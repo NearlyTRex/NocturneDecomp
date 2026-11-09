@@ -1,0 +1,181 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 90,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "004fa930",
+      "from_addr": "004faad7",
+      "name": "core_inv.cpp_drawItemIconBackground_FUN_004fa930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fa770",
+      "from_addr": "004fa917",
+      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_004fa770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00552f50",
+      "from_addr": "005530ea",
+      "name": "core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044d1d0",
+    "address_range": [
+      [
+        "0044d1d0",
+        "0044d205"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044d1d0",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_pushRect_FUN_0044d1d0(CDemonCamera *this_ptr,int left,int top,int right,int bottom)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.578947368421053,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CBRANCH": 1,
+      "COPY": 24,
+      "INT_ADD": 21,
+      "INT_AND": 19,
+      "INT_EQUAL": 9,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 20,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 163
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x1d0",
+      "severity": "mild",
+      "text": "if (0xff < *(int *)&this_ptr->field_0x1d0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x1d0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x1d0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x1d4",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(&this_ptr->field_0x1d4 + *(int *)&this_ptr->field_0x1d0 * 0x10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x1d0",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(&this_ptr->field_0x1d4 + *(int *)&this_ptr->field_0x1d0 * 0x10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x1d0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x1d0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

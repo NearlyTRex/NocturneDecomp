@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
@@ -103,7 +98,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -115,7 +110,7 @@
     },
     {
       "addr": "01fa7e78",
-      "name": "g_CDemonSet_01e57284.enemy_count",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -312,9 +307,9 @@
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(CEnemy **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CEnemy **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CEnemy **)((int)g_CDemonSet_PTR_005be368->enemies + iVar4);",
+      "text": "this_ptr_00 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + iVar4);",
       "type": "pointer_cast"
     }
   ]

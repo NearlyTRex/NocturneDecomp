@@ -1,28 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 199,
-        "message": "use of undeclared identifier '_DAT_0059b360'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 200,
-        "message": "use of undeclared identifier '_DAT_0059b360'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 201,
-        "message": "use of undeclared identifier '_DAT_0059b360'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 716,
@@ -717,30 +693,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCloth_setup_FUN_004359e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 53,
-          "line": 120,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 80,
-          "line": 121,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -1045,22 +997,6 @@
       "severity": "moderate",
       "text": "pCVar11 = (CCloth *)&(pCVar11->model).env_map_opac_list;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 120,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(uVar6 = pCVar15->x, uVar16 = (int)uVar6 >> 0x1f,",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 121,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar7 = (this_ptr->model).vertex_list[iVar4].x, uVar17 = (int)uVar7 >> 0x1f,",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

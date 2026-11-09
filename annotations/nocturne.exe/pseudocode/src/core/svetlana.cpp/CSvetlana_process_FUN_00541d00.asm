@@ -37,8 +37,8 @@
 ;   double DOUBLE_005963a9 = 1.57079632675000
 ;   double DOUBLE_005963b1 = 1.59386252192652E-314
 ;   double DOUBLE_005963b9 = 3.14159265350000
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_02dca058
 ;
 ; Called Functions:
@@ -384,8 +384,8 @@ section .text
     ADD ESP,0xc                         ; 0054206d
     PUSH EBX                            ; 00542070
     PUSH 0x59634b                       ; 00542071 | = "%s confused while walking to scriptDe..."
-    MOV EDI,dword ptr [0x005ad350]      ; 00542076 | g_CConsole_PTR_005ad350
-    PUSH EDI                            ; 0054207c | g_CConsole_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 00542076 | g_CConsolePtr
+    PUSH EDI                            ; 0054207c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0054207d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00541e42                      ; 00542082

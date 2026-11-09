@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01bcd07c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01bcd07c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
@@ -372,30 +354,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CEditorTools_restoreWindowAndCleanup_FUN_004720c0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 19,
-          "line": 36,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 23,
-          "line": 43,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -500,22 +458,6 @@
       "severity": "moderate",
       "text": "// 00472174: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 36,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar5 = iVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 43,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar6 = iVar5 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

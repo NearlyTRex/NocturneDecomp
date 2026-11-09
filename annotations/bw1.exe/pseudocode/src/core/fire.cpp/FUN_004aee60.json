@@ -1,0 +1,320 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 128,
+    "complexity_score": 241,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 41,
+    "suspect_count": 19,
+    "suspect_types": [
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 169
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004aee60",
+    "address_range": [
+      [
+        "004aee60",
+        "004aef8b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fire.cpp_FUN_004aee60",
+    "signature": "undefined4 core_fire_cpp_FUN_004aee60(CVector3f *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b59e0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0"
+    },
+    {
+      "addr": "004b5e00",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_004b5e00"
+    },
+    {
+      "addr": "00555ab0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initCameraShake_FUN_00555ab0"
+    },
+    {
+      "addr": "00572780",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572780"
+    },
+    {
+      "addr": "005728e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005728e0"
+    },
+    {
+      "addr": "00572ac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572ac0"
+    },
+    {
+      "addr": "00572b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572b40"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    },
+    {
+      "addr": "00572d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005df24c",
+      "name": "s_rock_x_wav_005df24c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df257",
+      "name": "s_rock_x_wav_005df257",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c010",
+      "name": "DAT_0061c010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.295238095238095,
+    "instruction_count": 105,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 4,
+      "COPY": 178,
+      "FLOAT2FLOAT": 12,
+      "INT_ADD": 28,
+      "INT_AND": 51,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 50,
+      "INT_LESS": 9,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 25,
+      "INT_SUB": 53,
+      "INT_XOR": 4,
+      "LOAD": 19,
+      "POPCOUNT": 25,
+      "RETURN": 2,
+      "STORE": 50
+    },
+    "pcode_op_count": 556
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_fire_cpp_FUN_004aee60(CVector3f *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)(param_1 + 8));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[6].field_0x4 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[6].field_0x4 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_fire_cpp_FUN_004b5e00(0x01C57074,param_1,(CVector3f *)0x0,1,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C57074,param_1,(CVector3f *)0x0,0x10000,0x10000,0,0xffff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((double)*(float *)param_1,(double)*(float *)&param_1->field_0x4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((double)*(float *)param_1,(double)*(float *)&param_1->field_0x4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "((double)*(float *)param_1,(double)*(float *)&param_1->field_0x4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(double)*(float *)&param_1->field_0x8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "(double)*(float *)&param_1->field_0x8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[6].field_0x4 != 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[6].field_0x4 != 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C57074,param_1,(CVector3f *)0x0,0x10000,0x10000,2,0xffff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((double)*(float *)param_1,(double)*(float *)&param_1->field_0x4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((double)*(float *)param_1,(double)*(float *)&param_1->field_0x4,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "((double)*(float *)param_1,(double)*(float *)&param_1->field_0x4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(double)*(float *)&param_1->field_0x8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "(double)*(float *)&param_1->field_0x8);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 12,
+        "vtable_addr": "00600084"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

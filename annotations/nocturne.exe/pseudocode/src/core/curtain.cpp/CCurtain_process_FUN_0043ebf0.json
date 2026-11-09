@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 65,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 122,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "type_error",
-        "column": 60,
-        "line": 206,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 80,
-        "line": 208,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 60,
-        "line": 209,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 651,
@@ -137,7 +101,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -185,19 +149,19 @@
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "g_CDemonSet_01e57284.characters[0]",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "g_CDemonSet_01e57284.characters[1]",
+      "name": "g_CDemonSetInstance.characters[1]",
       "type": "undefined4",
       "value": null
     }
@@ -353,15 +317,15 @@
       "line": 105,
       "match": "DAT_0077bdb8",
       "severity": "mild",
-      "text": "for (iStack_20 = 0; iVar6 = DAT_0077bdb8,",
+      "text": "for (iStack_20 = 0; iVar6 = DAT_0077bdb8, iStack_20 < g_CDemonSetPtr->character_count;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 107,
-      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar10 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iStack_28);",
+      "text": "iVar10 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);",
       "type": "pointer_cast"
     },
     {

@@ -1,0 +1,290 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 172,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 14,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [
+    {
+      "addr": "005114f0",
+      "from_addr": "0051157a",
+      "name": "core_platfrm.cpp_FUN_005114f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529a70",
+      "from_addr": "0052da6e",
+      "name": "core_script.cpp_CScript_step_FUN_00529a70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00512020",
+    "address_range": [
+      [
+        "00512020",
+        "005120af"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_FUN_00512020",
+    "signature": "void __cdecl core_platfrm_cpp_FUN_00512020(CPlatform *this_ptr,float goal_param,float movement_rate)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0052da6e",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00529a70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0051157a",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_FUN_005114f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0051180e",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_FUN_005114f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0051185d",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_FUN_005114f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0051189f",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_FUN_005114f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.184210526315789,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 5,
+      "BRANCH": 1,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 107,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT2FLOAT": 2,
+      "INT_ADD": 20,
+      "INT_AND": 19,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 12,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "INT_ZEXT": 12,
+      "LOAD": 12,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 273
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "goal_param",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "movement_rate",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2e0 = goal_param;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "if (*(float *)&this_ptr->field_0x2e0 < 0.0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2e0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "if (1.0 < *(float *)&this_ptr->field_0x2e0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2e0 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2e4",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2e4 = movement_rate;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2dc",
+      "severity": "mild",
+      "text": "if (*(float *)&this_ptr->field_0x2dc < goal_param) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2d4 = 3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2dc",
+      "severity": "mild",
+      "text": "if (goal_param < *(float *)&this_ptr->field_0x2dc) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2d4 = 4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x480",
+      "severity": "mild",
+      "text": "if (this_ptr->field_0x480 == '\\0') {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x30))(this_ptr,&this_ptr->field_0x480);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x30))(this_ptr,&this_ptr->field_0x480);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x480",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x30))(this_ptr,&this_ptr->field_0x480);",
+      "type": "unnamed_field"
+    }
+  ]
+}

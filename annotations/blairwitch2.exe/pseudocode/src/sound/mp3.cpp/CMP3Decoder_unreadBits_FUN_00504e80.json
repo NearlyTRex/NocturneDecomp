@@ -1,0 +1,180 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 108,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "00507240",
+      "from_addr": "0050787c",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00504e80",
+    "address_range": [
+      [
+        "00504e80",
+        "00504ed6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_unreadBits_FUN_00504e80",
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_00504e80(CMP3Decoder *this_ptr,int num_bits)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050787c",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.423076923076923,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 16,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 12,
+      "INT_LESS": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "LOAD": 11,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 115
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "num_bits",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "uVar1 = *(int *)&this_ptr->field_0x531c + num_bits;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x531c = uVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x1314",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 - num_bits;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x1314",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 - num_bits;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x531c = *(int *)&this_ptr->field_0x531c + -8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x531c = *(int *)&this_ptr->field_0x531c + -8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)&this_ptr->field_0x531c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1318",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1318 = *(int *)&this_ptr->field_0x1318 + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1318",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1318 = *(int *)&this_ptr->field_0x1318 + -1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

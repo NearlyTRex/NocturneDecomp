@@ -1,0 +1,334 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 142,
+    "cross_reference_count": 6,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [
+    {
+      "addr": "00409f60",
+      "from_addr": "0040ac63",
+      "name": "core_actor.cpp_FUN_00409f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486d40",
+      "from_addr": "004874fe",
+      "name": "core_elephant.cpp_FUN_00486d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048b020",
+      "from_addr": "0048b579",
+      "name": "core_exorcism.cpp_FUN_0048b020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0fc0",
+      "from_addr": "004d1818",
+      "name": "core_gun.cpp_FUN_004d0fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527d70",
+      "from_addr": "00528482",
+      "name": "core_rifle.cpp_FUN_00527d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b410",
+      "from_addr": "0056bcad",
+      "name": "core_tommygun.cpp_FUN_0056b410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004461c0",
+    "address_range": [
+      [
+        "004461c0",
+        "0044627d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crate.cpp_FUN_004461c0",
+    "signature": "void __cdecl core_crate_cpp_FUN_004461c0(CCrate *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a36e0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_004a36e0"
+    },
+    {
+      "addr": "004f6f10",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f6f10"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00441ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b9a1a",
+      "name": "s_s_exploding_005b9a19+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600530",
+      "name": "DAT_00600530",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01d81080",
+      "name": "DAT_01d81080",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0040ac63",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_FUN_00409f60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004874fe",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_FUN_00486d40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048b579",
+        "call_type": "direct",
+        "caller": "core_exorcism.cpp_FUN_0048b020",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d1818",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_FUN_004d0fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00528482",
+        "call_type": "direct",
+        "caller": "core_rifle.cpp_FUN_00527d70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056bcad",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_FUN_0056b410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.344262295081967,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 69,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 1,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 34,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 19,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 26,
+      "INT_ZEXT": 2,
+      "LOAD": 17,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 26
+    },
+    "pcode_op_count": 265
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrate *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x70",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x70 != 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "if (&uStack_10 != (uint *)&this_ptr->field_0x20) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "uStack_10 = *(uint *)&this_ptr->field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "fStack_c = *(float *)&this_ptr->field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "uStack_8 = *(uint *)&this_ptr->field_0x28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x70",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x70 = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 25,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

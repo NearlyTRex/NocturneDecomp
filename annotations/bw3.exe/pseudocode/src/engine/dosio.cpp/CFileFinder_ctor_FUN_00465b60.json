@@ -1,0 +1,208 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 21,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "005152e0",
+      "from_addr": "00515310",
+      "name": "core_podmain.cpp_FUN_005152e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482a70",
+      "from_addr": "00482ba9",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482c70",
+      "from_addr": "00482d9c",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dd1e",
+      "from_addr": "0047dddc",
+      "name": "shape_edittool.cpp_FUN_0047dd1e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482ea0",
+      "from_addr": "00482ef8",
+      "name": "shape_edittool.cpp_FUN_00482ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483020",
+      "from_addr": "004830df",
+      "name": "shape_edittool.cpp_FUN_00483020",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00465b60",
+    "address_range": [
+      [
+        "00465b60",
+        "00465b7b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00465b60",
+    "signature": "CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00465b60(CFileFinder *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00465ce0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_reset_FUN_00465ce0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "00482ba9",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00482d9c",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00515310",
+        "call_type": "direct",
+        "caller": "core_podmain.cpp_FUN_005152e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00482ef8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00482ea0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004830df",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483020",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047dddc",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047dd1e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5555555555555554,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 7,
+      "INT_ADD": 5,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 32
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileFinder *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10c = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFileFinder",
+        "offset": 0,
+        "vtable_addr": "005decb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

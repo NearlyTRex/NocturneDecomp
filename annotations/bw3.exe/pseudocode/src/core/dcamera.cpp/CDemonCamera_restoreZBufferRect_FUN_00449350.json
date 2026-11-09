@@ -1,0 +1,236 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 147,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [
+    {
+      "addr": "00449430",
+      "from_addr": "004496bd",
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00449350",
+    "address_range": [
+      [
+        "00449350",
+        "00449425"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_00449350",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_00449350(CDemonCamera *this_ptr,CRect *rect_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00471271",
+      "is_variadic": false,
+      "name": "core_dstrendr.cpp_memcpyMMX_FUN_00471271"
+    },
+    {
+      "addr": "00566370",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_00566370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba18",
+      "name": "DAT_005fba18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba1c",
+      "name": "DAT_005fba1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c60dac",
+      "name": "DAT_01c60dac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6cee8",
+      "name": "DAT_01c6cee8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004496bd",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00449430",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.027027027027027,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 4,
+      "CALL": 2,
+      "CBRANCH": 7,
+      "COPY": 59,
+      "INT_ADD": 37,
+      "INT_AND": 75,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 47,
+      "INT_LEFT": 6,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 15,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 27,
+      "INT_SUB": 27,
+      "INT_XOR": 3,
+      "LOAD": 31,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 14,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 446
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "rect_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CRect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x11d4",
+      "severity": "mild",
+      "text": "if ((((*(int *)&this_ptr->field_0x11d4 < *(int *)(rect_ptr + 4)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x11d8",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x11d8 < *(int *)(rect_ptr + 0xc))) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x11dc",
+      "severity": "mild",
+      "text": "(*(int *)rect_ptr < *(int *)&this_ptr->field_0x11dc)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x11e0",
+      "severity": "mild",
+      "text": "(*(int *)(rect_ptr + 8) < *(int *)&this_ptr->field_0x11e0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_00566370(0,0,0,DAT_005fba18 + -1,DAT_005fba1c + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_00566370(0,0,0,DAT_005fba18 + -1,DAT_005fba1c + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_01c60dac",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(&DAT_01c60dac + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&this_ptr->field_0x144 * iVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "(void *)(*(int *)&this_ptr->field_0x15c + (iVar2 + *(int *)rect_ptr) * 4),",
+      "type": "unnamed_field"
+    }
+  ]
+}

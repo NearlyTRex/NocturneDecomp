@@ -16,9 +16,9 @@
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 at 00554f0a
 ;
 ; Referenced Globals:
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01c6750c
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLightningBolt_activate_FUN_00488b10
@@ -70,9 +70,9 @@ section .text
         ;   Label: LAB_0048c481
     PUSH 0x0                            ; 0048c486
     PUSH 0x0                            ; 0048c488
-    MOV EBP,dword ptr [0x005be368]      ; 0048c48a | g_CDemonSet_PTR_005be368
+    MOV EBP,dword ptr [0x005be368]      ; 0048c48a | g_CDemonSetPtr
     PUSH 0x42c80000                     ; 0048c490
-    PUSH EBP                            ; 0048c495 | g_CDemonSet_01e57284
+    PUSH EBP                            ; 0048c495 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660 ; 0048c496
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 0048c49b

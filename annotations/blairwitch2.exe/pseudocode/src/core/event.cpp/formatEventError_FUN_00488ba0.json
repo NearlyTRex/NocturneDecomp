@@ -1,0 +1,243 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 37,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_ref",
+      "undefined_data"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "0048e7e0",
+      "from_addr": "00490a01",
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00489670",
+      "from_addr": "004897d6",
+      "name": "core_event.cpp_FUN_00489670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00488ba0",
+    "address_range": [
+      [
+        "00488ba0",
+        "00488bc9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_formatEventError_FUN_00488ba0",
+    "signature": "int __cdecl core_event_cpp_formatEventError_FUN_00488ba0(char *format)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7768",
+      "is_variadic": false,
+      "name": "crt_stdio.c_vsprintf_FUN_005b7768"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c3dd10",
+      "name": "DAT_01c3dd10",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "004897d6",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00489845",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048993d",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00489b1d",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00489c50",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00489cf2",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00489de5",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00489e30",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00489f79",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048a097",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.666666666666667,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 12,
+      "INT_ADD": 5,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 2,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 70
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 7,
+      "match": "&stack0x00000008",
+      "severity": "moderate",
+      "text": "local_4 = &stack0x00000008;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_01c3dd10",
+      "severity": "mild",
+      "text": "_vsprintf(&DAT_01c3dd10,format,&local_4);",
+      "type": "undefined_data"
+    }
+  ]
+}

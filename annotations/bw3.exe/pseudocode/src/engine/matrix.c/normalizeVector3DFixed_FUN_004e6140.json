@@ -1,0 +1,310 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 244,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 19,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "unnamed_param"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "00405280",
+      "from_addr": "004052aa",
+      "name": "engine_3d.c_FUN_00405280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004051a0",
+      "from_addr": "004051ca",
+      "name": "engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e6140",
+    "address_range": [
+      [
+        "004e6140",
+        "004e61b5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_matrix.c_normalizeVector3DFixed_FUN_004e6140",
+    "signature": "void engine_matrix_c_normalizeVector3DFixed_FUN_004e6140(int *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e6060",
+      "is_variadic": false,
+      "name": "engine_matrix.c_integerSquareRoot_FUN_004e6060"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004051ca",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonTexturedUVLit_FUN_004051a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004052aa",
+        "call_type": "direct",
+        "caller": "engine_3d.c_FUN_00405280",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.08,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 46,
+      "INT_ADD": 24,
+      "INT_AND": 16,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 3,
+      "INT_LESS": 1,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 3,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SDIV": 3,
+      "INT_SEXT": 21,
+      "INT_SLESS": 8,
+      "INT_SREM": 3,
+      "INT_SUB": 12,
+      "INT_ZEXT": 12,
+      "LOAD": 14,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 18
+    },
+    "pcode_op_count": 254
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004e61a4",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void engine_matrix_c_normalizeVector3DFixed_FUN_004e6140(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "aiStackY_ffc",
+      "severity": "moderate",
+      "text": "int aiStackY_ffc [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1] * param_1[1] + *param_1 * *param_1 + param_1[2] * param_1[2]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1] * param_1[1] + *param_1 * *param_1 + param_1[2] * param_1[2]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1] * param_1[1] + *param_1 * *param_1 + param_1[2] * param_1[2]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1] * param_1[1] + *param_1 * *param_1 + param_1[2] * param_1[2]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1] * param_1[1] + *param_1 * *param_1 + param_1[2] * param_1[2]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1] * param_1[1] + *param_1 * *param_1 + param_1[2] * param_1[2]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_14 = (int)(((longlong)*param_1 * 0x7fff) / (longlong)iVar1) * 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_10 = (int)(((longlong)param_1[1] * 0x7fff) / (longlong)iVar1) * 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = iStack_14;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(int *)(&stack0xfffffff4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 18,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

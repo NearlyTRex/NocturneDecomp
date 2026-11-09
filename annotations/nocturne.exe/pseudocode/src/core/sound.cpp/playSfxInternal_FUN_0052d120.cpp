@@ -139,7 +139,7 @@ LAB_0052d202:
         local_44.z = z + position_tracker->z;
       }
       local_28 = core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0
-                           (g_CDemonSet_PTR_005be368,&local_44);
+                           (g_CDemonSetPtr,&local_44);
       local_1c = local_28;
       local_18 = local_28 + 5;
       do {
@@ -179,8 +179,7 @@ LAB_0052d202:
       } while (local_1c < local_18);
     }
     if (local_a8[0] == '\0') {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"Can't find wav: %s\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"Can't find wav: %s\n");
       return 0;
     }
     local_174 = 1.0;

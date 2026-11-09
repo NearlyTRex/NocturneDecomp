@@ -131,7 +131,7 @@ LAB_0044eae9:
             piVar2 = (int *)(iVar7 + 0x1abb0b8);
             iVar7 = iVar7 + 4;
             iVar6 = iVar6 + 1;
-            core_dstrender_cpp_memcpyMMX_FUN_00465341
+            core_dstrendr_cpp_memcpyMMX_FUN_00465341
                       (this_ptr->shadow_depth_buffer + iVar5,
                        (void *)((int)this_ptr->master_zbuffer + iVar5 * 2),
                        (*piVar2 - *piVar1) * 2 + 2);

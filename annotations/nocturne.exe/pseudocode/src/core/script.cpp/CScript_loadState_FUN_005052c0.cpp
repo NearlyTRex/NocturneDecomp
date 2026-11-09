@@ -24,14 +24,14 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
     core_main_c_displayErrorAndQuit_FUN_004c8440("CScript::loadState - file version is newer than .EXE");
   }
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,"%d\n",&g_CGame_PTR_005b9354->letterbox_mode);
+  _fscanf(file_handle,"%d\n",&g_CGamePtr->letterbox_mode);
   if (1 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,"%d\n",&g_CGame_PTR_005b9354->allow_damage_flag);
+    _fscanf(file_handle,"%d\n",&g_CGamePtr->allow_damage_flag);
   }
   if (2 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,"%d\n",&g_CGame_PTR_005b9354->allow_enemy_attack_flag);
+    _fscanf(file_handle,"%d\n",&g_CGamePtr->allow_enemy_attack_flag);
   }
   _fgets(local_118,0xff,file_handle);
   _fscanf(file_handle,"%g\n",&DAT_01e56c20);
@@ -74,7 +74,7 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(CScript *this_ptr,_F
     uVar1 = core_script_cpp_CScript_computeChecksum_FUN_00505820(this_ptr);
     if (uVar1 != local_14) {
       shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                (g_CEditorTools_PTR_005b6d50,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
+                (g_CEditorToolsPtr,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
       return;
     }
   }

@@ -1,0 +1,480 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 169,
+    "complexity_score": 330,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 75,
+    "suspect_count": 22,
+    "suspect_types": [
+      "param_count_too_few",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 244
+  },
+  "cross_references": [
+    {
+      "addr": "004b90d0",
+      "from_addr": "004b9d3b",
+      "name": "core_game.cpp_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b8e10",
+    "address_range": [
+      [
+        "004b8e10",
+        "004b8fc4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004b8e10",
+    "signature": "void core_game_cpp_FUN_004b8e10(undefined4 param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040c5a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c5a0"
+    },
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c840"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "0044fd70",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
+    },
+    {
+      "addr": "004dadb0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004dadb0"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "004fcda0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d79f3",
+      "name": "s_CMeleeAxe_005d79f1+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d79fd",
+      "name": "DAT_005d79fd",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d79fe",
+      "name": "DAT_005d79fe",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d79ff",
+      "name": "DAT_005d79ff",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7a00",
+      "name": "DAT_005d7a00",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7a01",
+      "name": "s_CBoxActor_005d7a01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a0b",
+      "name": "s_Lantern_005d7a0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a13",
+      "name": "s_Lantern_kfm_005d7a13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a1f",
+      "name": "s_core_game_cpp_005d7a1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7a30",
+      "name": "s_giveHeroWeapon_This_is_n_005d7a30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618170",
+      "name": "DAT_00618170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc9e8",
+      "name": "g_CBoxActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cedef4",
+      "name": "DAT_01cedef4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661f38",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004b9d3b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b90d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d4a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d59",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d68",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d7a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.132352941176471,
+    "instruction_count": 136,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CALLIND": 3,
+      "CBRANCH": 9,
+      "COPY": 97,
+      "INT_ADD": 48,
+      "INT_AND": 69,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 64,
+      "INT_LESS": 5,
+      "INT_MULT": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 32,
+      "INT_SUB": 53,
+      "LOAD": 25,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 55
+    },
+    "pcode_op_count": 562
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_game_cpp_FUN_004b8e10(uint param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_game_cpp_FUN_004b8e10(uint param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "actor_ptr = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c5a0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar4 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar5->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar5 = (CDemonActor *)&pCVar5->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 37,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&pCVar3->field_0x2b0 + 8))(pCVar3);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&pCVar3->field_0x2b0 + 8))(pCVar3);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = _strcmp(param_2,\"Lantern\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x1bc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3[1].field_0x1bc = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_005d79fd",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d79fd;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar5->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar5 = (CDemonActor *)&pCVar5->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 64,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&actor_ptr->field_0x2b0 + 8))(actor_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&actor_ptr->field_0x2b0 + 8))(actor_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 72,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&actor_ptr->field_0x2b0 + 0x90))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 72,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&actor_ptr->field_0x2b0 + 0x90))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 35,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDemonActor *)&pCVar5->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 61,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDemonActor *)&pCVar5->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

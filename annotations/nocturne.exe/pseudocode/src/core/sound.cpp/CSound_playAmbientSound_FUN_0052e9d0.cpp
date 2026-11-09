@@ -29,7 +29,6 @@ void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0(CSound *this_pt
     return;
   }
   _DAT_02dc9c90 =
-       core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSet_PTR_005be368,&DAT_02dc9c68)
-  ;
+       core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSetPtr,&DAT_02dc9c68);
   return;
 }

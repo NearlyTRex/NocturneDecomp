@@ -1,0 +1,15 @@
+// Name: core_disease.cpp_CDisease_getActorType_FUN_0045bf70
+// Address: 0045bf70
+// Address Range: [[0045bf70, 0045bf75]]
+// Convention: unknown
+// Signature: CDemonActorType * core_disease_cpp_CDisease_getActorType_FUN_0045bf70(CDisease *this_ptr)
+
+#include "nocturne.h"
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+CDemonActorType * core_disease_cpp_CDisease_getActorType_FUN_0045bf70(CDisease *this_ptr)
+
+{
+  return &g_CDiseaseClassInfo;
+}

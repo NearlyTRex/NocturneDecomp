@@ -1,0 +1,199 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 128,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 9,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "005516ce",
+      "from_addr": "005516e6",
+      "name": "sound_sndmain.cpp_FUN_005516ce",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00551950",
+    "address_range": [
+      [
+        "00551950",
+        "005519ad"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_sndmain.cpp_FUN_00551950",
+    "signature": "void sound_sndmain_cpp_FUN_00551950(char *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    },
+    {
+      "addr": "0054d9b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0"
+    },
+    {
+      "addr": "00551440",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551440"
+    },
+    {
+      "addr": "005518e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005518e0"
+    },
+    {
+      "addr": "005532f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_005532f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005516e6",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_005516ce",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.878787878787879,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 22,
+      "INT_ADD": 12,
+      "INT_AND": 21,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 161
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void sound_sndmain_cpp_FUN_00551950(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void sound_sndmain_cpp_FUN_00551950(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_005518e0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "if (*(int *)(&g_SfxSamples[0].field_0x154 + iVar2) == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)(&g_SfxSamples[0].field_0x0 + iVar2),param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "((char *)(&g_SfxSamples[0].field_0x0 + iVar2),param_1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "((CSfxSample *)(&g_SfxSamples[0].field_0x0 + iVar2));",
+      "type": "unnamed_field"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

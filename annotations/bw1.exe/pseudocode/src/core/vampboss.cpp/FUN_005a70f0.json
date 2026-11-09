@@ -1,0 +1,204 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 94,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 6,
+    "suspect_types": [
+      "suspicious_cast",
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "005a5550",
+      "from_addr": "005a638f",
+      "name": "core_vampboss.cpp_FUN_005a5550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a70f0",
+    "address_range": [
+      [
+        "005a70f0",
+        "005a7150"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_FUN_005a70f0",
+    "signature": "void __cdecl core_vampboss_cpp_FUN_005a70f0(CVampireBoss *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "005a4eb0",
+      "is_variadic": false,
+      "name": "core_tvbat.cpp_FUN_005a4eb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f8edc",
+      "name": "s_voicusummon_wav_005f8edb+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fcf2cc",
+      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fcf2d0",
+      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8aee8",
+      "name": "g_CTVBatClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005a638f",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_FUN_005a5550",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 0,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.823529411764706,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 28,
+      "INT_ADD": 16,
+      "INT_AND": 21,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "LOAD": 10,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 164
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"?voicusummon.wav\" + 1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"?voicusummon.wav\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "for (iVar1 = 0; iVar1 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar1 = iVar1 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x14d168",
+      "severity": "mild",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar2),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0xc410",
+      "severity": "mild",
+      "text": "if ((this_ptr_00 != (CTVBat *)0x0) && (*(int *)&this_ptr_00->field_0xc410 != 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
+      "line": 14,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar2),",
+      "type": "suspicious_cast"
+    }
+  ]
+}

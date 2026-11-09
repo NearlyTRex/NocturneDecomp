@@ -1,0 +1,179 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 112,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 125
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005326b0",
+    "address_range": [
+      [
+        "005326b0",
+        "005327b7"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_FUN_005326b0",
+    "signature": "void core_set_cpp_FUN_005326b0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0053b100",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_0053b100"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "0207bab8",
+      "name": "DAT_0207bab8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0207babc",
+      "name": "DAT_0207babc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0207bac0",
+      "name": "DAT_0207bac0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.060975609756097,
+    "instruction_count": 82,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 162,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 4,
+      "INT_ADD": 31,
+      "INT_AND": 70,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 37,
+      "INT_LESS": 9,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 12,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 17,
+      "INT_SRIGHT": 9,
+      "INT_SUB": 23,
+      "LOAD": 20,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 23,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 497
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_set_cpp_FUN_005326b0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_1c = *(int *)(param_1 + 0x108);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_18 = *(int *)(param_1 + 0x10c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_20 = *(int *)(param_1 + 0x110);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == _DAT_0207bab8) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == _DAT_0207babc) {",
+      "type": "unnamed_param"
+    }
+  ]
+}

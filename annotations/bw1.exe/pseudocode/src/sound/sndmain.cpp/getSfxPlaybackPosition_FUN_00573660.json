@@ -1,0 +1,278 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 124,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 7,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "sub84_truncation",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [
+    {
+      "addr": "004aa400",
+      "from_addr": "004aa443",
+      "name": "core_event.cpp_CEventList_updateSfxEntries_FUN_004aa400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598d50",
+      "from_addr": "00598e2f",
+      "name": "core_tommygun.cpp_FUN_00598d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a23b0",
+      "from_addr": "005a285f",
+      "name": "core_turret.cpp_FUN_005a23b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00573660",
+    "address_range": [
+      [
+        "00573660",
+        "00573718"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660",
+    "signature": "double __cdecl sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00573660(uint sfx_handle,uint output_format)"
+  },
+  "function_calls": [
+    {
+      "addr": "00572430",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430"
+    },
+    {
+      "addr": "00571fa0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_00571fa0"
+    },
+    {
+      "addr": "0056fa10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_0056fa10"
+    },
+    {
+      "addr": "00573e70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c80650",
+      "name": "DAT_02c80650",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004aa443",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_updateSfxEntries_FUN_004aa400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a285f",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_FUN_005a23b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00598e2f",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_FUN_00598d50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 82,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 31,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 10,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 24,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 26
+    },
+    "pcode_op_count": 273
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "output_format",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00573669",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x60 != 0) && (_DAT_02c80650 != 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x58,output_format);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 32,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 37,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(local_24,local_28));",
+      "type": "bitcast_double_pair"
+    }
+  ]
+}

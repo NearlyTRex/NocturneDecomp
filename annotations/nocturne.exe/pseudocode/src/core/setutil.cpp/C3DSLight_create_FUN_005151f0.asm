@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_00590e25
 ;   TerminatedCString s_C3DSLight_create_Out_of_00590e39
-;   undefined4 DAT_005ad54c
+;   CFilterCache* g_CFilterCachePtr = 014b8de8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -105,7 +105,7 @@ section .text
         ;   Label: LAB_005152bf
     PUSH ECX                            ; 005152c5
     PUSH EBX                            ; 005152c6
-    MOV EAX,[0x005ad54c]                ; 005152c7 | DAT_005ad54c
+    MOV EAX,[0x005ad54c]                ; 005152c7 | g_CFilterCachePtr
     PUSH EAX                            ; 005152cc
     ADD EDI,0x4                         ; 005152cd
     INC ESI                             ; 005152d0

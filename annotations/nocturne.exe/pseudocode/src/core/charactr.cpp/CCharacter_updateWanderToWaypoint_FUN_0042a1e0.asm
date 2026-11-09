@@ -22,8 +22,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057a37a = 4
 ;   float FLOAT_0057a382 = 20
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 g_CDemonSet_01e57284.waypoint_count
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   undefined4 g_CDemonSetInstance.waypoint_count
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -97,10 +97,10 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 0042a29c
     MOV dword ptr [ESP + 0x1f5c],ECX    ; 0042a29f
     MOV dword ptr [ESP + 0x1f64],EAX    ; 0042a2a6
-    MOV ESI,dword ptr [0x005be368]      ; 0042a2ad | g_CDemonSet_PTR_005be368
+    MOV ESI,dword ptr [0x005be368]      ; 0042a2ad | g_CDemonSetPtr
         ;   Label: LAB_0042a2ad
     MOV EAX,dword ptr [ESP + 0x1f60]    ; 0042a2b3
-    CMP EAX,dword ptr [ESI + 0x154a7c]  ; 0042a2ba | g_CDemonSet_01e57284.waypoint_count
+    CMP EAX,dword ptr [ESI + 0x154a7c]  ; 0042a2ba | g_CDemonSetInstance.waypoint_count
     JGE 0x0042a409                      ; 0042a2c0
         ;   XREF to: 0042a409 (CONDITIONAL_JUMP)  ; LAB_0042a409
     ADD ESI,dword ptr [ESP + 0x1f5c]    ; 0042a2c6

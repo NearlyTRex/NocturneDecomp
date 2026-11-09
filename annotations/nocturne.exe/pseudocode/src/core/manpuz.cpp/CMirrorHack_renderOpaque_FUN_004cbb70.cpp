@@ -10,10 +10,10 @@ int __cdecl core_manpuz_cpp_CMirrorHack_renderOpaque_FUN_004cbb70(CMirrorHack *t
 
 {
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
-  g_CGame_PTR_005b9354->render_mode = 1;
+  g_CGamePtr->render_mode = 1;
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&this_ptr->mirror_model,0.0,-1);
-  g_CGame_PTR_005b9354->render_mode = 0;
+  g_CGamePtr->render_mode = 0;
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
   return 1;
 }

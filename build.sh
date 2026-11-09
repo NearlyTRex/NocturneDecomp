@@ -25,6 +25,7 @@
 #
 #   ./build.sh exe-linux-asan-x86_64 -j 4
 #   ./build.sh exe-linux-asan-x86_64 --target nocturne_globals
+#   ./build.sh -j 4                    # the default preset, -j 4 to the build
 #
 # Every run configures from the preset first, which also re-globs the sources
 # collect_sources.py finds.
@@ -36,8 +37,9 @@
 
 set -u
 
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-cd "${SCRIPT_DIR}" || exit 1
+# cmake --preset reads CMakePresets.json from the current directory. Should the
+# cd ever fail, SCRIPT_DIR stays unset and set -u stops at its first use.
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && SCRIPT_DIR="$(pwd -P)"
 
 VANILLA="${VANILLA:-0}"
 if [[ "${1:-}" == "--vanilla" ]]; then
@@ -45,8 +47,12 @@ if [[ "${1:-}" == "--vanilla" ]]; then
     shift
 fi
 
-PRESET="${1:-${BUILD_PRESET:-exe-linux-asan-x86_64}}"
-[ $# -ge 1 ] && shift
+# No preset name starts with '-', so a leading option belongs to the build.
+PRESET="${BUILD_PRESET:-exe-linux-asan-x86_64}"
+if [[ $# -ge 1 && "$1" != -* ]]; then
+    PRESET="$1"
+    shift
+fi
 
 BUILD_DIR="${SCRIPT_DIR}/build/${PRESET}"
 CONFIGURE_ARGS=()

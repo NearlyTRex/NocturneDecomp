@@ -261,15 +261,15 @@ section .text
     MOV dword ptr [EBX + 0x4],EAX       ; 0045adfb | g_SFreaky_ARRAY_01b4d280[0].control_points[2].y
     MOV EAX,dword ptr [ESP + 0x120]     ; 0045adfe
     MOV dword ptr [EBX + 0x8],EAX       ; 0045ae05 | g_SFreaky_ARRAY_01b4d280[0].control_points[2].z
-    MOV EAX,[0x01fb860c]                ; 0045ae08 | g_CDemonCamera_01fb8508.position.x
+    MOV EAX,[0x01fb860c]                ; 0045ae08 | g_CDemonCameraInstance.position.x
         ;   Label: LAB_0045ae08
     MOV dword ptr [ESP + 0x10c],EAX     ; 0045ae0d
     MOV EAX,0x1fb860c                   ; 0045ae14
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0045ae19 | g_CDemonCamera_01fb8508.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0045ae19 | g_CDemonCameraInstance.position.y
     MOV dword ptr [ESP + 0x110],EAX     ; 0045ae1c
     MOV EAX,0x1fb860c                   ; 0045ae23
     PUSH 0x40a00000                     ; 0045ae28
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0045ae2d | g_CDemonCamera_01fb8508.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0045ae2d | g_CDemonCameraInstance.position.z
     PUSH 0xc0a00000                     ; 0045ae30
     MOV dword ptr [ESP + 0x11c],EAX     ; 0045ae35
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045ae3c

@@ -1,0 +1,441 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 124,
+    "complexity_score": 355,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 29,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 169
+  },
+  "cross_references": [
+    {
+      "addr": "005a48e0",
+      "from_addr": "005a49a8",
+      "name": "crt_stdio.c_fwrite_FUN_005a48e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9bc0",
+      "from_addr": "005a9c22",
+      "name": "crt_unknown.c_FUN_005a9bc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005aac30",
+    "address_range": [
+      [
+        "005aac30",
+        "005aad39"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005aac30",
+    "signature": "DWORD crt_unknown_c_FUN_005aac30(uint param_1,LPCVOID param_2,DWORD param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a92c0",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_005a92c0"
+    },
+    {
+      "addr": "005a7f44",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a7f44"
+    },
+    {
+      "addr": "005ab46c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005ab46c"
+    },
+    {
+      "addr": "005ab920",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005ab920"
+    },
+    {
+      "addr": "EXTERNAL:00000094",
+      "is_variadic": false,
+      "name": "SetFilePointer"
+    },
+    {
+      "addr": "EXTERNAL:000000a7",
+      "is_variadic": false,
+      "name": "WriteFile"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3640",
+      "name": "PTR_SetFilePointer_005b3640",
+      "type": "void*",
+      "value": "001b41c4"
+    },
+    {
+      "addr": "005b368c",
+      "name": "PTR_WriteFile_005b368c",
+      "type": "void*",
+      "value": "001b430e"
+    },
+    {
+      "addr": "006079a4",
+      "name": "PTR_crt_unknown.c_FUN_005a7f44_006079a4",
+      "type": "void*",
+      "value": "005a7f44"
+    },
+    {
+      "addr": "006079a8",
+      "name": "PTR_crt_unknown.c_FUN_005a7f44_006079a8",
+      "type": "void*",
+      "value": "005a7f44"
+    },
+    {
+      "addr": "00607b18",
+      "name": "DAT_00607b18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00607b44",
+      "name": "DAT_00607b44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00607b84",
+      "name": "DAT_00607b84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00607bdc",
+      "name": "DAT_00607bdc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005a49a8",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_fwrite_FUN_005a48e0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005a9c22",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005a9bc0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 6,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.421568627450981,
+    "instruction_count": 102,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 9,
+      "CBRANCH": 8,
+      "COPY": 89,
+      "INT_ADD": 40,
+      "INT_AND": 50,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 46,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 23,
+      "INT_SUB": 44,
+      "LOAD": 27,
+      "POPCOUNT": 23,
+      "RETURN": 4,
+      "STORE": 39
+    },
+    "pcode_op_count": 451
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "DWORD FUN_005aac30(uint param_1,LPCVOID param_2,DWORD param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DWORD FUN_005aac30(uint param_1,LPCVOID param_2,DWORD param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "DWORD FUN_005aac30(uint param_1,LPCVOID param_2,DWORD param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((int)param_1 < 0) || (0x00000014 < param_1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((int)param_1 < 0) || (0x00000014 < param_1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "hFile = *(HANDLE *)(DAT_00607bdc + param_1 * 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_00607bdc",
+      "severity": "mild",
+      "text": "hFile = *(HANDLE *)(DAT_00607bdc + param_1 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a4)(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a4)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar1 = FUN_005ab920(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 23,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 28,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_00607b44 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_00607b44",
+      "severity": "mild",
+      "text": "if (DAT_00607b44 != (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = (*DAT_00607b18)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00607b18",
+      "severity": "mild",
+      "text": "iVar3 = (*DAT_00607b18)(param_1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DVar2 = (*DAT_00607b44)(iVar3,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "DVar2 = (*DAT_00607b44)(iVar3,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00607b44",
+      "severity": "mild",
+      "text": "DVar2 = (*DAT_00607b44)(iVar3,param_2,param_3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 32,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "BVar4 = WriteFile(hFile,param_2,param_3,&DStack_14,(LPOVERLAPPED)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "BVar4 = WriteFile(hFile,param_2,param_3,&DStack_14,(LPOVERLAPPED)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 38,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 != DStack_14) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:6",
+      "param_delta": 6,
+      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

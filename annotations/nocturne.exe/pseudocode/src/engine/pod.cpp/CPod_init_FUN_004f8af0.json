@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 16,
-        "message": "use of undeclared identifier 'iRam00000000'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
@@ -138,31 +126,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CPod_init_FUN_004f8af0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 5,
-          "line": 23,
-          "message": "Either the condition 'this_ptr==(CPod*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Either the condition 'this_ptr==(CPod*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-      "line": 23,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "(*this_ptr->vtable->load)(this_ptr);",
-      "type": "static_null_pointer_redundant_check"
-    }
-  ]
+  "suspects": []
 }

@@ -1,0 +1,588 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 138,
+    "complexity_score": 514,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 44,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 177
+  },
+  "cross_references": [
+    {
+      "addr": "005c09f0",
+      "from_addr": "005c09f5",
+      "name": "crt_unknown.c_FUN_005c09f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c10e8",
+      "from_addr": "005c110b",
+      "name": "crt_unknown.c_FUN_005c10e8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c68f8",
+      "from_addr": "005c6996",
+      "name": "crt_unknown.c_FUN_005c68f8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c7018",
+      "from_addr": "005c71c0",
+      "name": "crt_unknown.c_FUN_005c7018",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c0a00",
+    "address_range": [
+      [
+        "005c0a00",
+        "005c0b05"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c0a00",
+    "signature": "void crt_unknown_c_FUN_005c0a00(int *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c50d4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c50d4"
+    },
+    {
+      "addr": "005c6750",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c6750"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00626220",
+      "name": "DAT_00626220",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626224",
+      "name": "DAT_00626224",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626228",
+      "name": "DAT_00626228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626618",
+      "name": "PTR_crt_unknown.c_FUN_005c50d4_00626618",
+      "type": "void*",
+      "value": "005c50d4"
+    },
+    {
+      "addr": "00626620",
+      "name": "PTR_crt_unknown.c_FUN_005c50d4_00626620",
+      "type": "void*",
+      "value": "005c50d4"
+    },
+    {
+      "addr": "02c9f040",
+      "name": "DAT_02c9f040",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9f690",
+      "name": "DAT_02c9f690",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "005c09f5",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c09f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005c110b",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c10e8",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005c1161",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c10e8",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005c6996",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c68f8",
+        "estimated_params": 3,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005c71c0",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c7018",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.724489795918367,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 15,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 2,
+      "CBRANCH": 25,
+      "COPY": 77,
+      "INT_ADD": 18,
+      "INT_AND": 78,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 68,
+      "INT_LESS": 16,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 34,
+      "INT_SUB": 22,
+      "INT_XOR": 1,
+      "LOAD": 18,
+      "POPCOUNT": 34,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 463
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_005c0a00(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != (int *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626618)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((((param_1 < _DAT_02c9f040 ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)(*_DAT_02c9f040 + (int)_DAT_02c9f040",
+      "severity": "moderate",
+      "text": "(piVar2 = _DAT_02c9f040, (int *)(*_DAT_02c9f040 + (int)_DAT_02c9f040) <= param_1)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(piVar2 = _DAT_02c9f040, (int *)(*_DAT_02c9f040 + (int)_DAT_02c9f040) <= param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(int *)(*piVar2 + (int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)(*piVar2 + (int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_00626220",
+      "severity": "mild",
+      "text": "((piVar1 = DAT_00626220, DAT_00626224 == (int *)0x0 ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "((piVar1 = DAT_00626220, DAT_00626224 == (int *)0x0 ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((((param_1 < DAT_00626224 ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "((((param_1 < DAT_00626224 ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)(*DAT_00626224 + (int)DAT_00626224",
+      "severity": "moderate",
+      "text": "(piVar2 = DAT_00626224, (int *)(*DAT_00626224 + (int)DAT_00626224) <= param_1)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(piVar2 = DAT_00626224, (int *)(*DAT_00626224 + (int)DAT_00626224) <= param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "(piVar2 = DAT_00626224, (int *)(*DAT_00626224 + (int)DAT_00626224) <= param_1)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "(piVar2 = DAT_00626224, (int *)(*DAT_00626224 + (int)DAT_00626224) <= param_1)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "(piVar2 = DAT_00626224, (int *)(*DAT_00626224 + (int)DAT_00626224) <= param_1)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "((piVar2 = (int *)DAT_00626224[1], piVar2 == (int *)0x0 ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)(*piVar2 + (int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "((piVar2 = (int *)DAT_00626224[2], piVar2 == (int *)0x0 ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)(*piVar2 + (int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)(*piVar2 + (int)piVar2",
+      "severity": "moderate",
+      "text": "if ((piVar2 <= param_1) && (param_1 < (int *)(*piVar2 + (int)piVar2))) goto LAB_005c0abc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((piVar2 <= param_1) && (param_1 < (int *)(*piVar2 + (int)piVar2))) goto LAB_005c0abc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((piVar2 <= param_1) && (param_1 < (int *)(*piVar2 + (int)piVar2))) goto LAB_005c0abc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_00626224",
+      "severity": "mild",
+      "text": "if ((piVar2 < DAT_00626224) && (DAT_00626228 < (uint)piVar2[5])) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_00626228",
+      "severity": "mild",
+      "text": "if ((piVar2 < DAT_00626224) && (DAT_00626228 < (uint)piVar2[5])) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_00626228",
+      "severity": "mild",
+      "text": "DAT_00626228 = piVar2[5];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_02c9f690",
+      "severity": "mild",
+      "text": "DAT_02c9f690 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626620)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)piVar2",
+      "severity": "moderate",
+      "text": "((param_1 < piVar2 || ((int *)(*piVar2 + (int)piVar2) <= param_1)))))))))) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)piVar2",
+      "severity": "moderate",
+      "text": "if ((piVar2 <= param_1) && (param_1 < (int *)(*piVar2 + (int)piVar2))) goto LAB_005c0abc;",
+      "type": "pointer_truncation"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

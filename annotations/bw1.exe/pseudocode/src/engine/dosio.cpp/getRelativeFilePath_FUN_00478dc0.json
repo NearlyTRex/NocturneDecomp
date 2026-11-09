@@ -1,0 +1,137 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 35,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strcpy"
+    ],
+    "total_lines": 62
+  },
+  "cross_references": [
+    {
+      "addr": "00478e20",
+      "from_addr": "00478e30",
+      "name": "engine_dosio.cpp_FUN_00478e20",
+      "type": "COMPUTED_CALL"
+    }
+  ],
+  "function": {
+    "address": "00478dc0",
+    "address_range": [
+      [
+        "00478dc0",
+        "00478e06"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_getRelativeFilePath_FUN_00478dc0",
+    "signature": "void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00478dc0(char *dest_path,char *directory,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005daa1e",
+      "name": "s_s_s_005daa1e",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00478e30",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_FUN_00478e20",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.212121212121212,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 27,
+      "INT_ADD": 15,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "LOAD": 13,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 139
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 11,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

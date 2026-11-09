@@ -13,11 +13,11 @@
 // =============================================================================
 
 // CDemonCamera
-extern CDemonCamera g_CDemonCamera_01fb8508;
+extern CDemonCamera g_CDemonCameraInstance;
 
 // CDemonRaytrace
-extern CDemonRaytrace g_CDemonRaytrace_01fba938;
+extern CDemonRaytrace g_CDemonRaytraceInstance;
 
 // CKeyFramedModel
-extern CKeyFramedModel g_CKeyFramedModel_01fbacc8;
+extern CKeyFramedModel g_CKeyFramedModelInstance;
 

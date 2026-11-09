@@ -1,0 +1,434 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 380,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 32,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "0041f0f0",
+      "from_addr": "0041f327",
+      "name": "core_bugs.cpp_FUN_0041f0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420000",
+      "from_addr": "00420111",
+      "name": "core_bugs.cpp_FUN_00420000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004203a0",
+      "from_addr": "0042054e",
+      "name": "core_bugs.cpp_FUN_004203a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420830",
+      "from_addr": "00420835",
+      "name": "core_bugs.cpp_FUN_00420830",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00421a00",
+    "address_range": [
+      [
+        "00421a00",
+        "00421b01"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_FUN_00421a00",
+    "signature": "void __cdecl core_bugs_cpp_FUN_00421a00(CBugs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041a590",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_0041a590"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cca81",
+      "name": "DAT_005cca81",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cca85",
+      "name": "DAT_005cca85",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00420111",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_FUN_00420000",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042054e",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_FUN_004203a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00420835",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_FUN_00420830",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0041f327",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_FUN_0041f0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 237,
+      "FLOAT2FLOAT": 14,
+      "FLOAT_ADD": 6,
+      "INT_ADD": 36,
+      "INT_AND": 14,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 15,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "LOAD": 20,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 408
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x10b08",
+      "severity": "mild",
+      "text": "puVar1 = &this_ptr->field_0x10b08;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x1e608",
+      "severity": "mild",
+      "text": "if (&this_ptr->field_0x1e608 != puVar1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1e608",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e608 = *(uint *)puVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x1e60c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e60c = *(uint *)&this_ptr->field_0x10b0c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x10b0c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e60c = *(uint *)&this_ptr->field_0x10b0c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x1e610",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e610 = *(uint *)&this_ptr->field_0x10b10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x10b10",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e610 = *(uint *)&this_ptr->field_0x10b10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x1e614",
+      "severity": "mild",
+      "text": "if (&this_ptr->field_0x1e614 != puVar1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x1e614",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e614 = *(uint *)puVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x1e618",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e618 = *(uint *)&this_ptr->field_0x10b0c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x10b0c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e618 = *(uint *)&this_ptr->field_0x10b0c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x1e61c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e61c = *(uint *)&this_ptr->field_0x10b10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x10b10",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1e61c = *(uint *)&this_ptr->field_0x10b10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x10afc",
+      "severity": "mild",
+      "text": "if (1 < *(int *)&this_ptr->field_0x10afc) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x10b48",
+      "severity": "mild",
+      "text": "point = (CVector3f *)&this_ptr->field_0x10b48;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x1e608",
+      "severity": "mild",
+      "text": "((CBoundingBox3D *)&this_ptr->field_0x1e608,point);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "point = (CVector3f *)&point[5].field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x10afc",
+      "severity": "mild",
+      "text": "} while (iVar7 < *(int *)&this_ptr->field_0x10afc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x1e608",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)&this_ptr->field_0x1e608 + _DAT_005cca81;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x1e610",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)&this_ptr->field_0x1e610 + _DAT_005cca81;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x1e614",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)&this_ptr->field_0x1e614 + _DAT_005cca85;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x1e618",
+      "severity": "mild",
+      "text": "fVar5 = *(float *)&this_ptr->field_0x1e618 + _DAT_005cca85;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x1e61c",
+      "severity": "mild",
+      "text": "fVar6 = *(float *)&this_ptr->field_0x1e61c + _DAT_005cca85;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x1e60c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1e60c = *(float *)&this_ptr->field_0x1e60c + _DAT_005cca81;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x1e60c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1e60c = *(float *)&this_ptr->field_0x1e60c + _DAT_005cca81;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x1e610",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1e610 = fVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x1e614",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1e614 = fVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x1e618",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1e618 = fVar5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x1e61c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1e61c = fVar6;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x1e608",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1e608 = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `point` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*point) + offsetof(subfield)` equals the real array stride. Replace `point->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 34,
+      "match": "point = (T *)&point[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "point = (CVector3f *)&point[5].field_0x4;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

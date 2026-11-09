@@ -1,73 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 72,
-        "message": "use of undeclared identifier '_DAT_01cc30a0'"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 148,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 152,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 169,
-        "message": "format specifies type 'int' but the argument has type 'CBitFont *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 47,
-        "line": 201,
-        "message": "format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 201,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 276,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 286,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 381,
-        "message": "use of undeclared identifier '_DAT_01d16810'; did you mean 'DAT_02DE6810'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 638,
+    "complexity_score": 635,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 383,
+    "pseudocode_lines": 380,
     "suspect_count": 22,
     "suspect_types": [
       "concat_reconstruction",
@@ -78,7 +18,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1461
+    "total_lines": 1458
   },
   "cross_references": [
     {
@@ -311,7 +251,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -353,25 +293,25 @@
     },
     {
       "addr": "01c775ec",
-      "name": "g_CGame_01c775ec",
+      "name": "g_CGameInstance",
       "type": "CGame",
       "value": null
     },
     {
       "addr": "01c77814",
-      "name": "g_CGame_01c775ec.letterbox_mode",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7782c",
-      "name": "g_CGame_01c775ec.goggles_active",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77830",
-      "name": "g_CGame_01c775ec.flashlight_active",
+      "name": "g_CGameInstance.flashlight_active",
       "type": "undefined4",
       "value": null
     },
@@ -764,23 +704,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CInventory_renderAllItems_FUN_004c2470.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "legacyUninitvar",
-          "column": 15,
-          "line": 170,
-          "message": "Uninitialized variable: local_4c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -840,7 +763,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 308,
+      "line": 307,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 +",
@@ -848,7 +771,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 309,
+      "line": 308,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "(float)(iStack_7c - (int)local_18) * this_ptr->battery_charge *",
@@ -856,7 +779,7 @@
     },
     {
       "description": "Pointer value `pCVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 313,
+      "line": 312,
       "match": "(int)pCVar11",
       "severity": "moderate",
       "text": "engine_2d_c_fillRectColor_FUN_00403e60(6,iStack_80,iVar12,iVar3,(int)pCVar11);",
@@ -864,7 +787,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 345,
+      "line": 344,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 - (float)(int)local_18 * fStack_684));",
@@ -872,7 +795,7 @@
     },
     {
       "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 345,
+      "line": 344,
       "match": "(int)local_18",
       "severity": "moderate",
       "text": "((double)((float)(int)local_18 - (float)(int)local_18 * fStack_684));",
@@ -880,10 +803,10 @@
     },
     {
       "description": "Pointer value `pCVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 349,
+      "line": 347,
       "match": "(int)pCVar11",
       "severity": "moderate",
-      "text": "(int)pCVar11);",
+      "text": "(&g_HealthBar1Bitmap,iStack_7c,local_78 + 4,0,local_78,iVar7 + -1,iVar3,(int)pCVar11);",
       "type": "pointer_truncation"
     },
     {
@@ -896,7 +819,7 @@
     },
     {
       "description": "Raw hex address 0x4c2ae5 assigned to bare local `iVar12`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar12` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 305,
+      "line": 304,
       "match": "0x4c2ae5",
       "severity": "moderate",
       "text": "iVar12 = 0x4c2ae5;",
@@ -904,7 +827,7 @@
     },
     {
       "description": "Raw hex address 0x4c2c2e assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 342,
+      "line": 341,
       "match": "0x4c2c2e",
       "severity": "moderate",
       "text": "iVar3 = 0x4c2c2e;",
@@ -957,14 +880,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
-    },
-    {
-      "description": "Uninitialized variable: local_4c",
-      "line": 170,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "pCVar11 = local_4c;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

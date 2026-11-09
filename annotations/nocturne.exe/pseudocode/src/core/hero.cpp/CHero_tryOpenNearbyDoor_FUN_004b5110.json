@@ -1,23 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 69,
+    "complexity_score": 68,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 53,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 199
+    "total_lines": 198
   },
   "cross_references": [
     {
@@ -112,7 +107,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -124,13 +119,13 @@
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -329,11 +324,11 @@
   },
   "suspects": [
     {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "description": "Complex pointer cast",
       "line": 25,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),",
       "type": "pointer_cast"
     }
   ]

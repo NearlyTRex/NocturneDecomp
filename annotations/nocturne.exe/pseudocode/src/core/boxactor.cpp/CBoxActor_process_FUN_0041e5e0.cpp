@@ -141,8 +141,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_0041e5e0(CBoxActor *this_pt
       auStack_d0._52_4_ = this_ptr;
       pCStack_98 = this_ptr;
       core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880
-                (g_CDemonSet_PTR_005be368,&CStack_64,&actor_position->position,
-                 (SDamageInfo *)auStack_d0);
+                (g_CDemonSetPtr,&CStack_64,&actor_position->position,(SDamageInfo *)auStack_d0);
       return;
     }
   }

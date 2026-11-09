@@ -1,0 +1,40 @@
+// Name: engine_2d.c_drawString_FUN_00402090
+// Address: 00402090
+// Address Range: [[00402090, 004020e0]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_drawString_FUN_00402090(char *text,int x_pos,int y_pos,int color)
+
+#include "nocturne.h"
+
+void __cdecl engine_2d_c_drawString_FUN_00402090(char *text,int x_pos,int y_pos,int color)
+
+{
+  char cVar1;
+  byte bVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  char *pcVar6;
+  
+  uVar4 = 0xffffffff;
+  pcVar6 = text;
+  do {
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+  } while (cVar1 != '\0');
+  iVar5 = 0;
+  if (0 < (int)(~uVar4 - 1)) {
+    do {
+      bVar2 = *text;
+      if ((0x1f < bVar2) && (bVar2 < 0x100)) {
+        iVar3 = engine_2d_c_drawCharacterMaskedColor_FUN_00401a20((uint)bVar2,x_pos,y_pos,color);
+        x_pos = x_pos + iVar3;
+      }
+      iVar5 = iVar5 + 1;
+      text = text + 1;
+    } while (iVar5 < (int)(~uVar4 - 1));
+  }
+  return;
+}

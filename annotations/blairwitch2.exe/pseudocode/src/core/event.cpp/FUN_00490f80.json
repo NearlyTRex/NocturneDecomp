@@ -1,0 +1,211 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 125,
+    "complexity_score": 106,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 186
+  },
+  "cross_references": [
+    {
+      "addr": "00489670",
+      "from_addr": "0048b3d5",
+      "name": "core_event.cpp_FUN_00489670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cff90",
+      "from_addr": "004cfffc",
+      "name": "core_hero.cpp_FUN_004cff90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1660",
+      "from_addr": "004d2541",
+      "name": "core_hostage.cpp_FUN_004d1660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc8c0",
+      "from_addr": "004dcc93",
+      "name": "core_inv.cpp_FUN_004dc8c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a3ba0",
+      "from_addr": "005a3bd4",
+      "name": "core_schngeis.cpp_FUN_005a3ba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00490f80",
+    "address_range": [
+      [
+        "00490f80",
+        "004910a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_FUN_00490f80",
+    "signature": "void __cdecl core_event_cpp_FUN_00490f80(CEventList *this_ptr,char *name,int add_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00491540",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_findPersistentEvent_FUN_00491540"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005ba1f0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005ba1f0"
+    },
+    {
+      "addr": "005ba840",
+      "is_variadic": false,
+      "name": "crt_string.c_strupr_FUN_005ba840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d4cbb",
+      "name": "s_core_event_cpp_005d4cbb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4ccd",
+      "name": "s_Too_many_persistent_even_005d4ccd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4ce9",
+      "name": "s_core_event_cpp_005d4ce9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4cfb",
+      "name": "s_Event_name_s_too_long_005d4cfb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.9504950495049505,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 23,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 11,
+      "COPY": 77,
+      "INT_ADD": 42,
+      "INT_AND": 113,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 73,
+      "INT_LEFT": 8,
+      "INT_LESS": 9,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 20,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 41,
+      "INT_SUB": 37,
+      "INT_XOR": 5,
+      "INT_ZEXT": 1,
+      "LOAD": 28,
+      "POPCOUNT": 33,
+      "RETURN": 3,
+      "STORE": 23
+    },
+    "pcode_op_count": 601
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "add_flag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 37,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (((iVar3 + -1) - iVar4) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 23,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

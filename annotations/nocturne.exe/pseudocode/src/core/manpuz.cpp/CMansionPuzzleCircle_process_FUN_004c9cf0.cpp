@@ -60,7 +60,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_004c9cf0(CMansionP
               (&this_ptr->reflectors[0].rotation_matrix,pCVar1);
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
               (&this_ptr->reflectors[1].rotation_matrix,&this_ptr->reflectors[1].rotation);
-    core_game_cpp_CGame_setFudgeTarget_FUN_0049b240(g_CGame_PTR_005b9354,pCVar1,0.017453292);
+    core_game_cpp_CGame_setFudgeTarget_FUN_0049b240(g_CGamePtr,pCVar1,0.017453292);
   }
   return;
 }

@@ -1,0 +1,200 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 83,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00502f80",
+    "address_range": [
+      [
+        "00502f80",
+        "00503000"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_litecone.cpp_CLightCone_archive_FUN_00502f80",
+    "signature": "void __cdecl core_litecone_cpp_CLightCone_archive_FUN_00502f80(CLightCone *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e7062",
+      "name": "DAT_005e7062",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e7066",
+      "name": "s_falloff_005e7066",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e706e",
+      "name": "s_state_005e706e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7074",
+      "name": "s_onEvent_005e7074",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e707c",
+      "name": "s_offEvent_005e707c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f350",
+      "name": "g_CLightConeClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1891891891891895,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 23,
+      "INT_ADD": 16,
+      "INT_AND": 16,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 17,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 8,
+      "INT_SUB": 19,
+      "LOAD": 5,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 155
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightCone *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_005e7062",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x158,&DAT_005e7062);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x158,&DAT_005e7062);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x15c,\"falloff\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x160,\"state\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x164,\"onEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1c8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1c8,\"offEvent\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLightCone",
+        "offset": 212,
+        "vtable_addr": "006032d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

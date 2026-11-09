@@ -50,12 +50,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0(CDem
     if (this_ptr->shadow_pass_active == 0) {
       g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST);
       g_VertexPreprocessMode = 6;
-      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_004649dd;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_004649dd;
     }
     else {
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = 0;
-      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00463a79;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
               (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);

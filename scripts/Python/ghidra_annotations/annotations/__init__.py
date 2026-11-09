@@ -1,104 +1,73 @@
-from ghidra_annotations.annotations.applied_arrays import *
-from ghidra_annotations.annotations.applied_basic_types import *
-from ghidra_annotations.annotations.applied_enums import *
-from ghidra_annotations.annotations.applied_pointers import *
-from ghidra_annotations.annotations.applied_strings import *
-from ghidra_annotations.annotations.applied_structs import *
-from ghidra_annotations.annotations.applied_unions import *
-from ghidra_annotations.annotations.bookmarks import *
-from ghidra_annotations.annotations.call_overrides import *
-from ghidra_annotations.annotations.comments import *
-from ghidra_annotations.annotations.cross_references import *
-from ghidra_annotations.annotations.data_types import *
-from ghidra_annotations.annotations.entry_points import *
-from ghidra_annotations.annotations.equates import *
-from ghidra_annotations.annotations.memory_layout import *
-from ghidra_annotations.annotations.external_imports import *
-from ghidra_annotations.annotations.functions import *
-from ghidra_annotations.annotations.metadata import *
-from ghidra_annotations.annotations.pseudocode import *
-from ghidra_annotations.annotations.symbols_class import *
-from ghidra_annotations.annotations.symbols_label import *
-from ghidra_annotations.annotations.symbols_namespace import *
-from ghidra_annotations.annotations.type_info import *
-from ghidra_annotations.annotations.vtables import *
-from ghidra_annotations.annotations.switch_tables import *
-from ghidra_annotations.annotations.code_caves import *
-from ghidra_annotations.annotations.recreation import *
+# One module per annotation category, each with export_<category> and, for the
+# categories an import can apply, import_<category> and delete_<category>.
+# Gathered here so `from ghidra_annotations.annotations import name` reaches them.
 
-def delete_annotations(currentProgram, path):
-    delete_data_types(currentProgram, path)
-    delete_functions(currentProgram, path)
-    delete_call_overrides(currentProgram, path)
-    delete_comments(currentProgram, path)
-    delete_bookmarks(currentProgram, path)
-    delete_applied_arrays(currentProgram, path)
-    delete_applied_basic_types(currentProgram, path)
-    delete_applied_enums(currentProgram, path)
-    delete_applied_pointers(currentProgram, path)
-    delete_applied_strings(currentProgram, path)
-    delete_applied_structs(currentProgram, path)
-    delete_applied_unions(currentProgram, path)
-    delete_symbols_class(currentProgram, path)
-    delete_symbols_label(currentProgram, path)
-    delete_symbols_namespace(currentProgram, path)
-    delete_equates(currentProgram, path)
-    delete_external_imports(currentProgram, path)
-    delete_cross_references(currentProgram, path)
-    delete_memory_layout(currentProgram, path)
-    delete_pseudocode(currentProgram, path)
+from ghidra_annotations.annotations.applied_arrays import (
+    delete_applied_arrays, export_applied_arrays, import_applied_arrays)
+from ghidra_annotations.annotations.applied_basic_types import (
+    delete_applied_basic_types, export_applied_basic_types, import_applied_basic_types)
+from ghidra_annotations.annotations.applied_enums import (
+    delete_applied_enums, export_applied_enums, import_applied_enums)
+from ghidra_annotations.annotations.applied_pointers import (
+    delete_applied_pointers, export_applied_pointers, import_applied_pointers)
+from ghidra_annotations.annotations.applied_strings import (
+    delete_applied_strings, export_applied_strings, import_applied_strings)
+from ghidra_annotations.annotations.applied_structs import (
+    delete_applied_structs, export_applied_structs, import_applied_structs)
+from ghidra_annotations.annotations.applied_unions import (
+    delete_applied_unions, export_applied_unions, import_applied_unions)
+from ghidra_annotations.annotations.bookmarks import delete_bookmarks, export_bookmarks, import_bookmarks
+from ghidra_annotations.annotations.call_overrides import (
+    delete_call_overrides, export_call_overrides, import_call_overrides)
+from ghidra_annotations.annotations.code_caves import export_code_caves
+from ghidra_annotations.annotations.comments import delete_comments, export_comments, import_comments
+from ghidra_annotations.annotations.cross_references import (
+    delete_cross_references, export_cross_references, import_cross_references)
+from ghidra_annotations.annotations.data_types import delete_data_types, export_data_types, import_data_types
+from ghidra_annotations.annotations.entry_points import export_entry_points
+from ghidra_annotations.annotations.equates import delete_equates, export_equates, import_equates
+from ghidra_annotations.annotations.external_imports import (
+    delete_external_imports, export_external_imports, import_external_imports)
+from ghidra_annotations.annotations.functions import delete_functions, export_functions, import_functions
+from ghidra_annotations.annotations.memory_layout import (
+    delete_memory_layout, export_memory_layout, import_memory_layout)
+from ghidra_annotations.annotations.metadata import export_metadata
+from ghidra_annotations.annotations.pseudocode import delete_pseudocode, export_pseudocode
+from ghidra_annotations.annotations.recreation import export_recreation
+from ghidra_annotations.annotations.switch_tables import export_switch_tables
+from ghidra_annotations.annotations.symbols_class import delete_symbols_class, export_symbols_class, import_symbols_class
+from ghidra_annotations.annotations.symbols_label import delete_symbols_label, export_symbols_label, import_symbols_label
+from ghidra_annotations.annotations.symbols_namespace import (
+    delete_symbols_namespace, export_symbols_namespace, import_symbols_namespace)
+from ghidra_annotations.annotations.type_info import export_type_info
+from ghidra_annotations.annotations.vtables import export_vtables
 
-def export_annotations(currentProgram, folder, strict=False, deep_analysis=False,
-                       allow_size_mismatch=False, allow_name_address_mismatch=False,
-                       allow_this_ptr_mismatch=False, allow_duplicate_data_types=False):
-    export_data_types(currentProgram, folder, allow_duplicates=allow_duplicate_data_types)
-    export_functions(currentProgram, folder,
-                     allow_name_address_mismatch=allow_name_address_mismatch,
-                     allow_this_ptr_mismatch=allow_this_ptr_mismatch)
-    export_call_overrides(currentProgram, folder)
-    export_comments(currentProgram, folder)
-    export_bookmarks(currentProgram, folder)
-    export_applied_arrays(currentProgram, folder)
-    export_applied_basic_types(currentProgram, folder)
-    export_applied_enums(currentProgram, folder)
-    export_applied_pointers(currentProgram, folder)
-    export_applied_strings(currentProgram, folder)
-    export_applied_structs(currentProgram, folder)
-    export_applied_unions(currentProgram, folder)
-    export_symbols_class(currentProgram, folder)
-    export_symbols_label(currentProgram, folder)
-    export_symbols_namespace(currentProgram, folder)
-    export_equates(currentProgram, folder)
-    export_external_imports(currentProgram, folder)
-    export_cross_references(currentProgram, folder)
-    export_entry_points(currentProgram, folder)
-    export_memory_layout(currentProgram, folder)
-    export_metadata(currentProgram, folder)
-    export_type_info(currentProgram, folder, strict=strict,
-                     allow_size_mismatch=allow_size_mismatch)
-    export_vtables(currentProgram, folder)
-    export_switch_tables(currentProgram, folder)
-    export_code_caves(currentProgram, folder)
-    export_recreation(currentProgram, folder)
-    export_pseudocode(currentProgram, folder, strict=strict, deep_analysis=deep_analysis)
-
-def import_annotations(currentProgram, folder):
-    import_memory_layout(currentProgram, folder)
-    import_data_types(currentProgram, folder)
-    import_symbols_namespace(currentProgram, folder)
-    import_external_imports(currentProgram, folder)
-    import_functions(currentProgram, folder)
-    import_call_overrides(currentProgram, folder)
-    import_applied_enums(currentProgram, folder)
-    import_applied_unions(currentProgram, folder)
-    import_applied_structs(currentProgram, folder)
-    import_applied_arrays(currentProgram, folder)
-    import_applied_basic_types(currentProgram, folder)
-    import_applied_pointers(currentProgram, folder)
-    import_applied_strings(currentProgram, folder)
-    import_symbols_class(currentProgram, folder)
-    import_symbols_label(currentProgram, folder)
-    import_equates(currentProgram, folder)
-    import_comments(currentProgram, folder)
-    import_bookmarks(currentProgram, folder)
-    import_cross_references(currentProgram, folder)
+__all__ = [
+    "delete_applied_arrays", "export_applied_arrays", "import_applied_arrays",
+    "delete_applied_basic_types", "export_applied_basic_types", "import_applied_basic_types",
+    "delete_applied_enums", "export_applied_enums", "import_applied_enums",
+    "delete_applied_pointers", "export_applied_pointers", "import_applied_pointers",
+    "delete_applied_strings", "export_applied_strings", "import_applied_strings",
+    "delete_applied_structs", "export_applied_structs", "import_applied_structs",
+    "delete_applied_unions", "export_applied_unions", "import_applied_unions",
+    "delete_bookmarks", "export_bookmarks", "import_bookmarks",
+    "delete_call_overrides", "export_call_overrides", "import_call_overrides",
+    "export_code_caves",
+    "delete_comments", "export_comments", "import_comments",
+    "delete_cross_references", "export_cross_references", "import_cross_references",
+    "delete_data_types", "export_data_types", "import_data_types",
+    "export_entry_points",
+    "delete_equates", "export_equates", "import_equates",
+    "delete_external_imports", "export_external_imports", "import_external_imports",
+    "delete_functions", "export_functions", "import_functions",
+    "delete_memory_layout", "export_memory_layout", "import_memory_layout",
+    "export_metadata",
+    "delete_pseudocode", "export_pseudocode",
+    "export_recreation",
+    "export_switch_tables",
+    "delete_symbols_class", "export_symbols_class", "import_symbols_class",
+    "delete_symbols_label", "export_symbols_label", "import_symbols_label",
+    "delete_symbols_namespace", "export_symbols_namespace", "import_symbols_namespace",
+    "export_type_info",
+    "export_vtables",
+]

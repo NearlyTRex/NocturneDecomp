@@ -22,14 +22,14 @@ extern CBulletTrail g_CBulletTrail_ARRAY_01c58c90[10];
 extern CExplosion g_CExplosion_ARRAY_01c5d708[10];
 
 // CFireball[64]
-extern CFireball g_CFireball_ARRAY_01c58dfc[64];
+extern CFireball g_FireballPool[64];
 
 // CLaserBeam[64]
 extern CLaserBeam g_CLaserBeam_ARRAY_01c5c704[64];
 
 // CRock[64]
-extern CRock g_CRock_ARRAY_01c5b500[64];
+extern CRock g_RockPool[64];
 
 // CToss[20]
-extern CToss g_CToss_ARRAY_01c5d824[20];
+extern CToss g_TossPool[20];
 

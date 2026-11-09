@@ -7,17 +7,19 @@
 #include "system/watcom.h"
 #include "system/winnt.h"
 #include "types/classes/CDemonMission.h"
+#include "types/classes/CDemonPod.h"
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CEditorTools.h"
 #include "types/classes/CFireEffect.h"
 #include "types/classes/CForceFeedback.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
+#include "types/classes/CGround.h"
 #include "types/classes/CKeys.h"
 #include "types/classes/CLevelLoader.h"
 #include "types/classes/CMouse.h"
 #include "types/classes/CNetGame.h"
-#include "types/classes/CPod.h"
+#include "types/classes/CScript.h"
 #include "types/classes/CSound.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SAlphaEntry.h"
@@ -30,11 +32,14 @@
 // CDemonMission*
 extern CDemonMission* g_CDemonMission_PTR_005baf90;
 
+// CDemonPod*
+extern CDemonPod* g_CDemonPodPtr;
+
 // CDemonSet*
-extern CDemonSet* g_CDemonSet_PTR_005be368;
+extern CDemonSet* g_CDemonSetPtr;
 
 // CEditorTools*
-extern CEditorTools* g_CEditorTools_PTR_005b6d50;
+extern CEditorTools* g_CEditorToolsPtr;
 
 // CFireEffect*
 extern CFireEffect* g_CFireEffect_PTR_005b80f0;
@@ -43,10 +48,13 @@ extern CFireEffect* g_CFireEffect_PTR_005b80f0;
 extern CForceFeedback* g_CForceFeedback_PTR_005b9284;
 
 // CGame*
-extern CGame* g_CGame_PTR_005b9354;
+extern CGame* g_CGamePtr;
 
 // CGore*
-extern CGore* g_CGore_PTR_005b96c4;
+extern CGore* g_CGorePtr;
+
+// CGround*
+extern CGround* g_CGroundPtr;
 
 // CKeys*
 extern CKeys* g_CKeys_PTR_005bac64;
@@ -55,13 +63,13 @@ extern CKeys* g_CKeys_PTR_005bac64;
 extern CLevelLoader* g_CLevelLoader_PTR_005baca0;
 
 // CMouse*
-extern CMouse* g_CMouse_PTR_005be060;
+extern CMouse* g_CMousePtr;
 
 // CNetGame*
-extern CNetGame* g_CNetGame_PTR_005bdee0;
+extern CNetGame* g_CNetGamePtr;
 
-// CPod*
-extern CPod* g_CPod_PTR_005be1cc;
+// CScript*
+extern CScript* g_CScriptPtr;
 
 // CSound*
 extern CSound* g_CSound_PTR_005bed68;
@@ -76,24 +84,24 @@ extern SAlphaEntry g_AlphaTable[256];
 extern SMRGLTextureBasic g_LoadingMoonGlowTexture;
 
 // WatcomStaticDestructorNode
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8050;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8060;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8070;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8080;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8090;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80a0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80b0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80c0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80d0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80e0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92c0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92d0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92e0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b9694;
+extern WatcomStaticDestructorNode g_CEditorToolsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectStakesDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectSparksDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectGlassParticlesDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectFireballsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectRocksDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectTossesDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectCratersDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectShellsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectPopcornsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectRainDropsDestructorNode;
+extern WatcomStaticDestructorNode g_CDemonLightDestructorNode;
+extern WatcomStaticDestructorNode g_CGameDestructorNode;
+extern WatcomStaticDestructorNode g_CPickListDestructorNode;
+extern WatcomStaticDestructorNode g_CGoreDestructorNode;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b96a4;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b96b4;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ba8dc;
+extern WatcomStaticDestructorNode g_CGroundDestructorNode;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baa80;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baa90;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baaa0;
@@ -108,11 +116,11 @@ extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab20;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab30;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab40;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab50;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bac90;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad0e;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad1e;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad2e;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad3e;
+extern WatcomStaticDestructorNode g_LoadingMoonModelDestructorNode;
+extern WatcomStaticDestructorNode g_LoadingScreenBitmap1DestructorNode;
+extern WatcomStaticDestructorNode g_LoadingScreenBitmap2DestructorNode;
+extern WatcomStaticDestructorNode g_LoadingScreenBitmap3DestructorNode;
+extern WatcomStaticDestructorNode g_LoadingScreenBitmap4DestructorNode;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005badf8;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae08;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae18;
@@ -123,21 +131,21 @@ extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb158;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb168;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb178;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb188;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bded0;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be050;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be0a8;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be1bc;
+extern WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode;
+extern WatcomStaticDestructorNode g_CMouseDestructorNode;
+extern WatcomStaticDestructorNode g_PathMapCacheDestructorNode;
+extern WatcomStaticDestructorNode g_CDemonPodMainDestructorNode;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be200;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be210;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be328;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be338;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be348;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be358;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be980;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be990;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea20;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea30;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea44;
+extern WatcomStaticDestructorNode g_CDemonSetDestructorNode;
+extern WatcomStaticDestructorNode g_CDemonCameraDestructorNode;
+extern WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode;
+extern WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode;
+extern WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode;
+extern WatcomStaticDestructorNode g_SkeletonPoolDestructorNode;
+extern WatcomStaticDestructorNode g_SfxSamplesDestructorNode;
+extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1;
+extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bed50;
 
 // _MMX_INTEGER
@@ -198,7 +206,6 @@ extern int INT_005b9624;
 extern int INT_005b9650;
 extern int INT_005b9668;
 extern int INT_005ba8c8;
-extern int INT_005ba8ec;
 extern int INT_005ba928;
 extern int g_INT_005ba940;
 extern int g_INT_005ba944;

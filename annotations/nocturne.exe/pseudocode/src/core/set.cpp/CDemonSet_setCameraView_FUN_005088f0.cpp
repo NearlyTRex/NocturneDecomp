@@ -84,7 +84,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
   _DAT_01fba9a4 = 0;
   _DAT_01fba2ec = 0;
   _DAT_01fba480 = 0;
-  core_setutil_cpp_C3DSCamera_apply_FUN_005148b0(this_ptr_01,&g_CDemonCamera_01fb8508);
+  core_setutil_cpp_C3DSCamera_apply_FUN_005148b0(this_ptr_01,&g_CDemonCameraInstance);
   pCVar1 = &(this_ptr->active_fog).scroll;
   if (this_ptr->cameras[index].use_global_fog == 0) {
     (this_ptr->active_fog).color_index.r = (this_ptr_01->fog).color_index.r;
@@ -116,8 +116,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
   }
   iVar5 = 0;
   core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0
-            (&g_CDemonCamera_01fb8508,&this_ptr->active_fog);
-  g_CDemonRaytrace_01fba938.rendering_mode = 0;
+            (&g_CDemonCameraInstance,&this_ptr->active_fog);
+  g_CDemonRaytraceInstance.rendering_mode = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
@@ -126,28 +126,28 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
       pCVar4 = (CDemonSet *)pCVar4->cameras;
     } while (iVar5 < this_ptr->actor_count);
   }
-  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCamera_01fb8508,0);
-  core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(&g_CDemonCamera_01fb8508);
+  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCameraInstance,0);
+  core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(&g_CDemonCameraInstance);
   core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(this_ptr,0x10);
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,1);
-  core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310(&g_CDemonCamera_01fb8508);
+  core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310(&g_CDemonCameraInstance);
   _DAT_01ffb060 = 1;
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
   _DAT_01ffb060 = 0;
-  core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_004421b0(&g_CDemonCamera_01fb8508);
-  core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_00448380(&g_CDemonCamera_01fb8508);
+  core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_004421b0(&g_CDemonCameraInstance);
+  core_dcamera_cpp_CDemonCamera_restoreZBufferScanlines_FUN_00448380(&g_CDemonCameraInstance);
   _sprintf(&stack0xffffff10,"%s.raw",this_ptr->cameras + index);
-  core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(&g_CDemonCamera_01fb8508,&stack0xffffff10);
+  core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(&g_CDemonCameraInstance,&stack0xffffff10);
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
-  core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(&g_CDemonCamera_01fb8508,0);
+  core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(&g_CDemonCameraInstance,0);
   if (g_UseExternalRenderer != 0) {
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,0);
-    if (0x02DD1210->wave_animation_enabled == 0) {
-      core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);
+    if (g_CWaterPtr->wave_animation_enabled == 0) {
+      core_water_cpp_CWater_render_FUN_00550cb0(g_CWaterPtr,0);
     }
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
   }
-  core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508,0);
+  core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCameraInstance,0);
   if (this_ptr->disable_spotlight_shadows == 0) {
     local_14 = 0;
     if (0 < this_ptr->light_count) {
@@ -202,7 +202,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
         core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(this_ptr_00,0);
         core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(this_ptr_00);
         core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50
-                  (&g_CDemonCamera_01fb8508,this_ptr_00,rect);
+                  (&g_CDemonCameraInstance,this_ptr_00,rect);
         iVar5 = iVar5 + 1;
         rect = rect + 1;
         local_18 = local_18 + 4;
@@ -210,22 +210,22 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
     }
   }
   this_ptr->lighting_quality_mode = 0;
-  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCamera_01fb8508,1);
-  core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(&g_CDemonCamera_01fb8508);
+  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCameraInstance,1);
+  core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(&g_CDemonCameraInstance);
   _DAT_01c038f4 = 0;
   if (this_ptr->has_sky != 0) {
     core_dskybox_cpp_renderSkyDome_FUN_00463580
               (PTR_DAT_005b0674,this_ptr->sky_texture_name,this_ptr->sky_brightness);
   }
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
-  core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGore_PTR_005b96c4,1,in_stack_ffffff10);
+  core_gore_cpp_CGore_renderDecals_FUN_004afe80(g_CGorePtr,1,in_stack_ffffff10);
   core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970
             (g_CFireEffect_PTR_005b80f0,1,in_stack_ffffff10);
-  if (0x02DD1210->wave_animation_enabled == 0) {
-    core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);
+  if (g_CWaterPtr->wave_animation_enabled == 0) {
+    core_water_cpp_CWater_render_FUN_00550cb0(g_CWaterPtr,0);
   }
-  core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(&g_CDemonCamera_01fb8508,0);
-  core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508,0);
+  core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(&g_CDemonCameraInstance,0);
+  core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCameraInstance,0);
   this_ptr->directional_light_ratio_enabled = 0;
   core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(this_ptr);
   if (this_ptr->cameras[index].use_global_fog == 0) {
@@ -235,15 +235,15 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet *this_p
     iVar5 = this_ptr->default_master_reverb;
   }
   core_sound_cpp_CSound_setReverbPreset_FUN_0052ece0(g_CSound_PTR_005bed68,iVar5);
-  local_2c.x = g_CDemonCamera_01fb8508.position.x;
-  local_2c.y = g_CDemonCamera_01fb8508.position.y;
-  local_2c.z = g_CDemonCamera_01fb8508.position.z;
+  local_2c.x = g_CDemonCameraInstance.position.x;
+  local_2c.y = g_CDemonCameraInstance.position.y;
+  local_2c.z = g_CDemonCameraInstance.position.z;
   if (&local_44 != &local_2c) {
-    local_44.x = g_CDemonCamera_01fb8508.position.x;
-    local_44.y = g_CDemonCamera_01fb8508.position.y;
-    local_44.z = g_CDemonCamera_01fb8508.position.z;
+    local_44.x = g_CDemonCameraInstance.position.x;
+    local_44.y = g_CDemonCameraInstance.position.y;
+    local_44.z = g_CDemonCameraInstance.position.z;
   }
-  pCVar6 = &g_CDemonCamera_01fb8508.rotation_matrix;
+  pCVar6 = &g_CDemonCameraInstance.rotation_matrix;
   pfVar7 = local_a0;
   for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {
     *pfVar7 = pCVar6->m[0].x;

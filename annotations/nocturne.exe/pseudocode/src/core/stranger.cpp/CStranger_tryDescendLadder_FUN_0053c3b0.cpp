@@ -61,10 +61,10 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
      ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
     local_28 = &(this_ptr->base).base.base.location.position;
     local_20 = 0;
-    for (local_1c = 0; local_1c < g_CDemonSet_PTR_005be368->actor_count; local_1c = local_1c + 1) {
+    for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
       this_ptr_00 = (CLadder *)
                     core_actor_cpp_castToClassHash_FUN_0040d890
-                              (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_20),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),
                                g_CLadderActorType_01cc30e8.name_hash);
       if ((this_ptr_00 != (CLadder *)0x0) &&
          (ABS((this_ptr->base).base.base.location.position.y -
@@ -120,7 +120,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(CStranger 
               uStack_f4 = (uint)((ulonglong)dVar1 >> 0x20);
               uStack_f8 = SUB84(__BITCAST_UINT64(dVar1),0);
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (g_CConsole_PTR_005ad350,"Ladder dot : %f\n",uStack_f8,uStack_f4);
+                        (g_CConsolePtr,"Ladder dot : %f\n",uStack_f8,uStack_f4);
               this_ptr->ladder_to_descend = this_ptr_00;
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                         (&(this_ptr->base).base.model.base,0x2b,1);

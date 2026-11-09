@@ -6677,7 +6677,7 @@ WatcomDestructorCall WatcomDestructorCall_006620e0 = {
     .destructor_func = (void *)core_path_cpp_CPathMap_arrdtor12_FUN_00548c30,
     .object_instance = (void *)&g_PathMapCache
 };
-WatcomDestructorCall g_CDemonPodDestructorNode = {
+WatcomDestructorCall g_CDemonPodDestructorCall = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)core_podmain_cpp_CDemonPod_dtor_FUN_00551b20,
     .object_instance = (void *)&g_CDemonPodInstance

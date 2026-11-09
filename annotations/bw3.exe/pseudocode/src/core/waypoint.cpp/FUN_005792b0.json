@@ -1,0 +1,324 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 84,
+    "complexity_score": 297,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 24,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 121
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005792b0",
+    "address_range": [
+      [
+        "005792b0",
+        "0057937b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_waypoint.cpp_FUN_005792b0",
+    "signature": "void core_waypoint_cpp_FUN_005792b0(CTrigger *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "0056e0f0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_FUN_0056e0f0"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00600530",
+      "name": "DAT_00600530",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9714285714285715,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 5,
+      "COPY": 110,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 31,
+      "INT_AND": 35,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 16,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 348
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_waypoint_cpp_FUN_005792b0(CTrigger *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_trigger_cpp_FUN_0056e0f0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0xf8 = *(uint *)(0x01D81080 + 0x1008);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0xf8",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0xf8 = *(uint *)(0x01D81080 + 0x1008);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar6 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&pCVar6[1].field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)&param_1->field_0x20 - *(float *)(iVar1 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)&param_1->field_0x20 - *(float *)(iVar1 + 0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)&param_1->field_0x24 - *(float *)(iVar1 + 0x24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)&param_1->field_0x24 - *(float *)(iVar1 + 0x24);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)&param_1->field_0x28 - *(float *)(iVar1 + 0x28);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)&param_1->field_0x28 - *(float *)(iVar1 + 0x28);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&pCVar6[1].field_0x8 = SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "pCVar6 = (CTrigger *)&pCVar6->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar5 < *(int *)(param_1 + 1));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->field_0x78 != '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "if (param_1->field_0x78 != '\\0') {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = _stricmp(&param_1->field_0x78,(char *)0x5d7394);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "iVar5 = _stricmp(&param_1->field_0x78,(char *)0x5d7394);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar5 = _stricmp(&param_1->field_0x78,(char *)0x5d7399),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "(iVar5 = _stricmp(&param_1->field_0x78,(char *)0x5d7399),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CTrigger *)&pCVar6->field_0x8;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005e6124"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

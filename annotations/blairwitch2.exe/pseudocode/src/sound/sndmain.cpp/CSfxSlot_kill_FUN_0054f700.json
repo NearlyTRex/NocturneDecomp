@@ -1,0 +1,562 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 131,
+    "complexity_score": 285,
+    "cross_reference_count": 11,
+    "function_call_count": 4,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 21,
+    "suspect_types": [
+      "pointer_truncation",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 186
+  },
+  "cross_references": [
+    {
+      "addr": "0054e8c0",
+      "from_addr": "0054eba3",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_0054e8c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054d3a0",
+      "from_addr": "0054d42b",
+      "name": "sound_sndmain.cpp_FUN_0054d3a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ddf0",
+      "from_addr": "0054e0a8",
+      "name": "sound_sndmain.cpp_FUN_0054ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054edb0",
+      "from_addr": "0054eef5",
+      "name": "sound_sndmain.cpp_FUN_0054edb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f8a0",
+      "from_addr": "0054f919",
+      "name": "sound_sndmain.cpp_FUN_0054f8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005506b0",
+      "from_addr": "0055092b",
+      "name": "sound_sndmain.cpp_FUN_005506b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005510d0",
+      "from_addr": "005510e3",
+      "name": "sound_sndmain.cpp_FUN_005510d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551220",
+      "from_addr": "00551277",
+      "name": "sound_sndmain.cpp_FUN_00551220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005518e0",
+      "from_addr": "00551923",
+      "name": "sound_sndmain.cpp_FUN_005518e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553380",
+      "from_addr": "00553534",
+      "name": "sound_sndmain.cpp_FUN_00553380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551050",
+      "from_addr": "00551065",
+      "name": "sound_sndmain.cpp_killSfx_FUN_00551050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054f700",
+    "address_range": [
+      [
+        "0054f700",
+        "0054f890"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700",
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_0054f700(CSfxSlot *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00436710"
+    },
+    {
+      "addr": "0054d9b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0"
+    },
+    {
+      "addr": "0054b960",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_0054b960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e8762",
+      "name": "s_sound_sndmain_cpp_005e8762",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8777",
+      "name": "s_SfxSlot_kill_must_be_loc_005e8777",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8797",
+      "name": "s_NULLsamplePtr_005e8797",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e87a7",
+      "name": "s_Killing_sfx_s_005e87a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e87b7",
+      "name": "s_sound_sndmain_cpp_005e87b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e87cc",
+      "name": "s_SfxSlot_kill_ref_count_o_005e87cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e87f6",
+      "name": "s_sound_sndmain_cpp_005e87f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e880b",
+      "name": "s_refCount_for_streaming_S_005e880b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e882d",
+      "name": "s_sound_sndmain_cpp_005e882d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8842",
+      "name": "s_streaming_sample_sfx_ind_005e8842",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e80",
+      "name": "DAT_02648e80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264901c",
+      "name": "DAT_0264901c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "0055092b",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_005506b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054e0a8",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0054ddf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054eba3",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSlot_compute_FUN_0054e8c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054d42b",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0054d3a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054d44c",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0054d3a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00551065",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_killSfx_FUN_00551050",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005510e3",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_005510d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00553534",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00553380",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00551277",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00551220",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054eef5",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0054edb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.232323232323233,
+    "instruction_count": 99,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 10,
+      "COPY": 75,
+      "INT_ADD": 32,
+      "INT_AND": 56,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 1,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 8,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 21,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 35,
+      "INT_ZEXT": 2,
+      "LOAD": 23,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 32,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 419
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x108 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "if (*(char **)&this_ptr->field_0x68 != (char *)0x0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "pcVar2 = *(char **)&this_ptr->field_0x68;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x60 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 25,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02648e80 + 0x50))(_DAT_02648e80,this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x60 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x108 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x64 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x68 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "if (*(int *)(*(int *)&this_ptr->field_0x68 + 0x154) < 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(*(int *)&this_ptr->field_0x68 + 0x154);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "this_ptr_00 = *(CSfxSample **)&this_ptr->field_0x68;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x68 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "if (-1 < *(int *)&this_ptr_00->field_0x160) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr_00->field_0x154 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0xac",
+      "severity": "mild",
+      "text": "if ((int)&this_ptr[-0x2277e].field_0xac / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "if ((int)&this_ptr[-0x2277e].field_0xac / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x160 = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x118 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `&this_ptr[-0x2277e].field_0xac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&this_ptr[-0x2277e].field_0xac",
+      "severity": "moderate",
+      "text": "if ((int)&this_ptr[-0x2277e].field_0xac / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
+      "type": "pointer_truncation"
+    }
+  ]
+}

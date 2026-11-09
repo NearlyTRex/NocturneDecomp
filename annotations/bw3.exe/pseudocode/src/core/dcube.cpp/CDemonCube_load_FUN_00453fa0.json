@@ -1,0 +1,320 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 133,
+    "complexity_score": 299,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 23,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 182
+  },
+  "cross_references": [
+    {
+      "addr": "00473940",
+      "from_addr": "00473a88",
+      "name": "core_dtrace.cpp_FUN_00473940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00453fa0",
+    "address_range": [
+      [
+        "00453fa0",
+        "0045409d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_CDemonCube_load_FUN_00453fa0",
+    "signature": "void __cdecl core_dcube_cpp_CDemonCube_load_FUN_00453fa0(CDemonCube *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00453d90",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00453d90"
+    },
+    {
+      "addr": "00451fb0",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00451fb0"
+    },
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00473a88",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_00473940",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.495495495495495,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 9,
+      "CBRANCH": 7,
+      "COPY": 100,
+      "INT_ADD": 44,
+      "INT_AND": 58,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 45,
+      "INT_LESS": 2,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 22,
+      "INT_SUB": 55,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 28,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 48
+    },
+    "pcode_op_count": 499
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCube *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "_fread(&this_ptr->field_0x8,1,0xc,file_handle);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "_fread(&this_ptr->field_0x14,1,0xc,file_handle);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "_fread(&this_ptr->field_0x20,1,4,file_handle);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "_fread(&this_ptr->field_0x28,1,4,file_handle);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x28 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "_fread(*(uint *)&this_ptr->field_0x24,*(uint *)&this_ptr->field_0x20,0xc,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "_fread(*(uint *)&this_ptr->field_0x24,*(uint *)&this_ptr->field_0x20,0xc,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x28) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "((CDemonCubeTriangle *)(*(int *)&this_ptr->field_0x2c + iVar3),file_handle,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(CVector3f **)&this_ptr->field_0x24);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x28);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x28 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "_fread(*(uint *)&this_ptr->field_0x30,1,*(int *)&this_ptr->field_0x28,file_handle);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "_fread(*(uint *)&this_ptr->field_0x30,1,*(int *)&this_ptr->field_0x28,file_handle);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x28 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "puVar4 = *(uint **)&this_ptr->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 39,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 44,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0045408f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 124,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0045408f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

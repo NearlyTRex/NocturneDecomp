@@ -1,0 +1,244 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 149,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "005cacd8",
+      "from_addr": "005cad03",
+      "name": "unkafter_zombie.cpp_FUN_005cacd8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cadb4",
+      "from_addr": "005cae9f",
+      "name": "unkafter_zombie.cpp_FUN_005cadb4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005cce60",
+    "address_range": [
+      [
+        "005cce60",
+        "005ccecb"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_zombie.cpp_FUN_005cce60",
+    "signature": "undefined4 unkafter_zombie_cpp_FUN_005cce60(undefined4 param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c09f0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c09f0"
+    },
+    {
+      "addr": "005c1cb0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c1cb0"
+    },
+    {
+      "addr": "005c50d4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c50d4"
+    },
+    {
+      "addr": "005ce000",
+      "is_variadic": false,
+      "name": "unkafter_2d.cpp_FUN_005ce000"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00626628",
+      "name": "PTR_crt_unknown.c_FUN_005c50d4_00626628",
+      "type": "void*",
+      "value": "005c50d4"
+    },
+    {
+      "addr": "0062662c",
+      "name": "PTR_crt_unknown.c_FUN_005c50d4_0062662c",
+      "type": "void*",
+      "value": "005c50d4"
+    },
+    {
+      "addr": "02c9ffa0",
+      "name": "DAT_02c9ffa0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005cae9f",
+        "call_type": "direct",
+        "caller": "unkafter_zombie.cpp_FUN_005cadb4",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005cad03",
+        "call_type": "direct",
+        "caller": "unkafter_zombie.cpp_FUN_005cacd8",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.85,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 2,
+      "COPY": 37,
+      "INT_ADD": 13,
+      "INT_AND": 18,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 12,
+      "INT_XOR": 3,
+      "LOAD": 7,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 154
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint unkafter_zombie_cpp_FUN_005cce60(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint unkafter_zombie_cpp_FUN_005cce60(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626628)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = unkafter_2d_cpp_FUN_005ce000(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar1[2] = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar1[1] = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar1[3] = (uint)*(byte *)(param_2 + 0x52);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_0062662c)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

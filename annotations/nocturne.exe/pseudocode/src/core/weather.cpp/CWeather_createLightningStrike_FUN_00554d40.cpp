@@ -36,8 +36,8 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
   this_ptr->flash_timer = flash_timer;
   this_ptr->lightning_active = 1;
   this_ptr->sub_flash_interval = local_14;
-  core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(&g_CDemonRaytrace_01fba938,&local_30);
-  core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(&g_CDemonRaytrace_01fba938,&local_54);
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(&g_CDemonRaytraceInstance,&local_30);
+  core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(&g_CDemonRaytraceInstance,&local_54);
   local_20 = (float)0.5;
   local_60 = (local_30.x + local_54.x) * local_20;
   local_58 = (local_30.z + local_54.z) * local_20;
@@ -73,8 +73,8 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
               (g_CFireEffect_PTR_005b80f0,&local_6c,local_18,0,0.0);
   }
   this_ptr_00 = 0x01C03A10;
-  local_14 = (float)g_CDemonCamera_01fb8508.corona_blend_factor;
-  fVar2 = (float)g_CDemonCamera_01fb8508.corona_blend_factor;
+  local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
+  fVar2 = (float)g_CDemonCameraInstance.corona_blend_factor;
   fVar1 = (float)1.5259021896696401e-05;
   this_ptr->base_ambient = fVar2 * fVar1;
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -84,8 +84,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
     if (1.0 < local_98) {
       local_98 = 1.0;
     }
-    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(&g_CDemonCamera_01fb8508,local_98)
-    ;
+    core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(&g_CDemonCameraInstance,local_98);
     if (play_sound == 0) {
       return;
     }

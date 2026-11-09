@@ -1,0 +1,353 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 153,
+    "complexity_score": 221,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 14,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 214
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057a930",
+    "address_range": [
+      [
+        "0057a930",
+        "0057ab05"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0057a930",
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0057a930(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "EXTERNAL:0000007b",
+      "is_variadic": false,
+      "name": "GlobalAlloc"
+    },
+    {
+      "addr": "EXTERNAL:0000007d",
+      "is_variadic": false,
+      "name": "GlobalLock"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
+    },
+    {
+      "addr": "00576030",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_00576030"
+    },
+    {
+      "addr": "EXTERNAL:00000027",
+      "is_variadic": false,
+      "name": "waveOutOpen"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0484",
+      "name": "PTR_waveOutOpen_005d0484",
+      "type": "void*",
+      "value": "001d09f4"
+    },
+    {
+      "addr": "005d05dc",
+      "name": "PTR_GlobalAlloc_005d05dc",
+      "type": "void*",
+      "value": "001d0fca"
+    },
+    {
+      "addr": "005d05e4",
+      "name": "PTR_GlobalLock_005d05e4",
+      "type": "void*",
+      "value": "001d0fe6"
+    },
+    {
+      "addr": "005f578c",
+      "name": "s_waveOutOpen_failed_005f578c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006235d4",
+      "name": "DAT_006235d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c82840",
+      "name": "DAT_02c82840",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c828c4",
+      "name": "DAT_02c828c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c828c8",
+      "name": "DAT_02c828c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c828cc",
+      "name": "DAT_02c828cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c828d0",
+      "name": "DAT_02c828d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c828d4",
+      "name": "DAT_02c828d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.868613138686132,
+    "instruction_count": 137,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 31,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 2,
+      "CALL": 3,
+      "CALLIND": 7,
+      "CBRANCH": 7,
+      "COPY": 185,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 46,
+      "INT_AND": 137,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 22,
+      "INT_OR": 26,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 9,
+      "INT_SEXT": 12,
+      "INT_SLESS": 36,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 41,
+      "INT_XOR": 8,
+      "INT_ZEXT": 2,
+      "LOAD": 30,
+      "POPCOUNT": 32,
+      "RETURN": 3,
+      "ROUND": 1,
+      "STORE": 41,
+      "SUBPIECE": 8,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 804
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_sample",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "channels",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sample_rate",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "out_buffer_size",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (*(code *)**(uint **)this_ptr)(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 23,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_24._16_4_ = sound_sndmain_cpp_getMaxSwLatency_FUN_00576030();",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 24,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "fVar6 = ((float10)(int)_DAT_02c828cc * (float10)(float)auStack_24._16_4_) / (float10)_DAT_02c828d4",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "auStack_24._0_2_ = 1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._14_2_",
+      "severity": "mild",
+      "text": "auStack_24._14_2_ = _DAT_02c828c4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 52,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "auStack_24._2_2_ = _DAT_02c828c8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._12_2_",
+      "severity": "mild",
+      "text": "auStack_24._12_2_ = (short)((int)(_DAT_02c828c4 & 0xffff) >> 3) * _DAT_02c828c8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_24._4_4_ = _DAT_02c828cc;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_24._8_4_ = _DAT_02c828cc * (ushort)auStack_24._12_2_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._12_2_",
+      "severity": "mild",
+      "text": "auStack_24._8_4_ = _DAT_02c828cc * (ushort)auStack_24._12_2_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_02c82840",
+      "severity": "mild",
+      "text": "MVar4 = waveOutOpen((LPHWAVEOUT)&DAT_02c82840,DAT_006235d4,(LPCWAVEFORMATEX)auStack_24,0,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_006235d4",
+      "severity": "mild",
+      "text": "MVar4 = waveOutOpen((LPHWAVEOUT)&DAT_02c82840,DAT_006235d4,(LPCWAVEFORMATEX)auStack_24,0,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 63,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)**(uint **)this_ptr)(this_ptr);",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWavOutDevice",
+        "offset": 12,
+        "vtable_addr": "00605c10"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

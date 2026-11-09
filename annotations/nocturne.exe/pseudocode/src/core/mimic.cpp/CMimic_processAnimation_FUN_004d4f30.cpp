@@ -83,7 +83,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004d4f30(CMimic *this_pt
     if (uVar7 == 0) {
       EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                         (&g_HeroActors[g_LocalHeroIndex]->base);
-      if (((EVar6 == DEATH_STATE_ALIVE) && (g_CGame_PTR_005b9354->freeze_enemies_enabled == 0)) &&
+      if (((EVar6 == DEATH_STATE_ALIVE) && (g_CGamePtr->freeze_enemies_enabled == 0)) &&
          (ABS((this_ptr->base).base.base.location.position.y -
               (g_HeroActors[g_LocalHeroIndex]->base).base.location.position.y) <=
           (float)15)) {
@@ -109,7 +109,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004d4f30(CMimic *this_pt
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     ((CDemonActor *)this_ptr,&local_f4,pCVar4);
           iVar14 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0
-                             (g_CDemonSet_PTR_005be368,&local_f4,&local_94);
+                             (g_CDemonSetPtr,&local_f4,&local_94);
           if (iVar14 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&local_18->base,2,1);
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -122,7 +122,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004d4f30(CMimic *this_pt
 LAB_004d4fed:
     EVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                       (&g_HeroActors[g_LocalHeroIndex]->base);
-    if ((EVar6 != DEATH_STATE_ALIVE) || (g_CGame_PTR_005b9354->freeze_enemies_enabled != 0)) {
+    if ((EVar6 != DEATH_STATE_ALIVE) || (g_CGamePtr->freeze_enemies_enabled != 0)) {
       iVar14 = 0;
       goto LAB_004d5015;
     }
@@ -222,7 +222,7 @@ LAB_004d4fed:
                            (local_18,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_7c,pCVar4);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_7c,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_7c,0);
         (this_ptr->base).pool_me = 1;
       }
       goto LAB_004d5024;

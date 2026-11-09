@@ -1,0 +1,369 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 356,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 29,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [
+    {
+      "addr": "0059af80",
+      "from_addr": "0059af93",
+      "name": "core_trigger.cpp_factoryFuncTrigger_FUN_0059af80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ab9c0",
+      "from_addr": "005ab9c5",
+      "name": "core_waypoint.cpp_CWayPoint_ctor_FUN_005ab9c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059afb0",
+    "address_range": [
+      [
+        "0059afb0",
+        "0059b0f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_ctor_FUN_0059afb0",
+    "signature": "CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_0059afb0(CTrigger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004085c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004085c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005ab9c5",
+        "call_type": "direct",
+        "caller": "core_waypoint.cpp_CWayPoint_ctor_FUN_005ab9c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059af93",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_factoryFuncTrigger_FUN_0059af80",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.59375,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 53,
+      "INT_ADD": 42,
+      "INT_AND": 18,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 10,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 35
+    },
+    "pcode_op_count": 230
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar2->field_0x154 = &g_CTriggerVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x160 = 0x40a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x164 = 0x41100000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x168 = 0x40a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x170",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x170 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x15c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x224",
+      "severity": "mild",
+      "text": "pCVar2->field_0x224 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x288",
+      "severity": "mild",
+      "text": "pCVar2->field_0x288 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x16c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "pcVar4 = &pCVar2->field_0x178;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x174 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x1c8",
+      "severity": "mild",
+      "text": "pcVar4 = &pCVar2->field_0x1c8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x218",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x218 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x21c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x21c = 0x3e800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x220",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x220 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x2ec",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x2ec = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x2f0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x2f0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x2f4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x2f4 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x2f8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x2f8 = 0x42c80000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x64 = 0x96;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x36c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x36c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x300",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x300 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x158 = 0x47c34ff3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x304",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x304 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x308",
+      "severity": "mild",
+      "text": "pCVar2->field_0x308 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x370",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x370 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x2fc",
+      "severity": "mild",
+      "text": "*(CTrigger **)&pCVar2->field_0x2fc = pCVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 23,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 34,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrigger",
+        "offset": 0,
+        "vtable_addr": "006072b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

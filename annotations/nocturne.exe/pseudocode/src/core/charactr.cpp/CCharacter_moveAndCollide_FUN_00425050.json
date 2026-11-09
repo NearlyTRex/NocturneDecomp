@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 89,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 186,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'CDemonActor *')"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 48,
-        "line": 187,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'struct CDemonActor *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 190,
-        "message": "use of undeclared identifier 'DAT_014b89e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 191,
-        "message": "use of undeclared identifier '_DAT_014b89e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 192,
-        "message": "use of undeclared identifier '_DAT_014b89ec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 193,
-        "message": "use of undeclared identifier '_DAT_014b89f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 195,
-        "message": "use of undeclared identifier 'DAT_014b89f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 196,
-        "message": "use of undeclared identifier '_DAT_014b89f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 197,
-        "message": "use of undeclared identifier '_DAT_014b89f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 198,
-        "message": "use of undeclared identifier '_DAT_014b89fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 200,
-        "message": "use of undeclared identifier 'DAT_014b8a00'; did you mean 'DAT_004B8F00'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 201,
-        "message": "use of undeclared identifier '_DAT_014b8a00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 202,
-        "message": "use of undeclared identifier '_DAT_014b8a04'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 203,
-        "message": "use of undeclared identifier '_DAT_014b8a08'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 225,
-        "message": "use of undeclared identifier 'DAT_014b89e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 226,
-        "message": "use of undeclared identifier '_DAT_014b89e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 227,
-        "message": "use of undeclared identifier '_DAT_014b89ec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 228,
-        "message": "use of undeclared identifier '_DAT_014b89f0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 682,
@@ -469,13 +349,13 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -547,7 +427,7 @@
     },
     {
       "addr": "01c77850",
-      "name": "g_CGame_01c775ec.delta_time_float",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -559,31 +439,31 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fc4",
-      "name": "g_CDemonSet_01e57284.collision_normal.x",
+      "name": "g_CDemonSetInstance.collision_normal.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc8",
-      "name": "g_CDemonSet_01e57284.collision_normal.y",
+      "name": "g_CDemonSetInstance.collision_normal.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fcc",
-      "name": "g_CDemonSet_01e57284.collision_normal.z",
+      "name": "g_CDemonSetInstance.collision_normal.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "g_CDemonSet_01e57284.collision_actor",
+      "name": "g_CDemonSetInstance.collision_actor",
       "type": "undefined4",
       "value": null
     }
@@ -993,7 +873,7 @@
       "line": 180,
       "match": "DAT_00765a9c",
       "severity": "mild",
-      "text": "DAT_00765a9c = g_CDemonSet_PTR_005be368->collision_actor;",
+      "text": "DAT_00765a9c = g_CDemonSetPtr->collision_actor;",
       "type": "undefined_data"
     },
     {

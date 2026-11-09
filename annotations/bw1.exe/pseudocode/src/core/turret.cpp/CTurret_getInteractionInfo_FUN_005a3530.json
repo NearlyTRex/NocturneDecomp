@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 67,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a3530",
+    "address_range": [
+      [
+        "005a3530",
+        "005a3598"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_turret.cpp_CTurret_getInteractionInfo_FUN_005a3530",
+    "signature": "void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005a3530(CTurret *this_ptr,SInteractionInfo *interaction_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409d20",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00409d20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006074cc",
+      "name": "DAT_006074cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006074d0",
+      "name": "DAT_006074d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.645161290322581,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 66,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_SUB": 2,
+      "INT_ADD": 20,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "LOAD": 12,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 144
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
+      },
+      {
+        "is_param": true,
+        "name": "interaction_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SInteractionInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x858",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x858 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x85c",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&this_ptr->field_0x85c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(float *)(interaction_info + 0x18) = 0x3F9C61AA - *(float *)&this_ptr->field_0x30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&this_ptr->field_0x30;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTurret",
+        "offset": 152,
+        "vtable_addr": "006074e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

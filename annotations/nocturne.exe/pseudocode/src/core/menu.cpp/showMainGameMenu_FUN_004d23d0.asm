@@ -23,7 +23,7 @@
 ;   TerminatedCString s_f0100_00589207
 ;   TerminatedCString s_f0300_0058920d
 ;   int g_WindowHeight = 0xc8
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   void* PTR_s_f0100_005baf18 = 00589207
 ;   undefined1* PTR_s_f0300_005baf1c = 0058920d
@@ -31,8 +31,8 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_FUN_004a4170
-;   core_game.cpp_CGame_FUN_004a4b50
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
+;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0
 ;   core_main.c_showDeveloperToolsMenu_FUN_004c8510
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440
@@ -118,22 +118,22 @@ section .text
     CALL core_moon.cpp_CMoon_init_FUN_004de860 ; 004d2480
         ;   XREF to: 004de860 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_004de860(CMoon * this_ptr)
     ADD ESP,0x4                         ; 004d2485
-    MOV EDX,dword ptr [0x005b9354]      ; 004d2488 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [0x005b9354]      ; 004d2488 | g_CGamePtr
     MOV EAX,0x1                         ; 004d248e
-    PUSH EDX                            ; 004d2493 | g_CGame_01c775ec
+    PUSH EDX                            ; 004d2493 | g_CGameInstance
     MOV dword ptr [ESP + 0x14],EAX      ; 004d2494
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004d2498
         ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_0049a890(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d249d
-    MOV ECX,dword ptr [0x005b9354]      ; 004d24a0 | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 004d24a0 | g_CGamePtr
         ;   Label: LAB_004d24a0
-    PUSH ECX                            ; 004d24a6 | g_CGame_01c775ec
+    PUSH ECX                            ; 004d24a6 | g_CGameInstance
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004d24a7
         ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d24ac
-    MOV EAX,[0x005b9354]                ; 004d24af | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d24af | g_CGamePtr
     SUB ESP,0x4                         ; 004d24b4
-    MOV EDX,dword ptr [EAX + 0x264]     ; 004d24b7 | g_CGame_01c775ec.delta_time_float
+    MOV EDX,dword ptr [EAX + 0x264]     ; 004d24b7 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004d24bd
     PUSH 0x1cc5780                      ; 004d24c0
     CALL core_moon.cpp_CMoon_update_FUN_004deae0 ; 004d24c5
@@ -293,10 +293,10 @@ section .text
     JZ 0x004d27c0                       ; 004d2630
         ;   XREF to: 004d27c0 (CONDITIONAL_JUMP)  ; LAB_004d27c0
     PUSH 0x2                            ; 004d2636
-    MOV ESI,dword ptr [0x005b9354]      ; 004d2638 | g_CGame_PTR_005b9354
-    PUSH ESI                            ; 004d263e | g_CGame_01c775ec
-    CALL core_game.cpp_CGame_FUN_004a4b50 ; 004d263f
-        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a4b50(CGame * this_ptr, int select_mode)
+    MOV ESI,dword ptr [0x005b9354]      ; 004d2638 | g_CGamePtr
+    PUSH ESI                            ; 004d263e | g_CGameInstance
+    CALL core_game.cpp_CGame_showChapterSelect_FUN_004a4b50 ; 004d263f
+        ;   XREF to: 004a4b50 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showChapterSelect_FUN_004a4b50(CGame * this_ptr, int select_mode)
         ;   Label: LAB_004d263f
     ADD ESP,0x8                         ; 004d2644
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004d2647
@@ -444,13 +444,13 @@ section .text
     ADD ESP,0x8                         ; 004d2797
     POP EBP                             ; 004d279a
     RET                                 ; 004d279b
-    MOV EAX,[0x005b9354]                ; 004d279c | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d279c | g_CGamePtr
         ;   Label: LAB_004d279c
-    CMP dword ptr [EAX + 0x4],0x1e0     ; 004d27a1 | g_CGame_01c775ec.game_pixy
+    CMP dword ptr [EAX + 0x4],0x1e0     ; 004d27a1 | g_CGameInstance.game_pixy
     JLE 0x004d23f1                      ; 004d27a8
         ;   XREF to: 004d23f1 (CONDITIONAL_JUMP)  ; LAB_004d23f1
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d27ae | g_CGame_01c775ec.game_pixy
-    MOV dword ptr [EAX],0x280           ; 004d27b5 | g_CGame_01c775ec
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004d27ae | g_CGameInstance.game_pixy
+    MOV dword ptr [EAX],0x280           ; 004d27b5 | g_CGameInstance
     JMP 0x004d23f1                      ; 004d27bb
         ;   XREF to: 004d23f1 (UNCONDITIONAL_JUMP)  ; LAB_004d23f1
     PUSH 0x1d                           ; 004d27c0
@@ -464,14 +464,14 @@ section .text
     JZ 0x004d27e1                       ; 004d27d1
         ;   XREF to: 004d27e1 (CONDITIONAL_JUMP)  ; LAB_004d27e1
     PUSH 0x1                            ; 004d27d3
-    MOV EBX,dword ptr [0x005b9354]      ; 004d27d5 | g_CGame_PTR_005b9354
-    PUSH EBX                            ; 004d27db | g_CGame_01c775ec
+    MOV EBX,dword ptr [0x005b9354]      ; 004d27d5 | g_CGamePtr
+    PUSH EBX                            ; 004d27db | g_CGameInstance
     JMP 0x004d263f                      ; 004d27dc
         ;   XREF to: 004d263f (UNCONDITIONAL_JUMP)  ; LAB_004d263f
     PUSH EAX                            ; 004d27e1
         ;   Label: LAB_004d27e1
-    MOV ECX,dword ptr [0x005b9354]      ; 004d27e2 | g_CGame_PTR_005b9354
-    PUSH ECX                            ; 004d27e8 | g_CGame_01c775ec
+    MOV ECX,dword ptr [0x005b9354]      ; 004d27e2 | g_CGamePtr
+    PUSH ECX                            ; 004d27e8 | g_CGameInstance
     JMP 0x004d263f                      ; 004d27e9
         ;   XREF to: 004d263f (UNCONDITIONAL_JUMP)  ; LAB_004d263f
     PUSH 0x1cc5780                      ; 004d27ee
@@ -486,8 +486,8 @@ section .text
     ADD ESP,0x4                         ; 004d2807
     PUSH 0x1                            ; 004d280a
     PUSH 0x0                            ; 004d280c
-    MOV EDI,dword ptr [0x005b9354]      ; 004d280e | g_CGame_PTR_005b9354
-    PUSH EDI                            ; 004d2814 | g_CGame_01c775ec
+    MOV EDI,dword ptr [0x005b9354]      ; 004d280e | g_CGamePtr
+    PUSH EDI                            ; 004d2814 | g_CGameInstance
     CALL core_game.cpp_CGame_FUN_004a4170 ; 004d2815
         ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004d281a

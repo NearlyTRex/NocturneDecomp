@@ -1,0 +1,244 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 253,
+    "complexity_score": 123,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 108,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 361
+  },
+  "cross_references": [
+    {
+      "addr": "0050baa0",
+      "from_addr": "0050bee3",
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050b3c0",
+    "address_range": [
+      [
+        "0050b3c0",
+        "0050b604"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_0050b3c0",
+    "signature": "int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_0050b3c0(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050b320",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01ec1514",
+      "name": "DAT_01ec1514",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050bee3",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.740566037735849,
+    "instruction_count": 212,
+    "opcode_distribution": {
+      "BOOL_AND": 5,
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 7,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 17,
+      "COPY": 165,
+      "INT_2COMP": 1,
+      "INT_ADD": 87,
+      "INT_AND": 137,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 137,
+      "INT_LESS": 31,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_SBORROW": 33,
+      "INT_SCARRY": 18,
+      "INT_SEXT": 6,
+      "INT_SLESS": 66,
+      "INT_SUB": 66,
+      "INT_XOR": 10,
+      "LOAD": 48,
+      "POPCOUNT": 66,
+      "RETURN": 3,
+      "STORE": 55,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 1005
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "start_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "start_height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_x",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_z",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_height",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

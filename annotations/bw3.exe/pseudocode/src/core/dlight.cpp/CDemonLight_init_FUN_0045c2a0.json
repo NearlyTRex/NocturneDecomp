@@ -1,0 +1,312 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 71,
+    "complexity_score": 154,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 11,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals",
+      "wrong_global"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "004203f0",
+      "from_addr": "0042040e",
+      "name": "core_boxactor.cpp_FUN_004203f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b81de",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00542940",
+      "from_addr": "0054298e",
+      "name": "core_setutil.cpp_C3DSLight_create_FUN_00542940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045c2a0",
+    "address_range": [
+      [
+        "0045c2a0",
+        "0045c375"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_init_FUN_0045c2a0",
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0045c2a0(CDemonLight *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045db40",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_0045db40"
+    },
+    {
+      "addr": "0045c380",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_FUN_0045c380"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3650"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bb1fc",
+      "name": "s_core_dlight_cpp_005bb1fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bb20f",
+      "name": "s_CDemonCamera_init_Unable_005bb20f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bb244",
+      "name": "DAT_005bb244",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f18dc",
+      "name": "g_GlobalFilters",
+      "type": "CDemonFilter*",
+      "value": "01548c00"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004b81de",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054298e",
+        "call_type": "direct",
+        "caller": "core_setutil.cpp_C3DSLight_create_FUN_00542940",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042040e",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_FUN_004203f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.35,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 61,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 26,
+      "INT_AND": 67,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 13,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SEXT": 6,
+      "INT_SLESS": 18,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 24,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 13,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 22,
+      "SUBPIECE": 4,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 381
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x1cc0",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2 + 0x210)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2 + 0x210)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2f98",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x2f98 = pvVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x2f94",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2f94 = *(int *)&this_ptr->field_0x2f98 + 0x10U & 0xfffffff0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x2f98",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2f94 = *(int *)&this_ptr->field_0x2f98 + 0x10U & 0xfffffff0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x1cc0",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x2fa8",
+      "severity": "mild",
+      "text": "fVar4 = (float10)*(float *)&this_ptr->field_0x2fa8 * (float10)_DAT_005bb244;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x2fa0",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x2fa0 = pvVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x005f18fc, +32 bytes).",
+      "line": 31,
+      "match": "g_GlobalFilters",
+      "severity": "moderate",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(fVar4)],0,0,iVar2);",
+      "type": "wrong_global"
+    }
+  ]
+}

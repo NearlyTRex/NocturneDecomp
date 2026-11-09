@@ -1,41 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 18,
-        "message": "use of undeclared identifier '_bStack00000018'; did you mean 'bStack00000018'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 18,
-        "message": "use of undeclared identifier '_bStack00000018'; did you mean 'bStack00000018'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 19,
-        "message": "use of undeclared identifier '_bStack00000018'; did you mean 'bStack00000018'?"
-      }
-    ],
-    "success": false,
-    "warnings": [
-      {
-        "category": "other",
-        "column": 50,
-        "line": 18,
-        "message": "result of comparison of constant 256 with expression of type 'byte' (aka 'unsigned char') is always true [-Wtautological-constant-out-of-range-compare]"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 18,
-        "message": "result of comparison of constant -1 with expression of type 'byte' (aka 'unsigned char') is always true [-Wtautological-constant-out-of-range-compare]"
-      }
-    ]
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 46,
@@ -197,31 +160,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "applyActPalette_FUN_0042d370.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 35,
-          "line": 19,
-          "message": "Uninitialized variable: bStack00000018",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Uninitialized variable: bStack00000018",
-      "line": 19,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "abStack_fc[_bStack00000018] = bStack00000018;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

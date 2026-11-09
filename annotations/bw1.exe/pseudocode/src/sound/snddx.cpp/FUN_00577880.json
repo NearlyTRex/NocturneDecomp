@@ -1,0 +1,291 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 278,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 21,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 166
+  },
+  "cross_references": [
+    {
+      "addr": "00577cd0",
+      "from_addr": "00577cf8",
+      "name": "sound_snddx.cpp_FUN_00577cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578cc0",
+      "from_addr": "00578f03",
+      "name": "sound_snddx.cpp_FUN_00578cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00579f30",
+      "from_addr": "00579f62",
+      "name": "sound_snddx.cpp_FUN_00579f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00577880",
+    "address_range": [
+      [
+        "00577880",
+        "005779ae"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_snddx.cpp_FUN_00577880",
+    "signature": "bool sound_snddx_cpp_FUN_00577880(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577500"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4c82",
+      "name": "s_Stop_hardware_sfx_second_005f4c82",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.076923076923077,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 7,
+      "COPY": 77,
+      "INT_ADD": 38,
+      "INT_AND": 80,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 6,
+      "INT_LESS": 4,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 15,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 27,
+      "INT_SUB": 26,
+      "INT_XOR": 4,
+      "LOAD": 24,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 462
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "bool sound_snddx_cpp_FUN_00577880(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 * 0x24;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 * 0x24;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar4 = (int *)(param_1 + 0x2c823e0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 19,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "error_code = (**(code **)(*apiStack_1a4[0] + 0x48))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 28,
+      "match": "*(int **)(param_1 + 0x2c823e4",
+      "severity": "moderate",
+      "text": "piVar1 = *(int **)(param_1 + 0x2c823e4);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar1 = *(int **)(param_1 + 0x2c823e4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 30,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x2c823e4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(param_1 + 0x2c823e8) * 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x2c823f0) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)(param_1 + 0x2c823f0) * 0x24 + 0x2c823ec) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823ec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(iVar2 + 0x2c81dc8) = *(uint *)(param_1 + 0x2c823f0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)(param_1 + 0x2c823ec) * 0x24 + 0x2c823f0) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823f0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 46,
+      "match": "*(int **)(iVar2 + 0x2c81dc4",
+      "severity": "moderate",
+      "text": "if ((piVar1 != *(int **)(iVar2 + 0x2c81dc4)) && (piVar1 != (int *)0x0)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 47,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823f0) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823ec) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2c823e8) = 0;",
+      "type": "unnamed_param"
+    }
+  ]
+}

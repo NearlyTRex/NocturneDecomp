@@ -1,0 +1,155 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 56,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00575aa0",
+    "address_range": [
+      [
+        "00575aa0",
+        "00575b1e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_startRecording_FUN_00575aa0",
+    "signature": "int __cdecl sound_sndmain_cpp_startRecording_FUN_00575aa0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00573e70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573e70"
+    },
+    {
+      "addr": "00575990",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isRecordingStarted_FUN_00575990"
+    },
+    {
+      "addr": "00575980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isRecordingSystemActive_FUN_00575980"
+    },
+    {
+      "addr": "00575d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_00575d20"
+    },
+    {
+      "addr": "005759b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setRecordingFormat_FUN_005759b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623320",
+      "name": "DAT_00623320",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623324",
+      "name": "DAT_00623324",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623328",
+      "name": "DAT_00623328",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81038",
+      "name": "DAT_02c81038",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8103c",
+      "name": "DAT_02c8103c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81040",
+      "name": "DAT_02c81040",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5714285714285716,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 47,
+      "INT_ADD": 16,
+      "INT_AND": 18,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 7,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 7,
+      "RETURN": 4,
+      "STORE": 15
+    },
+    "pcode_op_count": 175
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 21,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c81038 + 4))();",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

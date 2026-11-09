@@ -1,0 +1,261 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 119,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 7,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_ref",
+      "unnamed_field"
+    ],
+    "total_lines": 109
+  },
+  "cross_references": [
+    {
+      "addr": "00419b10",
+      "from_addr": "00419b63",
+      "name": "core_bodypart.cpp_FUN_00419b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00422c70",
+      "from_addr": "00422cb9",
+      "name": "core_boxactor.cpp_CBoxActor_onDropped_FUN_00422c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004acb60",
+      "from_addr": "004ace1c",
+      "name": "core_fire.cpp_CStake_spawn_FUN_004acb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b1c50",
+      "from_addr": "004b1d52",
+      "name": "core_fire.cpp_FUN_004b1c50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00420450",
+    "address_range": [
+      [
+        "00420450",
+        "004204e7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBox_setupVelocities_FUN_00420450",
+    "signature": "void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420450(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045f700",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045f700"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004ace1c",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CStake_spawn_FUN_004acb60",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004b1d52",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004b1c50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00419b63",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_FUN_00419b10",
+        "estimated_params": 3,
+        "instructions_analyzed": 12,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00422cb9",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_onDropped_FUN_00422c70",
+        "estimated_params": 3,
+        "instructions_analyzed": 12,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.125,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 68,
+      "INT_ADD": 44,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LESS": 4,
+      "INT_MULT": 6,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 17,
+      "INT_ZEXT": 6,
+      "LOAD": 25,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 264
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBox *"
+      },
+      {
+        "is_param": true,
+        "name": "linear_velocity",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "angular_velocity",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 6,
+      "match": "auStackY_1010",
+      "severity": "moderate",
+      "text": "uint auStackY_1010 [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x44) = *(uint *)&linear_velocity->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x48) = *(uint *)&linear_velocity->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "local_18[(uint)bVar1 * -2] = *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x74) = *(uint *)&angular_velocity->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x78) = *(uint *)&angular_velocity->field_0x8;",
+      "type": "unnamed_field"
+    }
+  ]
+}

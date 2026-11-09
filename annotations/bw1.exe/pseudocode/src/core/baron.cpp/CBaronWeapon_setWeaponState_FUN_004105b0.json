@@ -1,0 +1,211 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 106,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004105b0",
+    "address_range": [
+      [
+        "004105b0",
+        "0041063c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004105b0",
+    "signature": "void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_004105b0(CBaronWeapon *this_ptr,int weapon_state)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040fa70",
+      "is_variadic": false,
+      "name": "core_baron.cpp_CBaron_attachToOwner_FUN_0040fa70"
+    },
+    {
+      "addr": "0040fbc0",
+      "is_variadic": false,
+      "name": "core_baron.cpp_CBaron_detachFromOwner_FUN_0040fbc0"
+    },
+    {
+      "addr": "00410640",
+      "is_variadic": false,
+      "name": "core_baron.cpp_FUN_00410640"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005add50",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_setWeaponState_FUN_005add50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d351c",
+      "name": "s_core_baron_cpp_005d351c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d352e",
+      "name": "s_CBaronWeapon_setWeaponSt_005d352e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.020408163265306,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 21,
+      "INT_AND": 20,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 19,
+      "LOAD": 15,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 197
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaronWeapon *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon_state",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "target = (CDemonActor *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0x94))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "target = (CDemonActor *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0x94))(this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2d4 == 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "core_baron_cpp_CBaron_attachToOwner_FUN_0040fa70(*(CBaron **)&this_ptr->field_0x578,target);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "else if (*(CBaron **)&this_ptr->field_0x578 != (CBaron *)0x0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "core_baron_cpp_CBaron_detachFromOwner_FUN_0040fbc0(*(CBaron **)&this_ptr->field_0x578,target);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBaronWeapon",
+        "offset": 220,
+        "vtable_addr": "005fbc34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

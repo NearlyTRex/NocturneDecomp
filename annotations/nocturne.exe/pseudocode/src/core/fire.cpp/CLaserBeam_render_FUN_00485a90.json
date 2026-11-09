@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 128,
-        "message": "use of undeclared identifier 'DAT_005b852c'"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
-        "line": 135,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 14,
-        "line": 196,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 39,
-        "line": 196,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 16,
-        "line": 201,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 201,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 45,
-        "line": 206,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 54,
-        "line": 207,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 54,
-        "line": 208,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 54,
-        "line": 209,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 257,
-        "message": "use of undeclared identifier 'DAT_005b8574'"
-      },
-      {
-        "category": "type_error",
-        "column": 29,
-        "line": 300,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 302,
-        "message": "use of undeclared identifier 'DAT_005b8544'"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 370,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 371,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 372,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 373,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 374,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 375,
-        "message": "member reference base type 'byte[84]' (aka 'unsigned char[84]') is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1264,
@@ -359,7 +239,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -377,7 +257,7 @@
     },
     {
       "addr": "01c775f8",
-      "name": "g_CGame_01c775ec.halo_mode",
+      "name": "g_CGameInstance.halo_mode",
       "type": "undefined4",
       "value": null
     }
@@ -1669,30 +1549,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CLaserBeam_render_FUN_00485a90.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 156,
-          "message": "Uninitialized variable: local_118",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 59,
-          "line": 156,
-          "message": "Uninitialized variable: local_11c",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -2301,22 +2157,6 @@
       "severity": "moderate",
       "text": "// 004863ed: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_118",
-      "line": 156,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = local_118 * local_1d8 + local_120 * local_1e0 + local_11c * local_1dc;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_11c",
-      "line": 156,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = local_118 * local_1d8 + local_120 * local_1e0 + local_11c * local_1dc;",
-      "type": "static_uninitvar"
     }
   ]
 }

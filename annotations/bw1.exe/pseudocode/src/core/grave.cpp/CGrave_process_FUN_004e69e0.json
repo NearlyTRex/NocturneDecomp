@@ -1,0 +1,233 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 157,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e69e0",
+    "address_range": [
+      [
+        "004e69e0",
+        "004e6a9c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_grave.cpp_CGrave_process_FUN_004e69e0",
+    "signature": "void __cdecl core_grave_cpp_CGrave_process_FUN_004e69e0(CGrave *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00468900",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "004e6bf0",
+      "is_variadic": false,
+      "name": "core_grave.cpp_CGrave_startAnimation_FUN_004e6bf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.172413793103448,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 84,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 29,
+      "INT_AND": 28,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 11,
+      "INT_SUB": 15,
+      "INT_ZEXT": 4,
+      "LOAD": 19,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 300
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrave *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2dc",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2dc == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2e0 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2e8",
+      "severity": "mild",
+      "text": "(0x01C51D80,&this_ptr->field_0x2e8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2e0 == 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "fVar2 = (float)(*(int *)&pCVar4->field_0x100 + -1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x2d8",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&this_ptr->field_0x2d8 * delta_time + *(float *)&this_ptr->field_0x2d4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&this_ptr->field_0x2d8 * delta_time + *(float *)&this_ptr->field_0x2d4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2d4 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2e0 = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2d4 = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x104 = 1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGrave",
+        "offset": 12,
+        "vtable_addr": "006017b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

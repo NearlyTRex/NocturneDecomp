@@ -1,0 +1,534 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 256,
+    "complexity_score": 357,
+    "cross_reference_count": 2,
+    "function_call_count": 11,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 102,
+    "suspect_count": 23,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "unknown_field",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 358
+  },
+  "cross_references": [
+    {
+      "addr": "00538d10",
+      "from_addr": "0053973f",
+      "name": "core_setdir.cpp_FUN_00538d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538be0",
+      "from_addr": "00538ca4",
+      "name": "core_setdir.cpp_testCameraVisibility_FUN_00538be0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005386e0",
+    "address_range": [
+      [
+        "005386e0",
+        "0053896e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0",
+    "signature": "float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_005386e0(CZThumb *this_ptr,CDemonActor *actor,CVector3i *bounding_box_vertices,SMRGLHeaderPrimitive *primitives,int apply_scaling)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10"
+    },
+    {
+      "addr": "00538a30",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30"
+    },
+    {
+      "addr": "005389b0",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0"
+    },
+    {
+      "addr": "00538970",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00538970"
+    },
+    {
+      "addr": "0046b350",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350"
+    },
+    {
+      "addr": "004698a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_004698a0"
+    },
+    {
+      "addr": "0046b920",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920"
+    },
+    {
+      "addr": "0046b2b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0"
+    },
+    {
+      "addr": "0046b880",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880"
+    },
+    {
+      "addr": "004e8eb0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_projectTransformedPoint_FUN_004e8eb0"
+    },
+    {
+      "addr": "0055d723",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0055d723"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e5fe5",
+      "name": "DAT_005e5fe5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e5fed",
+      "name": "DAT_005e5fed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0053973f",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00538d10",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0053978b",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00538d10",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00538ca4",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_testCameraVisibility_FUN_00538be0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00538ce1",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_testCameraVisibility_FUN_00538be0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.685446009389671,
+    "instruction_count": 213,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 16,
+      "CBRANCH": 12,
+      "COPY": 218,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 1,
+      "INT_ADD": 94,
+      "INT_AND": 122,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 112,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 3,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 29,
+      "INT_SDIV": 2,
+      "INT_SEXT": 8,
+      "INT_SLESS": 56,
+      "INT_SREM": 2,
+      "INT_SUB": 53,
+      "INT_XOR": 9,
+      "INT_ZEXT": 4,
+      "LOAD": 51,
+      "POPCOUNT": 56,
+      "RETURN": 2,
+      "STORE": 64,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 998
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZThumb *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "bounding_box_vertices",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "primitives",
+        "offset": 16,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "apply_scaling",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005386e9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(CVector3f *)&actor->field_0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(CVector3f *)&actor->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_34._0_4_ = *(uint *)&actor->field_0x30;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "local_34._0_4_ = *(uint *)&actor->field_0x30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 29,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_34._8_4_ = *(uint *)&actor->field_0x38;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "local_34._8_4_ = *(uint *)&actor->field_0x38;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_34._4_4_ = *(uint *)&this_ptr->field_0x18;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "local_34._4_4_ = *(uint *)&this_ptr->field_0x18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,&local_34,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + iVar8),bounding_box_vertices);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "uVar3 = *(uint *)(iVar8 + 0x10 + *(int *)DAT_0060b280);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(SMRGLHeaderPrimitive **)((int)aiStack_4c",
+      "severity": "moderate",
+      "text": "*(SMRGLHeaderPrimitive **)((int)aiStack_4c + iVar8) = primitives;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "piVar7 = (int *)(*(int *)DAT_0060b280 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "if ((*(byte *)(*(int *)DAT_0060b280 + iVar8 + 0x13) & 0x80) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(*(int *)DAT_0060b280 + iVar8 + 8)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 85,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(uint)((local_24 & 0x80000000) != 0));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)aiStack_4c",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)aiStack_4c + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 98,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)*puVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
+      "type": "undefined_data"
+    }
+  ]
+}

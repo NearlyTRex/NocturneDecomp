@@ -16,10 +16,10 @@
 ; Referenced Globals:
 ;   undefined1* switchdataD_00455630 = 0045569a
 ;   undefined4 DAT_005b7650
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.character_count
-;   undefined4 g_CDemonSet_01e57284.characters[0]
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
@@ -86,8 +86,8 @@ section .text
     ADD ESP,0x8                         ; 004556d9
     PUSH ESI                            ; 004556dc
         ;   Label: LAB_004556dc
-    MOV EDI,dword ptr [0x005be368]      ; 004556dd | g_CDemonSet_PTR_005be368
-    PUSH EDI                            ; 004556e3 | g_CDemonSet_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 004556dd | g_CDemonSetPtr
+    PUSH EDI                            ; 004556e3 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0 ; 004556e4
         ;   XREF to: 00511aa0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004556e9
@@ -139,10 +139,10 @@ section .text
     LEA EAX,[ESI + 0x3c]                ; 00455769
     MOV dword ptr [ESP + 0xb8],ECX      ; 0045576c
     MOV dword ptr [ESP + 0x84],EAX      ; 00455773
-    MOV EAX,[0x005be368]                ; 0045577a | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 0045577a | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0045577a
     MOV EDX,dword ptr [ESP + 0xb8]      ; 0045577f
-    CMP EDX,dword ptr [EAX + 0x14ecb0]  ; 00455786 | g_CDemonSet_01e57284.character_count
+    CMP EDX,dword ptr [EAX + 0x14ecb0]  ; 00455786 | g_CDemonSetInstance.character_count
     JL 0x004559c6                       ; 0045578c
         ;   XREF to: 004559c6 (CONDITIONAL_JUMP)  ; LAB_004559c6
     CMP dword ptr [ESP + 0x7c],0x0      ; 00455792
@@ -261,8 +261,8 @@ section .text
     MOV dword ptr [ESI + 0x9c0],0x2     ; 00455921
     PUSH ESI                            ; 0045592b
         ;   Label: LAB_0045592b
-    MOV EBP,dword ptr [0x005be368]      ; 0045592c | g_CDemonSet_PTR_005be368
-    PUSH EBP                            ; 00455932 | g_CDemonSet_01e57284
+    MOV EBP,dword ptr [0x005be368]      ; 0045592c | g_CDemonSetPtr
+    PUSH EBP                            ; 00455932 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10 ; 00455933
         ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00455938
@@ -285,8 +285,8 @@ section .text
     MOV dword ptr [ESI + 0x9c0],0x2     ; 00455971
     PUSH ESI                            ; 0045597b
         ;   Label: LAB_0045597b
-    MOV EBX,dword ptr [0x005be368]      ; 0045597c | g_CDemonSet_PTR_005be368
-    PUSH EBX                            ; 00455982 | g_CDemonSet_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 0045597c | g_CDemonSetPtr
+    PUSH EBX                            ; 00455982 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10 ; 00455983
         ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00455988
@@ -309,7 +309,7 @@ section .text
     MOV dword ptr [ESP + 0xb8],EDX      ; 004559ba
     JMP 0x0045577a                      ; 004559c1
         ;   XREF to: 0045577a (UNCONDITIONAL_JUMP)  ; LAB_0045577a
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14ecb4] ; 004559c6 | g_CDemonSet_01e57284.characters[0]
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14ecb4] ; 004559c6 | g_CDemonSetInstance.characters[0]
         ;   Label: LAB_004559c6
     MOV EAX,ESP                         ; 004559cd
     PUSH EAX                            ; 004559cf

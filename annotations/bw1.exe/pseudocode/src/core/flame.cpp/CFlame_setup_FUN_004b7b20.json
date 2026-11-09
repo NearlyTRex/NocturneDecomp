@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 72,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "0041ab20",
+      "from_addr": "0041ab9e",
+      "name": "core_bodypart.cpp_FUN_0041ab20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a8c60",
+      "from_addr": "005a8d9c",
+      "name": "core_vessel.cpp_FUN_005a8c60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b7b20",
+    "address_range": [
+      [
+        "004b7b20",
+        "004b7b85"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flame.cpp_CFlame_setup_FUN_004b7b20",
+    "signature": "void __cdecl core_flame_cpp_CFlame_setup_FUN_004b7b20(CFlame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408850",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408850"
+    },
+    {
+      "addr": "005c084c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005c084c"
+    },
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061cdc0",
+      "name": "DAT_0061cdc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061cdd8",
+      "name": "DAT_0061cdd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061ce80",
+      "name": "DAT_0061ce80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0041ab9e",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_FUN_0041ab20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a8d9c",
+        "call_type": "direct",
+        "caller": "core_vessel.cpp_FUN_005a8c60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.942857142857143,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 15,
+      "INT_AND": 23,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 173
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0061ce80",
+      "severity": "mild",
+      "text": "pSVar2 = (SMRGLTextureBasic *)&DAT_0061ce80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_0061cdc0",
+      "severity": "mild",
+      "text": "texture = (SMRGLTextureBasic *)(&DAT_0061cdc0 + iVar3 * 0xc0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x294",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x294 = uVar1 & 1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlame",
+        "offset": 0,
+        "vtable_addr": "006003a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

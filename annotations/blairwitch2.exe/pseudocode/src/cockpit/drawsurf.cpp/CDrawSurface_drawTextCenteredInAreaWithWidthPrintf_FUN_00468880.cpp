@@ -1,0 +1,21 @@
+// Name: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00468880
+// Address: 00468880
+// Address Range: [[00468880, 004688fd]]
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00468880(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format)
+
+#include "nocturne.h"
+
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00468880(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format)
+
+{
+  char acStack_1014 [4096];
+  byte *puStack_14;
+  
+  puStack_14 = &stack0x0000001c;
+  _vsprintf(acStack_1014,format,&puStack_14);
+  puStack_14 = (byte *)0x0;
+  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00468810
+            (this_ptr,acStack_1014,x,width,y,height);
+  return;
+}

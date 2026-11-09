@@ -20,7 +20,7 @@
 ;   undefined4 g_CoronaBlurWorkBuffer[2][0]
 ;
 ; Called Functions:
-;   core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042
+;   core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_00492042
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH EBP                            ; 00450a6f | g_CoronaBlurOutputBuffer[1][0]
     MOV EBX,dword ptr [ESP + 0x8]       ; 00450a70 | g_CoronaBlurWorkBuffer[1][0]
     PUSH EBX                            ; 00450a74 | g_CoronaBlurWorkBuffer[1][0]
-    CALL core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042 ; 00450a75
-        ;   XREF to: 00492042 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042(ulonglong * output_buffer, ulonglong * input_buffer, int pixel_count)
+    CALL core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_00492042 ; 00450a75
+        ;   XREF to: 00492042 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_00492042(ulonglong * output_buffer, ulonglong * input_buffer, int pixel_count)
     ADD ESP,0xc                         ; 00450a7a
     MOV EAX,dword ptr [ESP]             ; 00450a7d
     INC EDI                             ; 00450a80

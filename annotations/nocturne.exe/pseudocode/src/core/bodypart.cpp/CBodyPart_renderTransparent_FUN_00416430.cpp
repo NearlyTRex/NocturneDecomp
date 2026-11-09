@@ -15,13 +15,13 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(CBodyPart
   if ((this_ptr->is_visible != 0) &&
      ((this_ptr->render_in_background < 2 || (this_ptr->fire_count != 0)))) {
     if (this_ptr->transparent_geometry_flag != 0) {
-      g_CDemonSet_PTR_005be368->disable_directional_lighting = this_ptr->dont_use_normals;
+      g_CDemonSetPtr->disable_directional_lighting = this_ptr->dont_use_normals;
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(&this_ptr->base);
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
                 (g_CDemonRenderer_PTR_005ae704,this_ptr->render_alpha);
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00416030(this_ptr,0x2e7);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(&this_ptr->base);
-      g_CDemonSet_PTR_005be368->disable_directional_lighting = 0;
+      g_CDemonSetPtr->disable_directional_lighting = 0;
     }
     iVar2 = 0;
     if (0 < this_ptr->fire_count) {

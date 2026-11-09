@@ -36,7 +36,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delt
     local_48.z = (this_ptr->home_pos).z;
     local_48.y = (this_ptr->home_pos).y + -5000.0f;
     core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00467930
-              (&g_CDemonRaytrace_01fba938,&local_54,&this_ptr->home_pos,&local_48);
+              (&g_CDemonRaytraceInstance,&local_54,&this_ptr->home_pos,&local_48);
     this_ptr->is_ground_cached = 1;
     this_ptr->ground_y = local_54.y;
   }
@@ -50,8 +50,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delt
     if ((this_ptr->base).location.position.y <
         this_ptr->ground_y - (local_78.max.y - local_78.min.y) * (float)0.84999999999999998) {
       if (this_ptr->is_visible != 0) {
-        core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660
-                  (g_CDemonSet_PTR_005be368,100.0,0.0,0.0,1.0);
+        core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660(g_CDemonSetPtr,100.0,0.0,0.0,1.0);
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->hit_sound);
       }
       iVar4 = this_ptr->no_rock_flag;
@@ -106,8 +105,8 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_00462300(CDrip *this_ptr,float delt
     iVar5 = 0;
     iVar4 = 0;
     while( true ) {
-      if (g_CDemonSet_PTR_005be368->character_count <= iVar5) break;
-      iVar2 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);
+      if (g_CDemonSetPtr->character_count <= iVar5) break;
+      iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
       core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_b4);
       SStack_b4.damage_amount = this_ptr->damage;
       SStack_b4.attacker = &this_ptr->base;

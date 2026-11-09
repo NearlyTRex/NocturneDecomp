@@ -36,7 +36,7 @@
 ;   TerminatedCString s_art_005843db
 ;   TerminatedCString s_core_game_cpp_005843df
 ;   TerminatedCString s_Can_t_open_s_005843f0
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -372,7 +372,7 @@ section .text
     PUSH ESI                            ; 004a5bc4
         ;   Label: LAB_004a5bc4
     PUSH 0x584380                       ; 004a5bc5 | = "Can't open %s"
-    MOV EBX,dword ptr [0x005b6d50]      ; 004a5bca | g_CEditorTools_PTR_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004a5bca | g_CEditorToolsPtr
     PUSH EBX                            ; 004a5bd0
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a5bd1
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
@@ -392,7 +392,7 @@ section .text
     PUSH EDX                            ; 004a5bfa
     PUSH ESI                            ; 004a5bfb
     PUSH 0x58438e                       ; 004a5bfc | = "%s is %d bytes, but expected %dx%d=%d..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 004a5c01 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004a5c01 | g_CEditorToolsPtr
     PUSH ECX                            ; 004a5c07
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a5c08
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
@@ -409,7 +409,7 @@ section .text
         ;   Label: LAB_004a5c29
     PUSH EAX                            ; 004a5c30
     PUSH 0x5843ca                       ; 004a5c31 | = "Can't open %s"
-    MOV EDI,dword ptr [0x005b6d50]      ; 004a5c36 | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004a5c36 | g_CEditorToolsPtr
     PUSH EDI                            ; 004a5c3c
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a5c3d
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)

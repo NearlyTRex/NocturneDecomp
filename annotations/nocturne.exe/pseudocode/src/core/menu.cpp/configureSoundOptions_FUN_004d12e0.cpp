@@ -64,9 +64,9 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
   
   dVar1 = (double)(ulonglong)local_800;
   bVar17 = 0;
-  uVar20 = CONCAT44((int)((ulonglong)in_stack_fffff7ec >> 0x20),g_CGame_PTR_005b9354);
+  uVar20 = CONCAT44((int)((ulonglong)in_stack_fffff7ec >> 0x20),g_CGamePtr);
   local_3c = 0;
-  core_game_cpp_CGame_saveClockTime_FUN_0049a890(g_CGame_PTR_005b9354);
+  core_game_cpp_CGame_saveClockTime_FUN_0049a890(g_CGamePtr);
   puVar10 = &DAT_01cc6ed8;
   iVar4 = 0;
   do {
@@ -77,10 +77,9 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_004d12e0(void)
   do {
     local_800 = SUB84(__BITCAST_UINT64(dVar1),0);
     uVar21 = (uint)((ulonglong)uVar20 >> 0x20);
-    core_game_cpp_CGame_updateDT_FUN_0049a8a0(g_CGame_PTR_005b9354);
-    core_moon_cpp_CMoon_update_FUN_004deae0
-              (&g_CMoon_01cc5780,g_CGame_PTR_005b9354->delta_time_float);
-    core_moon_cpp_CMoon_render_FUN_004dec50(&g_CMoon_01cc5780);
+    core_game_cpp_CGame_updateDT_FUN_0049a8a0(g_CGamePtr);
+    core_moon_cpp_CMoon_update_FUN_004deae0(&g_CMoonInstance,g_CGamePtr->delta_time_float);
+    core_moon_cpp_CMoon_render_FUN_004dec50(&g_CMoonInstance);
     local_2c = 0;
     pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Sound : ");
     pcVar13 = &DAT_01cc6ed8;

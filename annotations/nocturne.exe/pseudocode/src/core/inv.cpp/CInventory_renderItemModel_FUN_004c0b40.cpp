@@ -36,14 +36,14 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
   float local_18;
   float local_14;
   
-  pCVar6 = g_CDemonSet_PTR_005be368;
+  pCVar6 = g_CDemonSetPtr;
   if (item != (CDemonActor *)0x0) {
     if (0x280 < g_WindowWidth) {
       viewport_x = (viewport_x * 0x280) / g_WindowWidth;
       viewport_y = (viewport_y * 0x1e0) / g_WindowHeight;
       viewport_size = (viewport_size * 0x280) / g_WindowWidth;
     }
-    g_CDemonSet_PTR_005be368->rendering_mode = 1;
+    g_CDemonSetPtr->rendering_mode = 1;
     (pCVar6->light_direction).x = -0x482b;
     (pCVar6->light_direction).y = -0x482b;
     (pCVar6->light_direction).z = 0x482b;
@@ -54,10 +54,10 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
                (uint)((_DAT_01bd1d80 >> 0x1f) << 1 < 0)) >> 2);
     iVar7 = engine_matrix_c_interpolatedSin_FUN_004cca60(_DAT_01cc30a4);
     iVar8 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(_DAT_01cc30a4);
-    (g_CDemonSet_PTR_005be368->light_direction).x =
+    (g_CDemonSetPtr->light_direction).x =
          (uint)((longlong)iVar7 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar7 * 0x482b) >> 0x20) << 0x10;
-    (g_CDemonSet_PTR_005be368->light_direction).z =
+    (g_CDemonSetPtr->light_direction).z =
          (uint)((longlong)iVar8 * 0x482b) >> 0x10 |
          (int)((ulonglong)((longlong)iVar8 * 0x482b) >> 0x20) << 0x10;
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
@@ -143,7 +143,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(CInventory *th
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
-    g_CDemonSet_PTR_005be368->rendering_mode = 0;
+    g_CDemonSetPtr->rendering_mode = 0;
   }
   return;
 }

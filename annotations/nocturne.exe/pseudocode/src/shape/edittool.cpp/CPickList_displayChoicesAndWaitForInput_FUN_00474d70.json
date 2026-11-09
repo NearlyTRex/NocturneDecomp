@@ -1,84 +1,30 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 19,
-        "message": "comparison between pointer and integer ('undefined4' (aka 'unsigned int') and 'CBitFont *')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01bcd9b8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01bcd070'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01bcd9bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01bcd070'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01bd1d90'; did you mean 'DAT_005c1d90'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01bd1d8c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 50,
+    "complexity_score": 49,
     "cross_reference_count": 12,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 34,
     "suspect_count": 1,
     "suspect_types": [
       "warning_overlapping_globals"
     ],
-    "total_lines": 126
+    "total_lines": 125
   },
   "cross_references": [
-    {
-      "addr": "004a4b50",
-      "from_addr": "004a5055",
-      "name": "core_game.cpp_CGame_FUN_004a4b50",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0049da10",
       "from_addr": "0049df56",
       "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4b50",
+      "from_addr": "004a5055",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -216,7 +162,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -275,7 +221,7 @@
       {
         "call_addr": "004a5055",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -286,7 +232,7 @@
       {
         "call_addr": "004a524a",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -297,7 +243,7 @@
       {
         "call_addr": "004a539e",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,7 +254,7 @@
       {
         "call_addr": "004a555e",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -319,7 +265,7 @@
       {
         "call_addr": "004a564c",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,7 +276,7 @@
       {
         "call_addr": "004a56e0",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

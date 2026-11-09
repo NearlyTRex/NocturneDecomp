@@ -1,0 +1,431 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 172,
+    "complexity_score": 258,
+    "cross_reference_count": 3,
+    "function_call_count": 9,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 68,
+    "suspect_count": 17,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 240
+  },
+  "cross_references": [
+    {
+      "addr": "004c02a0",
+      "from_addr": "004c034b",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004c02a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fd30",
+      "from_addr": "0055fd93",
+      "name": "core_sound.cpp_FUN_0055fd30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005607d0",
+      "from_addr": "005608bb",
+      "name": "core_sound.cpp_FUN_005607d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00558050",
+    "address_range": [
+      [
+        "00558050",
+        "00558242"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00558050",
+    "signature": "int __cdecl sound_sndmain_cpp_FUN_00558050(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "00556750",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556750"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556fd0"
+    },
+    {
+      "addr": "005586b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005586b0"
+    },
+    {
+      "addr": "005586c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005586c0"
+    },
+    {
+      "addr": "00558e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00558e90"
+    },
+    {
+      "addr": "00558250",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_00558250"
+    },
+    {
+      "addr": "00558290",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_00558290"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005806a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00604228",
+      "name": "DAT_00604228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060422c",
+      "name": "DAT_0060422c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00604230",
+      "name": "DAT_00604230",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00604240",
+      "name": "DAT_00604240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2828",
+      "name": "DAT_02cf2828",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2838",
+      "name": "DAT_02cf2838",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2848",
+      "name": "DAT_02cf2848",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf28b8",
+      "name": "DAT_02cf28b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3280",
+      "name": "DAT_02cf3280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3284",
+      "name": "DAT_02cf3284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3294",
+      "name": "DAT_02cf3294",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3298",
+      "name": "DAT_02cf3298",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf329c",
+      "name": "DAT_02cf329c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf32a0",
+      "name": "DAT_02cf32a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3400",
+      "name": "DAT_02cf3400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3404",
+      "name": "DAT_02cf3404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3408",
+      "name": "DAT_02cf3408",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3420",
+      "name": "DAT_02cf3420",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004c034b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_rollCredits_FUN_004c02a0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0055fd93",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055fd30",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005608bb",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_005607d0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.299319727891157,
+    "instruction_count": 147,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 2,
+      "CALL": 10,
+      "CALLIND": 6,
+      "CBRANCH": 8,
+      "COPY": 144,
+      "INT_ADD": 60,
+      "INT_AND": 63,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 47,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 19,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SEXT": 3,
+      "INT_SLESS": 25,
+      "INT_SUB": 57,
+      "INT_XOR": 5,
+      "LOAD": 56,
+      "POPCOUNT": 23,
+      "RETURN": 5,
+      "STORE": 54,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 632
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_00604228",
+      "severity": "mild",
+      "text": "iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(DAT_00604228,DAT_0060422c,DAT_00604230);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_0060422c",
+      "severity": "mild",
+      "text": "iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(DAT_00604228,DAT_0060422c,DAT_00604230);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_00604230",
+      "severity": "mild",
+      "text": "iVar3 = sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(DAT_00604228,DAT_0060422c,DAT_00604230);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0060422c",
+      "severity": "mild",
+      "text": "if ((0 < _DAT_02cf32a0) && (iVar3 = 0, 0 < DAT_0060422c)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_0060422c",
+      "severity": "mild",
+      "text": "} while (iVar3 < DAT_0060422c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 39,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x1c))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_02cf2828",
+      "severity": "mild",
+      "text": "(_DAT_02cf3280,*(uint *)(&DAT_02cf2828 + _DAT_02cf28b8 * 8),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_02cf2838",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02cf2838 + _DAT_02cf28b8 * 8),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_02cf2848",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02cf2848 + _DAT_02cf28b8 * 8),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x20))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 56,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x24))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 60,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x28))(_DAT_02cf3280,DAT_00604240);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00604240",
+      "severity": "mild",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x28))(_DAT_02cf3280,DAT_00604240);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 61,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x2c))(_DAT_02cf3280,_DAT_02cf3400,_DAT_02cf3404,_DAT_02cf3408);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 63,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*_DAT_02cf3280 + 4))(_DAT_02cf3280);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (_DAT_02cf329c * _DAT_02cf32a0 * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 34,
+      "match": "memset",
+      "severity": "moderate",
+      "text": "memset((void *)*puVar1,0,_DAT_02cf329c * _DAT_02cf32a0 * 4);",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

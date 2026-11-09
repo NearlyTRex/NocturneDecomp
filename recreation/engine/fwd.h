@@ -72,7 +72,7 @@ struct SPackagePod;
 struct SPodCheck;
 struct SProjectionParams;
 struct SRelease;
-struct SReleasePod;
+struct SReleaseFile;
 struct SRGBColorPalette;
 struct SSoftwareEdge;
 struct SStoryUnlock;

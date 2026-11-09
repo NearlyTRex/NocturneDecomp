@@ -1,134 +1,14 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 66,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 45,
-        "line": 66,
-        "message": "format specifies type 'int *' but the argument has type 'SFog *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 33,
-        "line": 69,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 58,
-        "line": 72,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 72,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 28,
-        "line": 80,
-        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 43,
-        "line": 80,
-        "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 86,
-        "message": "indirection requires pointer operand ('int' invalid)"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 89,
-        "message": "indirection requires pointer operand ('int' invalid)"
-      },
-      {
-        "category": "format_error",
-        "column": 27,
-        "line": 94,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 147,
-        "message": "incompatible integer to pointer conversion assigning to 'CTerrain *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 153,
-        "message": "no matching function for call to 'core_terrain_cpp_CTerrain_free_FUN_005492f0'"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 173,
-        "message": "format specifies type 'int *' but the argument has type 'CDemonSet *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 221,
-        "message": "format specifies type 'float *' but the argument has type 'SRoom *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 223,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 224,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 295,
-        "message": "format specifies type 'float *' but the argument has type 'SVDBox *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 297,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 37,
-        "line": 298,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1169,
-    "complexity_score": 769,
+    "complexity_score": 739,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 71,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 419,
-    "suspect_count": 32,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -705,9 +585,9 @@
     },
     {
       "addr": "005c11ec",
-      "name": "DAT_005c11ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "02dd1210"
     },
     {
       "addr": "01cc4800",
@@ -723,13 +603,13 @@
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     },
     {
       "addr": "02dd1210",
-      "name": "g_CWater_02dd1210",
+      "name": "g_CWaterInstance",
       "type": "CWater",
       "value": null
     }
@@ -1064,30 +944,6 @@
       "severity": "moderate",
       "text": "local_1c = (CVector3f *)((int)(local_1c + 5) + 8);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 73,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "_fscanf(p_Var4,\"%f,%f\\n\",0x02DD1210 + 1,0x02DD1210 + 2);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 73,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "_fscanf(p_Var4,\"%f,%f\\n\",0x02DD1210 + 1,0x02DD1210 + 2);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 87,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "_fscanf(p_Var4,\"%d\\n\",0x02DD1210);",
-      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex address 0x2dd10c8 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

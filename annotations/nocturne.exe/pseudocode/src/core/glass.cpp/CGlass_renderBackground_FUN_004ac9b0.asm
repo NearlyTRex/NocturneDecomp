@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   undefined4 DAT_0059e390
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -109,8 +109,8 @@ section .text
         ;   Label: LAB_004aca90
     MOV EDX,dword ptr [EBP + 0xb2c]     ; 004aca91
     PUSH EDX                            ; 004aca97
-    MOV ECX,dword ptr [0x005be368]      ; 004aca98 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 004aca9e | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004aca98 | g_CDemonSetPtr
+    PUSH ECX                            ; 004aca9e | g_CDemonSetInstance
     XOR EDI,EDI                         ; 004aca9f
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 004acaa1
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)

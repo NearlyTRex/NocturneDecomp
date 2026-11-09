@@ -1,0 +1,324 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 139,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 104
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b89c6",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00484e30",
+      "from_addr": "00484e64",
+      "name": "shape_edittool.cpp_FUN_00484e30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00484eb0",
+      "from_addr": "00484eea",
+      "name": "shape_edittool.cpp_FUN_00484eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485010",
+      "from_addr": "00485048",
+      "name": "shape_edittool.cpp_FUN_00485010",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00484bd0",
+    "address_range": [
+      [
+        "00484bd0",
+        "00484c9d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_enableItem_FUN_00484bd0",
+    "signature": "void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(CPickList *this_ptr,int item_index,int enable_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3e50",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005a3e50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bd78d",
+      "name": "s_shape_edittool_cpp_005bd78d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd7a3",
+      "name": "s_CPickList_enableItem_inv_005bd7a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd7c9",
+      "name": "s_shape_edittool_cpp_005bd7c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd7df",
+      "name": "s_Out_of_memory_005bd7df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "004b89c6",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00484e64",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00484e30",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00484e8b",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00484e30",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00484eea",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00484eb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00485048",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00485010",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00485053",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00485010",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.754385964912281,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 48,
+      "INT_ADD": 22,
+      "INT_AND": 40,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 15,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 22,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 271
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "item_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "enable_flag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x1ac",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x1ac <= item_index) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x1b0",
+      "severity": "mild",
+      "text": "(*(void **)&this_ptr->field_0x1b0,*(int *)this_ptr << 2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x1b0",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x1b0 = pvVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x1ac",
+      "severity": "mild",
+      "text": "while (*(int *)&this_ptr->field_0x1ac < *(int *)this_ptr) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x1b0",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x1b0 + *(int *)&this_ptr->field_0x1ac * 4) = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x1ac",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x1b0 + *(int *)&this_ptr->field_0x1ac * 4) = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x1ac",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1ac = *(int *)&this_ptr->field_0x1ac + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x1ac",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1ac = *(int *)&this_ptr->field_0x1ac + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x1b0",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x1b0 + item_index * 4) = (uint)(enable_flag != 0);",
+      "type": "unnamed_field"
+    }
+  ]
+}

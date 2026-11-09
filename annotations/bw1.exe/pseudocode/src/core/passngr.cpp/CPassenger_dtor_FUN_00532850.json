@@ -1,0 +1,232 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 129,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 8,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00532850",
+    "address_range": [
+      [
+        "00532850",
+        "00532922"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_passngr.cpp_CPassenger_dtor_FUN_00532850",
+    "signature": "CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408730"
+    },
+    {
+      "addr": "00441ca0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_00441ca0"
+    },
+    {
+      "addr": "00522fc0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_dtor_FUN_00522fc0"
+    },
+    {
+      "addr": "00533060",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_dtor_FUN_00533060"
+    },
+    {
+      "addr": "005673f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0"
+    },
+    {
+      "addr": "005c030f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005c030f"
+    },
+    {
+      "addr": "005c0336",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0336"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    },
+    {
+      "addr": "0040ee30",
+      "is_variadic": false,
+      "name": "unkafter_armour.cpp_FUN_0040ee30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00604614",
+      "name": "g_CPassengerVTable",
+      "type": "undefined1*",
+      "value": "00532930"
+    },
+    {
+      "addr": "00604760",
+      "name": "g_CPassengerTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.455882352941177,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 9,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 43,
+      "INT_ADD": 25,
+      "INT_AND": 39,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 36,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 18,
+      "INT_SUB": 33,
+      "LOAD": 12,
+      "POPCOUNT": 18,
+      "RETURN": 3,
+      "STORE": 30
+    },
+    "pcode_op_count": 303
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPassenger *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x1fbc0",
+      "severity": "mild",
+      "text": "iVar3 = *(int *)&this_ptr->field_0x1fbc0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CPassengerVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 23,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 0xd0))(iVar3,2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x1fbc4",
+      "severity": "mild",
+      "text": "pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0((CMorph *)&this_ptr->field_0x1fbc4,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 27,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "iVar3 = unkafter_armour_cpp_FUN_0040ee30(&pCVar2[-1].field_0xace8,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xace8",
+      "severity": "mild",
+      "text": "iVar3 = unkafter_armour_cpp_FUN_0040ee30(&pCVar2[-1].field_0xace8,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 32,
+      "match": "pCVar5[-1].",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x224c",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 208,
+        "vtable_addr": "00604614"
+      },
+      {
+        "class_name": "CPassenger",
+        "offset": 8,
+        "vtable_addr": "00604764"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

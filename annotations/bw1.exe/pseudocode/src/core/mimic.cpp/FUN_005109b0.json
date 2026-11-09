@@ -1,0 +1,322 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 219,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 18,
+    "suspect_types": [
+      "primitive_walker_cast",
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005109b0",
+    "address_range": [
+      [
+        "005109b0",
+        "00510a7e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_mimic.cpp_FUN_005109b0",
+    "signature": "void core_mimic_cpp_FUN_005109b0(CEnemy *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040b870"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e8a13",
+      "name": "s_speed_005e8a13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8a19",
+      "name": "s_modelName_005e8a19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8a23",
+      "name": "s_attackCondition_005e8a23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8a33",
+      "name": "s_attackMode_005e8a33",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8a3e",
+      "name": "s_mirrorPlaneActor_005e8a3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8a4f",
+      "name": "s_motion_state_005e8a4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8a5c",
+      "name": "s_morphActorType_005e8a5c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8a6b",
+      "name": "s_mirrorCondition_005e8a6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f5a0",
+      "name": "g_CMimicClassVersion",
+      "type": "int",
+      "value": "0x3"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.245901639344262,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 42,
+      "INT_ADD": 26,
+      "INT_AND": 26,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 29,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 13,
+      "INT_SUB": 31,
+      "LOAD": 10,
+      "POPCOUNT": 13,
+      "RETURN": 3,
+      "STORE": 28
+    },
+    "pcode_op_count": 259
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_mimic_cpp_FUN_005109b0(CEnemy *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_enemy_cpp_CEnemy_archive_FUN_004a0520(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1->field_0xc1d0,\"speed\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0xc1d0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1->field_0xc1d0,\"speed\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&param_1->field_0x158,\"modelName\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&param_1->field_0x158,\"modelName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&param_1[1].field_0x64,\"attackCondition\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&param_1[1].field_0x64,\"attackCondition\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 10,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[5].field_0xa258,\"attackMode\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[5].field_0xa258,\"attackMode\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xa258",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[5].field_0xa258,\"attackMode\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&param_1[5].field_0xa25c,\"mirrorPlaneActor\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0xa25c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&param_1[5].field_0xa25c,\"mirrorPlaneActor\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&param_1->field_0x158,\"motion state\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&param_1->field_0x158,\"motion state\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&param_1[5].field_0xa260,\"morphActorType\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xa260",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&param_1[5].field_0xa260,\"morphActorType\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440((char *)(param_1 + 1),\"mirrorCondition\");",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "006039e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

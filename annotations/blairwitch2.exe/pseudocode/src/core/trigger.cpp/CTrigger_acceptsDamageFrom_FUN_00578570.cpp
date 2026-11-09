@@ -1,0 +1,23 @@
+// Name: core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_00578570
+// Address: 00578570
+// Address Range: [[00578570, 005785ad]]
+// Convention: __cdecl
+// Signature: int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_00578570(CTrigger *this_ptr,CDemonActor *actor)
+
+#include "nocturne.h"
+
+int __cdecl core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_00578570(CTrigger *this_ptr,CDemonActor *actor)
+
+{
+  int iVar1;
+  
+  if ((actor != (CDemonActor *)0x0) && (*(int *)&this_ptr->field_0x2d0 == 7)) {
+    if (this_ptr->field_0x464 == '\0') {
+      return 1;
+    }
+    iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840
+                      (&this_ptr->field_0x464,(char *)actor,0);
+    return iVar1;
+  }
+  return 0;
+}

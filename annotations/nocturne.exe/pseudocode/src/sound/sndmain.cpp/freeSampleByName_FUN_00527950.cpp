@@ -19,8 +19,8 @@ void __cdecl sound_sndmain_cpp_freeSampleByName_FUN_00527950(char *sample_name,i
   }
   iVar2 = 0;
   do {
-    if (*(int *)((int)(&g_CSfxSample_ARRAY_02dc1edc[0].sample_info + 1) + iVar2 + 0xc) == 0) {
-      this_ptr = (CSfxSample *)(g_CSfxSample_ARRAY_02dc1edc[0].sample_info.name + iVar2);
+    if (*(int *)((int)(&g_SfxSamples[0].sample_info + 1) + iVar2 + 0xc) == 0) {
+      this_ptr = (CSfxSample *)(g_SfxSamples[0].sample_info.name + iVar2);
       iVar1 = _stricmp((char *)this_ptr,sample_name);
       if (iVar1 == 0) {
         sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);

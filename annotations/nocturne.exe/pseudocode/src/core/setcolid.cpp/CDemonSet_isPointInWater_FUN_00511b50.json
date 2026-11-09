@@ -1,24 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 77,
+    "complexity_score": 51,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 3,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
       "shadow_pointer_walk"
     ],
-    "total_lines": 156
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -67,13 +61,13 @@
     },
     {
       "addr": "005c11ec",
-      "name": "DAT_005c11ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "02dd1210"
     },
     {
       "addr": "02dd1214",
-      "name": "g_CWater_02dd1210.water_level_y",
+      "name": "g_CWaterInstance.water_level_y",
       "type": "undefined4",
       "value": null
     },
@@ -185,24 +179,8 @@
   },
   "suspects": [
     {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 11,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "if (((*(uint *)(0x02DD1210 + 4) & 0x7fffffff) == 0) ||",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 12,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "(*(float *)(0x02DD1210 + 4) <= point->y)) {",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 31,
+      "line": 30,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",

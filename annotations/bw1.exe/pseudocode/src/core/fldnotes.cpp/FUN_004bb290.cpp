@@ -1,0 +1,37 @@
+// Name: core_fldnotes.cpp_FUN_004bb290
+// Address: 004bb290
+// Address Range: [[004bb290, 004bb2e7]]
+// Convention: unknown
+// Signature: undefined4 core_fldnotes_cpp_FUN_004bb290(undefined4 param_1,char *param_2)
+
+#include "nocturne.h"
+
+uint core_fldnotes_cpp_FUN_004bb290(uint param_1,char *param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  int iVar3;
+  
+  cVar1 = *param_2;
+  iVar3 = 0;
+  while( true ) {
+    if (cVar1 == '\0') {
+      return 1;
+    }
+    iVar2 = core_fldnotes_cpp_FUN_004bb2f0(param_1,param_2);
+    if (iVar2 < 0) break;
+    if (iVar2 < 1) {
+      iVar3 = iVar3 + 1;
+      if (1 < iVar3) {
+        core_fldnotes_cpp_FUN_004bb290(param_1,"ERROR: item won't fit<br>");
+        return 1;
+      }
+    }
+    else {
+      param_2 = param_2 + iVar2;
+    }
+    cVar1 = *param_2;
+  }
+  return 0;
+}

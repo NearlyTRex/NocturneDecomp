@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 40,
-        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 189,
@@ -162,7 +150,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -254,51 +242,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonMission_ensureHeroPlaceholder_FUN_004d9c20.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 11,
-          "line": 45,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointer",
-          "column": 12,
-          "line": 46,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointer",
-          "column": 12,
-          "line": 47,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointer",
-          "column": 12,
-          "line": 48,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointer",
-          "column": 12,
-          "line": 50,
-          "message": "Possible null pointer dereference: actor",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
@@ -315,46 +258,6 @@
       "severity": "moderate",
       "text": "(pUVar4->vec).x = (pCVar3->orient).vec.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Possible null pointer dereference: actor",
-      "line": 45,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "actor->index = 0;",
-      "type": "static_null_pointer"
-    },
-    {
-      "description": "Possible null pointer dereference: actor",
-      "line": 46,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
-      "type": "static_null_pointer"
-    },
-    {
-      "description": "Possible null pointer dereference: actor",
-      "line": 47,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "(actor->base).location.position.y = (pCVar3->location).position.y;",
-      "type": "static_null_pointer"
-    },
-    {
-      "description": "Possible null pointer dereference: actor",
-      "line": 48,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "(actor->base).location.position.z = (pCVar3->location).position.z;",
-      "type": "static_null_pointer"
-    },
-    {
-      "description": "Possible null pointer dereference: actor",
-      "line": 50,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "(actor->base).location.area_id = (pCVar3->location).area_id;",
-      "type": "static_null_pointer"
     }
   ]
 }

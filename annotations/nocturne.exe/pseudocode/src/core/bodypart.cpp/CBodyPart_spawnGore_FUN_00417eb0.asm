@@ -10,7 +10,7 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416913
 ;
 ; Referenced Globals:
-;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CGore* g_CGorePtr = 01c78c7c
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -37,7 +37,7 @@ section .text
     PUSH 0x2dd1184                      ; 00417ecd | g_ZeroVector
     ADD EAX,0x20                        ; 00417ed2
     PUSH EAX                            ; 00417ed5
-    MOV ECX,dword ptr [0x005b96c4]      ; 00417ed6 | g_CGore_PTR_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 00417ed6 | g_CGorePtr
     PUSH ECX                            ; 00417edc
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 00417edd
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)

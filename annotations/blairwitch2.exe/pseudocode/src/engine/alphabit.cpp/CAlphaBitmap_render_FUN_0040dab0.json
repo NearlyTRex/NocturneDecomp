@@ -1,0 +1,301 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 116,
+    "complexity_score": 143,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 159
+  },
+  "cross_references": [
+    {
+      "addr": "004a2060",
+      "from_addr": "004a2109",
+      "name": "core_fldnotes.cpp_FUN_004a2060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5700",
+      "from_addr": "004a5e8d",
+      "name": "core_fldnotes.cpp_FUN_004a5700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd9b0",
+      "from_addr": "004de284",
+      "name": "core_inv.cpp_FUN_004dd9b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040dab0",
+    "address_range": [
+      [
+        "0040dab0",
+        "0040dbc4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0",
+    "signature": "void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040dab0(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040dca0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040dca0"
+    },
+    {
+      "addr": "0055d5be",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderAlphaRow16_FUN_0055d5be"
+    },
+    {
+      "addr": "0055d523",
+      "is_variadic": false,
+      "name": "engine_special.cpp_renderAlphaRow32_FUN_0055d523"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a38c",
+      "name": "DAT_01c2a38c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.320388349514563,
+    "instruction_count": 103,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 2,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 79,
+      "INT_ADD": 64,
+      "INT_AND": 84,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 62,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 20,
+      "INT_SEXT": 3,
+      "INT_SLESS": 34,
+      "INT_SUB": 26,
+      "INT_XOR": 2,
+      "LOAD": 37,
+      "POPCOUNT": 30,
+      "RETURN": 2,
+      "STORE": 27,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 548
+  },
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAlphaBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dest_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "left_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right_x",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom_y",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "global_alpha",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "iVar2 = top_y * *(int *)&this_ptr->field_0xc + left_x;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "srcAlpha = (uchar *)(iVar2 + *(int *)&this_ptr->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "((uint *)(*(int *)(&DAT_01c2a38c + local_18) + dest_x * 4),srcIndices,srcAlpha,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "srcIndices = srcIndices + *(int *)&this_ptr->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "srcAlpha = srcAlpha + *(int *)&this_ptr->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "((ushort *)(*(int *)(&DAT_01c2a38c + local_14) + dest_x * 2),srcIndices,srcAlpha,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "srcIndices = srcIndices + *(int *)&this_ptr->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "srcAlpha = srcAlpha + *(int *)&this_ptr->field_0xc;",
+      "type": "unnamed_field"
+    }
+  ]
+}

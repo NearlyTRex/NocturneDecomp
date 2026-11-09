@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
@@ -84,23 +79,6 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_004f49d8.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 16,
-          "message": "Uninitialized variable: unaff_EBP",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unaffected register variable",
@@ -141,14 +119,6 @@
       "severity": "moderate",
       "text": "*(void **)(unaff_EBP + 0x14) = pvVar1;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EBP",
-      "line": 16,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pvVar1 = realloc(*(void **)(unaff_EBP + 0x14),unaff_ESI);",
-      "type": "static_uninitvar"
     }
   ]
 }

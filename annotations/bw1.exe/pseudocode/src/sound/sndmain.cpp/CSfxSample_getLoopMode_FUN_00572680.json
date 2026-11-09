@@ -1,0 +1,205 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 67,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "005725a0",
+      "from_addr": "005725d6",
+      "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572030",
+      "from_addr": "005721e9",
+      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570460",
+      "from_addr": "00570525",
+      "name": "sound_sndmain.cpp_FUN_00570460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571f10",
+      "from_addr": "00571f6b",
+      "name": "sound_sndmain.cpp_FUN_00571f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00572680",
+    "address_range": [
+      [
+        "00572680",
+        "005726b9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00572680",
+    "signature": "int __cdecl sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00572680(CSfxSample *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00570525",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057068e",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005721e9",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005725d6",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00571f6b",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00571f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 18,
+      "INT_ADD": 11,
+      "INT_AND": 9,
+      "INT_EQUAL": 9,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 4,
+      "RETURN": 3,
+      "STORE": 1
+    },
+    "pcode_op_count": 88
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "if (((*(int *)&this_ptr->field_0x124 < 2) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x110 == *(int *)&this_ptr->field_0x128)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x128",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x110 == *(int *)&this_ptr->field_0x128)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x13c",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x13c < 1)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x13c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x13c == 0) {",
+      "type": "unnamed_field"
+    }
+  ]
+}

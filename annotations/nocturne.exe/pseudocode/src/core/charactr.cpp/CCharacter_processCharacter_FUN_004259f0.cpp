@@ -30,14 +30,14 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0(CCharacte
   }
   if ((0.0 < this_ptr->speech_timer) &&
      (fVar3 = this_ptr->speech_timer - delta_time, this_ptr->speech_timer = fVar3,
-     this_ptr_00 = 0x01E56DA0, fVar3 < 0.0)) {
+     this_ptr_00 = g_CScriptPtr, fVar3 < 0.0)) {
     this_ptr->speech_timer = 0.0;
     core_script_cpp_CScript_setSpeaker_FUN_00504bf0(this_ptr_00,&this_ptr->base);
   }
   if (this_ptr->health_bar_mode == HEALTH_BAR_ALWAYS) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
-              (g_CGame_PTR_005b9354,this_ptr->descriptive_name,
-               this_ptr->hit_points / this_ptr->max_hit_points,2.0);
+              (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
+               ,2.0);
   }
   if (this_ptr->render_active == 0) {
     if (this_ptr->closest_distance_threshold == 9999.0f) {

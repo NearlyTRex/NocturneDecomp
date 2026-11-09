@@ -1,0 +1,304 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 80,
+    "complexity_score": 256,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 21,
+    "suspect_types": [
+      "unnamed_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 111
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057e550",
+    "address_range": [
+      [
+        "0057e550",
+        "0057e625"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_turret.cpp_FUN_0057e550",
+    "signature": "void core_turret_cpp_FUN_0057e550(CWeapon *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044e6e0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0"
+    },
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "00589b50",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_FUN_00589b50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ed684",
+      "name": "DAT_005ed684",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fd518",
+      "name": "DAT_005fd518",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.373134328358209,
+    "instruction_count": 67,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 134,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 5,
+      "INT_ADD": 29,
+      "INT_AND": 27,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 16,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 15,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 360
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_turret_cpp_FUN_0057e550(CWeapon *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&param_1[1].field_0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&param_1[1].field_0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_weapon_cpp_FUN_00589b50(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&param_1->field_0x2b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&param_1->field_0x2b4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "(this_ptr,*(int *)&this_ptr->field_0x100 + -1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "for (iVar3 = 0; iVar3 < *(int *)&this_ptr->field_0x104; iVar3 = iVar3 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x2e8 = (float)*(int *)pCVar2 * _DAT_005fd518;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2e8",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x2e8 = (float)*(int *)pCVar2 * _DAT_005fd518;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x2ec = (float)*(int *)(pCVar2 + 4) * _DAT_005fd518;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2ec",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x2ec = (float)*(int *)(pCVar2 + 4) * _DAT_005fd518;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x2f0 = (float)*(int *)(pCVar2 + 8) * _DAT_005fd518;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x2f0",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x2f0 = (float)*(int *)(pCVar2 + 8) * _DAT_005fd518;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x33c = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x33c",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x33c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x340 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x340",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x340 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x338 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x338",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x338 = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005fd544"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

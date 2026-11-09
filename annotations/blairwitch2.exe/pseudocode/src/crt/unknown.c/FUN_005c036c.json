@@ -1,0 +1,175 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 7,
+    "cross_reference_count": 16,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
+  "cross_references": [
+    {
+      "addr": "005b99e0",
+      "from_addr": "005b99f3",
+      "name": "crt_io.c__chmod_FUN_005b99e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bacf0",
+      "from_addr": "005bad06",
+      "name": "crt_stdio.c_rename_FUN_005bacf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ba120",
+      "from_addr": "005ba1c7",
+      "name": "crt_stdlib.c__fullpath_FUN_005ba120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ba2e0",
+      "from_addr": "005ba2ee",
+      "name": "crt_unknown.c_FUN_005ba2e0",
+      "type": "CONDITIONAL_JUMP"
+    },
+    {
+      "addr": "005be300",
+      "from_addr": "005be3a7",
+      "name": "crt_unknown.c_FUN_005be300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bebb0",
+      "from_addr": "005bec2f",
+      "name": "crt_unknown.c_FUN_005bebb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005befc0",
+      "from_addr": "005bf150",
+      "name": "crt_unknown.c_FUN_005befc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bf250",
+      "from_addr": "005bf2a6",
+      "name": "crt_unknown.c_FUN_005bf250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bfb00",
+      "from_addr": "005bfb6c",
+      "name": "crt_unknown.c_FUN_005bfb00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bfdd4",
+      "from_addr": "005bff09",
+      "name": "crt_unknown.c_FUN_005bfdd4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c00d0",
+      "from_addr": "005c00fe",
+      "name": "crt_unknown.c_FUN_005c00d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c045c",
+      "from_addr": "005c0502",
+      "name": "crt_unknown.c_FUN_005c045c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c0f10",
+      "from_addr": "005c0f3c",
+      "name": "crt_unknown.c_FUN_005c0f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c0fc0",
+      "from_addr": "005c0fce",
+      "name": "crt_unknown.c_FUN_005c0fc0",
+      "type": "CONDITIONAL_JUMP"
+    },
+    {
+      "addr": "005b9c20",
+      "from_addr": "005b9c30",
+      "name": "crt_watcom.c__mkdir_FUN_005b9c20",
+      "type": "CONDITIONAL_JUMP"
+    },
+    {
+      "addr": "005c3870",
+      "from_addr": "005c38b4",
+      "name": "unkafter_morph.cpp_FUN_005c3870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c036c",
+    "address_range": [
+      [
+        "005c036c",
+        "005c037c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c036c",
+    "signature": "void crt_unknown_c_FUN_005c036c(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c0300",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0300"
+    },
+    {
+      "addr": "EXTERNAL:0000006f",
+      "is_variadic": false,
+      "name": "GetLastError"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c85a0",
+      "name": "PTR_GetLastError_005c85a0",
+      "type": "void*",
+      "value": "001c8ed8"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "COPY": 2,
+      "INT_ADD": 2,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 22
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

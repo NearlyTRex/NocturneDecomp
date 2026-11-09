@@ -1,0 +1,367 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 135,
+    "cross_reference_count": 28,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "0040e000",
+      "from_addr": "0040e01a",
+      "name": "core_ammo.cpp_CAmmo_archive_FUN_0040e000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e8f0",
+      "from_addr": "0040e90a",
+      "name": "core_ammobox.cpp_CAmmoBox_archive_FUN_0040e8f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040ef20",
+      "from_addr": "0040ef9e",
+      "name": "core_bat.cpp_CBat_archive_FUN_0040ef20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f630",
+      "from_addr": "0040f64a",
+      "name": "core_battery.cpp_CBattery_archive_FUN_0040f630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041fb90",
+      "from_addr": "0041fbb4",
+      "name": "core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00421960",
+      "from_addr": "004219c1",
+      "name": "core_bugs.cpp_FUN_00421960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446040",
+      "from_addr": "0044605a",
+      "name": "core_crate.cpp_CCrate_archive_FUN_00446040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464cd0",
+      "from_addr": "00464ceb",
+      "name": "core_door.cpp_FUN_00464cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046ebc0",
+      "from_addr": "0046ebde",
+      "name": "core_drip.cpp_CDrip_archive_FUN_0046ebc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00488bb0",
+      "from_addr": "00488cc8",
+      "name": "core_emitter.cpp_FUN_00488bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00489120",
+      "from_addr": "004892ee",
+      "name": "core_enemy.cpp_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496380",
+      "from_addr": "0049639a",
+      "name": "core_filmreel.cpp_CFilmReel_archive_FUN_00496380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a73d0",
+      "from_addr": "004a73ea",
+      "name": "core_flamecan.cpp_CFlameCan_archive_FUN_004a73d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6780",
+      "from_addr": "004c679c",
+      "name": "core_gasmask.cpp_CGasMask_archive_FUN_004c6780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc800",
+      "from_addr": "004cc81c",
+      "name": "core_goggles.cpp_FUN_004cc800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004cf5fe",
+      "name": "core_grave.cpp_CGrave_archive_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1fe0",
+      "from_addr": "004d2003",
+      "name": "core_health.cpp_FUN_004d1fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dea10",
+      "from_addr": "004dea33",
+      "name": "core_keyactor.cpp_CKeyActor_archive_FUN_004dea10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004df880",
+      "from_addr": "004df89a",
+      "name": "core_ladder.cpp_CLadder_archive_FUN_004df880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ef30",
+      "from_addr": "0050ef4a",
+      "name": "core_pendulum.cpp_CPendulum_archive_FUN_0050ef30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512420",
+      "from_addr": "00512440",
+      "name": "core_platfrm.cpp_FUN_00512420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547660",
+      "from_addr": "0054767a",
+      "name": "core_simbox.cpp_CSimBox_archive_FUN_00547660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566e70",
+      "from_addr": "00566e8a",
+      "name": "core_spike.cpp_CSpike_archive_FUN_00566e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056d0b0",
+      "from_addr": "0056d0ca",
+      "name": "core_trap.cpp_CTrap_archive_FUN_0056d0b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056d2f0",
+      "from_addr": "0056d30a",
+      "name": "core_trash.cpp_CTrash_archive_FUN_0056d2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575230",
+      "from_addr": "0057526b",
+      "name": "core_tvbat.cpp_FUN_00575230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576fe0",
+      "from_addr": "00576ffa",
+      "name": "core_vessel.cpp_CCryptVessel_archive_FUN_00576fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057b2a0",
+      "from_addr": "0057b2c4",
+      "name": "core_weapon.cpp_FUN_0057b2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040b9b0",
+    "address_range": [
+      [
+        "0040b9b0",
+        "0040ba27"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0",
+    "signature": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007df9b8",
+      "name": "DAT_007df9b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.340909090909091,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 31,
+      "INT_ADD": 21,
+      "INT_AND": 22,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 16,
+      "LOAD": 11,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 191
+  },
+  "stack_frame": {
+    "frame_size": 212,
+    "local_size": 212,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_cf",
+        "offset": -207,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0040b9dd",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0040b9f5",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_007df9b8",
+      "severity": "mild",
+      "text": "if (DAT_007df9b8 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(local_d0,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(param_1,local_d0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar2 = &param_1->field_0x78;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "pcVar2 = &param_1->field_0x78;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(local_d0,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 17,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

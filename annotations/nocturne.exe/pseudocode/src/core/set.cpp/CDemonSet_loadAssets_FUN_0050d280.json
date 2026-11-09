@@ -1,29 +1,15 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 13,
-        "message": "no matching function for call to 'core_water_cpp_CWater_captureTextures_FUN_005507d0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 15
   },
   "cross_references": [
@@ -61,13 +47,13 @@
   "globals": [
     {
       "addr": "005c11ec",
-      "name": "DAT_005c11ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "02dd1210"
     },
     {
       "addr": "02dd1210",
-      "name": "g_CWater_02dd1210",
+      "name": "g_CWaterInstance",
       "type": "CWater",
       "value": null
     }
@@ -129,14 +115,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 6,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "core_water_cpp_CWater_captureTextures_FUN_005507d0(0x02DD1210);",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

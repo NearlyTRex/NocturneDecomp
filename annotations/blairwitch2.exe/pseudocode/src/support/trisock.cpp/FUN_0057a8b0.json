@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 95,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
+    "suspect_types": [
+      "register_param",
+      "unaffected_reg",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "0057a840",
+      "from_addr": "0057a896",
+      "name": "support_trisock.cpp_FUN_0057a840",
+      "type": "CONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "0057a8b0",
+    "address_range": [
+      [
+        "0057a8b0",
+        "0057a905"
+      ],
+      [
+        "0057a940",
+        "0057a97c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "support_trisock.cpp_FUN_0057a8b0",
+    "signature": "void support_trisock_cpp_FUN_0057a8b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0058fd20",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_createThread_FUN_0058fd20"
+    },
+    {
+      "addr": "0058fd00",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_releaseMutex_FUN_0058fd00"
+    },
+    {
+      "addr": "0058fd90",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_sleep_FUN_0058fd90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0265363c",
+      "name": "DAT_0265363c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02653648",
+      "name": "DAT_02653648",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 6,
+      "COPY": 28,
+      "INT_ADD": 10,
+      "INT_AND": 20,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 17,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 168
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "int *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*in_EAX = unaff_EBX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*in_EAX = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBX + 0x3c0) = 0;",
+      "type": "unaffected_reg"
+    }
+  ]
+}

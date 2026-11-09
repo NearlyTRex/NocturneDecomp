@@ -1,0 +1,385 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 124,
+    "cross_reference_count": 11,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 8,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "00410ac0",
+      "from_addr": "00410b1c",
+      "name": "core_baron.cpp_FUN_00410ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8e10",
+      "from_addr": "004b8e1c",
+      "name": "core_game.cpp_FUN_004b8e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b90d0",
+      "from_addr": "004b9a9d",
+      "name": "core_game.cpp_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0a40",
+      "from_addr": "004d0a55",
+      "name": "core_hero.cpp_FUN_004d0a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da900",
+      "from_addr": "004da95a",
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004da900",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc4b0",
+      "from_addr": "004dc76a",
+      "name": "core_inv.cpp_CInventory_load_FUN_004dc4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dadb0",
+      "from_addr": "004db508",
+      "name": "core_inv.cpp_FUN_004dadb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f04f0",
+      "from_addr": "004f06f1",
+      "name": "core_mimic.cpp_FUN_004f04f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fb590",
+      "from_addr": "004fbb27",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005115e0",
+      "from_addr": "005116a9",
+      "name": "core_passngr.cpp_FUN_005115e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051ec20",
+      "from_addr": "0051ec40",
+      "name": "core_scat.cpp_FUN_0051ec20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040c5a0",
+    "address_range": [
+      [
+        "0040c5a0",
+        "0040c63d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_createActorByName_FUN_0040c5a0",
+    "signature": "int __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c530",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getActorClassByName_FUN_0040c530"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cae28",
+      "name": "s_core_actor_cpp_005cae28",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cae3a",
+      "name": "s_Can_t_create_actor_of_un_005cae3a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cae67",
+      "name": "s_core_actor_cpp_005cae67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cae79",
+      "name": "s_Can_t_create_instance_of_005cae79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005caea3",
+      "name": "s_core_actor_cpp_005caea3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005caeb5",
+      "name": "s_Not_enough_memory_to_cre_005caeb5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 11,
+    "call_sites": [
+      {
+        "call_addr": "004fbb27",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b9a9d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b90d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b8e1c",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b8e10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004db508",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dadb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d0a55",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d0a40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004da95a",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_initialize_FUN_004da900",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dc76a",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_load_FUN_004dc4b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00410b1c",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_FUN_00410ac0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f06f1",
+        "call_type": "direct",
+        "caller": "core_mimic.cpp_FUN_004f04f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005116a9",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_FUN_005115e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.2941176470588234,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 45,
+      "INT_ADD": 15,
+      "INT_AND": 16,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 16,
+      "LOAD": 11,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 168
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = core_actor_cpp_getActorClassByName_FUN_0040c530(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4500(\"Can't create actor of unknown class type: %s\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4500(\"Can't create instance of abstract type %s\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(iVar1 + 0x2c))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4500(\"Not enough memory to create %s\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 11,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

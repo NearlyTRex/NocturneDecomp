@@ -59,7 +59,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
   core_flattn_cpp_doNothing_FUN_0048ee80();
   core_inivar_cpp_readIniData_FUN_004bdb80();
   g_AGPTextureMode = 2;
-  engine_pod_cpp_CPod_init_FUN_004f8af0(g_CPod_PTR_005be1cc);
+  engine_pod_cpp_CPod_init_FUN_004f8af0(&g_CDemonPodPtr->base);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00456750(engine_pod_cpp_findFileInPod_FUN_004f9250);
   engine_dosio_cpp_addGetFileInfoHook_FUN_00456750(engine_dosio_cpp_findFileNormally_FUN_00456800);
   support_newmsg_cpp_readMessageFile_FUN_004edfc0();
@@ -309,8 +309,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-              (g_CEditorTools_PTR_005b6d50,acStack_528);
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40(g_CEditorToolsPtr,acStack_528);
   }
   if (_DAT_02de20ac < 0xc800000) {
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Windows is reporting ");
@@ -451,12 +450,11 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
       pcVar8[1] = cVar2;
       pcVar8 = pcVar8 + 2;
     } while (cVar2 != '\0');
-    shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-              (g_CEditorTools_PTR_005b6d50,&stack0xfffff8d8);
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40(g_CEditorToolsPtr,&stack0xfffff8d8);
   }
-  pCVar4 = g_CGame_PTR_005b9354;
+  pCVar4 = g_CGamePtr;
   if (_DAT_01cae37c != 0) {
-    g_CGame_PTR_005b9354->game_pixx = 0x280;
+    g_CGamePtr->game_pixx = 0x280;
     _DAT_01cae37c = 0;
     pCVar4->game_pixy = 0x1e0;
     g_UseDirect3D = 0;
@@ -488,7 +486,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
   core_mission_cpp_CDemonMission_reset_FUN_004d7e00(g_CDemonMission_PTR_005baf90);
   iStack_14 = 0;
   do {
-    puVar1 = (uint *)((int)&DAT_005ad51c + iVar6);
+    puVar1 = (uint *)((int)&g_GlobalFilters + iVar6);
     iVar6 = iVar6 + 4;
     iVar9 = iStack_14 + 1;
     core_dfilter_cpp_CDemonFilter_init_FUN_0044c190
@@ -499,10 +497,10 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
   iVar9 = 0;
   iVar6 = 0;
   do {
-    **(uint **)((int)&DAT_005ad53c + iVar9) = 0x100;
+    **(uint **)((int)&g_PlayerFilters + iVar9) = 0x100;
     fVar3 = (float)0.25;
-    *(uint *)(*(int *)((int)&DAT_005ad53c + iVar9) + 4) = 0x100;
-    puVar1 = (uint *)((int)&DAT_005ad53c + iVar9);
+    *(uint *)(*(int *)((int)&g_PlayerFilters + iVar9) + 4) = 0x100;
+    puVar1 = (uint *)((int)&g_PlayerFilters + iVar9);
     iVar9 = iVar9 + 4;
     iVar10 = iVar6 + 1;
     iStack_14 = iVar6;
@@ -510,9 +508,9 @@ void __cdecl core_main_c_initializeGameSystems_FUN_004c85f0(int argc,char **argv
               ((CDemonFilter *)*puVar1,(float)iVar6 * fVar3 + (float)0.25,0);
     iVar6 = iVar10;
   } while (iVar10 < 4);
-  engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(g_CMouse_PTR_005be060);
+  engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0(g_CMousePtr);
   engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
-  core_netgame_cpp_CNetGame_init_FUN_004e9910(g_CNetGame_PTR_005bdee0);
+  core_netgame_cpp_CNetGame_init_FUN_004e9910(g_CNetGamePtr);
   wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
   return;

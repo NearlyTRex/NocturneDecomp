@@ -46,7 +46,7 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0047a390(char *name,
       }
       goto LAB_0047a41f;
     }
-    if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+    if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
       _sprintf(&DAT_01c08b60,"Can't use '$' actor specifier in multi-player");
       return (CDemonActor *)0x0;
     }

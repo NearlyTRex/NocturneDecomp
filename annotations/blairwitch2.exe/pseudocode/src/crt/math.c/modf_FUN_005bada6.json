@@ -1,0 +1,173 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 10,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "005b84d0",
+      "from_addr": "005b84e3",
+      "name": "crt_math.c_floor_FUN_005b84d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005060b0",
+      "from_addr": "005062de",
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005060b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505fbe",
+      "from_addr": "00506031",
+      "name": "sound_mp3.cpp_FUN_00505fbe",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005bada6",
+    "address_range": [
+      [
+        "005bada6",
+        "005badc5"
+      ]
+    ],
+    "convention": "__crtmath",
+    "name": "crt_math.c_modf_FUN_005bada6",
+    "signature": "double __crtmath crt_math_c_modf_FUN_005bada6(double value,double *integer_part)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "005062de",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005060b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00506348",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005060b0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005b84e3",
+        "call_type": "direct",
+        "caller": "crt_math.c_floor_FUN_005b84d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00506031",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_00505fbe",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050609b",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_00505fbe",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.133333333333334,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 44,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 6,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 77
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "integer_part",
+        "offset": 12,
+        "size": 4,
+        "type": "double *"
+      }
+    ]
+  },
+  "suspects": []
+}

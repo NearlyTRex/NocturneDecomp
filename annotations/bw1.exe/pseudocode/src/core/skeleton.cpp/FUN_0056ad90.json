@@ -1,0 +1,373 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 274,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 59,
+    "suspect_count": 19,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "00430060",
+      "from_addr": "004301bd",
+      "name": "core_charactr.cpp_FUN_00430060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046e630",
+      "from_addr": "0046e711",
+      "name": "core_doc.cpp_FUN_0046e630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004caff0",
+      "from_addr": "004cb0c5",
+      "name": "core_gabriela.cpp_FUN_004caff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589f10",
+      "from_addr": "00589ff1",
+      "name": "core_stranger.cpp_FUN_00589f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599150",
+      "from_addr": "0059958c",
+      "name": "core_thehand.cpp_FUN_00599150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056ad90",
+    "address_range": [
+      [
+        "0056ad90",
+        "0056ae6c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_FUN_0056ad90",
+    "signature": "void __cdecl core_skeleton_cpp_FUN_0056ad90(CDeformableModelInstance *this_ptr,SPose *bone_transform)"
+  },
+  "function_calls": [
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0046e711",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046e630",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cb0c5",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_FUN_004caff0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00589ff1",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_FUN_00589f10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004301bd",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00430060",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059958c",
+        "call_type": "direct",
+        "caller": "core_thehand.cpp_FUN_00599150",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1571428571428575,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 86,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 55,
+      "INT_AND": 31,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 31,
+      "INT_LESS": 3,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 15,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 10,
+      "LOAD": 27,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 361
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_transform",
+        "offset": 8,
+        "size": 4,
+        "type": "SPose *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x6a4",
+      "severity": "mild",
+      "text": "if ((SPose *)&this_ptr->field_0x6a4 != bone_transform) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x6a4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x6a4 = *(uint *)bone_transform;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x6a8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x6a8 = *(uint *)(bone_transform + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x6ac",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x6ac = *(uint *)(bone_transform + 8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x1de78",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&pCVar2->field_0x1de78;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)pCVar6",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)pCVar6 + (uint)bVar10 * -8 + 0x6b4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x6b0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar6->field_0x6b0 = *(uint *)(local_14 + 0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0xcf0",
+      "severity": "mild",
+      "text": "*(uint *)&local_c->field_0xcf0 = *(uint *)(bone_transform + 0x64c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "pCVar6 = (CDeformableModelInstance *)&pCVar6->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0xe80",
+      "severity": "mild",
+      "text": "puVar8 = (uint *)&pCVar3->field_0xe80;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_c = (CDeformableModelInstance *)&local_c->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x2320",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2320 = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)pCVar6",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)pCVar6 + (uint)bVar10 * -8 + 0x6b4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 48,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDeformableModelInstance *)&pCVar6->field_0x10;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_c->owner`). Replace `local_c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 55,
+      "match": "local_c = (T *)&local_c->FIELD",
+      "severity": "moderate",
+      "text": "local_c = (CDeformableModelInstance *)&local_c->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 57,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x30;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0056ae2b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 55,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0056ae2b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

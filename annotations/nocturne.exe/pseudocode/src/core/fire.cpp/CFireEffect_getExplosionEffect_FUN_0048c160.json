@@ -1,28 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 61,
-        "line": 36,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 61,
-        "line": 37,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 74,
-        "line": 39,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
@@ -385,37 +361,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CFireEffect_getExplosionEffect_FUN_0048c160.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 32,
-          "message": "Uninitialized variable: local_40",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 42,
-          "line": 32,
-          "message": "Uninitialized variable: local_48",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 64,
-          "line": 32,
-          "message": "Uninitialized variable: local_44",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unknown/mangled field access",
@@ -440,30 +385,6 @@
       "severity": "mild",
       "text": "out_force_dir->x = local_48 * fVar1 * 5.4811317061554153e-315._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Uninitialized variable: local_40",
-      "line": 32,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_48",
-      "line": 32,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_44",
-      "line": 32,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);",
-      "type": "static_uninitvar"
     }
   ]
 }

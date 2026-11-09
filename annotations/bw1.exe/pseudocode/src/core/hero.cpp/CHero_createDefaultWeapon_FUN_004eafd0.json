@@ -1,0 +1,277 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 112,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 6,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [
+    {
+      "addr": "004ea830",
+      "from_addr": "004ea942",
+      "name": "core_hero.cpp_FUN_004ea830",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004eafd0",
+    "address_range": [
+      [
+        "004eafd0",
+        "004eb080"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0",
+    "signature": "void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "0040c2b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c2b0"
+    },
+    {
+      "addr": "004f7050",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004f7050"
+    },
+    {
+      "addr": "004f7690",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f7690"
+    },
+    {
+      "addr": "004f8dc0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f8dc0"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e4800",
+      "name": "DAT_005e4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e4805",
+      "name": "s_core_hero_cpp_005e4805",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e4816",
+      "name": "s_Out_of_memory_005e4816",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e4825",
+      "name": "s_Your_weapon_005e4825",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e4826",
+      "name": "s_our_weapon_005e4825+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e4827",
+      "name": "s_ur_weapon_005e4825+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e4828",
+      "name": "s_r_weapon_005e4825+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99770",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ea942",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004ea830",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9661016949152543,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 20,
+      "INT_AND": 27,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 13,
+      "INT_SUB": 24,
+      "LOAD": 9,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 25
+    },
+    "pcode_op_count": 234
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005e4800",
+      "severity": "mild",
+      "text": "uVar2 = core_actor_cpp_createActorByName_FUN_0040c2b0(&DAT_005e4800,g_CWeaponClassInfo.name_hash);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar4->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar4 = (CDemonActor *)&pCVar4->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&item_actor[4].field_0x8 = 100;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 30,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonActor *)&pCVar4->field_0x2;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 320,
+        "vtable_addr": "00603f04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 320,
+        "vtable_addr": "00606414"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 320,
+        "vtable_addr": "00601d34"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 320,
+        "vtable_addr": "00602634"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 320,
+        "vtable_addr": "00601a64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 10
+  }
+}

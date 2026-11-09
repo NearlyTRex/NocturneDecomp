@@ -50,7 +50,7 @@ __asm {
         mov dword ptr [EBP + -0x44],EDI
         fstp float ptr [EBP + -0x48]
         call engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-        mov EAX,[g_CDemonSet_PTR_005be368]
+        mov EAX,[g_CDemonSetPtr]
         add ESP,0x8
         mov dword ptr [EAX + 0x15aa88],0x1
         push 0x10000
@@ -69,7 +69,7 @@ __asm {
         lea EAX,[ESI + 0x8]
         push EAX
         call core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-        mov EAX,[g_CDemonSet_PTR_005be368]
+        mov EAX,[g_CDemonSetPtr]
         mov dword ptr [EAX + 0x15aa8c],0xffffb7bc
         mov dword ptr [EAX + 0x15aa90],0xffffb7bc
         mov EDX,dword ptr [DAT_005bb210]
@@ -157,7 +157,7 @@ __asm {
         fmul float ptr [FLOAT_0058a94e]
         fsubr float ptr [FLOAT_0058a952]
     LAB_004dee88:
-        mov EDX,dword ptr [g_CDemonSet_PTR_005be368]
+        mov EDX,dword ptr [g_CDemonSetPtr]
         call crt_math_c_round_FUN_00563a30
         fistp dword ptr [EBP + -0x4]
         mov EAX,dword ptr [EBP + -0x4]
@@ -167,7 +167,7 @@ __asm {
         cmp EBX,0x2d0
         jnz LAB_004ded89
     LAB_004deeae:
-        mov EAX,[g_CDemonSet_PTR_005be368]
+        mov EAX,[g_CDemonSetPtr]
         push 0x1ccdc50
         mov dword ptr [EAX + 0x15aa88],0x0
         call engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0
@@ -178,7 +178,7 @@ __asm {
         mov EAX,[DAT_01ccdec0]
         sar EAX,0x10
         mov dword ptr [EBP + -0x14],EAX
-        mov EAX,[g_CAlphaBitmap_01ccdc50]
+        mov EAX,[g_MoonCloudTexture]
         mov dword ptr [EBP + -0x1c],EAX
         xor EAX,EAX
         mov dword ptr [EBP + -0x18],EAX

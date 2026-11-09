@@ -43,15 +43,15 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",pcVar9);
   if (iVar2 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-              (g_CEditorTools_PTR_005b6d50,"Can't open %s",pcVar9);
+              (g_CEditorToolsPtr,"Can't open %s",pcVar9);
     this_ptr->bitmap_filename[0] = '\0';
     return;
   }
   iVar3 = this_ptr->bitmap_width * this_ptr->bitmap_height;
   if (iVar2 != iVar3) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-              (g_CEditorTools_PTR_005b6d50,"%s is %d bytes, but expected %dx%d=%d byte file",pcVar9,
-               this_ptr->bitmap_width,this_ptr->bitmap_height,iVar3);
+              (g_CEditorToolsPtr,"%s is %d bytes, but expected %dx%d=%d byte file",pcVar9,this_ptr->bitmap_width,
+               this_ptr->bitmap_height,iVar3);
     this_ptr->bitmap_filename[0] = '\0';
     return;
   }
@@ -80,7 +80,7 @@ void __cdecl core_game_cpp_CGame_FUN_004a57c0(CGame *this_ptr)
   p_Var4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_130,"rb");
   if (p_Var4 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-              (g_CEditorTools_PTR_005b6d50,"Can't open %s",local_130);
+              (g_CEditorToolsPtr,"Can't open %s",local_130);
   }
   else {
     _fread(local_630,1,0x300,p_Var4);

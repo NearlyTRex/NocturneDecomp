@@ -261,7 +261,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
     else {
       iVar7 = _stricmp(local_150,"hasItem");
       if (iVar7 == 0) {
-        if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+        if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
           pcVar17 = "Can't use hasItem condition in multi-player";
           pcVar18 = &DAT_01c08b60;
           do {
@@ -420,7 +420,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
         }
         iVar7 = _stricmp(local_150,"hasKeyMask");
         if (iVar7 == 0) {
-          if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+          if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
             pcVar17 = "Can't use hasKeyMask condition in multi-player";
             pcVar18 = &DAT_01c08b60;
             do {
@@ -581,11 +581,10 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
               return -1;
             }
             local_dc = 0;
-            if ((-1 < g_CDemonSet_PTR_005be368->selected_camera_index) &&
+            if ((-1 < g_CDemonSetPtr->selected_camera_index) &&
                (iVar7 = _stricmp
-                                  (g_CDemonSet_PTR_005be368->cameras
-                                   [g_CDemonSet_PTR_005be368->selected_camera_index].name,local_858)
-               , iVar7 == 0)) {
+                                  (g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].
+                                   name,local_858), iVar7 == 0)) {
               local_dc = 1;
             }
             *parse_position = *parse_position + local_94;
@@ -635,7 +634,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
             if (iVar7 == 0) {
               local_8c = -1;
               sscanf(expression + *parse_position," ( )%n",&local_8c);
-              this_ptr_00 = g_CGame_PTR_005b9354;
+              this_ptr_00 = g_CGamePtr;
               if (local_8c < 2) {
                 pcVar17 = "Error parsing isFadeFinished function.";
                 pcVar18 = &DAT_01c08b60;
@@ -1010,7 +1009,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                     return -1;
                   }
                   core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
-                            (g_CDemonSet_PTR_005be368,local_920,&local_4c,&local_48);
+                            (g_CDemonSetPtr,local_920,&local_4c,&local_48);
                   if (local_4c == (C3DSLight *)0x0) {
                     _sprintf(local_a84,"Spotlight %s doesn't exist.",local_920);
                     pcVar17 = local_a84;
@@ -1053,7 +1052,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                       } while (cVar1 != '\0');
                       return -1;
                     }
-                    local_dc = (uint)(g_CGame_PTR_005b9354->nudity_flag != 0);
+                    local_dc = (uint)(g_CGamePtr->nudity_flag != 0);
                     *parse_position = *parse_position + local_44;
                   }
                   else {
@@ -1185,10 +1184,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(CEventList *this
                               if (local_b4 != 0x0FFFFFFF) {
                                 local_34 = &(local_b4->base).base.location;
                                 local_14 = 0;
-                                for (iVar7 = 0; iVar7 < g_CDemonSet_PTR_005be368->enemy_count;
+                                for (iVar7 = 0; iVar7 < g_CDemonSetPtr->enemy_count;
                                     iVar7 = iVar7 + 1) {
-                                  iVar8 = *(int *)((int)g_CDemonSet_PTR_005be368->enemies + local_14
-                                                  );
+                                  iVar8 = *(int *)((int)g_CDemonSetPtr->enemies + local_14);
                                   if ((((local_b4 == *(CHero **)(iVar8 + 0xbca4)) &&
                                        (iVar9 = (**(code **)(*(int *)(iVar8 + 0x14c) + 0x104))
                                                           (iVar8), iVar9 < 1)) &&

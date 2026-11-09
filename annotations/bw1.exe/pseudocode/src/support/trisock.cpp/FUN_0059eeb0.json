@@ -1,0 +1,162 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [
+    {
+      "addr": "0052c520",
+      "from_addr": "0052c550",
+      "name": "core_netgame.cpp_CNetGame_init_FUN_0052c520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059eeb0",
+    "address_range": [
+      [
+        "0059eeb0",
+        "0059ef19"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "support_trisock.cpp_FUN_0059eeb0",
+    "signature": "void support_trisock_cpp_FUN_0059eeb0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005cf7d8",
+      "is_variadic": false,
+      "name": "crt_wsock32.c_WSAStartup"
+    },
+    {
+      "addr": "005b3740",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_createMutex_FUN_005b3740"
+    },
+    {
+      "addr": "005b3a90",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005b3a90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f8851",
+      "name": "s_initSockets_005f8851",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f885e",
+      "name": "s_support_trisock_cpp_005f885e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8875",
+      "name": "s_Can_t_create_mutex_005f8875",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ae58",
+      "name": "DAT_02c8ae58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052c550",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_init_FUN_0052c520",
+        "estimated_params": 1,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.074074074074074,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 16,
+      "INT_ADD": 7,
+      "INT_AND": 15,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 110
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

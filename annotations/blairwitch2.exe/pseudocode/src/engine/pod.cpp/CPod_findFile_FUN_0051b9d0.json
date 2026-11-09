@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 72,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051b9d0",
+    "address_range": [
+      [
+        "0051b9d0",
+        "0051ba1f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_findFile_FUN_0051b9d0",
+    "signature": "int __cdecl engine_pod_cpp_CPod_findFile_FUN_0051b9d0(CPod *this_ptr,SFoundFileInfo *found_file_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0051a990",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_findFileIndex_FUN_0051a990"
+    },
+    {
+      "addr": "0051aa00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_populateFileInfo_FUN_0051aa00"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.317073170731708,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 42,
+      "INT_ADD": 18,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 19,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 177
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      },
+      {
+        "is_param": true,
+        "name": "found_file_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SFoundFileInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "(*(CPodFile **)&pCVar1->field_0x4,(char *)found_file_info);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "(*(CPodFile **)&pCVar1->field_0x4,file_index,found_file_info);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar1 = (CPod *)&pCVar1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 21,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPod *)&pCVar1->field_0x4;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPod",
+        "offset": 0,
+        "vtable_addr": "005fad6c"
+      },
+      {
+        "class_name": "CDemonPod",
+        "offset": 8,
+        "vtable_addr": "005fadd4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

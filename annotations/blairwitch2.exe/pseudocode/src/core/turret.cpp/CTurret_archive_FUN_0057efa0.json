@@ -1,0 +1,299 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 145,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 108
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057efa0",
+    "address_range": [
+      [
+        "0057efa0",
+        "0057f0ac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_turret.cpp_CTurret_archive_FUN_0057efa0",
+    "signature": "void __cdecl core_turret_cpp_CTurret_archive_FUN_0057efa0(CTurret *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040b550",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveOrientation_FUN_0040b550"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "00589d60",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_archive_FUN_00589d60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ed74c",
+      "name": "s_homeOrient_005ed74c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed757",
+      "name": "s_state_005ed757",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed75d",
+      "name": "s_activateEvent_005ed75d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed76b",
+      "name": "s_chargeTime_005ed76b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed776",
+      "name": "s_patrolTime_005ed776",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed781",
+      "name": "s_powerDownTime_005ed781",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed78f",
+      "name": "s_fireDelayTime_005ed78f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed79d",
+      "name": "s_timer_005ed79d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed7a3",
+      "name": "s_guardZoneTriggerPtr_005ed7a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed7b7",
+      "name": "s_allowedVictimTypes_005ed7b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed7ca",
+      "name": "s_rotateDegPerSec_005ed7ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed7da",
+      "name": "s_canManualAim_005ed7da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e494",
+      "name": "g_CTurretClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.097222222222222,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "CALL": 13,
+      "CBRANCH": 1,
+      "COPY": 44,
+      "INT_ADD": 30,
+      "INT_AND": 30,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 31,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 15,
+      "INT_SUB": 40,
+      "LOAD": 5,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 295
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x6d4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveOrientation_FUN_0040b550(&this_ptr->field_0x6d4,\"homeOrient\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x85c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x85c,\"state\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x860",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x860,\"activateEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x8c4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8c4,\"chargeTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x8c8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8c8,\"patrolTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x8cc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8cc,\"powerDownTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x8d0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8d0,\"fireDelayTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x8d8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8d8,\"timer\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x8dc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x8dc,\"guardZoneTriggerPtr\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x8e0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x8e0,\"allowedVictimTypes\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x8d4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8d4,\"rotateDegPerSec\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x9b4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x9b4,\"canManualAim\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fd544"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

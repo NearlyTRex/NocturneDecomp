@@ -1,0 +1,739 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 73,
+    "cross_reference_count": 75,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 67
+  },
+  "cross_references": [
+    {
+      "addr": "0040e680",
+      "from_addr": "0040e696",
+      "name": "core_anvil.cpp_FUN_0040e680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040eaa0",
+      "from_addr": "0040eb7b",
+      "name": "core_armour.cpp_FUN_0040eaa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040f4d0",
+      "from_addr": "0040f4ff",
+      "name": "core_baron.cpp_FUN_0040f4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00412ba0",
+      "from_addr": "004133fa",
+      "name": "core_batman.cpp_FUN_00412ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414b30",
+      "from_addr": "00414d46",
+      "name": "core_biggs.cpp_FUN_00414b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00419740",
+      "from_addr": "004198cc",
+      "name": "core_bodypart.cpp_FUN_00419740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041bb40",
+      "from_addr": "0041bb63",
+      "name": "core_boneguy.cpp_FUN_0041bb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004253c0",
+      "from_addr": "00425419",
+      "name": "core_bugs.cpp_FUN_004253c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004287e0",
+      "from_addr": "00428802",
+      "name": "core_carved.cpp_FUN_004287e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432f10",
+      "from_addr": "004330bc",
+      "name": "core_charactr.cpp_FUN_00432f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004459c0",
+      "from_addr": "004459d2",
+      "name": "core_constrct.cpp_FUN_004459c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00445cb0",
+      "from_addr": "00446d60",
+      "name": "core_constrct.cpp_FUN_00445cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004478a0",
+      "from_addr": "004478b9",
+      "name": "core_conveyor.cpp_FUN_004478a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044b6f0",
+      "from_addr": "0044b740",
+      "name": "core_curtain.cpp_FUN_0044b6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458bc0",
+      "from_addr": "00458be7",
+      "name": "core_demnfolk.cpp_FUN_00458bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459100",
+      "from_addr": "0045a2d1",
+      "name": "core_demnfolk.cpp_FUN_00459100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00469550",
+      "from_addr": "0046956e",
+      "name": "core_doc.cpp_FUN_00469550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004737b0",
+      "from_addr": "00473898",
+      "name": "core_doc.cpp_FUN_004737b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00476430",
+      "from_addr": "0047643c",
+      "name": "core_doc.cpp_FUN_00476430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477540",
+      "from_addr": "00477686",
+      "name": "core_door.cpp_FUN_00477540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477ab0",
+      "from_addr": "00477b07",
+      "name": "core_door.cpp_FUN_00477ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b510",
+      "from_addr": "0047c322",
+      "name": "core_dracbrid.cpp_FUN_0047b510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f310",
+      "from_addr": "0049f352",
+      "name": "core_emitter.cpp_FUN_0049f310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a0ab0",
+      "from_addr": "004a0b5d",
+      "name": "core_enemy.cpp_FUN_004a0ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a0fe0",
+      "from_addr": "004a0fff",
+      "name": "core_enemy.cpp_FUN_004a0fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aaee0",
+      "from_addr": "004aaefb",
+      "name": "core_event.cpp_CRuleList_findFirst_FUN_004aaee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1d00",
+      "from_addr": "004a226a",
+      "name": "core_event.cpp_FUN_004a1d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b7b90",
+      "from_addr": "004b7bc9",
+      "name": "core_flame.cpp_FUN_004b7b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b91d0",
+      "from_addr": "004b91e6",
+      "name": "core_flamecan.cpp_FUN_004b91d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bc830",
+      "from_addr": "004bc87f",
+      "name": "core_fldnotes.cpp_FUN_004bc830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d27db",
+      "name": "core_game.cpp_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e3a40",
+      "from_addr": "004e3a51",
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004e3a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e19c0",
+      "from_addr": "004e19e8",
+      "name": "core_glass.cpp_CGlass_process_FUN_004e19c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e69e0",
+      "from_addr": "004e6a28",
+      "name": "core_grave.cpp_CGrave_process_FUN_004e69e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8ef0",
+      "from_addr": "004e8f1b",
+      "name": "core_gun.cpp_FUN_004e8ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed2b0",
+      "from_addr": "004ed35a",
+      "name": "core_hiram.cpp_FUN_004ed2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed890",
+      "from_addr": "004eee50",
+      "name": "core_hostage.cpp_FUN_004ed890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f0a20",
+      "from_addr": "004f0a40",
+      "name": "core_hpriest.cpp_FUN_004f0a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502e20",
+      "from_addr": "00502e3d",
+      "name": "core_litecone.cpp_CLightCone_process_FUN_00502e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f630",
+      "from_addr": "0050f70f",
+      "name": "core_mimic.cpp_FUN_0050f630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051b7b0",
+      "from_addr": "0051b89a",
+      "name": "core_mission.cpp_FUN_0051b7b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051ce40",
+      "from_addr": "0051d0be",
+      "name": "core_mobster.cpp_FUN_0051ce40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005204e0",
+      "from_addr": "00520801",
+      "name": "core_moloch.cpp_FUN_005204e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00531b10",
+      "from_addr": "00531b72",
+      "name": "core_npc.cpp_FUN_00531b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00531ba0",
+      "from_addr": "00531bbe",
+      "name": "core_npc.cpp_FUN_00531ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532af0",
+      "from_addr": "00532b49",
+      "name": "core_passngr.cpp_FUN_00532af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537020",
+      "from_addr": "00537043",
+      "name": "core_pendulum.cpp_FUN_00537020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00539810",
+      "from_addr": "00539870",
+      "name": "core_platfrm.cpp_FUN_00539810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053a520",
+      "from_addr": "0053a582",
+      "name": "core_platfrm.cpp_FUN_0053a520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00540930",
+      "from_addr": "0054095b",
+      "name": "core_rifle.cpp_FUN_00540930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "00545e9b",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005542c0",
+      "from_addr": "00554387",
+      "name": "core_set.cpp_FUN_005542c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055dbf0",
+      "from_addr": "0055dc16",
+      "name": "core_shadow.cpp_FUN_0055dbf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fbf0",
+      "from_addr": "0055fc32",
+      "name": "core_shadow.cpp_FUN_0055fbf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fc60",
+      "from_addr": "0055fc92",
+      "name": "core_shadow.cpp_FUN_0055fc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00560510",
+      "from_addr": "00560531",
+      "name": "core_shadowsc.cpp_FUN_00560510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00561120",
+      "from_addr": "0056112d",
+      "name": "core_shadowsc.cpp_FUN_00561120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005611a0",
+      "from_addr": "005611d7",
+      "name": "core_shadowsc.cpp_FUN_005611a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005627a0",
+      "from_addr": "005627d2",
+      "name": "core_simbox.cpp_FUN_005627a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c220",
+      "from_addr": "0056c8bf",
+      "name": "core_smiley.cpp_FUN_0056c220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005831b0",
+      "from_addr": "005831dc",
+      "name": "core_spike.cpp_FUN_005831b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591d50",
+      "from_addr": "00591d5c",
+      "name": "core_stranger.cpp_CStranger_getDeathState_FUN_00591d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00585b00",
+      "from_addr": "00585b1e",
+      "name": "core_stranger.cpp_FUN_00585b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00592320",
+      "from_addr": "00592775",
+      "name": "core_succubus.cpp_FUN_00592320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a5550",
+      "from_addr": "005a6235",
+      "name": "core_vampboss.cpp_FUN_005a5550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaeb0",
+      "from_addr": "005aaf2e",
+      "name": "core_wateract.cpp_FUN_005aaeb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ae580",
+      "from_addr": "005ae7ad",
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ae190",
+      "from_addr": "005ae31f",
+      "name": "core_weather.cpp_FUN_005ae190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b81d0",
+      "from_addr": "005b81f1",
+      "name": "core_xform.cpp_FUN_005b81d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bafb0",
+      "from_addr": "005bc1e3",
+      "name": "core_zombie.cpp_FUN_005bafb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415fc0",
+      "from_addr": "00416407",
+      "name": "unkafter_alphabit.cpp_FUN_00415fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415690",
+      "from_addr": "004156f5",
+      "name": "unkafter_bird.cpp_FUN_00415690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415730",
+      "from_addr": "0041574e",
+      "name": "unkafter_bird.cpp_FUN_00415730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ff00",
+      "from_addr": "0045ff22",
+      "name": "unkafter_djien.cpp_FUN_0045ff00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00460230",
+      "from_addr": "00460364",
+      "name": "unkafter_djien.cpp_FUN_00460230",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a6c30",
+    "address_range": [
+      [
+        "004a6c30",
+        "004a6c8a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30",
+    "signature": "int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList *this_ptr,char *condition_expression)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a6d10",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateExpression_FUN_004a6d10"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    },
+    {
+      "addr": "00445430",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00445430"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005de189",
+      "name": "DAT_005de189",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005de18e",
+      "name": "DAT_005de18e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00611100",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007db5f0"
+    },
+    {
+      "addr": "007db5f0",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01c56ecc",
+      "name": "DAT_01c56ecc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c56ed0",
+      "name": "DAT_01c56ed0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "004a226a",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a3170",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a4f20",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a595c",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00477686",
+        "call_type": "direct",
+        "caller": "core_door.cpp_FUN_00477540",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d27db",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051b89a",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_0051b7b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00545e9b",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00545f03",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00545f79",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.636363636363637,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 29,
+      "INT_ADD": 9,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 21,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 10,
+      "INT_SUB": 12,
+      "INT_XOR": 3,
+      "LOAD": 7,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 153
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "condition_expression",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005de189",
+      "severity": "mild",
+      "text": "iVar2 = _stricmp(condition_expression,&DAT_005de189);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005de18e",
+      "severity": "mild",
+      "text": "engine_console_cpp_FUN_00445430(g_CConsolePtr,&DAT_005de18e,&DAT_01c56ed0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_01c56ed0",
+      "severity": "mild",
+      "text": "engine_console_cpp_FUN_00445430(g_CConsolePtr,&DAT_005de18e,&DAT_01c56ed0);",
+      "type": "undefined_data"
+    }
+  ]
+}

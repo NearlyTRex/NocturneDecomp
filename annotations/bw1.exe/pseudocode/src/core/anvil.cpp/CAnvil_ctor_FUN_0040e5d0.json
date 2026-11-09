@@ -1,0 +1,227 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 166,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 12,
+    "suspect_types": [
+      "negative_offset",
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "0040e5a0",
+      "from_addr": "0040e5b3",
+      "name": "core_anvil.cpp_factoryFuncAnvil_FUN_0040e5a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e5d0",
+    "address_range": [
+      [
+        "0040e5d0",
+        "0040e65a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_anvil.cpp_CAnvil_ctor_FUN_0040e5d0",
+    "signature": "CAnvil * __cdecl core_anvil_cpp_CAnvil_ctor_FUN_0040e5d0(CAnvil *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004085c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004085c0"
+    },
+    {
+      "addr": "00468860",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00468860"
+    },
+    {
+      "addr": "00468950",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040e5b3",
+        "call_type": "direct",
+        "caller": "core_anvil.cpp_factoryFuncAnvil_FUN_0040e5a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 30,
+      "INT_ADD": 21,
+      "INT_AND": 16,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 13,
+      "LOAD": 8,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 160
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAnvil *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CAnvilVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CAnvilVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x64 = 0x41c80000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x68 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x6c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x6c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar4->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 31,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "severity": "moderate",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAnvil",
+        "offset": 0,
+        "vtable_addr": "005fb794"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

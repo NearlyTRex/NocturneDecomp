@@ -27,7 +27,7 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_00486e40(CExplosion *this_ptr
     (this_ptr->position).y = position->y;
     (this_ptr->position).z = position->z;
   }
-  this_ptr_00 = g_CDemonSet_PTR_005be368;
+  this_ptr_00 = g_CDemonSetPtr;
   this_ptr->lifetime = 1.0;
   this_ptr->scale = scale;
   core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660(this_ptr_00,200.0,0.0,0.0,2.0);

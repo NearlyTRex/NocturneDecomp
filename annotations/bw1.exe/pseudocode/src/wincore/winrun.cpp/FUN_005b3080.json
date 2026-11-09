@@ -1,0 +1,203 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_noreturn",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "005030e0",
+      "from_addr": "00503168",
+      "name": "core_main.c_FUN_005030e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b3080",
+    "address_range": [
+      [
+        "005b3080",
+        "005b30cc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_FUN_005b3080",
+    "signature": "void __cdecl wincore_winrun_cpp_FUN_005b3080(char *message)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "EXTERNAL:00000055",
+      "is_variadic": false,
+      "name": "ExitProcess"
+    },
+    {
+      "addr": "EXTERNAL:0000003c",
+      "is_variadic": false,
+      "name": "MessageBoxA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d04dc",
+      "name": "PTR_MessageBoxA_005d04dc",
+      "type": "void*",
+      "value": "001d0b66"
+    },
+    {
+      "addr": "005d0544",
+      "name": "PTR_ExitProcess_005d0544",
+      "type": "void*",
+      "value": "001d0d10"
+    },
+    {
+      "addr": "005f9c7a",
+      "name": "s_s_File_s_Line_d_005f9c7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f9e9d",
+      "name": "s_Nocturne_005f9e9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006260dc",
+      "name": "PTR_s_Nocturne_006260dc",
+      "type": "void*",
+      "value": "005f9e9d"
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9a630",
+      "name": "DAT_02c9a630",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9be68",
+      "name": "DAT_02c9be68",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00503168",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_005030e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 2,
+      "COPY": 20,
+      "INT_ADD": 2,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 16,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "message",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02c9a630",
+      "severity": "mild",
+      "text": "(&DAT_02c9a630,\"%s\\n\\nFile: %s\\nLine: %d\",message,_DAT_01d1d400,_DAT_01d1d404);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_02c9a630",
+      "severity": "mild",
+      "text": "MessageBoxA(_DAT_02c9be68,&DAT_02c9a630,PTR_s_Nocturne_006260dc,0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 10,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ]
+}

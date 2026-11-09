@@ -1,0 +1,334 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 67,
+    "cross_reference_count": 12,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "004770c0",
+      "from_addr": "004770f9",
+      "name": "core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_004770c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473b20",
+      "from_addr": "00473c55",
+      "name": "core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00476300",
+      "from_addr": "0047640c",
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00476300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00476c30",
+      "from_addr": "00476cc2",
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00476c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004746b0",
+      "from_addr": "00474719",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477550",
+      "from_addr": "00477604",
+      "name": "core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00477550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00477430",
+      "from_addr": "004774e5",
+      "name": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_00477430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473e10",
+      "from_addr": "00473f7c",
+      "name": "core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004764c0",
+      "from_addr": "004767d5",
+      "name": "core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_004764c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00472c60",
+      "from_addr": "004730a5",
+      "name": "core_dtrace.cpp_FUN_00472c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473390",
+      "from_addr": "004736cc",
+      "name": "core_dtrace.cpp_FUN_00473390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004738d0",
+      "from_addr": "004739c7",
+      "name": "core_dtrace.cpp_FUN_004738d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00472af0",
+    "address_range": [
+      [
+        "00472af0",
+        "00472b4e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0",
+    "signature": "CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00472af0(CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "00474719",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004739c7",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_004738d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00473c55",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00473b20",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004770f9",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_004770c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004730a5",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_00472c60",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004736cc",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_00473390",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00476cc2",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00476c30",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00473f7c",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00473e10",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00477604",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00477550",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004774e5",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_00477430",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.809523809523809,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CBRANCH": 6,
+      "COPY": 39,
+      "INT_ADD": 21,
+      "INT_AND": 53,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 4,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SEXT": 9,
+      "INT_SLESS": 18,
+      "INT_SUB": 9,
+      "INT_XOR": 3,
+      "LOAD": 16,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 3,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 286
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "grid_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_z",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "(((grid_x < *(int *)&this_ptr->field_0x40 && (grid_y < *(int *)&this_ptr->field_0x44)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "(((grid_x < *(int *)&this_ptr->field_0x40 && (grid_y < *(int *)&this_ptr->field_0x44)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "(iVar1 = *(int *)&this_ptr->field_0x48, grid_z < iVar1)))) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x50 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "(grid_y * iVar1 + grid_z + grid_x * *(int *)&this_ptr->field_0x44 * iVar1) * 0x34);",
+      "type": "unnamed_field"
+    }
+  ]
+}

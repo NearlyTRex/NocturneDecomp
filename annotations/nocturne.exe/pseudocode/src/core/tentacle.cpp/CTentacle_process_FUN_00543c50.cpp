@@ -145,8 +145,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
                 iVar4 = iVar4 + 1;
                 fStack_18 = CStack_7c.y;
                 core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-                          (g_CGore_PTR_005b96c4,&CStack_a0,&CStack_7c,
-                           ((this_ptr->base).victim)->blood_type);
+                          (g_CGorePtr,&CStack_a0,&CStack_7c,((this_ptr->base).victim)->blood_type);
               } while (iVar4 < 0x46);
             }
           }

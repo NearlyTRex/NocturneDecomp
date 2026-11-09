@@ -1,0 +1,149 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 20,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "004cad20",
+      "from_addr": "004cade7",
+      "name": "core_gabriela.cpp_FUN_004cad20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057c57e",
+      "from_addr": "0057c5e2",
+      "name": "core_sound.cpp_FUN_0057c57e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ce10",
+      "from_addr": "0057d4f0",
+      "name": "core_sound.cpp_FUN_0057ce10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005af040",
+      "from_addr": "005af17f",
+      "name": "core_weather.cpp_CWeather_setOriginAndRotation_FUN_005af040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005592b0",
+    "address_range": [
+      [
+        "005592b0",
+        "005592be"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_disableIgnore_FUN_005592b0",
+    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005592b0(CDemonSet *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0057d4f0",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0057ce10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005af17f",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_CWeather_setOriginAndRotation_FUN_005af040",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cade7",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_FUN_004cad20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057c5e2",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0057c57e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 3,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 9
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x15f6ac",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x15f6ac = 0xffffffff;",
+      "type": "unnamed_field"
+    }
+  ]
+}

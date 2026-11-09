@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 50,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 62,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 92,
-        "message": "use of undeclared identifier '_DAT_005a18f0'; did you mean 'DAT_005a16f0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_005a18f0'; did you mean 'DAT_005a16f0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_005a18f0'; did you mean 'DAT_005a16f0'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 353,
@@ -249,19 +213,19 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005b96c4",
-      "name": "g_CGore_PTR_005b96c4",
+      "name": "g_CGorePtr",
       "type": "CGore*",
       "value": "01c78c7c"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -291,67 +255,67 @@
     },
     {
       "addr": "01c74640",
-      "name": "g_CDemonLight_01c74640",
+      "name": "g_CDemonLightInstance",
       "type": "CDemonLight",
       "value": null
     },
     {
       "addr": "01c74740",
-      "name": "g_CDemonLight_01c74640.base.fixed_point_scale",
+      "name": "g_CDemonLightInstance.base.fixed_point_scale",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74744",
-      "name": "g_CDemonLight_01c74640.base.position.x",
+      "name": "g_CDemonLightInstance.base.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74748",
-      "name": "g_CDemonLight_01c74640.base.position.y",
+      "name": "g_CDemonLightInstance.base.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7474c",
-      "name": "g_CDemonLight_01c74640.base.position.z",
+      "name": "g_CDemonLightInstance.base.position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74750",
-      "name": "g_CDemonLight_01c74640.base.rotation_matrix.m[0].x",
+      "name": "g_CDemonLightInstance.base.rotation_matrix.m[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74778",
-      "name": "g_CDemonLight_01c74640.base.focal_length",
+      "name": "g_CDemonLightInstance.base.focal_length",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762fc",
-      "name": "g_CDemonLight_01c74640.volumetric_enabled",
+      "name": "g_CDemonLightInstance.volumetric_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c76300",
-      "name": "g_CDemonLight_01c74640.shadow_map_width",
+      "name": "g_CDemonLightInstance.shadow_map_width",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c76304",
-      "name": "g_CDemonLight_01c74640.shadow_map_height",
+      "name": "g_CDemonLightInstance.shadow_map_height",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77804",
-      "name": "g_CGame_01c775ec.geometry_debug_enabled",
+      "name": "g_CGameInstance.geometry_debug_enabled",
       "type": "undefined4",
       "value": null
     },
@@ -363,31 +327,31 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb860c",
-      "name": "g_CDemonCamera_01fb8508.position.x",
+      "name": "g_CDemonCameraInstance.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8610",
-      "name": "g_CDemonCamera_01fb8508.position.y",
+      "name": "g_CDemonCameraInstance.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8614",
-      "name": "g_CDemonCamera_01fb8508.position.z",
+      "name": "g_CDemonCameraInstance.position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     },
@@ -591,23 +555,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_renderGogglesView_FUN_0050a260.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 39,
-          "line": 115,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -630,7 +577,7 @@
       "line": 43,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[2].z) {",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
     },
     {
@@ -638,7 +585,7 @@
       "line": 55,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 != &g_CDemonCamera_01fb8508.rotation_matrix.m[2].z) {",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonCameraInstance.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
     },
     {
@@ -670,7 +617,7 @@
       "line": 44,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CDemonLight_01c74640.base.position.x = local_2c.x;",
+      "text": "g_CDemonLightInstance.base.position.x = local_2c.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -678,7 +625,7 @@
       "line": 56,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CDemonCamera_01fb8508.position.x = local_2c.x;",
+      "text": "g_CDemonCameraInstance.position.x = local_2c.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -688,14 +635,6 @@
       "severity": "moderate",
       "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 115,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "((int)((iVar3 + (iVar3 >> 0x1f) * -0x80) - (uint)((iVar3 >> 0x1f) << 6 < 0)) >> 7) +",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

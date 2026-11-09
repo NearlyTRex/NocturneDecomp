@@ -13,11 +13,11 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
 ;   int g_UseExternalRenderer
-;   undefined4 g_CGame_01c775ec.suppress_set_geometry
+;   undefined4 g_CGameInstance.suppress_set_geometry
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004d76e0
@@ -36,8 +36,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 0050df44
     MOV EAX,dword ptr [ESP + 0x18]      ; 0050df48
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0050df4c
-    MOV EBX,dword ptr [0x005b9354]      ; 0050df50 | g_CGame_PTR_005b9354
-    CMP dword ptr [EBX + 0x1f0],0x0     ; 0050df56 | g_CGame_01c775ec.suppress_set_geometry
+    MOV EBX,dword ptr [0x005b9354]      ; 0050df50 | g_CGamePtr
+    CMP dword ptr [EBX + 0x1f0],0x0     ; 0050df56 | g_CGameInstance.suppress_set_geometry
     JNZ 0x0050df99                      ; 0050df5d
         ;   XREF to: 0050df99 (CONDITIONAL_JUMP)  ; LAB_0050df99
     MOV EBX,dword ptr [0x005ae704]      ; 0050df5f | g_CDemonRenderer_PTR_005ae704

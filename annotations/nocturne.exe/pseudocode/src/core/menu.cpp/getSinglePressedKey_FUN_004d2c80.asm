@@ -5,10 +5,10 @@
 ;
 ;
 ; Referenced Globals:
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   CGame g_CGame_01c775ec
-;   undefined4 g_CGame_01c775ec.game_control
+;   CGame g_CGameInstance
+;   undefined4 g_CGameInstance.game_control
 ;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
@@ -21,8 +21,8 @@ section .text
     PUSH EBX                            ; 004d2c80
         ;   Label: core_menu.cpp_getSinglePressedKey_FUN_004d2c80
     PUSH ESI                            ; 004d2c81
-    MOV EAX,[0x005b9354]                ; 004d2c82 | g_CGame_PTR_005b9354
-    CMP dword ptr [EAX + 0xbc],0x2      ; 004d2c87 | g_CGame_01c775ec.game_control
+    MOV EAX,[0x005b9354]                ; 004d2c82 | g_CGamePtr
+    CMP dword ptr [EAX + 0xbc],0x2      ; 004d2c87 | g_CGameInstance.game_control
     JZ 0x004d2cb5                       ; 004d2c8e
         ;   XREF to: 004d2cb5 (CONDITIONAL_JUMP)  ; LAB_004d2cb5
     MOV ESI,0xffffffff                  ; 004d2c90
@@ -45,7 +45,7 @@ section .text
     POP ESI                             ; 004d2cb2
     POP EBX                             ; 004d2cb3
     RET                                 ; 004d2cb4
-    PUSH EAX                            ; 004d2cb5 | g_CGame_01c775ec
+    PUSH EAX                            ; 004d2cb5 | g_CGameInstance
         ;   Label: LAB_004d2cb5
     CALL core_game.cpp_CGame_resetKeyState_FUN_0049e8b0 ; 004d2cb6
         ;   XREF to: 0049e8b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_0049e8b0(CGame * this_ptr)

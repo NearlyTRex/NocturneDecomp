@@ -29,7 +29,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_004feff0(CScript *this_ptr)
   iVar3 = g_LocalHeroIndex;
   this_ptr->who_is_speaking = (CDemonActor *)0x0;
   this_ptr->focus_actor = (CDemonActor *)g_HeroActors[iVar3];
-  pCVar2 = g_CGame_PTR_005b9354;
+  pCVar2 = g_CGamePtr;
   this_ptr->focus_actor_changed = 1;
   pCVar2->allow_damage_flag = 1;
   pCVar2->allow_enemy_attack_flag = 1;
@@ -37,7 +37,7 @@ void __cdecl core_script_cpp_CScript_initRuntime_FUN_004feff0(CScript *this_ptr)
   _DAT_01e56c20 = 0;
   this_ptr->message_duration = -1.0;
   this_ptr->saved_cmd_index = -1;
-  pcVar6 = g_CDemonSet_PTR_005be368->geometry_filename;
+  pcVar6 = g_CDemonSetPtr->geometry_filename;
   this_ptr->call_stack_count = 0;
   _DAT_01e56c28 = 0;
   this_ptr->focus_actor_locked = 0;

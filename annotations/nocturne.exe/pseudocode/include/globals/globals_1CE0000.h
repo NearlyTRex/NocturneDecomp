@@ -12,7 +12,7 @@
 // =============================================================================
 
 // CNetGame
-extern CNetGame g_CNetGame_01cea280;
+extern CNetGame g_CNetGameInstance;
 
 // SChatHistory[400]
 extern SChatHistory g_SChatHistory_ARRAY_01cea410[400];

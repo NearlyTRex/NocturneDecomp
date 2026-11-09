@@ -1,0 +1,196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 26,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
+  },
+  "cross_references": [
+    {
+      "addr": "00414750",
+      "from_addr": "0041478d",
+      "name": "core_bodypart.cpp_CBodyPart_ctor_FUN_00414750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041efe0",
+      "from_addr": "0041f002",
+      "name": "core_boxactor.cpp_CBoxActor_ctor_FUN_0041efe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4880",
+      "from_addr": "004a4888",
+      "name": "core_fire.cpp_CStake_ctor_FUN_004a4880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049ce90",
+      "from_addr": "0049cea6",
+      "name": "core_fire.cpp_CToss_ctor_FUN_0049ce90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005471c0",
+      "from_addr": "005471e4",
+      "name": "core_simbox.cpp_CSimBox_ctor_FUN_005471c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ad70",
+      "from_addr": "0057ad92",
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_0057ad70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041ad40",
+    "address_range": [
+      [
+        "0041ad40",
+        "0041aded"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBox_ctor_FUN_0041ad40",
+    "signature": "CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041ad40(CBox *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005a30d7"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dc930",
+      "name": "g_SScrapeTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0041478d",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_ctor_FUN_00414750",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057ad92",
+        "call_type": "direct",
+        "caller": "core_weapon.cpp_CWeapon_ctor_FUN_0057ad70",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0041f002",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_ctor_FUN_0041efe0",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049cea6",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CToss_ctor_FUN_0049ce90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a4888",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CStake_ctor_FUN_004a4880",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005471e4",
+        "call_type": "direct",
+        "caller": "core_simbox.cpp_CSimBox_ctor_FUN_005471c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.577777777777778,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 56,
+      "FLOAT2FLOAT": 3,
+      "INT_ADD": 34,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 5,
+      "LOAD": 13,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 161
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBox *"
+      }
+    ]
+  },
+  "suspects": []
+}

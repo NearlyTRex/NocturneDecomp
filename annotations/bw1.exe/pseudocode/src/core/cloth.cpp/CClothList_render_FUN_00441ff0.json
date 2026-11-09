@@ -1,0 +1,136 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 23,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "0042e960",
+      "from_addr": "0042e9ee",
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00592aa0",
+      "from_addr": "00592b4a",
+      "name": "core_succubus.cpp_FUN_00592aa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00441ff0",
+    "address_range": [
+      [
+        "00441ff0",
+        "00442064"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CClothList_render_FUN_00441ff0",
+    "signature": "void __cdecl core_cloth_cpp_CClothList_render_FUN_00441ff0(CClothList *this_ptr,CDeformableModelInstance *model_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00441800",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_render_FUN_00441800"
+    },
+    {
+      "addr": "00441710",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_saveJoinedLight_FUN_00441710"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0042e9ee",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00592b4a",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_FUN_00592aa0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.319148936170213,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 42,
+      "INT_ADD": 15,
+      "INT_AND": 29,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 13,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 203
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": []
+}

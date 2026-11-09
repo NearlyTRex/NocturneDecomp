@@ -1,0 +1,386 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 510,
+    "complexity_score": 221,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 23,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 206,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 716
+  },
+  "cross_references": [
+    {
+      "addr": "0046cee0",
+      "from_addr": "0046cefd",
+      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046cf30",
+      "from_addr": "0046cf9e",
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048114e",
+      "from_addr": "004811ca",
+      "name": "shape_edittool.cpp_FUN_0048114e",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e56b0",
+    "address_range": [
+      [
+        "004e56b0",
+        "004e5def"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_matrixPushAndTransform_FUN_004e56b0",
+    "signature": "void __cdecl engine_matrix_c_matrixPushAndTransform_FUN_004e56b0(int rot_x,int rot_y,int rot_z,int translate_x,int translate_y,int translate_z)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "004e4d90",
+      "is_variadic": false,
+      "name": "engine_matrix.c_FUN_004e4d90"
+    },
+    {
+      "addr": "004e4dd0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_FUN_004e4dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c6eda",
+      "name": "s_engine_matrix_c_005c6eda",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6eed",
+      "name": "s_Matrix_unbalance_005c6eed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01c6e2cc",
+      "name": "DAT_01c6e2cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2d0",
+      "name": "DAT_01c6e2d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2d4",
+      "name": "DAT_01c6e2d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2f0",
+      "name": "DAT_01c6e2f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2f4",
+      "name": "DAT_01c6e2f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2f8",
+      "name": "DAT_01c6e2f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2fc",
+      "name": "DAT_01c6e2fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e300",
+      "name": "DAT_01c6e300",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e304",
+      "name": "DAT_01c6e304",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e308",
+      "name": "DAT_01c6e308",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e30c",
+      "name": "DAT_01c6e30c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e310",
+      "name": "DAT_01c6e310",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e314",
+      "name": "DAT_01c6e314",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e318",
+      "name": "DAT_01c6e318",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e31c",
+      "name": "DAT_01c6e31c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d72690",
+      "name": "DAT_01d72690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d72694",
+      "name": "DAT_01d72694",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d72698",
+      "name": "DAT_01d72698",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d726a0",
+      "name": "DAT_01d726a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.570564516129032,
+    "instruction_count": 496,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 307,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 2,
+      "COPY": 443,
+      "INT_2COMP": 3,
+      "INT_ADD": 174,
+      "INT_AND": 962,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 292,
+      "INT_LEFT": 61,
+      "INT_LESS": 5,
+      "INT_MULT": 112,
+      "INT_NOTEQUAL": 247,
+      "INT_OR": 368,
+      "INT_RIGHT": 122,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 44,
+      "INT_SEXT": 183,
+      "INT_SLESS": 237,
+      "INT_SUB": 145,
+      "INT_XOR": 61,
+      "LOAD": 121,
+      "POPCOUNT": 115,
+      "RETURN": 2,
+      "STORE": 63,
+      "SUBPIECE": 122
+    },
+    "pcode_op_count": 4251
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "rot_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "rot_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "rot_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "translate_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "translate_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "translate_z",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

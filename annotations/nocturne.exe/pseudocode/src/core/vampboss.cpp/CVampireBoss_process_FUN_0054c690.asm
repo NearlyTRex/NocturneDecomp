@@ -576,8 +576,8 @@ section .text
     CMP EAX,0x2                         ; 0054cc91
     JZ 0x0054cca8                       ; 0054cc94
         ;   XREF to: 0054cca8 (CONDITIONAL_JUMP)  ; LAB_0054cca8
-    MOV EAX,[0x005b9354]                ; 0054cc96 | g_CGame_PTR_005b9354 | g_CGame_01c775ec
-    CMP dword ptr [EAX + 0x228],0x0     ; 0054cc9b | g_CGame_01c775ec.letterbox_mode
+    MOV EAX,[0x005b9354]                ; 0054cc96 | g_CGamePtr | g_CGameInstance
+    CMP dword ptr [EAX + 0x228],0x0     ; 0054cc9b | g_CGameInstance.letterbox_mode
     JZ 0x0054d86e                       ; 0054cca2
         ;   XREF to: 0054d86e (CONDITIONAL_JUMP)  ; LAB_0054d86e
     MOV ESP,EBP                         ; 0054cca8
@@ -1084,9 +1084,9 @@ section .text
     FLD float ptr [0x005a3a84]          ; 0054d239 | FLOAT_005a3a84
         ;   Label: caseD_0
     FMUL float ptr [EBP + 0x18]         ; 0054d23f
-    MOV EAX,[0x005b9354]                ; 0054d242 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 0054d242 | g_CGamePtr
     FSTP float ptr [EBX + 0x2430]       ; 0054d247
-    CMP dword ptr [EAX + 0x228],0x0     ; 0054d24d | g_CGame_01c775ec.letterbox_mode
+    CMP dword ptr [EAX + 0x228],0x0     ; 0054d24d | g_CGameInstance.letterbox_mode
     JZ 0x0054d7f3                       ; 0054d254
         ;   XREF to: 0054d7f3 (CONDITIONAL_JUMP)  ; LAB_0054d7f3
     PUSH 0x5970cc                       ; 0054d25a | = "morphToBat"
@@ -1105,9 +1105,9 @@ section .text
         ;   XREF to: 0054e1a0 (UNCONDITIONAL_CALL)  ; void core_vampboss.cpp_CVampireBoss_transformToBat_FUN_0054e1a0(CVampireBoss * this_ptr)
     ADD ESP,0x4                         ; 0054d286
         ;   Label: LAB_0054d286
-    MOV EAX,[0x005b9354]                ; 0054d289 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 0054d289 | g_CGamePtr
         ;   Label: caseD_1
-    CMP dword ptr [EAX + 0x228],0x0     ; 0054d28e | g_CGame_01c775ec.letterbox_mode
+    CMP dword ptr [EAX + 0x228],0x0     ; 0054d28e | g_CGameInstance.letterbox_mode
     JNZ 0x0054d303                      ; 0054d295
         ;   XREF to: 0054d303 (CONDITIONAL_JUMP)  ; LAB_0054d303
     CMP EDI,0x2                         ; 0054d297
@@ -1238,10 +1238,10 @@ section .text
     XOR EAX,EAX                         ; 0054d41f
     XOR EDI,ESI                         ; 0054d421
     MOV dword ptr [ESP + 0x224],EAX     ; 0054d423
-    MOV EAX,[0x005be368]                ; 0054d42a | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0054d42a | g_CDemonSetPtr
         ;   Label: LAB_0054d42a
     MOV EDX,dword ptr [ESP + 0x224]     ; 0054d42f
-    CMP EDX,dword ptr [EAX + 0x150bf4]  ; 0054d436 | g_CDemonSet_01e57284.enemy_count
+    CMP EDX,dword ptr [EAX + 0x150bf4]  ; 0054d436 | g_CDemonSetInstance.enemy_count
     JGE 0x0054d1bb                      ; 0054d43c
         ;   XREF to: 0054d1bb (CONDITIONAL_JUMP)  ; LAB_0054d1bb
     MOV ESI,dword ptr [0x02dd1144]      ; 0054d442 | g_CTVBatActorType_02dd110c.name_hash
@@ -1564,7 +1564,7 @@ section .text
     ADD EBX,0x2440                      ; 0054d882
     FSTP float ptr [ESP]                ; 0054d888
     PUSH EBX                            ; 0054d88b
-    PUSH EAX                            ; 0054d88c | g_CGame_01c775ec
+    PUSH EAX                            ; 0054d88c | g_CGameInstance
     CALL core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0 ; 0054d88d
         ;   XREF to: 004a3ab0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0(CGame * this_ptr, char * name, float value, float duration)
     ADD ESP,0x10                        ; 0054d892

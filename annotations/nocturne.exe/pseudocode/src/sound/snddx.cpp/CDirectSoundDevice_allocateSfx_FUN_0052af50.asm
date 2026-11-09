@@ -17,9 +17,9 @@
 ;   TerminatedCString s_DirectSoundDevice_alloca_00594403
 ;   TerminatedCString s_Duplicate_sound_buffer_00594435
 ;   TerminatedCString s_get_DirectSound3DBuffer_0059444c
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
 ;   undefined4 DAT_005c3918
-;   CConsole g_CConsole_0077ad0c
+;   CConsole g_CConsoleInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc9214
@@ -195,8 +195,8 @@ section .text
         ;   XREF to: 0052af92 (UNCONDITIONAL_JUMP)  ; LAB_0052af92
     PUSH 0x594403                       ; 0052b100 | = "DirectSoundDevice::allocateSfx - no f..."
         ;   Label: LAB_0052b100
-    MOV EBX,dword ptr [0x005ad350]      ; 0052b105 | g_CConsole_PTR_005ad350
-    PUSH EBX                            ; 0052b10b | g_CConsole_0077ad0c
+    MOV EBX,dword ptr [0x005ad350]      ; 0052b105 | g_CConsolePtr
+    PUSH EBX                            ; 0052b10b | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0052b10c
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0052b111

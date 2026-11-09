@@ -1,0 +1,136 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 53,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "00517f10",
+      "from_addr": "00517f36",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00517f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00516250",
+    "address_range": [
+      [
+        "00516250",
+        "0051626e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_00516250",
+    "signature": "int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_00516250(CPackedBitmap *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00517f36",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00517f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.714285714285714,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CBRANCH": 1,
+      "COPY": 13,
+      "INT_ADD": 9,
+      "INT_AND": 20,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 9,
+      "INT_LEFT": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 6,
+      "INT_SUB": 2,
+      "INT_XOR": 2,
+      "LOAD": 7,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 94
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x20 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "return (*(int *)&this_ptr->field_0x1c + 1) * 4 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(int *)(*(int *)&this_ptr->field_0x20 + *(int *)&this_ptr->field_0x1c * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(int *)(*(int *)&this_ptr->field_0x20 + *(int *)&this_ptr->field_0x1c * 4);",
+      "type": "unnamed_field"
+    }
+  ]
+}

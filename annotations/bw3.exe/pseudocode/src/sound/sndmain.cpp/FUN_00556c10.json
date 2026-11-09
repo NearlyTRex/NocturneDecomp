@@ -1,0 +1,158 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 48,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "0048c2e0",
+      "from_addr": "0048e040",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c4a60",
+      "from_addr": "004c4aa5",
+      "name": "core_game.cpp_FUN_004c4a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c4bc0",
+      "from_addr": "004c4c42",
+      "name": "core_game.cpp_FUN_004c4bc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00556c10",
+    "address_range": [
+      [
+        "00556c10",
+        "00556c5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00556c10",
+    "signature": "int __cdecl sound_sndmain_cpp_FUN_00556c10(uint sfx_handle,float target_volume,float fade_duration,int stop_after_fade)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552f10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00552f10"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556fd0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.954545454545454,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 30,
+      "FLOAT2FLOAT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 12,
+      "INT_AND": 11,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "LOAD": 7,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 109
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "target_volume",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "fade_duration",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "stop_after_fade",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(float *)&pCVar1->field_0xfc = target_volume;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "*(float *)&pCVar1->field_0x100 = fade_duration;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(float *)&pCVar1->field_0x104 = (float)stop_after_fade;",
+      "type": "unnamed_field"
+    }
+  ]
+}

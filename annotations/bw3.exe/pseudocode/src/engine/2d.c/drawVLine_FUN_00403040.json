@@ -1,0 +1,399 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 118,
+    "complexity_score": 166,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 56,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 174
+  },
+  "cross_references": [
+    {
+      "addr": "00403170",
+      "from_addr": "0040319d",
+      "name": "engine_2d.c_drawRect_FUN_00403170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b9b0",
+      "from_addr": "0047b9d4",
+      "name": "shape_edittool.cpp_FUN_0047b9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ee50",
+      "from_addr": "0047f3a8",
+      "name": "shape_edittool.cpp_FUN_0047ee50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047fa80",
+      "from_addr": "0048019a",
+      "name": "shape_edittool.cpp_FUN_0047fa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004850a0",
+      "from_addr": "00485259",
+      "name": "shape_edittool.cpp_FUN_004850a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004852f0",
+      "from_addr": "00485424",
+      "name": "shape_edittool.cpp_FUN_004852f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00403040",
+    "address_range": [
+      [
+        "00403040",
+        "00403164"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawVLine_FUN_00403040",
+    "signature": "void __cdecl engine_2d_c_drawVLine_FUN_00403040(int x,int y1,int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b51ba",
+      "name": "s_engine_2d_c_005b51ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b51c9",
+      "name": "s_vLine_invalid_bitsPerPix_005b51c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fba20",
+      "name": "DAT_005fba20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5faec",
+      "name": "DAT_01c5faec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5faf0",
+      "name": "DAT_01c5faf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a8",
+      "name": "DAT_01c6b5a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5ac",
+      "name": "DAT_01c6b5ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b0",
+      "name": "DAT_01c6b5b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b4",
+      "name": "DAT_01c6b5b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5c0",
+      "name": "DAT_01c6b5c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0048019a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047fa80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0040319d",
+        "call_type": "direct",
+        "caller": "engine_2d.c_drawRect_FUN_00403170",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004031a8",
+        "call_type": "direct",
+        "caller": "engine_2d.c_drawRect_FUN_00403170",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00485259",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004850a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00485287",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004850a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00485424",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004852f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004854e1",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004852f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0047f3a8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047ee50",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0047b9d4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047b9b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.131868131868132,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_AND": 5,
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 14,
+      "COPY": 77,
+      "INT_ADD": 37,
+      "INT_AND": 40,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 46,
+      "INT_LESS": 13,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 20,
+      "INT_SUB": 19,
+      "LOAD": 23,
+      "POPCOUNT": 20,
+      "RETURN": 3,
+      "STORE": 9
+    },
+    "pcode_op_count": 376
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 < 0x10) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 != 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "*(byte *)(*(int *)(&DAT_01c5faec + iVar5) + x) = DAT_01c6b5c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01c6b5c0",
+      "severity": "mild",
+      "text": "*(byte *)(*(int *)(&DAT_01c5faec + iVar5) + x) = DAT_01c6b5c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "else if (DAT_005fba20 < 0x11) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_01c6a070",
+      "severity": "mild",
+      "text": "uVar3 = *(ushort *)(&DAT_01c6a070 + _DAT_01c6b5c0 * 2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(&DAT_01c5faec + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 != 0x20) goto LAB_0040313e;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(&DAT_01c5faec + iVar5);",
+      "type": "undefined_data"
+    }
+  ]
+}

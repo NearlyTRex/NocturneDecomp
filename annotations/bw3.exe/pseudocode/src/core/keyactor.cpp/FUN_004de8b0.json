@@ -1,0 +1,242 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 156,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004de8b0",
+    "address_range": [
+      [
+        "004de8b0",
+        "004de94b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_keyactor.cpp_FUN_004de8b0",
+    "signature": "void core_keyactor_cpp_FUN_004de8b0(int param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045ab30",
+      "is_variadic": false,
+      "name": "core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30"
+    },
+    {
+      "addr": "0045aae0",
+      "is_variadic": false,
+      "name": "core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045aae0"
+    },
+    {
+      "addr": "005372f0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_addCoronaGlobe_FUN_005372f0"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c66a9",
+      "name": "DAT_005c66a9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c66ad",
+      "name": "DAT_005c66ad",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c66b5",
+      "name": "DAT_005c66b5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.872340425531915,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "CALL": 4,
+      "CALLOTHER": 1,
+      "COPY": 69,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 2,
+      "INT_ADD": 17,
+      "INT_AND": 92,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 26,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 17,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 8,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 17,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 417
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_keyactor_cpp_FUN_004de8b0(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_keyactor_cpp_FUN_004de8b0(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (CDemonGlobe *)(param_1 + 0x2dc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2d8) = param_2 * _DAT_005c66a9 + *(float *)(param_1 + 0x2d8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2d8) = param_2 * _DAT_005c66a9 + *(float *)(param_1 + 0x2d8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2d8) = param_2 * _DAT_005c66a9 + *(float *)(param_1 + 0x2d8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dglobe_cpp_CDemonGlobe_setPosition_FUN_0045aae0(this_ptr,(CVector3f *)(param_1 + 0x20));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = (float10)fsin((float10)*(float *)(param_1 + 0x2d8));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x318) = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(char *)(param_1 + 0x2f8) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2fc) = 0;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CKeyActor",
+        "offset": 12,
+        "vtable_addr": "005e2154"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

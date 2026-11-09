@@ -1,0 +1,122 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [
+    {
+      "addr": "0042e4b0",
+      "from_addr": "0042e696",
+      "name": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054a3a0",
+    "address_range": [
+      [
+        "0054a3a0",
+        "0054a3bb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_FUN_0054a3a0",
+    "signature": "int __cdecl core_skeleton_cpp_FUN_0054a3a0(CDeformableModel *this_ptr,int bone_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0042e696",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 6,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_EQUAL": 5,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 2
+    },
+    "pcode_op_count": 40
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0xc00",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0xc00 < 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x323c",
+      "severity": "mild",
+      "text": "return *(int *)(&this_ptr->field_0x323c + bone_index * 4);",
+      "type": "unnamed_field"
+    }
+  ]
+}

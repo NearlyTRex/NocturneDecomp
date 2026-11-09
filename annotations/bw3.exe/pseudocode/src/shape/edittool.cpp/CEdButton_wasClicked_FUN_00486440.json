@@ -1,0 +1,282 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 149,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 34,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 108
+  },
+  "cross_references": [
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d826",
+      "name": "shape_edittool.cpp_FUN_0047d230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483970",
+      "from_addr": "00483a80",
+      "name": "shape_edittool.cpp_FUN_00483970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c8e0",
+      "from_addr": "0047ca9e",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c2c0",
+      "from_addr": "0047c6dd",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00486440",
+    "address_range": [
+      [
+        "00486440",
+        "004864e2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdButton_wasClicked_FUN_00486440",
+    "signature": "int __cdecl shape_edittool_cpp_CEdButton_wasClicked_FUN_00486440(CEdButton *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c5bb78",
+      "name": "DAT_01c5bb78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fadc",
+      "name": "DAT_01c5fadc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "DAT_01c5fae0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae4",
+      "name": "DAT_01c5fae4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0047ca9e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00483a80",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483970",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00483bce",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483970",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d826",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c6dd",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c706",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.384615384615385,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CBRANCH": 11,
+      "COPY": 49,
+      "INT_ADD": 14,
+      "INT_AND": 37,
+      "INT_EQUAL": 34,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 6,
+      "INT_SLESS": 16,
+      "INT_SUB": 7,
+      "INT_XOR": 5,
+      "LOAD": 12,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 228
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdButton *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "bVar1 = DAT_01c5fae4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "if ((((*(int *)this_ptr == 0) && (*(int *)&this_ptr->field_0x8 <= _DAT_01c5fadc)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0xc <= _DAT_01c5fae0)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "((_DAT_01c5fadc < *(int *)&this_ptr->field_0x10 &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "(_DAT_01c5fae0 < *(int *)&this_ptr->field_0x14)))) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x18 = iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x18 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "if (((_DAT_01c5bb78 == (CEdButton *)0x0) && ((DAT_01c5fae4 & 1) != 0)) && (iVar2 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x18 = 1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

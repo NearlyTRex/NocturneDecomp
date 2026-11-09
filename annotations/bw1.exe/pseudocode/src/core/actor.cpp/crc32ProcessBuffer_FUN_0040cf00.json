@@ -1,0 +1,139 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 10,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "0040cf40",
+      "from_addr": "0040cf4c",
+      "name": "core_actor.cpp_crc32ProcessInt_FUN_0040cf40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040cf60",
+      "from_addr": "0040cf6c",
+      "name": "core_actor.cpp_crc32ProcessVector_FUN_0040cf60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040cf00",
+    "address_range": [
+      [
+        "0040cf00",
+        "0040cf33"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_crc32ProcessBuffer_FUN_0040cf00",
+    "signature": "void __cdecl core_actor_cpp_crc32ProcessBuffer_FUN_0040cf00(uint *crc_state,byte *buffer,int buffer_length)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce20",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040ce20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0040cf4c",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_crc32ProcessInt_FUN_0040cf40",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040cf6c",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_crc32ProcessVector_FUN_0040cf60",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.375,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 23,
+      "INT_ADD": 9,
+      "INT_AND": 14,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 13,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 105
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "crc_state",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_length",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

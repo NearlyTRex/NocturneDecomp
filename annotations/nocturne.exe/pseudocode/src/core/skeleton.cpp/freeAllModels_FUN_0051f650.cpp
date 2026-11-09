@@ -13,7 +13,7 @@ void __cdecl core_skeleton_cpp_freeAllModels_FUN_0051f650(void)
 {
   CDeformableModel *this_ptr;
   
-  this_ptr = g_CDeformableModel_ARRAY_0268cef4;
+  this_ptr = g_DeformableModelPool;
   do {
     core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(this_ptr);
     this_ptr = this_ptr + 1;

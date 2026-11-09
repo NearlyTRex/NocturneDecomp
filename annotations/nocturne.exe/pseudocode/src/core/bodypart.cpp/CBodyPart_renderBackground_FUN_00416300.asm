@@ -11,13 +11,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_going_into_background_00578f60
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CConsole g_CConsole_0077ad0c
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01b4d738
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
@@ -66,10 +66,10 @@ section .text
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 0041635e
         ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00416363
-    MOV EAX,[0x005be368]                ; 00416366 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 00416366 | g_CDemonSetPtr
     MOV EDX,dword ptr [EBX + 0xc98]     ; 0041636b
     PUSH 0x0                            ; 00416371
-    MOV dword ptr [EAX + 0x15a8a0],EDX  ; 00416373 | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV dword ptr [EAX + 0x15a8a0],EDX  ; 00416373 | g_CDemonSetInstance.disable_directional_lighting
     LEA EAX,[ESP + 0x8]                 ; 00416379
     PUSH EAX                            ; 0041637d
     MOV EDX,dword ptr [EBX + 0x14c]     ; 0041637e
@@ -98,8 +98,8 @@ section .text
     PUSH EAX                            ; 004163b3 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004163b4
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
-    MOV EAX,[0x005be368]                ; 004163b9 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
-    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004163be | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV EAX,[0x005be368]                ; 004163b9 | g_CDemonSetPtr | g_CDemonSetInstance
+    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004163be | g_CDemonSetInstance.disable_directional_lighting
     ADD ESP,0x4                         ; 004163c8
     MOV dword ptr [EBX + 0xf14],ESI     ; 004163cb
     POP ESI                             ; 004163d1
@@ -118,8 +118,8 @@ section .text
         ;   XREF to: 0041632f (CONDITIONAL_JUMP)  ; LAB_0041632f
     PUSH EBX                            ; 004163ed
     PUSH 0x578f60                       ; 004163ee | = "%s going into background\n"
-    MOV EBP,dword ptr [0x005ad350]      ; 004163f3 | g_CConsole_PTR_005ad350
-    PUSH EBP                            ; 004163f9 | g_CConsole_0077ad0c
+    MOV EBP,dword ptr [0x005ad350]      ; 004163f3 | g_CConsolePtr
+    PUSH EBP                            ; 004163f9 | g_CConsoleInstance
     MOV dword ptr [EBX + 0x150],0x1     ; 004163fa
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00416404
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)

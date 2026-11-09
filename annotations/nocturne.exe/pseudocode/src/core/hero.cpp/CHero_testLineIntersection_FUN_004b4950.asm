@@ -10,8 +10,8 @@
 ; CVector3f *      Stack[0x10]:4   out_intersection_point
 ;
 ; Referenced Globals:
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   undefined4 g_CGame_01c775ec.god_mode_enabled
+;   CGame* g_CGamePtr = 01c775ec
+;   undefined4 g_CGameInstance.god_mode_enabled
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_testLineIntersection_FUN_0040a420
@@ -23,8 +23,8 @@ section .text
     PUSH EBP                            ; 004b4950
         ;   Label: core_hero.cpp_CHero_testLineIntersection_FUN_004b4950
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b4951
-    MOV EAX,[0x005b9354]                ; 004b4955 | g_CGame_PTR_005b9354
-    CMP dword ptr [EAX + 0x1d0],0x0     ; 004b495a | g_CGame_01c775ec.god_mode_enabled
+    MOV EAX,[0x005b9354]                ; 004b4955 | g_CGamePtr
+    CMP dword ptr [EAX + 0x1d0],0x0     ; 004b495a | g_CGameInstance.god_mode_enabled
     JNZ 0x004b496f                      ; 004b4961
         ;   XREF to: 004b496f (CONDITIONAL_JUMP)  ; LAB_004b496f
     TEST dword ptr [EDX + 0xbc8c],0x7fffffff ; 004b4963

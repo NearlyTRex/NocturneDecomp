@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CNetGame
-CNetGame g_CNetGame_01cea280 = {};
+CNetGame g_CNetGameInstance = {};
 
 // SChatHistory[400]
 SChatHistory g_SChatHistory_ARRAY_01cea410[400] = {};

@@ -1,0 +1,253 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 97,
+    "complexity_score": 45,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 142
+  },
+  "cross_references": [
+    {
+      "addr": "00522350",
+      "from_addr": "00524322",
+      "name": "core_script.cpp_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521250",
+      "from_addr": "0052125c",
+      "name": "core_script.cpp_parseConditionExpr_FUN_00521250",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005211a0",
+    "address_range": [
+      [
+        "005211a0",
+        "00521240"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_parseArgument_FUN_005211a0",
+    "signature": "char * __cdecl core_script_cpp_parseArgument_FUN_005211a0(char **cursor,char *out_buffer,int max_length)"
+  },
+  "function_calls": [
+    {
+      "addr": "00521180",
+      "is_variadic": false,
+      "name": "core_script.cpp_skipWhitespace_FUN_00521180"
+    },
+    {
+      "addr": "00521110",
+      "is_variadic": false,
+      "name": "core_script.cpp_trimString_FUN_00521110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e2c81",
+      "name": "s_No_opening_parenthesis_005e2c81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2c98",
+      "name": "s_Argument_too_long_005e2c98",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2caa",
+      "name": "s_Can_t_find_closing_paren_005e2caa",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 20,
+    "call_sites": [
+      {
+        "call_addr": "00524322",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00524449",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00524b21",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00524ed3",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005258ed",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00525d14",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00525ecb",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052665c",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00526d3e",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00527155",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.128205128205129,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 7,
+      "COPY": 78,
+      "INT_ADD": 33,
+      "INT_AND": 37,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 34,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 17,
+      "INT_SUB": 15,
+      "INT_XOR": 3,
+      "LOAD": 31,
+      "POPCOUNT": 17,
+      "RETURN": 4,
+      "STORE": 16
+    },
+    "pcode_op_count": 322
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cursor",
+        "offset": 4,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "out_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "max_length",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

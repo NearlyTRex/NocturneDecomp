@@ -79,8 +79,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
     local_54 = 0;
     local_50 = 4;
     local_4c = 6;
-    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
-                      (g_CDemonSet_PTR_005be368,&SStack_6c);
+    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(g_CDemonSetPtr,&SStack_6c);
     iVar3 = iVar4;
     if (iVar1 != 0) goto LAB_0041d3f6;
     iVar3 = 0;
@@ -95,8 +94,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
     local_50 = 3;
     local_4c = 7;
     local_48 = 5;
-    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
-                      (g_CDemonSet_PTR_005be368,&SStack_6c);
+    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(g_CDemonSetPtr,&SStack_6c);
     iVar3 = iVar4;
     if (iVar1 != 0) goto LAB_0041d3f6;
     iVar3 = 0;
@@ -111,8 +109,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
     local_54 = 0;
     local_50 = 1;
     local_4c = 5;
-    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
-                      (g_CDemonSet_PTR_005be368,&SStack_6c);
+    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(g_CDemonSetPtr,&SStack_6c);
     iVar3 = iVar4;
     if (iVar1 != 0) goto LAB_0041d3f6;
     iVar3 = 0;
@@ -127,8 +124,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
     local_50 = 6;
     local_4c = 7;
     local_48 = 3;
-    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
-                      (g_CDemonSet_PTR_005be368,&SStack_6c);
+    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(g_CDemonSetPtr,&SStack_6c);
     iVar3 = iVar4;
     if (iVar1 != 0) goto LAB_0041d3f6;
     iVar3 = 0;
@@ -143,8 +139,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
     local_54 = 0;
     local_50 = 2;
     local_4c = 3;
-    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
-                      (g_CDemonSet_PTR_005be368,&SStack_6c);
+    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(g_CDemonSetPtr,&SStack_6c);
     iVar3 = iVar4;
     if (iVar1 != 0) goto LAB_0041d3f6;
     iVar3 = 0;
@@ -159,8 +154,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_0041d050(CBoundi
     local_50 = 5;
     local_4c = 7;
     local_48 = 6;
-    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490
-                      (g_CDemonSet_PTR_005be368,&SStack_6c);
+    iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490(g_CDemonSetPtr,&SStack_6c);
     iVar3 = iVar4;
     if (iVar1 == 0) {
       iVar3 = 0;

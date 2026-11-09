@@ -28,9 +28,9 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
     uVar2 = rand();
     _sprintf(&stack0xfffffef0,"load%d",(uVar2 & 3) + 1);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-              (&g_CAlphaBitmap_01cc480c,&stack0xfffffef0,0x280,0x1e0);
+              (&g_LoadingScreenBitmap1,&stack0xfffffef0,0x280,0x1e0);
     engine_special_cpp_clearScreen_FUN_0052ee70();
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(&g_CAlphaBitmap_01cc480c,0,0,0xffff);
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(&g_LoadingScreenBitmap1,0,0,0xffff);
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
                       (g_CBitFont_PTR_014b98f8,"In stores 10/26/99");
     engine_font_cpp_CBitFont_drawText_FUN_00490980
@@ -69,15 +69,15 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     wincore_winrun_cpp_getNextKeypress_FUN_00558b00();
     engine_2d_c_clearInputAndWait_FUN_00403f50();
-    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(&g_CAlphaBitmap_01cc480c);
-    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(&g_CAlphaBitmap_01cc4820);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(&g_LoadingScreenBitmap1);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(&g_LoadingScreenBitmap2);
   }
   else {
     _fclose(file_handle);
   }
-  core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(g_CNetGame_PTR_005bdee0);
+  core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(g_CNetGamePtr);
   engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
-  engine_ncursfx_cpp_CMouse_reset_FUN_004ee680(g_CMouse_PTR_005be060);
+  engine_ncursfx_cpp_CMouse_reset_FUN_004ee680(g_CMousePtr);
   core_mission_cpp_CDemonMission_clearMission_FUN_004d7e90(g_CDemonMission_PTR_005baf90);
   core_sound_cpp_CSound_dtor_FUN_0052dd80(g_CSound_PTR_005bed68);
   core_dmodel_cpp_freeAllModels_FUN_00454460();
@@ -89,7 +89,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_004c90e0(void)
   engine_3d_c_freeTextureCache_FUN_00404490();
   core_dfont_cpp_freeFonts_FUN_0044cc00();
   wincore_winrun_cpp_doNothing2_FUN_00559e90();
-  engine_pod_cpp_CPod_cleanup_FUN_004f8b40(g_CPod_PTR_005be1cc);
+  engine_pod_cpp_CPod_cleanup_FUN_004f8b40(&g_CDemonPodPtr->base);
   core_inivar_cpp_writeIniData_FUN_004be2d0();
   return;
 }

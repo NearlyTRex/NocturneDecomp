@@ -1,0 +1,319 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 265,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 70,
+    "suspect_count": 18,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 214
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00404b00",
+    "address_range": [
+      [
+        "00404b00",
+        "00404c74"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404b00",
+    "signature": "int __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404b00(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403970",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403970"
+    },
+    {
+      "addr": "004039e0",
+      "is_variadic": false,
+      "name": "engine_3d.c_lookupLitColor_FUN_004039e0"
+    },
+    {
+      "addr": "00431d90",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00431d90"
+    },
+    {
+      "addr": "004e28b0",
+      "is_variadic": false,
+      "name": "engine_light.cpp_calculateLighting_FUN_004e28b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006093bc",
+      "name": "DAT_006093bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0070ca5c",
+      "name": "DAT_0070ca5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0070ca74",
+      "name": "DAT_0070ca74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e60",
+      "name": "DAT_01c35e60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e64",
+      "name": "DAT_01c35e64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e6c",
+      "name": "DAT_01c35e6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b40",
+      "name": "DAT_01c38b40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b54",
+      "name": "DAT_01c38b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b58",
+      "name": "DAT_01c38b58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.76,
+    "instruction_count": 100,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BRANCH": 11,
+      "CALL": 4,
+      "CBRANCH": 12,
+      "COPY": 73,
+      "INT_ADD": 19,
+      "INT_AND": 54,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 2,
+      "INT_LESS": 11,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 23,
+      "INT_SUB": 28,
+      "INT_XOR": 3,
+      "LOAD": 11,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 376
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404b00(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0070ca74",
+      "severity": "mild",
+      "text": "if (DAT_0070ca74 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "else if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "else if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "else if (DAT_006141c0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_0070ca5c",
+      "severity": "mild",
+      "text": "_DAT_01c35e60 = engine_3d_c_lookupLitColor_FUN_004039e0(DAT_0070ca5c,_DAT_01c35e64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "006093c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

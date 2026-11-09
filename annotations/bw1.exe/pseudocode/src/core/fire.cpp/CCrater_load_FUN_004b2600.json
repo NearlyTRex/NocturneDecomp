@@ -1,0 +1,337 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 125,
+    "complexity_score": 245,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 21,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 155
+  },
+  "cross_references": [
+    {
+      "addr": "004b7370",
+      "from_addr": "004b73cf",
+      "name": "core_fire.cpp_CFireEffect_load_FUN_004b7370",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b2600",
+    "address_range": [
+      [
+        "004b2600",
+        "004b273b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CCrater_load_FUN_004b2600",
+    "signature": "void __cdecl core_fire_cpp_CCrater_load_FUN_004b2600(CCrater *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c04b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005c04b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005df400",
+      "name": "s_d_d_f_f_005df400",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df40d",
+      "name": "s_f_f_f_005df40d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df417",
+      "name": "s_f_f_f_005df417",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df421",
+      "name": "s_f_f_f_005df421",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df42b",
+      "name": "s_f_f_f_005df42b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df435",
+      "name": "s_f_f_f_005df435",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df43f",
+      "name": "s_f_f_f_005df43f",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b73cf",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_load_FUN_004b7370",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.939130434782609,
+    "instruction_count": 115,
+    "opcode_distribution": {
+      "CALL": 7,
+      "CBRANCH": 1,
+      "COPY": 77,
+      "INT_ADD": 62,
+      "INT_AND": 72,
+      "INT_CARRY": 32,
+      "INT_EQUAL": 72,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 33,
+      "INT_SEXT": 3,
+      "INT_SLESS": 36,
+      "INT_SUB": 49,
+      "INT_XOR": 1,
+      "LOAD": 29,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 568
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrater *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%d,%d,%f,%f\\n\",this_ptr,&this_ptr->field_0x4,&this_ptr->field_0x8,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%d,%d,%f,%f\\n\",this_ptr,&this_ptr->field_0x4,&this_ptr->field_0x8,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0xc,&this_ptr->field_0x10,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0xc,&this_ptr->field_0x10,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x14);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "puVar3 = &this_ptr->field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "puVar4 = &this_ptr->field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x1c + iVar1,puVar4,puVar3);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x40,&this_ptr->field_0x44,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x40,&this_ptr->field_0x44,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x48);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x4c,&this_ptr->field_0x50,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x4c,&this_ptr->field_0x50,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x54);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x58,&this_ptr->field_0x5c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x58,&this_ptr->field_0x5c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x60);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x64,&this_ptr->field_0x68,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x64,&this_ptr->field_0x68,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x6c",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x6c);",
+      "type": "unnamed_field"
+    }
+  ]
+}

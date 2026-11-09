@@ -1,50 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01cae0d4'; did you mean 'DAT_005ae4d4'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 26,
-        "message": "incompatible integer to pointer conversion assigning to 'CEventList *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 42,
-        "message": "no matching function for call to 'core_script_cpp_CScript_initRuntime_FUN_004feff0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 43,
-        "message": "no matching function for call to 'core_script_cpp_CScript_executeInitSection_FUN_004ff170'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 104,
+    "complexity_score": 83,
     "cross_reference_count": 4,
     "function_call_count": 10,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 5,
+    "pseudocode_lines": 38,
+    "suspect_count": 3,
     "suspect_types": [
       "raw_address_constant",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 152
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -56,7 +26,7 @@
     {
       "addr": "004a4b50",
       "from_addr": "004a4ebf",
-      "name": "core_game.cpp_CGame_FUN_004a4b50",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -157,7 +127,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -169,7 +139,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -181,25 +151,25 @@
     },
     {
       "addr": "005be220",
-      "name": "DAT_005be220",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e56da0"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01c77814",
-      "name": "g_CGame_01c775ec.letterbox_mode",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77820",
-      "name": "g_CGame_01c775ec.is_loading",
+      "name": "g_CGameInstance.is_loading",
       "type": "undefined4",
       "value": null
     },
@@ -217,13 +187,13 @@
     },
     {
       "addr": "01e56da0",
-      "name": "g_CScript_01e56da0",
+      "name": "g_CScriptInstance",
       "type": "CScript",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     }
@@ -234,7 +204,7 @@
       {
         "call_addr": "004a4ebf",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4b50",
+        "caller": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -344,22 +314,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 35,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "core_script_cpp_CScript_initRuntime_FUN_004feff0(0x01E56DA0);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 36,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "core_script_cpp_CScript_executeInitSection_FUN_004ff170(0x01E56DA0);",
-      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex address 0x1c03a10 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

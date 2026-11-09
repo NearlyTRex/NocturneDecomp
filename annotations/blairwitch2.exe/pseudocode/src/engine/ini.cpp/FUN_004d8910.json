@@ -1,0 +1,200 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 22,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "004bc840",
+      "from_addr": "004bc8fc",
+      "name": "core_game.cpp_FUN_004bc840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8d60",
+      "from_addr": "004d8d90",
+      "name": "core_inivar.cpp_FUN_004d8d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d94d0",
+      "from_addr": "004d94e6",
+      "name": "core_inivar.cpp_FUN_004d94d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522350",
+      "from_addr": "0052562f",
+      "name": "core_script.cpp_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d8910",
+    "address_range": [
+      [
+        "004d8910",
+        "004d893e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_ini.cpp_FUN_004d8910",
+    "signature": "CIniFile * __cdecl engine_ini_cpp_FUN_004d8910(CIniFile *this_ptr,char *filename,char *section)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d89d0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004d89d0"
+    },
+    {
+      "addr": "004d8990",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_initIniFile_FUN_004d8990"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f8ef4",
+      "name": "PTR_engine_ini.cpp_CIniFile_dtor_FUN_004d8940_005f8ef4",
+      "type": "void*",
+      "value": "004d8940"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004bc8fc",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bc840",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d8d90",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_FUN_004d8d60",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d94e6",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_FUN_004d94d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052562f",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005285b0",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6875,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 8,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 59
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIniFile *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "section",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x200",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x200 = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004d8940_005f8ef4;",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,112 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 69,
-        "line": 48,
-        "message": "format specifies type 'char *' but the argument has type 'CTurret *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 78,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 40,
-        "line": 78,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 82,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 35,
-        "line": 82,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 83,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 35,
-        "line": 83,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 47,
-        "line": 103,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 64,
-        "line": 107,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 64,
-        "line": 108,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 115,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 116,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 83,
-        "line": 117,
-        "message": "use of undeclared identifier 'stack0xfffffeb0'"
-      },
-      {
-        "category": "cast_error",
-        "column": 16,
-        "line": 123,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 21,
-        "line": 125,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 133,
-        "message": "use of undeclared identifier 'stack0xfffffeac'; did you mean 'in_stack_fffffeac'?"
-      },
-      {
-        "category": "type_error",
-        "column": 38,
-        "line": 136,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 404,
@@ -249,37 +141,37 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff8",
-      "name": "g_CDemonSet_01e57284.actors[1]",
+      "name": "g_CDemonSetInstance.actors[1]",
       "type": "undefined4",
       "value": null
     }
@@ -377,72 +269,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CTurret_updateTargeting_FUN_0054a110.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 8,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 79,
-          "message": "Uninitialized variable: fStack_c0",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 80,
-          "message": "Uninitialized variable: fStack_bc",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 81,
-          "message": "Uninitialized variable: fStack_b8",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 62,
-          "line": 136,
-          "message": "Uninitialized variable: fStack_a8",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 22,
-          "line": 137,
-          "message": "Uninitialized variable: fStack_a4",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 12,
-          "line": 138,
-          "message": "Uninitialized variable: fStack_a0",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 38,
-          "line": 138,
-          "message": "Uninitialized variable: fStack_9c",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 66,
-          "line": 138,
-          "message": "Uninitialized variable: fStack_98",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -535,9 +361,9 @@
     {
       "description": "Complex pointer cast",
       "line": 94,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar4);",
+      "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -635,70 +461,6 @@
       "severity": "moderate",
       "text": "if ((int)CStack_88.y < 0x42c60001) {",
       "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Uninitialized variable: fStack_c0",
-      "line": 79,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_c0 = fStack_c0 + -15.0f;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_bc",
-      "line": 80,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_bc = fStack_bc + -15.0f;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_b8",
-      "line": 81,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_b8 = fStack_b8 + 15.0f;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_a8",
-      "line": 136,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if (((pCVar1->x < (float)local_b4._8_4_) || (pCVar1->y < fStack_a8)) ||",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_a4",
-      "line": 137,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "((pCVar1->z < fStack_a4 ||",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_a0",
-      "line": 138,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "(((fStack_a0 < pCVar1->x || (fStack_9c < pCVar1->y)) || (fStack_98 < pCVar1->z))))))",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_9c",
-      "line": 138,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "(((fStack_a0 < pCVar1->x || (fStack_9c < pCVar1->y)) || (fStack_98 < pCVar1->z))))))",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_98",
-      "line": 138,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "(((fStack_a0 < pCVar1->x || (fStack_9c < pCVar1->y)) || (fStack_98 < pCVar1->z))))))",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

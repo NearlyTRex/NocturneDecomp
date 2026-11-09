@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 64,
-        "message": "use of undeclared identifier '_DAT_02dc9f5c'; did you mean 'DAT_005c1f5c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 65,
-        "message": "use of undeclared identifier '_DAT_02dc9f64'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 79,
-        "message": "use of undeclared identifier '_DAT_02dc9f60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 80,
-        "message": "use of undeclared identifier '_DAT_02dc9f68'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 145,
-        "message": "use of undeclared identifier 'DAT_005a4508'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 315,
@@ -521,30 +485,6 @@
       }
     ],
     "severity": "medium"
-  },
-  "static_analysis": {
-    "analyzed_file": "CStranger_applyArmAimRotation_FUN_0053a260.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 6,
-          "line": 168,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 8,
-          "line": 215,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -1394,22 +1334,6 @@
       "severity": "moderate",
       "text": "*(uint *)pcVar5 = *(uint *)((int)&local_cc + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 168,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(local_30 + 0x800) = local_6c.w;",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 215,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(local_30 + 0x800) = local_cc.w;",
-      "type": "static_invalid_pointer_cast"
     }
   ]
 }

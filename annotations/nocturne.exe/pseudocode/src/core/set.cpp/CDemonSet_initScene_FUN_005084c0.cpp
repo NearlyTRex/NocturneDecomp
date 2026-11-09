@@ -23,12 +23,12 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
   text = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Initializing scene");
   core_level_cpp_CLevelLoader_update_FUN_004c59e0(g_CLevelLoader_PTR_005baca0,text,iVar6);
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
-  core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(0x014B8DE8);
+  core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(g_CFilterCachePtr);
   _DAT_01fba2d8 = 0;
   this_ptr->mirror_glass_actor_count = 0;
-  core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0043ff50(&g_CDemonCamera_01fb8508);
+  core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0043ff50(&g_CDemonCameraInstance);
   core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0
-            (&g_CDemonCamera_01fb8508,&this_ptr->scene_fog);
+            (&g_CDemonCameraInstance,&this_ptr->scene_fog);
   pCVar4 = &(this_ptr->scene_fog).scroll;
   (this_ptr->active_fog).color_index.r = (this_ptr->scene_fog).color_index.r;
   (this_ptr->active_fog).color_index.g = (this_ptr->scene_fog).color_index.g;
@@ -44,7 +44,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet *this_ptr)
   (this_ptr->active_fog).temperature = (this_ptr->scene_fog).temperature;
   iVar6 = 0;
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-            (&g_CDemonCamera_01fb8508,this_ptr->min_ambient_value);
+            (&g_CDemonCameraInstance,this_ptr->min_ambient_value);
   do {
     if (*(int *)(&DAT_01fb99d4 + iVar6) != 0) {
       g_CurrentFilename = "..\\core\\set.cpp";

@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 17,
-        "message": "use of undeclared identifier 'DAT_005bbd00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 21,
-        "message": "use of undeclared identifier 'DAT_005bbc48'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
@@ -171,23 +153,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "calculateMainDataSize_FUN_004e77d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 39,
-          "message": "Uninitialized variable: unaff_retaddr",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Undefined global data reference",
@@ -204,14 +169,6 @@
       "severity": "mild",
       "text": "(&DAT_005bbc48 +",
       "type": "undefined_data"
-    },
-    {
-      "description": "Uninitialized variable: unaff_retaddr",
-      "line": 39,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (*(int *)(unaff_retaddr + 0x14) != 0) {",
-      "type": "static_uninitvar"
     }
   ]
 }

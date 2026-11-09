@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
@@ -691,37 +686,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "convertDirectionVectorToEulerAngles_FUN_0054e4a0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 32,
-          "message": "Uninitialized variable: extraout_ECX",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 34,
-          "message": "Uninitialized variable: extraout_EDX",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 3,
-          "line": 37,
-          "message": "Uninitialized variable: extraout_ECX_00",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -818,30 +782,6 @@
       "severity": "moderate",
       "text": "return extraout_ECX_00;",
       "type": "extra_output"
-    },
-    {
-      "description": "Uninitialized variable: extraout_ECX",
-      "line": 32,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*(float *)(extraout_ECX + 4) = (float)fVar1;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: extraout_EDX",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "((float10)extraout_EDX[1],",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: extraout_ECX_00",
-      "line": 37,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "extraout_ECX_00->x = (float)-fVar1;",
-      "type": "static_uninitvar"
     }
   ]
 }

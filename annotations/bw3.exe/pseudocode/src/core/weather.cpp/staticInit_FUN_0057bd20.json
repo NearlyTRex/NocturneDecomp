@@ -1,0 +1,114 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 53,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057bd20",
+    "address_range": [
+      [
+        "0057bd20",
+        "0057bd72"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_weather.cpp_staticInit_FUN_0057bd20",
+    "signature": "void core_weather_cpp_staticInit_FUN_0057bd20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057bd80",
+      "is_variadic": false,
+      "name": "core_weather.cpp_FUN_0057bd80"
+    },
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005a30d7"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2631578947368425,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 10,
+      "INT_ADD": 5,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 14,
+      "LOAD": 1,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_02d0c1a0",
+      "severity": "mild",
+      "text": "core_weather_cpp_FUN_0057bd80(&DAT_02d0c1a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_02d0c208",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_02d0c208,2000,&g_CVectorTypeInfo);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_02d11fc8",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_02d11fc8,2000,&g_CVectorTypeInfo);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02d17d88",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_02d17d88,2000,&g_CVectorTypeInfo);",
+      "type": "undefined_data"
+    }
+  ]
+}

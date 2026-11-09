@@ -1,0 +1,453 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 116,
+    "complexity_score": 455,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 36,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "unknown_field",
+      "unnamed_field",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 171
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005407e0",
+    "address_range": [
+      [
+        "005407e0",
+        "0054092f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_rifle.cpp_FUN_005407e0",
+    "signature": "void core_rifle_cpp_FUN_005407e0(CDemonActor *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ac0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408ac0"
+    },
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cc00"
+    },
+    {
+      "addr": "0045f3e0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045f3e0"
+    },
+    {
+      "addr": "0045f690",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045f690"
+    },
+    {
+      "addr": "00468780",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_loadModel_FUN_00468780"
+    },
+    {
+      "addr": "004b7270",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_004b7270"
+    },
+    {
+      "addr": "0057d8a0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0057d8a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005edc7f",
+      "name": "s_rifbullet_kfm_005edc7d+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005edc8d",
+      "name": "s_shotgun_cock_wav_3_005edc8d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c010",
+      "name": "DAT_0061c010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006236b8",
+      "name": "DAT_006236b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.631067961165049,
+    "instruction_count": 103,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "CALL": 8,
+      "CBRANCH": 2,
+      "COPY": 130,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 66,
+      "INT_AND": 30,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 31,
+      "INT_LESS": 3,
+      "INT_MULT": 13,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 15,
+      "INT_SUB": 47,
+      "INT_XOR": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 22,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 49
+    },
+    "pcode_op_count": 477
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_rifle_cpp_FUN_005407e0(CDemonActor *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "auStackY_103c",
+      "severity": "moderate",
+      "text": "uint auStackY_103c [1001];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[4].field_0x8 < 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[4].field_0x8 < 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 24,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_48._0_4_ = 0x40a00000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 25,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_48._4_4_ = 0x40c00000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 26,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_48._8_4_ = 0xc0c00000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 27,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_24._0_4_ = core_actor_cpp_FUN_0040cc00(0xbec90fdb,0x3ec90fdb);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "uStack_c = CStack_24._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 29,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_24._4_4_ = core_actor_cpp_FUN_0040cc00(0xbec90fdb,0x3ec90fdb);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_24._8_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 31,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uStack_c = CStack_24._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_00408ac0(param_1,puVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_18._0_4_ = CStack_54._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_18._0_4_ = CStack_54._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_48._0_4_ = CStack_18._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_48._0_4_ = CStack_18._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_48._4_4_ = CStack_18._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_48._4_4_ = CStack_18._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_48._8_4_ = CStack_18._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_48._8_4_ = CStack_18._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C57074,(CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01C57074,(CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x01C57074,(CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "(0x01C57074,(CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x02C82A60,param_1,\"shotgun-cock.wav @ .3\",",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&CStack_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)&CStack_18",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&CStack_54",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)&CStack_18",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&CStack_54",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 46,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_48._0_4_ = CStack_18._0_4_;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar1 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_18 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_54 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 216,
+        "vtable_addr": "00604b04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

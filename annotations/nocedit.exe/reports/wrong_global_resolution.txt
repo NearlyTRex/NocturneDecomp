@@ -12,13 +12,13 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6911
-  Functions with suspicious globals: 95
-  Total suspicious global references: 151
+  Functions with suspicious globals: 96
+  Total suspicious global references: 152
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
-    g_WindowWidth                                      7 functions
+    g_WindowWidth                                      8 functions
     g_CKeysPtr                                         6 functions
     g_WindowHeight                                     5 functions
     g_RenderVertexBuffer                               5 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CommandTemplates                                 2 functions
     g_MirrorSceneCameraState                           2 functions
 
-  .keep files with issues: 62 (these need manual review)
+  .keep files with issues: 63 (these need manual review)
   Raw .cpp files with issues: 33
 
 ====================================================================================================
@@ -113,27 +113,27 @@ core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840  [.keep]  (6 suspicious glob
   File: core/menu.cpp
 
   g_CKeysPtr
-    Used at lines: 47, 47, 50, 50, 69, ...
+    Used at lines: 52, 52, 55, 55, 74, ...
     NOT found in function reference list
 
   g_CMoonInstance
-    Used at lines: 34, 56
+    Used at lines: 39, 61
     NOT found in function reference list
 
   g_JoyButtons
-    Used at lines: 42, 64
+    Used at lines: 47, 69
     NOT found in function reference list
 
   g_JoyXPos
-    Used at lines: 42, 52, 64, 82, 83, ...
+    Used at lines: 47, 57, 69, 87, 88, ...
     NOT found in function reference list
 
   g_JoyYPos
-    Used at lines: 42, 53, 64, 88, 89, ...
+    Used at lines: 47, 58, 69, 93, 94, ...
     NOT found in function reference list
 
   g_MediumFont
-    Used at lines: 37, 39, 41, 59, 61, ...
+    Used at lines: 42, 44, 46, 64, 66, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -390,6 +390,14 @@ core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70  [.keep]  (1 suspicio
 
   g_ModalDialogActive
     Used at lines: 26
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_rollCredits_FUN_004e4010  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_WindowWidth
+    Used at lines: 35, 36
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

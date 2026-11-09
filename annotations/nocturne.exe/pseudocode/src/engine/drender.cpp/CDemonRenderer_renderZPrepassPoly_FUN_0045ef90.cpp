@@ -45,12 +45,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90(C
       if (this_ptr->shadow_pass_active == 0) {
         g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_WRITE);
         g_VertexPreprocessMode = 6;
-        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00463c42;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_00463c42;
       }
       else {
         g_RenderStateFlags.dword = 0;
         g_VertexPreprocessMode = 0;
-        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepth16BitConditional_FUN_00463ac7;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepth16BitConditional_FUN_00463ac7;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                 (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);

@@ -130,7 +130,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *this_ptr,f
         pCVar22 = (this_ptr->base).base.grabbed_by;
         if (pCVar22 != (CDemonActor *)0x0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s escaping from %s\n",this_ptr,pCVar22);
+                    (g_CConsolePtr,"%s escaping from %s\n",this_ptr,pCVar22);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_194);
           local_194.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,15.0);
           local_194.attacker = (CDemonActor *)this_ptr;
@@ -154,10 +154,9 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004b6d80(CHostage *this_ptr,f
       iVar23 = 0;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 ((CDemonActor *)this_ptr,&local_ec,&local_140);
-      while (iVar13 < g_CDemonSet_PTR_005be368->actor_count) {
+      while (iVar13 < g_CDemonSetPtr->actor_count) {
         pCVar15 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (*(CDemonActor **)
-                                       ((int)g_CDemonSet_PTR_005be368->actors + iVar23),
+                                     (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar23),
                                       g_CDoorActorType_01af4e9c.name_hash);
         if (pCVar15 == (CDoor *)0x0) {
 LAB_004b6f82:
@@ -229,7 +228,7 @@ LAB_004b7170:
                              (&pCVar2->base,8), 0.0 < local_18)) goto LAB_004b7170;
     iVar13 = core_charactr_cpp_CCharacter_processWalking_FUN_00428c00
                        ((CCharacter *)this_ptr,delta_time);
-    pCVar12 = g_CConsole_PTR_005ad350;
+    pCVar12 = g_CConsolePtr;
     if (iVar13 == 0) {
       switch(this_ptr->hostage_state) {
       case 0:
@@ -246,8 +245,8 @@ LAB_004b7170:
               (this_ptr->rescue_distance <=
                SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc))) ||
              (iVar13 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                 (0x01C03A10,this_ptr->rescue_condition),
-             pCVar12 = g_CConsole_PTR_005ad350, iVar13 == 0)) goto LAB_004b7672;
+                                 (0x01C03A10,this_ptr->rescue_condition), pCVar12 = g_CConsolePtr,
+             iVar13 == 0)) goto LAB_004b7672;
           this_ptr->hostage_state = 1;
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (pCVar12,"%s rescued, entering follow mode\n",this_ptr);
@@ -267,7 +266,7 @@ LAB_004b7170:
                               ((CWayPoint *)&(this_ptr->base).base.base.location,pCVar19);
           this_ptr->next_way_point = (CDemonActor *)pCVar19;
         }
-        pCVar12 = g_CConsole_PTR_005ad350;
+        pCVar12 = g_CConsolePtr;
         if (this_ptr->next_way_point == (CDemonActor *)0x0) {
           iVar13 = core_hostage_cpp_CHostage_processGrabberFlee_FUN_004b81a0(this_ptr,delta_time);
           if (iVar13 == 0) {
@@ -293,7 +292,7 @@ LAB_004b7170:
             else {
               if (uVar8 != 3) goto LAB_004b7672;
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
-              pCVar12 = g_CConsole_PTR_005ad350;
+              pCVar12 = g_CConsolePtr;
               this_ptr->hostage_state = 2;
               engine_console_cpp_CConsole_printf_FUN_0043ac60
                         (pCVar12,"%s left behind!\n",this_ptr);
@@ -340,7 +339,7 @@ LAB_004b794d:
             if (local_50 == 0) break;
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s was left behind, but now can follow again!\n",this_ptr);
+                    (g_CConsolePtr,"%s was left behind, but now can follow again!\n",this_ptr);
           core_event_cpp_CEventList_executeCommands_FUN_0047ab70
                     (0x01C03A10,this_ptr->hero_came_back_event);
         }
@@ -358,9 +357,9 @@ LAB_004b794d:
           switch(this_ptr->follow_state) {
           case 0:
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"%s reached waypoint %s!\n",this_ptr,
+                      (g_CConsolePtr,"%s reached waypoint %s!\n",this_ptr,
                        this_ptr->next_way_point);
-            pCVar12 = g_CConsole_PTR_005ad350;
+            pCVar12 = g_CConsolePtr;
             if ((CWayPoint *)this_ptr->next_way_point == (CWayPoint *)this_ptr->goal_way_point) {
               this_ptr->hostage_state = 4;
               engine_console_cpp_CConsole_printf_FUN_0043ac60
@@ -382,7 +381,7 @@ LAB_004b794d:
             break;
           case 3:
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
-            pCVar12 = g_CConsole_PTR_005ad350;
+            pCVar12 = g_CConsolePtr;
             this_ptr->hostage_state = 2;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
                       (pCVar12,"%s got confused going home.  Help me!\n",this_ptr);
@@ -493,7 +492,7 @@ LAB_004b7672:
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&(this_ptr->base).base.model.base,0,1);
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                  (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
       }
     }
   }
@@ -559,8 +558,7 @@ switchD_004b7b39_default:
       local_11c.z = 0.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                 ((CDemonActor *)this_ptr,&local_134,&local_11c);
-      core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-                (g_CGore_PTR_005b96c4,&local_158,&local_134,0);
+      core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(g_CGorePtr,&local_158,&local_134,0);
     }
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0((CCharacter *)this_ptr);

@@ -1,0 +1,269 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 107,
+    "complexity_score": 166,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 163
+  },
+  "cross_references": [
+    {
+      "addr": "00483c30",
+      "from_addr": "00483c42",
+      "name": "shape_edittool.cpp_FUN_00483c30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00480eb0",
+    "address_range": [
+      [
+        "00480eb0",
+        "00480f9c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_insert_FUN_00480eb0",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00480eb0(CStrList *this_ptr,int insert_index,char *string_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005ba1f0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005ba1f0"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8580"
+    },
+    {
+      "addr": "00480fa0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_allocate_FUN_00480fa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d259f",
+      "name": "s_shape_edittool_cpp_005d259f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d25b5",
+      "name": "s_CStrList_insert_invalid_005d25b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d25d6",
+      "name": "s_shape_edittool_cpp_005d25d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d25ec",
+      "name": "s_CStrList_insert_out_of_m_005d25ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00483c42",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483c30",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.827586206896552,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 64,
+      "INT_ADD": 35,
+      "INT_AND": 61,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 2,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 26,
+      "INT_SUB": 31,
+      "INT_XOR": 2,
+      "INT_ZEXT": 1,
+      "LOAD": 25,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 420
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "insert_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "string_data",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x4 < iVar5) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "((void *)(*(int *)&this_ptr->field_0x8 + iVar2 + 4),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "(void *)(*(int *)&this_ptr->field_0x8 + iVar2),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(void **)(*(int *)&this_ptr->field_0x8 + iVar2) = pvVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "if (*(int *)(iVar2 + *(int *)&this_ptr->field_0x8) == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "pcVar6 = *(char **)(*(int *)&this_ptr->field_0x8 + insert_index * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 48,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 34,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStrList",
+        "offset": 12,
+        "vtable_addr": "005f5d14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

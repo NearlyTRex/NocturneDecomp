@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 201,
@@ -205,23 +200,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "loadAndInterpolateKeyframes_FUN_004c3aa0.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 29,
-          "line": 79,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
@@ -262,14 +240,6 @@
       "severity": "moderate",
       "text": "pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 79,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar10 = (int)uVar7 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

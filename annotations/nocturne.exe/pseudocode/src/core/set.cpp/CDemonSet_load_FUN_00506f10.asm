@@ -235,7 +235,7 @@ section .text
     PUSH EAX                            ; 005070d2
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 005070d3
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
-    MOV EAX,[0x005c11ec]                ; 005070d8 | DAT_005c11ec
+    MOV EAX,[0x005c11ec]                ; 005070d8 | g_CWaterPtr
     ADD ESP,0xc                         ; 005070dd
     LEA ESI,[EAX + 0x8]                 ; 005070e0
     PUSH ESI                            ; 005070e3
@@ -273,8 +273,8 @@ section .text
     CALL crt_stdio.c_fgets_FUN_00564b20 ; 0050713f
         ;   XREF to: 00564b20 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_00564b20(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 00507144
-    MOV EDI,dword ptr [0x005c11ec]      ; 00507147 | DAT_005c11ec
-    PUSH EDI                            ; 0050714d | g_CWater_02dd1210
+    MOV EDI,dword ptr [0x005c11ec]      ; 00507147 | g_CWaterPtr
+    PUSH EDI                            ; 0050714d | g_CWaterInstance
     PUSH 0x590181                       ; 0050714e | = "%d\n"
     PUSH EBX                            ; 00507153
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 00507154
@@ -828,7 +828,7 @@ section .text
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fclose_FUN_00563380(_FILE * file_handle)
     ADD ESP,0x4                         ; 0050781b
     PUSH EBX                            ; 0050781e
-    PUSH 0x1fba938                      ; 0050781f | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 0050781f | g_CDemonRaytraceInstance
     CALL core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00467890 ; 00507824
         ;   XREF to: 00467890 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00467890(CDemonRaytrace * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00507829
@@ -1007,13 +1007,13 @@ section .text
     TEST EAX,EAX                        ; 005079ab
     JNZ 0x005079bf                      ; 005079ad
         ;   XREF to: 005079bf (CONDITIONAL_JUMP)  ; LAB_005079bf
-    MOV EAX,[0x005c11ec]                ; 005079af | DAT_005c11ec
-    MOV dword ptr [EAX],0x1             ; 005079b4 | g_CWater_02dd1210
+    MOV EAX,[0x005c11ec]                ; 005079af | g_CWaterPtr
+    MOV dword ptr [EAX],0x1             ; 005079b4 | g_CWaterInstance
     JMP 0x0050715c                      ; 005079ba
         ;   XREF to: 0050715c (UNCONDITIONAL_JUMP)  ; LAB_0050715c
-    MOV EAX,[0x005c11ec]                ; 005079bf | DAT_005c11ec
+    MOV EAX,[0x005c11ec]                ; 005079bf | g_CWaterPtr
         ;   Label: LAB_005079bf
-    MOV dword ptr [EAX],0x0             ; 005079c4 | g_CWater_02dd1210
+    MOV dword ptr [EAX],0x0             ; 005079c4 | g_CWaterInstance
     JMP 0x0050715c                      ; 005079ca
         ;   XREF to: 0050715c (UNCONDITIONAL_JUMP)  ; LAB_0050715c
     MOV dword ptr [EBP + 0x161240],0x1  ; 005079cf

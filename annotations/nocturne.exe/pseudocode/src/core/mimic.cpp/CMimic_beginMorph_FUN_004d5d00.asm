@@ -13,8 +13,8 @@
 ;   TerminatedCString s_core_mimic_cpp_00589513
 ;   TerminatedCString s_CMimic_beginMorph_can_t_00589525
 ;   TerminatedCString s_s_morphing_into_type_s_0058956e
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CConsole g_CConsoleInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -87,8 +87,8 @@ section .text
     PUSH EAX                            ; 004d5dc7
     PUSH EBX                            ; 004d5dc8
     PUSH 0x58956e                       ; 004d5dc9 | = "%s morphing into type %s\n"
-    MOV EDI,dword ptr [0x005ad350]      ; 004d5dce | g_CConsole_PTR_005ad350
-    PUSH EDI                            ; 004d5dd4 | g_CConsole_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 004d5dce | g_CConsolePtr
+    PUSH EDI                            ; 004d5dd4 | g_CConsoleInstance
     MOV dword ptr [EBX + 0xfc],0x1      ; 004d5dd5
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004d5ddf
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)

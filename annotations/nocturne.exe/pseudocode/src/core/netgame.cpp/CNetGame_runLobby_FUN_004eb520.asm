@@ -181,7 +181,7 @@ section .text
     MOV EBX,0x37                        ; 004eb6a8
     MOV dword ptr [ESP + 0x118],EAX     ; 004eb6ad
     MOV dword ptr [ESP + 0x114],EAX     ; 004eb6b4
-    MOV ESI,dword ptr [0x005bdee0]      ; 004eb6bb | g_CNetGame_PTR_005bdee0
+    MOV ESI,dword ptr [0x005bdee0]      ; 004eb6bb | g_CNetGamePtr
         ;   Label: LAB_004eb6bb
     MOV EAX,dword ptr [ESP + 0x118]     ; 004eb6c1
     CMP EAX,dword ptr [ESI + 0x1c]      ; 004eb6c8
@@ -230,7 +230,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb736
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004eb73b
-    MOV EAX,[0x005bdee0]                ; 004eb73e | g_CNetGame_PTR_005bdee0
+    MOV EAX,[0x005bdee0]                ; 004eb73e | g_CNetGamePtr
     MOV EDX,dword ptr [ESP + 0x118]     ; 004eb743
     CMP EDX,dword ptr [EAX + 0x114]     ; 004eb74a
     JNZ 0x004eb8a1                      ; 004eb750
@@ -333,7 +333,7 @@ section .text
         ;   XREF to: 004eb59b (UNCONDITIONAL_JUMP)  ; LAB_004eb59b
     PUSH 0x58c160                       ; 004eb84d | = "You have been disconnected from the g..."
         ;   Label: LAB_004eb84d
-    MOV ECX,dword ptr [0x005b6d50]      ; 004eb852 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004eb852 | g_CEditorToolsPtr
     PUSH ECX                            ; 004eb858
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004eb859
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
@@ -592,7 +592,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10c]     ; 004ebaf9
     PUSH EDI                            ; 004ebb00
     PUSH 0x58c202                       ; 004ebb01 | = "Loading %s"
-    MOV EAX,[0x005b6d50]                ; 004ebb06 | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004ebb06 | g_CEditorToolsPtr
     PUSH EAX                            ; 004ebb0b
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebb0c
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
@@ -741,7 +741,7 @@ section .text
         ;   XREF to: 004ebdc9 (CONDITIONAL_JUMP)  ; LAB_004ebdc9
     XOR EBX,EBX                         ; 004ebc93
         ;   Label: LAB_004ebc93
-    MOV EAX,[0x005bdee0]                ; 004ebc95 | g_CNetGame_PTR_005bdee0
+    MOV EAX,[0x005bdee0]                ; 004ebc95 | g_CNetGamePtr
         ;   Label: LAB_004ebc95
     CMP EBX,dword ptr [EAX + 0x1c]      ; 004ebc9a
     JGE 0x004eb5ad                      ; 004ebc9d
@@ -772,7 +772,7 @@ section .text
         ;   Label: LAB_004ebccb
     PUSH EBX                            ; 004ebcd1
     PUSH 0x58c20d                       ; 004ebcd2 | = "Loading %s"
-    MOV ECX,dword ptr [0x005b6d50]      ; 004ebcd7 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004ebcd7 | g_CEditorToolsPtr
     PUSH ECX                            ; 004ebcdd
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebcde
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
@@ -869,7 +869,7 @@ section .text
     PUSH 0x100                          ; 004ebdcb
     PUSH 0x1cea180                      ; 004ebdd0
     PUSH 0x58c218                       ; 004ebdd5 | = "Send chat"
-    MOV EAX,[0x005b6d50]                ; 004ebdda | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004ebdda | g_CEditorToolsPtr
     PUSH EAX                            ; 004ebddf
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 004ebde0
         ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)

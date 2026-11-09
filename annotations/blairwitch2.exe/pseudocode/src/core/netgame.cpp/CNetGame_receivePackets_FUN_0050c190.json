@@ -1,0 +1,327 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 95,
+    "cross_reference_count": 6,
+    "function_call_count": 5,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [
+    {
+      "addr": "0050ecb0",
+      "from_addr": "0050ed81",
+      "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cf50",
+      "from_addr": "0050d3f2",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050bdb0",
+      "from_addr": "0050bf47",
+      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b4d0",
+      "from_addr": "0050b698",
+      "name": "core_netgame.cpp_FUN_0050b4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b8d0",
+      "from_addr": "0050bb41",
+      "name": "core_netgame.cpp_FUN_0050b8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f120",
+      "from_addr": "0050f172",
+      "name": "core_netgame.cpp_FUN_0050f120",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050c190",
+    "address_range": [
+      [
+        "0050c190",
+        "0050c232"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_0050c190(CNetGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050c280",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_FUN_0050c280"
+    },
+    {
+      "addr": "0050db90",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_FUN_0050db90"
+    },
+    {
+      "addr": "00579090",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_isSocketValid_FUN_00579090"
+    },
+    {
+      "addr": "00579240",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_00579240"
+    },
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_0058e9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d34e34",
+      "name": "DAT_01d34e34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e38",
+      "name": "DAT_01d34e38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d62e48",
+      "name": "DAT_01d62e48",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0050bb41",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050b8d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050bd85",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050b8d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050bf47",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050c0cc",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050ed81",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050f172",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050f120",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050f2d1",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050f120",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050b698",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050b4d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050d3f2",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.842105263157895,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 39,
+      "INT_ADD": 17,
+      "INT_AND": 46,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 34,
+      "INT_LEFT": 1,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 16,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 276
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x180",
+      "severity": "mild",
+      "text": "((CSocket *)&this_ptr->field_0x180);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_01d62e4c",
+      "severity": "mild",
+      "text": "((CSocket *)&this_ptr->field_0x180,&DAT_01d62e4c,0x404,local_10);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x180",
+      "severity": "mild",
+      "text": "((CSocket *)&this_ptr->field_0x180,&DAT_01d62e4c,0x404,local_10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_01d62e48",
+      "severity": "mild",
+      "text": "core_netgame_cpp_FUN_0050c280(this_ptr,local_10,(UNetPacket *)&DAT_01d62e48);",
+      "type": "undefined_data"
+    }
+  ]
+}

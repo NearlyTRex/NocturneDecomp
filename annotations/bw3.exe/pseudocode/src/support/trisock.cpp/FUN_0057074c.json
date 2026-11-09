@@ -1,0 +1,284 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 102,
+    "complexity_score": 276,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 21,
+    "suspect_types": [
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 148
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057074c",
+    "address_range": [
+      [
+        "0057074c",
+        "00570832"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "support_trisock.cpp_FUN_0057074c",
+    "signature": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,undefined4 param_5,code *param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "0056fbb0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_sendSocketData_FUN_0056fbb0"
+    },
+    {
+      "addr": "005704a0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_005704a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 8,
+      "COPY": 74,
+      "INT_ADD": 33,
+      "INT_AND": 48,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 45,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 22,
+      "INT_SUB": 36,
+      "INT_XOR": 2,
+      "INT_ZEXT": 1,
+      "LOAD": 23,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 29
+    },
+    "pcode_op_count": 387
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0057076f",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 2,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,uint param_2,ushort param_3,uint param_4,uint param_5,code *param_6)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,uint param_2,ushort param_3,uint param_4,uint param_5,code *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,uint param_2,ushort param_3,uint param_4,uint param_5,code *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,uint param_2,ushort param_3,uint param_4,uint param_5,code *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,uint param_2,ushort param_3,uint param_4,uint param_5,code *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,uint param_2,ushort param_3,uint param_4,uint param_5,code *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void support_trisock_cpp_FUN_0057074c(CSocket *param_1,uint param_2,ushort param_3,uint param_4,uint param_5,code *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (param_6 == (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (param_6 == (code *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "param_6 = support_trisock_cpp_FUN_0056fee0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "iVar2 = (*param_6)(0,acStack_810);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005a28c0(acStack_810,\"GET %s HTTP/1.0\\r\\nHost: %s:%d\\r\\nConnection: close\\r\\n\\r\\n\",param_4,param_2,param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005a28c0(acStack_810,\"GET %s HTTP/1.0\\r\\nHost: %s:%d\\r\\nConnection: close\\r\\n\\r\\n\",param_4,param_2,param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_005a28c0(acStack_810,\"GET %s HTTP/1.0\\r\\nHost: %s:%d\\r\\nConnection: close\\r\\n\\r\\n\",param_4,param_2,param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,acStack_810,~uVar3 - 1,(SNetworkAddr *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if ((iVar2 == 0) && (iVar2 = (*param_6)(0,\"Error communicating with server\"), iVar2 == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trisock_cpp_FUN_005704a0(param_1,param_5,\"Receiving document\",param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "support_trisock_cpp_FUN_005704a0(param_1,param_5,\"Receiving document\",param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "support_trisock_cpp_FUN_005704a0(param_1,param_5,\"Receiving document\",param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 19,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 36,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

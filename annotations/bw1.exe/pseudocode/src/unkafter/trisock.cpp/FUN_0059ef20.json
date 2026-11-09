@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 33,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "0052c5d0",
+      "from_addr": "0052c5f1",
+      "name": "core_netgame.cpp_FUN_0052c5d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059ef20",
+    "address_range": [
+      [
+        "0059ef20",
+        "0059efad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "unkafter_trisock.cpp_FUN_0059ef20",
+    "signature": "int __cdecl unkafter_trisock_cpp_FUN_0059ef20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005cf7d2",
+      "is_variadic": false,
+      "name": "crt_wsock32.c_WSACleanup"
+    },
+    {
+      "addr": "0059de90",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_0059de90"
+    },
+    {
+      "addr": "005b3a90",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005b3a90"
+    },
+    {
+      "addr": "005b37b0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_releaseMutex_FUN_005b37b0"
+    },
+    {
+      "addr": "005b3860",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_sleep_FUN_005b3860"
+    },
+    {
+      "addr": "005b3750",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_waitForMutex_FUN_005b3750"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f8888",
+      "name": "s_killSockets_005f8888",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02c8ae58",
+      "name": "DAT_02c8ae58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ae5c",
+      "name": "DAT_02c8ae5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ae64",
+      "name": "DAT_02c8ae64",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052c5f1",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0052c5d0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.765957446808511,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 37,
+      "INT_ADD": 10,
+      "INT_AND": 24,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 17,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 177
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0059ef26",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 97,
+    "complexity_score": 55,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [
+    {
+      "addr": "004bb100",
+      "from_addr": "004bb977",
+      "name": "core_game.cpp_FUN_004bb100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3d70",
+      "from_addr": "004b3dce",
+      "name": "core_game.cpp_setupMovieRecording_FUN_004b3d70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047e940",
+    "address_range": [
+      [
+        "0047e940",
+        "0047ea0a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_0047e940",
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_0047e940(CEditorTools *this_ptr,char *prompt_text,int *result_ptr,int enable_range_check,int min_value,int max_value,int show_current_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a5b9c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005a5b9c"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "0047cf40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40"
+    },
+    {
+      "addr": "0047ecf0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047ecf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bcf91",
+      "name": "DAT_005bcf91",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005bcf94",
+      "name": "DAT_005bcf94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bcf97",
+      "name": "s_Please_enter_a_valid_int_005bcf97",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bcfb5",
+      "name": "s_Please_enter_a_valid_int_005bcfb5",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "004bb977",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bb100",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004bb99f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bb100",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004bb9c7",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bb100",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004b3dce",
+        "call_type": "direct",
+        "caller": "core_game.cpp_setupMovieRecording_FUN_004b3d70",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004b3df6",
+        "call_type": "direct",
+        "caller": "core_game.cpp_setupMovieRecording_FUN_004b3d70",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004b3e1e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_setupMovieRecording_FUN_004b3d70",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.131578947368421,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 4,
+      "BRANCH": 3,
+      "CALL": 5,
+      "CBRANCH": 6,
+      "COPY": 63,
+      "INT_ADD": 31,
+      "INT_AND": 32,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 31,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 15,
+      "INT_SUB": 31,
+      "INT_XOR": 1,
+      "LOAD": 21,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 28
+    },
+    "pcode_op_count": 314
+  },
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "prompt_text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "result_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "enable_range_check",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "min_value",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "max_value",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "show_current_value",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005bcf91",
+      "severity": "mild",
+      "text": "FUN_005a28c0(local_34,&DAT_005bcf91,*result_ptr);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005bcf94",
+      "severity": "mild",
+      "text": "iVar1 = sscanf(local_34,&DAT_005bcf94);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -61,7 +61,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
   float local_14;
   
   bVar5 = 0;
-  if ((this_ptr->volumetric_enabled != 0) && (g_CGame_PTR_005b9354->halo_mode == 2)) {
+  if ((this_ptr->volumetric_enabled != 0) && (g_CGamePtr->halo_mode == 2)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
               (g_CDemonRenderer_PTR_005ae704,&local_8c);
     local_8c.x = local_8c.x - (this_ptr->base).position.x;

@@ -1,0 +1,279 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 215,
+    "complexity_score": 194,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 84,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 299
+  },
+  "cross_references": [
+    {
+      "addr": "00544460",
+      "from_addr": "0054770b",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9ff0",
+    "address_range": [
+      [
+        "004a9ff0",
+        "004aa1ca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_setActorVariable_FUN_004a9ff0",
+    "signature": "void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004a9ff0(CEventList *this_ptr,char *var_name,CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408830"
+    },
+    {
+      "addr": "004aa240",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_findActorVariable_FUN_004aa240"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c25d0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005c25d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dec8b",
+      "name": "s_core_event_cpp_005dec8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dec9d",
+      "name": "s_Tried_to_assign_actor_va_005dec9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005decdb",
+      "name": "s_core_event_cpp_005decdb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005deced",
+      "name": "s_CEventList_setActorVaria_005deced",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0054770b",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00549143",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.54696132596685,
+    "instruction_count": 181,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 35,
+      "CALL": 6,
+      "CBRANCH": 14,
+      "COPY": 131,
+      "INT_ADD": 75,
+      "INT_AND": 188,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 124,
+      "INT_LEFT": 12,
+      "INT_LESS": 19,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 30,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 29,
+      "INT_SLESS": 71,
+      "INT_SUB": 54,
+      "INT_XOR": 6,
+      "LOAD": 45,
+      "POPCOUNT": 59,
+      "RETURN": 3,
+      "STORE": 40
+    },
+    "pcode_op_count": 1004
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "var_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 12,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "CVar1 = (CEventList)actor->field_0x1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "actor = (CDemonActor *)&actor->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 81,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "CVar1 = (CEventList)actor->field_0x1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 82,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "actor = (CDemonActor *)&actor->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `actor` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&actor->owner`). Replace `actor->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "actor = (T *)&actor->FIELD",
+      "severity": "moderate",
+      "text": "actor = (CDemonActor *)&actor->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `actor` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&actor->owner`). Replace `actor->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 82,
+      "match": "actor = (T *)&actor->FIELD",
+      "severity": "moderate",
+      "text": "actor = (CDemonActor *)&actor->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (((iVar2 + -1) - iVar5) * 0x1e) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 60,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((*(int *)(this_ptr + 0x34e8) - iVar5) * 0x1e) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 62,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

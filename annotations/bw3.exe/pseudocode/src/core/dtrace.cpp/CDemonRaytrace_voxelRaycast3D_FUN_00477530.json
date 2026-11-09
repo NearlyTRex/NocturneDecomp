@@ -1,0 +1,548 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 435,
+    "complexity_score": 381,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 176,
+    "suspect_count": 19,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 611
+  },
+  "cross_references": [
+    {
+      "addr": "0053cca0",
+      "from_addr": "0053ccaf",
+      "name": "core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0053cca0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00477530",
+    "address_range": [
+      [
+        "00477530",
+        "00477a0e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530",
+    "signature": "int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00473b60",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00473b60"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bcbdd",
+      "name": "DAT_005bcbdd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bcbe1",
+      "name": "DAT_005bcbe1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fb0e8",
+      "name": "DAT_005fb0e8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053ccaf",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_0053cca0",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.080519480519481,
+    "instruction_count": 385,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 72,
+      "BOOL_OR": 11,
+      "BOOL_XOR": 3,
+      "BRANCH": 7,
+      "CALL": 13,
+      "CBRANCH": 14,
+      "COPY": 1161,
+      "FLOAT2FLOAT": 56,
+      "FLOAT_ABS": 3,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 4,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 21,
+      "FLOAT_NAN": 8,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 18,
+      "INT2FLOAT": 16,
+      "INT_ADD": 185,
+      "INT_AND": 281,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 123,
+      "INT_LEFT": 27,
+      "INT_LESS": 19,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 59,
+      "INT_OR": 79,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 14,
+      "INT_SDIV": 3,
+      "INT_SEXT": 3,
+      "INT_SLESS": 63,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 18,
+      "INT_SUB": 60,
+      "INT_XOR": 7,
+      "INT_ZEXT": 31,
+      "LOAD": 131,
+      "POPCOUNT": 55,
+      "RETURN": 2,
+      "ROUND": 12,
+      "STORE": 71,
+      "SUBPIECE": 6,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 2726
+  },
+  "stack_frame": {
+    "frame_size": 168,
+    "local_size": 156,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "start_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "end_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0047753c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "fVar19 = (float10)1 / ((float10)*(float *)&this_ptr->field_0x28 * fVar16);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "fVar20 = (float10)1 / ((float10)*(float *)&this_ptr->field_0x2c * fVar16);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "fVar2 = (float)(((float10)*(float *)start_position - (float10)*(float *)&this_ptr->field_0x10) *",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "fVar21 = (float10)1 / ((float10)*(float *)&this_ptr->field_0x30 * fVar16);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "fVar19 = ((float10)*(float *)end_position - (float10)*(float *)&this_ptr->field_0x10) * fVar19;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar3 = (float)(((float10)*(float *)&start_position->field_0x4 -",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "(float10)*(float *)&this_ptr->field_0x14) * fVar20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar20 = ((float10)*(float *)&end_position->field_0x4 - (float10)*(float *)&this_ptr->field_0x14)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "fVar20 = ((float10)*(float *)&end_position->field_0x4 - (float10)*(float *)&this_ptr->field_0x14)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar16 = ((float10)*(float *)&end_position->field_0x8 - (float10)*(float *)&this_ptr->field_0x18)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "fVar16 = ((float10)*(float *)&end_position->field_0x8 - (float10)*(float *)&this_ptr->field_0x18)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar6 = *(float *)&end_position->field_0x4 - *(float *)&start_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar6 = *(float *)&end_position->field_0x4 - *(float *)&start_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar7 = *(float *)&end_position->field_0x8 - *(float *)&start_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar7 = *(float *)&end_position->field_0x8 - *(float *)&start_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar4 = (float)(((float10)*(float *)&start_position->field_0x8 -",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(float10)*(float *)&this_ptr->field_0x18) * fVar21);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_005fb0e8",
+      "severity": "mild",
+      "text": "(&DAT_005fb0e8)[local_38 % 8]) != 0)) {",
+      "type": "undefined_data"
+    }
+  ]
+}

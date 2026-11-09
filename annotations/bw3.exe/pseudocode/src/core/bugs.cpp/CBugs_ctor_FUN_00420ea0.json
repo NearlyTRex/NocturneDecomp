@@ -1,0 +1,378 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 125,
+    "complexity_score": 376,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 71,
+    "suspect_count": 29,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 196
+  },
+  "cross_references": [
+    {
+      "addr": "00420e70",
+      "from_addr": "00420e83",
+      "name": "core_bugs.cpp_factoryFuncBugs_FUN_00420e70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00420ea0",
+    "address_range": [
+      [
+        "00420ea0",
+        "00421051"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_bugs.cpp_CBugs_ctor_FUN_00420ea0",
+    "signature": "CBugs * core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cea0"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    },
+    {
+      "addr": "00488fd0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_00488fd0"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054eae0"
+    },
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005a30d7"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00420e83",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_factoryFuncBugs_FUN_00420e70",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9714285714285715,
+    "instruction_count": 105,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 7,
+      "CBRANCH": 6,
+      "COPY": 76,
+      "INT_ADD": 54,
+      "INT_AND": 42,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 42,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 21,
+      "INT_SUB": 35,
+      "LOAD": 14,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 53
+    },
+    "pcode_op_count": 417
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "iVar3 = __arrinit(&pCVar2[1].field_0x8,400,&g_SBugTypeInfo);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr_00[-0xcf].field_0x38 = &g_CBugsVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0xe4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-0x44].field_0xe4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xe8",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr_00[-0x44].field_0xe8 = iVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0xec",
+      "severity": "mild",
+      "text": "memset(&this_ptr_00[-0x44].field_0xec,0,0x6400);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054eae0(&this_ptr_00[-0xcf].field_0x3c,0x5b7710);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xc4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[2].field_0xc4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0xc8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[2].field_0xc8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[2].field_0x100 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "pcVar5 = &this_ptr_00[0x5c].field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[0x5c].field_0x3c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0xb0",
+      "severity": "mild",
+      "text": "pcVar5 = &this_ptr_00[0x5c].field_0xb0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[0x5c].field_0x40 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x114",
+      "severity": "mild",
+      "text": "pcVar5 = &this_ptr_00[0x5c].field_0x114;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-0xae].field_0x54 = 0x401f5c29;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-0xae].field_0x58 = 0x40200000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-0xae].field_0x64 = 0x3fa66666;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-0xae].field_0x68 = 0x3fc00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 69,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[0x5d].field_0x28 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[0x5c].field_0x44 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[0x5c].field_0x48 = 0x41f00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 72,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[0x5d].field_0x30 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[0x5d].field_0x34 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "return (CBugs *)&this_ptr_00[-0xd0].field_0x60;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 33,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 45,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 56,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBugs",
+        "offset": 0,
+        "vtable_addr": "005dcd74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

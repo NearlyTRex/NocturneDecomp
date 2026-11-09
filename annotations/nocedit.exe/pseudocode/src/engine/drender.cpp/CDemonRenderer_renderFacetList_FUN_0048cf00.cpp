@@ -93,7 +93,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
       }
     }
     else {
-      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0049072f;
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {

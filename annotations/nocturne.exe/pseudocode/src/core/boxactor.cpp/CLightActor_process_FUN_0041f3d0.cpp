@@ -71,7 +71,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CLightActor *thi
     core_xform_cpp_matrixToEulerAngles_FUN_0055b180(&local_84,&local_24);
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
               (&(this_ptr->light).base.rotation_matrix,&local_24);
-    core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(g_CDemonSet_PTR_005be368,&this_ptr->light);
+    core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(g_CDemonSetPtr,&this_ptr->light);
     return;
   }
   this_ptr_01 = &this_ptr->globe;
@@ -81,7 +81,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CLightActor *thi
   (this_ptr->globe).intensity_multiplier = uVar3 & 0x7fff;
   (this_ptr->globe).intensity.bytes[0] = (uchar)((int)(uVar3 & 0x7fff) >> 10);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(this_ptr_01,2.0);
-  this_ptr_00 = g_CDemonSet_PTR_005be368;
+  this_ptr_00 = g_CDemonSetPtr;
   (this_ptr->globe).corona_mode = 0;
   core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(this_ptr_00,this_ptr_01);
   return;

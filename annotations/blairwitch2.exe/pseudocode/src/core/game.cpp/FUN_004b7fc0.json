@@ -1,0 +1,196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 146,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 58
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004b7fc0",
+    "address_range": [
+      [
+        "004b7fc0",
+        "004b8026"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004b7fc0",
+    "signature": "void core_game_cpp_FUN_004b7fc0(int param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052ddf0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0"
+    },
+    {
+      "addr": "00538d10",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_FUN_00538d10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b460",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e65cd0"
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.735294117647059,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 16,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 11,
+      "LOAD": 12,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 127
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_game_cpp_FUN_004b7fc0(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_game_cpp_FUN_004b7fc0(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x25c)) && (*(int *)(param_1 + 0x25c) = param_2, param_2 == 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x25c)) && (*(int *)(param_1 + 0x25c) = param_2, param_2 == 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x25c)) && (*(int *)(param_1 + 0x25c) = param_2, param_2 == 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x25c)) && (*(int *)(param_1 + 0x25c) = param_2, param_2 == 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x25c)) && (*(int *)(param_1 + 0x25c) = param_2, param_2 == 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x15aeb8",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&g_CDemonSetPtr->field_0x15aeb8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "core_setdir_cpp_FUN_00538d10(g_CDemonSetPtr,*(uint *)&g_CScriptPtr->field_0xc,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&g_CScriptPtr->field_0x10 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x15aeb8",
+      "severity": "mild",
+      "text": "if (iVar1 == *(int *)&g_CDemonSetPtr->field_0x15aeb8) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x15aeb8",
+      "severity": "mild",
+      "text": "(g_CDemonSetPtr,*(int *)&g_CDemonSetPtr->field_0x15aeb8);",
+      "type": "unnamed_field"
+    }
+  ]
+}

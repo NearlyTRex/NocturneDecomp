@@ -1,133 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_02dc9468'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_02dc946c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_02dc9470'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_02dc945c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_02dc9460'; did you mean 'DAT_02DE9460'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_02dc9464'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_02dc946c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 59,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_02dc9474'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_02dc9478'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 87,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_02dc947c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_02dc9c98'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_02dc9c9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_02dc9ca0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_02dc9c98'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 47,
-        "message": "use of undeclared identifier '_DAT_02dc9c90'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 88,
-        "line": 48,
-        "message": "use of undeclared identifier 'DAT_02dc9c68'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 52,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 52,
-        "message": "use of undeclared identifier 'DAT_02dc9d58'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 53,
-        "message": "use of undeclared identifier '_DAT_02dc9d44'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 121,
+    "complexity_score": 120,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 50,
     "suspect_count": 5,
     "suspect_types": [
       "stack_ref",
@@ -135,7 +15,7 @@
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 187
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -250,37 +130,37 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb1afc",
-      "name": "g_CDemonSet_01e57284.active_fog.scroll.x",
+      "name": "g_CDemonSetInstance.active_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b00",
-      "name": "g_CDemonSet_01e57284.active_fog.scroll.y",
+      "name": "g_CDemonSetInstance.active_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b04",
-      "name": "g_CDemonSet_01e57284.active_fog.scroll.z",
+      "name": "g_CDemonSetInstance.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b44",
-      "name": "g_CDemonSet_01e57284.player_on_train",
+      "name": "g_CDemonSetInstance.player_on_train",
       "type": "undefined4",
       "value": null
     },
@@ -558,12 +438,12 @@
       "line": 41,
       "match": "DAT_02dc9c68",
       "severity": "mild",
-      "text": "core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSet_PTR_005be368,&DAT_02dc9c68)",
+      "text": "core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSetPtr,&DAT_02dc9c68);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 44,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != &DAT_02dc9d58) {",
@@ -571,7 +451,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 44,
       "match": "DAT_02dc9d58",
       "severity": "mild",
       "text": "if (&stack0x00000000 != &DAT_02dc9d58) {",
@@ -579,7 +459,7 @@
     },
     {
       "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&DAT_02dc9d58` is always TRUE (the address of `DAT_02dc9d58` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
-      "line": 45,
+      "line": 44,
       "match": "if ((T *)0x0 != &DAT_02dc9d58)",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != &DAT_02dc9d58) {",

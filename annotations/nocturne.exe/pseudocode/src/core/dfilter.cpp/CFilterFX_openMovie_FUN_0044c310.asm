@@ -24,7 +24,7 @@
 ;   TerminatedCString s_rb_0057c0c6
 ;   TerminatedCString s_core_dfilter_cpp_0057c0c9
 ;   TerminatedCString s_Can_t_open_movie_s_mov_0057c0dd
-;   undefined4 DAT_005ad54c
+;   CFilterCache* g_CFilterCachePtr = 014b8de8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -162,7 +162,7 @@ section .text
         ;   XREF to: 0044c403 (UNCONDITIONAL_JUMP)  ; LAB_0044c403
     PUSH 0x57c06d                       ; 0044c431 | = "movscrn.raw"
         ;   Label: LAB_0044c431
-    MOV EBX,dword ptr [0x005ad54c]      ; 0044c436 | DAT_005ad54c
+    MOV EBX,dword ptr [0x005ad54c]      ; 0044c436 | g_CFilterCachePtr
     PUSH EBX                            ; 0044c43c
     CALL core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60 ; 0044c43d
         ;   XREF to: 0044be60 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache * this_ptr, char * filter_name)

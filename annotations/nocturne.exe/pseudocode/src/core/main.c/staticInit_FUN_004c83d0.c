@@ -9,13 +9,13 @@
 void __cdecl core_main_c_staticInit_FUN_004c83d0(void)
 
 {
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc480c);
-  _atexit(&g_WatcomStaticDestructorNode_005bad0e);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc4820);
-  _atexit(&g_WatcomStaticDestructorNode_005bad1e);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc4834);
-  _atexit(&g_WatcomStaticDestructorNode_005bad2e);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc4848);
-  _atexit(&g_WatcomStaticDestructorNode_005bad3e);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_LoadingScreenBitmap1);
+  _atexit(&g_LoadingScreenBitmap1DestructorNode);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_LoadingScreenBitmap2);
+  _atexit(&g_LoadingScreenBitmap2DestructorNode);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_LoadingScreenBitmap3);
+  _atexit(&g_LoadingScreenBitmap3DestructorNode);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_LoadingScreenBitmap4);
+  _atexit(&g_LoadingScreenBitmap4DestructorNode);
   return;
 }

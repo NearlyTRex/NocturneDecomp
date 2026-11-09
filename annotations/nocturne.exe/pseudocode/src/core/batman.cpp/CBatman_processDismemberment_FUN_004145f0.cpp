@@ -59,10 +59,10 @@ switchD_00414626_default:
     if (this_ptr->part_indices[1] == damage_info->hit_part_index) {
       local_14 = 0.02;
     }
-    if (g_CGame_PTR_005b9354->gratuitous_dismemberment != 0) {
+    if (g_CGamePtr->gratuitous_dismemberment != 0) {
       local_14 = 1.0;
     }
-    if (g_CGame_PTR_005b9354->blood_flag == 0) {
+    if (g_CGamePtr->blood_flag == 0) {
       local_14 = 0.0;
     }
     iVar2 = core_actor_cpp_randomChance_FUN_0040dea0(local_14);
@@ -116,7 +116,7 @@ switchD_00414626_default:
   }
   damage_info->damage_amount = fVar1;
 LAB_004147e1:
-  this_ptr_00 = g_CConsole_PTR_005ad350;
+  this_ptr_00 = g_CConsolePtr;
   if ((this_ptr->part_indices[1] == damage_info->hit_part_index) &&
      (damage_info->damage_type == DAMAGE_TYPE_LAUNCH)) {
     damage_info->damage_amount = damage_info->damage_amount * (float)20;

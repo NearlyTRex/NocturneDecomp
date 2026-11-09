@@ -1,0 +1,13 @@
+// Name: core_bodypart.cpp_FUN_004157b0
+// Address: 004157b0
+// Address Range: [[004157b0, 004157ba]]
+// Convention: unknown
+// Signature: undefined4 core_bodypart_cpp_FUN_004157b0(int param_1)
+
+#include "nocturne.h"
+
+uint core_bodypart_cpp_FUN_004157b0(int param_1)
+
+{
+  return *(uint *)(param_1 + 0xf2c);
+}

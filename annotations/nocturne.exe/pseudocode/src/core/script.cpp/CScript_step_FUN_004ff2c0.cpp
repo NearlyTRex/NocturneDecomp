@@ -413,7 +413,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
               }
               local_118 = local_118 + local_e0;
               core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
-                        (g_CDemonSet_PTR_005be368,local_5d4,&local_110,&local_100);
+                        (g_CDemonSetPtr,local_5d4,&local_110,&local_100);
               if (local_110 == (C3DSLight *)0x0) {
                 _sprintf(&DAT_01e56420,"Light \"%s\" does not exist",local_5d4);
                 return -1;
@@ -452,7 +452,7 @@ LAB_0050064d:
                 if (_DAT_01e56418 == 0) {
                   iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                     (0x01C03A10,local_4a8);
-                  g_CGame_PTR_005b9354->allow_enemy_attack_flag = iVar6;
+                  g_CGamePtr->allow_enemy_attack_flag = iVar6;
                 }
               }
               else {
@@ -467,7 +467,7 @@ LAB_0050064d:
                     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                       (0x01C03A10,local_b4c);
                     _DAT_01e56c24 = (uint)(iVar6 == 0);
-                    g_CGame_PTR_005b9354->hero_controls_blocked = _DAT_01e56c24;
+                    g_CGamePtr->hero_controls_blocked = _DAT_01e56c24;
                   }
                 }
                 else {
@@ -481,7 +481,7 @@ LAB_0050064d:
                     if (_DAT_01e56418 == 0) {
                       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                         (0x01C03A10,local_ae8);
-                      g_CGame_PTR_005b9354->allow_damage_flag = iVar6;
+                      g_CGamePtr->allow_damage_flag = iVar6;
                     }
                   }
                   else {
@@ -520,7 +520,7 @@ LAB_0050064d:
                          ((g_CharacterClassificationTable[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
                         local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 0xb);
                         if (_DAT_01e56418 == 0) {
-                          core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(g_CGame_PTR_005b9354);
+                          core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(g_CGamePtr);
                         }
                       }
                       else {
@@ -531,7 +531,7 @@ LAB_0050064d:
                         {
                           local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 0xc);
                           if (_DAT_01e56418 == 0) {
-                            core_game_cpp_CGame_beginFadeOut_FUN_004a3820(g_CGame_PTR_005b9354);
+                            core_game_cpp_CGame_beginFadeOut_FUN_004a3820(g_CGamePtr);
                           }
                         }
                         else {
@@ -544,7 +544,7 @@ LAB_0050064d:
                             if (_DAT_01e56418 == 0) {
                               _sprintf(local_958,"Script breakpoint reached at line %d",local_11c);
                               core_game_cpp_CGame_displayMessage_FUN_0049aa30
-                                        (g_CGame_PTR_005b9354,local_958,5.0);
+                                        (g_CGamePtr,local_958,5.0);
                               this_ptr->script_state = 2;
                             }
                           }
@@ -558,7 +558,7 @@ LAB_0050064d:
                                                     (pcVar18 + 0x10);
                               if (_DAT_01e56418 == 0) {
                                 core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0
-                                          (g_CDemonSet_PTR_005be368);
+                                          (g_CDemonSetPtr);
                               }
                             }
                             else {
@@ -591,14 +591,14 @@ LAB_0050064d:
                                 if (iVar6 == 0) {
                                   if (_DAT_01e56418 == 0) {
                                     iVar11 = 0;
-                                    for (iVar6 = 0; iVar6 < g_CDemonSet_PTR_005be368->actor_count;
+                                    for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count;
                                         iVar6 = iVar6 + 1) {
                                       pCVar14 = (CCharacter *)
                                                 core_actor_cpp_castToClassHash_FUN_0040d890
                                                           (*(CDemonActor **)
-                                                            ((int)g_CDemonSet_PTR_005be368->actors +
-                                                            iVar11),g_CCharacterActorType_00765a60.
-                                                                    name_hash);
+                                                            ((int)g_CDemonSetPtr->actors + iVar11),
+                                                           g_CCharacterActorType_00765a60.name_hash)
+                                      ;
                                       if (pCVar14 != (CCharacter *)0x0) {
                                         (*(((pCVar14->base).vtable._uc)->_uc).setWalkTarget)
                                                   (pCVar14,(CDemonActor *)0x0,0.0,0.0);
@@ -716,7 +716,7 @@ LAB_00500e2e:
                                         _sprintf(local_226c,"[Can't find %s in database]",
                                                    local_570);
                                         shape_edittool_cpp_CStrList_add_FUN_00473cb0
-                                                  (&g_CPickList_01e56c30.base,local_226c);
+                                                  (&g_ScriptPickList.base,local_226c);
                                       }
                                       else {
                                         pSVar3 = this_ptr->dialog_entries;
@@ -778,7 +778,7 @@ LAB_00500e2e:
                                           _sprintf(local_2654,"[Can't find %s in database]",
                                                      local_444);
                                           shape_edittool_cpp_CStrList_add_FUN_00473cb0
-                                                    (&g_CPickList_01e56c30.base,local_2654);
+                                                    (&g_ScriptPickList.base,local_2654);
                                         }
                                         else {
                                           pSVar3 = this_ptr->dialog_entries;
@@ -819,7 +819,7 @@ joined_r0x00504194:
                                           if (pcVar18 != (char *)0x0) goto LAB_00500e2e;
                                           if (_DAT_01e56418 == 0) {
                                             shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
-                                                      (g_CEditorTools_PTR_005b6d50,
+                                                      (g_CEditorToolsPtr,
                                                        "Script debug message at line %d:\n%s",local_11c,
                                                        local_3784);
                                           }
@@ -987,7 +987,7 @@ joined_r0x00504194:
                                                             (local_2d5c);
                                                   iVar6 = 
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                                                            (g_CDemonSet_PTR_005be368,local_307c);
+                                                            (g_CDemonSetPtr,local_307c);
                                                   if (iVar6 < 0) {
                                                     _sprintf(&DAT_01e56420,
                                                                "Camera \"%s\" does not exist.",
@@ -999,7 +999,7 @@ joined_r0x00504194:
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                                             (0x01C03A10,local_2d5c);
                                                   core_set_cpp_CDemonSet_FUN_0050e550
-                                                            (g_CDemonSet_PTR_005be368,iVar6,iVar11);
+                                                            (g_CDemonSetPtr,iVar6,iVar11);
                                                   }
                                                   else {
                                                     pcVar18 = 
@@ -1049,8 +1049,7 @@ joined_r0x00504194:
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                                             (0x01C03A10,local_1dbc);
                                                   core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580
-                                                            (g_CDemonSet_PTR_005be368,local_a8,iVar6
-                                                            );
+                                                            (g_CDemonSetPtr,local_a8,iVar6);
                                                   }
                                                   else {
                                                     pcVar18 = 
@@ -1160,15 +1159,15 @@ LAB_00501802:
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       uVar16 = 
                                                   core_game_cpp_CGame_fadeIn_FUN_004a3a50
-                                                            (g_CGame_PTR_005b9354);
+                                                            (g_CGamePtr);
                                                   if (uVar16 != 0) {
                                                     local_124 = 1;
-                                                    g_CGame_PTR_005b9354->allow_damage_flag = 1;
+                                                    g_CGamePtr->allow_damage_flag = 1;
                                                   }
                                                   }
                                                   else {
                                                     core_game_cpp_CGame_beginFadeIn_FUN_004a37e0
-                                                              (g_CGame_PTR_005b9354);
+                                                              (g_CGamePtr);
                                                     this_ptr->cmd_timer = 1.0;
                                                   }
                                                   }
@@ -1184,9 +1183,9 @@ LAB_00501802:
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (pcVar18 + 7);
                                                   uVar16 = _DAT_01e56418;
-                                                  pCVar4 = g_CGame_PTR_005b9354;
+                                                  pCVar4 = g_CGamePtr;
                                                   if (_DAT_01e56418 == 0) {
-                                                    g_CGame_PTR_005b9354->allow_damage_flag = 0;
+                                                    g_CGamePtr->allow_damage_flag = 0;
                                                     local_124 = uVar16;
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       uVar16 = 
@@ -1423,7 +1422,7 @@ LAB_004ff42f:
                                                   if (_DAT_01e56418 == 0) {
                                                                                                         
                                                   shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                                                            (g_CEditorTools_PTR_005b6d50,
+                                                            (g_CEditorToolsPtr,
                                                              "Script GTFO at line %d:\n%s\nTerminating mission.",
                                                              local_11c,local_3400);
                                                   this_ptr->mission_ended = 1;
@@ -1582,7 +1581,7 @@ LAB_004ff42f:
                                                   sscanf
                                                             (local_118," ( )%n",&local_18);
                                                   uVar16 = _DAT_01e56418;
-                                                  pCVar4 = g_CGame_PTR_005b9354;
+                                                  pCVar4 = g_CGamePtr;
                                                   if (local_18 < 2) {
                                                     _sprintf(&DAT_01e56420,
                                                                "Error parsing finishedAct command");
@@ -1637,7 +1636,7 @@ LAB_005021b8:
                                                   }
                                                   iVar6 = _stricmp
                                                                     (local_890,"bottom");
-                                                  pCVar4 = g_CGame_PTR_005b9354;
+                                                  pCVar4 = g_CGamePtr;
                                                   if (iVar6 == 0) {
                                                     iVar11 = 2;
                                                   }
@@ -1648,14 +1647,14 @@ LAB_005021b8:
                                                     return -1;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
-                                                    g_CGame_PTR_005b9354->letterbox_mode = iVar11;
+                                                    g_CGamePtr->letterbox_mode = iVar11;
                                                     pCVar4->allow_damage_flag = (uint)(iVar11 == 0);
                                                     pCVar4->allow_enemy_attack_flag =
                                                          (uint)(pCVar4->letterbox_mode == 0);
                                                     pCVar4->hero_controls_blocked =
                                                          pCVar4->letterbox_mode;
                                                     this_ptr->saved_cmd_index = -1;
-                                                    pCVar5 = g_CDemonSet_PTR_005be368;
+                                                    pCVar5 = g_CDemonSetPtr;
                                                     _DAT_01e56c24 = 1;
                                                     if ((pCVar4->goggles_active != 0) &&
                                                        (pCVar4->letterbox_mode != 0)) {
@@ -1664,18 +1663,17 @@ LAB_005021b8:
                                                   core_event_cpp_getSelectedCameraIndex_FUN_00481920
                                                             (pCVar5);
                                                   core_setdir_cpp_CDemonSet_FUN_005125a0
-                                                            (g_CDemonSet_PTR_005be368,
-                                                             *(CDemonActor **)(0x01E56DA0 + 0xc),1
-                                                            );
-                                                  pCVar5 = g_CDemonSet_PTR_005be368;
-                                                  *(uint *)(0x01E56DA0 + 0x10) = 0;
+                                                            (g_CDemonSetPtr,
+                                                             g_CScriptPtr->focus_actor,1);
+                                                  pCVar5 = g_CDemonSetPtr;
+                                                  g_CScriptPtr->focus_actor_changed = 0;
                                                   iVar11 = 
                                                   core_event_cpp_getSelectedCameraIndex_FUN_00481920
                                                             (pCVar5);
                                                   if (iVar6 == iVar11) {
                                                                                                         
                                                   core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
-                                                            (g_CDemonSet_PTR_005be368,iVar11);
+                                                            (g_CDemonSetPtr,iVar11);
                                                   }
                                                   }
                                                   }
@@ -1918,7 +1916,7 @@ joined_r0x00500ad6:
                                                     if (_DAT_01e56c24 != 0) {
                                                                                                             
                                                   core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
-                                                            (g_CGame_PTR_005b9354);
+                                                            (g_CGamePtr);
                                                   _DAT_01e56c24 = 0;
                                                   }
                                                   *piVar10 = 1;
@@ -2015,7 +2013,7 @@ joined_r0x00500ad6:
                                                     if (_DAT_01e56c24 != 0) {
                                                                                                             
                                                   core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
-                                                            (g_CGame_PTR_005b9354);
+                                                            (g_CGamePtr);
                                                   _DAT_01e56c24 = uVar16;
                                                   }
                                                   *piVar10 = 0;
@@ -2120,7 +2118,7 @@ joined_r0x00500ad6:
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + local_8c;
-                                                  if (g_CNetGame_PTR_005bdee0->connection_type !=
+                                                  if (g_CNetGamePtr->connection_type !=
                                                       CONNECTION_NONE) {
                                                     _sprintf(&DAT_01e56420,
                                                                "Can't use removeKeys command in multi-player");
@@ -2169,7 +2167,7 @@ joined_r0x00500ad6:
                                                   sscanf
                                                             (local_118," ( )%n",&local_88);
                                                   uVar16 = _DAT_01e56418;
-                                                  pCVar4 = g_CGame_PTR_005b9354;
+                                                  pCVar4 = g_CGamePtr;
                                                   if (local_88 < 2) {
                                                     _sprintf(&DAT_01e56420,
                                                                "Error parsing rollCredits command");
@@ -2307,7 +2305,7 @@ LAB_00503106:
                                                   }
                                                   if (local_7c == 0) {
                                                     engine_console_cpp_CConsole_printf_FUN_0043ac60
-                                                              (g_CConsole_PTR_005ad350,
+                                                              (g_CConsolePtr,
                                                                "%s can't selectWeapon(%s)\n",
                                                                local_700,local_69c);
                                                   }
@@ -2402,7 +2400,7 @@ LAB_00503106:
                                                             (local_2b04);
                                                   iVar6 = 
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                                                            (g_CDemonSet_PTR_005be368,local_2b04);
+                                                            (g_CDemonSetPtr,local_2b04);
                                                   if (iVar6 < 0) {
                                                     _sprintf(&DAT_01e56420,
                                                                "Camera \"%s\" does not exist.",
@@ -2410,8 +2408,8 @@ LAB_00503106:
                                                     return -1;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
-                                                    g_CDemonSet_PTR_005be368->cameras[iVar6].
-                                                    camera_group = local_70;
+                                                    g_CDemonSetPtr->cameras[iVar6].camera_group =
+                                                         local_70;
                                                   }
                                                   }
                                                   else {
@@ -2752,8 +2750,7 @@ LAB_00503b62:
                                                     return -1;
                                                   }
                                                   if (_DAT_01e56418 == 0) {
-                                                    g_CGame_PTR_005b9354->time_scale_factor =
-                                                         local_3f74;
+                                                    g_CGamePtr->time_scale_factor = local_3f74;
                                                   }
                                                   }
                                                   else {
@@ -3013,7 +3010,7 @@ LAB_0050421a:
                                                   ;
                                                   iVar6 = 
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                                                            (g_CDemonSet_PTR_005be368,local_7c8);
+                                                            (g_CDemonSetPtr,local_7c8);
                                                   if (iVar6 < 0) {
                                                     _sprintf(&DAT_01e56420,
                                                                "Camera \"%s\" doesn't exist.",
@@ -3036,8 +3033,7 @@ LAB_0050421a:
                                                   if (_DAT_01e56418 == 0) {
                                                                                                         
                                                   core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0
-                                                            (g_CDemonSet_PTR_005be368,iVar6,
-                                                             local_3f78);
+                                                            (g_CDemonSetPtr,iVar6,local_3f78);
                                                   }
                                                   }
                                                   else {

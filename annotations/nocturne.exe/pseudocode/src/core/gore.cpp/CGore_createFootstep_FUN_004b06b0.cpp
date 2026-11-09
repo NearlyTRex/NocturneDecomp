@@ -15,7 +15,7 @@ void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004b06b0(CGore *this_ptr,CVe
   CFootstep *this_ptr_00;
   
   iVar1 = _DAT_01c9e53c + 1;
-  this_ptr_00 = g_CFootstep_ARRAY_01c9e544 + _DAT_01c9e53c;
+  this_ptr_00 = g_Footsteps + _DAT_01c9e53c;
   _DAT_01c9e53c = iVar1;
   if (999 < iVar1) {
     _DAT_01c9e53c = 0;

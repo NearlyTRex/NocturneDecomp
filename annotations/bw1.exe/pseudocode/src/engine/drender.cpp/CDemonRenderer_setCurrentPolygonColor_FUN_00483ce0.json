@@ -1,0 +1,179 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 20,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "00425650",
+      "from_addr": "0042574c",
+      "name": "core_bugs.cpp_FUN_00425650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004414ac",
+      "from_addr": "004414c4",
+      "name": "core_cloth.cpp_FUN_004414ac",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00479f5e",
+      "from_addr": "0047a047",
+      "name": "core_dpart.cpp_FUN_00479f5e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048c510",
+      "from_addr": "0048c8c3",
+      "name": "core_dtrace.cpp_FUN_0048c510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9f10",
+      "from_addr": "005aa50e",
+      "name": "core_water.cpp_FUN_005a9f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00483ce0",
+    "address_range": [
+      [
+        "00483ce0",
+        "00483ce9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0(CDemonRenderer *this_ptr,int color)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00713a5c",
+      "name": "DAT_00713a5c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "005aa50e",
+        "call_type": "direct",
+        "caller": "core_water.cpp_FUN_005a9f10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042574c",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_FUN_00425650",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004414c4",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_FUN_004414ac",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047a047",
+        "call_type": "direct",
+        "caller": "core_dpart.cpp_FUN_00479f5e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048c8c3",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.3333333333333335,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 7
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_00713a5c",
+      "severity": "mild",
+      "text": "DAT_00713a5c = color;",
+      "type": "undefined_data"
+    }
+  ]
+}

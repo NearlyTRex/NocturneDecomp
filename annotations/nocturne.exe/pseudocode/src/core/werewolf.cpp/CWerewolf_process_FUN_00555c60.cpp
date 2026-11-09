@@ -128,7 +128,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_00555c60(CWerewolf *this_pt
       dVar15 = round((double)(local_14 * (float)0.25));
       local_34 = (int)ROUND(dVar15);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (g_CGore_PTR_005b96c4,&local_98,(CVector3f *)0x0,local_34,iVar6);
+                (g_CGorePtr,&local_98,(CVector3f *)0x0,local_34,iVar6);
     }
     else if (uVar7 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_004d9110
@@ -268,8 +268,7 @@ LAB_005567cd:
             g_CurrentLineNumber = 429;
             core_main_c_displayErrorAndQuit_FUN_004c8440("Alpha werewolf requires 2 waypoints");
           }
-          engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"Phase: %d, Timer: %f\n");
+          engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"Phase: %d, Timer: %f\n");
           if ((this_ptr->phase == 1) || (this_ptr->phase == 3)) {
             pCVar8 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                                (&((this_ptr->base).victim)->base,&local_f8,
@@ -343,7 +342,7 @@ LAB_00556967:
                            ,SUB84(uVar18,4),in_stack_fffffcec);
         if (iVar6 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n");
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&(this_ptr->base).base.model.base,0,1);
         }
@@ -383,12 +382,10 @@ LAB_00556967:
                   core_werewolf_cpp_CWerewolf_playHowl_FUN_00557060(this_ptr);
                 }
                 iVar6 = 0;
-                for (iVar14 = 0; iVar14 < g_CDemonSet_PTR_005be368->enemy_count; iVar14 = iVar14 + 1
-                    ) {
+                for (iVar14 = 0; iVar14 < g_CDemonSetPtr->enemy_count; iVar14 = iVar14 + 1) {
                   pCVar10 = (CWerewolf *)
                             core_actor_cpp_castToClassHash_FUN_0040d890
-                                      (*(CDemonActor **)
-                                        ((int)g_CDemonSet_PTR_005be368->enemies + iVar6),
+                                      (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar6),
                                        g_CWerewolfActorType_02de078c.name_hash);
                   if (((pCVar10 != (CWerewolf *)0x0) && (pCVar10 != this_ptr)) &&
                      (pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
@@ -484,7 +481,7 @@ LAB_005567aa:
                                (pCVar1,&local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                       ((CDemonActor *)this_ptr,&local_1b8,pCVar8);
-            core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_1b8,0);
+            core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_1b8,0);
             (this_ptr->base).pool_me = 1;
           }
           goto LAB_00555e90;
@@ -647,7 +644,7 @@ LAB_00555e70:
     if (EVar4 != WALK_STATE_NO_PATH) goto LAB_0055610d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar1->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
   }
 LAB_00555e78:
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
@@ -689,7 +686,7 @@ LAB_00555e90:
        (pCVar10 = (CWerewolf *)(*(((pCVar13->base).vtable._uc)->_uc).getGrabber)(pCVar13),
        pCVar10 == this_ptr)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;

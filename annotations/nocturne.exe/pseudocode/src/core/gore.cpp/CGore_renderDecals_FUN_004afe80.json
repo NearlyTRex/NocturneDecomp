@@ -1,91 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01c7ccf0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c7ccf0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01c7ccf0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_01c7ccf0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 52,
-        "message": "use of undeclared identifier '_DAT_01c9e038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_01c9e038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 67,
-        "message": "use of undeclared identifier '_DAT_01c9e038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 73,
-        "message": "use of undeclared identifier '_DAT_01c9e038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 78,
-        "message": "use of undeclared identifier '_DAT_01c9e540'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 88,
-        "message": "use of undeclared identifier '_DAT_01c9e540'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_01c9e540'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 99,
-        "message": "use of undeclared identifier '_DAT_01c9e540'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 186,
-    "complexity_score": 309,
+    "complexity_score": 308,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 94,
+    "pseudocode_lines": 93,
     "suspect_count": 19,
     "suspect_types": [
       "param_count_too_many",
@@ -94,7 +16,7 @@
       "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 280
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -152,13 +74,13 @@
   "globals": [
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "01c77600",
-      "name": "g_CGame_01c775ec.blood_flag",
+      "name": "g_CGameInstance.blood_flag",
       "type": "undefined4",
       "value": null
     },
@@ -323,30 +245,30 @@
     {
       "description": "Complex pointer cast",
       "line": 74,
-      "match": "(int *)((int)g_CFootstep_ARRAY_01c9e544",
+      "match": "(int *)((int)g_Footsteps",
       "severity": "moderate",
-      "text": "if (*(int *)((int)g_CFootstep_ARRAY_01c9e544[0].corners + iVar1 + -8) == 0) {",
+      "text": "if (*(int *)((int)g_Footsteps[0].corners + iVar1 + -8) == 0) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(CFootstep *)((int)g_CFootstep_ARRAY_01c9e544",
+      "match": "(CFootstep *)((int)g_Footsteps",
       "severity": "moderate",
-      "text": "((CFootstep *)((int)g_CFootstep_ARRAY_01c9e544[0].corners + iVar1 + -8),",
+      "text": "((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),unaff_EBP);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 77,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 89,
+      "line": 88,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "core_gore_cpp_CFootstep_render_FUN_004afa20(this_ptr_02,unaff_EBP);",

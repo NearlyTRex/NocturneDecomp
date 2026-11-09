@@ -1,0 +1,378 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 354,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 29,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 173
+  },
+  "cross_references": [
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004cfa85",
+      "name": "core_game.cpp_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cc9c0",
+    "address_range": [
+      [
+        "004cc9c0",
+        "004ccaf1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_game.cpp_FUN_004cc9c0",
+    "signature": "void __cdecl core_game_cpp_FUN_004cc9c0(CGame *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e13bc",
+      "name": "DAT_005e13bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f2a4",
+      "name": "DAT_0061f2a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1bca0",
+      "name": "DAT_01d1bca0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cfa85",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cf5e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.108108108108108,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 8,
+      "CBRANCH": 9,
+      "COPY": 232,
+      "FLOAT2FLOAT": 21,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 38,
+      "INT_AND": 47,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 38,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 19,
+      "INT_SUB": 28,
+      "LOAD": 44,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 34
+    },
+    "pcode_op_count": 567
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004cc9c7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x1d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "if ((iVar1 != 0) && (*(int *)&this_ptr->field_0x9f0 != 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x9f4",
+      "severity": "mild",
+      "text": "fStack_18 = *(float *)&this_ptr->field_0x9f4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,0x38);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 17,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "**(float **)&this_ptr->field_0x9f0 = **(float **)&this_ptr->field_0x9f0 - fStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "**(float **)&this_ptr->field_0x9f0 = **(float **)&this_ptr->field_0x9f0 - fStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 21,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 21,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "**(float **)&this_ptr->field_0x9f0 = **(float **)&this_ptr->field_0x9f0 + fStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "**(float **)&this_ptr->field_0x9f0 = **(float **)&this_ptr->field_0x9f0 + fStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 25,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 25,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 8) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 8) - fStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 30,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 30,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 8) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 8) + fStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 35,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1e);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 35,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1e);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 4) - fStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 40,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x10);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x10);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x9f0",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x9f0 + 4) + fStack_18;",
+      "type": "unnamed_field"
+    }
+  ]
+}

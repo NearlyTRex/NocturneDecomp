@@ -32,7 +32,7 @@
 ;   int g_CameraOriginZ
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CDemonCamera_01fb8508.corona_blend_factor
+;   undefined4 g_CDemonCameraInstance.corona_blend_factor
 ;   undefined4 DAT_01ffb05c
 ;   undefined4 DAT_01fff224
 ;   ... and 3 more
@@ -287,7 +287,7 @@ section .text
     PUSH EBX                            ; 0050ba84
     CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 ; 0050ba85
         ;   XREF to: 0050b5c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
-    MOV EBP,dword ptr [0x01fb96f0]      ; 0050ba8a | g_CDemonCamera_01fb8508.corona_blend_factor
+    MOV EBP,dword ptr [0x01fb96f0]      ; 0050ba8a | g_CDemonCameraInstance.corona_blend_factor
     ADD ESP,0xc                         ; 0050ba90
     MOV ECX,EAX                         ; 0050ba93
     MOV dword ptr [ESP + 0x20],EBP      ; 0050ba95

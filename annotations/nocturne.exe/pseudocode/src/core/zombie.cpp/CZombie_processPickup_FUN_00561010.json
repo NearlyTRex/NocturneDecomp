@@ -1,74 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 77,
-        "line": 134,
-        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 16,
-        "line": 135,
-        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 93,
-        "line": 141,
-        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 16,
-        "line": 142,
-        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 75,
-        "line": 242,
-        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 16,
-        "line": 243,
-        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 68,
-        "line": 253,
-        "message": "format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 14,
-        "line": 254,
-        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 612,
-    "complexity_score": 361,
+    "complexity_score": 357,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 266,
+    "pseudocode_lines": 262,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 878
+    "total_lines": 874
   },
   "cross_references": [
     {
@@ -232,19 +178,19 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -262,19 +208,19 @@
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff8",
-      "name": "g_CDemonSet_01e57284.actors[1]",
+      "name": "g_CDemonSetInstance.actors[1]",
       "type": "undefined4",
       "value": null
     },
@@ -448,9 +394,9 @@
     {
       "description": "Complex pointer cast",
       "line": 82,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar6 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_20);",
+      "text": "pCVar6 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);",
       "type": "pointer_cast"
     },
     {
@@ -471,7 +417,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 172,
+      "line": 170,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = CStack_44.x;",
@@ -479,7 +425,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 181,
+      "line": 179,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = (pCVar6->location).position.x;",
@@ -487,7 +433,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 202,
+      "line": 200,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_a4.x = CStack_50.x;",
@@ -495,7 +441,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 207,
+      "line": 205,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_c8.x = g_ZeroVector.f.x;",

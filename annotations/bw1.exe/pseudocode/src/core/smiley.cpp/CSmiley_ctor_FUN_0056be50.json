@@ -1,0 +1,239 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 163,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "0056be20",
+      "from_addr": "0056be33",
+      "name": "core_smiley.cpp_factoryFuncSmiley_FUN_0056be20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056be50",
+    "address_range": [
+      [
+        "0056be50",
+        "0056bee7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_smiley.cpp_CSmiley_ctor_FUN_0056be50",
+    "signature": "CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_0056be50(CSmiley *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a0410",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a0410"
+    },
+    {
+      "addr": "00569f50",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00569f50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060594c",
+      "name": "DAT_0060594c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00605950",
+      "name": "DAT_00605950",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056be33",
+        "call_type": "direct",
+        "caller": "core_smiley.cpp_factoryFuncSmiley_FUN_0056be20",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.714285714285714,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 58,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 17,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 132
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSmiley *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar3->field_0x154 = &g_CSmileyVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,0x5f2857);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xc268",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0xc268 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0xc26c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0xc26c = 0x42c80000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2fec",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x2fec = 0x3f19999a;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x2ff0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x2ff0 = 0x3f666666;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0xc29c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0xc29c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0xc2a0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0xc2a0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xc2a4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0xc2a4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0xc2a8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0xc2a8 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2ff4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x2ff4 = uVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2ff8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x2ff8 = uVar2;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSmiley",
+        "offset": 0,
+        "vtable_addr": "00605ab4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

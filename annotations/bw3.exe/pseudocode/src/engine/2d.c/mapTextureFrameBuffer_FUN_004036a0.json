@@ -1,0 +1,123 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 57,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004036a0",
+    "address_range": [
+      [
+        "004036a0",
+        "004036bc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_mapTextureFrameBuffer_FUN_004036a0",
+    "signature": "int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_004036a0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403480",
+      "is_variadic": false,
+      "name": "engine_2d.c_FUN_00403480"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba28",
+      "name": "DAT_005fba28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6ced0",
+      "name": "DAT_01c6ced0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.25,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 10,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 7,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 39
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005fba28",
+      "severity": "mild",
+      "text": "iVar1 = engine_2d_c_FUN_00403480(_DAT_01c6ced0,DAT_005fba28,DAT_005fba28,8,DAT_005fba28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005fba28",
+      "severity": "mild",
+      "text": "iVar1 = engine_2d_c_FUN_00403480(_DAT_01c6ced0,DAT_005fba28,DAT_005fba28,8,DAT_005fba28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005fba28",
+      "severity": "mild",
+      "text": "iVar1 = engine_2d_c_FUN_00403480(_DAT_01c6ced0,DAT_005fba28,DAT_005fba28,8,DAT_005fba28);",
+      "type": "undefined_data"
+    }
+  ]
+}

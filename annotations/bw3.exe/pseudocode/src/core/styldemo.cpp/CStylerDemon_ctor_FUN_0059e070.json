@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 57,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 64
+  },
+  "cross_references": [
+    {
+      "addr": "0059e040",
+      "from_addr": "0059e053",
+      "name": "core_styldemo.cpp_factoryFuncStylerDemon_FUN_0059e040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059e070",
+    "address_range": [
+      [
+        "0059e070",
+        "0059e127"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_styldemo.cpp_CStylerDemon_ctor_FUN_0059e070",
+    "signature": "CStylerDemon * core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00488fd0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_00488fd0"
+    },
+    {
+      "addr": "004fa8a0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_ctor_FUN_004fa8a0"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054eae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e84e0",
+      "name": "DAT_005e84e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e84e4",
+      "name": "DAT_005e84e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0059e053",
+        "call_type": "direct",
+        "caller": "core_styldemo.cpp_factoryFuncStylerDemon_FUN_0059e040",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.636363636363637,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 61,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 21,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 153
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStylerDemon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "pCVar4 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar3[1].field_0x10);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStylerDemon",
+        "offset": 0,
+        "vtable_addr": "005e8644"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

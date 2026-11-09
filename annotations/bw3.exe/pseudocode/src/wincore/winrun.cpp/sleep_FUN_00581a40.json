@@ -1,0 +1,279 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 30,
+    "cross_reference_count": 7,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "00558d20",
+      "from_addr": "00558d5e",
+      "name": "sound_sndmain.cpp_FUN_00558d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558d70",
+      "from_addr": "00558ded",
+      "name": "sound_sndmain.cpp_FUN_00558d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558e10",
+      "from_addr": "00558e39",
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_00558e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570adc",
+      "from_addr": "00570c31",
+      "name": "support_trisock.cpp_FUN_00570adc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570e20",
+      "from_addr": "00570e58",
+      "name": "support_trisock.cpp_FUN_00570e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570f00",
+      "from_addr": "00570f22",
+      "name": "support_trisock.cpp_FUN_00570f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571f10",
+      "from_addr": "00571f94",
+      "name": "unkafter_trisock.cpp_FUN_00571f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00581a40",
+    "address_range": [
+      [
+        "00581a40",
+        "00581a95"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_sleep_FUN_00581a40",
+    "signature": "void __cdecl wincore_winrun_cpp_sleep_FUN_00581a40(double seconds)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a6067",
+      "is_variadic": false,
+      "name": "crt_math.c_ceil_FUN_005a6067"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "EXTERNAL:0000009a",
+      "is_variadic": false,
+      "name": "Sleep"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3658",
+      "name": "PTR_Sleep_005b3658",
+      "type": "void*",
+      "value": "001b4236"
+    },
+    {
+      "addr": "005d7e9b",
+      "name": "DAT_005d7e9b",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "00571f94",
+        "call_type": "direct",
+        "caller": "unkafter_trisock.cpp_FUN_00571f10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00570e58",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00570e20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00558ded",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00558d70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00558e39",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_killSoundThread_FUN_00558e10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00558d5e",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00558d20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00570c31",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00570adc",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00570f22",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00570f00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00570f79",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00570f00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.961538461538462,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CALLIND": 2,
+      "CBRANCH": 1,
+      "COPY": 63,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 10,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "INT_ZEXT": 4,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 10,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 181
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "seconds",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

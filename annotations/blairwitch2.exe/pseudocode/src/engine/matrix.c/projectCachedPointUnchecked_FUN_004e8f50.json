@@ -1,0 +1,312 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 113,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "00407cc0",
+      "from_addr": "00407ef5",
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00407fc0",
+      "from_addr": "004081ff",
+      "name": "engine_3d.c_clipAndDrawLine3D_FUN_00407fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b970",
+      "from_addr": "0046bc02",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e8f50",
+    "address_range": [
+      [
+        "004e8f50",
+        "004e8fc6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_projectCachedPointUnchecked_FUN_004e8f50",
+    "signature": "void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_004e8f50(int cache_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00622014",
+      "name": "DAT_00622014",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622018",
+      "name": "DAT_00622018",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062201c",
+      "name": "DAT_0062201c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622020",
+      "name": "DAT_00622020",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622024",
+      "name": "DAT_00622024",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622028",
+      "name": "DAT_00622028",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e38",
+      "name": "DAT_01c35e38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e3c",
+      "name": "DAT_01c35e3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e40",
+      "name": "DAT_01c35e40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e44",
+      "name": "DAT_01c35e44",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "00407ef5",
+        "call_type": "direct",
+        "caller": "engine_3d.c_clipAndDrawLine2D_FUN_00407cc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00407f02",
+        "call_type": "direct",
+        "caller": "engine_3d.c_clipAndDrawLine2D_FUN_00407cc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004081ff",
+        "call_type": "direct",
+        "caller": "engine_3d.c_clipAndDrawLine3D_FUN_00407fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040820c",
+        "call_type": "direct",
+        "caller": "engine_3d.c_clipAndDrawLine3D_FUN_00407fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046bc02",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046bc0f",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.090909090909091,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "COPY": 29,
+      "INT_ADD": 16,
+      "INT_AND": 32,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 5,
+      "INT_LESS": 1,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 12,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SDIV": 3,
+      "INT_SEXT": 9,
+      "INT_SLESS": 7,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 10,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 6,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 201
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cache_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_00622020",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_00622020 + cache_index * 0x30) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_0062201c",
+      "severity": "mild",
+      "text": "(int)(0x7fffffff / (longlong)(int)(&DAT_0062201c)[cache_index * 0xc]);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_00622024",
+      "severity": "mild",
+      "text": "(&DAT_00622024)[cache_index * 0xc] =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "(int)(((longlong)(int)(&DAT_00622014)[cache_index * 0xc] * (longlong)_DAT_01c35e38) /",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0062201c",
+      "severity": "mild",
+      "text": "(longlong)(int)(&DAT_0062201c)[cache_index * 0xc]) + _DAT_01c35e40;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_00622028",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_00622028 + cache_index * 0x30) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_00622018",
+      "severity": "mild",
+      "text": "(int)(((longlong)(int)(&DAT_00622018)[cache_index * 0xc] * (longlong)_DAT_01c35e3c) /",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_0062201c",
+      "severity": "mild",
+      "text": "(longlong)(int)(&DAT_0062201c)[cache_index * 0xc]) + _DAT_01c35e44;",
+      "type": "undefined_data"
+    }
+  ]
+}

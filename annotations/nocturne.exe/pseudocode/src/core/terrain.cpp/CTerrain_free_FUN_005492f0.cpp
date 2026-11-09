@@ -11,7 +11,7 @@
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_005492f0(CTerrain *this_ptr)
 
 {
-  core_ground_cpp_CGround_free_FUN_004b1470((CGround *)INT_005ba8ec);
+  core_ground_cpp_CGround_free_FUN_004b1470(g_CGroundPtr);
   _DAT_02dd10cc = 0;
   return;
 }

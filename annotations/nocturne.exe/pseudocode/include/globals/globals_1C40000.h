@@ -13,11 +13,11 @@
 // =============================================================================
 
 // CGlassParticle[256]
-extern CGlassParticle g_CGlassParticle_ARRAY_01c4f08c[256];
+extern CGlassParticle g_GlassParticlePool[256];
 
 // CMuzzleFlash[20]
 extern CMuzzleFlash g_CMuzzleFlash_ARRAY_01c4e958[20];
 
 // CSpark[256]
-extern CSpark g_CSpark_ARRAY_01c49d54[256];
+extern CSpark g_SparkPool[256];
 

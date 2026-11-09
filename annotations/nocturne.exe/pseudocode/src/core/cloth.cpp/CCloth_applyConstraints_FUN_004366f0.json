@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 480,
@@ -651,58 +646,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCloth_applyConstraints_FUN_004366f0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 105,
-          "message": "Uninitialized variable: local_74",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 40,
-          "line": 105,
-          "message": "Uninitialized variable: local_7c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 62,
-          "line": 105,
-          "message": "Uninitialized variable: local_78",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 171,
-          "message": "Uninitialized variable: local_b0",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 172,
-          "message": "Uninitialized variable: local_b8",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 173,
-          "message": "Uninitialized variable: local_b4",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
@@ -791,54 +734,6 @@
       "severity": "moderate",
       "text": "local_44 = (float)(g_FastInvSqrtMagic - ((int)local_48 >> 1));",
       "type": "fast_inv_sqrt_inline"
-    },
-    {
-      "description": "Uninitialized variable: local_74",
-      "line": 105,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_7c",
-      "line": 105,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_78",
-      "line": 105,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b0",
-      "line": 171,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_a4 = local_b0 * local_38[local_20].local_matrix.m[2].z +",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b8",
-      "line": 172,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_b8 * local_38[local_20].local_matrix.m[0].z +",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b4",
-      "line": 173,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_b4 * local_38[local_20].local_matrix.m[1].z;",
-      "type": "static_uninitvar"
     }
   ]
 }

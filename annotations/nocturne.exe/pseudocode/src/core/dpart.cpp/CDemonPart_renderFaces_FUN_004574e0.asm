@@ -19,10 +19,10 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0
@@ -71,8 +71,8 @@ section .text
     ADD EAX,EBX                         ; 00457534
     PUSH EAX                            ; 00457536
     PUSH EDX                            ; 00457537
-    MOV ESI,dword ptr [0x005be368]      ; 00457538 | g_CDemonSet_PTR_005be368
-    PUSH ESI                            ; 0045753e | g_CDemonSet_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 00457538 | g_CDemonSetPtr
+    PUSH ESI                            ; 0045753e | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 0045753f
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,[0x005ae704]                ; 00457544 | g_CDemonRenderer_PTR_005ae704
@@ -167,8 +167,8 @@ section .text
         ;   Label: LAB_00457614
     LEA EAX,[ESP + 0x4]                 ; 00457616
     PUSH EAX                            ; 0045761a
-    MOV EDX,dword ptr [0x005be368]      ; 0045761b | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 00457621 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0045761b | g_CDemonSetPtr
+    PUSH EDX                            ; 00457621 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0 ; 00457622
         ;   XREF to: 0050dfe0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim, int count)
     ADD ESP,0xc                         ; 00457627

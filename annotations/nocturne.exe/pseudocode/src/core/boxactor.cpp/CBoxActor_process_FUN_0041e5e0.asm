@@ -32,9 +32,9 @@
 ;   float FLOAT_00579811 = 0.5
 ;   double DOUBLE_00579815 = 3
 ;   float FLOAT_0057981d = 0.2000000
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
@@ -367,9 +367,9 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 0041e9d8
     MOV dword ptr [ESP + 0x40],EBX      ; 0041e9dc
     PUSH EAX                            ; 0041e9e0
-    MOV EAX,[0x005be368]                ; 0041e9e1 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0041e9e1 | g_CDemonSetPtr
     MOV dword ptr [ESP + 0x48],EBX      ; 0041e9e6
-    PUSH EAX                            ; 0041e9ea | g_CDemonSet_01e57284
+    PUSH EAX                            ; 0041e9ea | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x18]         ; 0041e9eb
     CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880 ; 0041e9ef
         ;   XREF to: 00511880 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_00511880(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)

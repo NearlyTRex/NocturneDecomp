@@ -1,0 +1,402 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 126,
+    "complexity_score": 194,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 54,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 180
+  },
+  "cross_references": [
+    {
+      "addr": "00465c20",
+      "from_addr": "00465c76",
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00465c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00465ba0",
+      "from_addr": "00465bef",
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00465cf0",
+    "address_range": [
+      [
+        "00465cf0",
+        "00465e47"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00465cf0",
+    "signature": "void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00465cf0(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "005a4ee0",
+      "is_variadic": false,
+      "name": "crt_string.c__strncpy_FUN_005a4ee0"
+    },
+    {
+      "addr": "005a4f20",
+      "is_variadic": false,
+      "name": "crt_time.c__mktime_FUN_005a4f20"
+    },
+    {
+      "addr": "EXTERNAL:00000057",
+      "is_variadic": false,
+      "name": "FileTimeToLocalFileTime"
+    },
+    {
+      "addr": "EXTERNAL:00000058",
+      "is_variadic": false,
+      "name": "FileTimeToSystemTime"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b354c",
+      "name": "PTR_FileTimeToLocalFileTime_005b354c",
+      "type": "void*",
+      "value": "001b3d32"
+    },
+    {
+      "addr": "005b3550",
+      "name": "PTR_FileTimeToSystemTime_005b3550",
+      "type": "void*",
+      "value": "001b3d4c"
+    },
+    {
+      "addr": "005bc005",
+      "name": "s_engine_dosio_c_005bc005",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bc017",
+      "name": "s_CFileFinder_convertStruc_005bc017",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00465bef",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00465c76",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_CFileFinder_findNext_FUN_00465c20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.742574257425742,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CALLIND": 2,
+      "CBRANCH": 8,
+      "COPY": 99,
+      "INT_ADD": 46,
+      "INT_AND": 62,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 56,
+      "INT_LESS": 4,
+      "INT_OR": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 28,
+      "INT_SUB": 27,
+      "INT_XOR": 6,
+      "LOAD": 41,
+      "POPCOUNT": 28,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 479
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 80,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_26",
+        "offset": -38,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_22",
+        "offset": -34,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1e",
+        "offset": -30,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileFinder *"
+      },
+      {
+        "is_param": true,
+        "name": "find_data",
+        "offset": 8,
+        "size": 4,
+        "type": "LPWIN32_FIND_DATAA"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x100 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(DWORD *)&this_ptr->field_0x104 = find_data->nFileSizeLow;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x108 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x108 = uVar2;",
+      "type": "unnamed_field"
+    }
+  ]
+}

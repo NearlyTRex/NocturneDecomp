@@ -1,56 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 88,
-        "message": "use of undeclared identifier 'DAT_0058d9a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 96,
-        "message": "use of undeclared identifier 'DAT_01e428d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 97,
-        "message": "use of undeclared identifier 'DAT_01e428d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 106,
-        "message": "use of undeclared identifier 'DAT_01e428d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 107,
-        "message": "use of undeclared identifier 'DAT_01e428d0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 237,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 112,
+    "pseudocode_lines": 111,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data"
     ],
-    "total_lines": 415
+    "total_lines": 414
   },
   "cross_references": [
     {
@@ -205,7 +169,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -370,7 +334,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_0058d9a8",
       "severity": "mild",
       "text": "iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,filename);",
@@ -378,7 +342,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 88,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar8 = &DAT_01e428d0;",
@@ -386,7 +350,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 89,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,0x10000,1,p_Var3);",
@@ -394,7 +358,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 98,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar8 = &DAT_01e428d0;",
@@ -402,7 +366,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,size,1,p_Var3);",

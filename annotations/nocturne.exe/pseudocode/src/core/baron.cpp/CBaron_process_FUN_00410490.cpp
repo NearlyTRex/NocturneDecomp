@@ -67,7 +67,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_baron_cpp_CBaron_updateMountedPosition_FUN_00410bf0(this_ptr,delta_time);
   }
-  pCVar2 = g_CGame_PTR_005b9354;
+  pCVar2 = g_CGamePtr;
   (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
   if (pCVar2->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
@@ -176,7 +176,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00410490(CBaron *this_ptr,float d
     if (EVar1 == WALK_STATE_NO_PATH) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar9->base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
       goto switchD_00410a6d_default;
     }
 LAB_00410847:

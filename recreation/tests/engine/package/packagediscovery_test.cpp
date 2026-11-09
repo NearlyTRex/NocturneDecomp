@@ -47,12 +47,13 @@ protected:
 
     CPackageFiles files_;
     std::vector<SRelease> releases_{
-        {.id = "1999-en",
+        {.id = "1999-en-nocturne",
          .name = "English",
          .game = "nocturne",
          .required = {"STARTUP.POD"},
          .pods = {{.name = "STARTUP.POD", .size = 7, .xxh3 = std::string(kHashOfPodOne)},
                   {.name = "A.POD", .size = 7, .xxh3 = std::string(kHashOfPodTwo)}},
+         .files = {},
          .content = {}}};
 };
 
@@ -74,7 +75,7 @@ TEST_F(CPackageDiscoveryTest, WithoutAManifestTheBaseGamesIsWrittenFromTheReleas
     const SPackage &base = found.packages.front();
     EXPECT_EQ(base.folder, "");
     EXPECT_TRUE(base.written_by_game);
-    EXPECT_EQ(base.manifest.release, "1999-en");
+    EXPECT_EQ(base.manifest.release, "1999-en-nocturne");
     EXPECT_EQ(base.manifest.pods.size(), 2U);
     EXPECT_TRUE(found.notes.empty());
     const std::optional<std::string> written = files_.contents("nocturne.toml");
@@ -117,7 +118,7 @@ TEST_F(CPackageDiscoveryTest, TheBaseManifestCarriesItsReleasesGameContent) {
 TEST_F(CPackageDiscoveryTest, AWrittenManifestWithOtherGameContentIsWrittenAgain) {
     releases_.front().content.front_end = "nocturne";
     files_.givenFile("nocturne.toml",
-                     std::format("{}\nid = \"nocturne\"\nrelease = \"1999-en\"\n"
+                     std::format("{}\nid = \"nocturne\"\nrelease = \"1999-en-nocturne\"\n"
                                  "front_end = \"old\"\n[[pod]]\npath = \"STARTUP.POD\"\n",
                                  kWrittenByGame));
     const SPackageDiscovery found = discover();
@@ -129,7 +130,7 @@ TEST_F(CPackageDiscoveryTest, AWrittenManifestWithOtherGameContentIsWrittenAgain
 
 TEST_F(CPackageDiscoveryTest, AWrittenManifestWithItsReleasesContentIsLeftAsItIs) {
     files_.givenFile("nocturne.toml",
-                     std::format("{}\nid = \"nocturne\"\nrelease = \"1999-en\"\n"
+                     std::format("{}\nid = \"nocturne\"\nrelease = \"1999-en-nocturne\"\n"
                                  "[[pod]]\npath = \"STARTUP.POD\"\n[[pod]]\npath = \"A.POD\"\n",
                                  kWrittenByGame));
     EXPECT_CALL(files_.file_system_, writeFile).Times(0);
@@ -139,7 +140,7 @@ TEST_F(CPackageDiscoveryTest, AWrittenManifestWithItsReleasesContentIsLeftAsItIs
 // The player's own manifest, or one of a release this build doesn't know, keeps its content.
 TEST_F(CPackageDiscoveryTest, OnlyAWrittenManifestOfAKnownReleaseTakesItsContent) {
     releases_.front().content.front_end = "nocturne";
-    files_.givenFile("nocturne.toml", "id = \"nocturne\"\nrelease = \"1999-en\"\n"
+    files_.givenFile("nocturne.toml", "id = \"nocturne\"\nrelease = \"1999-en-nocturne\"\n"
                                       "front_end = \"mine\"\n[[pod]]\npath = \"STARTUP.POD\"\n");
     files_.givenFile("mods/old/nocturne.toml",
                      std::format("{}\nid = \"old\"\nrelease = \"1998-xx\"\n", kWrittenByGame));
@@ -159,7 +160,7 @@ TEST_F(CPackageDiscoveryTest, AManifestTheGameWroteIsMarkedAsItsOwn) {
 TEST_F(CPackageDiscoveryTest, ABrokenBaseManifestIsNotedAndLeftAsItIs) {
     files_.givenFile("nocturne.toml", "id = \n");
     const SPackageDiscovery found = discover();
-    EXPECT_EQ(found.packages.front().manifest.release, "1999-en");
+    EXPECT_EQ(found.packages.front().manifest.release, "1999-en-nocturne");
     ASSERT_EQ(found.notes.size(), 2U);
     EXPECT_THAT(found.notes[0], StartsWith("nocturne.toml: line 1: "));
     EXPECT_THAT(found.notes[0], HasSubstr("; the package isn't loaded"));
@@ -494,7 +495,7 @@ TEST_F(CPackageDiscoveryTest, AnArchiveIsUnpackedInTheUsersCacheWhereThereIsOne)
 TEST_F(CPackageDiscoveryTest, TheBaseGamesOwnTitleNamesTheCache) {
     releases_.front().content.title = "Nocturne";
     files_.givenFile("nocturne.toml",
-                     "id = \"nocturne\"\nrelease = \"1999-en\"\n"
+                     "id = \"nocturne\"\nrelease = \"1999-en-nocturne\"\n"
                      "title = \"Nocturne Redux\"\n[[pod]]\npath = \"STARTUP.POD\"\n"
                      "[[pod]]\npath = \"A.POD\"\n");
     ON_CALL(files_.file_system_, getCacheFolder(std::string_view("Nocturne Redux")))

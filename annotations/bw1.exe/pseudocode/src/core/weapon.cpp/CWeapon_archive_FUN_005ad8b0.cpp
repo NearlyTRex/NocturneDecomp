@@ -1,0 +1,34 @@
+// Name: core_weapon.cpp_CWeapon_archive_FUN_005ad8b0
+// Address: 005ad8b0
+// Address Range: [[005ad8b0, 005ad98b]]
+// Convention: __cdecl
+// Signature: void __cdecl core_weapon_cpp_CWeapon_archive_FUN_005ad8b0(CWeapon *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_weapon_cpp_CWeapon_archive_FUN_005ad8b0(CWeapon *this_ptr)
+
+{
+  char local_104 [256];
+  
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
+            (&this_ptr->field_0x158,"modelName");
+  if (2 < g_CWeaponClassVersion) {
+    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x304,"carriedByActor");
+  }
+  if (3 < g_CWeaponClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x2d4,"weaponState")
+    ;
+    core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x568,"ammoCount");
+    core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x56c,"ammoType");
+  }
+  if (g_CWeaponClassVersion == 5) {
+    core_actor_cpp_archiveLocalizedString_FUN_0040b560(local_104,"descriptiveName");
+  }
+  if (g_CWeaponClassVersion < 7) {
+    return;
+  }
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x570,"simTimer");
+  return;
+}

@@ -1,0 +1,26 @@
+// Name: core_teleport.cpp_CTeleport_dtor_FUN_005724d0
+// Address: 005724d0
+// Address Range: [[005724d0, 0057251d]]
+// Convention: __cdecl
+// Signature: CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_005724d0(CTeleport *this_ptr,uint flags)
+
+#include "nocturne.h"
+
+CTeleport * __cdecl core_teleport_cpp_CTeleport_dtor_FUN_005724d0(CTeleport *this_ptr,uint flags)
+
+{
+  CTeleport *pCVar1;
+  void *ptr;
+  
+  if ((flags & 4) != 0) {
+    ptr = (void *)__vec_delete(this_ptr,&g_CTeleportTypeInfo);
+    FUN_005b7fce(ptr);
+    return this_ptr;
+  }
+  pCVar1 = (CTeleport *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  if ((flags & 2) == 0) {
+    return pCVar1;
+  }
+  FUN_005b7fdc(pCVar1);
+  return pCVar1;
+}

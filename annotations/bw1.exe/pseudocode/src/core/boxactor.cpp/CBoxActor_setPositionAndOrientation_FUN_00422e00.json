@@ -1,0 +1,312 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 259,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 23,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00422e00",
+    "address_range": [
+      [
+        "00422e00",
+        "00422e82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422e00",
+    "signature": "void __cdecl core_boxactor_cpp_CBoxActor_setPositionAndOrientation_FUN_00422e00(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0"
+    },
+    {
+      "addr": "00421e80",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_FUN_00421e80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.36,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 45,
+      "INT_ADD": 29,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "LOAD": 19,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 168
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      },
+      {
+        "is_param": true,
+        "name": "new_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "new_orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)new_position;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&new_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&new_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&new_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&new_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "if ((CVector3f *)&this_ptr->field_0x30 != new_orientation) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x30 = *(uint *)new_orientation;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)&new_orientation->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)&new_orientation->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)&new_orientation->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)&new_orientation->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x394",
+      "severity": "mild",
+      "text": "if ((CVector3f *)&this_ptr->field_0x394 != new_position) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x394",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x394 = *(uint *)new_position;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x398",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x398 = *(uint *)&new_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x398 = *(uint *)&new_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x39c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x39c = *(uint *)&new_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x39c = *(uint *)&new_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x3a0",
+      "severity": "mild",
+      "text": "if ((CVector3f *)&this_ptr->field_0x3a0 != new_orientation) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x3a0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x3a0 = *(uint *)new_orientation;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x3a4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x3a4 = *(uint *)&new_orientation->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x3a4 = *(uint *)&new_orientation->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x3a8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x3a8 = *(uint *)&new_orientation->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x3a8 = *(uint *)&new_orientation->field_0x8;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 104,
+        "vtable_addr": "005fcf34"
+      },
+      {
+        "class_name": "CBoxActor",
+        "offset": 104,
+        "vtable_addr": "005fce54"
+      },
+      {
+        "class_name": "CBoxActor",
+        "offset": 104,
+        "vtable_addr": "00605f54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

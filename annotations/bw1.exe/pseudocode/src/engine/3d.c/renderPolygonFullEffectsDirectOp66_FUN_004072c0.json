@@ -1,0 +1,475 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 137,
+    "complexity_score": 386,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 21,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 76,
+    "suspect_count": 29,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 213
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004072c0",
+    "address_range": [
+      [
+        "004072c0",
+        "00407468"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_004072c0",
+    "signature": "int __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_004072c0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "0043cbf0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_0043cbf0"
+    },
+    {
+      "addr": "00597d00",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_FUN_00597d00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4b8",
+      "name": "DAT_0061b4b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629014",
+      "name": "DAT_00629014",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629018",
+      "name": "DAT_00629018",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713af8",
+      "name": "DAT_00713af8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713afc",
+      "name": "DAT_00713afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713b00",
+      "name": "DAT_00713b00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713b04",
+      "name": "DAT_00713b04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713b08",
+      "name": "DAT_00713b08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713b0c",
+      "name": "DAT_00713b0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713b34",
+      "name": "DAT_00713b34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713bc4",
+      "name": "DAT_00713bc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713bc8",
+      "name": "DAT_00713bc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713c0c",
+      "name": "DAT_00713c0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713c10",
+      "name": "DAT_00713c10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713c14",
+      "name": "DAT_00713c14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f02c",
+      "name": "DAT_01c4f02c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d00",
+      "name": "DAT_01c51d00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d0c",
+      "name": "DAT_01c51d0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d14",
+      "name": "DAT_01c51d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d18",
+      "name": "DAT_01c51d18",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.918181818181818,
+    "instruction_count": 110,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "CALL": 3,
+      "CBRANCH": 12,
+      "COPY": 88,
+      "INT_ADD": 47,
+      "INT_AND": 83,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 64,
+      "INT_LEFT": 4,
+      "INT_LESS": 10,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 3,
+      "INT_SLESS": 33,
+      "INT_SUB": 28,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 27,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 17,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 541
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_004072c0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "vertex_indices = (int *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "else if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (((DAT_00713af8 == 0) || (0x9c3 < DAT_00713afc)) || (4 < *(int *)(param_1 + 4))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_00713af8",
+      "severity": "mild",
+      "text": "if (((DAT_00713af8 == 0) || (0x9c3 < DAT_00713afc)) || (4 < *(int *)(param_1 + 4))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_00713afc",
+      "severity": "mild",
+      "text": "if (((DAT_00713af8 == 0) || (0x9c3 < DAT_00713afc)) || (4 < *(int *)(param_1 + 4))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_0043cbf0(*(int *)(param_1 + 4),vertex_indices);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00713afc",
+      "severity": "mild",
+      "text": "iVar3 = DAT_00713afc * 0x118;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_00713b00",
+      "severity": "mild",
+      "text": "puVar6 = (uint *)(&DAT_00713b00 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_00713afc",
+      "severity": "mild",
+      "text": "DAT_00713afc = DAT_00713afc + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_00713afc",
+      "severity": "mild",
+      "text": "DAT_00713afc = DAT_00713afc + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*puVar6 = *(uint *)(param_1 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_00629014",
+      "severity": "mild",
+      "text": "puVar8 = &DAT_00629014 + *vertex_indices * 0xc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar7 < *(int *)(param_1 + 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_0061b4b8",
+      "severity": "mild",
+      "text": "uVar1 = DAT_0061b4b8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_00713bc4",
+      "severity": "mild",
+      "text": "puVar6 = (uint *)(&DAT_00713bc4 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_00713c0c",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_00713c0c + iVar3) = uVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_00713c14",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_00713c14 + iVar3) = iVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_00713c10",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_00713c10 + iVar3) = _DAT_01c51d0c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 53,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 69,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar7 = 0x12; iVar7 != 0; iVar7 = iVar7 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004073a5, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 69,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004073a5: MOVSD.REP ES:EDI,ESI  ; DAT_00629014 | DAT_00713b04 | DAT_00629018",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004073df, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 93,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004073df: MOVSD.REP ES:EDI,ESI  ; DAT_00713bc4 | DAT_00713bc8",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 264,
+        "vtable_addr": "006104f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

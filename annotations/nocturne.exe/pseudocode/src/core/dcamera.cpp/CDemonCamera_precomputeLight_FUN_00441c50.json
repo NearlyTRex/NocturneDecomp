@@ -1,100 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_01216608'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 64,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 70,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 75,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 77,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 77,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 79,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "format_error",
-        "column": 123,
-        "line": 88,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonCamera *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 101,
-        "message": "use of undeclared identifier 'stack0xffffff84'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 102,
-        "message": "use of undeclared identifier 'stack0xffffff88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 103,
-        "message": "use of undeclared identifier 'stack0xffffff88'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 27,
-        "line": 172,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 436,
@@ -519,37 +423,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCamera_precomputeLight_FUN_00441c50.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 107,
-          "message": "Uninitialized variable: local_78",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 19,
-          "line": 127,
-          "message": "Uninitialized variable: local_74",
-          "severity": "warning"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 13,
-          "line": 115,
-          "message": "Uninitialized variable: local_74",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -838,30 +711,6 @@
       "severity": "moderate",
       "text": "pCVar4 = (CDemonLight *)((pCVar4->base).camera_name + 4);",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_78",
-      "line": 107,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < local_78) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_74",
-      "line": 127,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_78 <= local_74) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_74",
-      "line": 115,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iVar1 = local_74 + 1;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

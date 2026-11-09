@@ -1,0 +1,162 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 62,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 4,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "0053d710",
+      "from_addr": "0053d715",
+      "name": "core_podmain.cpp_CDemonPod_ctor_FUN_0053d710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053d550",
+      "from_addr": "0053d555",
+      "name": "core_podmain.cpp_staticInit_FUN_0053d550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053c5c0",
+    "address_range": [
+      [
+        "0053c5c0",
+        "0053c5eb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_ctor_FUN_0053c5c0",
+    "signature": "CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_0053c5c0(CPod *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0053d555",
+        "call_type": "direct",
+        "caller": "core_podmain.cpp_staticInit_FUN_0053d550",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053d715",
+        "call_type": "direct",
+        "caller": "core_podmain.cpp_CDemonPod_ctor_FUN_0053d710",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4545454545454546,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 1,
+      "COPY": 8,
+      "INT_ADD": 5,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 38
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x194",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x194 = &PTR_engine_pod_cpp_CPod_dtor_FUN_0053c5f0_00604a34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar1 = (CPod *)&pCVar1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x190",
+      "severity": "mild",
+      "text": "} while (pCVar1 != (CPod *)&this_ptr->field_0x190);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 11,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPod *)&pCVar1->field_0x4;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPod",
+        "offset": 0,
+        "vtable_addr": "00604a54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

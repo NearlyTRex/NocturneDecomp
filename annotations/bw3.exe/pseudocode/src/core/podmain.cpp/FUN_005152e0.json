@@ -1,0 +1,304 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 147,
+    "complexity_score": 189,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_field",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 191
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005152e0",
+    "address_range": [
+      [
+        "005152e0",
+        "00515463"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_podmain.cpp_FUN_005152e0",
+    "signature": "void core_podmain_cpp_FUN_005152e0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a43ec",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005a43ec"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    },
+    {
+      "addr": "00465ca0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00465ca0"
+    },
+    {
+      "addr": "00465b60",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00465b60"
+    },
+    {
+      "addr": "00465b80",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_dtor_FUN_00465b80"
+    },
+    {
+      "addr": "00465c20",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00465c20"
+    },
+    {
+      "addr": "00465ba0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cca00",
+      "name": "DAT_005cca00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cca03",
+      "name": "s_pod_ini_005cca03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cca0b",
+      "name": "s_pod_005cca0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cca11",
+      "name": "s_core_podmain_cpp_005cca11",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cca25",
+      "name": "s_Can_t_mount_s_s_005cca25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cca38",
+      "name": "DAT_005cca38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cca3c",
+      "name": "DAT_005cca3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cca40",
+      "name": "s_core_podmain_cpp_005cca40",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cca54",
+      "name": "s_Can_t_mount_s_s_005cca54",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.034188034188034,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 91,
+      "INT_ADD": 45,
+      "INT_AND": 54,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 50,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 25,
+      "INT_SUB": 49,
+      "INT_XOR": 1,
+      "LOAD": 19,
+      "POPCOUNT": 25,
+      "RETURN": 2,
+      "STORE": 45
+    },
+    "pcode_op_count": 472
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_podmain_cpp_FUN_005152e0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005cca00",
+      "severity": "mild",
+      "text": "iVar1 = _fopen(\"pod.ini\",&DAT_005cca00);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 19,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "while (CStack_328._0_1_ != '\\0') {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_328,auStack_114);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_328,auStack_114);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_328,auStack_114);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_005cca38",
+      "severity": "mild",
+      "text": "_fscanf(iVar1,&DAT_005cca38,&iStack_14);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_005cca3c",
+      "severity": "mild",
+      "text": "_fscanf(iVar1,&DAT_005cca3c,auStack_214);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 37,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,auStack_214,auStack_114);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,auStack_214,auStack_114);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,auStack_214,auStack_114);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonPod",
+        "offset": 4,
+        "vtable_addr": "005e3494"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

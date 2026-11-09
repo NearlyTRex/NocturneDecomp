@@ -1,0 +1,258 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 162,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 37,
+    "suspect_count": 11,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [
+    {
+      "addr": "0049f850",
+      "from_addr": "004a006e",
+      "name": "core_flame.cpp_FUN_0049f850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005386e0",
+      "from_addr": "00538813",
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8e90",
+      "from_addr": "004e8ea6",
+      "name": "engine_matrix.c_projectCachedPoint_FUN_004e8e90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e8eb0",
+    "address_range": [
+      [
+        "004e8eb0",
+        "004e8f4d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_projectTransformedPoint_FUN_004e8eb0",
+    "signature": "void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e8eb0(int *param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c35e38",
+      "name": "DAT_01c35e38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e3c",
+      "name": "DAT_01c35e3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e40",
+      "name": "DAT_01c35e40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e44",
+      "name": "DAT_01c35e44",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004e8ea6",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_projectCachedPoint_FUN_004e8e90",
+        "estimated_params": 1,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00538813",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a006e",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_FUN_0049f850",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 3,
+      "CBRANCH": 6,
+      "COPY": 67,
+      "INT_2COMP": 2,
+      "INT_ADD": 23,
+      "INT_AND": 45,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 3,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 11,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 2,
+      "INT_SDIV": 3,
+      "INT_SEXT": 9,
+      "INT_SLESS": 16,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 17,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 9,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 330
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e8eb0(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[4] = -0x7ffffff0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[4] = bVar6 | 0x80000000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] = (int)(0x7fffffff / (longlong)iVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[4] = (int)(((longlong)iVar3 * (longlong)iVar4) / (longlong)iVar2) + _DAT_01c35e40;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[5] = (int)(((longlong)iVar1 * (longlong)iVar5) / (longlong)iVar2) + _DAT_01c35e44;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

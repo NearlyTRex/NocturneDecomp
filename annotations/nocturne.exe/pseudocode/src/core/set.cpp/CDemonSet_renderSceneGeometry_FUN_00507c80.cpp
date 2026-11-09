@@ -31,7 +31,7 @@ LAB_00507e84:
        (visible_cube_indices = this_ptr->cameras[iVar1].pvs_list, visible_cube_indices != (int *)0x0
        )) {
       core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0046ace0
-                (&g_CDemonRaytrace_01fba938,visible_cube_count,visible_cube_indices);
+                (&g_CDemonRaytraceInstance,visible_cube_count,visible_cube_indices);
       goto LAB_00507e84;
     }
     render_mode = 2;
@@ -39,10 +39,10 @@ LAB_00507d02:
     iVar1 = 0;
   }
   core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
-            (&g_CDemonRaytrace_01fba938,frustum_param,iVar1);
+            (&g_CDemonRaytraceInstance,frustum_param,iVar1);
   if (render_mode == 2) {
     core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40
-              (&g_CDemonRaytrace_01fba938,
+              (&g_CDemonRaytraceInstance,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list);
   }
@@ -61,16 +61,16 @@ LAB_00507d51:
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                   (g_CDemonRenderer_PTR_005ae704,&local_1c);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-                  (&g_CKeyFramedModel_01fbacc8,0,(CKeyFramedModelInstance *)0x0,-1);
+                  (&g_CKeyFramedModelInstance,0,(CKeyFramedModelInstance *)0x0,-1);
       }
       if ((this_ptr->disable_sky_rendering == 0) && (this_ptr->has_sky != 0)) {
         core_dskybox_cpp_renderSkyDome_FUN_00463580
                   (PTR_DAT_005b0674,this_ptr->sky_texture_name,this_ptr->sky_brightness);
       }
       if ((this_ptr->disable_water_rendering == 0) &&
-         (core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(0x02DD1210),
-         0x02DD1210->wave_animation_enabled == 0)) {
-        core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,1);
+         (core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(g_CWaterPtr),
+         g_CWaterPtr->wave_animation_enabled == 0)) {
+        core_water_cpp_CWater_render_FUN_00550cb0(g_CWaterPtr,1);
       }
       if (this_ptr->player_on_train != 0) {
         core_terrain_cpp_CTerrain_render_FUN_00549310(0x02DD10C8,1);
@@ -87,7 +87,7 @@ LAB_00507d51:
         }
         core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(this_ptr,iVar1,1);
         core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
-                  (&g_CDemonRaytrace_01fba938,frustum_param,0);
+                  (&g_CDemonRaytraceInstance,frustum_param,0);
         iVar1 = iVar1 + 1;
         core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(this_ptr);
         pCVar2 = (CDemonSet *)pCVar2->cameras;
@@ -104,7 +104,7 @@ LAB_00507d51:
       }
       core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0050e080(this_ptr,iVar1,0);
       core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0
-                (&g_CDemonRaytrace_01fba938,frustum_param,0);
+                (&g_CDemonRaytraceInstance,frustum_param,0);
       pCVar2 = (CDemonSet *)pCVar2->cameras;
       iVar1 = iVar1 + 1;
       core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(this_ptr);

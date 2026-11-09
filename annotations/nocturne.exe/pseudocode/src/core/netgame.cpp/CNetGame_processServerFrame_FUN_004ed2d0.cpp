@@ -133,7 +133,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(CNetGame 
 LAB_004ed475:
     iVar2 = rand();
     sim_frame->random_seed = iVar2;
-    sim_frame->delta_time = g_CGame_PTR_005b9354->delta_time_float;
+    sim_frame->delta_time = g_CGamePtr->delta_time_float;
     iVar2 = 0;
     pCVar4 = this_ptr;
     pSVar7 = sim_frame;

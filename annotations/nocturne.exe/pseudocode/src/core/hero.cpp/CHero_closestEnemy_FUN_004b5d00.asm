@@ -22,9 +22,9 @@
 ; Referenced Globals:
 ;   double DOUBLE_005858eb = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CMobsterActorType_01ccdbd8.name_hash
-;   undefined4 g_CDemonSet_01e57284.enemy_count
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 g_CVehicleActorType_02dd1190.name_hash
 ;
 ; Called Functions:
@@ -52,9 +52,9 @@ section .text
     ADD EAX,0x20                        ; 004b5d21
     MOV dword ptr [ESP + 0x8c],EDX      ; 004b5d24
     MOV dword ptr [ESP + 0x94],EAX      ; 004b5d2b
-    MOV EAX,[0x005be368]                ; 004b5d32 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004b5d32 | g_CDemonSetPtr
         ;   Label: LAB_004b5d32
-    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 004b5d37 | g_CDemonSet_01e57284.enemy_count
+    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 004b5d37 | g_CDemonSetInstance.enemy_count
     JL 0x004b5d5b                       ; 004b5d3d
         ;   XREF to: 004b5d5b (CONDITIONAL_JUMP)  ; LAB_004b5d5b
     CMP dword ptr [ESP + 0x8c],0x0      ; 004b5d3f

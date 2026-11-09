@@ -17,20 +17,18 @@ void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *out_referen
   int local_18;
   int local_14;
   
-  this_ptr = g_CSfxSample_ARRAY_02dc1edc;
+  this_ptr = g_SfxSamples;
   iVar2 = 0;
   iVar3 = 0;
   local_1c = 0;
   local_14 = 0;
   local_18 = 0;
   do {
-    if (0 < g_CSfxSample_ARRAY_02dc1edc[iVar3].streaming_buffer_size) {
-      if ((g_CSfxSample_ARRAY_02dc1edc[iVar3].ref_count == 0) &&
-         (g_CSfxSample_ARRAY_02dc1edc[iVar3].taken == 0)) {
+    if (0 < g_SfxSamples[iVar3].streaming_buffer_size) {
+      if ((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].taken == 0)) {
         local_1c = local_1c + 1;
-        iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
-                          (g_CSfxSample_ARRAY_02dc1edc + iVar3);
-        local_14 = local_14 + iVar1 * g_CSfxSample_ARRAY_02dc1edc[iVar3].streaming_buffer_size;
+        iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(g_SfxSamples + iVar3);
+        local_14 = local_14 + iVar1 * g_SfxSamples[iVar3].streaming_buffer_size;
       }
       else {
         iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(this_ptr);

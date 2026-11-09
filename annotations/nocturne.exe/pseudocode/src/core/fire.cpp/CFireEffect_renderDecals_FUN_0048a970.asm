@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   undefined4 DAT_01c20140
 ;   undefined4 DAT_01c23d48
-;   undefined4 g_CStake_ARRAY_01c23d50[0].physics_box.is_valid
-;   undefined4 g_CStake_ARRAY_01c23d50[1].physics_box.is_valid
+;   undefined4 g_StakePool[0].physics_box.is_valid
+;   undefined4 g_StakePool[1].physics_box.is_valid
 ;
 ; Called Functions:
 ;   core_fire.cpp_CBulletHole_render_FUN_00482f50
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 0048aa16 (CONDITIONAL_JUMP)  ; LAB_0048aa16
     MOV EDI,0x1c23d50                   ; 0048a9d1
     XOR EBX,EBX                         ; 0048a9d6
-    MOV EAX,dword ptr [EDI + 0x258]     ; 0048a9d8 | g_CStake_ARRAY_01c23d50[0].physics_box.is_valid | g_CStake_ARRAY_01c23d50[1].physics_box.is_valid
+    MOV EAX,dword ptr [EDI + 0x258]     ; 0048a9d8 | g_StakePool[0].physics_box.is_valid | g_StakePool[1].physics_box.is_valid
         ;   Label: LAB_0048a9d8
     TEST EAX,EAX                        ; 0048a9de
     JZ 0x0048aa93                       ; 0048a9e0

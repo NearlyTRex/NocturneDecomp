@@ -68,8 +68,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_0048d5d0(CFlame *this_pt
        (fVar2 = (this_ptr->flame_size).y, fVar3 = (this_ptr->flame_size).x,
        fVar4 = (this_ptr->flame_size).z,
        1.0 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) * this_ptr->globe_scalar)) {
-      core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20
-                (g_CDemonSet_PTR_005be368,&this_ptr->globe);
+      core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20(g_CDemonSetPtr,&this_ptr->globe);
     }
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != FLAME_TYPE_NONE)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90

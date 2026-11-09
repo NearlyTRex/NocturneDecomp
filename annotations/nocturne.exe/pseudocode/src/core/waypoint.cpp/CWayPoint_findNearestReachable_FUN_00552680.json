@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_02ddd5d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_02ddd5d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 47,
-        "message": "use of undeclared identifier 'DAT_02ddd5d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 61,
-        "message": "use of undeclared identifier 'DAT_02ddd5d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 69,
-        "message": "use of undeclared identifier 'DAT_02ddd5d4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
@@ -101,13 +65,13 @@
   "globals": [
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01fabd00",
-      "name": "g_CDemonSet_01e57284.waypoint_count",
+      "name": "g_CDemonSetInstance.waypoint_count",
       "type": "undefined4",
       "value": null
     },
@@ -284,9 +248,9 @@
     {
       "description": "Complex pointer cast",
       "line": 29,
-      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_CDemonSet_PTR_005be368->waypoints + iVar4);",
+      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -316,9 +280,9 @@
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(CWayPoint **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CWayPoint **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar9 = *(CWayPoint **)((int)g_CDemonSet_PTR_005be368->waypoints + iVar4);",
+      "text": "pCVar9 = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar4);",
       "type": "pointer_cast"
     },
     {

@@ -1,0 +1,215 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 71,
+    "cross_reference_count": 13,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 5,
+    "suspect_types": [
+      "fpu_register_input",
+      "register_param"
+    ],
+    "total_lines": 50
+  },
+  "cross_references": [
+    {
+      "addr": "0045b8e0",
+      "from_addr": "0045b991",
+      "name": "core_dirmat.cpp_FUN_0045b8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045b9b0",
+      "from_addr": "0045bcfc",
+      "name": "core_dirmat.cpp_FUN_0045b9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496c0c",
+      "from_addr": "00496c4f",
+      "name": "core_fire.cpp_FUN_00496c0c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a2e20",
+      "from_addr": "004a36b4",
+      "name": "core_fire.cpp_FUN_004a2e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051c1c0",
+      "from_addr": "0051c4f4",
+      "name": "core_prye.cpp_FUN_0051c1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005228be",
+      "from_addr": "0052290d",
+      "name": "core_prye.cpp_FUN_005228be",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052294e",
+      "from_addr": "00522a10",
+      "name": "core_prye.cpp_FUN_0052294e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522b00",
+      "from_addr": "00523463",
+      "name": "core_prye.cpp_FUN_00522b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523800",
+      "from_addr": "00523d2a",
+      "name": "core_prye.cpp_FUN_00523800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583a40",
+      "from_addr": "00583af2",
+      "name": "core_xform.cpp_FUN_00583a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583b10",
+      "from_addr": "00583ef9",
+      "name": "core_xform.cpp_FUN_00583b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583fb0",
+      "from_addr": "0058439b",
+      "name": "core_xform.cpp_FUN_00583fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00585a80",
+      "from_addr": "00585aee",
+      "name": "core_xform.cpp_FUN_00585a80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a4b74",
+    "address_range": [
+      [
+        "005a4b74",
+        "005a4bb0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_math.c_acos_FUN_005a4b74",
+    "signature": "undefined2 crt_math_c_acos_FUN_005a4b74(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a5cc1",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_005a5cc1"
+    },
+    {
+      "addr": "005aad76",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005aad76"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006075d0",
+      "name": "DAT_006075d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.814814814814815,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 90,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 3,
+      "INT_ADD": 2,
+      "INT_AND": 12,
+      "INT_EQUAL": 2,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "INT_ZEXT": 8,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 184
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_AX",
+      "severity": "mild",
+      "text": "ushort in_AX;",
+      "type": "register_param"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 7,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 9,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "if (((float10)1 - in_ST0 * in_ST0 != (float10)0) &&",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 9,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "if (((float10)1 - in_ST0 * in_ST0 != (float10)0) &&",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_AX",
+      "severity": "mild",
+      "text": "return in_AX;",
+      "type": "register_param"
+    }
+  ]
+}

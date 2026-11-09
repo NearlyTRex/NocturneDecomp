@@ -1,0 +1,73 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_litecone_cpp_CLightCone_archive_FUN_00502f80(CLightCone *this_ptr)
+;
+; Parameters:
+; CLightCone *     Stack[0x4]:4   this_ptr
+;
+; Referenced Globals:
+;   undefined4 DAT_005e7062
+;   TerminatedCString s_falloff_005e7066
+;   TerminatedCString s_state_005e706e
+;   TerminatedCString s_onEvent_005e7074
+;   TerminatedCString s_offEvent_005e707c
+;   int g_CLightConeClassVersion = 0x2
+;
+; Called Functions:
+;   core_actor.cpp_archiveFloat_FUN_0040b5f0
+;   core_actor.cpp_archiveInteger_FUN_0040b670
+;   core_actor.cpp_archiveString_FUN_0040b440
+;   core_actor.cpp_CDemonActor_archive_FUN_0040c040
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00502f80
+        ;   Label: core_litecone.cpp_CLightCone_archive_FUN_00502f80
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00502f81
+    PUSH EBX                            ; 00502f85
+    CALL core_actor.cpp_CDemonActor_archive_FUN_0040c040 ; 00502f86
+        ;   XREF to: 0040c040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040c040(CDemonActor * this_ptr)
+    ADD ESP,0x4                         ; 00502f8b
+    PUSH 0x5e7062                       ; 00502f8e | DAT_005e7062
+    LEA EAX,[EBX + 0x158]               ; 00502f93
+    PUSH EAX                            ; 00502f99
+    CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00502f9a
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+    ADD ESP,0x8                         ; 00502f9f
+    PUSH 0x5e7066                       ; 00502fa2 | = "falloff"
+    LEA EAX,[EBX + 0x15c]               ; 00502fa7
+    PUSH EAX                            ; 00502fad
+    CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 00502fae
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+    MOV EDX,dword ptr [0x0061f350]      ; 00502fb3 | g_CLightConeClassVersion
+    ADD ESP,0x8                         ; 00502fb9
+    CMP EDX,0x2                         ; 00502fbc
+    JGE 0x00502fc3                      ; 00502fbf
+        ;   XREF to: 00502fc3 (CONDITIONAL_JUMP)  ; LAB_00502fc3
+    POP EBX                             ; 00502fc1
+    RET                                 ; 00502fc2
+    PUSH 0x5e706e                       ; 00502fc3 | = "state"
+        ;   Label: LAB_00502fc3
+    LEA EAX,[EBX + 0x160]               ; 00502fc8
+    PUSH EAX                            ; 00502fce
+    CALL core_actor.cpp_archiveInteger_FUN_0040b670 ; 00502fcf
+        ;   XREF to: 0040b670 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040b670(int * int_ptr, char * property_name)
+    ADD ESP,0x8                         ; 00502fd4
+    PUSH 0x5e7074                       ; 00502fd7 | = "onEvent"
+    LEA EAX,[EBX + 0x164]               ; 00502fdc
+    PUSH EAX                            ; 00502fe2
+    CALL core_actor.cpp_archiveString_FUN_0040b440 ; 00502fe3
+        ;   XREF to: 0040b440 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040b440(char * string_buffer, char * property_type)
+    ADD ESP,0x8                         ; 00502fe8
+    PUSH 0x5e707c                       ; 00502feb | = "offEvent"
+    ADD EBX,0x1c8                       ; 00502ff0
+    PUSH EBX                            ; 00502ff6
+    CALL core_actor.cpp_archiveString_FUN_0040b440 ; 00502ff7
+        ;   XREF to: 0040b440 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveString_FUN_0040b440(char * string_buffer, char * property_type)
+    ADD ESP,0x8                         ; 00502ffc
+    POP EBX                             ; 00502fff
+    RET                                 ; 00503000
+

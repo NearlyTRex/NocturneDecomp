@@ -1,0 +1,176 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 65,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "00434190",
+      "from_addr": "0043424d",
+      "name": "core_charactr.cpp_FUN_00434190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00487c80",
+      "from_addr": "00487c9b",
+      "name": "core_emitter.cpp_FUN_00487c80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d22c0",
+    "address_range": [
+      [
+        "004d22c0",
+        "004d236e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_FUN_004d22c0",
+    "signature": "CHero * __cdecl core_hero_cpp_FUN_004d22c0(CLocation *location)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d5ba00",
+      "name": "DAT_01d5ba00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0043424d",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00434190",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00487c9b",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_FUN_00487c80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.878787878787879,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 116,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 27,
+      "INT_AND": 30,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 8,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 20,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 322
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "location",
+        "offset": 4,
+        "size": 4,
+        "type": "CLocation *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 18,
+      "match": "*(CHero **)(iVar3 + 0x1d5ba04",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CHero **)(iVar3 + 0x1d5ba04);",
+      "type": "raw_address_pointer_store"
+    }
+  ]
+}

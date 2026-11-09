@@ -1,0 +1,233 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 8,
+    "cross_reference_count": 5,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "00480480",
+      "from_addr": "00480614",
+      "name": "cockpit_drawsurf.cpp_FUN_00480480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8e50",
+      "from_addr": "004d9052",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8700",
+      "from_addr": "004d8a37",
+      "name": "core_game.cpp_FUN_004d8700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8a90",
+      "from_addr": "004d8de8",
+      "name": "core_game.cpp_FUN_004d8a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c23f0",
+      "from_addr": "004c244a",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c2350",
+    "address_range": [
+      [
+        "004c2350",
+        "004c239a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c2060",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c2060"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c3ea0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "004d8a37",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d8700",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004d8de8",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d8a90",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004d9052",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004c244a",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "00480614",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "00480672",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0606060606060606,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 2,
+      "COPY": 28,
+      "INT_ADD": 15,
+      "INT_AND": 26,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 15,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 4,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SRIGHT": 3,
+      "INT_SUB": 16,
+      "LOAD": 11,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 167
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "left_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 28,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

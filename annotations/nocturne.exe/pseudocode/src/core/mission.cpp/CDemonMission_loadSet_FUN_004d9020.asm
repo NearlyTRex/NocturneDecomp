@@ -14,10 +14,10 @@
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d9802
 ;
 ; Referenced Globals:
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.actor_count
-;   undefined4 g_CDemonSet_01e57284.actors[0]
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0
@@ -47,8 +47,8 @@ section .text
     LEA EAX,[EBX + 0x114]               ; 004d9038
     ADD EAX,EDX                         ; 004d903e
     PUSH EAX                            ; 004d9040
-    MOV ECX,dword ptr [0x005be368]      ; 004d9041 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 004d9047 | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004d9041 | g_CDemonSetPtr
+    PUSH ECX                            ; 004d9047 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_load_FUN_00506f10 ; 004d9048
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_load_FUN_00506f10(CDemonSet * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004d904d
@@ -63,12 +63,12 @@ section .text
     XOR ESI,ESI                         ; 004d9063
         ;   Label: LAB_004d9063
     XOR EBX,EBX                         ; 004d9065
-    MOV EAX,[0x005be368]                ; 004d9067 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004d9067 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004d9067
-    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 004d906c | g_CDemonSet_01e57284.actor_count
+    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 004d906c | g_CDemonSetInstance.actor_count
     JGE 0x004d902e                      ; 004d9072
         ;   XREF to: 004d902e (CONDITIONAL_JUMP)  ; LAB_004d902e
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004d9074 | g_CDemonSet_01e57284.actors[0]
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004d9074 | g_CDemonSetInstance.actors[0]
     PUSH EAX                            ; 004d907b
     MOV EDX,dword ptr [EAX + 0x14c]     ; 004d907c
     ADD ESI,0x4                         ; 004d9082

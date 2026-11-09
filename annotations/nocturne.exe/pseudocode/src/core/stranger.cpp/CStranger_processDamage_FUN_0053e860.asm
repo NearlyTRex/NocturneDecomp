@@ -26,12 +26,12 @@
 ;   double DOUBLE_00595d9f = 0.75
 ;   float FLOAT_00595da7 = 50
 ;   float FLOAT_005a26f8 = 2
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
-;   CConsole g_CConsole_0077ad0c
-;   CGame g_CGame_01c775ec
+;   CGame* g_CGamePtr = 01c775ec
+;   CGore* g_CGorePtr = 01c78c7c
+;   CConsole g_CConsoleInstance
+;   CGame g_CGameInstance
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -65,13 +65,13 @@ section .text
     SUB ESP,0x24                        ; 0053e866
     MOV EBX,dword ptr [EBP + 0x14]      ; 0053e869
     MOV ESI,dword ptr [EBP + 0x18]      ; 0053e86c
-    MOV EAX,[0x005b9354]                ; 0053e86f | g_CGame_PTR_005b9354
-    CMP dword ptr [EAX + 0x1d0],0x0     ; 0053e874 | g_CGame_01c775ec.god_mode_enabled
+    MOV EAX,[0x005b9354]                ; 0053e86f | g_CGamePtr
+    CMP dword ptr [EAX + 0x1d0],0x0     ; 0053e874 | g_CGameInstance.god_mode_enabled
     JNZ 0x0053eba6                      ; 0053e87b
         ;   XREF to: 0053eba6 (CONDITIONAL_JUMP)  ; LAB_0053eba6
-    MOV EAX,[0x005b9354]                ; 0053e881 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 0053e881 | g_CGamePtr
         ;   Label: LAB_0053e881
-    MOV ECX,dword ptr [EAX + 0x22c]     ; 0053e886 | g_CGame_01c775ec.allow_damage_flag
+    MOV ECX,dword ptr [EAX + 0x22c]     ; 0053e886 | g_CGameInstance.allow_damage_flag
     TEST ECX,ECX                        ; 0053e88c
     JNZ 0x0053e893                      ; 0053e88e
         ;   XREF to: 0053e893 (CONDITIONAL_JUMP)  ; LAB_0053e893
@@ -107,9 +107,9 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 0053e8e0
         ;   Label: LAB_0053e8e0
     FSUBR float ptr [EBX + 0x2434]      ; 0053e8e3
-    MOV EAX,[0x005b9354]                ; 0053e8e9 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 0053e8e9 | g_CGamePtr
     FSTP float ptr [EBX + 0x2434]       ; 0053e8ee
-    CMP dword ptr [EAX + 0xc8],0x0      ; 0053e8f4 | g_CGame_01c775ec.auto_use_health
+    CMP dword ptr [EAX + 0xc8],0x0      ; 0053e8f4 | g_CGameInstance.auto_use_health
     JZ 0x0053e95e                       ; 0053e8fb
         ;   XREF to: 0053e95e (CONDITIONAL_JUMP)  ; LAB_0053e95e
     CMP dword ptr [ESI + 0x30],0xb      ; 0053e8fd
@@ -123,8 +123,8 @@ section .text
     JC 0x0053e95e                       ; 0053e910
         ;   XREF to: 0053e95e (CONDITIONAL_JUMP)  ; LAB_0053e95e
     PUSH 0x595d45                       ; 0053e912 | = "Using auto health\n"
-    MOV EDI,dword ptr [0x005ad350]      ; 0053e917 | g_CConsole_PTR_005ad350
-    PUSH EDI                            ; 0053e91d | g_CConsole_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 0053e917 | g_CConsolePtr
+    PUSH EDI                            ; 0053e91d | g_CConsoleInstance
     MOV dword ptr [EBX + 0x2434],0x0    ; 0053e91e
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053e928
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
@@ -138,8 +138,8 @@ section .text
     FLD float ptr [EBX + 0x2434]        ; 0053e942
     FSTP double ptr [ESP]               ; 0053e948
     PUSH 0x595d58                       ; 0053e94b | = "hit points: %3.2f\n"
-    MOV EAX,[0x005ad350]                ; 0053e950 | g_CConsole_PTR_005ad350
-    PUSH EAX                            ; 0053e955 | g_CConsole_0077ad0c
+    MOV EAX,[0x005ad350]                ; 0053e950 | g_CConsolePtr
+    PUSH EAX                            ; 0053e955 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0053e956
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0053e95b
@@ -303,7 +303,7 @@ section .text
     PUSH 0x42480000                     ; 0053eb0a
     PUSH 0x32                           ; 0053eb0f
     PUSH EBX                            ; 0053eb11
-    MOV EDX,dword ptr [0x005b96c4]      ; 0053eb12 | g_CGore_PTR_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 0053eb12 | g_CGorePtr
     PUSH EDX                            ; 0053eb18
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 0053eb19
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
@@ -342,8 +342,8 @@ section .text
     SAHF                                ; 0053eb84
     JNC 0x0053eb95                      ; 0053eb85
         ;   XREF to: 0053eb95 (CONDITIONAL_JUMP)  ; LAB_0053eb95
-    MOV EAX,[0x005b9354]                ; 0053eb87 | g_CGame_PTR_005b9354
-    PUSH EAX                            ; 0053eb8c | g_CGame_01c775ec
+    MOV EAX,[0x005b9354]                ; 0053eb87 | g_CGamePtr
+    PUSH EAX                            ; 0053eb8c | g_CGameInstance
     CALL core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90 ; 0053eb8d
         ;   XREF to: 004a3a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0053eb92

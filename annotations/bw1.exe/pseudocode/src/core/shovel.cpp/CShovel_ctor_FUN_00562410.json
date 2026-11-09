@@ -1,0 +1,200 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 122,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "005623e0",
+      "from_addr": "005623f3",
+      "name": "core_shovel.cpp_factoryFuncShovel_FUN_005623e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00562410",
+    "address_range": [
+      [
+        "00562410",
+        "0056248d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shovel.cpp_CShovel_ctor_FUN_00562410",
+    "signature": "CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00562410(CShovel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00468950",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950"
+    },
+    {
+      "addr": "005ad4c0",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ad4c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005623f3",
+        "call_type": "direct",
+        "caller": "core_shovel.cpp_factoryFuncShovel_FUN_005623e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.652173913043478,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 18,
+      "INT_ADD": 15,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 84
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShovel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar1->field_0x154 = &g_CShovelVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&pCVar1->field_0x158,(char *)0x5f1a13);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2e0 = 7;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x56c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x56c = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x568",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x568 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2d8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2d8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2dc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2dc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2e4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2e4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x2e8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2e8 = 0x40a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x2ec",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2ec = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CShovel",
+        "offset": 0,
+        "vtable_addr": "00605724"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

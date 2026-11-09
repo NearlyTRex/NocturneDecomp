@@ -1,0 +1,414 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 149,
+    "complexity_score": 362,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 72,
+    "suspect_count": 26,
+    "suspect_types": [
+      "extra_output",
+      "unaffected_reg",
+      "undefined_data",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 221
+  },
+  "cross_references": [
+    {
+      "addr": "00556fd0",
+      "from_addr": "0055910b",
+      "name": "sound_sndmain.cpp_FUN_00556fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00558f20",
+    "address_range": [
+      [
+        "00558f20",
+        "005590e0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_sndmain.cpp_FUN_00558f20",
+    "signature": "void sound_sndmain_cpp_FUN_00558f20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00554430",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430"
+    },
+    {
+      "addr": "00555270",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270"
+    },
+    {
+      "addr": "005586d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005586d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02ce727c",
+      "name": "DAT_02ce727c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce7338",
+      "name": "DAT_02ce7338",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce7384",
+      "name": "DAT_02ce7384",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce7398",
+      "name": "DAT_02ce7398",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce7450",
+      "name": "DAT_02ce7450",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce7453",
+      "name": "DAT_02ce7453",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2828",
+      "name": "DAT_02cf2828",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2838",
+      "name": "DAT_02cf2838",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2848",
+      "name": "DAT_02cf2848",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf28b8",
+      "name": "DAT_02cf28b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3280",
+      "name": "DAT_02cf3280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3288",
+      "name": "DAT_02cf3288",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3424",
+      "name": "DAT_02cf3424",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3427",
+      "name": "DAT_02cf3427",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055910b",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00556fd0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.61344537815126,
+    "instruction_count": 119,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CALLIND": 6,
+      "CBRANCH": 13,
+      "COPY": 107,
+      "INT_ADD": 49,
+      "INT_AND": 62,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 52,
+      "INT_LESS": 5,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 26,
+      "INT_SUB": 48,
+      "INT_XOR": 1,
+      "LOAD": 54,
+      "POPCOUNT": 26,
+      "RETURN": 2,
+      "STORE": 46
+    },
+    "pcode_op_count": 549
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_FUN_005586d0(unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (0 < extraout_EAX) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x60 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 | _DAT_02cf3424;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 | _DAT_02cf3424;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "if ((this_ptr->field_0x4c & 1) != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 & 0xdffffff9;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 & 0xdffffff9;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x118 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 26,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02cf3280 + 0x44))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "(_DAT_02cf3280,this_ptr,*(uint *)&this_ptr->field_0x118);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x11b",
+      "severity": "mild",
+      "text": "else if ((this_ptr->field_0x11b & 0x40) != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 33,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02cf3280 + 0x4c))(_DAT_02cf3280,this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x11b",
+      "severity": "mild",
+      "text": "this_ptr->field_0x11b = this_ptr->field_0x11b & 0xbf;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x11b",
+      "severity": "mild",
+      "text": "this_ptr->field_0x11b = this_ptr->field_0x11b & 0xbf;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_02ceb91c",
+      "severity": "mild",
+      "text": "if (this_ptr == (CSfxSlot *)&DAT_02ceb91c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x1c))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_02cf2828",
+      "severity": "mild",
+      "text": "(_DAT_02cf3280,*(uint *)(&DAT_02cf2828 + _DAT_02cf28b8 * 8),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_02cf2838",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02cf2838 + _DAT_02cf28b8 * 8),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_02cf2848",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02cf2848 + _DAT_02cf28b8 * 8),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 51,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x20))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 63,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x24))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 69,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x18))(_DAT_02cf3280);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

@@ -155,7 +155,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     }
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0((CCharacter *)this_ptr,delta_time);
-  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGame_PTR_005b9354,delta_time);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGamePtr,delta_time);
   fVar18 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar18;
   if (fVar18 < 0.0) {
@@ -187,8 +187,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     local_24 = 0.0;
     pCStack_28 = (CMotionController *)0x0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"grabbedBy=%s\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"grabbedBy=%s\n");
     }
   }
   if ((this_ptr->base).pushed_object != (CBoxActor *)0x0) {
@@ -197,8 +196,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     iStack_20 = 0;
     local_24 = 0.0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"pushedObject=%s\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"pushedObject=%s\n");
     }
   }
   if (((this_ptr->base).ladder_to_climb != (CLadder *)0x0) ||
@@ -209,7 +207,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     local_24 = 0.0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"ladder\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"ladder\n");
     }
   }
   if (((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0) || (this_ptr->action_pending == 4))
@@ -218,7 +216,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     iVar26 = 0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"pickup\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"pickup\n");
     }
   }
   pCStack_54 = &(this_ptr->base).base.model.base;
@@ -233,7 +231,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     local_24 = 0.0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"hurt\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"hurt\n");
     }
   }
   pCStack_14 = &(this_ptr->base).base.model.base;
@@ -248,7 +246,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     iVar26 = 0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"door\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"door\n");
     }
   }
   fVar18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
@@ -260,46 +258,42 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
     pCStack_28 = (CMotionController *)0x0;
     iStack_20 = 0;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"sitting\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"sitting\n");
     }
   }
   if (this_ptr->action_pending == 1) {
     iVar26 = 0;
     bVar12 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"stashinventory\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"stashinventory\n");
     }
   }
   if (this_ptr->action_pending == 2) {
     iVar26 = 0;
     bVar12 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"placeobject\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"placeobject\n");
     }
   }
   if (this_ptr->action_pending == 6) {
     iVar26 = 0;
     bVar12 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"putdownobject\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"putdownobject\n");
     }
   }
   if (this_ptr->action_pending == 3) {
     iVar26 = 0;
     bVar12 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"toss\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"toss\n");
     }
   }
   if (this_ptr->action_pending == 7) {
     iVar26 = 0;
     bVar12 = false;
     if (iStack_1c != 0) {
-      engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"attackmelee\n");
+      engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"attackmelee\n");
     }
   }
   if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) {
@@ -481,7 +475,7 @@ LAB_0053713f:
                 }
                 core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
                 engine_console_cpp_CConsole_printf_FUN_0043ac60
-                          (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+                          (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
               }
               (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
               (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -946,7 +940,7 @@ LAB_00537586:
       if ((this_ptr->base).base.is_on_ground != 0) {
         engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"Splat at %3.2f fps\n",
+                  (g_CConsolePtr,"Splat at %3.2f fps\n",
                    (double)(this_ptr->base).base.velocity.y);
         fVar18 = -this_ptr->fall_velocity_snapshot;
         dVar28 = (double)fVar18;
@@ -1029,7 +1023,7 @@ LAB_00536144:
   (this_ptr->pending_velocity).z = 0.0;
   (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
   (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
-  pCVar15 = g_CGame_PTR_005b9354;
+  pCVar15 = g_CGamePtr;
   if (iStack_20 != 0) {
     if ((this_ptr->base).player_input.action_state.draw != 0) {
       if (this_ptr->guns_drawn == 0) {
@@ -1047,8 +1041,8 @@ LAB_00536144:
     if ((((this_ptr->base).player_input.action_state.light != 0) &&
         (pCVar9 = (this_ptr->base).inventory.selected_weapon, pCVar9 != (CWeapon *)0x0)) &&
        (pCVar9->can_attach_light != 0)) {
-      uVar25 = (uint)(g_CGame_PTR_005b9354->flashlight_active == 0);
-      g_CGame_PTR_005b9354->flashlight_active = uVar25;
+      uVar25 = (uint)(g_CGamePtr->flashlight_active == 0);
+      g_CGamePtr->flashlight_active = uVar25;
       if (uVar25 != 0) {
         this_ptr->guns_drawn = 1;
       }
@@ -1058,10 +1052,10 @@ LAB_00536144:
   }
   pCVar9 = (this_ptr->base).inventory.selected_weapon;
   if (pCVar9 == (CWeapon *)0x0) {
-    g_CGame_PTR_005b9354->flashlight_active = 0;
+    g_CGamePtr->flashlight_active = 0;
   }
   else if (pCVar9->can_attach_light == 0) {
-    g_CGame_PTR_005b9354->flashlight_active = 0;
+    g_CGamePtr->flashlight_active = 0;
   }
   if (local_24 != 0.0) {
     core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_0053f310(this_ptr,delta_time);
@@ -1143,7 +1137,7 @@ LAB_00536144:
   }
   iVar26 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->goggle_sfx_handles[0]);
   if (iVar26 == 0) {
-    if (g_CGame_PTR_005b9354->goggles_active != 0) {
+    if (g_CGamePtr->goggles_active != 0) {
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->goggle_sfx_handles[1]);
       sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_00526270(1);
@@ -1157,7 +1151,7 @@ LAB_00536144:
       return;
     }
   }
-  else if (g_CGame_PTR_005b9354->goggles_active == 0) {
+  else if (g_CGamePtr->goggles_active == 0) {
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->goggle_sfx_handles[1]);
     sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->goggle_sfx_handles[0]);
     sound_sndmain_cpp_pushSfxOptions_FUN_00526340();

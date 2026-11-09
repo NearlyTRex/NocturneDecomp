@@ -1,0 +1,190 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 79,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "00416750",
+      "from_addr": "004167ce",
+      "name": "core_bodypart.cpp_FUN_00416750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005764b0",
+      "from_addr": "005765ec",
+      "name": "core_vessel.cpp_FUN_005764b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a5aa0",
+    "address_range": [
+      [
+        "004a5aa0",
+        "004a5acc"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flame.cpp_FUN_004a5aa0",
+    "signature": "void core_flame_cpp_FUN_004a5aa0(CDemonActor *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408890"
+    },
+    {
+      "addr": "004a5ad0",
+      "is_variadic": false,
+      "name": "core_flame.cpp_FUN_004a5ad0"
+    },
+    {
+      "addr": "005a35cc",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005a35cc"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004167ce",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_FUN_00416750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005765ec",
+        "call_type": "direct",
+        "caller": "core_vessel.cpp_FUN_005764b0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.357142857142857,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 10,
+      "INT_ADD": 7,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 61
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_flame_cpp_FUN_004a5aa0(CDemonActor *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_00408890(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_flame_cpp_FUN_004a5ad0(*(uint *)&param_1[1].field_0x50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "core_flame_cpp_FUN_004a5ad0(*(uint *)&param_1[1].field_0x50);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x13c = uVar1 & 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x13c",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x13c = uVar1 & 1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005dfe74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -84,13 +84,13 @@ section .text
     TEST EAX,EAX                        ; 004a0583
     JZ 0x004a05d7                       ; 004a0585
         ;   XREF to: 004a05d7 (CONDITIONAL_JUMP)  ; LAB_004a05d7
-    MOV EAX,[0x005b9354]                ; 004a0587 | g_CGame_PTR_005b9354
-    CMP dword ptr [EAX + 0x214],0x29a   ; 004a058c | g_CGame_01c775ec.head_of_horror_cheat
+    MOV EAX,[0x005b9354]                ; 004a0587 | g_CGamePtr
+    CMP dword ptr [EAX + 0x214],0x29a   ; 004a058c | g_CGameInstance.head_of_horror_cheat
     JZ 0x004a05d7                       ; 004a0596
         ;   XREF to: 004a05d7 (CONDITIONAL_JUMP)  ; LAB_004a05d7
     PUSH 0x40a00000                     ; 004a0598
     PUSH 0x582ba2                       ; 004a059d | = "The horror has been unleashed."
-    MOV dword ptr [EAX + 0x214],0x29a   ; 004a05a2 | g_CGame_01c775ec.head_of_horror_cheat
+    MOV dword ptr [EAX + 0x214],0x29a   ; 004a05a2 | g_CGameInstance.head_of_horror_cheat
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a05ac
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a05b1
@@ -565,8 +565,8 @@ section .text
     PUSH 0xf0                           ; 004a0b47
     PUSH 0x0                            ; 004a0b4c
     PUSH 0x0                            ; 004a0b4e
-    MOV ECX,dword ptr [0x005be368]      ; 004a0b50 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 004a0b56 | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004a0b50 | g_CDemonSetPtr
+    PUSH ECX                            ; 004a0b56 | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x278],0x1     ; 004a0b57
     CALL core_set.cpp_CDemonSet_FUN_005090f0 ; 004a0b61
         ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_005090f0(CDemonSet * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
@@ -868,7 +868,7 @@ section .text
     PUSH 0x3e800000                     ; 004a0ebb
     PUSH 0x1                            ; 004a0ec0
     PUSH 0x5b9360                       ; 004a0ec2 | DAT_005b9360
-    MOV EDI,dword ptr [0x005b6d50]      ; 004a0ec7 | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004a0ec7 | g_CEditorToolsPtr
     XOR BL,BL                           ; 004a0ecd
     PUSH 0x5822e6                       ; 004a0ecf | = "Enter Movie FPS"
     MOV byte ptr [0x01c78af0],BL        ; 004a0ed4 | DAT_01c78af0
@@ -888,7 +888,7 @@ section .text
     PUSH 0x1                            ; 004a0f01
     PUSH 0x1c78ad0                      ; 004a0f03 | DAT_01c78ad0
     PUSH 0x5822f6                       ; 004a0f08 | = "Enter number of frames to record (or ..."
-    MOV EAX,[0x005b6d50]                ; 004a0f0d | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004a0f0d | g_CEditorToolsPtr
     PUSH EAX                            ; 004a0f12
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 ; 004a0f13
         ;   XREF to: 00471360 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
@@ -902,7 +902,7 @@ section .text
     PUSH 0x1                            ; 004a0f28
     PUSH 0x5b9364                       ; 004a0f2a | DAT_005b9364
     PUSH 0x582340                       ; 004a0f2f | = "Enter image width"
-    MOV EDX,dword ptr [0x005b6d50]      ; 004a0f34 | g_CEditorTools_PTR_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004a0f34 | g_CEditorToolsPtr
     PUSH EDX                            ; 004a0f3a
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 ; 004a0f3b
         ;   XREF to: 00471360 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
@@ -916,7 +916,7 @@ section .text
     PUSH 0x1                            ; 004a0f50
     PUSH 0x5b9368                       ; 004a0f52 | DAT_005b9368
     PUSH 0x582352                       ; 004a0f57 | = "Enter image height"
-    MOV ECX,dword ptr [0x005b6d50]      ; 004a0f5c | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004a0f5c | g_CEditorToolsPtr
     PUSH ECX                            ; 004a0f62
     CALL shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 ; 004a0f63
         ;   XREF to: 00471360 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360(CEditorTools * this_ptr, char * prompt_text, int * result_ptr, int enable_range_check, ...)
@@ -925,7 +925,7 @@ section .text
     JZ 0x004a0f8e                       ; 004a0f6d
         ;   XREF to: 004a0f8e (CONDITIONAL_JUMP)  ; LAB_004a0f8e
     PUSH 0x582365                       ; 004a0f6f | = "Press CTRL+V to begin recording."
-    MOV EBX,dword ptr [0x005b6d50]      ; 004a0f74 | g_CEditorTools_PTR_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004a0f74 | g_CEditorToolsPtr
     PUSH EBX                            ; 004a0f7a
     MOV ESI,0x1                         ; 004a0f7b
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004a0f80
@@ -1337,8 +1337,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x26c]     ; 004a1400
     PUSH 0x40a00000                     ; 004a1407
     PUSH EBX                            ; 004a140c
-    MOV ESI,dword ptr [0x005b9354]      ; 004a140d | g_CGame_PTR_005b9354
-    PUSH ESI                            ; 004a1413 | g_CGame_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004a140d | g_CGamePtr
+    PUSH ESI                            ; 004a1413 | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a1414
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a1419
@@ -1416,8 +1416,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x27c]     ; 004a14e8
     PUSH 0x40a00000                     ; 004a14ef
     PUSH EDX                            ; 004a14f4
-    MOV ECX,dword ptr [0x005b9354]      ; 004a14f5 | g_CGame_PTR_005b9354
-    PUSH ECX                            ; 004a14fb | g_CGame_01c775ec
+    MOV ECX,dword ptr [0x005b9354]      ; 004a14f5 | g_CGamePtr
+    PUSH ECX                            ; 004a14fb | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a14fc
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a1501
@@ -1495,8 +1495,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x28c]     ; 004a15c9
     PUSH 0x40a00000                     ; 004a15d0
     PUSH ESI                            ; 004a15d5
-    MOV EDI,dword ptr [0x005b9354]      ; 004a15d6 | g_CGame_PTR_005b9354
-    PUSH EDI                            ; 004a15dc | g_CGame_01c775ec
+    MOV EDI,dword ptr [0x005b9354]      ; 004a15d6 | g_CGamePtr
+    PUSH EDI                            ; 004a15dc | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a15dd
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a15e2
@@ -1574,8 +1574,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x298]     ; 004a16b0
     PUSH 0x40a00000                     ; 004a16b7
     PUSH EDI                            ; 004a16bc
-    MOV EAX,[0x005b9354]                ; 004a16bd | g_CGame_PTR_005b9354
-    PUSH EAX                            ; 004a16c2 | g_CGame_01c775ec
+    MOV EAX,[0x005b9354]                ; 004a16bd | g_CGamePtr
+    PUSH EAX                            ; 004a16c2 | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a16c3
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a16c8
@@ -1653,8 +1653,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2a8]     ; 004a1797
     PUSH 0x40a00000                     ; 004a179e
     PUSH EBX                            ; 004a17a3
-    MOV ESI,dword ptr [0x005b9354]      ; 004a17a4 | g_CGame_PTR_005b9354
-    PUSH ESI                            ; 004a17aa | g_CGame_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004a17a4 | g_CGamePtr
+    PUSH ESI                            ; 004a17aa | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a17ab
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a17b0
@@ -1732,8 +1732,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x2b8]     ; 004a187f
     PUSH 0x40a00000                     ; 004a1886
     PUSH EDX                            ; 004a188b
-    MOV ECX,dword ptr [0x005b9354]      ; 004a188c | g_CGame_PTR_005b9354
-    PUSH ECX                            ; 004a1892 | g_CGame_01c775ec
+    MOV ECX,dword ptr [0x005b9354]      ; 004a188c | g_CGamePtr
+    PUSH ECX                            ; 004a1892 | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a1893
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a1898
@@ -1811,8 +1811,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2c8]     ; 004a1967
     PUSH 0x40a00000                     ; 004a196e
     PUSH EDI                            ; 004a1973
-    MOV EAX,[0x005b9354]                ; 004a1974 | g_CGame_PTR_005b9354
-    PUSH EAX                            ; 004a1979 | g_CGame_01c775ec
+    MOV EAX,[0x005b9354]                ; 004a1974 | g_CGamePtr
+    PUSH EAX                            ; 004a1979 | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a197a
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a197f
@@ -1891,8 +1891,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2d8]     ; 004a1a4f
     PUSH 0x40a00000                     ; 004a1a56
     PUSH EBX                            ; 004a1a5b
-    MOV ESI,dword ptr [0x005b9354]      ; 004a1a5c | g_CGame_PTR_005b9354
-    PUSH ESI                            ; 004a1a62 | g_CGame_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004a1a5c | g_CGamePtr
+    PUSH ESI                            ; 004a1a62 | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a1a63
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a1a68
@@ -2226,7 +2226,7 @@ section .text
     PUSH 0x64                           ; 004a1df6
     PUSH EDI                            ; 004a1df8 | DAT_005b92f0
     PUSH 0x58347e                       ; 004a1df9 | = "Raise an event"
-    MOV EAX,[0x005b6d50]                ; 004a1dfe | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004a1dfe | g_CEditorToolsPtr
     PUSH EAX                            ; 004a1e03
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 004a1e04
         ;   XREF to: 00471600 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
@@ -2244,7 +2244,7 @@ section .text
     JZ 0x004a229c                       ; 004a1e26
         ;   XREF to: 004a229c (CONDITIONAL_JUMP)  ; LAB_004a229c
     PUSH EAX                            ; 004a1e2c
-    MOV ECX,dword ptr [0x005b6d50]      ; 004a1e2d | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004a1e2d | g_CEditorToolsPtr
     PUSH ECX                            ; 004a1e33
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004a1e34
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
@@ -2270,7 +2270,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a1e6c
     PUSH EAX                            ; 004a1e6f
-    MOV ECX,dword ptr [0x005b6d50]      ; 004a1e70 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004a1e70 | g_CEditorToolsPtr
     PUSH ECX                            ; 004a1e76
     CALL shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_00471630 ; 004a1e77
         ;   XREF to: 00471630 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_00471630(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
@@ -2357,8 +2357,8 @@ section .text
     PUSH EDI                            ; 004a1f83
     PUSH 0x0                            ; 004a1f84
     PUSH 0x0                            ; 004a1f86
-    MOV EAX,[0x005be368]                ; 004a1f88 | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 004a1f8d | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004a1f88 | g_CDemonSetPtr
+    PUSH EAX                            ; 004a1f8d | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x278],0x0     ; 004a1f8e
     JMP 0x004a0b61                      ; 004a1f98
         ;   XREF to: 004a0b61 (UNCONDITIONAL_JUMP)  ; LAB_004a0b61
@@ -2582,9 +2582,9 @@ section .text
     XOR EDI,EDI                         ; 004a2205
     MOV dword ptr [ESP + 0x47c],EBX     ; 004a2207
         ;   Label: LAB_004a2207
-    MOV EAX,[0x005be368]                ; 004a220e | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004a220e | g_CDemonSetPtr
     MOV EBX,dword ptr [ESP + 0x47c]     ; 004a2213
-    CMP EBX,dword ptr [EAX + 0x150bf4]  ; 004a221a | g_CDemonSet_01e57284.enemy_count
+    CMP EBX,dword ptr [EAX + 0x150bf4]  ; 004a221a | g_CDemonSetInstance.enemy_count
     JGE 0x004a22f9                      ; 004a2220
         ;   XREF to: 004a22f9 (CONDITIONAL_JUMP)  ; LAB_004a22f9
     MOV EBX,dword ptr [EDI + EAX*0x1 + 0x150bf8] ; 004a2226
@@ -2791,7 +2791,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x320]     ; 004a2484
     PUSH EBX                            ; 004a248b
     PUSH 0x583590                       ; 004a248c | = "Enter time factor"
-    MOV ESI,dword ptr [0x005b6d50]      ; 004a2491 | g_CEditorTools_PTR_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004a2491 | g_CEditorToolsPtr
     PUSH ESI                            ; 004a2497
     CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430 ; 004a2498
         ;   XREF to: 00471430 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, int enable_range_check, ...)
@@ -3124,11 +3124,11 @@ section .text
     JNZ 0x004a2852                      ; 004a282a
         ;   XREF to: 004a2852 (CONDITIONAL_JUMP)  ; LAB_004a2852
     PUSH 0x0                            ; 004a282c
-    MOV EAX,[0x005be368]                ; 004a282e | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004a282e | g_CDemonSetPtr
     XOR DH,DH                           ; 004a2833
     PUSH 0x1fb8508                      ; 004a2835
     MOV byte ptr [0x01c78af0],DH        ; 004a283a | DAT_01c78af0
-    MOV dword ptr [EAX + 0x14cd68],0x0  ; 004a2840 | g_CDemonSet_01e57284.min_ambient_value
+    MOV dword ptr [EAX + 0x14cd68],0x0  ; 004a2840 | g_CDemonSetInstance.min_ambient_value
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740 ; 004a284a
         ;   XREF to: 00446740 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00446740(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 004a284f
@@ -3465,10 +3465,10 @@ section .text
     XOR EBX,EBX                         ; 004a2bef
     MOV dword ptr [ESP + 0x454],EBX     ; 004a2bf1
     MOV dword ptr [ESP + 0x478],EBX     ; 004a2bf8
-    MOV EAX,[0x005be368]                ; 004a2bff | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004a2bff | g_CDemonSetPtr
         ;   Label: LAB_004a2bff
     MOV EBX,dword ptr [ESP + 0x478]     ; 004a2c04
-    CMP EBX,dword ptr [EAX + 0x14ecb0]  ; 004a2c0b | g_CDemonSet_01e57284.character_count
+    CMP EBX,dword ptr [EAX + 0x14ecb0]  ; 004a2c0b | g_CDemonSetInstance.character_count
     JGE 0x004a2eff                      ; 004a2c11
         ;   XREF to: 004a2eff (CONDITIONAL_JUMP)  ; LAB_004a2eff
     ADD EAX,dword ptr [ESP + 0x454]     ; 004a2c17

@@ -1,0 +1,168 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [
+    {
+      "addr": "004bbf70",
+      "from_addr": "004bc817",
+      "name": "core_game.cpp_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049ea80",
+    "address_range": [
+      [
+        "0049ea80",
+        "0049eaf7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_load_FUN_0049ea80",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_load_FUN_0049ea80(CFireEffect *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00499c60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CCrater_load_FUN_00499c60"
+    },
+    {
+      "addr": "0049c190",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_init_FUN_0049c190"
+    },
+    {
+      "addr": "005b9600",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgets_FUN_005b9600"
+    },
+    {
+      "addr": "005b8100",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005b8100"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d5832",
+      "name": "DAT_005d5832",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bc817",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bbf70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.405405405405405,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 1,
+      "COPY": 28,
+      "INT_ADD": 16,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 163
+  },
+  "stack_frame": {
+    "frame_size": 284,
+    "local_size": 276,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005d5832",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d5832,&local_10);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01c9cd94",
+      "severity": "mild",
+      "text": "} while (this_ptr_00 != (CCrater *)&DAT_01c9cd94);",
+      "type": "undefined_data"
+    }
+  ]
+}

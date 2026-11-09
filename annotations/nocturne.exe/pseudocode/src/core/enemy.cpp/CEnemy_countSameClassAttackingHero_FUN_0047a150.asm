@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   int g_LocalHeroIndex
-;   undefined4 g_CDemonSet_01e57284.enemy_count
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
@@ -36,9 +36,9 @@ section .text
     ADD ESP,0x4                         ; 0047a165
     XOR EBP,EBP                         ; 0047a168
     MOV dword ptr [ESP],EAX             ; 0047a16a
-    MOV EAX,[0x005be368]                ; 0047a16d | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0047a16d | g_CDemonSetPtr
         ;   Label: LAB_0047a16d
-    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 0047a172 | g_CDemonSet_01e57284.enemy_count
+    CMP EDI,dword ptr [EAX + 0x150bf4]  ; 0047a172 | g_CDemonSetInstance.enemy_count
     JL 0x0047a184                       ; 0047a178
         ;   XREF to: 0047a184 (CONDITIONAL_JUMP)  ; LAB_0047a184
     MOV EAX,EBP                         ; 0047a17a

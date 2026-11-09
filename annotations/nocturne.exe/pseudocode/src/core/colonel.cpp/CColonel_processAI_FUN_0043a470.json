@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 95,
-        "line": 56,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 422,
@@ -460,37 +448,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CColonel_processAI_FUN_0043a470.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 19,
-          "line": 50,
-          "message": "Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 19,
-          "line": 52,
-          "message": "Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 19,
-          "line": 54,
-          "message": "Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -531,30 +488,6 @@
       "severity": "moderate",
       "text": "local_54.x = pCVar6->x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.",
-      "line": 50,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "(pCVar5->base).base.location.position.x;",
-      "type": "static_null_pointer_redundant_check"
-    },
-    {
-      "description": "Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.",
-      "line": 52,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "(pCVar5->base).base.location.position.y;",
-      "type": "static_null_pointer_redundant_check"
-    },
-    {
-      "description": "Either the condition 'pCVar5!=(CHero*)0x0' is redundant or there is possible null pointer dereference: pCVar5.",
-      "line": 54,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "(pCVar5->base).base.location.position.z;",
-      "type": "static_null_pointer_redundant_check"
     }
   ]
 }

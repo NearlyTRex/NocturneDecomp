@@ -1,0 +1,240 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 72,
+    "cross_reference_count": 4,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 66
+  },
+  "cross_references": [
+    {
+      "addr": "004ed260",
+      "from_addr": "004ee101",
+      "name": "core_menu.cpp_FUN_004ed260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553680",
+      "from_addr": "00553764",
+      "name": "sound_sndmain.cpp_FUN_00553680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00552b90",
+      "from_addr": "00552ba3",
+      "name": "sound_sndmain.cpp_initializeSoundDevice_FUN_00552b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005523d0",
+      "from_addr": "0055244a",
+      "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00552aa0",
+    "address_range": [
+      [
+        "00552aa0",
+        "00552b00"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_selectSoundDevice_FUN_00552aa0",
+    "signature": "void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_00552aa0(int device_id)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00552980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00552980"
+    },
+    {
+      "addr": "00552b10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00552b10"
+    },
+    {
+      "addr": "00552890",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e903e",
+      "name": "s_sound_sndmain_cpp_005e903e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9053",
+      "name": "s_selectSoundDevice_device_005e9053",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061bcac",
+      "name": "DAT_0061bcac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00553764",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00553680",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00552ba3",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_initializeSoundDevice_FUN_00552b90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ee101",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055244a",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3793103448275863,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 4,
+      "COPY": 22,
+      "INT_ADD": 6,
+      "INT_AND": 13,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 11,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 7,
+      "LOAD": 5,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 98
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "device_id",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0061bcac",
+      "severity": "mild",
+      "text": "device_id = DAT_0061bcac;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_0061bcac",
+      "severity": "mild",
+      "text": "DAT_0061bcac = device_id;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_0061bcac",
+      "severity": "mild",
+      "text": "DAT_0061bcac = sound_sndmain_cpp_FUN_00552980();",
+      "type": "undefined_data"
+    }
+  ]
+}

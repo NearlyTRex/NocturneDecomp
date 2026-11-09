@@ -1,0 +1,171 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "004e44e0",
+      "from_addr": "004e4588",
+      "name": "core_main.c_FUN_004e44e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f7c30",
+    "address_range": [
+      [
+        "004f7c30",
+        "004f7c60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mmx.c_detectCPUFeatures_FUN_004f7c30",
+    "signature": "void __cdecl core_mmx_c_detectCPUFeatures_FUN_004f7c30(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f7c6c",
+      "is_variadic": false,
+      "name": "core_mmx.c_detectIntelProcessor_FUN_004f7c6c"
+    },
+    {
+      "addr": "004f7d19",
+      "is_variadic": false,
+      "name": "core_mmx.c_detectMMXSupport_FUN_004f7d19"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba34",
+      "name": "DAT_005fba34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600698",
+      "name": "DAT_00600698",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0060069c",
+      "name": "DAT_0060069c",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006006a1",
+      "name": "DAT_006006a1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "01c6e2a0",
+      "name": "DAT_01c6e2a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2a4",
+      "name": "DAT_01c6e2a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e4588",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004e44e0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.076923076923077,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 2,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "INT_XOR": 2,
+      "INT_ZEXT": 1,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 40
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_006006a1",
+      "severity": "mild",
+      "text": "_DAT_01c6e2a0 = (uint)DAT_006006a1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00600698",
+      "severity": "mild",
+      "text": "_DAT_005fba34 = (uint)DAT_00600698;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0060069c",
+      "severity": "mild",
+      "text": "_DAT_01c6e2a4 = (uint)DAT_0060069c;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+// Name: sound_sndmain.cpp_CSfxSample_init_FUN_00572340
+// Address: 00572340
+// Address Range: [[00572340, 0057238a]]
+// Convention: __cdecl
+// Signature: CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_init_FUN_00572340(CSfxSample *this_ptr)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_init_FUN_00572340(CSfxSample *this_ptr)
+
+{
+  float fVar1;
+  float fVar2;
+  
+  memset(this_ptr,0,0x150);
+  fVar1 = _DAT_02c745e0 * _DAT_00623308;
+  fVar2 = _DAT_00605b0c * _DAT_00623308;
+  *(float *)&this_ptr->field_0x114 = _DAT_00605b08 * _DAT_00623308;
+  *(float *)&this_ptr->field_0x118 = fVar1;
+  *(float *)&this_ptr->field_0x11c = fVar2;
+  return this_ptr;
+}

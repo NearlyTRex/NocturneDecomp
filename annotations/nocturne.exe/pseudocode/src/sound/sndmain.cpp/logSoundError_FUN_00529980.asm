@@ -24,8 +24,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_00593b86
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08
@@ -52,9 +52,9 @@ section .text
     MOV EAX,ESP                         ; 005299b2
     PUSH EAX                            ; 005299b4
     PUSH 0x593b86                       ; 005299b5 | = "%s\n"
-    MOV EBX,dword ptr [0x005ad350]      ; 005299ba | g_CConsole_PTR_005ad350
+    MOV EBX,dword ptr [0x005ad350]      ; 005299ba | g_CConsolePtr
     XOR ECX,ECX                         ; 005299c0
-    PUSH EBX                            ; 005299c2 | g_CConsole_0077ad0c
+    PUSH EBX                            ; 005299c2 | g_CConsoleInstance
     MOV dword ptr [ESP + 0x40c],ECX     ; 005299c3
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005299ca
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)

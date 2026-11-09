@@ -1,0 +1,189 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 101,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 7,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "00558730",
+      "from_addr": "00558777",
+      "name": "sound_sndmain.cpp_initializeSoundDevice_FUN_00558730",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055e540",
+    "address_range": [
+      [
+        "0055e540",
+        "0055e586"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_getWavOutDevice_FUN_0055e540",
+    "signature": "undefined * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0055e540(UINT_PTR param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055d870",
+      "is_variadic": false,
+      "name": "sound_sndwav.cpp_CWavOutDevice_close_FUN_0055d870"
+    },
+    {
+      "addr": "EXTERNAL:00000026",
+      "is_variadic": false,
+      "name": "waveOutGetDevCapsA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3480",
+      "name": "PTR_waveOutGetDevCapsA_005b3480",
+      "type": "void*",
+      "value": "001b39de"
+    },
+    {
+      "addr": "00604514",
+      "name": "DAT_00604514",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00558777",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_initializeSoundDevice_FUN_00558730",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.708333333333333,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 18,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 6
+    },
+    "pcode_op_count": 113
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "byte * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0055e540(UINT_PTR param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_02cf5678",
+      "severity": "mild",
+      "text": "iVar1 = sound_sndwav_cpp_CWavOutDevice_close_FUN_0055d870((CWavOutDevice *)&DAT_02cf5678);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "MVar2 = waveOutGetDevCapsA(param_1,&local_34,0x34);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "DAT_00604514 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_00604514",
+      "severity": "mild",
+      "text": "DAT_00604514 = param_1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_02cf5678",
+      "severity": "mild",
+      "text": "return &DAT_02cf5678;",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

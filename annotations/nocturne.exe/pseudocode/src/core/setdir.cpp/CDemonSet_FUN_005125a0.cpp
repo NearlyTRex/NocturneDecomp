@@ -113,7 +113,7 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonAct
   }
   else if (1 < param_3) goto LAB_0051260f;
   if (0.0 < this_ptr->camera_switch_cooldown) {
-    fVar23 = this_ptr->camera_switch_cooldown - g_CGame_PTR_005b9354->delta_time_float;
+    fVar23 = this_ptr->camera_switch_cooldown - g_CGamePtr->delta_time_float;
     this_ptr->camera_switch_cooldown = fVar23;
     if (0.0 < fVar23) {
       if ((-1 < this_ptr->pending_camera_index) &&
@@ -168,7 +168,7 @@ LAB_0051260f:
   if (param_3 == 0) {
     iStack_18 = this_ptr->camera_count * 10;
     dVar22 = round
-                       ((double)((float)iStack_18 * g_CGame_PTR_005b9354->delta_time_float));
+                       ((double)((float)iStack_18 * g_CGamePtr->delta_time_float));
     iStack_54 = (int)ROUND(dVar22);
     if (iStack_54 < 3) {
       iStack_54 = 3;
@@ -176,7 +176,7 @@ LAB_0051260f:
     if (this_ptr->camera_count < iStack_54) {
       iStack_54 = this_ptr->camera_count;
     }
-    fVar23 = this_ptr->previous_best_camera_timer - g_CGame_PTR_005b9354->delta_time_float;
+    fVar23 = this_ptr->previous_best_camera_timer - g_CGamePtr->delta_time_float;
     this_ptr->previous_best_camera_timer = fVar23;
     if (fVar23 <= 0.0) {
       this_ptr->previous_best_camera_index = -1;
@@ -211,9 +211,8 @@ LAB_0051260f:
   iVar13 = 0;
   _DAT_026639ec = 0;
   fStack_ac = 100.0f * 100.0f;
-  for (iStack_24 = 0; iStack_24 < g_CDemonSet_PTR_005be368->actor_count; iStack_24 = iStack_24 + 1)
-  {
-    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar13);
+  for (iStack_24 = 0; iStack_24 < g_CDemonSetPtr->actor_count; iStack_24 = iStack_24 + 1) {
+    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar13);
     iVar6 = (*((this_ptr_00->vtable)._ub)->getBlockVirtualDirectorFlag)(this_ptr_00);
     if (((iVar6 != 0) && (this_ptr_00 != param_2)) &&
        (fVar23 = (this_ptr_00->location).position.x - (param_2->location).position.x,
@@ -510,7 +509,7 @@ LAB_0051260f:
                 fStack_74 = (float)((int)fStack_74 + iVar9);
               } while (iVar6 < iVar13);
             }
-            if (g_CGame_PTR_005b9354->debug_toggle_flag != 0) {
+            if (g_CGamePtr->debug_toggle_flag != 0) {
               puVar10 = (uint *)(iStack_90 * 0x3000 + 0x23755f8);
               iVar13 = 0;
               do {

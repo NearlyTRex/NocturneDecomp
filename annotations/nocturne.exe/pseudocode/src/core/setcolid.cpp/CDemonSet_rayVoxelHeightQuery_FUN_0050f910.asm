@@ -23,7 +23,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00590a15 = -1
 ;   float FLOAT_00590a19 = 150
-;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
@@ -73,7 +73,7 @@ section .text
     PUSH EAX                            ; 0050f977
     FXCH                                ; 0050f978
     FSTP float ptr [ESP + 0x24]         ; 0050f97a
-    PUSH 0x1fba938                      ; 0050f97e | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 0050f97e | g_CDemonRaytraceInstance
     FSTP float ptr [ESP + 0x1c]         ; 0050f983
     CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 ; 0050f987
         ;   XREF to: 00467a00 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)

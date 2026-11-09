@@ -1,0 +1,532 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 144,
+    "cross_reference_count": 60,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 11,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "unnamed_param"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00408f00",
+      "from_addr": "00408f96",
+      "name": "core_actor.cpp_FUN_00408f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004091b0",
+      "from_addr": "004093fb",
+      "name": "core_actor.cpp_FUN_004091b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00409f60",
+      "from_addr": "0040a03a",
+      "name": "core_actor.cpp_FUN_00409f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410490",
+      "from_addr": "004105e2",
+      "name": "core_blundrbs.cpp_FUN_00410490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004157c0",
+      "from_addr": "00415a5b",
+      "name": "core_bodypart.cpp_FUN_004157c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041f360",
+      "from_addr": "0041f702",
+      "name": "core_boxactor.cpp_FUN_0041f360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00424550",
+      "from_addr": "00424645",
+      "name": "core_burncrss.cpp_FUN_00424550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042b9e0",
+      "from_addr": "0042bc04",
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c230",
+      "from_addr": "0042c298",
+      "name": "core_charactr.cpp_FUN_0042c230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042fc90",
+      "from_addr": "0042fd8e",
+      "name": "core_charactr.cpp_FUN_0042fc90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042fdc0",
+      "from_addr": "0042fe4e",
+      "name": "core_charactr.cpp_FUN_0042fdc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00431c40",
+      "from_addr": "00431c78",
+      "name": "core_charactr.cpp_FUN_00431c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00433220",
+      "from_addr": "0043323f",
+      "name": "core_charactr.cpp_FUN_00433220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00433c60",
+      "from_addr": "00433ebd",
+      "name": "core_charactr.cpp_FUN_00433c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00455080",
+      "from_addr": "00456f53",
+      "name": "core_demnfolk.cpp_FUN_00455080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00463d80",
+      "from_addr": "00464282",
+      "name": "core_door.cpp_FUN_00463d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004650a0",
+      "from_addr": "00465134",
+      "name": "core_door.cpp_FUN_004650a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486d40",
+      "from_addr": "00486e87",
+      "name": "core_elephant.cpp_FUN_00486d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00487560",
+      "from_addr": "0048760c",
+      "name": "core_elephant.cpp_FUN_00487560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004876d0",
+      "from_addr": "00487763",
+      "name": "core_elephant.cpp_FUN_004876d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00487eb0",
+      "from_addr": "004887f3",
+      "name": "core_emitter.cpp_FUN_00487eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004889b0",
+      "from_addr": "00488a70",
+      "name": "core_emitter.cpp_FUN_004889b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048b020",
+      "from_addr": "0048b12f",
+      "name": "core_exorcism.cpp_FUN_0048b020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00497610",
+      "from_addr": "00497988",
+      "name": "core_fire.cpp_FUN_00497610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4dc0",
+      "from_addr": "004a536e",
+      "name": "core_firestff.cpp_FUN_004a4dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ae850",
+      "from_addr": "004ae8f8",
+      "name": "core_flintlck.cpp_FUN_004ae850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c07b0",
+      "from_addr": "004c31b9",
+      "name": "core_game.cpp_FUN_004c07b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0fc0",
+      "from_addr": "004d1062",
+      "name": "core_gun.cpp_FUN_004d0fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1070",
+      "from_addr": "004e1e47",
+      "name": "core_lightgun.cpp_FUN_004e1070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a7d0",
+      "from_addr": "0050a932",
+      "name": "core_passngr.cpp_FUN_0050a7d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00518cd0",
+      "from_addr": "0051997f",
+      "name": "core_prye.cpp_FUN_00518cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051c1c0",
+      "from_addr": "0051c6ff",
+      "name": "core_prye.cpp_FUN_0051c1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521880",
+      "from_addr": "00521c76",
+      "name": "core_prye.cpp_FUN_00521880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005220d0",
+      "from_addr": "005221cd",
+      "name": "core_prye.cpp_FUN_005220d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523800",
+      "from_addr": "005238d1",
+      "name": "core_prye.cpp_FUN_00523800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527780",
+      "from_addr": "005278ef",
+      "name": "core_pryemorp.cpp_FUN_00527780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527d70",
+      "from_addr": "00527e0f",
+      "name": "core_rifle.cpp_FUN_00527d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005284d0",
+      "from_addr": "00528597",
+      "name": "core_rifle.cpp_FUN_005284d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053bc80",
+      "from_addr": "0053c7d7",
+      "name": "core_setcolid.cpp_FUN_0053bc80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053de10",
+      "from_addr": "0053e755",
+      "name": "core_setcolid.cpp_FUN_0053de10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005669a0",
+      "from_addr": "005669f2",
+      "name": "core_spike.cpp_FUN_005669a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566a80",
+      "from_addr": "00566b85",
+      "name": "core_spike.cpp_FUN_00566a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566fd0",
+      "from_addr": "00567236",
+      "name": "core_spike.cpp_FUN_00566fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ae00",
+      "from_addr": "0059b1af",
+      "name": "core_spirbear.cpp_FUN_0059ae00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599540",
+      "from_addr": "005998e2",
+      "name": "core_spireagl.cpp_FUN_00599540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a2b0",
+      "from_addr": "0059a63a",
+      "name": "core_spirindi.cpp_FUN_0059a2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568570",
+      "from_addr": "00568648",
+      "name": "core_stairs.cpp_FUN_00568570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568b50",
+      "from_addr": "00568bdb",
+      "name": "core_storm.cpp_FUN_00568b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d9e0",
+      "from_addr": "0059dcb0",
+      "name": "core_styler.cpp_FUN_0059d9e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c140",
+      "from_addr": "0056c5f3",
+      "name": "core_thehand.cpp_FUN_0056c140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b410",
+      "from_addr": "0056b4ec",
+      "name": "core_tommygun.cpp_FUN_0056b410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578d30",
+      "from_addr": "00578e8e",
+      "name": "core_wateract.cpp_FUN_00578d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057bb60",
+      "from_addr": "0057bc2b",
+      "name": "core_weapon.cpp_FUN_0057bb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588ee0",
+      "from_addr": "0058ad82",
+      "name": "core_zombie.cpp_FUN_00588ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058beb0",
+      "from_addr": "0058bf8b",
+      "name": "core_zombie.cpp_FUN_0058beb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563970",
+      "from_addr": "00563ac5",
+      "name": "engine_special.cpp_FUN_00563970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005989e0",
+      "from_addr": "00598cbf",
+      "name": "unkafter_darkwolf.cpp_FUN_005989e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458200",
+      "from_addr": "004582db",
+      "name": "unkafter_demnfolk.cpp_FUN_00458200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00524170",
+      "from_addr": "00524370",
+      "name": "unkafter_prye.cpp_FUN_00524170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00524940",
+      "from_addr": "005252c9",
+      "name": "unkafter_prye.cpp_FUN_00524940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00408b00",
+    "address_range": [
+      [
+        "00408b00",
+        "00408b30"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_actor.cpp_FUN_00408b00",
+    "signature": "void core_actor_cpp_FUN_00408b00(int param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045b800",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045b800"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.181818181818182,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 24,
+      "INT_ADD": 16,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 12,
+      "INT_ZEXT": 6,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 114
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_actor_cpp_FUN_00408b00(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_actor_cpp_FUN_00408b00(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 7,
+      "match": "auStackY_ffc",
+      "severity": "moderate",
+      "text": "uint auStackY_ffc [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dirmat_cpp_FUN_0045b800(param_1 + 0x3c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_dirmat_cpp_FUN_0045b800(param_1 + 0x3c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = local_14;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 13,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(uint *)(&stack0xfffffff0 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(uint *)(&stack0xfffffff0 + (uint)bVar1 * -8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    }
+  ]
+}

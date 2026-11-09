@@ -1,0 +1,111 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "004e94f0",
+      "from_addr": "004ea147",
+      "name": "core_menu.cpp_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00558410",
+    "address_range": [
+      [
+        "00558410",
+        "00558429"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setAudioSampleRate_FUN_00558410",
+    "signature": "void __cdecl sound_sndmain_cpp_setAudioSampleRate_FUN_00558410(int sample_rate)"
+  },
+  "function_calls": [
+    {
+      "addr": "00558370",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00558370"
+    },
+    {
+      "addr": "005583b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005583b0"
+    },
+    {
+      "addr": "00558290",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_00558290"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ea147",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004e94f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6666666666666665,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 4,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 6,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 33
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sample_rate",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

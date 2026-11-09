@@ -1,0 +1,275 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 151,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "00554430",
+      "from_addr": "0055475c",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00554390",
+    "address_range": [
+      [
+        "00554390",
+        "00554422"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00554390",
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00554390(CSfxSlot *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d308a",
+      "name": "s_sound_sndmain_cpp_005d308a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d309f",
+      "name": "s_SfxSlot_autoCalcDelayRem_005d309f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e4844",
+      "name": "DAT_005e4844",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00604240",
+      "name": "DAT_00604240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2828",
+      "name": "DAT_02cf2828",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2838",
+      "name": "DAT_02cf2838",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2848",
+      "name": "DAT_02cf2848",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf28b8",
+      "name": "DAT_02cf28b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf341c",
+      "name": "DAT_02cf341c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055475c",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.255813953488372,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 103,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 5,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 1,
+      "INT_ADD": 18,
+      "INT_AND": 13,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 6,
+      "LOAD": 13,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 226
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "if ((this_ptr->field_0x4c & 1) != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x40 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar1 = (float10)*(double *)&this_ptr->field_0x4 -",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02cf2828",
+      "severity": "mild",
+      "text": "(float10)*(double *)(&DAT_02cf2828 + _DAT_02cf28b8 * 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "fVar2 = (float10)*(double *)&this_ptr->field_0xc -",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_02cf2838",
+      "severity": "mild",
+      "text": "(float10)*(double *)(&DAT_02cf2838 + _DAT_02cf28b8 * 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "fVar3 = (float10)*(double *)&this_ptr->field_0x14 -",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_02cf2848",
+      "severity": "mild",
+      "text": "(float10)*(double *)(&DAT_02cf2848 + _DAT_02cf28b8 * 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x40 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_00604240",
+      "severity": "mild",
+      "text": "SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) * (float10)DAT_00604240);",
+      "type": "undefined_data"
+    }
+  ]
+}

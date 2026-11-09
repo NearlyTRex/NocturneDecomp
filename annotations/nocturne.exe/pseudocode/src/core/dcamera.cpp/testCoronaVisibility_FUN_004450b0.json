@@ -1,34 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_014b845c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_014b8468'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_014b8460'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_014b8464'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
@@ -189,23 +159,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "testCoronaVisibility_FUN_004450b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 19,
-          "line": 33,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -214,14 +167,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 33,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar5 = iVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

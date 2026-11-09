@@ -1,0 +1,62 @@
+// Name: core_fire.cpp_FUN_004b1c50
+// Address: 004b1c50
+// Address Range: [[004b1c50, 004b1d80]]
+// Convention: unknown
+// Signature: void core_fire_cpp_FUN_004b1c50(int *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,CVector3f *param_5,int param_6)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void core_fire_cpp_FUN_004b1c50(int *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,CVector3f *param_5,int param_6)
+
+{
+  CKeyFramedModel *pCVar1;
+  byte bVar2;
+  float afStackY_1020 [1013];
+  float volume;
+  float local_38;
+  float local_34;
+  float local_30;
+  CVector3f local_2c;
+  CVector3f local_20;
+  float local_14;
+  
+  bVar2 = 0;
+  *param_1 = param_2;
+  param_1[0xf7] = param_6;
+  param_1[0xf8] = 0;
+  if (*param_1 == 0) {
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
+              ((CKeyFramedModelInstance *)(param_1 + 1),"@\\@dynamitestick.kfm" + 3);
+    local_14 = 1.0;
+  }
+  else {
+    _DAT_01d1d400 = "..\\core\\fire.cpp";
+    _DAT_01d1d404 = 0xd76;
+    core_main_c_FUN_005030e0("CToss::create - invalid toss type.");
+  }
+  if ((float)param_1[0xf7] <= 0.0) {
+    param_1[0xf7] = 0x40a00000;
+  }
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
+            ((CKeyFramedModelInstance *)(param_1 + 1));
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
+                     ((CKeyFramedModelInstance *)(param_1 + 1));
+  volume = local_14;
+  local_38 = *(float *)&pCVar1->field_0x344 - *(float *)&pCVar1->field_0x338;
+  local_34 = *(float *)&pCVar1->field_0x348 - *(float *)&pCVar1->field_0x33c;
+  local_30 = *(float *)&pCVar1->field_0x34c - *(float *)&pCVar1->field_0x340;
+  local_2c._0_4_ = local_38;
+  *(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4) =
+       *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8);
+  *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  core_box_cpp_CBox_setupCorners_FUN_0041dac0
+            ((CBox *)(param_1 + 0x60),param_3,param_4,&local_2c,volume);
+  local_20._8_4_ = 0;
+  local_20._4_4_ = 0;
+  local_20._0_4_ = 0x4116cbe4;
+  core_box_cpp_CBox_setupVelocities_FUN_00420450((CBox *)(param_1 + 0x60),param_5,&local_20);
+  return;
+}

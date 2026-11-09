@@ -90,12 +90,17 @@ TEST(GameContentFile, WritesOnlyWhatAStoryAndPictureHave) {
     EXPECT_EQ(parseGameContent(formatGameContentTables(content)), content);
 }
 
-TEST(GameContentFile, TheShippedGamesFileReads) {
+TEST(GameContentFile, EveryShippedGamesFileReadsAndNamesItsOwnFrontEnd) {
     const auto games = getEmbeddedGames();
-    ASSERT_FALSE(games.empty());
-    const std::expected<SGameContent, std::string> content = parseGameContent(games.front().text);
-    ASSERT_TRUE(content.has_value()) << content.error();
-    EXPECT_EQ(content->stories.size(), 5U);
+    ASSERT_THAT(games, ::testing::Contains(::testing::Field(&SEmbeddedGame::id, "nocturne")));
+    for (const SEmbeddedGame &game : games) {
+        const std::expected<SGameContent, std::string> content = parseGameContent(game.text);
+        ASSERT_TRUE(content.has_value()) << game.id << ": " << content.error();
+        EXPECT_EQ(content->front_end, game.id);
+        if (game.id == "nocturne") {
+            EXPECT_EQ(content->stories.size(), 5U);
+        }
+    }
 }
 
 struct SBadCase {

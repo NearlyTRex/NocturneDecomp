@@ -14,7 +14,7 @@
 ;   TerminatedCString s_s_35_start_wav_00581031
 ;   TerminatedCString s_s_35_end_wav_0058103e
 ;   double DOUBLE_0058104b = 3.14159265350000
-;   undefined4 DAT_005ad550
+;   CFilterFX* g_CFilterFXPtr = 014b98ec
 ;   undefined4 DAT_005b7650
 ;   undefined4 g_CFilmReelActorType_01c08c8c.name_hash
 ;   char* g_CurrentFilename
@@ -133,7 +133,7 @@ section .text
     LEA EAX,[ESI + 0x2d0]               ; 0048211f
         ;   Label: LAB_0048211f
     PUSH EAX                            ; 00482125
-    MOV EBP,dword ptr [0x005ad550]      ; 00482126 | DAT_005ad550
+    MOV EBP,dword ptr [0x005ad550]      ; 00482126 | g_CFilterFXPtr
     PUSH EBP                            ; 0048212c
     CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 ; 0048212d
         ;   XREF to: 0044c310 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX * this_ptr, char * filename)
@@ -153,7 +153,7 @@ section .text
         ;   XREF to: 0048209e (UNCONDITIONAL_JUMP)  ; LAB_0048209e
     PUSH EDX                            ; 00482161
         ;   Label: LAB_00482161
-    MOV ESI,dword ptr [0x005ad550]      ; 00482162 | DAT_005ad550
+    MOV ESI,dword ptr [0x005ad550]      ; 00482162 | g_CFilterFXPtr
     PUSH ESI                            ; 00482168
     CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 ; 00482169
         ;   XREF to: 0044c310 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX * this_ptr, char * filename)

@@ -18,7 +18,7 @@
 ;   TerminatedCString s_core_mission_cpp_0058a0d2
 ;   TerminatedCString s_Hell_froze_finding_hero_0058a0e6
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_0058a0ff
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -181,7 +181,7 @@ section .text
         ;   XREF to: 004d8c60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004d9d68
     PUSH 0x58a0ff                       ; 004d9d6b | = "Replaced hero OK.  You will need to s..."
-    MOV ESI,dword ptr [0x005b6d50]      ; 004d9d70 | g_CEditorTools_PTR_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004d9d70 | g_CEditorToolsPtr
     PUSH ESI                            ; 004d9d76
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004d9d77
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)
@@ -216,7 +216,7 @@ section .text
     RET                                 ; 004d9dbe
     PUSH 0x589fd7                       ; 004d9dbf | = "Warning: mission has no hero placehol..."
         ;   Label: LAB_004d9dbf
-    MOV EDI,dword ptr [0x005b6d50]      ; 004d9dc4 | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004d9dc4 | g_CEditorToolsPtr
     PUSH EDI                            ; 004d9dca
     CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60 ; 004d9dcb
         ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showMessage_FUN_0046fe60(CEditorTools * this_ptr, char * format)

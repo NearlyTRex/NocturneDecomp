@@ -1649,13 +1649,13 @@ WatcomStaticDestructorNode g_CFireEffectRocksDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_RockPool
 };
-WatcomStaticDestructorNode g_CFireEffectTossesDestructorNodes = {
+WatcomStaticDestructorNode g_CFireEffectTossesDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065dc6c,
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_TossPool
 };
-WatcomStaticDestructorNode g_CFireEffectCratersDestructorNodes = {
+WatcomStaticDestructorNode g_CFireEffectCratersDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&WatcomDestructorCall_0065dc78,
     .registration_type = 0x00000001,

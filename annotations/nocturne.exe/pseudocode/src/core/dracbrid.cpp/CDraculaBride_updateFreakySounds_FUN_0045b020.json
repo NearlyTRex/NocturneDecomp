@@ -1,31 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 45,
-        "message": "use of undeclared identifier 'DAT_01b4d478'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 151,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
+    "pseudocode_lines": 110,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 380
+    "total_lines": 379
   },
   "cross_references": [
     {
@@ -95,13 +83,13 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -245,19 +233,19 @@
     },
     {
       "addr": "01fb860c",
-      "name": "g_CDemonCamera_01fb8508.position.x",
+      "name": "g_CDemonCameraInstance.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8610",
-      "name": "g_CDemonCamera_01fb8508.position.y",
+      "name": "g_CDemonCameraInstance.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb8614",
-      "name": "g_CDemonCamera_01fb8508.position.z",
+      "name": "g_CDemonCameraInstance.position.z",
       "type": "undefined4",
       "value": null
     }
@@ -526,7 +514,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 105,
+      "line": 104,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(local_20->tangent).x = pCVar5->x;",

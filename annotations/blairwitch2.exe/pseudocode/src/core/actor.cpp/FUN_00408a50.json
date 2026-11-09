@@ -1,0 +1,368 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 81,
+    "cross_reference_count": 15,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 6,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "0040b1c0",
+      "from_addr": "0040b1d2",
+      "name": "core_actor.cpp_CDemonActor_load_FUN_0040b1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040b0a0",
+      "from_addr": "0040b0b5",
+      "name": "core_actor.cpp_CDemonActor_save_FUN_0040b0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040b380",
+      "from_addr": "0040b3ee",
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00422930",
+      "from_addr": "00422b98",
+      "name": "core_charactr.cpp_FUN_00422930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00488aae",
+      "from_addr": "00488ac0",
+      "name": "core_enemy.cpp_FUN_00488aae",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00491680",
+      "from_addr": "004916b4",
+      "name": "core_event.cpp_CEventList_setActorVariable_FUN_00491680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00488d00",
+      "from_addr": "00488e03",
+      "name": "core_event.cpp_resolveActorByName_FUN_00488d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd020",
+      "from_addr": "004dd07e",
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dadb0",
+      "from_addr": "004db4e4",
+      "name": "core_inv.cpp_FUN_004dadb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004db760",
+      "from_addr": "004db7d0",
+      "name": "core_inv.cpp_FUN_004db760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dbc60",
+      "from_addr": "004dbd00",
+      "name": "core_inv.cpp_FUN_004dbc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc460",
+      "from_addr": "004dc47c",
+      "name": "core_inv.cpp_FUN_004dc460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fcda0",
+      "from_addr": "004fcdae",
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fbce0",
+      "from_addr": "004fbeb9",
+      "name": "core_mission.cpp_FUN_004fbce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521290",
+      "from_addr": "005213eb",
+      "name": "core_script.cpp_getActor_FUN_00521290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00408a50",
+    "address_range": [
+      [
+        "00408a50",
+        "00408a7b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_actor.cpp_FUN_00408a50",
+    "signature": "void core_actor_cpp_FUN_00408a50(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00436710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ca494",
+      "name": "s_s_getClassName_005ca494",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 18,
+    "call_sites": [
+      {
+        "call_addr": "0040b1d2",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_load_FUN_0040b1c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00488e03",
+        "call_type": "direct",
+        "caller": "core_event.cpp_resolveActorByName_FUN_00488d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004db4e4",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dadb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004db696",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dadb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004db6a7",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dadb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dd07e",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fbeb9",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004fbce0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040b0b5",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_save_FUN_0040b0a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dc47c",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dc460",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fcdae",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "COPY": 11,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 56
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_actor_cpp_FUN_00408a50(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_console_cpp_FUN_00436710(g_CConsolePtr,\"%s::getClassName()\\n\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 6,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0xd4))(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0xd4))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0xd4))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 18,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

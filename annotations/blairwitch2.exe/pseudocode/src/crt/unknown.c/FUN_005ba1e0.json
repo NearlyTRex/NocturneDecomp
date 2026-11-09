@@ -1,0 +1,110 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 6,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
+  "cross_references": [
+    {
+      "addr": "004bb9b0",
+      "from_addr": "004bb9da",
+      "name": "core_game.cpp_FUN_004bb9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bbf70",
+      "from_addr": "004bbf7f",
+      "name": "core_game.cpp_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b340",
+      "from_addr": "0050b347",
+      "name": "core_netgame.cpp_CNetGame_init_FUN_0050b340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b8af0",
+      "from_addr": "005b8ba9",
+      "name": "crt_stdio.c_fclose_FUN_005b8af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8530",
+      "from_addr": "004d8709",
+      "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004d8530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00461440",
+      "from_addr": "00461445",
+      "name": "unkafter_dosio.cpp_FUN_00461440",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ba1e0",
+    "address_range": [
+      [
+        "005ba1e0",
+        "005ba1ed"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_unknown.c_FUN_005ba1e0",
+    "signature": "int __watcallStack crt_unknown_c_FUN_005ba1e0(char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c0fc0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0fc0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 2,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 21
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

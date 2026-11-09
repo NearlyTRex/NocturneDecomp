@@ -1,0 +1,446 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 114,
+    "complexity_score": 351,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 28,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 160
+  },
+  "cross_references": [
+    {
+      "addr": "004f8110",
+      "from_addr": "004f8179",
+      "name": "engine_mini3d.cpp_FUN_004f8110",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f7f80",
+    "address_range": [
+      [
+        "004f7f80",
+        "004f80be"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_mini3d.cpp_FUN_004f7f80",
+    "signature": "void engine_mini3d_cpp_FUN_004f7f80(int param_1,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00618118",
+      "name": "DAT_00618118",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618120",
+      "name": "DAT_00618120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d17ab4",
+      "name": "DAT_01d17ab4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d17ab8",
+      "name": "DAT_01d17ab8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d17ac0",
+      "name": "DAT_01d17ac0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d17ac4",
+      "name": "DAT_01d17ac4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d17fb8",
+      "name": "DAT_01d17fb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d17fbc",
+      "name": "DAT_01d17fbc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004f8179",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_FUN_004f8110",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f8183",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_FUN_004f8110",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f818d",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_FUN_004f8110",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.0495049504950495,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CBRANCH": 5,
+      "COPY": 391,
+      "FLOAT2FLOAT": 28,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 5,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 8,
+      "INT2FLOAT": 3,
+      "INT_ADD": 45,
+      "INT_AND": 40,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 6,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 14,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 34,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 15,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 712
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void engine_mini3d_cpp_FUN_004f7f80(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void engine_mini3d_cpp_FUN_004f7f80(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01d17ab8",
+      "severity": "mild",
+      "text": "piVar4 = (int *)(&DAT_01d17ab8 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(float *)(param_2 + 0x18) < *(float *)(param_1 + 0x18)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_2 + 0x18) < *(float *)(param_1 + 0x18)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*piVar4 = (int)ROUND(*(float *)(param_1 + 0x18) - _DAT_00618118);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01d17abc + iVar3) = (int)ROUND(*(float *)(param_2 + 0x18) - _DAT_00618118);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_01d17abc",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01d17abc + iVar3) = (int)ROUND(*(float *)(param_2 + 0x18) - _DAT_00618118);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_01d17abc",
+      "severity": "mild",
+      "text": "if (iVar2 != *(int *)(&DAT_01d17abc + iVar3)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_01d17abc",
+      "severity": "mild",
+      "text": "if (_DAT_01d17fbc < *(int *)(&DAT_01d17abc + iVar3)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_01d17abc",
+      "severity": "mild",
+      "text": "_DAT_01d17fbc = *(int *)(&DAT_01d17abc + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_18 = *(float *)(param_2 + 0x18) - *(float *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18 = *(float *)(param_2 + 0x18) - *(float *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01d17ac4",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01d17ac4 + iVar3) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(float *)(param_2 + 0x14) - *(float *)(param_1 + 0x14)) * local_18 -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(float *)(param_2 + 0x14) - *(float *)(param_1 + 0x14)) * local_18 -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_01d17ac0",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01d17ac0 + iVar3) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((*(float *)(param_2 + 0x14) - *(float *)(param_1 + 0x14)) *",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((*(float *)(param_2 + 0x14) - *(float *)(param_1 + 0x14)) *",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float)*piVar4 + (1.0 - fVar1)) * local_18 + *(float *)(param_1 + 0x14)) -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 31,
+      "match": "(int)local_18 < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)local_18 < 0x3f800000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

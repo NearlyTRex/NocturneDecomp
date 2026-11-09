@@ -1,25 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 11,
-        "line": 159,
-        "message": "variable 'local_54' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 801,
-    "complexity_score": 431,
+    "complexity_score": 430,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 326,
+    "pseudocode_lines": 325,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
@@ -28,7 +16,7 @@
       "unrolled_memset",
       "warning_type_propagation"
     ],
-    "total_lines": 1127
+    "total_lines": 1126
   },
   "cross_references": [],
   "function": {
@@ -205,19 +193,19 @@
     },
     {
       "addr": "005b96c4",
-      "name": "g_CGore_PTR_005b96c4",
+      "name": "g_CGorePtr",
       "type": "CGore*",
       "value": "01c78c7c"
     },
     {
       "addr": "005bdee0",
-      "name": "g_CNetGame_PTR_005bdee0",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "01cea280"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -241,19 +229,19 @@
     },
     {
       "addr": "01cea280",
-      "name": "g_CNetGame_01cea280",
+      "name": "g_CNetGameInstance",
       "type": "CNetGame",
       "value": null
     },
     {
       "addr": "01fa7e78",
-      "name": "g_CDemonSet_01e57284.enemy_count",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     }
@@ -666,51 +654,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CTVBat_process_FUN_0054b460.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 223,
-          "message": "Return value of function atan2() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 145,
-          "message": "Uninitialized variable: local_80",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 36,
-          "line": 145,
-          "message": "Uninitialized variable: local_88",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 58,
-          "line": 145,
-          "message": "Uninitialized variable: local_84",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 55,
-          "line": 166,
-          "message": "Uninitialized variable: local_54",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -723,17 +666,17 @@
     {
       "description": "Complex pointer cast",
       "line": 72,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16);",
+      "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16);",
       "type": "pointer_cast"
     },
     {
@@ -775,38 +718,6 @@
       "severity": "moderate",
       "text": "if (&local_90 != &local_f0) {",
       "type": "self_copy_guard"
-    },
-    {
-      "description": "Uninitialized variable: local_80",
-      "line": 145,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_88",
-      "line": 145,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_84",
-      "line": 145,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_54",
-      "line": 166,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->height_offset + (float)4 + local_54;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

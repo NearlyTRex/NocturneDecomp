@@ -1,49 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 64,
-        "line": 72,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "cast_error",
-        "column": 28,
-        "line": 102,
-        "message": "cannot cast from type 'float' to pointer type 'CCharacter *'"
-      },
-      {
-        "category": "type_error",
-        "column": 58,
-        "line": 174,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 49,
-        "line": 208,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 74,
-        "line": 220,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 359,
+    "complexity_score": 357,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 219,
+    "pseudocode_lines": 217,
     "suspect_count": 12,
     "suspect_types": [
       "bit_int_float_compare",
@@ -51,7 +15,7 @@
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 801
+    "total_lines": 799
   },
   "cross_references": [
     {
@@ -222,7 +186,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -252,13 +216,13 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     }
@@ -379,9 +343,9 @@
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar4 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_18);",
+      "text": "pCVar4 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);",
       "type": "pointer_cast"
     },
     {
@@ -394,7 +358,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 167,
+      "line": 165,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_74.y = CStack_74.y + 5.3619766690650802e-315._0_4_;",
@@ -402,7 +366,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 201,
+      "line": 199,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar6 = delta_time / 5.2220990168285998e-315._0_4_ + this_ptr->look_at_weight;",
@@ -410,7 +374,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 213,
+      "line": 211,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar6 = this_ptr->look_at_weight - delta_time / 5.2220990168285998e-315._0_4_;",
@@ -434,7 +398,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 121,
+      "line": 119,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_d4.x = CStack_44.x;",
@@ -442,7 +406,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 163,
+      "line": 161,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_74.x = (pCVar7->position).x;",
@@ -450,7 +414,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 175,
+      "line": 173,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_74.x = pCVar5->x;",
@@ -458,7 +422,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 188,
+      "line": 186,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_d4.x = pCVar5->x;",

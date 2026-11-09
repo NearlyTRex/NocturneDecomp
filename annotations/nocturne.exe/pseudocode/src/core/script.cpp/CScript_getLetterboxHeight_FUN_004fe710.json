@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01e56c20'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
@@ -202,28 +190,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CScript_getLetterboxHeight_FUN_004fe710.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 39,
-          "line": 17,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        },
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 57,
-          "line": 17,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -232,22 +198,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 17,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *",
-      "type": "static_integer_division"
-    },
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 17,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *",
-      "type": "static_integer_division"
     }
   ]
 }

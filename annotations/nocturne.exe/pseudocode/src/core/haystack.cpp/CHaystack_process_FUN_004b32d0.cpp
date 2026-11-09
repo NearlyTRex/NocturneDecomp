@@ -57,7 +57,7 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004b32d0(CHaystack *this_pt
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_haystack_cpp_CHaystack_updateAI_FUN_004b3880(this_ptr,delta_time);
   }
-  pCVar5 = g_CGame_PTR_005b9354;
+  pCVar5 = g_CGamePtr;
   (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
   if (pCVar5->letterbox_mode != 0) {
     (this_ptr->base).base.turn_speed = (this_ptr->base).base.turn_speed * (float)0.33333333333333298;
@@ -172,7 +172,7 @@ LAB_004b35c4:
         if (EVar2 == WALK_STATE_NO_PATH) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar15->base,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
           goto switchD_004b375e_caseD_4;
         }
         goto LAB_004b35c4;

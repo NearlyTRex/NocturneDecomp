@@ -20,12 +20,12 @@
 ;   TerminatedCString s_Decay_0057b6b8
 ;   TerminatedCString s_core_dcamera_cpp_0057b6c1
 ;   TerminatedCString s_CDemonCamera_beginScene_0057b6d5
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
 ;   undefined4 DAT_005ad444
 ;   undefined4 DAT_005ad448
 ;   undefined4 DAT_005ad44c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CConsole g_CConsole_0077ad0c
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_012ceb58
 ;   undefined4 DAT_012ceb5c
 ;   undefined4 DAT_012ceb60
@@ -90,8 +90,8 @@ section .text
     MOV EBX,EAX                         ; 00440301
     PUSH 0x57b6a3                       ; 00440303 | = "Attack : "
         ;   Label: LAB_00440303
-    MOV EAX,[0x005ad350]                ; 00440308 | g_CConsole_PTR_005ad350
-    PUSH EAX                            ; 0044030d | g_CConsole_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00440308 | g_CConsolePtr
+    PUSH EAX                            ; 0044030d | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0044030e
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
         ;   Label: LAB_0044030e
@@ -262,8 +262,8 @@ section .text
     MOV [0x012ceb68],EAX                ; 00440535 | DAT_012ceb68
     PUSH 0x57b6ad                       ; 0044053a | = "Sustain : "
         ;   Label: LAB_0044053a
-    MOV ECX,dword ptr [0x005ad350]      ; 0044053f | g_CConsole_PTR_005ad350
-    PUSH ECX                            ; 00440545 | g_CConsole_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0044053f | g_CConsolePtr
+    PUSH ECX                            ; 00440545 | g_CConsoleInstance
     MOV EBX,dword ptr [0x005ad444]      ; 00440546 | DAT_005ad444
     JMP 0x0044030e                      ; 0044054c
         ;   XREF to: 0044030e (UNCONDITIONAL_JUMP)  ; LAB_0044030e
@@ -288,8 +288,8 @@ section .text
     MOV EBX,EAX                         ; 00440583
     PUSH 0x57b6b8                       ; 00440585 | = "Decay : "
         ;   Label: LAB_00440585
-    MOV ECX,dword ptr [0x005ad350]      ; 0044058a | g_CConsole_PTR_005ad350
-    PUSH ECX                            ; 00440590 | g_CConsole_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 0044058a | g_CConsolePtr
+    PUSH ECX                            ; 00440590 | g_CConsoleInstance
     JMP 0x0044030e                      ; 00440591
         ;   XREF to: 0044030e (UNCONDITIONAL_JUMP)  ; LAB_0044030e
     MOV EAX,0x3                         ; 00440596

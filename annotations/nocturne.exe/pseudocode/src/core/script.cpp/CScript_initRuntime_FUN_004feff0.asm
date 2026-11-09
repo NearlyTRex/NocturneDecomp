@@ -29,7 +29,7 @@
 ;   undefined4 s_s_0_85_0058e38b+1
 ;   undefined4 s_s_0_85_0058e38b+2
 ;   undefined4 s_s_0_85_0058e38b+3
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -56,20 +56,20 @@ section .text
     MOV dword ptr [EBX + 0x4],0x0       ; 004ff01e
     MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004ff025
     MOV dword ptr [EBX + 0xc],EAX       ; 004ff02c
-    MOV EAX,[0x005b9354]                ; 004ff02f | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004ff02f | g_CGamePtr
     MOV dword ptr [EBX + 0x10],0x1      ; 004ff034
-    MOV dword ptr [EAX + 0x22c],0x1     ; 004ff03b | g_CGame_01c775ec.allow_damage_flag
+    MOV dword ptr [EAX + 0x22c],0x1     ; 004ff03b | g_CGameInstance.allow_damage_flag
     XOR EDX,EDX                         ; 004ff045
-    MOV dword ptr [EAX + 0x230],0x1     ; 004ff047 | g_CGame_01c775ec.allow_enemy_attack_flag
+    MOV dword ptr [EAX + 0x230],0x1     ; 004ff047 | g_CGameInstance.allow_enemy_attack_flag
     PUSH EDX                            ; 004ff051
-    MOV dword ptr [EAX + 0x228],EDX     ; 004ff052 | g_CGame_01c775ec.letterbox_mode
+    MOV dword ptr [EAX + 0x228],EDX     ; 004ff052 | g_CGameInstance.letterbox_mode
     LEA EAX,[ESP + 0x4]                 ; 004ff058
     PUSH EAX                            ; 004ff05c
     MOV dword ptr [0x01e56c20],EDX      ; 004ff05d | DAT_01e56c20
     MOV dword ptr [EBX + 0x44c],0xbf800000 ; 004ff063
     PUSH EDX                            ; 004ff06d
     MOV dword ptr [EBX + 0x450],0xffffffff ; 004ff06e
-    MOV EAX,[0x005be368]                ; 004ff078 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004ff078 | g_CDemonSetPtr
     PUSH EDX                            ; 004ff07d
     ADD EAX,0x14cd08                    ; 004ff07e
     MOV dword ptr [EBX + 0x454],EDX     ; 004ff083

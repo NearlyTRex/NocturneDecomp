@@ -27,7 +27,7 @@ extern CDemonActorType g_CIcePickActorType_01cae2d0;
 extern CDemonActorType g_CImpActorType_01cae33c;
 
 // CGround
-extern CGround g_CGround_01cadf80;
+extern CGround g_CGroundInstance;
 
 // CHero*[4]
 extern CHero* g_HeroActors[4];

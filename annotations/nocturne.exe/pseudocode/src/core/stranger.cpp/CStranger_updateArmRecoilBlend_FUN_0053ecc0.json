@@ -1,31 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 114,
-        "message": "use of undeclared identifier '_DAT_02dc9f54'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 137,
-        "message": "use of undeclared identifier '_DAT_02dc9f58'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 250,
+    "complexity_score": 248,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 150,
+    "pseudocode_lines": 148,
     "suspect_count": 8,
     "suspect_types": [
       "bit_int_float_compare",
@@ -33,7 +15,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 595
+    "total_lines": 593
   },
   "cross_references": [
     {
@@ -137,31 +119,31 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "g_CDemonSet_01e57284.characters[0]",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "g_CDemonSet_01e57284.characters[1]",
+      "name": "g_CDemonSetInstance.characters[1]",
       "type": "undefined4",
       "value": null
     },
@@ -576,9 +558,9 @@
     {
       "description": "Complex pointer cast",
       "line": 44,
-      "match": "(CStranger **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CStranger **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CStranger **)((int)g_CDemonSet_PTR_005be368->characters + iVar6);",
+      "text": "this_ptr_00 = *(CStranger **)((int)g_CDemonSetPtr->characters + iVar6);",
       "type": "pointer_cast"
     },
     {
@@ -607,7 +589,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 134,
+      "line": 133,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_5c.x = pCVar4->x;",
@@ -615,7 +597,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 142,
+      "line": 141,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_98.x = local_38[0].x;",

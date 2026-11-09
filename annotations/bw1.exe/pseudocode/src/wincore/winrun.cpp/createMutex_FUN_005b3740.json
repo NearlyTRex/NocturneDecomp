@@ -1,0 +1,79 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "00575d20",
+      "from_addr": "00575d2b",
+      "name": "sound_sndmain.cpp_lockSound_FUN_00575d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059eeb0",
+      "from_addr": "0059eee0",
+      "name": "support_trisock.cpp_FUN_0059eeb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b3740",
+    "address_range": [
+      [
+        "005b3740",
+        "005b374d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_createMutex_FUN_005b3740",
+    "signature": "HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_005b3740(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004f",
+      "is_variadic": false,
+      "name": "CreateMutexA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d052c",
+      "name": "PTR_CreateMutexA_005d052c",
+      "type": "void*",
+      "value": "001d0c9a"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.2,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 4,
+      "INT_ADD": 1,
+      "INT_SUB": 4,
+      "LOAD": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 16
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

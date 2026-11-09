@@ -1,0 +1,290 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 31,
+    "cross_reference_count": 5,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 51
+  },
+  "cross_references": [
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d54d1",
+      "name": "core_game.cpp_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7250",
+      "from_addr": "004d7591",
+      "name": "core_game.cpp_FUN_004d7250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4f50",
+      "from_addr": "004f5726",
+      "name": "core_inivar.cpp_FUN_004f4f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5760",
+      "from_addr": "004f5ed4",
+      "name": "core_inivar.cpp_FUN_004f5760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "005475fa",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f4b30",
+    "address_range": [
+      [
+        "004f4b30",
+        "004f4b76"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_ini.cpp_CIniFile_dtor_FUN_004f4b30",
+    "signature": "CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c030f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005c030f"
+    },
+    {
+      "addr": "005c0336",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0336"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00600fc0",
+      "name": "g_CIniFileTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "00602964",
+      "name": "PTR_engine_ini.cpp_CIniFile_dtor_FUN_004f4b30_00602964",
+      "type": "void*",
+      "value": "004f4b30"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004d7591",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d7250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f5726",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_FUN_004f4f50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f5ed4",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_FUN_004f5760",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d54d1",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d5629",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d5776",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d58d0",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005475fa",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005498d0",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.925925925925926,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 21,
+      "INT_ADD": 12,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 3,
+      "STORE": 9
+    },
+    "pcode_op_count": 106
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIniFile *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x200",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x200 = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004f4b30_00602964;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CIniFile",
+        "offset": 0,
+        "vtable_addr": "00602964"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00600fc4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

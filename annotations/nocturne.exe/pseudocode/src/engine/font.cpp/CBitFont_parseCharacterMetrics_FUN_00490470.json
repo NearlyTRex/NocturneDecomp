@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 33,
-        "message": "assigning to 'int *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 40,
-        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
-      },
-      {
-        "category": "format_error",
-        "column": 72,
-        "line": 52,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 58,
-        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
-      },
-      {
-        "category": "format_error",
-        "column": 74,
-        "line": 100,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
@@ -334,31 +298,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CBitFont_parseCharacterMetrics_FUN_00490470.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 39,
-          "line": 94,
-          "message": "Uninitialized variable: local_28",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Uninitialized variable: local_28",
-      "line": 94,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "for (iVar6 = 0; iVar1 = iVar6 - local_28, iVar6 < bitmap_width; iVar6 = iVar6 + 1) {",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

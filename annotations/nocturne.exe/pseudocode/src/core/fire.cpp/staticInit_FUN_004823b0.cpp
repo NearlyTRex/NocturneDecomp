@@ -22,40 +22,37 @@ void __cdecl core_fire_cpp_staticInit_FUN_004823b0(void)
             (g_CSmokeParticle_ARRAY_01c0a140,0x800,&g_CSmokeParticleTypeInfo_0059d300);
   __arrinit
             (g_CBulletHole_ARRAY_01c20148,0x100,&g_CBulletHoleTypeInfo_0059d320);
-  __arrinit(g_CStake_ARRAY_01c23d50,0x100,&g_CStakeTypeInfo_0059d340);
-  _atexit(&g_WatcomStaticDestructorNode_005b8050);
-  __arrinit(g_CSpark_ARRAY_01c49d54,0x100,&g_CSparkTypeInfo_0059d360);
-  _atexit(&g_WatcomStaticDestructorNode_005b8060);
+  __arrinit(g_StakePool,0x100,&g_CStakeTypeInfo_0059d340);
+  _atexit(&g_CFireEffectStakesDestructorNode);
+  __arrinit(g_SparkPool,0x100,&g_CSparkTypeInfo_0059d360);
+  _atexit(&g_CFireEffectSparksDestructorNode);
   __arrinit
             (g_CMuzzleFlash_ARRAY_01c4e958,0x14,&g_CMuzzleFlashTypeInfo_0059d380);
-  __arrinit
-            (g_CGlassParticle_ARRAY_01c4f08c,0x100,&g_CGlassParticleTypeInfo_0059d3a0);
-  _atexit(&g_WatcomStaticDestructorNode_005b8070);
+  __arrinit(g_GlassParticlePool,0x100,&g_CGlassParticleTypeInfo_0059d3a0);
+  _atexit(&g_CFireEffectGlassParticlesDestructorNode);
   __arrinit
             (g_CBulletTrail_ARRAY_01c58c90,10,&g_CBulletTrailTypeInfo_0059d3c0);
-  __arrinit(g_CFireball_ARRAY_01c58dfc,0x40,&g_CFireballTypeInfo_0059d3e0)
-  ;
-  _atexit(&g_WatcomStaticDestructorNode_005b8080);
-  __arrinit(g_CRock_ARRAY_01c5b500,0x40,&g_CRockTypeInfo_0059d400);
-  _atexit(&g_WatcomStaticDestructorNode_005b8090);
+  __arrinit(g_FireballPool,0x40,&g_CFireballTypeInfo_0059d3e0);
+  _atexit(&g_CFireEffectFireballsDestructorNode);
+  __arrinit(g_RockPool,0x40,&g_CRockTypeInfo_0059d400);
+  _atexit(&g_CFireEffectRocksDestructorNode);
   __arrinit
             (g_CLaserBeam_ARRAY_01c5c704,0x40,&g_CLaserBeamTypeInfo_0059d420);
   __arrinit(g_CExplosion_ARRAY_01c5d708,10,&g_CExplosionTypeInfo_0059d440)
   ;
-  __arrinit(g_CToss_ARRAY_01c5d824,0x14,&g_CTossTypeInfo_0059d460);
-  _atexit(&g_WatcomStaticDestructorNode_005b80a0);
-  __arrinit(g_CCrater_ARRAY_01c625f8,0x14,&g_CCraterTypeInfo_0059d480);
-  _atexit(&g_WatcomStaticDestructorNode_005b80b0);
+  __arrinit(g_TossPool,0x14,&g_CTossTypeInfo_0059d460);
+  _atexit(&g_CFireEffectTossesDestructorNode);
+  __arrinit(g_CraterPool,0x14,&g_CCraterTypeInfo_0059d480);
+  _atexit(&g_CFireEffectCratersDestructorNode);
   __arrinit(g_CGunFlame_ARRAY_01c62ebc,500,&g_CGunFlameTypeInfo_0059d4a0);
   __arrinit
             (g_CLightningBolt_ARRAY_01c67510,10,&g_CLightningBoltTypeInfo_0059d4c0);
   __arrinit(g_CTrail_ARRAY_01c676cc,100,&g_CTrailTypeInfo_0059d4e0);
-  __arrinit(g_CShell_ARRAY_01c684e0,0x32,&g_CShellTypeInfo_0059d500);
-  _atexit(&g_WatcomStaticDestructorNode_005b80c0);
-  __arrinit(g_CPopcorn_ARRAY_01c69614,0x100,&g_CPopcornTypeInfo_0059d520);
-  _atexit(&g_WatcomStaticDestructorNode_005b80d0);
-  __arrinit
-            (g_CRainDrop_ARRAY_01c6ce18,0x100,&g_CRainDropTypeInfo_0059d540);
-  _atexit(&g_WatcomStaticDestructorNode_005b80e0);
+  __arrinit(g_ShellPool,0x32,&g_CShellTypeInfo_0059d500);
+  _atexit(&g_CFireEffectShellsDestructorNode);
+  __arrinit(g_PopcornPool,0x100,&g_CPopcornTypeInfo_0059d520);
+  _atexit(&g_CFireEffectPopcornsDestructorNode);
+  __arrinit(g_RainDropPool,0x100,&g_CRainDropTypeInfo_0059d540);
+  _atexit(&g_CFireEffectRainDropsDestructorNode);
   return;
 }

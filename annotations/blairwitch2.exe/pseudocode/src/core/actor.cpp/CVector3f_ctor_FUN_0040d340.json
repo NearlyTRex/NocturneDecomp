@@ -1,0 +1,268 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 5,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 8
+  },
+  "cross_references": [
+    {
+      "addr": "00417e20",
+      "from_addr": "00417e56",
+      "name": "core_boneguy.cpp_FUN_00417e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004192a0",
+      "from_addr": "00419325",
+      "name": "core_boneguy.cpp_FUN_004192a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e2e70",
+      "from_addr": "004e352f",
+      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd6e0",
+      "from_addr": "004fd716",
+      "name": "core_mobster.cpp_FUN_004fd6e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522350",
+      "from_addr": "00524c61",
+      "name": "core_script.cpp_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595810",
+      "from_addr": "00595846",
+      "name": "core_zombie.cpp_FUN_00595810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595f30",
+      "from_addr": "0059766a",
+      "name": "core_zombie.cpp_FUN_00595f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005980a0",
+      "from_addr": "00598169",
+      "name": "core_zombie.cpp_FUN_005980a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040d340",
+    "address_range": [
+      [
+        "0040d340",
+        "0040d344"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_actor.cpp_CVector3f_ctor_FUN_0040d340",
+    "signature": "CVector3f * core_actor_cpp_CVector3f_ctor_FUN_0040d340(CVector3f *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "00524c61",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00419325",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_FUN_004192a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0041935f",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_FUN_004192a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e352f",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e358d",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059766a",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_00595f30",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00597ad9",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_00595f30",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00598169",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_005980a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005981b8",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_005980a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00417e56",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_FUN_00417e20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 6
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CVector3f",
+        "offset": 0,
+        "vtable_addr": "005f22b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

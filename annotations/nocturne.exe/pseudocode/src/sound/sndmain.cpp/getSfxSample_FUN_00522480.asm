@@ -89,7 +89,7 @@ section .text
     MOV EBX,ECX                         ; 005224cc
     IMUL EAX,EBX,0x168                  ; 005224ce
         ;   Label: LAB_005224ce
-    MOV EDI,dword ptr [EAX + 0x2dc2004] ; 005224d4 | g_CSfxSample_ARRAY_02dc1edc[1].taken
+    MOV EDI,dword ptr [EAX + 0x2dc2004] ; 005224d4 | g_SfxSamples[1].taken
     CMP ECX,EDI                         ; 005224da
     JZ 0x00522754                       ; 005224dc
         ;   XREF to: 00522754 (CONDITIONAL_JUMP)  ; LAB_00522754
@@ -119,7 +119,7 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90 ; 0052251c
         ;   XREF to: 004e7d90 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00522521
-    PUSH 0x5bea30                       ; 00522524 | g_WatcomStaticDestructorNode_005bea30
+    PUSH 0x5bea30                       ; 00522524 | g_CMP3DecoderDestructorNode1
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 00522529
         ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 0052252e
@@ -313,7 +313,7 @@ section .text
     POP ESI                             ; 00522751
     POP EBX                             ; 00522752
     RET                                 ; 00522753
-    CMP EDI,dword ptr [EAX + 0x2dc2008] ; 00522754 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+    CMP EDI,dword ptr [EAX + 0x2dc2008] ; 00522754 | g_SfxSamples[1].ref_count
         ;   Label: LAB_00522754
     JNZ 0x005224e2                      ; 0052275a
         ;   XREF to: 005224e2 (CONDITIONAL_JUMP)  ; LAB_005224e2
@@ -384,10 +384,10 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0 ; 0052280e
         ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder * this_ptr, char * filename)
     MOV dword ptr [EBP + 0x104],0x10    ; 00522813
-    MOV EAX,[0x02da8be4]                ; 0052281d | g_CMP3Decoder_02da8ae0.num_channels
+    MOV EAX,[0x02da8be4]                ; 0052281d | g_CMP3DecoderInstance.num_channels
     MOV dword ptr [EBP + 0x108],EAX     ; 00522822
     ADD ESP,0x8                         ; 00522828
-    MOV EAX,[0x02da8be0]                ; 0052282b | g_CMP3Decoder_02da8ae0.sample_rate
+    MOV EAX,[0x02da8be0]                ; 0052282b | g_CMP3DecoderInstance.sample_rate
     MOV dword ptr [EBP + 0x110],0xffffffff ; 00522830
     PUSH EBP                            ; 0052283a
     MOV dword ptr [EBP + 0x10c],EAX     ; 0052283b

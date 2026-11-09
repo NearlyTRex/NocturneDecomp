@@ -20,7 +20,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_00458730(CDraculaBride *t
   
   pcVar4 = (this_ptr->base).base.model.model_name;
   pCVar1 = &(this_ptr->base).base.model;
-  if (g_CGame_PTR_005b9354->nudity_flag == 0) {
+  if (g_CGamePtr->nudity_flag == 0) {
     iVar2 = _stricmp(pcVar4,"nbride2.dfm");
     if (iVar2 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(pCVar1,"nbride2x.dfm");

@@ -1,0 +1,373 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 45,
+    "cross_reference_count": 17,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "00410bb0",
+      "from_addr": "00410bbf",
+      "name": "core_baron.cpp_CBaronWeapon_dtor_FUN_00410bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043ae70",
+      "from_addr": "0043ae96",
+      "name": "core_crossbow.cpp_CCrossbow_dtor_FUN_0043ae70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a3e0",
+      "from_addr": "0047a3ef",
+      "name": "core_dynamite.cpp_CDynamite_dtor_FUN_0047a3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486730",
+      "from_addr": "0048673f",
+      "name": "core_elephant.cpp_CElephantGun_dtor_FUN_00486730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a0fb0",
+      "from_addr": "004a0fbf",
+      "name": "core_flamegun.cpp_CFlameThrower_dtor_FUN_004a0fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a11b0",
+      "from_addr": "004a11bf",
+      "name": "core_flashlit.cpp_CFlashlight_dtor_FUN_004a11b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc6b0",
+      "from_addr": "004cc6bf",
+      "name": "core_gun.cpp_CGun_dtor_FUN_004cc6b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d170",
+      "from_addr": "0059d17f",
+      "name": "core_lantern.cpp_CLantern_dtor_FUN_0059d170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e40e0",
+      "from_addr": "004e40ef",
+      "name": "core_lightgun.cpp_CLightGun_dtor_FUN_004e40e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ead30",
+      "from_addr": "004ead3f",
+      "name": "core_melee.cpp_CMelee_dtor_FUN_004ead30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d300",
+      "from_addr": "0059d30f",
+      "name": "core_meleeaxe.cpp_CMeleeAxe_dtor_FUN_0059d300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053fd70",
+      "from_addr": "0053fd7f",
+      "name": "core_shotgun.cpp_CShotgun_dtor_FUN_0053fd70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ff00",
+      "from_addr": "0053ff0f",
+      "name": "core_shovel.cpp_CShovel_dtor_FUN_0053ff00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005763a0",
+      "from_addr": "005763af",
+      "name": "core_tommygun.cpp_CTommyGun_dtor_FUN_005763a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00580210",
+      "from_addr": "0058021f",
+      "name": "core_turret.cpp_CTurret_dtor_FUN_00580210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6b30",
+      "from_addr": "005a6b49",
+      "name": "unkafter_cross.cpp_CCross_dtor_FUN_005a6b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a7a60",
+      "from_addr": "005a7a6f",
+      "name": "unkafter_cross.cpp_CSimpleCross_dtor_FUN_005a7a60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00589ae0",
+    "address_range": [
+      [
+        "00589ae0",
+        "00589b4e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_dtor_FUN_00589ae0",
+    "signature": "CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_00589ae0(CWeapon *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408930"
+    },
+    {
+      "addr": "005b1c70",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_dtor_FUN_005b1c70"
+    },
+    {
+      "addr": "005b7fa7",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005b7fa7"
+    },
+    {
+      "addr": "005b7fce",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7fce"
+    },
+    {
+      "addr": "005b7fdc",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7fdc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fdf64",
+      "name": "g_CWeaponVTable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fe070",
+      "name": "g_CWeaponTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 17,
+    "call_sites": [
+      {
+        "call_addr": "00410bbf",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_dtor_FUN_00410bb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0043ae96",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_CCrossbow_dtor_FUN_0043ae70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047a3ef",
+        "call_type": "direct",
+        "caller": "core_dynamite.cpp_CDynamite_dtor_FUN_0047a3e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048673f",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_dtor_FUN_00486730",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a0fbf",
+        "call_type": "direct",
+        "caller": "core_flamegun.cpp_CFlameThrower_dtor_FUN_004a0fb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a11bf",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_CFlashlight_dtor_FUN_004a11b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cc6bf",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_CGun_dtor_FUN_004cc6b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e40ef",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_CLightGun_dtor_FUN_004e40e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ead3f",
+        "call_type": "direct",
+        "caller": "core_melee.cpp_CMelee_dtor_FUN_004ead30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053fd7f",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_CShotgun_dtor_FUN_0053fd70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.105263157894737,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 27,
+      "INT_ADD": 17,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 14,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 15
+    },
+    "pcode_op_count": 156
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CWeaponVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x464",
+      "severity": "mild",
+      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x464,0);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 216,
+        "vtable_addr": "005fdf64"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "005fe074"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

@@ -58,7 +58,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_004f0c20(CPathMap *
   bVar8 = 0;
   fStack_124 = 7.259422e-39;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-            (&g_CDemonRaytrace_01fba938,dest_position,&local_58);
+            (&g_CDemonRaytraceInstance,dest_position,&local_58);
   puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);
   (this_ptr->dest_voxel_coords).x = local_58.x;
   *puVar7 = *(uint *)((int)&local_58 + (uint)bVar8 * -8 + 4);
@@ -177,17 +177,17 @@ LAB_004f0ce0:
   iVar2 = core_path_cpp_CPathMap_isLineWalkable_FUN_004f0540
                     (this_ptr,_DAT_01e3161c,_DAT_01e31620,iVar2,_DAT_01e31624,_DAT_01e31628,iVar3);
   if (iVar2 != 0) {
-    local_44 = g_CDemonRaytrace_01fba938.adjusted_size.x;
-    local_40._0_4_ = g_CDemonRaytrace_01fba938.adjusted_size.y;
-    local_40._4_4_ = g_CDemonRaytrace_01fba938.adjusted_size.z;
+    local_44 = g_CDemonRaytraceInstance.adjusted_size.x;
+    local_40._0_4_ = g_CDemonRaytraceInstance.adjusted_size.y;
+    local_40._4_4_ = g_CDemonRaytraceInstance.adjusted_size.z;
     if ((CPathMap *)&local_8c != this_ptr) {
       local_8c = (this_ptr->current_position).x;
       local_88[0].x = (this_ptr->current_position).y;
       local_88[0].y = (this_ptr->current_position).z;
     }
     iStack_24 = iStack_a8;
-    local_8c = (float)local_b0 * g_CDemonRaytrace_01fba938.adjusted_size.x + local_8c;
-    local_88[0].y = (float)iStack_a8 * g_CDemonRaytrace_01fba938.adjusted_size.z + local_88[0].y;
+    local_8c = (float)local_b0 * g_CDemonRaytraceInstance.adjusted_size.x + local_8c;
+    local_88[0].y = (float)iStack_a8 * g_CDemonRaytraceInstance.adjusted_size.z + local_88[0].y;
     auStack_c8._0_4_ = (this_ptr->current_position).x - unaff_ESI->x;
     auStack_c8._4_4_ = (this_ptr->current_position).y - unaff_ESI->y;
     fStack_c0 = (this_ptr->current_position).z - unaff_ESI->z;

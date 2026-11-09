@@ -202,14 +202,13 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_00496d10(CGabriella *thi
             CStack_48.y = CStack_a8.y;
             CStack_48.z = CStack_a8.z;
           }
-          core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
-          core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                    (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
-          this_ptr_00 = g_CDemonSet_PTR_005be368;
-          g_CDemonSet_PTR_005be368->collision_actor = (CDemonActor *)0x0;
+          core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSetPtr,1);
+          core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,(CDemonActor *)this_ptr);
+          this_ptr_00 = g_CDemonSetPtr;
+          g_CDemonSetPtr->collision_actor = (CDemonActor *)0x0;
           core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(this_ptr_00,&CStack_78,&CStack_48);
-          core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-          if (this_ptr_01 == (CEnemy *)g_CDemonSet_PTR_005be368->collision_actor) {
+          core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+          if (this_ptr_01 == (CEnemy *)g_CDemonSetPtr->collision_actor) {
             (this_ptr->base).player_input.action_state.fire = 1;
             return;
           }

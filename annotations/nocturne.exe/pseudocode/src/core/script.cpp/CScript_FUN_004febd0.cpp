@@ -74,8 +74,7 @@ int __cdecl core_script_cpp_CScript_FUN_004febd0(CScript *this_ptr,char *param_2
             _fclose(file_handle);
             iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(&this_ptr->script_text);
             shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                      (g_CEditorTools_PTR_005b6d50,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,
-                       iVar3 + 1);
+                      (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1);
             core_script_cpp_CScript_FUN_004fe500(this_ptr);
             return 0;
           }
@@ -96,7 +95,7 @@ LAB_004fee03:
       return 1;
     }
     pcVar6 = core_script_cpp_CScript_validateSyntax_FUN_004fef60(this_ptr,&local_18);
-    shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01e56c30);
+    shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_ScriptPickList);
     if (pcVar6 == (char *)0x0) goto LAB_004fee03;
     g_CurrentFilename = "..\\core\\script.cpp";
     g_CurrentLineNumber = 882;

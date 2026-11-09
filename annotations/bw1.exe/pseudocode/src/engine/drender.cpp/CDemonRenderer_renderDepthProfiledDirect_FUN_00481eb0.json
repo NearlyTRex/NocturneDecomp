@@ -1,0 +1,310 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 65,
+    "cross_reference_count": 5,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 122
+  },
+  "cross_references": [
+    {
+      "addr": "0048cba0",
+      "from_addr": "0048d28d",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00519be0",
+      "from_addr": "00519c09",
+      "name": "core_mirror.cpp_FUN_00519be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00519cae",
+      "from_addr": "00519e16",
+      "name": "core_mirror.cpp_FUN_00519cae",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005558c0",
+      "from_addr": "005558e7",
+      "name": "core_set.cpp_FUN_005558c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9a40",
+      "from_addr": "005a9ea4",
+      "name": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005a9a40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481eb0",
+    "address_range": [
+      [
+        "00481eb0",
+        "00481f90"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0",
+    "signature": "int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_00481eb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "00481aa0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0"
+    },
+    {
+      "addr": "00483e40",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612564",
+      "name": "DAT_00612564",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc1238",
+      "name": "DAT_01bc1238",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f02c",
+      "name": "DAT_01c4f02c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c50948",
+      "name": "DAT_01c50948",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d14",
+      "name": "DAT_01c51d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d18",
+      "name": "DAT_01c51d18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e7dac8",
+      "name": "DAT_01e7dac8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "0048d28d",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048d2fd",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048d36a",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048d3da",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048d455",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048d4cc",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005558e7",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005558c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519c09",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_FUN_00519be0",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a9ea4",
+        "call_type": "direct",
+        "caller": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005a9a40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00519e16",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_FUN_00519cae",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6142857142857143,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 5,
+      "COPY": 69,
+      "INT_ADD": 22,
+      "INT_AND": 31,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 27,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 18,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 253
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_00612564",
+      "severity": "mild",
+      "text": "return (uint)(DAT_00612564 <= _DAT_01bc1238);",
+      "type": "undefined_data"
+    }
+  ]
+}

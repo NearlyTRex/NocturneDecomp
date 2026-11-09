@@ -61,21 +61,21 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
       pbVar7 = (byte *)(iVar3 + 0xaafdb8);
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
-          core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
+          core_dstrendr_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
                     (puVar5,(uint *)puVar6,pbVar7,pbVar4,this_ptr->screen_width);
         }
         if (this_ptr->scale_factor == 2) {
-          core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
+          core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
                     (puVar5,puVar6,pbVar7,pbVar4,this_ptr->screen_width);
         }
       }
       else {
         if (this_ptr->scale_factor == 1) {
-          core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
+          core_dstrendr_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
                     (puVar5,puVar6,pbVar7,pbVar4,this_ptr->screen_width);
         }
         if (this_ptr->scale_factor == 2) {
-          core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
+          core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
                     (puVar5,puVar6,pbVar7,pbVar4,this_ptr->screen_width);
         }
       }
@@ -112,21 +112,21 @@ LAB_0044729d:
       pbVar7 = &DAT_012ceb78 + iVar3;
       if ((uVar8 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
-          core_dstrender_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
+          core_dstrendr_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
                     ((uint *)puVar6,(uint *)texture_buffer,pbVar4,pbVar7,this_ptr->screen_width);
         }
         if (this_ptr->scale_factor == 2) {
-          core_dstrender_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
+          core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
                     (puVar6,texture_buffer,pbVar4,pbVar7,this_ptr->screen_width);
         }
       }
       else {
         if (this_ptr->scale_factor == 1) {
-          core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
+          core_dstrendr_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
                     ((uint *)puVar6,texture_buffer,pbVar4,pbVar7,this_ptr->screen_width);
         }
         if (this_ptr->scale_factor == 2) {
-          core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
+          core_dstrendr_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
                     (puVar6,texture_buffer,pbVar4,pbVar7,this_ptr->screen_width);
         }
       }

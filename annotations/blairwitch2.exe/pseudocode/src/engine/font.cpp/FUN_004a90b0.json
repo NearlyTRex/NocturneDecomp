@@ -1,0 +1,221 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 6,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "00467f70",
+      "from_addr": "0046803b",
+      "name": "cockpit_drawsurf.cpp_FUN_00467f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a93a0",
+      "from_addr": "004a93df",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a94b0",
+      "from_addr": "004a94f4",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004a94b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a92a0",
+      "from_addr": "004a92d5",
+      "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a91a0",
+      "from_addr": "004a91cf",
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004a91a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9130",
+      "from_addr": "004a9182",
+      "name": "engine_font.cpp_FUN_004a9130",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a90b0",
+    "address_range": [
+      [
+        "004a90b0",
+        "004a90de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_FUN_004a90b0",
+    "signature": "int __cdecl engine_font_cpp_FUN_004a90b0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004a8df0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "004a93df",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004a93a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046803b",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_00467f70",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004a91cf",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextRight_FUN_004a91a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a92d5",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a9182",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_FUN_004a9130",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004a94f4",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004a94b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4347826086956523,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 24,
+      "INT_ADD": 12,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 11,
+      "LOAD": 11,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 79
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 24,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

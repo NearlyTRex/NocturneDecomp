@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_00488430(CGunFlame *this_ptr)
   float fVar5;
   int iVar6;
   
-  fVar4 = g_CGame_PTR_005b9354->delta_time_float;
+  fVar4 = g_CGamePtr->delta_time_float;
   fVar2 = this_ptr->lifetime - fVar4;
   this_ptr->lifetime = fVar2;
   if (0.0 < fVar2) {

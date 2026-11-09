@@ -15,8 +15,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet *t
   CBoundingBox3D CStack_34;
   CVector3f local_1c;
   
-  if (((*(uint *)(0x02DD1210 + 4) & 0x7fffffff) == 0) ||
-     (*(float *)(0x02DD1210 + 4) <= point->y)) {
+  if ((ABS(g_CWaterPtr->water_level_y) == 0.0) || (g_CWaterPtr->water_level_y <= point->y)) {
     iVar1 = 0;
     pCVar2 = this_ptr;
     if (0 < this_ptr->actor_count) {

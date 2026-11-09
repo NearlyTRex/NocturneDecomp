@@ -1,0 +1,256 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 101,
+    "complexity_score": 174,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 44,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 145
+  },
+  "cross_references": [
+    {
+      "addr": "0044f750",
+      "from_addr": "0044fa98",
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044fdd0",
+    "address_range": [
+      [
+        "0044fdd0",
+        "0044ff02"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_0044fdd0",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_0044fdd0(CDemonCamera *this_ptr,int plane_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0135ead1",
+      "name": "DAT_0135ead1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ead2",
+      "name": "DAT_0135ead2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ec10",
+      "name": "DAT_0135ec10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ec11",
+      "name": "DAT_0135ec11",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ec12",
+      "name": "DAT_0135ec12",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ed51",
+      "name": "DAT_0135ed51",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01371810",
+      "name": "DAT_01371810",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0044fa98",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.141176470588236,
+    "instruction_count": 85,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CBRANCH": 5,
+      "COPY": 58,
+      "INT_ADD": 46,
+      "INT_AND": 133,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 75,
+      "INT_LEFT": 12,
+      "INT_LESS": 7,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 30,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 9,
+      "INT_SLESS": 45,
+      "INT_SUB": 20,
+      "INT_XOR": 7,
+      "LOAD": 16,
+      "POPCOUNT": 33,
+      "STORE": 9,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 607
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "plane_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "for (iVar5 = 1; iVar4 = iVar4 + 0x140, iVar5 < *(int *)&this_ptr->field_0x154 + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x150 + -1 <= iVar3) break;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0135ead1",
+      "severity": "mild",
+      "text": "*(byte *)(iVar1 + 0x13716d1) = (&DAT_0135ead1)[iVar2];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x154) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_0135ead0",
+      "severity": "mild",
+      "text": "*(byte *)(iVar5 + 0x13716d0) = (&DAT_0135ead0)[iVar4 * 0x140];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "*(byte *)(*(int *)&this_ptr->field_0x150 + 0x13716cf + iVar5) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "*(byte *)(*(int *)&this_ptr->field_0x150 + 0x135eacf + iVar4 * 0x140);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x154);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "while (iVar5 < *(int *)&this_ptr->field_0x150 + -1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_0135ead0",
+      "severity": "mild",
+      "text": "*(byte *)(iVar4 + 0x13716d1) = (&DAT_0135ead0)[iVar5];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "iVar2 = (*(int *)&this_ptr->field_0x154 + -1) * 0x140;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_0135ead0",
+      "severity": "mild",
+      "text": "*(byte *)(iVar2 + plane_index * 0x12c00 + 0x13716cf + iVar5) = (&DAT_0135ead0)[iVar1];",
+      "type": "undefined_data"
+    }
+  ]
+}

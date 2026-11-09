@@ -1,0 +1,247 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 382,
+    "complexity_score": 245,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 165,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 547
+  },
+  "cross_references": [
+    {
+      "addr": "00483970",
+      "from_addr": "00483a23",
+      "name": "shape_edittool.cpp_FUN_00483970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00485b00",
+    "address_range": [
+      [
+        "00485b00",
+        "00485ebb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00485b00",
+    "signature": "void __cdecl shape_edittool_cpp_CEdScrollBar_handleInput_FUN_00485b00(CEdScrollBar *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00485ec0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00485ec0"
+    },
+    {
+      "addr": "004859e0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004859e0"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005806a0"
+    },
+    {
+      "addr": "005809d0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005809d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00485ae8",
+      "name": "switchdataD_00485ae8",
+      "type": "void*",
+      "value": "00485d0c"
+    },
+    {
+      "addr": "01c5bb78",
+      "name": "DAT_01c5bb78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bb7c",
+      "name": "DAT_01c5bb7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bb80",
+      "name": "DAT_01c5bb80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bb84",
+      "name": "DAT_01c5bb84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bb88",
+      "name": "DAT_01c5bb88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bb8c",
+      "name": "DAT_01c5bb8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bb90",
+      "name": "DAT_01c5bb90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5bb94",
+      "name": "DAT_01c5bb94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fadc",
+      "name": "DAT_01c5fadc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "DAT_01c5fae0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae4",
+      "name": "DAT_01c5fae4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.140893470790378,
+    "instruction_count": 291,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 5,
+      "BRANCH": 17,
+      "BRANCHIND": 1,
+      "CALL": 9,
+      "CBRANCH": 30,
+      "COPY": 216,
+      "INT_ADD": 78,
+      "INT_AND": 176,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 165,
+      "INT_LEFT": 1,
+      "INT_LESS": 43,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 5,
+      "INT_SBORROW": 44,
+      "INT_SCARRY": 19,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 78,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 67,
+      "INT_XOR": 5,
+      "INT_ZEXT": 2,
+      "LOAD": 67,
+      "POPCOUNT": 78,
+      "RETURN": 3,
+      "STORE": 34,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1205
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdScrollBar *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "if ((DAT_01c5fae4 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "if ((DAT_01c5fae4 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "DAT_01c5fae4 = DAT_01c5fae4 & 0xfe;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "DAT_01c5fae4 = DAT_01c5fae4 & 0xfe;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "DAT_01c5fae4 = DAT_01c5fae4 & 0xfe;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_01c5fae4",
+      "severity": "mild",
+      "text": "DAT_01c5fae4 = DAT_01c5fae4 & 0xfe;",
+      "type": "undefined_data"
+    }
+  ]
+}

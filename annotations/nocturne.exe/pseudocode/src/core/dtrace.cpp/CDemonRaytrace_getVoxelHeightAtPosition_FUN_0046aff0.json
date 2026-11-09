@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 47,
-        "line": 77,
-        "message": "member reference base type 'float' is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
@@ -148,30 +136,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonRaytrace_getVoxelHeightAtPosition_FUN_0046aff0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 62,
-          "message": "Return value of function round() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 12,
-          "line": 75,
-          "message": "Either the condition 'pCVar15!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar15.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unknown/mangled field access",
@@ -180,14 +144,6 @@
       "severity": "mild",
       "text": "g_CVector3f_ARRAY_009bb178[0x88fd].x._0_1_) != 0)) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Either the condition 'pCVar15!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar15.",
-      "line": 75,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "if ((pCVar15->voxel_buffer1 != (SVoxelGrid *)0x0) &&",
-      "type": "static_null_pointer_redundant_check"
     }
   ]
 }

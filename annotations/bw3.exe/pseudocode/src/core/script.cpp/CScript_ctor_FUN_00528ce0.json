@@ -1,0 +1,206 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 131,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 11,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "005286b0",
+      "from_addr": "005286cf",
+      "name": "core_script.cpp_staticInit_FUN_005286b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00528ce0",
+    "address_range": [
+      [
+        "00528ce0",
+        "00528d16"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_ctor_FUN_00528ce0",
+    "signature": "CScript * __cdecl core_script_cpp_CScript_ctor_FUN_00528ce0(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00481f20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_00481f20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005286cf",
+        "call_type": "direct",
+        "caller": "core_script.cpp_staticInit_FUN_005286b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 7,
+      "INT_ADD": 9,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 54
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "pCVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00481f20((CStrList *)&this_ptr->field_0x34);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-1].field_0x8 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-1].field_0x8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 9,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-1].field_0xc = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-1].field_0xc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 10,
+      "match": "pCVar1[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-2].field_0xc = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-2].field_0xc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-1].field_0x4 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[-1].field_0x4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar1[-4].",
+      "severity": "mild",
+      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CScript",
+        "offset": 0,
+        "vtable_addr": "005e39d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

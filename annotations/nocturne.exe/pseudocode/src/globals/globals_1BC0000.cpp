@@ -14,7 +14,7 @@ CDemonActorType g_CEnemyActorType_01bcdebc = {};
 CDemonTriangle g_CDemonTriangle_ARRAY_01bc9ec8[8] = {};
 
 // CEditorTools
-CEditorTools g_CEditorTools_01bcd074 = {};
+CEditorTools g_CEditorToolsInstance = {};
 
 // CVector3f
 CVector3f g_CVector3f_01bca0c4 = {};

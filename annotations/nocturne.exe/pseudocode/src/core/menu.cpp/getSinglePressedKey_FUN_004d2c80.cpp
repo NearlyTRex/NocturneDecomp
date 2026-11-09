@@ -14,8 +14,8 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_004d2c80(void)
   EInputCodeType key_code;
   EInputCodeType EVar3;
   
-  if (g_CGame_PTR_005b9354->game_control == CONTROL_MODE_GAMEPAD) {
-    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGame_PTR_005b9354);
+  if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
+    core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGamePtr);
   }
   EVar1 = 0;
   EVar3 = 0xffffffff;

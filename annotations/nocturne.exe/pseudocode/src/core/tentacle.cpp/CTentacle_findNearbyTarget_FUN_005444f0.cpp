@@ -22,10 +22,10 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005444f0(CTentacle 
   iVar5 = 0;
   local_14 = 0;
   do {
-    if (g_CDemonSet_PTR_005be368->character_count <= local_14) {
+    if (g_CDemonSetPtr->character_count <= local_14) {
       return 0;
     }
-    actor_ptr = *(CTentacle **)((int)g_CDemonSet_PTR_005be368->characters + iVar5);
+    actor_ptr = *(CTentacle **)((int)g_CDemonSetPtr->characters + iVar5);
     if (actor_ptr != this_ptr) {
       iVar4 = core_actor_cpp_isOfClass_FUN_0040d7e0((CDemonActor *)actor_ptr,class_name);
       if (iVar4 != 0) {

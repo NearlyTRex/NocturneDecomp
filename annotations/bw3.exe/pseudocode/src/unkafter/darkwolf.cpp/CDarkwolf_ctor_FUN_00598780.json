@@ -1,0 +1,175 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 51,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [
+    {
+      "addr": "00598750",
+      "from_addr": "00598763",
+      "name": "core_darkwolf.cpp_factoryFuncDarkwolf_FUN_00598750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598fe0",
+      "from_addr": "00598fe6",
+      "name": "unkafter_darkwolf.cpp_CWhitewolf_ctor_FUN_00598fe0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00598780",
+    "address_range": [
+      [
+        "00598780",
+        "005987fb"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780",
+    "signature": "CDarkwolf * unkafter_darkwolf_cpp_CDarkwolf_ctor_FUN_00598780(CDarkwolf *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00488fd0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_00488fd0"
+    },
+    {
+      "addr": "004fa8a0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_ctor_FUN_004fa8a0"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054eae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e79f8",
+      "name": "DAT_005e79f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e79fc",
+      "name": "DAT_005e79fc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00598fe6",
+        "call_type": "direct",
+        "caller": "unkafter_darkwolf.cpp_CWhitewolf_ctor_FUN_00598fe0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00598763",
+        "call_type": "direct",
+        "caller": "core_darkwolf.cpp_factoryFuncDarkwolf_FUN_00598750",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 55,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 15,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 135
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDarkwolf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "pCVar4 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar3[1].field_0x10);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDarkwolf",
+        "offset": 0,
+        "vtable_addr": "005e7cc4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

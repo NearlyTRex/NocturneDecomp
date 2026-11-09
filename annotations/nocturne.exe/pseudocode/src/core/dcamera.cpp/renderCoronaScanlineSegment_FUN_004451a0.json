@@ -1,82 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_012b0660'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 27,
-        "message": "use of undeclared identifier 'DAT_012b0660'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 70,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_014b8458'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 46,
-        "message": "use of undeclared identifier 'DAT_012b0660'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 134,
@@ -221,37 +143,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "renderCoronaScanlineSegment_FUN_004451a0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 36,
-          "line": 31,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 35,
-          "line": 33,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 34,
-          "line": 35,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -284,30 +175,6 @@
       "severity": "mild",
       "text": "puVar3 = puVar3 + (1 << (DAT_012b0660 & 0x1f));",
       "type": "undefined_data"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 31,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(int)((uVar7 ^ (int)uVar7 >> 0x1f) - ((int)uVar7 >> 0x1f)) < _DAT_014b8458[3])) &&",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 33,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(int)((uVar4 ^ (int)uVar4 >> 0x1f) - ((int)uVar4 >> 0x1f)) < _DAT_014b8458[3])) &&",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 35,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(int)((uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f)) < _DAT_014b8458[3])) {",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

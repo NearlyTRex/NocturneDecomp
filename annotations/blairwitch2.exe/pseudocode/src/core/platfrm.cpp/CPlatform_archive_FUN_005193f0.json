@@ -1,0 +1,762 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 327,
+    "complexity_score": 559,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 37,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 109,
+    "suspect_count": 43,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 436
+  },
+  "cross_references": [
+    {
+      "addr": "00438780",
+      "from_addr": "00438786",
+      "name": "core_conveyor.cpp_CConveyor_archive_FUN_00438780",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005193f0",
+    "address_range": [
+      [
+        "005193f0",
+        "005197a5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_archive_FUN_005193f0",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040ba60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60"
+    },
+    {
+      "addr": "0040b690",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveQuaternion_FUN_0040b690"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040b4b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b4b0"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e21e0",
+      "name": "s_modelName_005e21df+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e21ea",
+      "name": "s_toStartEvent_005e21ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e21f7",
+      "name": "s_toEndEvent_005e21f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2202",
+      "name": "s_stopEvent_005e2202",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e220c",
+      "name": "s_startSound_005e220c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2217",
+      "name": "s_stopSound_005e2217",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2221",
+      "name": "s_activeSound_005e2221",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e222d",
+      "name": "s_courseFilename_005e222d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e223c",
+      "name": "s_startPos_005e223c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2245",
+      "name": "s_origOrient_005e2245",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2250",
+      "name": "s_endPos_005e2250",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2257",
+      "name": "s_endOrient_005e2257",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2261",
+      "name": "s_state_005e2261",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2267",
+      "name": "s_param_005e2267",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e226d",
+      "name": "s_travelTimeToStart_005e226d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e227f",
+      "name": "s_travelTimeToEnd_005e227f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e228f",
+      "name": "s_groundType_005e228f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e229a",
+      "name": "s_oneShot_005e229a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e22a2",
+      "name": "s_blockVirtualDirectorFlag_005e22a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e22bb",
+      "name": "s_renderInBackgroundWhenNo_005e22bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e22df",
+      "name": "s_cameraWhileMoving_005e22df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e22f1",
+      "name": "s_plotAsBoxInShadow_005e22f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2303",
+      "name": "s_goalParam_005e2303",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e230d",
+      "name": "s_currentMovementRate_005e230d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2321",
+      "name": "s_attachCount_005e2321",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e232d",
+      "name": "s_core_platfrm_cpp_005e232d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2341",
+      "name": "s_CPlatform_archive_too_ma_005e2341",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2370",
+      "name": "s_attach_actor_005e2370",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e237d",
+      "name": "s_attachCount_005e237d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2389",
+      "name": "s_attach_actor_005e2389",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2396",
+      "name": "s_pushFlag_005e2396",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e239f",
+      "name": "s_recomputeFog_005e239f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e23ac",
+      "name": "s_plotInShadowFlag_005e23ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b3dc",
+      "name": "g_CPlatformClassVersion",
+      "type": "int",
+      "value": "0xb"
+    },
+    {
+      "addr": "007bc038",
+      "name": "DAT_007bc038",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00438786",
+        "call_type": "direct",
+        "caller": "core_conveyor.cpp_CConveyor_archive_FUN_00438780",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.402390438247012,
+    "instruction_count": 251,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 33,
+      "CBRANCH": 19,
+      "COPY": 162,
+      "INT_ADD": 94,
+      "INT_AND": 134,
+      "INT_CARRY": 40,
+      "INT_EQUAL": 133,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 14,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 43,
+      "INT_SEXT": 3,
+      "INT_SLESS": 66,
+      "INT_SUB": 119,
+      "INT_XOR": 3,
+      "LOAD": 24,
+      "POPCOUNT": 66,
+      "RETURN": 2,
+      "STORE": 105,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1105
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x2b4,\"?modelName\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x4b0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x4b0,\"toStartEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x514",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x514,\"toEndEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x578,\"stopEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x5dc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x5dc,\"startSound\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x5f0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x5f0,\"stopSound\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x604",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x604,\"activeSound\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x44c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x44c,\"courseFilename\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x44c",
+      "severity": "mild",
+      "text": "if (this_ptr->field_0x44c == '\\0') {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x478",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->field_0x478,\"startPos\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x490",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->field_0x490,\"origOrient\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x484",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->field_0x484,\"endPos\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x4a0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->field_0x4a0,\"endOrient\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x430",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x430,\"state\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x438",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x438,\"param\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x448",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x448,\"travelTimeToStart\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x444",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x444 = *(uint *)&this_ptr->field_0x448;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x448",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x444 = *(uint *)&this_ptr->field_0x448;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x444",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x444,\"travelTimeToEnd\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x434",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x434,\"groundType\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x61c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x61c,\"oneShot\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x620",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x620,\"blockVirtualDirectorFlag\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x624",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x624,\"renderInBackgroundWhenNotMovingFlag\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x628",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x628,\"cameraWhileMoving\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x668",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x668,\"plotAsBoxInShadow\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x43c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x43c,\"goalParam\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x440",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x440,\"currentMovementRate\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_007bc038",
+      "severity": "mild",
+      "text": "if (DAT_007bc038 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 72,
+      "match": "field_0x678",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x678 = local_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 82,
+      "match": "field_0x678",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar1->field_0x678 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0x208",
+      "severity": "mild",
+      "text": "} while (pCVar1 != (CPlatform *)&this_ptr->field_0x208);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 91,
+      "match": "field_0x678",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar1->field_0x678 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 93,
+      "match": "field_0x678",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x678 + iVar2 * 0x34,\"attach actor\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 96,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 101,
+      "match": "field_0x66c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x66c,\"pushFlag\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 105,
+      "match": "field_0x670",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x670,\"recomputeFog\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 109,
+      "match": "field_0x674",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x674,\"plotInShadowFlag\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 74,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 85,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 96,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fa034"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fac54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

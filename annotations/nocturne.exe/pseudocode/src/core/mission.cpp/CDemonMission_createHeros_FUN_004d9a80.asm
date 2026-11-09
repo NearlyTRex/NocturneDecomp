@@ -8,7 +8,7 @@
 ; CCharacter *     Stack[0x8]:4   existing_hero
 ;
 ; XREF[3]:
-;   core_game.cpp_CGame_FUN_004a4b50 at 004a4eac
+;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50 at 004a4eac
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d9596
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb4d
 ;
@@ -16,18 +16,18 @@
 ;   TerminatedCString s_core_mission_cpp_00589f69
 ;   TerminatedCString s_CDemonMission_createHero_00589f7d
 ;   TerminatedCString s_CHeroPlaceholder_00589fc0
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
-;   undefined4 g_CGame_01c775ec.hero_number
-;   undefined4 g_CGame_01c775ec.aim_mode
+;   CGame* g_CGamePtr = 01c775ec
+;   CNetGame* g_CNetGamePtr = 01cea280
+;   undefined4 g_CGameInstance.hero_number
+;   undefined4 g_CGameInstance.aim_mode
 ;   undefined4 DAT_01cae0d4
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CNetGame g_CNetGame_01cea280
-;   undefined4 g_CNetGame_01cea280.player_count
-;   undefined4 g_CNetGame_01cea280.players[0].aim_mode
-;   undefined4 g_CNetGame_01cea280.local_player_index
+;   CNetGame g_CNetGameInstance
+;   undefined4 g_CNetGameInstance.player_count
+;   undefined4 g_CNetGameInstance.players[0].aim_mode
+;   undefined4 g_CNetGameInstance.local_player_index
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
@@ -54,12 +54,12 @@ section .text
     CMP EBX,0x10                        ; 004d9a95
     JNZ 0x004d9a8a                      ; 004d9a98
         ;   XREF to: 004d9a8a (CONDITIONAL_JUMP)  ; LAB_004d9a8a
-    MOV EAX,[0x005bdee0]                ; 004d9a9a | g_CNetGame_PTR_005bdee0
-    MOV ECX,dword ptr [EAX]             ; 004d9a9f | g_CNetGame_01cea280
+    MOV EAX,[0x005bdee0]                ; 004d9a9a | g_CNetGamePtr
+    MOV ECX,dword ptr [EAX]             ; 004d9a9f | g_CNetGameInstance
     TEST ECX,ECX                        ; 004d9aa1
     JZ 0x004d9b8d                       ; 004d9aa3
         ;   XREF to: 004d9b8d (CONDITIONAL_JUMP)  ; LAB_004d9b8d
-    MOV EAX,dword ptr [EAX + 0x1c]      ; 004d9aa9 | g_CNetGame_01cea280.player_count
+    MOV EAX,dword ptr [EAX + 0x1c]      ; 004d9aa9 | g_CNetGameInstance.player_count
     MOV [0x01cae0d4],EAX                ; 004d9aac | DAT_01cae0d4
     CMP EAX,0x4                         ; 004d9ab1
     JGE 0x004d9be0                      ; 004d9ab4
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 004d9b1e (CONDITIONAL_JUMP)  ; LAB_004d9b1e
     XOR EBX,EBX                         ; 004d9ac5
     XOR ESI,ESI                         ; 004d9ac7
-    MOV EAX,[0x005bdee0]                ; 004d9ac9 | g_CNetGame_PTR_005bdee0
+    MOV EAX,[0x005bdee0]                ; 004d9ac9 | g_CNetGamePtr
         ;   Label: LAB_004d9ac9
     PUSH 0x0                            ; 004d9ace
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x34] ; 004d9ad0
@@ -87,11 +87,11 @@ section .text
         ;   XREF to: 004d9b88 (CONDITIONAL_JUMP)  ; LAB_004d9b88
     MOV EAX,dword ptr [EBX + 0x1cae0d8] ; 004d9ae7
     MOV dword ptr [EAX + 0xbc90],0x1    ; 004d9aed
-    MOV EAX,[0x005bdee0]                ; 004d9af7 | g_CNetGame_PTR_005bdee0
+    MOV EAX,[0x005bdee0]                ; 004d9af7 | g_CNetGamePtr
     ADD EBX,0x4                         ; 004d9afc
     LEA EDX,[EAX + ESI*0x1]             ; 004d9aff
     MOV EAX,dword ptr [EBX + 0x1cae0d4] ; 004d9b02
-    MOV EDX,dword ptr [EDX + 0x38]      ; 004d9b08 | g_CNetGame_01cea280.players[0].aim_mode
+    MOV EDX,dword ptr [EDX + 0x38]      ; 004d9b08 | g_CNetGameInstance.players[0].aim_mode
     INC EDI                             ; 004d9b0b
     MOV dword ptr [EAX + 0x1f59c],EDX   ; 004d9b0c
     MOV EAX,[0x01cae0d4]                ; 004d9b12 | DAT_01cae0d4
@@ -99,9 +99,9 @@ section .text
     CMP EDI,EAX                         ; 004d9b1a
     JL 0x004d9ac9                       ; 004d9b1c
         ;   XREF to: 004d9ac9 (CONDITIONAL_JUMP)  ; LAB_004d9ac9
-    MOV EAX,[0x005bdee0]                ; 004d9b1e | g_CNetGame_PTR_005bdee0
+    MOV EAX,[0x005bdee0]                ; 004d9b1e | g_CNetGamePtr
         ;   Label: LAB_004d9b1e
-    MOV EAX,dword ptr [EAX + 0x114]     ; 004d9b23 | g_CNetGame_01cea280.local_player_index
+    MOV EAX,dword ptr [EAX + 0x114]     ; 004d9b23 | g_CNetGameInstance.local_player_index
     MOV [0x01cae0e8],EAX                ; 004d9b29 | g_LocalHeroIndex
     MOV EAX,[0x01cae0e8]                ; 004d9b2e | g_LocalHeroIndex
         ;   Label: LAB_004d9b2e
@@ -145,9 +145,9 @@ section .text
     RET                                 ; 004d9b8c
     MOV EBX,dword ptr [ESP + 0x18]      ; 004d9b8d
         ;   Label: LAB_004d9b8d
-    MOV EAX,[0x005b9354]                ; 004d9b91 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d9b91 | g_CGamePtr
     PUSH EBX                            ; 004d9b96
-    MOV ESI,dword ptr [EAX + 0xc0]      ; 004d9b97 | g_CGame_01c775ec.hero_number
+    MOV ESI,dword ptr [EAX + 0xc0]      ; 004d9b97 | g_CGameInstance.hero_number
     PUSH ESI                            ; 004d9b9d
     PUSH ECX                            ; 004d9b9e
     MOV EDX,0x1                         ; 004d9b9f
@@ -161,9 +161,9 @@ section .text
     JZ 0x004d9b88                       ; 004d9bbb
         ;   XREF to: 004d9b88 (CONDITIONAL_JUMP)  ; LAB_004d9b88
     MOV EAX,[0x01cae0e8]                ; 004d9bbd | g_LocalHeroIndex
-    MOV EDX,dword ptr [0x005b9354]      ; 004d9bc2 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [0x005b9354]      ; 004d9bc2 | g_CGamePtr
     MOV EBX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d9bc8
-    MOV EAX,dword ptr [EDX + 0xc4]      ; 004d9bcf | g_CGame_01c775ec.aim_mode
+    MOV EAX,dword ptr [EDX + 0xc4]      ; 004d9bcf | g_CGameInstance.aim_mode
     MOV dword ptr [EBX + 0x1f59c],EAX   ; 004d9bd5
     JMP 0x004d9b2e                      ; 004d9bdb
         ;   XREF to: 004d9b2e (UNCONDITIONAL_JUMP)  ; LAB_004d9b2e

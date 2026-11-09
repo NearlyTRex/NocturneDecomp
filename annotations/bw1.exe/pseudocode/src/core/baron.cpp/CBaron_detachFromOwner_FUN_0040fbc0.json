@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 56,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "004105b0",
+      "from_addr": "00410631",
+      "name": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004105b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040fc00",
+      "from_addr": "0040fcd6",
+      "name": "core_baron.cpp_CBaron_updateMountedPosition_FUN_0040fc00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040fbc0",
+    "address_range": [
+      [
+        "0040fbc0",
+        "0040fbf7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_baron.cpp_CBaron_detachFromOwner_FUN_0040fbc0",
+    "signature": "void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_0040fbc0(CBaron *this_ptr,CDemonActor *target)"
+  },
+  "function_calls": [
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9473684210526314,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 75
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaron *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x20084",
+      "severity": "mild",
+      "text": "if ((target == *(CDemonActor **)&this_ptr->field_0x20084) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x20084",
+      "severity": "mild",
+      "text": "(*(CDemonActor **)&this_ptr->field_0x20084 != (CDemonActor *)0x0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158,7,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x20084",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20084 = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

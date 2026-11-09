@@ -1,0 +1,219 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 108,
+    "complexity_score": 103,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 48,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unknown_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 156
+  },
+  "cross_references": [
+    {
+      "addr": "00465400",
+      "from_addr": "004658a3",
+      "name": "core_dracbrid.cpp_FUN_00465400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005594c0",
+      "from_addr": "005598c2",
+      "name": "core_sound.cpp_FUN_005594c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005593d0",
+    "address_range": [
+      [
+        "005593d0",
+        "005594b8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_FUN_005593d0",
+    "signature": "void __cdecl core_sound_cpp_FUN_005593d0(CSound *this_ptr,char *out_result,char *wildcard_pattern)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b849c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005b849c"
+    },
+    {
+      "addr": "00481240",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00481240"
+    },
+    {
+      "addr": "00485840",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_00485840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0264b450",
+      "name": "g_CStrListInstance",
+      "type": "CStrList",
+      "value": null
+    },
+    {
+      "addr": "0264b460",
+      "name": "DAT_0264b460",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005598c2",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_005594c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005598f1",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_005594c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004658a3",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_FUN_00465400",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.176470588235294,
+    "instruction_count": 85,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 8,
+      "COPY": 66,
+      "INT_ADD": 32,
+      "INT_AND": 71,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 52,
+      "INT_LEFT": 3,
+      "INT_LESS": 7,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 12,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 26,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 26,
+      "INT_XOR": 3,
+      "INT_ZEXT": 2,
+      "LOAD": 19,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 22,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 440
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "out_result",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "wildcard_pattern",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "for (iVar2 = 0; iVar2 < (int)g_CStrListInstance._0_4_; iVar2 = iVar2 + 1) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 22,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 40,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

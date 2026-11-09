@@ -34,15 +34,14 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta
       *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) =
            delta_time * (float)20 +
            *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);
-      if ((float)g_CCourse_ARRAY_01ccdec8
-                 [*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len <=
-          *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {
+      if ((float)g_MoonBatCourses[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len
+          <= *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {
         pfVar1 = (float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4);
-        *pfVar1 = *pfVar1 - (float)g_CCourse_ARRAY_01ccdec8
+        *pfVar1 = *pfVar1 - (float)g_MoonBatCourses
                                    [*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].
                                    len;
       }
-      fVar2 = (float)g_CKeyFramedModel_01cce1bc.frame_count;
+      fVar2 = (float)g_MoonBatModel.frame_count;
       fVar3 = delta_time * (float)30 +
               *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4);
       *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].animation_frame + iVar4) = fVar3;

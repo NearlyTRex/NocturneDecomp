@@ -1,0 +1,1193 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 261,
+    "complexity_score": 1244,
+    "cross_reference_count": 6,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 134,
+    "suspect_count": 108,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_param",
+      "stack_ref",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 395
+  },
+  "cross_references": [
+    {
+      "addr": "00564b1c",
+      "from_addr": "00564c4d",
+      "name": "core_skeleton.cpp_FUN_00564b1c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00407a70",
+      "from_addr": "00407ad5",
+      "name": "engine_3d.c_FUN_00407a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00404440",
+      "from_addr": "004044c6",
+      "name": "engine_3d.c_drawLineStrip2D_FUN_00404440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00498360",
+      "from_addr": "00498458",
+      "name": "shape_edittool.cpp_FUN_00498360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00498660",
+      "from_addr": "00498792",
+      "name": "shape_edittool.cpp_FUN_00498660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004987ae",
+      "from_addr": "00498a2c",
+      "name": "shape_edittool.cpp_FUN_004987ae",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00407af0",
+    "address_range": [
+      [
+        "00407af0",
+        "00407d6d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407af0",
+    "signature": "void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "004011a0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawLine_FUN_004011a0"
+    },
+    {
+      "addr": "0043b7b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0"
+    },
+    {
+      "addr": "0043b5b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0"
+    },
+    {
+      "addr": "0043b4b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0"
+    },
+    {
+      "addr": "0043b6b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0"
+    },
+    {
+      "addr": "00507bf0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_projectCachedPointUnchecked_FUN_00507bf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007135b4",
+      "name": "DAT_007135b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007135b8",
+      "name": "DAT_007135b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007135c4",
+      "name": "DAT_007135c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007135c8",
+      "name": "DAT_007135c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007135e4",
+      "name": "DAT_007135e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007135e8",
+      "name": "DAT_007135e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007135f4",
+      "name": "DAT_007135f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007135f8",
+      "name": "DAT_007135f8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "004044c6",
+        "call_type": "direct",
+        "caller": "engine_3d.c_drawLineStrip2D_FUN_00404440",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00407ad5",
+        "call_type": "direct",
+        "caller": "engine_3d.c_FUN_00407a70",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00498458",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00498360",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "004984a1",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00498360",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "004984f2",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00498360",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00498792",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00498660",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00498a2c",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004987ae",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00498bbe",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004987ae",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00498d3e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004987ae",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00564c4d",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_00564b1c",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 24,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.252336448598131,
+    "instruction_count": 214,
+    "opcode_distribution": {
+      "BOOL_AND": 9,
+      "BOOL_NEGATE": 31,
+      "BOOL_OR": 9,
+      "BRANCH": 11,
+      "CALL": 11,
+      "CBRANCH": 31,
+      "COPY": 192,
+      "INT_2COMP": 6,
+      "INT_ADD": 103,
+      "INT_AND": 145,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 119,
+      "INT_LESS": 18,
+      "INT_MULT": 20,
+      "INT_NOTEQUAL": 28,
+      "INT_OR": 16,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 48,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 97,
+      "INT_XOR": 1,
+      "INT_ZEXT": 20,
+      "LOAD": 45,
+      "POPCOUNT": 48,
+      "RETURN": 2,
+      "STORE": 55
+    },
+    "pcode_op_count": 1124
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407af0(int param_1,int param_2,int param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000034",
+      "severity": "moderate",
+      "text": "int in_stack_00000034;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "int in_stack_00000038;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "int in_stack_0000003c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "uint in_stack_00000044;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "if (((param_5 & in_stack_00000044 & 0x80000000) == 0) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if (((param_5 & in_stack_00000044 & 0x80000000) == 0) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000044",
+      "severity": "moderate",
+      "text": "((char)(param_5 & in_stack_00000044) == '\\0')) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "((char)(param_5 & in_stack_00000044) == '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000003c < in_stack_00000034) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000034",
+      "severity": "moderate",
+      "text": "if (in_stack_0000003c < in_stack_00000034) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_0043b4b0(&param_1,&stack0x00000034,local_40)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_0043b4b0(&param_1,&stack0x00000034,local_40)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "puVar4 = &stack0x00000034;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000034",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000034",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000034 != in_stack_0000003c && in_stack_00000034 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(&param_1,&stack0x00000034,local_40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(&param_1,&stack0x00000034,local_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "puVar4 = &stack0x00000034;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000003c < in_stack_00000038) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "if (in_stack_0000003c < in_stack_00000038) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 43,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_0043b6b0(&param_1,&stack0x00000034,local_40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_0043b6b0(&param_1,&stack0x00000034,local_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 45,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "puVar4 = &stack0x00000034;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "if (-in_stack_00000038 != in_stack_0000003c && in_stack_00000038 <= -in_stack_0000003c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "(&param_1,&stack0x00000034,local_40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1,&stack0x00000034,local_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "puVar4 = &stack0x00000034;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 < param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_3 < param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_0043b4b0(&stack0x00000034,&param_1,local_40)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_interpolateVertexRightClip_FUN_0043b4b0(&stack0x00000034,&param_1,local_40)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (-param_1 != param_3 && param_1 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 75,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(&stack0x00000034,&param_1,local_40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_interpolateVertexLeftClip_FUN_0043b5b0(&stack0x00000034,&param_1,local_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_3 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 85,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_0043b6b0(&stack0x00000034,&param_1,local_40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_interpolateVertexTopClip_FUN_0043b6b0(&stack0x00000034,&param_1,local_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (-param_2 != param_3 && param_2 <= -param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 96,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "(&stack0x00000034,&param_1,local_40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&stack0x00000034,&param_1,local_40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((((param_1 <= param_3) && (-param_1 == param_3 || -param_3 < param_1)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 <= param_3)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(param_2 <= param_3)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 109,
+      "match": "in_stack_00000034",
+      "severity": "moderate",
+      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 109,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((-param_2 == param_3 || -param_3 < param_2 && (in_stack_00000034 <= in_stack_0000003c))))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_00000034",
+      "severity": "moderate",
+      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_00000034",
+      "severity": "moderate",
+      "text": "&& ((-in_stack_00000034 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000034 &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 111,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "((in_stack_00000038 <= in_stack_0000003c &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 111,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "((in_stack_00000038 <= in_stack_0000003c &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_00000038",
+      "severity": "moderate",
+      "text": "(-in_stack_00000038 == in_stack_0000003c || -in_stack_0000003c < in_stack_00000038)))))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_0000003c",
+      "severity": "moderate",
+      "text": ") && ((0 < param_3 && (0 < in_stack_0000003c)))) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_3",
+      "severity": "mild",
+      "text": ") && ((0 < param_3 && (0 < in_stack_0000003c)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar3 = &param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_007135b4",
+      "severity": "mild",
+      "text": "puVar4 = &DAT_007135b4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 121,
+      "match": "&stack0x00000034",
+      "severity": "moderate",
+      "text": "puVar3 = &stack0x00000034;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_007135e4",
+      "severity": "mild",
+      "text": "puVar4 = &DAT_007135e4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_007135c4",
+      "severity": "mild",
+      "text": "(DAT_007135c4 >> 0x10,DAT_007135c8 >> 0x10,DAT_007135f4 >> 0x10,DAT_007135f8 >> 0x10",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_007135c8",
+      "severity": "mild",
+      "text": "(DAT_007135c4 >> 0x10,DAT_007135c8 >> 0x10,DAT_007135f4 >> 0x10,DAT_007135f8 >> 0x10",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_007135f4",
+      "severity": "mild",
+      "text": "(DAT_007135c4 >> 0x10,DAT_007135c8 >> 0x10,DAT_007135f4 >> 0x10,DAT_007135f8 >> 0x10",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_007135f8",
+      "severity": "mild",
+      "text": "(DAT_007135c4 >> 0x10,DAT_007135c8 >> 0x10,DAT_007135f4 >> 0x10,DAT_007135f8 >> 0x10",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 36,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 57,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 68,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 78,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 88,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 99,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 116,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 123,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00407d0e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 228,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00407d0e: MOVSD.REP ES:EDI,ESI  ; DAT_007135b4 | DAT_007135b8",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00407d23, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 233,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00407d23: MOVSD.REP ES:EDI,ESI  ; DAT_007135e4 | DAT_007135e8",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 10,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 24,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:24",
+      "param_delta": 24,
+      "text": "Function declares 0 params but call sites push 24 (24 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

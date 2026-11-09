@@ -25,12 +25,12 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
   int local_24;
   int local_18;
   
-  if (g_CGame_PTR_005b9354->shadow_flag != 0) {
-    if (g_CGame_PTR_005b9354->profile_mode != 0) {
+  if (g_CGamePtr->shadow_flag != 0) {
+    if (g_CGamePtr->profile_mode != 0) {
       local_38 = wincore_winrun_cpp_getTime_FUN_00558a30();
     }
     local_28 = 0;
-    g_CDemonRaytrace_01fba938.rendering_mode = 0;
+    g_CDemonRaytraceInstance.rendering_mode = 0;
     if (0 < _DAT_01fba2d8) {
       local_30 = 0;
       do {
@@ -66,7 +66,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
                 pCVar6 = (CDemonSet *)pCVar6->cameras;
               } while (local_18 < this_ptr->sorted_render_actor_count);
             }
-            core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGore_PTR_005b96c4);
+            core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGorePtr);
             core_fire_cpp_CFireEffect_render_FUN_0048a650(g_CFireEffect_PTR_005b80f0);
           }
           core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(pCVar2,1);
@@ -105,7 +105,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
               pCVar6 = (CDemonSet *)pCVar6->cameras;
             } while (iVar5 < this_ptr->sorted_render_actor_count);
           }
-          core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGore_PTR_005b96c4);
+          core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGorePtr);
           core_fire_cpp_CFireEffect_render_FUN_0048a650(g_CFireEffect_PTR_005b80f0);
           _DAT_014b9920 = (CDemonLight *)0x0;
           core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(pCVar2,0);
@@ -114,12 +114,12 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
         local_24 = local_24 + 1;
       } while (local_24 < _DAT_01fb9b54);
     }
-    if (g_CGame_PTR_005b9354->profile_mode != 0) {
+    if (g_CGamePtr->profile_mode != 0) {
       iVar5 = wincore_winrun_cpp_getTime_FUN_00558a30();
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"renderStaticLights : %3.2f ms\n",
+                (g_CConsolePtr,"renderStaticLights : %3.2f ms\n",
                  ((double)(iVar5 - local_38) * 0.055555555555555601 * 1.52587890625e-05 * 1000)
-                 / (double)g_CGame_PTR_005b9354->delta_time_float);
+                 / (double)g_CGamePtr->delta_time_float);
       return;
     }
   }

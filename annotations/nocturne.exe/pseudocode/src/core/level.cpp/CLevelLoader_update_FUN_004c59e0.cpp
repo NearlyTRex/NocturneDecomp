@@ -58,17 +58,17 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     local_24.z = 36.0;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (g_CDemonRenderer_PTR_005ae704,&local_24);
-    g_CDemonSet_PTR_005be368->rendering_mode = 1;
+    g_CDemonSetPtr->rendering_mode = 1;
     iVar6 = 0x8000 - (this_ptr->current_frame << 0xf) / this_ptr->total_frames;
     iVar3 = engine_matrix_c_interpolatedSin_FUN_004cca60(iVar6);
-    pCVar2 = g_CDemonSet_PTR_005be368;
-    (g_CDemonSet_PTR_005be368->light_direction).y = -37000;
+    pCVar2 = g_CDemonSetPtr;
+    (g_CDemonSetPtr->light_direction).y = -37000;
     (pCVar2->light_direction).x =
          (uint)((longlong)iVar3 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
     iVar3 = engine_matrix_c_interpolatedCos_FUN_004ccaa0(iVar6);
-    pCVar2 = g_CDemonSet_PTR_005be368;
-    g_CDemonSet_PTR_005be368->ambient_base_quick = 0x280;
+    pCVar2 = g_CDemonSetPtr;
+    g_CDemonSetPtr->ambient_base_quick = 0x280;
     (pCVar2->light_direction).z =
          (uint)((longlong)iVar3 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
@@ -148,7 +148,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_004c59e0(CLevelLoader *this_
     if (this_ptr->use_custom_viewport != 0) {
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(g_CDemonRenderer_PTR_005ae704);
     }
-    g_CDemonSet_PTR_005be368->rendering_mode = 0;
+    g_CDemonSetPtr->rendering_mode = 0;
     local_10 = g_CBitFont_PTR_014b9900;
     iVar3 = (g_WindowWidth * 0x240) / 0x280;
     iVar6 = (g_WindowHeight * 0x18) / 0x1e0;

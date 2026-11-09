@@ -73,7 +73,7 @@ void __cdecl core_larva_cpp_CLarva_processDamage_FUN_004c5310(CLarva *this_ptr,S
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
             ((CDemonActor *)this_ptr,&CStack_20,&damage_info->impact_direction);
   core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-            (g_CGore_PTR_005b96c4,&CStack_20,(CVector3f *)0x0,10,(this_ptr->base).base.blood_type);
+            (g_CGorePtr,&CStack_20,(CVector3f *)0x0,10,(this_ptr->base).base.blood_type);
   core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
   return;
 }

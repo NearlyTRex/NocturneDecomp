@@ -1,0 +1,302 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 74,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strlen"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [
+    {
+      "addr": "0040b0a0",
+      "from_addr": "0040b12e",
+      "name": "core_actor.cpp_CDemonActor_save_FUN_0040b0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040bee0",
+      "from_addr": "0040bf83",
+      "name": "core_actor.cpp_archiveBox_FUN_0040bee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040bfd0",
+      "from_addr": "0040c0e2",
+      "name": "core_actor.cpp_archiveClothList_FUN_0040bfd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040bb60",
+      "from_addr": "0040bc03",
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040bc50",
+      "from_addr": "0040bdd3",
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040bc50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040c170",
+      "from_addr": "0040c291",
+      "name": "core_actor.cpp_archiveRules_FUN_0040c170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc2c0",
+      "from_addr": "004dc2e9",
+      "name": "core_inv.cpp_FUN_004dc2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040b050",
+    "address_range": [
+      [
+        "0040b050",
+        "0040b095"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040b050",
+    "signature": "int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040b050(int indent_delta)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0060958e",
+      "name": "DAT_0060958e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060958f",
+      "name": "DAT_0060958f",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00609590",
+      "name": "DAT_00609590",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00609591",
+      "name": "DAT_00609591",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 14,
+    "call_sites": [
+      {
+        "call_addr": "0040b12e",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_save_FUN_0040b0a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040b148",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_save_FUN_0040b0a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040bc03",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archiveMotionState_FUN_0040bb60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040bc26",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archiveMotionState_FUN_0040bb60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040c0e2",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archiveClothList_FUN_0040bfd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040c142",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archiveClothList_FUN_0040bfd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040bdd3",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archivePartStatus_FUN_0040bc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040beb6",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archivePartStatus_FUN_0040bc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dc2e9",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dc2c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dc422",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dc2c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.428571428571429,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 5,
+      "COPY": 23,
+      "INT_ADD": 7,
+      "INT_AND": 27,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 12,
+      "INT_SUB": 8,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 6,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 152
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "indent_delta",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_00609590;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "(&DAT_00609590)[iVar2] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_0060958f",
+      "severity": "mild",
+      "text": "(&DAT_0060958f)[iVar2] = 9;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 12,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

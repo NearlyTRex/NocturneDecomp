@@ -1,0 +1,129 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 57
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00528660",
+    "address_range": [
+      [
+        "00528660",
+        "005286ad"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_rifle.cpp_CRifle_dtor_FUN_00528660",
+    "signature": "CRifle * core_rifle_cpp_CRifle_dtor_FUN_00528660(CRifle *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057aed0",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_dtor_FUN_0057aed0"
+    },
+    {
+      "addr": "005a308f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005a308f"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30b6"
+    },
+    {
+      "addr": "005a30c4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30c4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e3970",
+      "name": "g_CRifleTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 23,
+      "INT_ADD": 13,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 11
+    },
+    "pcode_op_count": 124
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CRifle *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 208,
+        "vtable_addr": "005e3874"
+      },
+      {
+        "class_name": "CRifle",
+        "offset": 8,
+        "vtable_addr": "005e3974"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

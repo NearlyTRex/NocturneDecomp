@@ -1,0 +1,416 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 240,
+    "complexity_score": 251,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 81,
+    "suspect_count": 15,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 321
+  },
+  "cross_references": [
+    {
+      "addr": "004e8f80",
+      "from_addr": "004e943c",
+      "name": "core_menu.cpp_FUN_004e8f80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e80f0",
+    "address_range": [
+      [
+        "004e80f0",
+        "004e837f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
+    "signature": "void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004e80f0(int *sensitivity_value_ptr,char *window_title)"
+  },
+  "function_calls": [
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "004031c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_004031c0"
+    },
+    {
+      "addr": "00403250",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403250"
+    },
+    {
+      "addr": "004b0ff0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0"
+    },
+    {
+      "addr": "004b30f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004b30f0"
+    },
+    {
+      "addr": "0047f3e0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0"
+    },
+    {
+      "addr": "0047f970",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047f970"
+    },
+    {
+      "addr": "0047fa80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047fa80"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+    },
+    {
+      "addr": "005809d0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005809d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c729e",
+      "name": "s_s_4_2f_005c729e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c72a6",
+      "name": "DAT_005c72a6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "005fba18",
+      "name": "DAT_005fba18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600284",
+      "name": "DAT_00600284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5b0e0",
+      "name": "DAT_01c5b0e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fadc",
+      "name": "DAT_01c5fadc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "DAT_01c5fae0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a8",
+      "name": "DAT_01c6b5a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5ac",
+      "name": "DAT_01c6b5ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b0",
+      "name": "DAT_01c6b5b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b4",
+      "name": "DAT_01c6b5b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d70a78",
+      "name": "DAT_01d70a78",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004e943c",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004e8f80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e9462",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004e8f80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.845,
+    "instruction_count": 200,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 1,
+      "BRANCH": 4,
+      "CALL": 10,
+      "CALLIND": 5,
+      "CBRANCH": 12,
+      "COPY": 167,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 46,
+      "INT_AND": 149,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 104,
+      "INT_LEFT": 5,
+      "INT_LESS": 16,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 20,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 18,
+      "INT_SDIV": 3,
+      "INT_SEXT": 12,
+      "INT_SLESS": 51,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 7,
+      "INT_SUB": 82,
+      "INT_XOR": 2,
+      "INT_ZEXT": 7,
+      "LOAD": 26,
+      "POPCOUNT": 49,
+      "RETURN": 1,
+      "STORE": 68,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 969
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sensitivity_value_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "window_title",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004e80f9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "iVar3 = DAT_005fba18 * 3 >> 0x1f;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "(g_CEditorToolsPtr,(int)((DAT_005fba18 * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "((int)(((longlong)(DAT_005fba18 + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "iVar3 = (int)(((longlong)_DAT_01c5fadc * 0x3c000) / (longlong)(DAT_005fba18 + -1)) + 0x4000;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 45,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 49,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 77,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 77,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 79,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 79,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 80,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "} while ((iVar1 == 0) && (iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar1 == 0));",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 80,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "} while ((iVar1 == 0) && (iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78), iVar1 == 0));",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

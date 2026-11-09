@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 54,
-        "line": 22,
-        "message": "format specifies type 'char *' but the argument has type 'CPackedBitmap *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
@@ -219,23 +207,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CPackedBitmap_openPBMFile_FUN_004f4e40.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 30,
-          "message": "Uninitialized variable: in_stack_00000020",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -268,14 +239,6 @@
       "severity": "moderate",
       "text": "uStack_60 = 0x4f4ed9;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000020",
-      "line": 30,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_00000020 == 0) {",
-      "type": "static_uninitvar"
     }
   ]
 }

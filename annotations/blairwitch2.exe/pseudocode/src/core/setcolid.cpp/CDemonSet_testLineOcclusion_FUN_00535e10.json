@@ -1,0 +1,259 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 13,
+    "cross_reference_count": 6,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
+  },
+  "cross_references": [
+    {
+      "addr": "004b20d0",
+      "from_addr": "004b225f",
+      "name": "core_gabriela.cpp_FUN_004b20d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559b4e",
+      "from_addr": "00559c15",
+      "name": "core_sound.cpp_FUN_00559b4e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a3c0",
+      "from_addr": "0055a71b",
+      "name": "core_sound.cpp_FUN_0055a3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056bf00",
+      "from_addr": "0056c788",
+      "name": "core_stranger.cpp_FUN_0056bf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595f30",
+      "from_addr": "00596211",
+      "name": "core_zombie.cpp_FUN_00595f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459ff0",
+      "from_addr": "0045a8c2",
+      "name": "unkafter_stranger.cpp_FUN_00459ff0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00535e10",
+    "address_range": [
+      [
+        "00535e10",
+        "00535e88"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00535e10",
+    "signature": "int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00535e10(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "00473390",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_FUN_00473390"
+    },
+    {
+      "addr": "00536490",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_00536490"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01fc9c68",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0055a71b",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0045a8c2",
+        "call_type": "direct",
+        "caller": "unkafter_stranger.cpp_FUN_00459ff0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004b225f",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_FUN_004b20d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056c788",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_FUN_0056bf00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00596211",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_00595f30",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00559c15",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_00559b4e",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.351851851851852,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 104,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 19,
+      "INT_AND": 24,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 18,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 289
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "start_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "end_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00535e19",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

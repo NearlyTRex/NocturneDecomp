@@ -22,15 +22,15 @@
 ;   float FLOAT_0058e24a = 0.3500000
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   CBitFont* g_CBitFont_PTR_014b98fc
 ;   CBitFont* g_CBitFont_PTR_014b9904
 ;   CBitFont* g_CBitFont_PTR_014b990c
 ;   int g_ClipTop
-;   CGame g_CGame_01c775ec
-;   undefined4 g_CGame_01c775ec.subtitle_mode
-;   undefined4 g_CGame_01c775ec.letterbox_mode
+;   CGame g_CGameInstance
+;   undefined4 g_CGameInstance.subtitle_mode
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01d16810
 ;   undefined4 DAT_01e53410
 ;   undefined4 DAT_01e56c20
@@ -56,12 +56,12 @@ section .text
     PUSH EBP                            ; 004fe773
     SUB ESP,0x20                        ; 004fe774
     MOV EDI,dword ptr [ESP + 0x34]      ; 004fe777
-    MOV EAX,[0x005b9354]                ; 004fe77b | g_CGame_PTR_005b9354
-    MOV EDX,dword ptr [EAX + 0x228]     ; 004fe780 | g_CGame_01c775ec.letterbox_mode
+    MOV EAX,[0x005b9354]                ; 004fe77b | g_CGamePtr
+    MOV EDX,dword ptr [EAX + 0x228]     ; 004fe780 | g_CGameInstance.letterbox_mode
     TEST EDX,EDX                        ; 004fe786
     JNZ 0x004fe991                      ; 004fe788
         ;   XREF to: 004fe991 (CONDITIONAL_JUMP)  ; LAB_004fe991
-    PUSH EAX                            ; 004fe78e | g_CGame_01c775ec
+    PUSH EAX                            ; 004fe78e | g_CGameInstance
     CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe78f
         ;   XREF to: 0042b5c0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0(CGame * game_ptr)
     MOV dword ptr [ESP + 0x20],EAX      ; 004fe794
@@ -141,8 +141,8 @@ section .text
     CMP byte ptr [EDI + 0x4c],0x0       ; 004fe852
     JZ 0x004fe980                       ; 004fe856
         ;   XREF to: 004fe980 (CONDITIONAL_JUMP)  ; LAB_004fe980
-    MOV EAX,[0x005b9354]                ; 004fe85c | g_CGame_PTR_005b9354
-    CMP dword ptr [EAX + 0x10],0x0      ; 004fe861 | g_CGame_01c775ec.subtitle_mode
+    MOV EAX,[0x005b9354]                ; 004fe85c | g_CGamePtr
+    CMP dword ptr [EAX + 0x10],0x0      ; 004fe861 | g_CGameInstance.subtitle_mode
     JZ 0x004fe980                       ; 004fe865
         ;   XREF to: 004fe980 (CONDITIONAL_JUMP)  ; LAB_004fe980
     MOV ECX,dword ptr [0x005b7620]      ; 004fe86b | g_WindowHeight
@@ -255,7 +255,7 @@ section .text
     POP ESI                             ; 004fe98e
     POP EBX                             ; 004fe98f
     RET                                 ; 004fe990
-    PUSH EAX                            ; 004fe991 | g_CGame_01c775ec
+    PUSH EAX                            ; 004fe991 | g_CGameInstance
         ;   Label: LAB_004fe991
     MOV dword ptr [0x01e53410],EDX      ; 004fe992 | DAT_01e53410
     CALL core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0 ; 004fe998

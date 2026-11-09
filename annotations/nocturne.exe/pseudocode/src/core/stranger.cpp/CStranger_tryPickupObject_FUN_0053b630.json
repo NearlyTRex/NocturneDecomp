@@ -1,28 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 223,
-        "message": "use of undeclared identifier '_DAT_02dc9f88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 225,
-        "message": "use of undeclared identifier '_DAT_02dc9f60'"
-      },
-      {
-        "category": "format_error",
-        "column": 22,
-        "line": 238,
-        "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 692,
@@ -212,19 +188,19 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -242,13 +218,13 @@
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -429,9 +405,9 @@
     {
       "description": "Complex pointer cast",
       "line": 72,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar8 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_18);",
+      "text": "pCVar8 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18);",
       "type": "pointer_cast"
     },
     {

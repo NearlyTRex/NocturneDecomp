@@ -1,0 +1,184 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 47,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "005a7b50",
+      "from_addr": "005a8043",
+      "name": "core_vehicle.cpp_FUN_005a7b50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a89c0",
+    "address_range": [
+      [
+        "005a89c0",
+        "005a8a07"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005a89c0",
+    "signature": "uint __cdecl core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005a89c0(CVehicle *this_ptr,char *sound_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057d8d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_0057d8d0"
+    },
+    {
+      "addr": "005727e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005727e0"
+    },
+    {
+      "addr": "00572880",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572880"
+    },
+    {
+      "addr": "00572ac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572ac0"
+    },
+    {
+      "addr": "00572b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572b40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006236b8",
+      "name": "DAT_006236b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005a8043",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_FUN_005a7b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a80bf",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_FUN_005a7b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a8475",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_FUN_005a7b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4615384615384617,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CALL": 5,
+      "COPY": 19,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 13,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 90
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVehicle *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_005727e0((CVector3f *)&this_ptr->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x1060",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_00572880((CVector3f *)&this_ptr->field_0x1060);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(CVector3f *)&this_ptr->field_0x20);",
+      "type": "unnamed_field"
+    }
+  ]
+}

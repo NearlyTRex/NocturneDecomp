@@ -1,0 +1,341 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 187,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 16,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00566e70",
+    "address_range": [
+      [
+        "00566e70",
+        "00566fbf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_spike.cpp_CSpike_archive_FUN_00566e70",
+    "signature": "void __cdecl core_spike_cpp_CSpike_archive_FUN_00566e70(CSpike *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b9b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d5b32",
+      "name": "s_modelName_005d5b31+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d5b3c",
+      "name": "s_spikeType_005d5b3c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b46",
+      "name": "s_spikeState_005d5b46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b51",
+      "name": "s_areWeActive_005d5b51",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b5d",
+      "name": "s_extendDistance_005d5b5d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b6c",
+      "name": "s_startEvent_005d5b6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b77",
+      "name": "s_stopEvent_005d5b77",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b81",
+      "name": "s_extendEvent_005d5b81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b8d",
+      "name": "s_retractEvent_005d5b8d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5b9a",
+      "name": "s_extendTime_005d5b9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5ba5",
+      "name": "s_retractTime_005d5ba5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5bb1",
+      "name": "s_extendSound_005d5bb1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5bbd",
+      "name": "s_retractSound_005d5bbd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5bca",
+      "name": "s_period_005d5bca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5bd1",
+      "name": "s_damageStrength_005d5bd1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5be0",
+      "name": "s_param_005d5be0",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.080459770114943,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "CALL": 17,
+      "COPY": 52,
+      "INT_ADD": 36,
+      "INT_AND": 36,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 36,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 18,
+      "INT_SUB": 51,
+      "LOAD": 3,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 51
+    },
+    "pcode_op_count": 355
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpike *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x158,\">modelName\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2d4,\"spikeType\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2d8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2d8,\"spikeState\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2dc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2dc,\"areWeActive\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2ec",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2ec,\"extendDistance\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2f0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2f0,\"startEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x354",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x354,\"stopEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x3b8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x3b8,\"extendEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x41c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x41c,\"retractEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x480",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x480,\"extendTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x484",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x484,\"retractTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x48c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x48c,\"extendSound\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x4f0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x4f0,\"retractSound\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x554",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x554,\"period\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x558",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x558,\"damageStrength\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x55c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x55c,\"param\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "005e4b44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -5,8 +5,8 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap g_CAlphaBitmap_01cb0380 = {};
-CAlphaBitmap g_CAlphaBitmap_01cb0394 = {};
-CAlphaBitmap g_CAlphaBitmap_01cb03a8 = {};
-CAlphaBitmap g_CAlphaBitmap_01cb03bc = {};
+CAlphaBitmap g_InvBackgroundBitmap = {};
+CAlphaBitmap g_InvBackground2Bitmap = {};
+CAlphaBitmap g_WeapBackgroundBitmap = {};
+CAlphaBitmap g_WeapBackground2Bitmap = {};
 

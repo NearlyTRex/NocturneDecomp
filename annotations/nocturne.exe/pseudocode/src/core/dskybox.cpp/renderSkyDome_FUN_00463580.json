@@ -1,106 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 55,
-        "message": "use of undeclared identifier '_DAT_01b7b728'; did you mean 'DAT_00575728'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 56,
-        "message": "use of undeclared identifier '_DAT_01b7b730'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 59,
-        "message": "use of undeclared identifier '_DAT_01b7b72c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 72,
-        "message": "use of undeclared identifier 'DAT_01b7b728'; did you mean 'DAT_00575728'?"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 80,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 22,
-        "line": 81,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 83,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 86,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 29,
-        "line": 86,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 94,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 29,
-        "line": 94,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 121,
-        "message": "use of undeclared identifier 'stack0xffffff44'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 150,
-        "message": "use of undeclared identifier 'stack0xffffff44'"
-      },
-      {
-        "category": "type_error",
-        "column": 49,
-        "line": 153,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "syntax_error",
-        "column": 77,
-        "line": 153,
-        "message": "expected ')'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 153,
-        "message": "use of undeclared identifier 'undefined3'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 362,
@@ -258,7 +156,7 @@
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     }
@@ -644,37 +542,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "renderSkyDome_FUN_00463580.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 54,
-          "line": 139,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 43,
-          "line": 140,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 90,
-          "message": "Uninitialized variable: local_6c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -787,30 +654,6 @@
       "severity": "moderate",
       "text": "local_30 = __BITCAST_FLOAT(CONCAT13(local_30._3_1_ + '\\x01',(undefined3)local_30));",
       "type": "concat_reconstruction"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 139,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "local_1c = (int)(((int)local_30 + ((int)local_30 >> 0x1f) * -4) -",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 140,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(uint)(((int)local_30 >> 0x1f) << 1 < 0)) >> 2 & 0xffffff;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Uninitialized variable: local_6c",
-      "line": 90,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_6c = -local_6c;",
-      "type": "static_uninitvar"
     }
   ]
 }

@@ -1,0 +1,16 @@
+// Name: core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00548ba0
+// Address: 00548ba0
+// Address Range: [[00548ba0, 00548bc9]]
+// Convention: __cdecl
+// Signature: void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_00548ba0(CDeformableModel *this_ptr,int lod_index,int *input_vertices)
+
+#include "nocturne.h"
+
+void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_00548ba0(CDeformableModel *this_ptr,int lod_index,int *input_vertices)
+
+{
+  core_set_cpp_CDemonSet_rotateVerticies_FUN_00538ad0
+            (g_CDemonSetPtr,*(int *)(&this_ptr->field_0x2c + lod_index * 4),
+             (CVector3i *)input_vertices);
+  return;
+}

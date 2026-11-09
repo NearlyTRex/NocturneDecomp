@@ -1,0 +1,120 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 24,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 60
+  },
+  "cross_references": [
+    {
+      "addr": "005531d0",
+      "from_addr": "0055322a",
+      "name": "sound_sndmain.cpp_FUN_005531d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058fd50",
+    "address_range": [
+      [
+        "0058fd50",
+        "0058fd8c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_setThreadPriority_FUN_0058fd50",
+    "signature": "int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_0058fd50(HANDLE hThread,int priority_level)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000096",
+      "is_variadic": false,
+      "name": "SetThreadPriority"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c863c",
+      "name": "PTR_SetThreadPriority_005c863c",
+      "type": "void*",
+      "value": "001c91c2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055322a",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_005531d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6363636363636362,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 16,
+      "INT_ADD": 3,
+      "INT_AND": 11,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 3,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 80
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hThread",
+        "offset": 4,
+        "size": 4,
+        "type": "HANDLE"
+      },
+      {
+        "is_param": true,
+        "name": "priority_level",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

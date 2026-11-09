@@ -1,0 +1,342 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 159,
+    "cross_reference_count": 6,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 11,
+    "suspect_types": [
+      "negative_offset",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "0040e3d0",
+      "from_addr": "0040e3d6",
+      "name": "core_ammo.cpp_CAmmoBullet_ctor_FUN_0040e3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e260",
+      "from_addr": "0040e266",
+      "name": "core_ammo.cpp_CAmmoManaLarge_ctor_FUN_0040e260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e0f0",
+      "from_addr": "0040e0f6",
+      "name": "core_ammo.cpp_CAmmoMana_ctor_FUN_0040e0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040de30",
+      "from_addr": "0040de43",
+      "name": "core_ammo.cpp_factoryFuncAmmo_FUN_0040de30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e720",
+      "from_addr": "0040e775",
+      "name": "core_ammobox.cpp_FUN_0040e720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004db8d0",
+      "from_addr": "004db8f4",
+      "name": "core_inv.cpp_FUN_004db8d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040de60",
+    "address_range": [
+      [
+        "0040de60",
+        "0040deea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040de60",
+    "signature": "CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040de60(CAmmo *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00408600"
+    },
+    {
+      "addr": "00462500",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b60b7",
+      "name": "s_bullet_kfm_005b60b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b60c2",
+      "name": "DAT_005b60c2",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b60c3",
+      "name": "DAT_005b60c3",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b60c4",
+      "name": "DAT_005b60c4",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b60c5",
+      "name": "DAT_005b60c5",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005db134",
+      "name": "g_CAmmoVTable",
+      "type": "void*",
+      "value": "0040def0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0040de43",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_factoryFuncAmmo_FUN_0040de30",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e0f6",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_CAmmoMana_ctor_FUN_0040e0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e266",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_CAmmoManaLarge_ctor_FUN_0040e260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e3d6",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_CAmmoBullet_ctor_FUN_0040e3d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e775",
+        "call_type": "direct",
+        "caller": "core_ammobox.cpp_FUN_0040e720",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004db8f4",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004db8d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 30,
+      "INT_ADD": 21,
+      "INT_AND": 16,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 13,
+      "LOAD": 8,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 160
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr_00[-1].field_0x178 = &g_CAmmoVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr_00[-1].field_0x178 = &g_CAmmoVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005b60c2",
+      "severity": "mild",
+      "text": "pcVar3 = &DAT_005b60c2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar4->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x40 = 0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x44 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x48 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 31,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "return (CAmmo *)&this_ptr_00[-1].field_0x24;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "return (CAmmo *)&this_ptr_00[-1].field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "severity": "moderate",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAmmo",
+        "offset": 0,
+        "vtable_addr": "005db514"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

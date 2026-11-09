@@ -24,8 +24,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
   do {
     while (pSVar2->exists != 0) {
       core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710
-                (g_CDemonSet_PTR_005be368,cylinder,&local_24,&pSVar2->local_position,
-                 &pSVar2->rotation_matrix);
+                (g_CDemonSetPtr,cylinder,&local_24,&pSVar2->local_position,&pSVar2->rotation_matrix)
+      ;
       pSVar2 = pSVar2 + 1;
       if ((SGem *)pSVar2 == this_ptr->gems) {
         return;

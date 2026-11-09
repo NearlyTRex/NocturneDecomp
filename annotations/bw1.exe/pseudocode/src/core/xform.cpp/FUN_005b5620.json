@@ -1,0 +1,401 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 114,
+    "complexity_score": 119,
+    "cross_reference_count": 13,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 34,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 148
+  },
+  "cross_references": [
+    {
+      "addr": "0041a200",
+      "from_addr": "0041a438",
+      "name": "core_bodypart.cpp_FUN_0041a200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004263d0",
+      "from_addr": "004264e1",
+      "name": "core_bugs.cpp_FUN_004263d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00430440",
+      "from_addr": "004307a6",
+      "name": "core_charactr.cpp_FUN_00430440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432690",
+      "from_addr": "004326d6",
+      "name": "core_charactr.cpp_FUN_00432690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043fa20",
+      "from_addr": "0043fb26",
+      "name": "core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043fa20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ac3e0",
+      "from_addr": "004ac54f",
+      "name": "core_fire.cpp_FUN_004ac3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd750",
+      "from_addr": "004fd79b",
+      "name": "core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004fd750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f7e0",
+      "from_addr": "0050f979",
+      "name": "core_mimic.cpp_FUN_0050f7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053adb0",
+      "from_addr": "0053ae38",
+      "name": "core_platfrm.cpp_CPlatform_attachActor_FUN_0053adb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00539810",
+      "from_addr": "00539a21",
+      "name": "core_platfrm.cpp_FUN_00539810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005952f0",
+      "from_addr": "005955f1",
+      "name": "core_tentacle.cpp_FUN_005952f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599150",
+      "from_addr": "005993a7",
+      "name": "core_thehand.cpp_FUN_00599150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a28c0",
+      "from_addr": "005a29b0",
+      "name": "core_turret.cpp_FUN_005a28c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b5620",
+    "address_range": [
+      [
+        "005b5620",
+        "005b575c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_FUN_005b5620",
+    "signature": "void __cdecl core_xform_cpp_FUN_005b5620(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045fd80",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045fd80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "004326d6",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00432690",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0041a438",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_FUN_0041a200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0041a455",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_FUN_0041a200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0053ae38",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_attachActor_FUN_0053adb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004264e1",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_FUN_004263d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00539a21",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_FUN_00539810",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043fb26",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043fa20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043fb3a",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043fa20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004307a6",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00430440",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004ac54f",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004ac3e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.027272727272727,
+    "instruction_count": 110,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 455,
+      "FLOAT2FLOAT": 59,
+      "FLOAT_ADD": 10,
+      "FLOAT_MULT": 25,
+      "FLOAT_NEG": 6,
+      "INT_ADD": 69,
+      "INT_AND": 12,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 6,
+      "INT_SUB": 16,
+      "LOAD": 54,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 27
+    },
+    "pcode_op_count": 773
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "output_matrix",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x4f *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "core_dirmat_cpp_FUN_0045fd80(&local_14,&local_20,&euler_angles->field_0x8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "core_dirmat_cpp_FUN_0045fd80(&local_10,&local_1c,&euler_angles->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "-(*(float *)&position->field_0x8 * *(float *)(output_matrix + 8) +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&position->field_0x4 * *(float *)(output_matrix + 4));",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "-(*(float *)&position->field_0x8 * *(float *)(output_matrix + 0x18) +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&position->field_0x4 * *(float *)(output_matrix + 0x14));",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "-(*(float *)&position->field_0x8 * *(float *)(output_matrix + 0x28) +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&position->field_0x4 * *(float *)(output_matrix + 0x24));",
+      "type": "unnamed_field"
+    }
+  ]
+}

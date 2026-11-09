@@ -6,10 +6,18 @@
 #include "system/basetypes.h"
 #include "system/stdlib.h"
 #include "system/watcom.h"
+#include "types/classes/CTextureList.h"
+#include "types/classes/CWater.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5C0000
 // =============================================================================
+
+// CTextureList*
+extern CTextureList* g_CTextureListPtr;
+
+// CWater*
+extern CWater* g_CWaterPtr;
 
 // RuntimeHandlerEntry
 extern RuntimeHandlerEntry g_FirstInitHandler;
@@ -23,8 +31,8 @@ extern RuntimeHandlerEntry g_InitHandlers[160];
 extern RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6];
 
 // WatcomStaticDestructorNode
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c11dc;
+extern WatcomStaticDestructorNode g_CTextureListDestructorNode;
+extern WatcomStaticDestructorNode g_CWaterDestructorNode;
 
 // char[256]
 extern char g_RendererDllPath[256];

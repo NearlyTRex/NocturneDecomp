@@ -1,0 +1,206 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 128,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 10,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [
+    {
+      "addr": "004ca0f0",
+      "from_addr": "004ca103",
+      "name": "core_grave.cpp_factoryFuncGrave_FUN_004ca0f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ca120",
+    "address_range": [
+      [
+        "004ca120",
+        "004ca1a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_grave.cpp_CGrave_ctor_FUN_004ca120",
+    "signature": "CGrave * __cdecl core_grave_cpp_CGrave_ctor_FUN_004ca120(CGrave *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00408790"
+    },
+    {
+      "addr": "0044fc80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80"
+    },
+    {
+      "addr": "0044fd70",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ca103",
+        "call_type": "direct",
+        "caller": "core_grave.cpp_factoryFuncGrave_FUN_004ca0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8076923076923075,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 19,
+      "INT_ADD": 17,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 99
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrave *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CGraveVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CGraveVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0x41f00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0xc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x10 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "this_ptr_00[1].field_0x14 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "this_ptr_00[1].field_0x78 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "this_ptr_00[-2].",
+      "severity": "mild",
+      "text": "return (CGrave *)&this_ptr_00[-2].field_0x44;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "return (CGrave *)&this_ptr_00[-2].field_0x44;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGrave",
+        "offset": 0,
+        "vtable_addr": "005f7da4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

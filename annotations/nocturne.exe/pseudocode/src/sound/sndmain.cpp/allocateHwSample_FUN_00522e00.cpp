@@ -28,10 +28,9 @@ int __cdecl sound_sndmain_cpp_allocateHwSample_FUN_00522e00(int bits_per_sample,
         if (0x3f < iVar1) {
           iVar1 = 0;
         }
-        if (((g_CSfxSample_ARRAY_02dc1edc[iVar1].ref_count == 0) &&
-            (g_CSfxSample_ARRAY_02dc1edc[iVar1].buffer_id != 0)) &&
-           (g_CSfxSample_ARRAY_02dc1edc[iVar1].taken == 0)) {
-          sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(g_CSfxSample_ARRAY_02dc1edc + iVar1);
+        if (((g_SfxSamples[iVar1].ref_count == 0) && (g_SfxSamples[iVar1].buffer_id != 0)) &&
+           (g_SfxSamples[iVar1].taken == 0)) {
+          sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(g_SfxSamples + iVar1);
           break;
         }
         iVar2 = iVar2 + 1;

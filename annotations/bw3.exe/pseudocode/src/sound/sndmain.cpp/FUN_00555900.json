@@ -1,0 +1,303 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 78,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 20
+  },
+  "cross_references": [
+    {
+      "addr": "005537c0",
+      "from_addr": "00553905",
+      "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_005537c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551d20",
+      "from_addr": "00551f1d",
+      "name": "sound_sndmain.cpp_FUN_00551d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00552350",
+      "from_addr": "00552549",
+      "name": "sound_sndmain.cpp_FUN_00552350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553660",
+      "from_addr": "005536eb",
+      "name": "sound_sndmain.cpp_FUN_00553660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553960",
+      "from_addr": "00553d6e",
+      "name": "sound_sndmain.cpp_FUN_00553960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055725e",
+      "from_addr": "0055733e",
+      "name": "sound_sndmain.cpp_FUN_0055725e",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555900",
+    "address_range": [
+      [
+        "00555900",
+        "00555926"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_sndmain.cpp_FUN_00555900",
+    "signature": "int sound_sndmain_cpp_FUN_00555900(int param_1,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "00553d6e",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00553960",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00553e83",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00553960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005536eb",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00553660",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00553905",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSample_seek_FUN_005537c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00551f1d",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00551d20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00552065",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00551d20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00552208",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00551d20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00552549",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00552350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055268b",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00552350",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055733e",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0055725e",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 14.454545454545455,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "COPY": 8,
+      "INT_ADD": 6,
+      "INT_AND": 43,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 13,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SEXT": 6,
+      "INT_SLESS": 7,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 5,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 159
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int sound_sndmain_cpp_FUN_00555900(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int sound_sndmain_cpp_FUN_00555900(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = param_2 * *(int *)(param_1 + 0x104) * *(int *)(param_1 + 0x108) + 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_2 * *(int *)(param_1 + 0x104) * *(int *)(param_1 + 0x108) + 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_2 * *(int *)(param_1 + 0x104) * *(int *)(param_1 + 0x108) + 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 10,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

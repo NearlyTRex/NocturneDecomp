@@ -10,8 +10,8 @@ void __cdecl core_stranger_cpp_CStranger_drawWeapon_FUN_00540730(CStranger *this
 
 {
   this_ptr->guns_drawn = drawn;
-  if ((drawn == 0) && (g_CGame_PTR_005b9354->flashlight_active != 0)) {
-    g_CGame_PTR_005b9354->flashlight_active = 0;
+  if ((drawn == 0) && (g_CGamePtr->flashlight_active != 0)) {
+    g_CGamePtr->flashlight_active = 0;
     (*((this_ptr->base).base.base.vtable._ub)->playSound)
               ((CDemonActor *)this_ptr,"flashlit.wav");
     return;

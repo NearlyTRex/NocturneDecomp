@@ -1,0 +1,200 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 12,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "0059c9c0",
+      "from_addr": "0059cac3",
+      "name": "core_patrpoin.cpp_FUN_0059c9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ba3a4",
+      "from_addr": "005ba604",
+      "name": "crt_time.c__strftime_FUN_005ba3a4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bb6f8",
+      "from_addr": "005bb708",
+      "name": "crt_unknown.c_FUN_005bb6f8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bb75c",
+      "from_addr": "005bb799",
+      "name": "crt_unknown.c_FUN_005bb75c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c67b0",
+      "from_addr": "005c6822",
+      "name": "unkafter_2d.cpp_FUN_005c67b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005bafd8",
+    "address_range": [
+      [
+        "005bafd8",
+        "005bb006"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_IntegerToString_FUN_005bafd8",
+    "signature": "char * __cdecl crt_stdio_c_IntegerToString_FUN_005bafd8(int value,char *buffer,int base)"
+  },
+  "function_calls": [
+    {
+      "addr": "005baf80",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005baf80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "005ba604",
+        "call_type": "direct",
+        "caller": "crt_time.c__strftime_FUN_005ba3a4",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005ba769",
+        "call_type": "direct",
+        "caller": "crt_time.c__strftime_FUN_005ba3a4",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005bb708",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005bb6f8",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005bb799",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005bb75c",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0059cac3",
+        "call_type": "direct",
+        "caller": "core_patrpoin.cpp_FUN_0059c9c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005c6822",
+        "call_type": "direct",
+        "caller": "unkafter_2d.cpp_FUN_005c67b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 16,
+      "INT_2COMP": 1,
+      "INT_ADD": 7,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 9,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 78
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "base",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,0 +1,667 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 131,
+    "complexity_score": 597,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 62,
+    "suspect_count": 51,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [
+    {
+      "addr": "005027b0",
+      "from_addr": "0050280f",
+      "name": "sound_mp3.cpp_FUN_005027b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00502890",
+    "address_range": [
+      [
+        "00502890",
+        "00502a0e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_mp3.cpp_FUN_00502890",
+    "signature": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,undefined4 param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a457c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005a457c"
+    },
+    {
+      "addr": "005a5d00",
+      "is_variadic": false,
+      "name": "crt_stdio.c_ftell_FUN_005a5d00"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3650"
+    },
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3770"
+    },
+    {
+      "addr": "004fdc50",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50"
+    },
+    {
+      "addr": "004fd780",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_004fd780"
+    },
+    {
+      "addr": "00502a10",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_00502a10"
+    },
+    {
+      "addr": "00502bc0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0"
+    },
+    {
+      "addr": "004fd150",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_004fd150"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c9f4e",
+      "name": "s_sound_mp3_cpp_005c9f4e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9f5f",
+      "name": "s_Out_of_memory_File_s_005c9f5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca39f",
+      "name": "DAT_005ca39f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006011b8",
+      "name": "DAT_006011b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050280f",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_005027b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.12962962962963,
+    "instruction_count": 108,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 12,
+      "CBRANCH": 3,
+      "COPY": 100,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 52,
+      "INT_AND": 48,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 36,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 53,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 446
+  },
+  "stack_frame": {
+    "frame_size": 108,
+    "local_size": 108,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_mp3_cpp_CMP3Decoder_free_FUN_00502a10(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar1 = &param_1->field_0x5320;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x5320",
+      "severity": "mild",
+      "text": "puVar1 = &param_1->field_0x5320;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_14 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_1c = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0x5324 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x5324",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0x5324 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_005a3770(*(int *)&param_1->field_0x5324);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x5324",
+      "severity": "mild",
+      "text": "FUN_005a3770(*(int *)&param_1->field_0x5324);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5324 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x5324",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5324 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5340 = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x5340",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5340 = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5344 = local_1c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x5344",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5344 = local_1c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(ulong *)&param_1->field_0x5328 = local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x5328",
+      "severity": "mild",
+      "text": "*(ulong *)&param_1->field_0x5328 = local_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(void **)&param_1->field_0x5324 = pvVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x5324",
+      "severity": "mild",
+      "text": "*(void **)&param_1->field_0x5324 = pvVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_01d94b98",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4330(\"Out of memory.  File: %s\",&DAT_01d94b98);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fseek(*(uint *)puVar1,*(uint *)&param_1->field_0x5340,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x5340",
+      "severity": "mild",
+      "text": "_fseek(*(uint *)puVar1,*(uint *)&param_1->field_0x5340,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5330 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x5330",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5330 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5334 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x5334",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5334 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x532c = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x532c",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x532c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5338 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x5338",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5338 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x533c = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x533c",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x533c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x5348",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x5344",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CFileBitStream *)&param_1->field_0x5320,0xfff,0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x5320",
+      "severity": "mild",
+      "text": "((CFileBitStream *)&param_1->field_0x5320,0xfff,0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CFileBitStream *)&param_1->field_0x5320,local_38);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x5320",
+      "severity": "mild",
+      "text": "((CFileBitStream *)&param_1->field_0x5320,local_38);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_006011b8",
+      "severity": "mild",
+      "text": "fVar4 = (float10)*(double *)(&DAT_006011b8 + local_58 * 8 + local_68[0] * 0x20) *",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)&param_1->field_0x100 = (int)ROUND(fVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "*(int *)&param_1->field_0x100 = (int)ROUND(fVar4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x104 = local_28;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x104 = local_28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_mp3_cpp_CMP3Decoder_seek_FUN_00502bc0(param_1,sample_offset);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

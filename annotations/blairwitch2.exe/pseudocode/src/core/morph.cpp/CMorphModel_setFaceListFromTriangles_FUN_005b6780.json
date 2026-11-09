@@ -1,0 +1,379 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 157,
+    "complexity_score": 237,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 67,
+    "suspect_count": 16,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 224
+  },
+  "cross_references": [
+    {
+      "addr": "005b6200",
+      "from_addr": "005b6337",
+      "name": "core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_005b6200",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b6780",
+    "address_range": [
+      [
+        "005b6780",
+        "005b693e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_005b6780",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005b6780(CMorphModel *this_ptr,int part_index,SInputFace *face_data,STextureSet *texture_sets ,int *index_data,int start_face,int face_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b6940",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_findOrAddTexture_FUN_005b6940"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f16a9",
+      "name": "s_core_morph_cpp_005f16a9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f16bb",
+      "name": "s_CMorphModel_setFaceList_005f16bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f16e9",
+      "name": "s_core_morph_cpp_005f16e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f16fb",
+      "name": "s_CMorphModel_setFaceList_005f16fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0268014c",
+      "name": "DAT_0268014c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005b6337",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_005b6200",
+        "estimated_params": 7,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.927007299270073,
+    "instruction_count": 137,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 25,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 7,
+      "COPY": 105,
+      "INT_ADD": 91,
+      "INT_AND": 141,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 89,
+      "INT_LEFT": 10,
+      "INT_LESS": 8,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 25,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 24,
+      "INT_SEXT": 6,
+      "INT_SLESS": 52,
+      "INT_SUB": 24,
+      "INT_XOR": 8,
+      "INT_ZEXT": 2,
+      "LOAD": 53,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "STORE": 29,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 812
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "part_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "face_data",
+        "offset": 12,
+        "size": 4,
+        "type": "SInputFace *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_sets",
+        "offset": 16,
+        "size": 4,
+        "type": "STextureSet *"
+      },
+      {
+        "is_param": true,
+        "name": "index_data",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "start_face",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "face_count",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "iVar5 = start_face + *(int *)(&this_ptr->field_0x10 + part_index * 0x10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "if (*(int *)(&this_ptr->field_0x10 + part_index * 0x10) +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0x8 + part_index * 0x10) < face_count + iVar5) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x60 + local_14 + 4) = 3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(uint *)(iVar3 + 0x18 + *(int *)&this_ptr->field_0x60 + local_14) = (uint)*(ushort *)pSVar2",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(uint *)(iVar3 + 0x1c + *(int *)&this_ptr->field_0x60 + local_14) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(uint *)(iVar3 + *(int *)&this_ptr->field_0x60 + local_14 + 0x20) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(int *)(local_14 + *(int *)&this_ptr->field_0x60) = iVar5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(local_14 + 0x18 + *(int *)&this_ptr->field_0x60);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*piVar1 = *piVar1 + *(int *)(&this_ptr->field_0xc + part_index * 0x10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(int *)(local_14 + 0x24 + *(int *)&this_ptr->field_0x60) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(int *)(local_14 + 0x24 + *(int *)&this_ptr->field_0x60) +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0xc + part_index * 0x10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "iVar5 = local_14 + *(int *)&this_ptr->field_0x60;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(int *)(iVar5 + 0x30) + *(int *)(&this_ptr->field_0xc + part_index * 0x10);",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -21,27 +21,26 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor 
   float local_24;
   float local_20;
   
-  local_28 = g_CDemonCamera_01fb8508.position.x;
-  local_24 = g_CDemonCamera_01fb8508.position.y;
-  local_20 = g_CDemonCamera_01fb8508.position.z;
-  fVar1 = position->x - g_CDemonCamera_01fb8508.position.x;
-  fVar3 = position->y - g_CDemonCamera_01fb8508.position.y;
-  fVar2 = position->z - g_CDemonCamera_01fb8508.position.z;
+  local_28 = g_CDemonCameraInstance.position.x;
+  local_24 = g_CDemonCameraInstance.position.y;
+  local_20 = g_CDemonCameraInstance.position.z;
+  fVar1 = position->x - g_CDemonCameraInstance.position.x;
+  fVar3 = position->y - g_CDemonCameraInstance.position.y;
+  fVar2 = position->z - g_CDemonCameraInstance.position.z;
   if (5.8789082188252795e-39._0_4_ < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) {
     return 0;
   }
-  iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(g_CDemonSet_PTR_005be368,position)
-  ;
+  iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(g_CDemonSetPtr,position);
   if (iVar4 != 0) {
     ground_type = GROUND_TYPE_WATER;
   }
   iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730
-                    (g_CGore_PTR_005b96c4,position,(int *)&this_ptr->blood_effect_color);
+                    (g_CGorePtr,position,(int *)&this_ptr->blood_effect_color);
   if (iVar4 == 0) {
     if (this_ptr->blood_effect_timer < 1) {
       if (ground_type == GROUND_TYPE_DIRT) {
         core_gore_cpp_CGore_createFootstep_FUN_004b06b0
-                  (g_CGore_PTR_005b96c4,position,&this_ptr->orient,3,0x4000,0);
+                  (g_CGorePtr,position,&this_ptr->orient,3,0x4000,0);
       }
       goto LAB_0040dc41;
     }
@@ -50,7 +49,7 @@ uint __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040db50(CDemonActor 
     this_ptr->blood_effect_timer = 0xffff;
   }
   core_gore_cpp_CGore_createFootstep_FUN_004b06b0
-            (g_CGore_PTR_005b96c4,position,&this_ptr->orient,0xb,this_ptr->blood_effect_timer,
+            (g_CGorePtr,position,&this_ptr->orient,0xb,this_ptr->blood_effect_timer,
              this_ptr->blood_effect_color);
   iVar4 = this_ptr->blood_effect_timer + -0x2000;
   this_ptr->blood_effect_timer = iVar4;

@@ -47,8 +47,8 @@
 ;   undefined4 DAT_005b7650
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 g_CDemonCamera_01fb8508.corona_blend_factor
-;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   undefined4 g_CDemonCameraInstance.corona_blend_factor
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -93,14 +93,14 @@ section .text
     LEA EAX,[ESP + 0x68]                ; 00554d98
     PUSH EAX                            ; 00554d9c
     MOV dword ptr [EBX + 0x24],0x1      ; 00554d9d
-    PUSH 0x1fba938                      ; 00554da4 | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 00554da4 | g_CDemonRaytraceInstance
     FSTP float ptr [EBX + 0x2c]         ; 00554da9
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0 ; 00554dac
         ;   XREF to: 0046b9c0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00554db1
     LEA EAX,[ESP + 0x44]                ; 00554db4
     PUSH EAX                            ; 00554db8
-    PUSH 0x1fba938                      ; 00554db9 | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 00554db9 | g_CDemonRaytraceInstance
     CALL core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0 ; 00554dbe
         ;   XREF to: 0046b9f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(CDemonRaytrace * this_ptr, CVector3f * output_vector)
     ADD ESP,0x8                         ; 00554dc3
@@ -213,7 +213,7 @@ section .text
     CALL core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420 ; 00554f0a
         ;   XREF to: 0048c420 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLightningBolt_FUN_0048c420(CFireEffect * this_ptr, CVector3f * start_position, float start_width, int enable_camera_shake, ...)
     ADD ESP,0x14                        ; 00554f0f
-    MOV EAX,[0x01fb96f0]                ; 00554f12 | g_CDemonCamera_01fb8508.corona_blend_factor
+    MOV EAX,[0x01fb96f0]                ; 00554f12 | g_CDemonCameraInstance.corona_blend_factor
         ;   Label: LAB_00554f12
     MOV dword ptr [ESP + 0x84],EAX      ; 00554f17
     FILD dword ptr [ESP + 0x84]         ; 00554f1e

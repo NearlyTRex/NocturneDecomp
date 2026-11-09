@@ -251,7 +251,7 @@ extern WatcomDestructorCall WatcomDestructorCall_00661c1c;
 extern WatcomDestructorCall WatcomDestructorCall_00661c70;
 extern WatcomDestructorCall WatcomDestructorCall_00661d20;
 extern WatcomDestructorCall WatcomDestructorCall_006620e0;
-extern WatcomDestructorCall g_CDemonPodDestructorNode;
+extern WatcomDestructorCall g_CDemonPodDestructorCall;
 extern WatcomDestructorCall WatcomDestructorCall_006625f0;
 extern WatcomDestructorCall WatcomDestructorCall_006625fc;
 extern WatcomDestructorCall WatcomDestructorCall_00662608;

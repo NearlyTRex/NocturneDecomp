@@ -1,0 +1,179 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 97,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "0040ea90",
+      "from_addr": "0040eaa3",
+      "name": "core_barrier.cpp_factoryFuncBarrier_FUN_0040ea90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040eac0",
+    "address_range": [
+      [
+        "0040eac0",
+        "0040eb0a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_barrier.cpp_CBarrier_ctor_FUN_0040eac0",
+    "signature": "CBarrier * __cdecl core_barrier_cpp_CBarrier_ctor_FUN_0040eac0(CBarrier *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00408600"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040eaa3",
+        "call_type": "direct",
+        "caller": "core_barrier.cpp_factoryFuncBarrier_FUN_0040ea90",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4615384615384617,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 10,
+      "INT_ADD": 11,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 45
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBarrier *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar1->field_0x154 = &g_CBarrierVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x160 = 0x40a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "pCVar1->field_0x168 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x164 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x15c = *(uint *)&pCVar1->field_0x160;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x15c = *(uint *)&pCVar1->field_0x160;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x158 = *(uint *)&pCVar1->field_0x15c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x158 = *(uint *)&pCVar1->field_0x15c;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBarrier",
+        "offset": 0,
+        "vtable_addr": "005db754"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

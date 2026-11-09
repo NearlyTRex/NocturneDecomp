@@ -1,140 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 92,
-        "message": "use of undeclared identifier '_DAT_01cc5118'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_01cc5124'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_01cc5130'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_01cc511c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 96,
-        "message": "use of undeclared identifier '_DAT_01cc5128'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 97,
-        "message": "use of undeclared identifier '_DAT_01cc5134'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 98,
-        "message": "use of undeclared identifier '_DAT_01cc5138'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 99,
-        "message": "use of undeclared identifier '_DAT_01cc5120'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 100,
-        "message": "use of undeclared identifier '_DAT_01cc512c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 101,
-        "message": "use of undeclared identifier '_DAT_01cc5130'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 102,
-        "message": "use of undeclared identifier '_DAT_01cc5118'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 103,
-        "message": "use of undeclared identifier '_DAT_01cc5124'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 104,
-        "message": "use of undeclared identifier '_DAT_01cc5128'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 105,
-        "message": "use of undeclared identifier '_DAT_01cc511c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 106,
-        "message": "use of undeclared identifier '_DAT_01cc5134'"
-      },
-      {
-        "category": "cast_error",
-        "column": 26,
-        "line": 107,
-        "message": "cannot cast from type 'float' to pointer type 'SInputFace *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 77,
-        "line": 112,
-        "message": "use of undeclared identifier '_DAT_01cc5138'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 76,
-        "line": 113,
-        "message": "use of undeclared identifier '_DAT_01cc5120'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 76,
-        "line": 114,
-        "message": "use of undeclared identifier '_DAT_01cc512c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 332,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 247,
+    "pseudocode_lines": 245,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
       "warning_overlapping_globals"
     ],
-    "total_lines": 904
+    "total_lines": 902
   },
   "cross_references": [
     {
@@ -220,7 +100,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -286,7 +166,7 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     }
@@ -804,30 +684,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModel_renderParts_FUN_00518510.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 35,
-          "line": 87,
-          "message": "Uninitialized variable: local_9c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 52,
-          "line": 87,
-          "message": "Uninitialized variable: local_38",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -839,7 +695,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 187,
+      "line": 186,
       "match": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2",
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(local_94[*local_98].textures + (int)fVar2));",
@@ -847,7 +703,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 225,
       "match": "(float *)((int)this_ptr",
       "severity": "moderate",
       "text": "(fVar2 = *(float *)((int)this_ptr->index_data_ptr[lod_index] + (int)local_4c),",
@@ -855,7 +711,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 229,
       "match": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2",
       "severity": "moderate",
       "text": "(SMRGLTextureBasic *)(local_a4[*local_9c].textures + (int)fVar2));",
@@ -871,7 +727,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 221,
+      "line": 219,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -879,27 +735,11 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 175,
+      "line": 174,
       "match": "(int *)(local_ac + 0x90)",
       "severity": "moderate",
       "text": "fVar2 = *(float *)(*(int *)(local_ac + 0x90) + local_40 * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_9c",
-      "line": 87,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "puVar8 = (ushort *)(local_9c[0x1f] + local_38);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_38",
-      "line": 87,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "puVar8 = (ushort *)(local_9c[0x1f] + local_38);",
-      "type": "static_uninitvar"
     }
   ]
 }

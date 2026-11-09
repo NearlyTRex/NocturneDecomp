@@ -1,0 +1,296 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 99,
+    "complexity_score": 151,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 125
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b5e10",
+    "address_range": [
+      [
+        "005b5e10",
+        "005b5f30"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_chain.cpp_CChain_archive_FUN_005b5e10",
+    "signature": "void __cdecl core_chain_cpp_CChain_archive_FUN_005b5e10(CChain *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f1450",
+      "name": "s_vertexCount_005f144f+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f145c",
+      "name": "s_chainLength_005f145c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1468",
+      "name": "s_target_005f1468",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f146f",
+      "name": "s_targetBone_005f146f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f147a",
+      "name": "s_weight_005f147a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1481",
+      "name": "s_dampen_005f1481",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1488",
+      "name": "s_friction_005f1488",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1491",
+      "name": "s_gravity_005f1491",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1499",
+      "name": "s_textureName_005f1499",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f14a5",
+      "name": "s_pullWavName_005f14a5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f14b1",
+      "name": "s_moveWavName_005f14b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f14bd",
+      "name": "s_groundCollideFlag_005f14bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ed58",
+      "name": "g_CChainClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1558441558441555,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 13,
+      "CBRANCH": 3,
+      "COPY": 46,
+      "INT_ADD": 30,
+      "INT_AND": 34,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 36,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 17,
+      "INT_SUB": 42,
+      "LOAD": 5,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 320
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChain *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x158,\"?vertexCount\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x15c,\"chainLength\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x164,\"target\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x168,\"targetBone\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x55c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x55c,\"weight\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x568",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x568,\"dampen\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x560",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x560,\"friction\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x564",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x564,\"gravity\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x174,\"textureName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x1b4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x1b4,\"pullWavName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x21c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x21c,\"moveWavName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x288",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x288,\"groundCollideFlag\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "00601284"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

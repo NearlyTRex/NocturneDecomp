@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 8,
-        "line": 16,
-        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
@@ -141,23 +129,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 9,
-          "line": 22,
-          "message": "Uninitialized variable: in_stack_00000014",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -174,14 +145,6 @@
       "severity": "moderate",
       "text": "if (in_stack_00000014 != 0) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000014",
-      "line": 22,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_00000014 != 0) {",
-      "type": "static_uninitvar"
     }
   ]
 }

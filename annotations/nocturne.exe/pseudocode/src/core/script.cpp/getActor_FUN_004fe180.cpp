@@ -50,7 +50,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_004fe180(char *actor_specifie
   else {
     iVar2 = _stricmp(actor_specifier,"$");
     if (iVar2 == 0) {
-      if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+      if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
         _sprintf(&DAT_01e56420,"Can't use '$' actor specifier in multi-player");
         return (CDemonActor *)0x0;
       }

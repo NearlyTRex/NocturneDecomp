@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CWater * core_water_cpp_CWater_dtor_FUN_005a9a00(CWater *this_ptr,uint flags)
+;
+; Parameters:
+; CWater *         Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 005a9a00
+        ;   Label: core_water.cpp_CWater_dtor_FUN_005a9a00
+    RET                                 ; 005a9a04
+

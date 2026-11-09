@@ -44,7 +44,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDe
             (&local_14c,start_x,start_z,dir_x,dir_z,radius,bottom_y,top_y);
   if ((ABS(dir_x) != 0.0) || (ABS(dir_z) != 0.0)) {
     core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0
-              (&g_CDemonRaytrace_01fba938,&local_14c);
+              (&g_CDemonRaytraceInstance,&local_14c);
   }
   this_ptr->ground_type = 1;
   this_ptr->collision_part_index = -1;

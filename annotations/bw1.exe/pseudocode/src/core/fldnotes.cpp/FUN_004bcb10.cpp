@@ -1,0 +1,21 @@
+// Name: core_fldnotes.cpp_FUN_004bcb10
+// Address: 004bcb10
+// Address Range: [[004bcb10, 004bcb3a]]
+// Convention: unknown
+// Signature: void core_fldnotes_cpp_FUN_004bcb10(undefined4 param_1,int param_2)
+
+#include "nocturne.h"
+
+void core_fldnotes_cpp_FUN_004bcb10(uint param_1,int param_2)
+
+{
+  int iVar1;
+  
+  iVar1 = unkaddr_004b9ab0_cpp_FUN_004ba730(param_1);
+  *(byte ***)(iVar1 + 0x14) =
+       &PTR_unkafter_fldnotes_cpp_PageResource_Map_dtor_FUN_004bf670_00600974;
+  *(int *)(iVar1 + 0x18) = param_2;
+  *(uint *)(iVar1 + 8) = *(uint *)(param_2 + 0x68);
+  *(uint *)(iVar1 + 0xc) = *(uint *)(*(int *)(iVar1 + 0x18) + 0x6c);
+  return;
+}

@@ -1,0 +1,150 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 57,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [
+    {
+      "addr": "00544460",
+      "from_addr": "00547048",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005559d0",
+    "address_range": [
+      [
+        "005559d0",
+        "00555a10"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_005559d0",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_005559d0(CDemonSet *this_ptr,int group_id,int enabled)"
+  },
+  "function_calls": [
+    {
+      "addr": "005559b0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setCameraEnabled_FUN_005559b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00547048",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.333333333333333,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 27,
+      "INT_ADD": 12,
+      "INT_AND": 15,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 130
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "group_id",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "enabled",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "if (group_id == *(int *)&pCVar1->field_0x150) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x1a4",
+      "severity": "mild",
+      "text": "pCVar1 = (CDemonSet *)&pCVar1->field_0x1a4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 16,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CDemonSet *)&pCVar1->field_0x1a4;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

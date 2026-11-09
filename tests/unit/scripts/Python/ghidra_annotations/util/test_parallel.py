@@ -1,3 +1,6 @@
+# Third-party imports
+import pytest
+
 # Local imports
 from ghidra_program import Address, Program
 from ghidra_annotations.util import parallel
@@ -24,14 +27,18 @@ def test_results_are_gathered_and_lists_flattened(capsys):
     assert "Scanning 2 memory ranges in parallel (2 threads)" in capsys.readouterr().out
 
 
-def test_a_failing_worker_is_logged_and_the_rest_kept(capsys):
+def test_a_failing_worker_fails_the_scan_after_the_rest_finish():
+    scanned = []
+
     def worker(start, end):
+        scanned.append(start.getOffset())
         if start.getOffset() == 0x401000:
             raise ValueError("bad range")
         return start.getOffset()
 
-    assert parallel.parallel_scan_ranges(program_with_two_blocks(), worker) == [0x500000]
-    assert "Worker error: bad range" in capsys.readouterr().out
+    with pytest.raises(ValueError, match = "bad range"):
+        parallel.parallel_scan_ranges(program_with_two_blocks(), worker, num_threads = 1)
+    assert sorted(scanned) == [0x401000, 0x500000]
 
 
 def test_create_address_set_covers_the_range():

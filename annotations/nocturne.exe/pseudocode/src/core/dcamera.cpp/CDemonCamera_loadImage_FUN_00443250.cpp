@@ -198,10 +198,10 @@ LAB_00443363:
                       ("%s too big to fit in decompress buffer",local_f4);
           }
           _fread(&DAT_0077d250,local_9c,1,local_14);
-          support_codec_cpp_CLZWDecompress_init_FUN_00439a30(&g_CLZWDecompress_012cdb28);
+          support_codec_cpp_CLZWDecompress_init_FUN_00439a30(&g_CLZWDecompressInstance);
           local_98 = _DAT_0140d780 * 0x12c00;
           iVar7 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30
-                            (&g_CLZWDecompress_012cdb28,&DAT_0077d250,(int *)&local_9c,
+                            (&g_CLZWDecompressInstance,&DAT_0077d250,(int *)&local_9c,
                              (char *)&g_VOID_PTR_012e1778,&local_98,1);
           if (iVar7 == 0) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";

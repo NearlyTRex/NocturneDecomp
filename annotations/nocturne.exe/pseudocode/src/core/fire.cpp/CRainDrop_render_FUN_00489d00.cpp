@@ -114,7 +114,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_00489d00(CRainDrop *this_ptr)
   _DAT_005c50d0 = DAT_005c5040;
   local_20.z = DAT_005c5040;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (g_CDemonSet_PTR_005be368,(CVector3i *)(local_38 + 8),(CVector3i *)&DAT_01c08d14,0,4);
+            (g_CDemonSetPtr,(CVector3i *)(local_38 + 8),(CVector3i *)&DAT_01c08d14,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   local_a8 = 4;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080

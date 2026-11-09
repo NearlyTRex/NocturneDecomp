@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 68,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "00491aa0",
+      "from_addr": "00491ad2",
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00491b00",
+      "from_addr": "00491b21",
+      "name": "core_event.cpp_CEventList_validateCondition_FUN_00491b00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00491b80",
+    "address_range": [
+      [
+        "00491b80",
+        "00491bed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_evaluateExpression_FUN_00491b80",
+    "signature": "int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_00491b80(CEventList *this_ptr,char *expression)"
+  },
+  "function_calls": [
+    {
+      "addr": "00494630",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateLogicalExpr_FUN_00494630"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bf4ce",
+      "name": "s_Syntax_error_005bf4ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bf4cf",
+      "name": "s_yntax_error_005bf4ce+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bf4d0",
+      "name": "s_ntax_error_005bf4ce+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bf4d1",
+      "name": "s_tax_error_005bf4ce+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c734b0",
+      "name": "DAT_01c734b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c734b1",
+      "name": "DAT_01c734b1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c734b2",
+      "name": "DAT_01c734b2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c734b3",
+      "name": "DAT_01c734b3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00491ad2",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00491b21",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_validateCondition_FUN_00491b00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5777777777777775,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 37,
+      "INT_ADD": 19,
+      "INT_AND": 27,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 26,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 13,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 206
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "expression",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_01c734b0",
+      "severity": "mild",
+      "text": "DAT_01c734b0 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_01c734b0",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_01c734b0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 17,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

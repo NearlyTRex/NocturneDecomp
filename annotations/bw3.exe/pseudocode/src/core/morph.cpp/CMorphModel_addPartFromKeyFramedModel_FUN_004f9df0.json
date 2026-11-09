@@ -1,0 +1,164 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 75,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 51
+  },
+  "cross_references": [
+    {
+      "addr": "004fab10",
+      "from_addr": "004fab37",
+      "name": "core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004fab10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f9df0",
+    "address_range": [
+      [
+        "004f9df0",
+        "004f9e38"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00460f60",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00460f60"
+    },
+    {
+      "addr": "004f9ad0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004f9ad0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fab37",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004fab10",
+        "estimated_params": 3,
+        "instructions_analyzed": 14,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.392857142857143,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 25,
+      "INT_ADD": 13,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 14,
+      "LOAD": 10,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 14
+    },
+    "pcode_op_count": 95
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "texture_index_list = *(int **)&model_ptr->field_0x118;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "texture_list = (SMRGLTextureModel *)&model_ptr->field_0x124;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x114",
+      "severity": "mild",
+      "text": "poly_data = *(SMRGLHeaderPrimitive **)&model_ptr->field_0x114;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "poly_count = *(int *)&model_ptr->field_0x110;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "(this_ptr,*(int *)&model_ptr->field_0x104,vertex_data,poly_count,poly_data,poly_stride,",
+      "type": "unnamed_field"
+    }
+  ]
+}

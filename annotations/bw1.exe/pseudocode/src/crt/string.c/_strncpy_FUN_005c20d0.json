@@ -1,0 +1,272 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 15,
+    "cross_reference_count": 11,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
+  "cross_references": [
+    {
+      "addr": "005375c0",
+      "from_addr": "005375cc",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_005375c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005392b0",
+      "from_addr": "005392bf",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_005392b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052ebd0",
+      "from_addr": "0052eccf",
+      "name": "core_netgame.cpp_FUN_0052ebd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c8094",
+      "from_addr": "005c837b",
+      "name": "crt_unknown.c_FUN_005c8094",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004794b0",
+      "from_addr": "004794d8",
+      "name": "engine_dosio.cpp_FUN_004794b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4370",
+      "from_addr": "004f4537",
+      "name": "engine_ini.cpp_FUN_004f4370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053c940",
+      "from_addr": "0053caaa",
+      "name": "engine_pod.cpp_findFilesByExtension_FUN_0053c940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00492ec0",
+      "from_addr": "00492f2c",
+      "name": "shape_edittool.cpp_CInputString_init_FUN_00492ec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00579f6e",
+      "from_addr": "0057a12b",
+      "name": "sound_snddx.cpp_FUN_00579f6e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cdce0",
+      "from_addr": "005cdd2e",
+      "name": "unkafter_2d.cpp_FUN_005cdce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059efd0",
+      "from_addr": "0059f004",
+      "name": "unkafter_trisock.cpp_FUN_0059efd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c20d0",
+    "address_range": [
+      [
+        "005c20d0",
+        "005c2104"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c__strncpy_FUN_005c20d0",
+    "signature": "char * __cdecl crt_string_c__strncpy_FUN_005c20d0(char *dest,char *src,SIZE_T count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 14,
+    "call_sites": [
+      {
+        "call_addr": "004794d8",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_FUN_004794b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004f4537",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_FUN_004f4370",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00492f2c",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CInputString_init_FUN_00492ec0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005c837b",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c8094",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0057a12b",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_00579f6e",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052eccf",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0052ebd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005375cc",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_005375c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0053caaa",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_findFilesByExtension_FUN_0053c940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0059f004",
+        "call_type": "direct",
+        "caller": "unkafter_trisock.cpp_FUN_0059efd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0059f0b1",
+        "call_type": "direct",
+        "caller": "unkafter_trisock.cpp_FUN_0059efd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.444444444444445,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CBRANCH": 4,
+      "COPY": 21,
+      "INT_ADD": 11,
+      "INT_AND": 20,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 120
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
+  },
+  "suspects": []
+}

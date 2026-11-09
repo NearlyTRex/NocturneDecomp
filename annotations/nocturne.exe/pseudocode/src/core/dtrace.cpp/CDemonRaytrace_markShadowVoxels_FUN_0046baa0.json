@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
@@ -353,37 +348,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonRaytrace_markShadowVoxels_FUN_0046baa0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 45,
-          "message": "Uninitialized variable: local_5c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 55,
-          "message": "Uninitialized variable: local_34",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 58,
-          "message": "Uninitialized variable: iStack_30",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
@@ -392,30 +356,6 @@
       "severity": "moderate",
       "text": "local_58.x = CStack_70.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_5c",
-      "line": 45,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = local_5c / (float)iStack_2c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_34",
-      "line": 55,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < local_34) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_30",
-      "line": 58,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < iStack_30) {",
-      "type": "static_uninitvar"
     }
   ]
 }

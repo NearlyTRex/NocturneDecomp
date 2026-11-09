@@ -168,13 +168,20 @@ TomlResult<SPackageManifest> readPackageManifest(const toml::table &table) {
     return manifest;
 }
 
-TomlResult<SReleasePod> readReleasePod(const toml::table &table, std::string_view where) {
-    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {"name", "size", "xxh3"}); !keys) {
+// A POD by its name, or with name_key "path" a loose file by its '/'-separated path in the install.
+TomlResult<SReleaseFile> readReleaseFile(const toml::table &table, std::string_view where,
+                                         std::string_view name_key) {
+    if (TomlResult<void> keys = rejectUnknownKeys(table, where, {name_key, "size", "xxh3"});
+        !keys) {
         return std::unexpected(keys.error());
     }
-    TomlResult<std::string> name = readRequiredString(table, where, "name");
+    TomlResult<std::string> name = readRequiredString(table, where, name_key);
     if (!name) {
         return std::unexpected(name.error());
+    }
+    if (name_key == "path" && (name->contains('\\') || !isPackagePath(*name))) {
+        return std::unexpected(
+            std::format("{}path: not a '/'-separated path inside the install", where));
     }
     const TomlResult<std::optional<std::uint64_t>> size = readSize(table, where);
     if (!size) {
@@ -187,12 +194,33 @@ TomlResult<SReleasePod> readReleasePod(const toml::table &table, std::string_vie
     if (!hash) {
         return std::unexpected(hash.error());
     }
-    return SReleasePod{.name = std::move(*name), .size = **size, .xxh3 = std::move(*hash)};
+    return SReleaseFile{.name = std::move(*name), .size = **size, .xxh3 = std::move(*hash)};
+}
+
+// The release's [[release.<kind>]] tables.
+TomlResult<std::vector<SReleaseFile>> readReleaseFiles(const toml::table &table,
+                                                       std::string_view where,
+                                                       std::string_view kind,
+                                                       std::string_view name_key) {
+    const TomlResult<std::vector<const toml::table *>> tables = readTables(table, where, kind);
+    if (!tables) {
+        return std::unexpected(tables.error());
+    }
+    std::vector<SReleaseFile> files;
+    for (std::size_t i = 0; i < tables->size(); ++i) {
+        TomlResult<SReleaseFile> file =
+            readReleaseFile(*(*tables)[i], std::format("{}{} {}: ", where, kind, i + 1), name_key);
+        if (!file) {
+            return std::unexpected(file.error());
+        }
+        files.push_back(std::move(*file));
+    }
+    return files;
 }
 
 TomlResult<SRelease> readRelease(const toml::table &table, std::string_view where) {
     if (TomlResult<void> keys =
-            rejectUnknownKeys(table, where, {"id", "name", "game", "required", "pod"});
+            rejectUnknownKeys(table, where, {"id", "name", "game", "required", "pod", "file"});
         !keys) {
         return std::unexpected(keys.error());
     }
@@ -212,25 +240,21 @@ TomlResult<SRelease> readRelease(const toml::table &table, std::string_view wher
     if (!required) {
         return std::unexpected(required.error());
     }
-    const TomlResult<std::vector<const toml::table *>> pods = readTables(table, where, "pod");
+    TomlResult<std::vector<SReleaseFile>> pods = readReleaseFiles(table, where, "pod", "name");
     if (!pods) {
         return std::unexpected(pods.error());
     }
-    SRelease release{.id = std::move(*id),
-                     .name = std::move(*name),
-                     .game = std::move(*game),
-                     .required = std::move(*required),
-                     .pods = {},
-                     .content = {}};
-    for (std::size_t i = 0; i < pods->size(); ++i) {
-        TomlResult<SReleasePod> pod =
-            readReleasePod(*(*pods)[i], std::format("{}pod {}: ", where, i + 1));
-        if (!pod) {
-            return std::unexpected(pod.error());
-        }
-        release.pods.push_back(std::move(*pod));
+    TomlResult<std::vector<SReleaseFile>> files = readReleaseFiles(table, where, "file", "path");
+    if (!files) {
+        return std::unexpected(files.error());
     }
-    return release;
+    return SRelease{.id = std::move(*id),
+                    .name = std::move(*name),
+                    .game = std::move(*game),
+                    .required = std::move(*required),
+                    .pods = std::move(*pods),
+                    .files = std::move(*files),
+                    .content = {}};
 }
 
 // Each release's game content from the game it names.

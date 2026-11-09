@@ -120,11 +120,11 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_0048d0c0(CFlame *this_ptr,float d
       if (this_ptr->enemy_burn_index < 0) {
         this_ptr->enemy_burn_index = 0;
       }
-      if (g_CDemonSet_PTR_005be368->enemy_count <= this_ptr->enemy_burn_index) {
+      if (g_CDemonSetPtr->enemy_count <= this_ptr->enemy_burn_index) {
         this_ptr->enemy_burn_index = 0;
       }
-      if (0 < g_CDemonSet_PTR_005be368->enemy_count) {
-        this_ptr_01 = g_CDemonSet_PTR_005be368->enemies[this_ptr->enemy_burn_index];
+      if (0 < g_CDemonSetPtr->enemy_count) {
+        this_ptr_01 = g_CDemonSetPtr->enemies[this_ptr->enemy_burn_index];
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_6c);
         EVar4 = (*((this_ptr_01->base).base.vtable._ub)->getCollisionType)
                           ((CDemonActor *)this_ptr_01,&SStack_6c);

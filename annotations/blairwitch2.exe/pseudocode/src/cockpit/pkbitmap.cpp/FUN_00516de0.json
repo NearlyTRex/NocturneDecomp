@@ -1,0 +1,172 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 104,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 7,
+    "suspect_types": [
+      "raw_address_constant",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00516de0",
+    "address_range": [
+      [
+        "00516de0",
+        "00516e59"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_pkbitmap.cpp_FUN_00516de0",
+    "signature": "void cockpit_pkbitmap_cpp_FUN_00516de0(CPackedBitmap *param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00516e60",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_FUN_00516e60"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b910c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8372093023255816,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 33,
+      "INT_ADD": 16,
+      "INT_AND": 17,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 19,
+      "LOAD": 8,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 165
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void cockpit_pkbitmap_cpp_FUN_00516de0(CPackedBitmap *param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void cockpit_pkbitmap_cpp_FUN_00516de0(CPackedBitmap *param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "file_handle = (_FILE *)_fopen(param_2,0x5e1c4b);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005b7790(&uStack_6c,\"Unable to create PBM file %s\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cockpit_pkbitmap_cpp_FUN_00516e60(param_1,file_handle);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x516e11 assigned to bare local `uStack_6c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_6c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 19,
+      "match": "0x516e11",
+      "severity": "moderate",
+      "text": "uStack_6c = 0x516e11;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

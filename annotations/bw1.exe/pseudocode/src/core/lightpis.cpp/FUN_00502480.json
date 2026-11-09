@@ -1,0 +1,572 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 162,
+    "complexity_score": 479,
+    "cross_reference_count": 0,
+    "function_call_count": 17,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 40,
+    "suspect_types": [
+      "stack_param",
+      "unknown_field",
+      "unnamed_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 216
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00502480",
+    "address_range": [
+      [
+        "00502480",
+        "00502673"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_lightpis.cpp_FUN_00502480",
+    "signature": "void core_lightpis_cpp_FUN_00502480(CWeapon *param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045d7c0",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_FUN_0045d7c0"
+    },
+    {
+      "addr": "00463e30",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30"
+    },
+    {
+      "addr": "004fa470",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004fa470"
+    },
+    {
+      "addr": "005017f0",
+      "is_variadic": false,
+      "name": "core_lightpis.cpp_FUN_005017f0"
+    },
+    {
+      "addr": "005518e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_005518e0"
+    },
+    {
+      "addr": "005ad770",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ad770"
+    },
+    {
+      "addr": "005ae580",
+      "is_variadic": false,
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580"
+    },
+    {
+      "addr": "005727e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005727e0"
+    },
+    {
+      "addr": "005728e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005728e0"
+    },
+    {
+      "addr": "00572900",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572900"
+    },
+    {
+      "addr": "00572ac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572ac0"
+    },
+    {
+      "addr": "00572b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572b40"
+    },
+    {
+      "addr": "005735a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005735a0"
+    },
+    {
+      "addr": "00573950",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573950"
+    },
+    {
+      "addr": "00573980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573980"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    },
+    {
+      "addr": "00572d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603170",
+      "name": "DAT_00603170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603178",
+      "name": "DAT_00603178",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060317c",
+      "name": "DAT_0060317c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603180",
+      "name": "DAT_00603180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603184",
+      "name": "DAT_00603184",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00611358",
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "0152c72c"
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "0062604c",
+      "name": "DAT_0062604c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cce0b4",
+      "name": "g_CDemonLightInstance.field7376_0x1cd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.924242424242424,
+    "instruction_count": 132,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 17,
+      "CBRANCH": 4,
+      "COPY": 199,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 3,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 2,
+      "INT_ADD": 56,
+      "INT_AND": 51,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 44,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 22,
+      "INT_SUB": 51,
+      "INT_ZEXT": 4,
+      "LOAD": 28,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 58
+    },
+    "pcode_op_count": 650
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_lightpis_cpp_FUN_00502480(CWeapon *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_lightpis_cpp_FUN_00502480(CWeapon *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "float in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ad770(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ad770(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "fVar1 = (_DAT_00603170 / fVar1) * in_stack_00000018 + *(float *)&param_1[1].field_0x8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (_DAT_00603170 / fVar1) * in_stack_00000018 + *(float *)&param_1[1].field_0x8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar1 = (_DAT_00603170 / fVar1) * in_stack_00000018 + *(float *)&param_1[1].field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x8 = fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x8 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x8 = _DAT_00603170;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0x8 = _DAT_00603170;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&param_1->field_0x2d4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&param_1->field_0x2d4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0xc = *(float *)&param_1[1].field_0x8 / _DAT_00603170;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0xc = *(float *)&param_1[1].field_0x8 / _DAT_00603170;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0xc = *(float *)&param_1[1].field_0x8 / _DAT_00603170;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&param_1[1].field_0xc = *(float *)&param_1[1].field_0x8 / _DAT_00603170;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (_DAT_0060317c - 0x40000000) * *(float *)&param_1[1].field_0xc + 0x40000000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "fVar1 = (_DAT_0060317c - 0x40000000) * *(float *)&param_1[1].field_0xc + 0x40000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_DAT_00603180 + (_DAT_00603184 - _DAT_00603180) * *(float *)&param_1[1].field_0xc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "_DAT_00603180 + (_DAT_00603184 - _DAT_00603180) * *(float *)&param_1[1].field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = sound_sndmain_cpp_FUN_005735a0(*(uint *)&param_1[1].field_0x4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "iVar2 = sound_sndmain_cpp_FUN_005735a0(*(uint *)&param_1[1].field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_005727e0((CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_005727e0((CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x4 = uVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x4 = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_00573950(*(uint *)&param_1[1].field_0x4,fVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_00573950(*(uint *)&param_1[1].field_0x4,fVar1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_00573980(*(uint *)&param_1[1].field_0x4,base_frequency);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_00573980(*(uint *)&param_1[1].field_0x4,base_frequency);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_lightpis_cpp_FUN_005017f0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 1) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 45,
+      "match": "._7376_4_",
+      "severity": "mild",
+      "text": "g_CDemonLightInstance._7376_4_ = 1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 1) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&param_1[1].field_0x4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&param_1[1].field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 1) = 0;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 12,
+        "vtable_addr": "00603194"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

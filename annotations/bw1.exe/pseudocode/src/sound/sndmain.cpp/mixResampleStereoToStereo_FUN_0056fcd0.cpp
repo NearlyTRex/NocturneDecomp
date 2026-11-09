@@ -1,0 +1,70 @@
+// Name: sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0056fcd0
+// Address: 0056fcd0
+// Address Range: [[0056fcd0, 0056fe0a]]
+// Convention: __cdecl
+// Signature: double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(int param_1,int *param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,int param_8)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* WARNING: Restarted to delay deadcode elimination for space: stack */
+
+double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(int param_1,int *param_2,float *param_3,uint param_4,uint param_5,uint param_6,uint param_7,int param_8)
+
+{
+  int iVar1;
+  short sVar2;
+  float fVar3;
+  float fVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  uint uVar8;
+  int iVar9;
+  int iVar10;
+  bool bVar11;
+  float10 fVar12;
+  double dVar13;
+  ulonglong local_34;
+  
+  if (0 < param_8) {
+    dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_5,param_4)));
+    fVar12 = (float10)dVar13;
+    round();
+    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    iVar10 = (uint)local_34;
+    local_34 = (longlong)ROUND(fVar12) & 0xffffffff;
+    fVar12 = ((float10)_param_4 - (float10)local_34) * (float10)_DAT_005f32a0;
+    round();
+    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    uVar8 = (uint)local_34;
+    dVar13 = floor(__BITCAST_DOUBLE(CONCAT44(param_7,param_6)));
+    fVar12 = (float10)dVar13;
+    round();
+    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    iVar7 = (uint)local_34;
+    local_34 = (longlong)ROUND(fVar12) & 0xffffffff;
+    fVar12 = ((float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) - (float10)local_34) *
+             (float10)_DAT_005f32a0;
+    round();
+    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    fVar3 = *param_3;
+    fVar4 = param_3[1];
+    iVar5 = param_2[1];
+    iVar6 = *param_2;
+    iVar9 = 0;
+    do {
+      sVar2 = *(short *)(param_1 + iVar10 * 4);
+      iVar1 = iVar10 * 4;
+      bVar11 = CARRY4(uVar8,(uint)local_34);
+      uVar8 = uVar8 + (uint)local_34;
+      iVar10 = iVar10 + iVar7 + (uint)bVar11;
+      *(float *)(iVar6 + iVar9 * 4) =
+           (float)*(short *)(param_1 + 2 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);
+      *(float *)(iVar5 + iVar9 * 4) = (float)sVar2 * fVar4 + *(float *)(iVar5 + iVar9 * 4);
+      iVar9 = iVar9 + 1;
+    } while (iVar9 < param_8);
+    _param_4 = (double)param_8 * __BITCAST_DOUBLE(CONCAT44(param_7,param_6)) + _param_4;
+  }
+  return _param_4;
+}

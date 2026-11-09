@@ -1,64 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_02dc9214'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_02dc9248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 39,
-        "message": "use of undeclared identifier 'DAT_02dc9248'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 59,
-        "message": "use of undeclared identifier '_DAT_02dc9214'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 60,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_02dc9214'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 62,
-        "message": "use of undeclared identifier 'DAT_02dc9244'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 73,
-        "message": "use of undeclared identifier 'DAT_02dc9244'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 76,
-        "message": "use of undeclared identifier 'DAT_02dc9244'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
@@ -315,30 +255,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDirectSoundDevice_allocateSample_FUN_0052ab60.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 57,
-          "line": 48,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 44,
-          "line": 49,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -395,22 +311,6 @@
       "severity": "mild",
       "text": "*(int *)(&DAT_02dc9244 + iVar5 * 4) = 0;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 48,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar3 = (int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 49,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3;",
-      "type": "static_shift_too_many_bits"
     }
   ],
   "vtable_info": {

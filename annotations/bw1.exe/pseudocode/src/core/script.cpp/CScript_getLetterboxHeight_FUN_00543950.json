@@ -1,0 +1,237 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 48,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "004cc2b0",
+      "from_addr": "004cc35b",
+      "name": "core_game.cpp_FUN_004cc2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d9260",
+      "from_addr": "004d98e9",
+      "name": "core_game.cpp_FUN_004d9260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005439b0",
+      "from_addr": "00543a33",
+      "name": "core_script.cpp_FUN_005439b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00543950",
+    "address_range": [
+      [
+        "00543950",
+        "005439a7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_getLetterboxHeight_FUN_00543950",
+    "signature": "int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00543950(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b498",
+      "name": "DAT_0061b498",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b49c",
+      "name": "DAT_0061b49c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e818b0",
+      "name": "DAT_01e818b0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004cc35b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cc2b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cc36a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cc2b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cc744",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cc2b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00543a33",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_005439b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d98e9",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d9260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.607142857142858,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALL": 1,
+      "COPY": 36,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 7,
+      "INT_AND": 67,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 5,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 19,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 15,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 5,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 4,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 4,
+      "SUBPIECE": 2,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 269
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0061b49c",
+      "severity": "mild",
+      "text": "fVar1 = (float10)((DAT_0061b49c - (DAT_0061b498 * 100) / 0xb9) / 2) * (float10)_DAT_01e818b0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0061b498",
+      "severity": "mild",
+      "text": "fVar1 = (float10)((DAT_0061b49c - (DAT_0061b498 * 100) / 0xb9) / 2) * (float10)_DAT_01e818b0;",
+      "type": "undefined_data"
+    }
+  ]
+}

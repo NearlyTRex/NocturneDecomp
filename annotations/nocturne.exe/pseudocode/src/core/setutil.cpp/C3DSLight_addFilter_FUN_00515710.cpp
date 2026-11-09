@@ -31,7 +31,7 @@ void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_00515710(C3DSLight *this_p
   this_ptr->filter_durations[this_ptr->filter_count] = duration;
   this_ptr->filter_indices[this_ptr->filter_count] = filter_mode;
   pCVar2 = core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
-                     (0x014B8DE8,this_ptr->filter_names[this_ptr->filter_count],
+                     (g_CFilterCachePtr,this_ptr->filter_names[this_ptr->filter_count],
                       this_ptr->blend_filter);
   this_ptr->filters[this_ptr->filter_count] = pCVar2;
   this_ptr->filter_count = this_ptr->filter_count + 1;

@@ -1,0 +1,276 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 224,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 19,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field",
+      "unrolled_memset"
+    ],
+    "total_lines": 50
+  },
+  "cross_references": [
+    {
+      "addr": "00420330",
+      "from_addr": "00420343",
+      "name": "core_boxactor.cpp_FUN_00420330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00420360",
+    "address_range": [
+      [
+        "00420360",
+        "004203e2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CLightActor_ctor_FUN_00420360",
+    "signature": "CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00420360(CLightActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041efe0",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_CBoxActor_ctor_FUN_0041efe0"
+    },
+    {
+      "addr": "0045c180",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_ctor_FUN_0045c180"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00420343",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_FUN_00420330",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7142857142857144,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 21,
+      "INT_ADD": 19,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 104
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "((CDemonLight *)&pCVar1[1].field_0x4,0x100,0x100);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar2[-1].field_0x2a14 = &g_CLightActorVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2a14",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar2[-1].field_0x2a14 = &g_CLightActorVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x1cb4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2->field_0x1cb4 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x4 = *(uint *)&pCVar2[1].field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x4 = *(uint *)&pCVar2[1].field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar2 + 1) = *(uint *)&pCVar2[1].field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x14 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x10 = *(uint *)&pCVar2[1].field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x10 = *(uint *)&pCVar2[1].field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0xc = *(uint *)&pCVar2[1].field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0xc = *(uint *)&pCVar2[1].field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x18 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[-1].field_0x2fa8 = 1;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x2fa8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[-1].field_0x2fa8 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "return (CLightActor *)&pCVar2[-1].field_0x28c0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x28c0",
+      "severity": "mild",
+      "text": "return (CLightActor *)&pCVar2[-1].field_0x28c0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 16,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "*(uint *)&pCVar2[1].field_0x14 = 0;",
+      "type": "unrolled_memset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLightActor",
+        "offset": 0,
+        "vtable_addr": "005dcb74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

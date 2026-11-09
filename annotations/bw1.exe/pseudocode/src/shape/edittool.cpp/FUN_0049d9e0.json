@@ -1,0 +1,323 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 49,
+    "cross_reference_count": 6,
+    "function_call_count": 3,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "00494690",
+      "from_addr": "004948a1",
+      "name": "shape_edittool.cpp_FUN_00494690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00497660",
+      "from_addr": "004976b6",
+      "name": "shape_edittool.cpp_FUN_00497660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b060",
+      "from_addr": "0049b4e8",
+      "name": "shape_edittool.cpp_FUN_0049b060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b830",
+      "from_addr": "0049b96b",
+      "name": "shape_edittool.cpp_FUN_0049b830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493d40",
+      "from_addr": "00493da8",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493720",
+      "from_addr": "004937b9",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_00493720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049d9e0",
+    "address_range": [
+      [
+        "0049d9e0",
+        "0049da6e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_FUN_0049d9e0",
+    "signature": "int __cdecl shape_edittool_cpp_FUN_0049d9e0(char *button_text)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "004c3f50",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c3f50"
+    },
+    {
+      "addr": "004c4510",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c4510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dbc68",
+      "name": "s_shape_edittool_cpp_005dbc68",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbc7e",
+      "name": "s_gEdFont_must_be_set_by_t_005dbc7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b49c",
+      "name": "DAT_0061b49c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3eb50",
+      "name": "DAT_01c3eb50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3f538",
+      "name": "DAT_01c3f538",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3f53c",
+      "name": "DAT_01c3f53c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "00493da8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00493e8a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004976b6",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00497660",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049b4e8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0049b060",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049b96b",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0049b830",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004948a1",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00494690",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049498e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00494690",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00494b73",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00494690",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00494b8e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00494690",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00494bc6",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00494690",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.119047619047619,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 34,
+      "INT_ADD": 11,
+      "INT_AND": 26,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 15,
+      "INT_LEFT": 1,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 7,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 13,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 173
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "button_text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_0061b49c",
+      "severity": "mild",
+      "text": "return DAT_0061b49c / 0x50 + iVar1;",
+      "type": "undefined_data"
+    }
+  ]
+}

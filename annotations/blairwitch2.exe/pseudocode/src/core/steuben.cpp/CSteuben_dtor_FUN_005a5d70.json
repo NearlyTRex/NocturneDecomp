@@ -1,0 +1,179 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 66,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a5d70",
+    "address_range": [
+      [
+        "005a5d70",
+        "005a5e04"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_steuben.cpp_CSteuben_dtor_FUN_005a5d70",
+    "signature": "CSteuben * core_steuben_cpp_CSteuben_dtor_FUN_005a5d70(CSteuben *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408930"
+    },
+    {
+      "addr": "005b1480",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_005b1480"
+    },
+    {
+      "addr": "00544d50",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50"
+    },
+    {
+      "addr": "005b7fa7",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005b7fa7"
+    },
+    {
+      "addr": "005b7fce",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7fce"
+    },
+    {
+      "addr": "005b7fdc",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7fdc"
+    },
+    {
+      "addr": "0059df70",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059df70"
+    },
+    {
+      "addr": "0040f2b0",
+      "is_variadic": false,
+      "name": "unkafter_armour.cpp_FUN_0040f2b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ffc60",
+      "name": "g_CSteubenTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 8,
+      "CBRANCH": 2,
+      "COPY": 32,
+      "INT_ADD": 19,
+      "INT_AND": 30,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 14,
+      "INT_SUB": 26,
+      "LOAD": 9,
+      "POPCOUNT": 14,
+      "RETURN": 3,
+      "STORE": 23
+    },
+    "pcode_op_count": 234
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSteuben *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x3a20",
+      "severity": "mild",
+      "text": "iVar1 = unkafter_armour_cpp_FUN_0040f2b0(&this_ptr->field_0x3a20,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar3[-1].field_0x2000,1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2000",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar3[-1].field_0x2000,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSteuben",
+        "offset": 8,
+        "vtable_addr": "005ffc64"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 216,
+        "vtable_addr": "005ffad4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

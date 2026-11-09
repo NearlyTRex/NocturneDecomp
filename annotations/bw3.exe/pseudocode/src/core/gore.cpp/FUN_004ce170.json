@@ -1,0 +1,507 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 393,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 30,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "self_copy_guard",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 207
+  },
+  "cross_references": [
+    {
+      "addr": "004cee70",
+      "from_addr": "004ceed8",
+      "name": "core_gore.cpp_FUN_004cee70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ce170",
+    "address_range": [
+      [
+        "004ce170",
+        "004ce300"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gore.cpp_FUN_004ce170",
+    "signature": "void __cdecl core_gore_cpp_FUN_004ce170(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00473cd0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_FUN_00473cd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4739",
+      "name": "DAT_005c4739",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c4741",
+      "name": "DAT_005c4741",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c4749",
+      "name": "DAT_005c4749",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c474d",
+      "name": "DAT_005c474d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ffe8c",
+      "name": "DAT_005ffe8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ffe90",
+      "name": "DAT_005ffe90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ffe9c",
+      "name": "DAT_005ffe9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "DAT_01d5ba14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203b37c",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.128787878787879,
+    "instruction_count": 132,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALL": 1,
+      "CALLOTHER": 2,
+      "CBRANCH": 5,
+      "COPY": 316,
+      "FLOAT2FLOAT": 26,
+      "FLOAT_ABS": 1,
+      "FLOAT_ADD": 7,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 2,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 70,
+      "INT_AND": 36,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 15,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 41,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 32
+    },
+    "pcode_op_count": 677
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFootstep *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": true,
+        "name": "is_bloody",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 24,
+        "size": 4,
+        "type": "EBloodType"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ce179",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "puVar4 = &pCVar1->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(float *)((int)orientation",
+      "severity": "moderate",
+      "text": "fVar5 = (float10)fsin((float10)*(float *)((int)orientation + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(float *)((int)orientation",
+      "severity": "moderate",
+      "text": "fVar6 = (float10)fcos((float10)*(float *)((int)orientation + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005ffe9c",
+      "severity": "mild",
+      "text": "local_34 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005ffe8c",
+      "severity": "mild",
+      "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_005ffe9c",
+      "severity": "mild",
+      "text": "local_2c = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_005ffe8c",
+      "severity": "mild",
+      "text": "fVar5 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_3c = *(float *)&position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_30 = *(float *)&position->field_0x4 + 1.0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(float *)&pCVar1->field_0x10 = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(float *)&pCVar1->field_0x14 = local_2c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "puVar4 = &this_ptr->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "if ((float)_DAT_005c4739 < ABS(*(float *)&this_ptr->field_0x10 - *(float *)(puVar4 + 0x10))) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)(puVar4 + 0x10) = *(uint *)&this_ptr->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "} while (puVar4 != &this_ptr->field_0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x3c = alpha;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x40 = is_bloody;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(EBloodType *)&this_ptr->field_0x4 = blood_type;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `&DAT_005ffe9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)&DAT_005ffe9c",
+      "severity": "moderate",
+      "text": "local_34 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_005ffe8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)&DAT_005ffe8c",
+      "severity": "moderate",
+      "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_005ffe9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&DAT_005ffe9c",
+      "severity": "moderate",
+      "text": "local_2c = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_005ffe8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&DAT_005ffe8c",
+      "severity": "moderate",
+      "text": "fVar5 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3)) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_40 != &local_34)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 35,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_40 != &local_34) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_34 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_2c = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ffe9c + iVar3) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "fVar5 * (float10)*(float *)((int)&DAT_005ffe8c + iVar3)) +",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -79,9 +79,9 @@ void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_00437ab0(CCloth *this_ptr,int 
   } while (vertex_index1 < 0xd);
   if (show_labels != 0) {
     text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490
-                           (g_CEditorTools_PTR_005b6d50);
+                           (g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0
-              (g_CEditorTools_PTR_005b6d50,
+              (g_CEditorToolsPtr,
                this_ptr->collide_bones[bone_index].radius1 +
                this_ptr->collide_bones[bone_index].radius2,text_color);
   }

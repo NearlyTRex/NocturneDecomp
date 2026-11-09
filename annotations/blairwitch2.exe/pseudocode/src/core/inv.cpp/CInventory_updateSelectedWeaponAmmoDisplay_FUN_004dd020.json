@@ -1,0 +1,154 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 38,
+    "complexity_score": 16,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "004dc4b0",
+      "from_addr": "004dc713",
+      "name": "core_inv.cpp_CInventory_load_FUN_004dc4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004db9d0",
+      "from_addr": "004dbb3c",
+      "name": "core_inv.cpp_FUN_004db9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dbc60",
+      "from_addr": "004dbd63",
+      "name": "core_inv.cpp_FUN_004dbc60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dd020",
+    "address_range": [
+      [
+        "004dd020",
+        "004dd098"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
+    "signature": "void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020(CInventory *this_ptr,int ammo_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408a50"
+    },
+    {
+      "addr": "0040e240",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_FUN_0040e240"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004dbb3c",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004db9d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dbd63",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dbc60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dc713",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_load_FUN_004dc4b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.878787878787879,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 29,
+      "INT_ADD": 24,
+      "INT_AND": 22,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 11,
+      "INT_LEFT": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 161
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "ammo_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

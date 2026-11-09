@@ -1,0 +1,18 @@
+====================================================================================================
+ACTOR POINTER CAST MISMATCH REPORT
+====================================================================================================
+
+This report identifies locations where actor resolution functions
+(castToClassHash, resolveActorByName, getActor) return a pointer
+that is cast to a type incompatible with the class specified by
+the ClassInfo argument. The ClassInfo tells us what class the actor
+actually is; when the cast doesn't match, all downstream field
+accesses and vtable calls will be wrong.
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Total resolution calls found:  0
+  Type mismatches found:         0
+  Unresolved (indirect variable): 0

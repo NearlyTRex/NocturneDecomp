@@ -1,0 +1,48 @@
+// Name: engine_special.cpp_drawPolyList2_FUN_00565db0
+// Address: 00565db0
+// Address Range: [[00565db0, 00565eec]]
+// Convention: __cdecl
+// Signature: undefined4 __cdecl engine_special_cpp_drawPolyList2_FUN_00565db0(int param_1,undefined4 *param_2,int param_3,undefined4 param_4)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint __cdecl engine_special_cpp_drawPolyList2_FUN_00565db0(int param_1,uint *param_2,int param_3,uint param_4)
+
+{
+  ushort *puVar1;
+  uint uVar2;
+  int iVar3;
+  int local_1c;
+  int local_18;
+  int local_14;
+  
+  if (_DAT_01c6cee8 == 0) {
+    return 0;
+  }
+  _DAT_01ed3198 = _DAT_01ed3198 + param_3;
+  if (_DAT_02cf602c != (code *)0x0) {
+    uVar2 = (*_DAT_02cf602c)(param_1,param_2,param_3,param_4);
+    return uVar2;
+  }
+  if (0 < param_3) {
+    iVar3 = 0;
+    do {
+      puVar1 = (ushort *)*param_2;
+      local_1c = param_1 + (uint)*puVar1 * 0x30;
+      local_18 = param_1 + (uint)puVar1[1] * 0x30;
+      local_14 = param_1 + (uint)puVar1[2] * 0x30;
+      *(uint *)(local_1c + 0x18) = (uint)puVar1[3] << 8;
+      *(uint *)(local_1c + 0x1c) = (uint)puVar1[6] << 8;
+      *(uint *)(local_18 + 0x18) = (uint)puVar1[4] << 8;
+      *(uint *)(local_18 + 0x1c) = (uint)puVar1[7] << 8;
+      *(uint *)(local_14 + 0x18) = (uint)puVar1[5] << 8;
+      *(uint *)(local_14 + 0x1c) = (uint)puVar1[8] << 8;
+      (*_DAT_02cf6024)(&local_1c,3,param_4);
+      iVar3 = iVar3 + 1;
+      param_2 = param_2 + 1;
+    } while (iVar3 < param_3);
+  }
+  return 1;
+}

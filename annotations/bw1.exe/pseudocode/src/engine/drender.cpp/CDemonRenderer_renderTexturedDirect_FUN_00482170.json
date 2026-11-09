@@ -1,0 +1,324 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 59,
+    "cross_reference_count": 10,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "00421670",
+      "from_addr": "004218f7",
+      "name": "core_box.cpp_FUN_00421670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042ea10",
+      "from_addr": "0042ec38",
+      "name": "core_charactr.cpp_FUN_0042ea10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b1870",
+      "from_addr": "004b1bd5",
+      "name": "core_fire.cpp_FUN_004b1870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8100",
+      "from_addr": "004b8a25",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004b8100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7c60",
+      "from_addr": "004e7c71",
+      "name": "core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004e7c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fa930",
+      "from_addr": "004faaa2",
+      "name": "core_inv.cpp_drawItemIconBackground_FUN_004fa930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fa770",
+      "from_addr": "004fa8e2",
+      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_004fa770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fe9c0",
+      "from_addr": "004fedc7",
+      "name": "core_level.cpp_FUN_004fe9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00506c90",
+      "from_addr": "00506e07",
+      "name": "core_marquee.cpp_CMarquee_renderLightBulb_FUN_00506c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509c90",
+      "from_addr": "00509de7",
+      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_00509c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00482170",
+    "address_range": [
+      [
+        "00482170",
+        "00482208"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "00481aa0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f02c",
+      "name": "DAT_01c4f02c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d14",
+      "name": "DAT_01c51d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d18",
+      "name": "DAT_01c51d18",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 18,
+    "call_sites": [
+      {
+        "call_addr": "004fedc7",
+        "call_type": "direct",
+        "caller": "core_level.cpp_FUN_004fe9c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004b1bd5",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004b1870",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004fa8e2",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_drawWeaponIconBackground_FUN_004fa770",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004faaa2",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_drawItemIconBackground_FUN_004fa930",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004e7c71",
+        "call_type": "direct",
+        "caller": "core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004e7c60",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00509de7",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_renderAudioSpectrumBar_FUN_00509c90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0042ec38",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042ea10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0042edd2",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042ea10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0042f046",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042ea10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0042f1dd",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042ea10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5319148936170213,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 40,
+      "INT_ADD": 15,
+      "INT_AND": 17,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 16,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 166
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    }
+  ]
+}

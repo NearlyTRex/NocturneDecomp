@@ -1,0 +1,27 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_weather_cpp_staticInit_FUN_005ae140(void)
+;
+;
+; Called Functions:
+;   core_weather.cpp_CWeather_ctor_FUN_005ae170
+;   crt_memory.c___arrinit_FUN_005c0357
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x2c997c0                      ; 005ae140
+        ;   Label: core_weather.cpp_staticInit_FUN_005ae140
+    CALL core_weather.cpp_CWeather_ctor_FUN_005ae170 ; 005ae145
+        ;   XREF to: 005ae170 (UNCONDITIONAL_CALL)  ; CWeather * core_weather.cpp_CWeather_ctor_FUN_005ae170(CWeather * this_ptr)
+    ADD ESP,0x4                         ; 005ae14a
+    PUSH 0x5fb430                       ; 005ae14d
+    PUSH 0xc8                           ; 005ae152
+    PUSH 0x2c997f8                      ; 005ae157
+    CALL crt_memory.c___arrinit_FUN_005c0357 ; 005ae15c
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+    ADD ESP,0xc                         ; 005ae161
+    RET                                 ; 005ae164
+

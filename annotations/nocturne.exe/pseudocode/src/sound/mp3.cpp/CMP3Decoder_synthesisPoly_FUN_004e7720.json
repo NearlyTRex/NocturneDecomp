@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
@@ -170,31 +165,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMP3Decoder_synthesisPoly_FUN_004e7720.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "arrayIndexOutOfBounds",
-          "column": 29,
-          "line": 31,
-          "message": "Array 'local_94[18]' accessed at index 19, which is out of bounds.",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Array 'local_94[18]' accessed at index 19, which is out of bounds.",
-      "line": 31,
-      "match": "Cppcheck: array index out of bounds",
-      "severity": "major",
-      "text": "(*pafVar3)[0] = local_94[iVar1 + 0x12];",
-      "type": "static_array_oob"
-    }
-  ]
+  "suspects": []
 }

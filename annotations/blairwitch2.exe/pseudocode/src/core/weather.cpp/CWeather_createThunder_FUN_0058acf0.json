@@ -1,0 +1,140 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 27,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "0058a660",
+      "from_addr": "0058a94e",
+      "name": "core_weather.cpp_FUN_0058a660",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058acf0",
+    "address_range": [
+      [
+        "0058acf0",
+        "0058ad3c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weather.cpp_CWeather_createThunder_FUN_0058acf0",
+    "signature": "void __cdecl core_weather_cpp_CWeather_createThunder_FUN_0058acf0(CWeather *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cf60"
+    },
+    {
+      "addr": "0055ae30",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playSound_FUN_0055ae30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ee5c6",
+      "name": "s_thndr_wav_005ee5c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0058a94e",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_FUN_0058a660",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9523809523809526,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 31,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 11,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 9,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 104
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeather *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Raw hex address 0x264b290 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 9,
+      "match": "0x264b290",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x0264B290;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

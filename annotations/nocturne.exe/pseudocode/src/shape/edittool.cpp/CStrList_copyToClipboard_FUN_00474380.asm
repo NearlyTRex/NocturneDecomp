@@ -15,7 +15,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057ed88
 ;   TerminatedCString s_CStrList_copyToClipboard_0057ed9e
 ;   TerminatedCString s_s_0057eddf
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -118,7 +118,7 @@ section .text
     MOV ECX,dword ptr [ESP]             ; 00474430
         ;   Label: LAB_00474430
     PUSH ECX                            ; 00474433
-    MOV EBX,dword ptr [0x005b6d50]      ; 00474434 | g_CEditorTools_PTR_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 00474434 | g_CEditorToolsPtr
     PUSH EBX                            ; 0047443a
     MOV byte ptr [EDI],0x0              ; 0047443b
     CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00472d10 ; 0047443e

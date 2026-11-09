@@ -1,0 +1,97 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 19,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 14
+  },
+  "cross_references": [
+    {
+      "addr": "00483c00",
+      "from_addr": "00483f96",
+      "name": "shape_edittool.cpp_FUN_00483c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485ff0",
+      "from_addr": "00485ff0",
+      "name": "shape_edittool.cpp_calculateGridHeight_FUN_00485ff0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00485fd0",
+    "address_range": [
+      [
+        "00485fd0",
+        "00485fe6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_calculateGridWidth_FUN_00485fd0",
+    "signature": "int __cdecl shape_edittool_cpp_calculateGridWidth_FUN_00485fd0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fba18",
+      "name": "DAT_005fba18",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.333333333333333,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "COPY": 8,
+      "INT_ADD": 2,
+      "INT_AND": 13,
+      "INT_EQUAL": 3,
+      "INT_LEFT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 1,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 57
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "return DAT_005fba18 / 0x30;",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 167,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 13,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [
+    {
+      "addr": "00447810",
+      "from_addr": "00447872",
+      "name": "core_conveyor.cpp_CConveyor_setup_FUN_00447810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00510e00",
+      "from_addr": "00510e05",
+      "name": "core_minecar.cpp_FUN_00510e00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005395d0",
+    "address_range": [
+      [
+        "005395d0",
+        "0053965c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_setup_FUN_005395d0",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_005395d0(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408850",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408850"
+    },
+    {
+      "addr": "00447db0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_load_FUN_00447db0"
+    },
+    {
+      "addr": "004688e0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0"
+    },
+    {
+      "addr": "0053adb0",
+      "is_variadic": false,
+      "name": "core_platfrm.cpp_CPlatform_attachActor_FUN_0053adb0"
+    },
+    {
+      "addr": "00539660",
+      "is_variadic": false,
+      "name": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00539660"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00447872",
+        "call_type": "direct",
+        "caller": "core_conveyor.cpp_CConveyor_setup_FUN_00447810",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00510e05",
+        "call_type": "direct",
+        "caller": "core_minecar.cpp_FUN_00510e00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.26530612244898,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 38,
+      "INT_ADD": 24,
+      "INT_AND": 24,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 17,
+      "LOAD": 11,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 209
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2f0",
+      "severity": "mild",
+      "text": "if (this_ptr->field_0x2f0 != '\\0') {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x310",
+      "severity": "mild",
+      "text": "((CCourse *)&this_ptr->field_0x310,&this_ptr->field_0x2f0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2f0",
+      "severity": "mild",
+      "text": "((CCourse *)&this_ptr->field_0x310,&this_ptr->field_0x2f0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x318",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x318 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x51c",
+      "severity": "mild",
+      "text": "while (actor = *(CDemonActor **)&pCVar1->field_0x51c, actor != (CDemonActor *)0x0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x51c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x51c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x208",
+      "severity": "mild",
+      "text": "if (pCVar1 == (CPlatform *)&this_ptr->field_0x208) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x208",
+      "severity": "mild",
+      "text": "} while (pCVar1 != (CPlatform *)&this_ptr->field_0x208);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 22,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPlatform",
+        "offset": 0,
+        "vtable_addr": "00604934"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

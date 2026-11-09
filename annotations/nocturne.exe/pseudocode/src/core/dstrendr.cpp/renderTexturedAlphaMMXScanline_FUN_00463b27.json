@@ -1,0 +1,320 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 214,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 151
+  },
+  "cross_references": [
+    {
+      "addr": "0045fe40",
+      "from_addr": "0045fe98",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0045fe40",
+      "type": "DATA"
+    },
+    {
+      "addr": "0045ff20",
+      "from_addr": "0045ff98",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20",
+      "type": "DATA"
+    },
+    {
+      "addr": "0045fc00",
+      "from_addr": "0045fc58",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0045fc00",
+      "type": "DATA"
+    },
+    {
+      "addr": "0045fce0",
+      "from_addr": "0045fd58",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0045fce0",
+      "type": "DATA"
+    },
+    {
+      "addr": "0045fb00",
+      "from_addr": "0045fb74",
+      "name": "engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0045fb00",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00463b27",
+    "address_range": [
+      [
+        "00463b27",
+        "00463c41"
+      ]
+    ],
+    "convention": "__edi_esi_ebx",
+    "name": "core_dstrendr.cpp_renderTexturedAlphaMMXScanline_FUN_00463b27",
+    "signature": "void __edi_esi_ebx core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005b06b8",
+      "name": "DAT_005b06b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06bc",
+      "name": "DAT_005b06bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06c4",
+      "name": "DAT_005b06c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06d4",
+      "name": "DAT_005b06d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06d8",
+      "name": "DAT_005b06d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06dc",
+      "name": "DAT_005b06dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06e4",
+      "name": "DAT_005b06e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06e8",
+      "name": "DAT_005b06e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bf550",
+      "name": "g_TextureShift1",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "005bf570",
+      "name": "g_TextureShift2",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "005bf590",
+      "name": "g_TextureMask1",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "005bf5b0",
+      "name": "g_TextureMask2",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "01bd2fa0",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01c00c84",
+      "name": "g_ReciprocalLookupTable[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c02580",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
+      "value": null
+    },
+    {
+      "addr": "01c02584",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "uchar*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.891891891891892,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CBRANCH": 6,
+      "COPY": 53,
+      "INT_ADD": 25,
+      "INT_AND": 63,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 1,
+      "INT_LESS": 8,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 6,
+      "INT_SEXT": 9,
+      "INT_SLESS": 22,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 18,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 4,
+      "SUBPIECE": 7
+    },
+    "pcode_op_count": 362
+  },
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_005b06e4",
+      "severity": "mild",
+      "text": "DAT_005b06e4 = iVar3 * 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005b06e8",
+      "severity": "mild",
+      "text": "DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005b06b8",
+      "severity": "mild",
+      "text": "DAT_005b06b8 = uVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_005b06bc",
+      "severity": "mild",
+      "text": "DAT_005b06bc = uVar5;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_005b06c4",
+      "severity": "mild",
+      "text": "DAT_005b06c4 = uVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(ushort *)((int)DAT_005b06e8",
+      "severity": "moderate",
+      "text": "if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar7)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_005b06e8",
+      "severity": "mild",
+      "text": "if (uVar1 < *(ushort *)((int)DAT_005b06e8 + uVar7)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(ushort *)((int)DAT_005b06e8",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)DAT_005b06e8 + uVar7) = (ushort)uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005b06e8",
+      "severity": "mild",
+      "text": "*(ushort *)((int)DAT_005b06e8 + uVar7) = (ushort)uVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_005b06e4",
+      "severity": "mild",
+      "text": "if (DAT_005b06e4 < uVar7) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[scanline_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)g_ScreenBufferArray[scanline_y]",
+      "severity": "moderate",
+      "text": "DAT_005b06e8 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

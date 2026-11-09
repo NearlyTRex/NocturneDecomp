@@ -5,6 +5,7 @@ from ghidra_annotations.util.log import log_warning
 from ghidra_annotations.util.string import get_string_data_type_obj
 from ghidra.program.model.data import Array
 from ghidra.program.model.data import ArrayDataType
+from ghidra.program.model.data import BuiltInDataType
 from ghidra.program.model.data import BuiltInDataTypeManager
 from ghidra.program.model.data import DefaultDataType
 from ghidra.program.model.data import FunctionDefinitionDataType
@@ -79,6 +80,17 @@ def get_primitive_data_types():
 def normalize_data_type_name(type_name):
     return re.sub(r'[\*\[].*$', '', type_name).strip()
 
+def find_by_name(dtm, name):
+    """The type of that name in any category, the program's own before a built-in.
+
+    A program can define a type a built-in is also named for -- winnt.h's GUID
+    typedef beside Ghidra's built-in GUID -- and a name alone must mean the
+    program's.
+    """
+    matches = [dt for dt in dtm.getAllDataTypes() if dt.getName() == name]
+    return next((dt for dt in matches if not isinstance(dt, BuiltInDataType)), matches[0] if matches else None)
+
+
 def resolve_data_type_obj(currentProgram, type_name, type_category = None):
 
     # Check type name
@@ -127,20 +139,9 @@ def resolve_data_type_obj(currentProgram, type_name, type_category = None):
     if not data_type:
         data_type = dtm.getDataType(original_type_name)
 
-    # Try searching by exact name in all categories
+    # Try searching by exact name in all categories, then by the normalized name
     if not data_type:
-        search_name = original_type_name
-        for dt in dtm.getAllDataTypes():
-            if dt.getName() == search_name:
-                data_type = dt
-                break
-
-    # Try normalized name search
-    if not data_type:
-        for dt in dtm.getAllDataTypes():
-            if dt.getName() == type_name_norm:
-                data_type = dt
-                break
+        data_type = find_by_name(dtm, original_type_name) or find_by_name(dtm, type_name_norm)
 
     # Try strings
     if not data_type:
@@ -284,7 +285,8 @@ def collect_typedef_deps(currentProgram, type_obj, seen = None, visited_ids = No
 
     # Structures / Unions
     elif isinstance(type_obj, (Structure, Union)):
-        for comp in type_obj.getComponents():
+        # Filler bytes are undefined and add no dependency
+        for comp in type_obj.getDefinedComponents():
             comp_dt = comp.getDataType()
             if isinstance(comp_dt, Pointer):
                 collect_typedef_deps(currentProgram, comp_dt.getDataType(), seen, visited_ids)
@@ -503,7 +505,8 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
 
     # Structures / Unions
     elif isinstance(type_obj, Structure) or isinstance(type_obj, Union):
-        for comp in type_obj.getComponents():
+        # Filler bytes are undefined and add no dependency
+        for comp in type_obj.getDefinedComponents():
             comp_dt = comp.getDataType()
             if comp_dt:
                 comp_name = normalize_data_type_name(resolve_data_type_name(currentProgram, comp_dt))
@@ -540,55 +543,23 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
     else:
         class_name = type_obj.__class__.__name__.rsplit('.', 1)[-1]
         if class_name in ['FunctionDefinitionDataType', 'FunctionDefinitionDB', 'FunctionDefinition', 'FunctionDefDataType']:
-            # Get return type dependencies
-            if hasattr(type_obj, 'getReturnType') and type_obj.getReturnType():
-                ret_dt = type_obj.getReturnType()
-                ret_name = normalize_data_type_name(resolve_data_type_name(currentProgram, ret_dt))
-                if should_track_as_dependency(ret_name) and ret_name != type_name:
-                    # Return type - only struct/union pointers can be forward declared
-                    if isinstance(ret_dt, Pointer):
-                        # Walk pointer chain to find ultimate pointed-to type
-                        # This handles X*, X**, X***, etc. A pointer is named
-                        # after its target ("CHero *"), so the target is the
-                        # tracked ret_name; a chain ending in nothing is
-                        # "void*", which is not tracked and never gets here.
-                        pointed_dt = ret_dt.getDataType()
-                        while isinstance(pointed_dt, Pointer):
-                            pointed_dt = pointed_dt.getDataType()
-                        if isinstance(pointed_dt, (Structure, Union)):
-                            seen_pointer.add(ret_name)
-                            # Don't recurse - forward declaration doesn't need transitive deps
-                        else:
-                            seen_direct.add(ret_name)
-                            collect_type_dependencies_with_context(currentProgram, pointed_dt, seen_direct, seen_pointer, visited_ids, root_name)
-                    else:
-                        seen_direct.add(ret_name)
-                        collect_type_dependencies_with_context(currentProgram, ret_dt, seen_direct, seen_pointer, visited_ids, root_name)
-
-            # Get parameter type dependencies
-            if hasattr(type_obj, 'getArguments') and type_obj.getArguments():
-                for param in type_obj.getArguments():
-                    if hasattr(param, 'getDataType') and param.getDataType():
-                        param_dt = param.getDataType()
-                        param_name = normalize_data_type_name(resolve_data_type_name(currentProgram, param_dt))
-                        if should_track_as_dependency(param_name) and param_name != type_name:
-                            # Parameter type - only struct/union pointers can be forward declared
-                            if isinstance(param_dt, Pointer):
-                                # Walk pointer chain to find ultimate pointed-to type
-                                # This handles X*, X**, X***, etc. As for the return
-                                # type, the target is the tracked param_name.
-                                pointed_dt = param_dt.getDataType()
-                                while isinstance(pointed_dt, Pointer):
-                                    pointed_dt = pointed_dt.getDataType()
-                                if isinstance(pointed_dt, (Structure, Union)):
-                                    seen_pointer.add(param_name)
-                                    # Don't recurse - forward declaration doesn't need transitive deps
-                                else:
-                                    seen_direct.add(param_name)
-                                    collect_type_dependencies_with_context(currentProgram, pointed_dt, seen_direct, seen_pointer, visited_ids, root_name)
-                            else:
-                                seen_direct.add(param_name)
-                                collect_type_dependencies_with_context(currentProgram, param_dt, seen_direct, seen_pointer, visited_ids, root_name)
+            # Ghidra gives the return and every parameter a type, DataType.DEFAULT at least
+            for signature_dt in [type_obj.getReturnType()] + [p.getDataType() for p in type_obj.getArguments()]:
+                signature_name = normalize_data_type_name(resolve_data_type_name(currentProgram, signature_dt))
+                if not should_track_as_dependency(signature_name) or signature_name == type_name:
+                    continue
+                # Walk a pointer chain (X*, X**, ...) to its target. A pointer is
+                # named after its target ("CHero *"), so the target is the tracked
+                # name; a chain ending in nothing is "void*", which is not tracked.
+                pointed_dt = signature_dt
+                while isinstance(pointed_dt, Pointer):
+                    pointed_dt = pointed_dt.getDataType()
+                # A struct or union behind a pointer needs only a forward declaration
+                if pointed_dt is not signature_dt and isinstance(pointed_dt, (Structure, Union)):
+                    seen_pointer.add(signature_name)
+                else:
+                    seen_direct.add(signature_name)
+                    collect_type_dependencies_with_context(currentProgram, pointed_dt, seen_direct, seen_pointer, visited_ids, root_name)
 
     return (seen_direct, seen_pointer)
 

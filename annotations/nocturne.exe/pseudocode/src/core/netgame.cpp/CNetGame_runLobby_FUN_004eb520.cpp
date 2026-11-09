@@ -63,9 +63,8 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
       engine_2d_c_drawHLine_FUN_00403bd0(0,0x31,g_WindowWidth + -1);
       iVar4 = 0x37;
       iStack_24 = 0;
-      for (iStack_20 = 0; iStack_20 < g_CNetGame_PTR_005bdee0->player_count;
-          iStack_20 = iStack_20 + 1) {
-        pcStack_1c = g_CNetGame_PTR_005bdee0->players[0].name + iStack_24;
+      for (iStack_20 = 0; iStack_20 < g_CNetGamePtr->player_count; iStack_20 = iStack_20 + 1) {
+        pcStack_1c = g_CNetGamePtr->players[0].name + iStack_24;
         engine_2d_c_drawText_FUN_00402600(pcStack_1c,0,iVar4);
         if (((SNetworkAddr *)(pcStack_1c + 0x1c))->ip_address == _DAT_02dd10c4) {
           pcVar6 = "(Local)";
@@ -85,7 +84,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(CNetGame *this_ptr)
           ;
         }
         engine_2d_c_drawText_FUN_00402600(acStack_130,100,iVar4);
-        if (iStack_20 == g_CNetGame_PTR_005bdee0->local_player_index) {
+        if (iStack_20 == g_CNetGamePtr->local_player_index) {
           pcVar8 = "(Local)";
 LAB_004eb75b:
           pcVar6 = acStack_130;
@@ -199,7 +198,7 @@ LAB_004eb75b:
           pcVar8 = pcStack_2c;
           if (iVar4 != 0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                      (g_CEditorTools_PTR_005b6d50,"Loading %s",pcStack_2c);
+                      (g_CEditorToolsPtr,"Loading %s",pcStack_2c);
             srand(this_ptr->random_seed);
             core_actor_cpp_setRandomSeed_FUN_0040dd20(this_ptr->random_seed);
             core_mission_cpp_CDemonMission_load_FUN_004d7ee0(g_CDemonMission_PTR_005baf90,pcVar8,0);
@@ -220,7 +219,7 @@ LAB_004eb75b:
       if ((this_ptr->connection_type == CONNECTION_CLIENT) &&
          (this_ptr->network_mode == NET_MODE_SYNCING)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                  (g_CEditorTools_PTR_005b6d50,"Loading %s",this_ptr->mission_name);
+                  (g_CEditorToolsPtr,"Loading %s",this_ptr->mission_name);
         srand(this_ptr->random_seed);
         core_actor_cpp_setRandomSeed_FUN_0040dd20(this_ptr->random_seed);
         core_mission_cpp_CDemonMission_load_FUN_004d7ee0
@@ -278,16 +277,16 @@ LAB_004eb75b:
       iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_S);
       if ((iVar4 != 0) &&
          (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600
-                            (g_CEditorTools_PTR_005b6d50,"Send chat",(char *)0x1cea180,
-                             0x100,1), iVar4 != 0)) {
+                            (g_CEditorToolsPtr,"Send chat",(char *)0x1cea180,0x100,1),
+         iVar4 != 0)) {
         core_netgame_cpp_CNetGame_processChatOut_FUN_004ebfd0(this_ptr,(char *)0x1cea180,-1);
       }
-      for (iVar4 = 0; iVar4 < g_CNetGame_PTR_005bdee0->player_count; iVar4 = iVar4 + 1) {
+      for (iVar4 = 0; iVar4 < g_CNetGamePtr->player_count; iVar4 = iVar4 + 1) {
         core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(this_ptr,iVar4,2.0);
       }
     }
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
-              (g_CEditorTools_PTR_005b6d50,"You have been disconnected from the game.");
+              (g_CEditorToolsPtr,"You have been disconnected from the game.");
 LAB_004eb861:
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,1);

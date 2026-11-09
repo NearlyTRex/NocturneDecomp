@@ -1,0 +1,448 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 191,
+    "complexity_score": 340,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 70,
+    "suspect_count": 25,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 261
+  },
+  "cross_references": [
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be7d7",
+      "name": "core_game.cpp_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053b7f0",
+    "address_range": [
+      [
+        "0053b7f0",
+        "0053b99e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_FUN_0053b7f0",
+    "signature": "void core_set_cpp_FUN_0053b7f0(int *param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    },
+    {
+      "addr": "0047cee0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047cee0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d091b",
+      "name": "s_anon_005d091b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0923",
+      "name": "DAT_005d0923",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0927",
+      "name": "s_core_set_cpp_005d0927",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0937",
+      "name": "s_Set_saveState_info_is_in_005d0937",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0960",
+      "name": "s_anon_005d0960",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0968",
+      "name": "DAT_005d0968",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d096c",
+      "name": "s_The_set_has_changed_sinc_005d096c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09d2",
+      "name": "DAT_005d09d2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d09d6",
+      "name": "s_anon_005d09d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09de",
+      "name": "DAT_005d09de",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d09e2",
+      "name": "s_anon_005d09e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d09ea",
+      "name": "DAT_005d09ea",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004be7d7",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bdfb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.615384615384615,
+    "instruction_count": 143,
+    "opcode_distribution": {
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 18,
+      "COPY": 101,
+      "INT_ADD": 48,
+      "INT_AND": 87,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 86,
+      "INT_LESS": 16,
+      "INT_NOTEQUAL": 15,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 42,
+      "INT_SUB": 58,
+      "INT_XOR": 3,
+      "LOAD": 29,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "STORE": 45
+    },
+    "pcode_op_count": 660
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_set_cpp_FUN_0053b7f0(int *param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_set_cpp_FUN_0053b7f0(int *param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d0923,&local_24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005d0923",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d0923,&local_24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d0968,&local_20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005d0968",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d0968,&local_20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 != local_20) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d09d2,&local_1c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005d09d2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d09d2,&local_1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iVar1 < *param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d09de,&local_18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005d09de",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d09de,&local_18);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iVar1 < *param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d09ea,&local_14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_005d09ea",
+      "severity": "mild",
+      "text": "_fscanf(param_2,&DAT_005d09ea,&local_14);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iVar1 < *param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

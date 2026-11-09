@@ -1,28 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_01cc5170'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_01cc5170'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 66,
-        "message": "use of undeclared identifier '_DAT_01cc5170'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 254,
@@ -297,23 +273,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "buildRotationMatrix_FUN_004ccdc0.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 18,
-          "line": 87,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -370,14 +329,6 @@
       "severity": "mild",
       "text": "(longlong)iVar6) / (longlong)DAT_005b7648);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 87,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar12 = iVar6 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

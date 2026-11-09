@@ -1,70 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 47,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "format_error",
-        "column": 83,
-        "line": 80,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 103,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 108,
-        "message": "use of undeclared identifier 'DAT_01fb99d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 112,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 114,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 119,
-        "message": "use of undeclared identifier 'DAT_01fb99d4'"
-      },
-      {
-        "category": "format_error",
-        "column": 44,
-        "line": 135,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 160,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 161,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 368,
@@ -239,7 +173,7 @@
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     }
@@ -308,51 +242,6 @@
         "type": "int"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_precomputeLightVisibility_FUN_00507f80.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 28,
-          "line": 88,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 90,
-          "message": "Uninitialized variable: in_stack_00000010",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 84,
-          "line": 146,
-          "message": "Uninitialized variable: iStack_24",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 30,
-          "line": 158,
-          "message": "Uninitialized variable: iStack_24",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 34,
-          "line": 96,
-          "message": "Uninitialized variable: iStack_18",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -480,7 +369,7 @@
       "line": 56,
       "match": "(int)pCStack_20",
       "severity": "moderate",
-      "text": "(pCStack_40 + (int)pCStack_20,&g_CDemonCamera_01fb8508);",
+      "text": "(pCStack_40 + (int)pCStack_20,&g_CDemonCameraInstance);",
       "type": "pointer_truncation"
     },
     {
@@ -658,46 +547,6 @@
       "severity": "moderate",
       "text": "pCStack_34 = (CDemonSet *)&pCStack_34->cameras[0].enabled;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 88,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iStack_1c = *(int *)(in_stack_0000000c + 0x19644);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000010",
-      "line": 90,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_00000010 != -1) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_24",
-      "line": 146,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*(uint *)((int)&this_ptr->lights[iVar5].camera_light_bounds[0].x_min + iStack_24)",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_24",
-      "line": 158,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "} while (iStack_14 < iStack_24);",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_18",
-      "line": 96,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iVar3 = iVar6 * 0x1898 + iStack_18 + in_stack_0000000c;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

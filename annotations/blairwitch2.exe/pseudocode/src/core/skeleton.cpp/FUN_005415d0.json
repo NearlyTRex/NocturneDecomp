@@ -1,0 +1,284 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 61,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "005ae680",
+      "from_addr": "005ae9b2",
+      "name": "core_cloth.cpp_FUN_005ae680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547890",
+      "from_addr": "0054789e",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544380",
+      "from_addr": "005443d4",
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005424ac",
+      "from_addr": "005424bc",
+      "name": "core_skeleton.cpp_FUN_005424ac",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005426be",
+      "from_addr": "005426cc",
+      "name": "core_skeleton.cpp_FUN_005426be",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544930",
+      "from_addr": "0054493c",
+      "name": "core_skeleton.cpp_FUN_00544930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544ae0",
+      "from_addr": "00544af0",
+      "name": "core_skeleton.cpp_FUN_00544ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005487d0",
+      "from_addr": "005487ea",
+      "name": "core_skeleton.cpp_FUN_005487d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005415d0",
+    "address_range": [
+      [
+        "005415d0",
+        "00541617"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_FUN_005415d0",
+    "signature": "CSkeleton * __cdecl core_skeleton_cpp_FUN_005415d0(CDeformableModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e6dad",
+      "name": "s_core_skeleton_cpp_005e6dad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6dc2",
+      "name": "s_Tried_to_do_something_wi_005e6dc2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0054789e",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005487ea",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_005487d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005443d4",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054493c",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_00544930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00544af0",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_00544ae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005ae9b2",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_FUN_005ae680",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005424bc",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_005424ac",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005426cc",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_005426be",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3333333333333335,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 9,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 60
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x2a6c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2a6c != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x2a6c",
+      "severity": "mild",
+      "text": "return *(CSkeleton **)&this_ptr->field_0x2a6c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2a6c",
+      "severity": "mild",
+      "text": "return *(CSkeleton **)&this_ptr->field_0x2a6c;",
+      "type": "unnamed_field"
+    }
+  ]
+}

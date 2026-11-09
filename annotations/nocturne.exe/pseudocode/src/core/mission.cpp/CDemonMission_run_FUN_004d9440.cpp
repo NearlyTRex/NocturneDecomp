@@ -33,18 +33,17 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
               (this_ptr,(g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id);
     DAT_01ccbbf0 = '\0';
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(this_ptr);
-    iVar1 = core_game_cpp_CGame_runGameSession_FUN_0049da10(g_CGame_PTR_005b9354);
+    iVar1 = core_game_cpp_CGame_runGameSession_FUN_0049da10(g_CGamePtr);
     this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
     core_mission_cpp_CDemonMission_removeActorFromList_FUN_004d8cd0
               (this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
     core_mission_cpp_CDemonMission_clearMissionData_FUN_004d7ea0(this_ptr);
     if ((iVar1 == 0) || (DAT_01ccbbf0 == '\0')) break;
-    iVar1 = _stricmp
-                      (g_CDemonSet_PTR_005be368->geometry_filename,"hq.geo");
+    iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;
     if (bVar2) {
-      core_game_cpp_CGame_displayActStats_FUN_004a6680(g_CGame_PTR_005b9354);
+      core_game_cpp_CGame_displayActStats_FUN_004a6680(g_CGamePtr);
       iVar1 = -1;
     }
     else {
@@ -71,9 +70,9 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
   }
   core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(this_ptr,(CDemonActor *)this_ptr_00,1);
 LAB_004d950e:
-  if (g_CGame_PTR_005b9354->act_completion_state == 0) {
+  if (g_CGamePtr->act_completion_state == 0) {
     return;
   }
-  core_game_cpp_CGame_finishAct_FUN_004a6a10(g_CGame_PTR_005b9354);
+  core_game_cpp_CGame_finishAct_FUN_004a6a10(g_CGamePtr);
   return;
 }

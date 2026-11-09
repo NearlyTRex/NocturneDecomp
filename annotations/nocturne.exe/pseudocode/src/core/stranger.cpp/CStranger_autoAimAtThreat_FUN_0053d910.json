@@ -1,43 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 91,
-        "message": "use of undeclared identifier '_DAT_02dc9f84'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 92,
-        "message": "use of undeclared identifier '_DAT_02dc9f5c'; did you mean 'DAT_005c1f5c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_02dc9f88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 96,
-        "message": "use of undeclared identifier '_DAT_02dc9f60'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 351,
+    "complexity_score": 349,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 271,
+    "pseudocode_lines": 269,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
@@ -45,7 +15,7 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 978
+    "total_lines": 976
   },
   "cross_references": [
     {
@@ -204,7 +174,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -216,13 +186,13 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa9dbc",
-      "name": "g_CDemonSet_01e57284.threat_count",
+      "name": "g_CDemonSetInstance.threat_count",
       "type": "undefined4",
       "value": null
     },
@@ -421,18 +391,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "line": 174,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_3c),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "line": 181,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCStack_1c = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->threats + iStack_3c);",
+      "text": "pCStack_1c = *(CDemonActor **)((int)g_CDemonSetPtr->threats + iStack_3c);",
       "type": "pointer_cast"
     },
     {

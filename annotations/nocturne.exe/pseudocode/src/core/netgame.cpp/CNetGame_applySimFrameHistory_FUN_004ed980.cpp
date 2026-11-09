@@ -24,7 +24,7 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(CNetGam
     core_main_c_displayErrorAndQuit_FUN_004c8440("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
   this_ptr->random_seed = sim_frame->random_seed;
-  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGame_PTR_005b9354,sim_frame->delta_time);
+  core_game_cpp_CGame_slamDT_FUN_004a5f00(g_CGamePtr,sim_frame->delta_time);
   iVar3 = 0;
   if (0 < this_ptr->player_count) {
     iVar4 = 0;

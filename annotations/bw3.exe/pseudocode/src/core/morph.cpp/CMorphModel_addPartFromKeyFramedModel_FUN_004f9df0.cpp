@@ -1,0 +1,30 @@
+// Name: core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0
+// Address: 004f9df0
+// Address Range: [[004f9df0, 004f9e38]]
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index)
+
+#include "nocturne.h"
+
+void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0(CMorphModel *this_ptr,CKeyFramedModel *model_ptr,int frame_index)
+
+{
+  CVector3i *vertex_data;
+  int poly_count;
+  SMRGLHeaderPrimitive *poly_data;
+  int poly_stride;
+  SMRGLTextureModel *texture_list;
+  int *texture_index_list;
+  
+  texture_index_list = *(int **)&model_ptr->field_0x118;
+  texture_list = (SMRGLTextureModel *)&model_ptr->field_0x124;
+  poly_stride = 0x48;
+  poly_data = *(SMRGLHeaderPrimitive **)&model_ptr->field_0x114;
+  poly_count = *(int *)&model_ptr->field_0x110;
+  vertex_data = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00460f60(model_ptr,frame_index)
+  ;
+  core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004f9ad0
+            (this_ptr,*(int *)&model_ptr->field_0x104,vertex_data,poly_count,poly_data,poly_stride,
+             texture_list,texture_index_list);
+  return;
+}

@@ -114,7 +114,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(CInventory *this_ptr,CDe
         pcVar7[1] = cVar1;
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,local_114,5.0);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGamePtr,local_114,5.0);
       iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004b43f0
                         (local_14,&g_HeroActors[g_LocalHeroIndex]->base);
       if (iVar2 < 1) {

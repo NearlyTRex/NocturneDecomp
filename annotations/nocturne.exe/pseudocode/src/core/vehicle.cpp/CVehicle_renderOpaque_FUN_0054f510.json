@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 60,
-        "message": "use of undeclared identifier 'stack0xffffff88'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
@@ -104,7 +92,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -116,7 +104,7 @@
     },
     {
       "addr": "01c7782c",
-      "name": "g_CGame_01c775ec.goggles_active",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     }
@@ -182,23 +170,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CVehicle_renderOpaque_FUN_0054f510.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 35,
-          "line": 55,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -263,14 +234,6 @@
       "severity": "moderate",
       "text": "this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000000c",
-      "line": 55,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "} while (iVar2 < *(int *)(in_stack_0000000c + 0x930));",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

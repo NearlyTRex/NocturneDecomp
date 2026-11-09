@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 129,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 11,
+    "suspect_types": [
+      "register_param",
+      "unaffected_reg"
+    ],
+    "total_lines": 16
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056ccaf",
+    "address_range": [
+      [
+        "0056ccaf",
+        "0056ccb9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_trap.cpp_FUN_0056ccaf",
+    "signature": "undefined1 core_trap_cpp_FUN_0056ccaf(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.0,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "COPY": 5,
+      "INT_ADD": 9,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 17,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 3,
+      "SUBPIECE": 1
+    },
+    "pcode_op_count": 54
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_CH",
+      "severity": "mild",
+      "text": "char in_CH;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)(in_EAX + 0x61) = *(char *)(in_EAX + 0x61) + in_CH;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)(in_EAX + 0x61) = *(char *)(in_EAX + 0x61) + in_CH;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_CH",
+      "severity": "mild",
+      "text": "*(char *)(in_EAX + 0x61) = *(char *)(in_EAX + 0x61) + in_CH;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)(in_EAX - 0x1c) = *(char *)(in_EAX - 0x1c) + in_CH;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)(in_EAX - 0x1c) = *(char *)(in_EAX - 0x1c) + in_CH;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_CH",
+      "severity": "mild",
+      "text": "*(char *)(in_EAX - 0x1c) = *(char *)(in_EAX - 0x1c) + in_CH;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return *(byte *)(unaff_EBX + (in_EAX & 0xff));",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "return *(byte *)(unaff_EBX + (in_EAX & 0xff));",
+      "type": "unaffected_reg"
+    }
+  ]
+}

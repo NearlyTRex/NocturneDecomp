@@ -1,58 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0xfffffef0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 31,
-        "message": "use of undeclared identifier 'stack0xfffffef0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 49,
-        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 50,
-        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 51,
-        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 53,
-        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 54,
-        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 56,
-        "message": "use of undeclared identifier '_DAT_01bd1d80'; did you mean 'DAT_005c1d80'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 267,
@@ -314,20 +260,20 @@
     },
     {
       "addr": "005bdee0",
-      "name": "g_CNetGame_PTR_005bdee0",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "01cea280"
     },
     {
       "addr": "005be060",
-      "name": "g_CMouse_PTR_005be060",
+      "name": "g_CMousePtr",
       "type": "CMouse*",
       "value": "01d465c0"
     },
     {
       "addr": "005be1cc",
-      "name": "g_CPod_PTR_005be1cc",
-      "type": "CPod*",
+      "name": "g_CDemonPodPtr",
+      "type": "CDemonPod*",
       "value": "01e528d0"
     },
     {
@@ -362,7 +308,7 @@
     },
     {
       "addr": "01cea280",
-      "name": "g_CNetGame_01cea280",
+      "name": "g_CNetGameInstance",
       "type": "CNetGame",
       "value": null
     }
@@ -465,7 +411,7 @@
       "line": 24,
       "match": "&stack0xfffffef0",
       "severity": "moderate",
-      "text": "(&g_CAlphaBitmap_01cc480c,&stack0xfffffef0,0x280,0x1e0);",
+      "text": "(&g_LoadingScreenBitmap1,&stack0xfffffef0,0x280,0x1e0);",
       "type": "stack_ref"
     }
   ]

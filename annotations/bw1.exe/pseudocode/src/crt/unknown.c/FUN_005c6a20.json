@@ -1,0 +1,256 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 164,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 9,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [
+    {
+      "addr": "005c1520",
+      "from_addr": "005c153e",
+      "name": "crt_unknown.c_FUN_005c1520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c6a20",
+    "address_range": [
+      [
+        "005c6a20",
+        "005c6add"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c6a20",
+    "signature": "undefined * crt_unknown_c_FUN_005c6a20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c6450",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_005c6450"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005c08d0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c08d0"
+    },
+    {
+      "addr": "005c50d4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c50d4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006262d4",
+      "name": "DAT_006262d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006262e0",
+      "name": "DAT_006262e0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006262ee",
+      "name": "DAT_006262ee",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006262fa",
+      "name": "DAT_006262fa",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006264dc",
+      "name": "DAT_006264dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626610",
+      "name": "PTR_crt_unknown.c_FUN_005c50d4_00626610",
+      "type": "void*",
+      "value": "005c50d4"
+    },
+    {
+      "addr": "00626614",
+      "name": "PTR_crt_unknown.c_FUN_005c50d4_00626614",
+      "type": "void*",
+      "value": "005c50d4"
+    },
+    {
+      "addr": "02c9f050",
+      "name": "DAT_02c9f050",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9f054",
+      "name": "DAT_02c9f054",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005c153e",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c1520",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9375,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CALLIND": 3,
+      "CBRANCH": 6,
+      "COPY": 58,
+      "INT_ADD": 20,
+      "INT_AND": 33,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 28,
+      "INT_LESS": 2,
+      "INT_OR": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 14,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 252
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626610)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_006262d4",
+      "severity": "mild",
+      "text": "dest = &DAT_006262d4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_006264dc",
+      "severity": "mild",
+      "text": "} while (dest < &DAT_006264dc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 28,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(byte *)((int)puVar1",
+      "severity": "moderate",
+      "text": "dest = (byte *)((int)puVar1 + 0x1d);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)puVar1",
+      "severity": "moderate",
+      "text": "dest = (byte *)((int)puVar1 + 0x1d);",
+      "type": "pointer_truncation"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

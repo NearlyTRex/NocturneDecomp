@@ -1,0 +1,443 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 282,
+    "cross_reference_count": 6,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 23,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "unnamed_param"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [
+    {
+      "addr": "004b32c0",
+      "from_addr": "004b3715",
+      "name": "core_game.cpp_FUN_004b32c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bdc1e",
+      "from_addr": "004bdf0f",
+      "name": "core_game.cpp_FUN_004bdc1e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be38a",
+      "name": "core_game.cpp_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd9b0",
+      "from_addr": "004ddc45",
+      "name": "core_inv.cpp_FUN_004dd9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005218a0",
+      "from_addr": "005219fe",
+      "name": "core_script.cpp_FUN_005218a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047e2b0",
+      "from_addr": "0047e3ef",
+      "name": "shape_edittool.cpp_FUN_0047e2b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ab2b0",
+    "address_range": [
+      [
+        "004ab2b0",
+        "004ab35a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_font.cpp_FUN_004ab2b0",
+    "signature": "int engine_font_cpp_FUN_004ab2b0(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "004ab090",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004ab090"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0047e3ef",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047e2b0",
+        "estimated_params": 10,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004b3715",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b32c0",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004be38a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bdfb0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004ddc45",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004de006",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004de351",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dd9b0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "005219fe",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_005218a0",
+        "estimated_params": 10,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004bdf0f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bdc1e",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 8,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.855263157894737,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 7,
+      "COPY": 70,
+      "INT_ADD": 39,
+      "INT_AND": 46,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 42,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 10,
+      "INT_SEXT": 6,
+      "INT_SLESS": 21,
+      "INT_SUB": 21,
+      "INT_XOR": 2,
+      "LOAD": 31,
+      "POPCOUNT": 21,
+      "RETURN": 3,
+      "STORE": 16,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 369
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int engine_font_cpp_FUN_004ab2b0(uint param_1,int param_2,void *param_3,int param_4,int param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int engine_font_cpp_FUN_004ab2b0(uint param_1,int param_2,void *param_3,int param_4,int param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "int engine_font_cpp_FUN_004ab2b0(uint param_1,int param_2,void *param_3,int param_4,int param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "int engine_font_cpp_FUN_004ab2b0(uint param_1,int param_2,void *param_3,int param_4,int param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "int engine_font_cpp_FUN_004ab2b0(uint param_1,int param_2,void *param_3,int param_4,int param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "int engine_font_cpp_FUN_004ab2b0(uint param_1,int param_2,void *param_3,int param_4,int param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "memset(param_3,0,param_4 * param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "memset(param_3,0,param_4 * param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "memset(param_3,0,param_4 * param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (0 < param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(char *)(param_5 * iVar2 + (int)param_3",
+      "severity": "moderate",
+      "text": "pcVar3 = (char *)(param_5 * iVar2 + (int)param_3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "pcVar3 = (char *)(param_5 * iVar2 + (int)param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "pcVar3 = (char *)(param_5 * iVar2 + (int)param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab090(param_1,param_2,pcVar3,param_5,param_6,0x2f,&local_c)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab090(param_1,param_2,pcVar3,param_5,param_6,0x2f,&local_c)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab090(param_1,param_2,pcVar3,param_5,param_6,0x2f,&local_c)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab090(param_1,param_2,pcVar3,param_5,param_6,0x2f,&local_c)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + local_c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + local_c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (param_4 <= iVar2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "} while (iVar2 < param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 8,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 8,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:8",
+      "param_delta": 8,
+      "text": "Function declares 0 params but call sites push 8 (8 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 78,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 70
+  },
+  "cross_references": [
+    {
+      "addr": "00544460",
+      "from_addr": "005491a0",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544190",
+      "from_addr": "005442ca",
+      "name": "core_script.cpp_FUN_00544190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057d810",
+    "address_range": [
+      [
+        "0057d810",
+        "0057d871"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_playAmbientSound_FUN_0057d810",
+    "signature": "void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_0057d810(CSound *this_ptr,char *sound_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057d880",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playSound_FUN_0057d880"
+    },
+    {
+      "addr": "0057d9d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_0057d9d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "02c83278",
+      "name": "DAT_02c83278",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83279",
+      "name": "DAT_02c83279",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8327a",
+      "name": "DAT_02c8327a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8327b",
+      "name": "DAT_02c8327b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c832a0",
+      "name": "DAT_02c832a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c832a4",
+      "name": "DAT_02c832a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005442ca",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00544190",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005491a0",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8947368421052633,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 16,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 13,
+      "LOAD": 12,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 148
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02c83278",
+      "severity": "mild",
+      "text": "pcVar2 = &DAT_02c83278;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_02c83278",
+      "severity": "mild",
+      "text": "core_sound_cpp_CSound_playSound_FUN_0057d880(this_ptr,g_CDemonSetPtr,&DAT_02c83278);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 12,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

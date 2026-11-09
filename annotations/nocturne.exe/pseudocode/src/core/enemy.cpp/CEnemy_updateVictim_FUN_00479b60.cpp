@@ -37,8 +37,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
   fVar1 = this_ptr->victim_height;
   pCVar2 = this_ptr->script_victim;
   if (pCVar2 == (CCharacter *)0x0) {
-    if (((g_CGame_PTR_005b9354->freeze_enemies_enabled != 0) ||
-        (g_CGame_PTR_005b9354->allow_enemy_attack_flag == 0)) ||
+    if (((g_CGamePtr->freeze_enemies_enabled != 0) || (g_CGamePtr->allow_enemy_attack_flag == 0)) ||
        (iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                           (0x01C03A10,"Capture"), iVar6 != 0)) {
       this_ptr->is_in_combat = 0;
@@ -61,9 +60,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
       local_28 = &(this_ptr->base).base.location;
       local_2c = 0;
       local_20 = 0;
-      for (local_24 = 0; local_24 < g_CDemonSet_PTR_005be368->character_count;
-          local_24 = local_24 + 1) {
-        iVar10 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + local_2c);
+      for (local_24 = 0; local_24 < g_CDemonSetPtr->character_count; local_24 = local_24 + 1) {
+        iVar10 = *(int *)((int)g_CDemonSetPtr->characters + local_2c);
         iVar9 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0xdc))(iVar10,this_ptr);
         if (((iVar9 != 0) &&
             (iVar9 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0x104))(iVar10), iVar9 == 0)) &&
@@ -104,7 +102,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_00479b60(CEnemy *this_ptr,fl
         if (iVar10 < 0) break;
         local_1c = *(CCharacter **)(&DAT_01bcdef8 + iVar10 * 4);
         iVar9 = core_enemy_cpp_CEnemy_canSeeTarget_FUN_00479ab0(this_ptr,&local_1c->base);
-        this_ptr_00 = g_CConsole_PTR_005ad350;
+        this_ptr_00 = g_CConsolePtr;
         if (iVar9 != 0) {
           this_ptr->victim = local_1c;
           engine_console_cpp_CConsole_printf_FUN_0043ac60

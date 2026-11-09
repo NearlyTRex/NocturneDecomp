@@ -1,0 +1,522 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 245,
+    "complexity_score": 370,
+    "cross_reference_count": 1,
+    "function_call_count": 18,
+    "global_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 105,
+    "suspect_count": 23,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "unknown_field",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 350
+  },
+  "cross_references": [
+    {
+      "addr": "00560b10",
+      "from_addr": "00560b45",
+      "name": "core_sound.cpp_CSound_getSoundDuration_FUN_00560b10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00557570",
+    "address_range": [
+      [
+        "00557570",
+        "005577ff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00557570",
+    "signature": "int __cdecl sound_sndmain_cpp_FUN_00557570(CSfxSample *out_sample)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3e13",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__atexit_FUN_005a3e13"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a54c0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005a54c0"
+    },
+    {
+      "addr": "00465e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00465e50"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    },
+    {
+      "addr": "00502750",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_ctor_FUN_00502750"
+    },
+    {
+      "addr": "00502a10",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_00502a10"
+    },
+    {
+      "addr": "005027b0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_005027b0"
+    },
+    {
+      "addr": "00551000",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551000"
+    },
+    {
+      "addr": "00551620",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551620"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556fd0"
+    },
+    {
+      "addr": "00558e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00558e90"
+    },
+    {
+      "addr": "00573fc0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_FUN_00573fc0"
+    },
+    {
+      "addr": "005738c0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0"
+    },
+    {
+      "addr": "00573a40",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40"
+    },
+    {
+      "addr": "00573d40",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573d40"
+    },
+    {
+      "addr": "00573db0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573db0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d3a09",
+      "name": "s_sound_005d3a09",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3a0f",
+      "name": "DAT_005d3a0f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3a13",
+      "name": "s_sound_005d3a13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3a19",
+      "name": "DAT_005d3a19",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3a1d",
+      "name": "s_sound_sndmain_cpp_005d3a1d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3a32",
+      "name": "s_Unknown_sample_file_form_005d3a32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3a5b",
+      "name": "s_sound_sndmain_cpp_005d3a5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3a70",
+      "name": "s_getSampleInfo_can_t_dete_005d3a70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00604214",
+      "name": "g_CMP3DecoderDestructorNode2",
+      "type": "WatcomStaticDestructorNode",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cdecb8",
+      "name": "g_CMP3DecoderInstanceOther.field256_0x100",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cdecbc",
+      "name": "g_CMP3DecoderInstanceOther.field260_0x104",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce71e8",
+      "name": "DAT_02ce71e8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00560b45",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_getSoundDuration_FUN_00560b10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.242268041237113,
+    "instruction_count": 194,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "CALL": 23,
+      "CBRANCH": 14,
+      "COPY": 154,
+      "INT_ADD": 68,
+      "INT_AND": 100,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 96,
+      "INT_LESS": 6,
+      "INT_MULT": 3,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 1,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 46,
+      "INT_SUB": 80,
+      "INT_XOR": 4,
+      "INT_ZEXT": 3,
+      "LOAD": 28,
+      "POPCOUNT": 46,
+      "RETURN": 4,
+      "STORE": 73
+    },
+    "pcode_op_count": 823
+  },
+  "stack_frame": {
+    "frame_size": 328,
+    "local_size": 324,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_13f",
+        "offset": -319,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "out_sample",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00557609",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(&g_SfxSamples[0].field_0x110 + iVar7)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "(&g_SfxSamples[0].field_0x0 + iVar7,(char *)out_sample);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "pcVar8 = &g_SfxSamples[0].field_0x0 + iVar7;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "out_sample->field_0x0 = pcVar8[0];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "out_sample->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "out_sample->field_0x2 = cVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x3",
+      "severity": "mild",
+      "text": "out_sample->field_0x3 = cVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(CSfxSample *)((int)out_sample",
+      "severity": "moderate",
+      "text": "out_sample = (CSfxSample *)((int)out_sample + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_005d3a0f",
+      "severity": "mild",
+      "text": "iVar7 = _stricmp(&local_140,&DAT_005d3a0f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_005d3a19",
+      "severity": "mild",
+      "text": "iVar7 = _stricmp(&local_140,&DAT_005d3a19);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_02ce71e8",
+      "severity": "mild",
+      "text": "if ((DAT_02ce71e8 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02ce71e8",
+      "severity": "mild",
+      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02ce71e8",
+      "severity": "mild",
+      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x104 = 0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._260_4_",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x108 = g_CMP3DecoderInstanceOther._260_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x108 = g_CMP3DecoderInstanceOther._260_4_;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._256_4_",
+      "severity": "mild",
+      "text": "uVar4 = g_CMP3DecoderInstanceOther._256_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 77,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x110 = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 78,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x10c = uVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 88,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&out_sample->field_0x110) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 56,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005575e8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 54,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005575e8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

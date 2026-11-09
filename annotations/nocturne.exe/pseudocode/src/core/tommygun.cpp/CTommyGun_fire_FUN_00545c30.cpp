@@ -88,22 +88,22 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
   CStack_38.x = CStack_98.x - CStack_d0.z;
   CStack_38.y = CStack_98.y - fStack_c4;
   CStack_38.z = CStack_98.z - fStack_c0;
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSetPtr,1);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   pCVar9 = (this_ptr->base).carried_by_actor;
   if (pCVar9 != (CDemonActor *)0x0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar9);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,pCVar9);
   }
   fStack_1c = 0.0;
   do {
     fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
-                          (g_CDemonSet_PTR_005be368,&CStack_38,&CStack_bc);
+                          (g_CDemonSetPtr,&CStack_38,&CStack_bc);
     dVar8 = (double)fStack_14;
     if ((dVar8 < 0.0) || (1.0 < dVar8)) goto LAB_00545ebe;
     this_ptr_01 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSet_PTR_005be368->collision_actor,
+                            (g_CDemonSetPtr->collision_actor,
                              g_CCharacterActorType_00765a60.name_hash);
     if ((this_ptr_01 != (CCharacter *)0x0) &&
        (EVar6 = (*(((this_ptr_01->base).vtable._uc)->_uc).getDeathState)(this_ptr_01),
@@ -112,32 +112,28 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
     }
     pCStack_18 = (CGlass *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSet_PTR_005be368->collision_actor,
-                            g_CGlassActorType_01c78c40.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash);
     this_ptr_02 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSet_PTR_005be368->collision_actor,
-                             g_CTriggerActorType_02dd1084.name_hash);
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerActorType_02dd1084.name_hash)
+    ;
     pCStack_24 = this_ptr_02;
     pCStack_20 = (CCrate *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSet_PTR_005be368->collision_actor,
-                            g_CCrateActorType_0077bd40.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CCrateActorType_0077bd40.name_hash);
     this_ptr_03 = (CFlameCan *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSet_PTR_005be368->collision_actor,
-                             g_CFlameCanActorType_01c70654.name_hash);
+                            (g_CDemonSetPtr->collision_actor,g_CFlameCanActorType_01c70654.name_hash
+                            );
     if (this_ptr_01 == (CCharacter *)0x0) {
       if (pCStack_18 == (CGlass *)0x0) {
         if (this_ptr_02 == (CTrigger *)0x0) {
           if (pCStack_20 == (CCrate *)0x0) {
             if (this_ptr_03 == (CFlameCan *)0x0) {
               core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60
-                        (g_CFireEffect_PTR_005b80f0,
-                         &g_CDemonSet_PTR_005be368->collision_impact_position,
-                         &g_CDemonSet_PTR_005be368->collision_normal,
-                         g_CDemonSet_PTR_005be368->ground_type,
-                         g_CDemonSet_PTR_005be368->collision_actor);
+                        (g_CFireEffect_PTR_005b80f0,&g_CDemonSetPtr->collision_impact_position,
+                         &g_CDemonSetPtr->collision_normal,g_CDemonSetPtr->ground_type,
+                         g_CDemonSetPtr->collision_actor);
               goto LAB_00545ebe;
             }
             core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(this_ptr_03);
@@ -157,15 +153,14 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
                                    (int)((ulonglong)dVar8 >> 0x20));
             core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(this_ptr_02,in_stack_fffffebc);
           }
-          core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                    (g_CDemonSet_PTR_005be368,&pCStack_24->base);
+          core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,&pCStack_24->base);
         }
       }
       else {
         iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004aded0(pCStack_18);
         if (iVar4 == 0) goto LAB_00545ebe;
         core_glass_cpp_CGlass_shatter_FUN_004ada20
-                  (pCStack_18,&g_CDemonSet_PTR_005be368->collision_impact_position);
+                  (pCStack_18,&g_CDemonSetPtr->collision_impact_position);
       }
     }
     else {
@@ -174,7 +169,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
       if ((iVar4 != 0) &&
          (pCVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
                              ((this_ptr->base).carried_by_actor,g_CHeroActorType_01cae0ec.name_hash)
-         , this_ptr_00 = g_CDemonSet_PTR_005be368, pCVar7 != (CDemonActor *)0x0)) {
+         , this_ptr_00 = g_CDemonSetPtr, pCVar7 != (CDemonActor *)0x0)) {
         if (pCStack_18 == (CGlass *)0x0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
           core_setcolid_cpp_CDemonSet_init_FUN_00511750(this_ptr_00);
@@ -187,12 +182,9 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
            (*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)
                      ((CCharacter *)this_ptr,pCVar9,(int)in_stack_fffffebc);
       auStack_130._4_4_ = 0.4;
-      fStack_c4 = (g_CDemonSet_PTR_005be368->ray_target).x -
-                  (g_CDemonSet_PTR_005be368->ray_origin).x;
-      fStack_c0 = (g_CDemonSet_PTR_005be368->ray_target).y -
-                  (g_CDemonSet_PTR_005be368->ray_origin).y;
-      CStack_bc.x = (g_CDemonSet_PTR_005be368->ray_target).z -
-                    (g_CDemonSet_PTR_005be368->ray_origin).z;
+      fStack_c4 = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+      fStack_c0 = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+      CStack_bc.x = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
       fStack_1c = (float)10 /
                   SQRT(CStack_bc.x * CStack_bc.x + fStack_c4 * fStack_c4 + fStack_c0 * fStack_c0);
       CStack_38.y = fStack_c4 * fStack_1c;
@@ -204,8 +196,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
         auStack_130._16_4_ = fStack_2c;
       }
       pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-                         (&this_ptr_01->base,&CStack_d0,
-                          &g_CDemonSet_PTR_005be368->collision_impact_position);
+                         (&this_ptr_01->base,&CStack_d0,&g_CDemonSetPtr->collision_impact_position);
       if ((CVector3f *)(auStack_130 + 0x18) != pCVar3) {
         auStack_130._24_4_ = pCVar3->x;
         fStack_114 = pCVar3->y;
@@ -222,12 +213,12 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_00545c30(CTommyGun *this_ptr)
                 (this_ptr_01,(SDamageInfo *)auStack_130);
       if ((this_ptr->base).can_penetrate == 0) goto LAB_00545ebe;
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->collision_actor);
+                (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
     }
     fStack_1c = (float)((int)fStack_1c + 1);
     if (3 < (int)fStack_1c) {
 LAB_00545ebe:
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
       if ((this_ptr->base).is_rendered != 0) {
         aCStack_68[0].x = CStack_98.x;
         aCStack_68[0].z = CStack_98.z;

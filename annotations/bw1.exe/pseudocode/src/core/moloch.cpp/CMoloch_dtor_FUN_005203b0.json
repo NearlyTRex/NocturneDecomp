@@ -1,0 +1,174 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 57,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005203b0",
+    "address_range": [
+      [
+        "005203b0",
+        "0052042e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_moloch.cpp_CMoloch_dtor_FUN_005203b0",
+    "signature": "CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_005203b0(CMoloch *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ea980",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004ea980"
+    },
+    {
+      "addr": "00522fc0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_dtor_FUN_00522fc0"
+    },
+    {
+      "addr": "005673f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0"
+    },
+    {
+      "addr": "005c030f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005c030f"
+    },
+    {
+      "addr": "005c0336",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0336"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603f04",
+      "name": "g_CMolochVTable",
+      "type": "undefined1*",
+      "value": "00520430"
+    },
+    {
+      "addr": "00604070",
+      "name": "g_CMolochTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.255813953488372,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 29,
+      "INT_ADD": 18,
+      "INT_AND": 22,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 18,
+      "LOAD": 9,
+      "POPCOUNT": 10,
+      "RETURN": 3,
+      "STORE": 18
+    },
+    "pcode_op_count": 183
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMoloch *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CMolochVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x22424",
+      "severity": "mild",
+      "text": "pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0((CMorph *)&this_ptr->field_0x22424,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x16f0",
+      "severity": "mild",
+      "text": "pCVar3 = (CMoloch *)core_hero_cpp_FUN_004ea980(&pCVar2[-0xf].field_0x16f0,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 208,
+        "vtable_addr": "00603f04"
+      },
+      {
+        "class_name": "CMoloch",
+        "offset": 8,
+        "vtable_addr": "00604074"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

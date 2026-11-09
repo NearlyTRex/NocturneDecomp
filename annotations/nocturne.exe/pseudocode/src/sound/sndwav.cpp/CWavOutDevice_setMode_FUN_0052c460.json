@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_02dc9428'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_02dc942c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_02dc943c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_02dc9430'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_02dc942c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 76,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_02dc943c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_02dc9434'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_02dc9434'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_02dc9434'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_02dc9438'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 8,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_02dc9434'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_02dc9428'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_02dc9428'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_02dc9428'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 43,
-        "message": "use of undeclared identifier '_DAT_02dc9430'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 45,
-        "message": "use of undeclared identifier '_DAT_02dc943c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_02dc9438'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 51,
-        "message": "use of undeclared identifier 'GlobalLock'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 54,
-        "message": "use of undeclared identifier 'GlobalAlloc'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
@@ -349,30 +229,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CWavOutDevice_setMode_FUN_0052c460.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 52,
-          "line": 42,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 41,
-          "line": 43,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -397,22 +253,6 @@
       "severity": "mild",
       "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_02dc93a4,DAT_005bed44,&WStack_24,0,0,0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 42,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "((int)((_DAT_02dc9428 + ((int)_DAT_02dc9428 >> 0x1f) * -8) -",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 43,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(uint)(((int)_DAT_02dc9428 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02dc9430;",
-      "type": "static_shift_too_many_bits"
     }
   ],
   "vtable_info": {

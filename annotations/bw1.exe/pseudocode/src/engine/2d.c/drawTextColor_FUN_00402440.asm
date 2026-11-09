@@ -1,0 +1,76 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl engine_2d_c_drawTextColor_FUN_00402440(char *text,int x,int y)
+;
+; Parameters:
+; char *           Stack[0x4]:4   text
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
+;
+; XREF[4]:
+;   cockpit_drawsurf.cpp_FUN_00480480 at 00480699
+;   engine_2d.c_FUN_00402540 at 00402562
+;   engine_2d.c_FUN_00402600 at 0040262b
+;   engine_2d.c_FUN_004026d0 at 004026ff
+;
+; Referenced Globals:
+;   undefined4 DAT_0061049c
+;   undefined4 DAT_006104a0
+;   undefined4 DAT_01c4f010
+;   undefined4 DAT_01c4f014
+;
+; Called Functions:
+;   engine_2d.c_drawTextMultilineColor_FUN_00401f50
+;   engine_2d.c_drawTextWrappedColor_FUN_00401ec0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH ESI                            ; 00402440
+        ;   Label: engine_2d.c_drawTextColor_FUN_00402440
+    PUSH EDI                            ; 00402441
+    PUSH EBP                            ; 00402442
+    MOV EDX,dword ptr [ESP + 0x10]      ; 00402443
+    MOV EAX,dword ptr [ESP + 0x14]      ; 00402447
+    MOV ECX,dword ptr [ESP + 0x18]      ; 0040244b
+    CMP dword ptr [0x0061049c],0x0      ; 0040244f | DAT_0061049c
+    JZ 0x0040247e                       ; 00402456
+        ;   XREF to: 0040247e (CONDITIONAL_JUMP)  ; LAB_0040247e
+    PUSH EBX                            ; 00402458
+    MOV EBX,dword ptr [0x006104a0]      ; 00402459 | DAT_006104a0
+    PUSH EBX                            ; 0040245f
+    MOV ESI,dword ptr [0x01c4f014]      ; 00402460 | DAT_01c4f014
+    PUSH ESI                            ; 00402466
+    MOV EDI,dword ptr [0x01c4f010]      ; 00402467 | DAT_01c4f010
+    PUSH EDI                            ; 0040246d
+    PUSH ECX                            ; 0040246e
+    PUSH EAX                            ; 0040246f
+    PUSH EDX                            ; 00402470
+    CALL engine_2d.c_drawTextWrappedColor_FUN_00401ec0 ; 00402471
+        ;   XREF to: 00401ec0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextWrappedColor_FUN_00401ec0(char * text, int x_start, int y_start, int x_max, ...)
+    ADD ESP,0x18                        ; 00402476
+    POP EBX                             ; 00402479
+    POP EBP                             ; 0040247a
+    POP EDI                             ; 0040247b
+    POP ESI                             ; 0040247c
+    RET                                 ; 0040247d
+    MOV ESI,dword ptr [0x006104a0]      ; 0040247e | DAT_006104a0
+        ;   Label: LAB_0040247e
+    PUSH ESI                            ; 00402484
+    MOV EDI,dword ptr [0x01c4f014]      ; 00402485 | DAT_01c4f014
+    PUSH EDI                            ; 0040248b
+    MOV EBP,dword ptr [0x01c4f010]      ; 0040248c | DAT_01c4f010
+    PUSH EBP                            ; 00402492
+    PUSH ECX                            ; 00402493
+    PUSH EAX                            ; 00402494
+    PUSH EDX                            ; 00402495
+    CALL engine_2d.c_drawTextMultilineColor_FUN_00401f50 ; 00402496
+        ;   XREF to: 00401f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextMultilineColor_FUN_00401f50(char * text, int x_start, int y_start, int x_max, ...)
+    ADD ESP,0x18                        ; 0040249b
+    POP EBP                             ; 0040249e
+    POP EDI                             ; 0040249f
+    POP ESI                             ; 004024a0
+    RET                                 ; 004024a1
+

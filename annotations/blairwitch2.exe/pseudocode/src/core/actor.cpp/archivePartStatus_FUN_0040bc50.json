@@ -1,0 +1,865 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 258,
+    "complexity_score": 686,
+    "cross_reference_count": 7,
+    "function_call_count": 7,
+    "global_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 81,
+    "suspect_count": 58,
+    "suspect_types": [
+      "param_count_too_few",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 339
+  },
+  "cross_references": [
+    {
+      "addr": "00419c50",
+      "from_addr": "00419d41",
+      "name": "core_boneguy.cpp_FUN_00419c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c39b0",
+      "from_addr": "004c3a6f",
+      "name": "core_ghoul.cpp_FUN_004c39b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ce590",
+      "from_addr": "004ce5f8",
+      "name": "core_hero.cpp_FUN_004ce590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2df0",
+      "from_addr": "004d2e56",
+      "name": "core_hostage.cpp_CHostage_archive_FUN_004d2df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572f90",
+      "from_addr": "00572fd8",
+      "name": "core_tentacle.cpp_FUN_00572f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599160",
+      "from_addr": "005991e4",
+      "name": "core_zombie.cpp_FUN_00599160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437b80",
+      "from_addr": "00437cdd",
+      "name": "unkafter_conveyor.cpp_FUN_00437b80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040bc50",
+    "address_range": [
+      [
+        "0040bc50",
+        "0040bede"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_archivePartStatus_FUN_0040bc50",
+    "signature": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b050",
+      "is_variadic": false,
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040b050"
+    },
+    {
+      "addr": "0040b380",
+      "is_variadic": false,
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b380"
+    },
+    {
+      "addr": "00547460",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460"
+    },
+    {
+      "addr": "00547440",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_00547440"
+    },
+    {
+      "addr": "005b8180",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005b8180"
+    },
+    {
+      "addr": "005b8100",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005b8100"
+    },
+    {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005caba1",
+      "name": "s_part_status_opening_brac_005caba1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cabbb",
+      "name": "DAT_005cabbb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cabbe",
+      "name": "DAT_005cabbe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cabc1",
+      "name": "s_description_005cabc1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cabcd",
+      "name": "s_part_status_entry_005cabcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cabdf",
+      "name": "DAT_005cabdf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cabe1",
+      "name": "DAT_005cabe1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cabe4",
+      "name": "s_description_005cabe4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cabf0",
+      "name": "s_part_texture_entry_005cabf0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cac03",
+      "name": "DAT_005cac03",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cac05",
+      "name": "s_part_status_info_closing_005cac05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cac24",
+      "name": "s_s_s_005cac24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cac2f",
+      "name": "s_s_d_005cac2f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cac35",
+      "name": "DAT_005cac35",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cac38",
+      "name": "DAT_005cac38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cac3c",
+      "name": "DAT_005cac3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cac3e",
+      "name": "DAT_005cac3e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cac41",
+      "name": "DAT_005cac41",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cac45",
+      "name": "DAT_005cac45",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cac47",
+      "name": "DAT_005cac47",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609590",
+      "name": "DAT_00609590",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "007bc034",
+      "name": "DAT_007bc034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc038",
+      "name": "DAT_007bc038",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "004ce5f8",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004ce590",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ce650",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004ce590",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00419d41",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_FUN_00419c50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00437cdd",
+        "call_type": "direct",
+        "caller": "unkafter_conveyor.cpp_FUN_00437b80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c3a6f",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_FUN_004c39b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d2e56",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_archive_FUN_004d2df0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00572fd8",
+        "call_type": "direct",
+        "caller": "core_tentacle.cpp_FUN_00572f90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005991e4",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_00599160",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.306930693069307,
+    "instruction_count": 202,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 24,
+      "CBRANCH": 15,
+      "COPY": 144,
+      "INT_ADD": 56,
+      "INT_AND": 111,
+      "INT_CARRY": 31,
+      "INT_EQUAL": 106,
+      "INT_LESS": 11,
+      "INT_NOTEQUAL": 8,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 34,
+      "INT_SLESS": 53,
+      "INT_SUB": 93,
+      "INT_XOR": 3,
+      "LOAD": 23,
+      "POPCOUNT": 53,
+      "RETURN": 3,
+      "STORE": 82
+    },
+    "pcode_op_count": 870
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_007bc038",
+      "severity": "mild",
+      "text": "if (DAT_007bc038 != 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s%d\\n\",&DAT_00609590,0x1e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s%d\\n\",&DAT_00609590,0x1e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac35,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005cac35",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac35,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac35,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x2140",
+      "severity": "mild",
+      "text": "puVar4 = &pCVar3->field_0x2140;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,*(uint *)puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005cac38",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,*(uint *)puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (pCVar3 != (CDeformableModelInstance *)&param_1->field_0x78);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "} while (pCVar3 != (CDeformableModelInstance *)&param_1->field_0x78);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005cac3c",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3e,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005cac3e",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3e,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac3e,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1->field_0x21b8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x21b8",
+      "severity": "mild",
+      "text": "puVar4 = &param_1->field_0x21b8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,*(uint *)puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005cac41",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,*(uint *)puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac45);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005cac45",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac45);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac47,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_005cac47",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac47,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac47,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(\"part status opening brace\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cabbb,&local_14);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_005cabbb",
+      "severity": "mild",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cabbb,&local_14);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00547440(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1->field_0x2140;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x2140",
+      "severity": "mild",
+      "text": "puVar4 = &param_1->field_0x2140;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_005cabbe",
+      "severity": "mild",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cabdf);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005cabdf",
+      "severity": "mild",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cabdf);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1->field_0x21b8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x21b8",
+      "severity": "mild",
+      "text": "puVar4 = &param_1->field_0x21b8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_005cabe1",
+      "severity": "mild",
+      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,puVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cac03);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_005cac03",
+      "severity": "mild",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cac03);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "while (iVar1 = _fgetc(DAT_007bc034), -1 < iVar1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(\"part status info closing brace\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 19,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `param_1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&param_1->owner`). Replace `param_1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "param_1 = (T *)&param_1->FIELD",
+      "severity": "moderate",
+      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "call_site_count": 8,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

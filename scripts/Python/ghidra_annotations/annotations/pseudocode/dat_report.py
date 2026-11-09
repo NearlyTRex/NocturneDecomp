@@ -14,6 +14,9 @@ from ghidra_annotations.util.log import log_info
 # =============================================================================
 
 _struct_size_cache = None
+# The tree the cache was built from; an --all-programs export moves to the next
+# program's tree, which has its own sizes
+_struct_size_cache_dir = None
 
 
 def build_struct_size_cache(pseudocode_src_dir):
@@ -26,9 +29,10 @@ def build_struct_size_cache(pseudocode_src_dir):
     """
     import json
 
-    global _struct_size_cache
-    if _struct_size_cache is not None:
+    global _struct_size_cache, _struct_size_cache_dir
+    if _struct_size_cache is not None and _struct_size_cache_dir == pseudocode_src_dir:
         return _struct_size_cache
+    _struct_size_cache_dir = pseudocode_src_dir
 
     # Derive data_types.json path: pseudocode_src_dir is .../pseudocode/src
     # so we need .../data_types/data_types.json

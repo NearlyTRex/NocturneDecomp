@@ -1,0 +1,309 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 70,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "raw_address_pointer_store",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "005a1b50",
+      "from_addr": "005a1b65",
+      "name": "core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2620",
+      "from_addr": "004d265a",
+      "name": "core_hero.cpp_FUN_004d2620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509af0",
+      "from_addr": "00509b05",
+      "name": "core_npc.cpp_CNPC_dtor_FUN_00509af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a530",
+      "from_addr": "0050a583",
+      "name": "core_passngr.cpp_CPassenger_dtor_FUN_0050a530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005274e0",
+      "from_addr": "00527533",
+      "name": "core_pryemorp.cpp_CPryeMorph_dtor_FUN_005274e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b540",
+      "from_addr": "0059b579",
+      "name": "core_spirbear.cpp_CSpiritBear_dtor_FUN_0059b540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599e40",
+      "from_addr": "00599e79",
+      "name": "core_spireagl.cpp_CSpiritEagle_dtor_FUN_00599e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a970",
+      "from_addr": "0059a9a9",
+      "name": "core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004101f0",
+      "from_addr": "00410205",
+      "name": "unkafter_bird.cpp_CBird_dtor_FUN_004101f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050ad40",
+    "address_range": [
+      [
+        "0050ad40",
+        "0050adc1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_dtor_FUN_0050ad40",
+    "signature": "CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_0050ad40(CPathMap *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a54c0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005a54c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01ec1518",
+      "name": "DAT_01ec1518",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "00410205",
+        "call_type": "direct",
+        "caller": "unkafter_bird.cpp_CBird_dtor_FUN_004101f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d265a",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d2620",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00509b05",
+        "call_type": "direct",
+        "caller": "core_npc.cpp_CNPC_dtor_FUN_00509af0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050a583",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_dtor_FUN_0050a530",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527533",
+        "call_type": "direct",
+        "caller": "core_pryemorp.cpp_CPryeMorph_dtor_FUN_005274e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00599e79",
+        "call_type": "direct",
+        "caller": "core_spireagl.cpp_CSpiritEagle_dtor_FUN_00599e40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059a9a9",
+        "call_type": "direct",
+        "caller": "core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059a9b9",
+        "call_type": "direct",
+        "caller": "core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059b579",
+        "call_type": "direct",
+        "caller": "core_spirbear.cpp_CSpiritBear_dtor_FUN_0059b540",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059b589",
+        "call_type": "direct",
+        "caller": "core_spirbear.cpp_CSpiritBear_dtor_FUN_0059b540",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.229166666666667,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 48,
+      "INT_ADD": 20,
+      "INT_AND": 25,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 24,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 12,
+      "INT_SUB": 12,
+      "INT_XOR": 3,
+      "LOAD": 12,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 203
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 16,
+      "match": "*(CPathMap **)(iVar2 + 0x1ec151c",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CPathMap **)(iVar2 + 0x1ec151c)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((_DAT_01ec1518 - iVar3) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 18,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPathMap",
+        "offset": 8,
+        "vtable_addr": "005e3184"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

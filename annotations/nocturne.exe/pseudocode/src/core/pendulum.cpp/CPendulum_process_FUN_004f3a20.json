@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 21,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 28,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
@@ -89,7 +71,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -107,31 +89,31 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "g_CDemonSet_01e57284.characters[0]",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "g_CDemonSet_01e57284.characters[1]",
+      "name": "g_CDemonSetInstance.characters[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f40",
-      "name": "g_CDemonSet_01e57284.characters[2]",
+      "name": "g_CDemonSetInstance.characters[2]",
       "type": "undefined4",
       "value": null
     }
@@ -214,9 +196,9 @@
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->characters + iVar3);",
+      "text": "actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar3);",
       "type": "pointer_cast"
     },
     {

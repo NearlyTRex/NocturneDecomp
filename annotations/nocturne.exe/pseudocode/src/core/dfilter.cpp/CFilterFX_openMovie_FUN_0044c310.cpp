@@ -45,7 +45,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(CFilterFX *this_p
     return;
   }
   this_ptr_00 = core_dfilter_cpp_CFilterCache_findFilter_FUN_0044be60
-                          (0x014B8DE8,"movscrn.raw");
+                          (g_CFilterCachePtr,"movscrn.raw");
   core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(this_ptr_00,"movscrn.raw");
   return;
 }

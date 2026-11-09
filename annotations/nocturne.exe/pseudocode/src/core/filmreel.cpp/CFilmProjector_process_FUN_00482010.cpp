@@ -16,7 +16,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CFilmProjecto
   
   if ((this_ptr->base).triggered == 0) {
     if (this_ptr->prev_dest_state != 0) {
-      core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(0x014B98EC,(char *)0x0);
+      core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(g_CFilterFXPtr,(char *)0x0);
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
       uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"35-end.wav");
@@ -36,7 +36,7 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CFilmProjecto
         g_CurrentLineNumber = 286;
         core_main_c_displayErrorAndQuit_FUN_004c8440("CFilmProjector::Need to put CFilmReel in place");
       }
-      core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(0x014B98EC,(char *)&pCVar3[2].orient);
+      core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(g_CFilterFXPtr,(char *)&pCVar3[2].orient);
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
       uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"35-start.wav");

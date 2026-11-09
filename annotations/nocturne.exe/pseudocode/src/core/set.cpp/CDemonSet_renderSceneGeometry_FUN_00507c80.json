@@ -1,58 +1,15 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 19,
-        "message": "use of undeclared identifier 'DAT_005be36c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 68,
-        "message": "use of undeclared identifier 'PTR_DAT_005b0674'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 71,
-        "message": "no matching function for call to 'core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800'"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 72,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 73,
-        "message": "no matching function for call to 'core_water_cpp_CWater_render_FUN_00550cb0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 76,
-        "message": "no matching function for call to 'core_terrain_cpp_CTerrain_render_FUN_00549310'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 189,
+    "complexity_score": 154,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 104,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_constant",
       "shadow_pointer_walk",
       "undefined_data"
     ],
@@ -228,9 +185,9 @@
     },
     {
       "addr": "005c11ec",
-      "name": "DAT_005c11ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "02dd1210"
     },
     {
       "addr": "01b4d738",
@@ -246,13 +203,13 @@
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     },
     {
       "addr": "02dd1210",
-      "name": "g_CWater_02dd1210",
+      "name": "g_CWaterInstance",
       "type": "CWater",
       "value": null
     }
@@ -453,30 +410,6 @@
       "severity": "mild",
       "text": "else if ((DAT_005be378 != 0) &&",
       "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 64,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "(core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(0x02DD1210),",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 65,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "0x02DD1210->wave_animation_enabled == 0)) {",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 66,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,1);",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

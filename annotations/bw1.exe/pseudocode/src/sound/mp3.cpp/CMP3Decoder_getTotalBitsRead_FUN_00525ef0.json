@@ -1,0 +1,202 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 19,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 8
+  },
+  "cross_references": [
+    {
+      "addr": "0052b450",
+      "from_addr": "0052ba54",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528410",
+      "from_addr": "005284b3",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00525ef0",
+    "address_range": [
+      [
+        "00525ef0",
+        "00525efa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_00525ef0",
+    "signature": "uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00525ef0(CMP3Decoder *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "0052ba54",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0052ba62",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0052bbcc",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005284b3",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005284e5",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00528558",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00528a09",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00528a1d",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00528a30",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00528a86",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 3,
+      "LOAD": 3,
+      "RETURN": 1
+    },
+    "pcode_op_count": 9
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x1314",
+      "severity": "mild",
+      "text": "return *(uint *)&this_ptr->field_0x1314;",
+      "type": "unnamed_field"
+    }
+  ]
+}

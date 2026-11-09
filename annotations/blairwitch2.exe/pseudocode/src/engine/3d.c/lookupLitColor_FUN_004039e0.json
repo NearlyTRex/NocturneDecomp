@@ -1,0 +1,176 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 7,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "00404b00",
+      "from_addr": "00404b7e",
+      "name": "engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00406450",
+      "from_addr": "00406675",
+      "name": "engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00404860",
+      "from_addr": "004049f0",
+      "name": "engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004066f0",
+      "from_addr": "0040675f",
+      "name": "engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_004066f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403af0",
+      "from_addr": "00403b5f",
+      "name": "engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403af0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004039e0",
+    "address_range": [
+      [
+        "004039e0",
+        "00403a16"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_lookupLitColor_FUN_004039e0",
+    "signature": "uint __cdecl engine_3d_c_lookupLitColor_FUN_004039e0(int color_value,int lighting_value)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00403b5f",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403af0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004049f0",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404860",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00404b7e",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404b00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00406675",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040675f",
+        "call_type": "direct",
+        "caller": "engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_004066f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 13.478260869565217,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_2COMP": 1,
+      "INT_ADD": 9,
+      "INT_AND": 95,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 34,
+      "INT_LEFT": 12,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 30,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 26,
+      "INT_SUB": 6,
+      "INT_XOR": 6,
+      "LOAD": 3,
+      "POPCOUNT": 14,
+      "RETURN": 2
+    },
+    "pcode_op_count": 310
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "lighting_value",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

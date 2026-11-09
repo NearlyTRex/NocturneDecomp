@@ -1,67 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01c78acc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01c78ad4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 78,
-        "line": 19,
-        "message": "use of undeclared identifier 'DAT_005b9360'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_01c78ad0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 26,
-        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 30,
-        "message": "no matching function for call to 'shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01c78ac8'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 92,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 31,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -126,7 +78,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -203,15 +155,15 @@
       "line": 12,
       "match": "DAT_005b9360",
       "severity": "mild",
-      "text": "(g_CEditorTools_PTR_005b6d50,\"Enter Movie FPS\",(float *)&DAT_005b9360,1",
+      "text": "(g_CEditorToolsPtr,\"Enter Movie FPS\",(float *)&DAT_005b9360,1,0.25,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 16,
       "match": "DAT_01c78ad0",
       "severity": "mild",
-      "text": "(int *)&DAT_01c78ad0,1,0,99999,1);",
+      "text": "(g_CEditorToolsPtr,\"Enter number of frames to record (or 0 to record until CTRL+V is pressed)\",(int *)&DAT_01c78ad0,1,",
       "type": "undefined_data"
     },
     {
@@ -219,15 +171,15 @@
       "line": 20,
       "match": "DAT_005b9364",
       "severity": "mild",
-      "text": "(g_CEditorTools_PTR_005b6d50,\"Enter image width\",&DAT_005b9364,1,1,",
+      "text": "(g_CEditorToolsPtr,\"Enter image width\",&DAT_005b9364,1,1,9999,1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 23,
       "match": "DAT_005b9368",
       "severity": "mild",
-      "text": "(g_CEditorTools_PTR_005b6d50,\"Enter image height\",&DAT_005b9368,1",
+      "text": "(g_CEditorToolsPtr,\"Enter image height\",&DAT_005b9368,1,1,9999,1)",
       "type": "undefined_data"
     }
   ]

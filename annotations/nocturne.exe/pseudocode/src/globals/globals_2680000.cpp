@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CDeformableModel[64]
-CDeformableModel g_CDeformableModel_ARRAY_0268cef4[64] = {};
+CDeformableModel g_DeformableModelPool[64] = {};
 
 // CVector3f[3000]
 CVector3f g_CVector3f_ARRAY_02684234[3000] = {};

@@ -21,8 +21,8 @@
 ;   TerminatedCString s_Error_processing_script_0058e411
 ;   TerminatedCString s_core_script_cpp_0058e44e
 ;   TerminatedCString s_Infinite_loop_detected_i_0058e461
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   CGame g_CGame_01c775ec
+;   CGame* g_CGamePtr = 01c775ec
+;   CGame g_CGameInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e56418
@@ -106,8 +106,8 @@ section .text
     CMP dword ptr [0x01e56c24],0x0      ; 004ff1fb | DAT_01e56c24
     JZ 0x004ff21b                       ; 004ff202
         ;   XREF to: 004ff21b (CONDITIONAL_JUMP)  ; LAB_004ff21b
-    MOV ECX,dword ptr [0x005b9354]      ; 004ff204 | g_CGame_PTR_005b9354
-    PUSH ECX                            ; 004ff20a | g_CGame_01c775ec
+    MOV ECX,dword ptr [0x005b9354]      ; 004ff204 | g_CGamePtr
+    PUSH ECX                            ; 004ff20a | g_CGameInstance
     XOR ESI,ESI                         ; 004ff20b
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0 ; 004ff20d
         ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame * this_ptr)

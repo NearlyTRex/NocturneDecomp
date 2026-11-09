@@ -1,0 +1,480 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 222,
+    "cross_reference_count": 32,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 18,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "0040f040",
+      "from_addr": "0040f07d",
+      "name": "core_armour.cpp_FUN_0040f040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004124a0",
+      "from_addr": "004124dd",
+      "name": "core_batcreat.cpp_FUN_004124a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00413e60",
+      "from_addr": "00413e9d",
+      "name": "core_batman.cpp_FUN_00413e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414b10",
+      "from_addr": "00414b4d",
+      "name": "core_beast.cpp_FUN_00414b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415250",
+      "from_addr": "0041528d",
+      "name": "core_biggs.cpp_FUN_00415250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00419c50",
+      "from_addr": "00419cb1",
+      "name": "core_boneguy.cpp_FUN_00419c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041e800",
+      "from_addr": "0041e87e",
+      "name": "core_bride.cpp_FUN_0041e800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00439830",
+      "from_addr": "0043987d",
+      "name": "core_cow.cpp_FUN_00439830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045eab0",
+      "from_addr": "0045eafd",
+      "name": "core_dog.cpp_FUN_0045eab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464cc0",
+      "from_addr": "00464d96",
+      "name": "core_dracbrid.cpp_FUN_00464cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046df70",
+      "from_addr": "0046dfbd",
+      "name": "core_drone.cpp_FUN_0046df70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0b40",
+      "from_addr": "004c0b7d",
+      "name": "core_gargoyle.cpp_FUN_004c0b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c39b0",
+      "from_addr": "004c3a37",
+      "name": "core_ghoul.cpp_FUN_004c39b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ce590",
+      "from_addr": "004ce5d0",
+      "name": "core_hero.cpp_FUN_004ce590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2df0",
+      "from_addr": "004d2fd5",
+      "name": "core_hostage.cpp_CHostage_archive_FUN_004d2df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d4330",
+      "from_addr": "004d436d",
+      "name": "core_hotdemon.cpp_FUN_004d4330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7a50",
+      "from_addr": "004d7a8d",
+      "name": "core_imp.cpp_FUN_004d7a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1080",
+      "from_addr": "004e10cd",
+      "name": "core_larva.cpp_FUN_004e1080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f1c20",
+      "from_addr": "004f1cb0",
+      "name": "core_mimic.cpp_FUN_004f1c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ffb70",
+      "from_addr": "004ffbc1",
+      "name": "core_mobster.cpp_FUN_004ffb70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005109e0",
+      "from_addr": "00510a21",
+      "name": "core_npc.cpp_FUN_005109e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00511a70",
+      "from_addr": "00511ae5",
+      "name": "core_passngr.cpp_FUN_00511a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b830",
+      "from_addr": "0052b869",
+      "name": "core_sentinel.cpp_FUN_0052b830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e860",
+      "from_addr": "0053e8b1",
+      "name": "core_shadow.cpp_FUN_0053e860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054a710",
+      "from_addr": "0054a761",
+      "name": "core_smiley.cpp_FUN_0054a710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fff0",
+      "from_addr": "0057002d",
+      "name": "core_succubus.cpp_FUN_0056fff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572f90",
+      "from_addr": "00572fca",
+      "name": "core_tentacle.cpp_FUN_00572f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583080",
+      "from_addr": "00583109",
+      "name": "core_vampboss.cpp_FUN_00583080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058d7e0",
+      "from_addr": "0058d831",
+      "name": "core_werewolf.cpp_FUN_0058d7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599160",
+      "from_addr": "005991c7",
+      "name": "core_zombie.cpp_FUN_00599160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059fc10",
+      "from_addr": "0059fc65",
+      "name": "unkafter_basicene.cpp_FUN_0059fc10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437b80",
+      "from_addr": "00437bc7",
+      "name": "unkafter_conveyor.cpp_FUN_00437b80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040bb60",
+    "address_range": [
+      [
+        "0040bb60",
+        "0040bc4b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_archiveMotionState_FUN_0040bb60",
+    "signature": "void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b050",
+      "is_variadic": false,
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040b050"
+    },
+    {
+      "addr": "0040b380",
+      "is_variadic": false,
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b380"
+    },
+    {
+      "addr": "005041b0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_load_FUN_005041b0"
+    },
+    {
+      "addr": "00504250",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00504250"
+    },
+    {
+      "addr": "005b8180",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005b8180"
+    },
+    {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cab51",
+      "name": "s_motion_state_info_openin_005cab51",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cab71",
+      "name": "s_motion_state_info_closin_005cab71",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cab91",
+      "name": "s_s_s_005cab91",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cab9c",
+      "name": "DAT_005cab9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609590",
+      "name": "DAT_00609590",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "007bc034",
+      "name": "DAT_007bc034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc038",
+      "name": "DAT_007bc038",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.061728395061729,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 6,
+      "COPY": 63,
+      "INT_ADD": 26,
+      "INT_AND": 34,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 32,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 16,
+      "INT_SUB": 38,
+      "LOAD": 16,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 34
+    },
+    "pcode_op_count": 329
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_007bc038",
+      "severity": "mild",
+      "text": "if (DAT_007bc038 != 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_motion_cpp_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "core_motion_cpp_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "core_motion_cpp_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab9c,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005cab9c",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab9c,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cab9c,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(\"motion state info opening brace\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_motion_cpp_CMotionController_load_FUN_005041b0(param_1,DAT_007bc034);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "core_motion_cpp_CMotionController_load_FUN_005041b0(param_1,DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(\"motion state info closing brace\",param_2);",
+      "type": "unnamed_param"
+    }
+  ]
+}

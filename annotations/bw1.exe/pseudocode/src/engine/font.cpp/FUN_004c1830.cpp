@@ -1,0 +1,33 @@
+// Name: engine_font.cpp_FUN_004c1830
+// Address: 004c1830
+// Address Range: [[004c1830, 004c18a7]]
+// Convention: unknown
+// Signature: void engine_font_cpp_FUN_004c1830(CBitFont *param_1)
+
+#include "nocturne.h"
+
+void engine_font_cpp_FUN_004c1830(CBitFont *param_1)
+
+{
+  CBitFont *pCVar1;
+  CBitFont *pCVar2;
+  
+  pCVar1 = param_1;
+  do {
+    pCVar2 = pCVar1 + 4;
+    FUN_005c0336(*(void **)(pCVar1 + 0x194));
+    *(uint *)(pCVar1 + 0x194) = 0;
+    pCVar1 = pCVar2;
+  } while (pCVar2 != param_1 + 0x10);
+  if (*(int *)(param_1 + 0x1dcc) != 0) {
+    FUN_005c09f0(*(int *)(param_1 + 0x1dcc));
+    *(uint *)(param_1 + 0x1dcc) = 0;
+  }
+  if (*(int *)(param_1 + 0x1dd4) == 0) {
+    engine_font_cpp_FUN_004c0b80(param_1);
+    return;
+  }
+  FUN_005c09f0(*(int *)(param_1 + 0x1dd4));
+  engine_font_cpp_FUN_004c0b80(param_1);
+  return;
+}

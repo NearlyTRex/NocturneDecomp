@@ -1,0 +1,231 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 25,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d49df",
+      "name": "core_game.cpp_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ec60",
+      "from_addr": "0054ed29",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0054ec60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005558f0",
+      "from_addr": "0055591d",
+      "name": "core_set.cpp_FUN_005558f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055c5f0",
+      "from_addr": "0055c665",
+      "name": "core_setutil.cpp_C3DSCamera_apply_FUN_0055c5f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ae580",
+      "from_addr": "005ae7fd",
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ae190",
+      "from_addr": "005ae407",
+      "name": "core_weather.cpp_FUN_005ae190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00453540",
+    "address_range": [
+      [
+        "00453540",
+        "00453559"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00453540",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00453540(CDemonCamera *this_ptr,float intensity)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d78ff",
+      "name": "DAT_005d78ff",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "004d49df",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054ed29",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0054ec60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055591d",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005558f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055c665",
+        "call_type": "direct",
+        "caller": "core_setutil.cpp_C3DSCamera_apply_FUN_0055c5f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ae407",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_FUN_005ae190",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ae41f",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_FUN_005ae190",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ae519",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_FUN_005ae190",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ae7fd",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.166666666666667,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 20,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 4,
+      "INT_SUB": 1,
+      "LOAD": 3,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 2,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 37
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "intensity",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

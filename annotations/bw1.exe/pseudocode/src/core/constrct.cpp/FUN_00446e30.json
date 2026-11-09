@@ -1,0 +1,588 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 201,
+    "complexity_score": 489,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 69,
+    "suspect_count": 40,
+    "suspect_types": [
+      "primitive_walker_cast",
+      "unnamed_field",
+      "unnamed_param",
+      "warning_type_propagation"
+    ],
+    "total_lines": 270
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00446e30",
+    "address_range": [
+      [
+        "00446e30",
+        "0044708a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_constrct.cpp_FUN_00446e30",
+    "signature": "void core_constrct_cpp_FUN_00446e30(CEnemy *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b3a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveQuaternion_FUN_0040b3a0"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040b1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b1c0"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040b870"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040b960"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d6f9d",
+      "name": "s_speed_005d6f9c+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6fa3",
+      "name": "s_modelName_005d6fa3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6fad",
+      "name": "s_motion_state_005d6fad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6fba",
+      "name": "s_fallEvent_005d6fba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6fc4",
+      "name": "s_mistState_005d6fc4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6fce",
+      "name": "s_vanishTimer_005d6fce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6fda",
+      "name": "s_newPos_005d6fda",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6fe1",
+      "name": "s_deathEvent_005d6fe1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6fec",
+      "name": "s_recombineTime_005d6fec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6ffa",
+      "name": "s_blownUp_005d6ffa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7002",
+      "name": "s_param_005d7002",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7008",
+      "name": "s_boxCount_005d7008",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7011",
+      "name": "s_partStatus_005d7011",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d701c",
+      "name": "s_boxListPos_005d701c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7027",
+      "name": "s_boxListOrient_005d7027",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7035",
+      "name": "s_boxListDestOrient_005d7035",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7047",
+      "name": "s_boxListStartOrient_005d7047",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d705a",
+      "name": "s_sourcePos_005d705a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7064",
+      "name": "s_boxListPart_005d7064",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00611148",
+      "name": "g_CConstructClassVersion",
+      "type": "int",
+      "value": "0x3"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.923976608187134,
+    "instruction_count": 171,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 20,
+      "CBRANCH": 5,
+      "COPY": 108,
+      "INT_ADD": 93,
+      "INT_AND": 107,
+      "INT_CARRY": 44,
+      "INT_EQUAL": 108,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 45,
+      "INT_SEXT": 3,
+      "INT_SLESS": 53,
+      "INT_SUB": 68,
+      "INT_XOR": 2,
+      "LOAD": 35,
+      "POPCOUNT": 53,
+      "RETURN": 3,
+      "STORE": 73,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 842
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_constrct_cpp_FUN_00446e30(CEnemy *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_enemy_cpp_CEnemy_archive_FUN_004a0520(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1->field_0xc1d0,\"@speed\" + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0xc1d0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1->field_0xc1d0,\"@speed\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&param_1->field_0x158,\"modelName\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&param_1->field_0x158,\"modelName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&param_1->field_0x158,\"motion state\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&param_1->field_0x158,\"motion state\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440((char *)(param_1 + 1),\"fallEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&param_1[1].field_0xc0,\"deathEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0xc0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&param_1[1].field_0xc0,\"deathEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1[1].field_0x124,\"recombineTime\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1[1].field_0x124,\"recombineTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 43,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[1].field_0x7f0,\"blownUp\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[1].field_0x7f0,\"blownUp\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x7f0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[1].field_0x7f0,\"blownUp\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1[1].field_0x7f4,\"param\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x7f4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&param_1[1].field_0x7f4,\"param\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 45,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[1].field_0x12c,\"boxCount\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[1].field_0x12c,\"boxCount\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x12c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&param_1[1].field_0x12c,\"boxCount\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&param_1->field_0x158,\"partStatus\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&param_1->field_0x158,\"partStatus\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[1].field_0x12c < 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x12c",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[1].field_0x12c < 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puStack_14 = &param_1[1].field_0x130;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x130",
+      "severity": "mild",
+      "text": "puStack_14 = &param_1[1].field_0x130;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puStack_10 = &param_1[1].field_0x168;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "puStack_10 = &param_1[1].field_0x168;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar3 = &param_1[1].field_0x174;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "puVar3 = &param_1[1].field_0x174;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar2 = &param_1[1].field_0x158;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "puVar2 = &param_1[1].field_0x158;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puStack_c = &param_1[1].field_0x13c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x13c",
+      "severity": "mild",
+      "text": "puStack_c = &param_1[1].field_0x13c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar4 = &param_1[1].field_0x148;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "puVar4 = &param_1[1].field_0x148;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar1 < *(int *)&param_1[1].field_0x12c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0x12c",
+      "severity": "mild",
+      "text": "} while (iVar1 < *(int *)&param_1[1].field_0x12c);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "005fddd4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

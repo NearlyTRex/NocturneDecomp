@@ -1,0 +1,19 @@
+// Name: core_minecar.cpp_staticInit_FUN_00510f20
+// Address: 00510f20
+// Address Range: [[00510f20, 00510f5a]]
+// Convention: unknown
+// Signature: void core_minecar_cpp_staticInit_FUN_00510f20(void)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void core_minecar_cpp_staticInit_FUN_00510f20(void)
+
+{
+  unkafter_minecar_cpp_CMini3D_ctor_FUN_00510f60(&g_CMini3DInstance);
+  _atexit();
+  __arrinit(0x1d25008,0x32);
+  _DAT_01d25f34 = _DAT_00603c94;
+  return;
+}

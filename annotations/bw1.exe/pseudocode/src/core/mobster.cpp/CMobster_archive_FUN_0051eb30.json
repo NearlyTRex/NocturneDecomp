@@ -1,0 +1,298 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 102,
+    "complexity_score": 143,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 11,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051eb30",
+    "address_range": [
+      [
+        "0051eb30",
+        "0051ec57"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mobster.cpp_CMobster_archive_FUN_0051eb30",
+    "signature": "void __cdecl core_mobster_cpp_CMobster_archive_FUN_0051eb30(CMobster *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040bce0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveClothList_FUN_0040bce0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040b870"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9e9a",
+      "name": "s_speed_005e9e99+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e9ea0",
+      "name": "s_modelName_005e9ea0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9eaa",
+      "name": "s_guardDistance_005e9eaa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9eb8",
+      "name": "s_motion_state_005e9eb8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ec5",
+      "name": "s_clothList_005e9ec5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ecf",
+      "name": "s_postMode_005e9ecf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ed8",
+      "name": "s_ourPost_005e9ed8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ee0",
+      "name": "s_vehicle_005e9ee0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ee8",
+      "name": "s_sideOfCar_005e9ee8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ef2",
+      "name": "s_holdPosFlag_005e9ef2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9efe",
+      "name": "s_holdPosCond_005e9efe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f7c4",
+      "name": "g_CMobsterClassVersion",
+      "type": "int",
+      "value": "0x7"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.220779220779221,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 5,
+      "COPY": 46,
+      "INT_ADD": 28,
+      "INT_AND": 36,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 37,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 18,
+      "INT_SUB": 41,
+      "LOAD": 5,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 36
+    },
+    "pcode_op_count": 325
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMobster *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0xc1d0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1d0,\"?speed\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"modelName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xc1e0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1e0,\"guardDistance\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&this_ptr->field_0x158,\"motion state\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2ca0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveClothList_FUN_0040bce0(&this_ptr->field_0x2ca0,\"clothList\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0xc284",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc284,\"postMode\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0xc288",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0xc288,\"ourPost\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0xc28c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0xc28c,\"vehicle\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xc290",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc290,\"sideOfCar\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xc294",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc294,\"holdPosFlag\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0xc298",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0xc298,\"holdPosCond\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "00603d74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

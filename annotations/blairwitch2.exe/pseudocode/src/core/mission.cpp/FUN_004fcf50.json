@@ -1,0 +1,113 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "004fb590",
+      "from_addr": "004fba97",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fcf50",
+    "address_range": [
+      [
+        "004fcf50",
+        "004fcf63"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_mission.cpp_FUN_004fcf50",
+    "signature": "void core_mission_cpp_FUN_004fcf50(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044fc50",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_FUN_0044fc50"
+    },
+    {
+      "addr": "00548f80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00548f80"
+    },
+    {
+      "addr": "00549090",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00549090"
+    },
+    {
+      "addr": "00575010",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_FUN_00575010"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fba97",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.5,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 3,
+      "INT_SUB": 3,
+      "STORE": 3
+    },
+    "pcode_op_count": 10
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

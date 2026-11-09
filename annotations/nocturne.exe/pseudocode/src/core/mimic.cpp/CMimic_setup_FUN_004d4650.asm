@@ -52,8 +52,8 @@ section .text
     PUSH EBP                            ; 004d4653
     SUB ESP,0x18                        ; 004d4654
     MOV EBX,dword ptr [ESP + 0x2c]      ; 004d4657
-    MOV EAX,[0x005bdee0]                ; 004d465b | g_CNetGame_PTR_005bdee0
-    CMP dword ptr [EAX],0x0             ; 004d4660 | g_CNetGame_01cea280
+    MOV EAX,[0x005bdee0]                ; 004d465b | g_CNetGamePtr
+    CMP dword ptr [EAX],0x0             ; 004d4660 | g_CNetGameInstance
     JNZ 0x004d49ba                      ; 004d4663
         ;   XREF to: 004d49ba (CONDITIONAL_JUMP)  ; LAB_004d49ba
     MOV EAX,[0x01cae0e8]                ; 004d4669 | g_LocalHeroIndex

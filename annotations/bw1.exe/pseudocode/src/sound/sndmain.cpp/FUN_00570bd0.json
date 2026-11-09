@@ -1,0 +1,241 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 152,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 11,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "00570f30",
+      "from_addr": "005710b2",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570bd0",
+    "address_range": [
+      [
+        "00570bd0",
+        "00570c3c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00570bd0",
+    "signature": "void __cdecl sound_sndmain_cpp_FUN_00570bd0(CSfxSlot *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006232ec",
+      "name": "DAT_006232ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80710",
+      "name": "DAT_02c80710",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80718",
+      "name": "DAT_02c80718",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80750",
+      "name": "DAT_02c80750",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80758",
+      "name": "DAT_02c80758",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80790",
+      "name": "DAT_02c80790",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80798",
+      "name": "DAT_02c80798",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005710b2",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.487179487179487,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 88,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 16,
+      "INT_AND": 19,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 214
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_006232ec",
+      "severity": "mild",
+      "text": "if (0 < DAT_006232ec) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02c80710",
+      "severity": "mild",
+      "text": "fVar4 = (float10)*(double *)&this_ptr->field_0x4 - (float10)*(double *)(&DAT_02c80710 + iVar2)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar4 = (float10)*(double *)&this_ptr->field_0x4 - (float10)*(double *)(&DAT_02c80710 + iVar2)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_02c80750",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(double *)&this_ptr->field_0xc - (float10)*(double *)(&DAT_02c80750 + iVar2)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(double *)&this_ptr->field_0xc - (float10)*(double *)(&DAT_02c80750 + iVar2)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "fVar6 = (float10)*(double *)&this_ptr->field_0x14 -",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02c80790",
+      "severity": "mild",
+      "text": "(float10)*(double *)(&DAT_02c80790 + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x70",
+      "severity": "mild",
+      "text": "*(float *)&pCVar1->field_0x70 = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar1 = (CSfxSlot *)&pCVar1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_006232ec",
+      "severity": "mild",
+      "text": "} while (iVar3 < DAT_006232ec);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CSfxSlot *)&pCVar1->field_0x4;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

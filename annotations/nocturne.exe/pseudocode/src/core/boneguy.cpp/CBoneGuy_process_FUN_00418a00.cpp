@@ -264,7 +264,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_00418a00(CBoneGuy *this_ptr,f
           pCVar2 = &(this_ptr->base).base.model;
           if (iVar8 < 0) {
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
+                      (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
           }
           else {
@@ -377,7 +377,7 @@ LAB_0041907c:
       if (EVar5 != WALK_STATE_NO_PATH) goto LAB_0041907c;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -395,7 +395,7 @@ LAB_0041907c:
        (pCVar12 = (CBoneGuy *)(*(((pCVar6->base).vtable._uc)->_uc).getGrabber)(pCVar6),
        pCVar12 == this_ptr)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;

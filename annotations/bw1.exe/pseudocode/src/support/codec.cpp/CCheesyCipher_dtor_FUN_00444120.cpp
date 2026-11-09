@@ -1,0 +1,28 @@
+// Name: support_codec.cpp_CCheesyCipher_dtor_FUN_00444120
+// Address: 00444120
+// Address Range: [[00444120, 0044416d]]
+// Convention: unknown
+// Signature: CCheesyCipher * support_codec_cpp_CCheesyCipher_dtor_FUN_00444120(CCheesyCipher *this_ptr,uint flags)
+
+#include "nocturne.h"
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+CCheesyCipher * support_codec_cpp_CCheesyCipher_dtor_FUN_00444120(CCheesyCipher *this_ptr,uint flags)
+
+{
+  CCheesyCipher *pCVar1;
+  void *ptr;
+  
+  if ((flags & 4) != 0) {
+    ptr = (void *)__vec_delete(this_ptr,&g_CCheesyCipherTypeInfo);
+    FUN_005c0336(ptr);
+    return this_ptr;
+  }
+  pCVar1 = (CCheesyCipher *)support_codec_cpp_CCodec_dtor_FUN_00442bb0((CCodec *)this_ptr,1);
+  if ((flags & 2) == 0) {
+    return pCVar1;
+  }
+  FUN_005c0344(pCVar1);
+  return pCVar1;
+}

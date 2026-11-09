@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CBloodParticle[256]
-CBloodParticle g_CBloodParticle_ARRAY_01c78cec[256] = {};
+CBloodParticle g_BloodParticles[256] = {};
 
 // CBloodSplat[2000]
 CBloodSplat g_CBloodSplat_ARRAY_01c7ccf4[2000] = {};
@@ -24,19 +24,19 @@ CDemonActorType g_CGhoulActorType_01c78bd8 = {};
 CDemonActorType g_CGlassActorType_01c78c40 = {};
 
 // CDemonLight
-CDemonLight g_CDemonLight_01c74640 = {};
+CDemonLight g_CDemonLightInstance = {};
 
 // CForceFeedback
 CForceFeedback g_CForceFeedback_01c70f74 = {};
 
 // CGame
-CGame g_CGame_01c775ec = {};
+CGame g_CGameInstance = {};
 
 // CGore
-CGore g_CGore_01c78c7c = {};
+CGore g_CGoreInstance = {};
 
 // CPickList
-CPickList g_CPickList_01c78424 = {};
+CPickList g_CPickList = {};
 
 // CVector3f
 CVector3f CVector3f_01c71364 = {};

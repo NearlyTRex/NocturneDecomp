@@ -1,0 +1,25 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void core_larva_cpp_staticInit_FUN_004fd8f0(void)
+;
+;
+; Called Functions:
+;   core_actor.cpp_registerActorClass_FUN_0040c160
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x1c3f668                      ; 004fd8f0
+        ;   Label: core_larva.cpp_staticInit_FUN_004fd8f0
+    PUSH 0x2                            ; 004fd8f5
+    PUSH 0x61f2bc                       ; 004fd8f7
+    PUSH 0x4fd920                       ; 004fd8fc
+    PUSH 0x5e6bab                       ; 004fd901
+    PUSH 0x1d1bce0                      ; 004fd906
+    CALL core_actor.cpp_registerActorClass_FUN_0040c160 ; 004fd90b
+        ;   XREF to: 0040c160 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c160(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factory_func, int * max_version, ...)
+    ADD ESP,0x18                        ; 004fd910
+    RET                                 ; 004fd913
+

@@ -31,6 +31,9 @@ def parallel_scan_ranges(currentProgram, worker_func, extra_args=None, num_threa
     Returns:
         List of all results from workers (flattened if workers return lists)
 
+    A worker that raises fails the scan, once the others finish: its range's
+    results are missing, so the export would be incomplete.
+
     The worker_func signature should be:
         def my_worker(start_addr, end_addr, arg1, arg2, ...):
             # Process addresses in range
@@ -51,15 +54,12 @@ def parallel_scan_ranges(currentProgram, worker_func, extra_args=None, num_threa
         futures = [executor.submit(worker_func, *args) for args in worker_args]
 
         for future in as_completed(futures):
-            try:
-                result = future.result()
-                # Flatten if result is a list
-                if isinstance(result, list):
-                    all_results.extend(result)
-                else:
-                    all_results.append(result)
-            except Exception as e:
-                log_info("Worker error: %s" % str(e))
+            result = future.result()
+            # Flatten if result is a list
+            if isinstance(result, list):
+                all_results.extend(result)
+            else:
+                all_results.append(result)
 
     return all_results
 

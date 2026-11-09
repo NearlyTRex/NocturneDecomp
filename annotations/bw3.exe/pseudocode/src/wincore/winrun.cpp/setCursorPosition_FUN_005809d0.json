@@ -1,0 +1,194 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 23,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 19
+  },
+  "cross_references": [
+    {
+      "addr": "004ba2e0",
+      "from_addr": "004ba34b",
+      "name": "core_game.cpp_FUN_004ba2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba490",
+      "from_addr": "004ba528",
+      "name": "core_game.cpp_FUN_004ba490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e80f0",
+      "from_addr": "004e817a",
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485b00",
+      "from_addr": "00485ba7",
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00485b00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005809d0",
+    "address_range": [
+      [
+        "005809d0",
+        "005809f3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_setCursorPosition_FUN_005809d0",
+    "signature": "void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005809d0(int x,int y)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000042",
+      "is_variadic": false,
+      "name": "SetCursorPos"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b34f4",
+      "name": "PTR_SetCursorPos_005b34f4",
+      "type": "void*",
+      "value": "001b3bc8"
+    },
+    {
+      "addr": "01c5fadc",
+      "name": "DAT_01c5fadc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "DAT_01c5fae0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00485ba7",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00485b00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00485d23",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00485b00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ba528",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004ba490",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ba34b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004ba2e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e817a",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.7,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 9,
+      "INT_ADD": 5,
+      "INT_SUB": 3,
+      "LOAD": 5,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

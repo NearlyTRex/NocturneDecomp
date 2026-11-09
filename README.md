@@ -5,201 +5,70 @@
 [![Latest release](https://img.shields.io/github/v/release/NearlyTRex/NocturneDecomp)](https://github.com/NearlyTRex/NocturneDecomp/releases/latest)
 [![License: 0BSD (original work)](https://img.shields.io/badge/license-0BSD%20(original%20work)-blue)](LICENSE)
 
-A work-in-progress reverse engineering and decompilation project for the 1999 game **Nocturne**,
-aimed at understanding its engine and getting it running on modern systems, and a clean C++
-recreation of the game engine built from that decompilation.
+A reverse engineering and decompilation of the 1999 game **Nocturne**, playable on modern
+systems, and a clean C++ recreation of its engine built from that decompilation.
 
-## About
-
-This project uses [Ghidra](https://ghidra-sre.org/) to decompile and analyse the Nocturne
-binaries, and pairs the result with a hand-written compatibility layer so the decompiled code
-can actually run.
-
-**This is not a byte-for-byte matching decompilation.** The aim is to reproduce the original
-game's *functionality* as faithfully as possible — playable on modern systems — not to
-regenerate an executable whose machine code matches the shipped binary. Decompiler artifacts are
-rewritten into readable, portable C/C++ that preserves observable behaviour; exact instruction
-selection, register allocation and stack layout are not preserved.
-
-**Two source trees, with separate jobs.**
-
-- **The decompilation** (`annotations/*/pseudocode/src/`) is the reference. Its goal is to run as
-  the original did, with as few edits as that takes.
-- **The recreation** (`recreation/`) is the game engine rewritten as clean, tested C++23, keeping
-  the original's structure and names. It is ported function by function from the decompilation, in
-  the order of the [recreation itinerary](docs/recreation-itinerary.md), and it is where the
-  enhanced version of the game will come from.
-
-**Faithful, and honest about where it isn't.** Where the decompilation currently departs from
-what the shipped binary does — fixing an original bug, adding a window mode, scaling the HUD past
-640x480 — the deviation sits behind a `NOCTURNE_AUTHENTIC_*` flag that restores the original
-behaviour, with both paths visible in the source. See
-[docs/authenticity-flags.md](docs/authenticity-flags.md). These inline enhancements and bug fixes
-are transitional: as the recreation takes over, they move there, and the decompilation returns to
-the original behaviour.
-
-**Portable C/C++ only — no inline assembly.** Architecture-specific code in the original (MMX
-SIMD loops, x87 FPU idioms, hand-rolled asm) is ported to equivalent scalar or standard-library
-C/C++, so the result builds on any target the toolchain supports rather than 32-bit x86 alone.
-The `.mmx.*` variants in the tree are reference captures of the original intent, never compiled.
-
-**Builds and runs as 64-bit.** Getting there meant removing the pointer-width assumptions the
-original was full of — pointers truncated through `int`, allocation sizes and serialisation
-written against a 4-byte pointer — so those are now flagged as suspects and fixed as they are
-found. There was a 32-bit lane once, layout-faithful down to the struct offset; it was retired
-because it was the only thing in the repository that needed an i386 multilib toolchain. The
-generated layout assertions that encode that 32-bit layout are still in the tree, guarded to
-run only when pointers are 4 bytes wide.
-
-**No game data is included.** The repository contains reverse-engineered documentation,
-annotations and source. Binaries, assets and data files are gitignored and are never required to
-build.
-
-**Licensed in two halves, because a decompilation cannot license what it was derived from.** The
-original work here — the shims, the build system, the tooling, the docs and the research — is
-0BSD, which is to say use it for anything without conditions. The reconstructed source under
-`annotations/*/pseudocode/src/` describes someone else's copyrighted program and is not covered:
-no rights in it are held here and none are granted. See [LICENSE](LICENSE).
+It reproduces the game's behaviour, not its machine code. It is 64-bit and portable, with no
+inline assembly, and every deviation from the original is behind a flag. No game data is
+included; you need your own copy. More in **[docs/about.md](docs/about.md)**.
 
 ## Status
 
-**Active research — the decompiled game builds and plays on Linux and Windows.** It is
-alpha-quality: mostly playable, with rough edges still being found and fixed.
+- **The decompilation is playable on Linux and Windows.** It is alpha quality: mostly
+  playable, with rough edges still being fixed. macOS and Arm Linux build but haven't been
+  played yet, so [testers are wanted](docs/ports.md).
+- **The recreation is being ported** in startup order, under a 100% coverage gate, and is not
+  playable yet. [Itinerary](docs/recreation-itinerary.md).
+- **The Ghidra annotation is ongoing** for `nocedit.exe`, `nocturne.exe`, `tridx7.dll` and the
+  three Blair Witch games. [Progress](docs/progress.md).
 
-The engine runs through SDL2-backed shims for DirectDraw, DirectSound, DirectInput and the Win32
-APIs it expects. Rendering no longer goes through an emulated DirectX 7: `trigl`, written
-directly against GL 3.3 core, implements the game's own renderer interface and is the only
-renderer in the build. Sound, music and FMV play; both the hardware path and the software
-rasteriser work.
-
-Beyond getting it running, work has moved on to quality-of-life and to fixing defects that
-shipped in the original — windowed and borderless modes, modern controller support, HUD and
-menu scaling above 640x480, a resolution list the menu can actually reach, netplay, and a
-catalogue of rendering bugs traced to their cause. The [research index](research/README.md)
-is the record of those investigations, several of which ended in a measured fix.
-
-The recreation is being ported now, and it is where the project is headed: a clean engine is
-where the bigger additions belong, such as more advanced graphics options and ports to new
-platforms. It builds and runs on its own, through SDL3 adapters behind platform interfaces, and
-its tests hold it at 100% line, function and branch coverage.
-[docs/recreation-itinerary.md](docs/recreation-itinerary.md) tracks how much of the game it
-covers, step by step.
-
-The Ghidra annotation is still active: types, names and signatures are still being found and
-corrected, and each fix is applied to both `nocedit.exe` and `nocturne.exe`. Porting the
-recreation turns up many of them, because every ported function is checked against its read
-sites in both binaries.
-
-Ongoing: porting the recreation, the annotation fixes above, remaining ASan/UBSan findings, the
-`nocturne.exe` function bodies (signatures imported, bodies unfinished), and the open items
-listed in the research documents.
-
-## Progress
-
-![Overall Progress](annotations/nocedit.exe/reports/overall_progress.svg)
-
-*"Complete" = function has clean decompilation (no suspect patterns) AND compiles successfully
-with clang++.*
-
-### Decompilation Details
-
-| Status | Breakdown |
-|:------:|:---------:|
-| [![Completion](annotations/nocedit.exe/reports/completion_pie.svg)](annotations/nocedit.exe/reports/all_files_decompilation.svg) | [![Suspects](annotations/nocedit.exe/reports/suspect_breakdown.svg)](annotations/nocedit.exe/reports/all_files_decompilation.svg) |
-
-*Click charts to see per-file breakdown. "Clean" = no decompiler artifacts (extraout_, unaff_,
-BADSPACEBASE, etc.).*
-
-### Compilation Details
-
-[![Compilation Status](annotations/nocedit.exe/reports/compilation_progress.svg)](annotations/nocedit.exe/reports/all_files_compilation.svg)
-
-*Click chart to see per-file breakdown. Compiled with clang++ -m32 -fsyntax-only.*
-
-## Building
+## Quick start
 
 ```sh
-./build.sh          # configure + build the default preset
-./run.sh            # launch it
+./build.sh          # configure and build the default preset
+./run.sh            # run it
+./recreation.sh     # build and run the recreation
 ```
 
-The default is a native 64-bit build with AddressSanitizer and UBSan. Syntax-only presets that
-never link are available too, and need nothing beyond clang, cmake, ninja and python.
+Presets, prerequisites and the Windows, macOS and Arm lanes are in
+[docs/building.md](docs/building.md).
 
-64-bit Windows builds two ways: `exe-windows-x86_64` cross-compiles a `nocturne.exe` from Linux,
-and `exe-windows-msys2` builds one natively on Windows under MSYS2. Both are opt-in and neither
-is looked for by any other preset, so a plain clone on either platform is unaffected. There are
-lanes for macOS (Apple silicon and Intel) and 64-bit Arm Linux as well.
+## Roadmap
 
-The recreation is a separate CMake project with its own script:
-
-```sh
-./recreation.sh     # build the recreation, then run it
-```
-
-Full prerequisites and the preset table are in **[docs/building.md](docs/building.md)**.
+| | Status |
+|---|---|
+| Linux and Windows | Playable |
+| Netplay | Works; the text-only lobby will be replaced |
+| Window modes, controllers, HUD scaling above 640x480 | Done in the decompilation, moving to the recreation |
+| macOS, Arm Linux | Built, untested: [ports](docs/ports.md) |
+| The recreation | Ongoing: [itinerary](docs/recreation-itinerary.md) |
+| Mod packages | Package loading, archives and game-content manifests done in the recreation: [mod support](docs/mod-support.md) |
+| Blair Witch Volumes 1–3 as packages | Binaries mapped against Nocturne's: [mod support](docs/mod-support.md#the-blair-witch-games) |
+| Advanced graphics options, alternative controls | Planned for the recreation |
+| Console ports | Planned, from the recreation: [ports](docs/ports.md#consoles) |
 
 ## Documentation
 
-**[docs/](docs/)** — how the project is built and worked on:
-
-| Document | What it covers |
+| | |
 |---|---|
-| [building.md](docs/building.md) | Presets, prerequisites, build commands |
-| [project-structure.md](docs/project-structure.md) | What every directory is for |
-| [recreation-itinerary.md](docs/recreation-itinerary.md) | The order the recreation is ported in, and how far it has got |
-| [decompilation-workflow.md](docs/decompilation-workflow.md) | Raw Ghidra output to clean, compiling source |
-| [decompiler-artifacts.md](docs/decompiler-artifacts.md) | What Ghidra gets wrong on this binary, and the rewrite for each |
-| [keep-files.md](docs/keep-files.md) | Writing a `.keep` reconstruction |
-| [annotation_format.md](docs/annotation_format.md) | Naming and typing conventions |
-| [watcom-abi.md](docs/watcom-abi.md) | Calling conventions, stack frames, struct layout |
-| [sibling-binaries.md](docs/sibling-binaries.md) | What transfers between the editor and game builds |
-| [shims.md](docs/shims.md) | The compatibility layer and the renderer |
-| [authenticity-flags.md](docs/authenticity-flags.md) | How deviations from the shipped binary are gated |
-| [debugging.md](docs/debugging.md) | gdb tooling, probe patterns, dump helpers |
-| [testing.md](docs/testing.md) | Shim unit tests and renderer golden traces |
-
-**[research/](research/README.md)** — the investigations: engine architecture, file formats, the
-Ghidra decompiler fixes this project needed, and the bug hunts with their measurements and
-findings. The index there is the map.
-
-**[docs/decompiler-artifacts.md](docs/decompiler-artifacts.md)** — the artifact catalogue: every
-suspect type, the recognition pattern, and the rewrite, indexed by the detector id that reports it.
-
-## Future work
-
-- **Finish the recreation**, with the decompilation's enhancements and bug fixes merged into it,
-  leaving the decompilation as close to the original as it can run.
-- **More advanced graphics options** in the recreation, beyond what the original renderer
-  offered.
-- **Modern game controls** for those who don't like tank controls and want an alternative method.
-- **Mod support** including for extra episodes made by the community.
-- **Console ports**, such as Xbox, Nintendo Switch and PlayStation 4, built from the
-  recreation. The decompilation can be built for them already: see "Consoles and packaged
-  apps" in [docs/porting.md](docs/porting.md).
-- **An improved netplay lobby** to replace the current text-only one.
-- **Supporting other Nocturne-engine games** like the original Blair Witch trilogy.
+| [About](docs/about.md) | Goals, the two source trees, licensing, tools |
+| [Progress](docs/progress.md) | Decompilation and compilation charts for every binary |
+| [Ports](docs/ports.md) | Each platform's status, and how to report a test |
+| [Mod support](docs/mod-support.md) | Packages, manifests and the Blair Witch games |
+| [Checksums](docs/checksums.md) | Hashes of the executables, DLLs and PODs, to check your copy |
+| [Building](docs/building.md) | Presets, prerequisites, build commands |
+| [All docs](docs/README.md) | Workflow, ABI, shims, testing, debugging and the rest |
+| [Research](research/README.md) | The investigations: engine, formats, bug hunts and their findings |
 
 ## Contributing
 
-This is a research project. Contributions and documentation improvements are welcome, as are
-insights about the Nocturne engine. See [CONTRIBUTING.md](CONTRIBUTING.md), and
+Contributions, test reports and insights about the engine are welcome. See
+[CONTRIBUTING.md](CONTRIBUTING.md), and
 [Discussions](https://github.com/NearlyTRex/NocturneDecomp/discussions) for questions and ideas.
 
-## Legal Notice
+## Legal notice
 
-This project is for educational and research purposes only. All reverse engineering is conducted
-in accordance with applicable laws. This repository contains only reverse-engineered
-documentation, annotations, and analysis derived from the decompilation process. No original
-game binaries, assets, or copyrighted materials from the game are included.
-
-## Tools Used
-
-- **[Ghidra](https://ghidra-sre.org/)** — decompilation and analysis, built from source with
-  project-specific patches for Watcom code (see
-  [research/05-badspacebase_investigation/](research/05-badspacebase_investigation/) and
-  [research/06-per_function_decompiler_helpers/](research/06-per_function_decompiler_helpers/))
-- **clang / LLVM** — compilation, sanitizers, static analysis
-- **SDL2, SDL2_ttf, FFmpeg** — the runtime substrate the shims are built on, all built from
-  source by the CMake project
-- **PyGhidra** — headless automation for annotation export, pseudocode generation and reporting
+This project is for educational and research purposes. It contains only reverse-engineered
+documentation, annotations and analysis. No original game binaries, assets or other copyrighted
+game material are included. See [LICENSE](LICENSE) for how the original work and the
+reconstructed source are licensed.

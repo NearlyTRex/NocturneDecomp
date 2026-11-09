@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 16,
-        "line": 210,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 32,
-        "line": 213,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 27,
-        "line": 217,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 49,
-        "line": 223,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 23,
-        "line": 248,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 282,
-        "message": "incompatible integer to pointer conversion assigning to 'CEventList *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 335,
-        "message": "incompatible integer to pointer conversion assigning to 'CEventList *' from 'int'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 460,
-        "message": "incompatible integer to pointer conversion assigning to 'CEventList *' from 'int'"
-      },
-      {
-        "category": "cast_error",
-        "column": 22,
-        "line": 486,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 58,
-        "line": 489,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 22,
-        "line": 490,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 22,
-        "line": 491,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 82,
-        "line": 492,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 36,
-        "line": 493,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 16,
-        "line": 495,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 35,
-        "line": 495,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 36,
-        "line": 496,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 54,
-        "line": 496,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 58,
-        "line": 500,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1466,
@@ -472,25 +352,25 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01c775ec",
-      "name": "g_CGame_01c775ec",
+      "name": "g_CGameInstance",
       "type": "CGame",
       "value": null
     },
     {
       "addr": "01c77814",
-      "name": "g_CGame_01c775ec.letterbox_mode",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -514,7 +394,7 @@
     },
     {
       "addr": "01fa7e78",
-      "name": "g_CDemonSet_01e57284.enemy_count",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -1041,56 +921,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CVampireBoss_process_FUN_0054c690.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_name": "cert-flp30-c",
-          "column": 23,
-          "line": 423,
-          "message": "loop induction expression should not have floating-point type"
-        }
-      ],
-      "error": null
-    },
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 5,
-          "line": 205,
-          "message": "Return value of function atan2() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 28,
-          "line": 206,
-          "message": "Uninitialized variable: local_ec",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 16,
-          "line": 200,
-          "message": "Uninitialized variable: local_b4",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 18,
-          "line": 178,
-          "message": "Uninitialized variable: local_b0",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -1151,9 +981,9 @@
     {
       "description": "Complex pointer cast",
       "line": 419,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar8)",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar8),",
       "type": "pointer_cast"
     },
     {
@@ -1331,30 +1161,6 @@
       "severity": "moderate",
       "text": "pCVar15 = (CVampireBoss *)((pCVar15->base).base.base.actor_name + 4);",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_ec",
-      "line": 206,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "fVar16 = SQRT((float10)local_ec * (float10)local_ec + (float10)local_e4 * (float10)local_e4);",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b4",
-      "line": 200,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_b4 = local_b4 + 4.0f;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b0",
-      "line": 178,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "fVar5 = local_b0 - (this_ptr->base).base.base.location.position.z,",
-      "type": "static_legacy_uninitvar"
     }
   ],
   "vtable_info": {

@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 67,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "00554550",
+      "from_addr": "00554550",
+      "name": "core_set.cpp_CDemonSet_loadAssets_FUN_00554550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00464150",
+    "address_range": [
+      [
+        "00464150",
+        "0046418a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_captureLightTextures_FUN_00464150",
+    "signature": "void __cdecl core_dlight_cpp_captureLightTextures_FUN_00464150(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006122c0",
+      "name": "DAT_006122c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006122d8",
+      "name": "DAT_006122d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612308",
+      "name": "DAT_00612308",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612488",
+      "name": "DAT_00612488",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00554550",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_loadAssets_FUN_00554550",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.95,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 15,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 9,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 79
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_006122d8",
+      "severity": "mild",
+      "text": "texture = (SMRGLTextureBasic *)&DAT_006122d8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_006122c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_006122c0",
+      "severity": "mild",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_006122c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_00612488",
+      "severity": "mild",
+      "text": "} while (texture != (SMRGLTextureBasic *)&DAT_00612488);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -23,7 +23,7 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004574e0(CDemonPart *this
             (g_CDemonRenderer_PTR_005ae704,0);
   iVar1 = this_ptr->vertex_count / this_ptr->vertex_group_size;
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-            (g_CDemonSet_PTR_005be368,iVar1,
+            (g_CDemonSetPtr,iVar1,
              this_ptr->vertex_positions + this_ptr->current_vertex_group * iVar1);
   if (g_CDemonRenderer_PTR_005ae704->advanced_culling_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
@@ -52,7 +52,7 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004574e0(CDemonPart *this
           local_1c = plane[7].i;
         }
         core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0050dfe0
-                  (g_CDemonSet_PTR_005be368,&local_58,1);
+                  (g_CDemonSetPtr,&local_58,1);
       }
       uVar2 = uVar2 + 1;
       plane = plane + 8;

@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01b7b748'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01b7b744'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01b7b744'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_01b7b744'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_01b7b748'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
@@ -275,23 +239,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonRaytrace_setPVS_FUN_0046ace0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 28,
-          "line": 43,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -308,14 +255,6 @@
       "severity": "moderate",
       "text": "*(CDemonCube **)(iVar11 * 4 + 0x1b7b74c) = this_ptr->cube_data + iVar5;",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 43,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar9 = (int)uVar8 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

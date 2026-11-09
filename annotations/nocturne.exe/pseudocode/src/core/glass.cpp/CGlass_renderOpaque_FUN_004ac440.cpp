@@ -48,7 +48,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ac440(CGlass *this_ptr)
       } while (iVar2 < this_ptr->broken_vertex_count);
     }
     core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-              (g_CDemonSet_PTR_005be368,this_ptr->broken_vertex_count,input_vertices);
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,input_vertices);
     lVar1 = (longlong)(0xffff - _DAT_01c038f4) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (g_CDemonRenderer_PTR_005ae704,
@@ -56,8 +56,8 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004ac440(CGlass *this_ptr)
     poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
     iVar2 = 0;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-              (g_CDemonSet_PTR_005be368,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count
-               ,poly,input_vertices,4,(CVector3i *)0x0);
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,poly,
+               input_vertices,4,(CVector3i *)0x0);
     pCVar5 = this_ptr;
     if (0 < this_ptr->broken_polygon_count) {
       do {

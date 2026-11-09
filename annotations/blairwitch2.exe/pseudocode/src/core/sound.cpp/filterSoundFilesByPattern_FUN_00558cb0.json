@@ -1,0 +1,146 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 96,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unknown_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00558cb0",
+    "address_range": [
+      [
+        "00558cb0",
+        "00558d45"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_filterSoundFilesByPattern_FUN_00558cb0",
+    "signature": "void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_00558cb0(char *wildcard_pattern)"
+  },
+  "function_calls": [
+    {
+      "addr": "00481240",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00481240"
+    },
+    {
+      "addr": "00485840",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_00485840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0264b450",
+      "name": "g_CStrListInstance",
+      "type": "CStrList",
+      "value": null
+    },
+    {
+      "addr": "0264b460",
+      "name": "DAT_0264b460",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.483333333333333,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 51,
+      "INT_ADD": 22,
+      "INT_AND": 33,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 33,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 16,
+      "INT_SUB": 20,
+      "INT_XOR": 2,
+      "LOAD": 14,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 17,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 269
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "wildcard_pattern",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((int)g_CStrListInstance._0_4_ < 1) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((int)g_CStrListInstance._0_4_ <= index) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 26,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

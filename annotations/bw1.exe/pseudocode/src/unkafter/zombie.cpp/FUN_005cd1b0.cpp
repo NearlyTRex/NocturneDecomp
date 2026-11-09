@@ -1,0 +1,35 @@
+// Name: unkafter_zombie.cpp_FUN_005cd1b0
+// Address: 005cd1b0
+// Address Range: [[005cd1b0, 005cd20e]]
+// Convention: unknown
+// Signature: undefined4 unkafter_zombie_cpp_FUN_005cd1b0(int param_1)
+
+#include "nocturne.h"
+
+uint unkafter_zombie_cpp_FUN_005cd1b0(int param_1)
+
+{
+  int iVar1;
+  
+  if (param_1 == 0) {
+    iVar1 = unkafter_zombie_cpp_FUN_005cd144(4);
+    if (iVar1 == 0) {
+      return 0;
+    }
+    unkafter_2d_cpp_FUN_005cd3b8(4);
+  }
+  else {
+    if (param_1 != 1) {
+      return 0;
+    }
+    iVar1 = unkafter_zombie_cpp_FUN_005cd144(7);
+    if (iVar1 == 0) {
+      return 0;
+    }
+    unkafter_2d_cpp_FUN_005cd3b8(7);
+  }
+  if ((iVar1 != 2) && (iVar1 != 3)) {
+    return 1;
+  }
+  return 0;
+}

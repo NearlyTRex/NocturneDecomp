@@ -1,0 +1,205 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [
+    {
+      "addr": "00534890",
+      "from_addr": "00535179",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045c480",
+    "address_range": [
+      [
+        "0045c480",
+        "0045c4f7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_0045c480",
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_0045c480(CDemonLight *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045c400",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_getRestoreMemory_FUN_0045c400"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00495f68",
+      "is_variadic": false,
+      "name": "crt_watcom.c__memcpy_FUN_00495f68"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bb28a",
+      "name": "s_core_dlight_cpp_005bb28a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bb29d",
+      "name": "s_CDemonLight_allocMasterZ_005bb29d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00535179",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.96875,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 26,
+      "INT_ADD": 16,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SEXT": 6,
+      "INT_SLESS": 4,
+      "INT_SUB": 10,
+      "LOAD": 12,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 10,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 127
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x164 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x1cc0",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2f9c",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x2f9c = pvVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1cc0",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2);",
+      "type": "unnamed_field"
+    }
+  ]
+}

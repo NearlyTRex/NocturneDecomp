@@ -30,9 +30,8 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004835d0(CStake *this_ptr)
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(&local_24);
   if (iVar2 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (g_CDemonSet_PTR_005be368,&(this_ptr->physics_box).position,
-               (UOrientationVector *)orientation,&local_24.min,&local_24.max,
-               &(this_ptr->physics_box).rotation_matrix);
+              (g_CDemonSetPtr,&(this_ptr->physics_box).position,(UOrientationVector *)orientation,
+               &local_24.min,&local_24.max,&(this_ptr->physics_box).rotation_matrix);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&g_CKeyFramedModelInstance_01c08d48,0.0,-1);
   }

@@ -1,0 +1,70 @@
+// Name: core_glass.cpp_CGlass_ctor_FUN_004c9ba0
+// Address: 004c9ba0
+// Address Range: [[004c9ba0, 004c9cd4]]
+// Convention: __cdecl
+// Signature: CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004c9ba0(CGlass *this_ptr)
+
+#include "nocturne.h"
+
+CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004c9ba0(CGlass *this_ptr)
+
+{
+  char cVar1;
+  CDemonActor *pCVar2;
+  CMirror *pCVar3;
+  int iVar4;
+  char *pcVar5;
+  char *pcVar6;
+  
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr);
+  pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004f3fc0((CMirror *)&pCVar2[1].field_0xc4);
+  iVar4 = __arrinit(pCVar3 + 0x1a0,0x19,&g_CVectorTypeInfo);
+  *(byte **)(iVar4 + -0x268) = &g_CGlassVTable;
+  pcVar5 = "HEADLITE.RAW";
+  *(uint *)(iVar4 + -0x264) = 0x40800000;
+  *(uint *)(iVar4 + -0x260) = 0x40800000;
+  pcVar6 = (char *)(iVar4 + -0x250);
+  *(uint *)(iVar4 + -0x25c) = 0x3dcccccd;
+  do {
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
+  } while (cVar1 != '\0');
+  *(uint *)(iVar4 + -0x254) = 0;
+  *(uint *)(iVar4 + -600) = 0xd;
+  *(uint *)(iVar4 + -0x210) = 0x8000;
+  *(uint *)(iVar4 + -0x20c) = 0;
+  pcVar5 = (char *)0x5c444c;
+  *(byte *)(iVar4 + -0x208) = 0;
+  pcVar6 = (char *)(iVar4 + -0x80);
+  *(uint *)(iVar4 + -0x1a4) = 0;
+  do {
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
+  } while (cVar1 != '\0');
+  pcVar5 = "7YEARS.RAW";
+  pcVar6 = (char *)(iVar4 + -0x10);
+  *(uint *)(iVar4 + -0x1c) = 0;
+  do {
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
+  } while (cVar1 != '\0');
+  *(uint *)(iVar4 + -0x14) = 0;
+  *(uint *)(iVar4 + -0x18) = 0xd;
+  *(uint *)(iVar4 + 0x7b0) = 0;
+  return (CGlass *)(iVar4 + -0x3bc);
+}

@@ -30,7 +30,7 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_004c34e0(CKeyActor *this_pt
   (this_ptr->globe).intensity.bytes[0] =
        (uchar)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(this_ptr_00,1.0);
-  this_ptr_01 = g_CDemonSet_PTR_005be368;
+  this_ptr_01 = g_CDemonSetPtr;
   (this_ptr->globe).corona_mode = 0;
   core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(this_ptr_01,this_ptr_00);
   return;

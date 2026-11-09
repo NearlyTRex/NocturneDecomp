@@ -11,12 +11,12 @@
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_005492b0(CTerrain *this_ptr)
 
 {
-  int this_ptr_00;
+  CGround *this_ptr_00;
   
-  this_ptr_00 = INT_005ba8ec;
+  this_ptr_00 = g_CGroundPtr;
   this_ptr->animation_counter = 0;
-  core_ground_cpp_CGround_init_FUN_004b13d0((CGround *)this_ptr_00);
-  core_ground_cpp_CGround_load_FUN_004b14d0((CGround *)INT_005ba8ec,"junk.jnk");
+  core_ground_cpp_CGround_init_FUN_004b13d0(this_ptr_00);
+  core_ground_cpp_CGround_load_FUN_004b14d0(g_CGroundPtr,"junk.jnk");
   _DAT_02dd10cc = 1;
   return;
 }

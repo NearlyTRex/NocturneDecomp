@@ -1,0 +1,88 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 7
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040e250",
+    "address_range": [
+      [
+        "0040e250",
+        "0040e255"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_ammo.cpp_FUN_0040e250",
+    "signature": "undefined * core_ammo_cpp_FUN_0040e250(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "007dfd64",
+      "name": "DAT_007dfd64",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_007dfd64",
+      "severity": "mild",
+      "text": "return &DAT_007dfd64;",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 204,
+        "vtable_addr": "005db2f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

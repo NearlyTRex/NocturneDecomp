@@ -1,0 +1,328 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 268,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 73,
+    "suspect_count": 17,
+    "suspect_types": [
+      "raw_address_constant",
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "warning_deadcode_restart",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 215
+  },
+  "cross_references": [
+    {
+      "addr": "00550580",
+      "from_addr": "0055064e",
+      "name": "core_set.cpp_FUN_00550580",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00451a30",
+    "address_range": [
+      [
+        "00451a30",
+        "00451bba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00451a30",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00451a30(CDemonCamera *this_ptr,CDemonLight *light_source)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0152a954",
+      "name": "DAT_0152a954",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055064e",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00550580",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.188524590163935,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_AND": 5,
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CBRANCH": 9,
+      "COPY": 90,
+      "INT_ADD": 82,
+      "INT_AND": 93,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 77,
+      "INT_LEFT": 4,
+      "INT_LESS": 10,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 39,
+      "INT_SUB": 17,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 64,
+      "POPCOUNT": 35,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 633
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "light_source",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Deadcode elimination delayed",
+      "line": 3,
+      "match": "WARNING: Restarted to delay deadcode elimination",
+      "severity": "mild",
+      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
+      "type": "warning_deadcode_restart"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x154) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x1888",
+      "severity": "mild",
+      "text": "iVar2 = (*(int *)&local_14->field_0x1888 - *(int *)&local_14->field_0x14c8) + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x14c8",
+      "severity": "mild",
+      "text": "iVar2 = (*(int *)&local_14->field_0x1888 - *(int *)&local_14->field_0x14c8) + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x1c48",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)(*(int *)&light_source->field_0x1c48 + local_18 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x14c8",
+      "severity": "mild",
+      "text": "*(int *)&local_14->field_0x14c8 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x1c4c",
+      "severity": "mild",
+      "text": "(*(int *)&light_source->field_0x1c4c + local_18 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x14c8",
+      "severity": "mild",
+      "text": "*(int *)&local_14->field_0x14c8 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x1c50",
+      "severity": "mild",
+      "text": "piVar4 = (int *)(*(int *)&light_source->field_0x1c50 + local_18 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x14c8",
+      "severity": "mild",
+      "text": "*(int *)&local_14->field_0x14c8 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x14c8",
+      "severity": "mild",
+      "text": "pcVar5 = (char *)(local_20 + *(int *)&local_14->field_0x14c8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x1c54",
+      "severity": "mild",
+      "text": "_DAT_0152a954 = *(int *)&light_source->field_0x1c54;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_14 = (CDemonLight *)&local_14->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "} while (local_1c < *(int *)&this_ptr->field_0x154);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Raw hex address 0xb10718 assigned to bare local `local_20`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_20` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 25,
+      "match": "0xb10718",
+      "severity": "moderate",
+      "text": "local_20 = 0xb10718;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_14->owner`). Replace `local_14->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 70,
+      "match": "local_14 = (T *)&local_14->FIELD",
+      "severity": "moderate",
+      "text": "local_14 = (CDemonLight *)&local_14->field_0x4;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

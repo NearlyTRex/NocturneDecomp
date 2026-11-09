@@ -1,55 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 35,
-        "message": "use of undeclared identifier 'PTR_s_f0100_005baf18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 59,
-        "message": "use of undeclared identifier 'DAT_01cc7d10'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 70,
-        "message": "use of undeclared identifier 'DAT_01cc7e10'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 81,
-        "message": "use of undeclared identifier 'DAT_01cc7f10'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 91,
-        "message": "use of undeclared identifier 'DAT_01cc8010'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 93,
-        "message": "use of undeclared identifier 'DAT_01cc7d10'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 327,
+    "complexity_score": 323,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
+    "pseudocode_lines": 178,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
@@ -58,7 +16,7 @@
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 656
+    "total_lines": 652
   },
   "cross_references": [
     {
@@ -87,14 +45,14 @@
       "name": "core_game.cpp_CGame_FUN_004a4170"
     },
     {
-      "addr": "004a4b50",
-      "is_variadic": false,
-      "name": "core_game.cpp_CGame_FUN_004a4b50"
-    },
-    {
       "addr": "0049a890",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_saveClockTime_FUN_0049a890"
+    },
+    {
+      "addr": "004a4b50",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004a4b50"
     },
     {
       "addr": "0049a8a0",
@@ -261,7 +219,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -291,19 +249,19 @@
     },
     {
       "addr": "01c775ec",
-      "name": "g_CGame_01c775ec",
+      "name": "g_CGameInstance",
       "type": "CGame",
       "value": null
     },
     {
       "addr": "01c775f0",
-      "name": "g_CGame_01c775ec.game_pixy",
+      "name": "g_CGameInstance.game_pixy",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "g_CGame_01c775ec.delta_time_float",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -489,7 +447,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 48,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7d10;",
@@ -497,7 +455,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 59,
       "match": "DAT_01cc7e10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7e10;",
@@ -505,7 +463,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 70,
       "match": "DAT_01cc7f10",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc7f10;",
@@ -513,7 +471,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 80,
       "match": "DAT_01cc8010",
       "severity": "mild",
       "text": "pcVar7 = &DAT_01cc8010;",
@@ -521,7 +479,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 82,
       "match": "DAT_01cc7d10",
       "severity": "mild",
       "text": "puVar5 = &DAT_01cc7d10;",
@@ -529,7 +487,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 98,
+      "line": 94,
       "match": "*(byte **)(iVar4 + 0x1cc8110",
       "severity": "moderate",
       "text": "*(byte **)(iVar4 + 0x1cc8110) = puVar5;",
@@ -545,7 +503,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 53,
+      "line": 49,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -553,7 +511,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 64,
+      "line": 60,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -561,7 +519,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 75,
+      "line": 71,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -569,7 +527,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 87,
+      "line": 83,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

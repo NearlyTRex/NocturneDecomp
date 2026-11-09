@@ -18,6 +18,11 @@ absolute operand in the image has one, which cuts two ways:
                     pointer: a vtable slot, a callback table entry, a dispatch
                     table. The target is a function entry.
 
+  RELOC_CODE_IMM  - a reloc site inside a DEFINED function whose value lands in
+                    executable space with no function there: a function passed by
+                    address, as every actor's staticInit passes its factory to
+                    registerActorClass. Scored as a code pointer.
+
   RELOC_CODE_RGN  - a reloc site inside executable bytes that belong to NO defined
                     function. The loader patches an absolute operand there, so
                     those bytes are provably code (an instruction with an absolute
@@ -70,7 +75,8 @@ CONF_RANK = {c: i for i, c in enumerate(CONFIDENCE_ORDER)}
 
 TIER_PTR = "RELOC_CODE_PTR"
 TIER_RGN = "RELOC_CODE_RGN"
-TIERS = [TIER_PTR, TIER_RGN]
+TIER_IMM = "RELOC_CODE_IMM"
+TIERS = [TIER_PTR, TIER_RGN, TIER_IMM]
 
 # IMAGE_REL_BASED_HIGHLOW -- the only 32-bit-absolute fixup type that matters here.
 # Type 0 (ABSOLUTE) is block padding and carries no address.
@@ -393,6 +399,7 @@ def classify_sites(program, sites, exec_set, regions, starts):
     stats = Counter()
     ptr_hits = defaultdict(list)
     rgn_hits = defaultdict(list)
+    imm_hits = defaultdict(list)
 
     for site in sites:
         block = memory.getBlock(site)
@@ -407,7 +414,17 @@ def classify_sites(program, sites, exec_set, regions, starts):
 
         if block.isExecute():
             if fm.getFunctionContaining(site) is not None:
-                stats["site/exec-in-function"] += 1
+                # An absolute operand inside a known function that points at
+                # code with no function: a callback or factory passed by address
+                # (`push offset factoryFuncColonel`). Anything inside a known
+                # body -- a function's own jump table -- scores LOW and is never
+                # defined (score_pointer).
+                if (target is not None and exec_set.contains(target)
+                        and fm.getFunctionAt(target) is None):
+                    stats["site/exec-in-function-to-code"] += 1
+                    imm_hits[target.getOffset()].append(site)
+                else:
+                    stats["site/exec-in-function"] += 1
                 continue
             region = find_region(regions, starts, site.getOffset())
             if region is None:
@@ -434,7 +451,7 @@ def classify_sites(program, sites, exec_set, regions, starts):
             stats["site/data-to-code"] += 1
             ptr_hits[target.getOffset()].append(site)
 
-    return ptr_hits, rgn_hits, stats
+    return ptr_hits, rgn_hits, imm_hits, stats
 
 
 def score_pointer(program, pseudo, exec_set, target):
@@ -580,24 +597,25 @@ def discover(program):
     print("  non-function code regions: %d" % len(regions))
 
     print("  classifying reloc sites...")
-    ptr_hits, rgn_hits, stats = classify_sites(program, sites, exec_set, regions, starts)
+    ptr_hits, rgn_hits, imm_hits, stats = classify_sites(program, sites, exec_set, regions, starts)
 
     rows = []
 
-    print("  scoring %d code-pointer target(s)..." % len(ptr_hits))
-    for target_off, sources in ptr_hits.items():
-        target = space.getAddress(target_off)
-        conf, reason, inside = score_pointer(program, pseudo, exec_set, target)
-        rows.append({
-            "addr": target,
-            "tier": TIER_PTR,
-            "confidence": conf,
-            "reason": reason,
-            "inside": inside.getName() if inside is not None else None,
-            "evidence": ["<- %s" % describe_target(program, s) for s in sources],
-            "n_evidence": len(sources),
-            "size": None,
-        })
+    for tier, hits in ((TIER_PTR, ptr_hits), (TIER_IMM, imm_hits)):
+        print("  scoring %d %s target(s)..." % (len(hits), tier))
+        for target_off, sources in hits.items():
+            target = space.getAddress(target_off)
+            conf, reason, inside = score_pointer(program, pseudo, exec_set, target)
+            rows.append({
+                "addr": target,
+                "tier": tier,
+                "confidence": conf,
+                "reason": reason,
+                "inside": inside.getName() if inside is not None else None,
+                "evidence": ["<- %s" % describe_target(program, s) for s in sources],
+                "n_evidence": len(sources),
+                "size": None,
+            })
 
     print("  scoring %d code region(s)..." % len(rgn_hits))
     region_by_start = {r[0].getOffset(): r for r in regions}

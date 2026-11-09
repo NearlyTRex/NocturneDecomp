@@ -17,7 +17,7 @@
 ;   TerminatedCString s_core_dlight_cpp_0057c53e
 ;   TerminatedCString s_CDemonCamera_init_Unable_0057c551
 ;   double DOUBLE_0057c586 = 7
-;   undefined4 DAT_005ad51c
+;   CDemonFilter* g_GlobalFilters = 014b8a58
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -80,7 +80,7 @@ section .text
     FISTP dword ptr [ESP + 0x8]         ; 0044e26b
     MOV EAX,dword ptr [ESP + 0x8]       ; 0044e26f
     PUSH 0x0                            ; 0044e273
-    MOV EDX,dword ptr [EAX*0x4 + 0x5ad51c] ; 0044e275 | DAT_005ad51c
+    MOV EDX,dword ptr [EAX*0x4 + 0x5ad51c] ; 0044e275 | g_GlobalFilters
     PUSH EDX                            ; 0044e27c
     PUSH EBX                            ; 0044e27d
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 0044e27e

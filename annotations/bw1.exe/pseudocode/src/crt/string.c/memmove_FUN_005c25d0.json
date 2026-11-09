@@ -1,0 +1,480 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 197,
+    "cross_reference_count": 45,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 14,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 93
+  },
+  "cross_references": [
+    {
+      "addr": "004a70d0",
+      "from_addr": "004a7392",
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_004a70d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9ff0",
+      "from_addr": "004aa196",
+      "name": "core_event.cpp_CEventList_setActorVariable_FUN_004a9ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9d70",
+      "from_addr": "004a9dce",
+      "name": "core_event.cpp_CEventList_setCounter_FUN_004a9d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9bf0",
+      "from_addr": "004a9cae",
+      "name": "core_event.cpp_CEventList_setTimerEvent_FUN_004a9bf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aa400",
+      "from_addr": "004aa539",
+      "name": "core_event.cpp_CEventList_updateSfxEntries_FUN_004aa400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a15c0",
+      "from_addr": "004a161b",
+      "name": "core_event.cpp_FUN_004a15c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1630",
+      "from_addr": "004a171d",
+      "name": "core_event.cpp_FUN_004a1630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1a40",
+      "from_addr": "004a1afe",
+      "name": "core_event.cpp_FUN_004a1a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1d00",
+      "from_addr": "004a2027",
+      "name": "core_event.cpp_FUN_004a1d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9870",
+      "from_addr": "004a99ea",
+      "name": "core_event.cpp_FUN_004a9870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9a60",
+      "from_addr": "004a9bda",
+      "name": "core_event.cpp_FUN_004a9a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aacce",
+      "from_addr": "004aad60",
+      "name": "core_event.cpp_FUN_004aacce",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aae0e",
+      "from_addr": "004aae76",
+      "name": "core_event.cpp_FUN_004aae0e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc810",
+      "from_addr": "004cc91b",
+      "name": "core_game.cpp_FUN_004cc810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8d00",
+      "from_addr": "004f8d9e",
+      "name": "core_inv.cpp_FUN_004f8d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052f100",
+      "from_addr": "0052f1e5",
+      "name": "core_netgame.cpp_CNetGame_addChatHistory_FUN_0052f100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00530340",
+      "from_addr": "00530455",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_00530340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052fee0",
+      "from_addr": "00530027",
+      "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0052fee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052f890",
+      "from_addr": "0052f97b",
+      "name": "core_netgame.cpp_CNetGame_removePlayer_FUN_0052f890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052c3ec",
+      "from_addr": "0052c444",
+      "name": "core_netgame.cpp_FUN_0052c3ec",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052ed80",
+      "from_addr": "0052efa0",
+      "name": "core_netgame.cpp_FUN_0052ed80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052c240",
+      "from_addr": "0052c2a0",
+      "name": "core_netgame.cpp_removeChatOut_FUN_0052c240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00533060",
+      "from_addr": "005330be",
+      "name": "core_path.cpp_CPathMap_dtor_FUN_00533060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00543240",
+      "from_addr": "0054329b",
+      "name": "core_script.cpp_trimString_FUN_00543240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551990",
+      "from_addr": "005519ec",
+      "name": "core_set.cpp_FUN_00551990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005abb80",
+      "from_addr": "005abc1c",
+      "name": "core_waypoint.cpp_FUN_005abb80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493000",
+      "from_addr": "00493036",
+      "name": "shape_edittool.cpp_CInputString_deleteRange_FUN_00493000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00492f70",
+      "from_addr": "00492fb6",
+      "name": "shape_edittool.cpp_CInputString_insertChar_FUN_00492f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499c80",
+      "from_addr": "00499e38",
+      "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00499c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499510",
+      "from_addr": "0049957f",
+      "name": "shape_edittool.cpp_CStrList_insert_FUN_00499510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499ed0",
+      "from_addr": "00499f90",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00499ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a0d0",
+      "from_addr": "0049a190",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_0049a0d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499730",
+      "from_addr": "004997cb",
+      "name": "shape_edittool.cpp_CStrList_remove_FUN_00499730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049517e",
+      "from_addr": "00495581",
+      "name": "shape_edittool.cpp_FUN_0049517e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e130",
+      "from_addr": "0056e396",
+      "name": "sound_sndmain.cpp_FUN_0056e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e830",
+      "from_addr": "0056e955",
+      "name": "sound_sndmain.cpp_FUN_0056e830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056f6d0",
+      "from_addr": "0056f743",
+      "name": "sound_sndmain.cpp_FUN_0056f6d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574410",
+      "from_addr": "005744c0",
+      "name": "sound_sndmain.cpp_FUN_00574410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576c20",
+      "from_addr": "00576d55",
+      "name": "sound_sndmain.cpp_FUN_00576c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e0a0",
+      "from_addr": "0056e124",
+      "name": "sound_sndmain.cpp_trimLineAndRemoveComments_FUN_0056e0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b9c50",
+      "from_addr": "004b9c9f",
+      "name": "unkaddr_004b9ab0.cpp_FUN_004b9c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ce6dc",
+      "from_addr": "005ce83c",
+      "name": "unkafter_2d.cpp_FUN_005ce6dc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ce880",
+      "from_addr": "005ce92a",
+      "name": "unkafter_2d.cpp_FUN_005ce880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cee44",
+      "from_addr": "005cef9f",
+      "name": "unkafter_2d.cpp_FUN_005cee44",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cefe4",
+      "from_addr": "005cf093",
+      "name": "unkafter_2d.cpp_FUN_005cefe4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c25d0",
+    "address_range": [
+      [
+        "005c25d0",
+        "005c2621"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_memmove_FUN_005c25d0",
+    "signature": "void * __cdecl crt_string_c_memmove_FUN_005c25d0(void *dest,void *src,SIZE_T n)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.022222222222222,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 1,
+      "BRANCH": 4,
+      "CBRANCH": 7,
+      "COPY": 44,
+      "INT_ADD": 27,
+      "INT_AND": 36,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 27,
+      "INT_LESS": 2,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_RIGHT": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 12,
+      "INT_SUB": 23,
+      "INT_ZEXT": 9,
+      "LOAD": 16,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 271
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "n",
+        "offset": 12,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(ushort *)((int)src",
+      "severity": "moderate",
+      "text": "if ((src < dest) && (dest < (ushort *)((int)src + n))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(ushort *)((int)src",
+      "severity": "moderate",
+      "text": "puVar2 = (ushort *)((int)src + n);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(ushort *)((int)dest",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)((int)dest + n);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(ushort *)((int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)((int)puVar3 + -1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(ushort *)((int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (ushort *)((int)puVar2 - 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)src",
+      "severity": "moderate",
+      "text": "src = (uint *)((int)src + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)src",
+      "severity": "moderate",
+      "text": "src = (uint *)((int)src + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)((int)puVar3 + -1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (ushort *)((int)puVar2 - 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
+      "line": 33,
+      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
+      "severity": "moderate",
+      "text": "for (uVar1 = n >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSW at 005c25fc, 2-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 2) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "MOVSW.REP",
+      "severity": "moderate",
+      "text": "// 005c25fc: MOVSW.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005c2616, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c2616: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

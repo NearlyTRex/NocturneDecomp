@@ -1,0 +1,172 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 110,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "004555c0",
+      "from_addr": "00455a0f",
+      "name": "core_doc.cpp_FUN_004555c0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0044fe40",
+    "address_range": [
+      [
+        "0044fe40",
+        "0044fe7d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_doc.cpp_FUN_0044fe40",
+    "signature": "float core_doc_cpp_FUN_0044fe40(undefined4 param_1,undefined4 param_2,float param_3,int param_4)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005cfb6f",
+      "name": "DAT_005cfb6f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cfb77",
+      "name": "DAT_005cfb77",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.6,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 38,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_MULT": 2,
+      "INT_ADD": 8,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 2,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 112
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "float core_doc_cpp_FUN_0044fe40(uint param_1,uint param_2,float param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "float core_doc_cpp_FUN_0044fe40(uint param_1,uint param_2,float param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "float core_doc_cpp_FUN_0044fe40(uint param_1,uint param_2,float param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "float core_doc_cpp_FUN_0044fe40(uint param_1,uint param_2,float param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if ((0 < param_4) && (dVar1 = _DAT_005cfb6f, param_4 != 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if ((0 < param_4) && (dVar1 = _DAT_005cfb6f, param_4 != 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "return param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "return param_3 * (float)dVar1;",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 60,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "004a1e90",
+      "from_addr": "004a1e9d",
+      "name": "core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1ad0",
+      "from_addr": "004a1c02",
+      "name": "core_fire.cpp_FUN_004a1ad0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004975a0",
+    "address_range": [
+      [
+        "004975a0",
+        "0049760b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fire.cpp_FUN_004975a0",
+    "signature": "void core_fire_cpp_FUN_004975a0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046d4c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c73674",
+      "name": "DAT_01c73674",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c73678",
+      "name": "DAT_01c73678",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7367c",
+      "name": "DAT_01c7367c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c73680",
+      "name": "DAT_01c73680",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c73684",
+      "name": "DAT_01c73684",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c73688",
+      "name": "DAT_01c73688",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7368c",
+      "name": "DAT_01c7368c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c73690",
+      "name": "DAT_01c73690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c73694",
+      "name": "DAT_01c73694",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004a1e9d",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a1c02",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004a1ad0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.4444444444444446,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 28,
+      "INT_ADD": 5,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0x8000);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

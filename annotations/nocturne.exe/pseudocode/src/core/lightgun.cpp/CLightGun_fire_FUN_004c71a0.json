@@ -1,121 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 65,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 69,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 57,
-        "line": 69,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 70,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 57,
-        "line": 70,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 71,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 57,
-        "line": 71,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 32,
-        "line": 73,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 32,
-        "line": 74,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 32,
-        "line": 75,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "pointer_type",
-        "column": 60,
-        "line": 130,
-        "message": "cannot initialize a parameter of type 'struct CDemonActor *' with an rvalue of type 'uint32_t' (aka 'unsigned int')"
-      },
-      {
-        "category": "format_error",
-        "column": 61,
-        "line": 189,
-        "message": "format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "type_error",
-        "column": 19,
-        "line": 195,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 39,
-        "line": 199,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 21,
-        "line": 225,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 21,
-        "line": 231,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 21,
-        "line": 232,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 644,
-    "complexity_score": 441,
+    "complexity_score": 439,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 231,
+    "pseudocode_lines": 229,
     "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
@@ -123,7 +15,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 875
+    "total_lines": 873
   },
   "cross_references": [],
   "function": {
@@ -350,7 +242,7 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
@@ -362,7 +254,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -380,13 +272,13 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
     {
       "addr": "01c74640",
-      "name": "g_CDemonLight_01c74640",
+      "name": "g_CDemonLightInstance",
       "type": "CDemonLight",
       "value": null
     },
@@ -404,31 +296,31 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "g_CDemonSet_01e57284.collision_actor",
+      "name": "g_CDemonSetInstance.collision_actor",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "g_CDemonSet_01e57284.characters[0]",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "g_CDemonSet_01e57284.characters[1]",
+      "name": "g_CDemonSetInstance.characters[1]",
       "type": "undefined4",
       "value": null
     },
@@ -530,23 +422,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CLightGun_fire_FUN_004c71a0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 212,
-          "message": "Uninitialized variable: unaff_retaddr",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unknown/mangled field access",
@@ -630,7 +505,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 123,
+      "line": 122,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar9),0),",
@@ -638,15 +513,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
-      "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
+      "line": 153,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);",
+      "text": "this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 188,
+      "line": 187,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_8c._8_4_ = (pCVar3->min).x + ((CVector3f *)this_ptr)->x;",
@@ -654,7 +529,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 192,
+      "line": 191,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_60.x = (float)auStack_8c._8_4_ * 0.5f;",
@@ -662,7 +537,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 218,
+      "line": 216,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_fc._4_4_ = 0.1;",
@@ -670,7 +545,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 224,
+      "line": 222,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_c8._0_4_ = this_ptr;",
@@ -678,7 +553,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 223,
       "match": "(code **)((int)pCVar3",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -686,7 +561,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 225,
+      "line": 223,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
@@ -694,19 +569,11 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 225,
+      "line": 223,
       "match": "code *",
       "severity": "moderate",
       "text": "auStack_c8._8_4_ = (**(code **)((int)pCVar3[0xe].min.z + 0x8c))((CDemonActor *)this_ptr);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Uninitialized variable: unaff_retaddr",
-      "line": 212,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (pCVar5 == unaff_retaddr) {",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

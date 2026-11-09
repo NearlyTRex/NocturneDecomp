@@ -53,7 +53,7 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(C3DSLight *
     do {
       iVar5 = iVar5 + 1;
       pCVar3 = core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
-                         (0x014B8DE8,*filter_name,this_ptr->blend_filter);
+                         (g_CFilterCachePtr,*filter_name,this_ptr->blend_filter);
       pCVar7->filters[0] = pCVar3;
       filter_name = filter_name + 1;
       pCVar7 = (C3DSLight *)pCVar7->name;

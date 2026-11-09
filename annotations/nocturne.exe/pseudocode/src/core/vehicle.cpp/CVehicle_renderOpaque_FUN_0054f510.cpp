@@ -30,7 +30,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_0054f510(CVehicle *this_p
   if (iStack_18 != 0) {
     iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                       (g_CDemonRenderer_PTR_005ae704);
-    if ((iVar2 == 0) || (g_CGame_PTR_005b9354->goggles_active != 0)) {
+    if ((iVar2 == 0) || (g_CGamePtr->goggles_active != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
                 (&this_ptr->model,0.0,-1);
       iVar2 = 0;

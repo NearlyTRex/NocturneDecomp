@@ -20,8 +20,8 @@
 ;
 ; Referenced Globals:
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CGame* g_CGamePtr = 01c775ec
+;   undefined4 g_CGameInstance.delta_time_float
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_ZeroVector+4
 ;   undefined4 g_ZeroVector+8
@@ -50,8 +50,8 @@ section .text
     SAHF                                ; 004874e5
     JNC 0x00487520                      ; 004874e6
         ;   XREF to: 00487520 (CONDITIONAL_JUMP)  ; LAB_00487520
-    MOV EAX,[0x005b9354]                ; 004874e8 | g_CGame_PTR_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 004874ed | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 004874e8 | g_CGamePtr
+    MOV EAX,dword ptr [EAX + 0x264]     ; 004874ed | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x24],EAX      ; 004874f3
     FLD float ptr [EBX + 0x3dc]         ; 004874f7
     FSUB float ptr [ESP + 0x24]         ; 004874fd

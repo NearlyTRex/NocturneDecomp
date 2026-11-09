@@ -1,0 +1,187 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 73,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [
+    {
+      "addr": "00447660",
+      "from_addr": "004476e4",
+      "name": "core_dfilter.cpp_FUN_00447660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b28b0",
+      "from_addr": "004b290d",
+      "name": "core_game.cpp_staticInit_FUN_004b28b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004477f0",
+    "address_range": [
+      [
+        "004477f0",
+        "00447830"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CDemonFilter_ctor_FUN_004477f0",
+    "signature": "CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_004477f0(CDemonFilter *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005ceb23",
+      "name": "s_unnamed_005ceb23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ceb24",
+      "name": "s_nnamed_005ceb23+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ceb25",
+      "name": "s_named_005ceb23+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ceb26",
+      "name": "s_amed_005ceb23+3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004476e4",
+        "call_type": "direct",
+        "caller": "core_dfilter.cpp_FUN_00447660",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b290d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_staticInit_FUN_004b28b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6666666666666665,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 2,
+      "COPY": 20,
+      "INT_ADD": 12,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 5,
+      "LOAD": 7,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 88
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFilter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x48 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "pcVar3 = &this_ptr->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = 0x40;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 14,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonFilter",
+        "offset": 0,
+        "vtable_addr": "005f3c04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

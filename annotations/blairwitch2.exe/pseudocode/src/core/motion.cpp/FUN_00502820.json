@@ -1,0 +1,391 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 446,
+    "complexity_score": 250,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 22,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 150,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 596
+  },
+  "cross_references": [
+    {
+      "addr": "00540aa0",
+      "from_addr": "00540db6",
+      "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00540aa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00502820",
+    "address_range": [
+      [
+        "00502820",
+        "00502c14"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_FUN_00502820",
+    "signature": "void __cdecl core_motion_cpp_FUN_00502820(CMotionList *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005027b0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_FUN_005027b0"
+    },
+    {
+      "addr": "005b8180",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005b8180"
+    },
+    {
+      "addr": "005b8100",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005b8100"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8580"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005df720",
+      "name": "DAT_005df720",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005df724",
+      "name": "s_core_motion_cpp_005df724",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df737",
+      "name": "s_Error_reading_motion_lis_005df737",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df752",
+      "name": "s_core_motion_cpp_005df752",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df765",
+      "name": "s_Can_t_read_motion_list_i_005df765",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df7d8",
+      "name": "DAT_005df7d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005df7dc",
+      "name": "DAT_005df7dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005df7e0",
+      "name": "DAT_005df7e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005df7e4",
+      "name": "s_f_d_d_d_005df7e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df7f9",
+      "name": "s_d_d_f_005df7f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df803",
+      "name": "s_d_f_d_005df803",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df80d",
+      "name": "s_d_f_005df80d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df814",
+      "name": "DAT_005df814",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005df818",
+      "name": "s_core_motion_cpp_005df818",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df82b",
+      "name": "s_Out_of_memory_005df82b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df839",
+      "name": "s_d_d_d_f_f_d_005df839",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df84c",
+      "name": "DAT_005df84c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005df850",
+      "name": "s_d_d_005df850",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df857",
+      "name": "DAT_005df857",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005df85a",
+      "name": "DAT_005df85a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00540db6",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00540aa0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.293768545994065,
+    "instruction_count": 337,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 6,
+      "BRANCH": 3,
+      "CALL": 30,
+      "CBRANCH": 37,
+      "COPY": 246,
+      "INT_ADD": 115,
+      "INT_AND": 194,
+      "INT_CARRY": 40,
+      "INT_EQUAL": 177,
+      "INT_LESS": 20,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 25,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 45,
+      "INT_SEXT": 3,
+      "INT_SLESS": 88,
+      "INT_SUB": 129,
+      "INT_XOR": 5,
+      "LOAD": 36,
+      "POPCOUNT": 88,
+      "RETURN": 1,
+      "STORE": 121,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1447
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionList *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005df720",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df720,&local_24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_005df7d8",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df7d8,this_ptr);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005df7dc",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df7dc,pCVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_005df7e0",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df7e0,this_ptr + 0x1c24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_005df814",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df814,pCVar3 + 0x68);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_005df84c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df84c,pCVar3 + 0x70);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 134,
+      "match": "DAT_005df857",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df857,pCVar3 + 0xec);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_005df85a",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005df85a,pCVar5);",
+      "type": "undefined_data"
+    }
+  ]
+}

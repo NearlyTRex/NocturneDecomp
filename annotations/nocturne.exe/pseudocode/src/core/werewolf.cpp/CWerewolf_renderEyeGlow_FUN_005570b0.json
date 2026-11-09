@@ -1,88 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 88,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 89,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 90,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 109,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 110,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 111,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 130,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 131,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 132,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 153,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 154,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 155,
-        "message": "use of undeclared identifier '_DAT_005a42d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 194,
-        "message": "use of undeclared identifier 'DAT_005c1618'; did you mean 'DAT_005c1688'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 354,
@@ -727,30 +643,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CWerewolf_renderEyeGlow_FUN_005570b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 89,
-          "message": "Uninitialized variable: local_54",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 90,
-          "message": "Uninitialized variable: local_50",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -799,22 +691,6 @@
       "severity": "moderate",
       "text": "if (&local_58 != &local_88) {",
       "type": "self_copy_guard"
-    },
-    {
-      "description": "Uninitialized variable: local_54",
-      "line": 89,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_4c.y = (int)ROUND(local_54 * _DAT_005a42d0);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_50",
-      "line": 90,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_4c.z = (int)ROUND(local_50 * _DAT_005a42d0);",
-      "type": "static_uninitvar"
     }
   ]
 }

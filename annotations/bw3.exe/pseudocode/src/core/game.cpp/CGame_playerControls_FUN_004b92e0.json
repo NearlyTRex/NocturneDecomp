@@ -1,0 +1,412 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 102,
+    "complexity_score": 245,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 157
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b8445",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b92e0",
+    "address_range": [
+      [
+        "004b92e0",
+        "004b93d5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_playerControls_FUN_004b92e0",
+    "signature": "void __cdecl core_game_cpp_CGame_playerControls_FUN_004b92e0(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b97b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_processJoystickControls_FUN_004b97b0"
+    },
+    {
+      "addr": "004b9960",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004b9960"
+    },
+    {
+      "addr": "004ba2e0",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004ba2e0"
+    },
+    {
+      "addr": "004ba490",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004ba490"
+    },
+    {
+      "addr": "004c07b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004c07b0"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00507f10",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_00507f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004b92d0",
+      "name": "switchdataD_004b92d0",
+      "type": "void*",
+      "value": "004b932f"
+    },
+    {
+      "addr": "005c27c0",
+      "name": "s_core_game_cpp_005c27c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c27d1",
+      "name": "s_CGame_playerControls_unk_005c27d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fe4b0",
+      "name": "g_CFieldNotesPtr",
+      "type": "CFieldNotes*",
+      "value": "01d1a05c"
+    },
+    {
+      "addr": "00603450",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "01da62f0"
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "007dffb4",
+      "name": "DAT_007dffb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae4",
+      "name": "DAT_01c5fae4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6cef0",
+      "name": "DAT_01c6cef0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6cef4",
+      "name": "DAT_01c6cef4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1a05c",
+      "name": "g_CFieldNotesInstance",
+      "type": "CFieldNotes",
+      "value": null
+    },
+    {
+      "addr": "01d1a09c",
+      "name": "g_CFieldNotesInstance.field64_0x40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21fa0",
+      "name": "DAT_01d21fa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21fa4",
+      "name": "DAT_01d21fa4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d221f8",
+      "name": "DAT_01d221f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d221fc",
+      "name": "DAT_01d221fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22200",
+      "name": "DAT_01d22200",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22b48",
+      "name": "DAT_01d22b48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da62f0",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
+      "value": null
+    },
+    {
+      "addr": "02032780",
+      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b8445",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.36986301369863,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "BRANCH": 6,
+      "BRANCHIND": 1,
+      "CALL": 7,
+      "CBRANCH": 8,
+      "COPY": 58,
+      "INT_ADD": 23,
+      "INT_AND": 37,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 27,
+      "INT_LESS": 6,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 34,
+      "INT_ZEXT": 4,
+      "LOAD": 17,
+      "POPCOUNT": 12,
+      "RETURN": 3,
+      "STORE": 23
+    },
+    "pcode_op_count": 319
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_007dffb4",
+      "severity": "mild",
+      "text": "if (((_DAT_01d22200 == 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) && (DAT_007dffb4 == 0))",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "if (((_DAT_01d22200 == 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) && (DAT_007dffb4 == 0))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x220",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x220 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x25c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x25c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "switch(*(uint *)&this_ptr->field_0xd4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_01c6cef0",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)&DAT_01c6cef0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01d21fa0",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)&DAT_01d21fa0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x15aeb8",
+      "severity": "mild",
+      "text": "_DAT_01d221fc = *(uint *)&g_CDemonSetPtr->field_0x15aeb8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 39,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x96; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 44,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004b934f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b934f: MOVSD.REP ES:EDI,ESI  ; DAT_01c6cef0 | DAT_01d21fa0 | DAT_01c6cef4",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

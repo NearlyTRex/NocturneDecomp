@@ -1,0 +1,249 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 121,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 115
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e21f0",
+    "address_range": [
+      [
+        "004e21f0",
+        "004e22ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_glass.cpp_CGlass_archive_FUN_004e21f0",
+    "signature": "void __cdecl core_glass_cpp_CGlass_archive_FUN_004e21f0(CGlass *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040b1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b1c0"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e3f3c",
+      "name": "s_glassSize_005e3f3b+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e3f46",
+      "name": "s_glassTexture_005e3f46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3f53",
+      "name": "s_opacity_005e3f53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3f5b",
+      "name": "s_shattered_005e3f5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3f65",
+      "name": "s_breakEvent_005e3f65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3f70",
+      "name": "s_mirrorFlag_005e3f70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3f7b",
+      "name": "s_breakableCondition_005e3f7b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3f8e",
+      "name": "s_backgroundFlag_005e3f8e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3f9d",
+      "name": "s_brokenTexture_005e3f9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc44",
+      "name": "g_CGlassClassVersion",
+      "type": "int",
+      "value": "0x6"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.303030303030303,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 5,
+      "COPY": 39,
+      "INT_ADD": 24,
+      "INT_AND": 32,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 34,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 16,
+      "INT_SUB": 35,
+      "LOAD": 5,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 30
+    },
+    "pcode_op_count": 284
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x158,\"?glassSize\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x16c,\"glassTexture\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x17c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x17c,\"opacity\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x180",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x180,\"shattered\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x184",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x184,\"breakEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x1e8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x1e8,\"mirrorFlag\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x30c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x30c,\"breakableCondition\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x370",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x370,\"backgroundFlag\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x37c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x37c,\"brokenTexture\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "00601474"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -19,34 +19,34 @@
 // =============================================================================
 
 // CAlphaBitmap
-extern CAlphaBitmap g_CAlphaBitmap_01cc2fd8;
-extern CAlphaBitmap g_CAlphaBitmap_01cc2fec;
-extern CAlphaBitmap g_CAlphaBitmap_01cc3000;
-extern CAlphaBitmap g_CAlphaBitmap_01cc3014;
-extern CAlphaBitmap g_CAlphaBitmap_01cc3028;
-extern CAlphaBitmap g_CAlphaBitmap_01cc303c;
-extern CAlphaBitmap g_CAlphaBitmap_01cc3050;
-extern CAlphaBitmap g_CAlphaBitmap_01cc3064;
-extern CAlphaBitmap g_CAlphaBitmap_01cc3078;
-extern CAlphaBitmap g_CAlphaBitmap_01cc308c;
-extern CAlphaBitmap g_CAlphaBitmap_01cc480c;
-extern CAlphaBitmap g_CAlphaBitmap_01cc4820;
-extern CAlphaBitmap g_CAlphaBitmap_01cc4834;
-extern CAlphaBitmap g_CAlphaBitmap_01cc4848;
-extern CAlphaBitmap g_CAlphaBitmap_01cc5b20;
-extern CAlphaBitmap g_CAlphaBitmap_01cc5b34;
-extern CAlphaBitmap g_CAlphaBitmap_01cc5b48;
-extern CAlphaBitmap g_CAlphaBitmap_01cc5b6c;
-extern CAlphaBitmap g_CAlphaBitmap_01ccdc50;
+extern CAlphaBitmap g_BatteryIconBitmap;
+extern CAlphaBitmap g_HealthBar1Bitmap;
+extern CAlphaBitmap g_HealthBar2Bitmap;
+extern CAlphaBitmap g_TommyClipIconBitmap;
+extern CAlphaBitmap g_BulletIconBitmap;
+extern CAlphaBitmap g_LithiumIconBitmap;
+extern CAlphaBitmap g_MercuryBulletIconBitmap;
+extern CAlphaBitmap g_ShotShellIconBitmap;
+extern CAlphaBitmap g_SilverBulletIconBitmap;
+extern CAlphaBitmap g_HolyBulletIconBitmap;
+extern CAlphaBitmap g_LoadingScreenBitmap1;
+extern CAlphaBitmap g_LoadingScreenBitmap2;
+extern CAlphaBitmap g_LoadingScreenBitmap3;
+extern CAlphaBitmap g_LoadingScreenBitmap4;
+extern CAlphaBitmap g_MenuBlurLeft;
+extern CAlphaBitmap g_MenuBlurMiddle;
+extern CAlphaBitmap g_MenuBlurRight;
+extern CAlphaBitmap g_CalibrationBitmap;
+extern CAlphaBitmap g_MoonCloudTexture;
 
 // CAlphaBitmap[30]
-extern CAlphaBitmap g_CAlphaBitmap_ARRAY_01ccdc64[30];
+extern CAlphaBitmap g_MoonAnimTextures[30];
 
 // CAlphaBitmap[8]
-extern CAlphaBitmap g_CAlphaBitmap_ARRAY_01cc56e0[8];
+extern CAlphaBitmap g_MenuBitmaps[8];
 
 // CCourse[3]
-extern CCourse g_CCourse_ARRAY_01ccdec8[3];
+extern CCourse g_MoonBatCourses[3];
 
 // CDemonActorType
 extern CDemonActorType g_CKeyActorActorType_01cc30a8;
@@ -66,7 +66,7 @@ extern CDemonActorType g_CMolochActorType_01ccdc14;
 
 // CKeyFramedModel
 extern CKeyFramedModel g_LoadingMoonModel;
-extern CKeyFramedModel g_CKeyFramedModel_01cce1bc;
+extern CKeyFramedModel g_MoonBatModel;
 
 // CKeys
 extern CKeys g_CKeys_01cc30e4;
@@ -75,7 +75,7 @@ extern CKeys g_CKeys_01cc30e4;
 extern CLevelLoader g_CLevelLoader;
 
 // CMoon
-extern CMoon g_CMoon_01cc5780;
+extern CMoon g_CMoonInstance;
 
 // CVector3f[32]
 extern CVector3f g_CVector3f_ARRAY_01cc9124[32];

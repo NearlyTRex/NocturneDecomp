@@ -1,0 +1,292 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 144,
+    "cross_reference_count": 20,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 11,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "unnamed_param"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00409170",
+      "from_addr": "004092c7",
+      "name": "core_actor.cpp_FUN_00409170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00422ab0",
+      "from_addr": "00422aeb",
+      "name": "core_boxactor.cpp_FUN_00422ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428ae0",
+      "from_addr": "00429453",
+      "name": "core_carved.cpp_FUN_00428ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00431cc0",
+      "from_addr": "00431e2c",
+      "name": "core_charactr.cpp_FUN_00431cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00432f10",
+      "from_addr": "00433362",
+      "name": "core_charactr.cpp_FUN_00432f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00433d50",
+      "from_addr": "00433dcc",
+      "name": "core_charactr.cpp_FUN_00433d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459100",
+      "from_addr": "00459b04",
+      "name": "core_demnfolk.cpp_FUN_00459100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00469550",
+      "from_addr": "00469ec7",
+      "name": "core_doc.cpp_FUN_00469550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ac3e0",
+      "from_addr": "004ac63b",
+      "name": "core_fire.cpp_FUN_004ac3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b6420",
+      "from_addr": "004b66d0",
+      "name": "core_fire.cpp_FUN_004b6420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfc00",
+      "from_addr": "004bfca1",
+      "name": "core_flies.cpp_FUN_004bfc00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c65f0",
+      "from_addr": "004c6dab",
+      "name": "core_gabriela.cpp_FUN_004c65f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eb240",
+      "from_addr": "004eb353",
+      "name": "core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558450",
+      "from_addr": "00558cd8",
+      "name": "core_setcolid.cpp_FUN_00558450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00585b00",
+      "from_addr": "005871b3",
+      "name": "core_stranger.cpp_FUN_00585b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a370",
+      "from_addr": "0059a7f5",
+      "name": "core_trash.cpp_FUN_0059a370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ad40",
+      "from_addr": "0059adbe",
+      "name": "core_trash.cpp_FUN_0059ad40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ae20",
+      "from_addr": "0059ae6e",
+      "name": "core_trash.cpp_FUN_0059ae20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a7b50",
+      "from_addr": "005a7dab",
+      "name": "core_vehicle.cpp_FUN_005a7b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bafb0",
+      "from_addr": "005bb921",
+      "name": "core_zombie.cpp_FUN_005bafb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00408b00",
+    "address_range": [
+      [
+        "00408b00",
+        "00408b30"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_actor.cpp_FUN_00408b00",
+    "signature": "void core_actor_cpp_FUN_00408b00(int param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045f700",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045f700"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.181818181818182,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 24,
+      "INT_ADD": 16,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 12,
+      "INT_ZEXT": 6,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 114
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_actor_cpp_FUN_00408b00(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_actor_cpp_FUN_00408b00(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 7,
+      "match": "auStackY_ffc",
+      "severity": "moderate",
+      "text": "uint auStackY_ffc [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dirmat_cpp_FUN_0045f700(param_1 + 0x3c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_dirmat_cpp_FUN_0045f700(param_1 + 0x3c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = local_14;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 13,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(uint *)(&stack0xfffffff0 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = *(uint *)(&stack0xfffffff0 + (uint)bVar1 * -8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 57,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [
+    {
+      "addr": "0040e0c0",
+      "from_addr": "0040e0d3",
+      "name": "core_ammo.cpp_FUN_0040e0c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e0f0",
+    "address_range": [
+      [
+        "0040e0f0",
+        "0040e131"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_ammo.cpp_CAmmoMana_ctor_FUN_0040e0f0",
+    "signature": "CAmmoMana * core_ammo_cpp_CAmmoMana_ctor_FUN_0040e0f0(CAmmoMana *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040de60",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040de60"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b60fa",
+      "name": "s_mana_sm_kfm_005b60fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db214",
+      "name": "g_CAmmo_ManaVTable",
+      "type": "void*",
+      "value": "0040def0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040e0d3",
+        "call_type": "direct",
+        "caller": "core_ammo.cpp_FUN_0040e0c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8823529411764706,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 12,
+      "INT_ADD": 9,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmoMana *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CAmmo_ManaVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&pCVar1->field_0x158,\"mana_sm.kfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x318",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x318 = 10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x314",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x314 = 0x14;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAmmoMana",
+        "offset": 0,
+        "vtable_addr": "005db4f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -36,8 +36,8 @@
 ;   double DOUBLE_00586172 = 1.57079632675000
 ;   double DOUBLE_0058617a = 1.59386252192652E-314
 ;   double DOUBLE_00586182 = 3.14159265350000
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01cae288
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
@@ -360,8 +360,8 @@ section .text
     ADD ESP,0xc                         ; 004ba31d
     PUSH EBX                            ; 004ba320
     PUSH 0x586116                       ; 004ba321 | = "%s confused while walking to scriptDe..."
-    MOV EDX,dword ptr [0x005ad350]      ; 004ba326 | g_CConsole_PTR_005ad350
-    PUSH EDX                            ; 004ba32c | g_CConsole_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 004ba326 | g_CConsolePtr
+    PUSH EDX                            ; 004ba32c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004ba32d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004ba0e3                      ; 004ba332

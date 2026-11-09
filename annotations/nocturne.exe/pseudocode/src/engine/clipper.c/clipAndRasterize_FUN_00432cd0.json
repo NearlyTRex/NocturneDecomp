@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 23,
-        "line": 92,
-        "message": "no matching function for call to 'engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 27,
-        "line": 105,
-        "message": "no matching function for call to 'engine_prim_c_calculateTriangleWindingOrder_FUN_004f9a10'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 120,
-        "message": "no matching function for call to 'engine_special_cpp_drawPolygon2_FUN_00532650'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 47,
-        "line": 164,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'undefined4 *' (aka 'unsigned int *'); dereference with *"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 202,
-        "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 204,
-        "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 79,
-        "line": 217,
-        "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 220,
-        "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 36,
-        "line": 249,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 36,
-        "line": 260,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 260,
-        "message": "use of undeclared identifier 'DAT_007678f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 262,
-        "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 40,
-        "line": 265,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 36,
-        "line": 274,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 274,
-        "message": "use of undeclared identifier 'DAT_007678f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 276,
-        "message": "use of undeclared identifier 'DAT_007678f8'; did you mean 'DAT_007672f8'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 35,
-        "line": 309,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 35,
-        "line": 320,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 320,
-        "message": "use of undeclared identifier 'DAT_007678f8'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 1019,
@@ -1053,23 +933,6 @@
         "type": "int *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "clipAndRasterize_FUN_00432cd0.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "arrayIndexOutOfBoundsCond",
-          "column": 48,
-          "line": 175,
-          "message": "Either the condition '0<vertex_count' is redundant or the array 'auStack_d4[33]' is accessed at index 33, which is out of bounds.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -2471,14 +2334,6 @@
       "severity": "moderate",
       "text": "pSVar15 = (SRenderVertex *)&(pSVar15->projected_vertex).transformed_z;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Either the condition '0<vertex_count' is redundant or the array 'auStack_d4[33]' is accessed at index 33, which is out of bounds.",
-      "line": 175,
-      "match": "Cppcheck: array index OOB depending on condition",
-      "severity": "moderate",
-      "text": "pSVar11 = (SRenderVertex *)auStack_d4[vertex_count];",
-      "type": "static_array_oob_cond"
     }
   ]
 }

@@ -90,9 +90,9 @@ section .text
     MOV EBP,ESP                         ; 004d12e4
     SUB ESP,0x800                       ; 004d12e6
     AND ESP,0xfffffff8                  ; 004d12ec
-    MOV ECX,dword ptr [0x005b9354]      ; 004d12ef | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 004d12ef | g_CGamePtr
     XOR EDX,EDX                         ; 004d12f5
-    PUSH ECX                            ; 004d12f7 | g_CGame_01c775ec
+    PUSH ECX                            ; 004d12f7 | g_CGameInstance
     MOV dword ptr [ESP + 0x7d8],EDX     ; 004d12f8
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004d12ff
         ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_0049a890(CGame * this_ptr)
@@ -106,15 +106,15 @@ section .text
     CMP EAX,0x28                        ; 004d131d
     JNZ 0x004d130e                      ; 004d1320
         ;   XREF to: 004d130e (CONDITIONAL_JUMP)  ; LAB_004d130e
-    MOV EBX,dword ptr [0x005b9354]      ; 004d1322 | g_CGame_PTR_005b9354
+    MOV EBX,dword ptr [0x005b9354]      ; 004d1322 | g_CGamePtr
         ;   Label: LAB_004d1322
-    PUSH EBX                            ; 004d1328 | g_CGame_01c775ec
+    PUSH EBX                            ; 004d1328 | g_CGameInstance
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004d1329
         ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d132e
-    MOV EAX,[0x005b9354]                ; 004d1331 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d1331 | g_CGamePtr
     SUB ESP,0x4                         ; 004d1336
-    MOV EDX,dword ptr [EAX + 0x264]     ; 004d1339 | g_CGame_01c775ec.delta_time_float
+    MOV EDX,dword ptr [EAX + 0x264]     ; 004d1339 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EDX             ; 004d133f
     PUSH 0x1cc5780                      ; 004d1342
     CALL core_moon.cpp_CMoon_update_FUN_004deae0 ; 004d1347

@@ -1,0 +1,378 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 147,
+    "complexity_score": 233,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 53,
+    "suspect_count": 17,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 200
+  },
+  "cross_references": [
+    {
+      "addr": "00510b00",
+      "from_addr": "00510bb9",
+      "name": "core_mimic.cpp_CMimic_beginMorph_FUN_00510b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f630",
+      "from_addr": "0050f6f5",
+      "name": "core_mimic.cpp_FUN_0050f630",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00510c20",
+    "address_range": [
+      [
+        "00510c20",
+        "00510d87"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_mimic.cpp_CMimic_processMorph_FUN_00510c20",
+    "signature": "void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00510c20(CMimic *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0051b160",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160"
+    },
+    {
+      "addr": "0051bd60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
+    },
+    {
+      "addr": "0051b740",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_0051b740"
+    },
+    {
+      "addr": "00523290",
+      "is_variadic": false,
+      "name": "core_morph.cpp_FUN_00523290"
+    },
+    {
+      "addr": "00524270",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advance_FUN_00524270"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e8b01",
+      "name": "s_core_mimic_cpp_005e8b01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8b13",
+      "name": "s_CMimic_processMorph_can_005e8b13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006039d4",
+      "name": "DAT_006039d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f650",
+      "name": "DAT_0061f650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c900",
+      "name": "DAT_01d2c900",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0050f6f5",
+        "call_type": "direct",
+        "caller": "core_mimic.cpp_FUN_0050f630",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00510bb9",
+        "call_type": "direct",
+        "caller": "core_mimic.cpp_CMimic_beginMorph_FUN_00510b00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.191666666666666,
+    "instruction_count": 120,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 5,
+      "BRANCH": 3,
+      "CALL": 8,
+      "CBRANCH": 6,
+      "COPY": 209,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "FLOAT_NEG": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 44,
+      "INT_AND": 55,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 15,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 35,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 26,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 623
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00510c29",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x47ac0",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x47ac0 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x47abc",
+      "severity": "mild",
+      "text": "fVar1 = delta_time / _DAT_006039d4 + *(float *)&this_ptr->field_0x47abc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x47abc",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x47abc = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x47ac0",
+      "severity": "mild",
+      "text": "(0x01D2C900,*(CDemonActor **)&this_ptr->field_0x47ac0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x47ac0",
+      "severity": "mild",
+      "text": "(0x01D2C900,*(CDemonActor **)&this_ptr->field_0x47ac0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x47ac0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x47ac0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158,local_18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x47ac0",
+      "severity": "mild",
+      "text": "((CMotionController *)(*(int *)&this_ptr->field_0x47ac0 + 0x158),local_18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x46e90",
+      "severity": "mild",
+      "text": "((CMorph *)&this_ptr->field_0x46e90,0,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "(CDeformableModelInstance *)&this_ptr->field_0x158,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x46e90",
+      "severity": "mild",
+      "text": "((CMorph *)&this_ptr->field_0x46e90,1,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x47ac0",
+      "severity": "mild",
+      "text": "(CDeformableModelInstance *)(*(int *)&this_ptr->field_0x47ac0 + 0x158),0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x46ee4",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x46ee4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x46ee8",
+      "severity": "mild",
+      "text": "*(float *)(*(int *)&this_ptr->field_0x46ee8 + 4 + iVar3) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x46ee8",
+      "severity": "mild",
+      "text": "-*(float *)(*(int *)&this_ptr->field_0x46ee8 + 4 + iVar3);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x46ee4",
+      "severity": "mild",
+      "text": "} while (iVar2 < *(int *)&this_ptr->field_0x46ee4);",
+      "type": "unnamed_field"
+    }
+  ]
+}

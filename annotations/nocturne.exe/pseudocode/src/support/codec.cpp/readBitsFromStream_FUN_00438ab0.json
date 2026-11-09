@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 58,
-        "message": "member reference base type 'int' is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
@@ -169,37 +157,6 @@
         "type": "int *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "readBitsFromStream_FUN_00438ab0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "shiftNegativeLHS",
-          "column": 18,
-          "line": 23,
-          "message": "Shifting a negative value is technically undefined behaviour",
-          "severity": "portability"
-        },
-        {
-          "check_id": "shiftNegativeLHS",
-          "column": 18,
-          "line": 38,
-          "message": "Shifting a negative value is technically undefined behaviour",
-          "severity": "portability"
-        },
-        {
-          "check_id": "shiftNegativeLHS",
-          "column": 33,
-          "line": 59,
-          "message": "Shifting a negative value is technically undefined behaviour",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {

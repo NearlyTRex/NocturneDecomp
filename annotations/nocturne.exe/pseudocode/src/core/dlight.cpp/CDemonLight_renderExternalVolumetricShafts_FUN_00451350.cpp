@@ -80,8 +80,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   
   bVar5 = 0;
   if (((this_ptr->volumetric_enabled != 0) &&
-      ((float)0.10000000000000001 <= (g_CDemonSet_PTR_005be368->active_fog).density_multiplier)) &&
-     (g_CGame_PTR_005b9354->halo_mode != 0)) {
+      ((float)0.10000000000000001 <= (g_CDemonSetPtr->active_fog).density_multiplier)) &&
+     (g_CGamePtr->halo_mode != 0)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
               (g_CDemonRenderer_PTR_005ae704,&local_f0);
     local_9c = local_f0.x;

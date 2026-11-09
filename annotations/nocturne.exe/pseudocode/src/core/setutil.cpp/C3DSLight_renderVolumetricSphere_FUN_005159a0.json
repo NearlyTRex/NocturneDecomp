@@ -1,100 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_00591001'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_00591009'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 49,
-        "message": "use of undeclared identifier '_DAT_00591011'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 52,
-        "message": "use of undeclared identifier '_DAT_00590ff9'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 53,
-        "message": "use of undeclared identifier '_DAT_00591019'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 53,
-        "message": "use of undeclared identifier '_DAT_00591009'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 54,
-        "message": "use of undeclared identifier '_DAT_00591021'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_005a1ab0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_005a1ab0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_005a1ab0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 72,
-        "message": "use of undeclared identifier '_DAT_00591029'; did you mean 'DAT_005C1020'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 76,
-        "message": "use of undeclared identifier '_DAT_00591029'; did you mean 'DAT_005C1020'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 80,
-        "message": "use of undeclared identifier '_DAT_00591029'; did you mean 'DAT_005C1020'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 90,
-        "message": "use of undeclared identifier 'DAT_005be924'; did you mean 'DAT_005bef24'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 102,
-        "message": "use of undeclared identifier 'stack0xffffff7c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 207,
@@ -464,23 +368,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "C3DSLight_renderVolumetricSphere_FUN_005159a0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 87,
-          "message": "Uninitialized variable: local_24",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -593,14 +480,6 @@
       "severity": "moderate",
       "text": "((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_24",
-      "line": 87,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_24 = local_24 + 0x1e0;",
-      "type": "static_uninitvar"
     }
   ]
 }

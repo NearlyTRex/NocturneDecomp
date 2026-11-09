@@ -1,0 +1,257 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 139,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cf5e0",
+    "address_range": [
+      [
+        "004cf5e0",
+        "004cf6d9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_grave.cpp_CGrave_archive_FUN_004cf5e0",
+    "signature": "void __cdecl core_grave_cpp_CGrave_archive_FUN_004cf5e0(CGrave *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b9b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c47c1",
+      "name": "s_model_name_005c47c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c47cc",
+      "name": "DAT_005c47cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c47d0",
+      "name": "s_active_005c47d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c47d7",
+      "name": "s_graveState_005c47d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c47e2",
+      "name": "s_curFrame_005c47e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c47eb",
+      "name": "s_hideOnFirstFrame_005c47eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c47fc",
+      "name": "s_startCondition_005c47fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c480b",
+      "name": "s_startSound_005c480b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fff28",
+      "name": "g_CGraveClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.367647058823529,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 9,
+      "CBRANCH": 4,
+      "COPY": 43,
+      "INT_ADD": 28,
+      "INT_AND": 34,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 35,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 17,
+      "INT_SUB": 33,
+      "LOAD": 8,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 30
+    },
+    "pcode_op_count": 297
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrave *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x158,\"model name\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005c47cc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2d8,&DAT_005c47cc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2d8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2d8,&DAT_005c47cc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2e0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2e0 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2e0,\"graveState\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2d4,\"curFrame\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2e4",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x2e4,\"hideOnFirstFrame\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2e8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2e8,\"startCondition\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x34c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x34c,\"startSound\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGrave",
+        "offset": 212,
+        "vtable_addr": "005e0f24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

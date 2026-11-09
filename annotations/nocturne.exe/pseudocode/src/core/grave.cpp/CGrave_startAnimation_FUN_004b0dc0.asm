@@ -12,8 +12,8 @@
 ;   core_zombie.cpp_CZombie_process_FUN_0055ef50 at 005600ad
 ;
 ; Referenced Globals:
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890
@@ -46,8 +46,8 @@ section .text
     ADD ESP,0x8                         ; 004b0e03
     PUSH EBX                            ; 004b0e06
         ;   Label: LAB_004b0e06
-    MOV EBX,dword ptr [0x005be368]      ; 004b0e07 | g_CDemonSet_PTR_005be368
-    PUSH EBX                            ; 004b0e0d | g_CDemonSet_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 004b0e07 | g_CDemonSetPtr
+    PUSH EBX                            ; 004b0e0d | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 ; 004b0e0e
         ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004b0e13

@@ -1,0 +1,190 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 106,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 8,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "0040ee80",
+      "from_addr": "0040ee93",
+      "name": "core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040ee80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040eeb0",
+    "address_range": [
+      [
+        "0040eeb0",
+        "0040ef11"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040eeb0",
+    "signature": "CBackgroundActor * core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040eeb0(CBackgroundActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004085c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004085c0"
+    },
+    {
+      "addr": "00468860",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00468860"
+    },
+    {
+      "addr": "00468950",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040ee93",
+        "call_type": "direct",
+        "caller": "core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040ee80",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9545454545454546,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 15,
+      "INT_ADD": 13,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 87
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBackgroundActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&pCVar1[1].field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x174 = &g_CBackgroundActorVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x174 = &g_CBackgroundActorVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 1;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "return (CBackgroundActor *)&this_ptr_00[-1].field_0x20;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "return (CBackgroundActor *)&this_ptr_00[-1].field_0x20;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBackgroundActor",
+        "offset": 0,
+        "vtable_addr": "005fba84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

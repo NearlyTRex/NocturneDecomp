@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 81,
-        "message": "use of undeclared identifier 'stack0xfffffe90'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 476,
@@ -545,23 +533,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CNetGame_applyNewGameSettings_FUN_004ec600.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 92,
-          "message": "Uninitialized variable: local_113",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
@@ -810,14 +781,6 @@
       "severity": "moderate",
       "text": "// 004eca5e: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_113",
-      "line": 92,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < local_113) {",
-      "type": "static_uninitvar"
     }
   ]
 }

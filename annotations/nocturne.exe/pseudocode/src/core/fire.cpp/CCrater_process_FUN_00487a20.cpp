@@ -14,13 +14,12 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_00487a20(CCrater *this_ptr)
   
   if (this_ptr->active != 0) {
     if ((0.0 < this_ptr->smoke_delay) &&
-       (this_ptr->smoke_delay = this_ptr->smoke_delay - g_CGame_PTR_005b9354->delta_time_float,
+       (this_ptr->smoke_delay = this_ptr->smoke_delay - g_CGamePtr->delta_time_float,
        this_ptr->smoke_delay < 0.0)) {
       this_ptr->has_smoke = 1;
       this_ptr->smoke_delay = 0.0;
     }
-    this_ptr->smoke_spawn_timer =
-         g_CGame_PTR_005b9354->delta_time_float + this_ptr->smoke_spawn_timer;
+    this_ptr->smoke_spawn_timer = g_CGamePtr->delta_time_float + this_ptr->smoke_spawn_timer;
     if ((float)0.20000000000000001 < this_ptr->smoke_spawn_timer) {
       this_ptr->smoke_spawn_timer = this_ptr->smoke_spawn_timer + -0.2f;
       local_18.x = 0.0;

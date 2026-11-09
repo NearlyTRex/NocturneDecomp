@@ -1,0 +1,305 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 212,
+    "complexity_score": 125,
+    "cross_reference_count": 1,
+    "function_call_count": 15,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 80,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unknown_field",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 292
+  },
+  "cross_references": [
+    {
+      "addr": "0055a100",
+      "from_addr": "0055a118",
+      "name": "core_sound.cpp_FUN_0055a100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481a70",
+    "address_range": [
+      [
+        "00481a70",
+        "00481c9e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70(CStrList *this_ptr,char *directory_path,char *file_pattern)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    },
+    {
+      "addr": "005ba1f0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005ba1f0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7790"
+    },
+    {
+      "addr": "00460f50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00460f50"
+    },
+    {
+      "addr": "00460e10",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00460e10"
+    },
+    {
+      "addr": "00460e30",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_dtor_FUN_00460e30"
+    },
+    {
+      "addr": "00460ed0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00460ed0"
+    },
+    {
+      "addr": "00460e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00460e50"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00461070"
+    },
+    {
+      "addr": "004610a0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004610a0"
+    },
+    {
+      "addr": "0051b5d0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_0051b5d0"
+    },
+    {
+      "addr": "0051b580",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_initSearch_FUN_0051b580"
+    },
+    {
+      "addr": "00480e70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_00480e70"
+    },
+    {
+      "addr": "00481300",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_findString_FUN_00481300"
+    },
+    {
+      "addr": "00481240",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00481240"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d285e",
+      "name": "s_s_s_005d285e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b40c",
+      "name": "g_CDemonPodPtr",
+      "type": "CDemonPod*",
+      "value": "01e614b0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0055a118",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055a100",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0055a12f",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055a100",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.407407407407407,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 16,
+      "CBRANCH": 17,
+      "COPY": 114,
+      "INT_ADD": 57,
+      "INT_AND": 92,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 87,
+      "INT_LESS": 12,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 43,
+      "INT_SUB": 76,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 21,
+      "POPCOUNT": 43,
+      "RETURN": 1,
+      "STORE": 62
+    },
+    "pcode_op_count": 714
+  },
+  "stack_frame": {
+    "frame_size": 2132,
+    "local_size": 2120,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_844",
+        "offset": -2116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_528",
+        "offset": -1320,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_414",
+        "offset": -1044,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_310",
+        "offset": -784,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30f",
+        "offset": -783,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_210",
+        "offset": -528,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_10f",
+        "offset": -271,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "directory_path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_pattern",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "if (local_528._0_1_ == '\\0') {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 44,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

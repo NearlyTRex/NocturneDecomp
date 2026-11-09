@@ -1,0 +1,766 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 344,
+    "complexity_score": 889,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 224,
+    "suspect_count": 63,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 568
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00417230",
+    "address_range": [
+      [
+        "00417230",
+        "00417598"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "unkafter_bmppuzzl.cpp_FUN_00417230",
+    "signature": "void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057d880",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playSound_FUN_0057d880"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d4002",
+      "name": "DAT_005d4002",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d4005",
+      "name": "DAT_005d4005",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d4008",
+      "name": "DAT_005d4008",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d400b",
+      "name": "DAT_005d400b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d400e",
+      "name": "DAT_005d400e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d4011",
+      "name": "DAT_005d4011",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d4012",
+      "name": "DAT_005d4012",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d4013",
+      "name": "DAT_005d4013",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d4014",
+      "name": "s_s_1_wav_005d4014",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d401d",
+      "name": "DAT_005d401d",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d401e",
+      "name": "DAT_005d401e",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d401f",
+      "name": "DAT_005d401f",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d4020",
+      "name": "s_s_1_wav_005d4020",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4029",
+      "name": "DAT_005d4029",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d402c",
+      "name": "s_AR_d_005d402c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4032",
+      "name": "DAT_005d4032",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d4033",
+      "name": "DAT_005d4033",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d4034",
+      "name": "DAT_005d4034",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d4035",
+      "name": "DAT_005d4035",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d403a",
+      "name": "DAT_005d403a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d403e",
+      "name": "DAT_005d403e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006236b8",
+      "name": "DAT_006236b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.167235494880546,
+    "instruction_count": 293,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "CALL": 10,
+      "CBRANCH": 34,
+      "COPY": 348,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 4,
+      "INT_ADD": 120,
+      "INT_AND": 171,
+      "INT_CARRY": 30,
+      "INT_EQUAL": 177,
+      "INT_LESS": 40,
+      "INT_MULT": 7,
+      "INT_SBORROW": 54,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 85,
+      "INT_SUB": 119,
+      "INT_ZEXT": 7,
+      "LOAD": 71,
+      "POPCOUNT": 85,
+      "RETURN": 1,
+      "STORE": 82
+    },
+    "pcode_op_count": 1514
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0041723c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_34,&DAT_005d4002,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005d4002",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_34,&DAT_005d4002,param_4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_40,&DAT_005d4005,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005d4005",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_40,&DAT_005d4005,param_5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_4c,&DAT_005d4008,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005d4008",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_4c,&DAT_005d4008,param_6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)param_1",
+      "severity": "moderate",
+      "text": "fStack_18 = ABS((float)(param_2 - *(int *)((int)param_1 + 0xc20)));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_18 = ABS((float)(param_2 - *(int *)((int)param_1 + 0xc20)));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_18 = ABS((float)(param_2 - *(int *)((int)param_1 + 0xc20)));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(int *)((int)param_1",
+      "severity": "moderate",
+      "text": "iStack_14 = param_3 - *(int *)((int)param_1 + 0xc24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iStack_14 = param_3 - *(int *)((int)param_1 + 0xc24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_14 = param_3 - *(int *)((int)param_1 + 0xc24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005d400b",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_64c,&DAT_005d400b,(double)(fStack_18 * _DAT_005d403a));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_005d400e",
+      "severity": "mild",
+      "text": "FUN_005bfb40(acStack_44c,&DAT_005d400e,(double)(fStack_1c * _DAT_005d403a));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_005d4011",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d4011;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_005d401d",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d401d;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_005d4029",
+      "severity": "mild",
+      "text": "(acStack_54c,&DAT_005d4029,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 179,
+      "match": "DAT_005d4032",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d4032;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 221,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,param_1,acStack_24c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 222,
+      "match": "(uint *)((int)param_1",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0xc18) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 222,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_1 + 0xc18) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 223,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,param_1,acStack_14c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(uint *)((int)param_1",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0xc1c) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 224,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_1 + 0xc1c) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 225,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,param_1,acStack_34c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 226,
+      "match": "(uint *)((int)param_1",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0xc14) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 226,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_1 + 0xc14) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 39,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 60,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 71,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 92,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 107,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 128,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 149,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 170,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 191,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 212,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 32,
+      "match": "(int *)((int)param_1 + 0xc20)",
+      "severity": "moderate",
+      "text": "fStack_18 = ABS((float)(param_2 - *(int *)((int)param_1 + 0xc20)));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 33,
+      "match": "(int *)((int)param_1 + 0xc24)",
+      "severity": "moderate",
+      "text": "iStack_14 = param_3 - *(int *)((int)param_1 + 0xc24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 222,
+      "match": "(uint *)((int)param_1 + 0xc18)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0xc18) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 224,
+      "match": "(uint *)((int)param_1 + 0xc1c)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0xc1c) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 226,
+      "match": "(uint *)((int)param_1 + 0xc14)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0xc14) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 51,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 83,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 119,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 140,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 161,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 182,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 203,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 51,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 83,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 119,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 140,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 161,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 182,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 203,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAudioRecPuzzle",
+        "offset": 88,
+        "vtable_addr": "005fc974"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

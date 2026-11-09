@@ -16,7 +16,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore *this_pt
   
   if (blood_type != 2) {
     iVar1 = _DAT_01c78ce8 + 1;
-    this_ptr_00 = g_CBloodParticle_ARRAY_01c78cec + _DAT_01c78ce8;
+    this_ptr_00 = g_BloodParticles + _DAT_01c78ce8;
     _DAT_01c78ce8 = iVar1;
     if (0xff < iVar1) {
       _DAT_01c78ce8 = 0;

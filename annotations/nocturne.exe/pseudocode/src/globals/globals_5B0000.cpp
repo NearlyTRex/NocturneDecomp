@@ -7,11 +7,14 @@
 // CDemonMission*
 CDemonMission* g_CDemonMission_PTR_005baf90 = (CDemonMission*)0x01CC9450; // DAT_01cc9450
 
+// CDemonPod*
+CDemonPod* g_CDemonPodPtr = (CDemonPod*)&g_CDemonPodInstance;
+
 // CDemonSet*
-CDemonSet* g_CDemonSet_PTR_005be368 = (CDemonSet*)&g_CDemonSet_01e57284;
+CDemonSet* g_CDemonSetPtr = (CDemonSet*)&g_CDemonSetInstance;
 
 // CEditorTools*
-CEditorTools* g_CEditorTools_PTR_005b6d50 = (CEditorTools*)&g_CEditorTools_01bcd074;
+CEditorTools* g_CEditorToolsPtr = (CEditorTools*)&g_CEditorToolsInstance;
 
 // CFireEffect*
 CFireEffect* g_CFireEffect_PTR_005b80f0 = (CFireEffect*)&g_CFireEffect_01c08d04;
@@ -20,10 +23,13 @@ CFireEffect* g_CFireEffect_PTR_005b80f0 = (CFireEffect*)&g_CFireEffect_01c08d04;
 CForceFeedback* g_CForceFeedback_PTR_005b9284 = (CForceFeedback*)&g_CForceFeedback_01c70f74;
 
 // CGame*
-CGame* g_CGame_PTR_005b9354 = (CGame*)&g_CGame_01c775ec;
+CGame* g_CGamePtr = (CGame*)&g_CGameInstance;
 
 // CGore*
-CGore* g_CGore_PTR_005b96c4 = (CGore*)&g_CGore_01c78c7c;
+CGore* g_CGorePtr = (CGore*)&g_CGoreInstance;
+
+// CGround*
+CGround* g_CGroundPtr = (CGround*)&g_CGroundInstance;
 
 // CKeys*
 CKeys* g_CKeys_PTR_005bac64 = (CKeys*)&g_CKeys_01cc30e4;
@@ -32,13 +38,13 @@ CKeys* g_CKeys_PTR_005bac64 = (CKeys*)&g_CKeys_01cc30e4;
 CLevelLoader* g_CLevelLoader_PTR_005baca0 = (CLevelLoader*)&g_CLevelLoader;
 
 // CMouse*
-CMouse* g_CMouse_PTR_005be060 = (CMouse*)&g_CMouse_01d465c0;
+CMouse* g_CMousePtr = (CMouse*)&g_CMouseInstance;
 
 // CNetGame*
-CNetGame* g_CNetGame_PTR_005bdee0 = (CNetGame*)&g_CNetGame_01cea280;
+CNetGame* g_CNetGamePtr = (CNetGame*)&g_CNetGameInstance;
 
-// CPod*
-CPod* g_CPod_PTR_005be1cc = (CPod*)&g_CDemonPod_01e528d0;
+// CScript*
+CScript* g_CScriptPtr = (CScript*)&g_CScriptInstance;
 
 // CSound*
 CSound* g_CSound_PTR_005bed68 = (CSound*)&g_CSound_02dc9450;
@@ -1597,377 +1603,377 @@ SMRGLTextureBasic g_LoadingMoonGlowTexture = {
 };
 
 // WatcomStaticDestructorNode
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b6d40 = {
+WatcomStaticDestructorNode g_CEditorToolsDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059ca40,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CEditorTools_01bcd074
+    .object_instance = (void *)&g_CEditorToolsInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8050 = {
+WatcomStaticDestructorNode g_CFireEffectStakesDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d180,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CStake_ARRAY_01c23d50
+    .object_instance = (void *)&g_StakePool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8060 = {
+WatcomStaticDestructorNode g_CFireEffectSparksDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d18c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CSpark_ARRAY_01c49d54
+    .object_instance = (void *)&g_SparkPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8070 = {
+WatcomStaticDestructorNode g_CFireEffectGlassParticlesDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d198,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CGlassParticle_ARRAY_01c4f08c
+    .object_instance = (void *)&g_GlassParticlePool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8080 = {
+WatcomStaticDestructorNode g_CFireEffectFireballsDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d1a4,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CFireball_ARRAY_01c58dfc
+    .object_instance = (void *)&g_FireballPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b8090 = {
+WatcomStaticDestructorNode g_CFireEffectRocksDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d1b0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CRock_ARRAY_01c5b500
+    .object_instance = (void *)&g_RockPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80a0 = {
+WatcomStaticDestructorNode g_CFireEffectTossesDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d1bc,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CToss_ARRAY_01c5d824
+    .object_instance = (void *)&g_TossPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80b0 = {
+WatcomStaticDestructorNode g_CFireEffectCratersDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d1c8,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CCrater_ARRAY_01c625f8
+    .object_instance = (void *)&g_CraterPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80c0 = {
+WatcomStaticDestructorNode g_CFireEffectShellsDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d1d4,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CShell_ARRAY_01c684e0
+    .object_instance = (void *)&g_ShellPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80d0 = {
+WatcomStaticDestructorNode g_CFireEffectPopcornsDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d1e0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CPopcorn_ARRAY_01c69614
+    .object_instance = (void *)&g_PopcornPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b80e0 = {
+WatcomStaticDestructorNode g_CFireEffectRainDropsDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059d1ec,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CRainDrop_ARRAY_01c6ce18
+    .object_instance = (void *)&g_RainDropPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92c0 = {
+WatcomStaticDestructorNode g_CDemonLightDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059de60,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDemonLight_01c74640
+    .object_instance = (void *)&g_CDemonLightInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92d0 = {
+WatcomStaticDestructorNode g_CGameDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059de6c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CGame_01c775ec
+    .object_instance = (void *)&g_CGameInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b92e0 = {
+WatcomStaticDestructorNode g_CPickListDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059de78,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CPickList_01c78424
+    .object_instance = (void *)&g_CPickList
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b9694 = {
+WatcomStaticDestructorNode g_CGoreDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059e4b0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CGore_01c78c7c
+    .object_instance = (void *)&g_CGoreInstance
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b96a4 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059e4bc,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CBloodParticle_ARRAY_01c78cec
+    .object_instance = (void *)&g_BloodParticles
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005b96b4 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059e4c8,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CFootstep_ARRAY_01c9e544
+    .object_instance = (void *)&g_Footsteps
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ba8dc = {
+WatcomStaticDestructorNode g_CGroundDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059e6d0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CGround_01cadf80
+    .object_instance = (void *)&g_CGroundInstance
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baa80 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f730,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cb0380
+    .object_instance = (void *)&g_InvBackgroundBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baa90 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f73c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cb0394
+    .object_instance = (void *)&g_InvBackground2Bitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baaa0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f748,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cb03a8
+    .object_instance = (void *)&g_WeapBackgroundBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baab0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f754,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cb03bc
+    .object_instance = (void *)&g_WeapBackground2Bitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baac0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f760,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc2fd8
+    .object_instance = (void *)&g_BatteryIconBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baad0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f76c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc2fec
+    .object_instance = (void *)&g_HealthBar1Bitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baae0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f778,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc3000
+    .object_instance = (void *)&g_HealthBar2Bitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005baaf0 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f784,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc3014
+    .object_instance = (void *)&g_TommyClipIconBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab00 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f790,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc3028
+    .object_instance = (void *)&g_BulletIconBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab10 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f79c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc303c
+    .object_instance = (void *)&g_LithiumIconBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab20 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f7a8,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc3050
+    .object_instance = (void *)&g_MercuryBulletIconBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab30 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f7b4,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc3064
+    .object_instance = (void *)&g_ShotShellIconBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab40 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f7c0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc3078
+    .object_instance = (void *)&g_SilverBulletIconBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bab50 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059f7cc,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc308c
+    .object_instance = (void *)&g_HolyBulletIconBitmap
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bac90 = {
+WatcomStaticDestructorNode g_LoadingMoonModelDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059fbf0,
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_LoadingMoonModel
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad0e = {
+WatcomStaticDestructorNode g_LoadingScreenBitmap1DestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059ffd0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc480c
+    .object_instance = (void *)&g_LoadingScreenBitmap1
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad1e = {
+WatcomStaticDestructorNode g_LoadingScreenBitmap2DestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059ffdc,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc4820
+    .object_instance = (void *)&g_LoadingScreenBitmap2
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad2e = {
+WatcomStaticDestructorNode g_LoadingScreenBitmap3DestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059ffe8,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc4834
+    .object_instance = (void *)&g_LoadingScreenBitmap3
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bad3e = {
+WatcomStaticDestructorNode g_LoadingScreenBitmap4DestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_0059fff4,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc4848
+    .object_instance = (void *)&g_LoadingScreenBitmap4
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005badf8 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0510,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_ARRAY_01cc56e0
+    .object_instance = (void *)&g_MenuBitmaps
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae08 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a051c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CMoon_01cc5780
+    .object_instance = (void *)&g_CMoonInstance
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae18 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0528,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc5b20
+    .object_instance = (void *)&g_MenuBlurLeft
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae28 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0534,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc5b34
+    .object_instance = (void *)&g_MenuBlurMiddle
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae38 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0540,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc5b48
+    .object_instance = (void *)&g_MenuBlurRight
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bae48 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a054c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01cc5b6c
+    .object_instance = (void *)&g_CalibrationBitmap
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb158 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0c30,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_01ccdc50
+    .object_instance = (void *)&g_MoonCloudTexture
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb168 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0c3c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CAlphaBitmap_ARRAY_01ccdc64
+    .object_instance = (void *)&g_MoonAnimTextures
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb178 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0c48,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CCourse_ARRAY_01ccdec8
+    .object_instance = (void *)&g_MoonBatCourses
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bb188 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0c54,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CKeyFramedModel_01cce1bc
+    .object_instance = (void *)&g_MoonBatModel
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bded0 = {
+WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0d90,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CNetGame_01cea280
+    .object_instance = (void *)&g_CNetGameInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be050 = {
+WatcomStaticDestructorNode g_CMouseDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a0e40,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CMouse_01d465c0
+    .object_instance = (void *)&g_CMouseInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be0a8 = {
+WatcomStaticDestructorNode g_PathMapCacheDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a11d0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CPathMap_ARRAY_01d468a0
+    .object_instance = (void *)&g_PathMapCache
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be1bc = {
+WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {
     .next = nullptr,
-    .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a14e0,
+    .destructor_info = (WatcomDestructorCall *)&g_CDemonPodDestructorCall,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDemonPod_01e528d0
+    .object_instance = (void *)&g_CDemonPodInstance
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be200 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a16c0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CPickList_01e56c30
+    .object_instance = (void *)&g_ScriptPickList
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be210 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a16cc,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CScript_01e56da0
+    .object_instance = (void *)&g_CScriptInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be328 = {
+WatcomStaticDestructorNode g_CDemonSetDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a18c0,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDemonSet_01e57284
+    .object_instance = (void *)&g_CDemonSetInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be338 = {
+WatcomStaticDestructorNode g_CDemonCameraDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a18cc,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDemonCamera_01fb8508
+    .object_instance = (void *)&g_CDemonCameraInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be348 = {
+WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a18d8,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDemonRaytrace_01fba938
+    .object_instance = (void *)&g_CDemonRaytraceInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be358 = {
+WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a18e4,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CKeyFramedModel_01fbacc8
+    .object_instance = (void *)&g_CKeyFramedModelInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be980 = {
+WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a1e90,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CDeformableModel_ARRAY_0268cef4
+    .object_instance = (void *)&g_DeformableModelPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be990 = {
+WatcomStaticDestructorNode g_SkeletonPoolDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a1e9c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CSkeleton_ARRAY_02737ef8
+    .object_instance = (void *)&g_SkeletonPool
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea20 = {
+WatcomStaticDestructorNode g_SfxSamplesDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a2120,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CSfxSample_ARRAY_02dc1edc
+    .object_instance = (void *)&g_SfxSamples
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea30 = {
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a212c,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CMP3Decoder_02da8ae0
+    .object_instance = (void *)&g_CMP3DecoderInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea44 = {
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2 = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a2138,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CMP3Decoder_02db4d18
+    .object_instance = (void *)&g_CMP3DecoderInstanceOther
 };
 WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bed50 = {
     .next = nullptr,
@@ -2034,7 +2040,6 @@ int INT_005b9624 = 0x2;
 int INT_005b9650 = 0x7;
 int INT_005b9668 = 0x6;
 int INT_005ba8c8 = 0x4;
-int INT_005ba8ec = 0x1CADF80;
 int INT_005ba928 = 0x3;
 int g_INT_005ba940 = 0xC;
 int g_INT_005ba944 = 0x1;

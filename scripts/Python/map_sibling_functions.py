@@ -70,6 +70,10 @@ SIGNAL_CONFIDENCE = {
     # edited function is not similar to itself.
     "manual":        1.00,
     "shape_strict":  0.99,
+    # The constructor, copy constructor or destructor the compiler recorded in
+    # the same class's WatcomTypeInfo on both sides. Not a resemblance but the
+    # compiler naming the function, so it holds even across a rewritten body.
+    "rtti":          0.98,
     "string":        0.97,
     "vtable":        0.90,
     # A vtable window whose two sides hold the same number of unmatched slots,
@@ -89,7 +93,7 @@ SIGNAL_CONFIDENCE = {
 }
 
 # Signals that are strong enough to anchor propagation on their own.
-ANCHOR_SIGNALS = frozenset(("shape_strict", "string", "vtable"))
+ANCHOR_SIGNALS = frozenset(("shape_strict", "string", "vtable", "rtti"))
 
 # A runner-up candidate scoring at least this fraction of the winner makes the
 # match ambiguous; confidence is discounted and the pair is flagged.
@@ -354,6 +358,16 @@ def seed_manual(ev, a_img, b_img, path, a_prog, b_prog, note=print):
     if bad:
         note(f"  manual       : {bad} entr{'y' if bad == 1 else 'ies'} rejected")
     return n
+
+
+def seed_rtti(ev, a_img, b_img):
+    """Pair constructors and destructors through each class's WatcomTypeInfo."""
+    import watcom_type_info as wti
+    pairs = wti.slot_pairs(wti.scan_type_info(a_img), wti.scan_type_info(b_img),
+                           a_img.by_addr, b_img.by_addr)
+    for a, b, why in pairs:
+        ev.add(a, b, "rtti", why)
+    return len(pairs)
 
 
 def seed_strings(ev, a_img, b_img):
@@ -823,6 +837,7 @@ def build_mapping(a_img, b_img, max_rounds=12, verbose=True, use_order=True,
     note(f"  manual       : {seed_manual(ev, a_img, b_img, ledger, a_img.program, b_img.program, note)} candidate pairs")
     note(f"  shape_strict : {seed_shapes(ev, a_img, b_img, 'strict', 'shape_strict')} candidate pairs")
     note(f"  string       : {seed_strings(ev, a_img, b_img)} candidate pairs")
+    note(f"  rtti         : {seed_rtti(ev, a_img, b_img)} candidate pairs")
     added = resolve(ev, mapping)
     note(f"  -> {added} matched ({len(mapping)} total)")
 

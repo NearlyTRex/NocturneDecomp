@@ -1,0 +1,168 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 97,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 8,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "005b1840",
+      "from_addr": "005b1855",
+      "name": "unkafter_2d.cpp_FUN_005b1840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005adaec",
+    "address_range": [
+      [
+        "005adaec",
+        "005adb45"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_asgaya.cpp_FUN_005adaec",
+    "signature": "bool unkafter_asgaya_cpp_FUN_005adaec(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000009c",
+      "is_variadic": false,
+      "name": "TlsAlloc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3660",
+      "name": "PTR_TlsAlloc_005b3660",
+      "type": "void*",
+      "value": "001b4256"
+    },
+    {
+      "addr": "00607983",
+      "name": "DAT_00607983",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00607985",
+      "name": "DAT_00607985",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "0060799c",
+      "name": "DAT_0060799c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 20,
+      "INT_ADD": 2,
+      "INT_AND": 15,
+      "INT_EQUAL": 14,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 9,
+      "LOAD": 2,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 105
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_0060799c",
+      "severity": "mild",
+      "text": "if (DAT_0060799c == 0xffffffff) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_0060799c",
+      "severity": "mild",
+      "text": "DAT_0060799c = TlsAlloc();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_00607985",
+      "severity": "mild",
+      "text": "if ((0x7fff < DAT_00607985) && (DAT_00607983 < 4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_00607983",
+      "severity": "mild",
+      "text": "if ((0x7fff < DAT_00607985) && (DAT_00607983 < 4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_0060799c",
+      "severity": "mild",
+      "text": "while ((DAT_0060799c != 0xffffffff && (DAT_0060799c < 3))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_0060799c",
+      "severity": "mild",
+      "text": "while ((DAT_0060799c != 0xffffffff && (DAT_0060799c < 3))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0060799c",
+      "severity": "mild",
+      "text": "DAT_0060799c = TlsAlloc();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0060799c",
+      "severity": "mild",
+      "text": "return DAT_0060799c != 0xffffffff;",
+      "type": "undefined_data"
+    }
+  ]
+}

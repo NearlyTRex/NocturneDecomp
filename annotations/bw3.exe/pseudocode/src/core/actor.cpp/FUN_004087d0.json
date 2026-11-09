@@ -1,0 +1,119 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 4,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "0057b040",
+      "from_addr": "0057b0fa",
+      "name": "core_weapon.cpp_FUN_0057b040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004087d0",
+    "address_range": [
+      [
+        "004087d0",
+        "004087df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_FUN_004087d0",
+    "signature": "int __cdecl core_actor_cpp_FUN_004087d0(CDemonActor *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057b0fa",
+        "call_type": "direct",
+        "caller": "core_weapon.cpp_FUN_0057b040",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "COPY": 5,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_XOR": 1,
+      "POPCOUNT": 1
+    },
+    "pcode_op_count": 12
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CActorDestination",
+        "offset": 16,
+        "vtable_addr": "005de204"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005e0d04"
+      },
+      {
+        "class_name": "CPlatform",
+        "offset": 20,
+        "vtable_addr": "005e3304"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005db214"
+      },
+      {
+        "class_name": "CGasMask",
+        "offset": 20,
+        "vtable_addr": "005e0914"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 44
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 30,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 50
+  },
+  "cross_references": [
+    {
+      "addr": "004caeb0",
+      "from_addr": "004cafd0",
+      "name": "core_glass.cpp_FUN_004caeb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054afb0",
+      "from_addr": "0054b2db",
+      "name": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0054afb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a2780",
+    "address_range": [
+      [
+        "004a2780",
+        "004a27d4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_FUN_004a2780",
+    "signature": "void __cdecl core_fire_cpp_FUN_004a2780(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049a650",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_0049a650"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01cbc0ec",
+      "name": "DAT_01cbc0ec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004cafd0",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_FUN_004caeb0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004cb06a",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_FUN_004caeb0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0054b2db",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0054afb0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0054b57a",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0054afb0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.838709677419355,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 31,
+      "INT_ADD": 13,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SEXT": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 119
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "STriangleVertices *"
+      },
+      {
+        "is_param": true,
+        "name": "uv_u_per_vertex",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "uv_v_per_vertex",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 20,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "lifetime",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

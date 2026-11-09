@@ -1,0 +1,244 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 214,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 15,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 125
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004db760",
+    "address_range": [
+      [
+        "004db760",
+        "004db826"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_inv.cpp_FUN_004db760",
+    "signature": "void core_inv_cpp_FUN_004db760(undefined4 param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408a50"
+    },
+    {
+      "addr": "0040ddb0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0"
+    },
+    {
+      "addr": "0040e240",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_FUN_0040e240"
+    },
+    {
+      "addr": "004dadb0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004dadb0"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b8be2",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8be2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.072463768115942,
+    "instruction_count": 69,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 54,
+      "INT_ADD": 29,
+      "INT_AND": 30,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 14,
+      "INT_SUB": 26,
+      "LOAD": 18,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 281
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_inv_cpp_FUN_004db760(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_inv_cpp_FUN_004db760(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(int *)(param_2 + 0x6c8) == -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x470 = *(uint *)(param_2 + 0x6c4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x470",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x470 = *(uint *)(param_2 + 0x6c4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x474 = *(uint *)(param_2 + 0x6c8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x474",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x474 = *(uint *)(param_2 + 0x6c8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar3 = (char *)core_actor_cpp_FUN_00408a50(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 29,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 8))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 8))(this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar2->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar2 = (CAmmo *)&pCVar2->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004dadb0(param_1,this_ptr,0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 39,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CAmmo *)&pCVar2->field_0x2;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

@@ -1,18 +1,14 @@
 import os
 import re
 import zlib
-from ghidra_annotations.util import *
+
+from ghidra.program.model.data import Array, Enum, FunctionDefinition, Pointer, Structure, TypeDef, Undefined
+from ghidra.util.task import TaskMonitor
+
 from ghidra_annotations.annotations.functions import RECEIVER_NAME
 from ghidra_annotations.annotations.pseudocode.functions import generate_source_filename
-from ghidra_annotations.annotations.type_info import get_class_hierarchy, get_class_files
-from ghidra.program.model.data import Array
-from ghidra.program.model.data import Enum
-from ghidra.program.model.data import FunctionDefinition
-from ghidra.program.model.data import Pointer
-from ghidra.program.model.data import Structure
-from ghidra.program.model.data import TypeDef
-from ghidra.program.model.data import Undefined
-from ghidra.util.task import TaskMonitor
+from ghidra_annotations.annotations.type_info import get_class_files, get_class_hierarchy
+from ghidra_annotations.util import clean_data, load_json_files, log_info, log_warning, save_json_files
 
 
 # Input for scaffolding the source recreation: the program's classes, their
@@ -102,9 +98,7 @@ def export_recreation_types(currentProgram):
     class_files = get_class_files()
 
     types = []
-    it = currentProgram.getDataTypeManager().getAllDataTypes()
-    while it.hasNext():
-        dt = it.next()
+    for dt in currentProgram.getDataTypeManager().getAllDataTypes():
         # Pointer and array derivatives (`CFoo *`, `CFoo[16]`) share the
         # category of their target; only the type definitions themselves count.
         if isinstance(dt, (Pointer, Array)):

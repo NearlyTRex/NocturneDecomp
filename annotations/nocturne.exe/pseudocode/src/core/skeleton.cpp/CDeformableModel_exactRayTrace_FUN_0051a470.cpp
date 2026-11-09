@@ -74,7 +74,7 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(CDef
             local_34 = -local_6c.normal.x;
             local_30 = -local_6c.normal.y;
             local_2c = -local_6c.normal.z;
-            if ((SLod *)&stack0x00000000 != g_CDeformableModel_ARRAY_0268cef4[0].lod_info + 3) {
+            if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 3) {
               _DAT_0268cedc = local_34;
               _DAT_0268cee0 = local_30;
               _DAT_0268cee4 = local_2c;

@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 417,
@@ -281,37 +276,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CWaterActor_setup_FUN_00551370.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 29,
-          "line": 48,
-          "message": "Uninitialized variable: iStack_4c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 68,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 20,
-          "line": 82,
-          "message": "Uninitialized variable: local_18",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
@@ -328,30 +292,6 @@
       "severity": "moderate",
       "text": "pCVar14 = (CWaterActor *)&(pCVar14->base).location;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: iStack_4c",
-      "line": 48,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->grid_rows = iStack_4c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 68,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "pfVar7[2] = local_2c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_18",
-      "line": 82,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_18 = local_18 + 1;",
-      "type": "static_legacy_uninitvar"
     }
   ],
   "vtable_info": {

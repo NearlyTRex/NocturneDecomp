@@ -1,0 +1,142 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 126,
+    "complexity_score": 89,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 74,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 200
+  },
+  "cross_references": [
+    {
+      "addr": "00527380",
+      "from_addr": "00527393",
+      "name": "core_pryemorp.cpp_factoryFuncPryeMorph_FUN_00527380",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005273b0",
+    "address_range": [
+      [
+        "005273b0",
+        "005274df"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0",
+    "signature": "CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043fa40",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_0043fa40"
+    },
+    {
+      "addr": "004fa8a0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_ctor_FUN_004fa8a0"
+    },
+    {
+      "addr": "00508f40",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_ctor_FUN_00508f40"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054eae0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00527393",
+        "call_type": "direct",
+        "caller": "core_pryemorp.cpp_factoryFuncPryeMorph_FUN_00527380",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.118811881188119,
+    "instruction_count": 101,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 4,
+      "CBRANCH": 10,
+      "COPY": 69,
+      "INT_ADD": 47,
+      "INT_AND": 50,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 50,
+      "INT_LESS": 10,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 25,
+      "INT_SUB": 28,
+      "LOAD": 20,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 32
+    },
+    "pcode_op_count": 416
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPryeMorph *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x14c",
+      "severity": "mild",
+      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].field_0x14c);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPryeMorph",
+        "offset": 0,
+        "vtable_addr": "005e3834"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

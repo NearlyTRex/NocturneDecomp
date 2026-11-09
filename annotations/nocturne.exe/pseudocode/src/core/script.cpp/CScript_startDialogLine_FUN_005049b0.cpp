@@ -32,7 +32,7 @@ float __cdecl core_script_cpp_CScript_startDialogLine_FUN_005049b0(CScript *this
                            (g_CSound_PTR_005bed68,sound_name);
       local_14 = local_28;
       if (local_28 < 0.0) {
-        shape_edittool_cpp_CStrList_add_FUN_00473cb0(&g_CPickList_01e56c30.base,sound_name);
+        shape_edittool_cpp_CStrList_add_FUN_00473cb0(&g_ScriptPickList.base,sound_name);
         uVar4 = 0xffffffff;
         pcVar5 = dialog_text;
         do {

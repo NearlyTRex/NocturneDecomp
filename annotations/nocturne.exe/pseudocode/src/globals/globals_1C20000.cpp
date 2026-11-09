@@ -8,5 +8,5 @@
 CBulletHole g_CBulletHole_ARRAY_01c20148[256] = {};
 
 // CStake[256]
-CStake g_CStake_ARRAY_01c23d50[256] = {};
+CStake g_StakePool[256] = {};
 

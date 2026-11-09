@@ -26,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
   }
   if (this_ptr->shadow_pass_active == 0) {
     if (render_mode == 0xc0) {
-      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyReversed_FUN_004906e9;
     }
     else if (g_BitsPerPixel == 0x20) {
       g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
@@ -82,7 +82,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
   else {
     g_RenderStateFlags.dword = 0;
     g_VertexPreprocessMode = PREPROCESS_NONE;
-    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0049072f;
     for (; 0 < face_count; face_count = face_count + -1) {
       if ((g_CullingMode == 0) ||
          (pSVar4 = this_ptr->vertex_buffer_ptr + vertex_indices[1],

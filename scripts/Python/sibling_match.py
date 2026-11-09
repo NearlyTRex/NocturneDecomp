@@ -39,6 +39,38 @@ from extract_line_pins import parse_pe
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(os.path.dirname(THIS_DIR))
 ANNOTATIONS = os.path.join(REPO_ROOT, "annotations")
+BINARIES = os.path.join(REPO_ROOT, "bin")
+
+
+def find_program_exe(program):
+    """The on-disk PE that Ghidra imported as `program`.
+
+    Matched by the MD5 the metadata export recorded, not by file name: the
+    project names a program however it likes (bw1.exe shipped as nocturne.exe),
+    and two releases of one game can share a file name while differing in every
+    address. Without an export the name is all there is to go on.
+    """
+    candidates = [os.path.join(REPO_ROOT, program)]
+    candidates += sorted(glob.glob(os.path.join(BINARIES, "**", "*"), recursive=True))
+    # Retail ships tridx6.dll and tridx7.dll byte-identical; the name breaks the tie.
+    candidates = sorted((path for path in candidates if os.path.isfile(path)),
+                        key=lambda path: os.path.basename(path).lower() != program.lower())
+    metadata = os.path.join(ANNOTATIONS, program, "metadata", "metadata.json")
+    if not os.path.exists(metadata):
+        for path in candidates:
+            if os.path.basename(path).lower() == program.lower():
+                return path
+        raise FileNotFoundError("no %s under %s" % (program, BINARIES))
+    with open(metadata) as fh:
+        expected = json.load(fh).get("md5", "").lower()
+    for path in candidates:
+        if not path.lower().endswith((".exe", ".dll")):
+            continue
+        with open(path, "rb") as fh:
+            if hashlib.md5(fh.read()).hexdigest() == expected:
+                return path
+    raise FileNotFoundError("no file under %s has %s's MD5 %s; put the copy Ghidra "
+                            "imported there" % (BINARIES, program, expected))
 
 # Ghidra's placeholder names -- a function carrying one of these is unnamed.
 UNNAMED_RE = re.compile(r"^(FUN_|thunk_FUN_|LAB_|SUB_|UndefinedFunction_)")
@@ -66,6 +98,26 @@ DATA_XREF_TYPES = frozenset(("DATA", "READ", "WRITE", "READ_WRITE"))
 
 def is_unnamed(name):
     return bool(UNNAMED_RE.match(name or ""))
+
+
+# Units that say where a function sits, not which file it came from: the CRT's
+# catch-all, and the virtual units assign_virtual_units.py gives the functions
+# no evidence names a file for. Never evidence, and always replaceable. A
+# virtual unit's folder says what kind of guess it is -- unkclass/ named for the
+# class it holds, unkafter/ for the known unit before it, unkaddr/ for its first
+# address -- and every part is 8.3, as the build's own names are. `unknown`
+# and `unkcore` are folders earlier runs used, still recognised so their names
+# are replaced.
+CRT_UNKNOWN_UNIT = "crt_unknown.c"
+VIRTUAL_UNIT_DIRS = frozenset(("unkclass", "unkafter", "unkaddr", "unknown", "unkcore"))
+
+
+def is_virtual_unit(unit):
+    return bool(unit) and "_" in unit and unit.rsplit("_", 1)[0] in VIRTUAL_UNIT_DIRS
+
+
+def is_placeholder_unit(unit):
+    return bool(unit) and (unit == CRT_UNKNOWN_UNIT or is_virtual_unit(unit))
 
 
 def strip_addr_suffix(name):
@@ -147,7 +199,7 @@ class Image:
 
     def __init__(self, program, exe_path=None, verbose=False):
         self.program = program
-        self.exe_path = exe_path or os.path.join(REPO_ROOT, program)
+        self.exe_path = exe_path or find_program_exe(program)
         with open(self.exe_path, "rb") as fh:
             self.data = fh.read()
         self.image_base, self.sections = parse_pe(self.data)

@@ -1,0 +1,197 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 52,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 157
+  },
+  "cross_references": [
+    {
+      "addr": "004faef0",
+      "from_addr": "004fb07e",
+      "name": "core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004697a0",
+    "address_range": [
+      [
+        "004697a0",
+        "00469899"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_004697a0",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_004697a0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403970",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403970"
+    },
+    {
+      "addr": "00469590",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01ba5c84",
+      "name": "DAT_01ba5c84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c88",
+      "name": "DAT_01ba5c88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e6c",
+      "name": "DAT_01c35e6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b54",
+      "name": "DAT_01c38b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b58",
+      "name": "DAT_01c38b58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fb07e",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 10,
+      "COPY": 72,
+      "INT_ADD": 32,
+      "INT_AND": 53,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 46,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 23,
+      "INT_SUB": 15,
+      "INT_XOR": 4,
+      "LOAD": 25,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 17,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 360
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "poly",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLPrimitivePoly *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_01ba5c84",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01ba5c84 + iVar1) = iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_01ba5c84",
+      "severity": "mild",
+      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01ba5c84);",
+      "type": "undefined_data"
+    }
+  ]
+}

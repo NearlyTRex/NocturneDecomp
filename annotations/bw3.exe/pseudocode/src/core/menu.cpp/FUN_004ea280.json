@@ -1,0 +1,410 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 195,
+    "complexity_score": 195,
+    "cross_reference_count": 2,
+    "function_call_count": 18,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 10,
+    "suspect_types": [
+      "raw_address_constant",
+      "raw_address_pointer_store",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 265
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b8a18",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea4d0",
+      "from_addr": "004ea9ac",
+      "name": "core_menu.cpp_FUN_004ea4d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ea280",
+    "address_range": [
+      [
+        "004ea280",
+        "004ea4b0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_FUN_004ea280",
+    "signature": "void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c02a0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004c02a0"
+    },
+    {
+      "addr": "004b4430",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004b4430"
+    },
+    {
+      "addr": "004b4440",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004b4440"
+    },
+    {
+      "addr": "004d95c0",
+      "is_variadic": false,
+      "name": "core_inivar.cpp_FUN_004d95c0"
+    },
+    {
+      "addr": "004e7860",
+      "is_variadic": false,
+      "name": "core_menu.cpp_FUN_004e7860"
+    },
+    {
+      "addr": "004e85a0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_FUN_004e85a0"
+    },
+    {
+      "addr": "004e8f80",
+      "is_variadic": false,
+      "name": "core_menu.cpp_FUN_004e8f80"
+    },
+    {
+      "addr": "004e94f0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_FUN_004e94f0"
+    },
+    {
+      "addr": "004eae80",
+      "is_variadic": false,
+      "name": "core_menu.cpp_FUN_004eae80"
+    },
+    {
+      "addr": "004f94a0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_FUN_004f94a0"
+    },
+    {
+      "addr": "004f9580",
+      "is_variadic": false,
+      "name": "core_moon.cpp_FUN_004f9580"
+    },
+    {
+      "addr": "004f9670",
+      "is_variadic": false,
+      "name": "core_moon.cpp_FUN_004f9670"
+    },
+    {
+      "addr": "0053b100",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_0053b100"
+    },
+    {
+      "addr": "005607d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_005607d0"
+    },
+    {
+      "addr": "00560930",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_00560930"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004ea26c",
+      "name": "switchdataD_004ea26c",
+      "type": "void*",
+      "value": "004ea3d9"
+    },
+    {
+      "addr": "005c78e6",
+      "name": "s_Graphic_Options_005c78e5+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c78f6",
+      "name": "s_Sound_Options_005c78f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7904",
+      "name": "s_Control_Options_005c7904",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7914",
+      "name": "s_Credits_005c7914",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c791c",
+      "name": "s_Option_Menu_005c791c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "00600284",
+      "name": "DAT_00600284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213e0",
+      "name": "g_CGameInstance.field212_0xd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213e4",
+      "name": "g_CGameInstance.field216_0xd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d70a78",
+      "name": "DAT_01d70a78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d737d8",
+      "name": "DAT_01d737d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "0203274c",
+      "name": "g_CDemonSetInstance.field1420932_0x15ae84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203275c",
+      "name": "g_CDemonSetInstance.field1420948_0x15ae94",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b8a18",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ea9ac",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ea4d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.171232876712328,
+    "instruction_count": 146,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "BRANCHIND": 1,
+      "CALL": 27,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 91,
+      "INT_ADD": 46,
+      "INT_AND": 70,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 68,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 34,
+      "INT_SUB": 70,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 34,
+      "RETURN": 2,
+      "STORE": 71
+    },
+    "pcode_op_count": 609
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "initialize_systems",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x15ae84",
+      "severity": "mild",
+      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x15ae94",
+      "severity": "mild",
+      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x15ae84",
+      "severity": "mild",
+      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0xd8",
+      "severity": "mild",
+      "text": "*(uint *)&g_CGamePtr->field_0xd8 = 9;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "_DAT_01d737d8 = *(int *)&g_CGamePtr->field_0xd4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "if (_DAT_01d737d8 != *(int *)&g_CGamePtr->field_0xd4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 64,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 64,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Raw hex address 0x1d75478 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 18,
+      "match": "0x1d75478",
+      "severity": "moderate",
+      "text": "iVar3 = 0x1d75478;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

@@ -1,0 +1,1734 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1712,
+    "complexity_score": 1869,
+    "cross_reference_count": 8,
+    "function_call_count": 22,
+    "global_count": 58,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 834,
+    "suspect_count": 99,
+    "suspect_types": [
+      "raw_address_constant",
+      "undefined_data",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 2546
+  },
+  "cross_references": [
+    {
+      "addr": "0040e720",
+      "from_addr": "0040e744",
+      "name": "core_ammobox.cpp_FUN_0040e720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bafd0",
+      "from_addr": "004bb054",
+      "name": "core_game.cpp_FUN_004bafd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb100",
+      "from_addr": "004bbbbb",
+      "name": "core_game.cpp_FUN_004bb100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d3e20",
+      "from_addr": "004d4016",
+      "name": "core_hero.cpp_FUN_004d3e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d41a0",
+      "from_addr": "004d41cc",
+      "name": "core_hero.cpp_FUN_004d41a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004db8d0",
+      "from_addr": "004db974",
+      "name": "core_inv.cpp_FUN_004db8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00518430",
+      "from_addr": "005184b8",
+      "name": "core_prye.cpp_FUN_00518430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529a70",
+      "from_addr": "0052b3eb",
+      "name": "core_script.cpp_CScript_step_FUN_00529a70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004da880",
+    "address_range": [
+      [
+        "004da880",
+        "004db8c3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_FUN_004da880",
+    "signature": "int __cdecl core_inv_cpp_FUN_004da880(CInventory *this_ptr,CDemonActor *item_actor,int show_tutorial_message)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "0040c4f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c4f0"
+    },
+    {
+      "addr": "004085a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_004085a0"
+    },
+    {
+      "addr": "00408870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408870"
+    },
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c790"
+    },
+    {
+      "addr": "004b46b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004b46b0"
+    },
+    {
+      "addr": "004d20c0",
+      "is_variadic": false,
+      "name": "core_health.cpp_FUN_004d20c0"
+    },
+    {
+      "addr": "004dbb40",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004dbb40"
+    },
+    {
+      "addr": "004d9eb0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_getItemDescription_FUN_004d9eb0"
+    },
+    {
+      "addr": "004d9e40",
+      "is_variadic": false,
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004d9e40"
+    },
+    {
+      "addr": "004eaa60",
+      "is_variadic": false,
+      "name": "core_menu.cpp_FUN_004eaa60"
+    },
+    {
+      "addr": "004f7530",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530"
+    },
+    {
+      "addr": "004f69a0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f69a0"
+    },
+    {
+      "addr": "004f6f10",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f6f10"
+    },
+    {
+      "addr": "005609d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005609d0"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a3d00",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005a3d00"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00441ff0"
+    },
+    {
+      "addr": "004b2a80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004b2a80"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c5fe2",
+      "name": "s_wp_getmana_wav_005c5fe2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c5ff1",
+      "name": "s_wp_getammo_wav_005c5ff1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6000",
+      "name": "s_You_ve_found_005c6000",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6010",
+      "name": "DAT_005c6010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c6014",
+      "name": "s_bullets_005c6014",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6015",
+      "name": "s_ullets_005c6014+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c6016",
+      "name": "s_llets_005c6014+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c6017",
+      "name": "s_lets_005c6014+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c601c",
+      "name": "DAT_005c601c",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c601d",
+      "name": "DAT_005c601d",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c6021",
+      "name": "s_You_ve_received_d_health_005c6021",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c603d",
+      "name": "s_CHealthItem_005c603d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6049",
+      "name": "s_Press_005c6049",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6050",
+      "name": "s_and_005c6050",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6056",
+      "name": "s_to_cycle_through_your_in_005c6056",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6080",
+      "name": "s_to_use_this_item_to_rest_005c6080",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c60aa",
+      "name": "s_CKeyActor_005c60aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c60b4",
+      "name": "s_With_your_guns_put_away_005c60b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c60d4",
+      "name": "s_to_open_a_previously_loc_005c60d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c60f7",
+      "name": "s_CBoxActor_005c60f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6101",
+      "name": "s_Press_005c6101",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6108",
+      "name": "s_and_005c6108",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c610e",
+      "name": "s_to_cycle_through_your_in_005c610e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6138",
+      "name": "s_to_use_this_item_005c6138",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c614b",
+      "name": "s_CLightActor_005c614b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6157",
+      "name": "s_Press_005c6157",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c615e",
+      "name": "s_to_use_the_lantern_005c615e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6173",
+      "name": "s_CWeapon_005c6173",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c617b",
+      "name": "s_Select_your_005c617b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6188",
+      "name": "s_with_005c6188",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c618f",
+      "name": "s_and_005c618f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6195",
+      "name": "DAT_005c6195",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c6197",
+      "name": "s_Found_existing_ammo_but_005c6197",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c61bb",
+      "name": "s_Found_weapon_to_put_this_005c61bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c61df",
+      "name": "s_Found_new_type_of_ammo_f_005c61df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6226",
+      "name": "s_Found_same_weapon_increa_005c6226",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c624f",
+      "name": "s_Converting_existing_ammo_005c624f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c627f",
+      "name": "DAT_005c627f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "00600530",
+      "name": "DAT_00600530",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007dfd24",
+      "name": "g_CAmmoClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01549ab4",
+      "name": "DAT_01549ab4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21354",
+      "name": "g_CGameInstance.field72_0x48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2135c",
+      "name": "g_CGameInstance.field80_0x50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21360",
+      "name": "g_CGameInstance.field84_0x54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213a0",
+      "name": "g_CGameInstance.field148_0x94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213a4",
+      "name": "g_CGameInstance.field152_0x98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213a8",
+      "name": "g_CGameInstance.field156_0x9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d213ac",
+      "name": "g_CGameInstance.field160_0xa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21558",
+      "name": "g_CGameInstance.field588_0x24c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5b9b4",
+      "name": "g_CHealthItemClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "DAT_01d5ba14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba70",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d72c08",
+      "name": "g_CMeleeClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0c150",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7254901960784315,
+    "instruction_count": 1377,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 78,
+      "BOOL_OR": 7,
+      "BRANCH": 9,
+      "CALL": 89,
+      "CALLIND": 10,
+      "CBRANCH": 170,
+      "COPY": 968,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 536,
+      "INT_AND": 875,
+      "INT_CARRY": 183,
+      "INT_EQUAL": 862,
+      "INT_LESS": 133,
+      "INT_MULT": 28,
+      "INT_NOTEQUAL": 13,
+      "INT_SBORROW": 181,
+      "INT_SCARRY": 191,
+      "INT_SLESS": 419,
+      "INT_SUB": 536,
+      "INT_XOR": 10,
+      "INT_ZEXT": 24,
+      "LOAD": 345,
+      "POPCOUNT": 419,
+      "RETURN": 9,
+      "ROUND": 1,
+      "STORE": 405,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 6507
+  },
+  "stack_frame": {
+    "frame_size": 844,
+    "local_size": 832,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_33c",
+        "offset": -828,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_33b",
+        "offset": -827,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_23c",
+        "offset": -572,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_23b",
+        "offset": -571,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_13b",
+        "offset": -315,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "item_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "show_tutorial_message",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 28,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004daa9f",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004daad1",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dab04",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dab3e",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dab71",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004daba8",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dabdb",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dac2b",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dac5a",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dac8d",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dacdd",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dad0f",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dad42",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dad7c",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dadaf",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dade6",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dae19",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dae69",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dae98",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004daecb",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004daf39",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004daf67",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004daf9a",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004dafd4",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004db007",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004db041",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004db074",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004db0bc",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db142) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db14b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db159) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db49d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db4bb) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db4d4) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db176) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db181) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db193) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db1a2) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 12,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db52b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 13,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db546) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 14,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db1bc) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 15,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db1c7) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 16,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db1d5) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 17,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db1f3) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 18,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db54b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 19,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db56d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 20,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db586) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 21,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db20f) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 22,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db21a) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 23,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004db2b5) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 24,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 69,
+      "match": "field_0xc8",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)&pCVar8[0x185].field_0xc8 + *(int *)(iVar5 + 0x314);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0xc8",
+      "severity": "mild",
+      "text": "*(int *)&pCVar8[0x185].field_0xc8 = iVar5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 72,
+      "match": "field_0xc8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar8[0x185].field_0xc8 = 100;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x02CF5680,pCVar8,\"wp_getmana.wav\",(CVector3f *)&pCVar8->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 80,
+      "match": "field_0xcc",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)&pCVar8[0x185].field_0xcc + *(int *)(iVar5 + 0x314);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 81,
+      "match": "field_0xcc",
+      "severity": "mild",
+      "text": "*(int *)&pCVar8[0x185].field_0xcc = iVar5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 83,
+      "match": "field_0xcc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar8[0x185].field_0xcc = 0x32;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x02CF5680,pCVar8,\"wp_getammo.wav\",(CVector3f *)&pCVar8->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 98,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar5 = (**(code **)(*(int *)&item_actor->field_0x154 + 0x94))(item_actor);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 98,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "iVar5 = (**(code **)(*(int *)&item_actor->field_0x154 + 0x94))(item_actor);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 100,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x8c))(item_actor,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 100,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x8c))(item_actor,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 102,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x88))(item_actor,*(int *)(this_ptr + 4));",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 102,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x88))(item_actor,*(int *)(this_ptr + 4));",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 122,
+      "match": "field_0x24c",
+      "severity": "mild",
+      "text": "(show_tutorial_message == 0)) || (*(int *)&g_CGamePtr->field_0x24c != 0)) goto LAB_004db104;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 147,
+      "match": "DAT_005c6010",
+      "severity": "mild",
+      "text": "FUN_005a28c0(local_13c,&DAT_005c6010,*(uint *)(local_30 + 0x314));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 174,
+      "match": "DAT_005c601c",
+      "severity": "mild",
+      "text": "pcVar11 = &DAT_005c601c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 212,
+      "match": "field_0x9c",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 254,
+      "match": "field_0xa0",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0xa0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 297,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x50);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 354,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x48);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 410,
+      "match": "field_0x9c",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 452,
+      "match": "field_0xa0",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0xa0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 495,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x50);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 550,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x54);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 648,
+      "match": "field_0x94",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 690,
+      "match": "field_0x98",
+      "severity": "mild",
+      "text": "pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 711,
+      "match": "DAT_005c6195",
+      "severity": "mild",
+      "text": "pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c6195);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 765,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 765,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 780,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "if ((iVar5 == 0) && (*(int *)&pCVar9[4].field_0xc == *(int *)&pCVar8[4].field_0xc)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 780,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "if ((iVar5 == 0) && (*(int *)&pCVar9[4].field_0xc == *(int *)&pCVar8[4].field_0xc)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 781,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(int *)&pCVar9[4].field_0x8 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 782,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(int *)&pCVar9[4].field_0x8 + *(int *)&pCVar8[4].field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 782,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(int *)&pCVar9[4].field_0x8 + *(int *)&pCVar8[4].field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 806,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)**(uint **)&pCVar9->field_0x154)(pCVar9);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 806,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(*(code *)**(uint **)&pCVar9->field_0x154)(pCVar9);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 807,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar9[4].field_0x8 = *(uint *)(iVar5 + 0x314);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 808,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar9[4].field_0xc = *(uint *)(iVar5 + 0x318);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 809,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&pCVar9->field_0x154 + 0x88))(pCVar9,*(uint *)(this_ptr + 4))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 809,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&pCVar9->field_0x154 + 0x88))(pCVar9,*(uint *)(this_ptr + 4))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 811,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&pCVar9->field_0x154 + 0x6c))(pCVar9,this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 811,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&pCVar9->field_0x154 + 0x6c))(pCVar9,this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 833,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 833,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 762,
+      "match": "0x1d81080",
+      "severity": "moderate",
+      "text": "pCVar4 = 0x01D81080;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1d81080 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 830,
+      "match": "0x1d81080",
+      "severity": "moderate",
+      "text": "pCVar4 = 0x01D81080;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 127,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 160,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 188,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 224,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 245,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 266,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 288,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 309,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 331,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 366,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 388,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 422,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 443,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 464,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 486,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 507,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 528,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 562,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 583,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 618,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 639,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 660,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 681,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 702,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 723,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 151,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 179,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 151,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 179,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ]
+}

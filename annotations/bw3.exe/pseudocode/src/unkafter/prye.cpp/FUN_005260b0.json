@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 222,
+    "complexity_score": 179,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 69,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 291
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005260b0",
+    "address_range": [
+      [
+        "005260b0",
+        "005262e3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_prye.cpp_FUN_005260b0",
+    "signature": "undefined4 unkafter_prye_cpp_FUN_005260b0(int param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00433a60",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00433a60"
+    },
+    {
+      "addr": "004d4840",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004d4840"
+    },
+    {
+      "addr": "004fc350",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_004fc350"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00526078",
+      "name": "switchdataD_00526078",
+      "type": "undefined1*",
+      "value": "0052627a"
+    },
+    {
+      "addr": "005cd95f",
+      "name": "DAT_005cd95f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cd967",
+      "name": "DAT_005cd967",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.01058201058201,
+    "instruction_count": 189,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 5,
+      "BRANCHIND": 1,
+      "CALL": 18,
+      "CBRANCH": 6,
+      "COPY": 415,
+      "FLOAT2FLOAT": 46,
+      "FLOAT_ADD": 14,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT_ADD": 106,
+      "INT_AND": 77,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 60,
+      "INT_LEFT": 12,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 30,
+      "INT_SUB": 60,
+      "INT_XOR": 4,
+      "INT_ZEXT": 12,
+      "LOAD": 54,
+      "POPCOUNT": 30,
+      "RETURN": 4,
+      "STORE": 88
+    },
+    "pcode_op_count": 1136
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint unkafter_prye_cpp_FUN_005260b0(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint unkafter_prye_cpp_FUN_005260b0(int param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x20b64) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1 + 0x158;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "switch(param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar19 = (float)core_charactr_cpp_FUN_00433a60(param_1,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar18 = (float)core_charactr_cpp_FUN_00433a60(param_1,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar17 = core_hero_cpp_FUN_004d4840(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar17 = core_hero_cpp_FUN_004d4840(param_1,param_2);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 348,
+        "vtable_addr": "005e3534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

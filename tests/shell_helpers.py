@@ -47,6 +47,26 @@ def link_programs(bin_dir, *names):
         os.symlink(shutil.which(name), bin_dir / name)
 
 
+# Stands in for a launcher cmake generates into a build tree: prints how it was
+# called, its own path first
+def generated_launcher(path):
+    path.parent.mkdir(parents = True, exist_ok = True)
+    path.write_text('#!/bin/bash\necho "$0 $*"\n', encoding = "utf-8")
+    path.chmod(0o755)
+    return path
+
+
+# Runs the repository script `script` through a link to it in `root`: a script
+# that finds its tree from its own location takes `root` for it, while shell
+# coverage, which resolves links, still counts the original
+def run_linked(script, root, *args, env = None):
+    link = root / os.path.basename(script)
+    if not link.exists():
+        os.symlink(script, link)
+    return subprocess.run(["bash", str(link), *args], env = env,
+                          capture_output = True, text = True, check = False)
+
+
 def run_script(name, *args, cwd = None, env = None):
     return subprocess.run(["bash", bash_script(name), *args], cwd = cwd, env = env,
                           capture_output = True, text = True, check = False)

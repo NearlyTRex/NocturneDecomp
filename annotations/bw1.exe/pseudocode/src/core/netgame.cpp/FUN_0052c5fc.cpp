@@ -1,0 +1,41 @@
+// Name: core_netgame.cpp_FUN_0052c5fc
+// Address: 0052c5fc
+// Address Range: [[0052c5fc, 0052c6a2]]
+// Convention: unknown
+// Signature: undefined4 core_netgame_cpp_FUN_0052c5fc(CNetGame *param_1)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint core_netgame_cpp_FUN_0052c5fc(CNetGame *param_1)
+
+{
+  CGame *pCVar1;
+  SNetworkAddr *addr;
+  int iVar2;
+  char *name;
+  int hero_number;
+  byte auStack_14 [8];
+  
+  shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400
+            (g_CEditorToolsPtr,"Initializing network to host game");
+  core_netgame_cpp_CNetGame_disconnect_FUN_0052cab0(param_1,0);
+  pCVar1 = g_CGamePtr;
+  *(uint *)&param_1->field_0x1c = 0;
+  iVar2 = *(int *)&pCVar1->field_0xd8;
+  hero_number = *(int *)&pCVar1->field_0xd4;
+  name = &param_1->field_0x8;
+  addr = (SNetworkAddr *)
+         support_trisock_cpp_createNetworkAddr_FUN_0059c740(auStack_14,_DAT_02c8ae4c,0x1ddf);
+  iVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_0052e040(param_1,addr,name,hero_number,iVar2);
+  *(int *)&param_1->field_0x11c = iVar2;
+  *(int *)&param_1->field_0x118 = iVar2;
+  iVar2 = core_netgame_cpp_FUN_0052c970(param_1);
+  if (iVar2 == 0) {
+    return 0;
+  }
+  *(uint *)&param_1->field_0x4 = 1;
+  *(uint *)param_1 = 1;
+  return 1;
+}

@@ -1,0 +1,424 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 109,
+    "complexity_score": 374,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 28,
+    "suspect_types": [
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 173
+  },
+  "cross_references": [
+    {
+      "addr": "004d4c50",
+      "from_addr": "004d4fd6",
+      "name": "core_icepick.cpp_FUN_004d4c50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d5470",
+    "address_range": [
+      [
+        "004d5470",
+        "004d55d2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_icepick.cpp_FUN_004d5470",
+    "signature": "void __cdecl core_icepick_cpp_FUN_004d5470(CIcePick *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00502f10",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00502f10"
+    },
+    {
+      "addr": "00503860",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00503860"
+    },
+    {
+      "addr": "00546f40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40"
+    },
+    {
+      "addr": "00545a60",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00545a60"
+    },
+    {
+      "addr": "00593fa0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleX_FUN_00593fa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da84e",
+      "name": "s_shoot_005da84e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da856",
+      "name": "DAT_005da856",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005da85e",
+      "name": "DAT_005da85e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005da862",
+      "name": "DAT_005da862",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee0f4",
+      "name": "DAT_01cee0f4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d4fd6",
+        "call_type": "direct",
+        "caller": "core_icepick.cpp_FUN_004d4c50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.066666666666666,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 5,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 6,
+      "COPY": 174,
+      "FLOAT2FLOAT": 16,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 5,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 46,
+      "INT_AND": 38,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 15,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 35,
+      "INT_ZEXT": 20,
+      "LOAD": 23,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 35
+    },
+    "pcode_op_count": 546
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIcePick *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "auStackY_1808",
+      "severity": "moderate",
+      "text": "uint auStackY_1808 [1519];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *blend_callback;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x25660",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x25660 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x25640",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x25640 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&this_ptr->field_0x25668 - delta_time * (float)_DAT_005da856;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x25668 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25668 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "fVar1 = delta_time * (float)_DAT_005da856 + *(float *)&this_ptr->field_0x25668;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x25668 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25668 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "this_ptr_00 = core_motion_cpp_FUN_00503860((CMotionController *)&this_ptr->field_0x2b4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x2b4,iVar3,0,*(uint *)&this_ptr->field_0x25668,_DAT_01cee0f4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x2b4,iVar3,0,*(uint *)&this_ptr->field_0x25668,_DAT_01cee0f4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x2566c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2566c =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x10a94",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x10a94 * _DAT_005da85e * (float)_DAT_005da856 * delta_time +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x2566c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2566c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x2566c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2566c < 0x3f490fdc) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x2566c",
+      "severity": "mild",
+      "text": "if (*(float *)&this_ptr->field_0x2566c < _DAT_005da862) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x2566c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2566c = 0xbf490fdb;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x2566c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2566c = 0x3f490fdb;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x2566c",
+      "severity": "mild",
+      "text": "core_xform_cpp_quaternionFromAngleX_FUN_00593fa0(*(uint *)&this_ptr->field_0x2566c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "auStack_18[(uint)bVar2 * -2] = *(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 58,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8) +",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x2b4,(CQuaternion4f *)&local_1c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x25668,iVar3,blend_callback);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8) +",
+      "type": "pointer_truncation"
+    }
+  ]
+}

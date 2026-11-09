@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 32,
-        "message": "use of undeclared identifier 'stack0xffffff5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 81,
-        "line": 32,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xffffff3c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 84,
-        "line": 34,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 85,
-        "line": 36,
-        "message": "use of undeclared identifier 'stack0xffffffa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 40,
-        "message": "use of undeclared identifier 'stack0xffffffa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 42,
-        "message": "use of undeclared identifier 'stack0xffffffa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 44,
-        "message": "use of undeclared identifier 'stack0xffffffbc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 46,
-        "message": "use of undeclared identifier 'stack0xffffffcc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 48,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 50,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 52,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 54,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 58,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 60,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 62,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 64,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 66,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 822,
@@ -554,30 +434,6 @@
         "type": "CBitFont *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "testDrawingSurface_FUN_0045e370.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 30,
-          "line": 189,
-          "message": "Uninitialized variable: in_stack_0000011c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 192,
-          "message": "Uninitialized variable: in_stack_00000128",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -1339,22 +1195,6 @@
       "severity": "moderate",
       "text": "iStack000000c4 = 0x45ecc3;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000011c",
-      "line": 189,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iStack00000120 = iVar4 - in_stack_0000011c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000128",
-      "line": 192,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar3 = iVar4 - in_stack_00000128;",
-      "type": "static_uninitvar"
     }
   ]
 }

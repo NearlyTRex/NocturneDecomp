@@ -1,0 +1,14 @@
+// Name: core_fire.cpp_CTrail_reset_FUN_004b3c70
+// Address: 004b3c70
+// Address Range: [[004b3c70, 004b3c7b]]
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_CTrail_reset_FUN_004b3c70(CTrail *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_fire_cpp_CTrail_reset_FUN_004b3c70(CTrail *this_ptr)
+
+{
+  *(uint *)&this_ptr->field_0x10 = 0;
+  return;
+}

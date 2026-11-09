@@ -1,52 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 33,
-        "message": "use of undeclared identifier 'DAT_0145b290'; did you mean 'DAT_00455290'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 34,
-        "message": "use of undeclared identifier 'DAT_01410290'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 44,
-        "message": "use of undeclared identifier 'DAT_005ad49c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 45,
-        "message": "use of undeclared identifier 'DAT_0145b290'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 57,
-        "message": "use of undeclared identifier 'DAT_00b0daf8'; did you mean 'DAT_005b6d08'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 66,
-        "line": 70,
-        "message": "use of undeclared identifier 'DAT_005ad49c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 71,
-        "message": "use of undeclared identifier 'DAT_00b0daf8'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
@@ -220,30 +172,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCamera_uploadBackdropTexture_FUN_00443180.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 21,
-          "line": 30,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 36,
-          "line": 36,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Undefined global data reference",
@@ -380,22 +308,6 @@
       "severity": "moderate",
       "text": "// 00443227: MOVSD.REP ES:EDI,ESI  ; DAT_00b0daf8 | DAT_00b0dafc",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 30,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar3 = iVar2 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 36,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "((int)((iVar7 + (iVar7 >> 0x1f) * -0x100) - (uint)((iVar7 >> 0x1f) << 7 < 0)) >> 8) *",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

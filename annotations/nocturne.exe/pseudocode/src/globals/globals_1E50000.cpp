@@ -9,16 +9,16 @@ CDemonActorType g_CScatActorType_01e533d0 = {};
 CDemonActorType g_CSentinelActorType_01e57248 = {};
 
 // CDemonPod
-CDemonPod g_CDemonPod_01e528d0 = {};
+CDemonPod g_CDemonPodInstance = {};
 
 // CDemonSet
-CDemonSet g_CDemonSet_01e57284 = {};
+CDemonSet g_CDemonSetInstance = {};
 
 // CPickList
-CPickList g_CPickList_01e56c30 = {};
+CPickList g_ScriptPickList = {};
 
 // CScript
-CScript g_CScript_01e56da0 = {};
+CScript g_CScriptInstance = {};
 
 // int
 int g_RenderedTriangleCount = {};

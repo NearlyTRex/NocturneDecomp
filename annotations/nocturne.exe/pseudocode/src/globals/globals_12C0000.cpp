@@ -5,5 +5,5 @@
 // =============================================================================
 
 // CLZWDecompress
-CLZWDecompress g_CLZWDecompress_012cdb28 = {};
+CLZWDecompress g_CLZWDecompressInstance = {};
 

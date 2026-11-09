@@ -5,11 +5,11 @@
 // =============================================================================
 
 // CDemonCamera
-CDemonCamera g_CDemonCamera_01fb8508 = {};
+CDemonCamera g_CDemonCameraInstance = {};
 
 // CDemonRaytrace
-CDemonRaytrace g_CDemonRaytrace_01fba938 = {};
+CDemonRaytrace g_CDemonRaytraceInstance = {};
 
 // CKeyFramedModel
-CKeyFramedModel g_CKeyFramedModel_01fbacc8 = {};
+CKeyFramedModel g_CKeyFramedModelInstance = {};
 

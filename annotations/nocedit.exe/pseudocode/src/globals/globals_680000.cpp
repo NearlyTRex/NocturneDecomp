@@ -37,6 +37,9 @@ CSpotView* g_CSpotViewPtr = (CSpotView*)&g_CSpotViewInstance;
 // CTerrain*
 CTerrain* g_CTerrainPtr = (CTerrain*)&g_CTerrainInstance;
 
+// CTextureList*
+CTextureList* g_CTextureListPtr = (CTextureList*)&g_CTextureListInstance;
+
 // CVector3i
 CVector3i g_GlobalLightDirection = {
     .x = 0x00000000,
@@ -3619,7 +3622,7 @@ WatcomStaticDestructorNode g_PathMapCacheDestructorNode = {
 };
 WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {
     .next = nullptr,
-    .destructor_info = (WatcomDestructorCall *)&g_CDemonPodDestructorNode,
+    .destructor_info = (WatcomDestructorCall *)&g_CDemonPodDestructorCall,
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CDemonPodInstance
 };

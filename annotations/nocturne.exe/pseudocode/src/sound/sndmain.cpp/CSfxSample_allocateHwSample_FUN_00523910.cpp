@@ -51,11 +51,9 @@ int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_00523910(CSfxSampl
           if (0x3f < iVar5) {
             iVar5 = 0;
           }
-          if (((g_CSfxSample_ARRAY_02dc1edc[iVar5].ref_count == 0) &&
-              (g_CSfxSample_ARRAY_02dc1edc[iVar5].buffer_id != 0)) &&
-             (g_CSfxSample_ARRAY_02dc1edc[iVar5].taken == 0)) {
-            sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60
-                      (g_CSfxSample_ARRAY_02dc1edc + iVar5);
+          if (((g_SfxSamples[iVar5].ref_count == 0) && (g_SfxSamples[iVar5].buffer_id != 0)) &&
+             (g_SfxSamples[iVar5].taken == 0)) {
+            sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(g_SfxSamples + iVar5);
             break;
           }
           iVar8 = iVar8 + 1;

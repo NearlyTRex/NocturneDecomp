@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 339,
@@ -378,65 +373,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "getMRGLBounds_FUN_004dcf60.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 7,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 52,
-          "line": 161,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 24,
-          "line": 162,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 27,
-          "line": 168,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 27,
-          "line": 174,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 159,
-          "message": "Uninitialized variable: local_38",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 18,
-          "line": 168,
-          "message": "Uninitialized variable: local_b0",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 18,
-          "line": 174,
-          "message": "Uninitialized variable: local_ac",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -549,62 +485,6 @@
       "severity": "moderate",
       "text": "// 004dd35d: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 161,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "local_a8.center_scaled.y = (uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f);",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 162,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar3 = (int)uVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 168,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar3 = (int)local_b0 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 174,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar3 = (int)local_ac >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Uninitialized variable: local_38",
-      "line": 159,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(uint)((longlong)local_38 * (longlong)(int)ROUND(dVar14)) >> 0x10 |",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b0",
-      "line": 168,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "uVar3 = (int)local_b0 >> 0x1f;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_ac",
-      "line": 174,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "uVar3 = (int)local_ac >> 0x1f;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

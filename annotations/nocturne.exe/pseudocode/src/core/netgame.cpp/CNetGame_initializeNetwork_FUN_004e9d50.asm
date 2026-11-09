@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Can_t_bind_UDP_socket_0058bc2f
 ;   TerminatedCString s_Can_t_querry_back_for_so_0058bc45
 ;   TerminatedCString s_Initializing_network_OK_0058bc6a
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;
@@ -42,7 +42,7 @@ section .text
     PUSH EBP                            ; 004e9d52
     MOV ESI,dword ptr [ESP + 0x10]      ; 004e9d53
     PUSH 0x58bbd2                       ; 004e9d57 | = "Initializing network..."
-    MOV EDX,dword ptr [0x005b6d50]      ; 004e9d5c | g_CEditorTools_PTR_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004e9d5c | g_CEditorToolsPtr
     PUSH EDX                            ; 004e9d62
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004e9d63
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
@@ -105,7 +105,7 @@ section .text
     IDIV EBX                            ; 004e9e01
     PUSH 0x58bc6a                       ; 004e9e03 | = "Initializing network...OK"
     MOV [0x01cea3f4],EAX                ; 004e9e08 | DAT_01cea3f4
-    MOV EAX,[0x005b6d50]                ; 004e9e0d | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004e9e0d | g_CEditorToolsPtr
     PUSH EAX                            ; 004e9e12
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004e9e13
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
@@ -117,7 +117,7 @@ section .text
     RET                                 ; 004e9e20
     PUSH 0x58bbea                       ; 004e9e21 | = "Can't create datagram socket"
         ;   Label: LAB_004e9e21
-    MOV ECX,dword ptr [0x005b6d50]      ; 004e9e26 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004e9e26 | g_CEditorToolsPtr
     PUSH ECX                            ; 004e9e2c
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004e9e2d
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
@@ -129,7 +129,7 @@ section .text
     RET                                 ; 004e9e3a
     PUSH 0x58bc07                       ; 004e9e3b | = "Can't turn off blocking mode for socket"
         ;   Label: LAB_004e9e3b
-    MOV EBX,dword ptr [0x005b6d50]      ; 004e9e40 | g_CEditorTools_PTR_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004e9e40 | g_CEditorToolsPtr
     PUSH EBX                            ; 004e9e46
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004e9e47
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
@@ -141,7 +141,7 @@ section .text
     RET                                 ; 004e9e54
     PUSH 0x58bc2f                       ; 004e9e55 | = "Can't bind UDP socket"
         ;   Label: LAB_004e9e55
-    MOV ESI,dword ptr [0x005b6d50]      ; 004e9e5a | g_CEditorTools_PTR_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 004e9e5a | g_CEditorToolsPtr
     PUSH ESI                            ; 004e9e60
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004e9e61
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)
@@ -154,7 +154,7 @@ section .text
     PUSH EDI                            ; 004e9e6f
         ;   Label: LAB_004e9e6f
     PUSH 0x58bc45                       ; 004e9e70 | = "Can't querry back for socket address"
-    MOV EDI,dword ptr [0x005b6d50]      ; 004e9e75 | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004e9e75 | g_CEditorToolsPtr
     PUSH EDI                            ; 004e9e7b
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004e9e7c
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)

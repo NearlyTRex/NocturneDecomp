@@ -1,0 +1,176 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 93,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "0056bd40",
+      "from_addr": "0056bda4",
+      "name": "core_tommygun.cpp_FUN_0056bd40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00556ae0",
+    "address_range": [
+      [
+        "00556ae0",
+        "00556b32"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00556ae0",
+    "signature": "int __cdecl sound_sndmain_cpp_FUN_00556ae0(uint sfx_handle,float base_frequency)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552f10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00552f10"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02cf3280",
+      "name": "DAT_02cf3280",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056bda4",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_FUN_0056bd40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 26,
+      "INT_ADD": 11,
+      "INT_AND": 15,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_OR": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 9,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 116
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "base_frequency",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "*(float *)&pCVar1->field_0x3c = base_frequency;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "pCVar1->field_0x118 = pCVar1->field_0x118 | 0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "pCVar1->field_0x118 = pCVar1->field_0x118 | 0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "if ((*(int *)&pCVar1->field_0x60 != 0) && (_DAT_02cf3280 != (int *)0x0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02cf3280 + 0x44))(_DAT_02cf3280,pCVar1,0x10);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

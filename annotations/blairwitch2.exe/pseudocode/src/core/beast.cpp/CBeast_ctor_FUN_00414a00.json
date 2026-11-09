@@ -1,0 +1,191 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 98,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "004149d0",
+      "from_addr": "004149e3",
+      "name": "core_beast.cpp_factoryFuncBeast_FUN_004149d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00414a00",
+    "address_range": [
+      [
+        "00414a00",
+        "00414a5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_beast.cpp_CBeast_ctor_FUN_00414a00",
+    "signature": "CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00414a00(CBeast *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00487db0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_00487db0"
+    },
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f3368",
+      "name": "DAT_005f3368",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f336c",
+      "name": "DAT_005f336c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004149e3",
+        "call_type": "direct",
+        "caller": "core_beast.cpp_factoryFuncBeast_FUN_004149d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.181818181818182,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 52,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 11,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 114
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBeast *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar3->field_0x2b0 = &g_CBeastVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar3->field_0x2b4,\"beast.dfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x3430",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x3430 = 0x41200000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x3434",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x3434 = 0x41200000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x3438",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x3438 = uVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x343c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar3->field_0x343c = uVar2;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBeast",
+        "offset": 0,
+        "vtable_addr": "005f34d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

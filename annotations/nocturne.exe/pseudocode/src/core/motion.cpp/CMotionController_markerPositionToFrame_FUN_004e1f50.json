@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 7,
-        "line": 21,
-        "message": "variable 'local_1c' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]"
-      },
-      {
-        "category": "other",
-        "column": 7,
-        "line": 21,
-        "message": "variable 'local_1c' is used uninitialized whenever '&&' condition is false [-Werror,-Wsometimes-uninitialized]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 117,
@@ -348,31 +330,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CMotionController_markerPositionToFrame_FUN_004e1f50.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 10,
-          "line": 45,
-          "message": "Uninitialized variable: local_1c",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Uninitialized variable: local_1c",
-      "line": 45,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "return local_1c;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

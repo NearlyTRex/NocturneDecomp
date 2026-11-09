@@ -1,0 +1,358 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 183,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 68,
+    "suspect_count": 10,
+    "suspect_types": [
+      "suspicious_cast",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 210
+  },
+  "cross_references": [
+    {
+      "addr": "004d7250",
+      "from_addr": "004d7522",
+      "name": "core_game.cpp_FUN_004d7250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051bad0",
+      "from_addr": "0051bc29",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_0051bad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052e120",
+      "from_addr": "0052e751",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0052e120",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051c0a0",
+    "address_range": [
+      [
+        "0051c0a0",
+        "0051c232"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0",
+    "signature": "int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_0051c0a0(CDemonMission *this_ptr,CCharacter *existing_hero)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c550",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c550"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0051b420",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_0051b420"
+    },
+    {
+      "addr": "0051bf30",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30"
+    },
+    {
+      "addr": "0051b4d0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9a42",
+      "name": "s_core_mission_cpp_005e9a42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9a56",
+      "name": "s_CDemonMission_createHero_005e9a56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9a99",
+      "name": "s_CHeroPlaceholder_005e9a99",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "00622580",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "01d51c20"
+    },
+    {
+      "addr": "01ccf464",
+      "name": "g_CGameInstance.field212_0xd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf468",
+      "name": "g_CGameInstance.field216_0xd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06aa0",
+      "name": "DAT_01d06aa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51c20",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
+      "value": null
+    },
+    {
+      "addr": "01d51c3c",
+      "name": "g_CNetGameInstance.field28_0x1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51c58",
+      "name": "g_CNetGameInstance.field56_0x38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51d3c",
+      "name": "g_CNetGameInstance.field284_0x11c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004d7522",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d7250",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051bc29",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_run_FUN_0051bad0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052e751",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0052e120",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052e923",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0052e120",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9,
+    "instruction_count": 110,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 10,
+      "COPY": 96,
+      "INT_ADD": 37,
+      "INT_AND": 57,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 51,
+      "INT_LESS": 3,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 25,
+      "INT_SUB": 28,
+      "INT_XOR": 5,
+      "LOAD": 21,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 429
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "existing_hero",
+        "offset": 8,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "(this_ptr,0,*(int *)&g_CGamePtr->field_0xd4,existing_hero);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0xd8",
+      "severity": "mild",
+      "text": "*(uint *)&g_CGamePtr->field_0xd8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "_DAT_01d06aa0 = *(int *)&g_CNetGamePtr->field_0x1c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->field_0x34 + iVar3),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(uint *)(&g_CNetGamePtr->field_0x38 + iVar3);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "_DAT_01d06ab4 = *(int *)&g_CNetGamePtr->field_0x11c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x14c",
+      "severity": "mild",
+      "text": "actor_ptr = *(CDemonActor **)&actor_ptr->field_0x14c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CNetGamePtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622584 (at 0x00622584, +4 bytes).",
+      "line": 43,
+      "match": "g_CNetGamePtr",
+      "severity": "moderate",
+      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->field_0x34 + iVar3),",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CNetGamePtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622584 (at 0x00622584, +4 bytes).",
+      "line": 51,
+      "match": "g_CNetGamePtr",
+      "severity": "moderate",
+      "text": "*(uint *)(&g_CNetGamePtr->field_0x38 + iVar3);",
+      "type": "suspicious_cast"
+    }
+  ]
+}

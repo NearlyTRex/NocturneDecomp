@@ -27,11 +27,11 @@
 ;   double DOUBLE_00581577 = 0.25
 ;   undefined4 DAT_005b7650
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   int g_LocalHeroIndex
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.enemy_count
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -269,15 +269,15 @@ section .text
     CMP dword ptr [ESI + 0x294],0x0     ; 0048d38e
     JL 0x0048d484                       ; 0048d395
         ;   XREF to: 0048d484 (CONDITIONAL_JUMP)  ; LAB_0048d484
-    MOV EBX,dword ptr [0x005be368]      ; 0048d39b | g_CDemonSet_PTR_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 0048d39b | g_CDemonSetPtr
         ;   Label: LAB_0048d39b
     MOV EAX,dword ptr [ESI + 0x294]     ; 0048d3a1
-    CMP EAX,dword ptr [EBX + 0x150bf4]  ; 0048d3a7 | g_CDemonSet_01e57284.enemy_count
+    CMP EAX,dword ptr [EBX + 0x150bf4]  ; 0048d3a7 | g_CDemonSetInstance.enemy_count
     JGE 0x0048d493                      ; 0048d3ad
         ;   XREF to: 0048d493 (CONDITIONAL_JUMP)  ; LAB_0048d493
-    MOV EAX,[0x005be368]                ; 0048d3b3 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 0048d3b3 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0048d3b3
-    CMP dword ptr [EAX + 0x150bf4],0x0  ; 0048d3b8 | g_CDemonSet_01e57284.enemy_count
+    CMP dword ptr [EAX + 0x150bf4],0x0  ; 0048d3b8 | g_CDemonSetInstance.enemy_count
     JG 0x0048d4a2                       ; 0048d3bf
         ;   XREF to: 0048d4a2 (CONDITIONAL_JUMP)  ; LAB_0048d4a2
     MOV ESP,EBP                         ; 0048d3c5

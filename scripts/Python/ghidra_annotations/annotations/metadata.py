@@ -1,12 +1,13 @@
-import os
-from ghidra_annotations.util import *
+from ghidra_annotations.util import clean_data, log_info, save_json_file
+
 
 def export_metadata(currentProgram, path):
 
     # Gather metadata
     log_info("Gather metadata")
     md = {
-        "program": currentProgram.getName(),
+        # The project's name for it: the Blair Witch games all shipped as nocturne.exe.
+        "program": currentProgram.getDomainFile().getName(),
         "language": str(currentProgram.getLanguageID()),
         "compiler": str(currentProgram.getCompilerSpec().getCompilerSpecID()),
         "format": currentProgram.getExecutableFormat(),

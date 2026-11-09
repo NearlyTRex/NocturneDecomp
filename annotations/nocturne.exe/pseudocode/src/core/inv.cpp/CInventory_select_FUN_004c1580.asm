@@ -29,7 +29,7 @@
 ;   TerminatedCString s_CBoxActor_005873f2
 ;   double DOUBLE_00587401 = 98
 ;   undefined4 DAT_005b7650
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   undefined4 g_CAmmoActorType_007641bc.name_hash
 ;   ... and 7 more
 ;
@@ -245,8 +245,8 @@ section .text
     MOV EAX,ESP                         ; 004c173e
     PUSH 0x40a00000                     ; 004c1740
     PUSH EAX                            ; 004c1745
-    MOV ESI,dword ptr [0x005b9354]      ; 004c1746 | g_CGame_PTR_005b9354
-    PUSH ESI                            ; 004c174c | g_CGame_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004c1746 | g_CGamePtr
+    PUSH ESI                            ; 004c174c | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004c174d
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     MOV EAX,[0x01cae0e8]                ; 004c1752 | g_LocalHeroIndex

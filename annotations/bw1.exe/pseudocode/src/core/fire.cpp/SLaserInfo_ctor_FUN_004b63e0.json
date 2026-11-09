@@ -1,0 +1,128 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 12,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "0049fdf0",
+      "from_addr": "0049fe4c",
+      "name": "core_emitter.cpp_FUN_0049fdf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505bc0",
+      "from_addr": "00505dbb",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005adf90",
+      "from_addr": "005ae091",
+      "name": "core_weapon.cpp_FUN_005adf90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b63e0",
+    "address_range": [
+      [
+        "004b63e0",
+        "004b641d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_SLaserInfo_ctor_FUN_004b63e0",
+    "signature": "SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_004b63e0(SLaserInfo *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fffac",
+      "name": "DAT_005fffac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005ae091",
+        "call_type": "direct",
+        "caller": "core_weapon.cpp_FUN_005adf90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049fe4c",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_FUN_0049fdf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00505dbb",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.727272727272727,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "COPY": 10,
+      "INT_ADD": 9,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 30
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SLaserInfo *"
+      }
+    ]
+  },
+  "suspects": []
+}

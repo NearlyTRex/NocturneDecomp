@@ -25,9 +25,9 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057cb6e = 250
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0
@@ -200,8 +200,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x114]     ; 0045331d
     ADD EAX,EBP                         ; 00453323
     PUSH EAX                            ; 00453325
-    MOV EDX,dword ptr [0x005be368]      ; 00453326 | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 0045332c | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00453326 | g_CDemonSetPtr
+    PUSH EDX                            ; 0045332c | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 ; 0045332d
         ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00453332
@@ -247,8 +247,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x114]     ; 00453393
     ADD EAX,EDX                         ; 00453399
     PUSH EAX                            ; 0045339b
-    MOV EDX,dword ptr [0x005be368]      ; 0045339c | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 004533a2 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0045339c | g_CDemonSetPtr
+    PUSH EDX                            ; 004533a2 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0 ; 004533a3
         ;   XREF to: 0050ddd0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 004533a8

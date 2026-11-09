@@ -22,10 +22,10 @@ CDemonFilter g_CDemonFilter_ARRAY_014b8cb8[4] = {};
 CDemonFilter g_CDemonFilter_ARRAY_014b8a58[8] = {};
 
 // CFilterCache
-CFilterCache g_CFilterCache_014b8de8 = {};
+CFilterCache g_CFilterCacheInstance = {};
 
 // CFilterFX
-CFilterFX g_CFilterFX_014b98ec = {};
+CFilterFX g_CFilterFXInstance = {};
 
 // CVector3f[16]
 CVector3f g_CVector3f_ARRAY_014b8490[16] = {};

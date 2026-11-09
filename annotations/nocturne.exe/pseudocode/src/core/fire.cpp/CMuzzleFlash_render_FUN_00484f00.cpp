@@ -30,7 +30,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
   local_c = local_28.z;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,&local_28,(CVector3f *)0x0);
-  g_CDemonSet_PTR_005be368->lighting_quality_mode = 1;
+  g_CDemonSetPtr->lighting_quality_mode = 1;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   uVar1 = rand();
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
@@ -52,7 +52,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(CMuzzleFlash *this_p
             (&g_CKeyFramedModelInstance_01c09338,0.0,99);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
-  g_CDemonSet_PTR_005be368->lighting_quality_mode = 0;
+  g_CDemonSetPtr->lighting_quality_mode = 0;
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(this_ptr_00);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,0);

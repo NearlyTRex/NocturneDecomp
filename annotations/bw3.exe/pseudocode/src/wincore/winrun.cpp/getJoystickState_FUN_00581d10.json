@@ -1,0 +1,237 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 118,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 184
+  },
+  "cross_references": [
+    {
+      "addr": "004b93e0",
+      "from_addr": "004b93fe",
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004b93e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00581d10",
+    "address_range": [
+      [
+        "00581d10",
+        "00581e65"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_getJoystickState_FUN_00581d10",
+    "signature": "void __cdecl wincore_winrun_cpp_getJoystickState_FUN_00581d10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000016",
+      "is_variadic": false,
+      "name": "joyGetPos"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3440",
+      "name": "PTR_joyGetPos_005b3440",
+      "type": "void*",
+      "value": "001b38cc"
+    },
+    {
+      "addr": "01c6e250",
+      "name": "DAT_01c6e250",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e254",
+      "name": "DAT_01c6e254",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e258",
+      "name": "DAT_01c6e258",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e25c",
+      "name": "DAT_01c6e25c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e260",
+      "name": "DAT_01c6e260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e264",
+      "name": "DAT_01c6e264",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e268",
+      "name": "DAT_01c6e268",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e26c",
+      "name": "DAT_01c6e26c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e274",
+      "name": "DAT_01c6e274",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e278",
+      "name": "DAT_01c6e278",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22c1c",
+      "name": "DAT_02d22c1c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b93fe",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_resetKeyState_FUN_004b93e0",
+        "estimated_params": 0,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6931818181818183,
+    "instruction_count": 88,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 6,
+      "CALLIND": 2,
+      "CBRANCH": 12,
+      "COPY": 79,
+      "INT_ADD": 25,
+      "INT_AND": 40,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 36,
+      "INT_LESS": 8,
+      "INT_OR": 2,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 18,
+      "INT_SUB": 17,
+      "INT_XOR": 2,
+      "LOAD": 26,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 325
+  },
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (_DAT_02d22c1c == (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

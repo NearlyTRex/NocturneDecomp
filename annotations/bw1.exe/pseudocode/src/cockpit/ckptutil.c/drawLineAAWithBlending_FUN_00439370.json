@@ -1,0 +1,210 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 308,
+    "complexity_score": 114,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 99,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 407
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00439370",
+    "address_range": [
+      [
+        "00439370",
+        "00439632"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_00439370",
+    "signature": "void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_00439370(int x0,int y0,int x1,int y1,int base_color,uchar blend_color,int blend_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00439900",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00439900"
+    },
+    {
+      "addr": "00439f70",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_putPixel_FUN_00439f70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007c7550",
+      "name": "DAT_007c7550",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f008",
+      "name": "DAT_01c4f008",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f00c",
+      "name": "DAT_01c4f00c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f010",
+      "name": "DAT_01c4f010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f014",
+      "name": "DAT_01c4f014",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.531645569620253,
+    "instruction_count": 237,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 35,
+      "BOOL_OR": 5,
+      "BRANCH": 9,
+      "CALL": 6,
+      "CBRANCH": 28,
+      "COPY": 291,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 6,
+      "INT_2COMP": 1,
+      "INT_ADD": 96,
+      "INT_AND": 190,
+      "INT_CARRY": 12,
+      "INT_DIV": 2,
+      "INT_EQUAL": 145,
+      "INT_LEFT": 6,
+      "INT_LESS": 22,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 22,
+      "INT_REM": 2,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 27,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 74,
+      "INT_SUB": 62,
+      "INT_XOR": 16,
+      "INT_ZEXT": 6,
+      "LOAD": 60,
+      "POPCOUNT": 68,
+      "RETURN": 2,
+      "STORE": 61,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1311
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x0",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y0",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "base_color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blend_color",
+        "offset": 24,
+        "size": 1,
+        "type": "uchar"
+      },
+      {
+        "is_param": true,
+        "name": "blend_mode",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00439379",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

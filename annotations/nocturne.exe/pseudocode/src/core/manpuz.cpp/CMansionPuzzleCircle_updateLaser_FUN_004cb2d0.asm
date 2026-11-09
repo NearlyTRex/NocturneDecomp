@@ -73,8 +73,8 @@
 ;   float FLOAT_0058802a = 2
 ;   float FLOAT_0058802e = 4
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -202,8 +202,8 @@ section .text
     CALL core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 ; 004cb412
         ;   XREF to: 0040a200 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_0040a200(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004cb417
-    MOV EDX,dword ptr [0x005be368]      ; 004cb41a | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 004cb420 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004cb41a | g_CDemonSetPtr
+    PUSH EDX                            ; 004cb420 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004cb421
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004cb426
@@ -279,8 +279,8 @@ section .text
     CALL core_fire.cpp_CFireEffect_traceLaser_FUN_0048b6f0 ; 004cb513
         ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_traceLaser_FUN_0048b6f0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * direction, SLaserInfo * laser_info, ...)
     ADD ESP,0x14                        ; 004cb518
-    MOV EDX,dword ptr [0x005be368]      ; 004cb51b | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 004cb521 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004cb51b | g_CDemonSetPtr
+    PUSH EDX                            ; 004cb521 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004cb522
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004cb527

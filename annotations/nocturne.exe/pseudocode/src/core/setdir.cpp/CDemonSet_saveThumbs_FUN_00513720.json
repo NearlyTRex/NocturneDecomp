@@ -1,34 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 37,
-        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 39,
-        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 41,
-        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 43,
-        "message": "use of undeclared identifier 'PTR_DAT_005ae700'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 135,
@@ -275,23 +245,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_saveThumbs_FUN_00513720.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "legacyUninitvar",
-          "column": 49,
-          "line": 72,
-          "message": "Uninitialized variable: local_20",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -372,14 +325,6 @@
       "severity": "moderate",
       "text": "// 0051382a: MOVSD.REP ES:EDI,ESI  ; g_ThumbZBufferTable | g_ThumbZBufferTable[0][0][1] | g_ThumbZBufferTable[0][1][0]",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 72,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(int)local_20);",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

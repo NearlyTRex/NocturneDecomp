@@ -1,0 +1,319 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 310,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 25,
+    "suspect_types": [
+      "raw_address_constant",
+      "register_param",
+      "unaffected_reg",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00461e62",
+    "address_range": [
+      [
+        "00461e62",
+        "00461e6d"
+      ],
+      [
+        "00461e6f",
+        "00461f21"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dpart.cpp_FUN_00461e62",
+    "signature": "void core_dpart_cpp_FUN_00461e62(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01ba51c8",
+      "name": "DAT_01ba51c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba56cc",
+      "name": "DAT_01ba56cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba56d0",
+      "name": "DAT_01ba56d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5714",
+      "name": "DAT_01ba5714",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.8125,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 31,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CBRANCH": 3,
+      "COPY": 59,
+      "INT_ADD": 23,
+      "INT_AND": 111,
+      "INT_CARRY": 2,
+      "INT_DIV": 1,
+      "INT_EQUAL": 47,
+      "INT_LEFT": 9,
+      "INT_LESS": 7,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 35,
+      "INT_REM": 1,
+      "INT_RIGHT": 8,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 3,
+      "INT_SEXT": 12,
+      "INT_SLESS": 32,
+      "INT_SUB": 18,
+      "INT_XOR": 9,
+      "INT_ZEXT": 3,
+      "LOAD": 16,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 5,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 500
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "int in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (in_EAX < unaff_EBP) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if (in_EAX < unaff_EBP) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "_DAT_01ba56cc = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar2 = *(int *)(unaff_EDI + 0x14) - *(int *)(unaff_EBX + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar2 = *(int *)(unaff_EDI + 0x14) - *(int *)(unaff_EBX + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar3 * (longlong)(*(int *)(unaff_EDI + 0x10) - *(int *)(unaff_EBX + 0x10));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar3 * (longlong)(*(int *)(unaff_EDI + 0x10) - *(int *)(unaff_EBX + 0x10));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_ESI + 0xc) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar3 * (longlong)((*(int *)(unaff_EDI + 8) - *(int *)(unaff_EBX + 8)) * 0x100);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)iVar3 * (longlong)((*(int *)(unaff_EDI + 8) - *(int *)(unaff_EBX + 8)) * 0x100);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_ESI + 0x2c) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar2 = (uint)(ushort)((ushort)*(uint *)(unaff_EBX + 0x14) ^ 0xffff);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)(int)uVar2 * (longlong)*(int *)(unaff_ESI + 0xc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_ESI + 8) =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 37,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBX + 0x10) + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "lVar1 = (longlong)(int)uVar2 * (longlong)*(int *)(unaff_ESI + 0x2c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_ESI + 0x28) =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(*(int *)(unaff_EBX + 8) * 0x100 - iVar3) +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Raw hex address 0x4568901 assigned to bare local `_DAT_01ba56d0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_01ba56d0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 20,
+      "match": "0x4568901",
+      "severity": "moderate",
+      "text": "_DAT_01ba56d0 = 0x4568901;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

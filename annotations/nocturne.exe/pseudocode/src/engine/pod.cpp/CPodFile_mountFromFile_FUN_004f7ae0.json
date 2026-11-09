@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 54,
-        "line": 197,
-        "message": "assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
-      },
-      {
-        "category": "pointer_type",
-        "column": 54,
-        "line": 218,
-        "message": "assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 481,
@@ -429,51 +411,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CPodFile_mountFromFile_FUN_004f7ae0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 34,
-          "line": 71,
-          "message": "Uninitialized variable: local_10f",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 57,
-          "line": 71,
-          "message": "Uninitialized variable: local_10e",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 80,
-          "line": 71,
-          "message": "Uninitialized variable: local_10d",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 30,
-          "line": 84,
-          "message": "Uninitialized variable: local_b8",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 31,
-          "line": 85,
-          "message": "Uninitialized variable: local_b4",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
@@ -730,46 +667,6 @@
       "severity": "moderate",
       "text": "(CPodDirectoryEntry *)malloc(this_ptr->file_count * 0x14)",
       "type": "alloc_magic_size"
-    },
-    {
-      "description": "Uninitialized variable: local_10f",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((local_110 == 'P') && (local_10f == 'O')) && (local_10e == 'D')) && (local_10d == '2')) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_10e",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((local_110 == 'P') && (local_10f == 'O')) && (local_10e == 'D')) && (local_10d == '2')) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_10d",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((local_110 == 'P') && (local_10f == 'O')) && (local_10e == 'D')) && (local_10d == '2')) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b8",
-      "line": 84,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->file_count = local_b8;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b4",
-      "line": 85,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->audit_count = local_b4;",
-      "type": "static_uninitvar"
     }
   ]
 }

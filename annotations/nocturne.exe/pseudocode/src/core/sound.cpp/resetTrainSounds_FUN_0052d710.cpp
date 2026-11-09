@@ -15,9 +15,9 @@ void __cdecl core_sound_cpp_resetTrainSounds_FUN_0052d710(void)
     _DAT_02dc9d54 = 0xffffffff;
     return;
   }
-  _DAT_02dc9d44 = -(g_CDemonSet_PTR_005be368->active_fog).scroll.x;
-  _DAT_02dc9d48 = -(g_CDemonSet_PTR_005be368->active_fog).scroll.y;
-  _DAT_02dc9d4c = -(g_CDemonSet_PTR_005be368->active_fog).scroll.z;
+  _DAT_02dc9d44 = -(g_CDemonSetPtr->active_fog).scroll.x;
+  _DAT_02dc9d48 = -(g_CDemonSetPtr->active_fog).scroll.y;
+  _DAT_02dc9d4c = -(g_CDemonSetPtr->active_fog).scroll.z;
   _DAT_02dc9d54 = 0xffffffff;
   return;
 }

@@ -25,12 +25,11 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004b5110(CHero *this_ptr)
   local_14 = 0;
   this_ptr->door_to_open = (CDoor *)0x0;
   do {
-    if (g_CDemonSet_PTR_005be368->actor_count <= iVar7) {
+    if (g_CDemonSetPtr->actor_count <= iVar7) {
       return 0;
     }
     this_ptr_00 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (*(CDemonActor **)
-                                       ((int)g_CDemonSet_PTR_005be368->actors + local_14),
+                                     (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),
                                       g_CDoorActorType_01af4e9c.name_hash);
     if ((this_ptr_00 != (CDoor *)0x0) && (this_ptr_00->door_state == DOOR_STATE_CLOSED)) {
       fVar3 = (this_ptr->base).base.location.position.x - (this_ptr_00->open_position).x;

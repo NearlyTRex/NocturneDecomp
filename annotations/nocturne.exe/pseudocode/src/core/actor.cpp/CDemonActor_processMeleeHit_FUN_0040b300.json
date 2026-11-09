@@ -1,133 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 76,
-        "message": "member reference base type 'byte[24]' (aka 'unsigned char[24]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 34,
-        "line": 80,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 34,
-        "line": 81,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 17,
-        "line": 85,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 17,
-        "line": 86,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 89,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 90,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 91,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "cast_error",
-        "column": 72,
-        "line": 118,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 37,
-        "line": 121,
-        "message": "assigning to 'char *' from incompatible type 'byte[52]' (aka 'unsigned char[52]')"
-      },
-      {
-        "category": "cast_error",
-        "column": 72,
-        "line": 145,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 81,
-        "line": 147,
-        "message": "use of undeclared identifier 'stack0xfffffd84'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 149,
-        "message": "use of undeclared identifier 'stack0xfffffd84'"
-      },
-      {
-        "category": "type_error",
-        "column": 46,
-        "line": 153,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "format_error",
-        "column": 86,
-        "line": 152,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 53,
-        "line": 153,
-        "message": "format specifies type 'char *' but the argument has type 'CTrigger *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "type_error",
-        "column": 85,
-        "line": 154,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 50,
-        "line": 176,
-        "message": "member reference base type 'byte[48]' (aka 'unsigned char[48]') is not a structure or union"
-      },
-      {
-        "category": "cast_error",
-        "column": 21,
-        "line": 216,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 819,
+    "complexity_score": 812,
     "cross_reference_count": 0,
     "function_call_count": 20,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 309,
+    "pseudocode_lines": 302,
     "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
@@ -141,7 +21,7 @@
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 1070
+    "total_lines": 1063
   },
   "cross_references": [],
   "function": {
@@ -298,19 +178,19 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b96c4",
-      "name": "g_CGore_PTR_005b96c4",
+      "name": "g_CGorePtr",
       "type": "CGore*",
       "value": "01c78c7c"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -322,7 +202,7 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -346,73 +226,73 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fac",
-      "name": "g_CDemonSet_01e57284.ray_origin.x",
+      "name": "g_CDemonSetInstance.ray_origin.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb0",
-      "name": "g_CDemonSet_01e57284.ray_origin.y",
+      "name": "g_CDemonSetInstance.ray_origin.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb4",
-      "name": "g_CDemonSet_01e57284.ray_origin.z",
+      "name": "g_CDemonSetInstance.ray_origin.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb8",
-      "name": "g_CDemonSet_01e57284.ray_target.x",
+      "name": "g_CDemonSetInstance.ray_target.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fbc",
-      "name": "g_CDemonSet_01e57284.ray_target.y",
+      "name": "g_CDemonSetInstance.ray_target.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc0",
-      "name": "g_CDemonSet_01e57284.ray_target.z",
+      "name": "g_CDemonSetInstance.ray_target.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "g_CDemonSet_01e57284.collision_actor",
+      "name": "g_CDemonSetInstance.collision_actor",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe4",
-      "name": "g_CDemonSet_01e57284.collision_part_index",
+      "name": "g_CDemonSetInstance.collision_part_index",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff8",
-      "name": "g_CDemonSet_01e57284.actors[1]",
+      "name": "g_CDemonSetInstance.actors[1]",
       "type": "undefined4",
       "value": null
     },
@@ -544,56 +424,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonActor_processMeleeHit_FUN_0040b300.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_name": "cert-flp30-c",
-          "column": 21,
-          "line": 98,
-          "message": "loop induction expression should not have floating-point type"
-        }
-      ],
-      "error": null
-    },
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 87,
-          "line": 260,
-          "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 68,
-          "line": 262,
-          "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x24' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 39,
-          "line": 301,
-          "message": "Undefined behaviour, pointer arithmetic 'auStack_1f4+0x14' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 17,
-          "line": 82,
-          "message": "Uninitialized variable: fStack_b8",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -694,9 +524,9 @@
     {
       "description": "Complex pointer cast",
       "line": 92,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCStack_18 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + (int)fStack_24);",
+      "text": "pCStack_18 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + (int)fStack_24);",
       "type": "pointer_cast"
     },
     {
@@ -776,7 +606,7 @@
       "line": 143,
       "match": "in_stack_fffffd6c",
       "severity": "moderate",
-      "text": "in_stack_fffffd6c = (char *)g_CConsole_PTR_005ad350;",
+      "text": "in_stack_fffffd6c = (char *)g_CConsolePtr;",
       "type": "stack_param"
     },
     {
@@ -853,7 +683,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 186,
+      "line": 185,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if (CStack_40.z == 1.4013e-45) {",
@@ -861,7 +691,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 242,
+      "line": 239,
       "match": "._4_4_",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)(float)auStack_148._4_4_),0),",
@@ -869,7 +699,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 242,
+      "line": 239,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)(float)auStack_148._4_4_),0),",
@@ -877,7 +707,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 243,
+      "line": 240,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(int)((ulonglong)(double)(float)auStack_148._4_4_ >> 0x20),pCVar5);",
@@ -885,7 +715,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 244,
+      "line": 241,
       "match": "._4_4_",
       "severity": "mild",
       "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(pCVar5,(float)auStack_148._4_4_);",
@@ -893,31 +723,23 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 271,
+      "line": 268,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "auStack_20c._0_4_ = g_CDemonSet_PTR_005be368->collision_part_index;",
+      "text": "auStack_20c._0_4_ = g_CDemonSetPtr->collision_part_index;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 278,
+      "line": 273,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "auStack_68._0_4_ =",
+      "text": "auStack_68._0_4_ = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 281,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 281,
+      "line": 275,
       "match": "._0_4_",
       "severity": "mild",
       "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
@@ -925,7 +747,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 285,
+      "line": 275,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "SQRT((float)auStack_68._0_4_ * (float)auStack_68._0_4_ +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 279,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_40.z = (float)auStack_68._0_4_ * CStack_40.z;",
@@ -933,7 +763,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 287,
+      "line": 281,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_1f4._4_4_ = CStack_40.x;",
@@ -949,7 +779,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 295,
+      "line": 288,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_1e0.x = pCVar2->x;",
@@ -962,14 +792,6 @@
       "severity": "moderate",
       "text": "if (&fStack_b4 != &fStack_90) {",
       "type": "self_copy_guard"
-    },
-    {
-      "description": "Uninitialized variable: fStack_b8",
-      "line": 82,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_88 = fStack_b8 + pCVar2->z;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

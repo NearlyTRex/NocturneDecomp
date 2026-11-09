@@ -27,7 +27,7 @@
 ;   double DOUBLE_00596598 = 6
 ;   double DOUBLE_005965a0 = 16
 ;   undefined4 DAT_005a30f8
-;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CGore* g_CGorePtr = 01c78c7c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -355,7 +355,7 @@ section .text
     PUSH EAX                            ; 00544053
     LEA EAX,[ESP + 0x1c8]               ; 00544054
     PUSH EAX                            ; 0054405b
-    MOV EAX,[0x005b96c4]                ; 0054405c | g_CGore_PTR_005b96c4
+    MOV EAX,[0x005b96c4]                ; 0054405c | g_CGorePtr
     PUSH EAX                            ; 00544061
     INC ESI                             ; 00544062
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 00544063

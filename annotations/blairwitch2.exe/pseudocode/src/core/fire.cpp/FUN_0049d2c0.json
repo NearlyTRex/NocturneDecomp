@@ -1,0 +1,325 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 144,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 74,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_alignment_array",
+      "unknown_field",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 218
+  },
+  "cross_references": [
+    {
+      "addr": "0043a7a0",
+      "from_addr": "0043ae01",
+      "name": "core_crossbow.cpp_FUN_0043a7a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049d2c0",
+    "address_range": [
+      [
+        "0049d2c0",
+        "0049d446"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_FUN_0049d2c0",
+    "signature": "void __cdecl core_fire_cpp_FUN_0049d2c0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00449280",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_00449280"
+    },
+    {
+      "addr": "00449530",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_00449530"
+    },
+    {
+      "addr": "00494150",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CStake_init_FUN_00494150"
+    },
+    {
+      "addr": "004941c0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CStake_spawn_FUN_004941c0"
+    },
+    {
+      "addr": "0055aef0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_0055aef0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0049d288",
+      "name": "switchdataD_0049d288",
+      "type": "undefined1*",
+      "value": "0049d2e0"
+    },
+    {
+      "addr": "005d57c2",
+      "name": "s_a_wood_wav_005d57c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c594e8",
+      "name": "DAT_01c594e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c594ec",
+      "name": "DAT_01c594ec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0043ae01",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_FUN_0043a7a0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.991869918699187,
+    "instruction_count": 123,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 21,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 181,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 67,
+      "INT_AND": 99,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 58,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 20,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 35,
+      "INT_SUB": 47,
+      "INT_XOR": 8,
+      "INT_ZEXT": 12,
+      "LOAD": 30,
+      "POPCOUNT": 27,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 737
+  },
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 120,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "impact_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation_angles",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "surface_normal",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ground_type",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "afStackY_1034",
+      "severity": "moderate",
+      "text": "float afStackY_1034 [1003];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "afStack_48[3] = *(float *)&impact_position->field_0x4 - local_30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_38 = *(float *)&impact_position->field_0x8 - local_2c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1c._0_4_ = *(float *)impact_position - local_34;",
+      "type": "unknown_field"
+    }
+  ]
+}

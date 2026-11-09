@@ -1,0 +1,195 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 63,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "004d0860",
+      "from_addr": "004d093c",
+      "name": "core_game.cpp_CGame_playerControls_FUN_004d0860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d19d0",
+      "from_addr": "004d19db",
+      "name": "core_game.cpp_FUN_004d19d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00530660",
+    "address_range": [
+      [
+        "00530660",
+        "005306ca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_00530660",
+    "signature": "SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_00530660(CNetGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ec371",
+      "name": "s_core_netgame_cpp_005ec371",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec385",
+      "name": "s_CNetGame_getMyControls_I_005ec385",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004d093c",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_playerControls_FUN_004d0860",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d19db",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d19d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.9411764705882355,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 27,
+      "INT_ADD": 15,
+      "INT_AND": 40,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 202
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x11c < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x6c",
+      "severity": "mild",
+      "text": "return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x11c * 0x7c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x11c * 0x7c);",
+      "type": "unnamed_field"
+    }
+  ]
+}

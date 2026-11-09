@@ -1,25 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 161,
+    "complexity_score": 160,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 116,
+    "pseudocode_lines": 115,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr",
       "unrolled_memset"
     ],
-    "total_lines": 413
+    "total_lines": 412
   },
   "cross_references": [],
   "function": {
@@ -104,37 +99,37 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "g_CDemonSet_01e57284.characters[0]",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "g_CDemonSet_01e57284.characters[1]",
+      "name": "g_CDemonSetInstance.characters[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     }
@@ -258,15 +253,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "line": 102,
+      "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 109,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x14c) + 0xf8))(iVar2,pCStack_20,0x3f800000,&SStack_b4);",
@@ -274,7 +269,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 91,
+      "line": 90,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->vel).z = 0.0;",

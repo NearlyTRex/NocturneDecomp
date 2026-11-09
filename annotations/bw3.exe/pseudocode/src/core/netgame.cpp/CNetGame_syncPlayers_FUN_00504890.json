@@ -1,0 +1,607 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 324,
+    "complexity_score": 368,
+    "cross_reference_count": 2,
+    "function_call_count": 10,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 128,
+    "suspect_count": 21,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 452
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b82fa",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00505a30",
+      "from_addr": "00505ff5",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_00505a30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00504890",
+    "address_range": [
+      [
+        "00504890",
+        "00504c04"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_00504890",
+    "signature": "int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_00504890(CNetGame *this_ptr,int sync_stage)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00504c70",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70"
+    },
+    {
+      "addr": "00505870",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_send_FUN_00505870"
+    },
+    {
+      "addr": "00506320",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_00506320"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "00401fe0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fe0"
+    },
+    {
+      "addr": "00560d70",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_00560d70"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005806a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ca711",
+      "name": "s_core_netgame_cpp_005ca711",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca725",
+      "name": "s_CNetGame_syncPlayers_don_005ca725",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca75d",
+      "name": "s_Syncing_stage_d_005ca75d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca76f",
+      "name": "s_Waiting_on_005ca76f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca77b",
+      "name": "DAT_005ca77b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ca7bc",
+      "name": "s_Waiting_on_sync_code_d_f_005ca7bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca7e3",
+      "name": "s_core_netgame_cpp_005ca7e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca7f7",
+      "name": "s_CNetGame_syncPlayers_inv_005ca7f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca821",
+      "name": "DAT_005ca821",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ca829",
+      "name": "DAT_005ca829",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ca831",
+      "name": "DAT_005ca831",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600284",
+      "name": "DAT_00600284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d70a78",
+      "name": "DAT_01d70a78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da6474",
+      "name": "DAT_01da6474",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da6478",
+      "name": "DAT_01da6478",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da6480",
+      "name": "DAT_01da6480",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004b82fa",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b8313",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00505ff5",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_00505a30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00506079",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_00505a30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050625f",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_00505a30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.852713178294573,
+    "instruction_count": 258,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BOOL_OR": 11,
+      "BRANCH": 3,
+      "CALL": 22,
+      "CALLIND": 2,
+      "CBRANCH": 20,
+      "COPY": 275,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 6,
+      "INT2FLOAT": 2,
+      "INT_ADD": 90,
+      "INT_AND": 162,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 113,
+      "INT_LEFT": 17,
+      "INT_LESS": 15,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 31,
+      "INT_OR": 30,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 22,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 58,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 84,
+      "INT_XOR": 10,
+      "INT_ZEXT": 14,
+      "LOAD": 51,
+      "POPCOUNT": 54,
+      "RETURN": 4,
+      "STORE": 82,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1252
+  },
+  "stack_frame": {
+    "frame_size": 420,
+    "local_size": 412,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_198",
+        "offset": -408,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_194",
+        "offset": -404,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2b",
+        "offset": -43,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "sync_stage",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0050489c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0x5c + *(int *)&this_ptr->field_0x124 * 0x80) = sync_stage;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0x5c + *(int *)&this_ptr->field_0x124 * 0x80) = sync_stage;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "local_1c = &this_ptr->field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar3->field_0x5c < sync_stage) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_005ca77b",
+      "severity": "mild",
+      "text": "FUN_005a28c0(local_194,&DAT_005ca77b,*(uint *)&pCVar3->field_0x5c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "FUN_005a28c0(local_194,&DAT_005ca77b,*(uint *)&pCVar3->field_0x5c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x80",
+      "severity": "mild",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "} while (local_14 < *(int *)&this_ptr->field_0x1c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 88,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 90,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar3->field_0x5c < sync_stage) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 98,
+      "match": "field_0x80",
+      "severity": "mild",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 99,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x1c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 102,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 102,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 119,
+      "match": "*(code **)(*0x01D70A78",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 119,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 67,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 98,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 84,
@@ -139,30 +134,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "drawAntialiasedChar_FUN_004013d0.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 71,
-          "line": 29,
-          "message": "Uninitialized variable: in_stack_00000014",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 48,
-          "line": 34,
-          "message": "Uninitialized variable: in_stack_0000001c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -211,22 +182,6 @@
       "severity": "moderate",
       "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + iVar5) + in_stack_00000014);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000014",
-      "line": 29,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + iVar5) + in_stack_00000014);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_0000001c",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "[((int)(uint)*pbVar6 >> (in_stack_0000001c & 0x1f) & 0xffU) * 0x421];",
-      "type": "static_uninitvar"
     }
   ]
 }

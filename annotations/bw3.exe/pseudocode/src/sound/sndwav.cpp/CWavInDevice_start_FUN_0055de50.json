@@ -1,0 +1,233 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 116,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 6,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 128
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055de50",
+    "address_range": [
+      [
+        "0055de50",
+        "0055df31"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_CWavInDevice_start_FUN_0055de50",
+    "signature": "int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_0055de50(CWavInDevice *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "0055a560",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_0055a560"
+    },
+    {
+      "addr": "0055dcf0",
+      "is_variadic": false,
+      "name": "sound_sndwav.cpp_writeWavInBuffer_FUN_0055dcf0"
+    },
+    {
+      "addr": "EXTERNAL:00000023",
+      "is_variadic": false,
+      "name": "waveInStart"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3474",
+      "name": "PTR_waveInStart_005b3474",
+      "type": "void*",
+      "value": "001b39a8"
+    },
+    {
+      "addr": "005d508f",
+      "name": "s_waveInStart_failed_005d508f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02cf5504",
+      "name": "DAT_02cf5504",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf5648",
+      "name": "DAT_02cf5648",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf564c",
+      "name": "DAT_02cf564c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf5658",
+      "name": "DAT_02cf5658",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf565c",
+      "name": "DAT_02cf565c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf5670",
+      "name": "DAT_02cf5670",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf5674",
+      "name": "DAT_02cf5674",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.5625,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 1,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 4,
+      "COPY": 80,
+      "INT_ADD": 32,
+      "INT_AND": 76,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 13,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 6,
+      "INT_SLESS": 22,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 25,
+      "INT_XOR": 5,
+      "INT_ZEXT": 1,
+      "LOAD": 25,
+      "POPCOUNT": 20,
+      "RETURN": 3,
+      "STORE": 21,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 445
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavInDevice *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 16,
+      "match": "*(void **)(iVar3 + 0x2cf5558",
+      "severity": "moderate",
+      "text": "memset(*(void **)(iVar3 + 0x2cf5558),0,0x20);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 17,
+      "match": "*(uint **)(iVar3 + 0x2cf5558",
+      "severity": "moderate",
+      "text": "**(uint **)(iVar3 + 0x2cf5558) = *(uint *)(&DAT_02cf55f8 + iVar3);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02cf55f8",
+      "severity": "mild",
+      "text": "**(uint **)(iVar3 + 0x2cf5558) = *(uint *)(&DAT_02cf55f8 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 24,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)this_ptr + 8))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 38,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)this_ptr + 8))(this_ptr);",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWavInDevice",
+        "offset": 4,
+        "vtable_addr": "005e4938"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

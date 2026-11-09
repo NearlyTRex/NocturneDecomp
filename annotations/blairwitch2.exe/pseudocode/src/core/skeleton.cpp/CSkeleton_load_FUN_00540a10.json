@@ -1,0 +1,211 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 85
+  },
+  "cross_references": [
+    {
+      "addr": "00548fc0",
+      "from_addr": "00549033",
+      "name": "core_skeleton.cpp_FUN_00548fc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00540a10",
+    "address_range": [
+      [
+        "00540a10",
+        "00540a90"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CSkeleton_load_FUN_00540a10",
+    "signature": "void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00540a10(CSkeleton *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00540aa0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00540aa0"
+    },
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "00460c70",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00460c70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e696f",
+      "name": "DAT_005e696f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e6972",
+      "name": "DAT_005e6972",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e6977",
+      "name": "s_core_skeleton_cpp_005e6977",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e698c",
+      "name": "s_CSkeleton_load_Can_t_ope_005e698c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00549033",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_00548fc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9782608695652173,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 33,
+      "INT_ADD": 16,
+      "INT_AND": 21,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 18,
+      "LOAD": 9,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 183
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSkeleton *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005e6972",
+      "severity": "mild",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(&DAT_005e6972,filename,&DAT_005e696f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005e696f",
+      "severity": "mild",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(&DAT_005e6972,filename,&DAT_005e696f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1d1a8",
+      "severity": "mild",
+      "text": "pcVar2 = &this_ptr->field_0x1d1a8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 19,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

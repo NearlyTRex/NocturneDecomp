@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 69,
+    "complexity_score": 59,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 44,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 113
+  },
+  "cross_references": [
+    {
+      "addr": "0056f290",
+      "from_addr": "0056f2a3",
+      "name": "core_succubus.cpp_factoryFuncSuccubus_FUN_0056f290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056f2c0",
+    "address_range": [
+      [
+        "0056f2c0",
+        "0056f394"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_succubus.cpp_CSuccubus_ctor_FUN_0056f2c0",
+    "signature": "CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_0056f2c0(CSuccubus *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b1440",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_ctor_FUN_005b1440"
+    },
+    {
+      "addr": "00487db0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_00487db0"
+    },
+    {
+      "addr": "005b6e60",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_ctor_FUN_005b6e60"
+    },
+    {
+      "addr": "00544cd0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0"
+    },
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fc3cc",
+      "name": "DAT_005fc3cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc3d0",
+      "name": "DAT_005fc3d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056f2a3",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_factoryFuncSuccubus_FUN_0056f290",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.758620689655173,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 75,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 29,
+      "INT_AND": 26,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 13,
+      "INT_SUB": 20,
+      "LOAD": 8,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 276
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSuccubus *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSuccubus",
+        "offset": 0,
+        "vtable_addr": "005fc544"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

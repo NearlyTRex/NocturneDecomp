@@ -1,0 +1,93 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00442380",
+    "address_range": [
+      [
+        "00442380",
+        "004423e9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_constrct.cpp_staticInit_FUN_00442380",
+    "signature": "void core_constrct_cpp_staticInit_FUN_00442380(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c3a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_registerActorClass_FUN_0040c3a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.72,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 18,
+      "INT_ADD": 4,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 21,
+      "LOAD": 1,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 93
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_007f8edc",
+      "severity": "mild",
+      "text": "((CDemonActorType *)&DAT_007f8edc,\"CConstruct_Bone\",",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_007f8f18",
+      "severity": "mild",
+      "text": "((CDemonActorType *)&DAT_007f8f18,\"CConstruct_Red\",",
+      "type": "undefined_data"
+    }
+  ]
+}

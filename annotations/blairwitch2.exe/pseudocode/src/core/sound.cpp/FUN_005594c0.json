@@ -1,0 +1,767 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 543,
+    "complexity_score": 398,
+    "cross_reference_count": 5,
+    "function_call_count": 16,
+    "global_count": 28,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 228,
+    "suspect_count": 13,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "unrolled_strcat",
+      "unrolled_strchr",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 771
+  },
+  "cross_references": [
+    {
+      "addr": "0055ae50",
+      "from_addr": "0055ae6a",
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0055ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ae30",
+      "from_addr": "0055ae44",
+      "name": "core_sound.cpp_CSound_playSound_FUN_0055ae30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055af30",
+      "from_addr": "0055af59",
+      "name": "core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ae80",
+      "from_addr": "0055ae98",
+      "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055aef0",
+      "from_addr": "0055af1c",
+      "name": "core_sound.cpp_FUN_0055aef0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005594c0",
+    "address_range": [
+      [
+        "005594c0",
+        "00559aa4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_sound.cpp_FUN_005594c0",
+    "signature": "uint __cdecl core_sound_cpp_FUN_005594c0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00533190",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_00533190"
+    },
+    {
+      "addr": "005593d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_005593d0"
+    },
+    {
+      "addr": "005ba8cc",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005ba8cc"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7790"
+    },
+    {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00436710"
+    },
+    {
+      "addr": "00550110",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00550110"
+    },
+    {
+      "addr": "00550270",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00550270"
+    },
+    {
+      "addr": "00550290",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00550290"
+    },
+    {
+      "addr": "005502b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005502b0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00550450"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005504d0"
+    },
+    {
+      "addr": "005506b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005506b0"
+    },
+    {
+      "addr": "00550bc0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundMuted_FUN_00550bc0"
+    },
+    {
+      "addr": "00550380",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxFlags_FUN_00550380"
+    },
+    {
+      "addr": "00550170",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ea748",
+      "name": "s_d_d_n_005ea748",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea752",
+      "name": "s_core_sound_cpp_005ea752",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea764",
+      "name": "s_Invalid_sfx_string_s_005ea764",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea77b",
+      "name": "DAT_005ea77b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ea77d",
+      "name": "DAT_005ea77d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ea77f",
+      "name": "DAT_005ea77f",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005ea780",
+      "name": "DAT_005ea780",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005ea781",
+      "name": "DAT_005ea781",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005ea782",
+      "name": "DAT_005ea782",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005ea784",
+      "name": "s_Can_t_find_wav_s_005ea784",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea798",
+      "name": "s_f_n_005ea798",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea79e",
+      "name": "s_core_sound_cpp_005ea79e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea7b0",
+      "name": "s_Invalid_sfx_string_s_005ea7b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea7c7",
+      "name": "s_f_n_005ea7c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea7cd",
+      "name": "s_core_sound_cpp_005ea7cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea7df",
+      "name": "s_Invalid_sfx_string_s_005ea7df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea7f6",
+      "name": "s_core_sound_cpp_005ea7f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ea808",
+      "name": "s_Invalid_sfx_string_s_005ea808",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c220",
+      "name": "DAT_0061c220",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c224",
+      "name": "DAT_0061c224",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061ed94",
+      "name": "DAT_0061ed94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0055ae44",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_playSound_FUN_0055ae30",
+        "estimated_params": 6,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0055ae6a",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_playActorSound_FUN_0055ae50",
+        "estimated_params": 7,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0055ae98",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80",
+        "estimated_params": 7,
+        "instructions_analyzed": 11,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0055af1c",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055aef0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0055af59",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.854014598540146,
+    "instruction_count": 411,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 19,
+      "BOOL_OR": 7,
+      "BRANCH": 15,
+      "CALL": 23,
+      "CBRANCH": 49,
+      "COPY": 464,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 168,
+      "INT_AND": 234,
+      "INT_CARRY": 31,
+      "INT_EQUAL": 212,
+      "INT_LEFT": 8,
+      "INT_LESS": 39,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 10,
+      "INT_SBORROW": 42,
+      "INT_SCARRY": 43,
+      "INT_SLESS": 104,
+      "INT_SUB": 118,
+      "INT_XOR": 3,
+      "INT_ZEXT": 11,
+      "LOAD": 131,
+      "POPCOUNT": 104,
+      "RETURN": 3,
+      "STORE": 106
+    },
+    "pcode_op_count": 1995
+  },
+  "stack_frame": {
+    "frame_size": 432,
+    "local_size": 404,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_190",
+        "offset": -400,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_188",
+        "offset": -392,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_180",
+        "offset": -384,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_178",
+        "offset": -376,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_174",
+        "offset": -372,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_170",
+        "offset": -368,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_16f",
+        "offset": -367,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_10b",
+        "offset": -267,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "user_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "z",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "position_tracker",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 28,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005594cc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_0061ed94",
+      "severity": "mild",
+      "text": "while ((((cVar4 != '\\0' && (((&DAT_0061ed94)[(byte)(*local_14 + 1)] & 2) == 0)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_005ea77f",
+      "severity": "mild",
+      "text": "pcVar5 = &DAT_005ea77f;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_0061c220",
+      "severity": "mild",
+      "text": "puVar7 = &DAT_0061c220;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 132,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_40 = y + *(float *)&position_tracker->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 133,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_3c = z + *(float *)&position_tracker->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 179,
+      "match": "DAT_0061ed94",
+      "severity": "mild",
+      "text": "if (((&DAT_0061ed94)[(byte)(*local_14 + 1)] & 2) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 95,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 107,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 86,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 86,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 72,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '!' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '!') in a .keep.",
+      "line": 113,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

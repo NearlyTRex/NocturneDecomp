@@ -13,9 +13,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cheat_1_wav_00582b89
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   CGame g_CGame_01c775ec
+;   CGame g_CGameInstance
 ;   undefined4 DAT_01c78af0
 ;
 ; Called Functions:
@@ -93,8 +93,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x24]      ; 004a04a4
     PUSH 0x40a00000                     ; 004a04a8
     PUSH ESI                            ; 004a04ad
-    MOV EDI,dword ptr [0x005b9354]      ; 004a04ae | g_CGame_PTR_005b9354
-    PUSH EDI                            ; 004a04b4 | g_CGame_01c775ec
+    MOV EDI,dword ptr [0x005b9354]      ; 004a04ae | g_CGamePtr
+    PUSH EDI                            ; 004a04b4 | g_CGameInstance
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004a04b5
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004a04ba

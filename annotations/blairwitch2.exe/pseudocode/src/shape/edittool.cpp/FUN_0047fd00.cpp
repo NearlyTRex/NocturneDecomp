@@ -1,0 +1,112 @@
+// Name: shape_edittool.cpp_FUN_0047fd00
+// Address: 0047fd00
+// Address Range: [[0047fd00, 0047fd0a]]
+// Convention: unknown
+// Signature: void shape_edittool_cpp_FUN_0047fd00(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void shape_edittool_cpp_FUN_0047fd00(uint param_1,uint param_2,uint param_3)
+
+{
+  uint uVar1;
+  int iVar2;
+  uint *puVar3;
+  uint *puVar4;
+  uint *puVar5;
+  byte bVar6;
+  uint uStackY_84;
+  byte *puStackY_80;
+  uint uStackY_7c;
+  byte *puStackY_78;
+  uint auStackY_74 [8];
+  uint auStackY_54 [2];
+  uint auStackY_4c [2];
+  uint uStackY_44;
+  byte *puStackY_40;
+  
+  bVar6 = 0;
+  if (_DAT_01c25590 == (CBitFont *)0x0) {
+    _DAT_01d046a0 = "..\\shape\\edittool.cpp";
+    _DAT_01d046a4 = 0xa0;
+    core_main_c_FUN_004e4500();
+  }
+  _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
+  puStackY_40 = &UNK_0047fd31;
+  _DAT_01c25f7c = engine_font_cpp_FUN_004ab560(_DAT_01c25590,0x6a);
+  iVar2 = _DAT_01c25f84;
+  round();
+  uVar1 = param_3;
+  if (iVar2 != 0) {
+    engine_mini3d_cpp_FUN_004f8e20();
+    uVar1 = _DAT_01c35e60;
+  }
+  _DAT_01c35e60 = uVar1;
+  puStackY_40 = &UNK_0047fdb4;
+  engine_matrix_c_transformToCache_FUN_004e8e60(0,(CVector3i *)&stack0xffffffe0);
+  engine_matrix_c_transformToCache_FUN_004e8e60(1,(CVector3i *)&stack0xffffffe8);
+  puVar4 = &DAT_00622044;
+  puVar5 = auStackY_54;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  }
+  puVar4 = &DAT_00622014;
+  puVar5 = &uStackY_84;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  }
+  engine_3d_c_clipAndDrawLine2D_FUN_00407cc0();
+  engine_matrix_c_transformToCache_FUN_004e8e60(2,(CVector3i *)&stack0xfffffff0);
+  puVar4 = (uint *)&DAT_00622074;
+  puVar5 = auStackY_4c;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  }
+  puVar4 = &DAT_00622014;
+  puVar5 = &uStackY_7c;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  }
+  puStackY_80 = &UNK_0047fe46;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407cc0();
+  engine_matrix_c_transformToCache_FUN_004e8e60(3,(CVector3i *)&stack0xfffffff8);
+  puVar4 = (uint *)&DAT_006220a4;
+  puVar5 = &uStackY_44;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  }
+  puVar3 = &DAT_00622044;
+  puVar4 = &DAT_00622014;
+  puVar5 = auStackY_74;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+  }
+  puStackY_78 = &UNK_0047fe97;
+  engine_3d_c_clipAndDrawLine2D_FUN_00407cc0();
+  iVar2 = 0;
+  do {
+    if ((*(byte *)((int)puVar3 + 0x13) & 0x80) == 0) {
+      FUN_005b7790();
+      engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
+      engine_mini3d_cpp_FUN_004f3570();
+      engine_font_cpp_FUN_004a8df0();
+    }
+    iVar2 = iVar2 + 1;
+    puVar3 = puVar3 + 0xc;
+  } while (iVar2 < 3);
+  return;
+}

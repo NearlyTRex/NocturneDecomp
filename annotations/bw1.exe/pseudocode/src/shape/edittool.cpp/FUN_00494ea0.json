@@ -1,0 +1,136 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 100,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_ref",
+      "unnamed_param"
+    ],
+    "total_lines": 132
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00494ea0",
+    "address_range": [
+      [
+        "00494ea0",
+        "00494fc2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_FUN_00494ea0",
+    "signature": "undefined4 shape_edittool_cpp_FUN_00494ea0(undefined4 param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb18",
+      "is_variadic": false,
+      "name": "crt_stdio.c_vsprintf_FUN_005bfb18"
+    },
+    {
+      "addr": "004994d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
+    },
+    {
+      "addr": "00499380",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_00499380"
+    },
+    {
+      "addr": "004993a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004993a0"
+    },
+    {
+      "addr": "00494690",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00494690"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9012345679012346,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 58,
+      "INT_ADD": 32,
+      "INT_AND": 35,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 34,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 17,
+      "INT_SUB": 36,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 35
+    },
+    "pcode_op_count": 316
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint shape_edittool_cpp_FUN_00494ea0(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint shape_edittool_cpp_FUN_00494ea0(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 11,
+      "match": "&stack0x0000000c",
+      "severity": "moderate",
+      "text": "puStack_8 = &stack0x0000000c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_vsprintf(aCStack_418,param_2,&puStack_8);",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 187,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 15,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [
+    {
+      "addr": "005af2a0",
+      "from_addr": "005af2b3",
+      "name": "core_werewolf.cpp_factoryFuncWerewolf_FUN_005af2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005af2d0",
+    "address_range": [
+      [
+        "005af2d0",
+        "005af37d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_CWerewolf_ctor_FUN_005af2d0",
+    "signature": "CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005af2d0(CWerewolf *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a0410",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a0410"
+    },
+    {
+      "addr": "00569f50",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00569f50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00607fd0",
+      "name": "DAT_00607fd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00607fd4",
+      "name": "DAT_00607fd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00607fd8",
+      "name": "DAT_00607fd8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005af2b3",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_factoryFuncWerewolf_FUN_005af2a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.064516129032258,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 77,
+      "FLOAT2FLOAT": 6,
+      "INT_ADD": 19,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 157
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar4->field_0x154 = &g_CWerewolfVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar4->field_0x158,0x5f99d4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2fec",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x2fec = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2ff0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x2ff0 = 0x40000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0xc268",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc268 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0xc280",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc280 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xc294",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc294 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0xc298",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc298 = 0x40a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0xc29c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc29c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0xc2a0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc2a0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0xc2a4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc2a4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x2ff4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x2ff4 = uVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x2ff8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x2ff8 = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0xc2a8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0xc2a8 = uVar3;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWerewolf",
+        "offset": 0,
+        "vtable_addr": "00608144"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

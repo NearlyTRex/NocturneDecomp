@@ -1,0 +1,111 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 50,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "0044fc80",
+      "from_addr": "0044fc94",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044fd70",
+      "from_addr": "0044fda2",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044fca0",
+    "address_range": [
+      [
+        "0044fca0",
+        "0044fcb6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_0044fca0",
+    "signature": "CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_0044fca0(CKeyFramedModelInstance *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.875,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 1,
+      "COPY": 4,
+      "INT_ADD": 4,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 1,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 39
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModelInstance *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "puVar1 = &this_ptr->field_0x78;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "this_ptr = (CKeyFramedModelInstance *)&this_ptr->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 10,
+      "match": "this_ptr = (T *)&this_ptr->FIELD",
+      "severity": "moderate",
+      "text": "this_ptr = (CKeyFramedModelInstance *)&this_ptr->field_0x4;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

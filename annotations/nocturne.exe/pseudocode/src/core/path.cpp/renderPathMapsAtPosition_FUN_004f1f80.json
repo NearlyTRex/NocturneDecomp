@@ -1,34 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xffffffe0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01e312f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 49,
-        "message": "use of undeclared identifier '_DAT_01e312f8'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
@@ -113,7 +83,7 @@
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     }
@@ -229,30 +199,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "renderPathMapsAtPosition_FUN_004f1f80.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 58,
-          "line": 43,
-          "message": "Uninitialized variable: local_24",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 44,
-          "message": "Uninitialized variable: local_20",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -365,22 +311,6 @@
       "severity": "moderate",
       "text": "if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&",
       "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Uninitialized variable: local_24",
-      "line": 43,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(local_28 == (this_ptr->voxel_coords).x)) && (local_24 == (this_ptr->voxel_coords).y)) &&",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 44,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(local_20 == (this_ptr->voxel_coords).z)) {",
-      "type": "static_uninitvar"
     }
   ]
 }

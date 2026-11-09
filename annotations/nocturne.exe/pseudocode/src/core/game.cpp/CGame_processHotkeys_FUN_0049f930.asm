@@ -229,8 +229,8 @@ section .text
     PUSH ECX                            ; 0049fafd
     PUSH EAX                            ; 0049fafe
     PUSH EAX                            ; 0049faff
-    MOV ECX,dword ptr [0x005be368]      ; 0049fb00 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 0049fb06 | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0049fb00 | g_CDemonSetPtr
+    PUSH ECX                            ; 0049fb06 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_FUN_005090f0 ; 0049fb07
         ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_005090f0(CDemonSet * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
         ;   Label: LAB_0049fb07
@@ -383,7 +383,7 @@ section .text
     ADD ESP,0xc                         ; 0049fc9c
     MOV EAX,dword ptr [EBX + 0x224]     ; 0049fc9f
     PUSH EAX                            ; 0049fca5
-    MOV EDX,dword ptr [0x005be368]      ; 0049fca6 | g_CDemonSet_PTR_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 0049fca6 | g_CDemonSetPtr
     PUSH EDX                            ; 0049fcac
     CALL core_set.cpp_CDemonSet_setGamma_FUN_0050e400 ; 0049fcad
         ;   XREF to: 0050e400 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setGamma_FUN_0050e400(CDemonSet * this_ptr, int gamma)
@@ -425,7 +425,7 @@ section .text
     ADD ESP,0xc                         ; 0049fd27
     MOV EDI,dword ptr [EBX + 0x224]     ; 0049fd2a
     PUSH EDI                            ; 0049fd30
-    MOV EAX,[0x005be368]                ; 0049fd31 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0049fd31 | g_CDemonSetPtr
     PUSH EAX                            ; 0049fd36
     CALL core_set.cpp_CDemonSet_setGamma_FUN_0050e400 ; 0049fd37
         ;   XREF to: 0050e400 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setGamma_FUN_0050e400(CDemonSet * this_ptr, int gamma)
@@ -452,14 +452,14 @@ section .text
     TEST EAX,EAX                        ; 0049fd6b
     JZ 0x0049fd92                       ; 0049fd6d
         ;   XREF to: 0049fd92 (CONDITIONAL_JUMP)  ; LAB_0049fd92
-    MOV EAX,[0x005be368]                ; 0049fd6f | g_CDemonSet_PTR_005be368
-    MOV EAX,dword ptr [EAX + 0x15aab8]  ; 0049fd74 | g_CDemonSet_01e57284.camera_enabled_flag
+    MOV EAX,[0x005be368]                ; 0049fd6f | g_CDemonSetPtr
+    MOV EAX,dword ptr [EAX + 0x15aab8]  ; 0049fd74 | g_CDemonSetInstance.camera_enabled_flag
     TEST EAX,EAX                        ; 0049fd7a
     SETZ AL                             ; 0049fd7c
     MOV EDI,EAX                         ; 0049fd7f
-    MOV EAX,[0x005be368]                ; 0049fd81 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0049fd81 | g_CDemonSetPtr
     AND EDI,0xff                        ; 0049fd86
-    MOV dword ptr [EAX + 0x15aab8],EDI  ; 0049fd8c | g_CDemonSet_01e57284.camera_enabled_flag
+    MOV dword ptr [EAX + 0x15aab8],EDI  ; 0049fd8c | g_CDemonSetInstance.camera_enabled_flag
     CMP dword ptr [EBX + 0x210],0x0     ; 0049fd92
         ;   Label: LAB_0049fd92
     JNZ 0x004a019b                      ; 0049fd99
@@ -499,17 +499,17 @@ section .text
     MOV dword ptr [EBX + 0x274],EAX     ; 0049fde3
     JZ 0x0049fe11                       ; 0049fde9
         ;   XREF to: 0049fe11 (CONDITIONAL_JUMP)  ; LAB_0049fe11
-    MOV EAX,[0x005be220]                ; 0049fdeb | DAT_005be220
+    MOV EAX,[0x005be220]                ; 0049fdeb | g_CScriptPtr
     PUSH 0x1                            ; 0049fdf0
-    MOV EDX,dword ptr [EAX + 0xc]       ; 0049fdf2 | g_CScript_01e56da0.focus_actor
+    MOV EDX,dword ptr [EAX + 0xc]       ; 0049fdf2 | g_CScriptInstance.focus_actor
     PUSH EDX                            ; 0049fdf5
-    MOV ECX,dword ptr [0x005be368]      ; 0049fdf6 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 0049fdfc | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0049fdf6 | g_CDemonSetPtr
+    PUSH ECX                            ; 0049fdfc | g_CDemonSetInstance
     CALL core_setdir.cpp_CDemonSet_FUN_005125a0 ; 0049fdfd
         ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * param_2, int param_3)
-    MOV EAX,[0x005be220]                ; 0049fe02 | DAT_005be220
+    MOV EAX,[0x005be220]                ; 0049fe02 | g_CScriptPtr
     ADD ESP,0xc                         ; 0049fe07
-    MOV dword ptr [EAX + 0x10],0x0      ; 0049fe0a | g_CScript_01e56da0.focus_actor_changed
+    MOV dword ptr [EAX + 0x10],0x0      ; 0049fe0a | g_CScriptInstance.focus_actor_changed
     MOV ESI,dword ptr [EBX + 0x274]     ; 0049fe11
         ;   Label: LAB_0049fe11
     TEST ESI,ESI                        ; 0049fe17
@@ -539,15 +539,15 @@ section .text
     TEST ECX,ECX                        ; 0049fe57
     JGE 0x0049fe69                      ; 0049fe59
         ;   XREF to: 0049fe69 (CONDITIONAL_JUMP)  ; LAB_0049fe69
-    MOV EAX,[0x005be368]                ; 0049fe5b | g_CDemonSet_PTR_005be368
-    MOV EAX,dword ptr [EAX]             ; 0049fe60 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 0049fe5b | g_CDemonSetPtr
+    MOV EAX,dword ptr [EAX]             ; 0049fe60 | g_CDemonSetInstance
     DEC EAX                             ; 0049fe62
     MOV dword ptr [EBX + 0x270],EAX     ; 0049fe63
     MOV EDI,dword ptr [EBX + 0x270]     ; 0049fe69
         ;   Label: LAB_0049fe69
     PUSH EDI                            ; 0049fe6f
-    MOV EAX,[0x005be368]                ; 0049fe70 | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 0049fe75 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 0049fe70 | g_CDemonSetPtr
+    PUSH EAX                            ; 0049fe75 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 ; 0049fe76
         ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 0049fe7b
@@ -556,9 +556,9 @@ section .text
     MOV EDI,dword ptr [EBX + 0x270]     ; 0049fe83
         ;   Label: LAB_0049fe83
     INC EDI                             ; 0049fe89
-    MOV EAX,[0x005be368]                ; 0049fe8a | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0049fe8a | g_CDemonSetPtr
     MOV dword ptr [EBX + 0x270],EDI     ; 0049fe8f
-    CMP EDI,dword ptr [EAX]             ; 0049fe95 | g_CDemonSet_01e57284
+    CMP EDI,dword ptr [EAX]             ; 0049fe95 | g_CDemonSetInstance
     JL 0x0049fe69                       ; 0049fe97
         ;   XREF to: 0049fe69 (CONDITIONAL_JUMP)  ; LAB_0049fe69
     MOV dword ptr [EBX + 0x270],ESI     ; 0049fe99
@@ -617,8 +617,8 @@ section .text
         ;   Label: LAB_0049ff1b
     PUSH 0x1                            ; 0049ff20
     PUSH 0x1                            ; 0049ff22
-    MOV EAX,[0x005be368]                ; 0049ff24 | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 0049ff29 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 0049ff24 | g_CDemonSetPtr
+    PUSH EAX                            ; 0049ff29 | g_CDemonSetInstance
     JMP 0x0049fb07                      ; 0049ff2a
         ;   XREF to: 0049fb07 (UNCONDITIONAL_JUMP)  ; LAB_0049fb07
     PUSH 0x1d                           ; 0049ff2f
@@ -711,7 +711,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004a001a
     PUSH EAX                            ; 004a001d
-    MOV EDX,dword ptr [0x005b6d50]      ; 004a001e | g_CEditorTools_PTR_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004a001e | g_CEditorToolsPtr
     PUSH EDX                            ; 004a0024
     CALL shape_edittool.cpp_FUN_00470230 ; 004a0025
         ;   XREF to: 00470230 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00470230()
@@ -767,9 +767,9 @@ section .text
         ;   XREF to: 0049fbfa (CONDITIONAL_JUMP)  ; LAB_0049fbfa
     JMP 0x0049fc23                      ; 004a00a8
         ;   XREF to: 0049fc23 (UNCONDITIONAL_JUMP)  ; LAB_0049fc23
-    MOV EAX,[0x005be220]                ; 004a00ad | DAT_005be220
+    MOV EAX,[0x005be220]                ; 004a00ad | g_CScriptPtr
         ;   Label: LAB_004a00ad
-    CMP dword ptr [EAX + 0x18],0x2      ; 004a00b2 | g_CScript_01e56da0.script_state
+    CMP dword ptr [EAX + 0x18],0x2      ; 004a00b2 | g_CScriptInstance.script_state
     JZ 0x004a010c                       ; 004a00b6
         ;   XREF to: 004a010c (CONDITIONAL_JUMP)  ; LAB_004a010c
     PUSH 0x3f                           ; 004a00b8
@@ -784,25 +784,25 @@ section .text
     PUSH 0xf0                           ; 004a00cc
     PUSH 0x0                            ; 004a00d1
     PUSH 0x0                            ; 004a00d3
-    MOV ECX,dword ptr [0x005be368]      ; 004a00d5 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 004a00db | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004a00d5 | g_CDemonSetPtr
+    PUSH ECX                            ; 004a00db | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x278],0x1     ; 004a00dc
     CALL core_set.cpp_CDemonSet_FUN_005090f0 ; 004a00e6
         ;   XREF to: 005090f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_005090f0(CDemonSet * this_ptr, undefined4 param_2, undefined4 param_3, int param_4)
-    MOV EAX,[0x005be220]                ; 004a00eb | DAT_005be220
+    MOV EAX,[0x005be220]                ; 004a00eb | g_CScriptPtr
     MOV dword ptr [EBX + 0x1dc],0x1     ; 004a00f0
-    MOV ESI,dword ptr [EAX + 0x18]      ; 004a00fa | g_CScript_01e56da0.script_state
+    MOV ESI,dword ptr [EAX + 0x18]      ; 004a00fa | g_CScriptInstance.script_state
     ADD ESP,0x10                        ; 004a00fd
     CMP ESI,0x1                         ; 004a0100
     JNZ 0x004a0170                      ; 004a0103
         ;   XREF to: 004a0170 (CONDITIONAL_JUMP)  ; LAB_004a0170
-    MOV dword ptr [EAX + 0x18],0x0      ; 004a0105 | g_CScript_01e56da0.script_state
+    MOV dword ptr [EAX + 0x18],0x0      ; 004a0105 | g_CScriptInstance.script_state
     CMP dword ptr [EBX + 0x1dc],0x0     ; 004a010c
         ;   Label: LAB_004a010c
     JZ 0x0049fc30                       ; 004a0113
         ;   XREF to: 0049fc30 (CONDITIONAL_JUMP)  ; LAB_0049fc30
-    MOV EAX,[0x005be220]                ; 004a0119 | DAT_005be220
-    CMP dword ptr [EAX + 0x18],0x2      ; 004a011e | g_CScript_01e56da0.script_state
+    MOV EAX,[0x005be220]                ; 004a0119 | g_CScriptPtr
+    CMP dword ptr [EAX + 0x18],0x2      ; 004a011e | g_CScriptInstance.script_state
     JZ 0x004a0179                       ; 004a0122
         ;   XREF to: 004a0179 (CONDITIONAL_JUMP)  ; LAB_004a0179
     PUSH 0x3f                           ; 004a0124
@@ -815,8 +815,8 @@ section .text
     TEST EAX,EAX                        ; 004a0134
     JZ 0x004a0144                       ; 004a0136
         ;   XREF to: 004a0144 (CONDITIONAL_JUMP)  ; LAB_004a0144
-    MOV EAX,[0x005be220]                ; 004a0138 | DAT_005be220
-    MOV dword ptr [EAX + 0x18],0x0      ; 004a013d | g_CScript_01e56da0.script_state
+    MOV EAX,[0x005be220]                ; 004a0138 | g_CScriptPtr
+    MOV dword ptr [EAX + 0x18],0x0      ; 004a013d | g_CScriptInstance.script_state
     PUSH 0x43                           ; 004a0144
         ;   Label: LAB_004a0144
     MOV EAX,[0x005bac64]                ; 004a0146 | g_CKeys_PTR_005bac64
@@ -827,14 +827,14 @@ section .text
     TEST EAX,EAX                        ; 004a0154
     JZ 0x0049fc30                       ; 004a0156
         ;   XREF to: 0049fc30 (CONDITIONAL_JUMP)  ; LAB_0049fc30
-    MOV ECX,dword ptr [0x005be220]      ; 004a015c | DAT_005be220
+    MOV ECX,dword ptr [0x005be220]      ; 004a015c | g_CScriptPtr
     PUSH ECX                            ; 004a0162
     CALL core_script.cpp_CScript_resetDialogState_FUN_00504d60 ; 004a0163
         ;   XREF to: 00504d60 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_resetDialogState_FUN_00504d60(CScript * this_ptr)
     ADD ESP,0x4                         ; 004a0168
     JMP 0x0049fc30                      ; 004a016b
         ;   XREF to: 0049fc30 (UNCONDITIONAL_JUMP)  ; LAB_0049fc30
-    MOV dword ptr [EAX + 0x18],0x1      ; 004a0170 | g_CScript_01e56da0.script_state
+    MOV dword ptr [EAX + 0x18],0x1      ; 004a0170 | g_CScriptInstance.script_state
         ;   Label: LAB_004a0170
     JMP 0x004a010c                      ; 004a0177
         ;   XREF to: 004a010c (UNCONDITIONAL_JUMP)  ; LAB_004a010c
@@ -848,8 +848,8 @@ section .text
     TEST EAX,EAX                        ; 004a0189
     JZ 0x004a0124                       ; 004a018b
         ;   XREF to: 004a0124 (CONDITIONAL_JUMP)  ; LAB_004a0124
-    MOV EAX,[0x005be220]                ; 004a018d | DAT_005be220
-    MOV dword ptr [EAX + 0x18],0x1      ; 004a0192 | g_CScript_01e56da0.script_state
+    MOV EAX,[0x005be220]                ; 004a018d | g_CScriptPtr
+    MOV dword ptr [EAX + 0x18],0x1      ; 004a0192 | g_CScriptInstance.script_state
     JMP 0x004a0124                      ; 004a0199
         ;   XREF to: 004a0124 (UNCONDITIONAL_JUMP)  ; LAB_004a0124
     PUSH 0x38                           ; 004a019b
@@ -882,7 +882,7 @@ section .text
     TEST EAX,EAX                        ; 004a01e5
     JNZ 0x004a0245                      ; 004a01e7
         ;   XREF to: 004a0245 (CONDITIONAL_JUMP)  ; LAB_004a0245
-    MOV EAX,[0x01fb96f0]                ; 004a01e9 | g_CDemonCamera_01fb8508.corona_blend_factor
+    MOV EAX,[0x01fb96f0]                ; 004a01e9 | g_CDemonCameraInstance.corona_blend_factor
         ;   Label: LAB_004a01e9
     MOV dword ptr [ESP + 0x204],EAX     ; 004a01ee
     FILD dword ptr [ESP + 0x204]        ; 004a01f5
@@ -907,14 +907,14 @@ section .text
         ;   XREF to: 004a0252 (CONDITIONAL_JUMP)  ; LAB_004a0252
     XOR EBX,EBX                         ; 004a0226
         ;   Label: LAB_004a0226
-    MOV EAX,[0x005be368]                ; 004a0228 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004a0228 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004a0228
-    CMP EBX,dword ptr [EAX]             ; 004a022d | g_CDemonSet_01e57284
+    CMP EBX,dword ptr [EAX]             ; 004a022d | g_CDemonSetInstance
     JGE 0x0049fd9f                      ; 004a022f
         ;   XREF to: 0049fd9f (CONDITIONAL_JUMP)  ; LAB_0049fd9f
     PUSH dword ptr [ESP]                ; 004a0235
     PUSH EBX                            ; 004a0238
-    PUSH EAX                            ; 004a0239 | g_CDemonSet_01e57284
+    PUSH EAX                            ; 004a0239 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0 ; 004a023a
         ;   XREF to: 0050e4c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0(CDemonSet * this_ptr, int index, float value)
     INC EBX                             ; 004a023f

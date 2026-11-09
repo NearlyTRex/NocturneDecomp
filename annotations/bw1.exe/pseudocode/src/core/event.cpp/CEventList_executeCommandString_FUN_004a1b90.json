@@ -1,0 +1,224 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 96,
+    "complexity_score": 101,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 41,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "004a1b70",
+      "from_addr": "004a1b83",
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a6cd0",
+      "from_addr": "004a6cf1",
+      "name": "core_event.cpp_CEventList_validateCommands_FUN_004a6cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a1b90",
+    "address_range": [
+      [
+        "004a1b90",
+        "004a1c56"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_executeCommandString_FUN_004a1b90",
+    "signature": "int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventList *this_ptr,char *command_string)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a1d00",
+      "is_variadic": false,
+      "name": "core_event.cpp_FUN_004a1d00"
+    },
+    {
+      "addr": "00445430",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00445430"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dcd8e",
+      "name": "DAT_005dcd8e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00611100",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007db5f0"
+    },
+    {
+      "addr": "00626114",
+      "name": "DAT_00626114",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007db5f0",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01c56ecc",
+      "name": "DAT_01c56ecc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c56ed0",
+      "name": "DAT_01c56ed0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004a1b83",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a6cf1",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_validateCommands_FUN_004a6cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.565217391304348,
+    "instruction_count": 69,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 2,
+      "CBRANCH": 9,
+      "COPY": 50,
+      "INT_ADD": 22,
+      "INT_AND": 55,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 48,
+      "INT_LESS": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 24,
+      "INT_SUB": 16,
+      "LOAD": 16,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 315
+  },
+  "stack_frame": {
+    "frame_size": 532,
+    "local_size": 524,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_208",
+        "offset": -520,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "command_string",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "while (((&DAT_00626114)[(byte)(*command_string + 1)] & 2) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "(((&DAT_00626114)[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_005dcd8e",
+      "severity": "mild",
+      "text": "engine_console_cpp_FUN_00445430(g_CConsolePtr,&DAT_005dcd8e,&DAT_01c56ed0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01c56ed0",
+      "severity": "mild",
+      "text": "engine_console_cpp_FUN_00445430(g_CConsolePtr,&DAT_005dcd8e,&DAT_01c56ed0);",
+      "type": "undefined_data"
+    }
+  ]
+}

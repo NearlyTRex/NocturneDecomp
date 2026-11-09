@@ -1,0 +1,546 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 237,
+    "complexity_score": 368,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 27,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 73,
+    "suspect_count": 29,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 310
+  },
+  "cross_references": [
+    {
+      "addr": "00579390",
+      "from_addr": "0057939c",
+      "name": "core_waypoint.cpp_FUN_00579390",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056e940",
+    "address_range": [
+      [
+        "0056e940",
+        "0056ebf4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_archive_FUN_0056e940",
+    "signature": "void __cdecl core_trigger_cpp_CTrigger_archive_FUN_0056e940(CTrigger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b930"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "0040b400",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b400"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    },
+    {
+      "addr": "0056eed0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_FUN_0056eed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d662b",
+      "name": "s_triggerState_005d662a+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6638",
+      "name": "s_triggerSize_005d6638",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6644",
+      "name": "s_triggerType_005d6644",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6650",
+      "name": "s_onName_005d6650",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6657",
+      "name": "s_offName_005d6657",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d665f",
+      "name": "s_whoTriggers_005d665f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d666b",
+      "name": "s_actorTriggerName_005d666b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d667c",
+      "name": "s_lightMin_005d667c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6685",
+      "name": "s_lightMax_005d6685",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d668e",
+      "name": "s_laserType_005d668e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6698",
+      "name": "s_actorTriggerTypes_005d6698",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66aa",
+      "name": "s_hitPoints_005d66aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66b4",
+      "name": "s_pressurePlate_005d66b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66c2",
+      "name": "s_whoTriggers_005d66c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66ce",
+      "name": "s_actorTriggerName_005d66ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66df",
+      "name": "s_actorTriggerTypes_005d66df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66f1",
+      "name": "s_lightMin_005d66f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d66fa",
+      "name": "s_lightMax_005d66fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6703",
+      "name": "s_laserType_005d6703",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d670d",
+      "name": "s_hitPoints_005d670d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6717",
+      "name": "s_pressurePlate_005d6717",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6725",
+      "name": "s_testRadius_005d6725",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6730",
+      "name": "s_autoAimAtMe_005d6730",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d673c",
+      "name": "s_shape_005d673c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6742",
+      "name": "s_damageActorWildcard_005d6742",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6756",
+      "name": "s_hiliteActor_005d6756",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00606964",
+      "name": "g_CTriggerClassVersion",
+      "type": "int",
+      "value": "0xd"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057939c",
+        "call_type": "direct",
+        "caller": "core_waypoint.cpp_FUN_00579390",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.382022471910112,
+    "instruction_count": 178,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 28,
+      "CBRANCH": 14,
+      "COPY": 107,
+      "INT_ADD": 65,
+      "INT_AND": 88,
+      "INT_CARRY": 30,
+      "INT_EQUAL": 91,
+      "INT_LESS": 14,
+      "INT_NOTEQUAL": 8,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 44,
+      "INT_SUB": 98,
+      "LOAD": 13,
+      "POPCOUNT": 44,
+      "RETURN": 3,
+      "STORE": 84
+    },
+    "pcode_op_count": 780
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x16c,\"?triggerState\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x160,\"triggerSize\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x15c,\"triggerType\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x224",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x224,\"onName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x288",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x288,\"offName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x174,\"whoTriggers\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x178,\"actorTriggerName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x21c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x21c,\"lightMin\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x220",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x220,\"lightMax\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "if ((3 < g_CTriggerClassVersion) && (*(int *)&this_ptr->field_0x174 == 5)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x2f4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2f4,\"laserType\")",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x174 == 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x1c8",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x1c8,\"actorTriggerTypes\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x174 == 7) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x2f8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2f8,\"hitPoints\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x218",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x218,\"pressurePlate\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x174,\"whoTriggers\")",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x178,\"actorTriggerName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x1c8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x1c8,\"actorTriggerTypes\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x21c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x21c,\"lightMin\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x220",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x220,\"lightMax\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x2f4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2f4,\"laserType\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x2f8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2f8,\"hitPoints\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x218",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x218,\"pressurePlate\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x158,\"testRadius\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x304",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x304,\"autoAimAtMe\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x170",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x170,\"shape\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x308",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x308,\"damageActorWildcard\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x2fc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x2fc,\"hiliteActor\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "005e58d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

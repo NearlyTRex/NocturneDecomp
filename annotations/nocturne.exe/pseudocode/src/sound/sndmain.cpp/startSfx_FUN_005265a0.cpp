@@ -120,9 +120,9 @@ LAB_005266dc:
       if (0x3f < _DAT_02dc1ed8) {
         _DAT_02dc1ed8 = 0;
       }
-      if ((g_CSfxSample_ARRAY_02dc1edc[_DAT_02dc1ed8].taken == 0) &&
-         (g_CSfxSample_ARRAY_02dc1edc[_DAT_02dc1ed8].ref_count == 0)) {
-        local_18 = g_CSfxSample_ARRAY_02dc1edc + _DAT_02dc1ed8;
+      if ((g_SfxSamples[_DAT_02dc1ed8].taken == 0) && (g_SfxSamples[_DAT_02dc1ed8].ref_count == 0))
+      {
+        local_18 = g_SfxSamples + _DAT_02dc1ed8;
         goto LAB_0052671f;
       }
       iVar3 = iVar3 + 1;

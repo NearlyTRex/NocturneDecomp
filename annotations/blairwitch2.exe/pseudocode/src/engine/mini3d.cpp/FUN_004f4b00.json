@@ -1,0 +1,238 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 45,
+    "complexity_score": 116,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f4b00",
+    "address_range": [
+      [
+        "004f4b00",
+        "004f4baa"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_mini3d.cpp_FUN_004f4b00",
+    "signature": "void engine_mini3d_cpp_FUN_004f4b00(float param_1,float param_2,float *param_3)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d0987c",
+      "name": "DAT_01d0987c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09880",
+      "name": "DAT_01d09880",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09884",
+      "name": "DAT_01d09884",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09888",
+      "name": "DAT_01d09888",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0988c",
+      "name": "DAT_01d0988c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09890",
+      "name": "DAT_01d09890",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09894",
+      "name": "DAT_01d09894",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09898",
+      "name": "DAT_01d09898",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0989c",
+      "name": "DAT_01d0989c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098a0",
+      "name": "DAT_01d098a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098a4",
+      "name": "DAT_01d098a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098a8",
+      "name": "DAT_01d098a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098ac",
+      "name": "DAT_01d098ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098b0",
+      "name": "DAT_01d098b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098b4",
+      "name": "DAT_01d098b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098b8",
+      "name": "DAT_01d098b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.386363636363637,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "COPY": 253,
+      "FLOAT2FLOAT": 27,
+      "FLOAT_ADD": 9,
+      "FLOAT_DIV": 2,
+      "FLOAT_MULT": 6,
+      "FLOAT_SUB": 2,
+      "INT_ADD": 12,
+      "LOAD": 8,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 325
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void engine_mini3d_cpp_FUN_004f4b00(float param_1,float param_2,float *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void engine_mini3d_cpp_FUN_004f4b00(float param_1,float param_2,float *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void engine_mini3d_cpp_FUN_004f4b00(float param_1,float param_2,float *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (param_1 - _DAT_01d09884) / _DAT_01d0987c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar2 = (param_2 - _DAT_01d09888) / _DAT_01d09880;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*param_3 = _DAT_01d098b0 + _DAT_01d098a4 + fVar2 * _DAT_01d09898 + fVar1 * _DAT_01d0988c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3[1] = fVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3[2] = fVar4;",
+      "type": "unnamed_param"
+    }
+  ]
+}

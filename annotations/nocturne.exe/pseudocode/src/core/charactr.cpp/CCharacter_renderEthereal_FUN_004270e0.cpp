@@ -24,8 +24,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_004270e0(CCharacter
             (g_CDemonRenderer_PTR_005ae704,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
     dVar4 = round
-                      ((double)((float)DAT_007658dc +
-                               g_CGame_PTR_005b9354->delta_time_float * 8388608.0f));
+                      ((double)((float)DAT_007658dc + g_CGamePtr->delta_time_float * 8388608.0f)
+                      );
     DAT_007658dc = (int)ROUND(dVar4);
   }
   iVar2 = rand();

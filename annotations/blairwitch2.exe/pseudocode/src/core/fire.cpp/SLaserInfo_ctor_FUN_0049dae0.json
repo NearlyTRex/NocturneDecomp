@@ -1,0 +1,128 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 12,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "00487790",
+      "from_addr": "004877ec",
+      "name": "core_emitter.cpp_FUN_00487790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e6f20",
+      "from_addr": "004e711b",
+      "name": "core_manpuz.cpp_FUN_004e6f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a440",
+      "from_addr": "0058a541",
+      "name": "core_weapon.cpp_CWeapon_renderAimBeam_FUN_0058a440",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049dae0",
+    "address_range": [
+      [
+        "0049dae0",
+        "0049db1d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_SLaserInfo_ctor_FUN_0049dae0",
+    "signature": "SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_0049dae0(SLaserInfo *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005f64fc",
+      "name": "DAT_005f64fc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0058a541",
+        "call_type": "direct",
+        "caller": "core_weapon.cpp_CWeapon_renderAimBeam_FUN_0058a440",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004877ec",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_FUN_00487790",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e711b",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_FUN_004e6f20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.727272727272727,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "COPY": 10,
+      "INT_ADD": 9,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 30
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SLaserInfo *"
+      }
+    ]
+  },
+  "suspects": []
+}

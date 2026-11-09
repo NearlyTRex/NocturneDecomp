@@ -20,7 +20,7 @@
 ;   TerminatedCString s_core_mission_cpp_00589ef8
 ;   TerminatedCString s_CDemonMission_createOneH_00589f0c
 ;   TerminatedCString s_Can_t_find_hero_placehol_00589f41
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
@@ -165,7 +165,7 @@ section .text
     PUSH EDI                            ; 004d9a60
         ;   Label: LAB_004d9a60
     PUSH 0x589f41                       ; 004d9a61 | = "Can't find hero placeholder for hero %d"
-    MOV EDI,dword ptr [0x005b6d50]      ; 004d9a66 | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004d9a66 | g_CEditorToolsPtr
     PUSH EDI                            ; 004d9a6c
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004d9a6d
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)

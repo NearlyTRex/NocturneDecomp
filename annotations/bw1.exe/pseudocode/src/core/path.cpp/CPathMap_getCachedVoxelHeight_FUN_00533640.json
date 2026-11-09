@@ -1,0 +1,328 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 91,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [
+    {
+      "addr": "00533930",
+      "from_addr": "0053399f",
+      "name": "core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00533930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00533dc0",
+      "from_addr": "005341c0",
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005336e0",
+      "from_addr": "00533755",
+      "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00535490",
+      "from_addr": "0053558f",
+      "name": "core_path.cpp_CPathMap_searchGrid_FUN_00535490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00533640",
+    "address_range": [
+      [
+        "00533640",
+        "005336d4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00533640",
+    "signature": "int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00533640(CPathMap *this_ptr,int grid_z,int grid_x,int current_height)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048f120",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_0048f120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01fe5c1c",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 32,
+    "call_sites": [
+      {
+        "call_addr": "005341c0",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005341dd",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00533755",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005337b2",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005337cd",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00533862",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0053388a",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005338a9",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_isLineWalkable_FUN_005336e0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0053399f",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00533930",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005339d4",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00533930",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.888888888888889,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 43,
+      "INT_ADD": 31,
+      "INT_AND": 58,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 21,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 318
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "grid_z",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "current_height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x9c70",
+      "severity": "mild",
+      "text": "if (current_height != *(int *)(&this_ptr->field_0x9c70 + iVar1)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "local_18 = *(int *)&this_ptr->field_0x24 + grid_x;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "local_10 = *(int *)&this_ptr->field_0x2c + grid_z;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0x30 + iVar1) = iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x9c70",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0x9c70 + iVar1) = current_height;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&this_ptr->field_0x30 + iVar1);",
+      "type": "unnamed_field"
+    }
+  ]
+}

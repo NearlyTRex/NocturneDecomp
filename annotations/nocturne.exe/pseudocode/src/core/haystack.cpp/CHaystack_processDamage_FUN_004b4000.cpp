@@ -17,10 +17,10 @@ void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CHaystack *t
   if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
+  if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
+  if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
   (this_ptr->base).invincibility_timer = 0.5f;
@@ -36,7 +36,7 @@ void __cdecl core_haystack_cpp_CHaystack_processDamage_FUN_004b4000(CHaystack *t
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,8,1);
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                  (g_CGore_PTR_005b96c4,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
         core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
         return;
       }

@@ -1,0 +1,277 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 227,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 17,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_memset",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 92
+  },
+  "cross_references": [
+    {
+      "addr": "00412af0",
+      "from_addr": "00412b03",
+      "name": "core_batman.cpp_factoryFuncBatman_FUN_00412af0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00412b20",
+    "address_range": [
+      [
+        "00412b20",
+        "00412bd0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_batman.cpp_CBatman_ctor_FUN_00412b20",
+    "signature": "CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412b20(CBatman *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00487db0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_00487db0"
+    },
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f3090",
+      "name": "DAT_005f3090",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f3094",
+      "name": "DAT_005f3094",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00412b03",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_factoryFuncBatman_FUN_00412af0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.354166666666667,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 75,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 26,
+      "INT_AND": 14,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "LOAD": 10,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 209
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBatman *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar4->field_0x2b0 = &g_CBatmanVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4->field_0x10af8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar4->field_0x2b4,(char *)0x5cb966);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x3430",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x3430 = 0x3f19999a;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x3434",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x3434 = 0x40000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x3438",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x3438 = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x343c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x343c = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x10b94",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x10b94 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x10b98",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x10b98 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x10ba4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x10ba4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x10ba0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x10ba0 = *(uint *)&pCVar4->field_0x10ba4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x10ba4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x10ba0 = *(uint *)&pCVar4->field_0x10ba4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x10b9c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x10b9c = *(uint *)&pCVar4->field_0x10ba0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x10ba0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x10b9c = *(uint *)&pCVar4->field_0x10ba0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 26,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 37,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "*(uint *)&pCVar4->field_0x10ba4 = 0;",
+      "type": "unrolled_memset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBatman",
+        "offset": 0,
+        "vtable_addr": "005f3204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

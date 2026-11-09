@@ -1,42 +1,21 @@
-import os
-from ghidra_annotations.util import *
+from ghidra_annotations.util import clean_data, log_info, save_json_files
+
 
 def export_entry_points(currentProgram, path):
+    """The program's entry points as Ghidra records them: the PE entry, and each export.
 
-    # Gather entry points
+    The image base is not one: in a PE it is the DOS header.
+    """
     log_info("Gathering entry points")
-    entry_points = []
     symbol_table = currentProgram.getSymbolTable()
-    entry_addr = currentProgram.getImageBase()
-    entry_symbol = symbol_table.getPrimarySymbol(entry_addr)
-    if entry_symbol:
+    entry_points = []
+    for address in symbol_table.getExternalEntryPointIterator():
+        symbol = symbol_table.getPrimarySymbol(address)
         entry_points.append({
-            "addr": str(entry_addr),
-            "name": entry_symbol.getName()
-        })
-    else:
-        entry_points.append({
-            "addr": str(entry_addr),
-            "name": "entry"
+            "addr": str(address),
+            "name": symbol.getName() if symbol is not None else "entry_%s" % address,
         })
 
-    # Look for common entry point functions
-    common_names = ["main", "WinMain", "_start", "start"]
-    for name in common_names:
-        try:
-            symbols = symbol_table.getGlobalSymbols(name)
-            for symbol in symbols:
-                if not symbol.isExternal():
-                    addr_str = str(symbol.getAddress())
-                    if not any(ep["addr"] == addr_str for ep in entry_points):
-                        entry_points.append({
-                            "addr": addr_str,
-                            "name": symbol.getName()
-                        })
-        except:
-            continue
-
-    # Export entry points
     log_info("Exporting %s entry points" % len(entry_points))
     save_json_files(
         path = path,

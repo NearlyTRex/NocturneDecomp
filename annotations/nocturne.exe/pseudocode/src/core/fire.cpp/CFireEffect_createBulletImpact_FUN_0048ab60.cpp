@@ -58,7 +58,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffe
   }
 LAB_0048ac45:
   iVar2 = core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590
-                    (&g_CDemonCamera_01fb8508,impact_pos,0.5);
+                    (&g_CDemonCameraInstance,impact_pos,0.5);
   if (iVar2 != 0) {
     iVar2 = 0;
     do {

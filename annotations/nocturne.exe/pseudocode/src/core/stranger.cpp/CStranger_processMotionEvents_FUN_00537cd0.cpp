@@ -119,13 +119,13 @@ LAB_005383ca:
           }
           else {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x77c);
           }
           pCVar7 = (this_ptr->base).object_to_pick_up;
           if (pCVar7 == (CDemonActor *)0x0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"Object to pick up is now NULL\nstranger.cpp line %d",0x782);
+                      (g_CEditorToolsPtr,"Object to pick up is now NULL\nstranger.cpp line %d",0x782);
           }
           else {
             iVar4 = (*((pCVar7->vtable)._ub)->canPickup)(pCVar7,(CDemonActor *)this_ptr);
@@ -142,9 +142,9 @@ LAB_005383ca:
               }
               if (iVar4 == 2) {
                 if (this_ptr->action_pending != 0) {
-                  in_stack_ffffff48 = &g_CEditorTools_PTR_005b6d50->unused;
+                  in_stack_ffffff48 = &g_CEditorToolsPtr->unused;
                   shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                            (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d");
+                            (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d");
                 }
                 this_ptr->action_pending = 1;
               }
@@ -168,7 +168,7 @@ LAB_00537df4:
           else {
             if (iVar4 == 6) goto LAB_00537df4;
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",iVar4,0x75e);
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar4,0x75e);
           }
           iVar4 = (this_ptr->base).base.layer_action_index;
           (this_ptr->base).target_actor = (CDemonActor *)0x0;
@@ -210,8 +210,7 @@ LAB_00537df4:
             dVar6 = round((double)fStack_a4 * 0.20000000000000001);
             unaff_EBP = (int)ROUND(dVar6);
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                      (g_CGore_PTR_005b96c4,(CVector3f *)(local_38 + 4),(CVector3f *)0x0,
-                       unaff_EBP + 1,0);
+                      (g_CGorePtr,(CVector3f *)(local_38 + 4),(CVector3f *)0x0,unaff_EBP + 1,0);
             in_stack_ffffff48 = "kick1.wav";
             (*((this_ptr->base).base.base.vtable._ub)->playSound)
                       ((CDemonActor *)this_ptr,"kick1.wav");
@@ -257,7 +256,7 @@ LAB_00537df4:
           }
           else {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x7c0);
           }
         }
@@ -267,12 +266,12 @@ LAB_00537df4:
           }
           else {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x813);
           }
           if ((this_ptr->base).door_to_open == (CDoor *)0x0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"doorToOpen == NULL\nstranger.cpp line %d",0x819);
+                      (g_CEditorToolsPtr,"doorToOpen == NULL\nstranger.cpp line %d",0x819);
           }
           iVar4 = core_hero_cpp_CHero_tryOpenDoor_FUN_004b5270(&this_ptr->base);
           if (iVar4 == 0) {

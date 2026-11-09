@@ -179,7 +179,7 @@ extern CDemonActorType g_CTentacleActorType_02dca1e0;
 extern CSfxOptions g_CSfxOptions_ARRAY_02dc1b78[8];
 
 // CSfxSample[64]
-extern CSfxSample g_CSfxSample_ARRAY_02dc1edc[64];
+extern CSfxSample g_SfxSamples[64];
 
 // CSound
 extern CSound g_CSound_02dc9450;
@@ -188,7 +188,7 @@ extern CSound g_CSound_02dc9450;
 extern CStrList g_CStrList_02dc9610;
 
 // CTextureList
-extern CTextureList g_CTextureList_02dca21c;
+extern CTextureList g_CTextureListInstance;
 
 // CVector3f
 extern CVector3f CVector3f_02dc9f34;

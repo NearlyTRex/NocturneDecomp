@@ -1,0 +1,64 @@
+// Name: core_motion.cpp_CMotionController_findAndStartTransition_FUN_00524620
+// Address: 00524620
+// Address Range: [[00524620, 00524705]]
+// Convention: __cdecl
+// Signature: int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_00524620(CMotionController *this_ptr)
+
+#include "nocturne.h"
+
+int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_00524620(CMotionController *this_ptr)
+
+{
+  SMotion *pSVar1;
+  SMotionTransition *pSVar2;
+  int iVar3;
+  SMotionTransition *transition;
+  
+  pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(this_ptr);
+  iVar3 = *(int *)&this_ptr->field_0x28;
+  if ((iVar3 < 0) || (iVar3 == *(int *)(pSVar1 + 0x24))) {
+    *(uint *)&this_ptr->field_0x2c = 0;
+    return 0;
+  }
+  if ((*(int **)&this_ptr->field_0x2c == (int *)0x0) || (iVar3 != **(int **)&this_ptr->field_0x2c))
+  {
+    iVar3 = 0;
+    transition = (SMotionTransition *)0x0;
+    if (0 < *(int *)(pSVar1 + 0x70)) {
+      pSVar2 = *(SMotionTransition **)(pSVar1 + 0x74);
+      do {
+        transition = pSVar2;
+        if (*(int *)&this_ptr->field_0x28 == *(int *)pSVar2) break;
+        iVar3 = iVar3 + 1;
+        pSVar2 = pSVar2 + 0x18;
+        transition = (SMotionTransition *)0x0;
+      } while (iVar3 < *(int *)(pSVar1 + 0x70));
+    }
+    if ((transition != (SMotionTransition *)0x0) &&
+       (transition != *(SMotionTransition **)&this_ptr->field_0x2c)) {
+      *(uint *)&this_ptr->field_0x2c = 0;
+      core_motion_cpp_CMotionController_clearTweenState_FUN_00524b70(this_ptr);
+      switch(*(uint *)(transition + 4)) {
+      case 1:
+        core_motion_cpp_CMotionController_jumpToMotion_FUN_00524b10
+                  (this_ptr,*(int *)(transition + 8),*(float *)(transition + 0xc));
+        if (*(int *)(transition + 0x14) != 0) {
+          pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(this_ptr);
+          *(uint *)&this_ptr->field_0x28 = *(uint *)(pSVar1 + 0x24);
+        }
+        return 1;
+      case 2:
+        *(SMotionTransition **)&this_ptr->field_0x2c = transition;
+        return 0;
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+        *(SMotionTransition **)&this_ptr->field_0x2c = transition;
+        core_motion_cpp_CMotionController_startTransition_FUN_00524880(this_ptr,transition);
+        return 0;
+      }
+    }
+  }
+  return 0;
+}

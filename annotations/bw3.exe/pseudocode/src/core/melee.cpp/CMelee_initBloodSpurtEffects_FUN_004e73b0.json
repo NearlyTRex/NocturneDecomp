@@ -1,0 +1,145 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 63,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [
+    {
+      "addr": "004e7310",
+      "from_addr": "004e7344",
+      "name": "core_melee.cpp_FUN_004e7310",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e73b0",
+    "address_range": [
+      [
+        "004e73b0",
+        "004e73de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004e73b0",
+    "signature": "void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004e73b0(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e7344",
+        "call_type": "direct",
+        "caller": "core_melee.cpp_FUN_004e7310",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "COPY": 24,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 9,
+      "LOAD": 5,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 45
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      },
+      {
+        "is_param": true,
+        "name": "blood_spurt_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_gore_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x5b4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x5b4 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x5a8",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x5a8 = blood_gore_type;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x5b0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x5b0 = *(uint *)&this_ptr->field_0x5b4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x5b4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x5b0 = *(uint *)&this_ptr->field_0x5b4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x5ac",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x5ac = blood_spurt_count;",
+      "type": "unnamed_field"
+    }
+  ]
+}

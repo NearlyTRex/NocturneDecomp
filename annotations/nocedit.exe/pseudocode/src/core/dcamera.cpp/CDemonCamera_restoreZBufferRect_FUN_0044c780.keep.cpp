@@ -23,7 +23,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(CDemo
     iVar4 = rect_ptr->y_min;
     if (iVar4 <= rect_ptr->y_max) {
       do {
-        core_dstrender_cpp_memcpyMMX_FUN_00492001
+        core_dstrendr_cpp_memcpyMMX_FUN_00492001
                   (g_ZBufferScanlineArray[iVar4] + rect_ptr->x_min,
                    (uint *)this_ptr->zbuffer_aligned +
                            this_ptr->framebuffer_width * iVar4 + rect_ptr->x_min,

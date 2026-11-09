@@ -1,46 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c039dc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01c039dc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c039e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c039e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01c039e4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c039e4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
@@ -310,23 +268,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "calculateLighting_FUN_004c6cc0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 35,
-          "line": 37,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -351,14 +292,6 @@
       "severity": "mild",
       "text": "iVar3 = DAT_005bacd0 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 37,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "return ((int)((iVar3 + (iVar3 >> 0x1f) * -0x10) - (uint)((iVar3 >> 0x1f) << 3 < 0)) >> 4) +",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

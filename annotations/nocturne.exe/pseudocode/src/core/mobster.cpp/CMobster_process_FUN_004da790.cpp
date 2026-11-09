@@ -408,7 +408,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                             ((this_ptr->base).base.carry_hands[1].carry_actor,
                              g_CWeaponActorType_02ddf970.name_hash);
         if (pCVar14 != (CCharacter *)0x0) {
-          core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+          core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
           local_34 = (pCVar14->model).bone_origins[0x4f].y;
           pCVar5 = (pCVar14->base).vtable._uc;
           (pCVar14->model).bone_origins[0x4f].y = 1.4013e-43;
@@ -425,7 +425,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                              g_CWeaponActorType_02ddf970.name_hash);
         local_2c = pCVar14;
         if (pCVar14 != (CCharacter *)0x0) {
-          core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+          core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
           pCVar5 = (pCVar14->base).vtable._uc;
           fVar16 = (pCVar14->model).bone_origins[0x4f].y;
           (pCVar14->model).bone_origins[0x4f].y = 1.4013e-43;
@@ -465,7 +465,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_004da790(CMobster *this_ptr,f
                             (pCVar2,&local_4c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_c4,pCVar13);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_c4,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_c4,0);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -528,7 +528,7 @@ LAB_004dacfc:
     if (EVar4 != WALK_STATE_NO_PATH) goto LAB_004dacfc;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -547,7 +547,7 @@ switchD_004db6cf_caseD_3:
          (pCVar11 = (CMobster *)(*(((pCVar14->base).vtable._uc)->_uc).getGrabber)(pCVar14),
          pCVar11 == this_ptr)) {
         core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                  (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                  (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
       }
       (this_ptr->base).base.velocity.y =
            (this_ptr->base).base.velocity.y - delta_time * (float)32;

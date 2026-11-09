@@ -1,0 +1,226 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 110,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 66
+  },
+  "cross_references": [
+    {
+      "addr": "004c9f20",
+      "from_addr": "004c9f5f",
+      "name": "core_gore.cpp_CGore_save_FUN_004c9f20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c8e00",
+    "address_range": [
+      [
+        "004c8e00",
+        "004c8e75"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CBloodPool_save_FUN_004c8e00",
+    "signature": "int __cdecl core_gore_cpp_CBloodPool_save_FUN_004c8e00(CBloodPool *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d950f",
+      "name": "s_f_f_f_005d950f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9519",
+      "name": "s_d_d_005d9519",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9520",
+      "name": "s_d_f_d_d_d_005d9520",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c9f5f",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CGore_save_FUN_004c9f20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.404255319148936,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 104,
+      "FLOAT2FLOAT": 8,
+      "INT_ADD": 19,
+      "INT_AND": 14,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 23,
+      "LOAD": 17,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 254
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodPool *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "(file_handle,\"%f,%f,%f\\n\",(double)*(float *)&this_ptr->field_0x4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "(double)*(float *)&this_ptr->field_0x8,(double)*(float *)&this_ptr->field_0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "(double)*(float *)&this_ptr->field_0x8,(double)*(float *)&this_ptr->field_0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "(file_handle,\"%d,%d\\n\",*(uint *)this_ptr,*(uint *)&this_ptr->field_0x10",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "(file_handle,\"%d,%f,%d,%d,%d\\n\",*(uint *)&this_ptr->field_0x14,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(double)*(float *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "(double)*(float *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20,*(uint *)&this_ptr->field_0x24);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20,*(uint *)&this_ptr->field_0x24);",
+      "type": "unnamed_field"
+    }
+  ]
+}

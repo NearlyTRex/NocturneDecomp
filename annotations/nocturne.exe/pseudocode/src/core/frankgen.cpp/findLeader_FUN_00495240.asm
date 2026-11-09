@@ -11,13 +11,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_00581d72
 ;   TerminatedCString s_CFrankenstienMachine_fin_00581d87
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CFrankenstienMachineActorType_01c71304.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CDemonSet_01e57284.actor_count
-;   undefined4 g_CDemonSet_01e57284.actors[0]
-;   undefined4 g_CDemonSet_01e57284.actors[1]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -34,14 +34,14 @@ section .text
     PUSH EBP                            ; 00495243
     XOR ESI,ESI                         ; 00495244
     XOR EBX,EBX                         ; 00495246
-    MOV EAX,[0x005be368]                ; 00495248 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 00495248 | g_CDemonSetPtr
         ;   Label: LAB_00495248
-    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 0049524d | g_CDemonSet_01e57284.actor_count
+    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 0049524d | g_CDemonSetInstance.actor_count
     JGE 0x0049527a                      ; 00495253
         ;   XREF to: 0049527a (CONDITIONAL_JUMP)  ; LAB_0049527a
     MOV EDI,dword ptr [0x01c7133c]      ; 00495255 | g_CFrankenstienMachineActorType_01c71304.name_hash
     PUSH EDI                            ; 0049525b
-    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0049525c | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
+    MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0049525c | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EBP                            ; 00495263
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00495264
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)

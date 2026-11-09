@@ -1,0 +1,251 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 14,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "0050a9b0",
+      "from_addr": "0050aa78",
+      "name": "core_passngr.cpp_FUN_0050a9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527970",
+      "from_addr": "00527a38",
+      "name": "core_pryemorp.cpp_FUN_00527970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b2e0",
+      "from_addr": "0059b3a8",
+      "name": "core_spirbear.cpp_FUN_0059b2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599a70",
+      "from_addr": "00599afc",
+      "name": "core_spireagl.cpp_FUN_00599a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a760",
+      "from_addr": "0059a828",
+      "name": "core_spirindi.cpp_FUN_0059a760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a01c0",
+      "from_addr": "005a0288",
+      "name": "core_styldemo.cpp_FUN_005a01c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ddb0",
+      "from_addr": "0059de80",
+      "name": "core_styler.cpp_FUN_0059ddb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598e00",
+      "from_addr": "00598ec8",
+      "name": "unkafter_darkwolf.cpp_FUN_00598e00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fb0e0",
+    "address_range": [
+      [
+        "004fb0e0",
+        "004fb147"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorph_render_FUN_004fb0e0",
+    "signature": "void __cdecl core_morph_cpp_CMorph_render_FUN_004fb0e0(CMorph *this_ptr,float morph_t)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fa450",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_render_FUN_004fa450"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0050aa78",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_FUN_0050a9b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527a38",
+        "call_type": "direct",
+        "caller": "core_pryemorp.cpp_FUN_00527970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00598ec8",
+        "call_type": "direct",
+        "caller": "unkafter_darkwolf.cpp_FUN_00598e00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00599afc",
+        "call_type": "direct",
+        "caller": "core_spireagl.cpp_FUN_00599a70",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059a828",
+        "call_type": "direct",
+        "caller": "core_spirindi.cpp_FUN_0059a760",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059b3a8",
+        "call_type": "direct",
+        "caller": "core_spirbear.cpp_FUN_0059b2e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059de80",
+        "call_type": "direct",
+        "caller": "core_styler.cpp_FUN_0059ddb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a0288",
+        "call_type": "direct",
+        "caller": "core_styldemo.cpp_FUN_005a01c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.85,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 111,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 16,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 11,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 274
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorph *"
+      },
+      {
+        "is_param": true,
+        "name": "morph_t",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,55 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01c713b4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_01c713b8'"
-      },
-      {
-        "category": "cast_error",
-        "column": 63,
-        "line": 84,
-        "message": "C-style cast from 'char *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 71,
-        "line": 119,
-        "message": "use of undeclared identifier '_DAT_01c713c8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 73,
-        "line": 122,
-        "message": "use of undeclared identifier 'stack0xffffff60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 134,
-        "message": "use of undeclared identifier 'stack0xffffff60'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 376,
-    "complexity_score": 271,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 171,
+    "pseudocode_lines": 170,
     "suspect_count": 8,
     "suspect_types": [
       "stack_param",
@@ -57,7 +15,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 547
+    "total_lines": 546
   },
   "cross_references": [
     {
@@ -201,7 +159,7 @@
     },
     {
       "addr": "005b96c4",
-      "name": "g_CGore_PTR_005b96c4",
+      "name": "g_CGorePtr",
       "type": "CGore*",
       "value": "01c78c7c"
     },
@@ -487,7 +445,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 133,
       "match": "in_stack_ffffff58",
       "severity": "moderate",
       "text": "in_stack_ffffff58 = \"kick1.wav\";",

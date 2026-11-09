@@ -64,7 +64,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *this_ptr,floa
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   local_1b14 = delta_time;
-  while (pCVar6 = g_CGame_PTR_005b9354, 0.0 < local_1b14) {
+  while (pCVar6 = g_CGamePtr, 0.0 < local_1b14) {
     iVar7 = core_motion_cpp_CMotionController_advance_FUN_004e11c0
                       (&(this_ptr->base).base.model.base,&local_1b14);
     core_charactr_cpp_CCharacter_processMotion_FUN_0042add0((CCharacter *)this_ptr,iVar7);
@@ -116,7 +116,7 @@ LAB_004dde3e:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                     (&(this_ptr->base).base.model.base,0,1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                    (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
           goto LAB_004ddc3a;
         }
         goto LAB_004dde3e;

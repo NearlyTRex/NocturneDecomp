@@ -1,0 +1,241 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 7,
+    "cross_reference_count": 8,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "004f90d0",
+      "from_addr": "004f9332",
+      "name": "core_inv.cpp_FUN_004f90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fe9c0",
+      "from_addr": "004fea78",
+      "name": "core_level.cpp_FUN_004fe9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555590",
+      "from_addr": "005555c8",
+      "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00550da0",
+      "from_addr": "005510fa",
+      "name": "core_set.cpp_FUN_00550da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559f80",
+      "from_addr": "0055a99a",
+      "name": "core_setdir.cpp_FUN_00559f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055b330",
+      "from_addr": "0055b3ec",
+      "name": "core_setdir.cpp_FUN_0055b330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005847e0",
+      "from_addr": "005848c9",
+      "name": "shape_spotview.cpp_FUN_005847e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00416fa0",
+      "from_addr": "004170f1",
+      "name": "unkafter_bmppuzzl.cpp_FUN_00416fa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00483530",
+    "address_range": [
+      [
+        "00483530",
+        "00483558"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(CDemonRenderer *this_ptr,CVector3f *euler_angles)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045f3e0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045f3e0"
+    },
+    {
+      "addr": "00483560",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "004fea78",
+        "call_type": "direct",
+        "caller": "core_level.cpp_FUN_004fe9c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f9332",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004f90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005510fa",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00550da0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005555c8",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055a99a",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00559f80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055b3ec",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_0055b330",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004170f1",
+        "call_type": "direct",
+        "caller": "unkafter_bmppuzzl.cpp_FUN_00416fa0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005848c9",
+        "call_type": "direct",
+        "caller": "shape_spotview.cpp_FUN_005847e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 8,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

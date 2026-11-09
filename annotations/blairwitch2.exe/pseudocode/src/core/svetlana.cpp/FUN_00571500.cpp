@@ -1,0 +1,117 @@
+// Name: core_svetlana.cpp_FUN_00571500
+// Address: 00571500
+// Address Range: [[00571500, 005716eb]]
+// Convention: __cdecl
+// Signature: void __cdecl core_svetlana_cpp_FUN_00571500(CSvetlana *this_ptr,int bone_index)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_svetlana_cpp_FUN_00571500(CSvetlana *this_ptr,int bone_index)
+
+{
+  CSvetlana *pCVar1;
+  CSkeleton *pCVar2;
+  CSkeleton *pCVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  byte bVar7;
+  uint auStackY_1060 [998];
+  uint *puVar8;
+  char *pcVar9;
+  SDamageInfo local_b4 [4];
+  uint local_b0;
+  uint local_8c;
+  uint local_88;
+  uint local_84;
+  uint local_78;
+  uint auStack_74 [5];
+  uint local_60;
+  uint local_54 [3];
+  uint local_48 [3];
+  uint local_3c [3];
+  uint local_30 [3];
+  uint local_24;
+  int local_18;
+  int local_14;
+  
+  bVar7 = 0;
+  iVar5 = 0;
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
+                     ((CDeformableModelInstance *)&this_ptr->field_0x2b4);
+  local_18 = -1;
+  pCVar3 = pCVar2;
+  iVar6 = local_18;
+  if (0 < *(int *)&pCVar2->field_0x1d1f8) {
+    do {
+      iVar6 = iVar5;
+      if (bone_index == *(int *)&pCVar3->field_0x1d21c) break;
+      iVar5 = iVar5 + 1;
+      pCVar3 = (CSkeleton *)&pCVar3->field_0x24;
+      iVar6 = local_18;
+    } while (iVar5 < *(int *)&pCVar2->field_0x1d1f8);
+  }
+  local_18 = iVar6;
+  if (local_18 == -1) {
+    _DAT_01d046a0 = "..\\core\\svetlana.cpp";
+    _DAT_01d046a4 = 0x2ef;
+    core_main_c_FUN_004e4500("Can't find svetlana's parent bone");
+  }
+  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,bone_index);
+  puVar8 = auStack_74 + 0x11;
+  local_30[0] = auStack_74[2];
+  auStack_74[(uint)bVar7 * -2 + 0x12] = auStack_74[(uint)bVar7 * -2 + 3];
+  auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x13] =
+       auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
+  core_actor_cpp_FUN_00408d70(this_ptr,puVar8);
+  local_48[0] = local_24;
+  auStack_74[(uint)bVar7 * -2 + 0xc] = auStack_74[(uint)bVar7 * -2 + 0x15];
+  auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd] =
+       auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x16];
+  core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,local_18);
+  puVar8 = auStack_74 + 0xe;
+  local_3c[0] = local_78;
+  auStack_74[(uint)bVar7 * -2 + 0xf] = auStack_74[(uint)bVar7 * -2];
+  auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x10] =
+       auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+  core_actor_cpp_FUN_00408d70(this_ptr,puVar8);
+  local_54[0] = local_60;
+  auStack_74[(uint)bVar7 * -2 + 9] = auStack_74[(uint)bVar7 * -2 + 6];
+  auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
+       auStack_74[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
+  iVar5 = 0;
+  iVar6 = 0;
+  local_14 = 0;
+  do {
+    while( true ) {
+      if (*(int *)&g_CDemonSetPtr->field_0x14f0a8 <= iVar6) {
+        if (local_14 == 0) {
+          pcVar9 = "svetlana-miss?.wav";
+        }
+        else {
+          pcVar9 = "svetlana-attack?.wav";
+        }
+        (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,pcVar9);
+        return;
+      }
+      pCVar1 = *(CSvetlana **)(&g_CDemonSetPtr->field_0x14f0ac + iVar5);
+      if (pCVar1 != this_ptr) break;
+LAB_00571618:
+      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + 4;
+    }
+    core_charactr_cpp_SDamageInfo_ctor_FUN_004222d0(local_b4);
+    local_b0 = 0x41700000;
+    local_8c = 3;
+    local_88 = 0x3f333333;
+    local_84 = 0x67;
+    iVar4 = (**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x10c))
+                      (pCVar1,auStack_74 + 0xb,auStack_74 + 8,local_b4,0);
+    if (iVar4 == 0) goto LAB_00571618;
+    local_14 = 1;
+    iVar6 = iVar6 + 1;
+    iVar5 = iVar5 + 4;
+  } while( true );
+}

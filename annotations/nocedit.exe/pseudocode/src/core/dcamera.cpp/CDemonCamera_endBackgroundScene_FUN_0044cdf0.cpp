@@ -56,7 +56,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemo
           byte_count = this_ptr->framebuffer_width * 4;
           iVar7 = iVar7 + 4;
           iVar3 = iVar3 + 1;
-          core_dstrender_cpp_memcpyMMX_FUN_00492001
+          core_dstrendr_cpp_memcpyMMX_FUN_00492001
                     ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
                      (void *)(*piVar1 + byte_count),byte_count);
         } while (iVar3 < this_ptr->framebuffer_height);

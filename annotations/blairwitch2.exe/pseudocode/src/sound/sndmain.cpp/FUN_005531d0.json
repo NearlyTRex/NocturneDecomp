@@ -1,0 +1,234 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 72,
+    "complexity_score": 95,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [
+    {
+      "addr": "00555130",
+      "from_addr": "005551b9",
+      "name": "sound_snddx.cpp_FUN_00555130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557dc0",
+      "from_addr": "00557e5b",
+      "name": "sound_sndwav.cpp_CWavOutDevice_start_FUN_00557dc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005531d0",
+    "address_range": [
+      [
+        "005531d0",
+        "0055326d"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "sound_sndmain.cpp_FUN_005531d0",
+    "signature": "int sound_sndmain_cpp_FUN_005531d0(float param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00553270",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_00553270"
+    },
+    {
+      "addr": "0058fd20",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_createThread_FUN_0058fd20"
+    },
+    {
+      "addr": "0058fd50",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setThreadPriority_FUN_0058fd50"
+    },
+    {
+      "addr": "0058fd90",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_sleep_FUN_0058fd90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e919e",
+      "name": "DAT_005e919e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264900c",
+      "name": "DAT_0264900c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02649010",
+      "name": "DAT_02649010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02649014",
+      "name": "DAT_02649014",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005551b9",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_00555130",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00557e5b",
+        "call_type": "direct",
+        "caller": "sound_sndwav.cpp_CWavOutDevice_start_FUN_00557dc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.763636363636364,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 67,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 14,
+      "INT_AND": 36,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 10,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 262
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005531d5",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int sound_sndmain_cpp_FUN_005531d0(float param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_DAT_0264900c = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 < (float)_DAT_005e919e) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

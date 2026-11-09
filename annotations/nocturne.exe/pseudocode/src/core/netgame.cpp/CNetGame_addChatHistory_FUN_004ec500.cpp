@@ -53,6 +53,6 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *thi
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   _DAT_01cea40c = _DAT_01cea40c + 1;
-  core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,message,5.0);
+  core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGamePtr,message,5.0);
   return;
 }

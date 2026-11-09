@@ -1,0 +1,186 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 55,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "00459b80",
+      "from_addr": "00459c68",
+      "name": "core_dfilter.cpp_CDemonFilter_init_FUN_00459b80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459980",
+      "from_addr": "00459a72",
+      "name": "core_dfilter.cpp_CDemonFilter_load_FUN_00459980",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00459910",
+    "address_range": [
+      [
+        "00459910",
+        "0045995c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00459910",
+    "signature": "void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00459910(CDemonFilter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00459960",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CDemonFilter_freeMemory_FUN_00459960"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3650"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005baa7d",
+      "name": "s_core_dfilter_cpp_005baa7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005baa91",
+      "name": "s_CDemonFilter_allocMemory_005baa91",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00459c68",
+        "call_type": "direct",
+        "caller": "core_dfilter.cpp_CDemonFilter_init_FUN_00459b80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00459a72",
+        "call_type": "direct",
+        "caller": "core_dfilter.cpp_CDemonFilter_load_FUN_00459980",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8846153846153846,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 21,
+      "INT_ADD": 11,
+      "INT_AND": 9,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SCARRY": 3,
+      "INT_SEXT": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 9,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 101
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFilter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pvVar1 = FUN_005a3650(*(int *)this_ptr * *(int *)&this_ptr->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x48 = pvVar1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

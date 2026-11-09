@@ -1,0 +1,136 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "00409df0",
+      "from_addr": "00409e23",
+      "name": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00429c70",
+      "from_addr": "00429c98",
+      "name": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00429c70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040d2a0",
+    "address_range": [
+      [
+        "0040d2a0",
+        "0040d2b4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_crc32ProcessInt_FUN_0040d2a0",
+    "signature": "void __cdecl core_actor_cpp_crc32ProcessInt_FUN_0040d2a0(uint *crc_state,int value)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d260",
+      "is_variadic": false,
+      "name": "core_actor.cpp_crc32ProcessBuffer_FUN_0040d260"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00409e23",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409df0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00429c98",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00429c70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00429cd1",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00429c70",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.625,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 5,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 29
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "crc_state",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

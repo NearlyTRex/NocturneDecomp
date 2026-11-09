@@ -17,7 +17,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_dstrender.cpp_memcpyMMX_FUN_00465341
+;   core_dstrendr.cpp_memcpyMMX_FUN_00465341
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     PUSH EDX                            ; 0044e6dc
     PUSH ECX                            ; 0044e6dd
     INC EDI                             ; 0044e6de
-    CALL core_dstrender.cpp_memcpyMMX_FUN_00465341 ; 0044e6df
-        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
+    CALL core_dstrendr.cpp_memcpyMMX_FUN_00465341 ; 0044e6df
+        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
     MOV EAX,dword ptr [ESI + 0xc]       ; 0044e6e4
     ADD ESP,0xc                         ; 0044e6e7
     CMP EDI,EAX                         ; 0044e6ea

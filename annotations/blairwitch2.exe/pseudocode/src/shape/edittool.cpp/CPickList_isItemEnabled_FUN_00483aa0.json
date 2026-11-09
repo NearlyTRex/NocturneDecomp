@@ -1,0 +1,263 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 38,
+    "complexity_score": 53,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 51
+  },
+  "cross_references": [
+    {
+      "addr": "00482350",
+      "from_addr": "00482387",
+      "name": "shape_edittool.cpp_FUN_00482350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482770",
+      "from_addr": "0048279a",
+      "name": "shape_edittool.cpp_FUN_00482770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004831d0",
+      "from_addr": "0048363c",
+      "name": "shape_edittool.cpp_FUN_004831d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483c30",
+      "from_addr": "00483c59",
+      "name": "shape_edittool.cpp_FUN_00483c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483cb0",
+      "from_addr": "00483cdf",
+      "name": "shape_edittool.cpp_FUN_00483cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483e10",
+      "from_addr": "00483e2d",
+      "name": "shape_edittool.cpp_FUN_00483e10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00483aa0",
+    "address_range": [
+      [
+        "00483aa0",
+        "00483afb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_00483aa0",
+    "signature": "int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_00483aa0(CPickList *this_ptr,int item_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d2997",
+      "name": "s_shape_edittool_cpp_005d2997",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d29ad",
+      "name": "s_CPickList_isItemEnabled_005d29ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0048279a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00482770",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048363c",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004831d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00482387",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00482350",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00483c59",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483c30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00483cdf",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483cb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00483e2d",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483e10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00483e39",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483e10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 13,
+      "INT_AND": 14,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "LOAD": 13,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 126
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "item_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x1ac",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x1ac <= item_index) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x1b0",
+      "severity": "mild",
+      "text": "return (uint)(*(int *)(*(int *)&this_ptr->field_0x1b0 + item_index * 4) != 0);",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -53,7 +53,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delt
   bVar22 = 0;
   iVar13 = core_charactr_cpp_CCharacter_processCharacter_FUN_004259f0
                      ((CCharacter *)this_ptr,delta_time);
-  pCVar12 = g_CGame_PTR_005b9354;
+  pCVar12 = g_CGamePtr;
   if (iVar13 == 0) {
     return;
   }
@@ -186,7 +186,7 @@ LAB_004fc367:
     else {
       if (EVar7 != WALK_STATE_NO_PATH) goto LAB_004fc367;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
       iVar13 = core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(this_ptr);
       if (iVar13 == 0) {
         iVar13 = 0;

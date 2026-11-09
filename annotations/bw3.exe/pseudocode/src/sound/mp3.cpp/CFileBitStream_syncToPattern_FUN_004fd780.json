@@ -1,0 +1,141 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
+  },
+  "cross_references": [
+    {
+      "addr": "00502d60",
+      "from_addr": "00502dbf",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502890",
+      "from_addr": "00502964",
+      "name": "sound_mp3.cpp_FUN_00502890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fd780",
+    "address_range": [
+      [
+        "004fd780",
+        "004fd7f3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_004fd780",
+    "signature": "int __cdecl sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004fd780(CFileBitStream *this_ptr,uint sync_pattern,uint pattern_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fd5e0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_004fd5e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00502dbf",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00502964",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_00502890",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.510204081632653,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 45,
+      "INT_ADD": 14,
+      "INT_AND": 55,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 30,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 11,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 18,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 270
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      },
+      {
+        "is_param": true,
+        "name": "sync_pattern",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "pattern_bits",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

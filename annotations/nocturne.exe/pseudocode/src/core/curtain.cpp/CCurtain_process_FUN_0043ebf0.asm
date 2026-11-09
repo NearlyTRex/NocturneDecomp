@@ -22,7 +22,7 @@
 ;   double DOUBLE_0057b52e = 5.08118523482294E-315
 ;   double DOUBLE_0057b536 = 0.100000000000000
 ;   undefined4 DAT_005b7650
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_0077bdb8
 ;   CVector3f[100] g_CVector3f_ARRAY_0077bdbc
 ;   undefined4 g_CVector3f_ARRAY_0077bdbc[0].y
@@ -187,16 +187,16 @@ section .text
     MOV dword ptr [ESP + 0xc0],EDX      ; 0043ed79
     MOV dword ptr [ESP + 0xb8],EDX      ; 0043ed80
     MOV dword ptr [0x0077bdb8],EDX      ; 0043ed87 | DAT_0077bdb8
-    MOV EDX,dword ptr [0x005be368]      ; 0043ed8d | g_CDemonSet_PTR_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 0043ed8d | g_CDemonSetPtr
         ;   Label: LAB_0043ed8d
     MOV EAX,dword ptr [ESP + 0xc0]      ; 0043ed93
-    CMP EAX,dword ptr [EDX + 0x14ecb0]  ; 0043ed9a | g_CDemonSet_01e57284.character_count
+    CMP EAX,dword ptr [EDX + 0x14ecb0]  ; 0043ed9a | g_CDemonSetInstance.character_count
     JGE 0x0043ee81                      ; 0043eda0
         ;   XREF to: 0043ee81 (CONDITIONAL_JUMP)  ; LAB_0043ee81
     MOV EAX,[0x0077bdb8]                ; 0043eda6 | DAT_0077bdb8
     IMUL ESI,EAX,0x28                   ; 0043edab
     ADD EDX,dword ptr [ESP + 0xb8]      ; 0043edae
-    MOV EBX,dword ptr [EDX + 0x14ecb4]  ; 0043edb5 | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1]
+    MOV EBX,dword ptr [EDX + 0x14ecb4]  ; 0043edb5 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     IMUL EDX,EAX,0xc                    ; 0043edbb
     ADD EDX,0x77bdbc                    ; 0043edbe | g_CVector3f_ARRAY_0077bdbc
     LEA EAX,[EBX + 0x20]                ; 0043edc4

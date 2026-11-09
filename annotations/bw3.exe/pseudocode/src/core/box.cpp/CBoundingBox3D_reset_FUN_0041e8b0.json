@@ -1,0 +1,197 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 105,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "0054bb60",
+      "from_addr": "0054bb91",
+      "name": "core_skeleton.cpp_FUN_0054bb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054fa00",
+      "from_addr": "0054fa2f",
+      "name": "core_skeleton.cpp_FUN_0054fa00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566fd0",
+      "from_addr": "00567072",
+      "name": "core_spike.cpp_FUN_00566fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041e8b0",
+    "address_range": [
+      [
+        "0041e8b0",
+        "0041e8d6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBoundingBox3D_reset_FUN_0041e8b0",
+    "signature": "void __cdecl core_box_cpp_CBoundingBox3D_reset_FUN_0041e8b0(CBoundingBox3D *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0054bb91",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_0054bb60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054fa2f",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_0054fa00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00567072",
+        "call_type": "direct",
+        "caller": "core_spike.cpp_FUN_00566fd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.636363636363637,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "COPY": 26,
+      "FLOAT2FLOAT": 3,
+      "INT_ADD": 10,
+      "LOAD": 5,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 51
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = 0x7cf0bdc2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x14 = 0xfcf0bdc2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&this_ptr->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&this_ptr->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)this_ptr = *(uint *)&this_ptr->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    }
+  ]
+}

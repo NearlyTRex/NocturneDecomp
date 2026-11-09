@@ -112,7 +112,7 @@ LAB_0044c9e6:
       iVar1 = 0;
       if (0 < g_ScanlineSpanCount) {
         do {
-          core_dstrender_cpp_memcpyMMX_FUN_00492001
+          core_dstrendr_cpp_memcpyMMX_FUN_00492001
                     ((char *)g_ZBufferScanlineArray[local_14] + g_ScanlineSpanLeft[iVar1] * 4,
                      (uint *)this_ptr->zbuffer_aligned +
                              local_14 * this_ptr->framebuffer_width + g_ScanlineSpanLeft[iVar1],

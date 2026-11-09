@@ -39,8 +39,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004d8aa0(CDem
           ;
           if (unaff_ESI == (CDemonActor *)0x0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                      (g_CEditorTools_PTR_005b6d50,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,
-                       current_actor,property_description);
+                      (g_CEditorToolsPtr,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)",local_dc,current_actor,
+                       property_description);
           }
         }
         iVar2 = _fgetc(file);

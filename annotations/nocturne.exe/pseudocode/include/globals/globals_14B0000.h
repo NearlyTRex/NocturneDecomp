@@ -33,10 +33,10 @@ extern CDemonFilter g_CDemonFilter_ARRAY_014b8cb8[4];
 extern CDemonFilter g_CDemonFilter_ARRAY_014b8a58[8];
 
 // CFilterCache
-extern CFilterCache g_CFilterCache_014b8de8;
+extern CFilterCache g_CFilterCacheInstance;
 
 // CFilterFX
-extern CFilterFX g_CFilterFX_014b98ec;
+extern CFilterFX g_CFilterFXInstance;
 
 // CVector3f[16]
 extern CVector3f g_CVector3f_ARRAY_014b8490[16];

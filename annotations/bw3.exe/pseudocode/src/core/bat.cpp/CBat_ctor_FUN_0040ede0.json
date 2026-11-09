@@ -1,0 +1,272 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 221,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 17,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "0040edb0",
+      "from_addr": "0040edc3",
+      "name": "core_bat.cpp_factoryFuncBat_FUN_0040edb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040ede0",
+    "address_range": [
+      [
+        "0040ede0",
+        "0040eeaf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bat.cpp_CBat_ctor_FUN_0040ede0",
+    "signature": "CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_0040ede0(CBat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00408600"
+    },
+    {
+      "addr": "004448d0",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_ctor_FUN_004448d0"
+    },
+    {
+      "addr": "00462500",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040edc3",
+        "call_type": "direct",
+        "caller": "core_bat.cpp_factoryFuncBat_FUN_0040edb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.04,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 37,
+      "INT_ADD": 29,
+      "INT_AND": 20,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 15,
+      "LOAD": 8,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 25
+    },
+    "pcode_op_count": 202
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "pCVar3 = core_course_cpp_CCourse_ctor_FUN_004448d0((CCourse *)&pCVar2[1].field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x148 = &g_CBatVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x148 = &g_CBatVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0x41f00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x8 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "pcVar5 = &this_ptr_00[-1].field_0x14c;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x14c",
+      "severity": "mild",
+      "text": "pcVar5 = &this_ptr_00[-1].field_0x14c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0xc = 0x41f00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "this_ptr_00[1].field_0x10 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x74",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x74 = 0x41700000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x78 = 0x41f00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x80",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00[1].field_0x80 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "this_ptr_00[-2].",
+      "severity": "mild",
+      "text": "return (CBat *)&this_ptr_00[-2].field_0x170;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x170",
+      "severity": "mild",
+      "text": "return (CBat *)&this_ptr_00[-2].field_0x170;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBat",
+        "offset": 0,
+        "vtable_addr": "005db874"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

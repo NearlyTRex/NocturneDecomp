@@ -27,7 +27,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(CPickList *t
   int local_18;
   char *local_14;
   
-  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
+  shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorToolsPtr);
   local_28 = g_ClipLeft;
   local_24 = this_ptr->scroll_top;
   local_30 = 0;
@@ -108,6 +108,6 @@ LAB_00475b35:
   if (this_ptr->state_flag != 0) {
     return;
   }
-  shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(g_CEditorTools_PTR_005b6d50,1);
+  shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(g_CEditorToolsPtr,1);
   return;
 }

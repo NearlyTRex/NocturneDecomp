@@ -1,0 +1,48 @@
+// Name: core_enemy.cpp_CEnemy_ctor_FUN_00487db0
+// Address: 00487db0
+// Address Range: [[00487db0, 00487ea5]]
+// Convention: __cdecl
+// Signature: CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr)
+
+#include "nocturne.h"
+
+CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr)
+
+{
+  char cVar1;
+  CEnemy *pCVar2;
+  uint uVar3;
+  char *pcVar4;
+  char *pcVar5;
+  
+  pCVar2 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00422340((CCharacter *)this_ptr);
+  *(byte **)&pCVar2->field_0x2b0 = &g_CEnemyVTable;
+  uVar3 = core_actor_cpp_FUN_0040cf60(0x3f666666,0x3f8ccccd);
+  *(uint *)&pCVar2->field_0x10a64 = 0;
+  *(uint *)&pCVar2->field_0x10ae8 = 0;
+  *(uint *)&pCVar2->field_0x10a78 = 0;
+  *(uint *)&pCVar2->field_0x10a7c = 0;
+  *(uint *)&pCVar2->field_0x10a80 = 0x42480000;
+  *(uint *)&pCVar2->field_0x10a68 = 1;
+  *(uint *)&pCVar2->field_0x10af0 = 0;
+  *(uint *)&pCVar2->field_0x10a6c = 0;
+  pCVar2->field_0x10a84 = 0;
+  *(uint *)&pCVar2->field_0x10a70 = 0x42c80000;
+  pcVar4 = &DAT_005d2d28;
+  *(uint *)&pCVar2->field_0x10a74 = 0;
+  pcVar5 = &pCVar2->field_0x120;
+  *(uint *)&pCVar2->field_0x10aec = 0x40c00000;
+  *(uint *)&pCVar2->field_0x10af4 = 1;
+  *(uint *)&pCVar2->field_0x10a60 = uVar3;
+  do {
+    cVar1 = *pcVar4;
+    *pcVar5 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
+  } while (cVar1 != '\0');
+  *(uint *)&pCVar2->field_0x259c = 0x3fc90fdb;
+  return pCVar2;
+}

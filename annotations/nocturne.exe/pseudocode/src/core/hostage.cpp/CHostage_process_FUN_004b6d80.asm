@@ -210,8 +210,8 @@ section .text
     PUSH EDI                            ; 004b6e99
     PUSH EBX                            ; 004b6e9a
     PUSH 0x585aaf                       ; 004b6e9b | = "%s escaping from %s\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 004b6ea0 | g_CConsole_PTR_005ad350
-    PUSH EDX                            ; 004b6ea6 | g_CConsole_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 004b6ea0 | g_CConsolePtr
+    PUSH EDX                            ; 004b6ea6 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b6ea7
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 004b6eac
@@ -258,14 +258,14 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 004b6f4c
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004b6f51
-    MOV EAX,[0x005be368]                ; 004b6f54 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004b6f54 | g_CDemonSetPtr
         ;   Label: LAB_004b6f54
-    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 004b6f59 | g_CDemonSet_01e57284.actor_count
+    CMP ESI,dword ptr [EAX + 0x14cd6c]  ; 004b6f59 | g_CDemonSetInstance.actor_count
     JGE 0x004b701f                      ; 004b6f5f
         ;   XREF to: 004b701f (CONDITIONAL_JUMP)  ; LAB_004b701f
     MOV EDX,dword ptr [0x01af4ed4]      ; 004b6f65 | g_CDoorActorType_01af4e9c.name_hash
     PUSH EDX                            ; 004b6f6b
-    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 004b6f6c | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
+    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 004b6f6c | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH ECX                            ; 004b6f73
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b6f74
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)
@@ -504,7 +504,7 @@ section .text
     PUSH EAX                            ; 004b7237
     LEA EAX,[ESP + 0x70]                ; 004b7238
     PUSH EAX                            ; 004b723c
-    MOV EAX,[0x005b96c4]                ; 004b723d | g_CGore_PTR_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004b723d | g_CGorePtr
     PUSH EAX                            ; 004b7242
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004b7243
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
@@ -847,8 +847,8 @@ section .text
     PUSH EBX                            ; 004b763f
     MOV EAX,0x585ac4                    ; 004b7640 | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 004b7645 | = "%s confused while walking to scriptDe..."
-    MOV EDX,dword ptr [0x005ad350]      ; 004b7646 | g_CConsole_PTR_005ad350
-    PUSH EDX                            ; 004b764c | g_CConsole_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 004b7646 | g_CConsolePtr
+    PUSH EDX                            ; 004b764c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b764d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b7652
@@ -938,8 +938,8 @@ section .text
         ;   XREF to: 004b7672 (CONDITIONAL_JUMP)  ; LAB_004b7672
     PUSH EBX                            ; 004b773b
     PUSH 0x585aee                       ; 004b773c | = "%s rescued, entering follow mode\n"
-    MOV ESI,dword ptr [0x005ad350]      ; 004b7741 | g_CConsole_PTR_005ad350
-    PUSH ESI                            ; 004b7747 | g_CConsole_0077ad0c
+    MOV ESI,dword ptr [0x005ad350]      ; 004b7741 | g_CConsolePtr
+    PUSH ESI                            ; 004b7747 | g_CConsoleInstance
     MOV dword ptr [EBX + 0x1f924],0x1   ; 004b7748
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b7752
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
@@ -964,8 +964,8 @@ section .text
         ;   XREF to: 004b7807 (CONDITIONAL_JUMP)  ; LAB_004b7807
     PUSH EBX                            ; 004b778b
     PUSH 0x585b10                       ; 004b778c | = "%s was led close enough, going home!\n"
-    MOV EAX,[0x005ad350]                ; 004b7791 | g_CConsole_PTR_005ad350
-    PUSH EAX                            ; 004b7796 | g_CConsole_0077ad0c
+    MOV EAX,[0x005ad350]                ; 004b7791 | g_CConsolePtr
+    PUSH EAX                            ; 004b7796 | g_CConsoleInstance
     MOV dword ptr [EBX + 0x1f924],0x3   ; 004b7797
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b77a1
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
@@ -1062,8 +1062,8 @@ section .text
     ADD ESP,0xc                         ; 004b7892
     PUSH EBX                            ; 004b7895
     PUSH 0x585b36                       ; 004b7896 | = "%s left behind!\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 004b789b | g_CConsole_PTR_005ad350
-    PUSH ECX                            ; 004b78a1 | g_CConsole_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004b789b | g_CConsolePtr
+    PUSH ECX                            ; 004b78a1 | g_CConsoleInstance
     MOV dword ptr [EBX + 0x1f924],0x2   ; 004b78a2
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b78ac
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
@@ -1135,8 +1135,8 @@ section .text
     PUSH EBX                            ; 004b7960
         ;   Label: LAB_004b7960
     PUSH 0x585b47                       ; 004b7961 | = "%s was left behind, but now can follo..."
-    MOV EAX,[0x005ad350]                ; 004b7966 | g_CConsole_PTR_005ad350
-    PUSH EAX                            ; 004b796b | g_CConsole_0077ad0c
+    MOV EAX,[0x005ad350]                ; 004b7966 | g_CConsolePtr
+    PUSH EAX                            ; 004b796b | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b796c
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004b7971
@@ -1184,8 +1184,8 @@ section .text
         ;   XREF to: 004b7b09 (CONDITIONAL_JUMP)  ; LAB_004b7b09
     PUSH EBX                            ; 004b79d0
     PUSH 0x585b76                       ; 004b79d1 | = "%s doesn't know next waypoint going h..."
-    MOV ECX,dword ptr [0x005ad350]      ; 004b79d6 | g_CConsole_PTR_005ad350
-    PUSH ECX                            ; 004b79dc | g_CConsole_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004b79d6 | g_CConsolePtr
+    PUSH ECX                            ; 004b79dc | g_CConsoleInstance
     MOV dword ptr [EBX + 0x1f924],0x2   ; 004b79dd
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b79e7
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
@@ -1197,8 +1197,8 @@ section .text
     PUSH EDX                            ; 004b79fa
     PUSH EBX                            ; 004b79fb
     PUSH 0x585bab                       ; 004b79fc | = "%s reached waypoint %s!\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 004b7a01 | g_CConsole_PTR_005ad350
-    PUSH ECX                            ; 004b7a07 | g_CConsole_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004b7a01 | g_CConsolePtr
+    PUSH ECX                            ; 004b7a07 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b7a08
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     MOV EAX,dword ptr [EBX + 0x1f930]   ; 004b7a0d
@@ -1209,8 +1209,8 @@ section .text
         ;   XREF to: 004b7a4e (CONDITIONAL_JUMP)  ; LAB_004b7a4e
     PUSH EBX                            ; 004b7a20
     PUSH 0x585bc4                       ; 004b7a21 | = "%s rescued and taken home!\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 004b7a26 | g_CConsole_PTR_005ad350
-    PUSH EDX                            ; 004b7a2c | g_CConsole_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 004b7a26 | g_CConsolePtr
+    PUSH EDX                            ; 004b7a2c | g_CConsoleInstance
     MOV dword ptr [EBX + 0x1f924],0x4   ; 004b7a2d
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b7a37
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
@@ -1237,8 +1237,8 @@ section .text
     ADD ESP,0xc                         ; 004b7a70
     PUSH EBX                            ; 004b7a73
     PUSH 0x585be0                       ; 004b7a74 | = "%s got confused going home.  Help me!\n"
-    MOV ECX,dword ptr [0x005ad350]      ; 004b7a79 | g_CConsole_PTR_005ad350
-    PUSH ECX                            ; 004b7a7f | g_CConsole_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004b7a79 | g_CConsolePtr
+    PUSH ECX                            ; 004b7a7f | g_CConsoleInstance
     MOV dword ptr [EBX + 0x1f924],0x2   ; 004b7a80
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b7a8a
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)

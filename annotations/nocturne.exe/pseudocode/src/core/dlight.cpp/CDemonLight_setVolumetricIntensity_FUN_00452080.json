@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
@@ -16,7 +11,7 @@
     "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant",
-      "undefined_data"
+      "wrong_global"
     ],
     "total_lines": 68
   },
@@ -97,15 +92,15 @@
     },
     {
       "addr": "005ad51c",
-      "name": "DAT_005ad51c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_GlobalFilters",
+      "type": "CDemonFilter*",
+      "value": "014b8a58"
     },
     {
       "addr": "005ad53c",
-      "name": "DAT_005ad53c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PlayerFilters",
+      "type": "CDemonFilter*",
+      "value": "014b8a58"
     }
   ],
   "param_estimates": {
@@ -246,20 +241,20 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_PlayerFilters accessed via (&g_PlayerFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilterCachePtr (at 0x005ad54c, +16 bytes).",
       "line": 16,
-      "match": "DAT_005ad53c",
-      "severity": "mild",
-      "text": "(this_ptr,(CDemonFilter *)(&DAT_005ad53c)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
-      "type": "undefined_data"
+      "match": "g_PlayerFilters",
+      "severity": "moderate",
+      "text": "(this_ptr,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
+      "type": "wrong_global"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x005ad53c, +32 bytes).",
       "line": 24,
-      "match": "DAT_005ad51c",
-      "severity": "mild",
-      "text": "(this_ptr,(CDemonFilter *)(&DAT_005ad51c)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
-      "type": "undefined_data"
+      "match": "g_GlobalFilters",
+      "severity": "moderate",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);",
+      "type": "wrong_global"
     },
     {
       "description": "Raw hex address 0x4520b3 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ee2a
 ;   TerminatedCString s_Too_many_picklist_column_0057ee40
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 DAT_01bcd070
@@ -321,7 +321,7 @@ section .text
     PUSH EDX                            ; 004757fc
     PUSH ESI                            ; 004757fd
     PUSH EBP                            ; 004757fe
-    MOV ECX,dword ptr [0x005b6d50]      ; 004757ff | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004757ff | g_CEditorToolsPtr
     PUSH ECX                            ; 00475805
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 00475806
         ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)

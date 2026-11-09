@@ -1,25 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 184,
-        "message": "use of undeclared identifier '_DAT_01cc5b5c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 505,
-    "complexity_score": 369,
+    "complexity_score": 365,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 244,
+    "pseudocode_lines": 240,
     "suspect_count": 10,
     "suspect_types": [
       "raw_address_constant",
@@ -28,7 +16,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 749
+    "total_lines": 745
   },
   "cross_references": [
     {
@@ -248,7 +236,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -260,55 +248,55 @@
     },
     {
       "addr": "01c77680",
-      "name": "g_CGame_01c775ec.invert_mouse_y_axis",
+      "name": "g_CGameInstance.invert_mouse_y_axis",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77684",
-      "name": "g_CGame_01c775ec.always_run",
+      "name": "g_CGameInstance.always_run",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77688",
-      "name": "g_CGame_01c775ec.x_mouse_sensitivity",
+      "name": "g_CGameInstance.x_mouse_sensitivity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7768c",
-      "name": "g_CGame_01c775ec.y_mouse_sensitivity",
+      "name": "g_CGameInstance.y_mouse_sensitivity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77690",
-      "name": "g_CGame_01c775ec.x_center",
+      "name": "g_CGameInstance.x_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a8",
-      "name": "g_CGame_01c775ec.game_control",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776b0",
-      "name": "g_CGame_01c775ec.aim_mode",
+      "name": "g_CGameInstance.aim_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776b4",
-      "name": "g_CGame_01c775ec.auto_use_health",
+      "name": "g_CGameInstance.auto_use_health",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "g_CGame_01c775ec.delta_time_float",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -456,7 +444,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 89,
+      "line": 88,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -464,7 +452,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -472,7 +460,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 122,
+      "line": 121,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -480,7 +468,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 145,
+      "line": 144,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -488,7 +476,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 102,
+      "line": 101,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -496,7 +484,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 136,
+      "line": 135,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -504,7 +492,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 102,
+      "line": 101,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -512,7 +500,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 136,
+      "line": 135,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

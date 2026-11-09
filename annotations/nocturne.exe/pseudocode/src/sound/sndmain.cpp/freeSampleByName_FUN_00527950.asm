@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   kill_active_slots
 ;
 ; Referenced Globals:
-;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+;   undefined4 g_SfxSamples[1].ref_count
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 005279a3 (CONDITIONAL_JUMP)  ; LAB_005279a3
     XOR EBX,EBX                         ; 00527963
         ;   Label: LAB_00527963
-    CMP dword ptr [EBX + 0x2dc2008],0x0 ; 00527965 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+    CMP dword ptr [EBX + 0x2dc2008],0x0 ; 00527965 | g_SfxSamples[1].ref_count
         ;   Label: LAB_00527965
     JNZ 0x0052798c                      ; 0052796c
         ;   XREF to: 0052798c (CONDITIONAL_JUMP)  ; LAB_0052798c

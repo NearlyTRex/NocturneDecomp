@@ -99,6 +99,64 @@ def base_type_name(text):
 
 KINDS = ("funcdef", "struct", "union", "enum", "typedef", "other")
 
+STUB_DESCRIPTION = "Stub: no RTTI in this build, size and fields not yet recovered"
+
+
+def is_stub(dt):
+    """A placeholder this tool or watcom_type_info.py made, with no layout recovered."""
+    return str(dt.getDescription() or "").startswith("Stub:")
+
+
+def in_target(dt, dtm):
+    """`dt` rebuilt from the target's own types, or None if one is missing.
+
+    Pointers and arrays are rebuilt around the target's type of the same name,
+    so nothing from the source program comes along: a struct copied this way
+    brings its own layout and no one else's.
+    """
+    from ghidra.program.model.data import (Array, ArrayDataType, BuiltInDataType, Pointer,
+                                           PointerDataType)
+    if isinstance(dt, Pointer):
+        inner = dt.getDataType()
+        if inner is None:
+            return dt
+        base = in_target(inner, dtm)
+        return PointerDataType(base, dtm) if base is not None else None
+    if isinstance(dt, Array):
+        base = in_target(dt.getDataType(), dtm)
+        return ArrayDataType(base, dt.getNumElements(), dt.getElementLength(), dtm) if base else None
+    if isinstance(dt, BuiltInDataType):
+        return dt
+    return find_type(dtm, dt.getName())
+
+
+def layout_in_target(sdt, dtm):
+    """The source struct `sdt` as a new struct of the target's types, or None."""
+    from ghidra.program.model.data import StructureDataType
+    out = StructureDataType(sdt.getCategoryPath(), sdt.getName(), 0, dtm)
+    for c in sdt.getComponents():
+        dt = in_target(c.getDataType(), dtm)
+        if dt is None:
+            return None
+        out.insertAtOffset(c.getOffset(), dt, c.getLength(), c.getFieldName(), c.getComment())
+    if out.getLength() < sdt.getLength():
+        out.growStructure(sdt.getLength() - out.getLength())
+    out.setDescription(sdt.getDescription())
+    return out
+
+
+def empty_stub(sdt, dtm):
+    """A struct named and filed as `sdt`, asserting nothing about its layout.
+
+    Enough for `T *` to resolve in a signature. With no RTTI record there is no
+    size to give it, and the source's would be a guess across the build
+    boundary, which is exactly the layout drift a stub exists to avoid.
+    """
+    from ghidra.program.model.data import StructureDataType
+    stub = StructureDataType(sdt.getCategoryPath(), sdt.getName(), 0, dtm)
+    stub.setDescription(STUB_DESCRIPTION)
+    return stub
+
 
 def kind_of(dt):
     """Coarse category for a Ghidra data type, matching --kind values.
@@ -271,6 +329,13 @@ def main():
                          "data (funcdefs are only reachable that way)")
     ap.add_argument("--prune-conflicts", action="store_true",
                     help="delete any .conflict types this run introduces")
+    ap.add_argument("--stub-structs", action="store_true",
+                    help="create each missing struct as an empty placeholder "
+                         "at the source's category instead of copying its "
+                         "layout, for a build whose layouts are not known")
+    ap.add_argument("--replace-stubs", action="store_true",
+                    help="replace a type named with --type that is still a "
+                         "placeholder stub with the source's layout")
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 
@@ -306,11 +371,15 @@ def main():
                           % (len(extra), args.from_program, len(needed)))
 
                 kinds = set(args.kind)
+                replace = set()
                 missing, already, wrong_kind = [], [], []
                 for name in needed:
-                    if find_type(dst_dtm, name) is not None:
-                        already.append(name)
-                        continue
+                    existing = find_type(dst_dtm, name)
+                    if existing is not None:
+                        if not (args.replace_stubs and name in args.type and is_stub(existing)):
+                            already.append(name)
+                            continue
+                        replace.add(name)
                     sdt = find_type(src_dtm, name)
                     if sdt is not None and kinds and kind_of(sdt) not in kinds:
                         wrong_kind.append(name)
@@ -358,10 +427,36 @@ def main():
                     tx = dst.startTransaction("Import sibling data types")
                     ok = True
                     try:
+                        # Stubs first, so a type imported after them that
+                        # mentions one resolves to the stub rather than
+                        # dragging the source's layout in as a dependency.
+                        stubbed = []
+                        if args.stub_structs:
+                            stubbed = [(n, s) for n, s in have
+                                       if kind_of(s) == "struct"]
+                            for name, sdt in stubbed:
+                                dst_dtm.addDataType(
+                                    empty_stub(sdt, dst_dtm),
+                                    DataTypeConflictHandler.KEEP_HANDLER)
+                            print("\nstubbed %d struct(s) as empty placeholders"
+                                  % len(stubbed))
                         for name, sdt in have:
+                            if (name, sdt) in stubbed:
+                                continue
                             # KEEP_HANDLER: dependencies the target already has
                             # are its own, corrected copies -- do not replace
-                            # them with the source's.
+                            # them with the source's. A stub asked for by name
+                            # with --replace-stubs is rebuilt from the target's
+                            # own types instead, so no dependency comes along.
+                            if name in replace:
+                                rebuilt = layout_in_target(sdt, dst_dtm)
+                                if rebuilt is None:
+                                    print("  %s: a field type is missing from the target; "
+                                          "stub left as it is" % name)
+                                    continue
+                                dst_dtm.replaceDataType(find_type(dst_dtm, name), rebuilt, True)
+                                print("  %s: stub replaced, %d bytes" % (name, rebuilt.getLength()))
+                                continue
                             dst_dtm.addDataType(
                                 sdt, DataTypeConflictHandler.KEEP_HANDLER)
                     except Exception as e:

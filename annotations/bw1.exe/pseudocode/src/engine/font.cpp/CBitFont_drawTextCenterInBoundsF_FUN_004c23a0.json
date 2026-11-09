@@ -1,0 +1,204 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 39,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_ref"
+    ],
+    "total_lines": 44
+  },
+  "cross_references": [
+    {
+      "addr": "0050a5e0",
+      "from_addr": "0050a7be",
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004962b0",
+      "from_addr": "004963ac",
+      "name": "shape_edittool.cpp_FUN_004962b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c23a0",
+    "address_range": [
+      [
+        "004c23a0",
+        "004c23e8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c23f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004963ac",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004962b0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "00496755",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_004962b0",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "0050a7be",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 36,
+        "stack_params": 9
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 8,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.696969696969697,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 33,
+      "INT_ADD": 15,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 122
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "left_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "format_string",
+        "offset": 28,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 8,
+      "match": "&stack0x00000020",
+      "severity": "moderate",
+      "text": "local_14 = &stack0x00000020;",
+      "type": "stack_ref"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 7,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 8,
+      "fix_type": "add_params",
+      "match": "declared:7 vs estimated:8",
+      "param_delta": 1,
+      "text": "Function declares 7 params but call sites push 8 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

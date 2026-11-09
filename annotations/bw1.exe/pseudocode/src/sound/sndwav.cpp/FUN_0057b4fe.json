@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 110,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 8,
+    "suspect_types": [
+      "stack_ref",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057b4fe",
+    "address_range": [
+      [
+        "0057b4fe",
+        "0057b4ff"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_sndwav.cpp_FUN_0057b4fe",
+    "signature": "undefined * sound_sndwav_cpp_FUN_0057b4fe(undefined4 param_1,UINT_PTR param_2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "COPY": 1
+    },
+    "pcode_op_count": 1
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "byte * sound_sndwav_cpp_FUN_0057b4fe(uint param_1,UINT_PTR param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "byte * sound_sndwav_cpp_FUN_0057b4fe(uint param_1,UINT_PTR param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02c82a50",
+      "severity": "mild",
+      "text": "iVar1 = sound_sndwav_cpp_CWavInDevice_close_FUN_0057ac70((CWavInDevice *)&DAT_02c82a50);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "MVar2 = waveInGetDevCapsA(param_2,(LPWAVEINCAPSA)&stack0xffffffd4,0x30);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "MVar2 = waveInGetDevCapsA(param_2,(LPWAVEINCAPSA)&stack0xffffffd4,0x30);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DAT_006235d8 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_006235d8",
+      "severity": "mild",
+      "text": "DAT_006235d8 = param_2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02c82a50",
+      "severity": "mild",
+      "text": "return &DAT_02c82a50;",
+      "type": "undefined_data"
+    }
+  ]
+}

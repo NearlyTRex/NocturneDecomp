@@ -1,0 +1,63 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_unknown.c_FUN_005c4f2c
+# Entry:       005c4f2c
+# Signature:   void crt_unknown_c_FUN_005c4f2c(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@005c4f2c [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x4]
+INT_ADD (unique,0x7600,4) = (const,0x4,4), (register,0x10,4) /* ESP */
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
+
+@005c4f30 [ESP:+0]  # FRSTOR [EAX]
+LOAD (register,0x10a0,2) = (const,0x1a1,8), (register,0x0,4) /* EAX */
+INT_ADD (unique,0xbc100,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
+LOAD (register,0x10a2,2) = (const,0x1a1,8), (unique,0xbc100,4)
+INT_ADD (unique,0xbc300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
+LOAD (register,0x10a4,2) = (const,0x1a1,8), (unique,0xbc300,4)
+INT_ADD (unique,0xbc500,4) = (register,0x0,4) /* EAX */, (const,0x14,4)
+LOAD (register,0x10a8,4) = (const,0x1a1,8), (unique,0xbc500,4)
+INT_ADD (unique,0xbc700,4) = (register,0x0,4) /* EAX */, (const,0xc,4)
+LOAD (register,0x10ac,4) = (const,0x1a1,8), (unique,0xbc700,4)
+INT_ADD (unique,0xbc900,4) = (register,0x0,4) /* EAX */, (const,0x12,4)
+LOAD (register,0x10a6,2) = (const,0x1a1,8), (unique,0xbc900,4)
+INT_ADD (unique,0xbcb00,4) = (register,0x0,4) /* EAX */, (const,0x1c,4)
+LOAD (register,0x1100,10) = (const,0x1a1,8), (unique,0xbcb00,4)
+INT_ADD (unique,0xbcd00,4) = (register,0x0,4) /* EAX */, (const,0x26,4)
+LOAD (register,0x1110,10) = (const,0x1a1,8), (unique,0xbcd00,4)
+INT_ADD (unique,0xbcf00,4) = (register,0x0,4) /* EAX */, (const,0x30,4)
+LOAD (register,0x1120,10) = (const,0x1a1,8), (unique,0xbcf00,4)
+INT_ADD (unique,0xbd100,4) = (register,0x0,4) /* EAX */, (const,0x3a,4)
+LOAD (register,0x1130,10) = (const,0x1a1,8), (unique,0xbd100,4)
+INT_ADD (unique,0xbd300,4) = (register,0x0,4) /* EAX */, (const,0x44,4)
+LOAD (register,0x1140,10) = (const,0x1a1,8), (unique,0xbd300,4)
+INT_ADD (unique,0xbd500,4) = (register,0x0,4) /* EAX */, (const,0x4e,4)
+LOAD (register,0x1150,10) = (const,0x1a1,8), (unique,0xbd500,4)
+INT_ADD (unique,0xbd700,4) = (register,0x0,4) /* EAX */, (const,0x58,4)
+LOAD (register,0x1160,10) = (const,0x1a1,8), (unique,0xbd700,4)
+INT_ADD (unique,0xbd900,4) = (register,0x0,4) /* EAX */, (const,0x62,4)
+LOAD (register,0x1170,10) = (const,0x1a1,8), (unique,0xbd900,4)
+
+@005c4f32 [ESP:+0]  # WAIT
+# (no p-code)
+
+@005c4f33 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 4 instructions, 33 P-code ops
+# ============================================================================

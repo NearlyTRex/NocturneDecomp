@@ -22,8 +22,8 @@ int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_0047a150(CEnem
   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0((CDemonActor *)this_ptr);
   iVar3 = 0;
   while( true ) {
-    if (g_CDemonSet_PTR_005be368->enemy_count <= iVar5) break;
-    this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->enemies + iVar4);
+    if (g_CDemonSetPtr->enemy_count <= iVar5) break;
+    this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->enemies + iVar4);
     iVar1 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,class_name);
     if (iVar1 != 0) {
       EVar2 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);

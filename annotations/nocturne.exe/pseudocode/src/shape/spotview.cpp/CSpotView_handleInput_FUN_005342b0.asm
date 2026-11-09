@@ -13,9 +13,9 @@
 ;   undefined4 DAT_0059511a
 ;   undefined4 DAT_00595122
 ;   undefined4 DAT_0059512a
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
@@ -45,12 +45,12 @@ section .text
     JZ 0x0053454f                       ; 005342d7
         ;   XREF to: 0053454f (CONDITIONAL_JUMP)  ; LAB_0053454f
     MOV dword ptr [ESP],0x3d4ccccd      ; 005342dd
-    MOV EAX,[0x005b9354]                ; 005342e4 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 005342e4 | g_CGamePtr
         ;   Label: LAB_005342e4
     FLD float ptr [ESP]                 ; 005342e9
     FLD ST0                             ; 005342ec
     FMUL double ptr [0x00595122]        ; 005342ee | DAT_00595122
-    FLD float ptr [EAX + 0x264]         ; 005342f4 | g_CGame_01c775ec.delta_time_float
+    FLD float ptr [EAX + 0x264]         ; 005342f4 | g_CGameInstance.delta_time_float
     FMULP ST2                           ; 005342fa
     FLD float ptr [EBX + 0x2c]          ; 005342fc
     FMUL double ptr [0x0059512a]        ; 005342ff | DAT_0059512a

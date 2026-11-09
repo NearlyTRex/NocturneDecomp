@@ -96,7 +96,7 @@ def _parse_raw_assembly(assembly_code):
 
     Raw format:
         // 004906b0: MOVQ qword ptr [0x02d05258],MM0  ; g_SavedMMX0
-        //   Label: core_dstrender.cpp_saveMMXRegisters_FUN_004906b0
+        //   Label: core_dstrendr.cpp_saveMMXRegisters_FUN_004906b0
         //   XREF to: 0049200e (CONDITIONAL_JUMP)
 
     Returns:

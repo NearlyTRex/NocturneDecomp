@@ -31,7 +31,7 @@ void __cdecl shape_spotview_cpp_CSpotView_handleInput_FUN_005342b0(CSpotView *th
     local_20 = 0.05;
   }
   fVar3 = (float)_DAT_00595122;
-  fVar1 = g_CGame_PTR_005b9354->delta_time_float * local_20;
+  fVar1 = g_CGamePtr->delta_time_float * local_20;
   fStack_1c = this_ptr->distance * (float)_DAT_0059512a;
   fVar2 = fVar1 * (float)_DAT_0059511a;
   if (fStack_1c < 1.0) {

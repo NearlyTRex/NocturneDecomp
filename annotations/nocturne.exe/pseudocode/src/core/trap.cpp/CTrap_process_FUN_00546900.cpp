@@ -32,10 +32,10 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_00546900(CTrap *this_ptr,float delt
     }
     iVar4 = 0;
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_34);
-    for (iVar3 = 0; iVar3 < g_CDemonSet_PTR_005be368->enemy_count; iVar3 = iVar3 + 1) {
+    for (iVar3 = 0; iVar3 < g_CDemonSetPtr->enemy_count; iVar3 = iVar3 + 1) {
       pCVar2 = (CWerewolf *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar4),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar4),
                           g_CWerewolfActorType_02de078c.name_hash);
       if ((pCVar2 != (CWerewolf *)0x0) && (pCVar2->chain_anchor == (CDemonActor *)0x0)) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_5c);

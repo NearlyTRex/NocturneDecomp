@@ -21,7 +21,7 @@ void __cdecl core_skeleton_cpp_getMemoryStats_FUN_0051f760(char *output_buffer)
   iVar3 = 0;
   iVar4 = 0;
   if (0 < _DAT_02737ef4) {
-    this_ptr = g_CSkeleton_ARRAY_02737ef8;
+    this_ptr = g_SkeletonPool;
     do {
       iVar1 = core_skeleton_cpp_CSkeleton_calculateFrameDataSize_FUN_00517b50(this_ptr);
       iVar3 = iVar3 + 1;
@@ -32,7 +32,7 @@ void __cdecl core_skeleton_cpp_getMemoryStats_FUN_0051f760(char *output_buffer)
   iVar3 = 0;
   iVar1 = 0;
   if (0 < _DAT_0268cef0) {
-    this_ptr_00 = g_CDeformableModel_ARRAY_0268cef4;
+    this_ptr_00 = g_DeformableModelPool;
     do {
       iVar2 = core_skeleton_cpp_CDeformableModel_calculateMemorySize_FUN_0051b600(this_ptr_00);
       iVar3 = iVar3 + 1;

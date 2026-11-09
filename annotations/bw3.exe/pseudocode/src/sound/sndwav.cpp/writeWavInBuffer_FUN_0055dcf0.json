@@ -1,0 +1,213 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 55,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [
+    {
+      "addr": "0055e310",
+      "from_addr": "0055e467",
+      "name": "sound_sndwav.cpp_CWavInDevice_poll_FUN_0055e310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055de50",
+      "from_addr": "0055deba",
+      "name": "sound_sndwav.cpp_CWavInDevice_start_FUN_0055de50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055dcf0",
+    "address_range": [
+      [
+        "0055dcf0",
+        "0055dd9c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_writeWavInBuffer_FUN_0055dcf0",
+    "signature": "int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_0055dcf0(int buffer_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055a560",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_0055a560"
+    },
+    {
+      "addr": "EXTERNAL:0000001d",
+      "is_variadic": false,
+      "name": "waveInAddBuffer"
+    },
+    {
+      "addr": "EXTERNAL:00000021",
+      "is_variadic": false,
+      "name": "waveInPrepareHeader"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b345c",
+      "name": "PTR_waveInAddBuffer_005b345c",
+      "type": "void*",
+      "value": "001b3942"
+    },
+    {
+      "addr": "005b346c",
+      "name": "PTR_waveInPrepareHeader_005b346c",
+      "type": "void*",
+      "value": "001b3984"
+    },
+    {
+      "addr": "005d5049",
+      "name": "s_waveOutPrepareHeader_fai_005d5049",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5066",
+      "name": "s_waveOutWrite_failed_005d5066",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02cf5504",
+      "name": "DAT_02cf5504",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf5648",
+      "name": "DAT_02cf5648",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf564c",
+      "name": "DAT_02cf564c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf5658",
+      "name": "DAT_02cf5658",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0055deba",
+        "call_type": "direct",
+        "caller": "sound_sndwav.cpp_CWavInDevice_start_FUN_0055de50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055e467",
+        "call_type": "direct",
+        "caller": "sound_sndwav.cpp_CWavInDevice_poll_FUN_0055e310",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.32258064516129,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 23,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "CALL": 2,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 67,
+      "INT_ADD": 24,
+      "INT_AND": 75,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 18,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SEXT": 6,
+      "INT_SLESS": 18,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 22,
+      "INT_XOR": 5,
+      "INT_ZEXT": 1,
+      "LOAD": 21,
+      "POPCOUNT": 14,
+      "RETURN": 4,
+      "STORE": 16,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 392
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02cf55f8",
+      "severity": "mild",
+      "text": "if ((*(int *)(&DAT_02cf55f8 + iVar2) == 0) || (*(int *)(iVar2 + 0x2cf5558) == 0)) {",
+      "type": "undefined_data"
+    }
+  ]
+}

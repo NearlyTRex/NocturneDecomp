@@ -1,0 +1,176 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 89,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "00463780",
+      "from_addr": "00463793",
+      "name": "core_dog.cpp_FUN_00463780",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004637b0",
+    "address_range": [
+      [
+        "004637b0",
+        "0046380f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dog.cpp_CEtherealDog_ctor_FUN_004637b0",
+    "signature": "CEtherealDog * core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00462710",
+      "is_variadic": false,
+      "name": "core_dog.cpp_CZombieDog_ctor_FUN_00462710"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054eae0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00463793",
+        "call_type": "direct",
+        "caller": "core_dog.cpp_FUN_00463780",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.75,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 15,
+      "INT_ADD": 12,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 75
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEtherealDog *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CEtherealDogVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,\"ethereal_dog.dfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2538 = 0x41f00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0xce5c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0xce5c = 0x41200000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xce60",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0xce60 = 0x41200000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0xcdc4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0xcdc4 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0xd060",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0xd060 = 3;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CEtherealDog",
+        "offset": 0,
+        "vtable_addr": "005deb14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

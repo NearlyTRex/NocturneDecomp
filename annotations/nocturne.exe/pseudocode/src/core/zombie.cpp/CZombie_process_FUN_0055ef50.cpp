@@ -187,8 +187,7 @@ LAB_0055efe4:
               core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40
                         ((CCharacter *)this_ptr,iVar7,pCVar18,0.2);
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (g_CConsole_PTR_005ad350,"%s picked up %s using hand %d\n",this_ptr,
-                         pCVar18,iVar7);
+                        (g_CConsolePtr,"%s picked up %s using hand %d\n",this_ptr,pCVar18,iVar7);
             }
           }
         }
@@ -220,14 +219,13 @@ LAB_0055f021:
             local_158.x = (pCVar3->base).location.position.x;
             local_158.z = (pCVar3->base).location.position.z;
             local_158.y = local_230.y;
-            core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+            core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+            core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,(CDemonActor *)this_ptr);
             core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                      (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
-            core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                      (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                      (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
             iVar7 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                              (g_CDemonSet_PTR_005be368,&local_230,&local_158);
-            core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+                              (g_CDemonSetPtr,&local_230,&local_158);
+            core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
             if ((iVar7 != 0) ||
                (pCVar3 = (this_ptr->base).victim,
                iVar10 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabbed)
@@ -281,7 +279,7 @@ LAB_0055f021:
           dVar24 = round(local_98 * 2.5 * 0.25);
           local_80 = (int)ROUND(dVar24);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                    (g_CGore_PTR_005b96c4,&local_248,(CVector3f *)0x0,local_80,iVar7);
+                    (g_CGorePtr,&local_248,(CVector3f *)0x0,local_80,iVar7);
         }
         pCVar3 = (this_ptr->base).victim;
         EVar13 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3);
@@ -306,7 +304,7 @@ LAB_0055f021:
       pCVar18 = (this_ptr->base).base.carry_hands[iVar7].carry_actor;
       if (pCVar18 != (CDemonActor *)0x0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s lugging %s\n",this_ptr,pCVar18);
+                  (g_CConsolePtr,"%s lugging %s\n",this_ptr,pCVar18);
         local_14c.x = 0.0;
         local_14c.y = 6.0;
         local_14c.z = 17.0;
@@ -326,7 +324,7 @@ LAB_0055f021:
       pCVar18 = (this_ptr->base).base.carry_hands[iVar7].carry_actor;
       if (pCVar18 != (CDemonActor *)0x0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s tossing %s\n",this_ptr,pCVar18);
+                  (g_CConsolePtr,"%s tossing %s\n",this_ptr,pCVar18);
         local_23c.x = 0.0;
         local_23c.y = 0.0;
         local_23c.z = 1.0;
@@ -399,8 +397,8 @@ LAB_0055f021:
                             (pCVar2,&local_11c,this_ptr->bone_indices[0]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_104,pCVar11);
-        core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                  (g_CGore_PTR_005b96c4,&local_104,(CVector3f *)0x0,3,0);
+        core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(g_CGorePtr,&local_104,(CVector3f *)0x0,3,0)
+        ;
         iVar7 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
         if (iVar7 == 0) {
           pcVar25 = "ghoul-dig-?.wav";
@@ -481,7 +479,7 @@ LAB_0055f021:
           EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                              (&g_HeroActors[g_LocalHeroIndex]->base);
           if (EVar13 == DEATH_STATE_ALIVE) goto LAB_0055fc6b;
-          g_CGame_PTR_005b9354->player_hit_flag = 1;
+          g_CGamePtr->player_hit_flag = 1;
           (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         }
         if ((this_ptr->base).victim != (CCharacter *)0x0) {
@@ -507,7 +505,7 @@ LAB_0055f021:
         if ((((this_ptr->base).victim == (CCharacter *)0x0) && (local_38 != 0)) &&
            (EVar13 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState
                      )(&g_HeroActors[g_LocalHeroIndex]->base), EVar13 != DEATH_STATE_ALIVE)) {
-          g_CGame_PTR_005b9354->player_hit_flag = 1;
+          g_CGamePtr->player_hit_flag = 1;
           (this_ptr->base).victim = &g_HeroActors[g_LocalHeroIndex]->base;
         }
         if ((this_ptr->base).victim == (CCharacter *)0x0) {
@@ -579,7 +577,7 @@ LAB_0056033e:
             pCVar2 = &(this_ptr->base).base.model;
             if (iVar7 < 0) {
               engine_console_cpp_CConsole_printf_FUN_0043ac60
-                        (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
+                        (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
             }
             else if (iVar7 < 1) {
@@ -605,7 +603,7 @@ LAB_0056033e:
                     if ((this_ptr->base).base.carry_hands[iVar7].carry_actor != (CDemonActor *)0x0)
                     {
                       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                                (g_CConsole_PTR_005ad350,"%s lugging\n",this_ptr);
+                                (g_CConsolePtr,"%s lugging\n",this_ptr);
                       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                                 (&pCVar2->base,0xd,1);
                     }
@@ -614,7 +612,7 @@ LAB_0056033e:
                           ((this_ptr->base).base.carry_hands[iVar7].carry_actor !=
                            (CDemonActor *)0x0)) {
                     engine_console_cpp_CConsole_printf_FUN_0043ac60
-                              (g_CConsole_PTR_005ad350,"%s tossing\n",this_ptr);
+                              (g_CConsolePtr,"%s tossing\n",this_ptr);
                     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                               (&pCVar2->base,0xb,1);
                   }
@@ -668,7 +666,7 @@ LAB_00560776:
                 pCVar18 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
                 pCVar18 != (CDemonActor *)0x0)) {
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"%s gave up swing\n",this_ptr);
+                      (g_CConsolePtr,"%s gave up swing\n",this_ptr);
             core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(this_ptr);
           }
           else {
@@ -716,7 +714,7 @@ LAB_00560776:
                             (pCVar2,&local_a4,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_1c4,pCVar11);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_1c4,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_1c4,0);
         (this_ptr->base).pool_me = 1;
       }
     }
@@ -734,9 +732,8 @@ LAB_00560776:
               local_28 = 0;
               this_ptr->rise_delay = this_ptr->rise_delay + 1.0;
               local_24 = pCVar1;
-              for (; local_28 < g_CDemonSet_PTR_005be368->character_count; local_28 = local_28 + 1)
-              {
-                iVar10 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar7);
+              for (; local_28 < g_CDemonSetPtr->character_count; local_28 = local_28 + 1) {
+                iVar10 = *(int *)((int)g_CDemonSetPtr->characters + iVar7);
                 iVar19 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0xdc))(iVar10,this_ptr);
                 if (iVar19 != 0) {
                   local_1b8 = *(float *)(iVar10 + 0x20) - (local_24->position).x;
@@ -747,7 +744,7 @@ LAB_00560776:
                      SQRT(local_1b0 * local_1b0 + local_1b8 * local_1b8) <=
                      (this_ptr->base).guard_distance)) {
                     engine_console_cpp_CConsole_printf_FUN_0043ac60
-                              (g_CConsole_PTR_005ad350,"%s rising from the grave\n",this_ptr);
+                              (g_CConsolePtr,"%s rising from the grave\n",this_ptr);
                     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                               (&(this_ptr->base).base.model.base,0xf,1);
                     if ((CGrave *)this_ptr->grave_actor != (CGrave *)0x0) {
@@ -822,15 +819,14 @@ LAB_0055fd59:
             do {
               local_78 = (float)iVar7 * (float)6.2831853070000001 * (float)0.25;
               local_14 = (CVector3f *)iVar7;
-              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
               core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                        (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+                        (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar22 = (float10)fcos((float10)local_78);
               fVar23 = (float10)fsin((float10)local_78);
               local_18 = (CVector3f *)
                          core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                                   (g_CDemonSet_PTR_005be368,
-                                    (this_ptr->base).base.base.location.position.x,
+                                   (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x,
                                     (this_ptr->base).base.base.location.position.z,
                                     (float)(fVar23 * (float10)0.050000000000000003),
                                     (float)(fVar22 * (float10)0.050000000000000003),
@@ -839,7 +835,7 @@ LAB_0055fd59:
                                     (this_ptr->base).base.collision_cylinder_bottom,
                                     (this_ptr->base).base.base.location.position.y + local_30);
               local_14 = local_18;
-              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
               if ((float)local_18 < 1.0) break;
               iVar7 = iVar7 + 1;
             } while (iVar7 < 4);
@@ -869,7 +865,7 @@ LAB_0055fc6b:
                          ,pCVar17,pCVar11,fVar26,max_distance);
       if (iVar7 != 1) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s giving up attack\n",this_ptr);
+                  (g_CConsolePtr,"%s giving up attack\n",this_ptr);
         core_zombie_cpp_CZombie_resetChaseState_FUN_005624e0(this_ptr);
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
       }
@@ -896,7 +892,7 @@ LAB_0055fc2f:
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -923,7 +919,7 @@ LAB_0055fc2f:
            (pCVar12 = (CZombie *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
            pCVar12 == this_ptr)) {
           core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                    (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                    (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
         }
         (this_ptr->base).base.velocity.y =
              (this_ptr->base).base.velocity.y - delta_time * (float)32;

@@ -84,8 +84,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(CScript *this_ptr,char 
     iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_00505180(this_ptr,local_334);
     if (-1 < iVar3) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                (g_CEditorTools_PTR_005b6d50,"Warning! Duplicate wav string %s detected in %s",local_334,filename)
-      ;
+                (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,filename);
     }
     _sprintf(local_2f8,"%s.wav",local_334);
     iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",local_2f8);

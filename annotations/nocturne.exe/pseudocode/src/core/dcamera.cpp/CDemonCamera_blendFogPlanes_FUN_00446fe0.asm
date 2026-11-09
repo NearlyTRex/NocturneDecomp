@@ -18,7 +18,7 @@
 ;   undefined4 DAT_012e18b8
 ;
 ; Called Functions:
-;   core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50
+;   core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_00465f50
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
     PUSH EBX                            ; 00447098 | DAT_012e18b8
     PUSH EBP                            ; 00447099
     PUSH ESI                            ; 0044709a | DAT_012cecb8
-    CALL core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50 ; 0044709b
-        ;   XREF to: 00465f50 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50(uint * output_buffer, uint * source1_buffer, uint * source2_buffer, uint alpha1, ...)
+    CALL core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_00465f50 ; 0044709b
+        ;   XREF to: 00465f50 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_00465f50(uint * output_buffer, uint * source1_buffer, uint * source2_buffer, uint alpha1, ...)
     ADD ESP,0x18                        ; 004470a0
     INC EDI                             ; 004470a3
     MOV EAX,dword ptr [ESP + 0x18]      ; 004470a4

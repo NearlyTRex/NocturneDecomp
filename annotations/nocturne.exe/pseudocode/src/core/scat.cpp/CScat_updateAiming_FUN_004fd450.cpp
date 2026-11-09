@@ -72,9 +72,8 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float
     local_28 = (CDemonActor *)is_holstered;
     local_24 = 1e+30;
     iVar3 = 0;
-    for (local_20 = is_holstered; local_20 < g_CDemonSet_PTR_005be368->actor_count;
-        local_20 = local_20 + 1) {
-      target = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3);
+    for (local_20 = is_holstered; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
+      target = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);
       local_18 = core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20
                            (this_ptr,target,(uint)(target == this_ptr->aim_target));
       if ((0.0 <= local_18) && (local_18 < local_24)) {

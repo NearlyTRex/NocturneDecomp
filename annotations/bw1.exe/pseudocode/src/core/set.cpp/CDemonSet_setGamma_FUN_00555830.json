@@ -1,0 +1,270 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 86,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 5,
+    "suspect_types": [
+      "extra_output",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "004d1a80",
+      "from_addr": "004d1e21",
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004d1a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004cf8e0",
+      "name": "core_game.cpp_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc000",
+      "from_addr": "004dc021",
+      "name": "core_game.cpp_FUN_004dc000",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555830",
+    "address_range": [
+      [
+        "00555830",
+        "005558b9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_set.cpp_CDemonSet_setGamma_FUN_00555830",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00555830(CDemonSet *this_ptr,int gamma)"
+  },
+  "function_calls": [
+    {
+      "addr": "00454830",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00454830"
+    },
+    {
+      "addr": "005c18f4",
+      "is_variadic": false,
+      "name": "crt_math.c_pow_FUN_005c18f4"
+    },
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0bee",
+      "name": "DAT_005f0bee",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0bf6",
+      "name": "DAT_005f0bf6",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004cf8e0",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cf5e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d1e21",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processHotkeys_FUN_004d1a80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d1eab",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processHotkeys_FUN_004d1a80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dc021",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004dc000",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.317073170731708,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 79,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 2,
+      "INT_ADD": 17,
+      "INT_AND": 19,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 13,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 218
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "gamma",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00555837",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "iVar1 = extraout_EDX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(int *)(extraout_ECX + 0x1fe6344) = local_14;",
+      "type": "extra_output"
+    }
+  ]
+}

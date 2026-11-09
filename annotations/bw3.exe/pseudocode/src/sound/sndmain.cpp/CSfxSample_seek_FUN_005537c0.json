@@ -1,0 +1,394 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 148,
+    "complexity_score": 208,
+    "cross_reference_count": 3,
+    "function_call_count": 7,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 48,
+    "suspect_count": 15,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 196
+  },
+  "cross_references": [
+    {
+      "addr": "00555750",
+      "from_addr": "00555816",
+      "name": "sound_sndmain.cpp_CSfxSlot_seek_FUN_00555750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00552350",
+      "from_addr": "0055256d",
+      "name": "sound_sndmain.cpp_FUN_00552350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553960",
+      "from_addr": "00553bc0",
+      "name": "sound_sndmain.cpp_FUN_00553960",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005537c0",
+    "address_range": [
+      [
+        "005537c0",
+        "00553952"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_005537c0",
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005537c0(CSfxSample *this_ptr,int playback_position,int dest_buffer_offset)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "00502bc0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0"
+    },
+    {
+      "addr": "00555aa0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00555aa0"
+    },
+    {
+      "addr": "00555900",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00555900"
+    },
+    {
+      "addr": "00573cf0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573cf0"
+    },
+    {
+      "addr": "00573d60",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573d60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d2ca9",
+      "name": "s_sound_sndmain_cpp_005d2ca9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2cbe",
+      "name": "s_SfxSample_seek_s_isn_t_s_005d2cbe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2ce5",
+      "name": "s_sound_sndmain_cpp_005d2ce5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2cfa",
+      "name": "s_SfxSample_seek_invalid_d_005d2cfa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2d1c",
+      "name": "s_sound_sndmain_cpp_005d2d1c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2d31",
+      "name": "s_Error_seeking_s_to_d_005d2d31",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2d48",
+      "name": "s_sound_sndmain_cpp_005d2d48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2d5d",
+      "name": "s_SfxSample_seek_no_MP3_an_005d2d5d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00553bc0",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00553960",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0055256d",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00552350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00555816",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSlot_seek_FUN_00555750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2521008403361344,
+    "instruction_count": 119,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 10,
+      "CBRANCH": 7,
+      "COPY": 133,
+      "FLOAT2FLOAT": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 54,
+      "INT_AND": 51,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 46,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 23,
+      "INT_SUB": 36,
+      "LOAD": 33,
+      "POPCOUNT": 23,
+      "RETURN": 4,
+      "ROUND": 1,
+      "STORE": 39,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 506
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      },
+      {
+        "is_param": true,
+        "name": "playback_position",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dest_buffer_offset",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x160 < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x16c = (int)ROUND(fVar2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x16c < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x16c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "if ((dest_buffer_offset < 0) || (*(int *)&this_ptr->field_0x164 <= dest_buffer_offset)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x170",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x170 = dest_buffer_offset;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "if (*(CMP3Decoder **)&this_ptr->field_0x174 != (CMP3Decoder *)0x0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "(*(CMP3Decoder **)&this_ptr->field_0x174,*(int *)&this_ptr->field_0x16c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "(*(CMP3Decoder **)&this_ptr->field_0x174,*(int *)&this_ptr->field_0x16c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "(\"Error seeking %s to %d\",this_ptr,*(uint *)&this_ptr->field_0x16c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x17c",
+      "severity": "mild",
+      "text": "iVar1 = unkafter_turret_cpp_FUN_00573d60(&this_ptr->field_0x17c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "iVar1 = sound_sndmain_cpp_FUN_00555900(this_ptr,*(uint *)&this_ptr->field_0x16c,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x17c",
+      "severity": "mild",
+      "text": "unkafter_turret_cpp_FUN_00573cf0(&this_ptr->field_0x17c,iVar1 + *(int *)&this_ptr->field_0x178);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "unkafter_turret_cpp_FUN_00573cf0(&this_ptr->field_0x17c,iVar1 + *(int *)&this_ptr->field_0x178);",
+      "type": "unnamed_field"
+    }
+  ]
+}

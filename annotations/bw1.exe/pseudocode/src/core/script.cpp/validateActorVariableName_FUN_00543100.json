@@ -1,0 +1,208 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 95,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strlen"
+    ],
+    "total_lines": 117
+  },
+  "cross_references": [
+    {
+      "addr": "00544460",
+      "from_addr": "005476a7",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005433c0",
+      "from_addr": "005433e4",
+      "name": "core_script.cpp_getActor_FUN_005433c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00543100",
+    "address_range": [
+      [
+        "00543100",
+        "00543198"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_validateActorVariableName_FUN_00543100",
+    "signature": "int __cdecl core_script_cpp_validateActorVariableName_FUN_00543100(char *variable_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005edf17",
+      "name": "s_Actor_variable_name_must_005edf16+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005edf3f",
+      "name": "s_Actor_variable_name_s_is_005edf3f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edf64",
+      "name": "s_Actor_variable_name_s_is_005edf64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626114",
+      "name": "DAT_00626114",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005476a7",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005490e3",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005433e4",
+        "call_type": "direct",
+        "caller": "core_script.cpp_getActor_FUN_005433c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.904761904761905,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 8,
+      "COPY": 54,
+      "INT_ADD": 22,
+      "INT_AND": 42,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 41,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 20,
+      "INT_SUB": 24,
+      "INT_XOR": 4,
+      "INT_ZEXT": 1,
+      "LOAD": 20,
+      "POPCOUNT": 20,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 309
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "variable_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "while ((pcVar2 = pcVar2 + 1, ((&DAT_00626114)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_01e810b0",
+      "severity": "mild",
+      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor variable name \\\"%s\\\" is not valid\",variable_name);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01e810b0",
+      "severity": "mild",
+      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor variable name \\\"%s\\\" is too long\",variable_name);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01e810b0",
+      "severity": "mild",
+      "text": "FUN_005bfb40(&DAT_01e810b0,\"?Actor variable name must begin with '@'\" + 1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 13,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

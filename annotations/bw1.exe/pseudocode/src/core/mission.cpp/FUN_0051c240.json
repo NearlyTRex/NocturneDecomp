@@ -1,0 +1,409 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 190,
+    "complexity_score": 282,
+    "cross_reference_count": 1,
+    "function_call_count": 15,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 67,
+    "suspect_count": 20,
+    "suspect_types": [
+      "unknown_field",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 257
+  },
+  "cross_references": [
+    {
+      "addr": "0051a3f0",
+      "from_addr": "0051a450",
+      "name": "core_mission.cpp_CDemonMission_load_FUN_0051a3f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051c240",
+    "address_range": [
+      [
+        "0051c240",
+        "0051c40d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_FUN_0051c240",
+    "signature": "void __cdecl core_mission_cpp_FUN_0051c240(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "0040c550",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c550"
+    },
+    {
+      "addr": "004ecba0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHeroPlaceholder_ctor_FUN_004ecba0"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0051b160",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160"
+    },
+    {
+      "addr": "0051bd60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
+    },
+    {
+      "addr": "0051b4d0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0"
+    },
+    {
+      "addr": "0051b6c0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_0051b6c0"
+    },
+    {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0f32"
+    },
+    {
+      "addr": "004942e0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0"
+    },
+    {
+      "addr": "0049a620",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_0049a620"
+    },
+    {
+      "addr": "0049a710",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_0049a710"
+    },
+    {
+      "addr": "004994d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
+    },
+    {
+      "addr": "004998a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0"
+    },
+    {
+      "addr": "0049a8b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0049a8b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9aaa",
+      "name": "s_CHero_005e9aaa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ab0",
+      "name": "s_Warning_mission_has_no_h_005e9ab0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9ae9",
+      "name": "s_Mission_has_no_hero_plac_005e9ae9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9bab",
+      "name": "s_core_mission_cpp_005e9bab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9bbf",
+      "name": "s_Hell_froze_finding_hero_005e9bbf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9bd8",
+      "name": "s_Replaced_hero_OK_You_wil_005e9bd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061abc0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
+    },
+    {
+      "addr": "01d06b4c",
+      "name": "DAT_01d06b4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051a450",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_load_FUN_0051a3f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.086092715231788,
+    "instruction_count": 151,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CALL": 18,
+      "CBRANCH": 10,
+      "COPY": 115,
+      "INT_ADD": 59,
+      "INT_AND": 74,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 66,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 33,
+      "INT_SUB": 60,
+      "LOAD": 25,
+      "POPCOUNT": 33,
+      "RETURN": 3,
+      "STORE": 65
+    },
+    "pcode_op_count": 617
+  },
+  "stack_frame": {
+    "frame_size": 980,
+    "local_size": 976,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3cc",
+        "offset": -972,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((int)local_3cc._0_4_ < 1) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x158 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x20 = *(uint *)&pCVar2->field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x20 = *(uint *)&pCVar2->field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x24 = *(uint *)&pCVar2->field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x24 = *(uint *)&pCVar2->field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x28 = *(uint *)&pCVar2->field_0x28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x28 = *(uint *)&pCVar2->field_0x28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x2c = *(uint *)&pCVar2->field_0x2c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x2c = *(uint *)&pCVar2->field_0x2c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "if (&actor->field_0x30 != &pCVar2->field_0x30) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "if (&actor->field_0x30 != &pCVar2->field_0x30) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x30 = *(uint *)&pCVar2->field_0x30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x30 = *(uint *)&pCVar2->field_0x30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x34 = *(uint *)&pCVar2->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x34 = *(uint *)&pCVar2->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x38 = *(uint *)&pCVar2->field_0x38;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x38 = *(uint *)&pCVar2->field_0x38;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x14c",
+      "severity": "mild",
+      "text": "pCVar2 = *(CDemonActor **)&pCVar2->field_0x14c;",
+      "type": "unnamed_field"
+    }
+  ]
+}

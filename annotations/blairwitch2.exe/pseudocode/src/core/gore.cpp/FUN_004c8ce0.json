@@ -1,0 +1,171 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 81,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "004c9670",
+      "from_addr": "004c96ef",
+      "name": "core_gore.cpp_FUN_004c9670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c8ce0",
+    "address_range": [
+      [
+        "004c8ce0",
+        "004c8d0d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_FUN_004c8ce0",
+    "signature": "void __cdecl core_gore_cpp_FUN_004c8ce0(CBloodPool *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005d94e2",
+      "name": "DAT_005d94e2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "01cb6b84",
+      "name": "g_CGameInstance.field644_0x284",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c96ef",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_FUN_004c9670",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.928571428571429,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "CBRANCH": 1,
+      "COPY": 43,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 7,
+      "INT_AND": 5,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_ZEXT": 4,
+      "LOAD": 6,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 97
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBloodPool *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x18 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x284",
+      "severity": "mild",
+      "text": "*(float *)&g_CGamePtr->field_0x284 + *(float *)&this_ptr->field_0x18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&g_CGamePtr->field_0x284 + *(float *)&this_ptr->field_0x18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "if (*(float *)&this_ptr->field_0x18 <= (float)_DAT_005d94e2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x18 = 0x40680000;",
+      "type": "unnamed_field"
+    }
+  ]
+}

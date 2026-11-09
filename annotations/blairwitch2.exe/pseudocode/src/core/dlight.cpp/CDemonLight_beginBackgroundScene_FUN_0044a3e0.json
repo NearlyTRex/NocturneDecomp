@@ -1,0 +1,372 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 84,
+    "complexity_score": 268,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 48,
+    "suspect_count": 19,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 132
+  },
+  "cross_references": [
+    {
+      "addr": "0052ddf0",
+      "from_addr": "0052e6ed",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044a3e0",
+    "address_range": [
+      [
+        "0044a3e0",
+        "0044a4cd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_0044a3e0",
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_0044a3e0(CDemonLight *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "0046b940",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cf367",
+      "name": "s_core_dlight_cpp_005cf367",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf37a",
+      "name": "s_CDemonLight_beginBackgro_005cf37a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf3ad",
+      "name": "s_core_dlight_cpp_005cf3ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf3c0",
+      "name": "s_CDemonLight_beginBackgro_005cf3c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b11db4",
+      "name": "DAT_01b11db4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b11db8",
+      "name": "DAT_01b11db8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b11dbc",
+      "name": "DAT_01b11dbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b11dbd",
+      "name": "DAT_01b11dbd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a38c",
+      "name": "DAT_01c2a38c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a390",
+      "name": "DAT_01c2a390",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a391",
+      "name": "DAT_01c2a391",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052e6ed",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.470588235294118,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CBRANCH": 7,
+      "COPY": 62,
+      "INT_ADD": 27,
+      "INT_AND": 61,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 21,
+      "INT_SUB": 24,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 16,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 15,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 372
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x11e4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x11e4 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "puVar4 = (uint *)&DAT_01c2a38c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_01b11db8",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)&DAT_01b11db8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "for (uVar1 = *(uint *)&this_ptr->field_0x1cc4 & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x2f9c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2f9c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x1cc4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01c2a38c + iVar3) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x2f9c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2f9c + *(int *)&this_ptr->field_0x1cc0 * iVar2 * 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x1cc0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2f9c + *(int *)&this_ptr->field_0x1cc0 * iVar2 * 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "} while (iVar2 < *(int *)&this_ptr->field_0x1cc4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 24,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar1 = *(uint *)&this_ptr->field_0x1cc4 & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 29,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0044a424, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 24,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0044a424: MOVSD.REP ES:EDI,ESI  ; DAT_01c2a38c | DAT_01b11db8 | DAT_01c2a390",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

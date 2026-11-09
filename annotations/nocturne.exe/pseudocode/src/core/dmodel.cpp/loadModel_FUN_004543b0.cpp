@@ -17,7 +17,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_004543b0(char *filename)
   
   iVar3 = 0;
   if (0 < _DAT_01abb658) {
-    pCVar2 = g_CKeyFramedModel_ARRAY_01abb65c;
+    pCVar2 = g_CKeyFramedModelPool;
     do {
       iVar1 = _stricmp(pCVar2->model_filename,filename);
       if (iVar1 == 0) {
@@ -33,7 +33,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_004543b0(char *filename)
     core_main_c_displayErrorAndQuit_FUN_004c8440("Can't load %s because keyFrame model manager is full.  (Size is %d)",filename,0x100)
     ;
   }
-  pCVar2 = g_CKeyFramedModel_ARRAY_01abb65c + _DAT_01abb658;
+  pCVar2 = g_CKeyFramedModelPool + _DAT_01abb658;
   _DAT_01abb658 = _DAT_01abb658 + 1;
   core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(pCVar2,filename);
   core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00453950(pCVar2);

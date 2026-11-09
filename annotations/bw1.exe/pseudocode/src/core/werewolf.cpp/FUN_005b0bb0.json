@@ -1,0 +1,212 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 84,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "005af4a0",
+      "from_addr": "005b021f",
+      "name": "core_werewolf.cpp_FUN_005af4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b1470",
+      "from_addr": "005b15ae",
+      "name": "core_werewolf.cpp_FUN_005b1470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b0bb0",
+    "address_range": [
+      [
+        "005b0bb0",
+        "005b0bf7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_FUN_005b0bb0",
+    "signature": "void __cdecl core_werewolf_cpp_FUN_005b0bb0(CWerewolf *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005735a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005735a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f9b22",
+      "name": "s_were_wav_005f9b22",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "005b021f",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_FUN_005af4a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005b05c3",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_FUN_005af4a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005b05eb",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_FUN_005af4a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005b095a",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_FUN_005af4a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005b15ae",
+        "call_type": "direct",
+        "caller": "core_werewolf.cpp_FUN_005b1470",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.05,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 17,
+      "INT_ADD": 13,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 8,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0xc288",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc288 = 0x41200000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0xc284",
+      "severity": "mild",
+      "text": "iVar1 = sound_sndmain_cpp_FUN_005735a0(*(uint *)&this_ptr->field_0xc284);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"were?.wav\");",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "uVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"were?.wav\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xc288",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc288 = 0x41a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0xc284",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc284 = uVar2;",
+      "type": "unnamed_field"
+    }
+  ]
+}

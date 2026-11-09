@@ -1,0 +1,467 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 408,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 33,
+    "suspect_types": [
+      "unaffected_reg",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 146
+  },
+  "cross_references": [
+    {
+      "addr": "00482780",
+      "from_addr": "0048288d",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_00482780",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00487d8d",
+    "address_range": [
+      [
+        "00487d8d",
+        "00487eab"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dstrendr.cpp_renderTexturedDecalMMXScanline_FUN_00487d8d",
+    "signature": "void core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_00487d8d(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00614518",
+      "name": "DAT_00614518",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061451c",
+      "name": "DAT_0061451c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614524",
+      "name": "DAT_00614524",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614534",
+      "name": "DAT_00614534",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614538",
+      "name": "DAT_00614538",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061453c",
+      "name": "DAT_0061453c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614540",
+      "name": "DAT_00614540",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614544",
+      "name": "DAT_00614544",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614548",
+      "name": "DAT_00614548",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623eb8",
+      "name": "DAT_00623eb8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00623ed8",
+      "name": "DAT_00623ed8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00623ef8",
+      "name": "DAT_00623ef8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623f18",
+      "name": "DAT_00623f18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4354c",
+      "name": "DAT_01c4354c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4480c",
+      "name": "DAT_01c4480c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e3d4",
+      "name": "DAT_01c4e3d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f034",
+      "name": "DAT_01c4f034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c50930",
+      "name": "DAT_01c50930",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2465753424657535,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CBRANCH": 4,
+      "COPY": 54,
+      "INT_ADD": 29,
+      "INT_AND": 71,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 37,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 15,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 9,
+      "INT_SLESS": 21,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "INT_ZEXT": 3,
+      "LOAD": 20,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 4,
+      "SUBPIECE": 7
+    },
+    "pcode_op_count": 383
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)(unaff_ESI + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)(unaff_EDI + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar5 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar5 = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_EDI = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "DAT_00614540 = *(int *)(&DAT_01c4354c + unaff_EBX * 4) + uVar1 * 4;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00614540",
+      "severity": "mild",
+      "text": "DAT_00614540 = *(int *)(&DAT_01c4354c + unaff_EBX * 4) + uVar1 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_01c4354c",
+      "severity": "mild",
+      "text": "DAT_00614540 = *(int *)(&DAT_01c4354c + unaff_EBX * 4) + uVar1 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_00614544",
+      "severity": "mild",
+      "text": "DAT_00614544 = iVar2 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "DAT_00614548 = *(int *)(&DAT_01c4480c + unaff_EBX * 4) + uVar1 * 4;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00614548",
+      "severity": "mild",
+      "text": "DAT_00614548 = *(int *)(&DAT_01c4480c + unaff_EBX * 4) + uVar1 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_01c4480c",
+      "severity": "mild",
+      "text": "DAT_00614548 = *(int *)(&DAT_01c4480c + unaff_EBX * 4) + uVar1 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - uVar3) *",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_01c4f034",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_00614544",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - uVar4) *",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01c4f034",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_00614544",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "((longlong)(*(int *)(unaff_EDI + 0x28) - iVar5) *",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_01c4f034",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_00614544",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00614544)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_00614518",
+      "severity": "mild",
+      "text": "DAT_00614518 = uVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0061451c",
+      "severity": "mild",
+      "text": "DAT_0061451c = uVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_00614524",
+      "severity": "mild",
+      "text": "DAT_00614524 = iVar5;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_00614548",
+      "severity": "mild",
+      "text": "if (*(int *)(DAT_00614548 + uVar1) <= iVar5) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_00614540",
+      "severity": "mild",
+      "text": "*(uint *)(DAT_00614540 + uVar1) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_01c4e3d4",
+      "severity": "mild",
+      "text": "(&DAT_01c4e3d4 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00614544",
+      "severity": "mild",
+      "text": "if (DAT_00614544 < uVar1) break;",
+      "type": "undefined_data"
+    }
+  ]
+}

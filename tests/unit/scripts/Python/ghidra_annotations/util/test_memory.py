@@ -156,12 +156,8 @@ def test_disassemble_at_addr(disassembler, result, done):
 def test_disassemble_at_addr_clears_defined_data_first(disassembler):
     program = Program()
     start, end = Address(0x401000), Address(0x40100f)
-    program.getListing().data[start] = DefinedData()
+    program.getListing().add_data(0x401000, None)
     disassembler.result = Result(False)
     memory.disassemble_at_addr(program, start, end)
     assert program.getListing().cleared == [(start, end, False)]
-
-
-class DefinedData:
-    def isDefined(self):
-        return True
+    assert program.getListing().data == {}

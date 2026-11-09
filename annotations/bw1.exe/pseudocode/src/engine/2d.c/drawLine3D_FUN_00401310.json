@@ -1,0 +1,271 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 140,
+    "complexity_score": 187,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 62,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 202
+  },
+  "cross_references": [
+    {
+      "addr": "00407df0",
+      "from_addr": "0040808b",
+      "name": "engine_3d.c_clipAndDrawLine3D_FUN_00407df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483e70",
+      "from_addr": "0048415d",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401310",
+    "address_range": [
+      [
+        "00401310",
+        "00401446"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawLine3D_FUN_00401310",
+    "signature": "void __cdecl engine_2d_c_drawLine3D_FUN_00401310(int x1,int y1,uint z1,int x2,int y2,uint z2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00401280",
+      "is_variadic": false,
+      "name": "engine_2d.c_plotPixelWithDepth_FUN_00401280"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0040808b",
+        "call_type": "direct",
+        "caller": "engine_3d.c_clipAndDrawLine3D_FUN_00407df0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0048415d",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.068376068376068,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 5,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 9,
+      "COPY": 89,
+      "INT_2COMP": 1,
+      "INT_ADD": 53,
+      "INT_AND": 99,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 75,
+      "INT_LEFT": 2,
+      "INT_LESS": 12,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 10,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 14,
+      "INT_SDIV": 2,
+      "INT_SEXT": 2,
+      "INT_SLESS": 36,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 26,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 27,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 23,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 593
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "z1",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "z2",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar4 = iVar4 - unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar4 = iVar4 + unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "} while (unaff_EBP <= unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "} while (unaff_EBP <= unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar2 = iVar2 - unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 59,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar2 = iVar2 + unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "} while (iStack_14 <= unaff_EDI);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

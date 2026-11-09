@@ -120,7 +120,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
                            fVar12,fVar14);
         if (iVar5 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
         }
         else if ((0 < iVar5) && ((this_ptr->base).attack_cooldown <= 0.0)) {
@@ -172,7 +172,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_00462a60(CDrone *this_ptr,float d
                            (this_ptr_00,&local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_94,pCVar9);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_94,1);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_94,1);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -201,7 +201,7 @@ LAB_00462d6a:
     if (EVar2 != WALK_STATE_NO_PATH) goto LAB_00462d6a;
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -240,7 +240,7 @@ switchD_00463074_caseD_3:
        (pCVar8 = (CDrone *)(*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
        pCVar8 == this_ptr)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;

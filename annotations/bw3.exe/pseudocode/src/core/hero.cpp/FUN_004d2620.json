@@ -1,0 +1,213 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 119,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 8,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "00527300",
+      "from_addr": "0052730f",
+      "name": "unkafter_stranger.cpp_CPrye_dtor_FUN_00527300",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d2620",
+    "address_range": [
+      [
+        "004d2620",
+        "004d26ae"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_hero.cpp_FUN_004d2620",
+    "signature": "void core_hero_cpp_FUN_004d2620(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408770"
+    },
+    {
+      "addr": "0043f900",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_0043f900"
+    },
+    {
+      "addr": "004da420",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004da420"
+    },
+    {
+      "addr": "0050ad40",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_dtor_FUN_0050ad40"
+    },
+    {
+      "addr": "0054bf80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80"
+    },
+    {
+      "addr": "00410370",
+      "is_variadic": false,
+      "name": "unkafter_armour.cpp_FUN_00410370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1534",
+      "name": "PTR_core_hero.cpp_FUN_004d26b0_005e1534",
+      "type": "void*",
+      "value": "004d26b0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052730f",
+        "call_type": "direct",
+        "caller": "unkafter_stranger.cpp_CPrye_dtor_FUN_00527300",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.159090909090909,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 25,
+      "INT_ADD": 15,
+      "INT_AND": 32,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 16,
+      "INT_SUB": 25,
+      "INT_XOR": 2,
+      "LOAD": 4,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 227
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_hero_cpp_FUN_004d2620(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte ***)(param_1 + 0x154) = &PTR_core_hero_cpp_FUN_004d26b0_005e1534;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == *(int *)(iVar1 + 0x1d5ba04)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = core_inv_cpp_FUN_004da420((CInventory *)(param_1 + 0x206e8),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "iVar1 = unkafter_armour_cpp_FUN_00410370(&pCVar3[-1].field_0xa330,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0xa330",
+      "severity": "mild",
+      "text": "iVar1 = unkafter_armour_cpp_FUN_00410370(&pCVar3[-1].field_0xa330,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 25,
+      "match": "pCVar5[-1].",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x224c",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 208,
+        "vtable_addr": "005e1534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

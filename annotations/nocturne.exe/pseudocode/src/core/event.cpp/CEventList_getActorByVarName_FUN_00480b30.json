@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
@@ -60,13 +55,13 @@
   "globals": [
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     }
@@ -160,17 +155,17 @@
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(char **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(char **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(char **)((int)g_CDemonSet_PTR_005be368->actors + iVar3),",
+      "text": "(*(char **)((int)g_CDemonSetPtr->actors + iVar3),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "return *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3);",
+      "text": "return *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);",
       "type": "pointer_cast"
     }
   ]

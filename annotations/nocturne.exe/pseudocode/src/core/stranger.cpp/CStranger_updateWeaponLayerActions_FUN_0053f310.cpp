@@ -343,7 +343,7 @@ LAB_0053f520:
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(local_28,0x16,1);
           if (this_ptr->action_pending != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",
                        this_ptr->action_pending,0x13ba);
           }
           this_ptr->action_pending = 2;

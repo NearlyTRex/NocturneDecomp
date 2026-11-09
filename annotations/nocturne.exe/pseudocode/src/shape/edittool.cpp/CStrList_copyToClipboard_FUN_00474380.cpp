@@ -53,7 +53,7 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(CStrList *
       buffer = buffer + iVar6;
     } while (iVar5 < this_ptr->item_count);
   }
-  this_ptr_00 = g_CEditorTools_PTR_005b6d50;
+  this_ptr_00 = g_CEditorToolsPtr;
   *buffer = '\0';
   shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(this_ptr_00,pcVar2);
   shape_memdbg_cpp_free_FUN_00564486(pcVar2);

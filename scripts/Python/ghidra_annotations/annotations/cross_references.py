@@ -1,263 +1,162 @@
-import os
+# Every reference in the program, from each address that has one. A record's
+# `importable` flag is the user's, kept from the previous export.
+
 import re
-from ghidra_annotations.util import *
-from ghidra.program.model.symbol import ReferenceManager
-from ghidra.program.model.symbol import RefType
-from ghidra.program.model.symbol import SourceType
+
+from ghidra.program.model.symbol import RefType, SourceType
+
+from ghidra_annotations.util import (
+    clean_data, create_address_set, get_addr_obj, load_json_files, log_info, parallel_scan_ranges, save_json_files)
+
+# The reference types an import can recreate, by the name the export records
+REF_TYPES = ["UNCONDITIONAL_CALL", "CONDITIONAL_CALL", "UNCONDITIONAL_JUMP", "CONDITIONAL_JUMP", "READ", "WRITE",
+             "DATA", "READ_WRITE", "CALL_TERMINATOR", "COMPUTED_CALL", "COMPUTED_CALL_TERMINATOR",
+             "COMPUTED_JUMP", "FALL_THROUGH", "INDIRECTION", "PARAM"]
+
+# A name not in REF_TYPES falls back to the first kind it mentions, else DATA
+FALLBACK_TYPES = ["CALL", "JUMP", "READ", "WRITE"]
+FALLBACK_REF_TYPES = {"CALL": "UNCONDITIONAL_CALL", "JUMP": "UNCONDITIONAL_JUMP", "READ": "READ", "WRITE": "WRITE"}
+
+# The order address spaces sort in: memory, then stack, register, constant, external, then anything else
+SPACE_RANK = [("stack", 1), ("register", 2), ("const", 3), ("external", 4), ("ram", 0)]
+
 
 def get_reference_key(ref_data):
     return "%s|%s|%d" % (ref_data.get("from"), ref_data.get("to"), ref_data.get("operand", 0))
 
-def get_sortable_address_value(addr_str):
 
-    # Invalid address
+def get_sortable_address_value(addr_str):
+    """(space rank, offset, text) for an address as the export writes it, so memory sorts by offset."""
     if not addr_str:
         return (999, 0, "")
-
-    # Handle regular hex addresses first
     try:
-        if addr_str.startswith("0x") or addr_str.startswith("0X"):
-            return (0, int(addr_str, 16), addr_str)
-        else:
-            return (0, int(addr_str, 16), addr_str)
+        return (0, int(addr_str, 16), addr_str)
     except ValueError:
         pass
-
-    # Handle special address spaces with priority ordering
-    addr_lower = addr_str.lower()
-    if addr_lower.startswith("stack"):
-        try:
-            match = re.search(r'\[(-?0x[0-9a-f]+)\]', addr_lower)
-            if match:
-                offset_str = match.group(1)
-                if offset_str.startswith('-'):
-                    offset = -int(offset_str[3:], 16)
-                else:
-                    offset = int(offset_str, 16)
-                return (1, offset, addr_str)
-        except:
-            pass
-        return (1, 0, addr_str)
-    elif addr_lower.startswith("external"):
-        try:
-            if ":" in addr_str:
-                parts = addr_str.split(":", 1)
-                if len(parts) == 2:
-                    offset = int(parts[1], 16)
-                    return (4, offset, addr_str)
-        except:
-            pass
-        return (4, 0, addr_str)
-    elif addr_lower.startswith("register"):
-        try:
-            if ":" in addr_str:
-                parts = addr_str.split(":", 1)
-                if len(parts) == 2:
-                    offset = int(parts[1], 16)
-                    return (2, offset, addr_str)
-        except:
-            pass
-        return (2, 0, addr_str)
-    elif addr_lower.startswith("const"):
-        return (3, 0, addr_str)
-    elif addr_lower.startswith("ram"):
-        try:
-            match = re.search(r'ram:0x([0-9a-f]+)', addr_lower)
-            if match:
-                offset = int(match.group(1), 16)
-                return (0, offset, addr_str)
-        except:
-            pass
-        return (0, 0, addr_str)
-
-    # For any other format, use string comparison with low priority
+    lower = addr_str.lower()
+    for prefix, rank in SPACE_RANK:
+        if lower.startswith(prefix):
+            return (rank, space_offset(prefix, lower), addr_str)
     return (10, 0, addr_str)
 
-def delete_cross_references(currentProgram, path):
 
-    # Load cross references to get importable markings
-    log_info("Loading cross references to determine which are importable")
-    xrefs_data = load_json_files(path, "cross_references")
-    if xrefs_data is None:
-        log_info("No existing cross references file found - nothing to delete")
-        return
+def space_offset(prefix, lower):
+    if prefix == "stack":
+        match = re.search(r'\[(-?)0x([0-9a-f]+)\]', lower)
+        return (-1 if match.group(1) else 1) * int(match.group(2), 16) if match else 0
+    if prefix == "ram":
+        match = re.search(r'ram:0x([0-9a-f]+)', lower)
+        return int(match.group(1), 16) if match else 0
+    if prefix in ("register", "external") and ":" in lower:
+        try:
+            return int(lower.split(":", 1)[1], 16)
+        except ValueError:
+            return 0
+    return 0
 
-    # Get list of importable cross reference keys
-    importable_xrefs = set()
-    for xref_data in xrefs_data:
-        if xref_data.get("importable", False):
-            xref_key = get_reference_key(xref_data)
-            importable_xrefs.add(xref_key)
-            to_addr = xref_data.get("to", "")
-    log_info("Found %d importable cross references to delete" % len(importable_xrefs))
-    if not importable_xrefs:
-        log_info("No importable cross references found - nothing to delete")
-        return
 
-    # Delete only importable cross references
-    ref_mgr = currentProgram.getReferenceManager()
-    tx_id = currentProgram.startTransaction("Delete Cross References")
-    try:
-        deleted_count = 0
-        address_set = currentProgram.getMemory().getAllInitializedAddressSet()
-        addresses = address_set.getAddresses(True)
-        while addresses.hasNext():
-            from_addr = addresses.next()
-            refs = list(ref_mgr.getReferencesFrom(from_addr))
-            for ref in refs:
-                from_addr_str = str(ref.getFromAddress())
-                to_addr_str = str(ref.getToAddress())
-                operand_index = ref.getOperandIndex()
-                ref_key = "%s|%s|%d" % (from_addr_str, to_addr_str, operand_index)
-                if ref_key in importable_xrefs:
-                    ref_mgr.delete(ref)
-                    deleted_count += 1
-        log_info("Deleted %d cross references" % deleted_count)
-    finally:
-        currentProgram.endTransaction(tx_id, True)
+def resolve_ref_type(name):
+    if name not in REF_TYPES:
+        upper = name.upper()
+        name = next((FALLBACK_REF_TYPES[k] for k in FALLBACK_TYPES if k in upper), "DATA")
+        log_info("Unknown reference type, using %s" % name)
+    return getattr(RefType, name)
 
-def import_cross_references(currentProgram, path):
 
-    # Load cross references
-    log_info("Loading cross references")
-    cross_references = load_json_files(path, "cross_references")
-    if cross_references is None:
-        log_error("Unable to load cross references")
+def importable_target(program, address):
+    """Whether an import can recreate a reference to the address: one into the program's memory."""
+    return address.isMemoryAddress() and program.getMemory().contains(address)
 
-    # Import cross references
-    log_info("Importing cross references")
-    ref_mgr = currentProgram.getReferenceManager()
-    tx_id = currentProgram.startTransaction("Import Cross References")
-    try:
-        imported_count = 0
-        skipped_count = 0
-        for xref in cross_references:
-            from_addr_str = xref.get("from")
-            to_addr_str = xref.get("to")
 
-            # Handle special addresses that may not be in memory map
-            if "Stack[" in to_addr_str or "EXTERNAL:" in to_addr_str or "register:" in to_addr_str:
-                from_addr = get_addr_obj(currentProgram, from_addr_str)
-                to_addr = get_addr_obj(currentProgram, to_addr_str, validate_memory=False)
-            else:
-                from_addr = get_addr_obj(currentProgram, from_addr_str)
-                to_addr = get_addr_obj(currentProgram, to_addr_str)
-            ref_type_str = xref.get("type")
-            operand_index = xref.get("operand", 0)
-            is_primary = not xref.get("non_primary", False)
-            is_importable = xref.get("importable", False)
-            if not from_addr or not to_addr or not ref_type_str or not is_importable:
-                skipped_count += 1
-                continue
+def reference_sources(ref_mgr, start_addr, end_addr):
+    """The addresses in a range that references come from."""
+    return ref_mgr.getReferenceSourceIterator(create_address_set(start_addr, end_addr), True)
 
-            # Try to resolve reference type
-            ref_type = None
-            ref_type_map = {
-                "UNCONDITIONAL_CALL": RefType.UNCONDITIONAL_CALL,
-                "CONDITIONAL_CALL": RefType.CONDITIONAL_CALL,
-                "UNCONDITIONAL_JUMP": RefType.UNCONDITIONAL_JUMP,
-                "CONDITIONAL_JUMP": RefType.CONDITIONAL_JUMP,
-                "READ": RefType.READ,
-                "WRITE": RefType.WRITE,
-                "DATA": RefType.DATA,
-                "READ_WRITE": RefType.READ_WRITE,
-                "CALL_TERMINATOR": RefType.CALL_TERMINATOR,
-                "COMPUTED_CALL": RefType.COMPUTED_CALL,
-                "COMPUTED_JUMP": RefType.COMPUTED_JUMP,
-                "FALL_THROUGH": RefType.FALL_THROUGH,
-                "INDIRECTION": RefType.INDIRECTION,
-                "PARAM": RefType.PARAM
-            }
-            ref_type = ref_type_map.get(ref_type_str)
-            if not ref_type:
-                log_info("Unknown reference type '%s', using fallback logic" % ref_type_str)
-                if "CALL" in ref_type_str.upper():
-                    ref_type = RefType.UNCONDITIONAL_CALL
-                elif "JUMP" in ref_type_str.upper():
-                    ref_type = RefType.UNCONDITIONAL_JUMP
-                elif "READ" in ref_type_str.upper():
-                    ref_type = RefType.READ
-                elif "WRITE" in ref_type_str.upper():
-                    ref_type = RefType.WRITE
-                else:
-                    ref_type = RefType.DATA
-
-            # Check if reference already exists
-            existing_refs = ref_mgr.getReferencesFrom(from_addr, operand_index)
-            ref_exists = False
-            for existing_ref in existing_refs:
-                if (existing_ref.getToAddress().equals(to_addr) and
-                    existing_ref.getReferenceType() == ref_type):
-                    ref_exists = True
-                    break
-
-            # Create the reference
-            if not ref_exists:
-                new_ref = ref_mgr.addMemoryReference(
-                    from_addr, to_addr, ref_type, SourceType.USER_DEFINED, operand_index)
-                if is_primary and new_ref:
-                    ref_mgr.setPrimary(new_ref, True)
-                imported_count += 1
-        log_info("Imported %d cross references, skipped %d" % (imported_count, skipped_count))
-    finally:
-        currentProgram.endTransaction(tx_id, True)
-        log_info("Import complete")
 
 def scan_references_worker(start_addr, end_addr, ref_mgr):
-    """Worker function to scan references in an address range."""
+    """The records of the references from an address range."""
     references = []
-    try:
-        addr_set = create_address_set(start_addr, end_addr)
-        addresses = addr_set.getAddresses(True)
-
-        while addresses.hasNext():
-            addr = addresses.next()
-            refs = list(ref_mgr.getReferencesFrom(addr))
-
-            for ref in refs:
-                ref_data = {
-                    "from": str(ref.getFromAddress()),
-                    "to": str(ref.getToAddress()),
-                    "type": str(ref.getReferenceType())
-                }
-                operand_index = ref.getOperandIndex()
-                if operand_index != 0:
-                    ref_data["operand"] = operand_index
-                if not ref.isPrimary():
-                    ref_data["non_primary"] = True
-                references.append(ref_data)
-    except Exception:
-        pass
+    for addr in reference_sources(ref_mgr, start_addr, end_addr):
+        for ref in ref_mgr.getReferencesFrom(addr):
+            ref_data = {
+                "from": str(ref.getFromAddress()),
+                "to": str(ref.getToAddress()),
+                "type": str(ref.getReferenceType())
+            }
+            if ref.getOperandIndex() != 0:
+                ref_data["operand"] = ref.getOperandIndex()
+            if not ref.isPrimary():
+                ref_data["non_primary"] = True
+            references.append(ref_data)
     return references
 
 
-def export_cross_references(currentProgram, path):
-
-    # Load existing cross references to preserve importable markings
-    existing_importable = {}
+def delete_cross_references(currentProgram, path):
+    """Remove the importable memory references; the import cannot make the other kinds back."""
+    importable = {get_reference_key(r) for r in load_json_files(path, "cross_references")
+                  if r.get("importable", False)}
+    log_info("Found %d importable cross references to delete" % len(importable))
+    if not importable:
+        return
+    ref_mgr = currentProgram.getReferenceManager()
+    tx_id = currentProgram.startTransaction("Delete Cross References")
     try:
-        existing_xrefs = load_json_files(path, "cross_references")
-        if existing_xrefs:
-            log_info("Loading existing importable markings")
-            for xref_data in existing_xrefs:
-                xref_key = get_reference_key(xref_data)
-                existing_importable[xref_key] = xref_data.get("importable", True)
-    except:
-        log_info("No existing cross references file found, all cross references will default to non-importable")
+        doomed = []
+        for start, end in [(r.getMinAddress(), r.getMaxAddress())
+                           for r in currentProgram.getMemory().getAllInitializedAddressSet().getAddressRanges()]:
+            for addr in reference_sources(ref_mgr, start, end):
+                doomed += [ref for ref in ref_mgr.getReferencesFrom(addr)
+                           if importable_target(currentProgram, ref.getToAddress()) and "%s|%s|%d" % (ref.getFromAddress(), ref.getToAddress(), ref.getOperandIndex())
+                           in importable]
+        for ref in doomed:
+            ref_mgr.delete(ref)
+        log_info("Deleted %d cross references" % len(doomed))
+    finally:
+        currentProgram.endTransaction(tx_id, True)
 
-    # Scan in parallel
+
+def import_cross_references(currentProgram, path):
+    """Recreate the importable memory references the program lacks.
+
+    A reference to a stack slot, register or external is made by Ghidra's
+    analysis with its own kind of reference, so it is counted and left out.
+    """
+    ref_mgr = currentProgram.getReferenceManager()
+    imported = skipped = not_memory = 0
+    tx_id = currentProgram.startTransaction("Import Cross References")
+    try:
+        for xref in load_json_files(path, "cross_references"):
+            from_addr = get_addr_obj(currentProgram, xref.get("from"))
+            to_addr = get_addr_obj(currentProgram, xref.get("to"), validate_memory = False)
+            if not xref.get("importable", False) or not xref.get("type") or not from_addr or not to_addr:
+                skipped += 1
+                continue
+            if not importable_target(currentProgram, to_addr):
+                not_memory += 1
+                continue
+            ref_type = resolve_ref_type(xref["type"])
+            operand_index = xref.get("operand", 0)
+            if any(ref.getToAddress() == to_addr and ref.getReferenceType() == ref_type
+                   for ref in ref_mgr.getReferencesFrom(from_addr, operand_index)):
+                continue
+            new_ref = ref_mgr.addMemoryReference(from_addr, to_addr, ref_type, SourceType.USER_DEFINED, operand_index)
+            # Ghidra makes an operand's first reference primary itself, so the flag is set both ways
+            ref_mgr.setPrimary(new_ref, not xref.get("non_primary", False))
+            imported += 1
+        log_info("Imported %d cross references, skipped %d, left %d that are not memory references" % (
+            imported, skipped, not_memory))
+    finally:
+        currentProgram.endTransaction(tx_id, True)
+
+
+def export_cross_references(currentProgram, path):
+    importable = {get_reference_key(r): r.get("importable", True) for r in load_json_files(path, "cross_references")}
     log_info("Gathering cross references (parallel)")
     ref_mgr = currentProgram.getReferenceManager()
     cross_references = parallel_scan_ranges(currentProgram, scan_references_worker, extra_args=(ref_mgr,))
     log_info("Found %d cross references" % len(cross_references))
-
-    # Apply importable markings
     for ref_data in cross_references:
-        ref_key = get_reference_key(ref_data)
-        ref_data["importable"] = existing_importable.get(ref_key, True)
-
-    # Sort cross references for consistent output
-    log_info("Sorting cross references by address and operand index")
+        ref_data["importable"] = importable.get(get_reference_key(ref_data), True)
     cross_references.sort(key=lambda x: (
         get_sortable_address_value(x["from"]),
         x.get("operand", 0),
@@ -265,8 +164,6 @@ def export_cross_references(currentProgram, path):
         x["type"],
         x.get("non_primary", False)
     ))
-
-    # Export cross references
     log_info("Exporting %s cross references" % len(cross_references))
     save_json_files(
         path = path,

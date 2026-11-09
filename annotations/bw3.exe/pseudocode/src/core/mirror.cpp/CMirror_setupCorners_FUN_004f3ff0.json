@@ -1,0 +1,194 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 110,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "004c9ce0",
+      "from_addr": "004ca190",
+      "name": "core_glass.cpp_FUN_004c9ce0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f3ff0",
+    "address_range": [
+      [
+        "004f3ff0",
+        "004f4069"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CMirror_setupCorners_FUN_004f3ff0",
+    "signature": "void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004f3ff0(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ca190",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_FUN_004c9ce0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.423076923076923,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CBRANCH": 4,
+      "COPY": 50,
+      "INT_ADD": 32,
+      "INT_AND": 10,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 7,
+      "LOAD": 25,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 178
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirror *"
+      },
+      {
+        "is_param": true,
+        "name": "corner1",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "corner2",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "corner3",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "corner4",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 4) = *(uint *)&corner1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 8) = *(uint *)&corner1->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x10) = *(uint *)&corner2->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x14) = *(uint *)&corner2->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x1c) = *(uint *)&corner3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x20) = *(uint *)&corner3->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x28) = *(uint *)&corner4->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x2c) = *(uint *)&corner4->field_0x8;",
+      "type": "unnamed_field"
+    }
+  ]
+}

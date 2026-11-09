@@ -1,0 +1,174 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 128,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 10,
+    "suspect_types": [
+      "fast_inv_sqrt_inline",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00440010",
+    "address_range": [
+      [
+        "00440010",
+        "0044005e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_applyLightAttenuation_FUN_00440010",
+    "signature": "CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_00440010(CVector3f *v)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d1a0a8",
+      "name": "DAT_01d1a0a8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.5,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "COPY": 123,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 6,
+      "INT_ADD": 13,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SRIGHT": 1,
+      "INT_SUB": 2,
+      "LOAD": 12,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 210
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "v",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)v * *(float *)v + *(float *)&v->field_0x4 * *(float *)&v->field_0x4",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)v * *(float *)v + *(float *)&v->field_0x4 * *(float *)&v->field_0x4",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&v->field_0x4 = *(float *)&v->field_0x4 * fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&v->field_0x4 = *(float *)&v->field_0x4 * fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&v->field_0x8 = *(float *)&v->field_0x8 * fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&v->field_0x8 = *(float *)&v->field_0x8 * fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01d1a0a8`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01d1a0a8` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 8,
+      "match": "fVar1 = (float)(_DAT_01d1a0a8 - ((int)(*(float *)&v->field_0x8 * *(float *)&v->f",
+      "severity": "moderate",
+      "text": "fVar1 = (float)(_DAT_01d1a0a8 - ((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 + *(float *)v * *(float *)v + *",
+      "type": "fast_inv_sqrt_inline"
+    }
+  ]
+}

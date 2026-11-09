@@ -72,10 +72,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
   if (this_ptr->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_00558a30();
   }
-  this_ptr_00 = g_CNetGame_PTR_005bdee0;
+  this_ptr_00 = g_CNetGamePtr;
   g_RenderedTriangleCount = 0;
-  if ((this_ptr->cinematic_skip_in_progress != 0) ||
-     (g_CNetGame_PTR_005bdee0->has_pending_sim_frame != 0)) {
+  if ((this_ptr->cinematic_skip_in_progress != 0) || (g_CNetGamePtr->has_pending_sim_frame != 0)) {
     this_ptr->is_paused = 0;
     core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(this_ptr_00);
     core_game_cpp_CGame_process_FUN_004a6010(this_ptr);
@@ -85,7 +84,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     else {
       core_game_cpp_CGame_slamDT_FUN_004a5f00(this_ptr,0.25);
     }
-    core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(g_CNetGame_PTR_005bdee0);
+    core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(g_CNetGamePtr);
     return;
   }
   if (g_UseExternalRenderer != 0) {
@@ -96,9 +95,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     engine_special_cpp_clearScreen_FUN_0052ee70();
   }
   if (this_ptr->goggles_active == 0) {
-    core_set_cpp_CDemonSet_renderScene_FUN_00509a80(g_CDemonSet_PTR_005be368,1);
+    core_set_cpp_CDemonSet_renderScene_FUN_00509a80(g_CDemonSetPtr,1);
   }
-  core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(g_CNetGame_PTR_005bdee0);
+  core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(g_CNetGamePtr);
   if (this_ptr->is_paused == 0) {
     core_game_cpp_CGame_process_FUN_004a6010(this_ptr);
     core_sound_cpp_CSound_process_FUN_0052dff0(g_CSound_PTR_005bed68);
@@ -126,7 +125,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
                (CVector3f *)&local_b0.orientation);
     if ((DAT_01bd1d94 & 1) != 0) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
-                (&g_CDemonCamera_01fb8508,_DAT_01bd1d8c,_DAT_01bd1d90,&local_88);
+                (&g_CDemonCameraInstance,_DAT_01bd1d8c,_DAT_01bd1d90,&local_88);
       input_ptr = &local_7c;
       local_7c.x = local_88.x;
       *(uint *)((int)&local_7c + (uint)bVar20 * -8 + 4) =
@@ -134,7 +133,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
       *(uint *)((int)&local_7c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
            *(uint *)((int)&local_88 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);
       core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
-                (&g_CDemonCamera_01fb8508,input_ptr,&local_94);
+                (&g_CDemonCameraInstance,input_ptr,&local_94);
       local_7c.x = local_94.x;
       *(uint *)((int)&local_7c + (uint)bVar20 * -8 + 4) =
            *(uint *)((int)&local_94 + (uint)bVar20 * -8 + 4);
@@ -150,9 +149,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     }
   }
   core_game_cpp_CGame_updateDT_FUN_0049a8a0(this_ptr);
-  core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(g_CNetGame_PTR_005bdee0);
+  core_netgame_cpp_CNetGame_processServerFrame_FUN_004ed2d0(g_CNetGamePtr);
   if (this_ptr->goggles_active == 0) {
-    core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(g_CDemonSet_PTR_005be368);
+    core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(g_CDemonSetPtr);
   }
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0xffff);
@@ -160,15 +159,15 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     local_14 = wincore_winrun_cpp_getTime_FUN_00558a30();
     local_14 = local_14 - local_44;
     dVar1 = ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-            (double)g_CGame_PTR_005b9354->delta_time_float;
+            (double)g_CGamePtr->delta_time_float;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"screen paint : %3.2f ms\n",SUB84(__BITCAST_UINT64(dVar1),0),
+              (g_CConsolePtr,"screen paint : %3.2f ms\n",SUB84(__BITCAST_UINT64(dVar1),0),
                (int)((ulonglong)dVar1 >> 0x20));
   }
   if (this_ptr->skip_frame_render != 0) goto LAB_0049d5b0;
   engine_special_cpp_lockFrame_FUN_005322e0();
   if (this_ptr->goggles_active != 0) {
-    core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(g_CDemonSet_PTR_005be368);
+    core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(g_CDemonSetPtr);
   }
   if (this_ptr->developer_mode_enabled == 0) {
     pcVar19 = support_newmsg_cpp_decryptMessage_FUN_004ee3f0((char *)BYTE_ARRAY_005825f0);
@@ -186,7 +185,7 @@ LAB_0049cf70:
   }
   core_inv_cpp_CInventory_renderAllItems_FUN_004c2470(&g_HeroActors[g_LocalHeroIndex]->inventory);
   if (this_ptr->screen_clear_enabled != 0) {
-    core_set_cpp_CDemonSet_FUN_0050aa70(g_CDemonSet_PTR_005be368);
+    core_set_cpp_CDemonSet_FUN_0050aa70(g_CDemonSetPtr);
   }
   core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(this_ptr);
   if (_DAT_01c78ac8 != 0) {
@@ -267,7 +266,7 @@ LAB_0049cf70:
       _DAT_01c78acc = 0;
     }
   }
-  core_script_cpp_CScript_renderSubtitles_FUN_004fe770(0x01E56DA0);
+  core_script_cpp_CScript_renderSubtitles_FUN_004fe770(g_CScriptPtr);
   core_game_cpp_CGame_renderOverlay_FUN_0049ab50(this_ptr);
   core_game_cpp_CGame_renderIrisFade_FUN_004a3960(this_ptr);
   if (this_ptr->camera_debug_enabled == 0) {
@@ -275,9 +274,8 @@ LAB_0049cf70:
     _DAT_01c71e38 = 0;
   }
   else {
-    _sprintf(local_2dc,"Camera: \"%s\" Group %d",&g_CDemonCamera_01fb8508,
-               g_CDemonSet_PTR_005be368->cameras[g_CDemonSet_PTR_005be368->selected_camera_index].
-               camera_group);
+    _sprintf(local_2dc,"Camera: \"%s\" Group %d",&g_CDemonCameraInstance,
+               g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].camera_group);
     engine_2d_c_drawText_FUN_00402600(local_2dc,0,g_WindowHeight + -0x16);
     _DAT_01c71e38 = _DAT_01c71e38 + 1;
     _DAT_01c71e30 = _DAT_01c71e30 + (double)this_ptr->delta_time_float;
@@ -341,11 +339,11 @@ LAB_0049cf70:
   }
   if ((this_ptr->subtitle_system_enabled != 0) && (this_ptr->screen_clear_enabled != 0)) {
     core_script_cpp_CScript_renderEditor_FUN_004fe9d0
-              (0x01E56DA0,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1);
+              (g_CScriptPtr,0,0xf0,g_WindowWidth + -1,g_WindowHeight + -1);
   }
   if (this_ptr->editor_tools_enabled != 0) {
     shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004736d0
-              (g_CEditorTools_PTR_005b6d50,local_3dc);
+              (g_CEditorToolsPtr,local_3dc);
     engine_2d_c_drawText_FUN_00402600(local_3dc,0,g_WindowHeight + -0x42);
   }
   EVar12 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
@@ -371,13 +369,13 @@ LAB_0049cf70:
     core_game_cpp_CGame_showCustomizableKeys_FUN_0049b4e0(this_ptr);
   }
   if (this_ptr->console_enabled != 0) {
-    engine_console_cpp_CConsole_render_FUN_0043aec0(g_CConsole_PTR_005ad350);
+    engine_console_cpp_CConsole_render_FUN_0043aec0(g_CConsolePtr);
   }
-  if (0 < g_CPickList_01c78424.base.item_count) {
-    shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(&g_CPickList_01c78424);
+  if (0 < g_CPickList.base.item_count) {
+    shape_edittool_cpp_CPickList_renderDialog_FUN_004759d0(&g_CPickList);
   }
   if (this_ptr->is_paused != 0) {
-    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(g_CEditorTools_PTR_005b6d50,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004724e0(g_CEditorToolsPtr,0);
   }
   engine_special_cpp_unlockFrame_FUN_00532320(in_stack_fffff9fc);
 LAB_0049d5b0:

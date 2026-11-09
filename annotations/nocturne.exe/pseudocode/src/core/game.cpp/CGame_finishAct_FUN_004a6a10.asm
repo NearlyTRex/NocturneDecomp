@@ -76,7 +76,7 @@ section .text
     CMP dword ptr [EAX + 0x258],0x2     ; 004a6a22
     JNZ 0x004a6aec                      ; 004a6a29
         ;   XREF to: 004a6aec (CONDITIONAL_JUMP)  ; LAB_004a6aec
-    MOV EAX,[0x01fb8644]                ; 004a6a2f | g_CDemonCamera_01fb8508.screen_width
+    MOV EAX,[0x01fb8644]                ; 004a6a2f | g_CDemonCameraInstance.screen_width
     MOV EDI,dword ptr [0x014b9900]      ; 004a6a34 | g_CBitFont_PTR_014b9900
     CMP EAX,0x1e0                       ; 004a6a3a
     JGE 0x004a6a47                      ; 004a6a3f

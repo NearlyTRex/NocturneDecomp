@@ -1,0 +1,178 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 34,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "004104c0",
+      "from_addr": "004104c5",
+      "name": "core_baron.cpp_CBaronWeapon_setup_FUN_004104c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a21a0",
+      "from_addr": "005a21bb",
+      "name": "core_turret.cpp_CTurret_setup_FUN_005a21a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ad640",
+    "address_range": [
+      [
+        "005ad640",
+        "005ad671"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_setup_FUN_005ad640",
+    "signature": "void __cdecl core_weapon_cpp_CWeapon_setup_FUN_005ad640(CWeapon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408850",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408850"
+    },
+    {
+      "addr": "004688e0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0"
+    },
+    {
+      "addr": "005ade40",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_FUN_005ade40"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004104c5",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_setup_FUN_004104c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a21bb",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_setup_FUN_005a21a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 9,
+      "INT_ADD": 8,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 63
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x574",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x574 = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "00604b04"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "00600714"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "00601924"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "00605624"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "00603034"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 14
+  }
+}

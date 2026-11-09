@@ -1,0 +1,323 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 52,
+    "cross_reference_count": 8,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "0050ecb0",
+      "from_addr": "0050f0c6",
+      "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050eb80",
+      "from_addr": "0050ec78",
+      "name": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0050eb80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f4f0",
+      "from_addr": "0050f588",
+      "name": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050bdb0",
+      "from_addr": "0050bff1",
+      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050d840",
+      "from_addr": "0050d9c2",
+      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_0050d840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b4d0",
+      "from_addr": "0050b684",
+      "name": "core_netgame.cpp_FUN_0050b4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c280",
+      "from_addr": "0050c3e1",
+      "name": "core_netgame.cpp_FUN_0050c280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050e970",
+      "from_addr": "0050eb13",
+      "name": "core_netgame.cpp_FUN_0050e970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050cd90",
+    "address_range": [
+      [
+        "0050cd90",
+        "0050cdea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_send_FUN_0050cd90",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_send_FUN_0050cd90(CNetGame *this_ptr,int player_index,SNetPacketHeader *packet)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "0050cdf0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0a65",
+      "name": "s_core_netgame_cpp_005e0a65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0a79",
+      "name": "s_CNetGame_send_invalid_pl_005e0a79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "0050bff1",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050d9c2",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_updatePing_FUN_0050d840",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050f0c6",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050f588",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050c3e1",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050c280",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050c881",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050c280",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050ca66",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050c280",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050ec78",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0050eb80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050b684",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050b4d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050eb13",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0050e970",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.823529411764706,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 29,
+      "INT_ADD": 14,
+      "INT_AND": 26,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 164
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "packet",
+        "offset": 12,
+        "size": 4,
+        "type": "SNetPacketHeader *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "if ((player_index < 0) || (*(int *)&this_ptr->field_0x1c <= player_index)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "(this_ptr,(SNetworkAddr *)(&this_ptr->field_0x3c + player_index * 0x80),packet);",
+      "type": "unnamed_field"
+    }
+  ]
+}

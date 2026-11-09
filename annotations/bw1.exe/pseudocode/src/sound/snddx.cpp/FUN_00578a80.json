@@ -1,0 +1,397 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 137,
+    "complexity_score": 378,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 29,
+    "suspect_types": [
+      "concat_reconstruction",
+      "raw_address_pointer_store",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 200
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00578a80",
+    "address_range": [
+      [
+        "00578a80",
+        "00578bd1"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_snddx.cpp_FUN_00578a80",
+    "signature": "int sound_snddx_cpp_FUN_00578a80(undefined4 param_1,int param_2,int param_3,int param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577500"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4e42",
+      "name": "s_sound_snddx_cpp_005f4e42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4e55",
+      "name": "s_DirectSoundDevice_lockSa_005f4e55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4e85",
+      "name": "s_Lock_hw_sample_buffer_005f4e85",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.222222222222222,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 26,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 1,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 8,
+      "COPY": 97,
+      "INT_ADD": 48,
+      "INT_AND": 137,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 83,
+      "INT_LEFT": 6,
+      "INT_LESS": 16,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 23,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 3,
+      "INT_SLESS": 45,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 49,
+      "INT_XOR": 5,
+      "INT_ZEXT": 1,
+      "LOAD": 32,
+      "POPCOUNT": 39,
+      "RETURN": 3,
+      "STORE": 28,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 728
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int sound_snddx_cpp_FUN_00578a80(uint param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int sound_snddx_cpp_FUN_00578a80(uint param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "int sound_snddx_cpp_FUN_00578a80(uint param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "int sound_snddx_cpp_FUN_00578a80(uint param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*(int *)(param_2 * 0x18 + 0x2c81dcc) < 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 * 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 * 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(int *)(param_2 + 0x2c81dd4) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 * *(int *)(param_2 + 0x2c81dcc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 * *(int *)(param_2 + 0x2c81dcc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_3 = param_3 * *(int *)(param_2 + 0x2c81dcc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar3 = param_3 >> 0x1f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar3 = (param_3 + iVar3 * -0x100) - (uint)(iVar3 << 7 < 0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uVar5 = param_4 + 0x1fU & 0xffffffe0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar1 = *(int *)(param_2 + 0x2c81dd0) - uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iStack_1b8 = param_2 + 0x2c81dd8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iStack_1bc = param_2 + 0x2c81dd4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 49,
+      "match": "*(int **)(param_2 + 0x2c81dc4",
+      "severity": "moderate",
+      "text": "piStack_1c8 = *(int **)(param_2 + 0x2c81dc4);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "piStack_1c8 = *(int **)(param_2 + 0x2c81dc4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 52,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*piStack_1c8 + 0x2c))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(int *)(param_2 + 0x2c81dd0) + -0x20 <= (int)(uVar5 + uVar4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((void *)(((*(int *)(param_2 + 0x2c81dd4) + *(int *)(param_2 + 0x2c81dd0)) - uVar4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((void *)(((*(int *)(param_2 + 0x2c81dd4) + *(int *)(param_2 + 0x2c81dd0)) - uVar4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "return (*(int *)(param_2 + 0x2c81dd4) + (iVar3 >> 8)) - uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 38,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "uVar4 = CONCAT22((short)(char)((uint)iVar3 >> 0x18),(short)((uint)iVar3 >> 8)) & 0xffffffe0;",
+      "type": "concat_reconstruction"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 56,
+        "vtable_addr": "00605b9c"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 77,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "004ab9a0",
+      "from_addr": "004ab9a6",
+      "name": "core_filmreel.cpp_CFilmProjector_archive_FUN_004ab9a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045d5b0",
+    "address_range": [
+      [
+        "0045d5b0",
+        "0045d66c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dest.cpp_CActorDestination_archive_FUN_0045d5b0",
+    "signature": "void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0045d5b0(CActorDestination *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d8363",
+      "name": "s_whoGoesHere_005d8362+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d836f",
+      "name": "s_whatEvent_005d836f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8379",
+      "name": "s_destActor_005d8379",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8383",
+      "name": "s_destClass_005d8383",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d838d",
+      "name": "s_persistantEventFlag_005d838d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006112c8",
+      "name": "g_CActorDestinationClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ab9a6",
+        "call_type": "direct",
+        "caller": "core_filmreel.cpp_CFilmProjector_archive_FUN_004ab9a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.551020408163265,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 28,
+      "INT_ADD": 19,
+      "INT_AND": 28,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 29,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 14,
+      "INT_SUB": 23,
+      "LOAD": 5,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 223
+  },
+  "stack_frame": {
+    "frame_size": 268,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorDestination *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x158 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x188",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x188,\"whatEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x158,\"destActor\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x15c,\"destClass\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x1ec",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x1ec,\"persistantEventFlag\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CActorDestination",
+        "offset": 212,
+        "vtable_addr": "005fe854"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

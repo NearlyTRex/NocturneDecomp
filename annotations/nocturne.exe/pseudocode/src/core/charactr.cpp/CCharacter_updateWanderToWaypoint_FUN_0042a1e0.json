@@ -1,23 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 146,
+    "complexity_score": 145,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 120,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 387
+    "total_lines": 386
   },
   "cross_references": [
     {
@@ -81,13 +76,13 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01fabd00",
-      "name": "g_CDemonSet_01e57284.waypoint_count",
+      "name": "g_CDemonSetInstance.waypoint_count",
       "type": "undefined4",
       "value": null
     },
@@ -219,77 +214,22 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_updateWanderToWaypoint_FUN_0042a1e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 45,
-          "line": 67,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 44,
-          "line": 68,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 44,
-          "line": 69,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(char **)((int)g_CDemonSet_PTR_005be368",
+      "line": 55,
+      "match": "(char **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "target_string = *(char **)((int)g_CDemonSet_PTR_005be368->waypoints + local_24);",
+      "text": "target_string = *(char **)((int)g_CDemonSetPtr->waypoints + local_24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 65,
       "match": "(char **)((int)local_1f80",
       "severity": "moderate",
       "text": "*(char **)((int)local_1f80 + iVar5) = target_string;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 67,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(fVar6 = (local_1c->position).x - *(float *)(target_string + 0x20),",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 68,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "fVar1 = (local_1c->position).y - *(float *)(target_string + 0x24),",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 69,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "fVar7 = (local_1c->position).z - *(float *)(target_string + 0x28),",
-      "type": "static_invalid_pointer_cast"
     }
   ]
 }

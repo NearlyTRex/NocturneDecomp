@@ -1,28 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_0059ae90'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_0059ae90'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_0059ae90'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
@@ -175,23 +151,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CBugs_renderGroundHeightGrid_FUN_004216d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 17,
-          "line": 72,
-          "message": "Uninitialized variable: unaff_EDI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -256,14 +215,6 @@
       "severity": "moderate",
       "text": "pCStack_2c = (CBugs *)&(pCStack_2c->base).base.base.orient;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EDI",
-      "line": 72,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "unaff_EDI = unaff_EDI + 0xc;",
-      "type": "static_uninitvar"
     }
   ]
 }

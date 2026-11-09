@@ -1,0 +1,231 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 87,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [
+    {
+      "addr": "00480dc0",
+      "from_addr": "00480de5",
+      "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_00480dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480eb0",
+      "from_addr": "00480ef8",
+      "name": "shape_edittool.cpp_CStrList_insert_FUN_00480eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00480fa0",
+    "address_range": [
+      [
+        "00480fa0",
+        "0048104c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_allocate_FUN_00480fa0",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(CStrList *this_ptr,int new_capacity)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b8ce0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005b8ce0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d260d",
+      "name": "s_shape_edittool_cpp_005d260d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2623",
+      "name": "s_CStrList_allocate_Can_t_005d2623",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d264b",
+      "name": "s_shape_edittool_cpp_005d264b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2661",
+      "name": "s_CStrList_allocate_invali_005d2661",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2688",
+      "name": "s_shape_edittool_cpp_005d2688",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d269e",
+      "name": "s_CStrList_insert_out_of_m_005d269e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00480ef8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_insert_FUN_00480eb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00480de5",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_copyFrom_FUN_00480dc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.618181818181818,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 4,
+      "COPY": 49,
+      "INT_ADD": 21,
+      "INT_AND": 17,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 17,
+      "LOAD": 15,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 199
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "new_capacity",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x4 < new_capacity) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x4 = new_capacity;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "pvVar1 = realloc(*(void **)&this_ptr->field_0x8,new_capacity * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x8 = pvVar1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

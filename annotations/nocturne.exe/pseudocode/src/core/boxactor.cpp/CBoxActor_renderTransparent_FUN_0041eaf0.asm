@@ -11,9 +11,9 @@
 ; Referenced Globals:
 ;   void* PTR_DAT_005ae700 = 01b4d738
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
@@ -87,8 +87,8 @@ section .text
     TEST EBP,EBP                        ; 0041eb7e
     JZ 0x0041eb91                       ; 0041eb80
         ;   XREF to: 0041eb91 (CONDITIONAL_JUMP)  ; LAB_0041eb91
-    MOV EAX,[0x005be368]                ; 0041eb82 | g_CDemonSet_PTR_005be368
-    MOV dword ptr [EAX + 0x15a8a0],0x1  ; 0041eb87 | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV EAX,[0x005be368]                ; 0041eb82 | g_CDemonSetPtr
+    MOV dword ptr [EAX + 0x15a8a0],0x1  ; 0041eb87 | g_CDemonSetInstance.disable_directional_lighting
     TEST ESI,ESI                        ; 0041eb91
         ;   Label: LAB_0041eb91
     JZ 0x0041ebac                       ; 0041eb93
@@ -104,8 +104,8 @@ section .text
         ;   Label: LAB_0041ebac
     JZ 0x0041ebc4                       ; 0041ebb3
         ;   XREF to: 0041ebc4 (CONDITIONAL_JUMP)  ; LAB_0041ebc4
-    MOV EAX,[0x005be368]                ; 0041ebb5 | g_CDemonSet_PTR_005be368
-    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 0041ebba | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV EAX,[0x005be368]                ; 0041ebb5 | g_CDemonSetPtr
+    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 0041ebba | g_CDemonSetInstance.disable_directional_lighting
     MOV EDX,dword ptr [0x005ae700]      ; 0041ebc4 | PTR_DAT_005ae700
         ;   Label: LAB_0041ebc4
     PUSH EDX                            ; 0041ebca | DAT_01b4d738

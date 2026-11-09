@@ -1,0 +1,264 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 106,
+    "complexity_score": 181,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 162
+  },
+  "cross_references": [
+    {
+      "addr": "005c0d8c",
+      "from_addr": "005c0da2",
+      "name": "crt_unknown.c_FUN_005c0d8c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c6c7c",
+    "address_range": [
+      [
+        "005c6c7c",
+        "005c6d49"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c6c7c",
+    "signature": "undefined1 * crt_unknown_c_FUN_005c6c7c(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c3050",
+      "is_variadic": false,
+      "name": "crt_env.c_getenv_FUN_005c3050"
+    },
+    {
+      "addr": "005c2500",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__fullpath_FUN_005c2500"
+    },
+    {
+      "addr": "005c91d0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c91d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fab90",
+      "name": "DAT_005fab90",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005fab94",
+      "name": "DAT_005fab94",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00626650",
+      "name": "PTR_DAT_00626650",
+      "type": "void*",
+      "value": "005fab90"
+    },
+    {
+      "addr": "00626654",
+      "name": "PTR_DAT_00626654",
+      "type": "void*",
+      "value": "005fab94"
+    },
+    {
+      "addr": "00626663",
+      "name": "DAT_00626663",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00626664",
+      "name": "DAT_00626664",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00626665",
+      "name": "DAT_00626665",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00626666",
+      "name": "DAT_00626666",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00626667",
+      "name": "DAT_00626667",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005c0da2",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c0d8c",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.734939759036145,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 13,
+      "COPY": 50,
+      "INT_ADD": 21,
+      "INT_AND": 57,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 58,
+      "INT_LESS": 12,
+      "INT_MULT": 2,
+      "INT_NEGATE": 2,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 28,
+      "INT_SUB": 35,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 18,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 393
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_00626664",
+      "severity": "mild",
+      "text": "if (DAT_00626664 == '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_00626664",
+      "severity": "mild",
+      "text": "_fullpath(&DAT_00626664,pcVar2,0x103);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00626664",
+      "severity": "mild",
+      "text": "if (DAT_00626664 == '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00626664",
+      "severity": "mild",
+      "text": "pcVar5 = &DAT_00626664;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_00626664",
+      "severity": "mild",
+      "text": "pcVar2 = &DAT_00626664;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_00626663",
+      "severity": "mild",
+      "text": "(&DAT_00626663)[uVar3] = 0x5c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_00626664",
+      "severity": "mild",
+      "text": "(&DAT_00626664)[uVar3] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_00626664",
+      "severity": "mild",
+      "text": "return &DAT_00626664;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 34,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 19,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 46,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

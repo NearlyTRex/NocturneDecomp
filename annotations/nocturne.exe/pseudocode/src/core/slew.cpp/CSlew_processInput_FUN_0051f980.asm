@@ -20,9 +20,9 @@
 ;   double DOUBLE_00591ecd = 30
 ;   double DOUBLE_00591ed5 = -1.57079632675000
 ;   double DOUBLE_00591edd = 1.57079632675000
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeys_01cc30e4
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     SUB ESP,0x24                        ; 0051f984
     AND ESP,0xfffffff8                  ; 0051f987
     MOV EBX,dword ptr [EBP + 0xc]       ; 0051f98a
-    MOV EAX,[0x005b9354]                ; 0051f98d | g_CGame_PTR_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 0051f992 | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0051f98d | g_CGamePtr
+    MOV EAX,dword ptr [EAX + 0x264]     ; 0051f992 | g_CGameInstance.delta_time_float
     PUSH 0x38                           ; 0051f998
     MOV dword ptr [ESP + 0xc],EAX       ; 0051f99a
     MOV dword ptr [ESP + 0x8],EAX       ; 0051f99e

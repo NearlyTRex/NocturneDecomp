@@ -1,0 +1,420 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 177,
+    "complexity_score": 217,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 12,
+    "suspect_types": [
+      "self_copy_guard",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 254
+  },
+  "cross_references": [
+    {
+      "addr": "0052ddf0",
+      "from_addr": "0052e129",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058b4f0",
+    "address_range": [
+      [
+        "0058b4f0",
+        "0058b6ef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_weather.cpp_CWeather_setOriginAndRotation_FUN_0058b4f0",
+    "signature": "void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cf60"
+    },
+    {
+      "addr": "00537e90",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00537e90"
+    },
+    {
+      "addr": "00537e00",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00537e00"
+    },
+    {
+      "addr": "00535ee0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_00535ee0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ee5d2",
+      "name": "DAT_005ee5d2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ee5da",
+      "name": "DAT_005ee5da",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ee5e2",
+      "name": "DAT_005ee5e2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ee5ea",
+      "name": "DAT_005ee5ea",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ee5ee",
+      "name": "DAT_005ee5ee",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02661fb8",
+      "name": "DAT_02661fb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661fbc",
+      "name": "DAT_02661fbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661fc0",
+      "name": "DAT_02661fc0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052e129",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.954545454545454,
+    "instruction_count": 154,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CALLOTHER": 2,
+      "CBRANCH": 7,
+      "COPY": 324,
+      "FLOAT2FLOAT": 29,
+      "FLOAT_ADD": 8,
+      "FLOAT_MULT": 4,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 81,
+      "INT_AND": 45,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 44,
+      "INT_LESS": 10,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 22,
+      "INT_SUB": 29,
+      "INT_XOR": 1,
+      "LOAD": 43,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 51
+    },
+    "pcode_op_count": 763
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeather *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0058b4f9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0xc) = *(uint *)&direction->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x10) = *(uint *)&direction->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x18) = *(uint *)&rotation->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x1c) = *(uint *)&rotation->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_02661fb8",
+      "severity": "mild",
+      "text": "pfVar2 = (float *)&DAT_02661fb8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "(*(float *)&rotation->field_0x4 + (float)_DAT_005ee5e2,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&rotation->field_0x4 + (float)_DAT_005ee5da);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_34 = *(float *)&direction->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_30 = (float)(fVar5 * (float10)local_18 + (float10)*(float *)&direction->field_0x8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_50 != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 49,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_50 != &local_38) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_44 != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 54,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_44 != &local_38) {",
+      "type": "self_copy_guard"
+    }
+  ]
+}

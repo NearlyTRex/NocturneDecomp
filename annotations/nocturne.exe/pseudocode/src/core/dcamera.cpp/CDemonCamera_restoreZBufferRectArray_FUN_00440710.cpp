@@ -134,7 +134,7 @@ LAB_0044089a:
           piVar4 = (int *)(iVar7 + 0x140eba8);
           iVar7 = iVar7 + 4;
           iVar8 = iVar8 + 1;
-          core_dstrender_cpp_memcpyMMX_FUN_00465341
+          core_dstrendr_cpp_memcpyMMX_FUN_00465341
                     ((void *)(*(int *)((int)g_ZBufferScanlineArray + local_20) + *piVar1 * 4),
                      (void *)((int)this_ptr->zbuffer_aligned +
                              ((((int)local_18 - this_ptr->framebuffer_height) *

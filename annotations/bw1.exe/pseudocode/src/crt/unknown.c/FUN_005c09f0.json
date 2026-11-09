@@ -1,0 +1,541 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 30,
+    "cross_reference_count": 76,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "00438bd0",
+      "from_addr": "00438d2d",
+      "name": "cockpit_ckptutil.c_FUN_00438bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043a200",
+      "from_addr": "0043a2dc",
+      "name": "cockpit_ckptutil.c_FUN_0043a200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537550",
+      "from_addr": "00537576",
+      "name": "cockpit_pkbitmap.cpp_FUN_00537550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537c30",
+      "from_addr": "00537c7f",
+      "name": "cockpit_pkbitmap.cpp_FUN_00537c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537cb0",
+      "from_addr": "00537ce1",
+      "name": "cockpit_pkbitmap.cpp_FUN_00537cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538b2e",
+      "from_addr": "00538d13",
+      "name": "cockpit_pkbmpset.cpp_FUN_00538b2e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538db0",
+      "from_addr": "00538e84",
+      "name": "cockpit_pkbmpset.cpp_FUN_00538db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044cdf0",
+      "from_addr": "0044ce40",
+      "name": "core_dcamera.cpp_CDemonCamera_free_FUN_0044cdf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00457d70",
+      "from_addr": "00457d9d",
+      "name": "core_dcube.cpp_FUN_00457d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045da10",
+      "from_addr": "0045da1f",
+      "name": "core_dfilter.cpp_CDemonFilter_freeMemory_FUN_0045da10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045dd90",
+      "from_addr": "0045dd9f",
+      "name": "core_dfilter.cpp_FUN_0045dd90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045f100",
+      "from_addr": "0045f112",
+      "name": "core_dimage.cpp_FUN_0045f100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00462670",
+      "from_addr": "00462694",
+      "name": "core_dlight.cpp_FUN_00462670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00479ae0",
+      "from_addr": "00479af6",
+      "name": "core_dpart.cpp_FUN_00479ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00479b22",
+      "from_addr": "00479b23",
+      "name": "core_dpart.cpp_FUN_00479b22",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048a9b0",
+      "from_addr": "0048aa22",
+      "name": "core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_0048a9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba78e",
+      "from_addr": "004ba7ab",
+      "name": "core_fldnotes.cpp_FUN_004ba78e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb1c0",
+      "from_addr": "004bb1fa",
+      "name": "core_fldnotes.cpp_FUN_004bb1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bc250",
+      "from_addr": "004bc2af",
+      "name": "core_fldnotes.cpp_FUN_004bc250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8e50",
+      "from_addr": "004d9227",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d77d0",
+      "from_addr": "004d7db6",
+      "name": "core_game.cpp_FUN_004d77d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e72e0",
+      "from_addr": "004e72fd",
+      "name": "core_ground.cpp_CGround_free_FUN_004e72e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522170",
+      "from_addr": "005221a3",
+      "name": "core_morph.cpp_CMorphModel_free_FUN_00522170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00543740",
+      "from_addr": "00543778",
+      "name": "core_script.cpp_FUN_00543740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00543790",
+      "from_addr": "005437b6",
+      "name": "core_script.cpp_FUN_00543790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055c100",
+      "from_addr": "0055c11c",
+      "name": "core_setutil.cpp_C3DSCamera_free_FUN_0055c100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c0e40",
+      "from_addr": "005c0ec5",
+      "name": "crt_stdio.c_fclose_FUN_005c0e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c2500",
+      "from_addr": "005c2571",
+      "name": "crt_stdlib.c__fullpath_FUN_005c2500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c0344",
+      "from_addr": "005c034e",
+      "name": "crt_unknown.c_FUN_005c0344",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c53e8",
+      "from_addr": "005c53f5",
+      "name": "crt_unknown.c_FUN_005c53e8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c6b18",
+      "from_addr": "005c6b2a",
+      "name": "crt_unknown.c_FUN_005c6b18",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c8de0",
+      "from_addr": "005c8deb",
+      "name": "crt_unknown.c_FUN_005c8de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040d1c0",
+      "from_addr": "0040d1d5",
+      "name": "engine_alphabit.cpp_FUN_0040d1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0fa0",
+      "from_addr": "004c0fed",
+      "name": "engine_font.cpp_FUN_004c0fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c1830",
+      "from_addr": "004c187e",
+      "name": "engine_font.cpp_FUN_004c1830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00514cf0",
+      "from_addr": "00514d04",
+      "name": "engine_mini3d.cpp_FUN_00514cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f8a0",
+      "from_addr": "0051f901",
+      "name": "engine_model.c_FUN_0051f8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053be30",
+      "from_addr": "0053be9f",
+      "name": "engine_pod.cpp_CPodFile_cleanup_FUN_0053be30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005965d0",
+      "from_addr": "00596608",
+      "name": "engine_texture.cpp_FUN_005965d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00596680",
+      "from_addr": "005966cd",
+      "name": "engine_texture.cpp_FUN_00596680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00596f30",
+      "from_addr": "00596f69",
+      "name": "engine_texture.cpp_FUN_00596f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597000",
+      "from_addr": "00597036",
+      "name": "engine_texture.cpp_FUN_00597000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597d6e",
+      "from_addr": "005981a2",
+      "name": "engine_texture.cpp_FUN_00597d6e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493bd0",
+      "from_addr": "00493c11",
+      "name": "shape_edittool.cpp_CEditorTools_dtor_FUN_00493bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496df0",
+      "from_addr": "00496ec0",
+      "name": "shape_edittool.cpp_CEditorTools_popWindowState_FUN_00496df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499470",
+      "from_addr": "00499494",
+      "name": "shape_edittool.cpp_CStrList_clear_FUN_00499470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499730",
+      "from_addr": "00499791",
+      "name": "shape_edittool.cpp_CStrList_remove_FUN_00499730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049c370",
+      "from_addr": "0049c3ab",
+      "name": "shape_edittool.cpp_FUN_0049c370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b100",
+      "from_addr": "0052b155",
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_0052b100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00525ab0",
+      "from_addr": "00525acc",
+      "name": "sound_mp3.cpp_FUN_00525ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052af80",
+      "from_addr": "0052afc9",
+      "name": "sound_mp3.cpp_FUN_0052af80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056f630",
+      "from_addr": "0056f648",
+      "name": "sound_sndmain.cpp_FUN_0056f630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570130",
+      "from_addr": "00570142",
+      "name": "sound_sndmain.cpp_FUN_00570130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442fb0",
+      "from_addr": "00442fcb",
+      "name": "support_codec.cpp_FUN_00442fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00443f00",
+      "from_addr": "00443f7e",
+      "name": "support_codec.cpp_FUN_00443f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a0e80",
+      "from_addr": "005a0eab",
+      "name": "support_trstream.cpp_FUN_005a0e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a1400",
+      "from_addr": "005a1438",
+      "name": "support_trstream.cpp_FUN_005a1400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a1d20",
+      "from_addr": "005a1d51",
+      "name": "support_trstream.cpp_FUN_005a1d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba760",
+      "from_addr": "004ba778",
+      "name": "unkaddr_004b9ab0.cpp_FUN_004ba760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cde20",
+      "from_addr": "005cde55",
+      "name": "unkafter_2d.cpp_FUN_005cde20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ce510",
+      "from_addr": "005ce5d0",
+      "name": "unkafter_2d.cpp_FUN_005ce510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ce880",
+      "from_addr": "005ce90d",
+      "name": "unkafter_2d.cpp_FUN_005ce880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cefe4",
+      "from_addr": "005cf076",
+      "name": "unkafter_2d.cpp_FUN_005cefe4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523910",
+      "from_addr": "00523931",
+      "name": "unkafter_box.cpp_FUN_00523910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051104e",
+      "from_addr": "00511089",
+      "name": "unkafter_minecar.cpp_FUN_0051104e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ca9f4",
+      "from_addr": "005caa23",
+      "name": "unkafter_zombie.cpp_FUN_005ca9f4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cacd8",
+      "from_addr": "005cad10",
+      "name": "unkafter_zombie.cpp_FUN_005cacd8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005caf60",
+      "from_addr": "005cafba",
+      "name": "unkafter_zombie.cpp_FUN_005caf60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cc8b0",
+      "from_addr": "005cc981",
+      "name": "unkafter_zombie.cpp_FUN_005cc8b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cc99c",
+      "from_addr": "005cc9ae",
+      "name": "unkafter_zombie.cpp_FUN_005cc99c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cce60",
+      "from_addr": "005cce91",
+      "name": "unkafter_zombie.cpp_FUN_005cce60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ccecc",
+      "from_addr": "005ccef7",
+      "name": "unkafter_zombie.cpp_FUN_005ccecc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ccf44",
+      "from_addr": "005ccf5d",
+      "name": "unkafter_zombie.cpp_FUN_005ccf44",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005abfec",
+      "from_addr": "005ac00b",
+      "name": "wincore_wddvmem.cpp_FUN_005abfec",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ac1b0",
+      "from_addr": "005ac1cc",
+      "name": "wincore_wddvmem.cpp_FUN_005ac1b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ac300",
+      "from_addr": "005ac3bd",
+      "name": "wincore_wddvmem.cpp_FUN_005ac300",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c09f0",
+    "address_range": [
+      [
+        "005c09f0",
+        "005c09fd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c09f0",
+    "signature": "void crt_unknown_c_FUN_005c09f0(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c0a00",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0a00"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 2,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 21
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_005c09f0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_005c0a00(param_1);",
+      "type": "unnamed_param"
+    }
+  ]
+}

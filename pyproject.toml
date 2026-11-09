@@ -45,10 +45,8 @@ patch = ["subprocess"]
 omit = [
     "recreation/cmake/tidy.py",
     "scripts/Python/actor_class_tree.py",
-    "scripts/Python/add_cave_section.py",
     "scripts/Python/add_missing_string_references.py",
     "scripts/Python/add_runtime_heap_block.py",
-    "scripts/Python/analyze_calling_conventions.py",
     "scripts/Python/analyze_crt_functions.py",
     "scripts/Python/apply_apidll_signatures.py",
     "scripts/Python/apply_crt_signatures.py",
@@ -57,7 +55,6 @@ omit = [
     "scripts/Python/audit_ghidra_fixups.py",
     "scripts/Python/audit_transferred_signatures.py",
     "scripts/Python/audit_vtable_typing.py",
-    "scripts/Python/automap_preview.py",
     "scripts/Python/check_authentic_flags.py",
     "scripts/Python/check_keep_signatures.py",
     "scripts/Python/check_stale_keeps.py",
@@ -72,24 +69,19 @@ omit = [
     "scripts/Python/delete_function.py",
     "scripts/Python/derive_struct_drift.py",
     "scripts/Python/derive_vtable_contract.py",
-    "scripts/Python/detect_ecx_clobber.py",
     "scripts/Python/dethunk_function.py",
-    "scripts/Python/diagnose_badspacebase.py",
     "scripts/Python/diff_functions.py",
     "scripts/Python/diff_line_pins.py",
     "scripts/Python/diff_sibling_layout.py",
     "scripts/Python/disassemble_function.py",
     "scripts/Python/dropped_store_report.py",
-    "scripts/Python/dump_body_holes.py",
     "scripts/Python/dump_skl_motions.py",
     "scripts/Python/emit_layouts_json.py",
     "scripts/Python/emit_struct_drift_spec.py",
-    "scripts/Python/export_annotations.py",
     "scripts/Python/extract_crt_catalog.py",
     "scripts/Python/extract_line_pins.py",
     "scripts/Python/extract_pod.py",
     "scripts/Python/find_code_caves.py",
-    "scripts/Python/find_dead_functions.py",
     "scripts/Python/find_hidden_functions.py",
     "scripts/Python/find_junk_functions.py",
     "scripts/Python/find_missing_functions.py",
@@ -103,29 +95,7 @@ omit = [
     "scripts/Python/fix_this_ptr.py",
     "scripts/Python/fix_vtable_structs.py",
     "scripts/Python/generate_esp_to_ebp_patches.py",
-    "scripts/Python/generate_pcode_overrides.py",
     "scripts/Python/gen_struct_layout_checks.py",
-    "scripts/Python/ghidra_annotations/annotations/applied_arrays.py",
-    "scripts/Python/ghidra_annotations/annotations/applied_basic_types.py",
-    "scripts/Python/ghidra_annotations/annotations/applied_enums.py",
-    "scripts/Python/ghidra_annotations/annotations/applied_pointers.py",
-    "scripts/Python/ghidra_annotations/annotations/applied_strings.py",
-    "scripts/Python/ghidra_annotations/annotations/applied_structs.py",
-    "scripts/Python/ghidra_annotations/annotations/applied_unions.py",
-    "scripts/Python/ghidra_annotations/annotations/bookmarks.py",
-    "scripts/Python/ghidra_annotations/annotations/call_overrides.py",
-    "scripts/Python/ghidra_annotations/annotations/code_caves.py",
-    "scripts/Python/ghidra_annotations/annotations/comments.py",
-    "scripts/Python/ghidra_annotations/annotations/cross_references.py",
-    "scripts/Python/ghidra_annotations/annotations/data_types.py",
-    "scripts/Python/ghidra_annotations/annotations/entry_points.py",
-    "scripts/Python/ghidra_annotations/annotations/equates.py",
-    "scripts/Python/ghidra_annotations/annotations/external_imports.py",
-    "scripts/Python/ghidra_annotations/annotations/functions.py",
-    "scripts/Python/ghidra_annotations/annotations/__init__.py",
-    "scripts/Python/ghidra_annotations/annotations/memory_layout.py",
-    "scripts/Python/ghidra_annotations/annotations/metadata.py",
-    "scripts/Python/ghidra_annotations/annotations/pass_by_value_candidates.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/actor_cast_report.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/adjacency_sentinel_transform.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/adj_report.py",
@@ -156,7 +126,6 @@ omit = [
     "scripts/Python/ghidra_annotations/annotations/pseudocode/pass_by_value.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/pcode.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/proto.py",
-    "scripts/Python/ghidra_annotations/annotations/pseudocode.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/render_flags_transform.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/shim_compile.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/stack_patterns.py",
@@ -172,15 +141,6 @@ omit = [
     "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/_structtypes.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/transforms.py",
     "scripts/Python/ghidra_annotations/annotations/pseudocode/vtable_calls.py",
-    "scripts/Python/ghidra_annotations/annotations/recreation.py",
-    "scripts/Python/ghidra_annotations/annotations/size_mismatches.py",
-    "scripts/Python/ghidra_annotations/annotations/switch_tables.py",
-    "scripts/Python/ghidra_annotations/annotations/symbols_class.py",
-    "scripts/Python/ghidra_annotations/annotations/symbols_label.py",
-    "scripts/Python/ghidra_annotations/annotations/symbols_namespace.py",
-    "scripts/Python/ghidra_annotations/annotations/type_info.py",
-    "scripts/Python/ghidra_annotations/annotations/vtables.py",
-    "scripts/Python/import_annotations.py",
     "scripts/Python/import_datatypes.py",
     "scripts/Python/import_sibling_types.py",
     "scripts/Python/make_sibling_anchors.py",
@@ -188,7 +148,6 @@ omit = [
     "scripts/Python/map_factory_pairs.py",
     "scripts/Python/map_sibling_functions.py",
     "scripts/Python/map_vtable_slots.py",
-    "scripts/Python/name_array_destructors.py",
     "scripts/Python/name_crt_functions.py",
     "scripts/Python/name_functions_from_file_literals.py",
     "scripts/Python/name_vtable_slot_functions.py",
@@ -197,19 +156,14 @@ omit = [
     "scripts/Python/order_holdout_test.py",
     "scripts/Python/recreation_itinerary.py",
     "scripts/Python/refresh_sibling_mapping.py",
-    "scripts/Python/regenerate_charts.py",
-    "scripts/Python/remove_pcode_overrides.py",
     "scripts/Python/rename_3d_render_handlers.py",
     "scripts/Python/repair_broken_signatures.py",
     "scripts/Python/report_sibling_gaps.py",
     "scripts/Python/scaffold_recreation.py",
     "scripts/Python/shift_struct_fields.py",
-    "scripts/Python/sibling_match.py",
     "scripts/Python/snapshot_project.py",
     "scripts/Python/strip_unused_locals.py",
-    "scripts/Python/sync_annotations.py",
     "scripts/Python/sync_keep_names.py",
-    "scripts/Python/test_decompile_scenarios.py",
     "scripts/Python/test_suspects.py",
     "scripts/Python/transfer_custom_storage.py",
     "scripts/Python/tu_anchor.py",
@@ -218,7 +172,6 @@ omit = [
     "scripts/Python/validate_sibling_mapping.py",
     "scripts/Python/verify_globals.py",
     "scripts/Python/verify_headers.py",
-    "scripts/Python/verify_line_pins.py",
     "scripts/Python/verify_sibling_signatures.py",
     "scripts/Python/vtable_holdout_test.py",
     "scripts/Python/wall_off_crt.py",
@@ -240,10 +193,8 @@ select = ["E4", "E7", "E9", "F"]
 # Not yet cleaned up; mirrors [tool.coverage.run] omit, and shrinks with it
 "recreation/cmake/tidy.py" = ["E", "F"]
 "scripts/Python/actor_class_tree.py" = ["E", "F"]
-"scripts/Python/add_cave_section.py" = ["E", "F"]
 "scripts/Python/add_missing_string_references.py" = ["E", "F"]
 "scripts/Python/add_runtime_heap_block.py" = ["E", "F"]
-"scripts/Python/analyze_calling_conventions.py" = ["E", "F"]
 "scripts/Python/analyze_crt_functions.py" = ["E", "F"]
 "scripts/Python/apply_apidll_signatures.py" = ["E", "F"]
 "scripts/Python/apply_crt_signatures.py" = ["E", "F"]
@@ -252,7 +203,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/audit_ghidra_fixups.py" = ["E", "F"]
 "scripts/Python/audit_transferred_signatures.py" = ["E", "F"]
 "scripts/Python/audit_vtable_typing.py" = ["E", "F"]
-"scripts/Python/automap_preview.py" = ["E", "F"]
 "scripts/Python/check_authentic_flags.py" = ["E", "F"]
 "scripts/Python/check_keep_signatures.py" = ["E", "F"]
 "scripts/Python/check_stale_keeps.py" = ["E", "F"]
@@ -267,24 +217,19 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/delete_function.py" = ["E", "F"]
 "scripts/Python/derive_struct_drift.py" = ["E", "F"]
 "scripts/Python/derive_vtable_contract.py" = ["E", "F"]
-"scripts/Python/detect_ecx_clobber.py" = ["E", "F"]
 "scripts/Python/dethunk_function.py" = ["E", "F"]
-"scripts/Python/diagnose_badspacebase.py" = ["E", "F"]
 "scripts/Python/diff_functions.py" = ["E", "F"]
 "scripts/Python/diff_line_pins.py" = ["E", "F"]
 "scripts/Python/diff_sibling_layout.py" = ["E", "F"]
 "scripts/Python/disassemble_function.py" = ["E", "F"]
 "scripts/Python/dropped_store_report.py" = ["E", "F"]
-"scripts/Python/dump_body_holes.py" = ["E", "F"]
 "scripts/Python/dump_skl_motions.py" = ["E", "F"]
 "scripts/Python/emit_layouts_json.py" = ["E", "F"]
 "scripts/Python/emit_struct_drift_spec.py" = ["E", "F"]
-"scripts/Python/export_annotations.py" = ["E", "F"]
 "scripts/Python/extract_crt_catalog.py" = ["E", "F"]
 "scripts/Python/extract_line_pins.py" = ["E", "F"]
 "scripts/Python/extract_pod.py" = ["E", "F"]
 "scripts/Python/find_code_caves.py" = ["E", "F"]
-"scripts/Python/find_dead_functions.py" = ["E", "F"]
 "scripts/Python/find_hidden_functions.py" = ["E", "F"]
 "scripts/Python/find_junk_functions.py" = ["E", "F"]
 "scripts/Python/find_missing_functions.py" = ["E", "F"]
@@ -298,29 +243,7 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/fix_this_ptr.py" = ["E", "F"]
 "scripts/Python/fix_vtable_structs.py" = ["E", "F"]
 "scripts/Python/generate_esp_to_ebp_patches.py" = ["E", "F"]
-"scripts/Python/generate_pcode_overrides.py" = ["E", "F"]
 "scripts/Python/gen_struct_layout_checks.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/applied_arrays.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/applied_basic_types.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/applied_enums.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/applied_pointers.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/applied_strings.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/applied_structs.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/applied_unions.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/bookmarks.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/call_overrides.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/code_caves.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/comments.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/cross_references.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/data_types.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/entry_points.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/equates.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/external_imports.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/functions.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/__init__.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/memory_layout.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/metadata.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pass_by_value_candidates.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/actor_cast_report.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/adjacency_sentinel_transform.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/adj_report.py" = ["E", "F"]
@@ -351,7 +274,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/pass_by_value.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/pcode.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/proto.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/pseudocode.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/render_flags_transform.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/shim_compile.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/stack_patterns.py" = ["E", "F"]
@@ -367,15 +289,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/suspects/_structtypes.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/transforms.py" = ["E", "F"]
 "scripts/Python/ghidra_annotations/annotations/pseudocode/vtable_calls.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/recreation.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/size_mismatches.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/switch_tables.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/symbols_class.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/symbols_label.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/symbols_namespace.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/type_info.py" = ["E", "F"]
-"scripts/Python/ghidra_annotations/annotations/vtables.py" = ["E", "F"]
-"scripts/Python/import_annotations.py" = ["E", "F"]
 "scripts/Python/import_datatypes.py" = ["E", "F"]
 "scripts/Python/import_sibling_types.py" = ["E", "F"]
 "scripts/Python/make_sibling_anchors.py" = ["E", "F"]
@@ -383,7 +296,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/map_factory_pairs.py" = ["E", "F"]
 "scripts/Python/map_sibling_functions.py" = ["E", "F"]
 "scripts/Python/map_vtable_slots.py" = ["E", "F"]
-"scripts/Python/name_array_destructors.py" = ["E", "F"]
 "scripts/Python/name_crt_functions.py" = ["E", "F"]
 "scripts/Python/name_functions_from_file_literals.py" = ["E", "F"]
 "scripts/Python/name_vtable_slot_functions.py" = ["E", "F"]
@@ -392,19 +304,14 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/order_holdout_test.py" = ["E", "F"]
 "scripts/Python/recreation_itinerary.py" = ["E", "F"]
 "scripts/Python/refresh_sibling_mapping.py" = ["E", "F"]
-"scripts/Python/regenerate_charts.py" = ["E", "F"]
-"scripts/Python/remove_pcode_overrides.py" = ["E", "F"]
 "scripts/Python/rename_3d_render_handlers.py" = ["E", "F"]
 "scripts/Python/repair_broken_signatures.py" = ["E", "F"]
 "scripts/Python/report_sibling_gaps.py" = ["E", "F"]
 "scripts/Python/scaffold_recreation.py" = ["E", "F"]
 "scripts/Python/shift_struct_fields.py" = ["E", "F"]
-"scripts/Python/sibling_match.py" = ["E", "F"]
 "scripts/Python/snapshot_project.py" = ["E", "F"]
 "scripts/Python/strip_unused_locals.py" = ["E", "F"]
-"scripts/Python/sync_annotations.py" = ["E", "F"]
 "scripts/Python/sync_keep_names.py" = ["E", "F"]
-"scripts/Python/test_decompile_scenarios.py" = ["E", "F"]
 "scripts/Python/test_suspects.py" = ["E", "F"]
 "scripts/Python/transfer_custom_storage.py" = ["E", "F"]
 "scripts/Python/tu_anchor.py" = ["E", "F"]
@@ -413,7 +320,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/validate_sibling_mapping.py" = ["E", "F"]
 "scripts/Python/verify_globals.py" = ["E", "F"]
 "scripts/Python/verify_headers.py" = ["E", "F"]
-"scripts/Python/verify_line_pins.py" = ["E", "F"]
 "scripts/Python/verify_sibling_signatures.py" = ["E", "F"]
 "scripts/Python/vtable_holdout_test.py" = ["E", "F"]
 "scripts/Python/wall_off_crt.py" = ["E", "F"]

@@ -1,0 +1,517 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 326,
+    "cross_reference_count": 10,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 26,
+    "suspect_types": [
+      "negative_offset",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 129
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b88ee",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3cd0",
+      "from_addr": "004b3d13",
+      "name": "core_game.cpp_staticInit_FUN_004b3cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e94f0",
+      "from_addr": "004e9c02",
+      "name": "core_menu.cpp_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eae80",
+      "from_addr": "004ebd0d",
+      "name": "core_menu.cpp_FUN_004eae80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7a20",
+      "from_addr": "004f7a33",
+      "name": "core_mission.cpp_FUN_004f7a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005286b0",
+      "from_addr": "005286b5",
+      "name": "core_script.cpp_staticInit_FUN_005286b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00560c90",
+      "from_addr": "00560c9c",
+      "name": "core_sound.cpp_FUN_00560c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00513d1e",
+      "from_addr": "00513e82",
+      "name": "engine_pod.cpp_FUN_00513d1e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047db70",
+      "from_addr": "0047db84",
+      "name": "shape_edittool.cpp_FUN_0047db70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dd1e",
+      "from_addr": "0047ddcc",
+      "name": "shape_edittool.cpp_FUN_0047dd1e",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004831c0",
+    "address_range": [
+      [
+        "004831c0",
+        "004832af"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_ctor_FUN_004831c0",
+    "signature": "CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_004831c0(CPickList *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00486020",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdButton_ctor_FUN_00486020"
+    },
+    {
+      "addr": "00485510",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_ctor_FUN_00485510"
+    },
+    {
+      "addr": "00481f20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_00481f20"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bd6c2",
+      "name": "DAT_005bd6c2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bd6c5",
+      "name": "s_Cancel_005bd6c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df044",
+      "name": "g_CPickListVTable",
+      "type": "undefined1*",
+      "value": "004832b0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 11,
+    "call_sites": [
+      {
+        "call_addr": "0047db84",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047db70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b88ee",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b8dc4",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f7a33",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004f7a20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ebd0d",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e9c02",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004e94f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00560c9c",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_00560c90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b3d13",
+        "call_type": "direct",
+        "caller": "core_game.cpp_staticInit_FUN_004b3cd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005286b5",
+        "call_type": "direct",
+        "caller": "core_script.cpp_staticInit_FUN_005286b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047ddcc",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047dd1e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.294117647058823,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 45,
+      "INT_ADD": 36,
+      "INT_AND": 34,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 34,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 17,
+      "INT_SUB": 21,
+      "LOAD": 11,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 292
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "((CEdScrollBar *)&pCVar2[0x1b].field_0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar4[-4].",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar4[-4].field_0xc4 = &g_CPickListVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0xc4",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar4[-4].field_0xc4 = &g_CPickListVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar4[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xe0 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0xe0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xe0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar4[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0x9c = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x9c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0x9c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar4[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xa0 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0xa0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xa0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar4[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xa4 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xa4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xa4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "pCVar4[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xa8 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0xa8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-2].field_0xa8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005bd6c2",
+      "severity": "mild",
+      "text": "pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005bd6c2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 25,
+      "match": "pCVar4[-3].",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-3].field_0x30;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-3].field_0x30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar4[-3].",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-3].field_0x94;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x94",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-3].field_0x94;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 46,
+      "match": "pCVar4[-3].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-3].field_0x28 = 0xffffffff;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-3].field_0x28 = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 47,
+      "match": "pCVar4[-3].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-3].field_0x2c = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-3].field_0x2c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 48,
+      "match": "pCVar4[-4].",
+      "severity": "mild",
+      "text": "return (CPickList *)&pCVar4[-4].field_0xb8;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0xb8",
+      "severity": "mild",
+      "text": "return (CPickList *)&pCVar4[-4].field_0xb8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 26,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 37,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPickList",
+        "offset": 0,
+        "vtable_addr": "005df0c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

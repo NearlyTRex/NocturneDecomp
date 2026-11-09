@@ -1,0 +1,316 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 221,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 14,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 144
+  },
+  "cross_references": [
+    {
+      "addr": "0045f9d0",
+      "from_addr": "0045fadd",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "004649dd",
+    "address_range": [
+      [
+        "004649dd",
+        "00464afb"
+      ]
+    ],
+    "convention": "__edi_esi_ebx",
+    "name": "core_dstrendr.cpp_renderTexturedDecalMMXScanline_FUN_004649dd",
+    "signature": "void __edi_esi_ebx core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_004649dd(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005b06b8",
+      "name": "DAT_005b06b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06bc",
+      "name": "DAT_005b06bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06c4",
+      "name": "DAT_005b06c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06d4",
+      "name": "DAT_005b06d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06d8",
+      "name": "DAT_005b06d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06dc",
+      "name": "DAT_005b06dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06e0",
+      "name": "DAT_005b06e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06e4",
+      "name": "DAT_005b06e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b06e8",
+      "name": "DAT_005b06e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bf550",
+      "name": "g_TextureShift1",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "005bf570",
+      "name": "g_TextureShift2",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "005bf590",
+      "name": "g_TextureMask1",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "005bf5b0",
+      "name": "g_TextureMask2",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "01bd2fa0",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01bd4260",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
+      "value": null
+    },
+    {
+      "addr": "01c00024",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "01c00c84",
+      "name": "g_ReciprocalLookupTable[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c02580",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2465753424657535,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CBRANCH": 4,
+      "COPY": 54,
+      "INT_ADD": 29,
+      "INT_AND": 71,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 37,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 15,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 9,
+      "INT_SLESS": 21,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "INT_ZEXT": 3,
+      "LOAD": 20,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 4,
+      "SUBPIECE": 7
+    },
+    "pcode_op_count": 383
+  },
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(void *)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "DAT_005b06e0 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005b06e0",
+      "severity": "mild",
+      "text": "DAT_005b06e0 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_005b06e4",
+      "severity": "mild",
+      "text": "DAT_005b06e4 = iVar2 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005b06e8",
+      "severity": "mild",
+      "text": "DAT_005b06e8 = g_ZBufferScanlineArray[scanline_y] + uVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005b06b8",
+      "severity": "mild",
+      "text": "DAT_005b06b8 = uVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_005b06bc",
+      "severity": "mild",
+      "text": "DAT_005b06bc = uVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_005b06c4",
+      "severity": "mild",
+      "text": "DAT_005b06c4 = iVar6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(int *)((int)DAT_005b06e8",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)DAT_005b06e8 + uVar1) <= iVar6) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_005b06e8",
+      "severity": "mild",
+      "text": "if (*(int *)((int)DAT_005b06e8 + uVar1) <= iVar6) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)DAT_005b06e0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)DAT_005b06e0 + uVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_005b06e0",
+      "severity": "mild",
+      "text": "*(uint *)((int)DAT_005b06e0 + uVar1) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005b06e4",
+      "severity": "mild",
+      "text": "if (DAT_005b06e4 < uVar1) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[scanline_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)g_ScreenBufferArray[scanline_y]",
+      "severity": "moderate",
+      "text": "DAT_005b06e0 = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

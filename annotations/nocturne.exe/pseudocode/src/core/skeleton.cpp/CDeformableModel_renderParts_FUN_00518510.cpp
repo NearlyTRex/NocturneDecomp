@@ -168,9 +168,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeform
                        (SMRGLTextureBasic *)(local_94 + *(int *)local_12c.vertices[7].texture_v));
           }
           core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0
-                    (g_CDemonSet_PTR_005be368,
-                     (SInputFace *)(local_b0 * 0x12 + *(int *)(local_90 + 0x7c)),iVar9 - local_b0,
-                     render_flags);
+                    (g_CDemonSetPtr,(SInputFace *)(local_b0 * 0x12 + *(int *)(local_90 + 0x7c)),
+                     iVar9 - local_b0,render_flags);
         }
         else {
           local_68 = -NAN;
@@ -195,8 +194,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeform
                 local_68 = fVar2;
               }
               core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0
-                        (g_CDemonSet_PTR_005be368,
-                         (SInputFace *)(local_40 * 0x12 + *(int *)(local_90 + 0x7c)),
+                        (g_CDemonSetPtr,(SInputFace *)(local_40 * 0x12 + *(int *)(local_90 + 0x7c)),
                          iVar7 - local_40,render_flags);
               local_40 = iVar7;
             } while (iVar7 < iVar9);
@@ -239,7 +237,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_00518510(CDeform
               local_64 = fVar2;
             }
             core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0
-                      (g_CDemonSet_PTR_005be368,local_6c,1,render_flags);
+                      (g_CDemonSetPtr,local_6c,1,render_flags);
           }
           iVar9 = iVar9 + 1;
           local_48 = (float)((int)local_48 + 0x12);

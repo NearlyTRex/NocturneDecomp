@@ -95,10 +95,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float d
   local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-0.05,0.05);
   pfVar2 = &(this_ptr->drift).z;
   *pfVar2 = local_14 + *pfVar2;
-  pCVar5 = g_CDemonSet_PTR_005be368;
+  pCVar5 = g_CDemonSetPtr;
   local_d0 = 0x40800000;
   local_cc = 0;
-  pCVar9 = &(g_CDemonSet_PTR_005be368->active_fog).scroll;
+  pCVar9 = &(g_CDemonSetPtr->active_fog).scroll;
   local_c8 = 0;
   if (pCVar9 != (CVector3f *)&local_d0) {
     pCVar9->x = 4.0;
@@ -107,9 +107,9 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float d
   }
   fVar7 = this_ptr->animation_timer - delta_time;
   this_ptr->animation_timer = fVar7;
-  pCVar5 = g_CDemonSet_PTR_005be368;
+  pCVar5 = g_CDemonSetPtr;
   if (fVar7 <= 0.0) {
-    pCVar9 = &(g_CDemonSet_PTR_005be368->active_fog).scroll;
+    pCVar9 = &(g_CDemonSetPtr->active_fog).scroll;
     if (&this_ptr->drift_target != pCVar9) {
       (this_ptr->drift_target).x = pCVar9->x;
       (this_ptr->drift_target).y = (pCVar5->active_fog).scroll.y;
@@ -125,10 +125,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float d
     this_ptr->animation_timer = fVar7;
   }
   pCVar9 = &this_ptr->drift_target;
-  local_28 = (g_CDemonSet_PTR_005be368->active_fog).scroll.x - pCVar9->x;
-  local_24 = (g_CDemonSet_PTR_005be368->active_fog).scroll.y - (this_ptr->drift_target).y;
+  local_28 = (g_CDemonSetPtr->active_fog).scroll.x - pCVar9->x;
+  local_24 = (g_CDemonSetPtr->active_fog).scroll.y - (this_ptr->drift_target).y;
   local_ac = local_28 * 0.05f;
-  local_20 = (g_CDemonSet_PTR_005be368->active_fog).scroll.z - (this_ptr->drift_target).z;
+  local_20 = (g_CDemonSetPtr->active_fog).scroll.z - (this_ptr->drift_target).z;
   local_a8 = local_24 * 0.05f;
   local_a4 = local_20 * 0.05f;
   pCVar8 = &this_ptr->drift;
@@ -195,7 +195,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float d
   local_34.y = (this_ptr->acceleration).y * delta_time;
   local_34.z = delta_time * (this_ptr->acceleration).z;
   local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                       (g_CDemonSet_PTR_005be368,(this_ptr->base).location.position.x,
+                       (g_CDemonSetPtr,(this_ptr->base).location.position.x,
                         (this_ptr->base).location.position.z,local_58,local_50,
                         this_ptr->collision_radius,this_ptr->collision_bottom_y,
                         this_ptr->collision_top_y);
@@ -213,7 +213,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_00546e10(CTrash *this_ptr,float d
   (this_ptr->base).location.position.y = fVar7 + local_54;
   (this_ptr->base).location.position.z = fVar3 + local_50;
   local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                       (g_CDemonSet_PTR_005be368,&pCVar1->position,
+                       (g_CDemonSetPtr,&pCVar1->position,
                         this_ptr->collision_radius * (float)0.90000000000000002);
   if (local_1c <= (this_ptr->base).location.position.y) {
     if (!bVar4) goto LAB_005474f0;

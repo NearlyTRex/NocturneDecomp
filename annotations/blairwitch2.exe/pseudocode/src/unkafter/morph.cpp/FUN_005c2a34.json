@@ -1,0 +1,227 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 117,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 8,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 51
+  },
+  "cross_references": [
+    {
+      "addr": "005c68a8",
+      "from_addr": "005c68be",
+      "name": "unkafter_2d.cpp_FUN_005c68a8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c2a88",
+      "from_addr": "005c2a8a",
+      "name": "unkafter_morph.cpp_FUN_005c2a88",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c2a34",
+    "address_range": [
+      [
+        "005c2a34",
+        "005c2a87"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_morph.cpp_FUN_005c2a34",
+    "signature": "void unkafter_morph_cpp_FUN_005c2a34(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004a",
+      "is_variadic": false,
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "EXTERNAL:0000009c",
+      "is_variadic": false,
+      "name": "TlsGetValue"
+    },
+    {
+      "addr": "EXTERNAL:0000009d",
+      "is_variadic": false,
+      "name": "TlsSetValue"
+    },
+    {
+      "addr": "005c4bcc",
+      "is_variadic": false,
+      "name": "unkafter_morph.cpp_FUN_005c4bcc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c850c",
+      "name": "PTR_CloseHandle_005c850c",
+      "type": "void*",
+      "value": "001c8c32"
+    },
+    {
+      "addr": "005c8654",
+      "name": "PTR_TlsGetValue_005c8654",
+      "type": "void*",
+      "value": "001c922a"
+    },
+    {
+      "addr": "005c8658",
+      "name": "PTR_TlsSetValue_005c8658",
+      "type": "void*",
+      "value": "001c9238"
+    },
+    {
+      "addr": "0061f2a0",
+      "name": "DAT_0061f2a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005c68be",
+        "call_type": "direct",
+        "caller": "unkafter_2d.cpp_FUN_005c68a8",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005c2a8a",
+        "call_type": "direct",
+        "caller": "unkafter_morph.cpp_FUN_005c2a88",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 3,
+      "CBRANCH": 4,
+      "COPY": 24,
+      "INT_ADD": 7,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 13,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void unkafter_morph_cpp_FUN_005c2a34(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_0061f2a0",
+      "severity": "mild",
+      "text": "if (DAT_0061f2a0 != -1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0061f2a0",
+      "severity": "mild",
+      "text": "pvVar1 = TlsGetValue(DAT_0061f2a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(HANDLE *)((int)pvVar1",
+      "severity": "moderate",
+      "text": "hObject = *(HANDLE *)((int)pvVar1 + 0xde);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(uint *)((int)pvVar1",
+      "severity": "moderate",
+      "text": "unkafter_morph_cpp_FUN_005c4bcc(*(uint *)((int)pvVar1 + 0xda));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0061f2a0",
+      "severity": "mild",
+      "text": "TlsSetValue(DAT_0061f2a0,(LPVOID)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((hObject != (HANDLE)0x0) && (param_1 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

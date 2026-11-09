@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 53,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
+    "suspect_types": [
+      "warning_indirect_jump",
+      "warning_jumptable",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 10
+  },
+  "cross_references": [
+    {
+      "addr": "0047a480",
+      "from_addr": "0047a734",
+      "name": "core_dpart.cpp_FUN_0047a480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ab00",
+      "from_addr": "0047adf6",
+      "name": "core_dpart.cpp_FUN_0047ab00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c4d80",
+      "from_addr": "004c507f",
+      "name": "engine_fpoly.c_rasterizePolygonHardware_FUN_004c4d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e120",
+      "from_addr": "0053e57b",
+      "name": "engine_prim.c_FUN_0053e120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e650",
+      "from_addr": "0053e8c6",
+      "name": "engine_prim.c_FUN_0053e650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f080",
+      "from_addr": "0053f62f",
+      "name": "engine_prim.c_FUN_0053f080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f720",
+      "from_addr": "0053fb24",
+      "name": "engine_prim.c_FUN_0053f720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bf120",
+      "from_addr": "005bf5ba",
+      "name": "unkafter_zombie.cpp_FUN_005bf120",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00580127",
+    "address_range": [
+      [
+        "00580127",
+        "0058012c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_special.cpp_FUN_00580127",
+    "signature": "void engine_special_cpp_FUN_00580127(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c4f02c",
+      "name": "DAT_01c4f02c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "BRANCHIND": 1
+    },
+    "pcode_op_count": 1
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 7,
+      "match": "WARNING: Could not recover jumptable",
+      "severity": "mild",
+      "text": "/* WARNING: Could not recover jumptable at 0x00580127. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 8,
+      "match": "WARNING: Treating indirect jump as call",
+      "severity": "mild",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    }
+  ]
+}

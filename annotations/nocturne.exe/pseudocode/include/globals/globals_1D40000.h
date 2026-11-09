@@ -17,8 +17,8 @@ extern CDemonActorType g_CNPCActorType_01d46820;
 extern CDemonActorType g_CPassengerActorType_01d4685c;
 
 // CMouse
-extern CMouse g_CMouse_01d465c0;
+extern CMouse g_CMouseInstance;
 
 // CPathMap[12]
-extern CPathMap g_CPathMap_ARRAY_01d468a0[12];
+extern CPathMap g_PathMapCache[12];
 

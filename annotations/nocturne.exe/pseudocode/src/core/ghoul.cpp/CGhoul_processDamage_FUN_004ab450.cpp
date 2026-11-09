@@ -42,7 +42,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004ab450(CGhoul *this_ptr,S
       (this_ptr->prev_position).y = (this_ptr->base).base.base.location.position.y;
       (this_ptr->prev_position).z = (this_ptr->base).base.base.location.position.z;
     }
-    engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,"go berzerk\n");
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"go berzerk\n");
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {
     this_ptr->stun_timer = 4.0;

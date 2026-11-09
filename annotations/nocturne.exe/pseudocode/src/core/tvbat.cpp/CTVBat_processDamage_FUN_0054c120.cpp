@@ -14,7 +14,7 @@ void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_0054c120(CTVBat *this_ptr,S
   
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
   (this_ptr->base).base.hit_points = fVar1;
-  this_ptr_00 = g_CGore_PTR_005b96c4;
+  this_ptr_00 = g_CGorePtr;
   if (0.0 < fVar1) {
     core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(&this_ptr->base,damage_info);
     return;

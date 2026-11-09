@@ -27,13 +27,13 @@
 ;   TerminatedCString s_Can_t_find_svetlana_s_pa_00596416
 ;   TerminatedCString s_svetlana_attack_wav_00596438
 ;   TerminatedCString s_svetlana_miss_wav_0059644d
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CDemonSet_01e57284.character_count
-;   undefined4 g_CDemonSet_01e57284.characters[0]
-;   undefined4 g_CDemonSet_01e57284.characters[1]
-;   undefined4 g_CDemonSet_01e57284.characters[2]
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
+;   undefined4 g_CDemonSetInstance.characters[1]
+;   undefined4 g_CDemonSetInstance.characters[2]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -116,12 +116,12 @@ section .text
     XOR ECX,ECX                         ; 00542c18
     XOR EDI,EDI                         ; 00542c1a
     MOV dword ptr [ESP + 0x70],ECX      ; 00542c1c
-    MOV EAX,[0x005be368]                ; 00542c20 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 00542c20 | g_CDemonSetPtr
         ;   Label: LAB_00542c20
-    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 00542c25 | g_CDemonSet_01e57284.character_count
+    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 00542c25 | g_CDemonSetInstance.character_count
     JGE 0x00542cdb                      ; 00542c2b
         ;   XREF to: 00542cdb (CONDITIONAL_JUMP)  ; LAB_00542cdb
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14ecb4] ; 00542c31 | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1] | g_CDemonSet_01e57284.characters[2]
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14ecb4] ; 00542c31 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1] | g_CDemonSetInstance.characters[2]
     CMP EBX,EBP                         ; 00542c38
     JNZ 0x00542c72                      ; 00542c3a
         ;   XREF to: 00542c72 (CONDITIONAL_JUMP)  ; LAB_00542c72

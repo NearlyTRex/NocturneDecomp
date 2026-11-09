@@ -58,7 +58,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
   default:
     goto switchD_004402a8_caseD_3;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,format);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,format);
 switchD_004402a8_caseD_3:
   _DAT_012ceb6c =
        _DAT_012ceb6c +

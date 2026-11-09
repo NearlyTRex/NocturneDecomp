@@ -133,8 +133,8 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,f
   (this_ptr->base).orient.vec.y = fVar4;
   (*pCVar6->getBoundingBox)(&this_ptr->base,&local_a0);
   iStack_18 = 0;
-  for (iVar16 = 0; iVar16 < g_CDemonSet_PTR_005be368->character_count; iVar16 = iVar16 + 1) {
-    pCVar7 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_18);
+  for (iVar16 = 0; iVar16 < g_CDemonSetPtr->character_count; iVar16 = iVar16 + 1) {
+    pCVar7 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
     pCVar11 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (&pCVar7->base,g_CMobsterActorType_01ccdbd8.name_hash);
     if ((pCVar11 == (CDemonActor *)0x0) ||
@@ -174,14 +174,13 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_0054eae0(CVehicle *this_ptr,f
   fStack_3c = (this_ptr->base).location.position.y - (pCVar8->base).base.location.position.y;
   fStack_38 = (this_ptr->base).location.position.z - (pCVar8->base).base.location.position.z;
   if ((SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <=
-       (float)200) || (0x671 < g_CDemonSet_PTR_005be368->actor_count))
-  goto LAB_0054ef54;
+       (float)200) || (0x671 < g_CDemonSetPtr->actor_count)) goto LAB_0054ef54;
   iVar16 = 0;
   iStack_20 = 0;
   iStack_1c = 0;
-  for (iVar13 = 0; iVar13 < g_CDemonSet_PTR_005be368->enemy_count; iVar13 = iVar13 + 1) {
+  for (iVar13 = 0; iVar13 < g_CDemonSetPtr->enemy_count; iVar13 = iVar13 + 1) {
     pCVar11 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),
+                        (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),
                          g_CMobsterActorType_01ccdbd8.name_hash);
     if ((pCVar11 != (CDemonActor *)0x0) &&
        (pCVar10 = (CVehicle *)pCVar11[0x90].orient_matrix.m[1].x, this_ptr == pCVar10)) {

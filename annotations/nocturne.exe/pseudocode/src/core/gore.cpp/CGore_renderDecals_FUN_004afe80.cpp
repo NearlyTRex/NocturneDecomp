@@ -18,7 +18,7 @@ void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004afe80(CGore *this_ptr,int r
   int iVar2;
   CFootstep *this_ptr_02;
   
-  if (g_CGame_PTR_005b9354->blood_flag != 0) {
+  if (g_CGamePtr->blood_flag != 0) {
     core_gore_cpp_CBloodSplat_setupRenderState_FUN_004aeae0(g_CBloodSplat_ARRAY_01c7ccf4);
     if (render_all == 0) {
       iVar2 = 0;
@@ -78,10 +78,9 @@ void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004afe80(CGore *this_ptr,int r
       if (0 < _DAT_01c9e540) {
         iVar1 = 0;
         do {
-          if (*(int *)((int)g_CFootstep_ARRAY_01c9e544[0].corners + iVar1 + -8) == 0) {
+          if (*(int *)((int)g_Footsteps[0].corners + iVar1 + -8) == 0) {
             core_gore_cpp_CFootstep_render_FUN_004afa20
-                      ((CFootstep *)((int)g_CFootstep_ARRAY_01c9e544[0].corners + iVar1 + -8),
-                       unaff_EBP);
+                      ((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),unaff_EBP);
           }
           iVar2 = iVar2 + 1;
           iVar1 = iVar1 + 0x40;
@@ -91,7 +90,7 @@ void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004afe80(CGore *this_ptr,int r
     else {
       iVar2 = 0;
       if (0 < _DAT_01c9e540) {
-        this_ptr_02 = g_CFootstep_ARRAY_01c9e544;
+        this_ptr_02 = g_Footsteps;
         do {
           core_gore_cpp_CFootstep_render_FUN_004afa20(this_ptr_02,unaff_EBP);
           iVar2 = iVar2 + 1;

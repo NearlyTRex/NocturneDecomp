@@ -1,0 +1,157 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 43,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "004b6170",
+      "from_addr": "004b6190",
+      "name": "core_game.cpp_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436680",
+      "from_addr": "004366cc",
+      "name": "engine_console.cpp_CConsole_ctor_FUN_00436680",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004368b0",
+    "address_range": [
+      [
+        "004368b0",
+        "004368ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_console.cpp_CConsole_reset_FUN_004368b0",
+    "signature": "void __cdecl engine_console_cpp_CConsole_reset_FUN_004368b0(CConsole *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "00461440",
+      "is_variadic": false,
+      "name": "unkafter_dosio.cpp_FUN_00461440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00609ed8",
+      "name": "s_console_txt_00609ed8",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b6190",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b6170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004366cc",
+        "call_type": "direct",
+        "caller": "engine_console.cpp_CConsole_ctor_FUN_00436680",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 11,
+      "INT_ADD": 8,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 57
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConsole *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "memset(&this_ptr->field_0x8,0,4000);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0xfa8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xfa8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0xfac",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xfac = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 50,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [
+    {
+      "addr": "00403790",
+      "from_addr": "00403790",
+      "name": "engine_3d.c_initTextureCache_FUN_00403790",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00597970",
+    "address_range": [
+      [
+        "00597970",
+        "005979c1"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_texture.cpp_FUN_00597970",
+    "signature": "void engine_texture_cpp_FUN_00597970(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0f32"
+    },
+    {
+      "addr": "00596560",
+      "is_variadic": false,
+      "name": "unkafter_texlist.cpp_FUN_00596560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f7c55",
+      "name": "s_engine_texture_cpp_005f7c55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f7c6b",
+      "name": "s_initTexture_out_of_memor_005f7c6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8a680",
+      "name": "DAT_02c8a680",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00403790",
+        "call_type": "direct",
+        "caller": "engine_3d.c_initTextureCache_FUN_00403790",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7916666666666665,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 15,
+      "INT_ADD": 6,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 6,
+      "LOAD": 3,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 6
+    },
+    "pcode_op_count": 91
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0059798a) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}
