@@ -1,171 +1,172 @@
-// Name: FUN_004fb280
+// Name: core_motion.cpp_FUN_004fb280
 // Address: 004fb280
 // Address Range: [[004fb280, 004fb6ad]]
-// Convention: unknown
-// Signature: void FUN_004fb280(int *param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_motion_cpp_FUN_004fb280(CMotionList *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004fb280(int *param_1,uint param_2)
+void __cdecl core_motion_cpp_FUN_004fb280(CMotionList *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
-  int iVar2;
-  int *piVar3;
-  int *piVar4;
-  int local_28;
+  void *pvVar2;
+  int iVar3;
+  CMotionList *pCVar4;
+  CMotionList *pCVar5;
+  uint local_28;
   int local_24;
-  int *local_20;
+  CMotionList *local_20;
   int local_1c;
-  int *local_18;
+  CMotionList *local_18;
   int local_14;
   
-  FUN_004fb210(param_1);
+  unkafter_box_cpp_FUN_004fb210(this_ptr);
   local_24 = -1;
   do {
-    iVar1 = FUN_005a32b0(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  FUN_005a3230(param_2,&DAT_005c974c,&local_24);
+  _fscanf(file_handle,&DAT_005c974c,&local_24);
   if (local_24 < 0) {
     _DAT_01d71de0 = "..\\core\\motion.cpp";
     _DAT_01d71de4 = 0x81;
-    FUN_004e4330("Error reading motion list.");
+    core_main_c_FUN_004e4330("Error reading motion list.");
   }
   if (3 < local_24) {
     _DAT_01d71de0 = "..\\core\\motion.cpp";
     _DAT_01d71de4 = 0x83;
-    FUN_004e4330("Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)",local_24,3);
+    core_main_c_FUN_004e4330("Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)",local_24,3);
   }
   do {
-    iVar1 = FUN_005a32b0(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  FUN_005a3230(param_2,&DAT_005c9804,param_1);
-  if (0 < *param_1) {
-    piVar4 = param_1 + 1;
+  _fscanf(file_handle,&DAT_005c9804,this_ptr);
+  if (0 < *(int *)this_ptr) {
+    pCVar5 = this_ptr + 4;
     do {
-      FUN_005a3230(param_2,&DAT_005c9808,piVar4);
+      _fscanf(file_handle,&DAT_005c9808,pCVar5);
       iVar1 = iVar1 + 1;
-      piVar4 = (int *)((int)piVar4 + 0x1e);
-    } while (iVar1 < *param_1);
+      pCVar5 = pCVar5 + 0x1e;
+    } while (iVar1 < *(int *)this_ptr);
   }
   do {
-    iVar1 = FUN_005a32b0(param_2);
+    iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  FUN_005a3230(param_2,&DAT_005c980c,param_1 + 0x709);
+  _fscanf(file_handle,&DAT_005c980c,this_ptr + 0x1c24);
   local_1c = 0;
-  if (0 < param_1[0x709]) {
-    local_20 = param_1 + 0x70a;
-    piVar4 = local_20;
+  if (0 < *(int *)(this_ptr + 0x1c24)) {
+    local_20 = this_ptr + 0x1c28;
+    pCVar5 = local_20;
 LAB_004fb383:
     do {
-      iVar1 = FUN_005a32b0(param_2);
+      iVar1 = _fgetc(file_handle);
       if (-1 < iVar1) {
         if (iVar1 != 10) goto LAB_004fb383;
       }
-      FUN_005a3230(param_2,"\"%[^\"]\",%f,%d,%d,%d\n",piVar4,piVar4 + 8,piVar4 + 9,piVar4 + 0x18,
-                   piVar4 + 0x19);
+      _fscanf(file_handle,"\"%[^\"]\",%f,%d,%d,%d\n",pCVar5,pCVar5 + 0x20,pCVar5 + 0x24,pCVar5 + 0x60,
+                 pCVar5 + 100);
       do {
-        iVar1 = FUN_005a32b0(param_2);
+        iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
-      FUN_005a3230(param_2,"%d,%d,%f\n",piVar4 + 10,piVar4 + 0xd,piVar4 + 0xe);
+      _fscanf(file_handle,"%d,%d,%f\n",pCVar5 + 0x28,pCVar5 + 0x34,pCVar5 + 0x38);
       do {
-        iVar1 = FUN_005a32b0(param_2);
+        iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
-      FUN_005a3230(param_2,"%d,%f,%d\n",&local_28,piVar4 + 0xf,piVar4 + 0x10);
-      piVar4[0xc] = local_28;
+      _fscanf(file_handle,"%d,%f,%d\n",&local_28,pCVar5 + 0x3c,pCVar5 + 0x40);
+      *(uint *)(pCVar5 + 0x30) = local_28;
       do {
-        iVar1 = FUN_005a32b0(param_2);
+        iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
-      FUN_005a3230(param_2,"%d,%f\n",piVar4 + 0x14,piVar4 + 0x15);
+      _fscanf(file_handle,"%d,%f\n",pCVar5 + 0x50,pCVar5 + 0x54);
       if (local_24 < 3) {
-        piVar4[0x1a] = 1;
-        piVar4[0x1b] = piVar4[0x19];
+        *(uint *)(pCVar5 + 0x68) = 1;
+        *(uint *)(pCVar5 + 0x6c) = *(uint *)(pCVar5 + 100);
       }
       else {
         do {
-          iVar1 = FUN_005a32b0(param_2);
+          iVar1 = _fgetc(file_handle);
           if (iVar1 < 0) break;
         } while (iVar1 != 10);
-        FUN_005a3230(param_2,"%d,%d\n",piVar4 + 0x1a,piVar4 + 0x1b);
+        _fscanf(file_handle,"%d,%d\n",pCVar5 + 0x68,pCVar5 + 0x6c);
       }
       do {
-        iVar1 = FUN_005a32b0(param_2);
+        iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
-      FUN_005a3230(param_2,&DAT_005c9847,piVar4 + 0x1c);
-      if (0 < piVar4[0x1c]) {
-        iVar1 = FUN_005a3650(piVar4[0x1c] * 0x18);
-        piVar4[0x1d] = iVar1;
-        if (iVar1 == 0) {
+      _fscanf(file_handle,&DAT_005c9847,pCVar5 + 0x70);
+      if (0 < *(int *)(pCVar5 + 0x70)) {
+        pvVar2 = FUN_005a3650(*(int *)(pCVar5 + 0x70) * 0x18);
+        *(void **)(pCVar5 + 0x74) = pvVar2;
+        if (pvVar2 == (void *)0x0) {
           _DAT_01d71de0 = "..\\core\\motion.cpp";
           _DAT_01d71de4 = 0xc0;
-          FUN_004e4330("Out of memory");
+          core_main_c_FUN_004e4330("Out of memory");
         }
         local_14 = 0;
-        if (0 < piVar4[0x1c]) {
+        if (0 < *(int *)(pCVar5 + 0x70)) {
           iVar1 = 0;
           do {
-            iVar2 = piVar4[0x1d] + iVar1;
-            FUN_005a3230(param_2,"%d,%d,%d,%f,%f,%d\n",iVar2,&local_28,iVar2 + 8,iVar2 + 0xc,
-                         iVar2 + 0x10,iVar2 + 0x14);
-            *(int *)(iVar2 + 4) = local_28;
+            iVar3 = *(int *)(pCVar5 + 0x74) + iVar1;
+            _fscanf(file_handle,"%d,%d,%d,%f,%f,%d\n",iVar3,&local_28,iVar3 + 8,iVar3 + 0xc,
+                       iVar3 + 0x10,iVar3 + 0x14);
+            *(uint *)(iVar3 + 4) = local_28;
             iVar1 = iVar1 + 0x18;
             local_14 = local_14 + 1;
-          } while (local_14 < piVar4[0x1c]);
+          } while (local_14 < *(int *)(pCVar5 + 0x70));
         }
       }
       do {
-        iVar1 = FUN_005a32b0(param_2);
+        iVar1 = _fgetc(file_handle);
         if (iVar1 < 0) break;
       } while (iVar1 != 10);
       iVar1 = 0;
-      FUN_005a3230(param_2,&DAT_005c987f,piVar4 + 0x1e);
-      if (0 < piVar4[0x1e]) {
-        local_18 = piVar4 + 0x1f;
-        piVar3 = piVar4 + 0x20;
+      _fscanf(file_handle,&DAT_005c987f,pCVar5 + 0x78);
+      if (0 < *(int *)(pCVar5 + 0x78)) {
+        local_18 = pCVar5 + 0x7c;
+        pCVar4 = pCVar5 + 0x80;
         do {
-          iVar2 = iVar1 * 2;
+          iVar3 = iVar1 * 8;
           iVar1 = iVar1 + 1;
-          FUN_005a3230(param_2,"%d,%d\n",local_18 + iVar2,piVar3);
-          piVar3 = piVar3 + 2;
-        } while (iVar1 < piVar4[0x1e]);
+          _fscanf(file_handle,"%d,%d\n",local_18 + iVar3,pCVar4);
+          pCVar4 = pCVar4 + 8;
+        } while (iVar1 < *(int *)(pCVar5 + 0x78));
       }
       if (local_24 < 2) {
-        piVar4[0x3d] = 0;
+        *(uint *)(pCVar5 + 0xf4) = 0;
       }
       else {
         do {
-          iVar1 = FUN_005a32b0(param_2);
+          iVar1 = _fgetc(file_handle);
           if (iVar1 < 0) break;
         } while (iVar1 != 10);
         iVar1 = 0;
-        FUN_005a3230(param_2,&DAT_005c988a,piVar4 + 0x3d);
-        if (0 < piVar4[0x3d]) {
-          piVar3 = piVar4 + 0x3e;
+        _fscanf(file_handle,&DAT_005c988a,pCVar5 + 0xf4);
+        if (0 < *(int *)(pCVar5 + 0xf4)) {
+          pCVar4 = pCVar5 + 0xf8;
           do {
             iVar1 = iVar1 + 1;
-            FUN_005a3230(param_2,&DAT_005c988d,piVar3);
-            piVar3 = piVar3 + 1;
-          } while (iVar1 < piVar4[0x3d]);
+            _fscanf(file_handle,&DAT_005c988d,pCVar4);
+            pCVar4 = pCVar4 + 4;
+          } while (iVar1 < *(int *)(pCVar5 + 0xf4));
         }
         do {
-          iVar1 = FUN_005a32b0(param_2);
+          iVar1 = _fgetc(file_handle);
           if (iVar1 < 0) break;
         } while (iVar1 != 10);
       }
-      local_20 = local_20 + 0x48;
+      local_20 = local_20 + 0x120;
       local_1c = local_1c + 1;
-      piVar4 = local_20;
-    } while (local_1c < param_1[0x709]);
+      pCVar5 = local_20;
+    } while (local_1c < *(int *)(this_ptr + 0x1c24));
   }
   return;
 }

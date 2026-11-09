@@ -4,20 +4,28 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CConsole.h"
+#include "types/classes/CDemonActorType.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7F0000
 // =============================================================================
 
+// CConsole
+extern CConsole g_CConsoleInstance;
+
+// CDemonActorType
+extern CDemonActorType g_CConstructClassInfo;
+extern CDemonActorType g_CZombieCowClassInfo;
+extern CDemonActorType g_CCrateClassInfo;
+extern CDemonActorType g_CCurtainClassInfo;
+
 // undefined4
-extern undefined4 DAT_007f7ea4;
 extern undefined4 DAT_007f8e64;
 extern undefined4 DAT_007f8e68;
 extern undefined4 DAT_007f8e6c;
 extern undefined4 DAT_007f8e74;
 extern undefined4 DAT_007f8e94;
 extern undefined4 DAT_007f8e9c;
-extern undefined4 DAT_007f8ed8;
-extern undefined4 DAT_007f8fc8;
 extern undefined4 DAT_007fa460;
 

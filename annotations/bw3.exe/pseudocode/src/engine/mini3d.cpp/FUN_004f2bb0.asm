@@ -1,10 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f2bb0(float *param_1,float *param_2,float *param_3)
+; void engine_mini3d_cpp_FUN_004f2bb0(float *param_1,float *param_2,float *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
+;
+; XREF[1]:
+;   engine_mini3d.cpp_FUN_004f2cf0 at 004f2de8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005c828e
@@ -17,14 +20,14 @@
 ;   undefined4 DAT_01d7a6a8
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f2bb0
-        ;   Label: FUN_004f2bb0
+        ;   Label: engine_mini3d.cpp_FUN_004f2bb0
     PUSH ESI                            ; 004f2bb1
     PUSH EDI                            ; 004f2bb2
     PUSH EBP                            ; 004f2bb3
@@ -119,8 +122,8 @@ section .text
     PUSH 0x5c82a3                       ; 004f2cb7 | = "Bad clip!"
     MOV dword ptr [0x01d71de0],ECX      ; 004f2cbc | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 004f2cc2 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004f2cc8
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004f2cc8
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004f2ccd
     JMP 0x004f2bfb                      ; 004f2cd0
         ;   XREF to: 004f2bfb (UNCONDITIONAL_JUMP)  ; LAB_004f2bfb

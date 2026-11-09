@@ -1,0 +1,355 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 98,
+    "complexity_score": 334,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 29,
+    "suspect_types": [
+      "sign_compare_idiom",
+      "unnamed_param"
+    ],
+    "total_lines": 132
+  },
+  "cross_references": [
+    {
+      "addr": "004aa0b0",
+      "from_addr": "004aa182",
+      "name": "core_fldnotes.cpp_FUN_004aa0b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004aa200",
+    "address_range": [
+      [
+        "004aa200",
+        "004aa2e3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_FUN_004aa200",
+    "signature": "void core_fldnotes_cpp_FUN_004aa200(int param_1,int param_2,int param_3,int param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "004aa2f0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_FUN_004aa2f0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.15,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 7,
+      "COPY": 60,
+      "INT_2COMP": 2,
+      "INT_ADD": 42,
+      "INT_AND": 53,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 1,
+      "INT_LESS": 9,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 5,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 9,
+      "INT_SDIV": 1,
+      "INT_SEXT": 13,
+      "INT_SLESS": 21,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 19,
+      "INT_ZEXT": 2,
+      "LOAD": 26,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 18,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 412
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_fldnotes_cpp_FUN_004aa200(int param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_fldnotes_cpp_FUN_004aa200(int param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void core_fldnotes_cpp_FUN_004aa200(int param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void core_fldnotes_cpp_FUN_004aa200(int param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x1260)) || (param_3 != *(int *)(param_1 + 0x1264))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x1260)) || (param_3 != *(int *)(param_1 + 0x1264))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x1260)) || (param_3 != *(int *)(param_1 + 0x1264))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_2 != *(int *)(param_1 + 0x1260)) || (param_3 != *(int *)(param_1 + 0x1264))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_10 = -param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (local_10 <= param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_14 = local_10 + param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar2 = -param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (-param_4 == param_4 || SBORROW4(iVar2,param_4) != param_4 * -2 < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (-param_4 == param_4 || SBORROW4(iVar2,param_4) != param_4 * -2 < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (-param_4 == param_4 || SBORROW4(iVar2,param_4) != param_4 * -2 < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (-param_4 == param_4 || SBORROW4(iVar2,param_4) != param_4 * -2 < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 17,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "if (-param_4 == param_4 || SBORROW4(iVar2,param_4) != param_4 * -2 < 0) {",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar3 = param_2 + iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (iVar1 <= param_4 * param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (iVar1 <= param_4 * param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,iVar3,local_14,0xff - (iVar1 * 0xff) / (param_4 * param_4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,iVar3,local_14,0xff - (iVar1 * 0xff) / (param_4 * param_4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(param_1,iVar3,local_14,0xff - (iVar1 * 0xff) / (param_4 * param_4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "} while (iVar2 <= param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "} while (local_10 <= param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x1260) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x1260) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x1264) = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x1264) = param_3;",
+      "type": "unnamed_param"
+    }
+  ]
+}

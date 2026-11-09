@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00419550(int param_1)
+; void __cdecl core_boneguy_cpp_FUN_00419550(CBoneGuy *this_ptr)
 ;
+; Parameters:
+; CBoneGuy *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
 ; undefined4       Stack[-0x38]:4  local_38
@@ -17,10 +19,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_004179b0 at 00417a28
-;   FUN_004192d0 at 00419378
-;   FUN_00419b40 at 00419b98
-;   FUN_0041a810 at 0041a870
+;   core_boneguy.cpp_FUN_004179b0 at 00417a28
+;   core_boneguy.cpp_FUN_004192d0 at 00419378
+;   core_boneguy.cpp_FUN_00419b40 at 00419b98
+;   core_boneguy.cpp_FUN_0041a810 at 0041a870
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_boneguy_cpp_005b7119
@@ -30,29 +32,29 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_0040ce40
-;   FUN_00414550
-;   FUN_004157c0
-;   FUN_00430590
-;   FUN_00431ce0
-;   FUN_004e4330
-;   FUN_0054ea40
-;   FUN_005860b0
+;   core_actor.cpp_FUN_0040ce40
+;   core_bodypart.cpp_FUN_00414550
+;   core_bodypart.cpp_FUN_004157c0
+;   core_charactr.cpp_FUN_00430590
+;   core_charactr.cpp_FUN_00431ce0
+;   core_main.c_FUN_004e4330
+;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
+;   core_xform.cpp_FUN_005860b0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00419550
-        ;   Label: FUN_00419550
+        ;   Label: core_boneguy.cpp_FUN_00419550
     PUSH ESI                            ; 00419551
     PUSH EDI                            ; 00419552
     PUSH EBP                            ; 00419553
     SUB ESP,0x38                        ; 00419554
     MOV EDX,dword ptr [ESP + 0x4c]      ; 00419557
     PUSH EDX                            ; 0041955b
-    CALL FUN_00431ce0                   ; 0041955c
-        ;   XREF to: 00431ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00431ce0()
+    CALL core_charactr.cpp_FUN_00431ce0 ; 0041955c
+        ;   XREF to: 00431ce0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00431ce0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00419561
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00419564
     LEA EBX,[EAX + 0xd068]              ; 00419568
@@ -72,8 +74,8 @@ section .text
         ;   Label: LAB_00419599
     ADD EAX,0x158                       ; 0041959d
     PUSH EAX                            ; 004195a2
-    CALL FUN_0054ea40                   ; 004195a3
-        ;   XREF to: 0054ea40 (UNCONDITIONAL_CALL)  ; undefined FUN_0054ea40()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40 ; 004195a3
+        ;   XREF to: 0054ea40 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004195a8
     MOV EBX,dword ptr [ESP + 0x4c]      ; 004195ab
     MOV dword ptr [ESP + 0x30],EAX      ; 004195af
@@ -87,8 +89,8 @@ section .text
     PUSH 0x5b712d                       ; 004195ce | = "CBoneGuy::explode - Not enough contai..."
     MOV dword ptr [0x01d71de0],EBX      ; 004195d3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004195d9 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004195df
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004195df
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004195e4
     MOV EAX,dword ptr [ESP + 0x30]      ; 004195e7
         ;   Label: LAB_004195e7
@@ -114,24 +116,24 @@ section .text
     PUSH 0x40a00000                     ; 00419631
         ;   Label: LAB_00419631
     PUSH 0xc0a00000                     ; 00419636
-    CALL FUN_0040ce40                   ; 0041963b
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ce40()
+    CALL core_actor.cpp_FUN_0040ce40    ; 0041963b
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
     MOV dword ptr [ESP + 0x3c],EAX      ; 00419640
     FLD float ptr [ESP + 0x3c]          ; 00419644
     ADD ESP,0x8                         ; 00419648
     PUSH 0x41200000                     ; 0041964b
     PUSH 0x0                            ; 00419650
     FSTP float ptr [ESP + 0x18]         ; 00419652
-    CALL FUN_0040ce40                   ; 00419656
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ce40()
+    CALL core_actor.cpp_FUN_0040ce40    ; 00419656
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
     MOV dword ptr [ESP + 0x3c],EAX      ; 0041965b
     FLD float ptr [ESP + 0x3c]          ; 0041965f
     ADD ESP,0x8                         ; 00419663
     PUSH 0x40a00000                     ; 00419666
     PUSH 0xc0a00000                     ; 0041966b
     FSTP float ptr [ESP + 0x1c]         ; 00419670
-    CALL FUN_0040ce40                   ; 00419674
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ce40()
+    CALL core_actor.cpp_FUN_0040ce40    ; 00419674
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
     MOV dword ptr [ESP + 0x3c],EAX      ; 00419679
     FLD float ptr [ESP + 0x3c]          ; 0041967d
     ADD ESP,0x8                         ; 00419681
@@ -147,8 +149,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 00419699
     PUSH EDI                            ; 0041969d
     FSTP float ptr [ESP + 0x34]         ; 0041969e
-    CALL FUN_00414550                   ; 004196a2
-        ;   XREF to: 00414550 (UNCONDITIONAL_CALL)  ; undefined FUN_00414550()
+    CALL core_bodypart.cpp_FUN_00414550 ; 004196a2
+        ;   XREF to: 00414550 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_FUN_00414550(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 004196a7
     MOV EBX,EAX                         ; 004196aa
     PUSH 0x1                            ; 004196ac
@@ -158,13 +160,13 @@ section .text
     PUSH EBX                            ; 004196b5
     MOV EDX,dword ptr [ESP + 0x58]      ; 004196b6
     PUSH EDX                            ; 004196ba
-    CALL FUN_00430590                   ; 004196bb
-        ;   XREF to: 00430590 (UNCONDITIONAL_CALL)  ; undefined FUN_00430590()
+    CALL core_charactr.cpp_FUN_00430590 ; 004196bb
+        ;   XREF to: 00430590 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00430590(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 004196c0
     PUSH EBX                            ; 004196c3
     MOV dword ptr [EBX + 0xcc4],0x1     ; 004196c4
-    CALL FUN_004157c0                   ; 004196ce
-        ;   XREF to: 004157c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004157c0()
+    CALL core_bodypart.cpp_FUN_004157c0 ; 004196ce
+        ;   XREF to: 004157c0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_004157c0(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 004196d3
     IMUL EAX,dword ptr [ESP + 0x2c],0x48 ; 004196d6
     MOV EDI,dword ptr [ESP + 0x28]      ; 004196db
@@ -197,8 +199,8 @@ section .text
     PUSH ESI                            ; 0041971d
     LEA ESI,[ESP + 0x4]                 ; 0041971e
     ADD EBP,0x48                        ; 00419722
-    CALL FUN_005860b0                   ; 00419725
-        ;   XREF to: 005860b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005860b0()
+    CALL core_xform.cpp_FUN_005860b0    ; 00419725
+        ;   XREF to: 005860b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005860b0()
     ADD ESP,0x4                         ; 0041972a
     MOV ESI,ESP                         ; 0041972d
     MOV EDI,dword ptr [ESP + 0x28]      ; 0041972f

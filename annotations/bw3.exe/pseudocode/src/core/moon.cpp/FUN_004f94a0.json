@@ -1,0 +1,302 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 171,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 12,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param"
+    ],
+    "total_lines": 94
+  },
+  "cross_references": [
+    {
+      "addr": "004ea280",
+      "from_addr": "004ea412",
+      "name": "core_menu.cpp_FUN_004ea280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea4d0",
+      "from_addr": "004ea580",
+      "name": "core_menu.cpp_FUN_004ea4d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f94a0",
+    "address_range": [
+      [
+        "004f94a0",
+        "004f9578"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_moon.cpp_FUN_004f94a0",
+    "signature": "void core_moon_cpp_FUN_004f94a0(int *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d460",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c9245",
+      "name": "s_bwp3_menu_scroll_005c9245",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9256",
+      "name": "s_bwp3_hand_005c9256",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9285",
+      "name": "s_BWP3_mainmenu_005c9283+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c9293",
+      "name": "s_blair_00000_005c9293",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c929f",
+      "name": "s_blair_00001_005c929f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006006f8",
+      "name": "PTR_s_BWP3_mainmenu_005c9283+2_006006f8",
+      "type": "void*",
+      "value": "005c9285"
+    },
+    {
+      "addr": "006006fc",
+      "name": "PTR_s_blair_00000_006006fc",
+      "type": "void*",
+      "value": "005c9293"
+    },
+    {
+      "addr": "00600700",
+      "name": "PTR_s_blair_00001_00600700",
+      "type": "undefined1*",
+      "value": "005c929f"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004ea580",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ea4d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ea875",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ea4d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ea412",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ea280",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ea79d",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ea4d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ea997",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ea4d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.018518518518518,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 47,
+      "INT_ADD": 22,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 26,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 217
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_moon_cpp_FUN_004f94a0(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x2b4] = 0x140;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x2b5] = -0x140;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x2b6] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x2b7] = 0x1e0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x2b8] = 0x10000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[0x2b9] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&PTR_s_blair_00000_006006fc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)&PTR_s_blair_00000_006006fc",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&PTR_s_blair_00000_006006fc + iVar2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&PTR_s_blair_00000_006006fc + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

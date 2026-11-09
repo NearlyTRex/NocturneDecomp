@@ -1,0 +1,302 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 176,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 10,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 139
+  },
+  "cross_references": [
+    {
+      "addr": "005114f0",
+      "from_addr": "00512006",
+      "name": "core_platfrm.cpp_FUN_005114f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00512be0",
+    "address_range": [
+      [
+        "00512be0",
+        "00512ced"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_FUN_00512be0",
+    "signature": "void __cdecl core_platfrm_cpp_FUN_00512be0(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00583940",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00583940"
+    },
+    {
+      "addr": "00583b10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00583b10"
+    },
+    {
+      "addr": "00584450",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00584450"
+    },
+    {
+      "addr": "005833e0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005833e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00512006",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_FUN_005114f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.922077922077922,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 77,
+      "INT_ADD": 57,
+      "INT_AND": 28,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 29,
+      "INT_LESS": 3,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SEXT": 3,
+      "INT_SLESS": 14,
+      "INT_SUB": 37,
+      "INT_XOR": 1,
+      "INT_ZEXT": 14,
+      "LOAD": 20,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 29,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 379
+  },
+  "stack_frame": {
+    "frame_size": 228,
+    "local_size": 224,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00512c35",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "auStackY_1034",
+      "severity": "moderate",
+      "text": "uint auStackY_1034 [979];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "core_xform_cpp_FUN_00583940(local_dc,&this_ptr->field_0x20,&this_ptr->field_0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "core_xform_cpp_FUN_00583940(local_dc,&this_ptr->field_0x20,&this_ptr->field_0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x51c",
+      "severity": "mild",
+      "text": "local_14 = &this_ptr->field_0x51c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x51c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x51c != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x51c",
+      "severity": "mild",
+      "text": "local_1c = *(int *)&this_ptr->field_0x51c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 48,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(local_18 + 0x68))(local_1c,auStack_48 + 8);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "this_ptr = (CPlatform *)&this_ptr->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 31,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 51,
+      "match": "this_ptr = (T *)&this_ptr->FIELD",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)&this_ptr->field_0x34;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

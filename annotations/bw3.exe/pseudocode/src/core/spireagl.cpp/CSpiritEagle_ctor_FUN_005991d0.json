@@ -1,0 +1,142 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 42,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
+  },
+  "cross_references": [
+    {
+      "addr": "005991a0",
+      "from_addr": "005991b3",
+      "name": "core_spireagl.cpp_factoryFuncSpiritEagle_FUN_005991a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005991d0",
+    "address_range": [
+      [
+        "005991d0",
+        "005992e2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_spireagl.cpp_CSpiritEagle_ctor_FUN_005991d0",
+    "signature": "CSpiritEagle * core_spireagl_cpp_CSpiritEagle_ctor_FUN_005991d0(CSpiritEagle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040ce40"
+    },
+    {
+      "addr": "0042ac20",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_0042ac20"
+    },
+    {
+      "addr": "0043f8c0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_ctor_FUN_0043f8c0"
+    },
+    {
+      "addr": "004fa8a0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_ctor_FUN_004fa8a0"
+    },
+    {
+      "addr": "0050acc0",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_ctor_FUN_0050acc0"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054eae0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005991b3",
+        "call_type": "direct",
+        "caller": "core_spireagl.cpp_factoryFuncSpiritEagle_FUN_005991a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5625,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 60,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 37,
+      "INT_AND": 30,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 30,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 15,
+      "INT_SUB": 21,
+      "LOAD": 9,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 33
+    },
+    "pcode_op_count": 292
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpiritEagle *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpiritEagle",
+        "offset": 0,
+        "vtable_addr": "005e7e54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

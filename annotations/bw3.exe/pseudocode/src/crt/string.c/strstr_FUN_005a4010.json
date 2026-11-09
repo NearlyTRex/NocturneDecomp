@@ -1,0 +1,269 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 135,
+    "complexity_score": 134,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 104,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_strlen",
+      "warning_overlapping_instructions"
+    ],
+    "total_lines": 239
+  },
+  "cross_references": [
+    {
+      "addr": "00431000",
+      "from_addr": "004310a3",
+      "name": "core_charactr.cpp_FUN_00431000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aa810",
+      "from_addr": "004aaadb",
+      "name": "core_fldnotes.cpp_FUN_004aa810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b960",
+      "from_addr": "0059c194",
+      "name": "core_hino.cpp_FUN_0059b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d000",
+      "from_addr": "0059d02b",
+      "name": "core_hino.cpp_FUN_0059d000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528790",
+      "from_addr": "005287d5",
+      "name": "core_script.cpp_trimLine_FUN_00528790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551620",
+      "from_addr": "0055181a",
+      "name": "sound_sndmain.cpp_FUN_00551620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551590",
+      "from_addr": "0055159d",
+      "name": "sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00551590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7920",
+      "from_addr": "004a792a",
+      "name": "unkaddr_004a76f0.cpp_FUN_004a7920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a4010",
+    "address_range": [
+      [
+        "005a4010",
+        "005a40de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_strstr_FUN_005a4010",
+    "signature": "char * __cdecl crt_string_c_strstr_FUN_005a4010(char *haystack_str,char *needle_str)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004aaadb",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_FUN_004aa810",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005287d5",
+        "call_type": "direct",
+        "caller": "core_script.cpp_trimLine_FUN_00528790",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055181a",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00551620",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059d02b",
+        "call_type": "direct",
+        "caller": "core_hino.cpp_FUN_0059d000",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059c194",
+        "call_type": "direct",
+        "caller": "core_hino.cpp_FUN_0059b960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059c58c",
+        "call_type": "direct",
+        "caller": "core_hino.cpp_FUN_0059b960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004310a3",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00431000",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a792a",
+        "call_type": "direct",
+        "caller": "unkaddr_004a76f0.cpp_FUN_004a7920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055159d",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00551590",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.87037037037037,
+    "instruction_count": 108,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "BRANCH": 2,
+      "CBRANCH": 22,
+      "COPY": 87,
+      "INT_ADD": 33,
+      "INT_AND": 73,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 74,
+      "INT_LESS": 18,
+      "INT_MULT": 5,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 34,
+      "INT_SUB": 39,
+      "INT_XOR": 4,
+      "INT_ZEXT": 7,
+      "LOAD": 38,
+      "POPCOUNT": 34,
+      "RETURN": 3,
+      "STORE": 9
+    },
+    "pcode_op_count": 526
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "haystack_str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "needle_str",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping instructions detected",
+      "line": 2,
+      "match": "WARNING: Instruction at (ram,0x005a40a2) overlaps instruction at",
+      "severity": "mild",
+      "text": "/* WARNING: Instruction at (ram,0x005a40a2) overlaps instruction at (ram,0x005a40a0)",
+      "type": "warning_overlapping_instructions"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 54,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

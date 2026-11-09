@@ -1,54 +1,55 @@
-// Name: FUN_0055a0b0
+// Name: sound_sndmain.cpp_FUN_0055a0b0
 // Address: 0055a0b0
 // Address Range: [[0055a0b0, 0055a1a9]]
-// Convention: unknown
-// Signature: void FUN_0055a0b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_FUN_0055a0b0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0055a0b0(void)
+void __cdecl sound_sndmain_cpp_FUN_0055a0b0(void)
 
 {
   int iVar1;
+  int extraout_EAX;
   int iVar2;
-  byte *puVar3;
-  float fVar4;
+  CSfxSlot *this_ptr;
+  float delta_time;
   
   if (_DAT_02cf341c < 1) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x19f6;
-    FUN_004e4330("SfxSlot::pollSfx - must be locked!");
+    core_main_c_FUN_004e4330("SfxSlot::pollSfx - must be locked!");
   }
-  iVar1 = FUN_005806a0();
+  iVar1 = wincore_winrun_cpp_FUN_005806a0();
   iVar2 = iVar1 - _DAT_02cf3420;
   if ((iVar2 < 0) || (0x1cccb < iVar2)) {
     _DAT_02cf3420 = iVar1;
     if (_DAT_02cf28bc == 0) {
-      FUN_005526d0();
+      sound_sndmain_cpp_FUN_005526d0();
     }
-    fVar4 = 0.0;
-    iVar1 = FUN_005586d0(0);
-    if (0 < iVar1) {
-      fVar4 = (float)iVar2 * _DAT_005d3f0e;
-      if (0.0 <= fVar4) {
-        if (_DAT_005d3f12 < fVar4) {
-          fVar4 = 0.25;
+    delta_time = 0.0;
+    sound_sndmain_cpp_FUN_005586d0(0);
+    if (0 < extraout_EAX) {
+      delta_time = (float)iVar2 * _DAT_005d3f0e;
+      if (0.0 <= delta_time) {
+        if (_DAT_005d3f12 < delta_time) {
+          delta_time = 0.25;
         }
       }
       else {
-        fVar4 = 0.0;
+        delta_time = 0.0;
       }
     }
-    puVar3 = (byte *)0x2ce721c;
+    this_ptr = (CSfxSlot *)0x2ce721c;
     do {
-      iVar1 = FUN_00554430(puVar3,fVar4);
+      iVar1 = sound_sndmain_cpp_CSfxSlot_compute_FUN_00554430(this_ptr,delta_time);
       if (iVar1 != 0) {
-        FUN_00555410(puVar3);
+        sound_sndmain_cpp_FUN_00555410(this_ptr);
       }
-      puVar3 = puVar3 + 0x11c;
-    } while (puVar3 != &DAT_02ceb91c);
+      this_ptr = this_ptr + 1;
+    } while (this_ptr != (CSfxSlot *)&DAT_02ceb91c);
   }
   return;
 }

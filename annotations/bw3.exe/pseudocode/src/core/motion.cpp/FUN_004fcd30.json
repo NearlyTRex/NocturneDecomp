@@ -1,146 +1,25 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 20,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 22,
-        "message": "no matching function for call to 'FUN_004fc070'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 23,
-        "message": "no matching function for call to 'FUN_005a3140'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 26,
-        "message": "no matching function for call to 'FUN_005a3140'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 183,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 15,
+    "pseudocode_lines": 22,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 77
+    "total_lines": 81
   },
   "cross_references": [
     {
       "addr": "0040bab0",
       "from_addr": "0040bb6c",
-      "name": "FUN_0040bab0",
+      "name": "core_actor.cpp_FUN_0040bab0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,26 +31,26 @@
         "004fcdb6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
-    "name": "FUN_004fcd30",
-    "signature": "void FUN_004fcd30(int *param_1,undefined4 param_2,undefined4 param_3)"
+    "name": "core_motion.cpp_FUN_004fcd30",
+    "signature": "void __cdecl core_motion_cpp_FUN_004fcd30(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "004fc070",
       "is_variadic": false,
-      "name": "FUN_004fc070"
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
     },
     {
       "addr": "005a3140",
       "is_variadic": false,
-      "name": "FUN_005a3140"
+      "name": "crt_unknown.c_FUN_005a3140"
     }
   ],
   "globals": [
@@ -218,22 +97,20 @@
       {
         "call_addr": "0040bb6c",
         "call_type": "direct",
-        "caller": "FUN_0040bab0",
-        "estimated_params": 4,
+        "caller": "core_actor.cpp_FUN_0040bab0",
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 4,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.74,
@@ -261,10 +138,10 @@
     "pcode_op_count": 237
   },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 36,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -273,6 +150,27 @@
         "offset": -20,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "indent_prefix",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -286,119 +184,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void FUN_004fcd30(int *param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void FUN_004fcd30(int *param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void FUN_004fcd30(int *param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((char)param_1[0xc] == '\\0') {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 10,
-      "match": "param_1",
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "if (*param_1 == 0) {",
-      "type": "unnamed_param"
+      "text": "if (this_ptr->field_0x30 == '\\0') {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = FUN_004fc070(param_1,(double)(float)param_1[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = FUN_004fc070(param_1,(double)(float)param_1[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 16,
-      "match": "param_2",
+      "match": "field_0x8",
       "severity": "mild",
-      "text": "FUN_005a3140(param_2,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",param_3,uVar1);",
-      "type": "unnamed_param"
+      "text": "dVar2 = (double)*(float *)&this_ptr->field_0x8;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_3",
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "FUN_005a3140(param_2,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",param_3,uVar1);",
-      "type": "unnamed_param"
+      "text": "(file_handle,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",indent_prefix,&this_ptr->field_0x30,",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x8",
       "severity": "mild",
-      "text": "FUN_005a3140(param_2,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",param_3,param_1 + 0xc,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "FUN_005a3140(param_2,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",param_3,param_1 + 0xc,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005a3140(param_2,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\",param_3,param_1 + 0xc,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)(float)param_1[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
+      "text": "(double)*(float *)&this_ptr->field_0x8);",
+      "type": "unnamed_field"
     }
   ]
 }

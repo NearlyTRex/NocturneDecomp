@@ -1,0 +1,258 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 90,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d575",
+      "name": "shape_edittool.cpp_FUN_0047d230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483c00",
+      "from_addr": "00484202",
+      "name": "shape_edittool.cpp_FUN_00483c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c8e0",
+      "from_addr": "0047ca81",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c2c0",
+      "from_addr": "0047c437",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004860d0",
+    "address_range": [
+      [
+        "004860d0",
+        "00486117"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004860d0",
+    "signature": "void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004860d0(CEdButton *this_ptr,int left,int top,int right,int bottom,char *button_text)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0047ca81",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00484202",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483c00",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0048425d",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483c00",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0047d575",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0047c437",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0047c465",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.033333333333333,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 2,
+      "COPY": 24,
+      "INT_ADD": 21,
+      "INT_AND": 12,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 5,
+      "LOAD": 12,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 121
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdButton *"
+      },
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "button_text",
+        "offset": 24,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "pcVar2 = &this_ptr->field_0x1c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x8 = left;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc = top;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x10 = right + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x14 = bottom + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 9,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

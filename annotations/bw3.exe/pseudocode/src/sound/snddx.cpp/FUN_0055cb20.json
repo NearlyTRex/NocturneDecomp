@@ -1,133 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 26,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 31,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 34,
-        "message": "no matching function for call to 'FUN_005a28c0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 36,
-        "message": "no matching function for call to 'FUN_0055a560'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 132,
+    "complexity_score": 134,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 34,
     "suspect_count": 8,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -135,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 143
+    "total_lines": 145
   },
   "cross_references": [],
   "function": {
@@ -148,34 +28,34 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_0055cb20",
-    "signature": "double FUN_0055cb20(undefined4 param_1,int param_2)"
+    "name": "sound_snddx.cpp_FUN_0055cb20",
+    "signature": "double sound_snddx_cpp_FUN_0055cb20(undefined4 param_1,int param_2)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
-    },
-    {
-      "addr": "005558e0",
-      "is_variadic": false,
-      "name": "FUN_005558e0"
-    },
-    {
-      "addr": "0055a560",
-      "is_variadic": false,
-      "name": "FUN_0055a560"
-    },
-    {
-      "addr": "0055a670",
-      "is_variadic": false,
-      "name": "FUN_0055a670"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "FUN_005a28c0"
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "0055a670",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_0055a670"
+    },
+    {
+      "addr": "005558e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005558e0"
+    },
+    {
+      "addr": "0055a560",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_0055a560"
     }
   ],
   "globals": [
@@ -296,7 +176,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "double FUN_0055cb20(uint param_1,int param_2)",
+      "text": "double sound_snddx_cpp_FUN_0055cb20(uint param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -304,12 +184,12 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "double FUN_0055cb20(uint param_1,int param_2)",
+      "text": "double sound_snddx_cpp_FUN_0055cb20(uint param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_2 + 0x60);",
@@ -317,7 +197,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x68) != 0) {",
@@ -325,7 +205,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 23,
+      "line": 24,
       "match": "*(int **)(iVar2 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piVar1 = *(int **)(iVar2 * 0x24 + 0x2cf500c);",
@@ -333,18 +213,18 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
+      "line": 25,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*piVar1 + 0x10))(piVar1);",
+      "text": "error_code = (**(code **)(*piVar1 + 0x10))(piVar1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_005558e0(*(uint *)(param_2 + 0x68),uStack_28);",
+      "text": "iVar2 = sound_sndmain_cpp_FUN_005558e0(*(uint *)(param_2 + 0x68),uStack_28);",
       "type": "unnamed_param"
     }
   ],

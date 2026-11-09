@@ -1,0 +1,176 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "00476070",
+      "from_addr": "004769a2",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00476070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004772f0",
+    "address_range": [
+      [
+        "004772f0",
+        "00477360"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004772f0",
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_004772f0(CDemonRaytrace *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004540c0",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_CDemonCube_rotateVertices_FUN_004540c0"
+    },
+    {
+      "addr": "0046ce90",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90"
+    },
+    {
+      "addr": "0046d3d0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0"
+    },
+    {
+      "addr": "005661f0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_sync_FUN_005661f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2af8",
+      "name": "DAT_005f2af8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c0b7b4",
+      "name": "DAT_01c0b7b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c1f03c",
+      "name": "DAT_01c1f03c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004769a2",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00476070",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.358974358974359,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 33,
+      "INT_ADD": 12,
+      "INT_AND": 21,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 17,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 170
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_01c1f03c",
+      "severity": "mild",
+      "text": "world_position = (CVector3f *)&DAT_01c1f03c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 19,
+      "match": "*(CDemonCube **)(iVar2 + 0x1c0b7bc",
+      "severity": "moderate",
+      "text": "core_dcube_cpp_CDemonCube_rotateVertices_FUN_004540c0(*(CDemonCube **)(iVar2 + 0x1c0b7bc),0);",
+      "type": "raw_address_pointer_store"
+    }
+  ]
+}

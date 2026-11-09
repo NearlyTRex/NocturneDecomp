@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00459710(int *param_1,char *param_2,int param_3)
+; int core_dfilter_cpp_FUN_00459710(int *param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[2]:
-;   FUN_00542940 at 00542a19
-;   FUN_00542e50 at 00542ee3
+;   core_setutil.cpp_C3DSLight_addFilter_FUN_00542e50 at 00542ee3
+;   core_setutil.cpp_C3DSLight_create_FUN_00542940 at 00542a19
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dfilter_cpp_005ba9fa
@@ -17,19 +17,19 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004598a0
-;   FUN_00459980
-;   FUN_00459b80
-;   FUN_004e4330
-;   FUN_005a3cb2
-;   FUN_005a3d00
+;   core_dfilter.cpp_CDemonFilter_ctor_FUN_004598a0
+;   core_dfilter.cpp_CDemonFilter_init_FUN_00459b80
+;   core_dfilter.cpp_CDemonFilter_load_FUN_00459980
+;   core_main.c_FUN_004e4330
+;   crt_string.c__strcmp_FUN_005a3d00
+;   crt_unknown.c_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00459710
-        ;   Label: FUN_00459710
+        ;   Label: core_dfilter.cpp_FUN_00459710
     PUSH ESI                            ; 00459711
     PUSH EBP                            ; 00459712
     MOV EBP,dword ptr [ESP + 0x10]      ; 00459713
@@ -43,8 +43,8 @@ section .text
         ;   Label: LAB_00459723
     PUSH EAX                            ; 00459727
     PUSH ESI                            ; 00459728
-    CALL FUN_005a3d00                   ; 00459729
-        ;   XREF to: 005a3d00 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3d00()
+    CALL crt_string.c__strcmp_FUN_005a3d00 ; 00459729
+        ;   XREF to: 005a3d00 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005a3d00(char * str1, char * str2)
     ADD ESP,0x8                         ; 0045972e
     TEST EAX,EAX                        ; 00459731
     JZ 0x00459817                       ; 00459733
@@ -87,15 +87,15 @@ section .text
     POP EDI                             ; 00459784
         ;   Label: LAB_00459784
     PUSH 0x4c                           ; 00459785
-    CALL FUN_005a3cb2                   ; 00459787
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3cb2()
+    CALL crt_unknown.c_FUN_005a3cb2     ; 00459787
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0045978c
     TEST EAX,EAX                        ; 0045978f
     JZ 0x0045979c                       ; 00459791
         ;   XREF to: 0045979c (CONDITIONAL_JUMP)  ; LAB_0045979c
     PUSH EAX                            ; 00459793
-    CALL FUN_004598a0                   ; 00459794
-        ;   XREF to: 004598a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004598a0()
+    CALL core_dfilter.cpp_CDemonFilter_ctor_FUN_004598a0 ; 00459794
+        ;   XREF to: 004598a0 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CDemonFilter_ctor_FUN_004598a0(CDemonFilter * this_ptr)
     ADD ESP,0x4                         ; 00459799
     MOV ESI,EAX                         ; 0045979c
         ;   Label: LAB_0045979c
@@ -108,8 +108,8 @@ section .text
     PUSH 0x5baa4d                       ; 004597b3 | = "CFilterCache::getFilter - Out of memory"
     MOV dword ptr [0x01d71de0],ESI      ; 004597b8 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004597be | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004597c4
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004597c4
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004597c9
     LEA ESI,[EBX*0x4 + 0x0]             ; 004597cc
         ;   Label: LAB_004597cc
@@ -118,8 +118,8 @@ section .text
     PUSH EAX                            ; 004597d9
     MOV EDX,dword ptr [ESI + 0xa04]     ; 004597da
     PUSH EDX                            ; 004597e0
-    CALL FUN_00459980                   ; 004597e1
-        ;   XREF to: 00459980 (UNCONDITIONAL_CALL)  ; undefined FUN_00459980()
+    CALL core_dfilter.cpp_CDemonFilter_load_FUN_00459980 ; 004597e1
+        ;   XREF to: 00459980 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_load_FUN_00459980(CDemonFilter * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004597e6
     CMP dword ptr [ESP + 0x1c],0x0      ; 004597e9
     JZ 0x00459806                       ; 004597ee
@@ -128,8 +128,8 @@ section .text
     MOV EDI,dword ptr [ESI + 0xa04]     ; 004597f2
     PUSH 0x3faa9fbe                     ; 004597f8
     PUSH EDI                            ; 004597fd
-    CALL FUN_00459b80                   ; 004597fe
-        ;   XREF to: 00459b80 (UNCONDITIONAL_CALL)  ; undefined FUN_00459b80()
+    CALL core_dfilter.cpp_CDemonFilter_init_FUN_00459b80 ; 004597fe
+        ;   XREF to: 00459b80 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_init_FUN_00459b80(CDemonFilter * this_ptr, float init_value, int flags)
     ADD ESP,0xc                         ; 00459803
     SHL EBX,0x2                         ; 00459806
         ;   Label: LAB_00459806
@@ -152,8 +152,8 @@ section .text
     PUSH 0x5baa0e                       ; 0045982c | = "CFilterCache::getFilter - Too many fi..."
     MOV dword ptr [0x01d71de0],EDI      ; 00459831 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00459837 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0045983c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0045983c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00459841
     JMP 0x0045974f                      ; 00459844
         ;   XREF to: 0045974f (UNCONDITIONAL_JUMP)  ; LAB_0045974f

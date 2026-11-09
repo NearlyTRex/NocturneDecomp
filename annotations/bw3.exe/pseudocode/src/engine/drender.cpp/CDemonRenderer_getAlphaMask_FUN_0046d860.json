@@ -1,0 +1,163 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 4,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "0042e220",
+      "from_addr": "0042e230",
+      "name": "core_charactr.cpp_FUN_0042e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044a210",
+      "from_addr": "0044a23c",
+      "name": "core_dcamera.cpp_FUN_0044a210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044a3e0",
+      "from_addr": "0044a3f7",
+      "name": "core_dcamera.cpp_FUN_0044a3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044a7de",
+      "from_addr": "0044a875",
+      "name": "core_dcamera.cpp_FUN_0044a7de",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537390",
+      "from_addr": "005373be",
+      "name": "core_set.cpp_FUN_00537390",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046d860",
+    "address_range": [
+      [
+        "0046d860",
+        "0046d86a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0046d860",
+    "signature": "int __cdecl engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0046d860(CDemonRenderer *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0044a3f7",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_FUN_0044a3e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042e230",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042e220",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005373be",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00537390",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044a23c",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_FUN_0044a210",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044a875",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_FUN_0044a7de",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 10.75,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "COPY": 3,
+      "INT_ADD": 3,
+      "INT_AND": 13,
+      "INT_EQUAL": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 4,
+      "INT_SLESS": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 1,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 43
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0055a0b0(void)
+; void __cdecl sound_sndmain_cpp_FUN_0055a0b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0055b620 at 0055b645
+;   sound_snddx.cpp_FUN_0055b620 at 0055b645
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3ed5
@@ -23,19 +23,19 @@
 ;   undefined4 DAT_02cf3420
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005526d0
-;   FUN_00554430
-;   FUN_00555410
-;   FUN_005586d0
-;   FUN_005806a0
+;   core_main.c_FUN_004e4330
+;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430
+;   sound_sndmain.cpp_FUN_005526d0
+;   sound_sndmain.cpp_FUN_00555410
+;   sound_sndmain.cpp_FUN_005586d0
+;   wincore_winrun.cpp_FUN_005806a0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0055a0b0
-        ;   Label: FUN_0055a0b0
+        ;   Label: sound_sndmain.cpp_FUN_0055a0b0
     PUSH ESI                            ; 0055a0b1
     PUSH EDI                            ; 0055a0b2
     PUSH EBP                            ; 0055a0b3
@@ -43,8 +43,8 @@ section .text
     CMP dword ptr [0x02cf341c],0x0      ; 0055a0b7 | DAT_02cf341c
     JLE 0x0055a136                      ; 0055a0be
         ;   XREF to: 0055a136 (CONDITIONAL_JUMP)  ; LAB_0055a136
-    CALL FUN_005806a0                   ; 0055a0c4
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005806a0()
+    CALL wincore_winrun.cpp_FUN_005806a0 ; 0055a0c4
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
         ;   Label: LAB_0055a0c4
     MOV EDI,dword ptr [0x02cf3420]      ; 0055a0c9 | DAT_02cf3420
     MOV EBX,EAX                         ; 0055a0cf
@@ -65,8 +65,8 @@ section .text
     XOR EAX,EAX                         ; 0055a0f1
         ;   Label: LAB_0055a0f1
     MOV dword ptr [ESP],EAX             ; 0055a0f3
-    CALL FUN_005586d0                   ; 0055a0f6
-        ;   XREF to: 005586d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005586d0()
+    CALL sound_sndmain.cpp_FUN_005586d0 ; 0055a0f6
+        ;   XREF to: 005586d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005586d0(int enable)
     CMP EAX,0x1                         ; 0055a0fb
     JGE 0x0055a165                      ; 0055a0fe
         ;   XREF to: 0055a165 (CONDITIONAL_JUMP)  ; LAB_0055a165
@@ -76,15 +76,15 @@ section .text
     PUSH dword ptr [ESP]                ; 0055a10b
         ;   Label: LAB_0055a10b
     PUSH EBX                            ; 0055a10e | DAT_02ce7338
-    CALL FUN_00554430                   ; 0055a10f
-        ;   XREF to: 00554430 (UNCONDITIONAL_CALL)  ; undefined FUN_00554430()
+    CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430 ; 0055a10f
+        ;   XREF to: 00554430 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0055a114
     TEST EAX,EAX                        ; 0055a117
     JZ 0x0055a124                       ; 0055a119
         ;   XREF to: 0055a124 (CONDITIONAL_JUMP)  ; LAB_0055a124
     PUSH EBX                            ; 0055a11b
-    CALL FUN_00555410                   ; 0055a11c
-        ;   XREF to: 00555410 (UNCONDITIONAL_CALL)  ; undefined FUN_00555410()
+    CALL sound_sndmain.cpp_FUN_00555410 ; 0055a11c
+        ;   XREF to: 00555410 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00555410()
     ADD ESP,0x4                         ; 0055a121
     ADD EBX,0x11c                       ; 0055a124
         ;   Label: LAB_0055a124
@@ -104,13 +104,13 @@ section .text
     PUSH 0x5d3eea                       ; 0055a140 | = "SfxSlot::pollSfx - must be locked!"
     MOV dword ptr [0x01d71de0],ECX      ; 0055a145 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0055a14b | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0055a151
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0055a151
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0055a156
     JMP 0x0055a0c4                      ; 0055a159
         ;   XREF to: 0055a0c4 (UNCONDITIONAL_JUMP)  ; LAB_0055a0c4
-    CALL FUN_005526d0                   ; 0055a15e
-        ;   XREF to: 005526d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005526d0()
+    CALL sound_sndmain.cpp_FUN_005526d0 ; 0055a15e
+        ;   XREF to: 005526d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005526d0()
         ;   Label: LAB_0055a15e
     JMP 0x0055a0f1                      ; 0055a163
         ;   XREF to: 0055a0f1 (UNCONDITIONAL_JUMP)  ; LAB_0055a0f1

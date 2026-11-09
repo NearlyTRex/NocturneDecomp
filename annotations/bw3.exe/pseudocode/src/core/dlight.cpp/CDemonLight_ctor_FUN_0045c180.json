@@ -1,0 +1,295 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 198,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 17,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [
+    {
+      "addr": "00420360",
+      "from_addr": "0042037d",
+      "name": "core_boxactor.cpp_CLightActor_ctor_FUN_00420360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3cd0",
+      "from_addr": "004b3cdf",
+      "name": "core_game.cpp_staticInit_FUN_004b3cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00542940",
+      "from_addr": "00542a7d",
+      "name": "core_setutil.cpp_C3DSLight_create_FUN_00542940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045c180",
+    "address_range": [
+      [
+        "0045c180",
+        "0045c234"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_ctor_FUN_0045c180",
+    "signature": "CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_0045c180(CDemonLight *this_ptr,int shadow_map_width,int shadow_map_height)"
+  },
+  "function_calls": [
+    {
+      "addr": "00448be0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_00448be0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005de514",
+      "name": "PTR_core_dlight.cpp_CDemonLight_dtor_FUN_0045c240_005de514",
+      "type": "undefined1*",
+      "value": "0045c240"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00542a7d",
+        "call_type": "direct",
+        "caller": "core_setutil.cpp_C3DSLight_create_FUN_00542940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0042037d",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CLightActor_ctor_FUN_00420360",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004b3cdf",
+        "call_type": "direct",
+        "caller": "core_game.cpp_staticInit_FUN_004b3cd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.25,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 21,
+      "INT_ADD": 22,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 78
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "shadow_map_width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "shadow_map_height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar1->field_0x3c = &PTR_core_dlight_cpp_CDemonLight_dtor_FUN_0045c240_005de514;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x1cb4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1cb4 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x1cb8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1cb8 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2f94",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2f94 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2f98",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2f98 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2f9c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2f9c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x164 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x140",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x140 = 0x437f0000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2fa0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2fa0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x1c6c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1c6c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1c54",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1c54 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x2fa4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2fa4 = 0x10000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x2fa8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2fa8 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x1cbc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1cbc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x1cd0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1cd0 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x1cc0",
+      "severity": "mild",
+      "text": "*(int *)&pCVar1->field_0x1cc0 = shadow_map_width;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x1cc4",
+      "severity": "mild",
+      "text": "*(int *)&pCVar1->field_0x1cc4 = shadow_map_height;",
+      "type": "unnamed_field"
+    }
+  ]
+}

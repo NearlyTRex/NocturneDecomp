@@ -1,0 +1,289 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 121,
+    "complexity_score": 224,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 79,
+    "suspect_count": 13,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 200
+  },
+  "cross_references": [
+    {
+      "addr": "004a4aa0",
+      "from_addr": "004a4ab3",
+      "name": "core_firestff.cpp_factoryFuncFirestaff_FUN_004a4aa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a4ad0",
+    "address_range": [
+      [
+        "004a4ad0",
+        "004a4cc7"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_firestff.cpp_CFirestaff_ctor_FUN_004a4ad0",
+    "signature": "CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045ab30",
+      "is_variadic": false,
+      "name": "core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    },
+    {
+      "addr": "0057ad70",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_0057ad70"
+    },
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005a30d7"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c0b05",
+      "name": "DAT_005c0b05",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c0b0d",
+      "name": "DAT_005c0b0d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c0b15",
+      "name": "DAT_005c0b15",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c0b1d",
+      "name": "DAT_005c0b1d",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a4ab3",
+        "call_type": "direct",
+        "caller": "core_firestff.cpp_factoryFuncFirestaff_FUN_004a4aa0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.678899082568807,
+    "instruction_count": 109,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 210,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 56,
+      "INT_AND": 35,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 34,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 17,
+      "INT_SUB": 22,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 52
+    },
+    "pcode_op_count": 510
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFirestaff *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a4ad8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x80",
+      "severity": "mild",
+      "text": "iVar7 = __arrinit(&pCVar6[1].field_0x80,0xc,&g_CFlameTypeInfo);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x2a4",
+      "severity": "mild",
+      "text": "puVar8 = &pCVar9->field_0x2a4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x76c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar9->field_0x76c = 0x3f000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x770",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar9->field_0x770 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x774",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar9->field_0x774 = 0x3f000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x7bc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar9->field_0x7bc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x7c0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar9->field_0x7c0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x76c",
+      "severity": "mild",
+      "text": "*(float *)&pCVar9->field_0x76c = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x774",
+      "severity": "mild",
+      "text": "*(float *)&pCVar9->field_0x774 = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x770",
+      "severity": "mild",
+      "text": "*(float *)&pCVar9->field_0x770 = fVar2 * fVar5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x2a4",
+      "severity": "mild",
+      "text": "pCVar9 = (CFirestaff *)&pCVar9->field_0x2a4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 68,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CFirestaff *)&pCVar9->field_0x2a4;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFirestaff",
+        "offset": 0,
+        "vtable_addr": "005dfe34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

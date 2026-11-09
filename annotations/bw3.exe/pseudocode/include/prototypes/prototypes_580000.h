@@ -4,154 +4,221 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/basetsd.h"
+#include "system/winbase.h"
+#include "system/windef.h"
+#include "system/winnt.h"
+#include "system/winuser.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CKedward.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CMobster.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWinFont.h"
+#include "types/classes/CYow.h"
+#include "types/classes/CZombie.h"
+#include "types/classes/CZombieCemetery.h"
+#include "types/classes/CZombieDemon.h"
+#include "types/classes/CZombieForest.h"
+#include "types/classes/CZombieIndian.h"
+#include "types/classes/CZombiePriest.h"
+#include "types/classes/CZombieSpirit.h"
+#include "types/enums/EInputCodeType.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x580000
 // =============================================================================
 
-bool FUN_00580110(int param_1,int param_2,int param_3);
-void FUN_00580300(int param_1);
-undefined4 FUN_00580380(int param_1,LPCSTR param_2);
-int FUN_005803e0(int param_1,LPCSTR param_2);
-undefined4 FUN_00580450(void);
-void FUN_00580460(void);
-void FUN_00580690(void);
-int FUN_005806a0(void);
-undefined4 FUN_00580770(void);
-undefined1 FUN_00580790(void);
-bool FUN_00580800(void);
-void FUN_00580830(undefined4 param_1);
-void FUN_005809c0(void);
-void FUN_005809d0(int param_1,int param_2);
-void FUN_00580f70(void);
-void FUN_00581010(void);
-void FUN_00581080(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
-void FUN_00581300(undefined4 param_1);
-char * FUN_00581360(uint param_1);
-void FUN_00581920(void);
-bool FUN_00581930(HANDLE param_1);
-bool FUN_00581950(int param_1,double param_2);
-void FUN_00581990(HANDLE param_1);
-void FUN_005819b0(LPTHREAD_START_ROUTINE param_1,LPVOID param_2);
-void FUN_005819e0(HANDLE param_1,uint param_2);
-void FUN_00581a40(double param_1);
-void FUN_00581b70(LPCSTR param_1,LPCSTR param_2,LPBYTE param_3,DWORD param_4);
-void FUN_00581bf0(LPCSTR param_1,LPCSTR param_2,BYTE *param_3);
-void FUN_00581c70(LPCSTR param_1);
-MMRESULT FUN_00581c80(void);
-void FUN_00581cf0(void);
-void FUN_00581d10(void);
-float FUN_00581e70(int param_1,int *param_2,float param_3,float param_4);
-void FUN_00581f50(int param_1);
-void FUN_00582b60(HWND param_1);
-undefined4 FUN_00582eb0(undefined4 param_1,undefined4 param_2);
-void FUN_00583260(float *param_1,float *param_2);
-float * FUN_005832e0(float *param_1,float *param_2);
-void FUN_005833e0(float *param_1,float *param_2);
-undefined4 * FUN_00583590(undefined4 *param_1,undefined4 param_2);
-void FUN_005835d0(undefined4 *param_1);
-void FUN_00583660(undefined4 *param_1);
-void FUN_005836b0(float *param_1);
-void FUN_005837e0(int param_1);
-void FUN_00583800(float *param_1,float *param_2,int param_3);
-void FUN_00583940(float *param_1,float *param_2,int param_3);
-float FUN_00583a40(float param_1,float param_2);
-float * FUN_00583b10(float *param_1);
-float * FUN_00583fb0(float *param_1);
-void FUN_00584450(int param_1);
-double FUN_00584510(float *param_1);
-void FUN_00584560(float *param_1);
-void FUN_00584f70(float param_1);
-void FUN_00584ff0(float param_1);
-void FUN_005854a0(undefined4 *param_1,undefined4 *param_2,float param_3);
-void FUN_005855f0(float *param_1,float *param_2);
-void FUN_00585740(undefined4 param_1);
-void FUN_00585780(float *param_1);
-void FUN_00585930(float *param_1);
-void FUN_00585970(undefined4 *param_1);
-void FUN_00585990(float *param_1,float *param_2);
-void FUN_00585a80(float *param_1,float *param_2,float *param_3);
-float * FUN_00585b20(float *param_1,float *param_2,float param_3);
-void FUN_00585cd0(float param_1);
-void FUN_00585d10(float param_1);
-void FUN_00585d50(float param_1);
-void FUN_00585d90(float param_1,float *param_2);
-float * FUN_00585de0(float *param_1);
-float * FUN_00585f40(float *param_1);
-void FUN_005860b0(float *param_1);
-void FUN_005862e0(void);
-undefined4 FUN_00586330(void);
-int FUN_00586340(undefined4 param_1);
-void FUN_005863e0(int param_1);
-void FUN_00586500(int param_1,float param_2);
-void FUN_00586e50(int param_1);
-void FUN_00586eb0(int param_1,int param_2);
-int FUN_00586fa0(int param_1,float *param_2);
-int FUN_005872b0(int param_1,byte param_2);
-void FUN_00587340(int *param_1,int *param_2,int *param_3);
-void FUN_00587400(int *param_1,int *param_2,int *param_3);
-void FUN_005874c0(int *param_1,int *param_2,int *param_3);
-void FUN_00587580(int *param_1,int *param_2,int *param_3);
-int * FUN_00587cd0(uint param_1,int *param_2);
-void FUN_00588410(void);
-float FUN_005884f0(int param_1);
-undefined4 FUN_00588750(float *param_1);
-undefined4 FUN_005888c0(void);
-int FUN_005888d0(undefined4 param_1);
-void FUN_00588a80(int param_1);
-void FUN_00588ee0(int param_1,float param_2);
-undefined4 * FUN_0058af90(int param_1,int param_2);
-undefined4 FUN_0058b3f0(int param_1,float param_2);
-undefined4 FUN_0058bd50(int param_1,uint param_2);
-undefined4 FUN_0058bdf0(int param_1,undefined4 param_2);
-void FUN_0058be30(int param_1);
-undefined4 FUN_0058be70(int param_1);
-void FUN_0058beb0(int param_1);
-void FUN_0058c060(int param_1);
-undefined4 FUN_0058c1e0(int param_1,undefined4 *param_2);
-void FUN_0058c330(int param_1,int *param_2);
-void FUN_0058c5a0(int param_1,int param_2);
-int FUN_0058c7e0(int param_1,float *param_2);
-undefined4 FUN_0058caf0(undefined4 param_1,undefined4 param_2);
-bool FUN_0058cb30(undefined4 param_1,undefined4 param_2,int param_3);
-undefined4 FUN_0058cb40(int param_1,undefined4 param_2,int param_3);
-undefined4 FUN_0058cbb0(int param_1);
-undefined4 FUN_0058cbe0(int param_1);
-void FUN_0058cc20(int param_1);
-undefined4 FUN_0058ccb0(void);
-int FUN_0058ccc0(undefined4 param_1);
-undefined4 FUN_0058cd40(void);
-int FUN_0058cd50(undefined4 param_1);
-undefined4 FUN_0058cdd0(void);
-int FUN_0058cde0(undefined4 param_1);
-undefined4 FUN_0058ce60(void);
-int FUN_0058ce70(undefined4 param_1);
-undefined4 FUN_0058cef0(void);
-int FUN_0058cf00(undefined4 param_1);
-int FUN_0058cf60(int param_1,byte param_2);
-int FUN_0058cff0(int param_1,byte param_2);
-int FUN_0058d080(int param_1,byte param_2);
-int FUN_0058d110(int param_1,byte param_2);
-int FUN_0058d1a0(int param_1,byte param_2);
-int FUN_0058d230(int param_1,byte param_2);
-void FUN_0058d2c0(void);
-undefined4 FUN_0058d4d0(void);
-int FUN_0058d4e0(undefined4 param_1);
-void FUN_0058d5e0(int param_1);
-void FUN_0058d960(int param_1,float param_2);
-void FUN_0058e8d0(int param_1,float param_2);
-void FUN_0058ecd0(int param_1,int param_2);
-undefined4 FUN_0058efb0(int param_1,float param_2);
-void FUN_0058f4a0(int param_1);
-void FUN_0058f510(int param_1);
-undefined4 FUN_0058f610(void);
-void FUN_0058f630(int param_1,int *param_2);
-void FUN_0058f990(int param_1,int param_2);
-int FUN_0058fb20(int param_1,undefined4 *param_2);
-void FUN_0058fc60(undefined4 param_1,undefined4 param_2);
-int FUN_0058fc80(int param_1,byte param_2);
-void FUN_0058fd10(void);
-undefined4 FUN_0058fd60(void);
-int FUN_0058fd70(undefined4 param_1);
-void FUN_0058fe70(int param_1);
+int __cdecl engine_winfont_cpp_FUN_00580110(CWinFont *this_ptr,int width,int height);
+void __cdecl engine_winfont_cpp_FUN_00580300(CWinFont *this_ptr);
+undefined4 engine_winfont_cpp_FUN_00580380(CWinFont *param_1,LPCSTR param_2);
+int engine_winfont_cpp_FUN_005803e0(CWinFont *param_1,LPCSTR param_2);
+undefined4 unkafter_winfont_cpp_FUN_00580450(void);
+void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_00580460(void);
+void __watcallRegister wincore_winrun_cpp_endPeriod_FUN_00580690(void);
+int wincore_winrun_cpp_FUN_005806a0(void);
+void __cdecl wincore_winrun_cpp_clearKeypresses_FUN_00580770(void);
+int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00580790(void);
+int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_00580800(void);
+undefined1 wincore_winrun_cpp_FUN_0058081c(void);
+void __cdecl wincore_winrun_cpp_enqueueInput_FUN_00580830(int input_value);
+void wincore_winrun_cpp_FUN_00580870(undefined4 param_1);
+void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_00580890(int x_coord,int y_coord);
+void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005808d0(void);
+void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005809c0(void);
+void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005809d0(int x,int y);
+LRESULT __stdcall wincore_winrun_cpp_FUN_00580a50(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
+void __cdecl wincore_winrun_cpp_FUN_00580f70(void);
+void wincore_winrun_cpp_FUN_00581010(void);
+void wincore_winrun_cpp_FUN_0058105e(void);
+void wincore_winrun_cpp_FUN_00581080(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+void __cdecl wincore_winrun_cpp_FUN_00581300(char *message);
+char * __cdecl wincore_winrun_cpp_FUN_00581360(EInputCodeType keycode);
+HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_00581920(void);
+int __cdecl wincore_winrun_cpp_waitForMutex_FUN_00581930(HANDLE mutex_handle);
+int __cdecl wincore_winrun_cpp_waitForMutexTimeout_FUN_00581950(HANDLE mutex_handle,double timeout_seconds);
+void __cdecl wincore_winrun_cpp_releaseMutex_FUN_00581990(HANDLE mutex_handle);
+HANDLE __cdecl wincore_winrun_cpp_createThread_FUN_005819b0(LPTHREAD_START_ROUTINE thread_func,LPVOID thread_param);
+int __cdecl wincore_winrun_cpp_setThreadPriority_FUN_005819e0(HANDLE hThread,int priority_level);
+void wincore_winrun_cpp_FUN_00581a20(HANDLE param_1);
+void __cdecl wincore_winrun_cpp_sleep_FUN_00581a40(double seconds);
+void wincore_winrun_cpp_FUN_00581a9c(char *param_1);
+void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_00581b70(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
+void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_00581bf0(char *key_path,char *value_name,char *value_data);
+void wincore_winrun_cpp_FUN_00581c70(LPCSTR param_1);
+void __cdecl wincore_winrun_cpp_initJoystick_FUN_00581c80(void);
+void __cdecl wincore_winrun_cpp_FUN_00581cf0(void);
+void __cdecl wincore_winrun_cpp_getJoystickState_FUN_00581d10(void);
+float unkafter_winrun_cpp_FUN_00581e70(int param_1,int *param_2,float param_3,float param_4);
+void unkafter_winrun_cpp_FUN_00581f50(int param_1);
+void unkafter_winrun_cpp_FUN_0058236e(void);
+void unkafter_winrun_cpp_FUN_005823a0(int param_1,int param_2,UINT_PTR param_3);
+void unkafter_winrun_cpp_FUN_005824b0(int param_1);
+void unkafter_winrun_cpp_FUN_00582500(float param_1);
+float unkafter_winrun_cpp_FUN_0058257c(void);
+void unkafter_winrun_cpp_FUN_005825e0(int param_1);
+void unkafter_winrun_cpp_FUN_00582630(undefined4 param_1);
+void unkafter_winrun_cpp_FUN_00582680(undefined4 param_1);
+void unkafter_winrun_cpp_FUN_0058282c(undefined4 param_1);
+void unkafter_winrun_cpp_FUN_00582aa0(void);
+void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00582b60(HWND window_handle);
+void __cdecl wincore_winvideo_cpp_openMovie_FUN_00582bb0(HWND parent_window,char *movie_filename);
+void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_00582e40(HWND notify_window,int play_state);
+int __cdecl wincore_winvideo_cpp_FUN_00582eb0(char *directory_path,char *movie_filename);
+void core_xform_cpp_FUN_00583260(float *param_1,float *param_2);
+float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005832e0(float *param_1,float *param_2);
+void core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(float *param_1,float *param_2);
+undefined4 * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00583590(undefined4 *param_1,undefined4 param_2);
+void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005835d0(undefined4 *param_1);
+void core_xform_cpp_FUN_0058362e(void);
+void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_00583660(undefined4 *param_1);
+void core_xform_cpp_FUN_005836b0(float *param_1);
+void __cdecl core_xform_cpp_clearTranslation_FUN_005837e0(int param_1);
+void __cdecl core_xform_cpp_FUN_00583800(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
+void core_xform_cpp_FUN_00583940(float *param_1,float *param_2,int param_3);
+float core_xform_cpp_FUN_00583a40(float param_1,float param_2);
+float * core_xform_cpp_FUN_00583b10(float *param_1);
+float * core_xform_cpp_FUN_00583fb0(float *param_1);
+void core_xform_cpp_FUN_00584450(int param_1);
+double __cdecl core_xform_cpp_determinant_FUN_00584510(float *param_1);
+void core_xform_cpp_FUN_00584560(float *param_1);
+void core_xform_cpp_FUN_00584b00(void);
+void core_xform_cpp_buildRotationX_FUN_00584f70(float param_1);
+void core_xform_cpp_buildRotationY_FUN_00584ff0(float param_1);
+void core_xform_cpp_FUN_00585210(float param_1);
+void core_xform_cpp_FUN_0058526e(float param_1);
+void core_xform_cpp_FUN_005852d0(float param_1);
+void core_xform_cpp_lerpMatrix3x4_FUN_005854a0(undefined4 *param_1,undefined4 *param_2,float param_3);
+CQuaternion4f * __cdecl core_xform_cpp_FUN_005855f0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
+void core_xform_cpp_quaternionToMatrix3x4_FUN_00585740(CQuaternion4f *param_1);
+void core_xform_cpp_FUN_00585780(float *param_1);
+void core_xform_cpp_negateFirstComponent_FUN_00585930(float *param_1);
+void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00585970(undefined4 *param_1);
+void core_xform_cpp_multiplyQuaternion_FUN_00585990(float *param_1,float *param_2);
+void core_xform_cpp_FUN_00585a80(float *param_1,float *param_2,float *param_3);
+float * core_xform_cpp_FUN_00585b20(float *param_1,float *param_2,float param_3);
+void core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(float param_1);
+void core_xform_cpp_quaternionFromAngleY_FUN_00585d10(float param_1);
+void core_xform_cpp_FUN_00585d50(float param_1);
+void core_xform_cpp_quaternionFromAxisAngle_FUN_00585d90(float param_1,float *param_2);
+float * core_xform_cpp_FUN_00585de0(float *param_1);
+float * core_xform_cpp_FUN_00585f40(float *param_1);
+void core_xform_cpp_FUN_005860b0(float *param_1);
+void core_xform_cpp_FUN_005861d0(float *param_1);
+void core_yow_cpp_staticInit_FUN_005862e0(void);
+void core_yow_cpp_factoryFuncYow_FUN_00586310(void);
+CDemonActorType * core_xform_cpp_CYow_getActorType_FUN_00586330(CYow *this_ptr);
+CYow * core_xform_cpp_CYow_ctor_FUN_00586340(CYow *this_ptr);
+void core_xform_cpp_FUN_005863e0(CEnemy *param_1);
+void core_xform_cpp_FUN_00586500(CEnemy *param_1,float param_2);
+void core_xform_cpp_FUN_00586e50(int param_1);
+void core_xform_cpp_FUN_00586eb0(int param_1,int param_2);
+int core_xform_cpp_FUN_00586fa0(int param_1,float *param_2);
+CYow * core_xform_cpp_CYow_dtor_FUN_005872b0(CYow *this_ptr,uint flags);
+void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_00587340(int *param_1,int *param_2,int *param_3);
+void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_00587400(int *param_1,int *param_2,int *param_3);
+void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_005874c0(int *param_1,int *param_2,int *param_3);
+void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_00587580(int *param_1,int *param_2,int *param_3);
+void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00587940(void);
+void core_xform_cpp_FUN_00587c20(void);
+void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00587cd0(int vertex_count,int *vertex_indices);
+void core_zombie_cpp_staticInit_FUN_00588410(void);
+float core_zombie_cpp_FUN_005884f0(int param_1);
+void core_zombie_cpp_FUN_00588590(int param_1);
+void core_zombie_cpp_FUN_00588650(int param_1);
+int __cdecl core_zombie_cpp_FUN_00588750(CVector3f *dimensions);
+void core_zombie_cpp_factoryFuncZombie_FUN_005888a0(void);
+CDemonActorType * core_zombie_cpp_CZombie_getActorType_FUN_005888c0(CZombie *this_ptr);
+CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005888d0(CZombie *this_ptr);
+void core_zombie_cpp_FUN_00588a80(CEnemy *param_1);
+void core_zombie_cpp_FUN_00588ee0(CZombie *param_1,float param_2);
+undefined4 * core_zombie_cpp_FUN_0058af90(int param_1,int param_2);
+int __cdecl core_zombie_cpp_FUN_0058b3f0(CZombie *this_ptr,float delta_time);
+int __cdecl core_zombie_cpp_FUN_0058bd50(CZombie *this_ptr,int object_shape_type);
+int __cdecl core_zombie_cpp_FUN_0058bdf0(CZombie *this_ptr,int object_shape_type);
+void __cdecl core_zombie_cpp_FUN_0058be30(CZombie *this_ptr);
+int core_zombie_cpp_FUN_0058be70(CCharacter *param_1);
+void core_zombie_cpp_FUN_0058beb0(int param_1);
+void core_zombie_cpp_FUN_0058c060(int param_1);
+undefined4 core_zombie_cpp_FUN_0058c1e0(int param_1,undefined4 *param_2);
+void __cdecl core_zombie_cpp_FUN_0058c330(CZombie *this_ptr,SDamageInfo *damage_info);
+void core_zombie_cpp_FUN_0058c5a0(CZombie *param_1,SDamageInfo *param_2);
+int core_zombie_cpp_FUN_0058c7e0(int param_1,float *param_2);
+int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_0058caf0(CZombie *this_ptr,CDemonActor *grabber);
+int __cdecl core_zombie_cpp_CZombie_canBeGrabbed_FUN_0058cb30(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
+undefined4 core_zombie_cpp_FUN_0058cb40(int param_1,undefined4 param_2,int param_3);
+int core_zombie_cpp_FUN_0058cbb0(CDemonActor *param_1);
+undefined4 core_zombie_cpp_FUN_0058cbe0(int param_1);
+void __cdecl core_zombie_cpp_FUN_0058cc20(CZombie *this_ptr);
+void core_zombie_cpp_FUN_0058cc90(void);
+undefined4 core_zombie_cpp_FUN_0058ccb0(void);
+CZombieCemetery * core_zombie_cpp_CZombieCemetery_ctor_FUN_0058ccc0(CZombieCemetery *this_ptr);
+void core_zombie_cpp_FUN_0058cd20(void);
+undefined4 core_zombie_cpp_FUN_0058cd40(void);
+CZombieForest * core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr);
+void core_zombie_cpp_FUN_0058cdb0(void);
+undefined4 core_zombie_cpp_FUN_0058cdd0(void);
+CZombieSpirit * core_zombie_cpp_CZombieSpirit_ctor_FUN_0058cde0(CZombieSpirit *this_ptr);
+void core_zombie_cpp_FUN_0058ce40(void);
+undefined4 core_zombie_cpp_FUN_0058ce60(void);
+CZombieIndian * core_zombie_cpp_CZombieIndian_ctor_FUN_0058ce70(CZombieIndian *this_ptr);
+void core_zombie_cpp_FUN_0058ced0(void);
+undefined4 core_zombie_cpp_FUN_0058cef0(void);
+CZombieDemon * core_zombie_cpp_CZombieDemon_ctor_FUN_0058cf00(CZombieDemon *this_ptr);
+CZombieDemon * core_zombie_cpp_CZombieDemon_dtor_FUN_0058cf60(CZombieDemon *this_ptr,uint flags);
+CZombieIndian * core_zombie_cpp_CZombieIndian_dtor_FUN_0058cff0(CZombieIndian *this_ptr,uint flags);
+CZombieSpirit * core_zombie_cpp_CZombieSpirit_dtor_FUN_0058d080(CZombieSpirit *this_ptr,uint flags);
+CZombieForest * core_zombie_cpp_CZombieForest_dtor_FUN_0058d110(CZombieForest *this_ptr,uint flags);
+CZombieCemetery * core_zombie_cpp_CZombieCemetery_dtor_FUN_0058d1a0(CZombieCemetery *this_ptr,uint flags);
+CZombie * core_zombie_cpp_CZombie_dtor_FUN_0058d230(CZombie *this_ptr,uint flags);
+void core_zombprie_cpp_staticInit_FUN_0058d2c0(void);
+void core_zombprie_cpp_FUN_0058d2f0(int param_1);
+void core_zombprie_cpp_FUN_0058d3b0(int param_1);
+void core_zombprie_cpp_factoryFuncZombiePriest_FUN_0058d4b0(void);
+CDemonActorType * core_zombprie_cpp_CZombiePriest_getActorType_FUN_0058d4d0(CZombiePriest *this_ptr);
+CZombiePriest * core_zombprie_cpp_CZombiePriest_ctor_FUN_0058d4e0(CZombiePriest *this_ptr);
+void core_zombprie_cpp_FUN_0058d5e0(CEnemy *param_1);
+void core_zombprie_cpp_FUN_0058d960(CEnemy *param_1,float param_2);
+void core_zombprie_cpp_FUN_0058e8d0(int param_1,float param_2);
+void unkafter_zombiepr_cpp_FUN_0058ecd0(int param_1,int param_2);
+undefined4 unkafter_zombiepr_cpp_FUN_0058efb0(CCharacter *param_1,float param_2);
+void __cdecl unkafter_zombiepr_cpp_FUN_0058f4a0(CMobster *this_ptr);
+void unkafter_zombiepr_cpp_FUN_0058f510(int param_1);
+undefined4 unkafter_zombiepr_cpp_FUN_0058f610(void);
+void unkafter_zombiepr_cpp_FUN_0058f630(CCharacter *param_1,int *param_2);
+void unkafter_zombiepr_cpp_FUN_0058f990(int param_1,int param_2);
+int unkafter_zombiepr_cpp_FUN_0058fb20(int param_1,undefined4 *param_2);
+void unkafter_zombiepr_cpp_FUN_0058fc60(CCharacter *param_1,SCollisionInfo *param_2);
+CZombiePriest * unkafter_zombiepr_cpp_CZombiePriest_dtor_FUN_0058fc80(CZombiePriest *this_ptr,uint flags);
+void core_kedward_cpp_staticInit_FUN_0058fd10(void);
+void core_kedward_cpp_factoryFuncKedward_FUN_0058fd40(void);
+CDemonActorType * core_kedward_cpp_CKedward_getActorType_FUN_0058fd60(CKedward *this_ptr);
+CKedward * core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr);
+void core_kedward_cpp_FUN_0058fe70(CEnemy *param_1);
 

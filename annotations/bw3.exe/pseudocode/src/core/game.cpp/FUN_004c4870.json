@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "004f6de0",
+      "from_addr": "004f6e72",
+      "name": "core_mission.cpp_FUN_004f6de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4870",
+    "address_range": [
+      [
+        "004c4870",
+        "004c48a7"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004c4870",
+    "signature": "void core_game_cpp_FUN_004c4870(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0053b1c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setGamma_FUN_0053b1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01d22c2c",
+      "name": "DAT_01d22c2c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22c6c",
+      "name": "DAT_01d22c6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22c9c",
+      "name": "DAT_01d22c9c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f6e72",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004f6de0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.235294117647059,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 17,
+      "INT_ADD": 6,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 55
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_game_cpp_FUN_004c4870(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_setGamma_FUN_0053b1c0(g_CDemonSetPtr,*(int *)(param_1 + 0x248));",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

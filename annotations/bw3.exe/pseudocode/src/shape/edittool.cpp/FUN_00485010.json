@@ -1,0 +1,288 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 245,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 22,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00485010",
+    "address_range": [
+      [
+        "00485010",
+        "00485094"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_FUN_00485010",
+    "signature": "void shape_edittool_cpp_FUN_00485010(CPickList *param_1,int param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00484bd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_enableItem_FUN_00484bd0"
+    },
+    {
+      "addr": "00484dd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_getItemHotKey_FUN_00484dd0"
+    },
+    {
+      "addr": "00484ca0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_00484ca0"
+    },
+    {
+      "addr": "00484d00",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_setItemHotKey_FUN_00484d00"
+    },
+    {
+      "addr": "004826c0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_swap_FUN_004826c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.078125,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 9,
+      "CBRANCH": 2,
+      "COPY": 50,
+      "INT_ADD": 22,
+      "INT_AND": 22,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 11,
+      "INT_SUB": 38,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 36
+    },
+    "pcode_op_count": 261
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00485010(CPickList *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00485010(CPickList *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00485010(CPickList *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_swap_FUN_004826c0((CStrList *)param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_swap_FUN_004826c0((CStrList *)param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_swap_FUN_004826c0((CStrList *)param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,param_2,iVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,param_2,iVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,param_3,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,param_3,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_00484dd0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_00484dd0(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_00484dd0(param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_00484dd0(param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(param_1,param_2,iVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(param_1,param_2,iVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(param_1,param_3,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(param_1,param_3,iVar1);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPickList",
+        "offset": 16,
+        "vtable_addr": "005df044"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

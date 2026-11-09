@@ -1,0 +1,173 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 100,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 7,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "00489c90",
+      "from_addr": "00489cfe",
+      "name": "core_enemy.cpp_FUN_00489c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dba30",
+    "address_range": [
+      [
+        "004dba30",
+        "004dba7e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_inv.cpp_FUN_004dba30",
+    "signature": "undefined4 core_inv_cpp_FUN_004dba30(int param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d0c150",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00489cfe",
+        "call_type": "direct",
+        "caller": "core_enemy.cpp_FUN_00489c90",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.473684210526316,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 40,
+      "INT_ADD": 20,
+      "INT_AND": 20,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 9,
+      "INT_XOR": 2,
+      "LOAD": 17,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 170
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_inv_cpp_FUN_004dba30(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint core_inv_cpp_FUN_004dba30(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 0x10)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((iVar1 != 0) && (param_2 == *(int *)(iVar1 + 0x56c))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar3 < *(int *)(param_1 + 0x10));",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

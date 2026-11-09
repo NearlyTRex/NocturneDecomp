@@ -1,0 +1,129 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [
+    {
+      "addr": "00505a30",
+      "from_addr": "00506027",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_00505a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00581080",
+      "from_addr": "005810be",
+      "name": "wincore_winrun.cpp_FUN_00581080",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a35f0",
+    "address_range": [
+      [
+        "005a35f0",
+        "005a35ff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "crt_stdlib.c_srand_FUN_005a35f0",
+    "signature": "void __cdecl crt_stdlib_c_srand_FUN_005a35f0(uint seed)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a35c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a35c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005810be",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_00581080",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00506027",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_00505a30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00506205",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_00505a30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 4,
+      "INT_ADD": 2,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 21
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "seed",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

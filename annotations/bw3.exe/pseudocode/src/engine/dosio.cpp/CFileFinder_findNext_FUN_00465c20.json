@@ -1,0 +1,277 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 58,
+    "cross_reference_count": 6,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 66
+  },
+  "cross_references": [
+    {
+      "addr": "005152e0",
+      "from_addr": "00515351",
+      "name": "core_podmain.cpp_FUN_005152e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482a70",
+      "from_addr": "00482bfe",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482c70",
+      "from_addr": "00482dfd",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dd1e",
+      "from_addr": "0047de31",
+      "name": "shape_edittool.cpp_FUN_0047dd1e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482ea0",
+      "from_addr": "00482f34",
+      "name": "shape_edittool.cpp_FUN_00482ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483020",
+      "from_addr": "0048310f",
+      "name": "shape_edittool.cpp_FUN_00483020",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00465c20",
+    "address_range": [
+      [
+        "00465c20",
+        "00465c9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00465c20",
+    "signature": "int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00465c20(CFileFinder *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00465cf0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00465cf0"
+    },
+    {
+      "addr": "00465ce0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_reset_FUN_00465ce0"
+    },
+    {
+      "addr": "EXTERNAL:0000005b",
+      "is_variadic": false,
+      "name": "FindNextFileA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b355c",
+      "name": "PTR_FindNextFileA_005b355c",
+      "type": "void*",
+      "value": "001b3d82"
+    },
+    {
+      "addr": "005bbfcc",
+      "name": "s_engine_dosio_c_005bbfcc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbfde",
+      "name": "s_CFileFinder_open_search_005bbfde",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "00482bfe",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00482dfd",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00515351",
+        "call_type": "direct",
+        "caller": "core_podmain.cpp_FUN_005152e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00482f34",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00482ea0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048310f",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483020",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047de31",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047dd1e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047df56",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047dd1e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.15,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 34,
+      "INT_ADD": 15,
+      "INT_AND": 19,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 166
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileFinder *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x10c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "BVar1 = FindNextFileA(*(HANDLE *)&this_ptr->field_0x110,&_Stack_148);",
+      "type": "unnamed_field"
+    }
+  ]
+}

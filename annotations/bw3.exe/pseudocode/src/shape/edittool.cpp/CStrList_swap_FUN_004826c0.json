@@ -1,0 +1,193 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 73,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "00485010",
+      "from_addr": "00485023",
+      "name": "shape_edittool.cpp_FUN_00485010",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004826c0",
+    "address_range": [
+      [
+        "004826c0",
+        "00482733"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_swap_FUN_004826c0",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_swap_FUN_004826c0(CStrList *this_ptr,int index1,int index2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bd5ec",
+      "name": "s_shape_edittool_cpp_005bd5ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd602",
+      "name": "s_CStrList_swap_invalid_in_005bd602",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00485023",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00485010",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.98,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 6,
+      "COPY": 52,
+      "INT_ADD": 25,
+      "INT_AND": 18,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 17,
+      "INT_LESS": 4,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
+      "LOAD": 23,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 8
+    },
+    "pcode_op_count": 199
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "index1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "index2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)(index1 * 4 + *(int *)&this_ptr->field_0x8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*puVar2 = *(uint *)(*(int *)&this_ptr->field_0x8 + index2 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x8 + index2 * 4) = uVar1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStrList",
+        "offset": 16,
+        "vtable_addr": "005df024"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

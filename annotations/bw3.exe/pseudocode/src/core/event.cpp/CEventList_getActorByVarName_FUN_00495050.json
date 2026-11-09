@@ -1,0 +1,220 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 106,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 7,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "suspicious_cast",
+      "unnamed_field"
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [
+    {
+      "addr": "0048b950",
+      "from_addr": "0048b96f",
+      "name": "core_event.cpp_resolveActorByName_FUN_0048b950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005289b0",
+      "from_addr": "00528a22",
+      "name": "core_script.cpp_getActor_FUN_005289b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00495050",
+    "address_range": [
+      [
+        "00495050",
+        "004950be"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_getActorByVarName_FUN_00495050",
+    "signature": "CDemonActor * __cdecl core_event_cpp_CEventList_getActorByVarName_FUN_00495050(CEventList *this_ptr,char *name)"
+  },
+  "function_calls": [
+    {
+      "addr": "004950c0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_findActorVariable_FUN_004950c0"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "02024a2c",
+      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a30",
+      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0048b96f",
+        "call_type": "direct",
+        "caller": "core_event.cpp_resolveActorByName_FUN_0048b950",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00528a22",
+        "call_type": "direct",
+        "caller": "core_script.cpp_getActor_FUN_005289b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.630434782608695,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 43,
+      "INT_ADD": 24,
+      "INT_AND": 43,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 17,
+      "INT_SUB": 13,
+      "INT_XOR": 4,
+      "LOAD": 15,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 259
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "for (iVar4 = 0; iVar4 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar4 = iVar4 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 15,
+      "match": "*(char **)(&g_CDemonSetPtr->field_0x14d168",
+      "severity": "moderate",
+      "text": "(*(char **)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x14d168",
+      "severity": "mild",
+      "text": "(*(char **)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 18,
+      "match": "*(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168",
+      "severity": "moderate",
+      "text": "return *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iVar3);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x14d168",
+      "severity": "mild",
+      "text": "return *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iVar3);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 15,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(char **)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 18,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "return *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iVar3);",
+      "type": "suspicious_cast"
+    }
+  ]
+}

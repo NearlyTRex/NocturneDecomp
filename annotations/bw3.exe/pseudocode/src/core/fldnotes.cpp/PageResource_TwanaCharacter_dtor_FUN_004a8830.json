@@ -1,0 +1,141 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a8830",
+    "address_range": [
+      [
+        "004a8830",
+        "004a8884"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_PageResource_TwanaCharacter_dtor_FUN_004a8830",
+    "signature": "SPageResourceTwanaCharacter * core_fldnotes_cpp_PageResource_TwanaCharacter_dtor_FUN_004a8830(SPageResourceTwanaCharacter *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a8710",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004a8710"
+    },
+    {
+      "addr": "005a308f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005a308f"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30b6"
+    },
+    {
+      "addr": "005a30c4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30c4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e02b4",
+      "name": "PTR_core_fldnotes.cpp_PageResource_TwanaCharacter_dtor_FUN_004a8830_005e02b4",
+      "type": "void*",
+      "value": "004a8830"
+    },
+    {
+      "addr": "005e0380",
+      "name": "g_PageResource_TwanaCharacterTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.96875,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 24,
+      "INT_ADD": 14,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 12
+    },
+    "pcode_op_count": 127
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceTwanaCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x14 =",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005e02b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

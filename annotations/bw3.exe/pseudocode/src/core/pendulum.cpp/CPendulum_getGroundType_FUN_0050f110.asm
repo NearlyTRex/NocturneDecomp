@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_0050f110(CPendulum *this_ptr)
+;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0050f110
+        ;   Label: core_pendulum.cpp_CPendulum_getGroundType_FUN_0050f110
+    MOV EAX,dword ptr [EAX + 0x438]     ; 0050f114
+    RET                                 ; 0050f11a
+

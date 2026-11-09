@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00505950(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5 )
+; int core_netgame_cpp_FUN_00505950(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
-; XREF[3]:
-;   FUN_00503fb0 at 00504003
-;   FUN_00504d60 at 00504f3a
-;   FUN_00506b00 at 0050715d
+; XREF[4]:
+;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00506b00 at 0050715d
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00504003
+;   core_netgame.cpp_FUN_00503efc at 00503f62
+;   core_netgame.cpp_FUN_00504d60 at 00504f3a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005cab0b
@@ -18,15 +19,15 @@
 ;   undefined4 DAT_01da6484
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005a28f0
+;   core_main.c_FUN_004e4330
+;   crt_memory.c_memset_FUN_005a28f0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00505950
-        ;   Label: FUN_00505950
+        ;   Label: core_netgame.cpp_FUN_00505950
     PUSH ESI                            ; 00505951
     PUSH EDI                            ; 00505952
     PUSH EBP                            ; 00505953
@@ -45,8 +46,8 @@ section .text
     MOV dword ptr [EBX + -0x4],EDX      ; 00505977
     ADD EBX,EAX                         ; 0050597a
     PUSH EBX                            ; 0050597c
-    CALL FUN_005a28f0                   ; 0050597d
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 0050597d
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00505982
     MOV EDI,EBX                         ; 00505985
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00505987
@@ -100,8 +101,8 @@ section .text
     PUSH 0x5cab1f                       ; 00505a0a | = "CNetGame::addPlayer - too many players!"
     MOV dword ptr [0x01d71de0],ECX      ; 00505a0f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00505a15 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00505a1b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00505a1b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00505a20
     JMP 0x00505962                      ; 00505a23
         ;   XREF to: 00505962 (UNCONDITIONAL_JUMP)  ; LAB_00505962

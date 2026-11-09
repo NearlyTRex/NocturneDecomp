@@ -1,0 +1,140 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 54,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040ec30",
+    "address_range": [
+      [
+        "0040ec30",
+        "0040ec6c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_barrier.cpp_CBarrier_getCollisionType_FUN_0040ec30",
+    "signature": "ECollisionType __cdecl core_barrier_cpp_CBarrier_getCollisionType_FUN_0040ec30(CBarrier *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007df974",
+      "name": "DAT_007df974",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.608695652173913,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 19,
+      "INT_ADD": 11,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 106
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBarrier *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "if (this_ptr->field_0x168 != '\\0') {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_007df974",
+      "severity": "mild",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c790(DAT_007df974,&this_ptr->field_0x168);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c790(DAT_007df974,&this_ptr->field_0x168);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 60,
+        "vtable_addr": "005db674"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

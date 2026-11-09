@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005152e0(int param_1)
+; void core_podmain_cpp_FUN_005152e0(int param_1)
 ;
 ;
 ; Referenced Globals:
@@ -18,22 +18,22 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_00465b60
-;   FUN_00465b80
-;   FUN_00465ba0
-;   FUN_00465c20
-;   FUN_00465ca0
-;   FUN_004e4330
-;   FUN_005a3230
-;   FUN_005a3a90
-;   FUN_005a43ec
+;   core_main.c_FUN_004e4330
+;   crt_stdio.c_fclose_FUN_005a3a90
+;   crt_stdio.c_fopen_FUN_005a43ec
+;   crt_stdio.c_fscanf_FUN_005a3230
+;   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00465ca0
+;   engine_dosio.cpp_CFileFinder_ctor_FUN_00465b60
+;   engine_dosio.cpp_CFileFinder_dtor_FUN_00465b80
+;   engine_dosio.cpp_CFileFinder_findNext_FUN_00465c20
+;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005152e0
-        ;   Label: FUN_005152e0
+        ;   Label: core_podmain.cpp_FUN_005152e0
     PUSH ESI                            ; 005152e1
     PUSH EDI                            ; 005152e2
     PUSH EBP                            ; 005152e3
@@ -41,8 +41,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x32c]     ; 005152ea
     PUSH 0x5cca00                       ; 005152f1 | DAT_005cca00
     PUSH 0x5cca03                       ; 005152f6 | = "pod.ini"
-    CALL FUN_005a43ec                   ; 005152fb
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined FUN_005a43ec()
+    CALL crt_stdio.c_fopen_FUN_005a43ec ; 005152fb
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
     ADD ESP,0x8                         ; 00515300
     MOV EDI,EAX                         ; 00515303
     TEST EAX,EAX                        ; 00515305
@@ -50,14 +50,14 @@ section .text
         ;   XREF to: 005153b6 (CONDITIONAL_JUMP)  ; LAB_005153b6
     MOV EAX,ESP                         ; 0051530d
     PUSH EAX                            ; 0051530f
-    CALL FUN_00465b60                   ; 00515310
-        ;   XREF to: 00465b60 (UNCONDITIONAL_CALL)  ; undefined FUN_00465b60()
+    CALL engine_dosio.cpp_CFileFinder_ctor_FUN_00465b60 ; 00515310
+        ;   XREF to: 00465b60 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_ctor_FUN_00465b60(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00515315
     PUSH 0x5cca0b                       ; 00515318 | = "*.pod"
     LEA EAX,[ESP + 0x4]                 ; 0051531d
     PUSH EAX                            ; 00515321
-    CALL FUN_00465ba0                   ; 00515322
-        ;   XREF to: 00465ba0 (UNCONDITIONAL_CALL)  ; undefined FUN_00465ba0()
+    CALL engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0 ; 00515322
+        ;   XREF to: 00465ba0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0(CFileFinder * this_ptr, char * search_pattern)
     ADD ESP,0x8                         ; 00515327
     CMP byte ptr [ESP],0x0              ; 0051532a
     JZ 0x0051535f                       ; 0051532e
@@ -77,8 +77,8 @@ section .text
     MOV EAX,ESP                         ; 0051534e
         ;   Label: LAB_0051534e
     PUSH EAX                            ; 00515350
-    CALL FUN_00465c20                   ; 00515351
-        ;   XREF to: 00465c20 (UNCONDITIONAL_CALL)  ; undefined FUN_00465c20()
+    CALL engine_dosio.cpp_CFileFinder_findNext_FUN_00465c20 ; 00515351
+        ;   XREF to: 00465c20 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_findNext_FUN_00465c20(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00515356
     CMP byte ptr [ESP],0x0              ; 00515359
     JNZ 0x00515330                      ; 0051535d
@@ -86,14 +86,14 @@ section .text
     MOV EAX,ESP                         ; 0051535f
         ;   Label: LAB_0051535f
     PUSH EAX                            ; 00515361
-    CALL FUN_00465ca0                   ; 00515362
-        ;   XREF to: 00465ca0 (UNCONDITIONAL_CALL)  ; undefined FUN_00465ca0()
+    CALL engine_dosio.cpp_CFileFinder_closeSearch_FUN_00465ca0 ; 00515362
+        ;   XREF to: 00465ca0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_closeSearch_FUN_00465ca0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00515367
     PUSH 0x0                            ; 0051536a
     LEA EAX,[ESP + 0x4]                 ; 0051536c
     PUSH EAX                            ; 00515370
-    CALL FUN_00465b80                   ; 00515371
-        ;   XREF to: 00465b80 (UNCONDITIONAL_CALL)  ; undefined FUN_00465b80()
+    CALL engine_dosio.cpp_CFileFinder_dtor_FUN_00465b80 ; 00515371
+        ;   XREF to: 00465b80 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_dtor_FUN_00465b80(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00515376
     ADD ESP,0x318                       ; 00515379
     POP EBP                             ; 0051537f
@@ -111,8 +111,8 @@ section .text
     PUSH 0x5cca25                       ; 0051539b | = "Can't mount %s: %s"
     MOV dword ptr [0x01d71de0],EDX      ; 005153a0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 005153a6 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 005153ac
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 005153ac
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0xc                         ; 005153b1
     JMP 0x0051534e                      ; 005153b4
         ;   XREF to: 0051534e (UNCONDITIONAL_JUMP)  ; LAB_0051534e
@@ -121,8 +121,8 @@ section .text
     PUSH EDX                            ; 005153bd
     PUSH 0x5cca38                       ; 005153be | DAT_005cca38
     PUSH EAX                            ; 005153c3
-    CALL FUN_005a3230                   ; 005153c4
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 005153c4
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 005153c9
     MOV EDX,dword ptr [ESP + 0x314]     ; 005153cc
     XOR ESI,ESI                         ; 005153d3
@@ -135,8 +135,8 @@ section .text
     PUSH EAX                            ; 005153e5
     PUSH 0x5cca3c                       ; 005153e6 | DAT_005cca3c
     PUSH EDI                            ; 005153eb
-    CALL FUN_005a3230                   ; 005153ec
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 005153ec
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 005153f1
     LEA EAX,[ESP + 0x214]               ; 005153f4
     PUSH EAX                            ; 005153fb
@@ -157,8 +157,8 @@ section .text
         ;   XREF to: 005153de (CONDITIONAL_JUMP)  ; LAB_005153de
     PUSH EDI                            ; 00515421
         ;   Label: LAB_00515421
-    CALL FUN_005a3a90                   ; 00515422
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3a90()
+    CALL crt_stdio.c_fclose_FUN_005a3a90 ; 00515422
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
     ADD ESP,0x4                         ; 00515427
     ADD ESP,0x318                       ; 0051542a
     POP EBP                             ; 00515430
@@ -174,8 +174,8 @@ section .text
     PUSH EAX                            ; 0051544e
     PUSH 0x5cca54                       ; 0051544f | = "Can't mount %s: %s"
     MOV dword ptr [0x01d71de0],EBP      ; 00515454 | DAT_01d71de0
-    CALL FUN_004e4330                   ; 0051545a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0051545a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0xc                         ; 0051545f
     JMP 0x00515415                      ; 00515462
         ;   XREF to: 00515415 (UNCONDITIONAL_JUMP)  ; LAB_00515415

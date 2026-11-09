@@ -1,0 +1,285 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 168,
+    "complexity_score": 86,
+    "cross_reference_count": 3,
+    "function_call_count": 10,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 51,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 219
+  },
+  "cross_references": [
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be468",
+      "name": "core_game.cpp_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be8d0",
+      "from_addr": "004bea0a",
+      "name": "core_game.cpp_FUN_004be8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfa40",
+      "from_addr": "004bfaf5",
+      "name": "core_game.cpp_FUN_004bfa40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047db70",
+    "address_range": [
+      [
+        "0047db70",
+        "0047dd1a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_FUN_0047db70",
+    "signature": "int __cdecl shape_edittool_cpp_FUN_0047db70(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "00465e80",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00465e80"
+    },
+    {
+      "addr": "0047cf40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40"
+    },
+    {
+      "addr": "004831c0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004831c0"
+    },
+    {
+      "addr": "004832b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004832b0"
+    },
+    {
+      "addr": "00482450",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getFieldAt_FUN_00482450"
+    },
+    {
+      "addr": "00482a70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70"
+    },
+    {
+      "addr": "00482390",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_sortAll_FUN_00482390"
+    },
+    {
+      "addr": "00483450",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00483450"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bcec2",
+      "name": "s_No_files_found_005bcec2",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004bea0a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004be8d0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004be468",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bdfb0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004bfaf5",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bfa40",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8333333333333335,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 14,
+      "CBRANCH": 6,
+      "COPY": 108,
+      "INT_ADD": 46,
+      "INT_AND": 56,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 52,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 26,
+      "INT_SUB": 67,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 64
+    },
+    "pcode_op_count": 529
+  },
+  "stack_frame": {
+    "frame_size": 2288,
+    "local_size": 2264,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8d4",
+        "offset": -2260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_514",
+        "offset": -1300,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_314",
+        "offset": -788,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "dialog_title",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "search_directory",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_pattern",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_filename",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((int)local_8d4._0_4_ < 1) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 27,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if (((flags & 1) != 0) && (string_index = 0, 0 < (int)local_8d4._0_4_)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "} while (string_index < (int)local_8d4._0_4_);",
+      "type": "unknown_field"
+    }
+  ]
+}

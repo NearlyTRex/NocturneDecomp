@@ -1,0 +1,220 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 104,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 155
+  },
+  "cross_references": [
+    {
+      "addr": "00483550",
+      "from_addr": "004835e0",
+      "name": "shape_edittool.cpp_FUN_00483550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00482740",
+    "address_range": [
+      [
+        "00482740",
+        "00482819"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_00482740",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00482740(CStrList *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30b6"
+    },
+    {
+      "addr": "005a40df",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a40df"
+    },
+    {
+      "addr": "00482440",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00482440"
+    },
+    {
+      "addr": "00480e30",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00480e30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bd623",
+      "name": "s_shape_edittool_cpp_005bd623",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd639",
+      "name": "s_CStrList_copyToClipboard_005bd639",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd67a",
+      "name": "DAT_005bd67a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004835e0",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483550",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004835fd",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00483550",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.662790697674419,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALL": 7,
+      "CBRANCH": 7,
+      "COPY": 64,
+      "INT_ADD": 21,
+      "INT_AND": 59,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 57,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 28,
+      "INT_SUB": 34,
+      "INT_XOR": 4,
+      "INT_ZEXT": 1,
+      "LOAD": 17,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 27
+    },
+    "pcode_op_count": 401
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005bd67a",
+      "severity": "mild",
+      "text": "iVar6 = FUN_005a28c0(pcVar7,&DAT_005bd67a,pcVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 24,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

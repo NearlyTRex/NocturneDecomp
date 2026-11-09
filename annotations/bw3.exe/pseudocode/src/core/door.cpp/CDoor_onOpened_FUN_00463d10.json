@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 20,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "00431980",
+      "from_addr": "00431992",
+      "name": "core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00431980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d3250",
+      "from_addr": "004d3291",
+      "name": "core_hero.cpp_FUN_004d3250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d4520",
+      "from_addr": "004d4694",
+      "name": "core_hero.cpp_FUN_004d4520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00463d10",
+    "address_range": [
+      [
+        "00463d10",
+        "00463d29"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_door.cpp_CDoor_onOpened_FUN_00463d10",
+    "signature": "void __cdecl core_door_cpp_CDoor_onOpened_FUN_00463d10(CDoor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048c150",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_0048c150"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004d4694",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d4520",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d3291",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d3250",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00431992",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00431980",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.25,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 4,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 34
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x2e8",
+      "severity": "mild",
+      "text": "core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,&this_ptr->field_0x2e8);",
+      "type": "unnamed_field"
+    }
+  ]
+}

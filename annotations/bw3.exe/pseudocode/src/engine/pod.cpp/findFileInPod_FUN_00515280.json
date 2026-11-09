@@ -1,0 +1,119 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "004e44e0",
+      "from_addr": "004e456e",
+      "name": "core_main.c_FUN_004e44e0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00515280",
+    "address_range": [
+      [
+        "00515280",
+        "005152a1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_findFileInPod_FUN_00515280",
+    "signature": "int __cdecl engine_pod_cpp_findFileInPod_FUN_00515280(SFoundFileInfo *info)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0060395c",
+      "name": "g_CDemonPodPtr",
+      "type": "CDemonPod*",
+      "value": "01ed2af0"
+    },
+    {
+      "addr": "01ed2c84",
+      "name": "g_CDemonPodInstance.field404_0x194",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.230769230769231,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 6,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 55
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "info",
+        "offset": 4,
+        "size": 4,
+        "type": "SFoundFileInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)&g_CDemonPodPtr->field_0x194 + 8))(g_CDemonPodPtr,info);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x194",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)&g_CDemonPodPtr->field_0x194 + 8))(g_CDemonPodPtr,info);",
+      "type": "unnamed_field"
+    }
+  ]
+}

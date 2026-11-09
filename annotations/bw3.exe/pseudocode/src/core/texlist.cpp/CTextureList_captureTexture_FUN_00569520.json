@@ -1,0 +1,149 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 23
+  },
+  "cross_references": [
+    {
+      "addr": "004d0500",
+      "from_addr": "004d0526",
+      "name": "core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004d0500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00569520",
+    "address_range": [
+      [
+        "00569520",
+        "0056954f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_texlist.cpp_CTextureList_captureTexture_FUN_00569520",
+    "signature": "void __cdecl core_texlist_cpp_CTextureList_captureTexture_FUN_00569520(CTextureList *this_ptr,uint texture_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046e5e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d0526",
+        "call_type": "direct",
+        "caller": "core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004d0500",
+        "estimated_params": 2,
+        "instructions_analyzed": 14,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.428571428571429,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "COPY": 9,
+      "INT_ADD": 7,
+      "INT_AND": 24,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 104
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureList *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_index",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "(SMRGLTextureBasic *)(&this_ptr->field_0x4 + (texture_index & 0xfff) * 0x18));",
+      "type": "unnamed_field"
+    }
+  ]
+}

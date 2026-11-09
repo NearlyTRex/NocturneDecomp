@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00467c80(uint param_1,uint param_2,uint param_3)
+; void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)
 ;
+;
+; XREF[1]:
+;   cockpit_drawsurf.cpp_FUN_0046a750 at 0046a7fa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20
@@ -19,14 +22,14 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00467c80
-        ;   Label: FUN_00467c80
+        ;   Label: cockpit_drawsurf.cpp_FUN_00467c80
     PUSH ESI                            ; 00467c81
     PUSH EDI                            ; 00467c82
     PUSH EBP                            ; 00467c83
@@ -145,8 +148,8 @@ section .text
     PUSH 0x5bc1e3                       ; 00467dc0
     MOV [0x01d71de0],EAX                ; 00467dc5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00467dca | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00467dd0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00467dd0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00467dd5
     ADD ESP,0x8                         ; 00467dd8
     POP EBP                             ; 00467ddb

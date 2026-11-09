@@ -1,0 +1,403 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 360,
+    "complexity_score": 559,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 189,
+    "suspect_count": 34,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 549
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00514d00",
+    "address_range": [
+      [
+        "00514d00",
+        "00515149"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_00514d00",
+    "signature": "void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_00514d00(CPod *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005151f0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_dismountPod_FUN_005151f0"
+    },
+    {
+      "addr": "00515150",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_getPodIndexByFilename_FUN_00515150"
+    },
+    {
+      "addr": "00514110",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_FUN_00514110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.985074626865671,
+    "instruction_count": 268,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 8,
+      "BRANCH": 12,
+      "CALL": 7,
+      "CBRANCH": 37,
+      "COPY": 210,
+      "INT_ADD": 140,
+      "INT_AND": 195,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 175,
+      "INT_LEFT": 4,
+      "INT_LESS": 26,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 24,
+      "INT_OR": 10,
+      "INT_SBORROW": 29,
+      "INT_SCARRY": 29,
+      "INT_SLESS": 85,
+      "INT_SUB": 60,
+      "INT_XOR": 12,
+      "INT_ZEXT": 4,
+      "LOAD": 80,
+      "POPCOUNT": 81,
+      "RETURN": 1,
+      "STORE": 60
+    },
+    "pcode_op_count": 1336
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "iStack_18 = *(int *)&pCStack_3c->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCStack_3c = (CPod *)&pCStack_3c->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 83,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&pCVar3->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 84,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (*(int *)(iVar1 + 0x408) < *(int *)(*(int *)&pCVar3->field_0x4 + 0x408)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(int *)&pCVar3->field_0x8 = *(int *)&pCVar3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(int *)&pCVar3->field_0x8 = *(int *)&pCVar3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(int *)&pCVar3->field_0x4 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar3 = (CPod *)&pCVar3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 99,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "iStack_2c = *(int *)&pCStack_4c->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(int *)((int)aiStack_ab0",
+      "severity": "moderate",
+      "text": "*(int *)((int)aiStack_ab0 + iVar6) = iStack_2c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 123,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)(&this_ptr->field_0x4 + iVar5 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(uint *)((int)aiStack_ab0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStack_ab0 + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 127,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(&this_ptr->field_0x4 + iVar5 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(int *)((int)aiStack_ab0",
+      "severity": "moderate",
+      "text": "*(int *)((int)aiStack_ab0 + iVar6 + 4) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 137,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCStack_4c = (CPod *)&pCStack_4c->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 146,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "puStack_38 = &this_ptr->field_0x0 + iVar6 * 4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(uint *)((int)aiStack_ab0",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)aiStack_ab0 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(int *)((int)aiStack_ab0",
+      "severity": "moderate",
+      "text": "if (*(int *)&pCVar3->field_0x4 == *(int *)((int)aiStack_ab0 + iVar5)) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 160,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar3->field_0x4 == *(int *)((int)aiStack_ab0 + iVar5)) break;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 162,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar3 = (CPod *)&pCVar3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 181,
+      "match": "(uint *)((int)(&this_ptr->field_0x0 + iStack_34 * 4) +",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)(&this_ptr->field_0x0 + iStack_34 * 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 181,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)((int)(&this_ptr->field_0x0 + iStack_34 * 4) + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 182,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "puVar7 = (uint *)(&this_ptr->field_0x0 + iStack_34 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 187,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&pCStack_50->field_0x4 = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 189,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCStack_50 = (CPod *)&pCStack_50->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `(&this_ptr->field_0x0 + iStack_34 * 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 181,
+      "match": "(int)(&this_ptr->field_0x0 + iStack_34 * 4)",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)(&this_ptr->field_0x0 + iStack_34 * 4) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 56,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0x42; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 105,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0x42; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_3c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_3c->owner`). Replace `pCStack_3c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 67,
+      "match": "pCStack_3c = (T *)&pCStack_3c->FIELD",
+      "severity": "moderate",
+      "text": "pCStack_3c = (CPod *)&pCStack_3c->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 89,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CPod *)&pCVar3->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_4c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_4c->owner`). Replace `pCStack_4c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 137,
+      "match": "pCStack_4c = (T *)&pCStack_4c->FIELD",
+      "severity": "moderate",
+      "text": "pCStack_4c = (CPod *)&pCStack_4c->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 162,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CPod *)&pCVar3->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_50` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_50->owner`). Replace `pCStack_50->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 189,
+      "match": "pCStack_50 = (T *)&pCStack_50->FIELD",
+      "severity": "moderate",
+      "text": "pCStack_50 = (CPod *)&pCStack_50->field_0x4;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

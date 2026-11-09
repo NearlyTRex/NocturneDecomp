@@ -1,0 +1,40 @@
+// Name: core_set.cpp_CDemonSet_addLightFilter_FUN_0053b3b0
+// Address: 0053b3b0
+// Address Range: [[0053b3b0, 0053b43e]]
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_0053b3b0(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light)
+
+#include "nocturne.h"
+
+void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_0053b3b0(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light)
+
+{
+  C3DSLight *pCVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  
+  iVar3 = 0;
+  iVar5 = 0;
+  if (0 < *(int *)&this_ptr->field_0x19a2c) {
+    iVar4 = 0;
+    do {
+      pCVar1 = (C3DSLight *)(&this_ptr->field_0x19a30 + iVar4);
+      *out_light = pCVar1;
+      if (*(int *)pCVar1 == 0) {
+        iVar2 = _stricmp(&pCVar1->field_0x4,light_name);
+        if (iVar2 == 0) {
+          *out_master_light = *(CDemonLight **)(&DAT_0203a418 + iVar5 * 4);
+          return;
+        }
+        iVar5 = iVar5 + 1;
+      }
+      iVar3 = iVar3 + 1;
+      iVar4 = iVar4 + 0x1898;
+    } while (iVar3 < *(int *)&this_ptr->field_0x19a2c);
+  }
+  *out_light = (C3DSLight *)0x0;
+  *out_master_light = (CDemonLight *)0x0;
+  return;
+}

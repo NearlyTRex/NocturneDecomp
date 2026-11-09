@@ -1,0 +1,192 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 64,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "004a2e20",
+      "from_addr": "004a2e66",
+      "name": "core_fire.cpp_FUN_004a2e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1070",
+      "from_addr": "004e1f28",
+      "name": "core_lightgun.cpp_FUN_004e1070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523800",
+      "from_addr": "0052394c",
+      "name": "core_prye.cpp_FUN_00523800",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053ecd0",
+    "address_range": [
+      [
+        "0053ecd0",
+        "0053ed06"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_FUN_0053ecd0",
+    "signature": "void __cdecl core_setcolid_cpp_FUN_0053ecd0(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0052394c",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_FUN_00523800",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004a2e66",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004a2e20",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004e1f28",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_004e1070",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "COPY": 10,
+      "INT_ADD": 11,
+      "LOAD": 6,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 33
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "laser_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_r",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_g",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_b",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x15f698",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x15f698 = 3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x15f69c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x15f69c = laser_type;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x15f6a0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x15f6a0 = color_r;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x15f6a4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x15f6a4 = color_g;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x15f6a8",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x15f6a8 = color_b;",
+      "type": "unnamed_field"
+    }
+  ]
+}

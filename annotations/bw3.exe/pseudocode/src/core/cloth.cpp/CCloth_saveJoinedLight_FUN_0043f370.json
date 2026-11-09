@@ -1,0 +1,224 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 119,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 117
+  },
+  "cross_references": [
+    {
+      "addr": "0043fc50",
+      "from_addr": "0043fc76",
+      "name": "core_cloth.cpp_CClothList_render_FUN_0043fc50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043f370",
+    "address_range": [
+      [
+        "0043f370",
+        "0043f454"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043f370",
+    "signature": "int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043f370(CCloth *this_ptr,CDeformableModelInstance *model_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b914c",
+      "name": "s_core_cloth_cpp_005b914c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b915e",
+      "name": "s_CCloth_saveJoinedLight_C_005b915e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9198",
+      "name": "s_core_cloth_cpp_005b9198",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b91aa",
+      "name": "s_CCloth_saveJoinedLight_M_005b91aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0043fc76",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CClothList_render_FUN_0043fc50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.904761904761905,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 55,
+      "INT_ADD": 28,
+      "INT_AND": 53,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 30,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SEXT": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 12,
+      "INT_XOR": 3,
+      "LOAD": 17,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 309
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x2320",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)&model_ptr->field_0x2320;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "piVar1 = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "*(uint *)(pCVar2 + 0x3a64c) = *(uint *)(iVar4 + 0x20 + *DAT_005f2afc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "if (0 < (int)pCVar3) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "return (int)pCVar3;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

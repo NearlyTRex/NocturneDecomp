@@ -1,0 +1,249 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 152,
+    "complexity_score": 112,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 42,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 194
+  },
+  "cross_references": [
+    {
+      "addr": "00496560",
+      "from_addr": "00496673",
+      "name": "core_filmreel.cpp_FUN_00496560",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00459d00",
+    "address_range": [
+      [
+        "00459d00",
+        "00459e85"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00459d00",
+    "signature": "void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00459d00(CFilterFX *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00459980",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CDemonFilter_load_FUN_00459980"
+    },
+    {
+      "addr": "00459850",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CFilterCache_findFilter_FUN_00459850"
+    },
+    {
+      "addr": "00459ce0",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_FUN_00459ce0"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3650"
+    },
+    {
+      "addr": "004659c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004659c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f190c",
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "01548f90"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00496673",
+        "call_type": "direct",
+        "caller": "core_filmreel.cpp_FUN_00496560",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004966af",
+        "call_type": "direct",
+        "caller": "core_filmreel.cpp_FUN_00496560",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.648,
+    "instruction_count": 125,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 31,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 2,
+      "CALL": 14,
+      "CBRANCH": 4,
+      "COPY": 95,
+      "INT_ADD": 39,
+      "INT_AND": 136,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 73,
+      "INT_LEFT": 6,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 27,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 39,
+      "INT_SRIGHT": 7,
+      "INT_SUB": 60,
+      "INT_XOR": 5,
+      "INT_ZEXT": 1,
+      "LOAD": 17,
+      "POPCOUNT": 33,
+      "RETURN": 2,
+      "STORE": 52
+    },
+    "pcode_op_count": 706
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilterFX *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x4 = pvVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "_fread(*(uint *)&this_ptr->field_0x4,0x2000,*(uint *)this_ptr,p_Var1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(char *)(iVar3 + *(int *)&this_ptr->field_0x4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "(char)((uint)((int)(uint)*(byte *)(iVar3 + *(int *)&this_ptr->field_0x4) >> 2) / 2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

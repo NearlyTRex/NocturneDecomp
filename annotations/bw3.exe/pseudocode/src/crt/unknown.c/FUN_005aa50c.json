@@ -1,0 +1,814 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 108,
+    "complexity_score": 474,
+    "cross_reference_count": 45,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 40,
+    "suspect_types": [
+      "carry_arith_idiom",
+      "concat_reconstruction",
+      "undefined_data",
+      "unknown_type",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 152
+  },
+  "cross_references": [
+    {
+      "addr": "005aa65b",
+      "from_addr": "005aa668",
+      "name": "crt_unknown.c_FUN_005aa65b",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa67c",
+      "from_addr": "005aa683",
+      "name": "crt_unknown.c_FUN_005aa67c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa697",
+      "from_addr": "005aa6a6",
+      "name": "crt_unknown.c_FUN_005aa697",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa6b3",
+      "from_addr": "005aa6ba",
+      "name": "crt_unknown.c_FUN_005aa6b3",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa6c3",
+      "from_addr": "005aa6ca",
+      "name": "crt_unknown.c_FUN_005aa6c3",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa6d7",
+      "from_addr": "005aa6de",
+      "name": "crt_unknown.c_FUN_005aa6d7",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa6e7",
+      "from_addr": "005aa6f6",
+      "name": "crt_unknown.c_FUN_005aa6e7",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa70c",
+      "from_addr": "005aa715",
+      "name": "crt_unknown.c_FUN_005aa70c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa72b",
+      "from_addr": "005aa73c",
+      "name": "crt_unknown.c_FUN_005aa72b",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa74b",
+      "from_addr": "005aa754",
+      "name": "crt_unknown.c_FUN_005aa74b",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa75f",
+      "from_addr": "005aa768",
+      "name": "crt_unknown.c_FUN_005aa75f",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa777",
+      "from_addr": "005aa780",
+      "name": "crt_unknown.c_FUN_005aa777",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa78b",
+      "from_addr": "005aa79a",
+      "name": "crt_unknown.c_FUN_005aa78b",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa7b0",
+      "from_addr": "005aa7b9",
+      "name": "crt_unknown.c_FUN_005aa7b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa7cf",
+      "from_addr": "005aa7e0",
+      "name": "crt_unknown.c_FUN_005aa7cf",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa7ef",
+      "from_addr": "005aa7f8",
+      "name": "crt_unknown.c_FUN_005aa7ef",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa803",
+      "from_addr": "005aa80c",
+      "name": "crt_unknown.c_FUN_005aa803",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa81b",
+      "from_addr": "005aa824",
+      "name": "crt_unknown.c_FUN_005aa81b",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa82f",
+      "from_addr": "005aa83e",
+      "name": "crt_unknown.c_FUN_005aa82f",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa854",
+      "from_addr": "005aa85d",
+      "name": "crt_unknown.c_FUN_005aa854",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa873",
+      "from_addr": "005aa884",
+      "name": "crt_unknown.c_FUN_005aa873",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa893",
+      "from_addr": "005aa89c",
+      "name": "crt_unknown.c_FUN_005aa893",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa8a7",
+      "from_addr": "005aa8b0",
+      "name": "crt_unknown.c_FUN_005aa8a7",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa8bf",
+      "from_addr": "005aa8c8",
+      "name": "crt_unknown.c_FUN_005aa8bf",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa8d3",
+      "from_addr": "005aa8e2",
+      "name": "crt_unknown.c_FUN_005aa8d3",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa8f8",
+      "from_addr": "005aa901",
+      "name": "crt_unknown.c_FUN_005aa8f8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa917",
+      "from_addr": "005aa928",
+      "name": "crt_unknown.c_FUN_005aa917",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa937",
+      "from_addr": "005aa940",
+      "name": "crt_unknown.c_FUN_005aa937",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa94b",
+      "from_addr": "005aa954",
+      "name": "crt_unknown.c_FUN_005aa94b",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa963",
+      "from_addr": "005aa96c",
+      "name": "crt_unknown.c_FUN_005aa963",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa977",
+      "from_addr": "005aa986",
+      "name": "crt_unknown.c_FUN_005aa977",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa99c",
+      "from_addr": "005aa9a5",
+      "name": "crt_unknown.c_FUN_005aa99c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa9bb",
+      "from_addr": "005aa9cc",
+      "name": "crt_unknown.c_FUN_005aa9bb",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa9db",
+      "from_addr": "005aa9e4",
+      "name": "crt_unknown.c_FUN_005aa9db",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa9ef",
+      "from_addr": "005aa9f8",
+      "name": "crt_unknown.c_FUN_005aa9ef",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaa07",
+      "from_addr": "005aaa10",
+      "name": "crt_unknown.c_FUN_005aaa07",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaa1b",
+      "from_addr": "005aaa2a",
+      "name": "crt_unknown.c_FUN_005aaa1b",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaa40",
+      "from_addr": "005aaa49",
+      "name": "crt_unknown.c_FUN_005aaa40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaa5f",
+      "from_addr": "005aaa70",
+      "name": "crt_unknown.c_FUN_005aaa5f",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaa7f",
+      "from_addr": "005aaa88",
+      "name": "crt_unknown.c_FUN_005aaa7f",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaa93",
+      "from_addr": "005aaa9c",
+      "name": "crt_unknown.c_FUN_005aaa93",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaaab",
+      "from_addr": "005aaab4",
+      "name": "crt_unknown.c_FUN_005aaaab",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaabf",
+      "from_addr": "005aaac9",
+      "name": "crt_unknown.c_FUN_005aaabf",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaad2",
+      "from_addr": "005aaadc",
+      "name": "crt_unknown.c_FUN_005aaad2",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aaae5",
+      "from_addr": "005aaaef",
+      "name": "crt_unknown.c_FUN_005aaae5",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005aa50c",
+    "address_range": [
+      [
+        "005aa50c",
+        "005aa622"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005aa50c",
+    "signature": "uint crt_unknown_c_FUN_005aa50c(int param_1,uint param_2,ushort param_3,undefined4 param_4,uint param_5,uint param_6 )"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00609ef8",
+      "name": "DAT_00609ef8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609f08",
+      "name": "DAT_00609f08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609f0c",
+      "name": "DAT_00609f0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609f10",
+      "name": "DAT_00609f10",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 45,
+    "call_sites": [
+      {
+        "call_addr": "005aa668",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa65b",
+        "estimated_params": 0,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa683",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa67c",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa6a6",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa697",
+        "estimated_params": 0,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa6ba",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa6b3",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa6ca",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa6c3",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa6de",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa6d7",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa6f6",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa6e7",
+        "estimated_params": 0,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa715",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa70c",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa73c",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa72b",
+        "estimated_params": 0,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005aa754",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005aa74b",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.506024096385542,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BRANCH": 2,
+      "CBRANCH": 12,
+      "COPY": 176,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_DIV": 6,
+      "FLOAT_MULT": 5,
+      "INT_ADD": 35,
+      "INT_AND": 57,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 39,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 8,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 20,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 27,
+      "POPCOUNT": 19,
+      "RETURN": 6,
+      "STORE": 5
+    },
+    "pcode_op_count": 457
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "uint FUN_005aa50c(int param_1,uint param_2,ushort param_3,uint param_4,uint param_5,uint param_6 )",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "while (!CARRY4(param_2,param_2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "while (!CARRY4(param_2,param_2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 12,
+      "match": "CARRY4(param_2,param_2)",
+      "severity": "moderate",
+      "text": "while (!CARRY4(param_2,param_2)) {",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == 0 && param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_1 == 0 && param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((param_3 & 0x7fff) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "return param_3 & 0x7fff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "uVar2 = param_6 & 0x7fff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if (CARRY4(param_5,param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if (CARRY4(param_5,param_5)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 21,
+      "match": "CARRY4(param_5,param_5)",
+      "severity": "moderate",
+      "text": "if (CARRY4(param_5,param_5)) {",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "return param_5 * 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 25,
+      "match": "CARRY4(param_5,param_5)",
+      "severity": "moderate",
+      "text": "else if ((uVar2 == 0x7fff) || (uVar2 = param_5 * 2, !CARRY4(param_5,param_5))) {",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = SUB104(fVar3,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = (ushort)((unkuint10)fVar3 >> 0x40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 30,
+      "match": "unkuint10",
+      "severity": "mild",
+      "text": "param_3 = (ushort)((unkuint10)fVar3 >> 0x40);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = (uint)((unkuint10)fVar3 >> 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 31,
+      "match": "unkuint10",
+      "severity": "mild",
+      "text": "param_2 = (uint)((unkuint10)fVar3 >> 0x20);",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar2 = param_2 * 2 ^ 0xe000000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar2 = (param_2 & 0x7fffffff) >> 0x1b;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_00609ef8",
+      "severity": "mild",
+      "text": "if ((&DAT_00609ef8)[uVar2] != '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (((param_3 & 0x7fff) != 0) && ((param_3 & 0x7fff) != 0x7fff)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if ((param_6 & 0x7fff) != 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "return param_6 & 0x7fff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "return param_3 & 0x7fff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra CONCAT28 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 11,
+      "match": "CONCAT28",
+      "severity": "moderate",
+      "text": "fVar1 = (float10)CONCAT28(param_3,CONCAT44(param_2,param_1));",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

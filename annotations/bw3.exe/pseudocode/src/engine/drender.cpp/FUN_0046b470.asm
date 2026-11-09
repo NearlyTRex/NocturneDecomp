@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0046b470(int *param_1,int param_2)
+; int __cdecl engine_drender_cpp_FUN_0046b470(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
+; SMRGLPrimitivePoly * Stack[0x8]:4   poly
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
-;   FUN_0053f940 at 005407c7
+; XREF[2]:
+;   core_setdir.cpp_FUN_0053f5d0 at 0053f623
+;   core_setdir.cpp_FUN_0053f940 at 005407c7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005bc4ac
@@ -22,16 +26,16 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_00403920
-;   FUN_0046b160
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
+;   engine_3d.c_isVisiblePlane_FUN_00403920
+;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0046b470
-        ;   Label: FUN_0046b470
+        ;   Label: engine_drender.cpp_FUN_0046b470
     PUSH ESI                            ; 0046b471
     PUSH EDI                            ; 0046b472
     PUSH EBP                            ; 0046b473
@@ -91,16 +95,16 @@ section .text
     PUSH 0x5bc4c2                       ; 0046b4fd | = "Can't use demonZFacetCount in shadow ..."
     MOV [0x01d71de0],EAX                ; 0046b502 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 0046b507 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0046b50d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0046b50d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0046b512
     PUSH 0x1bdd818                      ; 0046b515 | DAT_01bdd818
         ;   Label: LAB_0046b515
     MOV ECX,dword ptr [EDI + 0x4]       ; 0046b51a
     PUSH ECX                            ; 0046b51d
     PUSH EBP                            ; 0046b51e
-    CALL FUN_0046b160                   ; 0046b51f
-        ;   XREF to: 0046b160 (UNCONDITIONAL_CALL)  ; undefined FUN_0046b160()
+    CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160 ; 0046b51f
+        ;   XREF to: 0046b160 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     MOV EAX,[0x01bdd810]                ; 0046b524 | DAT_01bdd810
     ADD ESP,0xc                         ; 0046b529
     ADD ESP,0x4                         ; 0046b52c
@@ -113,8 +117,8 @@ section .text
     LEA EAX,[EDI + 0x8]                 ; 0046b534
         ;   Label: LAB_0046b534
     PUSH EAX                            ; 0046b537
-    CALL FUN_00403920                   ; 0046b538
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined FUN_00403920()
+    CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0046b538
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
     ADD ESP,0x4                         ; 0046b53d
     TEST EAX,EAX                        ; 0046b540
     JNZ 0x0046b492                      ; 0046b542
@@ -128,7 +132,7 @@ section .text
     MOV EBX,0xc0                        ; 0046b54e
         ;   Label: LAB_0046b54e
     MOV ESI,0x6                         ; 0046b553
-    MOV ECX,0x46ffa5                    ; 0046b558 | LAB_0046ffa5
+    MOV ECX,0x46ffa5                    ; 0046b558
     MOV dword ptr [0x01c6e2b4],EBX      ; 0046b55d | DAT_01c6e2b4
     MOV dword ptr [0x01c6e2b8],ESI      ; 0046b563 | DAT_01c6e2b8
     MOV dword ptr [0x01c6b5cc],ECX      ; 0046b569 | DAT_01c6b5cc

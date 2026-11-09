@@ -1,0 +1,26 @@
+// Name: core_elephant.cpp_CElephantGun_dtor_FUN_00487930
+// Address: 00487930
+// Address Range: [[00487930, 0048797d]]
+// Convention: __cdecl
+// Signature: CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00487930(CElephantGun *this_ptr,uint flags)
+
+#include "nocturne.h"
+
+CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00487930(CElephantGun *this_ptr,uint flags)
+
+{
+  CElephantGun *pCVar1;
+  void *ptr;
+  
+  if ((flags & 4) != 0) {
+    ptr = (void *)__vec_delete(this_ptr,&g_CElephantGunTypeInfo);
+    FUN_005a30b6(ptr);
+    return this_ptr;
+  }
+  pCVar1 = (CElephantGun *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  if ((flags & 2) == 0) {
+    return pCVar1;
+  }
+  FUN_005a30c4(pCVar1);
+  return pCVar1;
+}

@@ -1,14 +1,14 @@
-// Name: FUN_004dcad0
+// Name: core_inv.cpp_FUN_004dcad0
 // Address: 004dcad0
 // Address Range: [[004dcad0, 004dcb39]]
 // Convention: unknown
-// Signature: void FUN_004dcad0(int param_1)
+// Signature: void core_inv_cpp_FUN_004dcad0(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004dcad0(int param_1)
+void core_inv_cpp_FUN_004dcad0(int param_1)
 
 {
   int iVar1;
@@ -17,7 +17,7 @@ void FUN_004dcad0(int param_1)
   if (*(int *)(param_1 + 0x458) != 0) {
     _DAT_01d71de0 = "..\\core\\inv.cpp";
     _DAT_01d71de4 = 0x75c;
-    FUN_004e4330("CInventory::setupItems - we should own the items at this point!");
+    core_main_c_FUN_004e4330("CInventory::setupItems - we should own the items at this point!");
   }
   iVar1 = 0;
   iVar2 = param_1;

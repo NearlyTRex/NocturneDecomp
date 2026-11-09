@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00584560(float *param_1)
+; void core_xform_cpp_FUN_00584560(float *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -27,12 +27,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[6]:
-;   FUN_0042f770 at 0042fb0b
-;   FUN_00431ab0 at 00431b93
-;   FUN_00431d10 at 00431f56
-;   FUN_0043d830 at 0043d880
-;   FUN_004f40b0 at 004f44d1
-;   FUN_0056c140 at 0056c3bf
+;   core_charactr.cpp_FUN_0042f770 at 0042fb0b
+;   core_charactr.cpp_FUN_00431ab0 at 00431b93
+;   core_charactr.cpp_FUN_00431d10 at 00431f56
+;   core_cloth.cpp_FUN_0043d830 at 0043d880
+;   core_mirror.cpp_FUN_004f40b0 at 004f44d1
+;   core_thehand.cpp_FUN_0056c140 at 0056c3bf
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005d8147
@@ -41,23 +41,23 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_00584510
+;   core_main.c_FUN_004e4330
+;   core_xform.cpp_determinant_FUN_00584510
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00584560
-        ;   Label: FUN_00584560
+        ;   Label: core_xform.cpp_FUN_00584560
     PUSH EDI                            ; 00584561
     PUSH EBP                            ; 00584562
     SUB ESP,0x60                        ; 00584563
     MOV EBX,dword ptr [ESP + 0x70]      ; 00584566
     MOV EBP,ESI                         ; 0058456a
     PUSH EBX                            ; 0058456c
-    CALL FUN_00584510                   ; 0058456d
-        ;   XREF to: 00584510 (UNCONDITIONAL_CALL)  ; undefined FUN_00584510()
+    CALL core_xform.cpp_determinant_FUN_00584510 ; 0058456d
+        ;   XREF to: 00584510 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_determinant_FUN_00584510()
     MOV dword ptr [ESP + 0x34],EAX      ; 00584572
     MOV dword ptr [ESP + 0x38],EDX      ; 00584576
     FLD double ptr [ESP + 0x34]         ; 0058457a
@@ -239,8 +239,8 @@ section .text
     PUSH 0x5d8159                       ; 0058476c | = "inverse() - Singular matrix"
     MOV dword ptr [0x01d71de0],ECX      ; 00584771 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00584777 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0058477d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0058477d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00584782
     JMP 0x00584593                      ; 00584785
         ;   XREF to: 00584593 (UNCONDITIONAL_JUMP)  ; LAB_00584593

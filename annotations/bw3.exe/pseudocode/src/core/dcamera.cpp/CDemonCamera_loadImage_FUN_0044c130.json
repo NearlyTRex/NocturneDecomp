@@ -1,0 +1,1511 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1078,
+    "complexity_score": 1314,
+    "cross_reference_count": 1,
+    "function_call_count": 13,
+    "global_count": 61,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 464,
+    "suspect_count": 81,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "unrolled_strchr",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1542
+  },
+  "cross_references": [
+    {
+      "addr": "00534890",
+      "from_addr": "00534f9f",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044c130",
+    "address_range": [
+      [
+        "0044c130",
+        "0044d015"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044c130(CDemonCamera *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
+    },
+    {
+      "addr": "005a457c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005a457c"
+    },
+    {
+      "addr": "005a3d00",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005a3d00"
+    },
+    {
+      "addr": "00495ec0",
+      "is_variadic": false,
+      "name": "crt_watcom.c__memset_FUN_00495ec0"
+    },
+    {
+      "addr": "004659c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004659c0"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    },
+    {
+      "addr": "0046e5e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0"
+    },
+    {
+      "addr": "0046e690",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_FUN_0046e690"
+    },
+    {
+      "addr": "004409f0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_FUN_004409f0"
+    },
+    {
+      "addr": "00441350",
+      "is_variadic": false,
+      "name": "support_codec.cpp_FUN_00441350"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b9d96",
+      "name": "s_core_dcamera_cpp_005b9d96",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9daa",
+      "name": "s_CDemonCamera_loadImage_n_005b9daa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9dd1",
+      "name": "DAT_005b9dd1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9dd2",
+      "name": "DAT_005b9dd2",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9dd3",
+      "name": "DAT_005b9dd3",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9dd4",
+      "name": "DAT_005b9dd4",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9dd6",
+      "name": "DAT_005b9dd6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9dd9",
+      "name": "s_backdrop_005b9dd9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9de2",
+      "name": "DAT_005b9de2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9de5",
+      "name": "DAT_005b9de5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9de9",
+      "name": "s_core_dcamera_cpp_005b9de9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9dfd",
+      "name": "s_CDemonCamera_loadImage_n_005b9dfd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9e1e",
+      "name": "DAT_005b9e1e",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9e1f",
+      "name": "DAT_005b9e1f",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9e20",
+      "name": "DAT_005b9e20",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9e21",
+      "name": "DAT_005b9e21",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005b9e23",
+      "name": "DAT_005b9e23",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9e26",
+      "name": "s_backdrop_005b9e26",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9e2f",
+      "name": "DAT_005b9e2f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9e33",
+      "name": "DAT_005b9e33",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9e37",
+      "name": "s_backdrop_005b9e37",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9e40",
+      "name": "s_core_dcamera_cpp_005b9e40",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9e54",
+      "name": "s_Hell_froze_loading_s_005b9e54",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9e6a",
+      "name": "s_core_dcamera_cpp_005b9e6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9e7e",
+      "name": "s_s_too_big_to_fit_in_deco_005b9e7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9ea5",
+      "name": "s_core_dcamera_cpp_005b9ea5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9eb9",
+      "name": "s_Error_decompressing_s_005b9eb9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9ed0",
+      "name": "DAT_005b9ed0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9ed3",
+      "name": "s_backdrop_005b9ed3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9edc",
+      "name": "DAT_005b9edc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b9edf",
+      "name": "DAT_005b9edf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f1830",
+      "name": "DAT_005f1830",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba1c",
+      "name": "DAT_005fba1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba20",
+      "name": "DAT_005fba20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007fa464",
+      "name": "DAT_007fa464",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00b9da48",
+      "name": "DAT_00b9da48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00b9da4c",
+      "name": "DAT_00b9da4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00b9da4d",
+      "name": "DAT_00b9da4d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ead0",
+      "name": "DAT_0135ead0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ead1",
+      "name": "DAT_0135ead1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0135ec10",
+      "name": "DAT_0135ec10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01371810",
+      "name": "DAT_01371810",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0149d6d8",
+      "name": "DAT_0149d6d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0149e6e8",
+      "name": "DAT_0149e6e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0149e6ec",
+      "name": "DAT_0149e6ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0149e6f0",
+      "name": "DAT_0149e6f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0149e6f8",
+      "name": "DAT_0149e6f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014a0300",
+      "name": "DAT_014a0300",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014a0301",
+      "name": "DAT_014a0301",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014eb300",
+      "name": "DAT_014eb300",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014eb304",
+      "name": "DAT_014eb304",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014eb305",
+      "name": "DAT_014eb305",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6a970",
+      "name": "DAT_01c6a970",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6af74",
+      "name": "DAT_01c6af74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6af80",
+      "name": "DAT_01c6af80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6af8c",
+      "name": "DAT_01c6af8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6ced0",
+      "name": "DAT_01c6ced0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00534f9f",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.3387799564270155,
+    "instruction_count": 918,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 255,
+      "BOOL_OR": 15,
+      "BOOL_XOR": 3,
+      "BRANCH": 13,
+      "CALL": 29,
+      "CBRANCH": 65,
+      "COPY": 760,
+      "INT_ADD": 387,
+      "INT_AND": 1178,
+      "INT_CARRY": 103,
+      "INT_DIV": 3,
+      "INT_EQUAL": 658,
+      "INT_LEFT": 38,
+      "INT_LESS": 55,
+      "INT_MULT": 52,
+      "INT_NOTEQUAL": 173,
+      "INT_OR": 235,
+      "INT_REM": 3,
+      "INT_RIGHT": 28,
+      "INT_SBORROW": 55,
+      "INT_SCARRY": 120,
+      "INT_SDIV": 9,
+      "INT_SEXT": 96,
+      "INT_SLESS": 342,
+      "INT_SREM": 9,
+      "INT_SRIGHT": 40,
+      "INT_SUB": 228,
+      "INT_XOR": 45,
+      "INT_ZEXT": 43,
+      "LOAD": 188,
+      "POPCOUNT": 302,
+      "RETURN": 1,
+      "STORE": 206,
+      "SUBPIECE": 82
+    },
+    "pcode_op_count": 5819
+  },
+  "stack_frame": {
+    "frame_size": 336,
+    "local_size": 328,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_143",
+        "offset": -323,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_f3",
+        "offset": -243,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_9d",
+        "offset": -157,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0044c141",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044c15f",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_005b9dd1",
+      "severity": "mild",
+      "text": "pcVar25 = &DAT_005b9dd1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_005b9dd6",
+      "severity": "mild",
+      "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(\"backdrop\",local_144,&DAT_005b9dd6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_005b9de5",
+      "severity": "mild",
+      "text": "(p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005b9de5,local_144,&DAT_005b9de2),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_005b9de2",
+      "severity": "mild",
+      "text": "(p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005b9de5,local_144,&DAT_005b9de2),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 119,
+      "match": "DAT_00b9da48",
+      "severity": "mild",
+      "text": "_fread(&DAT_00b9da48,0x100,3,p_Var5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_005b9e1e",
+      "severity": "mild",
+      "text": "pcVar23 = &DAT_005b9e1e;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_005b9e23",
+      "severity": "mild",
+      "text": "local_14 = engine_dosio_cpp_FUN_004659c0(\"backdrop\",local_f4,&DAT_005b9e23);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 172,
+      "match": "DAT_005b9e2f",
+      "severity": "mild",
+      "text": "iVar6 = _strcmp(local_a0,&DAT_005b9e2f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 174,
+      "match": "DAT_005b9e33",
+      "severity": "mild",
+      "text": "(iVar6 = _strcmp(local_a0,&DAT_005b9e33), iVar6 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 187,
+      "match": "DAT_007fa464",
+      "severity": "mild",
+      "text": "_fread(&DAT_007fa464,local_9c,1,local_14);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 191,
+      "match": "DAT_007fa464",
+      "severity": "mild",
+      "text": "(&g_CLZWDecompressInstance,&DAT_007fa464,&local_9c,0x13716d0,&local_98,1",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 240,
+      "match": "DAT_005b9ed0",
+      "severity": "mild",
+      "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(\"backdrop\",filename,&DAT_005b9ed0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 242,
+      "match": "DAT_005b9edf",
+      "severity": "mild",
+      "text": "(p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005b9edf,filename,&DAT_005b9edc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 242,
+      "match": "DAT_005b9edc",
+      "severity": "mild",
+      "text": "(p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005b9edf,filename,&DAT_005b9edc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 247,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 248,
+      "match": "DAT_01c6af8c",
+      "severity": "mild",
+      "text": "uVar13 = (uint)*(byte *)(iVar20 + 0xb9da4a) << (DAT_01c6af8c & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 249,
+      "match": "DAT_01c6af80",
+      "severity": "mild",
+      "text": "(uint)*(byte *)(iVar20 + 0xb9da49) << (DAT_01c6af80 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 250,
+      "match": "DAT_00b9da48",
+      "severity": "mild",
+      "text": "(uint)(byte)(&DAT_00b9da48)[iVar20] << (DAT_01c6af74 & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 250,
+      "match": "DAT_01c6af74",
+      "severity": "mild",
+      "text": "(uint)(byte)(&DAT_00b9da48)[iVar20] << (DAT_01c6af74 & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 254,
+      "match": "DAT_00b9da48",
+      "severity": "mild",
+      "text": "(uint)(byte)(&DAT_00b9da48)[iVar20] << 0x10 | (uint)*(byte *)(iVar20 + 0xb9da4a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 261,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "_fread(&DAT_014a0300,0x280,0x1e0,p_Var5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 263,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "iVar6 = *(int *)&this_ptr->field_0x148;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 268,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "pbVar7 = &DAT_014a0300 + local_20;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 269,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "piVar26 = (int *)(*(int *)&this_ptr->field_0x158 + local_20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 284,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "pbVar7 = &DAT_014a0300;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 286,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "puVar15 = *(uint **)&this_ptr->field_0x158;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 296,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "local_88 = *(uint **)&this_ptr->field_0x158;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 297,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "uVar3 = 0x9600000 / (longlong)*(int *)&this_ptr->field_0x144;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 300,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "(longlong)*(int *)&this_ptr->field_0x148);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 302,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x148) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 306,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x144) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 310,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "uVar8 = local_2c / *(int *)&this_ptr->field_0x144;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 311,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "uVar9 = local_28 / *(int *)&this_ptr->field_0x148;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 312,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "local_6c = (int)(0x27d80 / (longlong)*(int *)&this_ptr->field_0x144) + uVar8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 314,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "local_68 = (int)(0x1de20 / (longlong)*(int *)&this_ptr->field_0x148) + uVar9;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 316,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "uVar13 = *(uint *)((uint)(byte)(&DAT_014a0300)[local_60 + iVar20] * 4 + 0xb9dd4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 322,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "uVar8 = *(uint *)((uint)(byte)(&DAT_014a0300)[iVar20 + local_5c] * 4 + 0xb9dd4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 327,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "uVar9 = *(uint *)((uint)(byte)(&DAT_014a0300)[local_58 + local_60] * 4 + 0xb9dd4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 332,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)((uint)(byte)(&DAT_014a0300)[local_58 + local_5c] * 4 + 0xb9dd4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 359,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "} while (local_80 < *(int *)&this_ptr->field_0x144);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 363,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "} while (local_7c < *(int *)&this_ptr->field_0x148);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 367,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "local_90 = *(uint **)&this_ptr->field_0x158;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 369,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x148) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 373,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x144) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 376,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "iVar16 = iVar20 / *(int *)&this_ptr->field_0x144;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 379,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "((uint)(byte)(&DAT_014a0300)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 380,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "[iVar16 + (local_24 / *(int *)&this_ptr->field_0x148) *",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 384,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "} while (iVar6 < *(int *)&this_ptr->field_0x144);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 388,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "} while (local_8c < *(int *)&this_ptr->field_0x148);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 400,
+      "match": "DAT_014eb300",
+      "severity": "mild",
+      "text": "(&DAT_014eb300)[iVar16] =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 401,
+      "match": "DAT_014a0300",
+      "severity": "mild",
+      "text": "(&DAT_014a0300)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 411,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f1830);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 411,
+      "match": "DAT_005f1830",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f1830);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 412,
+      "match": "DAT_014eb300",
+      "severity": "mild",
+      "text": "puVar15 = (uint *)&DAT_014eb300;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 421,
+      "match": "(uint *)((int)puVar15",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 422,
+      "match": "(uint *)((int)puVar27",
+      "severity": "moderate",
+      "text": "puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 424,
+      "match": "DAT_00b9da48",
+      "severity": "mild",
+      "text": "puVar15 = (uint *)&DAT_00b9da48;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 433,
+      "match": "(uint *)((int)puVar15",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 434,
+      "match": "(uint *)((int)puVar27",
+      "severity": "moderate",
+      "text": "puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 437,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f1830,(SRGBColorPalette *)&DAT_00b9da48);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 437,
+      "match": "DAT_005f1830",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f1830,(SRGBColorPalette *)&DAT_00b9da48);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 437,
+      "match": "DAT_00b9da48",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f1830,(SRGBColorPalette *)&DAT_00b9da48);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 439,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if (DAT_005fba1c == 0x180) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `(&DAT_014a0300)` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 379,
+      "match": "(byte)(&DAT_014a0300)",
+      "severity": "moderate",
+      "text": "((uint)(byte)(&DAT_014a0300)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 421,
+      "match": "(int)puVar15",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar27` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 422,
+      "match": "(int)puVar27",
+      "severity": "moderate",
+      "text": "puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 433,
+      "match": "(int)puVar15",
+      "severity": "moderate",
+      "text": "puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar27` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 434,
+      "match": "(int)puVar27",
+      "severity": "moderate",
+      "text": "puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 79,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 106,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 123,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 149,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 414,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0x4000; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 419,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 426,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 431,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 90,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 133,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0044c7d3, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 532,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0044c7d3: MOVSD.REP ES:EDI,ESI  ; DAT_014eb300 | DAT_014eb304",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0044c7f3, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 543,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0044c7f3: MOVSD.REP ES:EDI,ESI  ; DAT_00b9da48 | DAT_00b9da4c",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00480200(undefined4 param_1,int param_2)
+; void shape_edittool_cpp_FUN_00480200(undefined4 param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_0047c2c0 at 0047c49d
-;   FUN_0047c8e0 at 0047cad2
-;   FUN_004843d0 at 004843f2
+;   shape_edittool.cpp_FUN_004843d0 at 004843f2
+;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047cad2
+;   shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0 at 0047c49d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bd28a
@@ -28,18 +28,18 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_00402f30
-;   FUN_00486580
-;   FUN_004e4330
-;   FUN_004f3520
-;   FUN_004f3ab0
+;   core_main.c_FUN_004e4330
+;   engine_2d.c_drawHLine_FUN_00402f30
+;   engine_mini3d.cpp_FUN_004f3520
+;   engine_mini3d.cpp_FUN_004f3ab0
+;   shape_edittool.cpp_FUN_00486580
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00480200
-        ;   Label: FUN_00480200
+        ;   Label: shape_edittool.cpp_FUN_00480200
     PUSH ESI                            ; 00480201
     PUSH EDI                            ; 00480202
     PUSH EBP                            ; 00480203
@@ -68,8 +68,8 @@ section .text
     PUSH 0x0                            ; 0048024c
     MOV EDI,dword ptr [0x01c6b5c0]      ; 0048024e | DAT_01c6b5c0
     MOV ESI,EAX                         ; 00480254
-    CALL FUN_00486580                   ; 00480256
-        ;   XREF to: 00486580 (UNCONDITIONAL_CALL)  ; undefined FUN_00486580()
+    CALL shape_edittool.cpp_FUN_00486580 ; 00480256
+        ;   XREF to: 00486580 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00486580(char * button_text)
     ADD ESP,0x4                         ; 0048025b
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0048025e
     IMUL EDX,EAX                        ; 00480262
@@ -100,8 +100,8 @@ section .text
     AND EAX,0xff                        ; 004802b3
     OR EAX,EDX                          ; 004802b8
     PUSH EAX                            ; 004802ba
-    CALL FUN_004f3520                   ; 004802bb
-        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3520()
+    CALL engine_mini3d.cpp_FUN_004f3520 ; 004802bb
+        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3520()
     ADD ESP,0x4                         ; 004802c0
     MOV ECX,dword ptr [0x01c5baec]      ; 004802c3 | DAT_01c5baec
         ;   Label: LAB_004802c3
@@ -115,8 +115,8 @@ section .text
     PUSH EDX                            ; 004802da
     PUSH ESI                            ; 004802db
     PUSH EAX                            ; 004802dc
-    CALL FUN_004f3ab0                   ; 004802dd
-        ;   XREF to: 004f3ab0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3ab0()
+    CALL engine_mini3d.cpp_FUN_004f3ab0 ; 004802dd
+        ;   XREF to: 004f3ab0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3ab0()
     ADD ESP,0xc                         ; 004802e2
         ;   Label: LAB_004802e2
     MOV EBP,dword ptr [0x01c5baf8]      ; 004802e5 | DAT_01c5baf8
@@ -142,8 +142,8 @@ section .text
     PUSH EDX                            ; 00480321
     PUSH ESI                            ; 00480322
     PUSH EAX                            ; 00480323
-    CALL FUN_004f3ab0                   ; 00480324
-        ;   XREF to: 004f3ab0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3ab0()
+    CALL engine_mini3d.cpp_FUN_004f3ab0 ; 00480324
+        ;   XREF to: 004f3ab0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3ab0()
     ADD ESP,0xc                         ; 00480329
         ;   Label: LAB_00480329
     MOV EAX,dword ptr [ESP]             ; 0048032c
@@ -151,6 +151,7 @@ section .text
     MOV dword ptr [0x01c6b5c0],EDI      ; 0048032f | DAT_01c6b5c0
     MOV [0x01c6b5ac],EAX                ; 00480335 | DAT_01c6b5ac
     ADD ESP,0x4                         ; 0048033a
+        ;   Label: LAB_0048033a
     POP EBP                             ; 0048033d
     POP EDI                             ; 0048033e
     POP ESI                             ; 0048033f
@@ -162,8 +163,8 @@ section .text
     PUSH 0x5bd2a0                       ; 0048034c | = "CEditorTools::paintWindow() called bu..."
     MOV dword ptr [0x01d71de0],ECX      ; 00480351 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00480357 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0048035d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0048035d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00480362
     JMP 0x00480214                      ; 00480365
         ;   XREF to: 00480214 (UNCONDITIONAL_JUMP)  ; LAB_00480214
@@ -175,8 +176,8 @@ section .text
         ;   Label: LAB_00480374
     PUSH ESI                            ; 00480375
     PUSH EAX                            ; 00480376
-    CALL FUN_00402f30                   ; 00480377
-        ;   XREF to: 00402f30 (UNCONDITIONAL_CALL)  ; undefined FUN_00402f30()
+    CALL engine_2d.c_drawHLine_FUN_00402f30 ; 00480377
+        ;   XREF to: 00402f30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402f30(int x1, int y, int x2)
     JMP 0x004802e2                      ; 0048037c
         ;   XREF to: 004802e2 (UNCONDITIONAL_JUMP)  ; LAB_004802e2
     AND EAX,0xff                        ; 00480381
@@ -195,8 +196,8 @@ section .text
     AND EAX,0xff                        ; 004803ab
     OR EDX,EAX                          ; 004803b0
     PUSH EDX                            ; 004803b2
-    CALL FUN_004f3520                   ; 004803b3
-        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3520()
+    CALL engine_mini3d.cpp_FUN_004f3520 ; 004803b3
+        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3520()
     ADD ESP,0x4                         ; 004803b8
     JMP 0x00480309                      ; 004803bb
         ;   XREF to: 00480309 (UNCONDITIONAL_JUMP)  ; LAB_00480309
@@ -204,8 +205,8 @@ section .text
         ;   Label: LAB_004803c0
     PUSH ESI                            ; 004803c1
     PUSH EAX                            ; 004803c2
-    CALL FUN_00402f30                   ; 004803c3
-        ;   XREF to: 00402f30 (UNCONDITIONAL_CALL)  ; undefined FUN_00402f30()
+    CALL engine_2d.c_drawHLine_FUN_00402f30 ; 004803c3
+        ;   XREF to: 00402f30 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402f30(int x1, int y, int x2)
     JMP 0x00480329                      ; 004803c8
         ;   XREF to: 00480329 (UNCONDITIONAL_JUMP)  ; LAB_00480329
 

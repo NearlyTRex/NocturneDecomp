@@ -1,0 +1,143 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 53,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f9010",
+    "address_range": [
+      [
+        "004f9010",
+        "004f9041"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_moocow.cpp_FUN_004f9010",
+    "signature": "void core_moocow_cpp_FUN_004f9010(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040ba30"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040bab0"
+    },
+    {
+      "addr": "0042b450",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042b450"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c91fc",
+      "name": "s_modelName_005c91fb+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c9206",
+      "name": "s_motion_state_005c9206",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5625,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 9,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 9,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 73
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_moocow_cpp_FUN_004f9010(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_0042b450(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x158),\"?modelName\" + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_0040bab0((CMotionController *)(param_1 + 0x158),\"motion state\");",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "005e2a44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

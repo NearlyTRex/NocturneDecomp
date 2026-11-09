@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005027b0(char *param_1,char *param_2)
+; void __cdecl sound_mp3_cpp_FUN_005027b0(CMP3Decoder *this_ptr,char *filename)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[3]:
-;   FUN_00551d20 at 0055214c
-;   FUN_00552350 at 00552472
-;   FUN_00557570 at 00557761
+;   sound_sndmain.cpp_FUN_00551d20 at 0055214c
+;   sound_sndmain.cpp_FUN_00552350 at 00552472
+;   sound_sndmain.cpp_FUN_00557570 at 00557761
 ;
 ; Referenced Globals:
 ;   undefined4 s_sound_005ca31e+1
@@ -23,17 +26,17 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004657f0
-;   FUN_004659c0
-;   FUN_004e4330
-;   FUN_00502890
+;   core_main.c_FUN_004e4330
+;   engine_dosio.cpp_FUN_004659c0
+;   engine_dosio.cpp_getFileSize_FUN_004657f0
+;   sound_mp3.cpp_FUN_00502890
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005027b0
-        ;   Label: FUN_005027b0
+        ;   Label: sound_mp3.cpp_FUN_005027b0
     PUSH ESI                            ; 005027b1
     PUSH EDI                            ; 005027b2
     PUSH EBP                            ; 005027b3
@@ -41,8 +44,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 005027b8
     PUSH ESI                            ; 005027bc
     PUSH 0x5ca31f                       ; 005027bd | s_sound_005ca31e+1
-    CALL FUN_004657f0                   ; 005027c2
-        ;   XREF to: 004657f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004657f0()
+    CALL engine_dosio.cpp_getFileSize_FUN_004657f0 ; 005027c2
+        ;   XREF to: 004657f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004657f0(char * directory, char * filename)
     ADD ESP,0x8                         ; 005027c7
     MOV EBP,EAX                         ; 005027ca
     TEST EAX,EAX                        ; 005027cc
@@ -52,8 +55,8 @@ section .text
         ;   Label: LAB_005027d0
     PUSH ESI                            ; 005027d5
     PUSH 0x5ca347                       ; 005027d6 | = "sound"
-    CALL FUN_004659c0                   ; 005027db
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004659c0()
+    CALL engine_dosio.cpp_FUN_004659c0  ; 005027db
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005027e0
     MOV EBX,EAX                         ; 005027e3
     TEST EAX,EAX                        ; 005027e5
@@ -65,15 +68,15 @@ section .text
     PUSH 0x5ca35e                       ; 005027f4 | = "Can't open %s"
     MOV [0x01d71de0],EAX                ; 005027f9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 005027fe | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00502804
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00502804
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 00502809
     PUSH EBP                            ; 0050280c
         ;   Label: LAB_0050280c
     PUSH EBX                            ; 0050280d
     PUSH EDI                            ; 0050280e
-    CALL FUN_00502890                   ; 0050280f
-        ;   XREF to: 00502890 (UNCONDITIONAL_CALL)  ; undefined FUN_00502890()
+    CALL sound_mp3.cpp_FUN_00502890     ; 0050280f
+        ;   XREF to: 00502890 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_FUN_00502890()
     ADD ESP,0xc                         ; 00502814
     TEST EAX,EAX                        ; 00502817
     JZ 0x00502863                       ; 00502819
@@ -107,8 +110,8 @@ section .text
     PUSH 0x5ca336                       ; 00502845 | = "Can't open %s"
     MOV dword ptr [0x01d71de0],EDX      ; 0050284a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00502850 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00502856
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00502856
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 0050285b
     JMP 0x005027d0                      ; 0050285e
         ;   XREF to: 005027d0 (UNCONDITIONAL_JUMP)  ; LAB_005027d0
@@ -119,8 +122,8 @@ section .text
     PUSH 0x5ca37d                       ; 0050286e | = "Error preparing to decode %s"
     MOV dword ptr [0x01d71de0],ECX      ; 00502873 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00502879 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0050287f
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0050287f
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 00502884
     JMP 0x0050281b                      ; 00502887
         ;   XREF to: 0050281b (UNCONDITIONAL_JUMP)  ; LAB_0050281b

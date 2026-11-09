@@ -1,116 +1,119 @@
-// Name: FUN_00512420
+// Name: core_platfrm.cpp_FUN_00512420
 // Address: 00512420
 // Address Range: [[00512420, 005127e5]]
 // Convention: unknown
-// Signature: int FUN_00512420(int param_1)
+// Signature: void core_platfrm_cpp_FUN_00512420(CDemonActor *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_00512420(int param_1)
+void core_platfrm_cpp_FUN_00512420(CDemonActor *param_1)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
-  int iVar3;
   int iStack_1c;
-  int iStack_18;
+  uint uStack_18;
   int iStack_14;
   
-  FUN_0040c280(param_1);
-  FUN_0040b9b0(param_1 + 0x158,"?modelName" + 1);
-  FUN_0040b680(param_1 + 0x354,"toStartEvent");
-  FUN_0040b680(param_1 + 0x3b8,"toEndEvent");
-  FUN_0040b680(param_1 + 0x41c,"stopEvent");
-  FUN_0040b680(param_1 + 0x480,"startSound");
-  FUN_0040b680(param_1 + 0x494,"stopSound");
-  FUN_0040b680(param_1 + 0x4a8,"activeSound");
-  FUN_0040b680(param_1 + 0x2f0,"courseFilename");
-  if (*(char *)(param_1 + 0x2f0) == '\0') {
-    FUN_0040b400(param_1 + 0x31c,"startPos");
-    FUN_0040b5e0(param_1 + 0x334,"origOrient");
-    FUN_0040b400(param_1 + 0x328,"endPos");
-    FUN_0040b5e0(param_1 + 0x344,"endOrient");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c280(param_1);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(param_1 + 1,"?modelName" + 1);
+  core_actor_cpp_archiveString_FUN_0040b680(&param_1[2].field_0xa4,"toStartEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(&param_1[2].field_0x108,"toEndEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(&param_1[3].field_0x14,"stopEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(&param_1[3].field_0x78,"startSound");
+  core_actor_cpp_archiveString_FUN_0040b680(&param_1[3].field_0x8c,"stopSound");
+  core_actor_cpp_archiveString_FUN_0040b680(&param_1[3].field_0xa0,"activeSound");
+  core_actor_cpp_archiveString_FUN_0040b680(&param_1[2].field_0x40,"courseFilename");
+  if (param_1[2].field_0x40 == '\0') {
+    core_actor_cpp_archiveVector_FUN_0040b400(&param_1[2].field_0x6c,"startPos");
+    core_actor_cpp_archiveQuaternion_FUN_0040b5e0(&param_1[2].field_0x84,"origOrient");
+    core_actor_cpp_archiveVector_FUN_0040b400(&param_1[2].field_0x78,"endPos");
+    core_actor_cpp_archiveQuaternion_FUN_0040b5e0(&param_1[2].field_0x94,"endOrient");
   }
-  FUN_0040b8b0(param_1 + 0x2d4,"state");
-  FUN_0040b830(param_1 + 0x2dc,"param");
-  FUN_0040b830(param_1 + 0x2ec,"travelTimeToStart");
-  if (0x0000000B < 7) {
-    *(uint *)(param_1 + 0x2e8) = *(uint *)(param_1 + 0x2ec);
+  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&param_1[2].field_0x24,"state");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[2].field_0x2c,"param");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[2].field_0x3c,"travelTimeToStart");
+  if (g_CPlatformClassVersion < 7) {
+    *(uint *)&param_1[2].field_0x38 = *(uint *)&param_1[2].field_0x3c;
   }
   else {
-    FUN_0040b830(param_1 + 0x2e8,"travelTimeToEnd");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[2].field_0x38,"travelTimeToEnd");
   }
-  iVar1 = FUN_0040b8b0(param_1 + 0x2d8,"groundType");
-  if (1 < 0x0000000B) {
-    iVar1 = FUN_0040b8b0(param_1 + 0x4c0,"oneShot");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&param_1[2].field_0x28,"groundType");
+  if (1 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&param_1[3].field_0xb8,"oneShot");
   }
-  if (2 < 0x0000000B) {
-    iVar1 = FUN_0040b8b0(param_1 + 0x4c4,"blockVirtualDirectorFlag");
+  if (2 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0
+              ((int *)&param_1[3].field_0xbc,"blockVirtualDirectorFlag");
   }
-  if (3 < 0x0000000B) {
-    iVar1 = FUN_0040b8b0(param_1 + 0x4c8,"renderInBackgroundWhenNotMovingFlag");
+  if (3 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0
+              ((int *)&param_1[3].field_0xc0,"renderInBackgroundWhenNotMovingFlag");
   }
-  if (4 < 0x0000000B) {
-    iVar1 = FUN_0040b680(param_1 + 0x4cc,"cameraWhileMoving");
+  if (4 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveString_FUN_0040b680(&param_1[3].field_0xc4,"cameraWhileMoving");
   }
-  if (5 < 0x0000000B) {
-    iVar1 = FUN_0040b8b0(param_1 + 0x50c,"plotAsBoxInShadow");
+  if (5 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0
+              ((int *)&param_1[3].field_0x104,"plotAsBoxInShadow");
   }
-  if (7 < 0x0000000B) {
-    FUN_0040b830(param_1 + 0x2e0,"goalParam");
-    FUN_0040b830(param_1 + 0x2e4,"currentMovementRate");
+  if (7 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[2].field_0x30,"goalParam");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[2].field_0x34,"currentMovementRate");
     if (DAT_007df9b8 == 1) {
-      iVar1 = FUN_0040b8b0(&iStack_1c,"attachCount");
+      core_actor_cpp_archiveInteger_FUN_0040b8b0(&iStack_1c,"attachCount");
       if (10 < iStack_1c) {
         _DAT_01d71de0 = "..\\core\\platfrm.cpp";
         _DAT_01d71de4 = 0x316;
-        iVar1 = FUN_004e4330("CPlatform::archive - too many attached actors.");
+        core_main_c_FUN_004e4330("CPlatform::archive - too many attached actors.");
       }
       iVar2 = 0;
-      iVar3 = param_1;
+      pCVar1 = param_1;
       if (0 < iStack_1c) {
         do {
-          FUN_0040b930(&iStack_18,"attach actor");
-          *(int *)(iVar3 + 0x51c) = iStack_18;
+          core_actor_cpp_archiveActor_FUN_0040b930(&uStack_18,"attach actor");
+          *(uint *)&pCVar1[3].field_0x114 = uStack_18;
           iVar2 = iVar2 + 1;
-          iVar1 = iStack_18;
-          iVar3 = iVar3 + 0x34;
+          pCVar1 = (CDemonActor *)&pCVar1->field_0x34;
         } while (iVar2 < iStack_1c);
       }
     }
     else {
       iStack_14 = 0;
-      iVar1 = param_1;
+      pCVar1 = param_1;
       do {
-        if (*(int *)(iVar1 + 0x51c) != 0) {
+        if (*(int *)&pCVar1[3].field_0x114 != 0) {
           iStack_14 = iStack_14 + 1;
         }
-        iVar1 = iVar1 + 0x34;
-      } while (iVar1 != param_1 + 0x208);
+        pCVar1 = (CDemonActor *)&pCVar1->field_0x34;
+      } while (pCVar1 != (CDemonActor *)&param_1[1].field_0xb0);
       iVar2 = 0;
-      FUN_0040b8b0(&iStack_14,"attachCount");
-      iVar3 = param_1;
+      core_actor_cpp_archiveInteger_FUN_0040b8b0(&iStack_14,"attachCount");
+      pCVar1 = param_1;
       do {
-        iVar1 = iVar2 * 0x34;
-        if (*(int *)(iVar3 + 0x51c) != 0) {
-          iVar1 = FUN_0040b930(iVar1 + param_1 + 0x51c,"attach actor");
+        if (*(int *)&pCVar1[3].field_0x114 != 0) {
+          core_actor_cpp_archiveActor_FUN_0040b930
+                    (&param_1[3].field_0x114 + iVar2 * 0x34,"attach actor");
         }
         iVar2 = iVar2 + 1;
-        iVar3 = iVar3 + 0x34;
+        pCVar1 = (CDemonActor *)&pCVar1->field_0x34;
       } while (iVar2 < 10);
     }
   }
-  if (8 < 0x0000000B) {
-    iVar1 = FUN_0040b8b0(param_1 + 0x510,"pushFlag");
+  if (8 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&param_1[3].field_0x108,"pushFlag");
   }
-  if (9 < 0x0000000B) {
-    iVar1 = FUN_0040b8b0(param_1 + 0x514,"recomputeFog");
+  if (9 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0
+              ((int *)&param_1[3].field_0x10c,"recomputeFog");
   }
-  if (10 < 0x0000000B) {
-    iVar1 = FUN_0040b8b0(param_1 + 0x518,"plotInShadowFlag");
-    return iVar1;
+  if (10 < g_CPlatformClassVersion) {
+    core_actor_cpp_archiveInteger_FUN_0040b8b0
+              ((int *)&param_1[3].field_0x110,"plotInShadowFlag");
+    return;
   }
-  return iVar1;
+  return;
 }

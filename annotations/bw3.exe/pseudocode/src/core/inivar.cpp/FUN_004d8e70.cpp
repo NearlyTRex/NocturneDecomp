@@ -1,93 +1,93 @@
-// Name: FUN_004d8e70
+// Name: core_inivar.cpp_FUN_004d8e70
 // Address: 004d8e70
 // Address Range: [[004d8e70, 004d95bc]]
-// Convention: unknown
-// Signature: void FUN_004d8e70(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_inivar_cpp_FUN_004d8e70(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004d8e70(void)
+void __cdecl core_inivar_cpp_FUN_004d8e70(void)
 
 {
   int iVar1;
-  byte local_210 [516];
+  CIniFile local_210;
   
-  iVar1 = FUN_005a4bd0(".\\system\\bw3.ini",0x180);
+  iVar1 = _chmod(".\\system\\bw3.ini",0x180);
   if (iVar1 != 0) {
     _DAT_01d71de0 = "..\\core\\inivar.cpp";
     _DAT_01d71de4 = 0x57;
-    FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
+    core_main_c_FUN_004e4330("Please copy Blair Witch 3 to your hard drive");
   }
-  FUN_004d8a20(local_210,".\\system\\bw3.ini",0);
-  FUN_004d8ae0(local_210,"Graphics");
-  FUN_004d8c30(local_210,"gamePIXX",0x01D2130C);
-  FUN_004d8c30(local_210,"gamePIXY",0x01D2130C + 4);
-  FUN_004d8c30(local_210,"gameBPP",0x01D2130C + 8);
-  FUN_004d8c30(local_210,"useDirect3D",&DAT_02cf5fcc);
-  FUN_004d8c30(local_210,"useAGPFlag",&DAT_02cf5fd8);
-  FUN_004d8b20(local_210,"rendererDLLPath",&DAT_00606730,0xfa);
-  FUN_004d8c30(local_210,"gamma",0x01D2130C + 0x248);
-  FUN_004d8c30(local_210,"heroNumber",0x01D2130C + 0xd8);
-  FUN_004d8c30(local_210,"haloMode",0x01D2130C + 0xc);
-  FUN_004d8c30(local_210,"firstTimeFlag",&DAT_01d5bc7c);
-  FUN_004d8c30(local_210,"subtitleMode",0x01D2130C + 0x10);
-  FUN_004d8c30(local_210,"bloodFlag",0x01D2130C + 0x14);
-  FUN_004d8c30(local_210,"nudityFlag",0x01D2130C + 0x18);
-  FUN_004d8c30(local_210,"foulLanguageFlag",0x01D2130C + 0x1c);
-  FUN_004d8c30(local_210,"shadowFlag",0x01D2130C + 0x24);
+  engine_ini_cpp_FUN_004d8a20(&local_210,".\\system\\bw3.ini",(char *)0x0);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Graphics");
+  engine_ini_cpp_FUN_004d8c30(&local_210,"gamePIXX",g_CGamePtr);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"gamePIXY",&g_CGamePtr->field_0x4);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"gameBPP",&g_CGamePtr->field_0x8);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"useDirect3D",&DAT_02cf5fcc);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"useAGPFlag",&DAT_02cf5fd8);
+  engine_ini_cpp_FUN_004d8b20(&local_210,"rendererDLLPath",&DAT_00606730,0xfa);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"gamma",&g_CGamePtr->field_0x248);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"heroNumber",&g_CGamePtr->field_0xd8);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"haloMode",&g_CGamePtr->field_0xc);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"firstTimeFlag",&DAT_01d5bc7c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"subtitleMode",&g_CGamePtr->field_0x10);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"bloodFlag",&g_CGamePtr->field_0x14);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"nudityFlag",&g_CGamePtr->field_0x18);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"foulLanguageFlag",&g_CGamePtr->field_0x1c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"shadowFlag",&g_CGamePtr->field_0x24);
   _DAT_01d74020 = 0;
-  FUN_004d8c30(local_210,"currentBoard",&DAT_01d74020);
-  FUN_004d8ae0(local_210,"Sound");
-  FUN_00559220(local_210);
-  FUN_004d8ae0(local_210,"Control");
-  FUN_004d8c30(local_210,"gameControl",0x01D2130C + 0xd4);
-  FUN_004b8e60(0x01D2130C);
-  FUN_004d8c30(local_210,"keyWalk",0x01D2130C + 0x28);
-  FUN_004d8c30(local_210,"keyBackup",0x01D2130C + 0x2c);
-  FUN_004d8c30(local_210,"keyRun",0x01D2130C + 0x30);
-  FUN_004d8c30(local_210,"keyStrafe",0x01D2130C + 0x34);
-  FUN_004d8c30(local_210,"keyStrafeLeft",0x01D2130C + 0x38);
-  FUN_004d8c30(local_210,"keyStrafeRight",0x01D2130C + 0x3c);
-  FUN_004d8c30(local_210,"keyRight",0x01D2130C + 0x40);
-  FUN_004d8c30(local_210,"keyLeft",0x01D2130C + 0x44);
-  FUN_004d8c30(local_210,"keyFire",0x01D2130C + 0x48);
-  FUN_004d8c30(local_210,"keyAction",0x01D2130C + 0x4c);
-  FUN_004d8c30(local_210,"keyUseItem",0x01D2130C + 0x50);
-  FUN_004d8c30(local_210,"keyLight",0x01D2130C + 0x54);
-  FUN_004d8c30(local_210,"keyFieldNotes",0x01D2130C + 0x5c);
-  FUN_004d8c30(local_210,"keyMap",0x01D2130C + 0x60);
-  FUN_004d8c30(local_210,"keyVoodooDoll",0x01D2130C + 0x68);
-  FUN_004d8c30(local_210,"keyDraw",0x01D2130C + 0x6c);
-  FUN_004d8c30(local_210,"keyQuickTurn",0x01D2130C + 0x74);
-  FUN_004d8c30(local_210,"keyPointUp",0x01D2130C + 0x78);
-  FUN_004d8c30(local_210,"keyPointDown",0x01D2130C + 0x7c);
-  FUN_004d8c30(local_210,"keyWeapon1",0x01D2130C + 0x80);
-  FUN_004d8c30(local_210,"keyWeapon2",0x01D2130C + 0x84);
-  FUN_004d8c30(local_210,"keyWeapon3",0x01D2130C + 0x88);
-  FUN_004d8c30(local_210,"keyWeapon4",0x01D2130C + 0x8c);
-  FUN_004d8c30(local_210,"keyWeapon5",0x01D2130C + 0x90);
-  FUN_004d8c30(local_210,"keyNextWeapon",0x01D2130C + 0x94);
-  FUN_004d8c30(local_210,"keyPrevWeapon",0x01D2130C + 0x98);
-  FUN_004d8c30(local_210,"keyNextItem",0x01D2130C + 0x9c);
-  FUN_004d8c30(local_210,"keyPrevItem",0x01D2130C + 0xa0);
-  FUN_004d8c30(local_210,"invertMouseYAxis",0x01D2130C + 0xac);
-  FUN_004d8c30(local_210,"alwaysRun",0x01D2130C + 0xb0);
-  FUN_004d8c30(local_210,"xMouseSensitivity",0x01D2130C + 0xb4);
-  FUN_004d8c30(local_210,"yMouseSensitivity",0x01D2130C + 0xb8);
-  FUN_004d8c30(local_210,"xCenter",0x01D2130C + 0xbc);
-  FUN_004d8c30(local_210,"yCenter",0x01D2130C + 0xc0);
-  FUN_004d8c30(local_210,"xStickMin",0x01D2130C + 0xc4);
-  FUN_004d8c30(local_210,"xStickMax",0x01D2130C + 200);
-  FUN_004d8c30(local_210,"yStickMin",0x01D2130C + 0xcc);
-  FUN_004d8c30(local_210,"yStickMax",0x01D2130C + 0xd0);
-  FUN_004d8c30(local_210,"aimMode",0x01D2130C + 0xdc);
-  FUN_004d8c30(local_210,"show_hero_numbers",0x01D2130C + 0xe0);
-  FUN_004d8c30(local_210,"show_crosshair",0x01D2130C + 0xe4);
-  FUN_004d8ae0(local_210,"Debug");
-  FUN_004d8c30(local_210,"logConsoleFlag",PTR_DAT_005f1690);
-  FUN_004d8ae0(local_210,"Editor");
-  FUN_004d8a50(local_210,0);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"currentBoard",&DAT_01d74020);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Sound");
+  sound_sndmain_cpp_FUN_00559220(&local_210);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Control");
+  engine_ini_cpp_FUN_004d8c30(&local_210,"gameControl",&g_CGamePtr->field_0xd4);
+  core_game_cpp_FUN_004b8e60(g_CGamePtr);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyWalk",&g_CGamePtr->field_0x28);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyBackup",&g_CGamePtr->field_0x2c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyRun",&g_CGamePtr->field_0x30);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyStrafe",&g_CGamePtr->field_0x34);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyStrafeLeft",&g_CGamePtr->field_0x38);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyStrafeRight",&g_CGamePtr->field_0x3c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyRight",&g_CGamePtr->field_0x40);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyLeft",&g_CGamePtr->field_0x44);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyFire",&g_CGamePtr->field_0x48);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyAction",&g_CGamePtr->field_0x4c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyUseItem",&g_CGamePtr->field_0x50);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyLight",&g_CGamePtr->field_0x54);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyFieldNotes",&g_CGamePtr->field_0x5c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyMap",&g_CGamePtr->field_0x60);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyVoodooDoll",&g_CGamePtr->field_0x68);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyDraw",&g_CGamePtr->field_0x6c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyQuickTurn",&g_CGamePtr->field_0x74);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyPointUp",&g_CGamePtr->field_0x78);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyPointDown",&g_CGamePtr->field_0x7c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyWeapon1",&g_CGamePtr->field_0x80);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyWeapon2",&g_CGamePtr->field_0x84);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyWeapon3",&g_CGamePtr->field_0x88);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyWeapon4",&g_CGamePtr->field_0x8c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyWeapon5",&g_CGamePtr->field_0x90);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyNextWeapon",&g_CGamePtr->field_0x94);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyPrevWeapon",&g_CGamePtr->field_0x98);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyNextItem",&g_CGamePtr->field_0x9c);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"keyPrevItem",&g_CGamePtr->field_0xa0);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"invertMouseYAxis",&g_CGamePtr->field_0xac);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"alwaysRun",&g_CGamePtr->field_0xb0);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"xMouseSensitivity",&g_CGamePtr->field_0xb4);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"yMouseSensitivity",&g_CGamePtr->field_0xb8);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"xCenter",&g_CGamePtr->field_0xbc);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"yCenter",&g_CGamePtr->field_0xc0);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"xStickMin",&g_CGamePtr->field_0xc4);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"xStickMax",&g_CGamePtr->field_0xc8);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"yStickMin",&g_CGamePtr->field_0xcc);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"yStickMax",&g_CGamePtr->field_0xd0);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"aimMode",&g_CGamePtr->field_0xdc);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"show_hero_numbers",&g_CGamePtr->field_0xe0);
+  engine_ini_cpp_FUN_004d8c30(&local_210,"show_crosshair",&g_CGamePtr->field_0xe4);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Debug");
+  engine_ini_cpp_FUN_004d8c30(&local_210,"logConsoleFlag",g_CConsolePtr);
+  engine_ini_cpp_CIniFile_readIniHeader_FUN_004d8ae0(&local_210,"Editor");
+  engine_ini_cpp_CIniFile_dtor_FUN_004d8a50(&local_210,0);
   return;
 }

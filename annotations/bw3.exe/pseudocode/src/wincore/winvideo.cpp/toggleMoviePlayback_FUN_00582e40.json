@@ -1,0 +1,109 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 70
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00582e40",
+    "address_range": [
+      [
+        "00582e40",
+        "00582ea8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winvideo.cpp_toggleMoviePlayback_FUN_00582e40",
+    "signature": "void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_00582e40(HWND notify_window,int play_state)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d22fac",
+      "name": "DAT_02d22fac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22fb8",
+      "name": "DAT_02d22fb8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5675675675675675,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALLIND": 2,
+      "CBRANCH": 3,
+      "COPY": 39,
+      "INT_ADD": 8,
+      "INT_AND": 14,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 17,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 132
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "notify_window",
+        "offset": 4,
+        "size": 4,
+        "type": "HWND"
+      },
+      {
+        "is_param": true,
+        "name": "play_state",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

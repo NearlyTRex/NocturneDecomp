@@ -1,112 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 38,
-        "message": "no matching function for call to 'FUN_00512fb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 42,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
@@ -134,19 +26,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_005144b0",
-    "signature": "void FUN_005144b0(int *param_1)"
+    "name": "engine_pod.cpp_FUN_005144b0",
+    "signature": "void engine_pod_cpp_FUN_005144b0(int *param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "00512fb0",
       "is_variadic": false,
-      "name": "FUN_00512fb0"
+      "name": "engine_pod.cpp_FUN_00512fb0"
     }
   ],
   "globals": [
@@ -234,7 +126,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005144b0(int *param_1)",
+      "text": "void engine_pod_cpp_FUN_005144b0(int *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -273,12 +165,12 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CPod",
         "offset": 12,
         "vtable_addr": "005e342c"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonPod",
         "offset": 20,
         "vtable_addr": "005e3494"
       }

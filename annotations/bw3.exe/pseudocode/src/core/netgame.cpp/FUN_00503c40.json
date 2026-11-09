@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01dc5c80'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01dc5c80'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01dc5c80'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 35,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
@@ -145,19 +25,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00503c40",
-    "signature": "int * FUN_00503c40(int param_1)"
+    "name": "core_netgame.cpp_FUN_00503c40",
+    "signature": "int * core_netgame_cpp_FUN_00503c40(int param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005a28f0",
       "is_variadic": false,
-      "name": "FUN_005a28f0"
+      "name": "crt_memory.c_memset_FUN_005a28f0"
     }
   ],
   "globals": [
@@ -241,7 +121,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int * FUN_00503c40(int param_1)",
+      "text": "int * core_netgame_cpp_FUN_00503c40(int param_1)",
       "type": "unnamed_param"
     },
     {
@@ -257,7 +137,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*piVar3 = param_1;",
+      "text": "*dest = param_1;",
       "type": "unnamed_param"
     }
   ]

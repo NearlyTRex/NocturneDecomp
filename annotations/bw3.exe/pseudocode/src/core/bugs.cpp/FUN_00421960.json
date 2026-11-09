@@ -1,0 +1,336 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 114,
+    "complexity_score": 212,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 17,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 146
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00421960",
+    "address_range": [
+      [
+        "00421960",
+        "00421a98"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_bugs.cpp_FUN_00421960",
+    "signature": "void core_bugs_cpp_FUN_00421960(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b9b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    },
+    {
+      "addr": "00489120",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_FUN_00489120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b7771",
+      "name": "s_count_005b7770+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7777",
+      "name": "s_modelCount_005b7777",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b7782",
+      "name": "DAT_005b7782",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7783",
+      "name": "s_modelName_005b7783",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b778d",
+      "name": "s_allowChase_005b778d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b7798",
+      "name": "s_allowSwarm_005b7798",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b77a3",
+      "name": "s_allowChaseEvent_005b77a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b77b3",
+      "name": "s_allowSwarmEvent_005b77b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b77c3",
+      "name": "s_animateEvent_005b77c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b77d0",
+      "name": "s_remove_bug_timer_005b77d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b77e1",
+      "name": "s_max_life_timer_005b77e1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0e7c",
+      "name": "g_CBugsClassVersion",
+      "type": "int",
+      "value": "0x2"
+    },
+    {
+      "addr": "007df9b8",
+      "name": "DAT_007df9b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.153846153846154,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 4,
+      "COPY": 66,
+      "INT_ADD": 38,
+      "INT_AND": 41,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 41,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 20,
+      "INT_SUB": 42,
+      "INT_XOR": 1,
+      "LOAD": 13,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 378
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_bugs_cpp_FUN_00421960(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_enemy_cpp_FUN_00489120(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)(param_1 + 0xd058),\"?count\" + 1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)(param_1 + 0x1345c),\"modelCount\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_007df9b8",
+      "severity": "mild",
+      "text": "if (DAT_007df9b8 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 0x13460),&DAT_005b7782);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005b7782",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 0x13460),&DAT_005b7782);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 0x1345c)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_1 + 0x13460;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar2 < *(int *)(param_1 + 0x1345c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)(param_1 + 0x1bd2c),\"allowChase\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)(param_1 + 0x1bd30),\"allowSwarm\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680((char *)(param_1 + 0x1bd3c),\"allowChaseEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680((char *)(param_1 + 0x1bda0),\"allowSwarmEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680((char *)(param_1 + 0x1be04),\"animateEvent\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(param_1 + 0x1bd34,\"remove_bug_timer\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(param_1 + 0x1bd38,\"max_life_timer\");",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "005dcbe4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

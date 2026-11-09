@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 37,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "004e4c70",
+      "from_addr": "004e4cbe",
+      "name": "core_main.c_FUN_004e4c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f76f0",
+      "from_addr": "004f76ff",
+      "name": "core_mission.cpp_FUN_004f76f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005502d0",
+    "address_range": [
+      [
+        "005502d0",
+        "0055030d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_FUN_005502d0",
+    "signature": "void __cdecl core_skeleton_cpp_FUN_005502d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00547b90",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00547b90"
+    },
+    {
+      "addr": "005501a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_005501a0"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004cf860",
+      "name": "DAT_004cf860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cd28bc",
+      "name": "DAT_02cd28bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004e4cbe",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004e4c70",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004f76ff",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004f76f0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.15,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 11,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 83
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02cd28bc",
+      "severity": "mild",
+      "text": "} while (pCVar1 != (CSkeleton *)&DAT_02cd28bc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_02cd28bc",
+      "severity": "mild",
+      "text": "memset(&DAT_02cd28bc,0,0xa0);",
+      "type": "undefined_data"
+    }
+  ]
+}

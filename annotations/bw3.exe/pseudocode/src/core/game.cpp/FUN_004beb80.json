@@ -1,112 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 20,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01d22b44'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
@@ -129,7 +21,7 @@
     {
       "addr": "0048c2e0",
       "from_addr": "0048d5e6",
-      "name": "FUN_0048c2e0",
+      "name": "core_event.cpp_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -142,14 +34,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004beb80",
-    "signature": "void FUN_004beb80(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5)"
+    "name": "core_game.cpp_FUN_004beb80",
+    "signature": "void core_game_cpp_FUN_004beb80(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     }
   ],
   "globals": [
@@ -190,7 +82,7 @@
       {
         "call_addr": "0048d5e6",
         "call_type": "direct",
-        "caller": "FUN_0048c2e0",
+        "caller": "core_event.cpp_FUN_0048c2e0",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,7 +148,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_game_cpp_FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -264,7 +156,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_game_cpp_FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -272,7 +164,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_game_cpp_FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -280,7 +172,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_game_cpp_FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -288,7 +180,7 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "void FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
+      "text": "void core_game_cpp_FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -304,7 +196,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004e4330(\"CGame::displayBitmap - tried to queue %s, but %s already queued!\",param_2,param_1 + 0x968);",
+      "text": "core_main_c_FUN_004e4330(\"CGame::displayBitmap - tried to queue %s, but %s already queued!\",param_2,param_1 + 0x968);",
       "type": "unnamed_param"
     },
     {
@@ -312,7 +204,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e4330(\"CGame::displayBitmap - tried to queue %s, but %s already queued!\",param_2,param_1 + 0x968);",
+      "text": "core_main_c_FUN_004e4330(\"CGame::displayBitmap - tried to queue %s, but %s already queued!\",param_2,param_1 + 0x968);",
       "type": "unnamed_param"
     },
     {

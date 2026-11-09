@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005586f0(undefined4 param_1)
+; void sound_sndmain_cpp_FUN_005586f0(undefined4 param_1)
 ;
 ;
 ; XREF[2]:
-;   FUN_004e94f0 at 004ea247
-;   FUN_00559220 at 00559344
+;   core_menu.cpp_FUN_004e94f0 at 004ea247
+;   sound_sndmain.cpp_FUN_00559220 at 00559344
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3b6c
@@ -16,16 +16,16 @@
 ;   undefined4 DAT_02cf328c
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005586b0
+;   core_main.c_FUN_004e4330
+;   sound_sndmain.cpp_FUN_005586b0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL FUN_005586b0                   ; 005586f0
-        ;   XREF to: 005586b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005586b0()
-        ;   Label: FUN_005586f0
+    CALL sound_sndmain.cpp_FUN_005586b0 ; 005586f0
+        ;   XREF to: 005586b0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_FUN_005586b0()
+        ;   Label: sound_sndmain.cpp_FUN_005586f0
     TEST EAX,EAX                        ; 005586f5
     JNZ 0x00558703                      ; 005586f7
         ;   XREF to: 00558703 (CONDITIONAL_JUMP)  ; LAB_00558703
@@ -38,8 +38,8 @@ section .text
     PUSH 0x5d3b81                       ; 0055870d | = "enableHwSoundMixing - Can't do this w..."
     MOV dword ptr [0x01d71de0],EDX      ; 00558712 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00558718 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0055871e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0055871e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00558723
     MOV EAX,dword ptr [ESP + 0x4]       ; 00558726
     MOV [0x02cf328c],EAX                ; 0055872a | DAT_02cf328c

@@ -1,97 +1,100 @@
-// Name: FUN_00419550
+// Name: core_boneguy.cpp_FUN_00419550
 // Address: 00419550
 // Address Range: [[00419550, 00419784]]
-// Convention: unknown
-// Signature: void FUN_00419550(int param_1)
+// Convention: __cdecl
+// Signature: void __cdecl core_boneguy_cpp_FUN_00419550(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00419550(int param_1)
+void __cdecl core_boneguy_cpp_FUN_00419550(CBoneGuy *this_ptr)
 
 {
   int iVar1;
+  CBodyPart *body_part;
   uint *puVar2;
-  uint *puVar3;
+  byte *puVar3;
   uint *puVar4;
-  byte bVar5;
+  uint *puVar5;
+  byte bVar6;
   uint auStackY_1824 [1520];
   uint local_48;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
+  CVector3f local_38;
+  UOrientationVector *local_2c;
+  CVector3f *local_28;
+  byte *local_24;
+  CBoneGuy *local_20;
   int local_1c;
-  int local_18;
+  CDeformableModel *local_18;
   uint local_14;
   
-  bVar5 = 0;
-  FUN_00431ce0(param_1);
-  *(uint *)(param_1 + 0xd0e4) = 1;
-  *(uint *)(param_1 + 0xd694) = 0;
-  if ((uint *)(param_1 + 0xd068) != (uint *)(param_1 + 0x20)) {
-    *(uint *)(param_1 + 0xd068) = *(uint *)(param_1 + 0x20);
-    *(uint *)(param_1 + 0xd06c) = *(uint *)(param_1 + 0x24);
-    *(uint *)(param_1 + 0xd070) = *(uint *)(param_1 + 0x28);
+  bVar6 = 0;
+  core_charactr_cpp_FUN_00431ce0((CCharacter *)this_ptr);
+  *(uint *)&this_ptr->field_0xd0e4 = 1;
+  *(uint *)&this_ptr->field_0xd694 = 0;
+  if (&this_ptr->field_0xd068 != &this_ptr->field_0x20) {
+    *(uint *)&this_ptr->field_0xd068 = *(uint *)&this_ptr->field_0x20;
+    *(uint *)&this_ptr->field_0xd06c = *(uint *)&this_ptr->field_0x24;
+    *(uint *)&this_ptr->field_0xd070 = *(uint *)&this_ptr->field_0x28;
   }
-  local_18 = FUN_0054ea40(param_1 + 0x158);
-  iVar1 = *(int *)(local_18 + 0xc00);
-  *(int *)(param_1 + 0xd0e8) = iVar1;
+  local_18 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
+                       ((CDeformableModelInstance *)&this_ptr->field_0x158);
+  iVar1 = *(int *)&local_18->field_0xc00;
+  *(int *)&this_ptr->field_0xd0e8 = iVar1;
   if (0x14 < iVar1) {
     _DAT_01d71de0 = "..\\core\\boneguy.cpp";
     _DAT_01d71de4 = 0x49c;
-    FUN_004e4330("CBoneGuy::explode - Not enough containers");
+    core_main_c_FUN_004e4330("CBoneGuy::explode - Not enough containers");
   }
   local_1c = 0;
-  if (0 < *(int *)(local_18 + 0xc00)) {
-    local_24 = param_1 + 0xd0f0;
-    local_2c = param_1 + 0x30;
-    local_28 = param_1 + 0x20;
-    puVar3 = (uint *)(param_1 + 0xd0fc);
-    local_20 = param_1;
+  if (0 < *(int *)&local_18->field_0xc00) {
+    local_24 = &this_ptr->field_0xd0f0;
+    local_2c = (UOrientationVector *)&this_ptr->field_0x30;
+    local_28 = (CVector3f *)&this_ptr->field_0x20;
+    puVar4 = (uint *)&this_ptr->field_0xd0fc;
+    local_20 = this_ptr;
     do {
-      local_38 = FUN_0040ce40(0xc0a00000,0x40a00000);
-      local_14 = local_38;
-      local_34 = FUN_0040ce40(0,0x41200000);
-      local_14 = local_34;
-      local_30 = FUN_0040ce40(0xc0a00000,0x40a00000);
-      local_14 = local_30;
-      iVar1 = FUN_00414550(local_28,local_2c,&stack0xffffffc8,param_1,1,1,2);
-      FUN_00430590(param_1,iVar1,local_1c,1);
-      *(uint *)(iVar1 + 0xcc4) = 1;
-      FUN_004157c0(iVar1);
-      *(int *)(local_20 + 0xd134) = iVar1;
-      puVar2 = (uint *)(local_1c * 0x48 + local_24);
-      if (puVar2 != (uint *)(iVar1 + 0x20)) {
-        *puVar2 = *(uint *)(iVar1 + 0x20);
-        puVar2[1] = *(uint *)(iVar1 + 0x24);
-        puVar2[2] = *(uint *)(iVar1 + 0x28);
+      local_38._0_4_ = core_actor_cpp_FUN_0040ce40(0xc0a00000,0x40a00000);
+      local_14 = local_38._0_4_;
+      local_38._4_4_ = core_actor_cpp_FUN_0040ce40(0,0x41200000);
+      local_14 = local_38._4_4_;
+      local_38._8_4_ = core_actor_cpp_FUN_0040ce40(0xc0a00000,0x40a00000);
+      local_14 = local_38._8_4_;
+      body_part = core_bodypart_cpp_FUN_00414550
+                            (local_28,local_2c,&local_38,(CDemonActor *)this_ptr,1,1,BLOOD_TYPE_NONE
+                            );
+      core_charactr_cpp_FUN_00430590((CCharacter *)this_ptr,body_part,local_1c,1);
+      *(uint *)&body_part->field_0xcc4 = 1;
+      core_bodypart_cpp_FUN_004157c0(body_part);
+      *(CBodyPart **)&local_20->field_0xd134 = body_part;
+      puVar2 = (uint *)(local_24 + local_1c * 0x48);
+      if (puVar2 != (uint *)&body_part->field_0x20) {
+        *puVar2 = *(uint *)&body_part->field_0x20;
+        puVar2[1] = *(uint *)&body_part->field_0x24;
+        puVar2[2] = *(uint *)&body_part->field_0x28;
       }
-      if (puVar3 != (uint *)(iVar1 + 0x30)) {
-        *puVar3 = *(uint *)(iVar1 + 0x30);
-        puVar3[1] = *(uint *)(iVar1 + 0x34);
-        puVar3[2] = *(uint *)(iVar1 + 0x38);
+      if (puVar4 != (uint *)&body_part->field_0x30) {
+        *puVar4 = *(uint *)&body_part->field_0x30;
+        puVar4[1] = *(uint *)&body_part->field_0x34;
+        puVar4[2] = *(uint *)&body_part->field_0x38;
       }
-      puVar3 = puVar3 + 0x12;
-      FUN_005860b0(iVar1 + 0x30);
-      iVar1 = local_20 + 0x48;
+      puVar4 = puVar4 + 0x12;
+      core_xform_cpp_FUN_005860b0(&body_part->field_0x30);
+      puVar3 = &local_20->field_0x48;
       local_1c = local_1c + 1;
-      puVar2 = (uint *)(local_20 + 0xd11c + (uint)bVar5 * -8);
-      *(uint *)(local_20 + 0xd118) = local_48;
-      puVar4 = puVar2 + (uint)bVar5 * -2 + 1;
-      *puVar2 = *(uint *)(&stack0xffffffbc + (uint)bVar5 * -8);
-      *puVar4 = *(uint *)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-      puVar4[(uint)bVar5 * -2 + 1] =
+      puVar2 = (uint *)((int)local_20 + (uint)bVar6 * -8 + 0xd11c);
+      *(uint *)&local_20->field_0xd118 = local_48;
+      puVar5 = puVar2 + (uint)bVar6 * -2 + 1;
+      *puVar2 = *(uint *)(&stack0xffffffbc + (uint)bVar6 * -8);
+      *puVar5 = *(uint *)(&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+      puVar5[(uint)bVar6 * -2 + 1] =
            *(uint *)
-            ((int)(&stack0xffffffc0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
-            ((uint)bVar5 * -2 + 1) * 4);
-      local_20 = iVar1;
-    } while (local_1c < *(int *)(local_18 + 0xc00));
+            ((int)(&stack0xffffffc0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
+            ((uint)bVar6 * -2 + 1) * 4);
+      local_20 = (CBoneGuy *)puVar3;
+    } while (local_1c < *(int *)&local_18->field_0xc00);
   }
-  (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,"boneguy-fallapart.wav");
+  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,"boneguy-fallapart.wav");
   return;
 }

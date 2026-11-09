@@ -1,0 +1,416 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 330,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 26,
+    "suspect_types": [
+      "param_count_too_few",
+      "raw_address_constant",
+      "stack_ref",
+      "suspicious_cast",
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 129
+  },
+  "cross_references": [
+    {
+      "addr": "004a3fd0",
+      "from_addr": "004a3ffa",
+      "name": "core_fire.cpp_FUN_004a3fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a0480",
+    "address_range": [
+      [
+        "004a0480",
+        "004a056e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fire.cpp_FUN_004a0480",
+    "signature": "void core_fire_cpp_FUN_004a0480(CDemonActor *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005609d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005609d0"
+    },
+    {
+      "addr": "0057d050",
+      "is_variadic": false,
+      "name": "core_weather.cpp_FUN_0057d050"
+    },
+    {
+      "addr": "0057d1a0",
+      "is_variadic": false,
+      "name": "core_weather.cpp_FUN_0057d1a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c093c",
+      "name": "s_wp_storm_wav_005c093b+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006071f0",
+      "name": "DAT_006071f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032780",
+      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0c1a0",
+      "name": "DAT_02d0c1a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a3ffa",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004a3fd0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 8,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.972972972972973,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 56,
+      "INT_ADD": 32,
+      "INT_AND": 31,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 30,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 6,
+      "INT_SLESS": 15,
+      "INT_SUB": 21,
+      "LOAD": 13,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 27,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 294
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_fire_cpp_FUN_004a0480(CDemonActor *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)&param_1->field_0x4 = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(int *)&param_1->field_0x4 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x15aeb8",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&g_CDemonSetPtr->field_0x15aeb8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "if (&local_14 != (uint *)(&g_CDemonSetPtr->field_0x104 + iVar1 * 0x1a4)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "local_14 = *(uint *)(&g_CDemonSetPtr->field_0x104 + iVar1 * 0x1a4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "local_10 = *(uint *)(&g_CDemonSetPtr->field_0x108 + iVar1 * 0x1a4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "local_c = *(uint *)(&g_CDemonSetPtr->field_0x10c + iVar1 * 0x1a4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "if (&local_20 != (uint *)(&g_CDemonSetPtr->field_0x110 + iVar1 * 0x1a4)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "local_20 = *(uint *)(&g_CDemonSetPtr->field_0x110 + iVar1 * 0x1a4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x114",
+      "severity": "mild",
+      "text": "local_1c = *(uint *)(&g_CDemonSetPtr->field_0x114 + iVar1 * 0x1a4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "local_18 = *(uint *)(&g_CDemonSetPtr->field_0x118 + iVar1 * 0x1a4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)param_1 = 0x40a00000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0x00000008",
+      "severity": "moderate",
+      "text": "(this_ptr,param_1,\"@wp_storm.wav\" + 1,(CVector3f *)&stack0x00000008);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(this_ptr,param_1,\"@wp_storm.wav\" + 1,(CVector3f *)&stack0x00000008);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x8 = uVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x8 = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 22,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "local_14 = *(uint *)(&g_CDemonSetPtr->field_0x104 + iVar1 * 0x1a4);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 23,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "local_10 = *(uint *)(&g_CDemonSetPtr->field_0x108 + iVar1 * 0x1a4);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 24,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "local_c = *(uint *)(&g_CDemonSetPtr->field_0x10c + iVar1 * 0x1a4);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 27,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "local_20 = *(uint *)(&g_CDemonSetPtr->field_0x110 + iVar1 * 0x1a4);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 28,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "local_1c = *(uint *)(&g_CDemonSetPtr->field_0x114 + iVar1 * 0x1a4);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 29,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "local_18 = *(uint *)(&g_CDemonSetPtr->field_0x118 + iVar1 * 0x1a4);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Raw hex address 0x2d0c1a0 assigned to bare local `piVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `piVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 16,
+      "match": "0x2d0c1a0",
+      "severity": "moderate",
+      "text": "piVar2 = 0x02D0C1A0;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x2cf5680 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 37,
+      "match": "0x2cf5680",
+      "severity": "moderate",
+      "text": "this_ptr = 0x02CF5680;",
+      "type": "raw_address_constant"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 8,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:8",
+      "param_delta": 8,
+      "text": "Function declares 0 params but call sites push 8 (8 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

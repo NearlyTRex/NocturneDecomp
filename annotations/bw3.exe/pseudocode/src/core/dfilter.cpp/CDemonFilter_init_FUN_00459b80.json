@@ -1,0 +1,304 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 154,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 9,
+    "suspect_types": [
+      "extra_output",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 178
+  },
+  "cross_references": [
+    {
+      "addr": "00459710",
+      "from_addr": "004597fe",
+      "name": "core_dfilter.cpp_FUN_00459710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e44e0",
+      "from_addr": "004e4b4c",
+      "name": "core_main.c_FUN_004e44e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00459b80",
+    "address_range": [
+      [
+        "00459b80",
+        "00459c9a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dfilter.cpp_CDemonFilter_init_FUN_00459b80",
+    "signature": "void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_00459b80(CDemonFilter *this_ptr,float init_value,int flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00459910",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00459910"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005babfa",
+      "name": "DAT_005babfa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bac02",
+      "name": "DAT_005bac02",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004e4b4c",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004e44e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004e4ba3",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004e44e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004597fe",
+        "call_type": "direct",
+        "caller": "core_dfilter.cpp_FUN_00459710",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.3076923076923075,
+    "instruction_count": 104,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 4,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 210,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 6,
+      "INT_ADD": 31,
+      "INT_AND": 87,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 56,
+      "INT_LEFT": 4,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 13,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 6,
+      "INT_SLESS": 27,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 18,
+      "INT_XOR": 3,
+      "INT_ZEXT": 5,
+      "LOAD": 29,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 17,
+      "SUBPIECE": 4,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 656
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFilter *"
+      },
+      {
+        "is_param": true,
+        "name": "init_value",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00459b89",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar2 = (float)(*(int *)&this_ptr->field_0x4 / 2 - iVar4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(byte *)(*(int *)&this_ptr->field_0x48 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 44,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(byte *)(*(int *)this_ptr * iVar4 + extraout_ECX + *(int *)&this_ptr->field_0x48) =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(byte *)(*(int *)this_ptr * iVar4 + extraout_ECX + *(int *)&this_ptr->field_0x48) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 46,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "iVar3 = extraout_ECX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x4);",
+      "type": "unnamed_field"
+    }
+  ]
+}

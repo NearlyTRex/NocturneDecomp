@@ -1,14 +1,14 @@
-// Name: FUN_0047cd80
+// Name: shape_edittool.cpp_FUN_0047cd80
 // Address: 0047cd80
 // Address Range: [[0047cd80, 0047ce77]]
-// Convention: unknown
-// Signature: void FUN_0047cd80(void)
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_FUN_0047cd80(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0047cd80(void)
+void __cdecl shape_edittool_cpp_FUN_0047cd80(void)
 
 {
   int iVar1;
@@ -26,7 +26,7 @@ void FUN_0047cd80(void)
   if (_DAT_01c5b104 < 1) {
     _DAT_01d71de0 = "..\\shape\\edittool.cpp";
     _DAT_01d71de4 = 0x3df;
-    FUN_004e4330("paintWindowBackground called but no window was opened!");
+    core_main_c_FUN_004e4330("paintWindowBackground called but no window was opened!");
   }
   iVar1 = (_DAT_01c5b104 + -1) * 0x1f8;
   puVar7 = *(uint **)(iVar1 + 0x1c5b2e0);

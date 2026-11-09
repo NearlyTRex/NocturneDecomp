@@ -1,118 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_02cf328c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 23,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02cf328c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
@@ -134,13 +20,13 @@
     {
       "addr": "004e94f0",
       "from_addr": "004ea247",
-      "name": "FUN_004e94f0",
+      "name": "core_menu.cpp_FUN_004e94f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00559220",
       "from_addr": "00559344",
-      "name": "FUN_00559220",
+      "name": "sound_sndmain.cpp_FUN_00559220",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,19 +39,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_005586f0",
-    "signature": "void FUN_005586f0(undefined4 param_1)"
+    "name": "sound_sndmain.cpp_FUN_005586f0",
+    "signature": "void sound_sndmain_cpp_FUN_005586f0(undefined4 param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005586b0",
       "is_variadic": false,
-      "name": "FUN_005586b0"
+      "name": "sound_sndmain.cpp_FUN_005586b0"
     }
   ],
   "globals": [
@@ -206,7 +92,7 @@
       {
         "call_addr": "00559344",
         "call_type": "direct",
-        "caller": "FUN_00559220",
+        "caller": "sound_sndmain.cpp_FUN_00559220",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +105,7 @@
       {
         "call_addr": "004ea247",
         "call_type": "direct",
-        "caller": "FUN_004e94f0",
+        "caller": "core_menu.cpp_FUN_004e94f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -278,7 +164,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005586f0(uint param_1)",
+      "text": "void sound_sndmain_cpp_FUN_005586f0(uint param_1)",
       "type": "unnamed_param"
     },
     {

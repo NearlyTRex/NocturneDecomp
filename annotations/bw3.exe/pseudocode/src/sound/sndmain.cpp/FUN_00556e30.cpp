@@ -1,21 +1,21 @@
-// Name: FUN_00556e30
+// Name: sound_sndmain.cpp_FUN_00556e30
 // Address: 00556e30
 // Address Range: [[00556e30, 00556e73]]
-// Convention: unknown
-// Signature: undefined4 FUN_00556e30(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl sound_sndmain_cpp_FUN_00556e30(int channel_index)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_00556e30(int param_1)
+int __cdecl sound_sndmain_cpp_FUN_00556e30(int channel_index)
 
 {
-  if ((-1 < param_1) && (param_1 < 0x20)) {
-    return *(uint *)(param_1 * 4 + 0x2cf2940);
+  if ((-1 < channel_index) && (channel_index < 0x20)) {
+    return *(int *)(channel_index * 4 + 0x2cf2940);
   }
   _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
   _DAT_01d71de4 = 0x1147;
-  FUN_004e4330("isSfxChannelEnabled - invalid channel index: %d",param_1);
-  return *(uint *)(param_1 * 4 + 0x2cf2940);
+  core_main_c_FUN_004e4330("isSfxChannelEnabled - invalid channel index: %d",channel_index);
+  return *(int *)(channel_index * 4 + 0x2cf2940);
 }

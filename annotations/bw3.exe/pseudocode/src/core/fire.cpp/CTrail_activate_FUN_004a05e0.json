@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 120,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "004a3cf0",
+      "from_addr": "004a3d1f",
+      "name": "core_fire.cpp_CFireEffect_createTrailSegment_FUN_004a3cf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a05e0",
+    "address_range": [
+      [
+        "004a05e0",
+        "004a0624"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CTrail_activate_FUN_004a05e0",
+    "signature": "void __cdecl core_fire_cpp_CTrail_activate_FUN_004a05e0(CTrail *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a3d1f",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createTrailSegment_FUN_004a3cf0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0869565217391304,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CBRANCH": 1,
+      "COPY": 20,
+      "INT_ADD": 18,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 11,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 71
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrail *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "lifetime",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "texture_ptr",
+        "offset": 24,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0xc = size;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x14 = alpha;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x10 = lifetime;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x18 = lifetime;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1c = alpha;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(SMRGLTextureBasic **)&this_ptr->field_0x20 = texture_ptr;",
+      "type": "unnamed_field"
+    }
+  ]
+}

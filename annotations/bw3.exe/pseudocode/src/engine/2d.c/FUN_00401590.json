@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 17,
-        "message": "no matching function for call to 'FUN_005738c0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 18,
-        "message": "use of undeclared identifier 'DAT_005b505c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 22,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_01c6af98'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 53,
@@ -141,7 +21,7 @@
     {
       "addr": "00401010",
       "from_addr": "0040104a",
-      "name": "FUN_00401010",
+      "name": "engine_2d.c_FUN_00401010",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,39 +34,39 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00401590",
-    "signature": "void FUN_00401590(undefined4 param_1)"
+    "name": "engine_2d.c_FUN_00401590",
+    "signature": "void engine_2d_c_FUN_00401590(undefined4 param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
-    },
-    {
-      "addr": "005738c0",
-      "is_variadic": false,
-      "name": "FUN_005738c0"
-    },
-    {
-      "addr": "00573a40",
-      "is_variadic": false,
-      "name": "FUN_00573a40"
-    },
-    {
-      "addr": "00573c00",
-      "is_variadic": false,
-      "name": "FUN_00573c00"
-    },
-    {
-      "addr": "00573db0",
-      "is_variadic": false,
-      "name": "FUN_00573db0"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "00573fc0",
       "is_variadic": false,
-      "name": "FUN_00573fc0"
+      "name": "support_trstream.cpp_FUN_00573fc0"
+    },
+    {
+      "addr": "005738c0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0"
+    },
+    {
+      "addr": "00573a40",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40"
+    },
+    {
+      "addr": "00573c00",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573c00"
+    },
+    {
+      "addr": "00573db0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573db0"
     }
   ],
   "globals": [
@@ -233,7 +113,7 @@
       {
         "call_addr": "0040104a",
         "call_type": "direct",
-        "caller": "FUN_00401010",
+        "caller": "engine_2d.c_FUN_00401010",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,7 +182,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00401590(uint param_1)",
+      "text": "void engine_2d_c_FUN_00401590(uint param_1)",
       "type": "unnamed_param"
     },
     {
@@ -310,7 +190,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00573fc0(local_2c,&DAT_005b505c,param_1,1);",
+      "text": "iVar1 = support_trstream_cpp_FUN_00573fc0(&local_2c,&DAT_005b505c,param_1,1);",
       "type": "unnamed_param"
     },
     {
@@ -318,7 +198,7 @@
       "line": 11,
       "match": "DAT_005b505c",
       "severity": "mild",
-      "text": "iVar1 = FUN_00573fc0(local_2c,&DAT_005b505c,param_1,1);",
+      "text": "iVar1 = support_trstream_cpp_FUN_00573fc0(&local_2c,&DAT_005b505c,param_1,1);",
       "type": "undefined_data"
     },
     {
@@ -326,7 +206,7 @@
       "line": 17,
       "match": "DAT_01c6af98",
       "severity": "mild",
-      "text": "FUN_00573c00(local_2c,&DAT_01c6af98,0x300);",
+      "text": "unkafter_turret_cpp_FUN_00573c00(&local_2c,&DAT_01c6af98,0x300);",
       "type": "undefined_data"
     },
     {

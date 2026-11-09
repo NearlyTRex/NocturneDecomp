@@ -1,26 +1,29 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0043fa40(int *param_1,char *param_2)
+; void __cdecl core_cloth_cpp_FUN_0043fa40(CClothList *this_ptr,char *filename)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[2]:
-;   FUN_00517f80 at 00518417
-;   FUN_005273b0 at 005274d2
+;   core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0 at 005274d2
+;   core_stranger.cpp_CPrye_ctor_FUN_00517f80 at 00518417
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0043fa40
-        ;   Label: FUN_0043fa40
+        ;   Label: core_cloth.cpp_FUN_0043fa40
     PUSH ESI                            ; 0043fa41
     PUSH EDI                            ; 0043fa42
     MOV EBX,dword ptr [ESP + 0x10]      ; 0043fa43
@@ -64,8 +67,8 @@ section .text
     PUSH 0x5b9238                       ; 0043fa9a
     MOV dword ptr [0x01d71de0],ECX      ; 0043fa9f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0043faa5 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0043faab
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0043faab
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0043fab0
     JMP 0x0043fa4c                      ; 0043fab3
         ;   XREF to: 0043fa4c (UNCONDITIONAL_JUMP)  ; LAB_0043fa4c

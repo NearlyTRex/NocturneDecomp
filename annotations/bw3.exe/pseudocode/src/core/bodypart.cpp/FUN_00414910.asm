@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00414910(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_bodypart_cpp_FUN_00414910(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
 ; XREF[6]:
-;   FUN_00414880 at 0041489b
-;   FUN_00414fd0 at 00415216
-;   FUN_00415350 at 004153ee
-;   FUN_004157c0 at 004157f0
-;   FUN_00416970 at 0041699c
-;   FUN_0054a6a0 at 0054a8fe
+;   core_bodypart.cpp_CBodyPart_dtor_FUN_00414880 at 0041489b
+;   core_bodypart.cpp_FUN_00414fd0 at 00415216
+;   core_bodypart.cpp_FUN_00415350 at 004153ee
+;   core_bodypart.cpp_FUN_004157c0 at 004157f0
+;   core_bodypart.cpp_FUN_00416970 at 0041699c
+;   core_skeleton.cpp_CDeformableModel_dismember_FUN_0054a6a0 at 0054a8fe
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_005b6a5e
@@ -21,15 +21,15 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005a3e50
+;   core_main.c_FUN_004e4330
+;   crt_memory.c_realloc_FUN_005a3e50
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00414910
-        ;   Label: FUN_00414910
+        ;   Label: core_bodypart.cpp_FUN_00414910
     PUSH ESI                            ; 00414911
     PUSH EDI                            ; 00414912
     PUSH EBP                            ; 00414913
@@ -45,8 +45,8 @@ section .text
     PUSH EAX                            ; 0041493e
     MOV EDX,dword ptr [EBX + 0x178]     ; 0041493f
     PUSH EDX                            ; 00414945
-    CALL FUN_005a3e50                   ; 00414946
-        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3e50()
+    CALL crt_memory.c_realloc_FUN_005a3e50 ; 00414946
+        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     MOV EDX,dword ptr [EBX + 0x174]     ; 0041494b
     MOV dword ptr [EBX + 0x178],EAX     ; 00414951
     LEA EAX,[EDX*0x4 + 0x0]             ; 00414957
@@ -56,8 +56,8 @@ section .text
     PUSH EAX                            ; 00414966
     MOV ECX,dword ptr [EBX + 0x17c]     ; 00414967
     PUSH ECX                            ; 0041496d
-    CALL FUN_005a3e50                   ; 0041496e
-        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3e50()
+    CALL crt_memory.c_realloc_FUN_005a3e50 ; 0041496e
+        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     MOV dword ptr [EBX + 0x17c],EAX     ; 00414973
     MOV EAX,dword ptr [EBX + 0x180]     ; 00414979
     SHL EAX,0x2                         ; 0041497f
@@ -68,8 +68,8 @@ section .text
     PUSH EAX                            ; 0041498c
     MOV ESI,dword ptr [EBX + 0x184]     ; 0041498d
     PUSH ESI                            ; 00414993
-    CALL FUN_005a3e50                   ; 00414994
-        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3e50()
+    CALL crt_memory.c_realloc_FUN_005a3e50 ; 00414994
+        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     MOV dword ptr [EBX + 0x184],EAX     ; 00414999
     MOV EAX,dword ptr [EBX + 0x180]     ; 0041499f
     ADD ESP,0x8                         ; 004149a5
@@ -77,8 +77,8 @@ section .text
     PUSH EAX                            ; 004149ab
     MOV EDI,dword ptr [EBX + 0x188]     ; 004149ac
     PUSH EDI                            ; 004149b2
-    CALL FUN_005a3e50                   ; 004149b3
-        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3e50()
+    CALL crt_memory.c_realloc_FUN_005a3e50 ; 004149b3
+        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 004149b8
     MOV EBP,dword ptr [EBX + 0x174]     ; 004149bb
     MOV dword ptr [EBX + 0x188],EAX     ; 004149c1
@@ -99,8 +99,8 @@ section .text
     PUSH 0x5b6a73                       ; 004149ee | = "CBodyPart::setCounts - out of memory ..."
     MOV dword ptr [0x01d71de0],ECX      ; 004149f3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004149f9 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004149ff
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004149ff
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 00414a04
     CMP dword ptr [EBX + 0x180],0x0     ; 00414a07
         ;   Label: LAB_00414a07
@@ -126,8 +126,8 @@ section .text
     PUSH 0x5b6acd                       ; 00414a38 | = "CBodyPart::setCounts - out of memory ..."
     MOV dword ptr [0x01d71de0],ECX      ; 00414a3d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00414a43 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00414a49
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00414a49
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 00414a4e
     POP EBP                             ; 00414a51
     POP EDI                             ; 00414a52

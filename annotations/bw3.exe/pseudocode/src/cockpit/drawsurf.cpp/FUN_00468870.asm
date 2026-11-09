@@ -1,25 +1,35 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00468870(undefined4 param_1,int *param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7,int param_8,int param_9)
+; int __cdecl cockpit_drawsurf_cpp_FUN_00468870(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int *            Stack[0x8]:4   x1
+; int *            Stack[0xc]:4   y1
+; int *            Stack[0x10]:4   x2
+; int *            Stack[0x14]:4   y2
+; int              Stack[0x18]:4   clip_left
+; int              Stack[0x1c]:4   clip_top
+; int              Stack[0x20]:4   clip_right
+; int              Stack[0x24]:4   clip_bottom
 ;
 ; XREF[1]:
-;   FUN_004683f0 at 00468451
+;   cockpit_drawsurf.cpp_FUN_004683f0 at 00468451
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00468870
-        ;   Label: FUN_00468870
+        ;   Label: cockpit_drawsurf.cpp_FUN_00468870
     PUSH ESI                            ; 00468871
     PUSH EDI                            ; 00468872
     PUSH EBP                            ; 00468873
@@ -317,8 +327,8 @@ section .text
     PUSH 0x5bc28c                       ; 00468b2d
     MOV dword ptr [0x01d71de0],EBP      ; 00468b32 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00468b38 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00468b3d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00468b3d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00468b42
     MOV EAX,dword ptr [ESP + 0x18]      ; 00468b45
     ADD ESP,0x48                        ; 00468b49

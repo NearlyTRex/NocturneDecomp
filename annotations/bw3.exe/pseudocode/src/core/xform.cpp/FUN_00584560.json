@@ -1,106 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 45,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 46,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 196,
@@ -124,37 +22,37 @@
     {
       "addr": "0042f770",
       "from_addr": "0042fb0b",
-      "name": "FUN_0042f770",
+      "name": "core_charactr.cpp_FUN_0042f770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00431ab0",
       "from_addr": "00431b93",
-      "name": "FUN_00431ab0",
+      "name": "core_charactr.cpp_FUN_00431ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00431d10",
       "from_addr": "00431f56",
-      "name": "FUN_00431d10",
+      "name": "core_charactr.cpp_FUN_00431d10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0043d830",
       "from_addr": "0043d880",
-      "name": "FUN_0043d830",
+      "name": "core_cloth.cpp_FUN_0043d830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f40b0",
       "from_addr": "004f44d1",
-      "name": "FUN_004f40b0",
+      "name": "core_mirror.cpp_FUN_004f40b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056c140",
       "from_addr": "0056c3bf",
-      "name": "FUN_0056c140",
+      "name": "core_thehand.cpp_FUN_0056c140",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -167,19 +65,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00584560",
-    "signature": "void FUN_00584560(float *param_1)"
+    "name": "core_xform.cpp_FUN_00584560",
+    "signature": "void core_xform_cpp_FUN_00584560(float *param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "00584510",
       "is_variadic": false,
-      "name": "FUN_00584510"
+      "name": "core_xform.cpp_determinant_FUN_00584510"
     }
   ],
   "globals": [
@@ -214,7 +112,7 @@
       {
         "call_addr": "00431b93",
         "call_type": "direct",
-        "caller": "FUN_00431ab0",
+        "caller": "core_charactr.cpp_FUN_00431ab0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +126,7 @@
       {
         "call_addr": "004f44d1",
         "call_type": "direct",
-        "caller": "FUN_004f40b0",
+        "caller": "core_mirror.cpp_FUN_004f40b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -242,7 +140,7 @@
       {
         "call_addr": "004f44ff",
         "call_type": "direct",
-        "caller": "FUN_004f40b0",
+        "caller": "core_mirror.cpp_FUN_004f40b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,7 +155,7 @@
       {
         "call_addr": "00431f56",
         "call_type": "direct",
-        "caller": "FUN_00431d10",
+        "caller": "core_charactr.cpp_FUN_00431d10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -270,7 +168,7 @@
       {
         "call_addr": "0043d880",
         "call_type": "direct",
-        "caller": "FUN_0043d830",
+        "caller": "core_cloth.cpp_FUN_0043d830",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -284,7 +182,7 @@
       {
         "call_addr": "0043d91e",
         "call_type": "direct",
-        "caller": "FUN_0043d830",
+        "caller": "core_cloth.cpp_FUN_0043d830",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -299,7 +197,7 @@
       {
         "call_addr": "0042fb0b",
         "call_type": "direct",
-        "caller": "FUN_0042f770",
+        "caller": "core_charactr.cpp_FUN_0042f770",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -313,7 +211,7 @@
       {
         "call_addr": "0056c3bf",
         "call_type": "direct",
-        "caller": "FUN_0056c140",
+        "caller": "core_thehand.cpp_FUN_0056c140",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -537,23 +435,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_00584560.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 70,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -568,7 +449,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00584560(float *param_1)",
+      "text": "void core_xform_cpp_FUN_00584560(float *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -584,7 +465,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_3c = (double)FUN_00584510(param_1);",
+      "text": "local_3c = (double)core_xform_cpp_determinant_FUN_00584510(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -997,14 +878,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *pfVar2;",
-      "type": "static_uninitvar"
     }
   ]
 }

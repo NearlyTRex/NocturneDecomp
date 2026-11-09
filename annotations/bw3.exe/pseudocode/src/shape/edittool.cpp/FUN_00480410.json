@@ -1,133 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 20,
-        "message": "no matching function for call to 'FUN_004803d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c5baec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 23,
-        "message": "use of undeclared identifier 'DAT_01c6af9a'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 24,
-        "message": "use of undeclared identifier 'DAT_01c6af98'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 25,
-        "message": "use of undeclared identifier 'DAT_01c6af99'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c6b5c0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 939,
-    "complexity_score": 854,
+    "complexity_score": 855,
     "cross_reference_count": 5,
     "function_call_count": 5,
     "global_count": 20,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 244,
+    "pseudocode_lines": 245,
     "suspect_count": 59,
     "suspect_types": [
       "param_count_too_few",
@@ -135,37 +15,37 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1183
+    "total_lines": 1184
   },
   "cross_references": [
     {
-      "addr": "0047c2c0",
-      "from_addr": "0047c4ff",
-      "name": "FUN_0047c2c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047c8e0",
-      "from_addr": "0047cb5a",
-      "name": "FUN_0047c8e0",
+      "addr": "004b6f30",
+      "from_addr": "004b796c",
+      "name": "core_game.cpp_FUN_004b6f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047d230",
       "from_addr": "0047d897",
-      "name": "FUN_0047d230",
+      "name": "shape_edittool.cpp_FUN_0047d230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004843d0",
       "from_addr": "004849d2",
-      "name": "FUN_004843d0",
+      "name": "shape_edittool.cpp_FUN_004843d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b6f30",
-      "from_addr": "004b796c",
-      "name": "FUN_004b6f30",
+      "addr": "0047c8e0",
+      "from_addr": "0047cb5a",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c2c0",
+      "from_addr": "0047c4ff",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -178,34 +58,34 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00480410",
-    "signature": "void FUN_00480410(undefined4 param_1,int param_2)"
+    "name": "shape_edittool.cpp_FUN_00480410",
+    "signature": "void shape_edittool_cpp_FUN_00480410(CEditorTools *param_1,int param_2)"
   },
   "function_calls": [
     {
-      "addr": "00401130",
-      "is_variadic": false,
-      "name": "FUN_00401130"
-    },
-    {
-      "addr": "004803d0",
-      "is_variadic": false,
-      "name": "FUN_004803d0"
-    },
-    {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00401130",
+      "is_variadic": false,
+      "name": "engine_2d.c_plotPixel_FUN_00401130"
     },
     {
       "addr": "004f3520",
       "is_variadic": false,
-      "name": "FUN_004f3520"
+      "name": "engine_mini3d.cpp_FUN_004f3520"
     },
     {
       "addr": "004f36e0",
       "is_variadic": false,
-      "name": "FUN_004f36e0"
+      "name": "engine_mini3d.cpp_FUN_004f36e0"
+    },
+    {
+      "addr": "004803d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_004803d0"
     }
   ],
   "globals": [
@@ -336,7 +216,7 @@
       {
         "call_addr": "0047cb5a",
         "call_type": "direct",
-        "caller": "FUN_0047c8e0",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -349,7 +229,7 @@
       {
         "call_addr": "004849d2",
         "call_type": "direct",
-        "caller": "FUN_004843d0",
+        "caller": "shape_edittool.cpp_FUN_004843d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -360,7 +240,7 @@
       {
         "call_addr": "0047d897",
         "call_type": "direct",
-        "caller": "FUN_0047d230",
+        "caller": "shape_edittool.cpp_FUN_0047d230",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -373,7 +253,7 @@
       {
         "call_addr": "004b796c",
         "call_type": "direct",
-        "caller": "FUN_004b6f30",
+        "caller": "core_game.cpp_FUN_004b6f30",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -387,7 +267,7 @@
       {
         "call_addr": "0047c4ff",
         "call_type": "direct",
-        "caller": "FUN_0047c2c0",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -487,7 +367,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00480410(uint param_1,int param_2)",
+      "text": "void shape_edittool_cpp_FUN_00480410(CEditorTools *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -495,7 +375,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_00480410(uint param_1,int param_2)",
+      "text": "void shape_edittool_cpp_FUN_00480410(CEditorTools *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -503,23 +383,23 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_004803d0(param_1);",
+      "text": "uVar1 = shape_edittool_cpp_FUN_004803d0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_01c6af9a",
       "severity": "mild",
-      "text": "FUN_004f3520((uint)(byte)(&DAT_01c6af9a)[iVar4] |",
+      "text": "((uint)(byte)(&DAT_01c6af9a)[iVar4] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 18,
       "match": "DAT_01c6af98",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10 | (uint)(byte)(&DAT_01c6af99)[iVar4] << 8)",
       "type": "undefined_data"
     },
     {
@@ -527,12 +407,12 @@
       "line": 18,
       "match": "DAT_01c6af99",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c6af99)[iVar4] << 8);",
+      "text": "(uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10 | (uint)(byte)(&DAT_01c6af99)[iVar4] << 8)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "((_DAT_01c5fadc < DAT_005fba18 && (_DAT_01c5fae0 < DAT_005fba1c)))) &&",
@@ -540,7 +420,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 25,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "((_DAT_01c5fadc < DAT_005fba18 && (_DAT_01c5fae0 < DAT_005fba1c)))) &&",
@@ -548,7 +428,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -556,7 +436,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_005fb144",
       "severity": "mild",
       "text": "for (iVar4 = 1; iVar4 <= DAT_005fb144 / 2; iVar4 = iVar4 + 1) {",
@@ -564,7 +444,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "((iVar3 < DAT_005fba18 && (_DAT_01c5fae0 < DAT_005fba1c)))) &&",
@@ -572,7 +452,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "((iVar3 < DAT_005fba18 && (_DAT_01c5fae0 < DAT_005fba1c)))) &&",
@@ -580,7 +460,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -588,7 +468,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 51,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (((((-1 < iVar3) && (-1 < _DAT_01c5fae0)) && (iVar3 < DAT_005fba18)) &&",
@@ -596,7 +476,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 52,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(_DAT_01c5fae0 < DAT_005fba1c)) &&",
@@ -604,7 +484,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -612,7 +492,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_005fb148",
       "severity": "mild",
       "text": "while (iVar4 <= DAT_005fb148 / 2) {",
@@ -620,7 +500,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 68,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "((_DAT_01c5fadc < DAT_005fba18 && (iVar3 < DAT_005fba1c)))) &&",
@@ -628,7 +508,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 68,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "((_DAT_01c5fadc < DAT_005fba18 && (iVar3 < DAT_005fba1c)))) &&",
@@ -636,7 +516,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 69,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -644,7 +524,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 81,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "((DAT_005fba18 <= _DAT_01c5fadc || (DAT_005fba1c <= iVar3)))) ||",
@@ -652,7 +532,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 81,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "((DAT_005fba18 <= _DAT_01c5fadc || (DAT_005fba1c <= iVar3)))) ||",
@@ -660,7 +540,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 != 0 &&",
@@ -668,7 +548,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 98,
       "match": "DAT_005fb148",
       "severity": "mild",
       "text": "iVar5 = _DAT_01c5fae0 - DAT_005fb148 / 2;",
@@ -676,7 +556,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_005fb148",
       "severity": "mild",
       "text": "iVar3 = DAT_005fb148 + iVar5 + -1;",
@@ -684,7 +564,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 102,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (((((-1 < _DAT_01c5fadc) && (-1 < iVar4)) && (_DAT_01c5fadc < DAT_005fba18)) &&",
@@ -692,7 +572,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 103,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "(iVar4 < DAT_005fba1c)) &&",
@@ -700,7 +580,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 104,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -708,7 +588,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 116,
       "match": "DAT_005fb144",
       "severity": "mild",
       "text": "while (iVar4 <= DAT_005fb144 / 2) {",
@@ -716,31 +596,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar2) && (-1 < iVar5)) && ((iVar2 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar2) && (-1 < iVar5)) && ((iVar2 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 118,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((param_2 == 0 ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if ((((-1 < iVar2) && (-1 < iVar5)) && ((iVar2 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
@@ -748,7 +604,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 118,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((((-1 < iVar2) && (-1 < iVar5)) && ((iVar2 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
@@ -756,7 +612,31 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 119,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((param_2 == 0 ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 130,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar2) && (-1 < iVar5)) && ((iVar2 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 130,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar2) && (-1 < iVar5)) && ((iVar2 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 131,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -764,23 +644,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if (((((-1 < iVar2) && (-1 < iVar3)) && (iVar2 < DAT_005fba18)) && (iVar3 < DAT_005fba1c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if (((((-1 < iVar2) && (-1 < iVar3)) && (iVar2 < DAT_005fba18)) && (iVar3 < DAT_005fba1c)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 142,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "if (((((-1 < iVar2) && (-1 < iVar3)) && (iVar2 < DAT_005fba18)) && (iVar3 < DAT_005fba1c)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if (((((-1 < iVar2) && (-1 < iVar3)) && (iVar2 < DAT_005fba18)) && (iVar3 < DAT_005fba1c)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -788,7 +668,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 153,
+      "line": 154,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if ((((iVar2 < 0) || (iVar3 < 0)) || ((DAT_005fba18 <= iVar2 || (DAT_005fba1c <= iVar3)))) ||",
@@ -796,7 +676,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 153,
+      "line": 154,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if ((((iVar2 < 0) || (iVar3 < 0)) || ((DAT_005fba18 <= iVar2 || (DAT_005fba1c <= iVar3)))) ||",
@@ -804,7 +684,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 155,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 != 0 &&",
@@ -812,7 +692,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 172,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "((_DAT_01c5fadc < DAT_005fba18 && (_DAT_01c5fae0 < DAT_005fba1c)))) &&",
@@ -820,7 +700,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 172,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "((_DAT_01c5fadc < DAT_005fba18 && (_DAT_01c5fae0 < DAT_005fba1c)))) &&",
@@ -828,7 +708,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 173,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -836,7 +716,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 184,
       "match": "DAT_005fb144",
       "severity": "mild",
       "text": "while (iVar4 <= DAT_005fb144 / 2) {",
@@ -844,7 +724,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 186,
+      "line": 187,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if ((((-1 < iVar5) && (-1 < iVar3)) && (iVar5 < DAT_005fba18)) &&",
@@ -852,7 +732,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 187,
+      "line": 188,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "((iVar3 < DAT_005fba1c &&",
@@ -860,7 +740,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 188,
+      "line": 189,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -868,23 +748,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 200,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 200,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 201,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 201,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar3) && (-1 < iVar5)) && ((iVar3 < DAT_005fba18 && (iVar5 < DAT_005fba1c)))) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 202,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -892,23 +772,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 213,
-      "match": "DAT_005fba18",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar5) && (-1 < iVar3)) && ((iVar5 < DAT_005fba18 && (iVar3 < DAT_005fba1c)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 213,
-      "match": "DAT_005fba1c",
-      "severity": "mild",
-      "text": "if ((((-1 < iVar5) && (-1 < iVar3)) && ((iVar5 < DAT_005fba18 && (iVar3 < DAT_005fba1c)))) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 214,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar5) && (-1 < iVar3)) && ((iVar5 < DAT_005fba18 && (iVar3 < DAT_005fba1c)))) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 214,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar5) && (-1 < iVar3)) && ((iVar5 < DAT_005fba18 && (iVar3 < DAT_005fba1c)))) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 215,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 == 0 ||",
@@ -916,7 +796,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 226,
+      "line": 227,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (((((iVar3 < 0) || (iVar5 < 0)) || (DAT_005fba18 <= iVar3)) || (DAT_005fba1c <= iVar5)) ||",
@@ -924,7 +804,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 226,
+      "line": 227,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (((((iVar3 < 0) || (iVar5 < 0)) || (DAT_005fba18 <= iVar3)) || (DAT_005fba1c <= iVar5)) ||",
@@ -932,7 +812,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 227,
+      "line": 228,
       "match": "param_2",
       "severity": "mild",
       "text": "((param_2 != 0 &&",

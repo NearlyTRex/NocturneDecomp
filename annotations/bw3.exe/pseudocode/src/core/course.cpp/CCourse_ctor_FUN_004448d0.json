@@ -1,0 +1,104 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 7,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
+  "cross_references": [
+    {
+      "addr": "0040ede0",
+      "from_addr": "0040edf6",
+      "name": "core_bat.cpp_CBat_ctor_FUN_0040ede0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005110e0",
+      "from_addr": "00511107",
+      "name": "core_platfrm.cpp_CPlatform_ctor_FUN_005110e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004448d0",
+    "address_range": [
+      [
+        "004448d0",
+        "004448e8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_course.cpp_CCourse_ctor_FUN_004448d0",
+    "signature": "CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_004448d0(CCourse *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0040edf6",
+        "call_type": "direct",
+        "caller": "core_bat.cpp_CBat_ctor_FUN_0040ede0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00511107",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_ctor_FUN_005110e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "COPY": 4,
+      "INT_ADD": 4,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 14
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCourse *"
+      }
+    ]
+  },
+  "suspects": []
+}

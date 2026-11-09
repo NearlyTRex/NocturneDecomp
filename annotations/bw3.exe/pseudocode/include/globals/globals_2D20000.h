@@ -4,10 +4,30 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActorType.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2D20000
 // =============================================================================
+
+// CDemonActorType
+extern CDemonActorType g_CWerewolfClassInfo;
+extern CDemonActorType g_CYowClassInfo;
+extern CDemonActorType g_CZombieClassInfo;
+extern CDemonActorType g_CZombiePriestClassInfo;
+extern CDemonActorType g_CKedwardClassInfo;
+extern CDemonActorType g_CMattanntoteClassInfo;
+extern CDemonActorType g_CTawiscaraClassInfo;
+extern CDemonActorType g_CBaalClassInfo;
+extern CDemonActorType g_CHecaitomixClassInfo;
+extern CDemonActorType g_CDarkwolfClassInfo;
+extern CDemonActorType g_CSpiritEagleClassInfo;
+extern CDemonActorType g_CSpiritIndianClassInfo;
+extern CDemonActorType g_CSpiritBearClassInfo;
+extern CDemonActorType g_CHinoClassInfo;
+extern CDemonActorType g_CStylerClassInfo;
+extern CDemonActorType g_CStylerDemonClassInfo;
+extern CDemonActorType g_CAsgayaClassInfo;
 
 // word
 extern word DAT_02D270D6;

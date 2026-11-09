@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 90,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00512e70",
+    "address_range": [
+      [
+        "00512e70",
+        "00512ef6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_pod.cpp_FUN_00512e70",
+    "signature": "uint engine_pod_cpp_FUN_00512e70(char *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a32b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005a32b0"
+    },
+    {
+      "addr": "005a43ec",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005a43ec"
+    },
+    {
+      "addr": "005a457c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005a457c"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    },
+    {
+      "addr": "00512d60",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_00512d60"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 40,
+      "INT_ADD": 18,
+      "INT_AND": 30,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 14,
+      "INT_SUB": 24,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 234
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint engine_pod_cpp_FUN_00512e70(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint engine_pod_cpp_FUN_00512e70(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = engine_dosio_cpp_getFileSize_FUN_004657f0((char *)0x5cc4c6,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = iVar1 - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = _fopen(param_1,0x5cc4c7);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fseek(uVar2,param_2,0,iVar1,uVar2);",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -4,13 +4,150 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdlib.h"
+#include "system/watcom.h"
+#include "types/classes/CDemonPod.h"
+#include "types/classes/CDemonSet.h"
+#include "types/classes/CMini3D.h"
+#include "types/classes/CMouse.h"
+#include "types/classes/CNetGame.h"
+#include "types/classes/CScript.h"
+#include "types/classes/CTextureList.h"
+#include "types/classes/CWater.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x600000
 // =============================================================================
 
+// CDemonPod*
+extern CDemonPod* g_CDemonPodPtr;
+
+// CDemonSet*
+extern CDemonSet* g_CDemonSetPtr;
+
+// CMini3D*
+extern CMini3D* g_CMini3DPtr;
+
+// CMouse*
+extern CMouse* g_CMousePtr;
+
+// CNetGame*
+extern CNetGame* g_CNetGamePtr;
+
+// CScript*
+extern CScript* g_CScriptPtr;
+
+// CTextureList*
+extern CTextureList* g_CTextureListPtr;
+
+// CWater*
+extern CWater* g_CWaterPtr;
+
+// RuntimeHandlerEntry[172]
+extern RuntimeHandlerEntry g_InitHandlers[172];
+
 // TerminatedCString
 extern TerminatedCString s_d3d_dll_00606733;
+
+// WatcomStaticDestructorNode
+extern WatcomStaticDestructorNode DAT_00600130;
+extern WatcomStaticDestructorNode DAT_00600140;
+extern WatcomStaticDestructorNode DAT_00600150;
+extern WatcomStaticDestructorNode DAT_00600160;
+extern WatcomStaticDestructorNode DAT_00600170;
+extern WatcomStaticDestructorNode DAT_0060029C;
+extern WatcomStaticDestructorNode DAT_00600302;
+extern WatcomStaticDestructorNode DAT_00600312;
+extern WatcomStaticDestructorNode DAT_00600322;
+extern WatcomStaticDestructorNode DAT_00600332;
+extern WatcomStaticDestructorNode DAT_00600358;
+extern WatcomStaticDestructorNode DAT_00600368;
+extern WatcomStaticDestructorNode DAT_00600378;
+extern WatcomStaticDestructorNode DAT_00600388;
+extern WatcomStaticDestructorNode DAT_00600398;
+extern WatcomStaticDestructorNode DAT_006003A8;
+extern WatcomStaticDestructorNode DAT_006004A8;
+extern WatcomStaticDestructorNode DAT_006006B8;
+extern WatcomStaticDestructorNode DAT_006006C8;
+extern WatcomStaticDestructorNode DAT_006006D8;
+extern WatcomStaticDestructorNode DAT_006006E8;
+extern WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode;
+extern WatcomStaticDestructorNode g_CMouseDestructorNode;
+extern WatcomStaticDestructorNode g_PathMapCacheDestructorNode;
+extern WatcomStaticDestructorNode g_CDemonPodMainDestructorNode;
+extern WatcomStaticDestructorNode DAT_006039C0;
+extern WatcomStaticDestructorNode DAT_006039D0;
+extern WatcomStaticDestructorNode g_CDemonSetDestructorNode;
+extern WatcomStaticDestructorNode g_CDemonCameraDestructorNode;
+extern WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode;
+extern WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode;
+extern WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode;
+extern WatcomStaticDestructorNode g_SkeletonPoolDestructorNode;
+extern WatcomStaticDestructorNode g_SfxSamplesDestructorNode;
+extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1;
+extern WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2;
+extern WatcomStaticDestructorNode DAT_006045E0;
+extern WatcomStaticDestructorNode g_CTextureListDestructorNode;
+extern WatcomStaticDestructorNode DAT_00606ABC;
+extern WatcomStaticDestructorNode g_CWaterDestructorNode;
+
+// int
+extern int g_CHolycrossClassVersion;
+extern int g_CHotDemonClassVersion;
+extern int g_CImpClassVersion;
+extern int g_CKeyActorClassVersion;
+extern int g_CLadderClassVersion;
+extern int g_CLeverClassVersion;
+extern int g_CLightStaffClassVersion;
+extern int g_CLightConeClassVersion;
+extern int g_CMeleeClassVersion;
+extern int g_CMooCowClassVersion;
+extern int g_CNPCClassVersion;
+extern int g_CPassengerClassVersion;
+extern int g_CPendulumClassVersion;
+extern int g_CPlatformClassVersion;
+extern int g_CPryeClassVersion;
+extern int g_CPryeMorphClassVersion;
+extern int g_CRifleClassVersion;
+extern int g_CSentinelClassVersion;
+extern int g_CShadowClassVersion;
+extern int g_CShadowscClassVersion;
+extern int g_CShovelClassVersion;
+extern int g_CSimBoxClassVersion;
+extern int g_CSpawnerClassVersion;
+extern int g_CSpikeClassVersion;
+extern int g_CSpsClassVersion;
+extern int g_CStairsClassVersion;
+extern int g_CTempleStoneClassVersion;
+extern int g_CStormClassVersion;
+extern int g_CTeleportDestClassVersion;
+extern int g_CTommyGunClassVersion;
+extern int g_CTheHandClassVersion;
+extern int g_CTrapClassVersion;
+extern int g_CTrashClassVersion;
+extern int g_CTriggerClassVersion;
+extern int g_CTVBatClassVersion;
+extern int g_CCryptVesselClassVersion;
+extern int g_CWaterActorClassVersion;
+extern int g_CWayPointClassVersion;
+extern int g_CWeaponClassVersion;
+extern int g_CWerewolfClassVersion;
+extern int g_CYowClassVersion;
+extern int g_CZombieClassVersion;
+extern int g_CZombiePriestClassVersion;
+extern int g_CKedwardClassVersion;
+extern int g_CMattanntoteClassVersion;
+extern int g_CTawiscaraClassVersion;
+extern int g_CBaalClassVersion;
+extern int g_CHecaitomixClassVersion;
+extern int g_CDarkwolfClassVersion;
+extern int g_CSpiritEagleClassVersion;
+extern int g_CSpiritIndianClassVersion;
+extern int g_CSpiritBearClassVersion;
+extern int g_CHinoClassVersion;
+extern int g_CStylerClassVersion;
+extern int g_CStylerDemonClassVersion;
+extern int g_CAsgayaClassVersion;
 
 // undefined1
 extern undefined1 DAT_00600698;
@@ -31,10 +168,6 @@ extern undefined1 DAT_00607cb1;
 extern undefined1 DAT_00607d48;
 extern undefined1 DAT_00607d74;
 extern undefined1 DAT_00607ef0;
-extern undefined1 DAT_006080ae;
-extern undefined1 DAT_006080b4;
-extern undefined1 DAT_0060848c;
-extern undefined1 DAT_00608492;
 extern undefined1 DAT_006084b6;
 extern undefined1 DAT_006084b7;
 
@@ -48,6 +181,7 @@ extern undefined4 DAT_0060018c;
 extern undefined4 DAT_006001f0;
 extern undefined4 DAT_006001f4;
 extern undefined4 DAT_006002c4;
+extern undefined4 DAT_006002c8;
 extern undefined4 DAT_006005a0;
 extern undefined4 DAT_006005a4;
 extern undefined4 DAT_00600608;
@@ -63,6 +197,7 @@ extern undefined4 DAT_006011b0;
 extern undefined4 DAT_00603454;
 extern undefined4 DAT_00603634;
 extern undefined4 DAT_00603638;
+extern undefined4 DAT_00603974;
 extern undefined4 DAT_006039f0;
 extern undefined4 DAT_006039f4;
 extern undefined4 DAT_00603b38;
@@ -83,6 +218,7 @@ extern undefined4 DAT_00604230;
 extern undefined4 DAT_00604238;
 extern undefined4 DAT_0060423c;
 extern undefined4 DAT_00604240;
+extern undefined4 DAT_0060424c;
 extern undefined4 DAT_00604250;
 extern undefined4 DAT_00604254;
 extern undefined4 DAT_00604258;
@@ -92,6 +228,7 @@ extern undefined4 DAT_00604368;
 extern undefined4 DAT_0060436c;
 extern undefined4 DAT_00604510;
 extern undefined4 DAT_00604514;
+extern undefined4 DAT_00604518;
 extern undefined4 DAT_006047b0;
 extern undefined4 DAT_006047b4;
 extern undefined4 DAT_00604818;

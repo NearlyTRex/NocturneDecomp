@@ -1,0 +1,38 @@
+// Name: unkafter_bird.cpp_CBird_dtor_FUN_004101f0
+// Address: 004101f0
+// Address Range: [[004101f0, 00410284]]
+// Convention: unknown
+// Signature: CBird * unkafter_bird_cpp_CBird_dtor_FUN_004101f0(CBird *this_ptr,uint flags)
+
+#include "nocturne.h"
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+CBird * unkafter_bird_cpp_CBird_dtor_FUN_004101f0(CBird *this_ptr,uint flags)
+
+{
+  CPathMap *pCVar1;
+  int iVar2;
+  CClothList *pCVar3;
+  CDeformableModelInstance *pCVar4;
+  CBird *pCVar5;
+  void *ptr;
+  
+  if ((flags & 4) != 0) {
+    ptr = (void *)__vec_delete(this_ptr,&g_CBirdTypeInfo);
+    FUN_005a30b6(ptr);
+    return this_ptr;
+  }
+  pCVar1 = core_path_cpp_CPathMap_dtor_FUN_0050ad40((CPathMap *)&this_ptr->field_0xcdcc,0);
+  iVar2 = unkafter_armour_cpp_FUN_00410370(&pCVar1[-1].field_0xa36c,0);
+  pCVar3 = core_cloth_cpp_FUN_0043f900((CClothList *)(iVar2 + -0x954),0);
+  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
+                     ((CDeformableModelInstance *)(pCVar3 + -0x2db0),0);
+  pCVar5 = (CBird *)core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                              ((CDemonActor *)&pCVar4[-1].field_0x224c,1);
+  if ((flags & 2) == 0) {
+    return pCVar5;
+  }
+  FUN_005a30c4(pCVar5);
+  return pCVar5;
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double FUN_0055cb20(undefined4 param_1,int param_2)
+; double sound_snddx_cpp_FUN_0055cb20(undefined4 param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -13,18 +13,18 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005558e0
-;   FUN_0055a560
-;   FUN_0055a670
-;   FUN_005a28c0
+;   core_main.c_FUN_004e4330
+;   crt_unknown.c_FUN_005a28c0
+;   sound_snddx.cpp_FUN_0055a670
+;   sound_sndmain.cpp_FUN_005558e0
+;   sound_sndmain.cpp_FUN_0055a560
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0055cb20
-        ;   Label: FUN_0055cb20
+        ;   Label: sound_snddx.cpp_FUN_0055cb20
     PUSH ESI                            ; 0055cb21
     PUSH EDI                            ; 0055cb22
     PUSH EBP                            ; 0055cb23
@@ -45,8 +45,8 @@ section .text
     PUSH 0x5d4bcf                       ; 0055cb48 | = "DirectSoundDevice::getSfxPlaybackPos ..."
     MOV dword ptr [0x01d71de0],ECX      ; 0055cb4d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0055cb53 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0055cb59
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0055cb59
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0055cb5e
     MOV EAX,dword ptr [ESI + 0x68]      ; 0055cb61
         ;   Label: LAB_0055cb61
@@ -90,8 +90,8 @@ section .text
     PUSH EBX                            ; 0055cbc8
     MOV EDI,dword ptr [ESI + 0x68]      ; 0055cbc9
     PUSH EDI                            ; 0055cbcc
-    CALL FUN_005558e0                   ; 0055cbcd
-        ;   XREF to: 005558e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005558e0()
+    CALL sound_sndmain.cpp_FUN_005558e0 ; 0055cbcd
+        ;   XREF to: 005558e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005558e0()
     ADD ESP,0x8                         ; 0055cbd2
     MOV dword ptr [ESP + 0x1a0],EAX     ; 0055cbd5
     FILD dword ptr [ESP + 0x1a0]        ; 0055cbdc
@@ -106,21 +106,21 @@ section .text
     RET                                 ; 0055cbf3
     PUSH EAX                            ; 0055cbf4
         ;   Label: LAB_0055cbf4
-    CALL FUN_0055a670                   ; 0055cbf5
-        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a670()
+    CALL sound_snddx.cpp_FUN_0055a670   ; 0055cbf5
+        ;   XREF to: 0055a670 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_0055a670(uint error_code)
     ADD ESP,0x4                         ; 0055cbfa
     PUSH EAX                            ; 0055cbfd
     PUSH 0x5d4c05                       ; 0055cbfe | = "Get playback cursor of hardware sfx s..."
     PUSH 0x5d452f                       ; 0055cc03 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x14]                ; 0055cc08
     PUSH EAX                            ; 0055cc0c
-    CALL FUN_005a28c0                   ; 0055cc0d
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28c0()
+    CALL crt_unknown.c_FUN_005a28c0     ; 0055cc0d
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
     ADD ESP,0x10                        ; 0055cc12
     LEA EAX,[ESP + 0x8]                 ; 0055cc15
     PUSH EAX                            ; 0055cc19
-    CALL FUN_0055a560                   ; 0055cc1a
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined FUN_0055a560()
+    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055cc1a
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
     ADD ESP,0x4                         ; 0055cc1f
     XOR EDX,EDX                         ; 0055cc22
     MOV ECX,0xbff00000                  ; 0055cc24

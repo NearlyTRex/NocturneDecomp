@@ -1,0 +1,25 @@
+// Name: core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0
+// Address: 004198e0
+// Address Range: [[004198e0, 00419941]]
+// Convention: unknown
+// Signature: CSkeletonForest * core_boneguy_cpp_CSkeletonForest_ctor_FUN_004198e0(CSkeletonForest *this_ptr)
+
+#include "nocturne.h"
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+CSkeletonForest * core_boneguy_cpp_CSkeletonForest_ctor_FUN_004198e0(CSkeletonForest *this_ptr)
+
+{
+  CBoneGuy *pCVar1;
+  
+  pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400((CBoneGuy *)this_ptr);
+  *(byte ***)&pCVar1->field_0x154 = &g_CSkeleton_ForestVTable;
+  core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,0x5b7182);
+  *(uint *)&pCVar1->field_0x2538 = 0x41c80000;
+  *(uint *)&pCVar1->field_0xce5c = 0x41000000;
+  *(uint *)&pCVar1->field_0xce60 = 0x40a00000;
+  *(uint *)&pCVar1->field_0xd074 = 1;
+  *(uint *)&pCVar1->field_0xd058 = *(uint *)&pCVar1->field_0x2538;
+  return (CSkeletonForest *)pCVar1;
+}

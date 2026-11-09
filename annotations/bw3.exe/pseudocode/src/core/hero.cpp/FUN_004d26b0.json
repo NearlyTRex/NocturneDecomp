@@ -1,0 +1,199 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 118,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 10,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00518680",
+      "from_addr": "0051868c",
+      "name": "core_prye.cpp_FUN_00518680",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d26b0",
+    "address_range": [
+      [
+        "004d26b0",
+        "004d2719"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_hero.cpp_FUN_004d26b0",
+    "signature": "void core_hero_cpp_FUN_004d26b0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042b0e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042b0e0"
+    },
+    {
+      "addr": "004dcad0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004dcad0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054e6b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051868c",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_FUN_00518680",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8095238095238093,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 15,
+      "INT_ADD": 14,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 80
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_hero_cpp_FUN_004d26b0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054e6b0((CDeformableModelInstance *)(param_1 + 0x158));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_0042b0e0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xcdcc) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004dcad0(param_1 + 0x206e8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20b68) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20b6c) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20b70) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20b7c) = 0x7149f2ca;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20b78) = 0;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005e1534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

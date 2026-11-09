@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00537270(undefined4 param_1,int param_2)
+; void __cdecl core_set_cpp_FUN_00537270(CDemonSet *this_ptr,CDemonLight *light)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[4]:
-;   FUN_00420420 at 00420679
-;   FUN_00486c30 at 00486d23
-;   FUN_00535da0 at 00535ddf
-;   FUN_0057b160 at 0057b290
+;   core_boxactor.cpp_FUN_00420420 at 00420679
+;   core_elephant.cpp_FUN_00486c30 at 00486d23
+;   core_set.cpp_FUN_00535da0 at 00535ddf
+;   core_weapon.cpp_FUN_0057b160 at 0057b290
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005d05f7
@@ -18,14 +21,14 @@
 ;   undefined4 DAT_0203ad1c
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00537270
-        ;   Label: FUN_00537270
+        ;   Label: core_set.cpp_FUN_00537270
     PUSH ESI                            ; 00537271
     MOV ESI,dword ptr [0x0203ad1c]      ; 00537272 | DAT_0203ad1c
     MOV EBX,dword ptr [ESP + 0x10]      ; 00537278
@@ -66,8 +69,8 @@ section .text
     PUSH 0x5d0607                       ; 005372ce | = "Too many dynamic lights!"
     MOV dword ptr [0x01d71de0],ECX      ; 005372d3 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 005372d9 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 005372df
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 005372df
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 005372e4
     POP EDI                             ; 005372e7
     JMP 0x005372ac                      ; 005372e8

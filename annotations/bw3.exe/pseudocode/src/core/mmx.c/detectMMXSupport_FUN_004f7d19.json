@@ -1,0 +1,141 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 32,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "004f7c30",
+      "from_addr": "004f7c36",
+      "name": "core_mmx.c_detectCPUFeatures_FUN_004f7c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7d2f",
+      "from_addr": "004f7d45",
+      "name": "core_mmx.c_getCPUInfo_FUN_004f7d2f",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f7d19",
+    "address_range": [
+      [
+        "004f7d19",
+        "004f7d2e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_mmx.c_detectMMXSupport_FUN_004f7d19",
+    "signature": "void __cdecl core_mmx_c_detectMMXSupport_FUN_004f7d19(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0060069d",
+      "name": "DAT_0060069d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006006a1",
+      "name": "DAT_006006a1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00800000",
+      "name": "DAT_00800000",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004f7c36",
+        "call_type": "direct",
+        "caller": "core_mmx.c_detectCPUFeatures_FUN_004f7c30",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004f7d45",
+        "call_type": "direct",
+        "caller": "core_mmx.c_getCPUInfo_FUN_004f7d2f",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.142857142857143,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 2,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 22
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_0060069d",
+      "severity": "mild",
+      "text": "if ((DAT_0060069d & 0x800000) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_006006a1",
+      "severity": "mild",
+      "text": "DAT_006006a1 = 1;",
+      "type": "undefined_data"
+    }
+  ]
+}

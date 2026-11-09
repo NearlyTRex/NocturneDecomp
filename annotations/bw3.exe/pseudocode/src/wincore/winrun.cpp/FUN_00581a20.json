@@ -1,0 +1,128 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [
+    {
+      "addr": "00570f00",
+      "from_addr": "00570f91",
+      "name": "support_trisock.cpp_FUN_00570f00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00581a20",
+    "address_range": [
+      [
+        "00581a20",
+        "00581a31"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "wincore_winrun.cpp_FUN_00581a20",
+    "signature": "void wincore_winrun_cpp_FUN_00581a20(HANDLE param_1)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00570f91",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00570f00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 5,
+      "INT_ADD": 3,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void wincore_winrun_cpp_FUN_00581a20(HANDLE param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == (HANDLE)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CloseHandle(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

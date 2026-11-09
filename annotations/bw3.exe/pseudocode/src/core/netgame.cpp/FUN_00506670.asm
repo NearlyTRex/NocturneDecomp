@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00506670(int param_1)
+; void __cdecl core_netgame_cpp_FUN_00506670(CNetGame *this_ptr)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x158]:4  local_158
 ; undefined4       Stack[-0x154]:4  local_154
@@ -25,7 +27,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_00504c70 at 00504d05
+;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 at 00504d05
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005ca409
@@ -46,25 +48,25 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005058d0
-;   FUN_005806a0
-;   FUN_005a54c0
+;   core_main.c_FUN_004e4330
+;   core_netgame.cpp_CNetGame_sendPacket_FUN_005058d0
+;   crt_string.c_memmove_FUN_005a54c0
+;   wincore_winrun.cpp_FUN_005806a0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00506670
-        ;   Label: FUN_00506670
+        ;   Label: core_netgame.cpp_FUN_00506670
     PUSH ESI                            ; 00506671
     PUSH EDI                            ; 00506672
     PUSH EBP                            ; 00506673
     MOV EBP,ESP                         ; 00506674
     SUB ESP,0x144                       ; 00506676
     AND ESP,0xfffffff8                  ; 0050667c
-    CALL FUN_005806a0                   ; 0050667f
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005806a0()
+    CALL wincore_winrun.cpp_FUN_005806a0 ; 0050667f
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
     MOV EDX,EAX                         ; 00506684
     MOV EBX,0x12                        ; 00506686
     SAR EDX,0x1f                        ; 0050668b
@@ -186,8 +188,8 @@ section .text
     PUSH 0x5ca41d                       ; 0050684b | = "removeChatOut - invalid index"
     MOV [0x01d71de0],EAX                ; 00506850 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00506855 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0050685b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0050685b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00506860
     MOV ECX,dword ptr [0x01dc2690]      ; 00506863 | DAT_01dc2690
         ;   Label: LAB_00506863
@@ -204,8 +206,8 @@ section .text
     ADD EAX,0x1dc2694                   ; 0050688a
     PUSH EAX                            ; 0050688f
     MOV dword ptr [0x01dc2690],ECX      ; 00506890 | DAT_01dc2690
-    CALL FUN_005a54c0                   ; 00506896
-        ;   XREF to: 005a54c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a54c0()
+    CALL crt_string.c_memmove_FUN_005a54c0 ; 00506896
+        ;   XREF to: 005a54c0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005a54c0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0050689b
     MOV EAX,dword ptr [ESP + 0x120]     ; 0050689e
         ;   Label: LAB_0050689e
@@ -311,8 +313,8 @@ section .text
     PUSH EDI                            ; 005069b4
     MOV EAX,dword ptr [EBP + 0x14]      ; 005069b5
     PUSH EAX                            ; 005069b8
-    CALL FUN_005058d0                   ; 005069b9
-        ;   XREF to: 005058d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005058d0()
+    CALL core_netgame.cpp_CNetGame_sendPacket_FUN_005058d0 ; 005069b9
+        ;   XREF to: 005058d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_005058d0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     MOV EAX,[0x01da6478]                ; 005069be | DAT_01da6478
     ADD ESP,0xc                         ; 005069c3
     MOV dword ptr [EBX + 0xc],EAX       ; 005069c6 | DAT_01dc26a4

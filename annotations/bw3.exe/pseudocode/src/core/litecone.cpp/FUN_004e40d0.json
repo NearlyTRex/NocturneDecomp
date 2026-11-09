@@ -1,0 +1,272 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 238,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 18,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e40d0",
+    "address_range": [
+      [
+        "004e40d0",
+        "004e416a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_litecone.cpp_FUN_004e40d0",
+    "signature": "int core_litecone_cpp_FUN_004e40d0(CDemonActor *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830"
+    },
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "0045f5a0",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_FUN_0045f5a0"
+    },
+    {
+      "addr": "0046d540",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6909090909090905,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 44,
+      "INT_ADD": 28,
+      "INT_AND": 30,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 29,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 14,
+      "INT_SUB": 24,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 13,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 258
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int core_litecone_cpp_FUN_004e40d0(CDemonActor *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[1].field_0x8 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[1].field_0x8 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_004087f0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408830(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "((CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "((CVector3f *)&param_1->field_0x20,(CVector3f *)&param_1->field_0x30,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 1),*(float *)&param_1[1].field_0x4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 1),*(float *)&param_1[1].field_0x4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 1),*(float *)&param_1[1].field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 20,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLightCone",
+        "offset": 20,
+        "vtable_addr": "005e2634"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

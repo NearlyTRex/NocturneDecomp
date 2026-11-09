@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0043c8a0(int param_1)
+; void __cdecl core_cloth_cpp_FUN_0043c8a0(CCloth *this_ptr)
 ;
+; Parameters:
+; CCloth *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
@@ -23,8 +25,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_0043c330 at 0043c5e1
-;   FUN_0043cb00 at 0043cdbb
+;   core_cloth.cpp_FUN_0043c330 at 0043c5e1
+;   core_cloth.cpp_FUN_0043cb00 at 0043cdbb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b90b9
@@ -33,14 +35,14 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0043c8a0
-        ;   Label: FUN_0043c8a0
+        ;   Label: core_cloth.cpp_FUN_0043c8a0
     PUSH ESI                            ; 0043c8a1
     PUSH EDI                            ; 0043c8a2
     PUSH EBP                            ; 0043c8a3
@@ -268,8 +270,8 @@ section .text
     PUSH 0x5b90cb                       ; 0043cadd | = "Too many connecting verticies"
     MOV dword ptr [0x01d71de0],EDI      ; 0043cae2 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0043cae8 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0043caed
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0043caed
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0043caf2
     JMP 0x0043ca08                      ; 0043caf5
         ;   XREF to: 0043ca08 (UNCONDITIONAL_JUMP)  ; LAB_0043ca08

@@ -1,45 +1,46 @@
-// Name: FUN_004d22c0
+// Name: core_hero.cpp_FUN_004d22c0
 // Address: 004d22c0
 // Address Range: [[004d22c0, 004d236e]]
-// Convention: unknown
-// Signature: int FUN_004d22c0(float *param_1)
+// Convention: __cdecl
+// Signature: CHero * __cdecl core_hero_cpp_FUN_004d22c0(CLocation *location)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004d22c0(float *param_1)
+CHero * __cdecl core_hero_cpp_FUN_004d22c0(CLocation *location)
 
 {
-  int iVar1;
+  CHero *pCVar1;
   float fVar2;
-  float fVar3;
-  float fVar4;
-  int iVar5;
-  int iVar6;
+  int iVar3;
+  CHero *pCVar4;
   float fStack_1c;
   
-  iVar6 = 0;
+  pCVar4 = (CHero *)0x0;
   fStack_1c = 1e+30;
   if (0 < _DAT_01d5ba00) {
-    iVar5 = 0;
+    iVar3 = 0;
     do {
-      iVar1 = *(int *)(iVar5 + 0x1d5ba04);
-      if ((iVar1 != 0) &&
-         (fVar2 = *(float *)(iVar1 + 0x20) - *param_1, fVar4 = *(float *)(iVar1 + 0x24) - param_1[1]
-         , fVar3 = *(float *)(iVar1 + 0x28) - param_1[2],
-         fVar2 = fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2, fVar2 < fStack_1c)) {
-        iVar6 = iVar1;
+      pCVar1 = *(CHero **)(iVar3 + 0x1d5ba04);
+      if ((pCVar1 != (CHero *)0x0) &&
+         (fVar2 = (*(float *)(pCVar1 + 0x28) - *(float *)(location + 8)) *
+                  (*(float *)(pCVar1 + 0x28) - *(float *)(location + 8)) +
+                  (*(float *)(pCVar1 + 0x24) - *(float *)(location + 4)) *
+                  (*(float *)(pCVar1 + 0x24) - *(float *)(location + 4)) +
+                  (*(float *)(pCVar1 + 0x20) - *(float *)location) *
+                  (*(float *)(pCVar1 + 0x20) - *(float *)location), fVar2 < fStack_1c)) {
+        pCVar4 = pCVar1;
         fStack_1c = fVar2;
       }
-      iVar5 = iVar5 + 4;
-    } while (iVar5 < _DAT_01d5ba00 * 4);
+      iVar3 = iVar3 + 4;
+    } while (iVar3 < _DAT_01d5ba00 * 4);
   }
-  if (iVar6 != 0) {
-    return iVar6;
+  if (pCVar4 != (CHero *)0x0) {
+    return pCVar4;
   }
   _DAT_01d71de0 = "..\\core\\hero.cpp";
   _DAT_01d71de4 = 0x3a;
-  FUN_004e4330("closestHeroToPoint - no heros!");
-  return 0;
+  core_main_c_FUN_004e4330("closestHeroToPoint - no heros!");
+  return (CHero *)0x0;
 }

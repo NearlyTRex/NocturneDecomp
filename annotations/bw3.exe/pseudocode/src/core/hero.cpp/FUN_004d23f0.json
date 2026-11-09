@@ -1,0 +1,229 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 65,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 110
+  },
+  "cross_references": [
+    {
+      "addr": "0042cd70",
+      "from_addr": "0042d228",
+      "name": "core_charactr.cpp_FUN_0042cd70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d23f0",
+    "address_range": [
+      [
+        "004d23f0",
+        "004d24a1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_hero.cpp_FUN_004d23f0",
+    "signature": "int __cdecl core_hero_cpp_FUN_004d23f0(CVector3f *point,float horizontal_radius,float vertical_tolerance)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d5ba00",
+      "name": "DAT_01d5ba00",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0042d228",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042cd70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.866666666666666,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 3,
+      "CBRANCH": 5,
+      "COPY": 228,
+      "FLOAT2FLOAT": 16,
+      "FLOAT_ABS": 1,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 36,
+      "INT_AND": 42,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 19,
+      "INT_LEFT": 10,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 15,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 11,
+      "INT_SUB": 13,
+      "INT_XOR": 3,
+      "INT_ZEXT": 14,
+      "LOAD": 28,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 515
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "point",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "horizontal_radius",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "vertical_tolerance",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004d23f9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)(iVar1 + 0x28) - *(float *)&point->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (ABS(*(float *)(iVar1 + 0x24) - *(float *)&point->field_0x4) <= vertical_tolerance) {",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,46 +1,46 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004d4be0(int param_1)
+; CDemonActor * core_hero_cpp_FUN_004d4be0(int param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_004f7710 at 004f7853
+;   core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710 at 004f7853
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_005c50f1
 ;   TerminatedCString s_CHeroPlaceholder_createH_005c5102
 ;   undefined4 DAT_00600530
-;   undefined4 DAT_01d5ba70
+;   undefined4 g_CHeroClassInfo.name_hash
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004088f0
-;   FUN_0040c4f0
-;   FUN_0040c840
-;   FUN_004e4330
-;   FUN_004f7530
+;   core_actor.cpp_castToClassHash_FUN_0040c840
+;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
+;   core_actor.cpp_createActorByName_FUN_0040c4f0
+;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004d4be0
-        ;   Label: FUN_004d4be0
+        ;   Label: core_hero.cpp_FUN_004d4be0
     PUSH ESI                            ; 004d4be1
     PUSH EBP                            ; 004d4be2
     MOV ESI,dword ptr [ESP + 0x10]      ; 004d4be3
-    MOV EDX,dword ptr [0x01d5ba70]      ; 004d4be7 | DAT_01d5ba70
+    MOV EDX,dword ptr [0x01d5ba70]      ; 004d4be7 | g_CHeroClassInfo.name_hash
     PUSH EDX                            ; 004d4bed
     LEA EAX,[ESI + 0x15c]               ; 004d4bee
     PUSH EAX                            ; 004d4bf4
-    CALL FUN_0040c4f0                   ; 004d4bf5
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c4f0()
+    CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 004d4bf5
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
     ADD ESP,0x4                         ; 004d4bfa
     PUSH EAX                            ; 004d4bfd
-    CALL FUN_0040c840                   ; 004d4bfe
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c840()
+    CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004d4bfe
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
     ADD ESP,0x8                         ; 004d4c03
     MOV EBX,EAX                         ; 004d4c06
     TEST EAX,EAX                        ; 004d4c08
@@ -52,16 +52,16 @@ section .text
     PUSH 0x5c5102                       ; 004d4c17 | = "CHeroPlaceholder::createHero - failed."
     MOV dword ptr [0x01d71de0],ECX      ; 004d4c1c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004d4c22 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004d4c28
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004d4c28
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004d4c2d
     POP EDI                             ; 004d4c30
     PUSH EBX                            ; 004d4c31
         ;   Label: LAB_004d4c31
     MOV EBP,dword ptr [0x00600530]      ; 004d4c32 | DAT_00600530
     PUSH EBP                            ; 004d4c38
-    CALL FUN_004f7530                   ; 004d4c39
-        ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7530()
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530 ; 004d4c39
+        ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530(CDemonMission * this_ptr, CDemonActor * actor)
     LEA EAX,[ESI + 0x20]                ; 004d4c3e
     LEA EDX,[EBX + 0x20]                ; 004d4c41
     MOV ECX,dword ptr [EAX]             ; 004d4c44
@@ -86,8 +86,8 @@ section .text
     MOV dword ptr [EDX + 0x8],ECX       ; 004d4c74
     PUSH EBX                            ; 004d4c77
         ;   Label: LAB_004d4c77
-    CALL FUN_004088f0                   ; 004d4c78
-        ;   XREF to: 004088f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004088f0()
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0 ; 004d4c78
+        ;   XREF to: 004088f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004d4c7d
     MOV EAX,EBX                         ; 004d4c80
     POP EBP                             ; 004d4c82

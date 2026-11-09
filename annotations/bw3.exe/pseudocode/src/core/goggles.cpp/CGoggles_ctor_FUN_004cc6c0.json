@@ -1,0 +1,158 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "004cc690",
+      "from_addr": "004cc6a3",
+      "name": "core_goggles.cpp_factoryFuncGoggles_FUN_004cc690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cc6c0",
+    "address_range": [
+      [
+        "004cc6c0",
+        "004cc70d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_goggles.cpp_CGoggles_ctor_FUN_004cc6c0",
+    "signature": "CGoggles * core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00408600"
+    },
+    {
+      "addr": "00462500",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cc6a3",
+        "call_type": "direct",
+        "caller": "core_goggles.cpp_factoryFuncGoggles_FUN_004cc690",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.05,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 13,
+      "INT_ADD": 11,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGoggles *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CGogglesVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CGogglesVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "this_ptr_00[-1].",
+      "severity": "mild",
+      "text": "return (CGoggles *)&this_ptr_00[-1].field_0x24;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "return (CGoggles *)&this_ptr_00[-1].field_0x24;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGoggles",
+        "offset": 0,
+        "vtable_addr": "005e0de4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

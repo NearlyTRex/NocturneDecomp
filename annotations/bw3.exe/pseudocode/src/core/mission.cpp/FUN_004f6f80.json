@@ -1,160 +1,47 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 28,
-        "message": "use of undeclared identifier 'DAT_005c8b57'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 40,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_00491aa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 42,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 140,
+    "complexity_score": 209,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 7,
+    "pseudocode_lines": 49,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
-      "raw_address_constant",
+      "suspicious_cast",
       "undefined_data",
+      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 146
+    "total_lines": 150
   },
   "cross_references": [
     {
       "addr": "0048c2e0",
       "from_addr": "0048f54e",
-      "name": "FUN_0048c2e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f6de0",
-      "from_addr": "004f6e55",
-      "name": "FUN_004f6de0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f70a0",
-      "from_addr": "004f70fb",
-      "name": "FUN_004f70a0",
+      "name": "core_event.cpp_FUN_0048c2e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f72a0",
       "from_addr": "004f7308",
-      "name": "FUN_004f72a0",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_004f72a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6de0",
+      "from_addr": "004f6e55",
+      "name": "core_mission.cpp_FUN_004f6de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f70a0",
+      "from_addr": "004f70fb",
+      "name": "core_mission.cpp_FUN_004f70a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -167,39 +54,39 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f6f80",
-    "signature": "void FUN_004f6f80(int *param_1)"
+    "name": "core_mission.cpp_FUN_004f6f80",
+    "signature": "void core_mission_cpp_FUN_004f6f80(int *param_1)"
   },
   "function_calls": [
     {
       "addr": "0040cf40",
       "is_variadic": false,
-      "name": "FUN_0040cf40"
+      "name": "core_actor.cpp_FUN_0040cf40"
     },
     {
       "addr": "00491aa0",
       "is_variadic": false,
-      "name": "FUN_00491aa0"
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0"
     },
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "0053b460",
       "is_variadic": false,
-      "name": "FUN_0053b460"
+      "name": "core_set.cpp_FUN_0053b460"
     },
     {
       "addr": "0053eda0",
       "is_variadic": false,
-      "name": "FUN_0053eda0"
+      "name": "core_setcolid.cpp_FUN_0053eda0"
     },
     {
       "addr": "005a3260",
       "is_variadic": false,
-      "name": "FUN_005a3260"
+      "name": "crt_string.c__stricmp_FUN_005a3260"
     }
   ],
   "globals": [
@@ -229,9 +116,9 @@
     },
     {
       "addr": "00603b28",
-      "name": "DAT_00603b28",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
     },
     {
       "addr": "01d71de0",
@@ -247,19 +134,19 @@
     },
     {
       "addr": "01ed78c8",
-      "name": "DAT_01ed78c8",
-      "type": "undefined4",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "02024a2c",
-      "name": "DAT_02024a2c",
+      "name": "g_CDemonSetInstance.field1364324_0x14d164",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02024a30",
-      "name": "DAT_02024a30",
+      "name": "g_CDemonSetInstance.field1364328_0x14d168",
       "type": "undefined4",
       "value": null
     }
@@ -270,7 +157,7 @@
       {
         "call_addr": "0048f54e",
         "call_type": "direct",
-        "caller": "FUN_0048c2e0",
+        "caller": "core_event.cpp_FUN_0048c2e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -283,7 +170,7 @@
       {
         "call_addr": "004f7308",
         "call_type": "direct",
-        "caller": "FUN_004f72a0",
+        "caller": "core_mission.cpp_CDemonMission_run_FUN_004f72a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -294,7 +181,7 @@
       {
         "call_addr": "004f6e55",
         "call_type": "direct",
-        "caller": "FUN_004f6de0",
+        "caller": "core_mission.cpp_FUN_004f6de0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -305,7 +192,7 @@
       {
         "call_addr": "004f70fb",
         "call_type": "direct",
-        "caller": "FUN_004f70a0",
+        "caller": "core_mission.cpp_FUN_004f70a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -372,12 +259,20 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004f6f80(int *param_1)",
+      "text": "void core_mission_cpp_FUN_004f6f80(int *param_1)",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 11,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(uint *)&g_CDemonSetPtr->field_0x14d164 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1[0x50f];",
@@ -385,7 +280,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == *(int *)(iVar1 + 0x2c)) {",
@@ -393,19 +288,59 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_005c8b57",
       "severity": "mild",
-      "text": "iVar2 = FUN_005a3260(iVar1 + 0x78,&DAT_005c8b57);",
+      "text": "iVar3 = _stricmp((char *)(iVar1 + 0x78),&DAT_005c8b57);",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x1ed78c8 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 37,
-      "match": "0x1ed78c8",
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "if (1999 < *(int *)&g_CDemonSetPtr->field_0x14d164) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x14d168",
+      "severity": "mild",
+      "text": "*(int *)(&g_CDemonSetPtr->field_0x14d168 + *(int *)&g_CDemonSetPtr->field_0x14d164 * 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(int *)(&g_CDemonSetPtr->field_0x14d168 + *(int *)&g_CDemonSetPtr->field_0x14d164 * 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(int *)&pCVar2->field_0x14d164 = *(int *)&pCVar2->field_0x14d164 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(int *)&pCVar2->field_0x14d164 = *(int *)&pCVar2->field_0x14d164 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 41,
+      "match": "g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar2 = 0x01ED78C8;",
-      "type": "raw_address_constant"
+      "text": "*(int *)(&g_CDemonSetPtr->field_0x14d168 + *(int *)&g_CDemonSetPtr->field_0x14d164 * 4) =",
+      "type": "suspicious_cast"
     },
     {
       "call_site_count": 4,

@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0047e470(undefined4 param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5,byte param_6)
+; int __cdecl shape_edittool_cpp_FUN_0047e470(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   dialog_title
+; char *           Stack[0xc]:4   directory_path
+; char *           Stack[0x10]:4   file_extension
+; char *           Stack[0x14]:4   output_buffer
+; uint             Stack[0x18]:4   flags
 ; Local Variables:
 ; undefined1       Stack[-0x360]:1  local_360
 ; undefined1       Stack[-0x35f]:1  local_35f
@@ -14,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004bda10 at 004bdeb6
+;   core_game.cpp_FUN_004bda10 at 004bdeb6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005bcd25
@@ -35,21 +42,21 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   FUN_004032b0
-;   FUN_00406bf0
-;   FUN_0047ba60
-;   FUN_0047baf0
-;   FUN_0047bb10
-;   FUN_0047bc10
-;   FUN_0047bc60
-;   FUN_0047bd50
-;   FUN_0047c050
-;   FUN_0047f3e0
-;   FUN_0047f970
-;   FUN_0047fa80
-;   FUN_004b0a20
-;   FUN_004b2a80
-;   FUN_004b30f0
+;   core_main.c_FUN_004e4330
+;   crt_string.c_strupr_FUN_005a5b10
+;   engine_2d.c_clearInputAndWait_FUN_004032b0
+;   engine_3d.c_setRenderAlpha_FUN_00406bf0
+;   engine_font.cpp_FUN_004b0a20
+;   engine_font.cpp_FUN_004b2a80
+;   engine_font.cpp_FUN_004b30f0
+;   engine_keys.cpp_CKeys_getInputKey_FUN_004df580
+;   engine_mini3d.cpp_FUN_004edaf0
+;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
+;   shape_edittool.cpp_CInputString_backspace_FUN_0047bc60
+;   shape_edittool.cpp_CInputString_deleteSelection_FUN_0047bc10
+;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047bd50
+;   shape_edittool.cpp_CInputString_init_FUN_0047ba60
+;   shape_edittool.cpp_CInputString_insertChar_FUN_0047bb10
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -57,7 +64,7 @@
 section .text
 
     PUSH EBX                            ; 0047e470
-        ;   Label: FUN_0047e470
+        ;   Label: shape_edittool.cpp_FUN_0047e470
     PUSH ESI                            ; 0047e471
     PUSH EDI                            ; 0047e472
     PUSH EBP                            ; 0047e473
@@ -75,8 +82,8 @@ section .text
     PUSH 0x5bcd3b                       ; 0047e4a2 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d71de0],ESI      ; 0047e4a7 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0047e4ad | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0047e4b3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0047e4b3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0047e4b8
     MOV EAX,[0x01c5b0e0]                ; 0047e4bb | DAT_01c5b0e0
         ;   Label: LAB_0047e4bb
@@ -84,8 +91,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x41e8]    ; 0047e4c2
     PUSH EAX                            ; 0047e4c8
     MOV dword ptr [0x01c5bae0],ECX      ; 0047e4c9 | DAT_01c5bae0
-    CALL FUN_004b30f0                   ; 0047e4cf
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b30f0()
+    CALL engine_font.cpp_FUN_004b30f0   ; 0047e4cf
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047e4d4
     PUSH 0x0                            ; 0047e4d7
     MOV EDX,dword ptr [ESP + 0x36c]     ; 0047e4d9
@@ -101,8 +108,8 @@ section .text
     PUSH EAX                            ; 0047e4f7
     MOV ECX,dword ptr [ESP + 0x374]     ; 0047e4f8
     PUSH ECX                            ; 0047e4ff
-    CALL FUN_0047f3e0                   ; 0047e500
-        ;   XREF to: 0047f3e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0047f3e0()
+    CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0 ; 0047e500
+        ;   XREF to: 0047f3e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 0047e505
     TEST byte ptr [ESP + 0x378],0x1     ; 0047e508
     JZ 0x0047e705                       ; 0047e510
@@ -114,8 +121,8 @@ section .text
     LEA EAX,[ESP + 0x214]               ; 0047e522
         ;   Label: LAB_0047e522
     PUSH EAX                            ; 0047e529
-    CALL FUN_0047ba60                   ; 0047e52a
-        ;   XREF to: 0047ba60 (UNCONDITIONAL_CALL)  ; undefined FUN_0047ba60()
+    CALL shape_edittool.cpp_CInputString_init_FUN_0047ba60 ; 0047e52a
+        ;   XREF to: 0047ba60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_init_FUN_0047ba60(CInputString * this_ptr, char * source_string, int max_length, int mask_mode)
     ADD ESP,0x10                        ; 0047e52f
     MOV EDI,0x7f                        ; 0047e532
     XOR ESI,ESI                         ; 0047e537
@@ -126,21 +133,21 @@ section .text
     MOV EAX,dword ptr [ESP + 0x364]     ; 0047e552
         ;   Label: LAB_0047e552
     PUSH EAX                            ; 0047e559
-    CALL FUN_0047fa80                   ; 0047e55a
-        ;   XREF to: 0047fa80 (UNCONDITIONAL_CALL)  ; undefined FUN_0047fa80()
+    CALL shape_edittool.cpp_FUN_0047fa80 ; 0047e55a
+        ;   XREF to: 0047fa80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047fa80()
     ADD ESP,0x4                         ; 0047e55f
     LEA EAX,[ESP + 0x208]               ; 0047e562
     PUSH EAX                            ; 0047e569
-    CALL FUN_005a5b10                   ; 0047e56a
-        ;   XREF to: 005a5b10 (UNCONDITIONAL_CALL)  ; undefined FUN_005a5b10()
+    CALL crt_string.c_strupr_FUN_005a5b10 ; 0047e56a
+        ;   XREF to: 005a5b10 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strupr_FUN_005a5b10(char * string)
     ADD ESP,0x4                         ; 0047e56f
     MOV EAX,dword ptr [ESP + 0x36c]     ; 0047e572
     CMP byte ptr [EAX],0x0              ; 0047e579
     JZ 0x0047e61d                       ; 0047e57c
         ;   XREF to: 0047e61d (CONDITIONAL_JUMP)  ; LAB_0047e61d
     PUSH 0x5bcf6d                       ; 0047e582 | = "Directory: "
-    CALL FUN_00508960                   ; 0047e587
-        ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; undefined FUN_00508960()
+    CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 0047e587
+        ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 0047e58c
     MOV EDI,ESP                         ; 0047e58f
     MOV ESI,EAX                         ; 0047e591
@@ -184,12 +191,12 @@ section .text
     POP EDI                             ; 0047e5d7
         ;   Label: LAB_0047e5d7
     PUSH 0xffff                         ; 0047e5d8
-    CALL FUN_00406bf0                   ; 0047e5dd
-        ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; undefined FUN_00406bf0()
+    CALL engine_3d.c_setRenderAlpha_FUN_00406bf0 ; 0047e5dd
+        ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047e5e2
     PUSH 0x3f800000                     ; 0047e5e5
-    CALL FUN_004edaf0                   ; 0047e5ea
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined FUN_004edaf0()
+    CALL engine_mini3d.cpp_FUN_004edaf0 ; 0047e5ea
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
     ADD ESP,0x4                         ; 0047e5ef
     PUSH -0x1                           ; 0047e5f2
     MOV EDX,dword ptr [0x01c5bb24]      ; 0047e5f4 | DAT_01c5bb24
@@ -202,8 +209,8 @@ section .text
     PUSH EAX                            ; 0047e60d
     MOV ESI,dword ptr [0x01c5b0e0]      ; 0047e60e | DAT_01c5b0e0
     PUSH ESI                            ; 0047e614
-    CALL FUN_004b0a20                   ; 0047e615
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0a20()
+    CALL engine_font.cpp_FUN_004b0a20   ; 0047e615
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
     ADD ESP,0x18                        ; 0047e61a
     CMP dword ptr [ESP + 0x34c],0x0     ; 0047e61d
         ;   Label: LAB_0047e61d
@@ -212,12 +219,12 @@ section .text
     MOV EBX,dword ptr [0x01c5bb28]      ; 0047e62b | DAT_01c5bb28
     PUSH 0xffff                         ; 0047e631
         ;   Label: LAB_0047e631
-    CALL FUN_00406bf0                   ; 0047e636
-        ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; undefined FUN_00406bf0()
+    CALL engine_3d.c_setRenderAlpha_FUN_00406bf0 ; 0047e636
+        ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047e63b
     PUSH 0x3f800000                     ; 0047e63e
-    CALL FUN_004edaf0                   ; 0047e643
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined FUN_004edaf0()
+    CALL engine_mini3d.cpp_FUN_004edaf0 ; 0047e643
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
     ADD ESP,0x4                         ; 0047e648
     PUSH -0x1                           ; 0047e64b
     MOV EAX,[0x01c6b5ac]                ; 0047e64d | DAT_01c6b5ac
@@ -228,24 +235,24 @@ section .text
     MOV ECX,dword ptr [0x01c6b5a8]      ; 0047e65c | DAT_01c6b5a8
     PUSH ECX                            ; 0047e662
     PUSH 0x5bcf79                       ; 0047e663 | = "Filename: "
-    CALL FUN_00508960                   ; 0047e668
-        ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; undefined FUN_00508960()
+    CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 0047e668
+        ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 0047e66d
     PUSH EAX                            ; 0047e670
     MOV EBX,dword ptr [0x01c5b0e0]      ; 0047e671 | DAT_01c5b0e0
     PUSH EBX                            ; 0047e677
-    CALL FUN_004b0a20                   ; 0047e678
-        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0a20()
+    CALL engine_font.cpp_FUN_004b0a20   ; 0047e678
+        ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
     ADD ESP,0x18                        ; 0047e67d
     PUSH 0x5bcf84                       ; 0047e680 | = "Filename: "
-    CALL FUN_00508960                   ; 0047e685
-        ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; undefined FUN_00508960()
+    CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 0047e685
+        ;   XREF to: 00508960 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00508960(char * key)
     ADD ESP,0x4                         ; 0047e68a
     PUSH EAX                            ; 0047e68d
     MOV ESI,dword ptr [0x01c5b0e0]      ; 0047e68e | DAT_01c5b0e0
     PUSH ESI                            ; 0047e694
-    CALL FUN_004b2a80                   ; 0047e695
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; undefined FUN_004b2a80()
+    CALL engine_font.cpp_FUN_004b2a80   ; 0047e695
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
     MOV EDI,dword ptr [0x01c5bae4]      ; 0047e69a | DAT_01c5bae4
     MOV ECX,EAX                         ; 0047e6a0
     MOV EAX,[0x01c6b5ac]                ; 0047e6a2 | DAT_01c6b5ac
@@ -256,24 +263,24 @@ section .text
     PUSH ECX                            ; 0047e6b3
     LEA EAX,[ESP + 0x210]               ; 0047e6b4
     PUSH EAX                            ; 0047e6bb
-    CALL FUN_0047c050                   ; 0047e6bc
-        ;   XREF to: 0047c050 (UNCONDITIONAL_CALL)  ; undefined FUN_0047c050()
+    CALL shape_edittool.cpp_FUN_0047c050 ; 0047e6bc
+        ;   XREF to: 0047c050 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047c050()
     ADD ESP,0xc                         ; 0047e6c1
-    CALL FUN_0057a8a0                   ; 0047e6c4
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 0047e6c4
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
     CMP dword ptr [ESP + 0x34c],0x0     ; 0047e6c9
     JNZ 0x0047e71b                      ; 0047e6d1
         ;   XREF to: 0047e71b (CONDITIONAL_JUMP)  ; LAB_0047e71b
-    CALL FUN_00580800                   ; 0047e6d3
-        ;   XREF to: 00580800 (UNCONDITIONAL_CALL)  ; undefined FUN_00580800()
+    CALL wincore_winrun.cpp_wasKeyPressed_FUN_00580800 ; 0047e6d3
+        ;   XREF to: 00580800 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_00580800()
         ;   Label: LAB_0047e6d3
     TEST EAX,EAX                        ; 0047e6d8
     JNZ 0x0047e76f                      ; 0047e6da
         ;   XREF to: 0047e76f (CONDITIONAL_JUMP)  ; LAB_0047e76f
     LEA EAX,[ESP + 0x208]               ; 0047e6e0
     PUSH EAX                            ; 0047e6e7
-    CALL FUN_0047bd50                   ; 0047e6e8
-        ;   XREF to: 0047bd50 (UNCONDITIONAL_CALL)  ; undefined FUN_0047bd50()
+    CALL shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047bd50 ; 0047e6e8
+        ;   XREF to: 0047bd50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047bd50(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0047e6ed
     JMP 0x0047e552                      ; 0047e6f0
         ;   XREF to: 0047e552 (UNCONDITIONAL_JUMP)  ; LAB_0047e552
@@ -312,8 +319,8 @@ section .text
     POP EDI                             ; 0047e749
         ;   Label: LAB_0047e749
     PUSH ECX                            ; 0047e74a
-    CALL FUN_0047f970                   ; 0047e74b
-        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined FUN_0047f970()
+    CALL shape_edittool.cpp_FUN_0047f970 ; 0047e74b
+        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f970()
     ADD ESP,0x4                         ; 0047e750
     MOV EAX,dword ptr [ESP + 0x348]     ; 0047e753
     MOV [0x005fba2c],EAX                ; 0047e75a | DAT_005fba2c
@@ -327,8 +334,8 @@ section .text
     MOV EBX,dword ptr [0x00600284]      ; 0047e76f | DAT_00600284
         ;   Label: LAB_0047e76f
     PUSH EBX                            ; 0047e775 | DAT_01d70a78
-    CALL FUN_004df580                   ; 0047e776
-        ;   XREF to: 004df580 (UNCONDITIONAL_CALL)  ; undefined FUN_004df580()
+    CALL engine_keys.cpp_CKeys_getInputKey_FUN_004df580 ; 0047e776
+        ;   XREF to: 004df580 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_004df580(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0047e77b
     MOV EBX,EAX                         ; 0047e77e
     CMP EAX,0x1b                        ; 0047e780
@@ -429,13 +436,13 @@ section .text
     PUSH EAX                            ; 0047e84c
     MOV dword ptr [ESP + 0x33c],ECX     ; 0047e84d
     MOV dword ptr [ESP + 0x340],ECX     ; 0047e854
-    CALL FUN_0047baf0                   ; 0047e85b
-        ;   XREF to: 0047baf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0047baf0()
+    CALL shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0047baf0 ; 0047e85b
+        ;   XREF to: 0047baf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0047baf0(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0047e860
     MOV EDI,0x1                         ; 0047e863
         ;   Label: LAB_0047e863
-    CALL FUN_004032b0                   ; 0047e868
-        ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004032b0()
+    CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0047e868
+        ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     MOV dword ptr [ESP + 0x34c],EDI     ; 0047e86d
     CMP EBX,0x8                         ; 0047e874
         ;   Label: LAB_0047e874
@@ -459,20 +466,20 @@ section .text
         ;   XREF to: 0047e6d3 (CONDITIONAL_JUMP)  ; LAB_0047e6d3
     LEA EAX,[ESP + 0x208]               ; 0047e8b0
     PUSH EAX                            ; 0047e8b7
-    CALL FUN_0047bc10                   ; 0047e8b8
-        ;   XREF to: 0047bc10 (UNCONDITIONAL_CALL)  ; undefined FUN_0047bc10()
+    CALL shape_edittool.cpp_CInputString_deleteSelection_FUN_0047bc10 ; 0047e8b8
+        ;   XREF to: 0047bc10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_deleteSelection_FUN_0047bc10(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0047e8bd
     PUSH 0x1                            ; 0047e8c0
     PUSH EBX                            ; 0047e8c2
     LEA EAX,[ESP + 0x210]               ; 0047e8c3
     PUSH EAX                            ; 0047e8ca
-    CALL FUN_0047bb10                   ; 0047e8cb
-        ;   XREF to: 0047bb10 (UNCONDITIONAL_CALL)  ; undefined FUN_0047bb10()
+    CALL shape_edittool.cpp_CInputString_insertChar_FUN_0047bb10 ; 0047e8cb
+        ;   XREF to: 0047bb10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_insertChar_FUN_0047bb10(CInputString * this_ptr, char character, int advance_cursor)
     ADD ESP,0xc                         ; 0047e8d0
     LEA EAX,[ESP + 0x208]               ; 0047e8d3
     PUSH EAX                            ; 0047e8da
-    CALL FUN_0047baf0                   ; 0047e8db
-        ;   XREF to: 0047baf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0047baf0()
+    CALL shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0047baf0 ; 0047e8db
+        ;   XREF to: 0047baf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0047baf0(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0047e8e0
     JMP 0x0047e6d3                      ; 0047e8e3
         ;   XREF to: 0047e6d3 (UNCONDITIONAL_JUMP)  ; LAB_0047e6d3
@@ -481,13 +488,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x374]     ; 0047e8ef
     PUSH EBP                            ; 0047e8f6
     MOV byte ptr [EAX],0x0              ; 0047e8f7
-    CALL FUN_0047f970                   ; 0047e8fa
-        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined FUN_0047f970()
+    CALL shape_edittool.cpp_FUN_0047f970 ; 0047e8fa
+        ;   XREF to: 0047f970 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047f970()
     ADD ESP,0x4                         ; 0047e8ff
-    CALL FUN_004032b0                   ; 0047e902
-        ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004032b0()
-    CALL FUN_0057a8a0                   ; 0047e907
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0057a8a0()
+    CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0047e902
+        ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
+    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 0047e907
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
     MOV EAX,dword ptr [ESP + 0x348]     ; 0047e90c
     MOV [0x005fba2c],EAX                ; 0047e913 | DAT_005fba2c
     XOR EAX,EAX                         ; 0047e918
@@ -500,8 +507,8 @@ section .text
     LEA EAX,[ESP + 0x208]               ; 0047e925
         ;   Label: LAB_0047e925
     PUSH EAX                            ; 0047e92c
-    CALL FUN_0047bc60                   ; 0047e92d
-        ;   XREF to: 0047bc60 (UNCONDITIONAL_CALL)  ; undefined FUN_0047bc60()
+    CALL shape_edittool.cpp_CInputString_backspace_FUN_0047bc60 ; 0047e92d
+        ;   XREF to: 0047bc60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CInputString_backspace_FUN_0047bc60(CInputString * this_ptr)
     ADD ESP,0x4                         ; 0047e932
     JMP 0x0047e6d3                      ; 0047e935
         ;   XREF to: 0047e6d3 (UNCONDITIONAL_JUMP)  ; LAB_0047e6d3

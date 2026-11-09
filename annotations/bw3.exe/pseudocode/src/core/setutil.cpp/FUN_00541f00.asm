@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00541f00(int param_1,undefined4 param_2)
+; void __cdecl core_setutil_cpp_FUN_00541f00(C3DSCamera *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; C3DSCamera *     Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   FUN_00532b80 at 0053354d
+;   core_set.cpp_FUN_00532b80 at 0053354d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d0dbe
@@ -16,16 +19,16 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005a3230
-;   FUN_005a3e50
+;   core_main.c_FUN_004e4330
+;   crt_memory.c_realloc_FUN_005a3e50
+;   crt_stdio.c_fscanf_FUN_005a3230
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 00541f00
-        ;   Label: FUN_00541f00
+        ;   Label: core_setutil.cpp_FUN_00541f00
     PUSH EDI                            ; 00541f01
     PUSH EBP                            ; 00541f02
     MOV EDI,dword ptr [ESP + 0x10]      ; 00541f03
@@ -34,16 +37,16 @@ section .text
     PUSH EAX                            ; 00541f11
     PUSH 0x5d0dbe                       ; 00541f12 | DAT_005d0dbe
     PUSH EBP                            ; 00541f17
-    CALL FUN_005a3230                   ; 00541f18
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00541f18
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     MOV EAX,dword ptr [EDI + 0x194]     ; 00541f1d
     ADD ESP,0xc                         ; 00541f23
     SHL EAX,0x2                         ; 00541f26
     PUSH EAX                            ; 00541f29
     MOV EDX,dword ptr [EDI + 0x198]     ; 00541f2a
     PUSH EDX                            ; 00541f30
-    CALL FUN_005a3e50                   ; 00541f31
-        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3e50()
+    CALL crt_memory.c_realloc_FUN_005a3e50 ; 00541f31
+        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00541f36
     MOV ECX,dword ptr [EDI + 0x194]     ; 00541f39
     MOV dword ptr [EDI + 0x198],EAX     ; 00541f3f
@@ -69,8 +72,8 @@ section .text
     PUSH EBP                            ; 00541f6a
     INC ESI                             ; 00541f6b
     ADD EBX,0x4                         ; 00541f6c
-    CALL FUN_005a3230                   ; 00541f6f
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00541f6f
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     MOV EAX,dword ptr [EDI + 0x194]     ; 00541f74
     ADD ESP,0xc                         ; 00541f7a
     CMP ESI,EAX                         ; 00541f7d
@@ -89,8 +92,8 @@ section .text
     PUSH 0x5d0dd6                       ; 00541f91 | = "Out of memory for pvsList - %d"
     MOV dword ptr [0x01d71de0],ESI      ; 00541f96 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00541f9c | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00541fa1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00541fa1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 00541fa6
     JMP 0x00541f4d                      ; 00541fa9
         ;   XREF to: 00541f4d (UNCONDITIONAL_JUMP)  ; LAB_00541f4d

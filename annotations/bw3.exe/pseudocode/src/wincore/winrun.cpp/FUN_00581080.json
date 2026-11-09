@@ -1,0 +1,782 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 215,
+    "complexity_score": 440,
+    "cross_reference_count": 1,
+    "function_call_count": 26,
+    "global_count": 37,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 125,
+    "suspect_count": 27,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_noreturn",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 340
+  },
+  "cross_references": [
+    {
+      "addr": "005ad1e0",
+      "from_addr": "005ad27d",
+      "name": "crt_startup.cpp_WinMainBootstrap_FUN_005ad1e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00581080",
+    "address_range": [
+      [
+        "00581080",
+        "00581151"
+      ],
+      [
+        "00581157",
+        "005812e4"
+      ],
+      [
+        "005812f1",
+        "005812fd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "wincore_winrun.cpp_FUN_00581080",
+    "signature": "void wincore_winrun_cpp_FUN_00581080(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000002c",
+      "is_variadic": false,
+      "name": "BringWindowToTop"
+    },
+    {
+      "addr": "004e44d0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e44d0"
+    },
+    {
+      "addr": "004e44e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e44e0"
+    },
+    {
+      "addr": "004e4c70",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4c70"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "005a35f0",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_srand_FUN_005a35f0"
+    },
+    {
+      "addr": "EXTERNAL:00000054",
+      "is_variadic": false,
+      "name": "ExitProcess"
+    },
+    {
+      "addr": "EXTERNAL:00000033",
+      "is_variadic": false,
+      "name": "FindWindowA"
+    },
+    {
+      "addr": "EXTERNAL:00000061",
+      "is_variadic": false,
+      "name": "GetCommandLineA"
+    },
+    {
+      "addr": "EXTERNAL:00000065",
+      "is_variadic": false,
+      "name": "GetCurrentDirectoryA"
+    },
+    {
+      "addr": "EXTERNAL:00000066",
+      "is_variadic": false,
+      "name": "GetCurrentProcess"
+    },
+    {
+      "addr": "EXTERNAL:00000036",
+      "is_variadic": false,
+      "name": "GetLastActivePopup"
+    },
+    {
+      "addr": "EXTERNAL:00000072",
+      "is_variadic": false,
+      "name": "GetModuleFileNameA"
+    },
+    {
+      "addr": "EXTERNAL:0000000d",
+      "is_variadic": false,
+      "name": "GetStockObject"
+    },
+    {
+      "addr": "EXTERNAL:0000007e",
+      "is_variadic": false,
+      "name": "GlobalMemoryStatus"
+    },
+    {
+      "addr": "EXTERNAL:00000038",
+      "is_variadic": false,
+      "name": "IsIconic"
+    },
+    {
+      "addr": "EXTERNAL:00000039",
+      "is_variadic": false,
+      "name": "LoadCursorA"
+    },
+    {
+      "addr": "EXTERNAL:0000003a",
+      "is_variadic": false,
+      "name": "LoadIconA"
+    },
+    {
+      "addr": "EXTERNAL:00000040",
+      "is_variadic": false,
+      "name": "RegisterClassA"
+    },
+    {
+      "addr": "EXTERNAL:0000008e",
+      "is_variadic": false,
+      "name": "SetCurrentDirectoryA"
+    },
+    {
+      "addr": "EXTERNAL:00000045",
+      "is_variadic": false,
+      "name": "SetForegroundWindow"
+    },
+    {
+      "addr": "EXTERNAL:00000098",
+      "is_variadic": false,
+      "name": "SetThreadPriority"
+    },
+    {
+      "addr": "EXTERNAL:00000047",
+      "is_variadic": false,
+      "name": "ShowWindow"
+    },
+    {
+      "addr": "EXTERNAL:0000001c",
+      "is_variadic": false,
+      "name": "timeGetTime"
+    },
+    {
+      "addr": "EXTERNAL:00000049",
+      "is_variadic": false,
+      "name": "UpdateWindow"
+    },
+    {
+      "addr": "00581010",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_00581010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00000065",
+      "name": "DAT_00000065",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00007f00",
+      "name": "DAT_00007f00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b3418",
+      "name": "PTR_GetStockObject_005b3418",
+      "type": "void*",
+      "value": "001b383e"
+    },
+    {
+      "addr": "005b3458",
+      "name": "PTR_timeGetTime_005b3458",
+      "type": "void*",
+      "value": "001b3934"
+    },
+    {
+      "addr": "005b349c",
+      "name": "PTR_BringWindowToTop_005b349c",
+      "type": "void*",
+      "value": "001b3a54"
+    },
+    {
+      "addr": "005b34b8",
+      "name": "PTR_FindWindowA_005b34b8",
+      "type": "void*",
+      "value": "001b3ad4"
+    },
+    {
+      "addr": "005b34c4",
+      "name": "PTR_GetLastActivePopup_005b34c4",
+      "type": "void*",
+      "value": "001b3b06"
+    },
+    {
+      "addr": "005b34cc",
+      "name": "PTR_IsIconic_005b34cc",
+      "type": "void*",
+      "value": "001b3b2e"
+    },
+    {
+      "addr": "005b34d0",
+      "name": "PTR_LoadCursorA_005b34d0",
+      "type": "void*",
+      "value": "001b3b3a"
+    },
+    {
+      "addr": "005b34d4",
+      "name": "PTR_LoadIconA_005b34d4",
+      "type": "void*",
+      "value": "001b3b48"
+    },
+    {
+      "addr": "005b34ec",
+      "name": "PTR_RegisterClassA_005b34ec",
+      "type": "void*",
+      "value": "001b3ba2"
+    },
+    {
+      "addr": "005b3500",
+      "name": "PTR_SetForegroundWindow_005b3500",
+      "type": "void*",
+      "value": "001b3bf0"
+    },
+    {
+      "addr": "005b3508",
+      "name": "PTR_ShowWindow_005b3508",
+      "type": "void*",
+      "value": "001b3c16"
+    },
+    {
+      "addr": "005b3510",
+      "name": "PTR_UpdateWindow_005b3510",
+      "type": "void*",
+      "value": "001b3c38"
+    },
+    {
+      "addr": "005b3540",
+      "name": "PTR_ExitProcess_005b3540",
+      "type": "void*",
+      "value": "001b3cfe"
+    },
+    {
+      "addr": "005b3574",
+      "name": "PTR_GetCommandLineA_005b3574",
+      "type": "void*",
+      "value": "001b3de4"
+    },
+    {
+      "addr": "005b3584",
+      "name": "PTR_GetCurrentDirectoryA_005b3584",
+      "type": "void*",
+      "value": "001b3e2e"
+    },
+    {
+      "addr": "005b3588",
+      "name": "PTR_GetCurrentProcess_005b3588",
+      "type": "void*",
+      "value": "001b3e46"
+    },
+    {
+      "addr": "005b35b8",
+      "name": "PTR_GetModuleFileNameA_005b35b8",
+      "type": "void*",
+      "value": "001b3f26"
+    },
+    {
+      "addr": "005b35e8",
+      "name": "PTR_GlobalMemoryStatus_005b35e8",
+      "type": "void*",
+      "value": "001b3ffa"
+    },
+    {
+      "addr": "005b3628",
+      "name": "PTR_SetCurrentDirectoryA_005b3628",
+      "type": "void*",
+      "value": "001b4146"
+    },
+    {
+      "addr": "005b3650",
+      "name": "PTR_SetThreadPriority_005b3650",
+      "type": "void*",
+      "value": "001b4204"
+    },
+    {
+      "addr": "005d7ebe",
+      "name": "s_Blair_Witch_3_005d7ebe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00607280",
+      "name": "PTR_s_Blair_Witch_3_00607280",
+      "type": "void*",
+      "value": "005d7ebe"
+    },
+    {
+      "addr": "02d21b78",
+      "name": "DAT_02d21b78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d21b7c",
+      "name": "DAT_02d21b7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d21b88",
+      "name": "DAT_02d21b88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d21b8c",
+      "name": "DAT_02d21b8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22518",
+      "name": "DAT_02d22518",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22519",
+      "name": "DAT_02d22519",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22618",
+      "name": "DAT_02d22618",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22718",
+      "name": "DAT_02d22718",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22719",
+      "name": "DAT_02d22719",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d2271a",
+      "name": "DAT_02d2271a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d2271b",
+      "name": "DAT_02d2271b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d2271c",
+      "name": "DAT_02d2271c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d22818",
+      "name": "DAT_02d22818",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005ad27d",
+        "call_type": "direct",
+        "caller": "crt_startup.cpp_WinMainBootstrap_FUN_005ad1e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.061797752808989,
+    "instruction_count": 178,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CALLIND": 22,
+      "CBRANCH": 16,
+      "COPY": 150,
+      "INT_ADD": 34,
+      "INT_AND": 88,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 74,
+      "INT_LEFT": 2,
+      "INT_LESS": 12,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 37,
+      "INT_SUB": 85,
+      "INT_XOR": 5,
+      "INT_ZEXT": 1,
+      "LOAD": 16,
+      "POPCOUNT": 35,
+      "STORE": 83
+    },
+    "pcode_op_count": 723
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void wincore_winrun_cpp_FUN_00581080(HMODULE param_1,uint param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void wincore_winrun_cpp_FUN_00581080(HMODULE param_1,uint param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void wincore_winrun_cpp_FUN_00581080(HMODULE param_1,uint param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void wincore_winrun_cpp_FUN_00581080(HMODULE param_1,uint param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 40,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(WNDCLASSA *)((int)pWVar11",
+      "severity": "moderate",
+      "text": "pWVar11 = (WNDCLASSA *)((int)pWVar11 + -0x80);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_02d22718",
+      "severity": "mild",
+      "text": "pcVar12 = &DAT_02d22718;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_02d22718",
+      "severity": "mild",
+      "text": "pcVar12 = &DAT_02d22718;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_02d22718",
+      "severity": "mild",
+      "text": "if (DAT_02d22718 != '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 71,
+      "match": "*(char **)(iVar9 + 0x2d2281c",
+      "severity": "moderate",
+      "text": "*(char **)(iVar9 + 0x2d2281c) = pcVar12;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_02d22618",
+      "severity": "mild",
+      "text": "GetCurrentDirectoryA(0x100,&DAT_02d22618);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "GetModuleFileNameA(param_1,&DAT_02d22518,0x100);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_02d22518",
+      "severity": "mild",
+      "text": "GetModuleFileNameA(param_1,&DAT_02d22518,0x100);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_02d22518",
+      "severity": "mild",
+      "text": "pcVar12 = &DAT_02d22518;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_02d22518",
+      "severity": "mild",
+      "text": "SetCurrentDirectoryA(&DAT_02d22518);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_58.hInstance = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_58.hIcon = LoadIconA(param_1,&DAT_00000065);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_00000065",
+      "severity": "mild",
+      "text": "local_58.hIcon = LoadIconA(param_1,&DAT_00000065);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_00007f00",
+      "severity": "mild",
+      "text": "local_58.hCursor = LoadCursorA((HINSTANCE)0x0,&DAT_00007f00);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 113,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_DAT_02d21b7c = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "ShowWindow(_DAT_02d21b78,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 127,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Pointer value `pWVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pWVar11",
+      "severity": "moderate",
+      "text": "pWVar11 = (WNDCLASSA *)((int)pWVar11 + -0x80);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pWVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)pWVar11",
+      "severity": "moderate",
+      "text": "} while (iVar9 < (int)pWVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 51,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 87,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

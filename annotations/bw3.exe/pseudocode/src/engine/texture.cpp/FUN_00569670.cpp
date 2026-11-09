@@ -1,14 +1,14 @@
-// Name: FUN_00569670
+// Name: engine_texture.cpp_FUN_00569670
 // Address: 00569670
 // Address Range: [[00569670, 0056978f]]
 // Convention: unknown
-// Signature: int FUN_00569670(int *param_1)
+// Signature: int engine_texture_cpp_FUN_00569670(int *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_00569670(int *param_1)
+int engine_texture_cpp_FUN_00569670(int *param_1)
 
 {
   int *piVar1;
@@ -26,7 +26,7 @@ int FUN_00569670(int *param_1)
       if (iVar3 != 0) {
         _DAT_01d71de0 = "..\\engine\\texture.cpp";
         _DAT_01d71de4 = 0xbc;
-        FUN_004e4330("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
+        core_main_c_FUN_004e4330("CTextureCache::findFreeSlot - Cache has wrapped, but is supposed to be frozen");
       }
     }
   }
@@ -56,9 +56,9 @@ int FUN_00569670(int *param_1)
   }
   if (param_1[0x14] != 0) {
     FUN_005a3770(param_1[0x14]);
-    FUN_005a28f0(param_1,0,0x60);
+    memset(param_1,0,0x60);
     return iVar4;
   }
-  FUN_005a28f0(param_1,0,0x60);
+  memset(param_1,0,0x60);
   return iVar4;
 }

@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005295e0(int param_1)
+; void __cdecl core_script_cpp_FUN_005295e0(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00529410 at 0052953d
+;   core_script.cpp_FUN_00529410 at 0052953d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_005cde8c
@@ -22,28 +24,28 @@
 ;   undefined4 DAT_01ed600b
 ;
 ; Called Functions:
-;   FUN_00482440
-;   FUN_00486af0
-;   FUN_004e4330
-;   FUN_00528790
-;   FUN_00528da0
-;   FUN_005a3650
-;   FUN_005a3e50
+;   core_main.c_FUN_004e4330
+;   core_script.cpp_FUN_00528da0
+;   core_script.cpp_trimLine_FUN_00528790
+;   crt_memory.c_realloc_FUN_005a3e50
+;   crt_unknown.c_FUN_005a3650
+;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440
+;   shape_edittool.cpp_FUN_00486af0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005295e0
-        ;   Label: FUN_005295e0
+        ;   Label: core_script.cpp_FUN_005295e0
     PUSH ESI                            ; 005295e1
     PUSH EDI                            ; 005295e2
     PUSH EBP                            ; 005295e3
     SUB ESP,0x4                         ; 005295e4
     MOV EBX,dword ptr [ESP + 0x18]      ; 005295e7
     PUSH EBX                            ; 005295eb
-    CALL FUN_00528da0                   ; 005295ec
-        ;   XREF to: 00528da0 (UNCONDITIONAL_CALL)  ; undefined FUN_00528da0()
+    CALL core_script.cpp_FUN_00528da0   ; 005295ec
+        ;   XREF to: 00528da0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00528da0(CScript * this_ptr)
     ADD ESP,0x4                         ; 005295f1
     LEA EAX,[EBX + 0x34]                ; 005295f4
     XOR EBP,EBP                         ; 005295f7
@@ -51,8 +53,8 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 005295fc
         ;   Label: LAB_005295fc
     PUSH EDX                            ; 005295ff
-    CALL FUN_00486af0                   ; 00529600
-        ;   XREF to: 00486af0 (UNCONDITIONAL_CALL)  ; undefined FUN_00486af0()
+    CALL shape_edittool.cpp_FUN_00486af0 ; 00529600
+        ;   XREF to: 00486af0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00486af0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 00529605
     CMP EBP,EAX                         ; 00529608
     JL 0x00529614                       ; 0052960a
@@ -68,12 +70,12 @@ section .text
     PUSH EBP                            ; 00529619
     MOV ECX,dword ptr [ESP + 0x8]       ; 0052961a
     PUSH ECX                            ; 0052961e
-    CALL FUN_00482440                   ; 0052961f
-        ;   XREF to: 00482440 (UNCONDITIONAL_CALL)  ; undefined FUN_00482440()
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_00482440 ; 0052961f
+        ;   XREF to: 00482440 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_00482440(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 00529624
     PUSH EAX                            ; 00529627
-    CALL FUN_00528790                   ; 00529628
-        ;   XREF to: 00528790 (UNCONDITIONAL_CALL)  ; undefined FUN_00528790()
+    CALL core_script.cpp_trimLine_FUN_00528790 ; 00529628
+        ;   XREF to: 00528790 (UNCONDITIONAL_CALL)  ; void core_script.cpp_trimLine_FUN_00528790(char * input_line, char * output_buffer)
     MOV AH,byte ptr [0x01ed6008]        ; 0052962d | DAT_01ed6008
     ADD ESP,0x8                         ; 00529633
     TEST AH,AH                          ; 00529636
@@ -85,8 +87,8 @@ section .text
     PUSH EAX                            ; 00529645
     MOV ESI,dword ptr [EBX + 0x30]      ; 00529646
     PUSH ESI                            ; 00529649
-    CALL FUN_005a3e50                   ; 0052964a
-        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3e50()
+    CALL crt_memory.c_realloc_FUN_005a3e50 ; 0052964a
+        ;   XREF to: 005a3e50 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005a3e50(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 0052964f
     MOV dword ptr [EBX + 0x30],EAX      ; 00529652
     TEST EAX,EAX                        ; 00529655
@@ -98,8 +100,8 @@ section .text
     MOV EDX,0x3a4                       ; 00529667
     PUSH 0x5cde9f                       ; 0052966c | = "Out of memory loading script at line %d"
     MOV dword ptr [0x01d71de4],EDX      ; 00529671 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00529677
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00529677
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 0052967c
     MOV EAX,dword ptr [EBX + 0x2c]      ; 0052967f
         ;   Label: LAB_0052967f
@@ -115,8 +117,8 @@ section .text
     DEC ECX                             ; 00529699
     INC ECX                             ; 0052969a
     PUSH ECX                            ; 0052969b
-    CALL FUN_005a3650                   ; 0052969c
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3650()
+    CALL crt_unknown.c_FUN_005a3650     ; 0052969c
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
     MOV ECX,dword ptr [EBX + 0x2c]      ; 005296a1
     MOV EDI,dword ptr [EBX + 0x30]      ; 005296a4
     MOV dword ptr [EDI + ECX*0x8 + 0x4],EAX ; 005296a7
@@ -131,8 +133,8 @@ section .text
     PUSH 0x5cdeda                       ; 005296c0 | = "Out of memory loading script at line %d"
     MOV dword ptr [0x01d71de0],EDI      ; 005296c5 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 005296cb | DAT_01d71de4
-    CALL FUN_004e4330                   ; 005296d0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 005296d0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 005296d5
     MOV EDI,dword ptr [EBX + 0x2c]      ; 005296d8
         ;   Label: LAB_005296d8

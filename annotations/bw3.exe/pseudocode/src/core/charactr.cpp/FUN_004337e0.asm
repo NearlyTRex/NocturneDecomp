@@ -1,25 +1,31 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004337e0(int param_1,undefined4 param_2,undefined4 param_3,char *param_4,undefined4 param_5 )
+; void __cdecl core_charactr_cpp_FUN_004337e0(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   from_bone_index
+; int              Stack[0xc]:4   to_bone_index
+; char *           Stack[0x10]:4   motion_name
+; int              Stack[0x14]:4   direction
 ;
 ; XREF[1]:
-;   FUN_00517f80 at 00518183
+;   core_stranger.cpp_CPrye_ctor_FUN_00517f80 at 00518183
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004337e0
-        ;   Label: FUN_004337e0
+        ;   Label: core_charactr.cpp_FUN_004337e0
     PUSH ESI                            ; 004337e1
     PUSH EDI                            ; 004337e2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004337e3
@@ -71,8 +77,8 @@ section .text
     PUSH 0x5b87b2                       ; 00433858
     MOV dword ptr [0x01d71de0],ECX      ; 0043385d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00433863 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00433869
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00433869
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0043386e
     JMP 0x004337f0                      ; 00433871
         ;   XREF to: 004337f0 (UNCONDITIONAL_JUMP)  ; LAB_004337f0

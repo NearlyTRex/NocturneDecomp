@@ -1,0 +1,539 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 157,
+    "complexity_score": 319,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 59,
+    "suspect_count": 23,
+    "suspect_types": [
+      "param_count_too_few",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 216
+  },
+  "cross_references": [
+    {
+      "addr": "00491f40",
+      "from_addr": "0049269f",
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_00491f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048c2e0",
+      "from_addr": "0048c760",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048ba80",
+      "from_addr": "0048bb1e",
+      "name": "core_event.cpp_parseVectorLocation_FUN_0048ba80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048b950",
+    "address_range": [
+      [
+        "0048b950",
+        "0048ba7c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_resolveActorByName_FUN_0048b950",
+    "signature": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,undefined4 param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408870"
+    },
+    {
+      "addr": "0040c810",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClassHash_FUN_0040c810"
+    },
+    {
+      "addr": "00495050",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_getActorByVarName_FUN_00495050"
+    },
+    {
+      "addr": "004f6e90",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f6e90"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a28c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bddcb",
+      "name": "s_Must_specify_actor_name_005bddcb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bddcc",
+      "name": "s_ust_specify_actor_name_005bddcb+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bddcd",
+      "name": "s_st_specify_actor_name_005bddcb+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bddce",
+      "name": "s_t_specify_actor_name_005bddcb+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bdde3",
+      "name": "DAT_005bdde3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bdde5",
+      "name": "s_Can_t_use_actor_specifie_005bdde5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bde13",
+      "name": "s_Actor_s_does_not_exist_005bde13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bde2e",
+      "name": "s_Actor_s_is_of_type_s_thi_005bde2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005df604",
+      "name": "DAT_005df604",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00600530",
+      "name": "DAT_00600530",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603450",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "01da62f0"
+    },
+    {
+      "addr": "01c734b0",
+      "name": "DAT_01c734b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c734b1",
+      "name": "DAT_01c734b1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c734b2",
+      "name": "DAT_01c734b2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c734b3",
+      "name": "DAT_01c734b3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "DAT_01d5ba14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da62f0",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 32,
+    "call_sites": [
+      {
+        "call_addr": "0048c760",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048ce18",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048ce4b",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048d20d",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048d3bf",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048d899",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048e419",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048e960",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048f791",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048fd32",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.190476190476191,
+    "instruction_count": 126,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "CALL": 8,
+      "CBRANCH": 12,
+      "COPY": 127,
+      "INT_ADD": 52,
+      "INT_AND": 59,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 52,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 26,
+      "INT_SUB": 37,
+      "INT_XOR": 4,
+      "LOAD": 45,
+      "POPCOUNT": 26,
+      "RETURN": 7,
+      "STORE": 34
+    },
+    "pcode_op_count": 528
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01c734b0",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_01c734b0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 == '@') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = core_event_cpp_CEventList_getActorByVarName_FUN_00495050(0x01C6E360,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = _stricmp(param_1,&DAT_005bdde3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_005bdde3",
+      "severity": "mild",
+      "text": "iVar2 = _stricmp(param_1,&DAT_005bdde3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = core_mission_cpp_FUN_004f6e90(0x01D81080,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_005a28c0(&DAT_01c734b0,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_01c734b0",
+      "severity": "mild",
+      "text": "FUN_005a28c0(&DAT_01c734b0,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_01c734b0",
+      "severity": "mild",
+      "text": "FUN_005a28c0(&DAT_01c734b0,\"Can't use '$' actor specifier in multi-player\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 46,
+      "match": "*(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04",
+      "severity": "moderate",
+      "text": "this_ptr = *(CDemonActor **)(_DAT_01d5ba14 * 4 + 0x1d5ba04);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c810(this_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 == '@') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&DAT_01c734b0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(&DAT_01c734b0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_01c734b0",
+      "severity": "mild",
+      "text": "(&DAT_01c734b0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 16,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "call_site_count": 32,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

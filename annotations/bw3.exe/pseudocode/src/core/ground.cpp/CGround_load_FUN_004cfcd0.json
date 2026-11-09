@@ -1,0 +1,530 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 335,
+    "complexity_score": 382,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 157,
+    "suspect_count": 20,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strchr",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 492
+  },
+  "cross_references": [
+    {
+      "addr": "00572370",
+      "from_addr": "0057239b",
+      "name": "core_terrain.cpp_CTerrain_init_FUN_00572370",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cfcd0",
+    "address_range": [
+      [
+        "004cfcd0",
+        "004cfff0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_load_FUN_004cfcd0",
+    "signature": "void __cdecl core_ground_cpp_CGround_load_FUN_004cfcd0(CGround *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005690c0",
+      "is_variadic": false,
+      "name": "core_texlist.cpp_CTextureList_load_FUN_005690c0"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a32b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005a32b0"
+    },
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
+    },
+    {
+      "addr": "004659c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004659c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4816",
+      "name": "s_core_ground_cpp_005c4816",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4829",
+      "name": "s_eopen_ext_not_found_005c4829",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4840",
+      "name": "s_core_ground_cpp_005c4840",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4853",
+      "name": "s_eopen_Cannot_open_file_005c4853",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c49af",
+      "name": "DAT_005c49af",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c49b2",
+      "name": "DAT_005c49b2",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49b3",
+      "name": "DAT_005c49b3",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49b4",
+      "name": "DAT_005c49b4",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49b5",
+      "name": "DAT_005c49b5",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49b6",
+      "name": "DAT_005c49b6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c49bb",
+      "name": "DAT_005c49bb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c49be",
+      "name": "DAT_005c49be",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49bf",
+      "name": "DAT_005c49bf",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49c0",
+      "name": "DAT_005c49c0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49c1",
+      "name": "DAT_005c49c1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005c49c2",
+      "name": "DAT_005c49c2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057239b",
+        "call_type": "direct",
+        "caller": "core_terrain.cpp_CTerrain_init_FUN_00572370",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.505747126436781,
+    "instruction_count": 261,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CBRANCH": 30,
+      "COPY": 189,
+      "INT_ADD": 90,
+      "INT_AND": 185,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 154,
+      "INT_LEFT": 4,
+      "INT_LESS": 25,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 10,
+      "INT_SBORROW": 25,
+      "INT_SCARRY": 34,
+      "INT_SEXT": 6,
+      "INT_SLESS": 80,
+      "INT_SUB": 65,
+      "INT_XOR": 6,
+      "LOAD": 53,
+      "POPCOUNT": 76,
+      "RETURN": 1,
+      "STORE": 58,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1176
+  },
+  "stack_frame": {
+    "frame_size": 216,
+    "local_size": 208,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_cb",
+        "offset": -203,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_7b",
+        "offset": -123,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGround *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004cfcf2",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004cfd13",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_005c49b6",
+      "severity": "mild",
+      "text": "local_24 = &DAT_005c49b6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_005c49af",
+      "severity": "mild",
+      "text": "local_20 = &DAT_005c49af;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005c49b2",
+      "severity": "mild",
+      "text": "pcVar7 = &DAT_005c49b2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 88,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(ushort *)(*(int *)&this_ptr->field_0x24 + (local_18 * *(int *)this_ptr + iVar9) * 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 94,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "} while (local_18 < *(int *)&this_ptr->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 98,
+      "match": "DAT_005c49c2",
+      "severity": "mild",
+      "text": "local_28 = &DAT_005c49c2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_005c49bb",
+      "severity": "mild",
+      "text": "local_2c = &DAT_005c49bb;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 127,
+      "match": "DAT_005c49be",
+      "severity": "mild",
+      "text": "pcVar6 = &DAT_005c49be;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 144,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 151,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "_fread(iVar5 * 4 + *(int *)&this_ptr->field_0x24 + 2,1,2,local_1c)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 156,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "} while (local_14 < *(int *)&this_ptr->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 159,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "core_texlist_cpp_CTextureList_load_FUN_005690c0(*(CTextureList **)&this_ptr->field_0x28,filename);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 29,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 58,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 101,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 128,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 40,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 111,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

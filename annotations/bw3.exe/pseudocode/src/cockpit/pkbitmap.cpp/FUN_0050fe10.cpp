@@ -1,27 +1,30 @@
-// Name: FUN_0050fe10
+// Name: cockpit_pkbitmap.cpp_FUN_0050fe10
 // Address: 0050fe10
 // Address Range: [[0050fe10, 0050fe89]]
 // Convention: unknown
-// Signature: void FUN_0050fe10(undefined4 param_1,undefined4 param_2)
+// Signature: void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0050fe10(uint param_1,uint param_2)
+void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,uint param_2)
 
 {
-  int iVar1;
-  byte auStack_6c [100];
+  _FILE *file_handle;
+  uint uStack_6c;
+  _FILE *p_Stack_68;
   
-  iVar1 = FUN_005a43ec(param_2,0x5cbd0e);
-  if (iVar1 == 0) {
-    FUN_005a28c0(auStack_6c,"Unable to create PBM file %s",param_2);
+  file_handle = (_FILE *)_fopen(param_2,0x5cbd0e);
+  if (file_handle == (_FILE *)0x0) {
+    FUN_005a28c0(&uStack_6c,"Unable to create PBM file %s",param_2);
     _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
     _DAT_01d71de4 = 0x474;
-    FUN_004e4330(auStack_6c);
+    core_main_c_FUN_004e4330(&uStack_6c);
   }
-  FUN_0050fe90(param_1,iVar1);
-  FUN_005a3a90(iVar1);
+  cockpit_pkbitmap_cpp_FUN_0050fe90(param_1,file_handle);
+  uStack_6c = 0x50fe41;
+  p_Stack_68 = file_handle;
+  _fclose();
   return;
 }

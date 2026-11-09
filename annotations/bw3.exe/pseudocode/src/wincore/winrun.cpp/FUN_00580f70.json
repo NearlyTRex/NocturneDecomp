@@ -1,0 +1,208 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 96,
+    "cross_reference_count": 4,
+    "function_call_count": 4,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b8729",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec8ce",
+      "from_addr": "004ec8e3",
+      "name": "unkafter_minecar.cpp_FUN_004ec8ce",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a8a0",
+      "from_addr": "0057a979",
+      "name": "wincore_wddvmem.cpp_FUN_0057a8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00582eb0",
+      "from_addr": "005831aa",
+      "name": "wincore_winvideo.cpp_FUN_00582eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00580f70",
+    "address_range": [
+      [
+        "00580f70",
+        "0058100d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_FUN_00580f70",
+    "signature": "void __cdecl wincore_winrun_cpp_FUN_00580f70(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000032",
+      "is_variadic": false,
+      "name": "DispatchMessageA"
+    },
+    {
+      "addr": "EXTERNAL:0000003e",
+      "is_variadic": false,
+      "name": "PeekMessageA"
+    },
+    {
+      "addr": "EXTERNAL:0000009a",
+      "is_variadic": false,
+      "name": "Sleep"
+    },
+    {
+      "addr": "EXTERNAL:00000048",
+      "is_variadic": false,
+      "name": "TranslateMessage"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b34b4",
+      "name": "PTR_DispatchMessageA_005b34b4",
+      "type": "void*",
+      "value": "001b3ac0"
+    },
+    {
+      "addr": "005b34e4",
+      "name": "PTR_PeekMessageA_005b34e4",
+      "type": "void*",
+      "value": "001b3b80"
+    },
+    {
+      "addr": "005b350c",
+      "name": "PTR_TranslateMessage_005b350c",
+      "type": "void*",
+      "value": "001b3c24"
+    },
+    {
+      "addr": "005b3658",
+      "name": "PTR_Sleep_005b3658",
+      "type": "void*",
+      "value": "001b4236"
+    },
+    {
+      "addr": "00607288",
+      "name": "DAT_00607288",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060728c",
+      "name": "DAT_0060728c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d21b80",
+      "name": "DAT_02d21b80",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.666666666666667,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CALLIND": 4,
+      "CBRANCH": 8,
+      "COPY": 50,
+      "INT_ADD": 16,
+      "INT_AND": 35,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 34,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 17,
+      "INT_SUB": 23,
+      "INT_XOR": 4,
+      "LOAD": 9,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 266
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00580fe7) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01c6cef0",
+      "severity": "mild",
+      "text": "(&DAT_01c6cef0)[iVar1] = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_00607288",
+      "severity": "mild",
+      "text": "if ((DAT_00607288 != 0) || (_DAT_02d21b80 != 0)) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_0060728c",
+      "severity": "mild",
+      "text": "if (DAT_0060728c == 0) {",
+      "type": "undefined_data"
+    }
+  ]
+}

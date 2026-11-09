@@ -1,0 +1,611 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 215,
+    "complexity_score": 185,
+    "cross_reference_count": 20,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 105,
+    "suspect_count": 7,
+    "suspect_types": [
+      "stack_alignment_array",
+      "unnamed_field"
+    ],
+    "total_lines": 320
+  },
+  "cross_references": [
+    {
+      "addr": "00409f60",
+      "from_addr": "0040a3d7",
+      "name": "core_actor.cpp_FUN_00409f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410490",
+      "from_addr": "004113bf",
+      "name": "core_blundrbs.cpp_FUN_00410490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00425da0",
+      "from_addr": "0042684d",
+      "name": "core_carved.cpp_FUN_00425da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004300e0",
+      "from_addr": "00430227",
+      "name": "core_charactr.cpp_FUN_004300e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00430a30",
+      "from_addr": "00430c1d",
+      "name": "core_charactr.cpp_FUN_00430a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00430d60",
+      "from_addr": "00430ec1",
+      "name": "core_charactr.cpp_FUN_00430d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00455080",
+      "from_addr": "00455b5b",
+      "name": "core_demnfolk.cpp_FUN_00455080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00487eb0",
+      "from_addr": "0048822d",
+      "name": "core_emitter.cpp_FUN_00487eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004893f0",
+      "from_addr": "00489476",
+      "name": "core_enemy.cpp_FUN_004893f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ae850",
+      "from_addr": "004af346",
+      "name": "core_flintlck.cpp_FUN_004ae850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6eb0",
+      "from_addr": "004c7656",
+      "name": "core_ghoul.cpp_FUN_004c6eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d5260",
+      "from_addr": "004d52b5",
+      "name": "core_holycrss.cpp_FUN_004d5260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d6a90",
+      "from_addr": "004d6db0",
+      "name": "core_imp.cpp_FUN_004d6a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050df70",
+      "from_addr": "0050e5fc",
+      "name": "core_pendulum.cpp_FUN_0050df70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051b550",
+      "from_addr": "0051bea0",
+      "name": "core_prye.cpp_FUN_0051b550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00594000",
+      "from_addr": "0059416a",
+      "name": "core_tawiscar.cpp_FUN_00594000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575380",
+      "from_addr": "0057586c",
+      "name": "core_tvbat.cpp_FUN_00575380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576130",
+      "from_addr": "00576170",
+      "name": "core_tvbat.cpp_FUN_00576130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057d720",
+      "from_addr": "0057d88a",
+      "name": "core_werewolf.cpp_FUN_0057d720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588ee0",
+      "from_addr": "00589969",
+      "name": "core_zombie.cpp_FUN_00588ee0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ce9c0",
+    "address_range": [
+      [
+        "004ce9c0",
+        "004cebef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gore.cpp_FUN_004ce9c0",
+    "signature": "void __cdecl core_gore_cpp_FUN_004ce9c0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040ce40"
+    },
+    {
+      "addr": "0045b550",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045b550"
+    },
+    {
+      "addr": "004ce8a0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnBloodParticles_FUN_004ce8a0"
+    },
+    {
+      "addr": "005a5cc1",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_005a5cc1"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 26,
+    "call_sites": [
+      {
+        "call_addr": "00489476",
+        "call_type": "direct",
+        "caller": "core_enemy.cpp_FUN_004893f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0048822d",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_FUN_00487eb0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004c7656",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_FUN_004c6eb0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004c776d",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_FUN_004c6eb0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004c7820",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_FUN_004c6eb0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004c78d3",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_FUN_004c6eb0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0051bea0",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_FUN_0051b550",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0040a3d7",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_FUN_00409f60",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00430227",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_004300e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00430ec1",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00430d60",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.957219251336898,
+    "instruction_count": 187,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 8,
+      "CBRANCH": 9,
+      "COPY": 536,
+      "FLOAT2FLOAT": 36,
+      "FLOAT_ADD": 7,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 14,
+      "FLOAT_NAN": 2,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 3,
+      "INT2FLOAT": 2,
+      "INT_ADD": 105,
+      "INT_AND": 53,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 22,
+      "INT_SUB": 46,
+      "INT_XOR": 4,
+      "INT_ZEXT": 16,
+      "LOAD": 56,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 61
+    },
+    "pcode_op_count": 1114
+  },
+  "stack_frame": {
+    "frame_size": 160,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blood_type",
+        "offset": 20,
+        "size": 4,
+        "type": "EBloodType"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ce9c9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_1048",
+      "severity": "moderate",
+      "text": "float afStackY_1048 [1004];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_20 = SQRT(*(float *)&direction->field_0x8 * *(float *)&direction->field_0x8 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_20 = SQRT(*(float *)&direction->field_0x8 * *(float *)&direction->field_0x8 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&direction->field_0x4 * *(float *)&direction->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)&direction->field_0x4 * *(float *)&direction->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_44 = *(float *)&direction->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_40 = *(float *)&direction->field_0x8;",
+      "type": "unnamed_field"
+    }
+  ]
+}

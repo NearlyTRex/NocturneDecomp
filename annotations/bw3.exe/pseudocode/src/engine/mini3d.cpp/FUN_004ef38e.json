@@ -1,0 +1,253 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 218,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 18,
+    "suspect_types": [
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ef38e",
+    "address_range": [
+      [
+        "004ef38e",
+        "004ef41b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_mini3d.cpp_FUN_004ef38e",
+    "signature": "void engine_mini3d_cpp_FUN_004ef38e(float *param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004edcc0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_FUN_004edcc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c6cee8",
+      "name": "DAT_01c6cee8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d76cfc",
+      "name": "DAT_01d76cfc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf60a8",
+      "name": "DAT_02cf60a8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.551020408163265,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 187,
+      "FLOAT2FLOAT": 19,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 9,
+      "FLOAT_SQRT": 1,
+      "INT_ADD": 21,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 7,
+      "LOAD": 16,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 321
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void engine_mini3d_cpp_FUN_004ef38e(float *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void engine_mini3d_cpp_FUN_004ef38e(float *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_8 = param_2 / SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_8 = param_2 / SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_8 = param_2 / SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_8 = param_2 / SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_8 = param_2 / SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_8 = param_2 / SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_8 = param_2 / SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1])",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((_DAT_02cf60a8 != (code *)0x0) && (_DAT_01c6cee8 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_14 = *param_1 * fStack_8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_10 = param_1[1] * fStack_8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_c = fStack_8 * param_1[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*_DAT_02cf60a8)(&fStack_14,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(_DAT_01d76cfc + 0x30) = *param_1 * fStack_8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(iVar1 + 0x34) = param_1[1] * fStack_8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(iVar1 + 0x38) = fStack_8 * param_1[2];",
+      "type": "unnamed_param"
+    }
+  ]
+}

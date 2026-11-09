@@ -1,0 +1,209 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 156,
+    "complexity_score": 87,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 72,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 228
+  },
+  "cross_references": [
+    {
+      "addr": "004b9960",
+      "from_addr": "004b9ceb",
+      "name": "core_game.cpp_FUN_004b9960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c07b0",
+      "from_addr": "004c0aa5",
+      "name": "core_game.cpp_FUN_004c07b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dbc40",
+    "address_range": [
+      [
+        "004dbc40",
+        "004dbd71"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_FUN_004dbc40",
+    "signature": "void __cdecl core_inv_cpp_FUN_004dbc40(CInventory *this_ptr,int direction)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c790"
+    },
+    {
+      "addr": "004dd390",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004dd390"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c62af",
+      "name": "s_CWeapon_005c62af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c62b7",
+      "name": "s_CAmmo_005c62b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c62bd",
+      "name": "s_CWeapon_005c62bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c62c5",
+      "name": "s_CAmmo_005c62c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01d21570",
+      "name": "g_CGameInstance.field612_0x264",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004b9ceb",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b9960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9d20",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b9960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c0aa5",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004c07b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c0add",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004c07b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.675438596491228,
+    "instruction_count": 114,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 17,
+      "COPY": 100,
+      "INT_ADD": 56,
+      "INT_AND": 73,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 65,
+      "INT_LESS": 8,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 32,
+      "INT_SUB": 28,
+      "INT_XOR": 3,
+      "LOAD": 40,
+      "POPCOUNT": 32,
+      "RETURN": 4,
+      "STORE": 22
+    },
+    "pcode_op_count": 533
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x264",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CGamePtr->field_0x264 != 0) {",
+      "type": "unnamed_field"
+    }
+  ]
+}

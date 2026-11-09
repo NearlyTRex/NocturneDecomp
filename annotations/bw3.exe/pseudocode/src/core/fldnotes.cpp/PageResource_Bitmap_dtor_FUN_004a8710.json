@@ -1,0 +1,210 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 82,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 5,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "004a8830",
+      "from_addr": "004a8846",
+      "name": "core_fldnotes.cpp_PageResource_TwanaCharacter_dtor_FUN_004a8830",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a8710",
+    "address_range": [
+      [
+        "004a8710",
+        "004a877e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004a8710",
+    "signature": "SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_dtor_FUN_004a8710(SPageResourceBitmap *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a308f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005a308f"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30b6"
+    },
+    {
+      "addr": "005a30c4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30c4"
+    },
+    {
+      "addr": "0040d300",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300"
+    },
+    {
+      "addr": "0040d400",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040d400"
+    },
+    {
+      "addr": "004a83a0",
+      "is_variadic": false,
+      "name": "unkaddr_004a76f0.cpp_FUN_004a83a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e02a4",
+      "name": "g_PageResource_BitmapVTable",
+      "type": "void*",
+      "value": "004a8710"
+    },
+    {
+      "addr": "005e0360",
+      "name": "g_PageResource_BitmapTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a8846",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_PageResource_TwanaCharacter_dtor_FUN_004a8830",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.170731707317073,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 18,
+      "INT_AND": 20,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 16,
+      "LOAD": 9,
+      "POPCOUNT": 9,
+      "RETURN": 3,
+      "STORE": 17
+    },
+    "pcode_op_count": 171
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x14 = &g_PageResource_BitmapVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "engine_alphabit_cpp_FUN_0040d400((CAlphaBitmap *)&this_ptr->field_0x18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "((CAlphaBitmap *)&this_ptr->field_0x18,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar1[-2].",
+      "severity": "mild",
+      "text": "pSVar2 = (SPageResourceBitmap *)unkaddr_004a76f0_cpp_FUN_004a83a0(&pCVar1[-2].field_0x10,1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "pSVar2 = (SPageResourceBitmap *)unkaddr_004a76f0_cpp_FUN_004a83a0(&pCVar1[-2].field_0x10,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005e0364"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005e02a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

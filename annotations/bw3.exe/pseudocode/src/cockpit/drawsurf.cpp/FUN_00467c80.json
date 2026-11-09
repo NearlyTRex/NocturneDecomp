@@ -1,135 +1,16 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01bdd7c0'; did you mean 'DAT_005da7c0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 21,
-        "message": "use of undeclared identifier 'DAT_01c62070'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01bdd7c8'; did you mean 'DAT_005da7c8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01bdd7bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 25,
-        "message": "use of undeclared identifier 'DAT_01c62070'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01bdd7bc'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 377,
-    "cross_reference_count": 0,
+    "complexity_score": 392,
+    "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 37,
-    "suspect_count": 32,
+    "suspect_count": 33,
     "suspect_types": [
+      "param_count_too_few",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals",
@@ -137,7 +18,14 @@
     ],
     "total_lines": 166
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "0046a750",
+      "from_addr": "0046a7fa",
+      "name": "cockpit_drawsurf.cpp_FUN_0046a750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "00467c80",
     "address_range": [
@@ -147,14 +35,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00467c80",
-    "signature": "void FUN_00467c80(uint param_1,uint param_2,uint param_3)"
+    "name": "cockpit_drawsurf.cpp_FUN_00467c80",
+    "signature": "void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     }
   ],
   "globals": [
@@ -232,13 +120,69 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0046a7fa",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_0046a750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0046aa59",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_0046a750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0046aab9",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_0046a750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0046ab65",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_0046a750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0046ae5b",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_0046a750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
-    "matches_declared": true
+    "estimated_params": 3,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.9743589743589745,
@@ -304,7 +248,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00467c80(uint param_1,uint param_2,uint param_3)",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -312,7 +256,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_00467c80(uint param_1,uint param_2,uint param_3)",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -320,7 +264,7 @@
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_00467c80(uint param_1,uint param_2,uint param_3)",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)",
       "type": "unnamed_param"
     },
     {
@@ -538,6 +482,17 @@
       "severity": "mild",
       "text": "param_1 << (DAT_01c6af74 & 0x1f) | param_2 << (DAT_01c6af80 & 0x1f);",
       "type": "undefined_data"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

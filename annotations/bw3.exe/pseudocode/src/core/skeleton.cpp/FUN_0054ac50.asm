@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float FUN_0054ac50(int param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5,byte *param_6)
+; float core_skeleton_cpp_FUN_0054ac50(int param_1,int param_2,undefined4 param_3,undefined4 param_4,int *param_5,byte *param_6)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x90]:8  local_90
@@ -26,12 +26,12 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_0054f400 at 0054f448
+;   core_skeleton.cpp_FUN_0054f400 at 0054f448
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1e90
 ;   TerminatedCString s_CDeformableModel_exactRa_005d1ea5
-;   undefined4 DAT_005db0f0
+;   WatcomTypeInfo g_CVectorTypeInfo
 ;   undefined4 DAT_005e4760
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
@@ -47,17 +47,17 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   FUN_00478a50
-;   FUN_00478ac0
-;   FUN_004e4330
-;   FUN_005a30d7
+;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50
+;   core_dtri.cpp_rayTriangleIntersection_FUN_00478ac0
+;   core_main.c_FUN_004e4330
+;   crt_memory.c___arrinit_FUN_005a30d7
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0054ac50
-        ;   Label: FUN_0054ac50
+        ;   Label: core_skeleton.cpp_FUN_0054ac50
     PUSH ESI                            ; 0054ac51
     PUSH EDI                            ; 0054ac52
     PUSH EBP                            ; 0054ac53
@@ -81,8 +81,8 @@ section .text
     PUSH 0x5d1ea5                       ; 0054ac89 | = "CDeformableModel::exactRayTrace - too..."
     MOV dword ptr [0x01d71de0],EBX      ; 0054ac8e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0054ac94 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0054ac9a
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0054ac9a
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0054ac9f
     MOV EDI,dword ptr [EBP + 0x18]      ; 0054aca2
         ;   Label: LAB_0054aca2
@@ -175,8 +175,8 @@ section .text
     PUSH EAX                            ; 0054adad
     LEA EAX,[ESP + 0x18]                ; 0054adae
     PUSH EAX                            ; 0054adb2
-    CALL FUN_00478a50                   ; 0054adb3
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0054adb3
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0054adb8
     MOV ESI,dword ptr [EBP + 0x20]      ; 0054adbb
     PUSH ESI                            ; 0054adbe
@@ -184,8 +184,8 @@ section .text
     PUSH EDI                            ; 0054adc2
     LEA EAX,[ESP + 0x14]                ; 0054adc3
     PUSH EAX                            ; 0054adc7
-    CALL FUN_00478ac0                   ; 0054adc8
-        ;   XREF to: 00478ac0 (UNCONDITIONAL_CALL)  ; undefined FUN_00478ac0()
+    CALL core_dtri.cpp_rayTriangleIntersection_FUN_00478ac0 ; 0054adc8
+        ;   XREF to: 00478ac0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_00478ac0()
     MOV dword ptr [ESP + 0x84],EAX      ; 0054adcd
     FLD float ptr [ESP + 0x84]          ; 0054add4
     ADD ESP,0xc                         ; 0054addb
@@ -280,15 +280,15 @@ section .text
     POP ESI                             ; 0054aedc
     POP EBX                             ; 0054aedd
     RET                                 ; 0054aede
-    PUSH 0x5db0f0                       ; 0054aedf | DAT_005db0f0
+    PUSH 0x5db0f0                       ; 0054aedf | g_CVectorTypeInfo
         ;   Label: LAB_0054aedf
     MOV DL,AH                           ; 0054aee4
     PUSH 0x1388                         ; 0054aee6
     OR DL,0x1                           ; 0054aeeb
     PUSH 0x271383c                      ; 0054aeee | DAT_0271383c
     MOV byte ptr [0x0272229c],DL        ; 0054aef3 | DAT_0272229c
-    CALL FUN_005a30d7                   ; 0054aef9
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined FUN_005a30d7()
+    CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0054aef9
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
     ADD ESP,0xc                         ; 0054aefe
     JMP 0x0054ac6b                      ; 0054af01
         ;   XREF to: 0054ac6b (UNCONDITIONAL_JUMP)  ; LAB_0054ac6b

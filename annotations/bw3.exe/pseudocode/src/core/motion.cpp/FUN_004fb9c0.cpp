@@ -1,37 +1,37 @@
-// Name: FUN_004fb9c0
+// Name: core_motion.cpp_FUN_004fb9c0
 // Address: 004fb9c0
 // Address Range: [[004fb9c0, 004fba42]]
-// Convention: unknown
-// Signature: int FUN_004fb9c0(int param_1,undefined4 param_2,int param_3)
+// Convention: __cdecl
+// Signature: int __cdecl core_motion_cpp_FUN_004fb9c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004fb9c0(int param_1,uint param_2,int param_3)
+int __cdecl core_motion_cpp_FUN_004fb9c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  CMotionList *str1;
   
   iVar2 = 0;
-  if (0 < *(int *)(param_1 + 0x1c24)) {
-    iVar3 = param_1 + 0x1c28;
+  if (0 < *(int *)(this_ptr + 0x1c24)) {
+    str1 = this_ptr + 0x1c28;
     do {
-      iVar1 = FUN_005a3260(iVar3,param_2);
+      iVar1 = _stricmp((char *)str1,motion_name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      iVar3 = iVar3 + 0x120;
-    } while (iVar2 < *(int *)(param_1 + 0x1c24));
+      str1 = str1 + 0x120;
+    } while (iVar2 < *(int *)(this_ptr + 0x1c24));
   }
-  if (param_3 == 0) {
+  if (error_on_not_found == 0) {
     return -1;
   }
   _DAT_01d71de0 = "..\\core\\motion.cpp";
   _DAT_01d71de4 = 0x13f;
-  FUN_004e4330("Can't find motion \"%s\" in motion list",param_2);
+  core_main_c_FUN_004e4330("Can't find motion \"%s\" in motion list",motion_name);
   return -1;
 }

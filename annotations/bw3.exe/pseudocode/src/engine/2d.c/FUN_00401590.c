@@ -1,28 +1,28 @@
-// Name: FUN_00401590
+// Name: engine_2d.c_FUN_00401590
 // Address: 00401590
 // Address Range: [[00401590, 00401616]]
 // Convention: unknown
-// Signature: void FUN_00401590(undefined4 param_1)
+// Signature: void engine_2d_c_FUN_00401590(undefined4 param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00401590(uint param_1)
+void engine_2d_c_FUN_00401590(uint param_1)
 
 {
   int iVar1;
-  byte local_2c [44];
+  CInStreamFile local_2c;
   
-  FUN_005738c0(local_2c);
-  iVar1 = FUN_00573fc0(local_2c,&DAT_005b505c,param_1,1);
+  unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_2c);
+  iVar1 = support_trstream_cpp_FUN_00573fc0(&local_2c,&DAT_005b505c,param_1,1);
   if (iVar1 == 0) {
     _DAT_01d71de0 = "..\\engine\\2d.c";
     _DAT_01d71de4 = 0x29b;
-    FUN_004e4330("Unable to open VGA palette (probably need to mount startup.pod or delete pod.ini).");
+    core_main_c_FUN_004e4330("Unable to open VGA palette (probably need to mount startup.pod or delete pod.ini).");
   }
-  FUN_00573c00(local_2c,&DAT_01c6af98,0x300);
-  FUN_00573db0(local_2c);
-  FUN_00573a40(local_2c,0);
+  unkafter_turret_cpp_FUN_00573c00(&local_2c,&DAT_01c6af98,0x300);
+  unkafter_turret_cpp_FUN_00573db0(&local_2c);
+  unkafter_turret_cpp_CInStreamFile_dtor_FUN_00573a40(&local_2c,0);
   return;
 }

@@ -1,0 +1,25 @@
+// Name: core_set.cpp_FUN_0053ac80
+// Address: 0053ac80
+// Address Range: [[0053ac80, 0053acef]]
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_FUN_0053ac80(CDemonSet *this_ptr,SInputFace *faces,int count,int flags)
+
+#include "nocturne.h"
+
+void __cdecl core_set_cpp_FUN_0053ac80(CDemonSet *this_ptr,SInputFace *faces,int count,int flags)
+
+{
+  int iVar1;
+  
+  if (*(int *)&g_CGamePtr->field_0x214 == 0) {
+    if (*(int *)&g_CGamePtr->field_0x218 != 0) {
+      iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);
+      if (iVar1 == 0) {
+        core_set_cpp_FUN_0053a6c0(this_ptr,faces,count,0xffff);
+        return;
+      }
+    }
+    engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(DAT_005f2afc,faces,count,flags);
+  }
+  return;
+}

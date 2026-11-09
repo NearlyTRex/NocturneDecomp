@@ -1,0 +1,267 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 161,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 12,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [
+    {
+      "addr": "00559220",
+      "from_addr": "005592b4",
+      "name": "sound_sndmain.cpp_FUN_00559220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558960",
+      "from_addr": "00558983",
+      "name": "sound_sndmain.cpp_findBestRecordingDevice_FUN_00558960",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00558900",
+    "address_range": [
+      [
+        "00558900",
+        "00558955"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900",
+    "signature": "void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00558900(int param_1,undefined4 *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005588a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getRecordingDeviceCount_FUN_005588a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d3bbf",
+      "name": "s_sound_sndmain_cpp_005d3bbf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3bd4",
+      "name": "s_getRecordingDeviceInfo_i_005d3bd4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005592b4",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00559220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00558983",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_findBestRecordingDevice_FUN_00558960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005589a4",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_findBestRecordingDevice_FUN_00558960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.142857142857143,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 26,
+      "INT_ADD": 11,
+      "INT_AND": 22,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 144
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00558900(int param_1,uint *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00558900(int param_1,uint *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 < 0) || (iVar1 <= param_1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 < 0) || (iVar1 <= param_1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)(param_1 * 0x108 + 0x2cf3428);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = *puVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + (uint)bVar3 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = param_2 + (uint)bVar3 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 19,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0055892b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 21,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0055892b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

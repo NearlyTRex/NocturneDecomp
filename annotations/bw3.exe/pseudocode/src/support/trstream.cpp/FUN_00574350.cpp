@@ -1,0 +1,31 @@
+// Name: support_trstream.cpp_FUN_00574350
+// Address: 00574350
+// Address Range: [[00574350, 0057437f] [00574383, 0057439f]]
+// Convention: unknown
+// Signature: longlong support_trstream_cpp_FUN_00574350(uint param_1,int param_2,uint param_3)
+
+#include "nocturne.h"
+
+longlong support_trstream_cpp_FUN_00574350(uint param_1,int param_2,uint param_3)
+
+{
+  if (*(int *)(param_1 + 4) == 0) {
+    return CONCAT44(param_1,0xfffffffe);
+  }
+  if (param_3 != 0) {
+    if (param_3 < 2) {
+      param_2 = param_2 + *(int *)(param_1 + 0xc);
+    }
+    else {
+      if (param_3 != 2) {
+        return (ulonglong)param_1 << 0x20;
+      }
+      param_2 = param_2 + *(int *)(param_1 + 8);
+    }
+  }
+  if ((-1 < param_2) && (param_2 <= *(int *)(param_1 + 8))) {
+    *(int *)(param_1 + 0xc) = param_2;
+    return CONCAT44(param_1,1);
+  }
+  return (ulonglong)param_1 << 0x20;
+}

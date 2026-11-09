@@ -1,0 +1,119 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "00553520",
+      "from_addr": "005535cb",
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00502790",
+    "address_range": [
+      [
+        "00502790",
+        "005027a1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_dtor_FUN_00502790",
+    "signature": "CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_00502790(CMP3Decoder *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00502a10",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_00502a10"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005535cb",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.625,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 6,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 29
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMP3Decoder",
+        "offset": 8,
+        "vtable_addr": "005e48c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

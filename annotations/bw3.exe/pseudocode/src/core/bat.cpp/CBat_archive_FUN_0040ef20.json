@@ -1,0 +1,276 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 83,
+    "complexity_score": 156,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 109
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040ef20",
+    "address_range": [
+      [
+        "0040ef20",
+        "0040f00d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bat.cpp_CBat_archive_FUN_0040ef20",
+    "signature": "void __cdecl core_bat_cpp_CBat_archive_FUN_0040ef20(CBat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b9b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b6237",
+      "name": "s_courseFilename_005b6237",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b6246",
+      "name": "s_param_005b6246",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b624c",
+      "name": "s_speed_005b624c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b6252",
+      "name": "s_flapSpeedMult_005b6252",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b6260",
+      "name": "s_courseSpeed_005b6260",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b626c",
+      "name": "s_modelName_005b626c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b6276",
+      "name": "s_periodicSoundTimerMin_005b6276",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b628c",
+      "name": "s_periodicSoundTimerMax_005b628c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b62a6",
+      "name": "DAT_005b62a6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0bdc",
+      "name": "g_CBatClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.453125,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 3,
+      "COPY": 55,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 25,
+      "INT_AND": 28,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 29,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 14,
+      "INT_SUB": 33,
+      "LOAD": 6,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 285
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBat *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x158,\"courseFilename\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x304",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x304,\"param\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x30c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x30c,\"speed\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x308",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x308 = *(float *)&this_ptr->field_0x30c * (float)_DAT_005b62a6;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x30c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x308 = *(float *)&this_ptr->field_0x30c * (float)_DAT_005b62a6;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x30c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x30c,\"flapSpeedMult\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x308",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x308,\"courseSpeed\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x188",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x188,\"modelName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x314",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x314,(char *)0x0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x378",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x378,\"periodicSoundTimerMin\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x37c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x37c,\"periodicSoundTimerMax\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBat",
+        "offset": 212,
+        "vtable_addr": "005db794"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

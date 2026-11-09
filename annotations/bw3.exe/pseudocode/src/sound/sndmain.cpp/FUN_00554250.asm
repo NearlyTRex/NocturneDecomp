@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float FUN_00554250(undefined4 *param_1)
+; void __cdecl sound_sndmain_cpp_FUN_00554250(CSfxSlot *this_ptr)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
@@ -13,7 +15,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_00554430 at 005545ec
+;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430 at 005545ec
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d304e
@@ -25,15 +27,15 @@
 ;   undefined4 DAT_02cf341c
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_00556d20
+;   core_main.c_FUN_004e4330
+;   sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00554250
-        ;   Label: FUN_00554250
+        ;   Label: sound_sndmain.cpp_FUN_00554250
     PUSH ESI                            ; 00554251
     PUSH EBP                            ; 00554252
     SUB ESP,0x1c                        ; 00554253
@@ -45,8 +47,8 @@ section .text
     MOV EBP,dword ptr [EBX]             ; 00554269
         ;   Label: LAB_00554269
     PUSH EBP                            ; 0055426b
-    CALL FUN_00556d20                   ; 0055426c
-        ;   XREF to: 00556d20 (UNCONDITIONAL_CALL)  ; undefined FUN_00556d20()
+    CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20 ; 0055426c
+        ;   XREF to: 00556d20 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00554271
     FLD float ptr [ESP + 0x1c]          ; 00554275
     FMUL float ptr [EBX + 0x38]         ; 00554279
@@ -85,8 +87,8 @@ section .text
     PUSH 0x5d3063                       ; 005542c8 | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d71de0],ECX      ; 005542cd | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 005542d3 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 005542d9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 005542d9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 005542de
     POP EDI                             ; 005542e1
     JMP 0x00554269                      ; 005542e2

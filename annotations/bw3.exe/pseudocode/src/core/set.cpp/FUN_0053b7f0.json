@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 22,
-        "message": "no matching function for call to 'FUN_005a3230'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 23,
-        "message": "use of undeclared identifier 'DAT_005d0923'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 27,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_005a3230'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
@@ -141,7 +21,7 @@
     {
       "addr": "004bdfb0",
       "from_addr": "004be7d7",
-      "name": "FUN_004bdfb0",
+      "name": "core_game.cpp_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,24 +34,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_0053b7f0",
-    "signature": "void FUN_0053b7f0(int *param_1,undefined4 param_2)"
+    "name": "core_set.cpp_FUN_0053b7f0",
+    "signature": "void core_set_cpp_FUN_0053b7f0(int *param_1,undefined4 param_2)"
   },
   "function_calls": [
     {
-      "addr": "0047cee0",
-      "is_variadic": false,
-      "name": "FUN_0047cee0"
-    },
-    {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005a3230",
       "is_variadic": false,
-      "name": "FUN_005a3230"
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    },
+    {
+      "addr": "0047cee0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047cee0"
     }
   ],
   "globals": [
@@ -249,9 +129,9 @@
     },
     {
       "addr": "005fb140",
-      "name": "DAT_005fb140",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
     },
     {
       "addr": "01d71de0",
@@ -272,7 +152,7 @@
       {
         "call_addr": "004be7d7",
         "call_type": "direct",
-        "caller": "FUN_004bdfb0",
+        "caller": "core_game.cpp_FUN_004bdfb0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -360,30 +240,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_0053b7f0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 13,
-          "line": 51,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 13,
-          "line": 68,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -398,7 +254,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0053b7f0(int *param_1,uint param_2)",
+      "text": "void core_set_cpp_FUN_0053b7f0(int *param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
@@ -406,7 +262,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_0053b7f0(int *param_1,uint param_2)",
+      "text": "void core_set_cpp_FUN_0053b7f0(int *param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
@@ -414,7 +270,7 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -422,7 +278,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0923,&local_24);",
+      "text": "_fscanf(param_2,&DAT_005d0923,&local_24);",
       "type": "unnamed_param"
     },
     {
@@ -430,7 +286,7 @@
       "line": 16,
       "match": "DAT_005d0923",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0923,&local_24);",
+      "text": "_fscanf(param_2,&DAT_005d0923,&local_24);",
       "type": "undefined_data"
     },
     {
@@ -438,7 +294,7 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -446,7 +302,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0968,&local_20);",
+      "text": "_fscanf(param_2,&DAT_005d0968,&local_20);",
       "type": "unnamed_param"
     },
     {
@@ -454,7 +310,7 @@
       "line": 23,
       "match": "DAT_005d0968",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0968,&local_20);",
+      "text": "_fscanf(param_2,&DAT_005d0968,&local_20);",
       "type": "undefined_data"
     },
     {
@@ -478,7 +334,7 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d09d2,&local_1c);",
+      "text": "_fscanf(param_2,&DAT_005d09d2,&local_1c);",
       "type": "unnamed_param"
     },
     {
@@ -486,7 +342,7 @@
       "line": 31,
       "match": "DAT_005d09d2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d09d2,&local_1c);",
+      "text": "_fscanf(param_2,&DAT_005d09d2,&local_1c);",
       "type": "undefined_data"
     },
     {
@@ -502,7 +358,7 @@
       "line": 41,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -518,7 +374,7 @@
       "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d09de,&local_18);",
+      "text": "_fscanf(param_2,&DAT_005d09de,&local_18);",
       "type": "unnamed_param"
     },
     {
@@ -526,7 +382,7 @@
       "line": 46,
       "match": "DAT_005d09de",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d09de,&local_18);",
+      "text": "_fscanf(param_2,&DAT_005d09de,&local_18);",
       "type": "undefined_data"
     },
     {
@@ -542,7 +398,7 @@
       "line": 58,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -558,7 +414,7 @@
       "line": 63,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d09ea,&local_14);",
+      "text": "_fscanf(param_2,&DAT_005d09ea,&local_14);",
       "type": "unnamed_param"
     },
     {
@@ -566,7 +422,7 @@
       "line": 63,
       "match": "DAT_005d09ea",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d09ea,&local_14);",
+      "text": "_fscanf(param_2,&DAT_005d09ea,&local_14);",
       "type": "undefined_data"
     },
     {
@@ -587,22 +443,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 51,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (0 < local_20) {",
-      "type": "static_identical_inner_condition"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 68,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (0 < local_20) {",
-      "type": "static_identical_inner_condition"
     }
   ]
 }

@@ -1,0 +1,178 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 109,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 7,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "00441610",
+      "from_addr": "00441639",
+      "name": "support_codec.cpp_FUN_00441610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00441490",
+    "address_range": [
+      [
+        "00441490",
+        "004414ec"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "support_codec.cpp_FUN_00441490",
+    "signature": "int support_codec_cpp_FUN_00441490(uint param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005f1320",
+      "name": "s_s_0123456789ABCDEFGHJKLM_005f1320",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f132f",
+      "name": "s_s_0123456789ABCDEFGHJKLM_005f1320+0xf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f133f",
+      "name": "s_s_0123456789ABCDEFGHJKLM_005f1320+0x1f",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00441639",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00441610",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.410256410256411,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 6,
+      "COPY": 33,
+      "INT_ADD": 16,
+      "INT_AND": 21,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 21,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 10,
+      "INT_SRIGHT": 1,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 3,
+      "STORE": 6
+    },
+    "pcode_op_count": 172
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int support_codec_cpp_FUN_00441490(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == (byte)\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((int)param_1 < (int)(uint)(byte)\"!()*+0123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz\"[iVar1]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != 0x4f) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 != 0x49) && (param_1 != 0x6c)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 != 0x49) && (param_1 != 0x6c)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

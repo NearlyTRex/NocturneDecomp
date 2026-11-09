@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004320d0(int param_1)
+; void core_charactr_cpp_FUN_004320d0(int param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   FUN_00433350 at 00433356
+;   core_charactr.cpp_FUN_00433350 at 00433356
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b85d7
@@ -21,18 +21,18 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_004fc310
-;   FUN_00548090
-;   FUN_0054cc90
-;   FUN_0054eac0
+;   core_main.c_FUN_004e4330
+;   core_motion.cpp_FUN_004fc310
+;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
+;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
+;   core_skeleton.cpp_FUN_00548090
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004320d0
-        ;   Label: FUN_004320d0
+        ;   Label: core_charactr.cpp_FUN_004320d0
     PUSH EBP                            ; 004320d1
     SUB ESP,0x10                        ; 004320d2
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004320d5
@@ -49,12 +49,12 @@ section .text
     PUSH 0x5b8630                       ; 004320f7 | = "Bip01 spine1"
     LEA ESI,[EBX + 0x158]               ; 004320fc
     PUSH ESI                            ; 00432102
-    CALL FUN_0054eac0                   ; 00432103
-        ;   XREF to: 0054eac0 (UNCONDITIONAL_CALL)  ; undefined FUN_0054eac0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0 ; 00432103
+        ;   XREF to: 0054eac0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00432108
     PUSH EAX                            ; 0043210b
-    CALL FUN_00548090                   ; 0043210c
-        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; undefined FUN_00548090()
+    CALL core_skeleton.cpp_FUN_00548090 ; 0043210c
+        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00432111
     MOV EDX,dword ptr [EBX + 0x2754]    ; 00432114
     MOV EBP,0x3f59999a                  ; 0043211a
@@ -62,8 +62,8 @@ section .text
     PUSH ESI                            ; 00432126
     MOV dword ptr [EBX + 0x2750],EAX    ; 00432127
     ADD EDI,EDX                         ; 0043212d
-    CALL FUN_004fc310                   ; 0043212f
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; undefined FUN_004fc310()
+    CALL core_motion.cpp_FUN_004fc310   ; 0043212f
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
     SHL EDI,0x5                         ; 00432134
     ADD ESP,0x4                         ; 00432137
     ADD EAX,0x1c28                      ; 0043213a
@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 004321ac (CONDITIONAL_JUMP)  ; LAB_004321ac
     MOV EAX,dword ptr [ESP + 0xc]       ; 004321a4
     MOV dword ptr [ESP + 0x14],EAX      ; 004321a8
-    PUSH 0x54bef0                       ; 004321ac | LAB_0054bef0
+    PUSH 0x54bef0                       ; 004321ac
         ;   Label: LAB_004321ac
     MOV ESI,dword ptr [EBX + 0x2750]    ; 004321b1
     PUSH ESI                            ; 004321b7
@@ -113,8 +113,8 @@ section .text
     PUSH EDI                            ; 004321c8
     ADD EBX,0x158                       ; 004321c9
     PUSH EBX                            ; 004321cf
-    CALL FUN_0054cc90                   ; 004321d0
-        ;   XREF to: 0054cc90 (UNCONDITIONAL_CALL)  ; undefined FUN_0054cc90()
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90 ; 004321d0
+        ;   XREF to: 0054cc90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 004321d5
     POP ESI                             ; 004321d8
     POP EDI                             ; 004321d9
@@ -130,8 +130,8 @@ section .text
     PUSH 0x5b85ec                       ; 004321eb | = "CCharacter::applyGesture - never set ..."
     MOV dword ptr [0x01d71de0],ESI      ; 004321f0 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004321f6 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004321fc
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004321fc
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 00432201
     JMP 0x004320f5                      ; 00432204
         ;   XREF to: 004320f5 (UNCONDITIONAL_JUMP)  ; LAB_004320f5

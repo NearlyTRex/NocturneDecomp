@@ -1,149 +1,30 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 32,
-        "message": "no matching function for call to 'FUN_005a3260'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 47,
-        "message": "no matching function for call to 'FUN_004657f0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 51,
-        "message": "no matching function for call to 'FUN_00465e50'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 61,
-        "message": "no matching function for call to 'FUN_005a54c0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 63,
-        "message": "use of undeclared identifier 'DAT_005d3a0f'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 65,
-        "message": "use of undeclared identifier 'DAT_005d3a19'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 417,
+    "complexity_score": 370,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 29,
+    "pseudocode_lines": 105,
+    "suspect_count": 23,
     "suspect_types": [
-      "param_count_too_few",
+      "pointer_cast",
       "undefined_data",
-      "unnamed_param",
+      "unknown_field",
+      "unnamed_field",
       "unrolled_memcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 342
+    "total_lines": 350
   },
   "cross_references": [
     {
       "addr": "00560b10",
       "from_addr": "00560b45",
-      "name": "FUN_00560b10",
+      "name": "core_sound.cpp_CSound_getSoundDuration_FUN_00560b10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -155,100 +36,100 @@
         "005577ff"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_00557570",
-    "signature": "undefined4 FUN_00557570(undefined4 *param_1)"
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00557570",
+    "signature": "int __cdecl sound_sndmain_cpp_FUN_00557570(CSfxSample *out_sample)"
   },
   "function_calls": [
     {
-      "addr": "004657f0",
-      "is_variadic": false,
-      "name": "FUN_004657f0"
-    },
-    {
-      "addr": "00465e50",
-      "is_variadic": false,
-      "name": "FUN_00465e50"
-    },
-    {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
-    },
-    {
-      "addr": "00502750",
-      "is_variadic": false,
-      "name": "FUN_00502750"
-    },
-    {
-      "addr": "005027b0",
-      "is_variadic": false,
-      "name": "FUN_005027b0"
-    },
-    {
-      "addr": "00502a10",
-      "is_variadic": false,
-      "name": "FUN_00502a10"
-    },
-    {
-      "addr": "00551000",
-      "is_variadic": false,
-      "name": "FUN_00551000"
-    },
-    {
-      "addr": "00551620",
-      "is_variadic": false,
-      "name": "FUN_00551620"
-    },
-    {
-      "addr": "00556fd0",
-      "is_variadic": false,
-      "name": "FUN_00556fd0"
-    },
-    {
-      "addr": "00558e90",
-      "is_variadic": false,
-      "name": "FUN_00558e90"
-    },
-    {
-      "addr": "005738c0",
-      "is_variadic": false,
-      "name": "FUN_005738c0"
-    },
-    {
-      "addr": "00573a40",
-      "is_variadic": false,
-      "name": "FUN_00573a40"
-    },
-    {
-      "addr": "00573d40",
-      "is_variadic": false,
-      "name": "FUN_00573d40"
-    },
-    {
-      "addr": "00573db0",
-      "is_variadic": false,
-      "name": "FUN_00573db0"
-    },
-    {
-      "addr": "00573fc0",
-      "is_variadic": false,
-      "name": "FUN_00573fc0"
-    },
-    {
-      "addr": "005a3260",
-      "is_variadic": false,
-      "name": "FUN_005a3260"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005a3e13",
       "is_variadic": false,
-      "name": "FUN_005a3e13"
+      "name": "crt_stdlib.c__atexit_FUN_005a3e13"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
     },
     {
       "addr": "005a54c0",
       "is_variadic": false,
-      "name": "FUN_005a54c0"
+      "name": "crt_string.c_memmove_FUN_005a54c0"
+    },
+    {
+      "addr": "00465e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00465e50"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    },
+    {
+      "addr": "00502750",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_ctor_FUN_00502750"
+    },
+    {
+      "addr": "00502a10",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_00502a10"
+    },
+    {
+      "addr": "005027b0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_005027b0"
+    },
+    {
+      "addr": "00551000",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551000"
+    },
+    {
+      "addr": "00551620",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551620"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556fd0"
+    },
+    {
+      "addr": "00558e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00558e90"
+    },
+    {
+      "addr": "00573fc0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_FUN_00573fc0"
+    },
+    {
+      "addr": "005738c0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0"
+    },
+    {
+      "addr": "00573a40",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40"
+    },
+    {
+      "addr": "00573d40",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573d40"
+    },
+    {
+      "addr": "00573db0",
+      "is_variadic": false,
+      "name": "unkafter_turret.cpp_FUN_00573db0"
     }
   ],
   "globals": [
@@ -302,8 +183,8 @@
     },
     {
       "addr": "00604214",
-      "name": "DAT_00604214",
-      "type": "undefined4",
+      "name": "g_CMP3DecoderDestructorNode2",
+      "type": "WatcomStaticDestructorNode",
       "value": null
     },
     {
@@ -320,13 +201,13 @@
     },
     {
       "addr": "02cdecb8",
-      "name": "DAT_02cdecb8",
+      "name": "g_CMP3DecoderInstanceOther.field256_0x100",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cdecbc",
-      "name": "DAT_02cdecbc",
+      "name": "g_CMP3DecoderInstanceOther.field260_0x104",
       "type": "undefined4",
       "value": null
     },
@@ -343,22 +224,20 @@
       {
         "call_addr": "00560b45",
         "call_type": "direct",
-        "caller": "FUN_00560b10",
-        "estimated_params": 2,
+        "caller": "core_sound.cpp_CSound_getSoundDuration_FUN_00560b10",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.242268041237113,
@@ -394,10 +273,10 @@
     "pcode_op_count": 823
   },
   "stack_frame": {
-    "frame_size": 324,
+    "frame_size": 328,
     "local_size": 324,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -427,6 +306,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "out_sample",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
       }
     ]
   },
@@ -457,80 +343,88 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint FUN_00557570(uint *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 25,
-      "match": "param_1",
+      "match": "field_0x110",
       "severity": "mild",
-      "text": "iVar3 = FUN_005a3260((uint *)(iVar5 + 0x2cebc24),param_1);",
-      "type": "unnamed_param"
+      "text": "if (0 < *(int *)(&g_SfxSamples[0].field_0x110 + iVar7)) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "(&g_SfxSamples[0].field_0x0 + iVar7,(char *)out_sample);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
       "line": 29,
-      "match": "param_1",
+      "match": "field_0x0",
       "severity": "mild",
-      "text": "*param_1 = *puVar6;",
-      "type": "unnamed_param"
+      "text": "pcVar8 = &g_SfxSamples[0].field_0x0 + iVar7;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x0",
       "severity": "mild",
-      "text": "param_1 = param_1 + (uint)bVar8 * -2 + 1;",
-      "type": "unnamed_param"
+      "text": "out_sample->field_0x0 = pcVar8[0];",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x1",
       "severity": "mild",
-      "text": "param_1 = param_1 + (uint)bVar8 * -2 + 1;",
-      "type": "unnamed_param"
+      "text": "out_sample->field_0x1 = cVar1;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x2",
       "severity": "mild",
-      "text": "iVar5 = FUN_004657f0(\"sound\",param_1);",
-      "type": "unnamed_param"
+      "text": "out_sample->field_0x2 = cVar2;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x3",
       "severity": "mild",
-      "text": "FUN_00465e50(param_1,0,0,0,&local_140);",
-      "type": "unnamed_param"
+      "text": "out_sample->field_0x3 = cVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(CSfxSample *)((int)out_sample",
+      "severity": "moderate",
+      "text": "out_sample = (CSfxSample *)((int)out_sample + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 64,
       "match": "DAT_005d3a0f",
       "severity": "mild",
-      "text": "iVar5 = FUN_005a3260(&local_140,&DAT_005d3a0f);",
+      "text": "iVar7 = _stricmp(&local_140,&DAT_005d3a0f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 66,
       "match": "DAT_005d3a19",
       "severity": "mild",
-      "text": "iVar5 = FUN_005a3260(&local_140,&DAT_005d3a19);",
+      "text": "iVar7 = _stricmp(&local_140,&DAT_005d3a19);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 68,
       "match": "DAT_02ce71e8",
       "severity": "mild",
       "text": "if ((DAT_02ce71e8 & 1) == 0) {",
@@ -538,127 +432,79 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_02ce71e8",
-      "severity": "mild",
-      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_02ce71e8",
-      "severity": "mild",
-      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_00604214",
-      "severity": "mild",
-      "text": "FUN_005a3e13(&DAT_00604214);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005027b0(0x2cdebb8,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x41] = 0x10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[0x42] = _DAT_02cdecbc;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 69,
-      "match": "param_1",
+      "match": "DAT_02ce71e8",
       "severity": "mild",
-      "text": "param_1[0x44] = 0xffffffff;",
-      "type": "unnamed_param"
+      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
+      "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02ce71e8",
       "severity": "mild",
-      "text": "param_1[0x43] = uVar2;",
-      "type": "unnamed_param"
+      "text": "DAT_02ce71e8 = DAT_02ce71e8 | 1;",
+      "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x104 = 0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._260_4_",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x108 = g_CMP3DecoderInstanceOther._260_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(uint *)&out_sample->field_0x108 = g_CMP3DecoderInstanceOther._260_4_;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 76,
-      "match": "param_1",
+      "match": "._256_4_",
       "severity": "mild",
-      "text": "FUN_004e4330(\"Unknown sample file format extension: %s\",param_1);",
-      "type": "unnamed_param"
+      "text": "uVar4 = g_CMP3DecoderInstanceOther._256_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 77,
+      "match": "field_0x110",
       "severity": "mild",
-      "text": "FUN_00551620(param_1);",
-      "type": "unnamed_param"
+      "text": "*(uint *)&out_sample->field_0x110 = 0xffffffff;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 78,
+      "match": "field_0x10c",
       "severity": "mild",
-      "text": "if (0 < (int)param_1[0x44]) {",
-      "type": "unnamed_param"
+      "text": "*(uint *)&out_sample->field_0x10c = uVar4;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 85,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 88,
+      "match": "field_0x110",
       "severity": "mild",
-      "text": "FUN_004e4330(\"getSampleInfo - can't determine length for %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = FUN_00573fc0(local_40,\"sound\",param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = FUN_00551000(local_40,&local_14,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 28,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "if (0 < *(int *)&out_sample->field_0x110) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 48,
+      "line": 56,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -671,17 +517,6 @@
       "severity": "moderate",
       "text": "// 005575e8: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

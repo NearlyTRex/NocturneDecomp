@@ -4,140 +4,177 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/C3DSLight.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CDeformableModel.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
+#include "types/classes/CDemonSet.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CScript.h"
+#include "types/classes/CSentinel.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/enums/ECollisionType.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SInputFace.h"
+#include "types/structs/SIntersectXZCylinder.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitivePoly.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SRaytraceState.h"
+#include "types/structs/SRoom.h"
+#include "types/structs/SVDBox.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x530000
 // =============================================================================
 
-float FUN_00530150(int param_1,undefined4 param_2,undefined4 param_3,char *param_4);
-undefined4 FUN_00530310(int param_1,float param_2,float *param_3);
-void FUN_00530390(int param_1,int param_2);
-int FUN_005303b0(int param_1,undefined4 param_2);
-int FUN_00530410(int param_1,int param_2,int param_3);
-void FUN_00530500(int param_1);
-undefined4 FUN_00530530(int *param_1);
-void FUN_00530610(int param_1,undefined4 param_2);
-int FUN_00530990(int param_1,undefined4 param_2);
-void FUN_00530a10(undefined4 param_1,undefined4 *param_2);
-void FUN_00530a90(undefined4 param_1,int *param_2);
-int FUN_00530ad0(int param_1,undefined4 param_2);
-void FUN_00530e00(int param_1,undefined4 param_2);
-undefined4 FUN_00531030(int param_1);
-int FUN_00531090(int param_1);
-void FUN_005310a0(void);
-undefined4 FUN_005310f0(void);
-int FUN_00531100(undefined4 param_1);
-void FUN_00531170(int param_1);
-void FUN_00531380(int param_1,float param_2);
-undefined4 FUN_005320b0(int param_1,int param_2);
-void FUN_00532210(int param_1);
-void FUN_00532270(int param_1,int param_2);
-undefined4 FUN_00532370(int param_1,undefined4 *param_2);
-void FUN_00532500(undefined4 param_1,undefined4 param_2);
-int FUN_00532520(int param_1,byte param_2);
-void FUN_005325b0(void);
-void FUN_00532630(void);
-undefined4 * FUN_005327c0(int param_1);
-int FUN_00532b00(int param_1);
-void FUN_00532b30(int param_1);
-int * FUN_00532b80(int *param_1,undefined4 param_2);
-void FUN_00533b80(int param_1,undefined4 param_2,int param_3);
-void FUN_00534420(int *param_1);
-void FUN_005346b0(int param_1,undefined4 param_2);
-void FUN_00534820(undefined4 param_1,int param_2);
-void FUN_00534890(int *param_1,int param_2);
-int FUN_00535360(int *param_1,undefined4 param_2);
-void FUN_005353b0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-int FUN_005353e0(int param_1);
-void FUN_00535a80(int param_1);
-void FUN_00535da0(int param_1,int param_2);
-void FUN_005365c0(int param_1);
-void FUN_00536990(int param_1);
-void FUN_00536c90(int param_1);
-void FUN_00536f90(int param_1);
-void FUN_00537270(undefined4 param_1,int param_2);
-void FUN_005372f0(undefined4 param_1,int param_2);
-void FUN_00537320(undefined4 param_1,int param_2);
-void FUN_00537390(undefined4 param_1,undefined4 param_2);
-undefined4 FUN_005373e0(void);
-void FUN_00537520(int param_1);
-void FUN_005375c0(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 *param_6);
-int FUN_005376e0(undefined4 param_1,float *param_2,undefined4 param_3,float *param_4,float *param_5,undefined4 param_6);
-int FUN_00537e20(int param_1,undefined4 param_2,int *param_3);
-void FUN_005380a0(int param_1,undefined4 param_2,int *param_3,int param_4,int param_5);
-undefined4 * FUN_00538400(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5);
-void FUN_005386d0(undefined4 param_1,float *param_2,float *param_3,int param_4);
-void FUN_005388e0(undefined4 param_1,int param_2);
-void FUN_00538ad0(undefined4 param_1,int param_2,int param_3);
-void FUN_00538ba0(int *param_1);
-float * FUN_00538dd0(float *param_1,float *param_2,int param_3,ushort *param_4,int param_5,int param_6,int *param_7);
-void FUN_00539c50(int param_1);
-float FUN_00539dd0(int param_1,float *param_2);
-void FUN_00539ee0(void);
-void FUN_00539f30(int param_1,uint param_2);
-void FUN_0053a420(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_0053a450(undefined4 param_1,undefined4 *param_2,int param_3,int param_4,int param_5);
-void FUN_0053a6c0(int param_1,ushort *param_2,int param_3,int param_4);
-void FUN_0053ab80(int param_1,int param_2,int param_3,undefined4 param_4);
-void FUN_0053ac80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-int FUN_0053acf0(int param_1,int param_2,int param_3);
-void FUN_0053adf0(int param_1,int param_2);
-void FUN_0053af20(int param_1);
-void FUN_0053afa0(int param_1);
-void FUN_0053b0c0(int param_1);
-void FUN_0053b0d0(int param_1);
-void FUN_0053b100(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_0053b130(int param_1,float *param_2);
-void FUN_0053b1c0(undefined4 param_1,int param_2);
-void FUN_0053b250(int param_1,undefined4 param_2);
-void FUN_0053b280(int param_1,int param_2,undefined4 param_3);
-void FUN_0053b2c0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void FUN_0053b300(int *param_1,int param_2,undefined4 param_3);
-void FUN_0053b340(int param_1,int param_2,undefined4 param_3);
-void FUN_0053b360(int *param_1,int param_2,undefined4 param_3);
-void FUN_0053b3b0(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4);
-void FUN_0053b440(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void FUN_0053b460(int param_1);
-void FUN_0053b660(undefined4 param_1,int *param_2);
-int FUN_0053b6a0(undefined4 param_1,int *param_2);
-int FUN_0053b6e0(int *param_1,undefined4 param_2);
-void FUN_0053b7f0(int *param_1,undefined4 param_2);
-undefined4 FUN_0053b9a0(int param_1);
-void FUN_0053ba00(undefined4 param_1,undefined4 param_2);
-undefined4 FUN_0053baf0(undefined4 param_1);
-undefined4 FUN_0053bb00(undefined4 param_1);
-void FUN_0053bb60(undefined4 param_1);
-void FUN_0053bb80(void);
-float FUN_0053bc80(int param_1,float *param_2,float param_3);
-float FUN_0053cad0(int param_1,undefined4 *param_2);
-undefined4 FUN_0053cbf0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 FUN_0053cc70(undefined4 param_1,undefined4 param_2);
-void FUN_0053cca0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 FUN_0053ccc0(int param_1,float *param_2,float *param_3);
-undefined4 FUN_0053ce80(int param_1);
-float FUN_0053cff0(undefined4 param_1,float *param_2,float *param_3);
-float FUN_0053d270(int param_1,float param_2,float *param_3,float *param_4,float param_5);
-undefined4 FUN_0053d770(int param_1,int param_2);
-bool FUN_0053da90(undefined4 param_1,float *param_2,undefined4 param_3,float *param_4,undefined4 param_5);
-float FUN_0053de10(int param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8);
-void FUN_0053e870(int param_1);
-void FUN_0053ea20(int param_1);
-void FUN_0053ebd0(int param_1);
-void FUN_0053ebe0(int param_1);
-void FUN_0053ec10(int param_1,int param_2);
-void FUN_0053ec70(int param_1);
-void FUN_0053ec80(int param_1);
-void FUN_0053ec90(int param_1,int param_2);
-void FUN_0053ecd0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void FUN_0053ed10(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
-void FUN_0053ed80(undefined4 *param_1);
-void FUN_0053eda0(int param_1);
-void FUN_0053ee00(undefined4 param_1,int param_2);
-void FUN_0053eea0(undefined4 param_1,int param_2);
-void FUN_0053ef40(void);
-undefined4 FUN_0053ef60(int param_1,int param_2);
-undefined4 FUN_0053f0b0(undefined4 param_1);
-undefined4 FUN_0053f0c0(undefined4 param_1);
-void FUN_0053f0d0(void);
-undefined4 FUN_0053f940(int *param_1,int param_2,int param_3);
+float core_script_cpp_FUN_00530150(void *param_1,undefined4 param_2,char *param_3,char *param_4);
+int __cdecl core_script_cpp_CScript_processTimer_FUN_00530310(CScript *this_ptr,float delta_time,float *timer_value);
+void __cdecl core_script_cpp_FUN_00530390(CScript *this_ptr,CDemonActor *actor);
+int __cdecl core_script_cpp_FUN_005303b0(CScript *this_ptr,char *label_name);
+int core_script_cpp_FUN_00530410(int param_1,int param_2,int param_3);
+void core_script_cpp_FUN_00530500(CScript *param_1);
+int __cdecl core_script_cpp_FUN_00530530(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char *filename);
+int __cdecl core_script_cpp_FUN_00530990(CScript *this_ptr,char *path);
+void __cdecl core_script_cpp_readActorReference_FUN_00530a10(undefined4 param_1,undefined4 *param_2);
+void __cdecl core_script_cpp_writeActorReference_FUN_00530a90(undefined4 param_1,int *param_2);
+void __cdecl core_script_cpp_CScript_loadState_FUN_00530ad0(CScript *this_ptr,_FILE *file_handle);
+void __cdecl core_script_cpp_FUN_00530e00(CScript *this_ptr,_FILE *file_handle);
+uint __cdecl core_script_cpp_FUN_00531030(CScript *this_ptr);
+char * __cdecl core_script_cpp_FUN_00531090(CDeformableModel *model_ptr);
+void core_sentinel_cpp_staticInit_FUN_005310a0(void);
+void core_sentinel_cpp_factoryFuncSentinel_FUN_005310d0(void);
+CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_005310f0(CSentinel *this_ptr);
+CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00531100(CSentinel *this_ptr);
+void core_sentinel_cpp_FUN_00531170(CEnemy *param_1);
+void core_sentinel_cpp_FUN_00531380(CEnemy *param_1,float param_2);
+undefined4 core_sentinel_cpp_FUN_005320b0(int param_1,int param_2);
+void core_sentinel_cpp_FUN_00532210(int param_1);
+void core_sentinel_cpp_FUN_00532270(int param_1,int param_2);
+undefined4 core_sentinel_cpp_FUN_00532370(int param_1,undefined4 *param_2);
+ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_00532500(CSentinel *this_ptr,SCollisionInfo *collision_info);
+CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_00532520(CSentinel *this_ptr,uint flags);
+void __cdecl core_set_cpp_staticInit_FUN_005325b0(void);
+void core_set_cpp_FUN_00532630(void);
+void core_set_cpp_FUN_005326b0(int param_1);
+CDemonSet * core_set_cpp_CDemonSet_ctor_FUN_005327c0(CDemonSet *this_ptr);
+CDemonSet * core_set_cpp_CDemonSet_dtor_FUN_00532b00(CDemonSet *this_ptr,uint flags);
+void __cdecl core_set_cpp_CDemonSet_clear_FUN_00532b30(CDemonSet *this_ptr);
+CDemonSet * core_set_cpp_FUN_00532b80(CDemonSet *param_1,char *param_2);
+void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00533b80(CDemonSet *this_ptr,float frustum_param,int render_mode);
+void core_set_cpp_FUN_00533e5e(CDemonSet *param_1,int param_2);
+void __cdecl core_set_cpp_CDemonSet_initScene_FUN_00534420(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_FUN_005346b0(CDemonSet *this_ptr,int layer_flag);
+void __cdecl core_set_cpp_FUN_00534820(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_00534890(CDemonSet *this_ptr,int index);
+int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_00535360(CDemonSet *this_ptr,char *name);
+void __cdecl core_set_cpp_FUN_005353b0(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
+void __cdecl core_set_cpp_FUN_005353e0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_FUN_00535a80(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_FUN_00535da0(CDemonSet *this_ptr,int skip_prerender);
+void __cdecl core_set_cpp_FUN_005365c0(CDemonSet *this_ptr);
+void core_set_cpp_FUN_00536990(CDemonSet *param_1);
+void core_set_cpp_FUN_00536c90(CDemonSet *param_1);
+void core_set_cpp_FUN_00536f90(CDemonSet *param_1);
+void __cdecl core_set_cpp_FUN_00537270(CDemonSet *this_ptr,CDemonLight *light);
+void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(CDemonSet *this_ptr,CDemonGlobe *globe);
+void core_set_cpp_FUN_00537320(undefined4 param_1,int param_2);
+void __cdecl core_set_cpp_FUN_00537390(CDemonSet *this_ptr,CDemonGlobe *globe);
+void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_005373e0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_FUN_00537520(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_005375c0(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
+int __cdecl core_set_cpp_FUN_005376e0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
+int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00537e20(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal);
+void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_005380a0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation);
+void __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_00538400(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
+void core_set_cpp_FUN_005386d0(undefined4 param_1,float *param_2,float *param_3,int param_4);
+void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_005388e0(CDemonSet *this_ptr,int vertex_count);
+void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_00538ad0(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices);
+void core_set_cpp_transformToWorldSpace_FUN_00538ba0(int *param_1);
+void core_set_cpp_transformNormalFixedPoint_FUN_00538c70(int *param_1);
+void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_00538dd0(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data,CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals);
+void __cdecl core_set_cpp_FUN_00539c50(CDemonSet *this_ptr);
+float core_set_cpp_FUN_00539dd0(int param_1,float *param_2);
+void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_00539ee0(CDemonSet *this_ptr);
+undefined4 __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_00539f00(int param_1,int param_2);
+void __cdecl core_set_cpp_FUN_00539f30(CDemonSet *this_ptr,uint dirty_flags_mask);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchTri_FUN_0053a3f0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0053a420(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha);
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prims,int count,int alpha,int stride);
+void __cdecl core_set_cpp_FUN_0053a6c0(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha);
+void core_set_cpp_FUN_0053ab0e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4);
+void __cdecl core_set_cpp_FUN_0053ab80(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags);
+void __cdecl core_set_cpp_FUN_0053ac80(CDemonSet *this_ptr,SInputFace *faces,int count,int flags);
+void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0053acf0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count);
+void core_set_cpp_FUN_0053ad70(int param_1,SMRGLPrimitivePoly *param_2,int param_3);
+void __cdecl core_set_cpp_FUN_0053adf0(CDemonSet *this_ptr,int mirror_index,int enable_flag);
+void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0053afa0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_FUN_0053b0c0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_FUN_0053b0d0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_FUN_0053b100(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale);
+void __cdecl core_set_cpp_FUN_0053b130(CDemonSet *this_ptr,CVector3f *position);
+void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_0053b1c0(CDemonSet *this_ptr,int gamma);
+int __cdecl core_set_cpp_FUN_0053b250(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim);
+void __cdecl core_set_cpp_FUN_0053b280(CDemonSet *this_ptr,int index,float value);
+void core_set_cpp_FUN_0053b2c0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0053b300(CDemonSet *this_ptr,int group_id,float value);
+void __cdecl core_set_cpp_CDemonSet_setCameraEnabled_FUN_0053b340(CDemonSet *this_ptr,int camera_index,int enabled);
+void __cdecl core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0053b360(CDemonSet *this_ptr,int group_id,int enabled);
+void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_0053b3b0(CDemonSet *this_ptr,char *light_name,C3DSLight **out_light,CDemonLight **out_master_light);
+void __cdecl core_set_cpp_CDemonSet_initCameraShake_FUN_0053b440(CDemonSet *this_ptr,float peak,float attack,float sustain,float decay);
+void core_set_cpp_FUN_0053b460(int param_1);
+void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0053b660(CDemonSet *this_ptr,int *light_state_buffer);
+int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0053b6a0(CDemonSet *this_ptr,int *light_state_buffer);
+int core_set_cpp_FUN_0053b6e0(int *param_1,undefined4 param_2);
+void core_set_cpp_FUN_0053b7f0(int *param_1,undefined4 param_2);
+int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_0053b9a0(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_expireDecals_FUN_0053ba00(CDemonSet *this_ptr,int expire_flag);
+void __cdecl core_set_cpp_CDemonSet_renderDecals_FUN_0053ba40(CDemonSet *this_ptr);
+SRoom * core_set_cpp_SRoom_ctor_FUN_0053baf0(SRoom *this_ptr);
+SVDBox * core_set_cpp_SVDBox_ctor_FUN_0053bb00(SVDBox *this_ptr);
+void core_set_cpp_FUN_0053bb60(undefined4 param_1);
+void __cdecl core_setcolid_cpp_staticInit_FUN_0053bb80(void);
+float core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3);
+float core_setcolid_cpp_FUN_0053cad0(int param_1,undefined4 *param_2);
+int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0053cbf0(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
+float __cdecl core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_0053cc70(CDemonSet *this_ptr,CVector3f *world_position);
+int __cdecl core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0053cca0(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos);
+undefined4 core_setcolid_cpp_FUN_0053ccc0(int param_1,float *param_2,float *param_3);
+undefined4 core_setcolid_cpp_FUN_0053ce80(int param_1);
+float core_setcolid_cpp_FUN_0053cff0(undefined4 param_1,float *param_2,float *param_3);
+float core_setcolid_cpp_FUN_0053d270(CDemonSet *param_1,float param_2,float *param_3,float *param_4,float param_5);
+int __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_0053d770(CDemonSet *this_ptr,CDemonActor *actor);
+int __cdecl core_setcolid_cpp_FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix);
+float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8);
+void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_0053e870(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_0053ea20(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_FUN_0053ebd0(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl core_setcolid_cpp_FUN_0053ec70(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_FUN_0053ec80(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_0053ec90(CDemonSet *this_ptr,int ray_type);
+void __cdecl core_setcolid_cpp_FUN_0053ecd0(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b);
+void core_setcolid_cpp_FUN_0053ed10(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
+SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80(SCollisionInfo *this_ptr);
+void __cdecl core_setcolid_cpp_FUN_0053eda0(CDemonSet *this_ptr);
+void __cdecl core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_0053ee00(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl core_setcolid_cpp_FUN_0053eea0(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_0053ef40(CDemonSet *this_ptr);
+int __cdecl core_setcolid_cpp_FUN_0053ef60(CDemonSet *this_ptr,CVector3f *point);
+SRaytraceState * core_setcolid_cpp_SRaytraceState_ctor_FUN_0053f0b0(SRaytraceState *this_ptr);
+SRaytraceState * core_setcolid_cpp_SRaytraceState_dtor_FUN_0053f0c0(SRaytraceState *this_ptr,uint flags);
+void core_setdir_cpp_staticInit_FUN_0053f0d0(void);
+float core_setdir_cpp_FUN_0053f5d0(void);
+undefined4 core_setdir_cpp_FUN_0053f940(CDemonSet *param_1,CDemonActor *param_2,int param_3);
 

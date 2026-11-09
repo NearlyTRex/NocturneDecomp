@@ -1,0 +1,233 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 118,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 8,
+    "suspect_types": [
+      "suspicious_cast",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "0048c2e0",
+      "from_addr": "0048f4df",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7880",
+      "from_addr": "004f797e",
+      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_004f7880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6d70",
+      "from_addr": "004f6d9f",
+      "name": "core_mission.cpp_FUN_004f6d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6de0",
+      "from_addr": "004f6e15",
+      "name": "core_mission.cpp_FUN_004f6de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f6bf0",
+    "address_range": [
+      [
+        "004f6bf0",
+        "004f6c92"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_004f6bf0",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "0053b460",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_0053b460"
+    },
+    {
+      "addr": "0053eda0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_0053eda0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c89f9",
+      "name": "s_core_mission_cpp_005c89f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c8a0d",
+      "name": "s_CDemonMission_buildSetAc_005c8a0d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02024a2c",
+      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a30",
+      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8863636363636362,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 37,
+      "INT_ADD": 19,
+      "INT_AND": 18,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 12,
+      "LOAD": 17,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 171
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(uint *)&g_CDemonSetPtr->field_0x14d164 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "if (1999 < *(int *)&g_CDemonSetPtr->field_0x14d164) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x14d168",
+      "severity": "mild",
+      "text": "*(int *)(&g_CDemonSetPtr->field_0x14d168 + *(int *)&g_CDemonSetPtr->field_0x14d164 * 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(int *)(&g_CDemonSetPtr->field_0x14d168 + *(int *)&g_CDemonSetPtr->field_0x14d164 * 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(int *)&pCVar2->field_0x14d164 = *(int *)&pCVar2->field_0x14d164 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "*(int *)&pCVar2->field_0x14d164 = *(int *)&pCVar2->field_0x14d164 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 19,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "*(int *)(&g_CDemonSetPtr->field_0x14d168 + *(int *)&g_CDemonSetPtr->field_0x14d164 * 4) =",
+      "type": "suspicious_cast"
+    }
+  ]
+}

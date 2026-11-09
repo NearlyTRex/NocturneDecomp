@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier 'Ordinal_115'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_02cfd8a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_02cfd8a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_02cfd8a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
@@ -138,7 +18,7 @@
     {
       "addr": "00503e20",
       "from_addr": "00503e50",
-      "name": "FUN_00503e20",
+      "name": "core_netgame.cpp_CNetGame_init_FUN_00503e20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -151,29 +31,29 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00571ea0",
-    "signature": "void FUN_00571ea0(void)"
+    "name": "support_trisock.cpp_FUN_00571ea0",
+    "signature": "void support_trisock_cpp_FUN_00571ea0(void)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
-    },
-    {
-      "addr": "00581920",
-      "is_variadic": false,
-      "name": "FUN_00581920"
-    },
-    {
-      "addr": "00581c70",
-      "is_variadic": false,
-      "name": "FUN_00581c70"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005b2568",
       "is_variadic": false,
-      "name": "Ordinal_115"
+      "name": "crt_wsock32.c_WSAStartup"
+    },
+    {
+      "addr": "00581920",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_createMutex_FUN_00581920"
+    },
+    {
+      "addr": "00581c70",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_00581c70"
     }
   ],
   "globals": [
@@ -220,7 +100,7 @@
       {
         "call_addr": "00503e50",
         "call_type": "direct",
-        "caller": "FUN_00503e20",
+        "caller": "core_netgame.cpp_CNetGame_init_FUN_00503e20",
         "estimated_params": 1,
         "instructions_analyzed": 6,
         "method": "push_count",

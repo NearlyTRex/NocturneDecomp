@@ -4,14 +4,29 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CDemonActorType.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7D0000
 // =============================================================================
 
+// CAlphaBitmap[4]
+extern CAlphaBitmap CAlphaBitmap_ARRAY_007dffc0[4];
+
+// CDemonActorType
+extern CDemonActorType g_CDemonActorClassInfo;
+extern CDemonActorType g_CAmmoClassInfo;
+extern CDemonActorType g_CAmmoBoxClassInfo;
+extern CDemonActorType g_CBarrierClassInfo;
+extern CDemonActorType g_CBatClassInfo;
+extern CDemonActorType g_CBatteryClassInfo;
+extern CDemonActorType g_CBindEvilClassInfo;
+extern CDemonActorType g_CBirdClassInfo;
+extern CDemonActorType g_CBlunderbusClassInfo;
+
 // undefined4
 extern undefined4 DAT_007df974;
-extern undefined4 DAT_007df9b0;
 extern undefined4 DAT_007df9b4;
 extern undefined4 DAT_007df9b8;
 extern undefined4 DAT_007df9bc;
@@ -20,9 +35,6 @@ extern undefined4 DAT_007df9c4;
 extern undefined4 DAT_007df9c8;
 extern undefined4 DAT_007df9cc;
 extern undefined4 DAT_007dfce8;
-extern undefined4 DAT_007dfd24;
-extern undefined4 DAT_007dfe14;
-extern undefined4 DAT_007dff04;
 extern undefined4 DAT_007dff08;
 extern undefined4 DAT_007dff88;
 extern undefined4 DAT_007dff8c;

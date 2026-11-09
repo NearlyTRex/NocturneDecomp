@@ -1,0 +1,36 @@
+// Name: core_box.cpp_CBox_saveToFile_FUN_0041d630
+// Address: 0041d630
+// Address Range: [[0041d630, 0041d782]]
+// Convention: __cdecl
+// Signature: void __cdecl core_box_cpp_CBox_saveToFile_FUN_0041d630(CBox *this_ptr,_FILE *file_handle,char *indent_prefix)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_box_cpp_CBox_saveToFile_FUN_0041d630(CBox *this_ptr,_FILE *file_handle,char *indent_prefix)
+
+{
+  FUN_005a3140();
+  FUN_005a3140(file_handle,"%s%d\n",indent_prefix,1);
+  FUN_005a3140();
+  FUN_005a3140
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)this_ptr,
+             (double)*(float *)(this_ptr + 4),(double)*(float *)(this_ptr + 8));
+  FUN_005a3140
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0xc),
+             (double)*(float *)(this_ptr + 0x14),(double)*(float *)(this_ptr + 0x10));
+  FUN_005a3140
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0xa4),
+             (double)*(float *)(this_ptr + 0xa8),(double)*(float *)(this_ptr + 0xac));
+  FUN_005a3140();
+  FUN_005a3140
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0x4c),
+             (double)*(float *)(this_ptr + 0x50),(double)*(float *)(this_ptr + 0x54));
+  FUN_005a3140
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0x70),
+             (double)*(float *)(this_ptr + 0x74),(double)*(float *)(this_ptr + 0x78));
+  FUN_005a3140
+            (file_handle,"%s%d\n",indent_prefix,*(uint *)(this_ptr + 0x254));
+  return;
+}

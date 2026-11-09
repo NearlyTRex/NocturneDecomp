@@ -1,0 +1,165 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 44,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "00580a50",
+      "from_addr": "00580b82",
+      "name": "wincore_winrun.cpp_FUN_00580a50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057ab20",
+    "address_range": [
+      [
+        "0057ab20",
+        "0057ab60"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "wincore_wddvmem.cpp_FUN_0057ab20",
+    "signature": "void wincore_wddvmem_cpp_FUN_0057ab20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "00565be0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_restoreVideoMode_FUN_00565be0"
+    },
+    {
+      "addr": "EXTERNAL:00000047",
+      "is_variadic": false,
+      "name": "ShowWindow"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b3508",
+      "name": "PTR_ShowWindow_005b3508",
+      "type": "void*",
+      "value": "001b3c16"
+    },
+    {
+      "addr": "005d77ae",
+      "name": "s_trigl_dll_005d77ae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00606730",
+      "name": "DAT_00606730",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "02cf5fcc",
+      "name": "DAT_02cf5fcc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0bcf8",
+      "name": "DAT_02d0bcf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d21b78",
+      "name": "DAT_02d21b78",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00580b82",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_00580a50",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.105263157894737,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 13,
+      "INT_ADD": 4,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 10,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 78
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00606730",
+      "severity": "mild",
+      "text": "iVar1 = _stricmp(&DAT_00606730,\"trigl.dll\");",
+      "type": "undefined_data"
+    }
+  ]
+}

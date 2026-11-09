@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004d22c0(float *param_1)
+; CHero * __cdecl core_hero_cpp_FUN_004d22c0(CLocation *location)
 ;
+; Parameters:
+; CLocation *      Stack[0x4]:4   location
 ;
-; XREF[1]:
-;   FUN_00434190 at 0043424d
+; XREF[2]:
+;   core_charactr.cpp_FUN_00434190 at 0043424d
+;   core_emitter.cpp_FUN_00487c80 at 00487c9b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d5ba00
@@ -13,14 +16,14 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004d22c0
-        ;   Label: FUN_004d22c0
+        ;   Label: core_hero.cpp_FUN_004d22c0
     PUSH ESI                            ; 004d22c1
     PUSH EDI                            ; 004d22c2
     PUSH EBP                            ; 004d22c3
@@ -88,8 +91,8 @@ section .text
     PUSH 0x5c4b05                       ; 004d234c
     MOV dword ptr [0x01d71de0],EBX      ; 004d2351 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004d2357 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004d235d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004d235d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004d2362
     MOV EAX,ESI                         ; 004d2365
     ADD ESP,0x14                        ; 004d2367

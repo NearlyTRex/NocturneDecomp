@@ -1,14 +1,14 @@
-// Name: FUN_0045b640
+// Name: core_dirmat.cpp_FUN_0045b640
 // Address: 0045b640
 // Address Range: [[0045b640, 0045b7f2]]
 // Convention: unknown
-// Signature: void FUN_0045b640(float *param_1)
+// Signature: void core_dirmat_cpp_FUN_0045b640(float *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0045b640(float *param_1)
+void core_dirmat_cpp_FUN_0045b640(float *param_1)
 
 {
   float fVar1;
@@ -34,7 +34,7 @@ void FUN_0045b640(float *param_1)
   if (ABS(fVar16) == 0.0) {
     _DAT_01d71de0 = "..\\core\\dirmat.cpp";
     _DAT_01d71de4 = 0x6c;
-    FUN_004e4330("CMatrix::invert - Singular matrix");
+    core_main_c_FUN_004e4330("CMatrix::invert - Singular matrix");
   }
   fVar1 = param_1[3];
   fVar2 = param_1[2];

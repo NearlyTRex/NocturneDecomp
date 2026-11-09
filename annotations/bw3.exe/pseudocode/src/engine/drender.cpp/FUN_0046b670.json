@@ -1,0 +1,301 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 135,
+    "complexity_score": 304,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 23,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 189
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046b670",
+    "address_range": [
+      [
+        "0046b670",
+        "0046b7cd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_drender.cpp_FUN_0046b670",
+    "signature": "void engine_drender_cpp_FUN_0046b670(CDemonRenderer *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "0046b160",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c6b5cc",
+      "name": "DAT_01c6b5cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b4",
+      "name": "DAT_01c6e2b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b8",
+      "name": "DAT_01c6e2b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.785046728971962,
+    "instruction_count": 107,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 11,
+      "COPY": 91,
+      "INT_ADD": 48,
+      "INT_AND": 81,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 65,
+      "INT_LEFT": 2,
+      "INT_LESS": 8,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 3,
+      "INT_SLESS": 34,
+      "INT_SUB": 19,
+      "INT_XOR": 6,
+      "LOAD": 33,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 512
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void engine_drender_cpp_FUN_0046b670(CDemonRenderer *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void engine_drender_cpp_FUN_0046b670(CDemonRenderer *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0xc) == 0) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(iVar4 = engine_3d_c_isVisiblePlane_FUN_00403920(param_2 + 8), iVar4 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_2 + 4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_01bdd818",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01bdd818 + iVar3) = iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uStack_14 = uStack_14 & *(uint *)(*(int *)param_1 + 0x10 + iVar1 * 0x30);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)(param_2 + 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 4) == 0) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((*(int *)(param_1 + 0x20) == 0 && (iVar4 = 0, 0 < *(int *)(param_2 + 4))))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((*(int *)(param_1 + 0x20) == 0 && (iVar4 = 0, 0 < *(int *)(param_2 + 4))))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01bdd818",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&DAT_01bdd818 + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)param_1 + iVar1 * 0x30 + 0x18) = *(uint *)(iVar2 + 0x1c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)param_1 + iVar1 * 0x30 + 0x1c) = *(uint *)(iVar2 + 0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)(param_2 + 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 4) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "_DAT_01c6b5cc = (code *)&UNK_00470130;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01bdd818);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01bdd818);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_01bdd818",
+      "severity": "mild",
+      "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01bdd818);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 213,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 18,
+    "suspect_types": [
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0041a810",
+    "address_range": [
+      [
+        "0041a810",
+        "0041a890"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_boneguy.cpp_FUN_0041a810",
+    "signature": "void core_boneguy_cpp_FUN_0041a810(CBoneGuy *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00419550",
+      "is_variadic": false,
+      "name": "core_boneguy.cpp_FUN_00419550"
+    },
+    {
+      "addr": "00489c90",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_FUN_00489c90"
+    },
+    {
+      "addr": "004fc0d0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
+    },
+    {
+      "addr": "00556be0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00556be0"
+    },
+    {
+      "addr": "0048a1b0",
+      "is_variadic": false,
+      "name": "unkafter_enemy.cpp_FUN_0048a1b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.319148936170213,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 68,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 24,
+      "INT_AND": 22,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 16,
+      "INT_ZEXT": 4,
+      "LOAD": 16,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 17
+    },
+    "pcode_op_count": 250
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_boneguy_cpp_FUN_0041a810(CBoneGuy *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_boneguy_cpp_FUN_0041a810(CBoneGuy *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&param_1->field_0xd078);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0xd078",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&param_1->field_0xd078);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(int *)(param_2 + 0x30) != 0x70) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&param_1->field_0x2538 - *(float *)(param_2 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&param_1->field_0x2538 - *(float *)(param_2 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&param_1->field_0x2538 - *(float *)(param_2 + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x2538 = fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x2538 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_enemy_cpp_FUN_00489c90(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x2538 = 0x3f800000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x2538 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_boneguy_cpp_FUN_00419550(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(param_1,*(uint *)(param_2 + 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = unkafter_enemy_cpp_FUN_0048a1b0(param_1,*(uint *)(param_2 + 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CMotionController *)&param_1->field_0x158,3,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&param_1->field_0x158,3,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 264,
+        "vtable_addr": "005dc6d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

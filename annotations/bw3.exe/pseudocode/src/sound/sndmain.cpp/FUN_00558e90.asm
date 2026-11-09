@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00558e90(void)
+; void __cdecl sound_sndmain_cpp_FUN_00558e90(void)
 ;
 ;
-; XREF[18]:
-;   FUN_00552f10 at 00552f62
-;   FUN_00556240 at 005562e6
-;   FUN_00556c60 at 00556c67
-;   FUN_00556c90 at 00556ce5
-;   FUN_00556db0 at 00556df2
-;   FUN_00557020 at 00557020
-;   FUN_00557080 at 00557080
-;   FUN_00557100 at 00557100
-;   FUN_00557570 at 00557581
-;   FUN_00557800 at 00557802
-;   ... and 8 more
+; XREF[25]:
+;   core_tommygun.cpp_FUN_0056bd40 at 0056be4d
+;   sound_sndmain.cpp_FUN_00552f10 at 00552f62
+;   sound_sndmain.cpp_FUN_00556240 at 005562e6
+;   sound_sndmain.cpp_FUN_00556c60 at 00556c67
+;   sound_sndmain.cpp_FUN_00556db0 at 00556df2
+;   sound_sndmain.cpp_FUN_00556fac at 00556fb0
+;   sound_sndmain.cpp_FUN_0055700e at 00557010
+;   sound_sndmain.cpp_FUN_00557020 at 00557020
+;   sound_sndmain.cpp_FUN_00557080 at 00557080
+;   sound_sndmain.cpp_FUN_00557100 at 00557100
+;   ... and 15 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d3cb5
@@ -28,22 +28,22 @@
 ;   undefined4 DAT_02cf341c
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_00581920
-;   FUN_00581930
+;   core_main.c_FUN_004e4330
+;   wincore_winrun.cpp_createMutex_FUN_00581920
+;   wincore_winrun.cpp_waitForMutex_FUN_00581930
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 00558e90
-        ;   Label: FUN_00558e90
+        ;   Label: sound_sndmain.cpp_FUN_00558e90
     PUSH EDI                            ; 00558e91
     CMP dword ptr [0x02cf3418],0x0      ; 00558e92 | DAT_02cf3418
     JNZ 0x00558ece                      ; 00558e99
         ;   XREF to: 00558ece (CONDITIONAL_JUMP)  ; LAB_00558ece
-    CALL FUN_00581920                   ; 00558e9b
-        ;   XREF to: 00581920 (UNCONDITIONAL_CALL)  ; undefined FUN_00581920()
+    CALL wincore_winrun.cpp_createMutex_FUN_00581920 ; 00558e9b
+        ;   XREF to: 00581920 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createMutex_FUN_00581920()
     MOV [0x02cf3418],EAX                ; 00558ea0 | DAT_02cf3418
     TEST EAX,EAX                        ; 00558ea5
     JNZ 0x00558ece                      ; 00558ea7
@@ -54,15 +54,15 @@ section .text
     PUSH 0x5d3cca                       ; 00558eb4 | = "lockSound - unable to create mutex ob..."
     MOV dword ptr [0x01d71de0],ECX      ; 00558eb9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 00558ebf | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00558ec5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00558ec5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00558eca
     POP EBX                             ; 00558ecd
     MOV ESI,dword ptr [0x02cf3418]      ; 00558ece | DAT_02cf3418
         ;   Label: LAB_00558ece
     PUSH ESI                            ; 00558ed4
-    CALL FUN_00581930                   ; 00558ed5
-        ;   XREF to: 00581930 (UNCONDITIONAL_CALL)  ; undefined FUN_00581930()
+    CALL wincore_winrun.cpp_waitForMutex_FUN_00581930 ; 00558ed5
+        ;   XREF to: 00581930 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_waitForMutex_FUN_00581930(HANDLE mutex_handle)
     MOV EDI,dword ptr [0x02cf341c]      ; 00558eda | DAT_02cf341c
     INC EDI                             ; 00558ee0
     ADD ESP,0x4                         ; 00558ee1
@@ -79,8 +79,8 @@ section .text
     PUSH 0x5d3d09                       ; 00558efc | = "lockSound - lock imbalance?"
     MOV [0x01d71de0],EAX                ; 00558f01 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00558f06 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00558f0c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00558f0c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00558f11
     POP EDI                             ; 00558f14
     POP ESI                             ; 00558f15

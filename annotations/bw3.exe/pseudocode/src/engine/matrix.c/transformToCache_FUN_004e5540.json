@@ -1,0 +1,238 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 21,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "00480f00",
+      "from_addr": "00480faf",
+      "name": "shape_edittool.cpp_FUN_00480f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481200",
+      "from_addr": "0048123e",
+      "name": "shape_edittool.cpp_FUN_00481200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481350",
+      "from_addr": "0048148d",
+      "name": "shape_edittool.cpp_FUN_00481350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e5540",
+    "address_range": [
+      [
+        "004e5540",
+        "004e5565"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_transformToCache_FUN_004e5540",
+    "signature": "void __cdecl engine_matrix_c_transformToCache_FUN_004e5540(int cacheIndex,CVector3i *inputPoint)"
+  },
+  "function_calls": [
+    {
+      "addr": "005632a3",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_005632a3"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "00480faf",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00480fce",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481017",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481060",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00480f00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048123e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00481200",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481308",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00481200",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048148d",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00481350",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004815a2",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00481350",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481619",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00481350",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481734",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00481350",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.076923076923077,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "COPY": 9,
+      "INT_ADD": 7,
+      "INT_AND": 19,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 9,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 92
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cacheIndex",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "inputPoint",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_0060b014",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(&DAT_0060b014 + cacheIndex * 0xc),inputPoint)",
+      "type": "undefined_data"
+    }
+  ]
+}

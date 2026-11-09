@@ -1,0 +1,138 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "0054bf00",
+      "from_addr": "0054bf05",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0054bf00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fbad0",
+    "address_range": [
+      [
+        "004fbad0",
+        "004fbaf2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionController_ctor_FUN_004fbad0",
+    "signature": "CMotionController * __cdecl core_motion_cpp_CMotionController_ctor_FUN_004fbad0(CMotionController *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fc090",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_reset_FUN_004fc090"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e2c84",
+      "name": "PTR_core_motion.cpp_CMotionController_dtor_FUN_004fbb00_005e2c84",
+      "type": "void*",
+      "value": "004fbb00"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0054bf05",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0054bf00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3636363636363638,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 9,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 37
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0x50 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "this_ptr->field_0x30 = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMotionController",
+        "offset": 0,
+        "vtable_addr": "005e2c94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

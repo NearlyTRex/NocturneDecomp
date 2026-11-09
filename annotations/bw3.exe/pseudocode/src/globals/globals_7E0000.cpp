@@ -4,6 +4,28 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x7E0000
 // =============================================================================
 
+// CAlphaBitmap[5]
+CAlphaBitmap CAlphaBitmap_ARRAY_007e0010[5] = {};
+
+// CAudioRecPuzzle
+CAudioRecPuzzle g_CAudioRecPuzzleInstance = {};
+
+// CChemPuzzle
+CChemPuzzle g_CChemPuzzleInstance = {};
+
+// CDemonActorType
+CDemonActorType g_CBodyPartClassInfo = {};
+CDemonActorType g_CBoneGuyClassInfo = {};
+CDemonActorType g_CBoxActorClassInfo = {};
+CDemonActorType g_CBugsClassInfo = {};
+CDemonActorType g_CBurncrossClassInfo = {};
+CDemonActorType g_CCarvedClassInfo = {};
+CDemonActorType g_CChainClassInfo = {};
+CDemonActorType g_CCharacterClassInfo = {};
+
+// CDemonFilter[8]
+CDemonFilter CDemonFilter_ARRAY_007e17b8[8] = {};
+
 // undefined1
 undefined1 DAT_007e1a58 = {};
 undefined1 DAT_007e2ad8 = {};
@@ -17,7 +39,6 @@ undefined1 DAT_007e5398 = {};
 undefined1 DAT_007e5f68 = {};
 
 // undefined4
-undefined4 DAT_007e161c = {};
 undefined4 DAT_007e1620 = {};
 undefined4 DAT_007e1624 = {};
 undefined4 DAT_007e1628 = {};
@@ -26,18 +47,13 @@ undefined4 DAT_007e1638 = {};
 undefined4 DAT_007e1644 = {};
 undefined4 DAT_007e1648 = {};
 undefined4 DAT_007e1774 = {};
-undefined4 DAT_007e17b4 = {};
 undefined4 DAT_007e1a50 = {};
 undefined4 DAT_007e1a54 = {};
 undefined4 DAT_007e1c94 = {};
 undefined4 DAT_007e1c98 = {};
 undefined4 DAT_007e1c9c = {};
-undefined4 DAT_007e2a14 = {};
-undefined4 DAT_007e2a50 = {};
 undefined4 DAT_007e2a54 = {};
-undefined4 DAT_007e2acc = {};
 undefined4 DAT_007e2ae8 = {};
-undefined4 DAT_007e2cec = {};
 undefined4 DAT_007e2cf0 = {};
 undefined4 DAT_007e2cf4 = {};
 undefined4 DAT_007e2cf8 = {};

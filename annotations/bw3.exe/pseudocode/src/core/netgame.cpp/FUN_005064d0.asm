@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005064d0(int param_1,undefined4 param_2,int param_3)
+; void __cdecl core_netgame_cpp_FUN_005064d0(CNetGame *this_ptr,char *message,int target_player)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   message
+; int              Stack[0xc]:4   target_player
 ;
 ; XREF[1]:
-;   FUN_00505a30 at 00506312
+;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00506312
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0
@@ -16,18 +20,18 @@
 ;   undefined4 DAT_01dc5c7c
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_00506a00
-;   FUN_005806a0
-;   FUN_005a28f0
-;   FUN_005a4ee0
+;   core_main.c_FUN_004e4330
+;   core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00
+;   crt_memory.c_memset_FUN_005a28f0
+;   crt_string.c__strncpy_FUN_005a4ee0
+;   wincore_winrun.cpp_FUN_005806a0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005064d0
-        ;   Label: FUN_005064d0
+        ;   Label: core_netgame.cpp_FUN_005064d0
     PUSH ESI                            ; 005064d1
     PUSH EDI                            ; 005064d2
     PUSH EBP                            ; 005064d3
@@ -49,8 +53,8 @@ section .text
     ADD EDI,EAX                         ; 00506509
     LEA EAX,[EDX + 0x1]                 ; 0050650b
     MOV [0x01dc2690],EAX                ; 0050650e | DAT_01dc2690
-    CALL FUN_005806a0                   ; 00506513
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005806a0()
+    CALL wincore_winrun.cpp_FUN_005806a0 ; 00506513
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
     MOV EDX,EAX                         ; 00506518
     MOV ECX,0x12                        ; 0050651a
     SAR EDX,0x1f                        ; 0050651f
@@ -79,8 +83,8 @@ section .text
     PUSH EAX                            ; 00506565
     MOV dword ptr [0x01da6478],EBP      ; 00506566 | DAT_01da6478
     MOV dword ptr [EDI],EBP             ; 0050656c
-    CALL FUN_005a28f0                   ; 0050656e
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 0050656e
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV EBP,dword ptr [0x01da6478]      ; 00506573 | DAT_01da6478
     ADD ESP,0xc                         ; 00506579
     TEST EBX,EBX                        ; 0050657c
@@ -101,15 +105,15 @@ section .text
     PUSH EBX                            ; 005065b0
     MOV dword ptr [0x01da6478],EBP      ; 005065b1 | DAT_01da6478
     MOV byte ptr [EDI + EAX*0x1 + 0x8],0x1 ; 005065b7
-    CALL FUN_005a28f0                   ; 005065bc
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 005065bc
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005065c1
     PUSH 0xff                           ; 005065c4
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005065c9
     PUSH EAX                            ; 005065cd
     PUSH EBX                            ; 005065ce
-    CALL FUN_005a4ee0                   ; 005065cf
-        ;   XREF to: 005a4ee0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a4ee0()
+    CALL crt_string.c__strncpy_FUN_005a4ee0 ; 005065cf
+        ;   XREF to: 005a4ee0 (UNCONDITIONAL_CALL)  ; char * crt_string.c__strncpy_FUN_005a4ee0(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 005065d4
     PUSH EBX                            ; 005065d7
     LEA EAX,[ESI + 0x8]                 ; 005065d8
@@ -123,8 +127,8 @@ section .text
     ADD EAX,0x1c                        ; 005065ee
     PUSH EAX                            ; 005065f1
     PUSH ESI                            ; 005065f2
-    CALL FUN_00506a00                   ; 005065f3
-        ;   XREF to: 00506a00 (UNCONDITIONAL_CALL)  ; undefined FUN_00506a00()
+    CALL core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00 ; 005065f3
+        ;   XREF to: 00506a00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00(CNetGame * this_ptr, SNetworkAddr * sender_addr, int message_id, char * sender_name, ...)
     MOV EBP,dword ptr [0x01da6478]      ; 005065f8 | DAT_01da6478
     ADD ESP,0x14                        ; 005065fe
     POP EBP                             ; 00506601
@@ -138,8 +142,8 @@ section .text
     PUSH 0x5cac9d                       ; 00506610
     MOV dword ptr [0x01d71de0],ECX      ; 00506615 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0050661b | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00506621
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00506621
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00506626
     JMP 0x005064ef                      ; 00506629
         ;   XREF to: 005064ef (UNCONDITIONAL_JUMP)  ; LAB_005064ef

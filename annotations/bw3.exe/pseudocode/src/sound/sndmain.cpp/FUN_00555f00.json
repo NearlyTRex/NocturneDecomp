@@ -1,0 +1,169 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 21,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 14
+  },
+  "cross_references": [
+    {
+      "addr": "004e94f0",
+      "from_addr": "004e9e3a",
+      "name": "core_menu.cpp_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f020",
+      "from_addr": "0055f222",
+      "name": "core_sound.cpp_FUN_0055f020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f6ae",
+      "from_addr": "0055f7b5",
+      "name": "core_sound.cpp_FUN_0055f6ae",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ff40",
+      "from_addr": "00560227",
+      "name": "core_sound.cpp_FUN_0055ff40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555f00",
+    "address_range": [
+      [
+        "00555f00",
+        "00555f1c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00555f00",
+    "signature": "void __cdecl sound_sndmain_cpp_FUN_00555f00(uint flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02ceb91c",
+      "name": "DAT_02ceb91c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00560227",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055ff40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055f222",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055f020",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e9e3a",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004e94f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055f7b5",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055f6ae",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.428571428571429,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "COPY": 5,
+      "INT_ADD": 4,
+      "INT_AND": 15,
+      "INT_EQUAL": 5,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 59
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,129 +1,9 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 19,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
     "complexity_score": 286,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
@@ -141,13 +21,19 @@
     {
       "addr": "00551d20",
       "from_addr": "00551f5f",
-      "name": "FUN_00551d20",
+      "name": "sound_sndmain.cpp_FUN_00551d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00553960",
       "from_addr": "00553bf3",
-      "name": "FUN_00553960",
+      "name": "sound_sndmain.cpp_FUN_00553960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557390",
+      "from_addr": "005573cc",
+      "name": "sound_sndmain.cpp_FUN_00557390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -160,19 +46,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00553660",
-    "signature": "int FUN_00553660(int param_1,int param_2,int param_3)"
+    "name": "sound_sndmain.cpp_FUN_00553660",
+    "signature": "int sound_sndmain_cpp_FUN_00553660(int param_1,int param_2,int param_3)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "00555900",
       "is_variadic": false,
-      "name": "FUN_00555900"
+      "name": "sound_sndmain.cpp_FUN_00555900"
     }
   ],
   "globals": [
@@ -232,12 +118,12 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 5,
     "call_sites": [
       {
         "call_addr": "00553bf3",
         "call_type": "direct",
-        "caller": "FUN_00553960",
+        "caller": "sound_sndmain.cpp_FUN_00553960",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +138,7 @@
       {
         "call_addr": "00553d56",
         "call_type": "direct",
-        "caller": "FUN_00553960",
+        "caller": "sound_sndmain.cpp_FUN_00553960",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -266,7 +152,7 @@
       {
         "call_addr": "00551f5f",
         "call_type": "direct",
-        "caller": "FUN_00551d20",
+        "caller": "sound_sndmain.cpp_FUN_00551d20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -279,12 +165,25 @@
       {
         "call_addr": "00552231",
         "call_type": "direct",
-        "caller": "FUN_00551d20",
+        "caller": "sound_sndmain.cpp_FUN_00551d20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
           "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005573cc",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_00557390",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
         ],
         "stack_bytes": 12,
         "stack_params": 3
@@ -348,7 +247,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_00553660(int param_1,int param_2,int param_3)",
+      "text": "int sound_sndmain_cpp_FUN_00553660(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -356,7 +255,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "int FUN_00553660(int param_1,int param_2,int param_3)",
+      "text": "int sound_sndmain_cpp_FUN_00553660(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -364,7 +263,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "int FUN_00553660(int param_1,int param_2,int param_3)",
+      "text": "int sound_sndmain_cpp_FUN_00553660(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -428,7 +327,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00555900(param_1,param_2);",
+      "text": "iVar1 = sound_sndmain_cpp_FUN_00555900(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -436,7 +335,7 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = FUN_00555900(param_1,param_2);",
+      "text": "iVar1 = sound_sndmain_cpp_FUN_00555900(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -512,7 +411,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 4,
+      "call_site_count": 5,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,

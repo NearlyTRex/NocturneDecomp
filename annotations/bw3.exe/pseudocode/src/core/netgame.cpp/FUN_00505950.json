@@ -1,129 +1,9 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 26,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 31,
-        "message": "no matching function for call to 'FUN_005a28f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_01da6478'; did you mean 'DAT_02D36478'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_01da6478'; did you mean 'DAT_02D36478'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
     "complexity_score": 280,
-    "cross_reference_count": 3,
+    "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
@@ -139,21 +19,27 @@
   },
   "cross_references": [
     {
+      "addr": "00506b00",
+      "from_addr": "0050715d",
+      "name": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00506b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00503fb0",
       "from_addr": "00504003",
-      "name": "FUN_00503fb0",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00503efc",
+      "from_addr": "00503f62",
+      "name": "core_netgame.cpp_FUN_00503efc",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00504d60",
       "from_addr": "00504f3a",
-      "name": "FUN_00504d60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00506b00",
-      "from_addr": "0050715d",
-      "name": "FUN_00506b00",
+      "name": "core_netgame.cpp_FUN_00504d60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -166,19 +52,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00505950",
-    "signature": "int FUN_00505950(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5 )"
+    "name": "core_netgame.cpp_FUN_00505950",
+    "signature": "int core_netgame_cpp_FUN_00505950(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005a28f0",
       "is_variadic": false,
-      "name": "FUN_005a28f0"
+      "name": "crt_memory.c_memset_FUN_005a28f0"
     }
   ],
   "globals": [
@@ -220,12 +106,12 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 5,
     "call_sites": [
       {
         "call_addr": "00504f3a",
         "call_type": "direct",
-        "caller": "FUN_00504d60",
+        "caller": "core_netgame.cpp_FUN_00504d60",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,7 +126,7 @@
       {
         "call_addr": "0050715d",
         "call_type": "direct",
-        "caller": "FUN_00506b00",
+        "caller": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00506b00",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -255,7 +141,7 @@
       {
         "call_addr": "00504003",
         "call_type": "direct",
-        "caller": "FUN_00503fb0",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -266,13 +152,24 @@
       {
         "call_addr": "0050404c",
         "call_type": "direct",
-        "caller": "FUN_00503fb0",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
           "EAX"
         ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00503f62",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_00503efc",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
@@ -336,7 +233,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5 )",
+      "text": "int core_netgame_cpp_FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -344,7 +241,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "int FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5 )",
+      "text": "int core_netgame_cpp_FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -352,7 +249,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "int FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5 )",
+      "text": "int core_netgame_cpp_FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -360,7 +257,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "int FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5 )",
+      "text": "int core_netgame_cpp_FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -368,7 +265,7 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "int FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5 )",
+      "text": "int core_netgame_cpp_FUN_00505950(int param_1,uint *param_2,char *param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -400,7 +297,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar5 = (char *)(param_1 + 0x20 + iVar2 * 0x80);",
+      "text": "dest = (char *)(param_1 + 0x20 + iVar2 * 0x80);",
       "type": "unnamed_param"
     },
     {
@@ -440,7 +337,7 @@
       "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(pcVar5 + 0x1c) = *param_2;",
+      "text": "*(uint *)(dest + 0x1c) = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -448,7 +345,7 @@
       "line": 36,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(pcVar5 + (uint)bVar7 * -8 + 0x20) = param_2[(uint)bVar7 * -2 + 1];",
+      "text": "*(uint *)(dest + (uint)bVar6 * -8 + 0x20) = param_2[(uint)bVar6 * -2 + 1];",
       "type": "unnamed_param"
     },
     {
@@ -456,7 +353,7 @@
       "line": 53,
       "match": "param_4",
       "severity": "mild",
-      "text": "*(uint *)(pcVar5 + 0x14) = param_4;",
+      "text": "*(uint *)(dest + 0x14) = param_4;",
       "type": "unnamed_param"
     },
     {
@@ -464,7 +361,7 @@
       "line": 54,
       "match": "param_5",
       "severity": "mild",
-      "text": "*(uint *)(pcVar5 + 0x18) = param_5;",
+      "text": "*(uint *)(dest + 0x18) = param_5;",
       "type": "unnamed_param"
     },
     {
@@ -476,7 +373,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "call_site_count": 4,
+      "call_site_count": 5,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 8,

@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00467a70(uint param_1)
+; void __cdecl cockpit_drawsurf_cpp_FUN_00467a70(int color_value)
 ;
+; Parameters:
+; int              Stack[0x4]:4   color_value
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
-;   FUN_00529210 at 00529258
+; XREF[2]:
+;   cockpit_drawsurf.cpp_FUN_0046a750 at 0046a811
+;   core_script.cpp_FUN_00529210 at 00529258
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005bc184
@@ -28,14 +31,14 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00467a70
-        ;   Label: FUN_00467a70
+        ;   Label: cockpit_drawsurf.cpp_FUN_00467a70
     PUSH ESI                            ; 00467a71
     PUSH EDI                            ; 00467a72
     PUSH EBP                            ; 00467a73
@@ -201,8 +204,8 @@ section .text
     PUSH 0x5bc19c                       ; 00467c59 | = "Invalid bitsPerPixel in CDrawSurface:..."
     MOV [0x01d71de0],EAX                ; 00467c5e | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 00467c63 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00467c69
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00467c69
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00467c6e
     ADD ESP,0x4                         ; 00467c71
     POP EBP                             ; 00467c74

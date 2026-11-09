@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 15,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 17,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 22,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
@@ -139,7 +19,7 @@
     {
       "addr": "004d95c0",
       "from_addr": "004d9681",
-      "name": "FUN_004d95c0",
+      "name": "core_inivar.cpp_FUN_004d95c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,19 +32,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004d8bb0",
-    "signature": "void FUN_004d8bb0(char *param_1,undefined4 param_2,undefined4 param_3)"
+    "name": "engine_ini.cpp_FUN_004d8bb0",
+    "signature": "void engine_ini_cpp_FUN_004d8bb0(char *param_1,char *param_2,char *param_3)"
   },
   "function_calls": [
     {
-      "addr": "004d89f0",
-      "is_variadic": false,
-      "name": "FUN_004d89f0"
-    },
-    {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "004d89f0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_writeProfileString_FUN_004d89f0"
     }
   ],
   "globals": [
@@ -211,7 +91,7 @@
       {
         "call_addr": "004d9681",
         "call_type": "direct",
-        "caller": "FUN_004d95c0",
+        "caller": "core_inivar.cpp_FUN_004d95c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -274,7 +154,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004d8bb0(char *param_1,uint param_2,uint param_3)",
+      "text": "void engine_ini_cpp_FUN_004d8bb0(char *param_1,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -282,7 +162,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004d8bb0(char *param_1,uint param_2,uint param_3)",
+      "text": "void engine_ini_cpp_FUN_004d8bb0(char *param_1,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -290,7 +170,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_004d8bb0(char *param_1,uint param_2,uint param_3)",
+      "text": "void engine_ini_cpp_FUN_004d8bb0(char *param_1,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +194,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
+      "text": "engine_ini_cpp_writeProfileString_FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -322,7 +202,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
+      "text": "engine_ini_cpp_writeProfileString_FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -330,7 +210,7 @@
       "line": 17,
       "match": "param_3",
       "severity": "mild",
-      "text": "FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
+      "text": "engine_ini_cpp_writeProfileString_FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -338,14 +218,14 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
+      "text": "engine_ini_cpp_writeProfileString_FUN_004d89f0(param_1 + 0x100,param_2,param_3,param_1);",
       "type": "unnamed_param"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CIniFile",
         "offset": 8,
         "vtable_addr": "005e2074"
       }

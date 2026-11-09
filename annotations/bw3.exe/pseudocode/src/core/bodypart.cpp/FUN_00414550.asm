@@ -1,23 +1,31 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00414550(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
+; CBodyPart * __cdecl core_bodypart_cpp_FUN_00414550(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,EBloodType blood_type)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   position
+; UOrientationVector * Stack[0x8]:4   orientation
+; CVector3f *      Stack[0xc]:4   initial_velocity
+; CDemonActor *    Stack[0x10]:4   scale_source
+; int              Stack[0x14]:4   dont_use_normals
+; int              Stack[0x18]:4   is_transparent
+; EBloodType       Stack[0x1c]:4   blood_type
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[13]:
-;   FUN_00419550 at 004196a2
-;   FUN_00428810 at 00428960
-;   FUN_00430520 at 0043055e
-;   FUN_00444110 at 0044421e
-;   FUN_00445730 at 004457d9
-;   FUN_00458680 at 0045874d
-;   FUN_004c5f10 at 004c5fd2
-;   FUN_004c9140 at 004c920d
-;   FUN_004d7bd0 at 004d7ca2
-;   FUN_004f9050 at 004f90cb
+;   core_boneguy.cpp_FUN_00419550 at 004196a2
+;   core_carved.cpp_FUN_00428810 at 00428960
+;   core_charactr.cpp_FUN_00430520 at 0043055e
+;   core_construc.cpp_FUN_00444110 at 0044421e
+;   core_cow.cpp_FUN_00445730 at 004457d9
+;   core_gargoyle.cpp_FUN_004c5f10 at 004c5fd2
+;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c9140 at 004c920d
+;   core_imp.cpp_FUN_004d7bd0 at 004d7ca2
+;   core_moocow.cpp_FUN_004f9050 at 004f90cb
+;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c25f
 ;   ... and 3 more
 ;
 ; Referenced Globals:
@@ -30,20 +38,20 @@
 ;   undefined4 DAT_01d81080
 ;
 ; Called Functions:
-;   FUN_004088f0
-;   FUN_0040ce40
-;   FUN_00414750
-;   FUN_004e4330
-;   FUN_004f6930
-;   FUN_004f7530
-;   FUN_005a3cb2
+;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0
+;   core_actor.cpp_FUN_0040ce40
+;   core_bodypart.cpp_CBodyPart_ctor_FUN_00414750
+;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
+;   core_mission.cpp_FUN_004f6930
+;   crt_unknown.c_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00414550
-        ;   Label: FUN_00414550
+        ;   Label: core_bodypart.cpp_FUN_00414550
     PUSH ESI                            ; 00414551
     PUSH EDI                            ; 00414552
     PUSH EBP                            ; 00414553
@@ -52,8 +60,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x44]      ; 0041455b
     MOV ESI,dword ptr [ESP + 0x48]      ; 0041455f
     PUSH 0xf34                          ; 00414563
-    CALL FUN_005a3cb2                   ; 00414568
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3cb2()
+    CALL crt_unknown.c_FUN_005a3cb2     ; 00414568
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0041456d
     TEST EAX,EAX                        ; 00414570
     JNZ 0x0041465f                      ; 00414572
@@ -68,8 +76,8 @@ section .text
     PUSH 0x5b6a3f                       ; 00414588 | = "Can't create body part!"
     MOV dword ptr [0x01d71de0],EDX      ; 0041458d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00414593 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00414599
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00414599
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0041459e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 004145a1
         ;   Label: LAB_004145a1
@@ -92,8 +100,8 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 004145cd
     PUSH EBX                            ; 004145d0
         ;   Label: LAB_004145d0
-    CALL FUN_004088f0                   ; 004145d1
-        ;   XREF to: 004088f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004088f0()
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0 ; 004145d1
+        ;   XREF to: 004088f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004145d6
     TEST ESI,ESI                        ; 004145d9
     JZ 0x0041466d                       ; 004145db
@@ -118,14 +126,14 @@ section .text
         ;   Label: LAB_00414609
     MOV EDI,dword ptr [0x00600530]      ; 0041460a | DAT_00600530
     PUSH EDI                            ; 00414610 | DAT_01d81080
-    CALL FUN_004f7530                   ; 00414611
-        ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7530()
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530 ; 00414611
+        ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00414616
     PUSH EBX                            ; 00414619
     MOV EBP,dword ptr [0x00600530]      ; 0041461a | DAT_00600530
     PUSH EBP                            ; 00414620 | DAT_01d81080
-    CALL FUN_004f6930                   ; 00414621
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; undefined FUN_004f6930()
+    CALL core_mission.cpp_FUN_004f6930  ; 00414621
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00414626
     TEST ESI,ESI                        ; 00414629
     JNZ 0x004146f5                      ; 0041462b
@@ -147,8 +155,8 @@ section .text
     RET                                 ; 0041465e
     PUSH EAX                            ; 0041465f
         ;   Label: LAB_0041465f
-    CALL FUN_00414750                   ; 00414660
-        ;   XREF to: 00414750 (UNCONDITIONAL_CALL)  ; undefined FUN_00414750()
+    CALL core_bodypart.cpp_CBodyPart_ctor_FUN_00414750 ; 00414660
+        ;   XREF to: 00414750 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CBodyPart_ctor_FUN_00414750(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00414665
     JMP 0x00414578                      ; 00414668
         ;   XREF to: 00414578 (UNCONDITIONAL_JUMP)  ; LAB_00414578
@@ -160,16 +168,16 @@ section .text
     PUSH 0x3fc90fdb                     ; 00414679
         ;   Label: LAB_00414679
     PUSH 0x3f490fdb                     ; 0041467e
-    CALL FUN_0040ce40                   ; 00414683
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ce40()
+    CALL core_actor.cpp_FUN_0040ce40    ; 00414683
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
     MOV dword ptr [ESP + 0x2c],EAX      ; 00414688
     FLD float ptr [ESP + 0x2c]          ; 0041468c
     ADD ESP,0x8                         ; 00414690
     PUSH 0x40c90fdb                     ; 00414693
     PUSH 0x0                            ; 00414698
     FSTP float ptr [ESP + 0x1c]         ; 0041469a
-    CALL FUN_0040ce40                   ; 0041469e
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ce40()
+    CALL core_actor.cpp_FUN_0040ce40    ; 0041469e
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
     MOV dword ptr [ESP + 0x2c],EAX      ; 004146a3
     FLD float ptr [ESP + 0x2c]          ; 004146a7
     ADD ESP,0x8                         ; 004146ab

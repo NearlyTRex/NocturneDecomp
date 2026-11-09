@@ -1,14 +1,14 @@
-// Name: FUN_004f2bb0
+// Name: engine_mini3d.cpp_FUN_004f2bb0
 // Address: 004f2bb0
 // Address Range: [[004f2bb0, 004f2cd4]]
 // Convention: unknown
-// Signature: void FUN_004f2bb0(float *param_1,float *param_2,float *param_3)
+// Signature: void engine_mini3d_cpp_FUN_004f2bb0(float *param_1,float *param_2,float *param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004f2bb0(float *param_1,float *param_2,float *param_3)
+void engine_mini3d_cpp_FUN_004f2bb0(float *param_1,float *param_2,float *param_3)
 
 {
   float fVar1;
@@ -18,7 +18,7 @@ void FUN_004f2bb0(float *param_1,float *param_2,float *param_3)
   if (ABS(fVar1) == 0.0) {
     _DAT_01d71de0 = "..\\engine\\mini3d.cpp";
     _DAT_01d71de4 = 0x1473;
-    FUN_004e4330("Bad clip!");
+    core_main_c_FUN_004e4330("Bad clip!");
   }
   fVar1 = -(_DAT_01d7a6a4 * param_1[2] +
            _DAT_01d7a6a0 * param_1[1] + _DAT_01d7a69c * *param_1 + _DAT_01d7a6a8) / fVar1;

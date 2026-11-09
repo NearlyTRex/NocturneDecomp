@@ -1,0 +1,235 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 83,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 105
+  },
+  "cross_references": [
+    {
+      "addr": "004fac10",
+      "from_addr": "004fb015",
+      "name": "core_morph.cpp_CMorph_getReady_FUN_004fac10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fa7f0",
+    "address_range": [
+      [
+        "004fa7f0",
+        "004fa89c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_findNearestPoint_FUN_004fa7f0",
+    "signature": "int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_004fa7f0(CMorphModel *this_ptr,CVector3f *position)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fb015",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_getReady_FUN_004fac10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.970588235294118,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CBRANCH": 3,
+      "COPY": 182,
+      "FLOAT2FLOAT": 14,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 36,
+      "INT_AND": 24,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "INT_ZEXT": 10,
+      "LOAD": 25,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 406
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004fa821",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x54) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "pfVar4 = (float *)(*(int *)&this_ptr->field_0x58 + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&position->field_0x4 - pfVar4[1];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)&position->field_0x8 - pfVar4[2];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x54);",
+      "type": "unnamed_field"
+    }
+  ]
+}

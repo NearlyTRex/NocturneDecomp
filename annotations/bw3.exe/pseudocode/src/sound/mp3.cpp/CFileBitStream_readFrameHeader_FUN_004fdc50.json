@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 80,
+    "complexity_score": 31,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 111
+  },
+  "cross_references": [
+    {
+      "addr": "00502d60",
+      "from_addr": "00503934",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502890",
+      "from_addr": "0050297a",
+      "name": "sound_mp3.cpp_FUN_00502890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fdc50",
+    "address_range": [
+      [
+        "004fdc50",
+        "004fdd0a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+    "signature": "void __cdecl sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004fdc50(CFileBitStream *this_ptr,SMpegFrameHeader **header_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fd4f0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_004fd4f0"
+    },
+    {
+      "addr": "004fd5e0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_004fd5e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00503934",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050297a",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_00502890",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2835820895522385,
+    "instruction_count": 67,
+    "opcode_distribution": {
+      "CALL": 12,
+      "COPY": 45,
+      "INT_ADD": 28,
+      "INT_AND": 32,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 30,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 15,
+      "INT_SUB": 33,
+      "LOAD": 6,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 44
+    },
+    "pcode_op_count": 287
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      },
+      {
+        "is_param": true,
+        "name": "header_out",
+        "offset": 8,
+        "size": 4,
+        "type": "SMpegFrameHeader * *"
+      }
+    ]
+  },
+  "suspects": []
+}

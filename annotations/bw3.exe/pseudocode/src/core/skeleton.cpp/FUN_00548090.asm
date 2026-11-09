@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00548090(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_skeleton_cpp_FUN_00548090(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   bone_name
+; int              Stack[0xc]:4   assert_if_not_found
 ;
 ; XREF[43]:
-;   FUN_0040fac0 at 0040fae8
-;   FUN_00417630 at 0041765c
-;   FUN_00425ab0 at 00425ad9
-;   FUN_0042b0e0 at 0042b18a
-;   FUN_004320d0 at 0043210c
-;   FUN_00432330 at 00432381
-;   FUN_00433c60 at 00433d88
-;   FUN_00433fb0 at 00433ff5
-;   FUN_0043d680 at 0043d6c6
-;   FUN_004425f0 at 00442659
+;   core_asgaya.cpp_FUN_005a0b00 at 005a0b28
+;   core_baal.cpp_FUN_00596730 at 00596780
+;   core_boneguy.cpp_FUN_00417630 at 0041765c
+;   core_carved.cpp_FUN_00425ab0 at 00425ad9
+;   core_charactr.cpp_FUN_0042b0e0 at 0042b18a
+;   core_charactr.cpp_FUN_004320d0 at 0043210c
+;   core_charactr.cpp_FUN_00432330 at 00432381
+;   core_charactr.cpp_FUN_00433c60 at 00433d88
+;   core_charactr.cpp_FUN_00433fb0 at 00433ff5
+;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043d680 at 0043d6c6
 ;   ... and 33 more
 ;
 ; Referenced Globals:
@@ -24,15 +28,15 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005a3260
+;   core_main.c_FUN_004e4330
+;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00548090
-        ;   Label: FUN_00548090
+        ;   Label: core_skeleton.cpp_FUN_00548090
     PUSH ESI                            ; 00548091
     PUSH EDI                            ; 00548092
     PUSH EBP                            ; 00548093
@@ -47,8 +51,8 @@ section .text
     PUSH EBP                            ; 005480ae
         ;   Label: LAB_005480ae
     PUSH ESI                            ; 005480af
-    CALL FUN_005a3260                   ; 005480b0
-        ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3260()
+    CALL crt_string.c__stricmp_FUN_005a3260 ; 005480b0
+        ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005a3260(char * str1, char * str2)
     ADD ESP,0x8                         ; 005480b5
     TEST EAX,EAX                        ; 005480b8
     JZ 0x005480db                       ; 005480ba
@@ -85,8 +89,8 @@ section .text
     PUSH 0x5d1846                       ; 005480f4 | = "Can't find bone %s in skeleton %s!"
     MOV dword ptr [0x01d71de0],ESI      ; 005480f9 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 005480ff | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00548104
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00548104
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0xc                         ; 00548109
     MOV EAX,0xffffffff                  ; 0054810c
     POP EBP                             ; 00548111

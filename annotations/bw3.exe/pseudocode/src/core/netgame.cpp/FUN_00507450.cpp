@@ -1,96 +1,96 @@
-// Name: FUN_00507450
+// Name: core_netgame.cpp_FUN_00507450
 // Address: 00507450
 // Address Range: [[00507450, 0050765e]]
-// Convention: unknown
-// Signature: void FUN_00507450(int *param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_FUN_00507450(CNetGame *this_ptr,int player_index)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00507450(int *param_1,int param_2)
+void __cdecl core_netgame_cpp_FUN_00507450(CNetGame *this_ptr,int player_index)
 
 {
   char cVar1;
-  int iVar2;
-  int *piVar3;
-  int iVar4;
-  int *piVar5;
-  int *piVar6;
-  char *pcVar7;
-  byte bVar8;
+  CNetGame *pCVar2;
+  int iVar3;
+  char *pcVar4;
+  char *pcVar5;
+  char *pcVar6;
+  byte bVar7;
   uint uStack_c8;
   byte uStack_c4;
   uint uStack_c3;
-  int iStack_bf;
+  uint uStack_bf;
   char acStack_bb [80];
-  int iStack_6b;
+  uint uStack_6b;
   char acStack_67 [20];
-  int aiStack_53 [15];
+  uint auStack_53 [15];
   char *pcStack_14;
   
-  bVar8 = 0;
-  if ((*param_1 != 1) || (param_1[1] != 1)) {
+  bVar7 = 0;
+  if ((*(int *)this_ptr != 1) || (*(int *)&this_ptr->field_0x4 != 1)) {
     _DAT_01d71de0 = "..\\core\\netgame.cpp";
     _DAT_01d71de4 = 0x8a8;
-    FUN_004e4330("CNetGame::sendGameSettingsPacket - should only call this in server lobby mode");
+    core_main_c_FUN_004e4330("CNetGame::sendGameSettingsPacket - should only call this in server lobby mode");
   }
-  if ((param_2 < 0) || (param_1[7] <= param_2)) {
+  if ((player_index < 0) || (*(int *)&this_ptr->field_0x1c <= player_index)) {
     _DAT_01d71de0 = "..\\core\\netgame.cpp";
     _DAT_01d71de4 = 0x8ae;
-    FUN_004e4330("CNetGame::send - invalid player index");
+    core_main_c_FUN_004e4330("CNetGame::send - invalid player index");
   }
   uStack_c4 = 0xb;
   uStack_c8 = 0xb1;
-  FUN_005a30d7(acStack_67,2,0x5e2d40);
-  iStack_bf = param_1[0x5f];
+  __arrinit(acStack_67,2,&g_SPlayerTypeInfo);
+  uStack_bf = *(uint *)&this_ptr->field_0x17c;
   uStack_c3 = _DAT_01da6484;
-  pcVar7 = acStack_bb;
-  iStack_6b = param_1[7];
-  piVar6 = param_1 + 0x4a;
+  pcVar6 = acStack_bb;
+  uStack_6b = *(uint *)&this_ptr->field_0x1c;
+  pcVar5 = &this_ptr->field_0x128;
   do {
-    iVar4 = *piVar6;
-    *pcVar7 = (char)iVar4;
-    if ((char)iVar4 == '\0') break;
-    cVar1 = *(char *)((int)piVar6 + 1);
-    piVar6 = (int *)((int)piVar6 + 2);
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar4 = 0;
-  if (0 < param_1[7]) {
-    piVar6 = param_1 + 8;
-    pcVar7 = acStack_67;
-    pcStack_14 = pcVar7;
-    piVar5 = piVar6;
-    piVar3 = param_1;
+  iVar3 = 0;
+  if (0 < *(int *)&this_ptr->field_0x1c) {
+    pcVar6 = &this_ptr->field_0x20;
+    pcVar5 = acStack_67;
+    pcStack_14 = pcVar5;
+    pcVar4 = pcVar6;
+    pCVar2 = this_ptr;
 LAB_00507570:
     do {
-      iVar2 = *piVar6;
-      *pcVar7 = (char)iVar2;
-      if ((char)iVar2 != '\0') {
-        cVar1 = *(char *)((int)piVar6 + 1);
-        piVar6 = (int *)((int)piVar6 + 2);
-        pcVar7[1] = cVar1;
-        pcVar7 = pcVar7 + 2;
+      cVar1 = *pcVar6;
+      *pcVar5 = cVar1;
+      if (cVar1 != '\0') {
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pcVar5[1] = cVar1;
+        pcVar5 = pcVar5 + 2;
         if (cVar1 != '\0') goto LAB_00507570;
       }
-      aiStack_53[iVar4 * 10] = piVar3[0xf];
-      aiStack_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] = piVar3[(uint)bVar8 * -2 + 0x10];
-      aiStack_53[iVar4 * 10 + 4] = piVar3[0x19];
-      aiStack_53[iVar4 * 10 + 2] = piVar3[0xd];
-      piVar6 = piVar5 + 0x20;
-      aiStack_53[iVar4 * 10 + 3] = piVar3[0xe];
-      iVar4 = iVar4 + 1;
-      pcVar7 = pcStack_14 + 0x28;
-      pcStack_14 = pcVar7;
-      piVar5 = piVar6;
-      piVar3 = piVar3 + 0x20;
-    } while (iVar4 < param_1[7]);
+      auStack_53[iVar3 * 10] = *(uint *)&pCVar2->field_0x3c;
+      auStack_53[iVar3 * 10 + (uint)bVar7 * -2 + 1] =
+           *(uint *)((int)pCVar2 + (uint)bVar7 * -8 + 0x40);
+      auStack_53[iVar3 * 10 + 4] = *(uint *)&pCVar2->field_0x64;
+      auStack_53[iVar3 * 10 + 2] = *(uint *)&pCVar2->field_0x34;
+      pcVar6 = pcVar4 + 0x80;
+      auStack_53[iVar3 * 10 + 3] = *(uint *)&pCVar2->field_0x38;
+      iVar3 = iVar3 + 1;
+      pcVar5 = pcStack_14 + 0x28;
+      pcStack_14 = pcVar5;
+      pcVar4 = pcVar6;
+      pCVar2 = (CNetGame *)&pCVar2->field_0x80;
+    } while (iVar3 < *(int *)&this_ptr->field_0x1c);
   }
-  FUN_00505870(param_1,param_2,&uStack_c8);
-  iVar4 = FUN_005806a0();
-  _DAT_01da6474 = iVar4 / 0x12 - _DAT_01da6474;
+  core_netgame_cpp_CNetGame_send_FUN_00505870(this_ptr,player_index,(SNetPacketHeader *)&uStack_c8);
+  iVar3 = wincore_winrun_cpp_FUN_005806a0();
+  _DAT_01da6474 = iVar3 / 0x12 - _DAT_01da6474;
   if (_DAT_01da6474 < 0) {
     _DAT_01da6474 = 0;
   }
@@ -98,7 +98,7 @@ LAB_00507570:
     _DAT_01da6474 = 0x20000;
   }
   _DAT_01da6478 = _DAT_01da6478 + _DAT_01da6474;
-  _DAT_01da6474 = iVar4 / 0x12;
-  param_1[param_2 * 0x20 + 0x16] = _DAT_01da6478;
+  _DAT_01da6474 = iVar3 / 0x12;
+  *(int *)(&this_ptr->field_0x58 + player_index * 0x80) = _DAT_01da6478;
   return;
 }

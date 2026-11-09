@@ -1,0 +1,123 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 24,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "0048c2e0",
+      "from_addr": "0049180f",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568e40",
+      "from_addr": "00568f0d",
+      "name": "core_teleport.cpp_FUN_00568e40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f6ed0",
+    "address_range": [
+      [
+        "004f6ed0",
+        "004f6f00"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0(CDemonMission *this_ptr,CLocation *teleport_target)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0049180f",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00568f0d",
+        "call_type": "direct",
+        "caller": "core_teleport.cpp_FUN_00568e40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8666666666666667,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "COPY": 15,
+      "INT_ADD": 12,
+      "INT_SUB": 1,
+      "LOAD": 8,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 43
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "teleport_target",
+        "offset": 8,
+        "size": 4,
+        "type": "CLocation *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 6,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(this_ptr + 0x1448) = *(uint *)(teleport_target + 4);",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

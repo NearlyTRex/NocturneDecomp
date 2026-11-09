@@ -1,147 +1,26 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 18,
-        "message": "use of undeclared identifier 'DAT_005d0dbe'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 19,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 25,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 34,
-        "message": "use of undeclared identifier 'DAT_005d0df5'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 218,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 17,
+    "pseudocode_lines": 30,
+    "suspect_count": 12,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 98
+    "total_lines": 100
   },
   "cross_references": [
     {
       "addr": "00532b80",
       "from_addr": "0053354d",
-      "name": "FUN_00532b80",
+      "name": "core_set.cpp_FUN_00532b80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,25 +32,25 @@
         "00541faa"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_00541f00",
-    "signature": "void FUN_00541f00(int param_1,undefined4 param_2)"
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_FUN_00541f00",
+    "signature": "void __cdecl core_setutil_cpp_FUN_00541f00(C3DSCamera *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
-    },
-    {
-      "addr": "005a3230",
-      "is_variadic": false,
-      "name": "FUN_005a3230"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005a3e50",
       "is_variadic": false,
-      "name": "FUN_005a3e50"
+      "name": "crt_memory.c_realloc_FUN_005a3e50"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
     }
   ],
   "globals": [
@@ -218,24 +97,20 @@
       {
         "call_addr": "0053354d",
         "call_type": "direct",
-        "caller": "FUN_00532b80",
-        "estimated_params": 5,
+        "caller": "core_set.cpp_FUN_00532b80",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 5,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.821428571428571,
@@ -268,29 +143,27 @@
     "pcode_op_count": 270
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
-  },
-  "static_analysis": {
-    "analyzed_file": "FUN_00541f00.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 11,
-          "line": 28,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -302,143 +175,92 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void FUN_00541f00(int param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void FUN_00541f00(int param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0dbe,param_1 + 0x194);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0dbe,param_1 + 0x194);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 12,
       "match": "DAT_005d0dbe",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0dbe,param_1 + 0x194);",
+      "text": "_fscanf(file_handle,&DAT_005d0dbe,&this_ptr->field_0x194);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 12,
-      "match": "param_1",
+      "match": "field_0x194",
       "severity": "mild",
-      "text": "iVar1 = FUN_005a3e50(*(uint *)(param_1 + 0x198),*(int *)(param_1 + 0x194) << 2);",
-      "type": "unnamed_param"
+      "text": "_fscanf(file_handle,&DAT_005d0dbe,&this_ptr->field_0x194);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005a3e50(*(uint *)(param_1 + 0x198),*(int *)(param_1 + 0x194) << 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x198) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 14,
-      "match": "param_1",
+      "match": "field_0x198",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x194)) {",
-      "type": "unnamed_param"
+      "text": "(*(void **)&this_ptr->field_0x198,*(int *)&this_ptr->field_0x194 << 2);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x194",
       "severity": "mild",
-      "text": "FUN_004e4330(\"Out of memory for pvsList - %d\",*(int *)(param_1 + 0x194));",
-      "type": "unnamed_param"
+      "text": "(*(void **)&this_ptr->field_0x198,*(int *)&this_ptr->field_0x194 << 2);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x198",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x194)) {",
-      "type": "unnamed_param"
+      "text": "*(void **)&this_ptr->field_0x198 = pvVar1;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x194",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x198) + iVar3;",
-      "type": "unnamed_param"
+      "text": "if (0 < *(int *)&this_ptr->field_0x194) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x194",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0df5,iVar2);",
-      "type": "unnamed_param"
+      "text": "core_main_c_FUN_004e4330(\"Out of memory for pvsList - %d\",*(int *)&this_ptr->field_0x194);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x194",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x194) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x198",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&this_ptr->field_0x198 + iVar3;",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 29,
       "match": "DAT_005d0df5",
       "severity": "mild",
-      "text": "FUN_005a3230(param_2,&DAT_005d0df5,iVar2);",
+      "text": "_fscanf(file_handle,&DAT_005d0df5,iVar2);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x194",
       "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 0x194));",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 28,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x194)) {",
-      "type": "static_identical_inner_condition"
+      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x194);",
+      "type": "unnamed_field"
     }
   ]
 }

@@ -1,0 +1,259 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 216,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 56,
+    "suspect_count": 15,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 198
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046682e",
+    "address_range": [
+      [
+        "0046682e",
+        "00466984"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dpart.cpp_FUN_0046682e",
+    "signature": "void core_dpart_cpp_FUN_0046682e(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00538ad0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_rotateVerticies_FUN_00538ad0"
+    },
+    {
+      "addr": "0053ad70",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_0053ad70"
+    },
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "0046d500",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500"
+    },
+    {
+      "addr": "0046d3c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0"
+    },
+    {
+      "addr": "0046d450",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450"
+    },
+    {
+      "addr": "0046d460",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.586206896551724,
+    "instruction_count": 116,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 9,
+      "CBRANCH": 5,
+      "COPY": 89,
+      "INT_2COMP": 1,
+      "INT_ADD": 47,
+      "INT_AND": 78,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 54,
+      "INT_LEFT": 3,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 14,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 28,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 38,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 22,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 42,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 532
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_dpart_cpp_FUN_0046682e(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450(DAT_005f2afc,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(param_1 + 0x20) / *(int *)(param_1 + 0x28);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(param_1 + 0x20) / *(int *)(param_1 + 0x28);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3i *)(*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c)));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3i *)(*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c)));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "if (*(int *)(DAT_005f2afc + 0x18) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar2 = *(uint **)(param_1 + 0x34);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 0x24)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,-((uVar3 & 0x7f) + 0x80));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while ((int)uVar3 < *(int *)(param_1 + 0x24));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450(DAT_005f2afc,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",
+      "type": "undefined_data"
+    }
+  ]
+}

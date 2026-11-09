@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * FUN_004f89a0(undefined4 param_1,int param_2)
+; SMRGLHeaderExtended * __cdecl engine_model_c_FUN_004f89a0(char *filename,int model_size)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; int              Stack[0x8]:4   model_size
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ;
 ; XREF[1]:
-;   FUN_004dee60 at 004deeb8
+;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004dee60 at 004deeb8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c90c0
@@ -24,19 +27,19 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004659c0
-;   FUN_004e4330
-;   FUN_005a28c0
-;   FUN_005a3650
-;   FUN_005a3890
-;   FUN_005a3a90
+;   core_main.c_FUN_004e4330
+;   crt_stdio.c_fclose_FUN_005a3a90
+;   crt_stdio.c_fread_FUN_005a3890
+;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_FUN_005a3650
+;   engine_dosio.cpp_FUN_004659c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f89a0
-        ;   Label: FUN_004f89a0
+        ;   Label: engine_model.c_FUN_004f89a0
     PUSH ESI                            ; 004f89a1
     PUSH EDI                            ; 004f89a2
     PUSH EBP                            ; 004f89a3
@@ -46,8 +49,8 @@ section .text
     PUSH 0x5c90c0                       ; 004f89af | DAT_005c90c0
     PUSH EBP                            ; 004f89b4
     PUSH 0x5c90c3                       ; 004f89b5 | = "models"
-    CALL FUN_004659c0                   ; 004f89ba
-        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004659c0()
+    CALL engine_dosio.cpp_FUN_004659c0  ; 004f89ba
+        ;   XREF to: 004659c0 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_FUN_004659c0(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004f89bf
     MOV ESI,EAX                         ; 004f89c2
     TEST EAX,EAX                        ; 004f89c4
@@ -56,8 +59,8 @@ section .text
     LEA EAX,[EDI + 0x4]                 ; 004f89cc
         ;   Label: LAB_004f89cc
     PUSH EAX                            ; 004f89cf
-    CALL FUN_005a3650                   ; 004f89d0
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3650()
+    CALL crt_unknown.c_FUN_005a3650     ; 004f89d0
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004f89d5
     MOV EBX,EAX                         ; 004f89d8
     TEST EAX,EAX                        ; 004f89da
@@ -67,8 +70,8 @@ section .text
     PUSH 0x5c90f5                       ; 004f89df | = "Out of partial model mem : %s"
     LEA EAX,[ESP + 0x8]                 ; 004f89e4
     PUSH EAX                            ; 004f89e8
-    CALL FUN_005a28c0                   ; 004f89e9
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28c0()
+    CALL crt_unknown.c_FUN_005a28c0     ; 004f89e9
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
     MOV EAX,0x2ef                       ; 004f89ee
     ADD ESP,0xc                         ; 004f89f3
     MOV [0x01d71de4],EAX                ; 004f89f6 | DAT_01d71de4
@@ -76,16 +79,16 @@ section .text
     MOV EBP,0x5c9113                    ; 004f89fd | = "..\\engine\\model.c"
     PUSH EAX                            ; 004f8a02
     MOV dword ptr [0x01d71de0],EBP      ; 004f8a03 | DAT_01d71de0
-    CALL FUN_004e4330                   ; 004f8a09
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004f8a09
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004f8a0e
     PUSH ESI                            ; 004f8a11
         ;   Label: LAB_004f8a11
     PUSH EDI                            ; 004f8a12
     PUSH 0x1                            ; 004f8a13
     PUSH EBX                            ; 004f8a15
-    CALL FUN_005a3890                   ; 004f8a16
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3890()
+    CALL crt_stdio.c_fread_FUN_005a3890 ; 004f8a16
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
     ADD ESP,0x10                        ; 004f8a1b
     CMP EAX,EDI                         ; 004f8a1e
     JZ 0x004f8a45                       ; 004f8a20
@@ -95,13 +98,13 @@ section .text
     PUSH 0x5c9137                       ; 004f8a2c | = "Model read hose"
     MOV dword ptr [0x01d71de0],EDX      ; 004f8a31 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004f8a37 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004f8a3d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004f8a3d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004f8a42
     PUSH ESI                            ; 004f8a45
         ;   Label: LAB_004f8a45
-    CALL FUN_005a3a90                   ; 004f8a46
-        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3a90()
+    CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004f8a46
+        ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
     XOR EAX,EAX                         ; 004f8a4b
     MOV AL,byte ptr [EBX]               ; 004f8a4d
     ADD ESP,0x4                         ; 004f8a4f
@@ -125,8 +128,8 @@ section .text
     PUSH 0x5c90ca                       ; 004f8a6e | = "Unable to open model: %s"
     LEA EAX,[ESP + 0x8]                 ; 004f8a73
     PUSH EAX                            ; 004f8a77
-    CALL FUN_005a28c0                   ; 004f8a78
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28c0()
+    CALL crt_unknown.c_FUN_005a28c0     ; 004f8a78
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
     MOV EDX,0x5c90e3                    ; 004f8a7d | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 004f8a82
     MOV EAX,ESP                         ; 004f8a85
@@ -134,8 +137,8 @@ section .text
     PUSH EAX                            ; 004f8a8c
     MOV dword ptr [0x01d71de0],EDX      ; 004f8a8d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004f8a93 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004f8a99
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004f8a99
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004f8a9e
     JMP 0x004f89cc                      ; 004f8aa1
         ;   XREF to: 004f89cc (UNCONDITIONAL_JUMP)  ; LAB_004f89cc
@@ -145,8 +148,8 @@ section .text
     PUSH 0x5c9159                       ; 004f8ab0 | = "Bad model!"
     MOV dword ptr [0x01d71de0],ESI      ; 004f8ab5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBP      ; 004f8abb | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004f8ac1
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004f8ac1
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004f8ac6
     MOV EAX,EBX                         ; 004f8ac9
     MOV dword ptr [EDI + EBX*0x1],0x0   ; 004f8acb

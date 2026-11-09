@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 53,
-        "message": "use of undeclared identifier 'stack0xffffff88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 55,
-        "message": "use of undeclared identifier 'stack0xffffff74'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 56,
-        "message": "use of undeclared identifier 'stack0xffffffbc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 57,
-        "message": "use of undeclared identifier 'stack0xffffff78'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 58,
-        "message": "use of undeclared identifier 'stack0xffffffc0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 59,
-        "message": "use of undeclared identifier '_DAT_005cb81c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 337,
@@ -145,7 +25,7 @@
     {
       "addr": "0050baa0",
       "from_addr": "0050c141",
-      "name": "FUN_0050baa0",
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -159,19 +39,19 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_0050ae20",
-    "signature": "float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)"
+    "name": "core_path.cpp_FUN_0050ae20",
+    "signature": "float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "00576250",
       "is_variadic": false,
-      "name": "FUN_00576250"
+      "name": "core_vecdir.cpp_FUN_00576250"
     }
   ],
   "globals": [
@@ -284,7 +164,7 @@
       {
         "call_addr": "0050c141",
         "call_type": "direct",
-        "caller": "FUN_0050baa0",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -299,7 +179,7 @@
       {
         "call_addr": "0050c3c0",
         "call_type": "direct",
-        "caller": "FUN_0050baa0",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -569,44 +449,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_0050ae20.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 54,
-          "message": "Uninitialized variable: local_48",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 60,
-          "message": "Uninitialized variable: local_8c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 61,
-          "message": "Uninitialized variable: local_88",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 69,
-          "message": "Uninitialized variable: local_80",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -629,7 +471,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
+      "text": "float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -637,7 +479,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
+      "text": "float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -645,7 +487,7 @@
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
+      "text": "float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -653,7 +495,7 @@
       "line": 5,
       "match": "param_4",
       "severity": "mild",
-      "text": "float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
+      "text": "float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -661,7 +503,7 @@
       "line": 5,
       "match": "param_5",
       "severity": "mild",
-      "text": "float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
+      "text": "float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -725,7 +567,7 @@
       "line": 46,
       "match": "&stack0xffffff88",
       "severity": "moderate",
-      "text": "FUN_00576250(&stack0xffffff88);",
+      "text": "core_vecdir_cpp_FUN_00576250(&stack0xffffff88);",
       "type": "stack_ref"
     },
     {
@@ -917,7 +759,7 @@
       "line": 187,
       "match": "&stack0xffffffac",
       "severity": "moderate",
-      "text": "FUN_00576250(&stack0xffffffac);",
+      "text": "core_vecdir_cpp_FUN_00576250(&stack0xffffffac);",
       "type": "stack_ref"
     },
     {
@@ -1106,38 +948,6 @@
       "param_delta": 8,
       "text": "Function declares 0 params but call sites push 8 (8 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: local_48",
-      "line": 54,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_90 = local_48;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_8c",
-      "line": 60,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_38 = local_8c * _DAT_005cb81c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_88",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_34 = local_88 * _DAT_005cb81c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_80",
-      "line": 69,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_80 = -local_80;",
-      "type": "static_uninitvar"
     }
   ]
 }

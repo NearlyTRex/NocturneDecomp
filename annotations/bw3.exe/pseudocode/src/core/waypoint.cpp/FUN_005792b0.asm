@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005792b0(int param_1)
+; void core_waypoint_cpp_FUN_005792b0(CTrigger *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -10,22 +10,22 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_0056e0f0
-;   FUN_005a3260
+;   core_main.c_FUN_004e4330
+;   core_trigger.cpp_FUN_0056e0f0
+;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 005792b0
-        ;   Label: FUN_005792b0
+        ;   Label: core_waypoint.cpp_FUN_005792b0
     PUSH EBP                            ; 005792b1
     SUB ESP,0xc                         ; 005792b2
     MOV ESI,dword ptr [ESP + 0x18]      ; 005792b5
     PUSH ESI                            ; 005792b9
-    CALL FUN_0056e0f0                   ; 005792ba
-        ;   XREF to: 0056e0f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e0f0()
+    CALL core_trigger.cpp_FUN_0056e0f0  ; 005792ba
+        ;   XREF to: 0056e0f0 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_FUN_0056e0f0(CTrigger * this_ptr)
     MOV EAX,[0x00600530]                ; 005792bf | DAT_00600530
     ADD ESP,0x4                         ; 005792c4
     MOV EDX,dword ptr [ESI + 0x374]     ; 005792c7
@@ -76,16 +76,16 @@ section .text
         ;   Label: LAB_0057932d
     ADD ESI,0x78                        ; 00579332
     PUSH ESI                            ; 00579335
-    CALL FUN_005a3260                   ; 00579336
-        ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3260()
+    CALL crt_string.c__stricmp_FUN_005a3260 ; 00579336
+        ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005a3260(char * str1, char * str2)
     ADD ESP,0x8                         ; 0057933b
     TEST EAX,EAX                        ; 0057933e
     JZ 0x00579327                       ; 00579340
         ;   XREF to: 00579327 (CONDITIONAL_JUMP)  ; LAB_00579327
     PUSH 0x5d7399                       ; 00579342
     PUSH ESI                            ; 00579347
-    CALL FUN_005a3260                   ; 00579348
-        ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3260()
+    CALL crt_string.c__stricmp_FUN_005a3260 ; 00579348
+        ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005a3260(char * str1, char * str2)
     ADD ESP,0x8                         ; 0057934d
     TEST EAX,EAX                        ; 00579350
     JZ 0x00579327                       ; 00579352
@@ -95,8 +95,8 @@ section .text
     PUSH 0x5d73b3                       ; 0057935e
     MOV dword ptr [0x01d71de0],EBP      ; 00579363 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00579369 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0057936e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0057936e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00579373
     ADD ESP,0xc                         ; 00579376
     POP EBP                             ; 00579379

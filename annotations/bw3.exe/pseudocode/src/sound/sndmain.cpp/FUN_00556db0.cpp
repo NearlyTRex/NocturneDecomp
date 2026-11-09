@@ -1,34 +1,34 @@
-// Name: FUN_00556db0
+// Name: sound_sndmain.cpp_FUN_00556db0
 // Address: 00556db0
 // Address Range: [[00556db0, 00556e24]]
-// Convention: unknown
-// Signature: void FUN_00556db0(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_FUN_00556db0(int channel_index,int enable_state)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00556db0(int param_1,int param_2)
+void __cdecl sound_sndmain_cpp_FUN_00556db0(int channel_index,int enable_state)
 
 {
   int iVar1;
   
-  if ((param_1 < 0) || (0x1f < param_1)) {
+  if ((channel_index < 0) || (0x1f < channel_index)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x1136;
-    FUN_004e4330("enableSfxChannel - invalid channel index: %d",param_1);
+    core_main_c_FUN_004e4330("enableSfxChannel - invalid channel index: %d",channel_index);
   }
-  *(int *)(param_1 * 4 + 0x2cf2940) = param_2;
-  if (param_2 == 0) {
-    FUN_00558e90();
+  *(int *)(channel_index * 4 + 0x2cf2940) = enable_state;
+  if (enable_state == 0) {
+    sound_sndmain_cpp_FUN_00558e90();
     iVar1 = 0;
     do {
-      if (param_1 == *(int *)(iVar1 + 0x2ce721c)) {
-        FUN_00555270(iVar1 + 0x2ce721c);
+      if (channel_index == *(int *)(iVar1 + 0x2ce721c)) {
+        sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270((CSfxSlot *)(iVar1 + 0x2ce721c));
       }
       iVar1 = iVar1 + 0x11c;
     } while (iVar1 != 0x4700);
-    FUN_00556fd0();
+    sound_sndmain_cpp_FUN_00556fd0();
   }
   return;
 }

@@ -1,35 +1,35 @@
-// Name: FUN_0043fa40
+// Name: core_cloth.cpp_FUN_0043fa40
 // Address: 0043fa40
 // Address Range: [[0043fa40, 0043fab4]]
-// Convention: unknown
-// Signature: void FUN_0043fa40(int *param_1,char *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_cloth_cpp_FUN_0043fa40(CClothList *this_ptr,char *filename)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0043fa40(int *param_1,char *param_2)
+void __cdecl core_cloth_cpp_FUN_0043fa40(CClothList *this_ptr,char *filename)
 
 {
-  char cVar1;
-  int *piVar2;
+  CClothList CVar1;
+  CClothList *pCVar2;
   
-  if (9 < *param_1) {
+  if (9 < *(int *)this_ptr) {
     _DAT_01d71de0 = "..\\core\\cloth.cpp";
     _DAT_01d71de4 = 0x5de;
-    FUN_004e4330("CClothList::add - list is full");
+    core_main_c_FUN_004e4330("CClothList::add - list is full");
   }
-  piVar2 = param_1 + *param_1 * 10 + 1;
+  pCVar2 = this_ptr + *(int *)this_ptr * 0x28 + 4;
   do {
-    cVar1 = *param_2;
-    *(char *)piVar2 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
-    *(char *)((int)piVar2 + 1) = cVar1;
-    piVar2 = (int *)((int)piVar2 + 2);
-  } while (cVar1 != '\0');
-  param_1[*param_1 + 0x65] = 0;
-  *param_1 = *param_1 + 1;
+    CVar1 = (CClothList)*filename;
+    *pCVar2 = CVar1;
+    if (CVar1 == (CClothList)0x0) break;
+    CVar1 = *(CClothList *)(filename + 1);
+    filename = filename + 2;
+    pCVar2[1] = CVar1;
+    pCVar2 = pCVar2 + 2;
+  } while (CVar1 != (CClothList)0x0);
+  *(uint *)(this_ptr + *(int *)this_ptr * 4 + 0x194) = 0;
+  *(int *)this_ptr = *(int *)this_ptr + 1;
   return;
 }

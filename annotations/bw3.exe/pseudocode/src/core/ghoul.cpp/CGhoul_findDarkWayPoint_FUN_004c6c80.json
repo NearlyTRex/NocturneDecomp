@@ -1,0 +1,434 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 166,
+    "complexity_score": 295,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 20,
+    "suspect_types": [
+      "suspicious_cast",
+      "unknown_field",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 236
+  },
+  "cross_references": [
+    {
+      "addr": "004c6eb0",
+      "from_addr": "004c819f",
+      "name": "core_ghoul.cpp_FUN_004c6eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c6c80",
+    "address_range": [
+      [
+        "004c6c80",
+        "004c6e2e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c6c80",
+    "signature": "void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c6c80(CGhoul *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040ce40"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "0050c680",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_findPathWithRetry_FUN_0050c680"
+    },
+    {
+      "addr": "0050ced0",
+      "is_variadic": false,
+      "name": "core_path.cpp_getPathMap_FUN_0050ced0"
+    },
+    {
+      "addr": "00486a40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_00486a40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4174",
+      "name": "s_core_ghoul_cpp_005c4174",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4186",
+      "name": "s_CGhoul_findDarkWayPoint_005c4186",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c442d",
+      "name": "s_darkPoint_005c442c+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fecb0",
+      "name": "PTR_s_darkPoint_005c442c+1_005fecb0",
+      "type": "void*",
+      "value": "005c442d"
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01d22d9c",
+      "name": "g_CGhoulClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02024a2c",
+      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a30",
+      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020288b4",
+      "name": "g_CDemonSetInstance.field1380332_0x150fec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0bcd8",
+      "name": "g_CWayPointClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c819f",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_FUN_004c6eb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.767441860465116,
+    "instruction_count": 129,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 13,
+      "COPY": 149,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 55,
+      "INT_AND": 73,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 63,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 31,
+      "INT_SUB": 35,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 25,
+      "POPCOUNT": 31,
+      "RETURN": 1,
+      "STORE": 41
+    },
+    "pcode_op_count": 615
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGhoul *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0xd0bc",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0xd0bc == 0) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0xd0b8",
+      "severity": "mild",
+      "text": "(fVar1 = *(float *)&this_ptr->field_0xd0b8 - delta_time,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xd0b8",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0xd0b8 = fVar1, fVar1 <= 0.0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "local_24 = (CVector3f *)&this_ptr->field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xd0b8",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0xd0b8 = local_14 + *(float *)&this_ptr->field_0xd0b8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xd0b8",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0xd0b8 = local_14 + *(float *)&this_ptr->field_0xd0b8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "for (; local_18 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_18 = local_18 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x14d168",
+      "severity": "mild",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x150fec",
+      "severity": "mild",
+      "text": "for (iVar4 = 0; iVar4 < *(int *)&g_CDemonSetPtr->field_0x150fec; iVar4 = iVar4 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x150ff0",
+      "severity": "mild",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x150ff0 + iVar2),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0xd0b4",
+      "severity": "mild",
+      "text": "(target_string == *(char **)&pCVar3->field_0xd0b4)) goto LAB_004c6d1f;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(target_string + 0x154) + 0xc4))(target_string);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_30._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_30._4_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_30._8_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x6c",
+      "severity": "mild",
+      "text": "(this_ptr_00,local_24,&CStack_30,*(int *)&this_ptr->field_0x6c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0xd0b4",
+      "severity": "mild",
+      "text": "*(char **)&this_ptr->field_0xd0b4 = target_string;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 31,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
+      "line": 41,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x150ff0 + iVar2),",
+      "type": "suspicious_cast"
+    }
+  ]
+}

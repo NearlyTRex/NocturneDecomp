@@ -4,155 +4,195 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CBloodParticle.h"
+#include "types/classes/CBloodPool.h"
+#include "types/classes/CBloodSplat.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CFlies.h"
+#include "types/classes/CFootstep.h"
+#include "types/classes/CGame.h"
+#include "types/classes/CGargoyle.h"
+#include "types/classes/CGasMask.h"
+#include "types/classes/CGhoul.h"
+#include "types/classes/CGlass.h"
+#include "types/classes/CGoggles.h"
+#include "types/classes/CGore.h"
+#include "types/classes/CGrave.h"
+#include "types/classes/CGround.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EBloodType.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EGroundType.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
+#include "types/structs/SLaserInfo.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4C0000
 // =============================================================================
 
-void FUN_004c02a0(int param_1);
-void FUN_004c07b0(int param_1,undefined4 *param_2);
-void FUN_004c4870(int param_1);
-void FUN_004c48b0(void);
-void FUN_004c49f0(void);
-void FUN_004c4a10(void);
-void FUN_004c4a60(int param_1,char *param_2,int param_3,uint param_4);
-void FUN_004c4bc0(int param_1);
-void FUN_004c4cc0(int param_1);
-void FUN_004c4d10(int param_1);
-undefined4 FUN_004c4d50(int param_1);
-void FUN_004c4d60(undefined4 param_1);
-void FUN_004c4d80(void);
-undefined4 FUN_004c4dd0(void);
-int FUN_004c4de0(undefined4 param_1);
-void FUN_004c4ee0(int param_1);
-undefined4 FUN_004c51a0(int param_1);
-void FUN_004c5350(int param_1,float param_2);
-void FUN_004c5e40(undefined4 param_1);
-void FUN_004c5e50(int param_1);
-void FUN_004c5f10(int param_1,int *param_2);
-void FUN_004c61b0(int param_1,int param_2);
-int FUN_004c6310(int param_1,undefined4 *param_2);
-void FUN_004c6530(undefined4 param_1,undefined4 param_2);
-int FUN_004c6550(int param_1,byte param_2);
-void FUN_004c65e0(void);
-undefined4 FUN_004c6630(void);
-int FUN_004c6640(undefined4 param_1);
-void FUN_004c6690(int param_1);
-undefined4 FUN_004c66b0(undefined4 param_1,undefined4 param_2);
-int FUN_004c66e0(int param_1);
-void FUN_004c6780(int param_1);
-undefined4 FUN_004c67b0(void);
-void FUN_004c67c0(int param_1);
-undefined4 FUN_004c6800(undefined4 param_1,byte param_2);
-void FUN_004c6850(void);
-undefined4 FUN_004c68d0(void);
-int FUN_004c68e0(undefined4 param_1);
-void FUN_004c6a10(int param_1);
-void FUN_004c6c80(int param_1,float param_2);
-void FUN_004c6eb0(int param_1,float param_2);
-void FUN_004c8c90(int param_1,undefined4 param_2);
-void FUN_004c8cc0(int param_1);
-undefined4 FUN_004c8dd0(int param_1,undefined4 *param_2);
-void FUN_004c90b0(int param_1);
-void FUN_004c9140(int param_1,int *param_2);
-void FUN_004c9400(int param_1,int param_2);
-int FUN_004c97e0(int param_1,float *param_2);
-int FUN_004c9ab0(int param_1,byte param_2);
-void FUN_004c9b40(void);
-undefined4 FUN_004c9b90(void);
-int FUN_004c9ba0(undefined4 param_1);
-void FUN_004c9ce0(int param_1);
-void FUN_004ca550(int param_1);
-undefined4 FUN_004ca5a0(int param_1);
-undefined4 FUN_004ca770(int param_1);
-void FUN_004ca940(int param_1);
-void FUN_004cab40(int param_1,int param_2);
-void FUN_004cad00(int param_1);
-void FUN_004cad80(int param_1);
-undefined4 FUN_004cae80(int param_1);
-void FUN_004caeb0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
-void FUN_004cc040(int param_1);
-void FUN_004cc480(int param_1,int param_2);
-undefined4 FUN_004cc5c0(void);
-void FUN_004cc5d0(int param_1);
-int FUN_004cc5f0(int param_1,byte param_2);
-void FUN_004cc660(void);
-undefined4 FUN_004cc6b0(void);
-int FUN_004cc6c0(undefined4 param_1);
-void FUN_004cc710(int param_1);
-undefined4 FUN_004cc730(undefined4 param_1,undefined4 param_2);
-int FUN_004cc760(int param_1);
-void FUN_004cc800(int param_1);
-undefined4 FUN_004cc830(void);
-void FUN_004cc840(int param_1);
-undefined4 FUN_004cc880(undefined4 param_1,byte param_2);
-void FUN_004cc8d0(void);
-void FUN_004cc970(undefined4 param_1,undefined4 *param_2,int *param_3,int *param_4);
-void FUN_004ccac0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_004ccaf0(void);
-void FUN_004ccbe0(float *param_1);
-undefined4 FUN_004cd3f0(int param_1,int param_2);
-void FUN_004cd450(undefined4 *param_1,float *param_2,undefined4 param_3);
-void FUN_004cd510(undefined4 *param_1,float *param_2,float *param_3,undefined4 param_4);
-void FUN_004cd600(void);
-void FUN_004cd690(undefined4 *param_1,int param_2);
-void FUN_004cdb20(int param_1);
-void FUN_004cdb50(int param_1,undefined4 param_2);
-void FUN_004cdbe0(undefined4 *param_1,undefined4 param_2);
-void FUN_004cdc90(void);
-void FUN_004cdd30(undefined4 *param_1,int param_2);
-void FUN_004cdfc0(int param_1);
-void FUN_004cdff0(int param_1,undefined4 *param_2,undefined4 param_3);
-void FUN_004ce090(int param_1,undefined4 param_2);
-void FUN_004ce0f0(int param_1,undefined4 param_2);
-void FUN_004ce170(float *param_1,float *param_2,int param_3,float param_4,float param_5,float param_6);
-void FUN_004ce310(undefined4 *param_1,int param_2);
-undefined4 FUN_004ce530(undefined4 param_1);
-undefined4 FUN_004ce550(undefined4 param_1);
-void FUN_004ce560(void);
-void FUN_004ce5b0(void);
-int FUN_004ce630(undefined4 param_1,int param_2,undefined4 param_3);
-undefined4 FUN_004ce7e0(void);
-void FUN_004ce8a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4);
-int FUN_004ce900(void);
-void FUN_004ce950(undefined4 param_1,undefined4 param_2,int param_3);
-void FUN_004ce980(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4);
-void FUN_004ce9c0(undefined4 param_1,undefined4 param_2,float *param_3,int param_4,int param_5);
-int FUN_004cebf0(void);
-void FUN_004cec40(undefined4 param_1,undefined4 param_2,int param_3);
-void FUN_004cec70(void);
-int FUN_004ced40(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5);
-void FUN_004cee30(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void FUN_004cee70(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,undefined4 param_6);
-undefined4 FUN_004ceef0(undefined4 param_1,float *param_2,undefined4 *param_3);
-undefined4 FUN_004cf010(undefined4 param_1,undefined4 param_2);
-undefined4 FUN_004cf0c0(undefined4 param_1,undefined4 param_2);
-int FUN_004cf1a0(int param_1);
-undefined4 FUN_004cf1c0(undefined4 param_1);
-undefined4 FUN_004cf1d0(undefined4 param_1);
-undefined4 FUN_004cf1e0(undefined4 param_1);
-undefined4 FUN_004cf1f0(undefined4 param_1);
-undefined4 FUN_004cf200(undefined4 param_1);
-void FUN_004cf210(undefined4 param_1);
-void FUN_004cf230(undefined4 param_1);
-void FUN_004cf240(undefined4 param_1);
-void FUN_004cf260(void);
-undefined4 FUN_004cf2b0(void);
-int FUN_004cf2c0(undefined4 param_1);
-void FUN_004cf350(int param_1);
-void FUN_004cf370(int param_1,float param_2);
-int FUN_004cf430(int param_1);
-void FUN_004cf4e0(int param_1,int param_2);
-void FUN_004cf580(int param_1);
-void FUN_004cf5e0(int param_1);
-void FUN_004cf6e0(int param_1);
-undefined4 FUN_004cf7f0(void);
-undefined4 FUN_004cf800(undefined4 param_1,byte param_2);
-undefined * FUN_004cf9a0(undefined4 param_1);
-undefined4 FUN_004cfaf0(undefined4 param_1);
-void FUN_004cfb50(int *param_1,int param_2,int param_3);
-undefined4 FUN_004cfbb0(undefined4 param_1);
-void FUN_004cfbd0(int *param_1);
-void FUN_004cfc70(int param_1);
-undefined4 FUN_004cfcd0(int *param_1,char *param_2);
+void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr);
+void core_game_cpp_FUN_004c07b0(int param_1,undefined4 *param_2);
+void core_game_cpp_FUN_004c4870(int param_1);
+void core_game_cpp_FUN_004c48b0(void);
+void core_game_cpp_FUN_004c49f0(void);
+void core_game_cpp_FUN_004c4a10(void);
+void core_game_cpp_FUN_004c4a60(void *param_1,char *param_2,int param_3,uint param_4);
+void core_game_cpp_FUN_004c4bc0(int param_1);
+void core_game_cpp_FUN_004c4cc0(int param_1);
+void core_game_cpp_FUN_004c4d10(int param_1);
+undefined4 core_game_cpp_FUN_004c4d50(int param_1);
+CAlphaBitmap * __cdecl core_game_cpp_CAlphaBitmap_arrdtor8_FUN_004c4d60(CAlphaBitmap *this_ptr,uint flags);
+void core_gargoyle_cpp_staticInit_FUN_004c4d80(void);
+void core_gargoyle_cpp_factoryFuncGargoyle_FUN_004c4db0(void);
+CDemonActorType * core_gargoyle_cpp_CGargoyle_getActorType_FUN_004c4dd0(CGargoyle *this_ptr);
+CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004c4de0(CGargoyle *this_ptr);
+void core_gargoyle_cpp_FUN_004c4ee0(CEnemy *param_1);
+undefined4 core_gargoyle_cpp_FUN_004c51a0(int param_1);
+void core_gargoyle_cpp_FUN_004c5350(CEnemy *param_1,float param_2);
+void core_gargoyle_cpp_FUN_004c5e40(CCharacter *param_1);
+void core_gargoyle_cpp_FUN_004c5e50(int param_1);
+void __cdecl core_gargoyle_cpp_FUN_004c5f10(CGargoyle *this_ptr,SDamageInfo *damage_info);
+void core_gargoyle_cpp_FUN_004c61b0(CGargoyle *param_1,SDamageInfo *param_2);
+int core_gargoyle_cpp_FUN_004c6310(int param_1,undefined4 *param_2);
+ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004c6530(CGargoyle *this_ptr,SCollisionInfo *collision_info);
+CGargoyle * core_gargoyle_cpp_CGargoyle_dtor_FUN_004c6550(CGargoyle *this_ptr,uint flags);
+void core_gasmask_cpp_staticInit_FUN_004c65e0(void);
+void core_gasmask_cpp_factoryFuncGasMask_FUN_004c6610(void);
+CDemonActorType * core_gasmask_cpp_CGasMask_getActorType_FUN_004c6630(CGasMask *this_ptr);
+CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004c6640(CGasMask *this_ptr);
+void __cdecl core_gasmask_cpp_CGasMask_setup_FUN_004c6690(CGasMask *this_ptr);
+int __cdecl core_gasmask_cpp_CGasMask_canPickup_FUN_004c66b0(CGasMask *this_ptr,CDemonActor *picker);
+void core_gasmask_cpp_FUN_004c66d0(void);
+int core_gasmask_cpp_FUN_004c66e0(int param_1);
+void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004c6780(CGasMask *this_ptr);
+undefined4 core_gasmask_cpp_FUN_004c67b0(void);
+void core_gasmask_cpp_FUN_004c67c0(int param_1);
+CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004c6800(CGasMask *this_ptr,uint flags);
+void __cdecl core_ghoul_cpp_staticInit_FUN_004c6850(void);
+void core_ghoul_cpp_factoryFuncGhoul_FUN_004c68b0(void);
+CDemonActorType * core_ghoul_cpp_CGhoul_getActorType_FUN_004c68d0(CGhoul *this_ptr);
+CGhoul * core_ghoul_cpp_CGhoul_ctor_FUN_004c68e0(CGhoul *this_ptr);
+void core_ghoul_cpp_FUN_004c6a10(CEnemy *param_1);
+void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004c6c80(CGhoul *this_ptr,float delta_time);
+void core_ghoul_cpp_FUN_004c6eb0(CGhoul *param_1,float param_2);
+void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004c8c90(CGhoul *this_ptr,int layer_flag);
+void core_ghoul_cpp_FUN_004c8cc0(int param_1);
+undefined4 core_ghoul_cpp_FUN_004c8dd0(int param_1,undefined4 *param_2);
+void core_ghoul_cpp_FUN_004c90b0(int param_1);
+void __cdecl core_ghoul_cpp_CGhoul_processDismemberment_FUN_004c9140(CGhoul *this_ptr,SDamageInfo *damage_info);
+void core_ghoul_cpp_FUN_004c9400(CGhoul *param_1,SDamageInfo *param_2);
+int core_ghoul_cpp_FUN_004c97e0(int param_1,float *param_2);
+CGhoul * core_ghoul_cpp_CGhoul_dtor_FUN_004c9ab0(CGhoul *this_ptr,uint flags);
+void core_glass_cpp_staticInit_FUN_004c9b40(void);
+void core_glass_cpp_factoryFuncGlass_FUN_004c9b70(void);
+CDemonActorType * core_glass_cpp_CGlass_getActorType_FUN_004c9b90(CGlass *this_ptr);
+CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004c9ba0(CGlass *this_ptr);
+void core_glass_cpp_FUN_004c9ce0(CDemonActor *param_1);
+void core_glass_cpp_FUN_004ca550(int param_1);
+undefined4 core_glass_cpp_FUN_004ca5a0(CDemonActor *param_1);
+undefined4 core_glass_cpp_FUN_004ca770(CDemonActor *param_1);
+void __cdecl core_glass_cpp_FUN_004ca940(CGlass *this_ptr);
+void core_glass_cpp_FUN_004cab40(CGlass *param_1,int param_2);
+void core_glass_cpp_FUN_004cad00(int param_1);
+void core_glass_cpp_FUN_004cad80(CDemonActor *param_1);
+ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004cae80(CGlass *this_ptr,SCollisionInfo *collision_info);
+void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *param_4,int param_5);
+void core_glass_cpp_FUN_004cc040(CDemonActor *param_1);
+void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004cc480(CGlass *this_ptr,SLaserInfo *laser_info);
+undefined4 core_glass_cpp_FUN_004cc5c0(void);
+int __cdecl core_glass_cpp_FUN_004cc5d0(CGlass *this_ptr);
+CGlass * core_glass_cpp_CGlass_dtor_FUN_004cc5f0(CGlass *this_ptr,uint flags);
+void core_goggles_cpp_staticInit_FUN_004cc660(void);
+void core_goggles_cpp_factoryFuncGoggles_FUN_004cc690(void);
+CDemonActorType * core_goggles_cpp_CGoggles_getActorType_FUN_004cc6b0(CGoggles *this_ptr);
+CGoggles * core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr);
+void core_goggles_cpp_FUN_004cc710(CDemonActor *param_1);
+undefined4 core_goggles_cpp_FUN_004cc730(undefined4 param_1,CDemonActor *param_2);
+void core_goggles_cpp_FUN_004cc750(void);
+int core_goggles_cpp_FUN_004cc760(int param_1);
+void core_goggles_cpp_FUN_004cc800(CDemonActor *param_1);
+undefined4 core_goggles_cpp_FUN_004cc830(void);
+void core_goggles_cpp_FUN_004cc840(int param_1);
+CGoggles * core_goggles_cpp_CGoggles_dtor_FUN_004cc880(CGoggles *this_ptr,uint flags);
+void core_gore_cpp_staticInit_FUN_004cc8d0(void);
+void core_gore_cpp_FUN_004cc970(undefined4 param_1,undefined4 *param_2,int *param_3,int *param_4);
+void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ccac0(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
+void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ccaf0(CBloodParticle *this_ptr);
+void core_gore_cpp_FUN_004ccbe0(CVector3f *param_1);
+undefined4 core_gore_cpp_FUN_004cd3f0(CVector3f *param_1,CVector3f *param_2);
+void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004cd450(CBloodSplat *this_ptr,CVector3f *position,EBloodType blood_type);
+void __cdecl core_gore_cpp_FUN_004cd510(CBloodSplat *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type);
+void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004cd600(CBloodSplat *this_ptr);
+void core_gore_cpp_FUN_004cd690(undefined4 *param_1,int param_2);
+void __cdecl core_gore_cpp_FUN_004cdb20(CBloodSplat *this_ptr);
+void core_gore_cpp_FUN_004cdb50(int param_1,undefined4 param_2);
+void core_gore_cpp_FUN_004cdbe0(undefined4 *param_1,undefined4 param_2);
+int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004cdc90(CBloodPool *this_ptr);
+void core_gore_cpp_FUN_004cdd30(undefined4 *param_1,int param_2);
+void __cdecl core_gore_cpp_FUN_004cdfc0(CBloodPool *this_ptr);
+void __cdecl core_gore_cpp_FUN_004cdff0(CBloodPool *this_ptr,CVector3f *position,EBloodType blood_type);
+void core_gore_cpp_FUN_004ce090(int param_1,undefined4 param_2);
+void core_gore_cpp_FUN_004ce0f0(int param_1,undefined4 param_2);
+void __cdecl core_gore_cpp_FUN_004ce170(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,EBloodType blood_type);
+void core_gore_cpp_FUN_004ce310(undefined4 *param_1,int param_2);
+CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ce530(CGore *this_ptr);
+CGore * core_gore_cpp_CGore_dtor_FUN_004ce550(CGore *this_ptr,uint flags);
+void __cdecl core_gore_cpp_CGore_reset_FUN_004ce560(CGore *this_ptr);
+void __cdecl core_gore_cpp_FUN_004ce5b0(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004ce630(CGore *this_ptr,int render_all,int expire_flag);
+void __cdecl core_gore_cpp_FUN_004ce7e0(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004ce8a0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
+CBloodSplat * __cdecl core_gore_cpp_CGore_allocateBloodSplat_FUN_004ce900(CGore *this_ptr);
+void __cdecl core_gore_cpp_FUN_004ce950(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
+void __cdecl core_gore_cpp_CGore_createWallBloodSplat_FUN_004ce980(CGore *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type);
+void __cdecl core_gore_cpp_FUN_004ce9c0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type);
+CBloodPool * __cdecl core_gore_cpp_FUN_004cebf0(CGore *this_ptr);
+void __cdecl core_gore_cpp_FUN_004cec40(CGore *this_ptr,CVector3f *position,EBloodType blood_type);
+void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004cec70(CGore *this_ptr);
+CFlies * core_gore_cpp_FUN_004ced40(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5);
+void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004cee30(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
+void core_gore_cpp_FUN_004cee70(undefined4 param_1,CVector3f *param_2,UOrientationVector *param_3,int param_4,int param_5,EBloodType param_6);
+int __cdecl core_gore_cpp_FUN_004ceef0(CGore *this_ptr,CVector3f *position,int *out_blood_type);
+int __cdecl core_gore_cpp_FUN_004cf010(CGore *this_ptr,_FILE *file_handle);
+int __cdecl core_gore_cpp_FUN_004cf0c0(CGore *this_ptr,_FILE *file_handle);
+void core_gore_cpp_FUN_004cf16e(float *param_1,int *param_2);
+CFootstep * __cdecl core_gore_cpp_CFootstep_ctor_FUN_004cf1a0(CFootstep *this_ptr);
+CFootstep * core_gore_cpp_CFootstep_dtor_FUN_004cf1c0(CFootstep *this_ptr,uint flags);
+CBloodPool * core_gore_cpp_CBloodPool_ctor_FUN_004cf1d0(CBloodPool *this_ptr);
+CBloodPool * core_gore_cpp_CBloodPool_dtor_FUN_004cf1e0(CBloodPool *this_ptr,uint flags);
+CBloodSplat * core_gore_cpp_CBloodSplat_ctor_FUN_004cf1f0(CBloodSplat *this_ptr);
+CBloodSplat * core_gore_cpp_CBloodSplat_dtor_FUN_004cf200(CBloodSplat *this_ptr,uint flags);
+CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_ctor_FUN_004cf210(CBloodParticle *this_ptr);
+CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004cf230(CBloodParticle *this_ptr,uint flags);
+CBloodParticle * core_gore_cpp_CBloodParticle_arrdtor256_FUN_004cf240(CBloodParticle *this_ptr,uint flags);
+void core_grave_cpp_staticInit_FUN_004cf260(void);
+void core_grave_cpp_factoryFuncGrave_FUN_004cf290(void);
+CDemonActorType * core_grave_cpp_CGrave_getActorType_FUN_004cf2b0(CGrave *this_ptr);
+CGrave * __cdecl core_grave_cpp_CGrave_ctor_FUN_004cf2c0(CGrave *this_ptr);
+void __cdecl core_grave_cpp_CGrave_setup_FUN_004cf350(CGrave *this_ptr);
+void __cdecl core_grave_cpp_CGrave_process_FUN_004cf370(CGrave *this_ptr,float delta_time);
+int core_grave_cpp_FUN_004cf430(CDemonActor *param_1);
+void core_grave_cpp_FUN_004cf4e0(CDemonActor *param_1,int param_2);
+void __cdecl core_grave_cpp_CGrave_startAnimation_FUN_004cf580(CGrave *this_ptr);
+void __cdecl core_grave_cpp_CGrave_archive_FUN_004cf5e0(CGrave *this_ptr);
+void core_grave_cpp_FUN_004cf6e0(int param_1);
+undefined4 core_grave_cpp_FUN_004cf7f0(void);
+CGrave * __cdecl core_grave_cpp_CGrave_dtor_FUN_004cf800(CGrave *this_ptr,uint flags);
+void core_ground_cpp_staticInit_FUN_004cf850(void);
+_FILE * core_ground_cpp_FUN_004cf87e(char *param_1,char *param_2,char *param_3,char *param_4);
+char * __cdecl core_ground_cpp_FUN_004cf9a0(EGroundType type);
+char * core_ground_cpp_FUN_004cfa50(undefined4 param_1);
+undefined4 __cdecl core_ground_cpp_getGroundTypeColor_FUN_004cfaf0(undefined4 param_1);
+CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004cfb50(CGround *this_ptr,int width,int height);
+CGround * __cdecl core_ground_cpp_CGround_dtor_FUN_004cfbb0(CGround *this_ptr,uint flags);
+void __cdecl core_ground_cpp_CGround_init_FUN_004cfbd0(CGround *this_ptr);
+void __cdecl core_ground_cpp_CGround_free_FUN_004cfc70(CGround *this_ptr);
+void __cdecl core_ground_cpp_CGround_load_FUN_004cfcd0(CGround *this_ptr,char *filename);
 

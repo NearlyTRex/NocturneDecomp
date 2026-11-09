@@ -1,0 +1,157 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 38,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 126
+  },
+  "cross_references": [
+    {
+      "addr": "00512e70",
+      "from_addr": "00512ed2",
+      "name": "engine_pod.cpp_FUN_00512e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00513d1e",
+      "from_addr": "00513e20",
+      "name": "engine_pod.cpp_FUN_00513d1e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00514220",
+      "from_addr": "005142e9",
+      "name": "engine_pod.cpp_FUN_00514220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005149bc",
+      "from_addr": "00514ad1",
+      "name": "engine_pod.cpp_FUN_005149bc",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00512d60",
+    "address_range": [
+      [
+        "00512d60",
+        "00512e15"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_crc32UpdateByte_FUN_00512d60",
+    "signature": "uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_00512d60(uint current_crc,uchar data_byte)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00512ed2",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_00512e70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00513e20",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_00513d1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005142e9",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_00514220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00514ad1",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_005149bc",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4576271186440675,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 6,
+      "CBRANCH": 8,
+      "COPY": 61,
+      "INT_ADD": 12,
+      "INT_AND": 57,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 2,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SLESS": 21,
+      "INT_SUB": 1,
+      "INT_XOR": 11,
+      "LOAD": 4,
+      "POPCOUNT": 19,
+      "RETURN": 2
+    },
+    "pcode_op_count": 263
+  },
+  "stack_frame": {
+    "frame_size": 9,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 5,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "current_crc",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "data_byte",
+        "offset": 8,
+        "size": 1,
+        "type": "uchar"
+      }
+    ]
+  },
+  "suspects": []
+}

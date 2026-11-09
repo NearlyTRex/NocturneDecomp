@@ -4,10 +4,37 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CAudioRecPuzzle.h"
+#include "types/classes/CChemPuzzle.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonFilter.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7E0000
 // =============================================================================
+
+// CAlphaBitmap[5]
+extern CAlphaBitmap CAlphaBitmap_ARRAY_007e0010[5];
+
+// CAudioRecPuzzle
+extern CAudioRecPuzzle g_CAudioRecPuzzleInstance;
+
+// CChemPuzzle
+extern CChemPuzzle g_CChemPuzzleInstance;
+
+// CDemonActorType
+extern CDemonActorType g_CBodyPartClassInfo;
+extern CDemonActorType g_CBoneGuyClassInfo;
+extern CDemonActorType g_CBoxActorClassInfo;
+extern CDemonActorType g_CBugsClassInfo;
+extern CDemonActorType g_CBurncrossClassInfo;
+extern CDemonActorType g_CCarvedClassInfo;
+extern CDemonActorType g_CChainClassInfo;
+extern CDemonActorType g_CCharacterClassInfo;
+
+// CDemonFilter[8]
+extern CDemonFilter CDemonFilter_ARRAY_007e17b8[8];
 
 // undefined1
 extern undefined1 DAT_007e1a58;
@@ -22,7 +49,6 @@ extern undefined1 DAT_007e5398;
 extern undefined1 DAT_007e5f68;
 
 // undefined4
-extern undefined4 DAT_007e161c;
 extern undefined4 DAT_007e1620;
 extern undefined4 DAT_007e1624;
 extern undefined4 DAT_007e1628;
@@ -31,18 +57,13 @@ extern undefined4 DAT_007e1638;
 extern undefined4 DAT_007e1644;
 extern undefined4 DAT_007e1648;
 extern undefined4 DAT_007e1774;
-extern undefined4 DAT_007e17b4;
 extern undefined4 DAT_007e1a50;
 extern undefined4 DAT_007e1a54;
 extern undefined4 DAT_007e1c94;
 extern undefined4 DAT_007e1c98;
 extern undefined4 DAT_007e1c9c;
-extern undefined4 DAT_007e2a14;
-extern undefined4 DAT_007e2a50;
 extern undefined4 DAT_007e2a54;
-extern undefined4 DAT_007e2acc;
 extern undefined4 DAT_007e2ae8;
-extern undefined4 DAT_007e2cec;
 extern undefined4 DAT_007e2cf0;
 extern undefined4 DAT_007e2cf4;
 extern undefined4 DAT_007e2cf8;

@@ -1,0 +1,432 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 471,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 71,
+    "suspect_count": 35,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "suspect_float",
+      "unaffected_reg",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 183
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00481200",
+    "address_range": [
+      [
+        "00481200",
+        "00481341"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_FUN_00481200",
+    "signature": "void shape_edittool_cpp_FUN_00481200(float *param_1,float *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00407b30",
+      "is_variadic": false,
+      "name": "engine_3d.c_FUN_00407b30"
+    },
+    {
+      "addr": "004e5540",
+      "is_variadic": false,
+      "name": "engine_matrix.c_transformToCache_FUN_004e5540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bd33d",
+      "name": "DAT_005bd33d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bd341",
+      "name": "DAT_005bd341",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005deffc",
+      "name": "DAT_005deffc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.111111111111111,
+    "instruction_count": 108,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 416,
+      "FLOAT2FLOAT": 35,
+      "FLOAT_ADD": 3,
+      "FLOAT_MULT": 12,
+      "INT_ADD": 69,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_MULT": 22,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 38,
+      "INT_ZEXT": 22,
+      "LOAD": 36,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 37,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 768
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004812b9",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0048131d",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0048132e",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00481200(float *param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00481200(float *param_1,float *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "float unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_1044",
+      "severity": "moderate",
+      "text": "float afStackY_1044 [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_4c[0] = (float)(int)ROUND(*param_1 * _DAT_005deffc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_4c[1] = (float)(int)ROUND(param_1[1] * _DAT_005deffc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_44 = (int)ROUND(param_1[2] * _DAT_005deffc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 33,
+      "match": "6.618707e-39",
+      "severity": "mild",
+      "text": "afStackY_1044[0x3f5] = 6.618707e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 33,
+      "match": "afStackY_1044",
+      "severity": "moderate",
+      "text": "afStackY_1044[0x3f5] = 6.618707e-39;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_34[2] = *param_2 * _DAT_005bd33d;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "afStack_34[3] = param_2[1] * _DAT_005bd33d;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_24 = param_2[2] * _DAT_005bd33d;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_14 = *param_2 * _DAT_005bd33d;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xfffffff0 + (uint)bVar4 * -8) = afStack_34[(uint)bVar4 * -2 + 3];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_20 = *param_1 * _DAT_005bd341;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_1c = param_1[1] * _DAT_005bd341;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_18 = param_1[2] * _DAT_005bd341;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_50 = *param_1 * _DAT_005bd341;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "fStack_58 = afStack_4c[0] + unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "fStack_54 = afStack_4c[1] + unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xffffffa8",
+      "severity": "moderate",
+      "text": "afStack_34[(uint)bVar4 * -2] = *(float *)((int)&stack0xffffffa8 + (uint)bVar4 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xffffffac",
+      "severity": "moderate",
+      "text": "*(float *)((int)&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_0060b044",
+      "severity": "mild",
+      "text": "puVar2 = &DAT_0060b044;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 60,
+      "match": "afStackY_1044",
+      "severity": "moderate",
+      "text": "pfVar3 = afStackY_1044 + 0x3f0;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_0060b014",
+      "severity": "mild",
+      "text": "puVar2 = &DAT_0060b014;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 67,
+      "match": "afStackY_1044",
+      "severity": "moderate",
+      "text": "pfVar3 = afStackY_1044 + 0x3e4;",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffa8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&stack0xffffffa8",
+      "severity": "moderate",
+      "text": "afStack_34[(uint)bVar4 * -2] = *(float *)((int)&stack0xffffffa8 + (uint)bVar4 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)&stack0xffffffac",
+      "severity": "moderate",
+      "text": "*(float *)((int)&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 61,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 68,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_34[(uint)bVar4 * -2] = *(float *)((int)&stack0xffffffa8 + (uint)bVar4 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 54,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

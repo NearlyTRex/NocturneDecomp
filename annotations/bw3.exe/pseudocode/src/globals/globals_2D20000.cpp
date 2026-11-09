@@ -4,6 +4,25 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2D20000
 // =============================================================================
 
+// CDemonActorType
+CDemonActorType g_CWerewolfClassInfo = {};
+CDemonActorType g_CYowClassInfo = {};
+CDemonActorType g_CZombieClassInfo = {};
+CDemonActorType g_CZombiePriestClassInfo = {};
+CDemonActorType g_CKedwardClassInfo = {};
+CDemonActorType g_CMattanntoteClassInfo = {};
+CDemonActorType g_CTawiscaraClassInfo = {};
+CDemonActorType g_CBaalClassInfo = {};
+CDemonActorType g_CHecaitomixClassInfo = {};
+CDemonActorType g_CDarkwolfClassInfo = {};
+CDemonActorType g_CSpiritEagleClassInfo = {};
+CDemonActorType g_CSpiritIndianClassInfo = {};
+CDemonActorType g_CSpiritBearClassInfo = {};
+CDemonActorType g_CHinoClassInfo = {};
+CDemonActorType g_CStylerClassInfo = {};
+CDemonActorType g_CStylerDemonClassInfo = {};
+CDemonActorType g_CAsgayaClassInfo = {};
+
 // word
 word DAT_02D270D6 = 0;
 word DAT_02D27376 = 0;

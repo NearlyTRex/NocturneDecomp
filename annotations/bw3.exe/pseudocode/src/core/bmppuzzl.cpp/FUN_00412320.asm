@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00412320(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
+; void core_bmppuzzl_cpp_FUN_00412320(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
 ;
 ;
 ; Referenced Globals:
@@ -11,15 +11,15 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_0040d460
-;   FUN_004e4330
+;   core_main.c_FUN_004e4330
+;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00412320
-        ;   Label: FUN_00412320
+        ;   Label: core_bmppuzzl.cpp_FUN_00412320
     PUSH ESI                            ; 00412321
     PUSH EDI                            ; 00412322
     MOV EBX,dword ptr [ESP + 0x10]      ; 00412323
@@ -38,8 +38,8 @@ section .text
     SHL ESI,0x2                         ; 0041234b
     ADD EAX,ESI                         ; 0041234e
     PUSH EAX                            ; 00412350
-    CALL FUN_0040d460                   ; 00412351
-        ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d460()
+    CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460 ; 00412351
+        ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     ADD ESP,0x10                        ; 00412356
     LEA EAX,[EBX + ESI*0x1]             ; 00412359
     MOV EDX,dword ptr [ESP + 0x24]      ; 0041235c
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5b6773                       ; 004123a0 | = "Too damn many buttons"
     MOV [0x01d71de0],EAX                ; 004123a5 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004123aa | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004123b0
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004123b0
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004123b5
     POP EDI                             ; 004123b8
     POP ESI                             ; 004123b9

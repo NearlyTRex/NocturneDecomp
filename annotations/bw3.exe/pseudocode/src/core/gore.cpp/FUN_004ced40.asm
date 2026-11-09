@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004ced40(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
+; CFlies * core_gore_cpp_FUN_004ced40(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
 ;
 ;
 ; XREF[1]:
-;   FUN_004cee30 at 004cee4d
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004cee30 at 004cee4d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_gore_cpp_005c4751
@@ -17,25 +17,25 @@
 ;   undefined4 DAT_01d81080
 ;
 ; Called Functions:
-;   FUN_004ad7b0
-;   FUN_004e4330
-;   FUN_004f6930
-;   FUN_004f7530
-;   FUN_005a3cb2
+;   core_flies.cpp_CFlies_ctor_FUN_004ad7b0
+;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
+;   core_mission.cpp_FUN_004f6930
+;   crt_unknown.c_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004ced40
-        ;   Label: FUN_004ced40
+        ;   Label: core_gore.cpp_FUN_004ced40
     PUSH ESI                            ; 004ced41
     PUSH EDI                            ; 004ced42
     MOV EDI,dword ptr [ESP + 0x14]      ; 004ced43
     MOV ESI,dword ptr [ESP + 0x20]      ; 004ced47
     PUSH 0x2a20                         ; 004ced4b
-    CALL FUN_005a3cb2                   ; 004ced50
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3cb2()
+    CALL crt_unknown.c_FUN_005a3cb2     ; 004ced50
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004ced55
     TEST EAX,EAX                        ; 004ced58
     JNZ 0x004cee1a                      ; 004ced5a
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5c4762                       ; 004ced70 | = "Can't create flies!"
     MOV dword ptr [0x01d71de0],EDX      ; 004ced75 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004ced7b | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004ced81
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004ced81
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004ced86
     FLD float ptr [ESP + 0x1c]          ; 004ced89
         ;   Label: LAB_004ced89
@@ -91,14 +91,14 @@ section .text
     PUSH EBX                            ; 004cedf4
     MOV ESI,dword ptr [0x00600530]      ; 004cedf5 | DAT_00600530
     PUSH ESI                            ; 004cedfb | DAT_01d81080
-    CALL FUN_004f7530                   ; 004cedfc
-        ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7530()
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530 ; 004cedfc
+        ;   XREF to: 004f7530 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004cee01
     PUSH EBX                            ; 004cee04
     MOV EDI,dword ptr [0x00600530]      ; 004cee05 | DAT_00600530
     PUSH EDI                            ; 004cee0b | DAT_01d81080
-    CALL FUN_004f6930                   ; 004cee0c
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; undefined FUN_004f6930()
+    CALL core_mission.cpp_FUN_004f6930  ; 004cee0c
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004cee11
     MOV EAX,EBX                         ; 004cee14
     POP EDI                             ; 004cee16
@@ -107,8 +107,8 @@ section .text
     RET                                 ; 004cee19
     PUSH EAX                            ; 004cee1a
         ;   Label: LAB_004cee1a
-    CALL FUN_004ad7b0                   ; 004cee1b
-        ;   XREF to: 004ad7b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ad7b0()
+    CALL core_flies.cpp_CFlies_ctor_FUN_004ad7b0 ; 004cee1b
+        ;   XREF to: 004ad7b0 (UNCONDITIONAL_CALL)  ; CFlies * core_flies.cpp_CFlies_ctor_FUN_004ad7b0(CFlies * this_ptr)
     ADD ESP,0x4                         ; 004cee20
     JMP 0x004ced60                      ; 004cee23
         ;   XREF to: 004ced60 (UNCONDITIONAL_JUMP)  ; LAB_004ced60

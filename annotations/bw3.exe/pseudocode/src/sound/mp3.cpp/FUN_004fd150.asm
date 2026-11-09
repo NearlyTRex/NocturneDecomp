@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004fd150(int *param_1)
+; void __cdecl sound_mp3_cpp_FUN_004fd150(SMpegFrame *frame)
 ;
+; Parameters:
+; SMpegFrame *     Stack[0x4]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -11,8 +13,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00502890 at 00502987
-;   FUN_00502d60 at 00503944
+;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 00503944
+;   sound_mp3.cpp_FUN_00502890 at 00502987
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005c9ec7
@@ -27,15 +29,15 @@
 ;   undefined4 DAT_01d94b98
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005a3120
+;   core_main.c_FUN_004e4330
+;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004fd150
-        ;   Label: FUN_004fd150
+        ;   Label: sound_mp3.cpp_FUN_004fd150
     PUSH ESI                            ; 004fd151
     PUSH EDI                            ; 004fd152
     PUSH EBP                            ; 004fd153
@@ -75,8 +77,8 @@ section .text
     PUSH 0x5c9f22                       ; 004fd1af | = "js_bound bad layer/modext (%d/%d)  Fi..."
     MOV dword ptr [0x01d71de0],EBP      ; 004fd1b4 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004fd1ba | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004fd1bf
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004fd1bf
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x10                        ; 004fd1c4
     SHL ESI,0x2                         ; 004fd1c7
         ;   Label: LAB_004fd1c7
@@ -124,8 +126,8 @@ section .text
     SHL ECX,0x5                         ; 004fd23c
     MOV dword ptr [ESP + 0x8],EBX       ; 004fd23f
     FLD double ptr [ECX + EAX*0x8 + 0x6011b8] ; 004fd243 | DAT_006011b8
-    CALL FUN_005a3120                   ; 004fd24a
-        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3120()
+    CALL crt_math.c_round_FUN_005a3120  ; 004fd24a
+        ;   XREF to: 005a3120 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005a3120()
     FISTP dword ptr [ESP + 0x10]        ; 004fd24f
     CMP EDI,0x1                         ; 004fd253
     JNZ 0x004fd2dd                      ; 004fd256
@@ -149,8 +151,8 @@ section .text
     PUSH 0x5c9ed8                       ; 004fd282 | = "MPEG Layer 2 - pick_table - can't loa..."
     MOV [0x01d71de0],EAX                ; 004fd287 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDX      ; 004fd28c | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004fd292
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004fd292
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 004fd297
     MOV EAX,dword ptr [ESP + 0xc]       ; 004fd29a
         ;   Label: LAB_004fd29a

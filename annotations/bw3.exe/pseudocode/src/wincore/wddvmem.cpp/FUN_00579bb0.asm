@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00579bb0(int param_1,int param_2,int param_3)
+; undefined4 wincore_wddvmem_cpp_FUN_00579bb0(int param_1,int param_2,int param_3)
 ;
 ;
 ; XREF[7]:
-;   FUN_00401010 at 0040103d
-;   FUN_004b7de0 at 004b7e0f
-;   FUN_004b7ee0 at 004b7f0b
-;   FUN_004e44e0 at 004e45e7
-;   FUN_0057a0e0 at 0057a244
-;   FUN_0057a2f0 at 0057a3b1
-;   FUN_0057ab70 at 0057ac62
+;   core_game.cpp_CGame_setGameRes_FUN_004b7de0 at 004b7e0f
+;   core_game.cpp_FUN_004b7ee0 at 004b7f0b
+;   core_main.c_FUN_004e44e0 at 004e45e7
+;   engine_2d.c_FUN_00401010 at 0040103d
+;   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_0057a2f0 at 0057a3b1
+;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_0057a0e0 at 0057a244
+;   wincore_wddvmem.cpp_videoRestore_FUN_0057ab70 at 0057ac62
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005d73f1
@@ -32,20 +32,20 @@
 ;   ... and 17 more
 ;
 ; Called Functions:
-;   FUN_00401810
-;   FUN_004e4330
-;   FUN_0057a770
-;   FUN_0057a8a0
-;   FUN_005a28f0
-;   FUN_005a3650
-;   FUN_005a3770
+;   core_main.c_FUN_004e4330
+;   crt_memory.c_memset_FUN_005a28f0
+;   crt_unknown.c_FUN_005a3650
+;   crt_unknown.c_FUN_005a3770
+;   engine_2d.c_setupViewportAndClipping_FUN_00401810
+;   wincore_wddvmem.cpp_FUN_0057a770
+;   wincore_wddvmem.cpp_FUN_0057a8a0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00579bb0
-        ;   Label: FUN_00579bb0
+        ;   Label: wincore_wddvmem.cpp_FUN_00579bb0
     PUSH ESI                            ; 00579bb1
     PUSH EDI                            ; 00579bb2
     PUSH EBP                            ; 00579bb3
@@ -105,8 +105,8 @@ section .text
     JZ 0x00579c7c                       ; 00579c6a
         ;   XREF to: 00579c7c (CONDITIONAL_JUMP)  ; LAB_00579c7c
     PUSH EDI                            ; 00579c6c
-    CALL FUN_005a3770                   ; 00579c6d
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3770()
+    CALL crt_unknown.c_FUN_005a3770     ; 00579c6d
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
     XOR EAX,EAX                         ; 00579c72
     ADD ESP,0x4                         ; 00579c74
     MOV [0x0060b010],EAX                ; 00579c77 | DAT_0060b010
@@ -116,8 +116,8 @@ section .text
     JZ 0x00579c97                       ; 00579c84
         ;   XREF to: 00579c97 (CONDITIONAL_JUMP)  ; LAB_00579c97
     PUSH EDX                            ; 00579c86
-    CALL FUN_005a3770                   ; 00579c87
-        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3770()
+    CALL crt_unknown.c_FUN_005a3770     ; 00579c87
+        ;   XREF to: 005a3770 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3770()
     XOR ESI,ESI                         ; 00579c8c
     ADD ESP,0x4                         ; 00579c8e
     MOV dword ptr [0x0072ffac],ESI      ; 00579c91 | DAT_0072ffac
@@ -132,8 +132,8 @@ section .text
     IMUL ECX,dword ptr [0x005fba1c]     ; 00579caf | DAT_005fba1c
     IMUL EAX,ECX                        ; 00579cb6
     PUSH EAX                            ; 00579cb9
-    CALL FUN_005a3650                   ; 00579cba
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3650()
+    CALL crt_unknown.c_FUN_005a3650     ; 00579cba
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 00579cbf
     MOV [0x0060b010],EAX                ; 00579cc2 | DAT_0060b010
     TEST EAX,EAX                        ; 00579cc7
@@ -144,8 +144,8 @@ section .text
     PUSH 0x5d7408                       ; 00579cd5 | = "WDDVMEM: Fatal - out of frame buffer ..."
     MOV dword ptr [0x01d71de0],EBP      ; 00579cda | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 00579ce0 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00579ce5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00579ce5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00579cea
     MOV EAX,[0x005fba18]                ; 00579ced | DAT_005fba18
         ;   Label: LAB_00579ced
@@ -153,8 +153,8 @@ section .text
     SHL EAX,0x2                         ; 00579cf9
     ADD EAX,0x40                        ; 00579cfc
     PUSH EAX                            ; 00579cff
-    CALL FUN_005a3650                   ; 00579d00
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3650()
+    CALL crt_unknown.c_FUN_005a3650     ; 00579d00
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 00579d05
     MOV [0x02d0bcf0],EAX                ; 00579d08 | DAT_02d0bcf0
     TEST EAX,EAX                        ; 00579d0d
@@ -165,8 +165,8 @@ section .text
     PUSH 0x5d744b                       ; 00579d1b | = "WDDVMEM: Fatal - out of Z buffer memory"
     MOV dword ptr [0x01d71de0],ECX      ; 00579d20 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00579d26 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00579d2c
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00579d2c
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00579d31
     MOV EAX,[0x02d0bcf0]                ; 00579d34 | DAT_02d0bcf0
         ;   Label: LAB_00579d34
@@ -262,8 +262,8 @@ section .text
     PUSH EAX                            ; 00579e21
     MOV EDI,0x6c                        ; 00579e22
     MOV EBP,0x21                        ; 00579e27
-    CALL FUN_005a28f0                   ; 00579e2c
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 00579e2c
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00579e31
     MOV EAX,0x6218                      ; 00579e34
     MOV EDX,0x2                         ; 00579e39
@@ -313,8 +313,8 @@ section .text
     PUSH 0x0                            ; 00579eb7
     LEA EAX,[ESP + 0xe0]                ; 00579eb9
     PUSH EAX                            ; 00579ec0
-    CALL FUN_005a28f0                   ; 00579ec1
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 00579ec1
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00579ec6
     MOV ESI,0x4                         ; 00579ec9
     LEA ECX,[ESP + 0xd8]                ; 00579ece
@@ -376,20 +376,20 @@ section .text
     PUSH EAX                            ; 00579f91
     PUSH 0x0                            ; 00579f92
     PUSH 0x0                            ; 00579f94
-    CALL FUN_00401810                   ; 00579f96
-        ;   XREF to: 00401810 (UNCONDITIONAL_CALL)  ; undefined FUN_00401810()
+    CALL engine_2d.c_setupViewportAndClipping_FUN_00401810 ; 00579f96
+        ;   XREF to: 00401810 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setupViewportAndClipping_FUN_00401810(int left, int top, int right, int bottom)
     ADD ESP,0x10                        ; 00579f9b
     XOR EDI,EDI                         ; 00579f9e
-    CALL FUN_0057a770                   ; 00579fa0
-        ;   XREF to: 0057a770 (UNCONDITIONAL_CALL)  ; undefined FUN_0057a770()
+    CALL wincore_wddvmem.cpp_FUN_0057a770 ; 00579fa0
+        ;   XREF to: 0057a770 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a770()
     XOR EBP,EBP                         ; 00579fa5
     PUSH 0x6c                           ; 00579fa7
         ;   Label: LAB_00579fa7
     PUSH EBP                            ; 00579fa9
     LEA EAX,[ESP + 0x74]                ; 00579faa
     PUSH EAX                            ; 00579fae
-    CALL FUN_005a28f0                   ; 00579faf
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 00579faf
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00579fb4
     PUSH EBP                            ; 00579fb7
     PUSH 0x1                            ; 00579fb8
@@ -410,8 +410,8 @@ section .text
     PUSH 0x5d74d2                       ; 00579fe2 | = "Clear of back buffer failed"
     MOV dword ptr [0x01d71de0],EDX      ; 00579fe7 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 00579fed | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00579ff3
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00579ff3
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00579ff8
     MOV EBX,dword ptr [ESP + 0x90]      ; 00579ffb
         ;   Label: LAB_00579ffb
@@ -432,8 +432,8 @@ section .text
     PUSH EAX                            ; 0057a029
     PUSH EBP                            ; 0057a02a
     PUSH EBX                            ; 0057a02b
-    CALL FUN_005a28f0                   ; 0057a02c
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 0057a02c
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0057a031
     INC ESI                             ; 0057a034
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0057a035
@@ -456,15 +456,15 @@ section .text
     PUSH 0x5d7505                       ; 0057a062 | = "Unlock of back buffer clear failed"
     MOV dword ptr [0x01d71de0],ECX      ; 0057a067 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0057a06d | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0057a073
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0057a073
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0057a078
     MOV ESI,0x1                         ; 0057a07b
         ;   Label: LAB_0057a07b
     MOV dword ptr [0x02d0bcf4],ESI      ; 0057a080 | DAT_02d0bcf4
     ADD EDI,ESI                         ; 0057a086
-    CALL FUN_0057a8a0                   ; 0057a088
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 0057a088
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
     CMP EDI,0x3                         ; 0057a08d
     JL 0x00579fa7                       ; 0057a090
         ;   XREF to: 00579fa7 (CONDITIONAL_JUMP)  ; LAB_00579fa7
@@ -481,8 +481,8 @@ section .text
     PUSH 0x5d748a                       ; 0057a0ad | = "setScreenResolution - Create back buf..."
     MOV dword ptr [0x01d71de0],EBP      ; 0057a0b2 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0057a0b8 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0057a0bd
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0057a0bd
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0057a0c2
     XOR EAX,EAX                         ; 0057a0c5
     ADD ESP,0xe0                        ; 0057a0c7

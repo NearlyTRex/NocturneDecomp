@@ -1,0 +1,210 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 56,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 16,
+    "suspect_count": 3,
+    "suspect_types": [
+      "stack_ref",
+      "undefined_data"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "004ba540",
+      "from_addr": "004bad20",
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004ba540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b8abc",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047d8c0",
+    "address_range": [
+      [
+        "0047d8c0",
+        "0047d970"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_FUN_0047d8c0",
+    "signature": "int __cdecl shape_edittool_cpp_FUN_0047d8c0(CEditorTools *this_ptr,char *format_string)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a2898",
+      "is_variadic": false,
+      "name": "crt_stdio.c_vsprintf_FUN_005a2898"
+    },
+    {
+      "addr": "00482070",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_00482070"
+    },
+    {
+      "addr": "00481f20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_00481f20"
+    },
+    {
+      "addr": "00481f40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_00481f40"
+    },
+    {
+      "addr": "0047d230",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047d230"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bce93",
+      "name": "DAT_005bce93",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bce98",
+      "name": "DAT_005bce98",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b8abc",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bad20",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processHotkeys_FUN_004ba540",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.083333333333333,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 37,
+      "INT_ADD": 21,
+      "INT_AND": 23,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 22,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 21,
+      "INT_XOR": 2,
+      "LOAD": 3,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 196
+  },
+  "stack_frame": {
+    "frame_size": 1060,
+    "local_size": 1052,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_418",
+        "offset": -1048,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "format_string",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 10,
+      "match": "&stack0x0000000c",
+      "severity": "moderate",
+      "text": "local_8 = &stack0x0000000c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005bce93",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00482070(&local_18,&DAT_005bce93);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005bce98",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00482070(&local_18,&DAT_005bce98);",
+      "type": "undefined_data"
+    }
+  ]
+}

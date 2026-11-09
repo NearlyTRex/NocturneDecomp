@@ -1,112 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01c5bae8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 31,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
@@ -134,14 +26,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00481df0",
-    "signature": "void FUN_00481df0(undefined4 param_1,uint param_2,uint param_3,uint param_4)"
+    "name": "shape_edittool.cpp_FUN_00481df0",
+    "signature": "void shape_edittool_cpp_FUN_00481df0(undefined4 param_1,uint param_2,uint param_3,uint param_4)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "core_main.c_FUN_004e4330"
     }
   ],
   "globals": [
@@ -243,23 +135,6 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_00481df0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 19,
-          "line": 42,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -274,7 +149,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void shape_edittool_cpp_FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -282,7 +157,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void shape_edittool_cpp_FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -290,7 +165,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void shape_edittool_cpp_FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -298,7 +173,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void shape_edittool_cpp_FUN_00481df0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -540,14 +415,6 @@
       "severity": "mild",
       "text": "DAT_005fb148 = param_3;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 42,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar2 = iVar1 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

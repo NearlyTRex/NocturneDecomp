@@ -1,0 +1,175 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "004b6f30",
+      "from_addr": "004b79a2",
+      "name": "core_game.cpp_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4a10",
+    "address_range": [
+      [
+        "004c4a10",
+        "004c4a55"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004c4a10",
+    "signature": "void core_game_cpp_FUN_004c4a10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d6f0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c5fadc",
+      "name": "DAT_01c5fadc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5fae0",
+      "name": "DAT_01c5fae0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22b48",
+      "name": "DAT_01d22b48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22bec",
+      "name": "DAT_01d22bec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22c0c",
+      "name": "DAT_01d22c0c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b79a2",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b6f30",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.05,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "COPY": 14,
+      "INT_ADD": 8,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 9,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 121
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_01d22bec",
+      "severity": "mild",
+      "text": "_DAT_01c5fadc - *(int *)(&DAT_01d22bec + _DAT_01d22b48 * 4),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_01d22c0c",
+      "severity": "mild",
+      "text": "_DAT_01c5fae0 - *(int *)(&DAT_01d22c0c + _DAT_01d22b48 * 4),0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

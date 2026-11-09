@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00402940(char *param_1)
+; void __cdecl engine_2d_c_FUN_00402940(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined1       Stack[-0x8c]:1  local_8c
 ; undefined1       Stack[-0x8b]:1  local_8b
@@ -10,7 +12,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   FUN_00401010 at 0040105f
+;   engine_2d.c_FUN_00401010 at 0040105f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_005b50cc
@@ -26,33 +28,33 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   FUN_00402880
-;   FUN_004e4330
-;   FUN_005738c0
-;   FUN_00573a40
-;   FUN_00573c00
-;   FUN_00573db0
-;   FUN_00573fc0
-;   FUN_005747c0
-;   FUN_00574850
-;   FUN_005748e0
-;   FUN_005749a0
-;   FUN_00574a10
-;   FUN_005a28c0
+;   core_main.c_FUN_004e4330
+;   crt_unknown.c_FUN_005a28c0
+;   engine_2d.c_buildColorLookupTable_FUN_00402880
+;   support_trstream.cpp_COutStreamFile_ctor_FUN_005747c0
+;   support_trstream.cpp_COutStreamFile_dtor_FUN_00574850
+;   support_trstream.cpp_FUN_00573fc0
+;   support_trstream.cpp_FUN_005748e0
+;   support_trstream.cpp_FUN_005749a0
+;   support_trstream.cpp_FUN_00574a10
+;   unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0
+;   unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40
+;   unkafter_turret.cpp_FUN_00573c00
+;   unkafter_turret.cpp_FUN_00573db0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 00402940
-        ;   Label: FUN_00402940
+        ;   Label: engine_2d.c_FUN_00402940
     PUSH EDI                            ; 00402941
     SUB ESP,0x84                        ; 00402942
     MOV ESI,dword ptr [ESP + 0x90]      ; 00402948
     LEA EAX,[ESP + 0x50]                ; 0040294f
     PUSH EAX                            ; 00402953
-    CALL FUN_005738c0                   ; 00402954
-        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005738c0()
+    CALL unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0 ; 00402954
+        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00402959
     MOV EDI,ESP                         ; 0040295c
     MOV DL,0x2e                         ; 0040295e
@@ -102,14 +104,14 @@ section .text
     PUSH 0x5b50db                       ; 004029a4 | = "hose!"
     MOV dword ptr [0x01d71de0],EDX      ; 004029a9 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 004029af | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004029b5
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004029b5
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 004029ba
     PUSH 0x5b50e1                       ; 004029bd | DAT_005b50e1
         ;   Label: LAB_004029bd
     PUSH EDI                            ; 004029c2
-    CALL FUN_005a28c0                   ; 004029c3
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28c0()
+    CALL crt_unknown.c_FUN_005a28c0     ; 004029c3
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
     ADD ESP,0x8                         ; 004029c8
     PUSH 0x1                            ; 004029cb
     LEA EAX,[ESP + 0x4]                 ; 004029cd
@@ -117,18 +119,18 @@ section .text
     PUSH 0x5b50e6                       ; 004029d2 | DAT_005b50e6
     LEA EAX,[ESP + 0x5c]                ; 004029d7
     PUSH EAX                            ; 004029db
-    CALL FUN_00573fc0                   ; 004029dc
-        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined FUN_00573fc0()
+    CALL support_trstream.cpp_FUN_00573fc0 ; 004029dc
+        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573fc0()
     ADD ESP,0x10                        ; 004029e1
     TEST EAX,EAX                        ; 004029e4
     JNZ 0x00402a97                      ; 004029e6
         ;   XREF to: 00402a97 (CONDITIONAL_JUMP)  ; LAB_00402a97
-    CALL FUN_00402880                   ; 004029ec
-        ;   XREF to: 00402880 (UNCONDITIONAL_CALL)  ; undefined FUN_00402880()
+    CALL engine_2d.c_buildColorLookupTable_FUN_00402880 ; 004029ec
+        ;   XREF to: 00402880 (UNCONDITIONAL_CALL)  ; void engine_2d.c_buildColorLookupTable_FUN_00402880()
     LEA EAX,[ESP + 0x7c]                ; 004029f1
     PUSH EAX                            ; 004029f5
-    CALL FUN_005747c0                   ; 004029f6
-        ;   XREF to: 005747c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005747c0()
+    CALL support_trstream.cpp_COutStreamFile_ctor_FUN_005747c0 ; 004029f6
+        ;   XREF to: 005747c0 (UNCONDITIONAL_CALL)  ; COutStreamFile * support_trstream.cpp_COutStreamFile_ctor_FUN_005747c0(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004029fb
     PUSH 0x5b50ea                       ; 004029fe | DAT_005b50ea
     LEA EAX,[ESP + 0x4]                 ; 00402a03
@@ -136,8 +138,8 @@ section .text
     PUSH 0x5b50ed                       ; 00402a08 | DAT_005b50ed
     LEA EAX,[ESP + 0x88]                ; 00402a0d
     PUSH EAX                            ; 00402a14
-    CALL FUN_00574a10                   ; 00402a15
-        ;   XREF to: 00574a10 (UNCONDITIONAL_CALL)  ; undefined FUN_00574a10()
+    CALL support_trstream.cpp_FUN_00574a10 ; 00402a15
+        ;   XREF to: 00574a10 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574a10()
     ADD ESP,0x10                        ; 00402a1a
     TEST EAX,EAX                        ; 00402a1d
     JNZ 0x00402a46                      ; 00402a1f
@@ -148,8 +150,8 @@ section .text
     PUSH 0x5b5100                       ; 00402a2c | = "Unable to write quick map!"
     MOV dword ptr [0x01d71de0],EBX      ; 00402a31 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 00402a37 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00402a3d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00402a3d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00402a42
     POP EBX                             ; 00402a45
     PUSH 0x8000                         ; 00402a46
@@ -157,26 +159,26 @@ section .text
     PUSH 0x1c62070                      ; 00402a4b | DAT_01c62070
     LEA EAX,[ESP + 0x84]                ; 00402a50
     PUSH EAX                            ; 00402a57
-    CALL FUN_005748e0                   ; 00402a58
-        ;   XREF to: 005748e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005748e0()
+    CALL support_trstream.cpp_FUN_005748e0 ; 00402a58
+        ;   XREF to: 005748e0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005748e0()
     ADD ESP,0xc                         ; 00402a5d
     LEA EAX,[ESP + 0x7c]                ; 00402a60
     PUSH EAX                            ; 00402a64
-    CALL FUN_005749a0                   ; 00402a65
-        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005749a0()
+    CALL support_trstream.cpp_FUN_005749a0 ; 00402a65
+        ;   XREF to: 005749a0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005749a0()
     ADD ESP,0x4                         ; 00402a6a
     PUSH 0x0                            ; 00402a6d
     LEA EAX,[ESP + 0x80]                ; 00402a6f
     PUSH EAX                            ; 00402a76
-    CALL FUN_00574850                   ; 00402a77
-        ;   XREF to: 00574850 (UNCONDITIONAL_CALL)  ; undefined FUN_00574850()
+    CALL support_trstream.cpp_COutStreamFile_dtor_FUN_00574850 ; 00402a77
+        ;   XREF to: 00574850 (UNCONDITIONAL_CALL)  ; COutStreamFile * support_trstream.cpp_COutStreamFile_dtor_FUN_00574850(COutStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00402a7c
     PUSH 0x0                            ; 00402a7f
         ;   Label: LAB_00402a7f
     LEA EAX,[ESP + 0x54]                ; 00402a81
     PUSH EAX                            ; 00402a85
-    CALL FUN_00573a40                   ; 00402a86
-        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; undefined FUN_00573a40()
+    CALL unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40 ; 00402a86
+        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00402a8b
     ADD ESP,0x84                        ; 00402a8e
     POP EDI                             ; 00402a94
@@ -187,13 +189,13 @@ section .text
     PUSH 0x1c62070                      ; 00402a9c | DAT_01c62070
     LEA EAX,[ESP + 0x58]                ; 00402aa1
     PUSH EAX                            ; 00402aa5
-    CALL FUN_00573c00                   ; 00402aa6
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00573c00()
+    CALL unkafter_turret.cpp_FUN_00573c00 ; 00402aa6
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573c00()
     ADD ESP,0xc                         ; 00402aab
     LEA EAX,[ESP + 0x50]                ; 00402aae
     PUSH EAX                            ; 00402ab2
-    CALL FUN_00573db0                   ; 00402ab3
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined FUN_00573db0()
+    CALL unkafter_turret.cpp_FUN_00573db0 ; 00402ab3
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573db0()
     ADD ESP,0x4                         ; 00402ab8
     JMP 0x00402a7f                      ; 00402abb
         ;   XREF to: 00402a7f (UNCONDITIONAL_JUMP)  ; LAB_00402a7f

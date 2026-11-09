@@ -1,0 +1,245 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 33,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "0042ac20",
+      "from_addr": "0042ac3a",
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_0042ac20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4340",
+      "from_addr": "004a4361",
+      "name": "core_fire.cpp_FUN_004a4340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7600",
+      "from_addr": "004a760d",
+      "name": "core_flashlit.cpp_FUN_004a7600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527ca0",
+      "from_addr": "00527cb4",
+      "name": "core_rifle.cpp_FUN_00527ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054a3c0",
+      "from_addr": "0054a40e",
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054b5b0",
+      "from_addr": "0054b62b",
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005638a0",
+      "from_addr": "005638b3",
+      "name": "engine_special.cpp_CSpawner_ctor_FUN_005638a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054bf00",
+    "address_range": [
+      [
+        "0054bf00",
+        "0054bf78"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0054bf00",
+    "signature": "CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0054bf00(CDeformableModelInstance *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fbad0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_ctor_FUN_004fbad0"
+    },
+    {
+      "addr": "005a30d7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005a30d7"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db0f0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "005e4784",
+      "name": "g_CDeformableModelInstanceVTable",
+      "type": "void*",
+      "value": "0054bf80"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0054b62b",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054a40e",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a760d",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_FUN_004a7600",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00527cb4",
+        "call_type": "direct",
+        "caller": "core_rifle.cpp_FUN_00527ca0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042ac3a",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_ctor_FUN_0042ac20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a4361",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004a4340",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005638b3",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_CSpawner_ctor_FUN_005638a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.88,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 18,
+      "INT_ADD": 17,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 97
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "iVar2 = __arrinit(&pCVar1[1].field_0x4,100,&g_CVectorTypeInfo);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDeformableModelInstance",
+        "offset": 0,
+        "vtable_addr": "005dfcf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

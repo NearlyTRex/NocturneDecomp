@@ -1,14 +1,14 @@
-// Name: FUN_004beb80
+// Name: core_game.cpp_FUN_004beb80
 // Address: 004beb80
 // Address Range: [[004beb80, 004bec1a]]
 // Convention: unknown
-// Signature: void FUN_004beb80(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5)
+// Signature: void core_game_cpp_FUN_004beb80(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)
+void core_game_cpp_FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param_5)
 
 {
   char cVar1;
@@ -17,7 +17,7 @@ void FUN_004beb80(int param_1,char *param_2,uint param_3,uint param_4,uint param
   if (*(char *)(param_1 + 0x968) != '\0') {
     _DAT_01d71de0 = "..\\core\\game.cpp";
     _DAT_01d71de4 = 0x122b;
-    FUN_004e4330("CGame::displayBitmap - tried to queue %s, but %s already queued!",param_2,param_1 + 0x968);
+    core_main_c_FUN_004e4330("CGame::displayBitmap - tried to queue %s, but %s already queued!",param_2,param_1 + 0x968);
   }
   pcVar2 = (char *)(param_1 + 0x968);
   do {

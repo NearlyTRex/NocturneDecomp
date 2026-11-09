@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)
+; float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xa8]:4  local_a8
@@ -32,7 +32,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_0050baa0 at 0050c141
+;   core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0 at 0050c141
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0050adc4 = 0050aede
@@ -53,15 +53,15 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_00576250
+;   core_main.c_FUN_004e4330
+;   core_vecdir.cpp_FUN_00576250
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0050ae20
-        ;   Label: FUN_0050ae20
+        ;   Label: core_path.cpp_FUN_0050ae20
     PUSH ESI                            ; 0050ae21
     PUSH EDI                            ; 0050ae22
     PUSH EBP                            ; 0050ae23
@@ -91,8 +91,8 @@ section .text
     PUSH EAX                            ; 0050ae66
     LEA ESI,[ESP + 0x64]                ; 0050ae67
     LEA EDI,[ESP + 0x1c]                ; 0050ae6b
-    CALL FUN_00576250                   ; 0050ae6f
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined FUN_00576250()
+    CALL core_vecdir.cpp_FUN_00576250   ; 0050ae6f
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
     LEA ESI,[ESP + 0x64]                ; 0050ae74
     ADD ESP,0x4                         ; 0050ae78
     MOVSD ES:EDI,ESI                    ; 0050ae7b
@@ -305,8 +305,8 @@ section .text
     PUSH 0x5cb7a3                       ; 0050b0c9 | = "CPathMap::getDirection - Should never..."
     MOV dword ptr [0x01d71de0],EDI      ; 0050b0ce | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 0050b0d4 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0050b0d9
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0050b0d9
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0050b0de
     MOV EAX,dword ptr [EBP + 0x18]      ; 0050b0e1
         ;   Label: LAB_0050b0e1
@@ -355,8 +355,8 @@ section .text
     PUSH EAX                            ; 0050b158
     LEA ESI,[ESP + 0x7c]                ; 0050b159
     LEA EDI,[ESP + 0x10]                ; 0050b15d
-    CALL FUN_00576250                   ; 0050b161
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined FUN_00576250()
+    CALL core_vecdir.cpp_FUN_00576250   ; 0050b161
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
     LEA ESI,[ESP + 0x7c]                ; 0050b166
     ADD ESP,0x4                         ; 0050b16a
     MOVSD ES:EDI,ESI                    ; 0050b16d

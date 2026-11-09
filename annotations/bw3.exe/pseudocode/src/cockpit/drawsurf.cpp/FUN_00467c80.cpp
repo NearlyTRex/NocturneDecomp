@@ -1,15 +1,15 @@
-// Name: FUN_00467c80
+// Name: cockpit_drawsurf.cpp_FUN_00467c80
 // Address: 00467c80
 // Address Range: [[00467c80, 00467ddf]]
 // Convention: unknown
-// Signature: void FUN_00467c80(uint param_1,uint param_2,uint param_3)
+// Signature: void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00467d91) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00467c80(uint param_1,uint param_2,uint param_3)
+void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)
 
 {
   int iVar1;
@@ -43,6 +43,6 @@ void FUN_00467c80(uint param_1,uint param_2,uint param_3)
   }
   _DAT_01d71de0 = "..\\cockpit\\drawsurf.cpp";
   _DAT_01d71de4 = 0x11e;
-  FUN_004e4330("Invalid bitsPerPixel in CDrawSurface::setColor");
+  core_main_c_FUN_004e4330("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

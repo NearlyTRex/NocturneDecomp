@@ -1,0 +1,27 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_unknown.c_FUN_005a7f3c
+# Entry:       005a7f3c
+# Signature:   undefined4 crt_unknown_c_FUN_005a7f3c(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@005a7f3c [ESP:+0]  # MOV EAX, [0x02d252bc]
+COPY (register,0x0,4) /* EAX */ = (ram,0x2d252bc,4)
+
+@005a7f41 [ESP:+0]  # LEA EAX, [EAX]
+COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
+
+# ============================================================================
+# Summary: 2 instructions, 2 P-code ops
+# ============================================================================

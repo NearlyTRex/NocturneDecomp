@@ -1,0 +1,220 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 142,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00405fa0",
+    "address_range": [
+      [
+        "00405fa0",
+        "0040603f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonTexturedDepthLitOp49_FUN_00405fa0",
+    "signature": "int __cdecl engine_3d_c_renderPolygonTexturedDepthLitOp49_FUN_00405fa0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004039d0",
+      "is_variadic": false,
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_004039d0"
+    },
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "0043a840",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_0043a840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba20",
+      "name": "DAT_005fba20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5cc",
+      "name": "DAT_01c6b5cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2a0",
+      "name": "DAT_01c6e2a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b4",
+      "name": "DAT_01c6e2b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b8",
+      "name": "DAT_01c6e2b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.434782608695652,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 35,
+      "INT_ADD": 15,
+      "INT_AND": 32,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 21,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 12,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 204
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl engine_3d_c_renderPolygonTexturedDepthLitOp49_FUN_00405fa0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "else if (DAT_005fba20 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_3d_c_calculatePolygonLighting_FUN_004039d0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_0043a840(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_0043a840(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 196,
+        "vtable_addr": "005f07c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

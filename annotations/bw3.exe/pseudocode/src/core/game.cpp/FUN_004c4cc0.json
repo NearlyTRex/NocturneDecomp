@@ -1,0 +1,180 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 100,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 7,
+    "suspect_types": [
+      "param_count_too_few",
+      "sub84_truncation",
+      "unnamed_param"
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b88d0",
+      "name": "core_game.cpp_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4cc0",
+    "address_range": [
+      [
+        "004c4cc0",
+        "004c4d02"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004c4cc0",
+    "signature": "void core_game_cpp_FUN_004c4cc0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005567c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005567c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b88d0",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b7f90",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.409090909090909,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 17,
+      "INT_ADD": 15,
+      "INT_AND": 11,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 97
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_game_cpp_FUN_004c4cc0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(uint *)(param_1 + 0x2fc) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "dVar1 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005567c0(*(uint *)(param_1 + 0x2fc),1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 13,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_c = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x300) = local_c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x304) = local_8;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

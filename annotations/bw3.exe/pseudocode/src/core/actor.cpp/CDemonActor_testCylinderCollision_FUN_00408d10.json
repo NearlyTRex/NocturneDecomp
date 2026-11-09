@@ -1,0 +1,208 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 73,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unknown_field",
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [
+    {
+      "addr": "004d2720",
+      "from_addr": "004d274c",
+      "name": "core_hero.cpp_FUN_004d2720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00408d10",
+    "address_range": [
+      [
+        "00408d10",
+        "00408d98"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_testCylinderCollision_FUN_00408d10",
+    "signature": "int __cdecl core_actor_cpp_CDemonActor_testCylinderCollision_FUN_00408d10(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance)"
+  },
+  "function_calls": [
+    {
+      "addr": "0053ed80",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d274c",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d2720",
+        "estimated_params": 3,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.867924528301887,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 4,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 131,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 24,
+      "INT_AND": 31,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 12,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 8,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 19,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 364
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionReturnInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "tolerance",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 11,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_30._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x3c))(this_ptr,local_30);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x3c))(this_ptr,local_30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 13,
+      "match": "._20_4_",
+      "severity": "mild",
+      "text": "if ((((iVar1 == 2) && ((float)local_30._20_4_ - tolerance <= *(float *)(collision_info + 4))) &&",
+      "type": "unknown_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 172,
+        "vtable_addr": "005dd704"
+      },
+      {
+        "class_name": "CActorDestination",
+        "offset": 172,
+        "vtable_addr": "005de204"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 172,
+        "vtable_addr": "005df104"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 172,
+        "vtable_addr": "005e0d04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 172,
+        "vtable_addr": "005e1d04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 133
+  }
+}

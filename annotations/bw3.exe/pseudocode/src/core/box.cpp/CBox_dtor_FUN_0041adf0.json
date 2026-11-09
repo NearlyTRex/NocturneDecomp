@@ -1,0 +1,212 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 4,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 7
+  },
+  "cross_references": [
+    {
+      "addr": "00414880",
+      "from_addr": "004148ac",
+      "name": "core_bodypart.cpp_CBodyPart_dtor_FUN_00414880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420db0",
+      "from_addr": "00420dc5",
+      "name": "core_boxactor.cpp_CBoxActor_dtor_FUN_00420db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00420d30",
+      "from_addr": "00420d55",
+      "name": "core_boxactor.cpp_CLightActor_dtor_FUN_00420d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a48a0",
+      "from_addr": "004a48aa",
+      "name": "core_fire.cpp_CStake_dtor_FUN_004a48a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a46c0",
+      "from_addr": "004a46cc",
+      "name": "core_fire.cpp_CToss_dtor_FUN_004a46c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547720",
+      "from_addr": "00547735",
+      "name": "core_simbox.cpp_CSimBox_dtor_FUN_00547720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005689e0",
+      "from_addr": "005689f5",
+      "name": "core_stone.cpp_CTempleStone_dtor_FUN_005689e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057aed0",
+      "from_addr": "0057aeef",
+      "name": "core_weapon.cpp_CWeapon_dtor_FUN_0057aed0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041adf0",
+    "address_range": [
+      [
+        "0041adf0",
+        "0041adf4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBox_dtor_FUN_0041adf0",
+    "signature": "CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041adf0(CBox *this_ptr,uint flags)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0057aeef",
+        "call_type": "direct",
+        "caller": "core_weapon.cpp_CWeapon_dtor_FUN_0057aed0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004148ac",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_dtor_FUN_00414880",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00420dc5",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_dtor_FUN_00420db0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00420d55",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CLightActor_dtor_FUN_00420d30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00547735",
+        "call_type": "direct",
+        "caller": "core_simbox.cpp_CSimBox_dtor_FUN_00547720",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005689f5",
+        "call_type": "direct",
+        "caller": "core_stone.cpp_CTempleStone_dtor_FUN_005689e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a46cc",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CToss_dtor_FUN_004a46c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a48aa",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CStake_dtor_FUN_004a48a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 6
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBox *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

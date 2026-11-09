@@ -1,147 +1,37 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c5b0e0'; did you mean 'DAT_005fb0e0'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d71de0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d71de4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 21,
-        "message": "no matching function for call to 'FUN_004e4330'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c5bae0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01c5b0e0'; did you mean 'DAT_005fb0e0'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 158,
-    "cross_reference_count": 1,
+    "complexity_score": 59,
+    "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 11,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 121
+    "total_lines": 122
   },
   "cross_references": [
     {
+      "addr": "0047366e",
+      "from_addr": "00473687",
+      "name": "core_dtrace.cpp_FUN_0047366e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005043b0",
       "from_addr": "00504431",
-      "name": "FUN_005043b0",
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_005043b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00513d1e",
+      "from_addr": "00513e75",
+      "name": "engine_pod.cpp_FUN_00513d1e",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,40 +43,40 @@
         "0047ee47"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_0047ed50",
-    "signature": "void FUN_0047ed50(undefined4 param_1,int param_2)"
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_FUN_0047ed50",
+    "signature": "void __cdecl shape_edittool_cpp_FUN_0047ed50(CEditorTools *this_ptr,char *message_text)"
   },
   "function_calls": [
     {
-      "addr": "0047ee50",
+      "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_0047ee50"
-    },
-    {
-      "addr": "0047f3e0",
-      "is_variadic": false,
-      "name": "FUN_0047f3e0"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "004b2a80",
       "is_variadic": false,
-      "name": "FUN_004b2a80"
+      "name": "engine_font.cpp_FUN_004b2a80"
     },
     {
       "addr": "004b30f0",
       "is_variadic": false,
-      "name": "FUN_004b30f0"
+      "name": "engine_font.cpp_FUN_004b30f0"
     },
     {
-      "addr": "004e4330",
+      "addr": "0047f3e0",
       "is_variadic": false,
-      "name": "FUN_004e4330"
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0"
+    },
+    {
+      "addr": "0047ee50",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047ee50"
     },
     {
       "addr": "005806a0",
       "is_variadic": false,
-      "name": "FUN_005806a0"
+      "name": "wincore_winrun.cpp_FUN_005806a0"
     }
   ],
   "globals": [
@@ -246,40 +136,58 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "00504431",
         "call_type": "direct",
-        "caller": "FUN_005043b0",
-        "estimated_params": 3,
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_005043b0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "00504657",
         "call_type": "direct",
-        "caller": "FUN_005043b0",
-        "estimated_params": 3,
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_005043b0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00473687",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0047366e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00513e75",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_00513d1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.9743589743589745,
@@ -313,12 +221,27 @@
     "pcode_op_count": 388
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "message_text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -330,87 +253,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void FUN_0047ed50(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void FUN_0047ed50(uint param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 18,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "iVar1 = DAT_005fba18 / 2;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar3 = FUN_004b2a80(_DAT_01c5b0e0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = FUN_004b2a80(_DAT_01c5b0e0,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0047f3e0(param_1,iVar1,_DAT_01c5bae4 * 6,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_0047f3e0(param_1,iVar1,_DAT_01c5bae4 * 6,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0047ee50(param_1,0,0x3f800000);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float FUN_0053bc80(int param_1,float *param_2,float param_3)
+; float core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x208]:4  local_208
@@ -24,14 +24,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   FUN_00408a40 at 00408a8c
-;   FUN_0040c8e0 at 0040c950
-;   FUN_0040c990 at 0040ca21
-;   FUN_0049d590 at 0049d5e6
-;   FUN_0049fce0 at 0049fd16
-;   FUN_004cdff0 at 004ce01b
-;   FUN_00521880 at 00521daf
-;   FUN_0056d360 at 0056dabd
+;   core_actor.cpp_FUN_00408a40 at 00408a8c
+;   core_actor.cpp_FUN_0040c8e0 at 0040c950
+;   core_actor.cpp_FUN_0040c990 at 0040ca21
+;   core_fire.cpp_FUN_0049d590 at 0049d5e6
+;   core_fire.cpp_FUN_0049fce0 at 0049fd16
+;   core_gore.cpp_FUN_004cdff0 at 004ce01b
+;   core_prye.cpp_FUN_00521880 at 00521daf
+;   core_trash.cpp_FUN_0056d360 at 0056dabd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005d0a2e
@@ -40,28 +40,28 @@
 ;   TerminatedCString s_Invalid_collision_type_005d0aa4
 ;   undefined4 DAT_005d0abe
 ;   undefined4 DAT_005d0ac2
-;   undefined4 DAT_005db0f0
+;   WatcomTypeInfo g_CVectorTypeInfo
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
-;   undefined4 DAT_0203b37c
-;   undefined4 DAT_02cf616c
+;   CDemonRaytrace g_CDemonRaytraceInstance
+;   undefined4 g_CSpikeClassInfo.name_hash
 ;
 ; Called Functions:
-;   FUN_00408b00
-;   FUN_00408b80
-;   FUN_00408bf0
-;   FUN_00408f00
-;   FUN_0040c840
-;   FUN_0041d8b0
-;   FUN_0041e910
-;   FUN_00461ef0
-;   FUN_004625a0
-;   FUN_00474940
-;   FUN_00474b90
-;   FUN_00478a50
-;   FUN_004795c0
-;   FUN_004e4330
-;   FUN_0053d770
+;   core_actor.cpp_castToClassHash_FUN_0040c840
+;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_FUN_00408b80
+;   core_actor.cpp_FUN_00408bf0
+;   core_actor.cpp_FUN_00408f00
+;   core_box.cpp_FUN_0041d8b0
+;   core_box.cpp_FUN_0041e910
+;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00461ef0
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
+;   core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00474b90
+;   core_dtrace.cpp_FUN_00474940
+;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50
+;   core_dtri.cpp_FUN_004795c0
+;   core_main.c_FUN_004e4330
+;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -69,7 +69,7 @@
 section .text
 
     PUSH EBX                            ; 0053bc80
-        ;   Label: FUN_0053bc80
+        ;   Label: core_setcolid.cpp_FUN_0053bc80
     PUSH ESI                            ; 0053bc81
     PUSH EDI                            ; 0053bc82
     PUSH EBP                            ; 0053bc83
@@ -89,9 +89,9 @@ section .text
     PUSH EBP                            ; 0053bcbf
     PUSH ESI                            ; 0053bcc0
     PUSH EBX                            ; 0053bcc1
-    PUSH 0x203b37c                      ; 0053bcc2 | DAT_0203b37c
-    CALL FUN_00474940                   ; 0053bcc7
-        ;   XREF to: 00474940 (UNCONDITIONAL_CALL)  ; undefined FUN_00474940()
+    PUSH 0x203b37c                      ; 0053bcc2 | g_CDemonRaytraceInstance
+    CALL core_dtrace.cpp_FUN_00474940   ; 0053bcc7
+        ;   XREF to: 00474940 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00474940()
     MOV dword ptr [ESP + 0x3b4],EAX     ; 0053bccc
     FLD float ptr [ESP + 0x3b4]         ; 0053bcd3
     ADD ESP,0x10                        ; 0053bcda
@@ -177,8 +177,8 @@ section .text
     FADD float ptr [0x005d0ac2]         ; 0053be53 | DAT_005d0ac2
     PUSH EAX                            ; 0053be59
     FSTP float ptr [ESP + 0x210]        ; 0053be5a
-    CALL FUN_0053ed80                   ; 0053be61
-        ;   XREF to: 0053ed80 (UNCONDITIONAL_CALL)  ; undefined FUN_0053ed80()
+    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80 ; 0053be61
+        ;   XREF to: 0053ed80 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 0053be66
     XOR EBX,EBX                         ; 0053be69
     MOV EAX,dword ptr [ESP + 0x3bc]     ; 0053be6b
@@ -199,8 +199,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x3c0]     ; 0053beb2
     PUSH ESI                            ; 0053beb9
     MOV dword ptr [ESP + 0x3a8],EAX     ; 0053beba
-    CALL FUN_0053d770                   ; 0053bec1
-        ;   XREF to: 0053d770 (UNCONDITIONAL_CALL)  ; undefined FUN_0053d770()
+    CALL core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770 ; 0053bec1
+        ;   XREF to: 0053d770 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0053bec6
     TEST EAX,EAX                        ; 0053bec9
     JZ 0x0053bf53                       ; 0053becb
@@ -236,21 +236,21 @@ section .text
     PUSH ESI                            ; 0053bf2a
     PUSH dword ptr [ESP + 0x3cc]        ; 0053bf2b
     PUSH EBX                            ; 0053bf32
-    PUSH 0x203b37c                      ; 0053bf33 | DAT_0203b37c
-    CALL FUN_00474b90                   ; 0053bf38
-        ;   XREF to: 00474b90 (UNCONDITIONAL_CALL)  ; undefined FUN_00474b90()
+    PUSH 0x203b37c                      ; 0053bf33 | g_CDemonRaytraceInstance
+    CALL core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00474b90 ; 0053bf38
+        ;   XREF to: 00474b90 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00474b90(CDemonRaytrace * this_ptr, CVector3f * pos, float radius, int * hit_flag, ...)
     MOV dword ptr [ESP + 0x3b8],EAX     ; 0053bf3d
     FLD float ptr [ESP + 0x3b8]         ; 0053bf44
     ADD ESP,0x14                        ; 0053bf4b
     JMP 0x0053bcdd                      ; 0053bf4e
         ;   XREF to: 0053bcdd (UNCONDITIONAL_JUMP)  ; LAB_0053bcdd
-    MOV EDI,dword ptr [0x02cf616c]      ; 0053bf53 | DAT_02cf616c
+    MOV EDI,dword ptr [0x02cf616c]      ; 0053bf53 | g_CSpikeClassInfo.name_hash
         ;   Label: LAB_0053bf53
     PUSH EDI                            ; 0053bf59
     MOV EBP,dword ptr [ESP + 0x3a4]     ; 0053bf5a
     PUSH EBP                            ; 0053bf61
-    CALL FUN_0040c840                   ; 0053bf62
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c840()
+    CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0053bf62
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
     ADD ESP,0x8                         ; 0053bf67
     TEST EAX,EAX                        ; 0053bf6a
     JNZ 0x0053bed1                      ; 0053bf6c
@@ -273,8 +273,8 @@ section .text
     PUSH EBP                            ; 0053bfa8
     LEA ESI,[ESP + 0x1fc]               ; 0053bfa9
     LEA EDI,[ESP + 0x22c]               ; 0053bfb0
-    CALL FUN_00408f00                   ; 0053bfb7
-        ;   XREF to: 00408f00 (UNCONDITIONAL_CALL)  ; undefined FUN_00408f00()
+    CALL core_actor.cpp_FUN_00408f00    ; 0053bfb7
+        ;   XREF to: 00408f00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408f00()
     ADD ESP,0xc                         ; 0053bfbc
     LEA EAX,[ESP + 0x220]               ; 0053bfbf
     MOV ECX,0x6                         ; 0053bfc6
@@ -283,8 +283,8 @@ section .text
     LEA ESI,[ESP + 0x1f4]               ; 0053bfd3
     PUSH EAX                            ; 0053bfda
     MOVSD.REP ES:EDI,ESI                ; 0053bfdb
-    CALL FUN_0041e910                   ; 0053bfdd
-        ;   XREF to: 0041e910 (UNCONDITIONAL_CALL)  ; undefined FUN_0041e910()
+    CALL core_box.cpp_FUN_0041e910      ; 0053bfdd
+        ;   XREF to: 0041e910 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_0041e910(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 0053bfe2
     TEST EAX,EAX                        ; 0053bfe5
     JZ 0x0053bed1                       ; 0053bfe7
@@ -300,12 +300,12 @@ section .text
     CMP EBX,0x1                         ; 0053c00a
     JNZ 0x0053ca6d                      ; 0053c00d
         ;   XREF to: 0053ca6d (CONDITIONAL_JUMP)  ; LAB_0053ca6d
-    PUSH 0x5db0f0                       ; 0053c013 | DAT_005db0f0
+    PUSH 0x5db0f0                       ; 0053c013 | g_CVectorTypeInfo
     PUSH 0x8                            ; 0053c018
     LEA EAX,[ESP + 0x8]                 ; 0053c01a
     PUSH EAX                            ; 0053c01e
-    CALL FUN_005a30d7                   ; 0053c01f
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined FUN_005a30d7()
+    CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0053c01f
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
     ADD ESP,0xc                         ; 0053c024
     MOV EAX,dword ptr [ESP + 0x3a0]     ; 0053c027
     MOV ESI,dword ptr [ESP + 0x3a0]     ; 0053c02e
@@ -326,8 +326,8 @@ section .text
     PUSH EAX                            ; 0053c06c
     LEA ESI,[ESP + 0x36c]               ; 0053c06d
     LEA EDI,[ESP + 0x33c]               ; 0053c074
-    CALL FUN_0041d8b0                   ; 0053c07b
-        ;   XREF to: 0041d8b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041d8b0()
+    CALL core_box.cpp_FUN_0041d8b0      ; 0053c07b
+        ;   XREF to: 0041d8b0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041d8b0()
     LEA ESI,[ESP + 0x36c]               ; 0053c080
     ADD ESP,0x8                         ; 0053c087
     LEA EAX,[ESP + 0x334]               ; 0053c08a
@@ -338,8 +338,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3a4]     ; 0053c095
     PUSH EDI                            ; 0053c09c
     LEA ESI,[ESP + 0x2dc]               ; 0053c09d
-    CALL FUN_00408b80                   ; 0053c0a4
-        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b80()
+    CALL core_actor.cpp_FUN_00408b80    ; 0053c0a4
+        ;   XREF to: 00408b80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b80()
     LEA EDI,[ESP + 0x2c4]               ; 0053c0a9
     LEA ESI,[ESP + 0x2dc]               ; 0053c0b0
     ADD ESP,0x8                         ; 0053c0b7
@@ -370,8 +370,8 @@ section .text
     PUSH EAX                            ; 0053c100
     LEA EAX,[ESP + 0x6c]                ; 0053c101
     PUSH EAX                            ; 0053c105
-    CALL FUN_00478a50                   ; 0053c106
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c106
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c10b
     LEA EAX,[ESP + 0x388]               ; 0053c10e
     PUSH EAX                            ; 0053c115
@@ -380,8 +380,8 @@ section .text
     PUSH EAX                            ; 0053c124
     LEA EAX,[ESP + 0x6c]                ; 0053c125
     PUSH EAX                            ; 0053c129
-    CALL FUN_004795c0                   ; 0053c12a
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c12a
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c12f
     MOV ESI,EAX                         ; 0053c132
     LEA EAX,[ESP + 0x18]                ; 0053c134
@@ -392,8 +392,8 @@ section .text
     PUSH EAX                            ; 0053c142
     LEA EAX,[ESP + 0x6c]                ; 0053c143
     PUSH EAX                            ; 0053c147
-    CALL FUN_00478a50                   ; 0053c148
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c148
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c14d
     LEA EAX,[ESP + 0x388]               ; 0053c150
     PUSH EAX                            ; 0053c157
@@ -404,8 +404,8 @@ section .text
     PUSH EAX                            ; 0053c16b
     XOR EBX,EBX                         ; 0053c16c
     MOV EBP,ESI                         ; 0053c16e
-    CALL FUN_004795c0                   ; 0053c170
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c170
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c175
     OR EBP,EAX                          ; 0053c178
     JZ 0x0053c207                       ; 0053c17a
@@ -449,8 +449,8 @@ section .text
     PUSH EAX                            ; 0053c215
     LEA EAX,[ESP + 0x14c]               ; 0053c216
     PUSH EAX                            ; 0053c21d
-    CALL FUN_00478a50                   ; 0053c21e
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c21e
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c223
     LEA EAX,[ESP + 0x388]               ; 0053c226
     PUSH EAX                            ; 0053c22d
@@ -460,8 +460,8 @@ section .text
     LEA EAX,[ESP + 0x14c]               ; 0053c23d
     PUSH EAX                            ; 0053c244
     OR EBX,EBP                          ; 0053c245
-    CALL FUN_004795c0                   ; 0053c247
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c247
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c24c
     MOV EBP,EAX                         ; 0053c24f
     LEA EAX,[ESP + 0x3c]                ; 0053c251
@@ -472,8 +472,8 @@ section .text
     PUSH EAX                            ; 0053c25f
     LEA EAX,[ESP + 0x14c]               ; 0053c260
     PUSH EAX                            ; 0053c267
-    CALL FUN_00478a50                   ; 0053c268
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c268
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c26d
     LEA EAX,[ESP + 0x388]               ; 0053c270
     PUSH EAX                            ; 0053c277
@@ -482,8 +482,8 @@ section .text
     PUSH EAX                            ; 0053c286
     LEA EAX,[ESP + 0x14c]               ; 0053c287
     PUSH EAX                            ; 0053c28e
-    CALL FUN_004795c0                   ; 0053c28f
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c28f
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c294
     OR EBP,EAX                          ; 0053c297
     JZ 0x0053c326                       ; 0053c299
@@ -527,8 +527,8 @@ section .text
     PUSH EAX                            ; 0053c334
     LEA EAX,[ESP + 0x184]               ; 0053c335
     PUSH EAX                            ; 0053c33c
-    CALL FUN_00478a50                   ; 0053c33d
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c33d
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c342
     LEA EAX,[ESP + 0x388]               ; 0053c345
     PUSH EAX                            ; 0053c34c
@@ -537,8 +537,8 @@ section .text
     PUSH EAX                            ; 0053c35b
     LEA EAX,[ESP + 0x184]               ; 0053c35c
     PUSH EAX                            ; 0053c363
-    CALL FUN_004795c0                   ; 0053c364
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c364
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c369
     MOV ESI,EAX                         ; 0053c36c
     LEA EAX,[ESP + 0x30]                ; 0053c36e
@@ -549,8 +549,8 @@ section .text
     PUSH EAX                            ; 0053c37c
     LEA EAX,[ESP + 0x184]               ; 0053c37d
     PUSH EAX                            ; 0053c384
-    CALL FUN_00478a50                   ; 0053c385
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c385
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c38a
     LEA EAX,[ESP + 0x388]               ; 0053c38d
     PUSH EAX                            ; 0053c394
@@ -561,8 +561,8 @@ section .text
     PUSH EAX                            ; 0053c3ab
     OR EBX,EBP                          ; 0053c3ac
     MOV EBP,ESI                         ; 0053c3ae
-    CALL FUN_004795c0                   ; 0053c3b0
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c3b0
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c3b5
     OR EBP,EAX                          ; 0053c3b8
     JZ 0x0053c447                       ; 0053c3ba
@@ -606,8 +606,8 @@ section .text
     PUSH EAX                            ; 0053c455
     LEA EAX,[ESP + 0x114]               ; 0053c456
     PUSH EAX                            ; 0053c45d
-    CALL FUN_00478a50                   ; 0053c45e
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c45e
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c463
     LEA EAX,[ESP + 0x388]               ; 0053c466
     PUSH EAX                            ; 0053c46d
@@ -617,8 +617,8 @@ section .text
     LEA EAX,[ESP + 0x114]               ; 0053c47d
     PUSH EAX                            ; 0053c484
     OR EBX,EBP                          ; 0053c485
-    CALL FUN_004795c0                   ; 0053c487
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c487
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c48c
     MOV EBP,EAX                         ; 0053c48f
     LEA EAX,[ESP + 0x24]                ; 0053c491
@@ -629,8 +629,8 @@ section .text
     PUSH EAX                            ; 0053c49f
     LEA EAX,[ESP + 0x114]               ; 0053c4a0
     PUSH EAX                            ; 0053c4a7
-    CALL FUN_00478a50                   ; 0053c4a8
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c4a8
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c4ad
     LEA EAX,[ESP + 0x388]               ; 0053c4b0
     PUSH EAX                            ; 0053c4b7
@@ -639,8 +639,8 @@ section .text
     PUSH EAX                            ; 0053c4c6
     LEA EAX,[ESP + 0x114]               ; 0053c4c7
     PUSH EAX                            ; 0053c4ce
-    CALL FUN_004795c0                   ; 0053c4cf
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c4cf
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c4d4
     OR EBP,EAX                          ; 0053c4d7
     JZ 0x0053c566                       ; 0053c4d9
@@ -684,8 +684,8 @@ section .text
     PUSH EAX                            ; 0053c574
     LEA EAX,[ESP + 0xdc]                ; 0053c575
     PUSH EAX                            ; 0053c57c
-    CALL FUN_00478a50                   ; 0053c57d
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c57d
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c582
     LEA EAX,[ESP + 0x388]               ; 0053c585
     PUSH EAX                            ; 0053c58c
@@ -695,8 +695,8 @@ section .text
     LEA EAX,[ESP + 0xdc]                ; 0053c59c
     PUSH EAX                            ; 0053c5a3
     OR EBX,EBP                          ; 0053c5a4
-    CALL FUN_004795c0                   ; 0053c5a6
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c5a6
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c5ab
     MOV EBP,EAX                         ; 0053c5ae
     LEA EAX,[ESP + 0xc]                 ; 0053c5b0
@@ -707,8 +707,8 @@ section .text
     PUSH EAX                            ; 0053c5be
     LEA EAX,[ESP + 0xdc]                ; 0053c5bf
     PUSH EAX                            ; 0053c5c6
-    CALL FUN_00478a50                   ; 0053c5c7
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c5c7
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c5cc
     LEA EAX,[ESP + 0x388]               ; 0053c5cf
     PUSH EAX                            ; 0053c5d6
@@ -717,8 +717,8 @@ section .text
     PUSH EAX                            ; 0053c5e5
     LEA EAX,[ESP + 0xdc]                ; 0053c5e6
     PUSH EAX                            ; 0053c5ed
-    CALL FUN_004795c0                   ; 0053c5ee
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c5ee
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c5f3
     OR EBP,EAX                          ; 0053c5f6
     JZ 0x0053c685                       ; 0053c5f8
@@ -762,8 +762,8 @@ section .text
     PUSH EAX                            ; 0053c693
     LEA EAX,[ESP + 0xa4]                ; 0053c694
     PUSH EAX                            ; 0053c69b
-    CALL FUN_00478a50                   ; 0053c69c
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c69c
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c6a1
     LEA EAX,[ESP + 0x388]               ; 0053c6a4
     PUSH EAX                            ; 0053c6ab
@@ -773,8 +773,8 @@ section .text
     LEA EAX,[ESP + 0xa4]                ; 0053c6bb
     PUSH EAX                            ; 0053c6c2
     OR EBX,EBP                          ; 0053c6c3
-    CALL FUN_004795c0                   ; 0053c6c5
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c6c5
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c6ca
     MOV EBP,EAX                         ; 0053c6cd
     LEA EAX,[ESP + 0x48]                ; 0053c6cf
@@ -785,8 +785,8 @@ section .text
     PUSH EAX                            ; 0053c6dd
     LEA EAX,[ESP + 0xa4]                ; 0053c6de
     PUSH EAX                            ; 0053c6e5
-    CALL FUN_00478a50                   ; 0053c6e6
-        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00478a50()
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50 ; 0053c6e6
+        ;   XREF to: 00478a50 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_00478a50(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0053c6eb
     LEA EAX,[ESP + 0x388]               ; 0053c6ee
     PUSH EAX                            ; 0053c6f5
@@ -795,8 +795,8 @@ section .text
     PUSH EAX                            ; 0053c704
     LEA EAX,[ESP + 0xa4]                ; 0053c705
     PUSH EAX                            ; 0053c70c
-    CALL FUN_004795c0                   ; 0053c70d
-        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004795c0()
+    CALL core_dtri.cpp_FUN_004795c0     ; 0053c70d
+        ;   XREF to: 004795c0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_FUN_004795c0(CDemonTriangle * triangle, CVector3f * position, float search_radius, float * out_height)
     ADD ESP,0x10                        ; 0053c712
     OR EBP,EAX                          ; 0053c715
     JZ 0x0053c7a4                       ; 0053c717
@@ -843,8 +843,8 @@ section .text
     PUSH EBX                            ; 0053c7c8
     LEA ESI,[ESP + 0x30c]               ; 0053c7c9
     LEA EDI,[ESP + 0x384]               ; 0053c7d0
-    CALL FUN_00408b00                   ; 0053c7d7
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b00()
+    CALL core_actor.cpp_FUN_00408b00    ; 0053c7d7
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
     LEA ESI,[ESP + 0x30c]               ; 0053c7dc
     ADD ESP,0x8                         ; 0053c7e3
     LEA EAX,[ESP + 0x37c]               ; 0053c7e6
@@ -869,8 +869,8 @@ section .text
     JZ 0x0053c001                       ; 0053c82a
         ;   XREF to: 0053c001 (CONDITIONAL_JUMP)  ; LAB_0053c001
     PUSH EBP                            ; 0053c830
-    CALL FUN_004625a0                   ; 0053c831
-        ;   XREF to: 004625a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004625a0()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0 ; 0053c831
+        ;   XREF to: 004625a0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0053c836
     MOV EDX,dword ptr [EAX + 0x358]     ; 0053c839
     MOV EBX,EAX                         ; 0053c83f
@@ -883,8 +883,8 @@ section .text
     PUSH 0x5d0a43                       ; 0053c850 | = "info.keyFramedModelInstancePtr != NUL..."
     MOV dword ptr [0x01d71de0],ECX      ; 0053c855 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 0053c85b | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0053c861
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0053c861
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 0053c866
     FLD float ptr [ESP + 0x2c8]         ; 0053c869
         ;   Label: LAB_0053c869
@@ -918,8 +918,8 @@ section .text
     PUSH 0x0                            ; 0053c8e1
     PUSH EBX                            ; 0053c8e3
     FSTP float ptr [ESP + 0x3a8]        ; 0053c8e4
-    CALL FUN_00461ef0                   ; 0053c8eb
-        ;   XREF to: 00461ef0 (UNCONDITIONAL_CALL)  ; undefined FUN_00461ef0()
+    CALL core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00461ef0 ; 0053c8eb
+        ;   XREF to: 00461ef0 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00461ef0(CKeyFramedModel * this_ptr, int frame_index, CVector3f * position, float search_radius, ...)
     ADD ESP,0x18                        ; 0053c8f0
     TEST EAX,EAX                        ; 0053c8f3
     JZ 0x0053bed1                       ; 0053c8f5
@@ -956,8 +956,8 @@ section .text
     PUSH ECX                            ; 0053c980
     LEA ESI,[ESP + 0x330]               ; 0053c981
     LEA EDI,[ESP + 0x270]               ; 0053c988
-    CALL FUN_00408bf0                   ; 0053c98f
-        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408bf0()
+    CALL core_actor.cpp_FUN_00408bf0    ; 0053c98f
+        ;   XREF to: 00408bf0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bf0()
     ADD ESP,0x8                         ; 0053c994
     LEA ESI,[ESP + 0x328]               ; 0053c997
     MOV EAX,dword ptr [ESP + 0x3a0]     ; 0053c99e
@@ -1016,8 +1016,8 @@ section .text
     PUSH 0x5d0aa4                       ; 0053ca77 | = "Invalid collision type!"
     MOV dword ptr [0x01d71de0],ECX      ; 0053ca7c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0053ca82 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0053ca88
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0053ca88
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0053ca8d
     JMP 0x0053bed1                      ; 0053ca90
         ;   XREF to: 0053bed1 (UNCONDITIONAL_JUMP)  ; LAB_0053bed1

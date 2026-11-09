@@ -1,0 +1,158 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 48,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "004fab90",
+      "from_addr": "004fabb7",
+      "name": "core_morph.cpp_FUN_004fab90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f9f50",
+    "address_range": [
+      [
+        "004f9f50",
+        "004f9f9b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_FUN_004f9f50",
+    "signature": "void __cdecl core_morph_cpp_FUN_004f9f50(CMorphModel *this_ptr,int part_index,CDeformableModelInstance *model_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f9e40",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_004f9e40"
+    },
+    {
+      "addr": "0054ea40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40"
+    },
+    {
+      "addr": "0054c110",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054c110"
+    },
+    {
+      "addr": "0054e420",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_0054e420"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004fabb7",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_FUN_004fab90",
+        "estimated_params": 3,
+        "instructions_analyzed": 14,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 21,
+      "INT_ADD": 14,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_MULT": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 15,
+      "LOAD": 9,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 112
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "part_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2320",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&model_ptr->field_0x2320;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2324",
+      "severity": "mild",
+      "text": "(this_ptr,part_index,*(CVector3i **)&model_ptr->field_0x2324,0,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(int *)(&pCVar2->field_0x2c + iVar1 * 4));",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 78,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 103
+  },
+  "cross_references": [
+    {
+      "addr": "004e44e0",
+      "from_addr": "004e4bc6",
+      "name": "core_main.c_FUN_004e44e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00503e20",
+    "address_range": [
+      [
+        "00503e20",
+        "00503ec1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_init_FUN_00503e20",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_init_FUN_00503e20(CNetGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005043b0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_005043b0"
+    },
+    {
+      "addr": "005a5ec0",
+      "is_variadic": false,
+      "name": "crt_env.c_getenv_FUN_005a5ec0"
+    },
+    {
+      "addr": "005a54b0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a54b0"
+    },
+    {
+      "addr": "00571ea0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_FUN_00571ea0"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005806a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ca480",
+      "name": "s_netlog_txt_005ca480",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca48b",
+      "name": "s_USERNAME_005ca48b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca494",
+      "name": "s_COMPUTERNAME_005ca494",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca4a1",
+      "name": "s_MyComputer_005ca4a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ca4a2",
+      "name": "s_yComputer_005ca4a1+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ca4a3",
+      "name": "s_Computer_005ca4a1+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ca4a4",
+      "name": "s_omputer_005ca4a1+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da6474",
+      "name": "DAT_01da6474",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da6478",
+      "name": "DAT_01da6478",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da648c",
+      "name": "DAT_01da648c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01dc2690",
+      "name": "DAT_01dc2690",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e4bc6",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_004e44e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.547169811320755,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 37,
+      "INT_ADD": 15,
+      "INT_AND": 39,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 1,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 13,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 8,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 241
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "pcVar3 = &this_ptr->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

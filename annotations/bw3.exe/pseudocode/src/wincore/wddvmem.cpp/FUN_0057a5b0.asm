@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0057a5b0(void)
+; void __cdecl wincore_wddvmem_cpp_FUN_0057a5b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x70]:4  local_70
 ;
 ; XREF[1]:
-;   FUN_0057a770 at 0057a88f
+;   wincore_wddvmem.cpp_FUN_0057a770 at 0057a88f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005d766a
@@ -28,23 +28,23 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   FUN_004d4eb0
-;   FUN_004e4330
-;   FUN_005a28f0
+;   core_main.c_FUN_004e4330
+;   crt_memory.c_memset_FUN_005a28f0
+;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0057a5b0
-        ;   Label: FUN_0057a5b0
+        ;   Label: wincore_wddvmem.cpp_FUN_0057a5b0
     SUB ESP,0x6c                        ; 0057a5b1
     PUSH 0x6c                           ; 0057a5b4
     PUSH 0x0                            ; 0057a5b6
     LEA EAX,[ESP + 0x8]                 ; 0057a5b8
     PUSH EAX                            ; 0057a5bc
-    CALL FUN_005a28f0                   ; 0057a5bd
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 0057a5bd
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0057a5c2
     PUSH 0x0                            ; 0057a5c5
     PUSH 0x1                            ; 0057a5c7
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5d76c6                       ; 0057a60c | = "setColorTable16 - Unable to unlock ba..."
     MOV dword ptr [0x01d71de0],ESI      ; 0057a611 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 0057a617 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0057a61d
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0057a61d
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0057a622
     POP ESI                             ; 0057a625
     POP EDI                             ; 0057a626
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5d7681                       ; 0057a67a | = "setColorTable16 - Unable to lock back..."
     MOV dword ptr [0x01d71de0],ECX      ; 0057a67f | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0057a685 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0057a68b
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0057a68b
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0057a690
     JMP 0x0057a5ec                      ; 0057a693
         ;   XREF to: 0057a5ec (UNCONDITIONAL_JUMP)  ; LAB_0057a5ec
@@ -214,16 +214,16 @@ section .text
     MOV EAX,0x20                        ; 0057a740
         ;   Label: LAB_0057a740
     MOV [0x01c6af94],EAX                ; 0057a745 | DAT_01c6af94
-    CALL FUN_004d4eb0                   ; 0057a74a
-        ;   XREF to: 004d4eb0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d4eb0()
+    CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0 ; 0057a74a
+        ;   XREF to: 004d4eb0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0()
     ADD ESP,0x6c                        ; 0057a74f
     POP EBX                             ; 0057a752
     RET                                 ; 0057a753
     MOV EAX,ECX                         ; 0057a754
         ;   Label: LAB_0057a754
     MOV [0x01c6af94],EAX                ; 0057a756 | DAT_01c6af94
-    CALL FUN_004d4eb0                   ; 0057a75b
-        ;   XREF to: 004d4eb0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d4eb0()
+    CALL wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0 ; 0057a75b
+        ;   XREF to: 004d4eb0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d4eb0()
     ADD ESP,0x6c                        ; 0057a760
     POP EBX                             ; 0057a763
     RET                                 ; 0057a764

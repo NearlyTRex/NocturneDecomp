@@ -1,14 +1,14 @@
-// Name: FUN_0057a4b0
+// Name: wincore_wddvmem.cpp_FUN_0057a4b0
 // Address: 0057a4b0
 // Address Range: [[0057a4b0, 0057a587]]
-// Convention: unknown
-// Signature: void FUN_0057a4b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_FUN_0057a4b0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0057a4b0(void)
+void __cdecl wincore_wddvmem_cpp_FUN_0057a4b0(void)
 
 {
   int iVar1;
@@ -43,7 +43,7 @@ void FUN_0057a4b0(void)
     if (iVar2 != 0) {
       _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
       _DAT_01d71de4 = 0x28f;
-      FUN_004e4330("closeScreenDevice - Unable to unlock");
+      core_main_c_FUN_004e4330("closeScreenDevice - Unable to unlock");
     }
     _DAT_02d0bcf4 = 1;
   }

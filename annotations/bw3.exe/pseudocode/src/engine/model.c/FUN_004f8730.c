@@ -1,28 +1,28 @@
-// Name: FUN_004f8730
+// Name: engine_model.c_FUN_004f8730
 // Address: 004f8730
 // Address Range: [[004f8730, 004f8894]]
-// Convention: unknown
-// Signature: int FUN_004f8730(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl engine_model_c_FUN_004f8730(SMRGLHeaderExtended *header)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004f8730(uint *param_1)
+int __cdecl engine_model_c_FUN_004f8730(SMRGLHeaderExtended *header)
 
 {
   byte local_100 [256];
   
-  switch(*param_1) {
+  switch(*(uint *)header) {
   case 0:
     return 4;
   case 1:
     return 0x10;
   case 2:
   case 3:
-    return param_1[2] * 0xc + 0xc;
+    return *(int *)(header + 8) * 0xc + 0xc;
   case 4:
-    return param_1[2] * 8 + 0xc;
+    return *(int *)(header + 8) * 8 + 0xc;
   case 5:
   case 6:
   case 7:
@@ -38,7 +38,7 @@ int FUN_004f8730(uint *param_1)
   case 0x2e:
   case 0x2f:
   case 0x3b:
-    return param_1[1] * 4 + 0x18;
+    return *(int *)(header + 4) * 4 + 0x18;
   case 9:
     return 0x20;
   case 10:
@@ -63,23 +63,23 @@ int FUN_004f8730(uint *param_1)
   case 0x3e:
   case 0x41:
   case 0x42:
-    return param_1[1] * 0xc + 0x18;
+    return *(int *)(header + 4) * 0xc + 0x18;
   case 0x10:
     return 0x14;
   default:
-    FUN_005a28c0(local_100,"MRGLSize: Bad type : %d",*param_1);
+    FUN_005a28c0(local_100,"MRGLSize: Bad type : %d",*(uint *)header);
     _DAT_01d71de0 = "..\\engine\\model.c";
     _DAT_01d71de4 = 0x25c;
-    FUN_004e4330(local_100);
+    core_main_c_FUN_004e4330(local_100);
     return 4;
   case 0x16:
-    return param_1[1] * 4 + 8;
+    return *(int *)(header + 4) * 4 + 8;
   case 0x17:
     return 0xc;
   case 0x1d:
-    return param_1[2] * 0x20 + 0x1c;
+    return *(int *)(header + 8) * 0x20 + 0x1c;
   case 0x1f:
-    return param_1[2] * 4 + 0xc;
+    return *(int *)(header + 8) * 4 + 0xc;
   case 0x20:
     return 0x158;
   case 0x26:

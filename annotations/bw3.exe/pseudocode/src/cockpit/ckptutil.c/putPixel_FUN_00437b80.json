@@ -1,0 +1,298 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 127,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "00436f80",
+      "from_addr": "00437043",
+      "name": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_00436f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437250",
+      "from_addr": "004372d0",
+      "name": "cockpit_ckptutil.c_drawLineAA_FUN_00437250",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00437b80",
+    "address_range": [
+      [
+        "00437b80",
+        "00437c01"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_putPixel_FUN_00437b80",
+    "signature": "void __cdecl cockpit_ckptutil_c_putPixel_FUN_00437b80(int x,int y,int color)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fba20",
+      "name": "DAT_005fba20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a8",
+      "name": "DAT_01c6b5a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5ac",
+      "name": "DAT_01c6b5ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b0",
+      "name": "DAT_01c6b5b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b4",
+      "name": "DAT_01c6b5b4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "004372d0",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_00437250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043734a",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_00437250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00437363",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_00437250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043738e",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_00437250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004374f3",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineAA_FUN_00437250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00437043",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_00436f80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043705f",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_00436f80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.093023255813954,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 1,
+      "CBRANCH": 8,
+      "COPY": 32,
+      "INT_ADD": 22,
+      "INT_AND": 46,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 16,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 12,
+      "RETURN": 5,
+      "STORE": 4
+    },
+    "pcode_op_count": 262
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (0xf < DAT_005fba20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 < 0x11) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "*(ushort *)(x * 2 + *(int *)(&DAT_01c5faec + iVar1)) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 != 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "*(uint *)(x * 4 + *(int *)(&DAT_01c5faec + iVar1)) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_01c6a974",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_01c6a974 + color * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "if (DAT_005fba20 == 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "*(char *)(x + *(int *)(&DAT_01c5faec + iVar1)) = (char)color;",
+      "type": "undefined_data"
+    }
+  ]
+}

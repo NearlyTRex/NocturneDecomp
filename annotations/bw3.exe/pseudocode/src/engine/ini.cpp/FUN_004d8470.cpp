@@ -1,14 +1,14 @@
-// Name: FUN_004d8470
+// Name: engine_ini.cpp_FUN_004d8470
 // Address: 004d8470
 // Address Range: [[004d8470, 004d863e]]
 // Convention: unknown
-// Signature: int FUN_004d8470(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: int engine_ini_cpp_FUN_004d8470(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5 )
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004d8470(uint *param_1,uint param_2,uint param_3,uint param_4,uint param_5)
+int engine_ini_cpp_FUN_004d8470(uint *param_1,uint param_2,char *param_3,uint param_4,char *param_5 )
 
 {
   byte bVar1;
@@ -19,22 +19,22 @@ int FUN_004d8470(uint *param_1,uint param_2,uint param_3,uint param_4,uint param
   char *pcVar6;
   char *pcVar7;
   char local_214 [256];
-  byte local_114 [256];
+  char local_114 [256];
   char *local_14;
   
   iVar5 = 0;
   bVar2 = false;
   *param_1 = 1;
-  iVar3 = FUN_005a43ec(param_4,&DAT_005c56b1);
+  iVar3 = _fopen(param_4,&DAT_005c56b1);
   if (iVar3 == 0) {
     _DAT_01d71de0 = "..\\engine\\ini.cpp";
     _DAT_01d71de4 = 0xfd;
-    FUN_004e4330("cIni::FindLineNumberOfVariable: Unable to open input");
+    core_main_c_FUN_004e4330("cIni::FindLineNumberOfVariable: Unable to open input");
   }
   FUN_005a28c0(local_114,"[%s]\n",param_2);
   while (((*(byte *)(iVar3 + 0xc) & 0x10) == 0 &&
-         (iVar4 = FUN_005a3f00(local_214,0xff,iVar3), iVar4 != 0))) {
-    iVar4 = FUN_005a3d00(local_214,local_114);
+         (iVar4 = _fgets(local_214,0xff,iVar3), iVar4 != 0))) {
+    iVar4 = _strcmp(local_214,local_114);
     if (iVar4 == 0) {
       bVar1 = *(byte *)(iVar3 + 0xc);
       bVar2 = false;
@@ -43,14 +43,14 @@ int FUN_004d8470(uint *param_1,uint param_2,uint param_3,uint param_4,uint param
     iVar5 = iVar5 + 1;
   }
 LAB_004d85a0:
-  FUN_005a3a90(iVar3);
+  _fclose(iVar3);
   if (bVar2) {
     return iVar5;
   }
   return 0;
 LAB_004d84e5:
   if (((bVar1 & 0x10) != 0) ||
-     (iVar4 = FUN_005a3f00(local_214,0xff,iVar3), pcVar7 = local_214, iVar4 == 0))
+     (iVar4 = _fgets(local_214,0xff,iVar3), pcVar7 = local_214, iVar4 == 0))
   goto LAB_004d85a0;
   do {
     pcVar6 = pcVar7;
@@ -80,10 +80,10 @@ LAB_004d8545:
   if (local_14 != (char *)0x0) {
     *local_14 = '\0';
   }
-  iVar4 = FUN_005a3d00(local_214,param_3);
+  iVar4 = _strcmp(local_214,param_3);
   if (iVar4 == 0) {
     bVar2 = true;
-    iVar4 = FUN_005a3d00(local_14 + 1,param_5);
+    iVar4 = _strcmp(local_14 + 1,param_5);
     if (iVar4 == 0) {
       *param_1 = 0;
     }

@@ -1,14 +1,14 @@
-// Name: FUN_004f6cd0
+// Name: core_mission.cpp_FUN_004f6cd0
 // Address: 004f6cd0
 // Address Range: [[004f6cd0, 004f6d66]]
 // Convention: unknown
-// Signature: void FUN_004f6cd0(int *param_1,int param_2,char *param_3)
+// Signature: void core_mission_cpp_FUN_004f6cd0(int *param_1,int param_2,char *param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004f6cd0(int *param_1,int param_2,char *param_3)
+void core_mission_cpp_FUN_004f6cd0(int *param_1,int param_2,char *param_3)
 
 {
   char cVar1;
@@ -17,7 +17,7 @@ void FUN_004f6cd0(int *param_1,int param_2,char *param_3)
   if ((param_2 < 0) || (param_1[1] <= param_2)) {
     _DAT_01d71de0 = "..\\core\\mission.cpp";
     _DAT_01d71de4 = 0x3be;
-    FUN_004e4330("CDemonMission::changeSetName - invalid index: %d, count = %d",param_2,param_1[1]);
+    core_main_c_FUN_004e4330("CDemonMission::changeSetName - invalid index: %d, count = %d",param_2,param_1[1]);
   }
   piVar2 = param_1 + param_2 * 0x40 + 2;
   do {
@@ -34,6 +34,6 @@ void FUN_004f6cd0(int *param_1,int param_2,char *param_3)
   }
   _DAT_01d71de0 = "..\\core\\mission.cpp";
   _DAT_01d71de4 = 0x3c8;
-  FUN_004e4330("Tried to change the set file for the set we are currently in.  Let's not allow this, OK?");
+  core_main_c_FUN_004e4330("Tried to change the set file for the set we are currently in.  Let's not allow this, OK?");
   return;
 }

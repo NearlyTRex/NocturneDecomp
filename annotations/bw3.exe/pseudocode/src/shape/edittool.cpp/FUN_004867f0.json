@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 46,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 3,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "0048666e",
+      "from_addr": "00486706",
+      "name": "shape_edittool.cpp_FUN_0048666e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486810",
+      "from_addr": "0048688b",
+      "name": "shape_edittool.cpp_FUN_00486810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004867f0",
+    "address_range": [
+      [
+        "004867f0",
+        "00486806"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_FUN_004867f0",
+    "signature": "int shape_edittool_cpp_FUN_004867f0(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00486780",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00486780"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00486706",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0048666e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048688b",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00486810",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.333333333333334,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "COPY": 5,
+      "INT_ADD": 3,
+      "INT_AND": 20,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 9,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 4,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SRIGHT": 3,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 75
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int shape_edittool_cpp_FUN_004867f0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_FUN_00486780(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

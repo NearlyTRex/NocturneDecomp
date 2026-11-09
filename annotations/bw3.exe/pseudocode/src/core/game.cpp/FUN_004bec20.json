@@ -1,138 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 187,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 189,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 28,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 41,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 46,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 373,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 386,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 415,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 415,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 41,
-        "message": "use of undeclared identifier 'DAT_005c38a8'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 43,
-        "message": "no matching function for call to 'FUN_0047cf40'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 49,
-        "message": "no matching function for call to 'FUN_0047cf40'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 54,
-        "message": "no matching function for call to 'FUN_005a5128'"
-      },
-      {
-        "category": "other",
-        "column": 12,
-        "line": 55,
-        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 76,
-        "message": "use of undeclared identifier 'DAT_005c38f2'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 887,
+    "complexity_score": 1170,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
-    "suspect_count": 66,
+    "pseudocode_lines": 185,
+    "suspect_count": 93,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
+      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_strcat",
@@ -140,13 +22,13 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 670
+    "total_lines": 673
   },
   "cross_references": [
     {
       "addr": "004b7f90",
       "from_addr": "004b8d21",
-      "name": "FUN_004b7f90",
+      "name": "core_game.cpp_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -159,114 +41,114 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004bec20",
-    "signature": "void FUN_004bec20(int param_1)"
+    "name": "core_game.cpp_FUN_004bec20",
+    "signature": "void core_game_cpp_FUN_004bec20(CGame *param_1)"
   },
   "function_calls": [
     {
-      "addr": "004032b0",
+      "addr": "004b93e0",
       "is_variadic": false,
-      "name": "FUN_004032b0"
-    },
-    {
-      "addr": "004657f0",
-      "is_variadic": false,
-      "name": "FUN_004657f0"
-    },
-    {
-      "addr": "004659c0",
-      "is_variadic": false,
-      "name": "FUN_004659c0"
-    },
-    {
-      "addr": "0047cf40",
-      "is_variadic": false,
-      "name": "FUN_0047cf40"
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004b93e0"
     },
     {
       "addr": "004b4430",
       "is_variadic": false,
-      "name": "FUN_004b4430"
+      "name": "core_game.cpp_FUN_004b4430"
     },
     {
       "addr": "004b4440",
       "is_variadic": false,
-      "name": "FUN_004b4440"
-    },
-    {
-      "addr": "004b93e0",
-      "is_variadic": false,
-      "name": "FUN_004b93e0"
+      "name": "core_game.cpp_FUN_004b4440"
     },
     {
       "addr": "004ba490",
       "is_variadic": false,
-      "name": "FUN_004ba490"
+      "name": "core_game.cpp_FUN_004ba490"
     },
     {
       "addr": "004e4330",
       "is_variadic": false,
-      "name": "FUN_004e4330"
-    },
-    {
-      "addr": "00560d70",
-      "is_variadic": false,
-      "name": "FUN_00560d70"
-    },
-    {
-      "addr": "00565820",
-      "is_variadic": false,
-      "name": "FUN_00565820"
-    },
-    {
-      "addr": "00565870",
-      "is_variadic": false,
-      "name": "FUN_00565870"
-    },
-    {
-      "addr": "0057a3c0",
-      "is_variadic": false,
-      "name": "FUN_0057a3c0"
-    },
-    {
-      "addr": "0057a4b0",
-      "is_variadic": false,
-      "name": "FUN_0057a4b0"
-    },
-    {
-      "addr": "0057a8a0",
-      "is_variadic": false,
-      "name": "FUN_0057a8a0"
-    },
-    {
-      "addr": "00580800",
-      "is_variadic": false,
-      "name": "FUN_00580800"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "FUN_005a3650"
-    },
-    {
-      "addr": "005a3770",
-      "is_variadic": false,
-      "name": "FUN_005a3770"
-    },
-    {
-      "addr": "005a3890",
-      "is_variadic": false,
-      "name": "FUN_005a3890"
+      "name": "core_main.c_FUN_004e4330"
     },
     {
       "addr": "005a3a90",
       "is_variadic": false,
-      "name": "FUN_005a3a90"
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
     },
     {
       "addr": "005a5128",
       "is_variadic": false,
-      "name": "FUN_005a5128"
+      "name": "crt_string.c_splitpath_FUN_005a5128"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3650"
+    },
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3770"
+    },
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "004659c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004659c0"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    },
+    {
+      "addr": "00560d70",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_00560d70"
+    },
+    {
+      "addr": "00565820",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_00565820"
+    },
+    {
+      "addr": "00565870",
+      "is_variadic": false,
+      "name": "engine_special.cpp_unlockFrame_FUN_00565870"
+    },
+    {
+      "addr": "0047cf40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40"
+    },
+    {
+      "addr": "0057a3c0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_0057a3c0"
+    },
+    {
+      "addr": "0057a4b0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_0057a4b0"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+    },
+    {
+      "addr": "00580800",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_00580800"
     }
   ],
   "globals": [
@@ -356,9 +238,9 @@
     },
     {
       "addr": "005fb140",
-      "name": "DAT_005fb140",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
     },
     {
       "addr": "005fba18",
@@ -380,9 +262,9 @@
     },
     {
       "addr": "005fe9dc",
-      "name": "DAT_005fe9dc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
     },
     {
       "addr": "00600284",
@@ -440,7 +322,7 @@
     },
     {
       "addr": "01d21620",
-      "name": "DAT_01d21620",
+      "name": "g_CGameInstance.field788_0x314",
       "type": "undefined4",
       "value": null
     },
@@ -475,7 +357,7 @@
       {
         "call_addr": "004b8d21",
         "call_type": "direct",
-        "caller": "FUN_004b7f90",
+        "caller": "core_game.cpp_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -631,31 +513,47 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004bec20(int param_1)",
+      "text": "void core_game_cpp_FUN_004bec20(CGame *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(char *)(param_1 + 0x968) == '\\0') {",
+      "text": "if (param_1->field_0x968 == '\\0') {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x968",
       "severity": "mild",
-      "text": "iVar5 = param_1 + 0x968;",
-      "type": "unnamed_param"
+      "text": "if (param_1->field_0x968 == '\\0') {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xe8) = 0;",
+      "text": "*(uint *)&param_1->field_0xe8 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0xe8",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0xe8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005c38a8,&param_1->field_0x968);",
       "type": "unnamed_param"
     },
     {
@@ -663,84 +561,124 @@
       "line": 34,
       "match": "DAT_005c38a8",
       "severity": "mild",
-      "text": "iVar2 = FUN_004657f0(&DAT_005c38a8,iVar5);",
+      "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005c38a8,&param_1->field_0x968);",
       "type": "undefined_data"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005c38a8,&param_1->field_0x968);",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0x968) = 0;",
+      "text": "param_1->field_0x968 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "param_1->field_0x968 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iVar2 != *(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0xa68) * *(int *)(param_1 + 0xa6c);",
+      "text": "if (iVar2 != *(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0xa68",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0xa68) * *(int *)(param_1 + 0xa6c);",
-      "type": "unnamed_param"
+      "text": "if (iVar2 != *(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0xa6c",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xa68),*(int *)(param_1 + 0xa6c),iVar3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xa68),*(int *)(param_1 + 0xa6c),iVar3);",
-      "type": "unnamed_param"
+      "text": "if (iVar2 != *(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0x968) = 0;",
+      "text": "param_1->field_0x968 = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "param_1->field_0x968 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->field_0x968,(char *)0x0,(char *)0x0,local_12c,(char *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "(&param_1->field_0x968,(char *)0x0,(char *)0x0,local_12c,(char *)0x0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
       "match": "DAT_005c38ea",
       "severity": "mild",
-      "text": "pcVar6 = &DAT_005c38ea;",
+      "text": "pcVar5 = &DAT_005c38ea;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 70,
       "match": "DAT_005c38f2",
       "severity": "mild",
-      "text": "iVar5 = FUN_004659c0(&DAT_005c38f2,local_12c,&DAT_005c38ef);",
+      "text": "p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c38f2,local_12c,&DAT_005c38ef);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 70,
       "match": "DAT_005c38ef",
       "severity": "mild",
-      "text": "iVar5 = FUN_004659c0(&DAT_005c38f2,local_12c,&DAT_005c38ef);",
+      "text": "p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c38f2,local_12c,&DAT_005c38ef);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 80,
+      "line": 82,
       "match": "DAT_005fba20",
       "severity": "mild",
       "text": "if (DAT_005fba20 == 0x10) {",
@@ -748,31 +686,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 86,
       "match": "(ushort *)((int)auStack_32c",
       "severity": "moderate",
-      "text": "*(ushort *)((int)auStack_32c + iVar2) =",
+      "text": "*(ushort *)((int)auStack_32c + iVar6) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 87,
       "match": "DAT_01c6af8c",
       "severity": "mild",
-      "text": "(ushort)(local_62c[iVar5 + 2] / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f)) |",
+      "text": "(ushort)(local_62c[iVar2 + 2] / _DAT_01c6af90 << (DAT_01c6af8c & 0x1f)) |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 88,
       "match": "DAT_01c6af80",
       "severity": "mild",
-      "text": "(ushort)(local_62c[iVar5 + 1] / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) |",
+      "text": "(ushort)(local_62c[iVar2 + 1] / _DAT_01c6af84 << (DAT_01c6af80 & 0x1f)) |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 89,
       "match": "DAT_01c6af74",
       "severity": "mild",
       "text": "(ushort)(local_2c << (DAT_01c6af74 & 0x1f));",
@@ -780,7 +718,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 91,
       "match": "DAT_005fba20",
       "severity": "mild",
       "text": "else if (DAT_005fba20 == 0x20) {",
@@ -788,39 +726,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 92,
       "match": "(uint *)((int)auStack_a2c",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_a2c + local_1c) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_01c6af74",
-      "severity": "mild",
-      "text": "(uint)local_62c[iVar5] << (DAT_01c6af74 & 0x1f) |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_01c6af80",
-      "severity": "mild",
-      "text": "(uint)local_62c[iVar5 + 1] << (DAT_01c6af80 & 0x1f) |",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 93,
+      "match": "DAT_01c6af74",
+      "severity": "mild",
+      "text": "(uint)local_62c[iVar2] << (DAT_01c6af74 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_01c6af80",
+      "severity": "mild",
+      "text": "(uint)local_62c[iVar2 + 1] << (DAT_01c6af80 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 95,
       "match": "DAT_01c6af8c",
       "severity": "mild",
-      "text": "(uint)local_62c[iVar5 + 2] << (DAT_01c6af8c & 0x1f);",
+      "text": "(uint)local_62c[iVar2 + 2] << (DAT_01c6af8c & 0x1f);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 98,
       "match": "(uint *)((int)auStack_a2c",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_a2c + local_1c) =",
@@ -828,71 +766,119 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = FUN_005a3650(*(int *)(param_1 + 0xa68) * *(int *)(param_1 + 0xa6c));",
+      "text": "(*(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = FUN_005a3650(*(int *)(param_1 + 0xa68) * *(int *)(param_1 + 0xa6c));",
+      "text": "(*(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c);",
       "type": "unnamed_param"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 113,
+      "match": "field_0xa68",
+      "severity": "mild",
+      "text": "(*(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 113,
+      "match": "field_0xa6c",
+      "severity": "mild",
+      "text": "(*(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c);",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = FUN_004659c0(&DAT_005c3907,param_1 + 0x968,&DAT_005c3904);",
+      "text": "p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3907,&param_1->field_0x968,&DAT_005c3904);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 115,
       "match": "DAT_005c3907",
       "severity": "mild",
-      "text": "iVar5 = FUN_004659c0(&DAT_005c3907,param_1 + 0x968,&DAT_005c3904);",
+      "text": "p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3907,&param_1->field_0x968,&DAT_005c3904);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 115,
       "match": "DAT_005c3904",
       "severity": "mild",
-      "text": "iVar5 = FUN_004659c0(&DAT_005c3907,param_1 + 0x968,&DAT_005c3904);",
+      "text": "p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3907,&param_1->field_0x968,&DAT_005c3904);",
       "type": "undefined_data"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 115,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3907,&param_1->field_0x968,&DAT_005c3904);",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 119,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e4330(\"Can't open %s\",param_1 + 0x968);",
+      "text": "core_main_c_FUN_004e4330(\"Can't open %s\",&param_1->field_0x968);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 119,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4330(\"Can't open %s\",&param_1->field_0x968);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 121,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(local_18,*(uint *)&param_1->field_0xa68,*(uint *)&param_1->field_0xa6c,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 121,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005a3890(local_18,*(uint *)(param_1 + 0xa68),*(uint *)(param_1 + 0xa6c),iVar5)",
+      "text": "_fread(local_18,*(uint *)&param_1->field_0xa68,*(uint *)&param_1->field_0xa6c,",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 118,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 121,
+      "match": "field_0xa68",
       "severity": "mild",
-      "text": "FUN_005a3890(local_18,*(uint *)(param_1 + 0xa68),*(uint *)(param_1 + 0xa6c),iVar5)",
-      "type": "unnamed_param"
+      "text": "_fread(local_18,*(uint *)&param_1->field_0xa68,*(uint *)&param_1->field_0xa6c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 121,
+      "match": "field_0xa6c",
+      "severity": "mild",
+      "text": "_fread(local_18,*(uint *)&param_1->field_0xa68,*(uint *)&param_1->field_0xa6c,",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 125,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (0 < DAT_005fba1c) {",
@@ -900,31 +886,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = *(int *)(param_1 + 0xa68) *",
+      "text": "local_14 = *(int *)&param_1->field_0xa68 *",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 128,
+      "match": "field_0xa68",
+      "severity": "mild",
+      "text": "local_14 = *(int *)&param_1->field_0xa68 *",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
-      "text": "((local_24 * *(int *)(param_1 + 0xa6c)) / DAT_005fba1c);",
+      "text": "((local_24 * *(int *)&param_1->field_0xa6c) / DAT_005fba1c);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 129,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "((local_24 * *(int *)(param_1 + 0xa6c)) / DAT_005fba1c);",
+      "text": "((local_24 * *(int *)&param_1->field_0xa6c) / DAT_005fba1c);",
       "type": "undefined_data"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 129,
+      "match": "field_0xa6c",
+      "severity": "mild",
+      "text": "((local_24 * *(int *)&param_1->field_0xa6c) / DAT_005fba1c);",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 131,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (0 < DAT_005fba18) {",
@@ -932,23 +934,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 135,
       "match": "param_1",
       "severity": "mild",
-      "text": "pbVar4 = (byte *)((*(int *)(param_1 + 0xa68) * iVar5) / DAT_005fba18 + local_14 +",
+      "text": "pbVar4 = (byte *)((*(int *)&param_1->field_0xa68 * iVar2) / DAT_005fba18 + local_14 +",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 135,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "pbVar4 = (byte *)((*(int *)(param_1 + 0xa68) * iVar5) / DAT_005fba18 + local_14 +",
+      "text": "pbVar4 = (byte *)((*(int *)&param_1->field_0xa68 * iVar2) / DAT_005fba18 + local_14 +",
       "type": "undefined_data"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 135,
+      "match": "field_0xa68",
+      "severity": "mild",
+      "text": "pbVar4 = (byte *)((*(int *)&param_1->field_0xa68 * iVar2) / DAT_005fba18 + local_14 +",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 137,
       "match": "DAT_005fba20",
       "severity": "mild",
       "text": "if (DAT_005fba20 == 0x10) {",
@@ -956,31 +966,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_01c5faec",
-      "severity": "mild",
-      "text": "*(ushort *)(*(int *)(&DAT_01c5faec + local_20) + iVar2) = auStack_32c[*pbVar4];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 138,
       "match": "DAT_01c5faec",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(&DAT_01c5faec + local_20) + iVar3) = auStack_a2c[*pbVar4];",
+      "text": "*(ushort *)(*(int *)(&DAT_01c5faec + local_20) + iVar6) = auStack_32c[*pbVar4];",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 141,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)(&DAT_01c5faec + local_20) + iVar7) = auStack_a2c[*pbVar4];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 146,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "} while (iVar5 < DAT_005fba18);",
+      "text": "} while (iVar2 < DAT_005fba18);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 150,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "} while (local_24 < DAT_005fba1c);",
@@ -988,135 +998,223 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004ba490(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 153,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0xd4) == 2) {",
+      "text": "core_game_cpp_FUN_004ba490(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 156,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004b93e0(param_1);",
+      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 156,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 157,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_game_cpp_CGame_resetKeyState_FUN_004b93e0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 158,
+      "line": 161,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)(param_1 + 0x48)),",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 161,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar5 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)(param_1 + 0x48)),",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 161,
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "((_DAT_01d22b44 != 1 && (*(float *)(param_1 + 0x438) < 0.0)))) break;",
-      "type": "unnamed_param"
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 163,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x438) = *(float *)(param_1 + 0x438) - *(float *)(0x01D2130C + 0x314)",
+      "text": "((_DAT_01d22b44 != 1 && (*(float *)&param_1->field_0x438 < 0.0)))) break;",
       "type": "unnamed_param"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 163,
+      "match": "field_0x438",
+      "severity": "mild",
+      "text": "((_DAT_01d22b44 != 1 && (*(float *)&param_1->field_0x438 < 0.0)))) break;",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x438) = *(float *)(param_1 + 0x438) - *(float *)(0x01D2130C + 0x314)",
+      "text": "*(float *)&param_1->field_0x438 =",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 165,
+      "match": "field_0x438",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x438 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 166,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x438 - *(float *)&g_CGamePtr->field_0x314;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 166,
+      "match": "field_0x438",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x438 - *(float *)&g_CGamePtr->field_0x314;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 166,
+      "match": "field_0x314",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x438 - *(float *)&g_CGamePtr->field_0x314;",
+      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 166,
+      "line": 169,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)(param_1 + 0x48)),",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar5 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)(param_1 + 0x48)),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 168,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0xd4) == 2) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 169,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004b93e0(param_1);",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 169,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "(iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 171,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 171,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0xd4 == 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 172,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_game_cpp_CGame_resetKeyState_FUN_004b93e0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 180,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004ba490(param_1);",
+      "text": "core_game_cpp_FUN_004ba490(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 181,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004b4430(param_1);",
+      "text": "core_game_cpp_FUN_004b4430(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 179,
+      "line": 182,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0x968) = 0;",
+      "text": "param_1->field_0x968 = 0;",
       "type": "unnamed_param"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 182,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "param_1->field_0x968 = 0;",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 187,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0x968) = 0;",
+      "text": "param_1->field_0x968 = 0;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 187,
+      "match": "field_0x968",
+      "severity": "mild",
+      "text": "param_1->field_0x968 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 136,
+      "match": "(int)local_18",
+      "severity": "moderate",
+      "text": "(int)local_18);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 60,
+      "line": 61,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1124,7 +1222,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 51,
+      "line": 52,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1132,7 +1230,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 51,
+      "line": 52,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

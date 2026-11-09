@@ -1,0 +1,323 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 151,
+    "cross_reference_count": 7,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "005ad95c",
+      "from_addr": "005ad961",
+      "name": "unkafter_asgaya.cpp_FUN_005ad95c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ad97c",
+      "from_addr": "005ad98c",
+      "name": "unkafter_asgaya.cpp_FUN_005ad97c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ad9ec",
+      "from_addr": "005ad9f1",
+      "name": "unkafter_asgaya.cpp_FUN_005ad9ec",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ada0c",
+      "from_addr": "005ada11",
+      "name": "unkafter_asgaya.cpp_FUN_005ada0c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ada2c",
+      "from_addr": "005ada31",
+      "name": "unkafter_asgaya.cpp_FUN_005ada2c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ada4c",
+      "from_addr": "005ada51",
+      "name": "unkafter_asgaya.cpp_FUN_005ada4c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005adc24",
+      "from_addr": "005adc79",
+      "name": "unkafter_asgaya.cpp_FUN_005adc24",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "005ad8d0",
+    "address_range": [
+      [
+        "005ad8d0",
+        "005ad931"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_asgaya.cpp_FUN_005ad8d0",
+    "signature": "void unkafter_asgaya_cpp_FUN_005ad8d0(undefined4 *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000053",
+      "is_variadic": false,
+      "name": "EnterCriticalSection"
+    },
+    {
+      "addr": "EXTERNAL:00000068",
+      "is_variadic": false,
+      "name": "GetCurrentThreadId"
+    },
+    {
+      "addr": "005ad794",
+      "is_variadic": false,
+      "name": "unkafter_asgaya.cpp_FUN_005ad794"
+    },
+    {
+      "addr": "005ad934",
+      "is_variadic": false,
+      "name": "unkafter_asgaya.cpp_FUN_005ad934"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b353c",
+      "name": "PTR_EnterCriticalSection_005b353c",
+      "type": "void*",
+      "value": "001b3ce6"
+    },
+    {
+      "addr": "005b3590",
+      "name": "PTR_GetCurrentThreadId_005b3590",
+      "type": "void*",
+      "value": "001b3e70"
+    },
+    {
+      "addr": "02d26180",
+      "name": "DAT_02d26180",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "005ad961",
+        "call_type": "direct",
+        "caller": "unkafter_asgaya.cpp_FUN_005ad95c",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005ad98c",
+        "call_type": "direct",
+        "caller": "unkafter_asgaya.cpp_FUN_005ad97c",
+        "estimated_params": 1,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005ad9f1",
+        "call_type": "direct",
+        "caller": "unkafter_asgaya.cpp_FUN_005ad9ec",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005ada11",
+        "call_type": "direct",
+        "caller": "unkafter_asgaya.cpp_FUN_005ada0c",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005ada31",
+        "call_type": "direct",
+        "caller": "unkafter_asgaya.cpp_FUN_005ada2c",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005ada51",
+        "call_type": "direct",
+        "caller": "unkafter_asgaya.cpp_FUN_005ada4c",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.294117647058823,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 3,
+      "COPY": 29,
+      "INT_ADD": 15,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 14,
+      "LOAD": 15,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 146
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void unkafter_asgaya_cpp_FUN_005ad8d0(uint *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (DVar1 != param_1[2]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1] == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02d26180",
+      "severity": "mild",
+      "text": "unkafter_asgaya_cpp_FUN_005ad8d0(&DAT_02d26180);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1] == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02d26180",
+      "severity": "mild",
+      "text": "unkafter_asgaya_cpp_FUN_005ad934(&DAT_02d26180);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "EnterCriticalSection((LPCRITICAL_SECTION)*param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2] = DVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] = param_1[3] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] = param_1[3] + 1;",
+      "type": "unnamed_param"
+    }
+  ]
+}

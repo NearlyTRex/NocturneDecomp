@@ -1,0 +1,32 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    engine_2d.c_FUN_00402860
+# Entry:       00402860
+# Signature:   void engine_2d_c_FUN_00402860(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00402860 [ESP:+0]  # MOV dword ptr [0x005f0770], 0xf8
+COPY (ram,0x5f0770,4) = (const,0xf8,4)
+
+@0040286a [ESP:+0]  # LEA EAX, [EAX]
+COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
+
+@00402870 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 3 instructions, 5 P-code ops
+# ============================================================================

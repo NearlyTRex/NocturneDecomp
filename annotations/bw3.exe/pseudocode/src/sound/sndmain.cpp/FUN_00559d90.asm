@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00559d90(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+; void sound_sndmain_cpp_FUN_00559d90(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_0055a820 at 0055a907
-;   FUN_0055d6f0 at 0055d7a4
+;   sound_snddx.cpp_fillStreamBuffer_FUN_0055a820 at 0055a907
+;   sound_sndwav.cpp_writeWavOutBuffer_FUN_0055d6f0 at 0055d7a4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2a6b
@@ -37,20 +37,20 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   FUN_004e4330
-;   FUN_005526d0
-;   FUN_00552d90
-;   FUN_00554430
-;   FUN_00554920
-;   FUN_005a28f0
-;   FUN_005a54c0
+;   core_main.c_FUN_004e4330
+;   crt_memory.c_memset_FUN_005a28f0
+;   crt_string.c_memmove_FUN_005a54c0
+;   sound_sndmain.cpp_convertMixBufToOutput_FUN_00552d90
+;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430
+;   sound_sndmain.cpp_FUN_005526d0
+;   sound_sndmain.cpp_FUN_00554920
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00559d90
-        ;   Label: FUN_00559d90
+        ;   Label: sound_sndmain.cpp_FUN_00559d90
     PUSH ESI                            ; 00559d91
     PUSH EDI                            ; 00559d92
     PUSH EBP                            ; 00559d93
@@ -86,8 +86,8 @@ section .text
     CMP EAX,dword ptr [0x00604230]      ; 00559ded | DAT_00604230
     JNZ 0x0055a09b                      ; 00559df3
         ;   XREF to: 0055a09b (CONDITIONAL_JUMP)  ; LAB_0055a09b
-    CALL FUN_005526d0                   ; 00559df9
-        ;   XREF to: 005526d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005526d0()
+    CALL sound_sndmain.cpp_FUN_005526d0 ; 00559df9
+        ;   XREF to: 005526d0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005526d0()
     MOV ECX,dword ptr [ESP + 0x78]      ; 00559dfe
     XOR EAX,EAX                         ; 00559e02
     TEST ECX,ECX                        ; 00559e04
@@ -131,8 +131,8 @@ section .text
     PUSH 0x5d2ab5                       ; 00559e78 | = "nextMixingBuffer - shouldn't have any..."
     MOV dword ptr [0x01d71de0],ESI      ; 00559e7d | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 00559e83 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 00559e89
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 00559e89
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 00559e8e
     MOV ESI,dword ptr [0x02cf329c]      ; 00559e91 | DAT_02cf329c
         ;   Label: LAB_00559e91
@@ -154,8 +154,8 @@ section .text
     ADD EDX,EAX                         ; 00559ec1
     PUSH EDX                            ; 00559ec3
     PUSH EAX                            ; 00559ec4
-    CALL FUN_005a54c0                   ; 00559ec5
-        ;   XREF to: 005a54c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a54c0()
+    CALL crt_string.c_memmove_FUN_005a54c0 ; 00559ec5
+        ;   XREF to: 005a54c0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005a54c0(void * dest, void * src, SIZE_T n)
     MOV EAX,[0x02cf32a0]                ; 00559eca | DAT_02cf32a0
     MOV EDX,dword ptr [0x02cf329c]      ; 00559ecf | DAT_02cf329c
     DEC EAX                             ; 00559ed5
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 00559eea
     ADD EBX,0x4                         ; 00559eeb
     INC EDI                             ; 00559eee
-    CALL FUN_005a28f0                   ; 00559eef
-        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a28f0()
+    CALL crt_memory.c_memset_FUN_005a28f0 ; 00559eef
+        ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV ECX,dword ptr [0x0060422c]      ; 00559ef4 | DAT_0060422c
     ADD ESP,0xc                         ; 00559efa
     CMP EDI,ECX                         ; 00559efd
@@ -206,8 +206,8 @@ section .text
     PUSH dword ptr [ESP + 0x58]         ; 00559f55
         ;   Label: LAB_00559f55
     PUSH EBX                            ; 00559f59 | DAT_02ce7338
-    CALL FUN_00554430                   ; 00559f5a
-        ;   XREF to: 00554430 (UNCONDITIONAL_CALL)  ; undefined FUN_00554430()
+    CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430 ; 00559f5a
+        ;   XREF to: 00554430 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430(CSfxSlot * this_ptr, float delta_time)
     ADD EBX,0x11c                       ; 00559f5f
     ADD ESP,0x8                         ; 00559f65
     CMP EBX,ESI                         ; 00559f68
@@ -221,8 +221,8 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 00559f7b
     PUSH EBX                            ; 00559f7f | DAT_02ce7338
     MOVSD.REP ES:EDI,ESI                ; 00559f80
-    CALL FUN_00554920                   ; 00559f82
-        ;   XREF to: 00554920 (UNCONDITIONAL_CALL)  ; undefined FUN_00554920()
+    CALL sound_sndmain.cpp_FUN_00554920 ; 00559f82
+        ;   XREF to: 00554920 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00554920()
     ADD ESP,0x30                        ; 00559f87
     ADD EBX,0x11c                       ; 00559f8a
     CMP EBX,dword ptr [ESP + 0x54]      ; 00559f90
@@ -263,8 +263,8 @@ section .text
     PUSH ECX                            ; 00559ffd
     ADD EAX,EDX                         ; 00559ffe
     PUSH EAX                            ; 0055a000
-    CALL FUN_00552d90                   ; 0055a001
-        ;   XREF to: 00552d90 (UNCONDITIONAL_CALL)  ; undefined FUN_00552d90()
+    CALL sound_sndmain.cpp_convertMixBufToOutput_FUN_00552d90 ; 0055a001
+        ;   XREF to: 00552d90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_convertMixBufToOutput_FUN_00552d90()
     ADD ESP,0x14                        ; 0055a006
     MOV EAX,dword ptr [ESP + EBX*0x1 + 0x2c] ; 0055a009
     ADD EBX,0x4                         ; 0055a00d
@@ -291,8 +291,8 @@ section .text
     PUSH 0x5d3ebb                       ; 0055a055 | = "pollSfx - must be locked!"
     MOV dword ptr [0x01d71de0],ECX      ; 0055a05a | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EBX      ; 0055a060 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0055a066
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0055a066
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0055a06b
     JMP 0x00559da4                      ; 0055a06e
         ;   XREF to: 00559da4 (UNCONDITIONAL_JUMP)  ; LAB_00559da4
@@ -302,8 +302,8 @@ section .text
     PUSH 0x5d2a80                       ; 0055a07d | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d71de0],EDX      ; 0055a082 | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ECX      ; 0055a088 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 0055a08e
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 0055a08e
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x4                         ; 0055a093
     JMP 0x00559e65                      ; 0055a096
         ;   XREF to: 00559e65 (UNCONDITIONAL_JUMP)  ; LAB_00559e65

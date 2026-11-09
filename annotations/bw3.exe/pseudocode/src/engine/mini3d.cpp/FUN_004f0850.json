@@ -1,0 +1,272 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 115,
+    "complexity_score": 197,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 62,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 177
+  },
+  "cross_references": [
+    {
+      "addr": "004f1020",
+      "from_addr": "004f1095",
+      "name": "engine_mini3d.cpp_FUN_004f1020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f1190",
+      "from_addr": "004f11e2",
+      "name": "engine_mini3d.cpp_FUN_004f1190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2a10",
+      "from_addr": "004f2abc",
+      "name": "engine_mini3d.cpp_FUN_004f2a10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f0850",
+    "address_range": [
+      [
+        "004f0850",
+        "004f0963"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_mini3d.cpp_FUN_004f0850",
+    "signature": "void engine_mini3d_cpp_FUN_004f0850(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f0510",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_FUN_004f0510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004f083c",
+      "name": "PTR_caseD_1_004f083c",
+      "type": "void*",
+      "value": "004f08fa"
+    },
+    {
+      "addr": "004f0844",
+      "name": "PTR_caseD_3_004f0844",
+      "type": "void*",
+      "value": "004f08d8"
+    },
+    {
+      "addr": "01d76f68",
+      "name": "DAT_01d76f68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d76f6c",
+      "name": "DAT_01d76f6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d7777c",
+      "name": "DAT_01d7777c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d77780",
+      "name": "DAT_01d77780",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d77784",
+      "name": "DAT_01d77784",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d777bc",
+      "name": "DAT_01d777bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d777c4",
+      "name": "DAT_01d777c4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.787234042553192,
+    "instruction_count": 94,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 27,
+      "BOOL_OR": 4,
+      "BRANCH": 4,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 113,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 31,
+      "INT_AND": 120,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 61,
+      "INT_LEFT": 18,
+      "INT_LESS": 4,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 22,
+      "INT_OR": 36,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 37,
+      "INT_SUB": 27,
+      "INT_XOR": 8,
+      "INT_ZEXT": 12,
+      "LOAD": 17,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 638
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_01d7777c",
+      "severity": "mild",
+      "text": "pfVar4 = (float *)&DAT_01d7777c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_01d7777c",
+      "severity": "mild",
+      "text": "pfVar5 = (float *)(&DAT_01d7777c + uVar2 * 0x40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_01d77784",
+      "severity": "mild",
+      "text": "if (*(float *)(&DAT_01d77784 + uVar2 * 0x40) <= *pfVar5) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_01d76f7c",
+      "severity": "mild",
+      "text": "pfVar7 = (float *)(&DAT_01d76f7c + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_01d76f7c",
+      "severity": "mild",
+      "text": "engine_mini3d_cpp_FUN_004f0510(pfVar5,pfVar4,&DAT_01d76f7c + _DAT_01d76f6c * 0x40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_01d76f7c",
+      "severity": "mild",
+      "text": "pfVar8 = (float *)(&DAT_01d76f7c + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_01d76f7c",
+      "severity": "mild",
+      "text": "engine_mini3d_cpp_FUN_004f0510(pfVar4,pfVar5,&DAT_01d76f7c + _DAT_01d76f6c * 0x40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 53,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004f08d6, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 59,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004f08d6: MOVSD.REP ES:EDI,ESI  ; DAT_01d7777c | DAT_01d77780",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004f0936, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 100,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004f0936: MOVSD.REP ES:EDI,ESI  ; DAT_01d7777c | DAT_01d77780",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

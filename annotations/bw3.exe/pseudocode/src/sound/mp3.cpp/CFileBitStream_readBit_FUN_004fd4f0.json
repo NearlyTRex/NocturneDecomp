@@ -1,0 +1,247 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 120,
+    "complexity_score": 62,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 47,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [
+    {
+      "addr": "004fdc50",
+      "from_addr": "004fdc5d",
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502d60",
+      "from_addr": "0050307a",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fee40",
+      "from_addr": "004feeb8",
+      "name": "sound_mp3.cpp_FUN_004fee40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fd4f0",
+    "address_range": [
+      [
+        "004fd4f0",
+        "004fd5db"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_004fd4f0",
+    "signature": "uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_004fd4f0(CFileBitStream *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00601560",
+      "name": "DAT_00601560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060157c",
+      "name": "DAT_0060157c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 17,
+    "call_sites": [
+      {
+        "call_addr": "0050307a",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fdc5d",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fdc7d",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fdcaf",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fdcbb",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fdce3",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fdcef",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004feeb8",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_004fee40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fef6e",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_004fee40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fef9a",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_004fee40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.150537634408602,
+    "instruction_count": 93,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 1,
+      "CBRANCH": 11,
+      "COPY": 74,
+      "INT_ADD": 41,
+      "INT_AND": 81,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 66,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 32,
+      "INT_SUB": 25,
+      "INT_XOR": 2,
+      "LOAD": 33,
+      "POPCOUNT": 31,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 479
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_00601560",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)(&DAT_00601560 + iVar4 * 4);",
+      "type": "undefined_data"
+    }
+  ]
+}

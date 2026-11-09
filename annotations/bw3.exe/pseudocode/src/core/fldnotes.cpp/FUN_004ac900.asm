@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004ac900(undefined4 param_1,undefined4 param_2)
+; void core_fldnotes_cpp_FUN_004ac900(undefined4 param_1,undefined4 param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x34c]:1  local_34c
@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004bdfb0 at 004be7f1
+;   core_game.cpp_FUN_004bdfb0 at 004be7f1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005c17b9
@@ -45,21 +45,21 @@
 ;   ... and 26 more
 ;
 ; Called Functions:
-;   FUN_0040dbb0
-;   FUN_0047cee0
-;   FUN_004a9c30
-;   FUN_004aa1a0
-;   FUN_004aa810
-;   FUN_004ab7a0
-;   FUN_004e4330
-;   FUN_005a3230
+;   core_fldnotes.cpp_FUN_004a9c30
+;   core_fldnotes.cpp_FUN_004aa1a0
+;   core_fldnotes.cpp_FUN_004aa810
+;   core_fldnotes.cpp_FUN_004ab7a0
+;   core_main.c_FUN_004e4330
+;   crt_stdio.c_fscanf_FUN_005a3230
+;   engine_alphabit.cpp_FUN_0040dbb0
+;   shape_edittool.cpp_FUN_0047cee0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004ac900
-        ;   Label: FUN_004ac900
+        ;   Label: core_fldnotes.cpp_FUN_004ac900
     PUSH ESI                            ; 004ac901
     PUSH EDI                            ; 004ac902
     PUSH EBP                            ; 004ac903
@@ -67,27 +67,27 @@ section .text
     MOV EBP,dword ptr [ESP + 0x454]     ; 004ac90a
     MOV EDX,dword ptr [ESP + 0x450]     ; 004ac911
     PUSH EDX                            ; 004ac918
-    CALL FUN_004ab7a0                   ; 004ac919
-        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ab7a0()
+    CALL core_fldnotes.cpp_FUN_004ab7a0 ; 004ac919
+        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ab7a0()
     ADD ESP,0x4                         ; 004ac91e
     PUSH 0x5c17b9                       ; 004ac921 | = "%*[^\n]\n"
     XOR ECX,ECX                         ; 004ac926
     PUSH EBP                            ; 004ac928
     MOV dword ptr [ESP + 0x408],ECX     ; 004ac929
-    CALL FUN_005a3230                   ; 004ac930
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ac930
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004ac935
     PUSH 0x5c17c1                       ; 004ac938 | = "%*[^\n]\n"
     PUSH EBP                            ; 004ac93d
-    CALL FUN_005a3230                   ; 004ac93e
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ac93e
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004ac943
     LEA EAX,[ESP + 0x400]               ; 004ac946
     PUSH EAX                            ; 004ac94d
     PUSH 0x5c17c9                       ; 004ac94e | DAT_005c17c9
     PUSH EBP                            ; 004ac953
-    CALL FUN_005a3230                   ; 004ac954
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ac954
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 004ac959
     MOV EBX,dword ptr [ESP + 0x400]     ; 004ac95c
     CMP EBX,0x1                         ; 004ac963
@@ -105,8 +105,8 @@ section .text
     PUSH 0x5c17e2                       ; 004ac981 | = "Invalid field notes file version: %d,..."
     MOV dword ptr [0x01d71de0],EDI      ; 004ac986 | DAT_01d71de0
     MOV [0x01d71de4],EAX                ; 004ac98c | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004ac991
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004ac991
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0xc                         ; 004ac996
     MOV ECX,0x40                        ; 004ac999
         ;   Label: LAB_004ac999
@@ -115,20 +115,20 @@ section .text
     MOV ESI,0x5fe4b8                    ; 004ac9aa | DAT_005fe4b8
     PUSH EBP                            ; 004ac9af
     MOVSD.REP ES:EDI,ESI                ; 004ac9b0 | DAT_005fe4b8 | DAT_005fe4bc
-    CALL FUN_005a3230                   ; 004ac9b2
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ac9b2
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004ac9b7
     LEA EAX,[ESP + 0x100]               ; 004ac9ba
     PUSH EAX                            ; 004ac9c1
     PUSH 0x5c1830                       ; 004ac9c2 | = " \"%[^\"]"
     PUSH EBP                            ; 004ac9c7
-    CALL FUN_005a3230                   ; 004ac9c8
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ac9c8
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 004ac9cd
     PUSH 0x5c1838                       ; 004ac9d0 | DAT_005c1838
     PUSH EBP                            ; 004ac9d5
-    CALL FUN_005a3230                   ; 004ac9d6
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ac9d6
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004ac9db
     CMP byte ptr [ESP + 0x100],0x0      ; 004ac9de
     JNZ 0x004aca01                      ; 004ac9e6
@@ -136,8 +136,8 @@ section .text
     PUSH 0x5c19be                       ; 004ac9e8 | = "%*[^\n]\n"
         ;   Label: LAB_004ac9e8
     PUSH EBP                            ; 004ac9ed
-    CALL FUN_005a3230                   ; 004ac9ee
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ac9ee
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004ac9f3
     ADD ESP,0x43c                       ; 004ac9f6
     POP EBP                             ; 004ac9fc
@@ -151,22 +151,22 @@ section .text
     PUSH EAX                            ; 004aca0a
     MOV ECX,dword ptr [ESP + 0x458]     ; 004aca0b
     PUSH ECX                            ; 004aca12
-    CALL FUN_004aa810                   ; 004aca13
-        ;   XREF to: 004aa810 (UNCONDITIONAL_CALL)  ; undefined FUN_004aa810()
+    CALL core_fldnotes.cpp_FUN_004aa810 ; 004aca13
+        ;   XREF to: 004aa810 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004aa810()
     ADD ESP,0xc                         ; 004aca18
     PUSH 0x5c183b                       ; 004aca1b | = "%*[^\n]\n"
     XOR EBX,EBX                         ; 004aca20
     PUSH EBP                            ; 004aca22
     MOV dword ptr [ESP + 0x40c],EBX     ; 004aca23
-    CALL FUN_005a3230                   ; 004aca2a
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004aca2a
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004aca2f
     LEA EAX,[ESP + 0x404]               ; 004aca32
     PUSH EAX                            ; 004aca39
     PUSH 0x5c1843                       ; 004aca3a | DAT_005c1843
     PUSH EBP                            ; 004aca3f
-    CALL FUN_005a3230                   ; 004aca40
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004aca40
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 004aca45
     MOV EDI,dword ptr [ESP + 0x404]     ; 004aca48
     MOV dword ptr [ESP + 0x42c],EBX     ; 004aca4f
@@ -185,8 +185,8 @@ section .text
     XOR EBX,EBX                         ; 004aca84
     PUSH EBP                            ; 004aca86
     MOVSD.REP ES:EDI,ESI                ; 004aca87 | = "(parse error)" | s_parse_error_005fe5b8+4
-    CALL FUN_005a3230                   ; 004aca89
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004aca89
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     LEA EAX,[ESP + 0x210]               ; 004aca8e
     MOV ECX,dword ptr [0x01d0d210]      ; 004aca95 | DAT_01d0d210
     ADD ESP,0x10                        ; 004aca9b
@@ -201,8 +201,8 @@ section .text
         ;   Label: LAB_004acab7
     PUSH EDI                            ; 004acabe
     PUSH ESI                            ; 004acabf
-    CALL FUN_004a9c30                   ; 004acac0
-        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined FUN_004a9c30()
+    CALL core_fldnotes.cpp_FUN_004a9c30 ; 004acac0
+        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a9c30()
     ADD ESP,0x8                         ; 004acac5
     MOV EDI,EAX                         ; 004acac8
     TEST EAX,EAX                        ; 004acaca
@@ -223,10 +223,10 @@ section .text
     LEA EAX,[ESP + 0x204]               ; 004acaef
     PUSH EAX                            ; 004acaf6
     PUSH 0x5c1854                       ; 004acaf7 | = "Ignoring saved game reference to fiel..."
-    MOV ECX,dword ptr [0x005fb140]      ; 004acafc | DAT_005fb140
+    MOV ECX,dword ptr [0x005fb140]      ; 004acafc | g_CEditorToolsPtr
     PUSH ECX                            ; 004acb02
-    CALL FUN_0047cee0                   ; 004acb03
-        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined FUN_0047cee0()
+    CALL shape_edittool.cpp_FUN_0047cee0 ; 004acb03
+        ;   XREF to: 0047cee0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047cee0()
     ADD ESP,0x10                        ; 004acb08
     MOV EAX,dword ptr [ESP + 0x42c]     ; 004acb0b
         ;   Label: LAB_004acb0b
@@ -279,15 +279,15 @@ section .text
     XOR ESI,ESI                         ; 004acba0
     PUSH EBP                            ; 004acba2
     MOV dword ptr [ESP + 0x414],ESI     ; 004acba3
-    CALL FUN_005a3230                   ; 004acbaa
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acbaa
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004acbaf
     LEA EAX,[ESP + 0x40c]               ; 004acbb2
     PUSH EAX                            ; 004acbb9
     PUSH 0x5c18ac                       ; 004acbba | DAT_005c18ac
     PUSH EBP                            ; 004acbbf
-    CALL FUN_005a3230                   ; 004acbc0
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acbc0
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 004acbc5
     MOV EAX,dword ptr [ESP + 0x40c]     ; 004acbc8
     MOV dword ptr [ESP + 0x428],ESI     ; 004acbcf
@@ -301,8 +301,8 @@ section .text
     MOV ESI,0x5fe6b8                    ; 004acbef | = "(corrupt save game file)"
     PUSH EBP                            ; 004acbf4
     MOVSD.REP ES:EDI,ESI                ; 004acbf5 | = "(corrupt save game file)" | s_corrupt_save_game_file_005fe6b8+4
-    CALL FUN_005a3230                   ; 004acbf7
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acbf7
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004acbfc
     LEA EAX,[ESP + 0x414]               ; 004acbff
     PUSH EAX                            ; 004acc06
@@ -313,8 +313,8 @@ section .text
     PUSH 0x5c18b8                       ; 004acc17 | = " %[^,], %d, %d\n"
     PUSH EBP                            ; 004acc1c
     XOR EBX,EBX                         ; 004acc1d
-    CALL FUN_005a3230                   ; 004acc1f
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acc1f
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     LEA EAX,[ESP + 0x314]               ; 004acc24
     ADD ESP,0x14                        ; 004acc2b
     XOR EDI,EDI                         ; 004acc2e
@@ -329,8 +329,8 @@ section .text
         ;   Label: LAB_004acc50
     PUSH ECX                            ; 004acc57
     PUSH ESI                            ; 004acc58
-    CALL FUN_004a9c30                   ; 004acc59
-        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined FUN_004a9c30()
+    CALL core_fldnotes.cpp_FUN_004a9c30 ; 004acc59
+        ;   XREF to: 004a9c30 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a9c30()
     ADD ESP,0x8                         ; 004acc5e
     MOV EDI,EAX                         ; 004acc61
     TEST EAX,EAX                        ; 004acc63
@@ -354,8 +354,8 @@ section .text
     MOV EDI,0x5c18c8                    ; 004acc92 | = "..\\core\\fldnotes.cpp"
     PUSH 0x5c18dd                       ; 004acc97 | = "CFieldNotes::loadState - No such map ..."
     MOV dword ptr [0x01d71de0],EDI      ; 004acc9c | DAT_01d71de0
-    CALL FUN_004e4330                   ; 004acca2
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004acca2
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 004acca7
     CMP dword ptr [EBX + 0x140],0x6     ; 004accaa
         ;   Label: LAB_004accaa
@@ -369,8 +369,8 @@ section .text
     PUSH 0x5c191c                       ; 004accc9 | = "CFieldNotes::loadState - Entry '%s' i..."
     MOV dword ptr [0x01d71de0],ESI      ; 004accce | DAT_01d71de0
     MOV dword ptr [0x01d71de4],EDI      ; 004accd4 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004accda
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004accda
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 004accdf
     IMUL EDI,dword ptr [EBX + 0x158],0x126c ; 004acce2
         ;   Label: LAB_004acce2
@@ -387,14 +387,14 @@ section .text
     PUSH 0x5c196b                       ; 004acd17 | = "CFieldNotes::loadState - Map '%s' has..."
     MOV dword ptr [0x01d71de0],EBX      ; 004acd1c | DAT_01d71de0
     MOV dword ptr [0x01d71de4],ESI      ; 004acd22 | DAT_01d71de4
-    CALL FUN_004e4330                   ; 004acd28
-        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4330()
+    CALL core_main.c_FUN_004e4330       ; 004acd28
+        ;   XREF to: 004e4330 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4330()
     ADD ESP,0x8                         ; 004acd2d
     PUSH 0x5c199e                       ; 004acd30 | = "%*[^\n]\n"
         ;   Label: LAB_004acd30
     PUSH EBP                            ; 004acd35
-    CALL FUN_005a3230                   ; 004acd36
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acd36
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004acd3b
     XOR EAX,EAX                         ; 004acd3e
     MOV EDX,dword ptr [EDI + 0x98]      ; 004acd40
@@ -405,8 +405,8 @@ section .text
     PUSH 0x5c19a6                       ; 004acd55 | DAT_005c19a6
         ;   Label: LAB_004acd55
     PUSH EBP                            ; 004acd5a
-    CALL FUN_005a3230                   ; 004acd5b
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acd5b
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004acd60
     MOV EDX,dword ptr [EDI + 0x94]      ; 004acd63
     MOV EBX,dword ptr [ESP + 0x438]     ; 004acd69
@@ -422,8 +422,8 @@ section .text
     PUSH EAX                            ; 004acd88
     PUSH 0x5c19a8                       ; 004acd89 | DAT_005c19a8
     PUSH EBP                            ; 004acd8e
-    CALL FUN_005a3230                   ; 004acd8f
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acd8f
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 004acd94
     MOV AL,byte ptr [ESP + 0x41c]       ; 004acd97
     MOV byte ptr [EBX],AL               ; 004acd9e
@@ -436,8 +436,8 @@ section .text
     PUSH 0x5c19ac                       ; 004acdac | DAT_005c19ac
         ;   Label: LAB_004acdac
     PUSH EBP                            ; 004acdb1
-    CALL FUN_005a3230                   ; 004acdb2
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acdb2
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004acdb7
     MOV ECX,dword ptr [ESP + 0x438]     ; 004acdba
     INC ECX                             ; 004acdc1
@@ -451,15 +451,15 @@ section .text
     XOR ESI,ESI                         ; 004acdd8
     PUSH EBP                            ; 004acdda
     MOV dword ptr [ESP + 0x420],ESI     ; 004acddb
-    CALL FUN_005a3230                   ; 004acde2
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acde2
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0x8                         ; 004acde7
     LEA EAX,[ESP + 0x418]               ; 004acdea
     PUSH EAX                            ; 004acdf1
     PUSH 0x5c19b6                       ; 004acdf2 | DAT_005c19b6
     PUSH EBP                            ; 004acdf7
-    CALL FUN_005a3230                   ; 004acdf8
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004acdf8
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 004acdfd
     CMP dword ptr [ESP + 0x418],0x0     ; 004ace00
     JLE 0x004ace31                      ; 004ace08
@@ -469,14 +469,14 @@ section .text
     PUSH EAX                            ; 004ace0c
     PUSH 0x5c19ba                       ; 004ace0d | DAT_005c19ba
     PUSH EBP                            ; 004ace12
-    CALL FUN_005a3230                   ; 004ace13
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined FUN_005a3230()
+    CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ace13
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 004ace18
     MOV EAX,ESP                         ; 004ace1b
     PUSH EAX                            ; 004ace1d
     PUSH EDI                            ; 004ace1e
-    CALL FUN_004aa1a0                   ; 004ace1f
-        ;   XREF to: 004aa1a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004aa1a0()
+    CALL core_fldnotes.cpp_FUN_004aa1a0 ; 004ace1f
+        ;   XREF to: 004aa1a0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004aa1a0()
     ADD ESP,0x8                         ; 004ace24
     INC ESI                             ; 004ace27
     CMP ESI,dword ptr [ESP + 0x418]     ; 004ace28
@@ -522,8 +522,8 @@ section .text
     PUSH 0xff                           ; 004acea1
     ADD EAX,0x88                        ; 004acea6
     PUSH EAX                            ; 004aceab
-    CALL FUN_0040dbb0                   ; 004aceac
-        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dbb0()
+    CALL engine_alphabit.cpp_FUN_0040dbb0 ; 004aceac
+        ;   XREF to: 0040dbb0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dbb0()
     ADD ESP,0x8                         ; 004aceb1
     JMP 0x004acb58                      ; 004aceb4
         ;   XREF to: 004acb58 (UNCONDITIONAL_JUMP)  ; LAB_004acb58

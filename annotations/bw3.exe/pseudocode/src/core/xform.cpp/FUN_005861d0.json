@@ -1,0 +1,276 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 94,
+    "complexity_score": 278,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 43,
+    "suspect_count": 20,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005861d0",
+    "address_range": [
+      [
+        "005861d0",
+        "005862d6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_xform.cpp_FUN_005861d0",
+    "signature": "void core_xform_cpp_FUN_005861d0(float *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045bef0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045bef0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d81eb",
+      "name": "DAT_005d81eb",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.011111111111111,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 295,
+      "FLOAT2FLOAT": 33,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 16,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 53,
+      "INT_AND": 10,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_MULT": 8,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 23,
+      "INT_ZEXT": 8,
+      "LOAD": 30,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 541
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005862b6",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_xform_cpp_FUN_005861d0(float *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_1820",
+      "severity": "moderate",
+      "text": "float afStackY_1820 [1524];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_20 = *param_1 * _DAT_005d81eb;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xffffffcc",
+      "severity": "moderate",
+      "text": "core_dirmat_cpp_FUN_0045bef0(&stack0xffffffcc,&fStack_28,&fStack_20);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_1c = param_1[2] * _DAT_005d81eb;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xffffffd0",
+      "severity": "moderate",
+      "text": "core_dirmat_cpp_FUN_0045bef0(&stack0xffffffd0,afStack_10,&fStack_1c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fStack_18 = param_1[1] * _DAT_005d81eb;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar1 = unaff_ESI + (uint)bVar2 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = fStack_44;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "*pfVar1 = *(float *)((int)&stack0xffffffc0 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 42,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "*(float *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "((float *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8))",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "*pfVar1 = *(float *)((int)&stack0xffffffc0 + (uint)bVar2 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "*(float *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "((float *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*pfVar1 = *(float *)((int)&stack0xffffffc0 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((float *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8))",
+      "type": "pointer_cast"
+    }
+  ]
+}

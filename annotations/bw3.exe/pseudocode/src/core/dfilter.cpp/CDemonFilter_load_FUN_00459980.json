@@ -1,0 +1,480 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 199,
+    "complexity_score": 302,
+    "cross_reference_count": 3,
+    "function_call_count": 7,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 67,
+    "suspect_count": 21,
+    "suspect_types": [
+      "extra_output",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 266
+  },
+  "cross_references": [
+    {
+      "addr": "004208d0",
+      "from_addr": "00420cd0",
+      "name": "core_boxactor.cpp_FUN_004208d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459d00",
+      "from_addr": "00459e3b",
+      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00459d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459710",
+      "from_addr": "004597e1",
+      "name": "core_dfilter.cpp_FUN_00459710",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00459980",
+    "address_range": [
+      [
+        "00459980",
+        "00459b7c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CDemonFilter_load_FUN_00459980",
+    "signature": "void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_00459980(CDemonFilter *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00459910",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00459910"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
+    },
+    {
+      "addr": "004659c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004659c0"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005baabb",
+      "name": "DAT_005baabb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005baabe",
+      "name": "DAT_005baabe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005baac2",
+      "name": "s_core_dfilter_cpp_005baac2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005baad6",
+      "name": "s_CDemonFilter_load_Bad_fi_005baad6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005baafd",
+      "name": "DAT_005baafd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bab01",
+      "name": "s_core_dfilter_cpp_005bab01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bab15",
+      "name": "s_CDemonFilter_load_Non_sq_005bab15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bab42",
+      "name": "s_core_dfilter_cpp_005bab42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bab56",
+      "name": "s_CDemonFilter_load_Bad_fi_005bab56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bab7e",
+      "name": "s_core_dfilter_cpp_005bab7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bab92",
+      "name": "s_CDemonFilter_load_Bad_fi_005bab92",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005babba",
+      "name": "DAT_005babba",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005babbd",
+      "name": "DAT_005babbd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005babc1",
+      "name": "s_core_dfilter_cpp_005babc1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005babd5",
+      "name": "s_CDemonFilter_load_Bad_fi_005babd5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004597e1",
+        "call_type": "direct",
+        "caller": "core_dfilter.cpp_FUN_00459710",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00420cd0",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_FUN_004208d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00459e3b",
+        "call_type": "direct",
+        "caller": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00459d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.774193548387097,
+    "instruction_count": 155,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 23,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 5,
+      "CALL": 13,
+      "CBRANCH": 10,
+      "COPY": 129,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 38,
+      "INT_AND": 116,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 3,
+      "INT_LESS": 11,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 18,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 17,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 37,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 58,
+      "INT_XOR": 3,
+      "INT_ZEXT": 3,
+      "LOAD": 26,
+      "POPCOUNT": 35,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 49,
+      "SUBPIECE": 4,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 740
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFilter *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005baabe",
+      "severity": "mild",
+      "text": "p_Var2 = engine_dosio_cpp_FUN_004659c0(&DAT_005baabe,filename,&DAT_005baabb);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005baabb",
+      "severity": "mild",
+      "text": "p_Var2 = engine_dosio_cpp_FUN_004659c0(&DAT_005baabe,filename,&DAT_005baabb);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005baafd",
+      "severity": "mild",
+      "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005baafd,filename);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "*(int *)&this_ptr->field_0x4 = extraout_EDX / *(int *)this_ptr;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x4 = extraout_EDX / *(int *)this_ptr;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if (*(int *)this_ptr != *(int *)&this_ptr->field_0x4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x4 < 0x40) || (0x100 < *(int *)&this_ptr->field_0x4)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x4 < 0x40) || (0x100 < *(int *)&this_ptr->field_0x4)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "(\"CDemonFilter::load - Bad filter size %d\",*(uint *)&this_ptr->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005babbd",
+      "severity": "mild",
+      "text": "p_Var2 = engine_dosio_cpp_FUN_004659c0(&DAT_005babbd,filename,&DAT_005babba);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005babba",
+      "severity": "mild",
+      "text": "p_Var2 = engine_dosio_cpp_FUN_004659c0(&DAT_005babbd,filename,&DAT_005babba);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "_fread(*(uint *)&this_ptr->field_0x48,*(uint *)this_ptr,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4,p_Var2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "for (iVar3 = 0; iVar3 < *(int *)this_ptr * *(int *)&this_ptr->field_0x4; iVar3 = iVar3 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(char *)(iVar3 + *(int *)&this_ptr->field_0x48) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "(char)((int)(uint)*(byte *)(iVar3 + *(int *)&this_ptr->field_0x48) >> 2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "pcVar4 = &this_ptr->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 59,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

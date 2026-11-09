@@ -4,283 +4,369 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CBitFont.h"
+#include "types/classes/CBulletHole.h"
+#include "types/classes/CBulletTrail.h"
+#include "types/classes/CCrater.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CExplosion.h"
+#include "types/classes/CFieldNotes.h"
+#include "types/classes/CFireEffect.h"
+#include "types/classes/CFireball.h"
+#include "types/classes/CFirefly.h"
+#include "types/classes/CFirestaff.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CFlameCan.h"
+#include "types/classes/CFlashlight.h"
+#include "types/classes/CFlies.h"
+#include "types/classes/CFlintlock.h"
+#include "types/classes/CGlassParticle.h"
+#include "types/classes/CGunFlame.h"
+#include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CLaserBeam.h"
+#include "types/classes/CLeaf.h"
+#include "types/classes/CLightningBolt.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CMuzzleFlash.h"
+#include "types/classes/CParticle.h"
+#include "types/classes/CPopcorn.h"
+#include "types/classes/CRainDrop.h"
+#include "types/classes/CRing.h"
+#include "types/classes/CRock.h"
+#include "types/classes/CShell.h"
+#include "types/classes/CSmokeParticle.h"
+#include "types/classes/CSpark.h"
+#include "types/classes/CStake.h"
+#include "types/classes/CToss.h"
+#include "types/classes/CTrail.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
+#include "types/structs/SFly.h"
+#include "types/structs/SLaserInfo.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SNotesMap.h"
+#include "types/structs/SNotesSection.h"
+#include "types/structs/SPageResourceBitmap.h"
+#include "types/structs/SPageResourceMap.h"
+#include "types/structs/SPageResourceText.h"
+#include "types/structs/SPageResourceTwanaCharacter.h"
+#include "types/structs/SPageResourceTwanaEntry.h"
+#include "types/structs/SProjectedVertex.h"
+#include "types/structs/STextView.h"
+#include "types/structs/STriangleVertices.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4A0000
 // =============================================================================
 
-void FUN_004a0470(undefined4 *param_1);
-void FUN_004a0480(undefined4 *param_1);
-void FUN_004a0570(float *param_1);
-void FUN_004a05d0(int param_1);
-void FUN_004a05e0(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void FUN_004a0630(int param_1);
-void FUN_004a0680(int param_1);
-void FUN_004a0960(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5);
-void FUN_004a09f0(float *param_1);
-void FUN_004a0af0(int param_1);
-undefined4 FUN_004a0b90(int param_1);
-void FUN_004a0cd0(float *param_1);
-void FUN_004a1040(float *param_1);
-undefined1 * FUN_004a1420(void);
-undefined4 FUN_004a1460(undefined4 param_1);
-void FUN_004a1480(void);
-void FUN_004a1760(void);
-uint FUN_004a1ad0(void);
-int FUN_004a1e90(undefined4 param_1,int param_2,int param_3);
-void FUN_004a2010(undefined4 param_1,undefined4 param_2);
-void FUN_004a2090(undefined4 param_1,float *param_2,undefined4 param_3,undefined4 param_4,int param_5,int param_6);
-void FUN_004a23c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5,undefined4 param_6,undefined4 param_7);
-void FUN_004a2450(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void FUN_004a24a0(void);
-void FUN_004a2560(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void FUN_004a2780(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void FUN_004a2830(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5);
-void FUN_004a28e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_004a2930(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5);
-void FUN_004a29d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
-void FUN_004a2aa0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10);
-void FUN_004a2b10(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
-void FUN_004a2b70(undefined4 param_1,float *param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,float param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10);
-void FUN_004a2de0(undefined4 *param_1);
-void FUN_004a2e20(undefined4 param_1,float *param_2,float *param_3,float param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,int param_9,int param_10,int param_11,float param_12,undefined4 param_13,undefined4 param_14,float param_15,undefined4 param_16,undefined4 param_17,float param_18,undefined4 param_19,undefined4 param_20,float param_21,float param_22,float param_23,float param_24,int param_25);
-void FUN_004a36e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,int param_6);
-undefined4 FUN_004a3790(undefined4 param_1,float *param_2,float param_3,float *param_4,float *param_5,float *param_6);
-void FUN_004a3920(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float param_5,undefined4 param_6);
-void FUN_004a39a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_004a39d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_004a3a00(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-int FUN_004a3a30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void FUN_004a3aa0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-int FUN_004a3af0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,undefined4 param_6);
-void FUN_004a3bd0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5);
-void FUN_004a3c50(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
-void FUN_004a3cf0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void FUN_004a3e70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void FUN_004a3ed0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void FUN_004a3f20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void FUN_004a3f70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_004a3fd0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_004a4030(undefined4 param_1,undefined4 param_2);
-void FUN_004a40b0(undefined4 param_1,undefined4 param_2);
-undefined4 FUN_004a4100(void);
-void FUN_004a4130(undefined4 param_1,int param_2);
-void FUN_004a41d0(undefined4 param_1,int param_2);
-void FUN_004a42c0(undefined4 param_1,int param_2);
-void FUN_004a42f0(undefined4 param_1,int param_2);
-void FUN_004a4340(undefined4 param_1,int param_2);
-void FUN_004a4550(undefined4 param_1);
-void FUN_004a4570(undefined4 param_1);
-void FUN_004a4580(undefined4 param_1);
-void FUN_004a45a0(undefined4 param_1);
-void FUN_004a45b0(undefined4 param_1);
-void FUN_004a45d0(undefined4 param_1);
-undefined4 FUN_004a45e0(undefined4 param_1);
-undefined4 FUN_004a45f0(undefined4 param_1);
-int FUN_004a4600(int param_1);
-undefined4 FUN_004a4640(undefined4 param_1);
-undefined4 FUN_004a4650(undefined4 param_1);
-undefined4 FUN_004a4660(undefined4 param_1);
-undefined4 FUN_004a4670(undefined4 param_1);
-undefined4 FUN_004a4680(undefined4 param_1);
-int FUN_004a4690(int param_1);
-undefined4 FUN_004a46b0(undefined4 param_1);
-int FUN_004a46c0(int param_1);
-undefined4 FUN_004a46e0(undefined4 param_1);
-undefined4 FUN_004a46f0(undefined4 param_1);
-undefined4 FUN_004a4700(undefined4 param_1);
-undefined4 FUN_004a4710(undefined4 param_1);
-undefined4 FUN_004a4720(undefined4 param_1);
-int FUN_004a4730(undefined4 param_1);
-void FUN_004a4760(undefined4 param_1);
-undefined4 FUN_004a4770(undefined4 param_1);
-undefined4 FUN_004a4780(undefined4 param_1);
-void FUN_004a4790(undefined4 param_1);
-void FUN_004a47b0(undefined4 param_1);
-void FUN_004a47c0(undefined4 param_1);
-void FUN_004a47e0(undefined4 param_1);
-void FUN_004a47f0(undefined4 param_1);
-void FUN_004a4810(undefined4 param_1);
-void FUN_004a4820(undefined4 param_1);
-void FUN_004a4840(undefined4 param_1);
-void FUN_004a4850(undefined4 param_1);
-void FUN_004a4870(undefined4 param_1);
-int FUN_004a4880(int param_1);
-int FUN_004a48a0(int param_1);
-undefined4 FUN_004a48c0(undefined4 param_1);
-undefined4 FUN_004a48d0(undefined4 param_1);
-undefined4 FUN_004a48e0(undefined4 param_1);
-undefined4 FUN_004a48f0(undefined4 param_1);
-undefined4 FUN_004a4900(undefined4 param_1);
-void FUN_004a4910(undefined4 param_1);
-void FUN_004a4930(undefined4 param_1);
-void FUN_004a4950(undefined4 param_1);
-void FUN_004a4970(undefined4 param_1);
-void FUN_004a4990(undefined4 param_1);
-void FUN_004a49b0(undefined4 param_1);
-void FUN_004a49d0(undefined4 param_1);
-void FUN_004a49f0(undefined4 param_1);
-void FUN_004a4a10(undefined4 param_1);
-void FUN_004a4a30(undefined4 param_1);
-void FUN_004a4a50(undefined4 param_1);
-void FUN_004a4a70(void);
-undefined4 FUN_004a4ac0(void);
-int FUN_004a4ad0(undefined4 param_1);
-void FUN_004a4cd0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
-undefined4 FUN_004a4d00(int param_1);
-void FUN_004a4dc0(int param_1,undefined4 param_2);
-void FUN_004a5770(int param_1,int param_2);
-int FUN_004a57c0(int param_1);
-void FUN_004a5870(undefined4 param_1);
-int FUN_004a58c0(int param_1,byte param_2);
-void FUN_004a5930(undefined4 param_1);
-void FUN_004a5950(void);
-undefined4 FUN_004a59a0(void);
-int FUN_004a59b0(undefined4 param_1);
-void FUN_004a5aa0(int param_1);
-void FUN_004a5ad0(int param_1);
-void FUN_004a5b10(int param_1,float param_2);
-undefined4 FUN_004a6090(int param_1);
-void FUN_004a6a50(int param_1,int param_2);
-void FUN_004a6c20(int param_1);
-void FUN_004a6ca0(int param_1);
-undefined4 FUN_004a6dc0(void);
-void FUN_004a6dd0(int param_1);
-void FUN_004a6ea0(void);
-undefined4 FUN_004a6ef0(void);
-int FUN_004a6f00(undefined4 param_1);
-void FUN_004a6fa0(int param_1);
-void FUN_004a7110(int param_1);
-void FUN_004a7160(int param_1,float param_2);
-int FUN_004a7230(int param_1);
-undefined4 FUN_004a72d0(int param_1);
-undefined4 FUN_004a7300(int param_1,float *param_2);
-void FUN_004a73d0(int param_1);
-undefined4 FUN_004a7430(void);
-void FUN_004a7440(int param_1);
-int FUN_004a7480(int param_1,byte param_2);
-void FUN_004a74f0(void);
-undefined4 FUN_004a7540(void);
-int FUN_004a7550(undefined4 param_1);
-undefined4 FUN_004a75d0(void);
-undefined4 FUN_004a75f0(void);
-void FUN_004a7600(int param_1);
-undefined4 FUN_004a76a0(undefined4 param_1,byte param_2);
-void FUN_004a76f0(void);
-void FUN_004a7890(char *param_1);
-void FUN_004a7a70(char *param_1);
-void FUN_004a7d70(void);
-int FUN_004a80d0(int param_1,int param_2);
-undefined4 FUN_004a8180(int param_1,int param_2);
-void FUN_004a8370(undefined4 *param_1);
-int FUN_004a83a0(int param_1);
-bool FUN_004a8470(int param_1);
-int FUN_004a8490(undefined4 param_1,char *param_2,undefined4 param_3);
-int FUN_004a8510(int param_1,byte param_2);
-void FUN_004a8570(int *param_1);
-int FUN_004a8650(undefined4 param_1);
-int FUN_004a8680(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-int FUN_004a8710(int param_1,byte param_2);
-void FUN_004a8780(undefined4 *param_1);
-int FUN_004a87a0(undefined4 param_1,char *param_2);
-int FUN_004a8830(int param_1,byte param_2);
-undefined4 FUN_004a8890(int param_1,int param_2);
-int FUN_004a88d0(undefined4 param_1);
-int FUN_004a8980(int param_1,byte param_2);
-void FUN_004a8a00(int param_1);
-void FUN_004a8b90(int param_1,char *param_2);
-void FUN_004a8cb0(undefined4 *param_1);
-void FUN_004a8cc0(int *param_1);
-void FUN_004a8d00(int *param_1,int param_2);
-int * FUN_004a8d50(int *param_1,int param_2,int param_3);
-void FUN_004a8da0(int *param_1);
-undefined4 FUN_004a8dd0(undefined4 param_1);
-undefined4 FUN_004a8de0(undefined4 param_1);
-void FUN_004a8e00(undefined4 *param_1);
-void FUN_004a8eb0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-undefined4 FUN_004a8ed0(undefined4 param_1,char *param_2);
-int FUN_004a8f30(int param_1,char *param_2);
-undefined4 FUN_004a9150(int param_1,undefined4 *param_2);
-void FUN_004a91b0(int param_1);
-void FUN_004a9230(int param_1,undefined4 param_2);
-void FUN_004a9270(int param_1);
-void FUN_004a9300(int param_1);
-undefined4 FUN_004a9330(int param_1,int param_2);
-undefined4 FUN_004a9710(int param_1,int param_2,int param_3);
-undefined4 FUN_004a9770(int param_1,char *param_2);
-void FUN_004a97d0(int param_1,char *param_2);
-void FUN_004a9830(int param_1);
-void FUN_004a98b0(int param_1,int param_2);
-void FUN_004a98f0(int param_1);
-int FUN_004a9930(int param_1);
-undefined4 FUN_004a9950(int param_1,int param_2);
-void FUN_004a9b70(undefined1 *param_1);
-undefined4 FUN_004a9ba0(undefined4 param_1);
-void FUN_004a9bc0(int param_1);
-undefined4 FUN_004a9c30(int param_1,undefined4 param_2);
-char * FUN_004a9c80(int param_1,char *param_2,undefined4 param_3);
-bool FUN_004a9d90(int param_1,int param_2);
-int FUN_004a9e10(int param_1);
-int FUN_004a9e70(int param_1);
-void FUN_004a9eb0(undefined4 *param_1);
-int FUN_004a9f30(int param_1);
-void FUN_004aa0b0(int *param_1);
-undefined4 FUN_004aa1a0(int param_1,undefined4 param_2);
-void FUN_004aa200(int param_1,int param_2,int param_3,int param_4);
-void FUN_004aa2f0(int param_1,int param_2,int param_3,int param_4);
-int FUN_004aa350(int param_1,float *param_2);
-void FUN_004aa490(int *param_1,int param_2,int param_3);
-void FUN_004aa620(int param_1);
-undefined4 FUN_004aa6d0(undefined4 param_1,undefined4 param_2);
-void FUN_004aa780(undefined4 param_1,int param_2);
-void FUN_004aa7b0(undefined4 *param_1);
-void FUN_004aa7d0(undefined1 *param_1);
-int FUN_004aa7e0(int param_1);
-undefined4 FUN_004aa810(char *param_1,char *param_2,char *param_3);
-void FUN_004ab7a0(undefined1 *param_1);
-undefined4 FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-void FUN_004aba10(undefined4 param_1,undefined4 param_2);
-undefined4 FUN_004abb30(undefined4 param_1,undefined4 param_2);
-void FUN_004abb90(undefined4 param_1,undefined4 param_2);
-void FUN_004abcb0(undefined4 param_1,undefined4 param_2);
-void FUN_004abdc0(undefined4 param_1,char *param_2);
-void FUN_004abe00(int param_1);
-void FUN_004ac6b0(int param_1);
-void FUN_004ac900(undefined4 param_1,undefined4 param_2);
-void FUN_004acf00(undefined4 param_1,undefined4 param_2);
-undefined4 FUN_004ad3c0(undefined4 param_1,byte param_2);
-void FUN_004ad410(undefined4 param_1);
-void FUN_004ad430(undefined4 param_1);
-void FUN_004ad450(undefined4 param_1);
-void FUN_004ad470(undefined4 param_1);
-void FUN_004ad490(void);
-void FUN_004ad4c0(void);
-void FUN_004ad750(void);
-undefined4 FUN_004ad7a0(void);
-int FUN_004ad7b0(undefined4 param_1);
-void FUN_004ad870(int param_1);
-void FUN_004ad8b0(int param_1);
-void FUN_004ad950(int param_1,float param_2);
-void FUN_004add00(int param_1,int param_2,uint param_3);
-int FUN_004addd0(int param_1);
-void FUN_004ae200(int param_1);
-undefined4 FUN_004ae270(void);
-void FUN_004ae280(int param_1,int param_2);
-float * FUN_004ae380(int param_1,float *param_2);
-int FUN_004ae6c0(int param_1);
-undefined4 FUN_004ae710(undefined4 param_1,byte param_2);
-int FUN_004ae760(int param_1);
-void FUN_004ae780(void);
-undefined4 FUN_004ae7d0(void);
-int FUN_004ae7e0(undefined4 param_1);
-undefined4 FUN_004ae850(int param_1);
-undefined4 FUN_004af580(void);
-void FUN_004af5b0(undefined4 param_1);
-undefined4 FUN_004af630(undefined4 param_1,byte param_2);
-undefined4 FUN_004af6d0(int *param_1,int *param_2,int *param_3,int *param_4,int *param_5,int param_6);
-undefined4 FUN_004af790(undefined4 param_1);
-undefined4 FUN_004af7b0(undefined4 param_1);
-void FUN_004af7d0(undefined4 *param_1);
-void FUN_004af8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void FUN_004af920(int *param_1,char *param_2,int param_3,int param_4,undefined4 param_5);
+void core_fire_cpp_FUN_004a0470(undefined4 *param_1);
+void core_fire_cpp_FUN_004a0480(CDemonActor *param_1);
+void core_fire_cpp_FUN_004a0570(float *param_1);
+void __cdecl core_fire_cpp_CTrail_reset_FUN_004a05d0(CTrail *this_ptr);
+void __cdecl core_fire_cpp_CTrail_activate_FUN_004a05e0(CTrail *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
+void __cdecl core_fire_cpp_FUN_004a0630(CTrail *this_ptr);
+void __cdecl core_fire_cpp_FUN_004a0680(CTrail *this_ptr);
+void core_fire_cpp_FUN_004a0960(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,undefined4 param_5);
+void core_fire_cpp_FUN_004a09f0(CVector3f *param_1);
+void core_fire_cpp_FUN_004a0af0(int param_1);
+undefined4 core_fire_cpp_FUN_004a0b90(CVector3f *param_1);
+undefined4 core_fire_cpp_FUN_004a0cc0(void);
+void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr);
+void core_fire_cpp_FUN_004a1040(CVector3f *param_1);
+undefined * core_fire_cpp_FUN_004a13ee(void);
+CBulletHole * __cdecl core_fire_cpp_FUN_004a1420(void);
+CFireEffect * __cdecl core_fire_cpp_FUN_004a1460(CFireEffect *this_ptr);
+void core_fire_cpp_FUN_004a1480(void);
+void core_fire_cpp_FUN_004a1760(void);
+void __cdecl core_fire_cpp_FUN_004a1ad0(CFireEffect *this_ptr);
+void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect *this_ptr,int render_mode,int render_completeness);
+void __cdecl core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect *this_ptr,CVector3f *position);
+void core_fire_cpp_FUN_004a2090(CFireEffect *param_1,CVector3f *param_2,undefined4 param_3,undefined4 param_4,int param_5,int param_6);
+void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int intensity_target,int intensity_scale,int spark_type,int fade_rate);
+void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffect *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
+void core_fire_cpp_FUN_004a24a0(void);
+void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004a2560(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
+void core_fire_cpp_FUN_004a25f0(CDemonActor *param_1,float *param_2,CVector3f *param_3,CVector3f *param_4,undefined4 param_5);
+void __cdecl core_fire_cpp_FUN_004a2780(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void core_fire_cpp_FUN_004a27de(undefined4 param_1,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl core_fire_cpp_FUN_004a2830(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
+void __cdecl core_fire_cpp_FUN_004a28e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
+void core_fire_cpp_FUN_004a2930(undefined4 param_1,undefined4 param_2,undefined4 param_3,CKeyFramedModel *param_4,undefined4 param_5);
+void core_fire_cpp_FUN_004a29d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
+void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_004a2aa0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);
+void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004a2b10(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
+void __cdecl core_fire_cpp_FUN_004a2b70(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
+SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_004a2de0(SLaserInfo *this_ptr);
+void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,undefined4 param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,float param_21,float param_22,float param_23,float param_24,int param_25);
+void core_fire_cpp_FUN_004a36e0(CDemonActor *param_1,CVector3f *param_2,undefined4 param_3,undefined4 param_4,float param_5,int param_6);
+undefined4 core_fire_cpp_FUN_004a3790(undefined4 param_1,float *param_2,float param_3,float *param_4,float *param_5,float *param_6);
+void core_fire_cpp_FUN_004a3920(CFireEffect *param_1,CVector3f *param_2,UOrientationVector *param_3,CVector3f *param_4,float param_5,undefined4 param_6);
+void core_fire_cpp_FUN_004a39a0(CFireEffect *param_1,CVector3f *param_2,UOrientationVector *param_3,CVector3f *param_4);
+void core_fire_cpp_FUN_004a39d0(CFireEffect *param_1,CVector3f *param_2,UOrientationVector *param_3,CVector3f *param_4);
+void core_fire_cpp_FUN_004a3a00(CFireEffect *param_1,CVector3f *param_2,UOrientationVector *param_3,CVector3f *param_4);
+int __cdecl core_fire_cpp_FUN_004a3a30(CFireEffect *this_ptr,int toss_type,CVector3f *position,UOrientationVector *orientation,CVector3f *velocity,float fuse_time);
+void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_004a3aa0(CFireEffect *this_ptr,CVector3f *position,float radius);
+int core_fire_cpp_FUN_004a3af0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,undefined4 param_6);
+void core_fire_cpp_FUN_004a3b60(undefined4 param_1,int param_2,undefined4 *param_3);
+void core_fire_cpp_FUN_004a3bd0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5);
+void core_fire_cpp_FUN_004a3c50(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
+void __cdecl core_fire_cpp_CFireEffect_createTrailSegment_FUN_004a3cf0(CFireEffect *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
+void core_fire_cpp_FUN_004a3d50(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,float param_6,SMRGLTextureBasic *param_7);
+void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004a3e70(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr);
+void core_fire_cpp_FUN_004a3ed0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void core_fire_cpp_FUN_004a3f20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void core_fire_cpp_FUN_004a3f70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void core_fire_cpp_FUN_004a3fd0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl core_fire_cpp_CFireEffect_load_FUN_004a4030(CFireEffect *this_ptr,_FILE *file_handle);
+void __cdecl core_fire_cpp_CFireEffect_save_FUN_004a40b0(CFireEffect *this_ptr,_FILE *file_handle);
+int __cdecl core_fire_cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004a4100(CFireEffect *this_ptr);
+void core_fire_cpp_FUN_004a4130(undefined4 param_1,int param_2);
+void core_fire_cpp_FUN_004a41d0(undefined4 param_1,int param_2);
+void core_fire_cpp_FUN_004a42c0(undefined4 param_1,int param_2);
+void core_fire_cpp_FUN_004a42f0(undefined4 param_1,int param_2);
+void core_fire_cpp_FUN_004a4340(undefined4 param_1,int param_2);
+void __cdecl core_fire_cpp_transformWorldToScreen_FUN_004a44c0(CVector3i *input,SProjectedVertex *output,CVector3f *world_position);
+CRainDrop * __cdecl core_fire_cpp_CRainDrop_ctor_FUN_004a4550(CRainDrop *this_ptr);
+CRainDrop * __cdecl core_fire_cpp_CRainDrop_dtor_FUN_004a4570(CRainDrop *this_ptr,uint flags);
+CPopcorn * __cdecl core_fire_cpp_CPopcorn_ctor_FUN_004a4580(CPopcorn *this_ptr);
+CPopcorn * __cdecl core_fire_cpp_CPopcorn_dtor_FUN_004a45a0(CPopcorn *this_ptr,uint flags);
+CShell * __cdecl core_fire_cpp_CShell_ctor_FUN_004a45b0(CShell *this_ptr);
+CShell * __cdecl core_fire_cpp_CShell_dtor_FUN_004a45d0(CShell *this_ptr,uint flags);
+CTrail * core_fire_cpp_CTrail_ctor_FUN_004a45e0(CTrail *this_ptr);
+CTrail * core_fire_cpp_CTrail_dtor_FUN_004a45f0(CTrail *this_ptr,uint flags);
+CRing * core_fire_cpp_CRing_ctor_FUN_004a4600(CRing *this_ptr);
+CRing * core_fire_cpp_CRing_dtor_FUN_004a4640(CRing *this_ptr,uint flags);
+CLightningBolt * core_fire_cpp_CLightningBolt_ctor_FUN_004a4650(CLightningBolt *this_ptr);
+CLightningBolt * core_fire_cpp_CLightningBolt_dtor_FUN_004a4660(CLightningBolt *this_ptr,uint flags);
+CGunFlame * core_fire_cpp_CGunFlame_ctor_FUN_004a4670(CGunFlame *this_ptr);
+CGunFlame * core_fire_cpp_CGunFlame_dtor_FUN_004a4680(CGunFlame *this_ptr,uint flags);
+CCrater * __cdecl core_fire_cpp_CCrater_ctor_FUN_004a4690(CCrater *this_ptr);
+CCrater * core_fire_cpp_CCrater_dtor_FUN_004a46b0(CCrater *this_ptr,uint flags);
+CToss * __cdecl core_fire_cpp_CToss_dtor_FUN_004a46c0(CToss *this_ptr,uint flags);
+CExplosion * core_fire_cpp_CExplosion_dtor_FUN_004a46e0(CExplosion *this_ptr,uint flags);
+CLaserBeam * core_fire_cpp_CLaserBeam_ctor_FUN_004a46f0(CLaserBeam *this_ptr);
+CLaserBeam * core_fire_cpp_CLaserBeam_dtor_FUN_004a4700(CLaserBeam *this_ptr,uint flags);
+CBulletTrail * core_fire_cpp_CBulletTrail_ctor_FUN_004a4710(CBulletTrail *this_ptr);
+CBulletTrail * core_fire_cpp_CBulletTrail_dtor_FUN_004a4720(CBulletTrail *this_ptr,uint flags);
+CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_ctor_FUN_004a4730(CGlassParticle *this_ptr);
+CGlassParticle * core_fire_cpp_CGlassParticle_dtor_FUN_004a4760(CGlassParticle *this_ptr,uint flags);
+CMuzzleFlash * core_fire_cpp_CMuzzleFlash_ctor_FUN_004a4770(CMuzzleFlash *this_ptr);
+CMuzzleFlash * core_fire_cpp_CMuzzleFlash_dtor_FUN_004a4780(CMuzzleFlash *this_ptr,uint flags);
+CLeaf * core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr);
+CLeaf * core_fire_cpp_CLeaf_dtor_FUN_004a47b0(CLeaf *this_ptr,uint flags);
+CRock * __cdecl core_fire_cpp_CRock_ctor_FUN_004a47c0(CRock *this_ptr);
+CRock * __cdecl core_fire_cpp_CRock_dtor_FUN_004a47e0(CRock *this_ptr,uint flags);
+CFireball * __cdecl core_fire_cpp_CFireball_ctor_FUN_004a47f0(CFireball *this_ptr);
+CFireball * __cdecl core_fire_cpp_CFireball_dtor_FUN_004a4810(CFireball *this_ptr,uint flags);
+CFirefly * core_fire_cpp_CFirefly_ctor_FUN_004a4820(CFirefly *this_ptr);
+CFirefly * core_fire_cpp_CFirefly_dtor_FUN_004a4840(CFirefly *this_ptr,uint flags);
+CSpark * __cdecl core_fire_cpp_CSpark_ctor_FUN_004a4850(CSpark *this_ptr);
+CSpark * __cdecl core_fire_cpp_CSpark_dtor_FUN_004a4870(CSpark *this_ptr,uint flags);
+CStake * __cdecl core_fire_cpp_CStake_ctor_FUN_004a4880(CStake *this_ptr);
+CStake * __cdecl core_fire_cpp_CStake_dtor_FUN_004a48a0(CStake *this_ptr,uint flags);
+CBulletHole * core_fire_cpp_CBulletHole_ctor_FUN_004a48c0(CBulletHole *this_ptr);
+CBulletHole * core_fire_cpp_CBulletHole_dtor_FUN_004a48d0(CBulletHole *this_ptr,uint flags);
+CSmokeParticle * core_fire_cpp_CSmokeParticle_ctor_FUN_004a48e0(CSmokeParticle *this_ptr);
+CSmokeParticle * core_fire_cpp_CSmokeParticle_dtor_FUN_004a48f0(CSmokeParticle *this_ptr,uint flags);
+CKeyFramedModelInstance * core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_004a4900(CKeyFramedModelInstance *this_ptr,uint flags);
+CRainDrop * core_fire_cpp_CRainDrop_arrdtor256_FUN_004a4910(CRainDrop *this_ptr,uint flags);
+CPopcorn * core_fire_cpp_CPopcorn_arrdtor256_FUN_004a4930(CPopcorn *this_ptr,uint flags);
+CShell * core_fire_cpp_CShell_arrdtor50_FUN_004a4950(CShell *this_ptr,uint flags);
+CToss * core_fire_cpp_CToss_arrdtor20_FUN_004a4970(CToss *this_ptr,uint flags);
+CLeaf * core_fire_cpp_CLeaf_arrdtor64_FUN_004a4990(CLeaf *this_ptr,uint flags);
+CRock * core_fire_cpp_CRock_arrdtor64_FUN_004a49b0(CRock *this_ptr,uint flags);
+CFireball * core_fire_cpp_CFireball_arrdtor64_FUN_004a49d0(CFireball *this_ptr,uint flags);
+CGlassParticle * core_fire_cpp_CGlassParticle_arrdtor1000_FUN_004a49f0(CGlassParticle *this_ptr,uint flags);
+CFirefly * core_fire_cpp_CFirefly_arrdtor64_FUN_004a4a10(CFirefly *this_ptr,uint flags);
+CSpark * core_fire_cpp_CSpark_arrdtor256_FUN_004a4a30(CSpark *this_ptr,uint flags);
+CStake * core_fire_cpp_CStake_arrdtor256_FUN_004a4a50(CStake *this_ptr,uint flags);
+void core_firestff_cpp_staticInit_FUN_004a4a70(void);
+void core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void);
+CDemonActorType * core_firestff_cpp_CFirestaff_getActorType_FUN_004a4ac0(CFirestaff *this_ptr);
+CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr);
+void core_firestff_cpp_FUN_004a4cd0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
+undefined4 core_firestff_cpp_FUN_004a4d00(CDemonActor *param_1);
+void core_firestff_cpp_FUN_004a4dc0(CWeapon *param_1,float param_2,undefined4 param_3,undefined4 param_4);
+void core_firestff_cpp_FUN_004a5770(CWeapon *param_1,int param_2);
+int core_firestff_cpp_FUN_004a57c0(CWeapon *param_1);
+void core_firestff_cpp_FUN_004a5870(CWeapon *param_1);
+CFirestaff * core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr,uint flags);
+void core_firestff_cpp_FUN_004a5930(undefined4 param_1);
+void core_flame_cpp_staticInit_FUN_004a5950(void);
+void core_flame_cpp_factoryFuncFlame_FUN_004a5980(void);
+CDemonActorType * core_flame_cpp_CFlame_getActorType_FUN_004a59a0(CFlame *this_ptr);
+CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_004a59b0(CFlame *this_ptr);
+void core_flame_cpp_FUN_004a5aa0(CDemonActor *param_1);
+void core_flame_cpp_FUN_004a5ad0(int param_1);
+void __cdecl core_flame_cpp_FUN_004a5b10(CFlame *this_ptr,float delta_time);
+int __cdecl core_flame_cpp_FUN_004a6090(CFlame *this_ptr);
+void core_flame_cpp_FUN_004a6a50(CDemonActor *param_1,int param_2);
+void core_flame_cpp_FUN_004a6c20(int param_1);
+void __cdecl core_flame_cpp_CFlame_archive_FUN_004a6ca0(CFlame *this_ptr);
+undefined4 core_flame_cpp_FUN_004a6dc0(void);
+void __cdecl core_flame_cpp_FUN_004a6dd0(CFlame *this_ptr);
+void core_flamecan_cpp_staticInit_FUN_004a6ea0(void);
+void core_flamecan_cpp_factoryFuncFlameCan_FUN_004a6ed0(void);
+CDemonActorType * core_flamecan_cpp_CFlameCan_getActorType_FUN_004a6ef0(CFlameCan *this_ptr);
+CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004a6f00(CFlameCan *this_ptr);
+void core_flamecan_cpp_FUN_004a6fa0(CDemonActor *param_1);
+void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(CFlameCan *this_ptr);
+void core_flamecan_cpp_FUN_004a7160(CFlameCan *param_1,float param_2);
+int core_flamecan_cpp_FUN_004a7230(int param_1);
+int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_004a72d0(CFlameCan *this_ptr);
+undefined4 core_flamecan_cpp_FUN_004a7300(int param_1,float *param_2);
+void __cdecl core_flamecan_cpp_CFlameCan_archive_FUN_004a73d0(CFlameCan *this_ptr);
+undefined4 core_flamecan_cpp_FUN_004a7430(void);
+void core_flamecan_cpp_FUN_004a7440(int param_1);
+CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004a7480(CFlameCan *this_ptr,uint flags);
+void core_flashlit_cpp_staticInit_FUN_004a74f0(void);
+void core_flashlit_cpp_factoryFuncFlashlight_FUN_004a7520(void);
+CDemonActorType * core_flashlit_cpp_CFlashlight_getActorType_FUN_004a7540(CFlashlight *this_ptr);
+CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004a7550(CFlashlight *this_ptr);
+undefined4 core_flashlit_cpp_FUN_004a75d0(void);
+void core_flashlit_cpp_FUN_004a75e0(void);
+undefined4 core_flashlit_cpp_FUN_004a75f0(void);
+void core_flashlit_cpp_FUN_004a7600(int param_1);
+CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004a76a0(CFlashlight *this_ptr,uint flags);
+void unkaddr_004a76f0_cpp_FUN_004a76f0(void);
+void unkaddr_004a76f0_cpp_FUN_004a7890(char *param_1);
+void unkaddr_004a76f0_cpp_FUN_004a7920(char *param_1);
+undefined4 unkaddr_004a76f0_cpp_FUN_004a7950(byte *param_1,byte *param_2,byte *param_3);
+int unkaddr_004a76f0_cpp_FUN_004a79f0(undefined4 param_1,int *param_2);
+void unkaddr_004a76f0_cpp_FUN_004a7a70(char *param_1);
+void unkaddr_004a76f0_cpp_FUN_004a7bb0(void);
+void unkaddr_004a76f0_cpp_FUN_004a7c30(void);
+void unkaddr_004a76f0_cpp_FUN_004a7d70(void);
+int unkaddr_004a76f0_cpp_FUN_004a8080(int param_1);
+int unkaddr_004a76f0_cpp_FUN_004a80d0(int param_1,int param_2);
+undefined4 unkaddr_004a76f0_cpp_FUN_004a8180(int param_1,int param_2);
+undefined4 unkaddr_004a76f0_cpp_FUN_004a826e(void);
+void unkaddr_004a76f0_cpp_FUN_004a82ee(void);
+void unkaddr_004a76f0_cpp_FUN_004a8370(undefined4 *param_1);
+int unkaddr_004a76f0_cpp_FUN_004a83a0(int param_1);
+void core_fldnotes_cpp_FUN_004a83ce(int param_1,char *param_2);
+bool core_fldnotes_cpp_FUN_004a8470(int param_1);
+int core_fldnotes_cpp_FUN_004a8490(undefined4 param_1,char *param_2,undefined4 param_3);
+SPageResourceText * core_fldnotes_cpp_PageResource_Text_dtor_FUN_004a8510(SPageResourceText *this_ptr,uint flags);
+void core_fldnotes_cpp_FUN_004a8570(int *param_1);
+SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_ctor_FUN_004a8650(SPageResourceBitmap *this_ptr);
+undefined1 * core_fldnotes_cpp_FUN_004a8680(undefined4 param_1,char *param_2,int param_3,int param_4);
+SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_dtor_FUN_004a8710(SPageResourceBitmap *this_ptr,uint flags);
+void core_fldnotes_cpp_FUN_004a8780(int *param_1);
+SPageResourceBitmap * core_fldnotes_cpp_FUN_004a87a0(SPageResourceBitmap *param_1,char *param_2);
+SPageResourceTwanaCharacter * core_fldnotes_cpp_PageResource_TwanaCharacter_dtor_FUN_004a8830(SPageResourceTwanaCharacter *this_ptr,uint flags);
+undefined4 core_fldnotes_cpp_FUN_004a8890(int param_1,int param_2);
+SPageResourceTwanaEntry * core_fldnotes_cpp_PageResource_TwanaEntry_ctor_FUN_004a88d0(SPageResourceTwanaEntry *this_ptr);
+SPageResourceTwanaEntry * core_fldnotes_cpp_PageResource_TwanaEntry_dtor_FUN_004a8980(SPageResourceTwanaEntry *this_ptr,uint flags);
+void core_fldnotes_cpp_FUN_004a8a00(int param_1);
+void core_fldnotes_cpp_FUN_004a8b90(int param_1,char *param_2);
+void core_fldnotes_cpp_FUN_004a8cb0(undefined4 *param_1);
+void core_fldnotes_cpp_FUN_004a8cc0(int *param_1);
+void core_fldnotes_cpp_FUN_004a8d00(int *param_1,int param_2);
+int * core_fldnotes_cpp_FUN_004a8d50(int *param_1,int param_2,int param_3);
+void core_fldnotes_cpp_FUN_004a8da0(int *param_1);
+STextView * core_fldnotes_cpp_TextView_ctor_FUN_004a8dd0(STextView *this_ptr);
+STextView * core_fldnotes_cpp_TextView_dtor_FUN_004a8de0(STextView *this_ptr,uint flags);
+void core_fldnotes_cpp_FUN_004a8e00(undefined4 *param_1);
+void core_fldnotes_cpp_FUN_004a8eb0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+undefined4 core_fldnotes_cpp_FUN_004a8ed0(undefined4 param_1,char *param_2);
+int core_fldnotes_cpp_FUN_004a8f30(int param_1,char *param_2);
+undefined4 core_fldnotes_cpp_FUN_004a9150(int param_1,undefined4 *param_2);
+void core_fldnotes_cpp_FUN_004a91b0(int param_1);
+void core_fldnotes_cpp_FUN_004a9230(int param_1,undefined4 param_2);
+void core_fldnotes_cpp_FUN_004a9270(int param_1);
+void core_fldnotes_cpp_FUN_004a9300(int param_1);
+undefined4 core_fldnotes_cpp_FUN_004a9330(int param_1,char *param_2);
+undefined4 core_fldnotes_cpp_FUN_004a9710(int param_1,int param_2,int param_3);
+undefined4 core_fldnotes_cpp_FUN_004a9770(int param_1,char *param_2);
+void core_fldnotes_cpp_FUN_004a97d0(int param_1,char *param_2);
+void core_fldnotes_cpp_FUN_004a9830(int param_1);
+void core_fldnotes_cpp_FUN_004a98b0(int param_1,int param_2);
+void core_fldnotes_cpp_FUN_004a98f0(int param_1);
+undefined1 * core_fldnotes_cpp_FUN_004a9930(int param_1);
+undefined4 core_fldnotes_cpp_FUN_004a9950(int param_1,int param_2);
+SNotesSection * core_fldnotes_cpp_NotesSection_ctor_FUN_004a9b70(SNotesSection *this_ptr);
+SNotesSection * core_fldnotes_cpp_NotesSection_dtor_FUN_004a9ba0(SNotesSection *this_ptr,uint flags);
+void core_fldnotes_cpp_FUN_004a9bc0(int param_1);
+undefined4 core_fldnotes_cpp_FUN_004a9c30(int param_1,char *param_2);
+char * core_fldnotes_cpp_FUN_004a9c80(int param_1,char *param_2,undefined4 param_3);
+bool core_fldnotes_cpp_FUN_004a9d90(int param_1,int param_2);
+SNotesMap * core_fldnotes_cpp_NotesMap_ctor_FUN_004a9e10(SNotesMap *this_ptr);
+SNotesMap * core_fldnotes_cpp_NotesMap_dtor_FUN_004a9e70(SNotesMap *this_ptr,uint flags);
+void core_fldnotes_cpp_FUN_004a9eb0(undefined4 *param_1);
+int core_fldnotes_cpp_FUN_004a9f30(int param_1);
+void core_fldnotes_cpp_FUN_004aa0b0(int *param_1);
+undefined4 core_fldnotes_cpp_FUN_004aa1a0(int param_1,char *param_2);
+void core_fldnotes_cpp_FUN_004aa200(int param_1,int param_2,int param_3,int param_4);
+void core_fldnotes_cpp_FUN_004aa2f0(int param_1,int param_2,int param_3,int param_4);
+int core_fldnotes_cpp_FUN_004aa350(int param_1,float *param_2);
+void core_fldnotes_cpp_FUN_004aa490(int *param_1,int param_2,int param_3);
+void core_fldnotes_cpp_FUN_004aa620(int param_1);
+undefined4 core_fldnotes_cpp_FUN_004aa6d0(undefined4 param_1,undefined4 param_2);
+void core_fldnotes_cpp_FUN_004aa780(undefined4 param_1,int param_2);
+void core_fldnotes_cpp_FUN_004aa7b0(undefined4 *param_1);
+CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr);
+CFieldNotes * core_fldnotes_cpp_CFieldNotes_dtor_FUN_004aa7e0(CFieldNotes *this_ptr,uint flags);
+undefined4 core_fldnotes_cpp_FUN_004aa810(char *param_1,char *param_2,char *param_3);
+void core_fldnotes_cpp_FUN_004ab7a0(undefined1 *param_1);
+undefined4 core_fldnotes_cpp_FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void core_fldnotes_cpp_FUN_004aba10(undefined4 param_1,undefined4 param_2);
+undefined4 core_fldnotes_cpp_FUN_004abb30(undefined4 param_1,undefined4 param_2);
+void core_fldnotes_cpp_FUN_004abb90(undefined4 param_1,undefined4 param_2);
+void core_fldnotes_cpp_FUN_004abcb0(undefined4 param_1,undefined4 param_2);
+void core_fldnotes_cpp_FUN_004abdc0(undefined4 param_1,char *param_2);
+void core_fldnotes_cpp_FUN_004abe00(int param_1);
+void core_fldnotes_cpp_FUN_004ac6b0(int param_1);
+void core_fldnotes_cpp_FUN_004ac900(undefined4 param_1,undefined4 param_2);
+void core_fldnotes_cpp_FUN_004acf00(undefined4 param_1,undefined4 param_2);
+SPageResourceMap * unkafter_fldnotes_cpp_PageResource_Map_dtor_FUN_004ad3c0(SPageResourceMap *this_ptr,uint flags);
+void unkafter_fldnotes_cpp_FUN_004ad410(undefined4 param_1);
+CAlphaBitmap * unkaddr_004a76f0_cpp_CAlphaBitmap_arrdtor6_FUN_004ad430(CAlphaBitmap *this_ptr,uint flags);
+SNotesMap * unkaddr_004a76f0_cpp_SNotesMap_arrdtor10_FUN_004ad450(SNotesMap *this_ptr,uint flags);
+SNotesSection * unkaddr_004a76f0_cpp_SNotesSection_arrdtor6_FUN_004ad470(SNotesSection *this_ptr,uint flags);
+void __cdecl core_flattn_cpp_staticInit_FUN_004ad490(void);
+void unkafter_flattn_cpp_FUN_004ad4c0(void);
+void unkafter_flattn_cpp_FUN_004ad4d0(undefined4 *param_1);
+void unkafter_flattn_cpp_FUN_004ad550(undefined4 *param_1,undefined4 *param_2);
+void unkafter_flattn_cpp_FUN_004ad5e0(undefined4 *param_1);
+void unkafter_flattn_cpp_FUN_004ad660(float *param_1,float *param_2);
+void unkafter_flattn_cpp_FUN_004ad6e0(float *param_1,float *param_2);
+void core_flies_cpp_staticInit_FUN_004ad750(void);
+void core_flies_cpp_factoryFuncFlies_FUN_004ad780(void);
+CDemonActorType * core_flies_cpp_CFlies_getActorType_FUN_004ad7a0(CFlies *this_ptr);
+CFlies * __cdecl core_flies_cpp_CFlies_ctor_FUN_004ad7b0(CFlies *this_ptr);
+void __cdecl core_flies_cpp_CFlies_setup_FUN_004ad870(CFlies *this_ptr);
+void __cdecl core_flies_cpp_CFlies_archive_FUN_004ad8b0(CFlies *this_ptr);
+void core_flies_cpp_FUN_004ad950(CFlies *param_1,float param_2);
+void __cdecl core_flies_cpp_drawFlyPixel_FUN_004add00(int screen_x,int screen_y,int z_depth);
+void __cdecl core_flies_cpp_drawFlyPixelClipped_FUN_004add90(int screen_x,int screen_y,int z_depth);
+int core_flies_cpp_FUN_004addd0(CDemonActor *param_1);
+void core_flies_cpp_FUN_004ae200(int param_1);
+undefined4 core_flies_cpp_FUN_004ae270(void);
+void __cdecl core_flies_cpp_FUN_004ae280(CFlies *this_ptr,int fly_index);
+float * core_flies_cpp_FUN_004ae380(int param_1,float *param_2);
+CFlies * __cdecl core_flies_cpp_FUN_004ae6c0(CDemonActor *actor);
+CFlies * core_flies_cpp_CFlies_dtor_FUN_004ae710(CFlies *this_ptr,uint flags);
+SFly * __cdecl core_flies_cpp_SFly_ctor_FUN_004ae760(SFly *this_ptr);
+void core_flintlck_cpp_staticInit_FUN_004ae780(void);
+void core_flintlck_cpp_factoryFuncFlintlock_FUN_004ae7b0(void);
+CDemonActorType * core_flintlck_cpp_CFlintlock_getActorType_FUN_004ae7d0(CFlintlock *this_ptr);
+CFlintlock * core_flintlck_cpp_CFlintlock_ctor_FUN_004ae7e0(CFlintlock *this_ptr);
+undefined4 core_flintlck_cpp_FUN_004ae850(CDemonActor *param_1);
+undefined4 core_flintlck_cpp_FUN_004af580(void);
+void core_flintlck_cpp_FUN_004af5b0(CWeapon *param_1);
+CFlintlock * core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags);
+int __cdecl engine_font_cpp_clipCharacter_FUN_004af6d0(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width );
+CBitFont * __cdecl engine_font_cpp_FUN_004af790(CBitFont *this_ptr);
+CBitFont * __cdecl engine_font_cpp_FUN_004af7b0(CBitFont *this_ptr,uint flags);
+void __cdecl engine_font_cpp_FUN_004af7d0(CBitFont *this_ptr);
+void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004af8f0(CBitFont *this_ptr,char *filename,int width,int height,int load_flags);
+void __cdecl engine_font_cpp_FUN_004af920(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
+void engine_font_cpp_FUN_004afbf0(int param_1,int param_2);
 

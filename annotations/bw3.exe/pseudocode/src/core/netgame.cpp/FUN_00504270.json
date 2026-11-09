@@ -1,0 +1,225 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 126,
+    "complexity_score": 94,
+    "cross_reference_count": 2,
+    "function_call_count": 9,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 44,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 170
+  },
+  "cross_references": [
+    {
+      "addr": "00503fb0",
+      "from_addr": "00504012",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00503efc",
+      "from_addr": "00503f77",
+      "name": "core_netgame.cpp_FUN_00503efc",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00504270",
+    "address_range": [
+      [
+        "00504270",
+        "005043a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_FUN_00504270",
+    "signature": "int __cdecl core_netgame_cpp_FUN_00504270(CNetGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00504c10",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_FUN_00504c10"
+    },
+    {
+      "addr": "0047cfa0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0"
+    },
+    {
+      "addr": "0047cf40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40"
+    },
+    {
+      "addr": "0056f970",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_bindSocket_FUN_0056f970"
+    },
+    {
+      "addr": "0056fc30",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_closeSocket_FUN_0056fc30"
+    },
+    {
+      "addr": "0056f930",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_createUDPSocket_FUN_0056f930"
+    },
+    {
+      "addr": "0056fd00",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_getSocketName_FUN_0056fd00"
+    },
+    {
+      "addr": "0056fd60",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_setSocketBlocking_FUN_0056fd60"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005806a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "01da6474",
+      "name": "DAT_01da6474",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01da6478",
+      "name": "DAT_01da6478",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00504012",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00503f77",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_00503efc",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.778846153846154,
+    "instruction_count": 104,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 13,
+      "CBRANCH": 4,
+      "COPY": 91,
+      "INT_ADD": 39,
+      "INT_AND": 74,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SCARRY": 14,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 26,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 40,
+      "INT_XOR": 5,
+      "INT_ZEXT": 2,
+      "LOAD": 23,
+      "POPCOUNT": 24,
+      "RETURN": 5,
+      "STORE": 38,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 497
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x180",
+      "severity": "mild",
+      "text": "this_ptr_00 = &this_ptr->field_0x180;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "(SNetworkAddr *)(&this_ptr->field_0x3c + *(int *)&this_ptr->field_0x124 * 0x80)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "(SNetworkAddr *)(&this_ptr->field_0x3c + *(int *)&this_ptr->field_0x124 * 0x80)",
+      "type": "unnamed_field"
+    }
+  ]
+}
