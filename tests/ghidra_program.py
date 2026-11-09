@@ -320,6 +320,28 @@ class Instruction:
         return self.operands[index]
 
 
+# One field of a struct's data: its name, and its value (a Scalar, an Address or None)
+class DataField:
+    def __init__(self, name, value):
+        self.name = name
+        self.value = value
+
+    def getFieldName(self):
+        return self.name
+
+    def getValue(self):
+        return self.value
+
+
+# A numeric value as Ghidra hands one out
+class Scalar:
+    def __init__(self, value):
+        self.value = value
+
+    def getValue(self):
+        return self.value
+
+
 class Data:
     def __init__(self, address, data_type, value = None, length = None, defined = True):
         self.address = address
@@ -329,6 +351,17 @@ class Data:
         self.defined = defined
         # {comment type name: text}, as CodeUnit.getComment(type) reads them
         self.comments = {}
+        # A struct's fields as data: DataField(name, value) for each, in order
+        self.fields = []
+
+    def getNumComponents(self):
+        return len(self.fields)
+
+    def getComponent(self, index):
+        return self.fields[index]
+
+    def getAddress(self):
+        return self.address
 
     def getComment(self, comment_type):
         return self.comments.get(str(comment_type))
@@ -420,6 +453,14 @@ class Listing:
         return data
 
 
+class FunctionTag:
+    def __init__(self, name):
+        self.name = name
+
+    def getName(self):
+        return self.name
+
+
 class LocalVariable:
     def __init__(self, name, data_type, first_use_offset):
         self.name = name
@@ -457,6 +498,78 @@ class Function:
         self.return_type = None
         self.varargs = False
         self.called = []
+        # The rest of what the functions export records, and the import sets
+        self.inline = False
+        self.noreturn = False
+        self.custom_storage = False
+        self.comment = None
+        self.tags = []
+        self.return_variable = None
+        # (update type, [parameters]) of each replaceParameters
+        self.replaced = []
+
+    def isInline(self):
+        return self.inline
+
+    def setInline(self, value):
+        self.inline = value
+
+    def hasNoReturn(self):
+        return self.noreturn
+
+    def setNoReturn(self, value):
+        self.noreturn = value
+
+    def hasCustomVariableStorage(self):
+        return self.custom_storage
+
+    def setCustomVariableStorage(self, value):
+        self.custom_storage = value
+
+    def setVarArgs(self, value):
+        self.varargs = value
+
+    def getComment(self):
+        return self.comment
+
+    def setComment(self, comment):
+        self.comment = comment
+
+    def getTags(self):
+        return [FunctionTag(tag) for tag in self.tags]
+
+    def addTag(self, name):
+        self.tags.append(name)
+
+    def setCallingConvention(self, name):
+        self.convention = name
+
+    def setReturnType(self, data_type, _source):
+        self.return_type = data_type
+
+    def getReturn(self):
+        return self.return_variable
+
+    def setReturn(self, data_type, storage, _source):
+        self.return_type = data_type
+        self.return_variable = ghidra_fake.Variable("<RETURN>", data_type, storage)
+
+    def setThunkedFunction(self, target):
+        self.thunk_target = target
+
+    # Numbered in order, as Ghidra's are
+    def replaceParameters(self, update, _force, _source, params):
+        self.replaced.append((update, list(params)))
+        self.parameters = list(params)
+        for ordinal, param in enumerate(self.parameters):
+            param.ordinal = ordinal
+
+    # The function keeps the variable it is handed, which is what Ghidra's hands back
+    def addLocalVariable(self, variable, _source):
+        if any(v.getName() == variable.getName() for v in self.local_variables):
+            raise ghidra_fake.DuplicateNameException(variable.getName())
+        self.local_variables.append(variable)
+        return variable
 
     def getParameters(self):
         return list(self.parameters)
@@ -538,6 +651,21 @@ class FunctionManager:
 
     def getFunctions(self, forward):
         return iter(sorted(self.functions.values(), key = lambda f: f.entry.getOffset(), reverse = not forward))
+
+    # A new function's calling convention is unknown until one is set, as in Ghidra
+    def createFunction(self, name, entry, body, _source):
+        function = Function(name, entry)
+        function.body = body
+        function.convention = "unknown"
+        self.functions[entry] = function
+        return function
+
+    def removeFunction(self, entry):
+        return self.functions.pop(entry, None) is not None
+
+    def getFunctionsOverlapping(self, address_set):
+        return iter([f for f in self.functions.values()
+                     if any(lo <= hi2 and lo2 <= hi for lo, hi in f.body.ranges for lo2, hi2 in address_set.ranges)])
 
 
 # A reference's kind, by its Ghidra name: a call, a flow (jumps and calls), or data
@@ -643,15 +771,28 @@ class AddressSpace:
 
 
 # Parses addresses as Ghidra's does: hex, with or without 0x, optionally "space:"
+class HashSpace:
+    def getAddress(self, offset):
+        address = Address(offset)
+        address.space_name = "HASH"
+        address.memory = False
+        return address
+
+
 class AddressFactory:
     def __init__(self, space):
         self.space = space
+        self.has_hash_space = True
 
     def getDefaultAddressSpace(self):
         return self.space
 
     def getAddressSpaces(self):
         return [self.space]
+
+    # The decompiler's HASH space, whose addresses name overrides; a test can take it away
+    def getAddressSpace(self, name):
+        return HashSpace() if name == "HASH" and self.has_hash_space else None
 
     # The default space's addresses, and EXTERNAL and register ones, which are not memory
     def getAddress(self, text):
@@ -684,12 +825,15 @@ class DataTypeManager:
     def add(self, *data_types):
         self.types.extend(data_types)
 
+    # Ghidra's overloads: (path), or (category path or its text, name)
     def getDataType(self, path_or_category, name = None):
+        if name is not None and not isinstance(path_or_category, str):
+            path_or_category = path_or_category.getPath()
         for data_type in self.types:
             category = data_type.getCategoryPath().getPath()
             if name is None and path_or_category == f"{category.rstrip('/')}/{data_type.getName()}":
                 return data_type
-            if name is not None and str(path_or_category) == category and name == data_type.getName():
+            if name is not None and path_or_category == category and name == data_type.getName():
                 return data_type
         return None
 
@@ -702,15 +846,23 @@ class DataTypeManager:
             if data_type.getName() == name:
                 found.add(data_type)
 
+    # A type at the path of one already here replaces it, as the REPLACE handler does
     def addDataType(self, data_type, _handler):
+        existing = self.getDataType(data_type.getCategoryPath(), data_type.getName())
+        if existing is not None:
+            self.types.remove(existing)
         self.types.append(data_type)
         return data_type
 
-    # Every use of `old` now refers to `new`, and `old` is gone
+    # Into a type already here, `old` merges: its uses refer to `new` and it is gone.
+    # Otherwise `old` takes `new`'s definition, staying the type its uses refer to.
     def replaceDataType(self, old, new, _update_category_path):
-        self.types.remove(old)
         self.replaced.append((old, new))
-        return new
+        if new in self.types:
+            self.types.remove(old)
+            return new
+        old.__dict__.update(new.__dict__)
+        return old
 
     def createCategory(self, path):
         self.categories.append(path.getPath())
@@ -873,6 +1025,7 @@ class Program:
         self.data_type_manager = DataTypeManager()
         self.domain_file = DomainFile()
         self.bookmark_manager = BookmarkManager()
+        self.registers = {"EAX": ghidra_fake.Register("EAX", 0), "ECX": ghidra_fake.Register("ECX", 4)}
         self.equate_table = EquateTable()
         self.external_manager = ExternalManager(self.symbol_table)
         # (name, committed) for each transaction, committed None while it is open
@@ -955,3 +1108,7 @@ class Program:
 
     def getLanguage(self):
         return self.language
+
+    # The x86 registers a test names, by name
+    def getRegister(self, name):
+        return self.registers.get(name)

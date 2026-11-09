@@ -1,18 +1,15 @@
-import os
 import re
-from ghidra_annotations.util import *
+
 from ghidra.program.model.address import AddressSet
-from ghidra.program.model.listing import Function
-from ghidra.program.model.listing import FunctionManager
-from ghidra.program.model.listing import LocalVariableImpl
-from ghidra.program.model.listing import Parameter
-from ghidra.program.model.listing import ParameterImpl
-from ghidra.program.model.listing import Variable
-from ghidra.program.model.listing import VariableStorage
-from ghidra.program.model.pcode import Varnode
+from ghidra.program.model.listing import Function, LocalVariableImpl, ParameterImpl, VariableStorage
 from ghidra.program.model.symbol import SourceType
-from ghidra.program.disassemble import Disassembler
-from ghidra.util.task import TaskMonitor
+from ghidra.util.exception import DuplicateNameException, InvalidInputException
+
+from ghidra_annotations.annotations.tracked import known_type
+
+from ghidra_annotations.util import (
+    clean_data, disassemble_at_addr, get_addr_obj, is_addr_disassembled, load_json_files, log_info, log_warning,
+    resolve_data_type_name, save_json_files)
 
 
 class FunctionNameAddressMismatchError(Exception):
@@ -113,11 +110,7 @@ def known_class_names(currentProgram):
     written by the data_types export, so depending on it here would make this
     gate's verdict depend on whether another exporter had already run.
     """
-    names = set()
-    it = currentProgram.getDataTypeManager().getAllDataTypes()
-    while it.hasNext():
-        names.add(it.next().getName())
-    return names
+    return {data_type.getName() for data_type in currentProgram.getDataTypeManager().getAllDataTypes()}
 
 
 def find_this_ptr_defects(functions, class_names):
@@ -172,171 +165,53 @@ def find_this_ptr_defects(functions, class_names):
 
 
 def is_function_external(currentProgram, function):
+    """An external function, or a thunk to one.
 
-    # Direct external check
+    An external function's entry point is in the external space and its symbol
+    is external, so isExternal() answers for all three.
+    """
     if function.isExternal():
         return True
-
-    # Check if it's a thunk
-    if function.isThunk():
-        thunk_target = function.getThunkedFunction(True)
-        if thunk_target:
-            if thunk_target.isExternal():
-                return True
-
-    # Check if function is in external memory space
-    entry_point = function.getEntryPoint()
-    if entry_point:
-        addr_space = entry_point.getAddressSpace()
-        if addr_space and addr_space.isExternalSpace():
-            return True
-
-    # Check if function symbols indicate external
-    symbol = function.getSymbol()
-    if symbol and symbol.isExternal():
-        return True
-    return False
-
-def extract_variable_names_from_conflict(conflict_message):
-
-    # Handle overlap conflicts: "Variables var1 and var2 overlap"
-    conflicting_vars = set()
-    overlap_match = re.search(r"Variables\s+(\w+)\s+and\s+(\w+)\s+overlap", conflict_message)
-    if overlap_match:
-        conflicting_vars.add(overlap_match.group(1))
-        conflicting_vars.add(overlap_match.group(2))
-        return conflicting_vars
-
-    # Handle invalid offset/size: "Variable var1 has invalid offset/size"
-    invalid_match = re.search(r"Variable\s+(\w+)\s+has\s+invalid", conflict_message)
-    if invalid_match:
-        conflicting_vars.add(invalid_match.group(1))
-        return conflicting_vars
-
-    # Try to extract any variable names from the message
-    var_names = re.findall(r"\b[a-zA-Z_][a-zA-Z0-9_]*\b", conflict_message)
-    excluded_words = {"Variable", "Variables", "has", "invalid", "offset", "size", "overlap", "and", "vs"}
-    for name in var_names:
-        if name not in excluded_words:
-            conflicting_vars.add(name)
-    return conflicting_vars
+    target = function.getThunkedFunction(True) if function.isThunk() else None
+    return target is not None and target.isExternal()
 
 def get_stack_conflicts(locals_data):
+    """(names, messages) for the stack locals an import could not place.
 
-    # Collect all stack variables with their ranges
-    stack_vars = []
+    One is out of the 16-bit offset range, or of a size no stack slot has, or
+    overlaps the next one up the frame.
+    """
+    stack_vars = sorted(((d.get("name"), d["storage"].get("offset", 0), d["storage"].get("size", 1))
+                         for d in locals_data if d.get("storage", {}).get("stack")), key = lambda v: v[1])
+    names, messages = set(), []
+    for i, (name, offset, size) in enumerate(stack_vars):
+        if offset < -32768 or offset > 32767:
+            names.add(name)
+            messages.append("Variable %s has invalid offset: %d" % (name, offset))
+        elif size <= 0 or size > 1024:
+            names.add(name)
+            messages.append("Variable %s has invalid size: %d" % (name, size))
+        elif i + 1 < len(stack_vars) and offset + size > stack_vars[i + 1][1]:
+            next_name, next_offset, next_size = stack_vars[i + 1]
+            names.update((name, next_name))
+            messages.append("Variables %s and %s overlap: [%d-%d] vs [%d-%d]" % (
+                name, next_name, offset, offset + size - 1, next_offset, next_offset + next_size - 1))
+    return names, messages
+
+
+def without_conflicting_storage(locals_data, names):
+    """The locals with the storage of the named ones dropped, and the names whose storage went."""
+    fixed, removed = [], []
     for local_data in locals_data:
-        storage_info = local_data.get("storage", {})
-        if storage_info.get("stack"):
-            offset = storage_info.get("offset", 0)
-            size = storage_info.get("size", 1)
-
-            # Calculate the range this variable occupies
-            start_offset = offset
-            end_offset = offset + size - 1
-            stack_vars.append({
-                "name": local_data.get("name"),
-                "offset": offset,
-                "size": size,
-                "start": start_offset,
-                "end": end_offset,
-                "data": local_data
-            })
-
-    # Sort by offset for easier overlap detection
-    stack_vars.sort(key=lambda x: x["offset"])
-
-    # Check for overlaps and invalid ranges
-    conflicts = []
-    for i, var in enumerate(stack_vars):
-
-        # Check offset
-        if var["offset"] < -32768 or var["offset"] > 32767:
-            conflicts.append("Variable %s has invalid offset: %d" % (var["name"], var["offset"]))
-            continue
-
-        # Check size
-        if var["size"] <= 0 or var["size"] > 1024:
-            conflicts.append("Variable %s has invalid size: %d" % (var["name"], var["size"]))
-            continue
-
-        # Check for overlaps with next variable
-        if i < len(stack_vars) - 1:
-            next_var = stack_vars[i + 1]
-            if var["end"] >= next_var["start"]:
-                conflicts.append("Variables %s and %s overlap: [%d-%d] vs [%d-%d]" % (
-                    var["name"], next_var["name"],
-                    var["start"], var["end"],
-                    next_var["start"], next_var["end"]))
-    return conflicts
-
-def fix_stack_conflicts(conflicts, locals_data):
-
-    # Check conflicts
-    if not conflicts or not locals_data:
-        return locals_data, []
-
-    # Build set of all conflicting variable names
-    conflicting_vars = set()
-    for conflict in conflicts:
-        vars_in_conflict = extract_variable_names_from_conflict(conflict)
-        conflicting_vars.update(vars_in_conflict)
-
-    # Only remove storage from conflicting variables
-    fixed_locals = []
-    removed_vars = []
-    for local_data in locals_data:
-        var_name = local_data.get("name", "")
-        if var_name in conflicting_vars:
-            local_copy = local_data.copy()
-            if "storage" in local_copy:
-                del local_copy["storage"]
-                removed_vars.append(var_name)
-                log_info("Removed storage from conflicting variable: %s" % var_name)
-            fixed_locals.append(local_copy)
-        else:
-            fixed_locals.append(local_data)
-    return fixed_locals, removed_vars
+        if local_data.get("name") in names and "storage" in local_data:
+            local_data = {k: v for k, v in local_data.items() if k != "storage"}
+            removed.append(local_data.get("name"))
+        fixed.append(local_data)
+    return fixed, removed
 
 def delete_functions(currentProgram, path):
-
-    # Load functions to get importable markings
-    log_info("Loading functions to determine which are importable")
-    functions_data = load_json_files(path, "functions")
-    if functions_data is None:
-        log_error("Unable to load functions")
-        return
-
-    # Get list of importable function addresses
-    importable_functions = set()
-    for fn_data in functions_data:
-        if fn_data.get("importable", False):
-            fn_addr = fn_data.get("addr")
-            if fn_addr:
-                importable_functions.add(fn_addr)
-    if not importable_functions:
-        log_info("No existing importable functions found - nothing to delete")
-        return
-
-    # Get current functions in Ghidra that still exist
-    fm = currentProgram.getFunctionManager()
-    current_functions = set()
-    for function in fm.getFunctions(True):
-        if not is_function_external(currentProgram, function):
-            current_functions.add(str(function.getEntryPoint()))
-
-    # Find functions that were importable but no longer exist in Ghidra
-    # These are functions that were deleted in Ghidra and should be removed from JSON
-    functions_to_remove = importable_functions - current_functions
-    log_info("Found %d importable functions that were deleted in Ghidra: %s" % (len(functions_to_remove), list(functions_to_remove)))
-
-    # Note: We don't actually delete anything from Ghidra here since they're already gone
-    # This function now serves as a validation/logging step
-    # The real cleanup happens during export when we only export existing functions
-    if functions_to_remove:
-        log_info("These functions will be removed from JSON during next export:")
-        for addr in functions_to_remove:
-            log_info("  - Function at %s (deleted in Ghidra)" % addr)
+    """Removes nothing: the import creates or updates each function in place."""
+    log_info("Functions are updated in place by the import, never deleted")
 
 def export_variable_storage(currentProgram, variable):
 
@@ -354,42 +229,24 @@ def export_variable_storage(currentProgram, variable):
     elif variable.isUniqueVariable():
         storage_info["unassigned"] = True
 
-    # Get variable storage details
+    # The storage's size, validity and varnodes; a register's varnode is made from the register
     var_storage = variable.getVariableStorage()
-    if var_storage:
-
-        # Size
-        size = var_storage.size()
-        if size > 0:
-            storage_info["size"] = size
-
-        # Validity
-        if not var_storage.isValid():
-            storage_info["invalid"] = True
-
-        # Direct varnode access
-        varnodes = []
-        for varnode in var_storage.getVarnodes():
-            vn_data = {
-                "addr": str(varnode.getAddress()),
-                "size": varnode.getSize()
-            }
-            if varnode.getOffset() != 0:
-                vn_data["offset"] = varnode.getOffset()
-            varnodes.append(vn_data)
-
-        # Try to get varnodes another way
-        if not varnodes and variable.isRegisterVariable():
-            reg = variable.getRegister()
-            if reg:
-                varnodes.append({
-                    "addr": "register:%08x" % reg.getOffset(),
-                    "size": reg.getBitLength() // 8
-                })
-
-        # Set varnodes
-        if varnodes:
-            storage_info["varnodes"] = varnodes
+    if var_storage.size() > 0:
+        storage_info["size"] = var_storage.size()
+    if not var_storage.isValid():
+        storage_info["invalid"] = True
+    varnodes = []
+    for varnode in var_storage.getVarnodes():
+        vn_data = {"addr": str(varnode.getAddress()), "size": varnode.getSize()}
+        if varnode.getOffset() != 0:
+            vn_data["offset"] = varnode.getOffset()
+        varnodes.append(vn_data)
+    if not varnodes and variable.isRegisterVariable():
+        reg = variable.getRegister()
+        varnodes.append({"addr": "register:%08x" % reg.getOffset(), "size": reg.getBitLength() // 8})
+    # Only what is there: clean_data keeps a value that only empties once cleaned
+    if varnodes:
+        storage_info["varnodes"] = varnodes
     return storage_info
 
 def export_function_variables(currentProgram, function):
@@ -443,300 +300,133 @@ def export_function_variables(currentProgram, function):
             local_info["cmt"] = comment
         locals_list.append(local_info)
 
-    # Validate and fix the exported locals
+    # A local whose storage an import could not place is exported without it
     if locals_list:
-        initial_conflicts = get_stack_conflicts(locals_list)
-        if initial_conflicts:
-
-            # Document what needs to be fixed
-            log_info("Storage conflicts detected in function %s" % function.getName())
-            for conflict in initial_conflicts:
-                log_info("  Conflict: %s" % conflict)
-
-            # Fix conflicts
-            locals_list, removed_vars = fix_stack_conflicts(initial_conflicts, locals_list)
-
-            # Document what was changed
-            if removed_vars:
-                variable_info["storage_conflicts_resolved"] = removed_vars
-                log_info("Removed storage from %d conflicting variables: %s" % (len(removed_vars), removed_vars))
-
-            # Verify the fix worked
-            remaining_conflicts = get_stack_conflicts(locals_list)
-            if remaining_conflicts:
-                log_info("Warning: Some conflicts remain after:")
-                for conflict in remaining_conflicts:
-                    log_info("  Remaining: %s" % conflict)
-            else:
-                log_info("All storage conflicts successfully resolved")
+        names, messages = get_stack_conflicts(locals_list)
+        if names:
+            log_info("Storage conflicts in function %s: %s" % (function.getName(), "; ".join(messages)))
+            locals_list, removed_vars = without_conflicting_storage(locals_list, names)
+            variable_info["storage_conflicts_resolved"] = removed_vars
         variable_info["locals"] = locals_list
 
     # Export return storage information
     return_var = function.getReturn()
-    if return_var:
-        ret_storage = export_variable_storage(currentProgram, return_var)
-        if ret_storage:
-            variable_info["ret_storage"] = ret_storage
+    ret_storage = export_variable_storage(currentProgram, return_var) if return_var else None
+    if ret_storage:
+        variable_info["ret_storage"] = ret_storage
     return variable_info
 
 def export_function_body(currentProgram, function):
-    body_ranges = []
-    function_body = function.getBody()
-    if function_body:
-        for addr_range in function_body:
-            range_info = {
-                "start": str(addr_range.getMinAddress()),
-                "end": str(addr_range.getMaxAddress()),
-                "size": addr_range.getLength()
-            }
-            body_ranges.append(range_info)
-    return body_ranges
+    return [{"start": str(r.getMinAddress()), "end": str(r.getMaxAddress()), "size": r.getLength()}
+            for r in function.getBody()]
 
 def import_variable_storage(currentProgram, storage_info, data_type):
+    """The VariableStorage a recorded storage stands for, or None to leave the storage to Ghidra.
 
-    # Ignore empty storage info
+    A stack slot must fit its type and the frame; a hash-addressed varnode is a
+    decompiler override of a variable's type.
+    """
+    storage = None
     if not storage_info:
         return None
-
-    # Stack variable
     if storage_info.get("stack"):
-        stack_offset = storage_info.get("offset", 0)
-        expected_size = storage_info.get("size", 1)
-        actual_size = data_type.getLength()
-
-        # Validate size consistency
-        if expected_size != actual_size:
-            log_info("Storage size mismatch: expected=%d, actual=%d - skipping custom storage" % (
-                expected_size, actual_size))
+        offset, size = storage_info.get("offset", 0), data_type.getLength()
+        if storage_info.get("size", 1) != size or not -32768 <= offset <= 32767 or not 0 < size <= 1024:
+            log_info("Stack storage at %d of size %s does not fit a %d-byte type" % (
+                offset, storage_info.get("size"), size))
             return None
-
-        # Validate offset bounds
-        if stack_offset < -32768 or stack_offset > 32767:
-            log_info("Stack offset out of bounds: %d - skipping custom storage" % stack_offset)
-            return None
-
-        # Validate size bounds
-        if actual_size <= 0 or actual_size > 1024:
-            log_info("Data type size out of bounds: %d - skipping custom storage" % actual_size)
-            return None
-
-        # Use program's address factory
-        addr_factory = currentProgram.getAddressFactory()
-        stack_space = addr_factory.getStackSpace()
-
-        # Test stack address creation
-        stack_addr = stack_space.getAddress(stack_offset)
-
-        # Create storage with actual data type length (not expected size)
-        storage = VariableStorage(currentProgram, stack_offset, actual_size)
-        if storage.isValid():
-            log_info("Created valid stack storage: offset=%d, size=%d" % (stack_offset, actual_size))
-            return storage
-        else:
-            log_info("Created stack storage is invalid")
-            return None
-
-    # Register variable
+        storage = VariableStorage(currentProgram, offset, size)
     elif storage_info.get("reg"):
-        reg_name = storage_info["reg"]
-        register = currentProgram.getRegister(reg_name)
-        if register:
-            storage = VariableStorage(currentProgram, register)
-            return storage if storage.isValid() else None
-
-    # Memory variable
+        register = currentProgram.getRegister(storage_info["reg"])
+        storage = VariableStorage(currentProgram, register) if register else None
     elif storage_info.get("mem"):
-        addr_str = storage_info["mem"]
-        address = get_addr_obj(currentProgram, addr_str)
-        if address:
-            storage = VariableStorage(currentProgram, address, data_type.getLength())
-            return storage if storage.isValid() else None
+        address = get_addr_obj(currentProgram, storage_info["mem"])
+        storage = VariableStorage(currentProgram, address, data_type.getLength()) if address else None
+    elif len(storage_info.get("varnodes", [])) == 1 and storage_info["varnodes"][0].get("addr", "").startswith("HASH:"):
+        varnode = storage_info["varnodes"][0]
+        hash_space = currentProgram.getAddressFactory().getAddressSpace("HASH")
+        if hash_space is not None:
+            address = hash_space.getAddress(int(varnode["addr"][len("HASH:"):], 16))
+            storage = VariableStorage(currentProgram, address, varnode.get("size", data_type.getLength()))
+    return storage if storage is not None and storage.isValid() else None
 
-    # Complex storage with varnodes (including HASH-addressed decompiler overrides)
-    elif storage_info.get("varnodes"):
-        varnodes = storage_info["varnodes"]
-        if len(varnodes) == 1 and str(varnodes[0].get("addr", "")).startswith("HASH:"):
-            # Reconstruct hash-addressed variable storage (decompiler type overrides)
-            hash_hex = str(varnodes[0]["addr"]).replace("HASH:", "")
-            hash_offset = long(hash_hex, 16)
-            vn_size = varnodes[0].get("size", data_type.getLength())
-            try:
-                addr_factory = currentProgram.getAddressFactory()
-                hash_space = addr_factory.getAddressSpace("HASH")
-                if hash_space:
-                    hash_addr = hash_space.getAddress(hash_offset)
-                    storage = VariableStorage(currentProgram, hash_addr, vn_size)
-                    if storage.isValid():
-                        log_info("Created HASH variable storage: %s size=%d" % (varnodes[0]["addr"], vn_size))
-                        return storage
-                    else:
-                        log_info("HASH variable storage is invalid: %s" % varnodes[0]["addr"])
-            except Exception as e:
-                log_info("Failed to create HASH variable storage: %s" % str(e))
-        return None
-    return None
+def import_parameters(currentProgram, function, params_data, custom_storage):
+    """Replace the function's parameters with the recorded ones.
 
-def import_function_variables(currentProgram, function, variables_data):
+    The recorded storage is used only when the function has custom storage;
+    otherwise the calling convention places them. A parameter of a type the
+    program lacks leaves the parameters as they are, since dropping or
+    retyping one would change the signature.
+    """
+    params = []
+    for param_data in params_data:
+        param_type = known_type(currentProgram, param_data.get("type"))
+        if param_type is None:
+            log_info("%s: parameter %s has a type the program lacks (%s); parameters left as they are" % (
+                function.getName(), param_data.get("name"), param_data.get("type")))
+            return
+        storage = import_variable_storage(currentProgram, param_data.get("storage"), param_type) \
+            if custom_storage else None
+        param = ParameterImpl(param_data.get("name", "param"), param_type, storage, currentProgram) \
+            if storage is not None else ParameterImpl(param_data.get("name", "param"), param_type, currentProgram)
+        if param_data.get("cmt"):
+            param.setComment(param_data["cmt"])
+        params.append(param)
+    if params:
+        update = (Function.FunctionUpdateType.CUSTOM_STORAGE if custom_storage
+                  else Function.FunctionUpdateType.DYNAMIC_STORAGE_ALL_PARAMS)
+        function.replaceParameters(update, True, SourceType.USER_DEFINED, params)
 
-    # Import parameters
-    params_data = variables_data.get("params", [])
-    new_params = []
-    for i, param_data in enumerate(params_data):
-        param_name = param_data.get("name", "param")
-        param_type_name = param_data.get("type")
-        param_type = resolve_data_type_obj(currentProgram, param_type_name)
-        param_comment = param_data.get("cmt")
-        storage_info = param_data.get("storage", {})
-        if param_type:
 
-            # Try custom storage first
-            param = None
-            custom_storage = import_variable_storage(currentProgram, storage_info, param_type)
-            if custom_storage:
-                param = ParameterImpl(param_name, param_type, custom_storage, currentProgram)
+def local_unchanged(currentProgram, existing, local_data):
+    """Whether a local already has the recorded type, stack slot, comment and first use."""
+    storage, recorded = export_variable_storage(currentProgram, existing), local_data.get("storage", {})
+    return (resolve_data_type_name(currentProgram, existing.getDataType()) == local_data.get("type")
+            and (storage.get("offset"), storage.get("size")) == (recorded.get("offset"), recorded.get("size"))
+            and existing.getComment() == local_data.get("cmt")
+            and existing.getFirstUseOffset() == local_data.get("use", 0))
 
-            # Fallback to register if available
-            if param is None and storage_info.get("reg"):
-                reg = currentProgram.getRegister(storage_info["reg"])
-                if reg:
-                    param = ParameterImpl(param_name, param_type, reg, currentProgram)
 
-            # Final fallback to automatic
-            if param is None:
-                param = ParameterImpl(param_name, param_type, currentProgram)
-
-            # Set comment
-            if param_data.get("cmt"):
-                param.setComment(param_data.get("cmt"))
-
-            # Add parameter
-            new_params.append(param)
-
-    # Replace function parameters
-    if new_params:
-        function.replaceParameters(
-            Function.FunctionUpdateType.CUSTOM_STORAGE,
-            True,
-            SourceType.USER_DEFINED,
-            new_params)
-
-    # Import local variables
-    locals_data = variables_data.get("locals", [])
-
-    # Get existing variables mapped by name
-    existing_locals = {var.getName(): var for var in function.getLocalVariables()}
-    imported_names = {local_data.get("name") for local_data in locals_data}
-
-    # Only remove variables that are NOT in the import data
-    for var_name, existing_var in existing_locals.items():
-        if var_name not in imported_names:
-            function.removeVariable(existing_var)
-            log_info("Removed variable not in import: %s" % var_name)
-
-    # Process each imported variable
+def import_locals(currentProgram, function, locals_data):
+    """Make the function's locals the recorded ones: others removed, changed ones remade."""
+    existing = {var.getName(): var for var in function.getLocalVariables()}
+    recorded_names = {local_data.get("name") for local_data in locals_data}
+    for name, variable in existing.items():
+        if name not in recorded_names:
+            function.removeVariable(variable)
     for local_data in locals_data:
-        local_name = local_data.get("name", "local")
-        local_type_name = local_data.get("type")
-        local_comment = local_data.get("cmt")
-        storage_info = local_data.get("storage", {})
-        first_use_offset = local_data.get("use", 0)
-        original_type_name = local_type_name
-        function_address = str(function.getEntryPoint()).replace("0x", "").lower()
+        name = local_data.get("name", "local")
+        if name in existing and local_unchanged(currentProgram, existing[name], local_data):
+            continue
+        local_type = known_type(currentProgram, local_data.get("type"))
+        if local_type is None:
+            log_info("%s: local %s has a type the program lacks (%s)" % (function.getName(), name,
+                                                                        local_data.get("type")))
+            continue
+        if name in existing:
+            function.removeVariable(existing[name])
+        storage = import_variable_storage(currentProgram, local_data.get("storage"), local_type)
+        local = LocalVariableImpl(name, local_data.get("use", 0), local_type,
+                                  storage if storage is not None else VariableStorage.UNASSIGNED_STORAGE,
+                                  currentProgram)
+        try:
+            added = function.addLocalVariable(local, SourceType.USER_DEFINED)
+        except (DuplicateNameException, InvalidInputException) as error:
+            log_info("%s: local %s not added: %s" % (function.getName(), name, error))
+            continue
+        # The comment goes on the variable the function made, not the one handed to it
+        if local_data.get("cmt"):
+            added.setComment(local_data["cmt"])
 
-        # Check if variable already exists
-        existing_var = existing_locals.get(local_name)
-        if existing_var:
-            existing_type_name = resolve_data_type_name(currentProgram, existing_var.getDataType())
-            existing_storage = export_variable_storage(currentProgram, existing_var)
-            existing_comment = existing_var.getComment()
-            existing_first_use = existing_var.getFirstUseOffset()
 
-            # Check if everything matches (using the potentially fixed type name)
-            type_matches = (existing_type_name == local_type_name)
-            storage_matches = (existing_storage.get("offset") == storage_info.get("offset") and
-                             existing_storage.get("size") == storage_info.get("size"))
-            comment_matches = (existing_comment == local_comment)
-            first_use_matches = (existing_first_use == first_use_offset)
-
-            if type_matches and storage_matches and comment_matches and first_use_matches:
-                log_info("Skipping unchanged variable: %s (%s, offset=%s, size=%s)" % (
-                    local_name, existing_type_name,
-                    storage_info.get("offset"), storage_info.get("size")))
-                continue
-
-            # If it doesn't match, remove and recreate
-            if original_type_name != local_type_name:
-                log_info("Updating variable %s at %s: %s -> %s (oscillation fix applied)" % (
-                    local_name, function_address, existing_type_name, local_type_name))
-            else:
-                log_info("Updating changed variable: %s (type: %s -> %s, offset=%s, size: %s -> %s)" % (
-                    local_name, existing_type_name, local_type_name,
-                    existing_storage.get("offset"), existing_storage.get("size"), storage_info.get("size")))
-            function.removeVariable(existing_var)
-        else:
-            if original_type_name != local_type_name:
-                log_info("Creating new variable: %s at %s (%s, offset=%s, size=%s) - oscillation fix applied" % (
-                    local_name, function_address, local_type_name, storage_info.get("offset"), storage_info.get("size")))
-            else:
-                log_info("Creating new variable: %s (%s, offset=%s, size=%s)" % (
-                    local_name, local_type_name, storage_info.get("offset"), storage_info.get("size")))
-
-        # Create new variable (only for changed/new variables, using the potentially fixed type)
-        local_type = resolve_data_type_obj(currentProgram, local_type_name)
-        if local_type:
-
-            # Create local variable
-            local_var = None
-            if storage_info.get("stack"):
-                stack_offset = storage_info.get("offset", 0)
-                expected_size = storage_info.get("size", 1)
-                actual_size = local_type.getLength()
-
-                # Validate size consistency
-                if expected_size != actual_size:
-                    log_info("Storage size mismatch: expected=%d, actual=%d - skipping custom storage" % (
-                        expected_size, actual_size))
-                    custom_storage = None
-                else:
-                    custom_storage = import_variable_storage(currentProgram, storage_info, local_type)
-
-                # Create local variable
-                if custom_storage:
-                    local_var = LocalVariableImpl(local_name, first_use_offset, local_type, custom_storage, currentProgram)
-                    log_info("Created local variable %s with custom storage" % local_name)
-                else:
-                    local_var = LocalVariableImpl(local_name, first_use_offset, local_type, VariableStorage.UNASSIGNED_STORAGE, currentProgram)
-                    log_info("Created local variable %s with unassigned storage" % local_name)
-            else:
-                custom_storage = import_variable_storage(currentProgram, storage_info, local_type)
-                if custom_storage:
-                    local_var = LocalVariableImpl(local_name, first_use_offset, local_type, custom_storage, currentProgram)
-                else:
-                    local_var = LocalVariableImpl(local_name, first_use_offset, local_type, VariableStorage.UNASSIGNED_STORAGE, currentProgram)
-
-            # Add the variable to the function
-            if local_var:
-                try:
-                    function.addLocalVariable(local_var, SourceType.USER_DEFINED)
-                    log_info("Successfully added local variable: %s (%s)" % (local_name, local_type_name))
-                except Exception as e:
-                    log_info("Failed to add local variable %s: %s" % (local_name, str(e)))
-                    continue
-
-            # Set additional properties
-            if local_var:
-                if local_comment:
-                    local_var.setComment(local_comment)
-                if first_use_offset != 0:
-                    local_var.setFirstUseOffset(first_use_offset)
-
-    # Import return storage
-    return_storage_data = variables_data.get("ret_storage")
-    if return_storage_data:
-        return_type = function.getReturnType()
-        custom_return_storage = import_variable_storage(currentProgram, return_storage_data, return_type)
-        if custom_return_storage:
-            function.setReturn(return_type, custom_return_storage, SourceType.USER_DEFINED)
+def import_function_variables(currentProgram, function, variables_data, custom_storage = False):
+    import_parameters(currentProgram, function, variables_data.get("params", []), custom_storage)
+    import_locals(currentProgram, function, variables_data.get("locals", []))
+    # Only a custom-storage function keeps a return storage of its own; otherwise the convention places it
+    return_storage = import_variable_storage(currentProgram, variables_data.get("ret_storage"),
+                                             function.getReturnType()) if custom_storage else None
+    if return_storage is not None:
+        function.setReturn(function.getReturnType(), return_storage, SourceType.USER_DEFINED)
 
 def import_function_body(currentProgram, fn_addr, body_ranges):
 
@@ -778,150 +468,73 @@ def should_import_return_type(fn_return, fn_variables):
     # Otherwise, it's safe to set the return type
     return True
 
-def import_functions(currentProgram, path):
-
-    # Get managers
-    dtm = currentProgram.getDataTypeManager()
+def place_function(currentProgram, fn, fn_addr):
+    """The function the record describes, made or moved to its body; overlapping functions are removed."""
     fm = currentProgram.getFunctionManager()
+    body_ranges = fn.get("body", [])
+    for range_info in body_ranges:
+        start_addr = get_addr_obj(currentProgram, range_info["start"])
+        end_addr = get_addr_obj(currentProgram, range_info["end"])
+        if start_addr and end_addr and not is_addr_disassembled(currentProgram, start_addr):
+            disassemble_at_addr(currentProgram, start_addr, end_addr)
+    body = import_function_body(currentProgram, fn_addr, body_ranges)
+    for other in list(fm.getFunctionsOverlapping(body)):
+        if other.getEntryPoint() != fn_addr:
+            log_info("Removing %s at %s, which overlaps %s" % (other.getName(), other.getEntryPoint(), fn["name"]))
+            fm.removeFunction(other.getEntryPoint())
+    function = fm.getFunctionAt(fn_addr)
+    if function is None:
+        return fm.createFunction(fn["name"], fn_addr, body, SourceType.USER_DEFINED)
+    function.setName(fn["name"], SourceType.USER_DEFINED)
+    if body_ranges:
+        function.setBody(body)
+    return function
 
-    # Load functions
-    log_info("Loading functions")
-    functions = load_json_files(path, "functions")
-    if functions is None:
-        log_error("Unable to load functions")
 
-    # Import functions
+def apply_function(currentProgram, function, fn):
+    """Set the record's signature, flags, variables, thunk target, tags and comment on the function."""
+    if should_import_return_type(fn.get("ret"), fn.get("vars")):
+        return_type = known_type(currentProgram, fn["ret"])
+        if return_type is not None:
+            function.setReturnType(return_type, SourceType.USER_DEFINED)
+    if fn.get("conv"):
+        function.setCallingConvention(fn["conv"])
+    # Set both ways: a flag the record lacks is off
+    function.setInline(bool(fn.get("inline")))
+    function.setVarArgs(bool(fn.get("variadic")))
+    function.setNoReturn(bool(fn.get("noreturn")))
+    function.setCustomVariableStorage(bool(fn.get("custom_storage")))
+    if fn.get("vars"):
+        import_function_variables(currentProgram, function, fn["vars"], bool(fn.get("custom_storage")))
+    target_addr = get_addr_obj(currentProgram, fn.get("thtarget")) if fn.get("thunk") else None
+    target = currentProgram.getFunctionManager().getFunctionAt(target_addr) if target_addr else None
+    if target is not None:
+        function.setThunkedFunction(target)
+    for tag_name in fn.get("tags", []):
+        function.addTag(tag_name)
+    if fn.get("cmt"):
+        function.setComment(fn["cmt"])
+
+
+def import_functions(currentProgram, path):
     log_info("Importing functions")
     tx_id = currentProgram.startTransaction("Import Functions")
     try:
-        for fn in functions:
-            fn_name = fn.get("name")
+        for fn in load_json_files(path, "functions"):
             fn_addr = get_addr_obj(currentProgram, fn.get("addr"))
-            fn_return = fn.get("ret")
-            fn_conv = fn.get("conv")
-            fn_inline = fn.get("inline")
-            fn_variadic = fn.get("variadic")
-            fn_thunked = fn.get("thunk")
-            fn_thunktarget = get_addr_obj(currentProgram, fn.get("thtarget"))
-            fn_custom_storage = fn.get("custom_storage")
-            fn_tags = fn.get("tags", [])
-            fn_comment = fn.get("cmt")
-            fn_variables = fn.get("vars")
-            fn_body_ranges = fn.get("body", [])
-            fn_importable = fn.get("importable", False)
-            if not fn_name or not fn_addr or not fn_importable:
+            if not fn.get("name") or not fn_addr or not fn.get("importable", False):
                 continue
-
-            # Disassemble function if not already
-            log_info("Disassembling function for %s" % fn_name)
-            for range_info in fn_body_ranges:
-                start_addr = get_addr_obj(currentProgram, range_info["start"])
-                end_addr = get_addr_obj(currentProgram, range_info["end"])
-                if is_addr_disassembled(currentProgram, start_addr):
-                    continue
-                if start_addr and end_addr:
-                    log_info("Disassembling function range from %s to %s" % (start_addr, end_addr))
-                    disassemble_at_addr(currentProgram, start_addr, end_addr)
-
-            # Get function body
-            function_body = import_function_body(currentProgram, fn_addr, fn_body_ranges)
-
-            # Check for and remove overlapping functions
-            removed_functions = []
-            for addr_range in function_body.getAddressRanges():
-                current_addr = addr_range.getMinAddress()
-                while current_addr and current_addr.compareTo(addr_range.getMaxAddress()) <= 0:
-                    existing_function = fm.getFunctionContaining(current_addr)
-                    if existing_function and existing_function.getEntryPoint() != fn_addr:
-                        existing_entry = existing_function.getEntryPoint()
-                        existing_name = existing_function.getName()
-                        if existing_entry not in removed_functions:
-                            log_info("Removing overlapping function %s at %s to make room for %s" % (
-                                existing_name, existing_entry, fn_name))
-                            fm.removeFunction(existing_entry)
-                            removed_functions.append(existing_entry)
-
-                    # Move to next address
-                    try:
-                        current_addr = current_addr.next()
-                    except:
-                        break
-                    if current_addr is None:
-                        break
-
-            # Create or update function
-            log_info("Creating or updating function %s with body containing %d ranges" % (fn_addr, len(fn_body_ranges)))
-            function = fm.getFunctionAt(fn_addr)
-            if not function:
-                function = fm.createFunction(fn_name, fn_addr, function_body, SourceType.USER_DEFINED)
-            else:
-                function.setName(fn_name, SourceType.USER_DEFINED)
-                if fn_body_ranges:
-                    function.setBody(function_body)
-                    log_info("Updated function body for %s" % fn_name)
-
-            # Set return type (only if it's meaningful)
-            if should_import_return_type(fn_return, fn_variables):
-                ret_type = resolve_data_type_obj(currentProgram, fn_return)
-                function.setReturnType(ret_type, SourceType.USER_DEFINED)
-
-            # Set calling convention (only if specified)
-            if fn_conv:
-                function.setCallingConvention(fn_conv)
-
-            # Set boolean properties (only if true)
-            if fn_inline:
-                function.setInline(True)
-            if fn_variadic:
-                function.setVarArgs(True)
-            if fn_custom_storage:
-                function.setCustomVariableStorage(True)
-
-            # Import variables
-            if fn_variables:
-                import_function_variables(currentProgram, function, fn_variables)
-
-            # Thunks
-            if fn_thunked and fn_thunktarget:
-                target_func = fm.getFunctionAt(fn_thunktarget)
-                if target_func:
-                    function.setThunkedFunction(target_func)
-
-            # Tags
-            for tag_name in fn_tags:
-                function.addTag(tag_name)
-
-            # Comment
-            if fn_comment:
-                function.setComment(fn_comment)
+            apply_function(currentProgram, place_function(currentProgram, fn, fn_addr), fn)
     finally:
         currentProgram.endTransaction(tx_id, True)
-        log_info("Import complete")
+    log_info("Import complete")
 
 def export_functions(currentProgram, path, allow_name_address_mismatch=False,
                      allow_this_ptr_mismatch=False):
 
-    # Load existing functions to preserve importable markings
-    existing_importable = {}
-    existing_thunk_info = {}
-    try:
-        existing_functions = load_json_files(path, "functions")
-        if existing_functions:
-            log_info("Loading existing importable markings and thunk information")
-            for fn_data in existing_functions:
-                fn_addr = fn_data.get("addr")
-                if fn_addr:
-                    existing_importable[fn_addr] = fn_data.get("importable", False)
-                    log_info("Preserving importable marking for function at: %s" % fn_addr)
-                    if fn_data.get("thunk") or fn_data.get("thtarget"):
-                        existing_thunk_info[fn_addr] = {
-                            "thunk": fn_data.get("thunk", False),
-                            "thtarget": fn_data.get("thtarget")
-                        }
-                        log_info("Preserving thunk info for function at: %s (thunk=%s, target=%s)" %
-                                (fn_addr, fn_data.get("thunk"), fn_data.get("thtarget")))
-    except:
-        log_info("No existing functions file found, all functions will default to non-importable")
+    # The importable flags are the user's, kept from the previous export; everything else is Ghidra's
+    existing_importable = {fn_data["addr"]: fn_data.get("importable", False)
+                           for fn_data in load_json_files(path, "functions") if fn_data.get("addr")}
 
     # Gather functions
     functions = []
@@ -941,7 +554,6 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False,
         func_variables = export_function_variables(currentProgram, f)
         func_body_ranges = export_function_body(currentProgram, f)
         func_importable = existing_importable.get(func_entry, True)
-        func_existing_thunk = existing_thunk_info.get(func_entry, {})
 
         # Build function data with only non-default values
         func_data = {
@@ -953,17 +565,11 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False,
         # Always include return type
         func_data["ret"] = func_ret if func_ret else "void"
 
-        # Include function body ranges if available
-        if func_body_ranges:
-            func_data["body"] = func_body_ranges
-
-        # Only include variables if they exist
-        if func_variables:
+        # Only what is there: clean_data keeps a value that only empties once cleaned
+        func_data["body"] = func_body_ranges
+        func_data["tags"] = func_tags
+        if any(func_variables.values()):
             func_data["vars"] = func_variables
-
-        # Only include tags if they exist
-        if func_tags:
-            func_data["tags"] = func_tags
 
         # Only include calling convention if not default
         if func_conv and func_conv != "unknown":
@@ -979,21 +585,14 @@ def export_functions(currentProgram, path, allow_name_address_mismatch=False,
         if func_custom_storage:
             func_data["custom_storage"] = True
 
-        # Handle thunk information
-        final_thunked = func_thunked or func_existing_thunk.get("thunk", False)
-        final_thunk_target = func_thunk_target or func_existing_thunk.get("thtarget")
-        if final_thunked:
+        # A thunk and its target, as Ghidra has them now
+        if func_thunked:
             func_data["thunk"] = True
-            if final_thunk_target:
-                func_data["thtarget"] = final_thunk_target
-                log_info("Preserving thunk relationship for %s -> %s" % (func_name, final_thunk_target))
+            func_data["thtarget"] = func_thunk_target
 
         # Only include comment if present
         if func_cmt:
             func_data["cmt"] = func_cmt
-
-        # Record function
-        log_info("Recording function %s with %d body ranges" % (func_name, len(func_body_ranges)))
         functions.append(clean_data(func_data))
 
     # Export functions

@@ -1,6 +1,8 @@
-import os
 import re
-from ghidra_annotations.util import *
+
+from ghidra_annotations.util import (
+    clean_data, extract_string_value, is_string_data_type_obj, log_info, log_warning, save_json_file)
+from watcom_type_info import LIBRARY_CLASSES, type_name as game_type_name
 
 class StructSizeMismatchError(Exception):
     """A Ghidra struct size disagrees with the Watcom RTTI instance_size."""
@@ -368,7 +370,6 @@ def resolve_ghidra_type_name(type_name, ghidra_struct_sizes, aliases):
     if alias and alias in ghidra_struct_sizes:
         return alias
     # The name watcom_type_info gives a type nocedit does not have (CAmmo_Mana -> CAmmoMana)
-    from watcom_type_info import type_name as game_type_name
     named = game_type_name(type_name)
     return named if named in ghidra_struct_sizes else None
 
@@ -453,10 +454,9 @@ def is_likely_source_file(file_path):
     if not has_source_ext:
         return False
 
-    # Must have at least one directory separator or be a reasonable filename
-    if '/' not in file_path and '\\' not in file_path:
-        if len(file_path) < 3 or len(file_path) > 100:
-            return False
+    # A bare filename (no directory) of a believable length
+    if '/' not in file_path and '\\' not in file_path and len(file_path) > 100:
+        return False
 
     # Skip obviously invalid patterns
     if file_path.startswith('http://') or file_path.startswith('https://'):
@@ -468,67 +468,56 @@ def is_likely_source_file(file_path):
     return True
 
 def get_functions_referencing_string(currentProgram, data_addr):
-
-    # Get all references TO this string address
-    referencing_functions = []
-    refs = currentProgram.getReferenceManager().getReferencesTo(data_addr)
-    for ref in refs:
-        from_addr = ref.getFromAddress()
-
-        # Find the function containing the reference
-        function = currentProgram.getFunctionManager().getFunctionContaining(from_addr)
+    """The functions with a reference to the address, each once, in the order the references come."""
+    functions = {}
+    for ref in currentProgram.getReferenceManager().getReferencesTo(data_addr):
+        function = currentProgram.getFunctionManager().getFunctionContaining(ref.getFromAddress())
         if function:
-            func_addr = str(function.getEntryPoint())
-            if func_addr not in referencing_functions:
-                referencing_functions.append(func_addr)
-    return referencing_functions
+            functions.setdefault(str(function.getEntryPoint()), function)
+    return list(functions.values())
 
 def collect_files_from_referencing_functions(currentProgram, referencing_functions):
-
-    # Build file list
+    """The source file paths in the strings the functions refer to, in the order found."""
+    reference_manager = currentProgram.getReferenceManager()
+    listing = currentProgram.getListing()
     files = []
-    for func_addr_str in referencing_functions:
-
-        # Get function address
-        func_addr = get_addr_obj(currentProgram, func_addr_str)
-        if not func_addr:
-            continue
-
-        # Get function
-        function = currentProgram.getFunctionManager().getFunctionAt(func_addr)
-        if not function:
-            continue
-
-        # Get all strings referenced by this function
-        for addr_range in function.getBody():
-            current_addr = addr_range.getMinAddress()
-            while current_addr and current_addr.compareTo(addr_range.getMaxAddress()) <= 0:
-
-                # Check if there are references from this address
-                reference_manager = currentProgram.getReferenceManager()
-                refs = reference_manager.getReferencesFrom(current_addr)
-                for ref in refs:
-                    to_addr = ref.getToAddress()
-
-                    # Check if the target is a string
-                    data = currentProgram.getListing().getDefinedDataAt(to_addr)
-                    if data and is_string_data_type_obj(data.getDataType()):
-                        string_value = extract_string_value(data)
-                        if string_value:
-
-                            # Look for file paths in this string
-                            file_paths = find_source_files_in_string(string_value)
-                            for file_path in file_paths:
-                                if file_path not in files:
-                                    files.append(file_path)
-
-                # Move to next instruction/data
-                next_addr = current_addr.next()
-                if next_addr and next_addr.compareTo(current_addr) > 0:
-                    current_addr = next_addr
-                else:
-                    break
+    for function in referencing_functions:
+        for source in reference_manager.getReferenceSourceIterator(function.getBody(), True):
+            for ref in reference_manager.getReferencesFrom(source):
+                data = listing.getDefinedDataAt(ref.getToAddress())
+                if data is None or not is_string_data_type_obj(data.getDataType()):
+                    continue
+                for file_path in find_source_files_in_string(extract_string_value(data)):
+                    if file_path not in files:
+                        files.append(file_path)
     return files
+
+def field_number(component):
+    """A WatcomTypeInfo field's value as a number: a Scalar's value, a pointer's offset, 0 when unset."""
+    value = component.getValue()
+    if value is None:
+        return 0
+    return value.getOffset() if hasattr(value, "getOffset") else value.getValue()
+
+
+def read_watcom_typeinfo(currentProgram):
+    """{class-name string address: {typeinfo_addr, size}} for each WatcomTypeInfo applied in the listing."""
+    found = {}
+    space = currentProgram.getAddressFactory().getDefaultAddressSpace()
+    for data in currentProgram.getListing().getDefinedData(True):
+        if data.getDataType() is None or data.getDataType().getName() != "WatcomTypeInfo":
+            continue
+        fields = {data.getComponent(i).getFieldName(): field_number(data.getComponent(i))
+                  for i in range(data.getNumComponents())}
+        class_name_ptr = fields.get("class_name", 0)
+        if "instance_size" not in fields or not class_name_ptr:
+            log_info("WatcomTypeInfo at %s has no class name or size (skipped)" % data.getAddress())
+            continue
+        found[str(space.getAddress(class_name_ptr))] = {"typeinfo_addr": str(data.getAddress()),
+                                                        "size": fields["instance_size"]}
+    log_info("Found %d WatcomTypeInfo structures" % len(found))
+    return found
+
 
 def export_type_info(currentProgram, path, strict = False, allow_size_mismatch = False):
     """Export RTTI-derived type info and validate struct sizes against it.
@@ -562,73 +551,7 @@ def export_type_info(currentProgram, path, strict = False, allow_size_mismatch =
     type_info_dict = {}
     methods_by_class = {}
     listing = currentProgram.getListing()
-    memory = currentProgram.getMemory()
-
-    # First, build a map of all WatcomTypeInfo structures
-    # Map: class_name_string_address -> typeinfo_data
-    watcom_typeinfo_map = {}
-    log_info("Searching for WatcomTypeInfo structures...")
-    for data in listing.getDefinedData(True):
-        data_type = data.getDataType()
-        if data_type is not None:
-            type_name_str = str(data_type.getName())
-
-            # Look for WatcomTypeInfo structures
-            if type_name_str == "WatcomTypeInfo":
-                try:
-                    typeinfo_addr = data.getAddress()
-
-                    # Try to access structure components by name
-                    num_components = data.getNumComponents()
-                    instance_size = None
-                    class_name_ptr = None
-                    for i in range(num_components):
-                        component = data.getComponent(i)
-                        field_name = component.getFieldName()
-
-                        # Get instance size
-                        if field_name == "instance_size":
-                            value = component.getValue()
-                            if value is not None:
-                                # Check if it's a Scalar (numeric value)
-                                if hasattr(value, 'getValue'):
-                                    instance_size = value.getValue()
-                                elif hasattr(value, 'intValue'):
-                                    instance_size = value.intValue()
-                                else:
-                                    instance_size = int(value)
-                            else:
-                                instance_size = 0
-
-                        # Get class name
-                        elif field_name == "class_name":
-                            value = component.getValue()
-                            if value is not None:
-                                if hasattr(value, 'getOffset'):
-                                    class_name_ptr = value.getOffset()
-                                else:
-                                    try:
-                                        class_name_ptr = int(str(value), 16)
-                                    except:
-                                        class_name_ptr = int(value)
-                            else:
-                                class_name_ptr = 0
-
-                    # Store in map using string address as key
-                    if instance_size is not None and class_name_ptr is not None and class_name_ptr != 0:
-                        class_name_addr = currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(class_name_ptr)
-                        watcom_typeinfo_map[str(class_name_addr)] = {
-                            "typeinfo_addr": str(typeinfo_addr),
-                            "size": instance_size
-                        }
-                        log_info("Found WatcomTypeInfo at %s: class_name_ptr=%s, size=0x%x" %
-                                (typeinfo_addr, class_name_addr, instance_size))
-                    else:
-                        log_info("WatcomTypeInfo at %s: instance_size=%s, class_name_ptr=0x%x (skipped)" %
-                                (typeinfo_addr, instance_size, class_name_ptr if class_name_ptr else 0))
-                except Exception as e:
-                    log_info("Error processing WatcomTypeInfo at %s: %s" % (data.getAddress(), str(e)))
-    log_info("Found %d WatcomTypeInfo structures" % len(watcom_typeinfo_map))
+    watcom_typeinfo_map = read_watcom_typeinfo(currentProgram)
 
     # Build a map of Ghidra struct/class names to their defined sizes.
     # Used to validate WatcomTypeInfo.instance_size against Ghidra definitions.
@@ -673,12 +596,11 @@ def export_type_info(currentProgram, path, strict = False, allow_size_mismatch =
                             type_info_dict[type_name]["typeinfo_size"] = typeinfo_data["size"]
                             type_info_dict[type_name]["typeinfo_addr"] = typeinfo_data["typeinfo_addr"]
 
-                            # Validate: Ghidra struct size must match binary's instance_size
-                            # Only check game types (skip CRT/Watcom stdlib like strstreambuf)
+                            # Validate: Ghidra struct size must match binary's instance_size.
+                            # Every type with RTTI is the game's but the Watcom library's
+                            # iostream classes, whichever program it is.
                             expected_size = typeinfo_data["size"]
-                            is_game_type = (type_name in class_files
-                                            or type_name in structure_files
-                                            or type_name in rtti_aliases)
+                            is_game_type = type_name not in LIBRARY_CLASSES
                             ghidra_name = resolve_ghidra_type_name(
                                 type_name, ghidra_struct_sizes, rtti_aliases)
                             if expected_size <= 0 or not is_game_type:
@@ -698,7 +620,6 @@ def export_type_info(currentProgram, path, strict = False, allow_size_mismatch =
                                             ", ".join("%d (0x%x)" % (s, s)
                                                       for s in ghidra_sizes),
                                             expected_size, expected_size))
-                                    log_error(msg)
                                     size_mismatches.append(msg)
                     log_info("Found type info at %s: '%s'" % (data_addr, type_name))
 
@@ -726,18 +647,12 @@ def export_type_info(currentProgram, path, strict = False, allow_size_mismatch =
                             }
 
                         # Add references
-                        method_entry = methods_by_class[class_name][method_name]
-                        method_entry_refs = method_entry["refs"]
-                        if data_addr_str:
-                            method_entry_refs["string"].add(data_addr_str)
-                        for func_addr in referencing_functions:
-                            if func_addr:
-                                method_entry_refs["function"].add(func_addr)
-                        if referencing_functions:
-                            method_files = collect_files_from_referencing_functions(currentProgram, referencing_functions)
-                            for file_path in method_files:
-                                if file_path:
-                                    method_entry_refs["file"].add(file_path)
+                        method_entry_refs = methods_by_class[class_name][method_name]["refs"]
+                        method_entry_refs["string"].add(data_addr_str)
+                        method_entry_refs["function"].update(
+                            str(f.getEntryPoint()) for f in referencing_functions)
+                        method_entry_refs["file"].update(
+                            collect_files_from_referencing_functions(currentProgram, referencing_functions))
 
     # Convert to lists
     for class_name in methods_by_class:
@@ -841,10 +756,11 @@ def export_type_info(currentProgram, path, strict = False, allow_size_mismatch =
         log_info("    " + msg)
     log_info("  %d non-game type(s) skipped (CRT/Watcom stdlib): %s"
              % (len(size_skipped), ", ".join(sorted(size_skipped))))
+    # log_warning, not log_error: log_error exits, before the export or --allow-struct-size-mismatch
     if size_mismatches:
-        log_error("STRUCT SIZE MISMATCHES (%d):" % len(size_mismatches))
+        log_warning("STRUCT SIZE MISMATCHES (%d):" % len(size_mismatches))
         for msg in size_mismatches:
-            log_error("  " + msg)
+            log_warning("  " + msg)
     log_info("=" * 60)
 
     # Export type info. This is written even when the check failed: the exported
