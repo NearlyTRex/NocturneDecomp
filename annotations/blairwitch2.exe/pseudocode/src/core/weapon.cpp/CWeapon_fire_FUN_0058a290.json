@@ -1,0 +1,237 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 43,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "0043a7a0",
+      "from_addr": "0043a801",
+      "name": "core_crossbow.cpp_FUN_0043a7a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a0a0",
+      "from_addr": "0047a0a6",
+      "name": "core_dynamite.cpp_FUN_0047a0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485b40",
+      "from_addr": "00485ba4",
+      "name": "core_elephant.cpp_FUN_00485b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cbdc0",
+      "from_addr": "004cbe21",
+      "name": "core_gun.cpp_FUN_004cbdc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e2e70",
+      "from_addr": "004e38b9",
+      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f170",
+      "from_addr": "0053f1d4",
+      "name": "core_shotgun.cpp_FUN_0053f170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575800",
+      "from_addr": "00575898",
+      "name": "core_tommygun.cpp_FUN_00575800",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058a290",
+    "address_range": [
+      [
+        "0058a290",
+        "0058a2b3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_fire_FUN_0058a290",
+    "signature": "int __cdecl core_weapon_cpp_CWeapon_fire_FUN_0058a290(CWeapon *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0043a801",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_FUN_0043a7a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047a0a6",
+        "call_type": "direct",
+        "caller": "core_dynamite.cpp_FUN_0047a0a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00485ba4",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_FUN_00485b40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cbe21",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_FUN_004cbdc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e38b9",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053f1d4",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_FUN_0053f170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00575898",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_FUN_00575800",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8181818181818183,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 1,
+      "COPY": 10,
+      "INT_ADD": 5,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 42
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x6c4",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x6c4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x6c4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x6c4 = *(int *)&this_ptr->field_0x6c4 + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x6c4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x6c4 = *(int *)&this_ptr->field_0x6c4 + -1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 236,
+        "vtable_addr": "005fdf64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

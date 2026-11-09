@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 20,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 37,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
@@ -142,7 +22,7 @@
     {
       "addr": "00522350",
       "from_addr": "005245f9",
-      "name": "FUN_00522350",
+      "name": "core_script.cpp_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -155,14 +35,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004fc5a0",
-    "signature": "void FUN_004fc5a0(int *param_1,int param_2,char *param_3)"
+    "name": "core_mission.cpp_FUN_004fc5a0",
+    "signature": "void core_mission_cpp_FUN_004fc5a0(int *param_1,int param_2,char *param_3)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     }
   ],
   "globals": [
@@ -209,7 +89,7 @@
       {
         "call_addr": "005245f9",
         "call_type": "direct",
-        "caller": "FUN_00522350",
+        "caller": "core_script.cpp_FUN_00522350",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -277,7 +157,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004fc5a0(int *param_1,int param_2,char *param_3)",
+      "text": "void core_mission_cpp_FUN_004fc5a0(int *param_1,int param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -285,7 +165,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004fc5a0(int *param_1,int param_2,char *param_3)",
+      "text": "void core_mission_cpp_FUN_004fc5a0(int *param_1,int param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -293,7 +173,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_004fc5a0(int *param_1,int param_2,char *param_3)",
+      "text": "void core_mission_cpp_FUN_004fc5a0(int *param_1,int param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -325,7 +205,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004e4500(\"CDemonMission::changeSetName - invalid index: %d, count = %d\",param_2,param_1[1]);",
+      "text": "core_main_c_FUN_004e4500(\"CDemonMission::changeSetName - invalid index: %d, count = %d\",param_2,param_1[1]);",
       "type": "unnamed_param"
     },
     {
@@ -333,7 +213,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e4500(\"CDemonMission::changeSetName - invalid index: %d, count = %d\",param_2,param_1[1]);",
+      "text": "core_main_c_FUN_004e4500(\"CDemonMission::changeSetName - invalid index: %d, count = %d\",param_2,param_1[1]);",
       "type": "unnamed_param"
     },
     {

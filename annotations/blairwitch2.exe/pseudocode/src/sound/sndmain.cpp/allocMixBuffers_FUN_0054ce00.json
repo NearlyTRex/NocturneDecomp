@@ -1,0 +1,306 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 132,
+    "complexity_score": 166,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 183
+  },
+  "cross_references": [
+    {
+      "addr": "005526f0",
+      "from_addr": "0055277a",
+      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_005526f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054ce00",
+    "address_range": [
+      [
+        "0054ce00",
+        "0054cfb0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_allocMixBuffers_FUN_0054ce00",
+    "signature": "void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_0054ce00(int requested_size,int num_buffers)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b8ce0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005b8ce0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e7f52",
+      "name": "s_sound_sndmain_cpp_005e7f52",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7f67",
+      "name": "s_allocMixBuffers_out_of_m_005e7f67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061bc9c",
+      "name": "DAT_0061bc9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e90",
+      "name": "DAT_02648e90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e94",
+      "name": "DAT_02648e94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e98",
+      "name": "DAT_02648e98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e9c",
+      "name": "DAT_02648e9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648ea0",
+      "name": "DAT_02648ea0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648ec4",
+      "name": "DAT_02648ec4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648ee8",
+      "name": "DAT_02648ee8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055277a",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_setSoundOutputMode_FUN_005526f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.589285714285714,
+    "instruction_count": 112,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 91,
+      "INT_ADD": 42,
+      "INT_AND": 70,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 57,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_MULT": 11,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 16,
+      "INT_SEXT": 21,
+      "INT_SLESS": 30,
+      "INT_SUB": 21,
+      "INT_XOR": 4,
+      "LOAD": 19,
+      "POPCOUNT": 28,
+      "RETURN": 1,
+      "STORE": 24,
+      "SUBPIECE": 14
+    },
+    "pcode_op_count": 514
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "requested_size",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_buffers",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_0061bc9c",
+      "severity": "mild",
+      "text": "realloc(_DAT_02648ec4,num_buffers * iVar4 * DAT_0061bc9c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_0061bc9c",
+      "severity": "mild",
+      "text": "_DAT_02648ee8 = realloc(_DAT_02648ee8,DAT_0061bc9c * iVar4 * 2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_0061bc9c",
+      "severity": "mild",
+      "text": "_DAT_02648ea0 = realloc(_DAT_02648ea0,iVar4 * DAT_0061bc9c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_0061bc9c",
+      "severity": "mild",
+      "text": "if (0 < DAT_0061bc9c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 41,
+      "match": "*(void **)(iVar2 + 0x2648ec8",
+      "severity": "moderate",
+      "text": "*(void **)(iVar2 + 0x2648ec8) =",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(void *)((int)_DAT_02648ec4",
+      "severity": "moderate",
+      "text": "(void *)((int)_DAT_02648ec4 + _DAT_02648e98 * iVar4 * _DAT_02648e9c * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_0061bc9c",
+      "severity": "mild",
+      "text": "} while (iVar4 < DAT_0061bc9c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)pvVar1",
+      "severity": "moderate",
+      "text": "*(int *)(iVar2 + 0x2648f0c) = (int)pvVar1 + iVar5;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

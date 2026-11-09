@@ -1,0 +1,279 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 116,
+    "complexity_score": 215,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 35,
+    "suspect_count": 16,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 151
+  },
+  "cross_references": [
+    {
+      "addr": "00489670",
+      "from_addr": "0048b0b1",
+      "name": "core_event.cpp_FUN_00489670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a5200",
+    "address_range": [
+      [
+        "004a5200",
+        "004a52e8"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_FUN_004a5200",
+    "signature": "undefined4 core_fldnotes_cpp_FUN_004a5200(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a35e0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_FUN_004a35e0"
+    },
+    {
+      "addr": "004a3b50",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_FUN_004a3b50"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d62d9",
+      "name": "s_No_such_entry_s_005d62d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d62ec",
+      "name": "s_s_is_not_a_map_005d62ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d62fe",
+      "name": "s_No_such_annotion_s_found_005d62fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cab9f0",
+      "name": "DAT_01cab9f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0048b0b1",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 6,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.391304347826087,
+    "instruction_count": 92,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 93,
+      "INT_ADD": 38,
+      "INT_AND": 49,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 44,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 22,
+      "INT_SUB": 26,
+      "INT_XOR": 6,
+      "LOAD": 30,
+      "POPCOUNT": 22,
+      "RETURN": 4,
+      "STORE": 24,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 404
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004a5233) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_fldnotes_cpp_FUN_004a5200(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint core_fldnotes_cpp_FUN_004a5200(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint core_fldnotes_cpp_FUN_004a5200(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint core_fldnotes_cpp_FUN_004a5200(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = core_fldnotes_cpp_FUN_004a35e0(pSVar3,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b7790(param_4,\"No such entry '%s'\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005b7790(param_4,\"No such entry '%s'\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b7790(param_4,\"'%s' is not a map\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005b7790(param_4,\"'%s' is not a map\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = core_fldnotes_cpp_FUN_004a3b50(SNotesMap_ARRAY_01cacb50 + *(int *)(iVar1 + 0x158),param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b7790(param_4,\"No such annotion '%s' found on map '%s'\",param_3,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_005b7790(param_4,\"No such annotion '%s' found on map '%s'\",param_3,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005b7790(param_4,\"No such annotion '%s' found on map '%s'\",param_3,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:6",
+      "param_delta": 6,
+      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

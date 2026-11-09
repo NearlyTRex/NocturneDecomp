@@ -1,0 +1,352 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 173,
+    "complexity_score": 167,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 52,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 225
+  },
+  "cross_references": [
+    {
+      "addr": "004b7050",
+      "from_addr": "004b70e7",
+      "name": "core_game.cpp_CGame_playerControls_FUN_004b7050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b80a0",
+    "address_range": [
+      [
+        "004b80a0",
+        "004b824e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_game.cpp_FUN_004b80a0",
+    "signature": "void __cdecl core_game_cpp_FUN_004b80a0(CGame *this_ptr,SPlayerInput *player_control)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b76c0",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004b76c0"
+    },
+    {
+      "addr": "0058ed10",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_0058ed10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d78f3",
+      "name": "DAT_005d78f3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d78fb",
+      "name": "DAT_005d78fb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7903",
+      "name": "DAT_005d7903",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141bc",
+      "name": "DAT_006141bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01c2a37c",
+      "name": "DAT_01c2a37c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a380",
+      "name": "DAT_01c2a380",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37790",
+      "name": "DAT_01c37790",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7784",
+      "name": "DAT_01cb7784",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc1070",
+      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b70e7",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_playerControls_FUN_004b7050",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.865771812080537,
+    "instruction_count": 149,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 10,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 11,
+      "COPY": 443,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ABS": 6,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 7,
+      "FLOAT_LESS": 7,
+      "FLOAT_MULT": 5,
+      "FLOAT_NAN": 14,
+      "INT2FLOAT": 8,
+      "INT_ADD": 51,
+      "INT_AND": 95,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 36,
+      "INT_LEFT": 28,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 43,
+      "INT_OR": 43,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 17,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 28,
+      "LOAD": 43,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 1023
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_control",
+        "offset": 8,
+        "size": 4,
+        "type": "SPlayerInput *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004b80a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x29c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x29c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "x = DAT_006141b8 / 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "y = DAT_006141bc / 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x15aeb8",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CDemonSetPtr->field_0x15aeb8 == _DAT_01cb7784) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xb0",
+      "severity": "mild",
+      "text": "local_3c = (float)*(int *)&this_ptr->field_0xb0 * (float)_DAT_005d78f3 * (float)_DAT_005d78fb",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0xb4",
+      "severity": "mild",
+      "text": "local_40 = (float)*(int *)&this_ptr->field_0xb4 * (float)_DAT_005d78f3 *",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0xa8",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0xa8 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_01c37790",
+      "severity": "mild",
+      "text": "if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x34] == '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "if ((&DAT_01c37790)[*(int *)&this_ptr->field_0x34] == '\\0') {",
+      "type": "unnamed_field"
+    }
+  ]
+}

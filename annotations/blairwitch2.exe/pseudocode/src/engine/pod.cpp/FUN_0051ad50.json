@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 26,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
@@ -147,34 +27,34 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_0051ad50",
-    "signature": "void FUN_0051ad50(int param_1,int param_2)"
+    "name": "engine_pod.cpp_FUN_0051ad50",
+    "signature": "void engine_pod_cpp_FUN_0051ad50(int param_1,int param_2)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
-    },
-    {
-      "addr": "005b87c0",
-      "is_variadic": false,
-      "name": "FUN_005b87c0"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "005b89c0",
       "is_variadic": false,
-      "name": "FUN_005b89c0"
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
     },
     {
       "addr": "005b910c",
       "is_variadic": false,
-      "name": "FUN_005b910c"
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005b87c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005b87c0"
     },
     {
       "addr": "005b929c",
       "is_variadic": false,
-      "name": "FUN_005b929c"
+      "name": "crt_stdio.c_fseek_FUN_005b929c"
     }
   ],
   "globals": [
@@ -239,23 +119,6 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_0051ad50.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 42,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -270,7 +133,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0051ad50(int param_1,int param_2)",
+      "text": "void engine_pod_cpp_FUN_0051ad50(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -278,7 +141,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_0051ad50(int param_1,int param_2)",
+      "text": "void engine_pod_cpp_FUN_0051ad50(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -318,7 +181,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_005b910c(param_1 + 4,0x5e25c0);",
+      "text": "iVar1 = _fopen(param_1 + 4,0x5e25c0);",
       "type": "unnamed_param"
     },
     {
@@ -326,7 +189,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e4500(\"CPodFile::getAuditRecord - can't open %s\",param_1 + 4);",
+      "text": "core_main_c_FUN_004e4500(\"CPodFile::getAuditRecord - can't open %s\",param_1 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -334,7 +197,7 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b929c(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
+      "text": "_fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
       "type": "unnamed_param"
     },
     {
@@ -342,7 +205,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005b929c(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
+      "text": "_fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x420),0);",
       "type": "unnamed_param"
     },
     {
@@ -350,7 +213,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004e4500(\"CPodFile::getAuditRecord - error reading %s\",param_1 + 4);",
+      "text": "core_main_c_FUN_004e4500(\"CPodFile::getAuditRecord - error reading %s\",param_1 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -392,14 +255,6 @@
       "severity": "moderate",
       "text": "// 0051ae2f: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 42,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "static_uninitvar"
     }
   ]
 }

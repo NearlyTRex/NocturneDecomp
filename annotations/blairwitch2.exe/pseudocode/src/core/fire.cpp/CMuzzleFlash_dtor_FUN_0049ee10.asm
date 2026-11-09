@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CMuzzleFlash * core_fire_cpp_CMuzzleFlash_dtor_FUN_0049ee10(CMuzzleFlash *this_ptr,uint flags)
+;
+; Parameters:
+; CMuzzleFlash *   Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0049ee10
+        ;   Label: core_fire.cpp_CMuzzleFlash_dtor_FUN_0049ee10
+    RET                                 ; 0049ee14
+

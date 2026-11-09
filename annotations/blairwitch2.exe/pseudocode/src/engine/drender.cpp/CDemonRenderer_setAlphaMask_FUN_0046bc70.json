@@ -1,0 +1,121 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 11
+  },
+  "cross_references": [
+    {
+      "addr": "005342e0",
+      "from_addr": "0053433a",
+      "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005341b0",
+      "from_addr": "005342ba",
+      "name": "core_set.cpp_FUN_005341b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046bc70",
+    "address_range": [
+      [
+        "0046bc70",
+        "0046bc7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0046bc70",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0046bc70(CDemonRenderer *this_ptr,int alpha_mask)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005342ba",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005341b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053433a",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.8,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "COPY": 4,
+      "INT_ADD": 4,
+      "INT_AND": 13,
+      "INT_EQUAL": 3,
+      "INT_LEFT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SLESS": 3,
+      "INT_SUB": 1,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 49
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_mask",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

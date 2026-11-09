@@ -1,0 +1,288 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 169,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 14,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "005386e0",
+      "from_addr": "005386f0",
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538470",
+      "from_addr": "0053858a",
+      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005389b0",
+    "address_range": [
+      [
+        "005389b0",
+        "00538a2e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0",
+    "signature": "void __cdecl core_setdir_cpp_CZThumb_pushRenderingContext_FUN_005389b0(CZThumb *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046b030",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030"
+    },
+    {
+      "addr": "0046afb0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_FUN_0046afb0"
+    },
+    {
+      "addr": "0046b4d0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_FUN_0046b4d0"
+    },
+    {
+      "addr": "0046b710",
+      "is_variadic": false,
+      "name": "engine_matrix.c_FUN_0046b710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141bc",
+      "name": "DAT_006141bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020b1518",
+      "name": "DAT_020b1518",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020b151c",
+      "name": "DAT_020b151c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005386f0",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053858a",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 35,
+      "INT_ADD": 13,
+      "INT_AND": 14,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 20,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 154
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZThumb *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "_DAT_020b1518 = DAT_006141b8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "_DAT_020b151c = DAT_006141bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "DAT_006141b8 = *(uint *)this_ptr;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "DAT_006141bc = *(int *)&this_ptr->field_0x4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "DAT_006141bc = *(int *)&this_ptr->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_matrix_c_FUN_0046b710(DAT_0060b280,0,0,*(int *)this_ptr + -1,DAT_006141bc + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "engine_matrix_c_FUN_0046b710(DAT_0060b280,0,0,*(int *)this_ptr + -1,DAT_006141bc + -1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_FUN_0046afb0(DAT_0060b280,(CVector3f *)&this_ptr->field_0x8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "engine_drender_cpp_FUN_0046afb0(DAT_0060b280,(CVector3f *)&this_ptr->field_0x8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_matrix_c_FUN_0046b4d0(DAT_0060b280,*(uint *)&this_ptr->field_0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "engine_matrix_c_FUN_0046b4d0(DAT_0060b280,*(uint *)&this_ptr->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(CVector3f *)&this_ptr->field_0x14);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(CVector3f *)&this_ptr->field_0x14);",
+      "type": "unnamed_field"
+    }
+  ]
+}

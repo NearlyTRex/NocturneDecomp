@@ -1,0 +1,566 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 227,
+    "cross_reference_count": 13,
+    "function_call_count": 0,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 15,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 141
+  },
+  "cross_references": [
+    {
+      "addr": "004944c0",
+      "from_addr": "00494558",
+      "name": "core_fire.cpp_FUN_004944c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495ca0",
+      "from_addr": "00495d65",
+      "name": "core_fire.cpp_FUN_00495ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004966a0",
+      "from_addr": "00496727",
+      "name": "core_fire.cpp_FUN_004966a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004968d0",
+      "from_addr": "00496956",
+      "name": "core_fire.cpp_FUN_004968d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b6f0",
+      "from_addr": "0049b79a",
+      "name": "core_fire.cpp_FUN_0049b6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049c780",
+      "from_addr": "0049c8a3",
+      "name": "core_fire.cpp_FUN_0049c780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c9440",
+      "from_addr": "004c9478",
+      "name": "core_gore.cpp_FUN_004c9440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052dc10",
+      "from_addr": "0052dcb3",
+      "name": "core_set.cpp_FUN_0052dc10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052fad0",
+      "from_addr": "0052fd41",
+      "name": "core_set.cpp_FUN_0052fad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052fea0",
+      "from_addr": "00530102",
+      "name": "core_set.cpp_FUN_0052fea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005301d0",
+      "from_addr": "005302e7",
+      "name": "core_set.cpp_FUN_005301d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00530410",
+      "from_addr": "00530524",
+      "name": "core_set.cpp_FUN_00530410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ad40",
+      "from_addr": "0058ae1c",
+      "name": "core_weather.cpp_FUN_0058ad40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00530980",
+    "address_range": [
+      [
+        "00530980",
+        "00530a9b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_00530980",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_00530980(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0200e88c",
+      "name": "DAT_0200e88c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e890",
+      "name": "DAT_0200e890",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e894",
+      "name": "DAT_0200e894",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e898",
+      "name": "DAT_0200e898",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e89c",
+      "name": "DAT_0200e89c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8a0",
+      "name": "DAT_0200e8a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8a4",
+      "name": "DAT_0200e8a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8a8",
+      "name": "DAT_0200e8a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8ac",
+      "name": "DAT_0200e8ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8b0",
+      "name": "DAT_0200e8b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8b4",
+      "name": "DAT_0200e8b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8b8",
+      "name": "DAT_0200e8b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8bc",
+      "name": "DAT_0200e8bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8c0",
+      "name": "DAT_0200e8c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8c4",
+      "name": "DAT_0200e8c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8c8",
+      "name": "DAT_0200e8c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8cc",
+      "name": "DAT_0200e8cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8d0",
+      "name": "DAT_0200e8d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8d4",
+      "name": "DAT_0200e8d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8d8",
+      "name": "DAT_0200e8d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8dc",
+      "name": "DAT_0200e8dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8e0",
+      "name": "DAT_0200e8e0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 13,
+    "call_sites": [
+      {
+        "call_addr": "00494558",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004944c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0052dcb3",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052dc10",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0049c8a3",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_0049c780",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004c9478",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_FUN_004c9440",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0052fd41",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052fad0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00530102",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052fea0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "005302e7",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005301d0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00530524",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00530410",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0058ae1c",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_FUN_0058ad40",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0049b79a",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_0049b6f0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.75,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 3,
+      "CBRANCH": 7,
+      "COPY": 199,
+      "FLOAT2FLOAT": 16,
+      "INT_ADD": 23,
+      "INT_AND": 14,
+      "INT_EQUAL": 13,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_SBORROW": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 10,
+      "INT_ZEXT": 2,
+      "LOAD": 26,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 342
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_min",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_max",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation_matrix",
+        "offset": 24,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_0200e890",
+      "severity": "mild",
+      "text": "if (position != (CVector3f *)&DAT_0200e890) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "_DAT_0200e898 = *(uint *)&position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "_DAT_0200e894 = *(uint *)&position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_0200e89c",
+      "severity": "mild",
+      "text": "if (orientation != (UOrientationVector *)&DAT_0200e89c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)orientation",
+      "severity": "moderate",
+      "text": "_DAT_0200e8a4 = *(uint *)((int)orientation + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)((int)orientation",
+      "severity": "moderate",
+      "text": "_DAT_0200e8a0 = *(uint *)((int)orientation + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_0200e8a8",
+      "severity": "mild",
+      "text": "if (aabb_min != (CVector3f *)&DAT_0200e8a8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "_DAT_0200e8b0 = *(uint *)&aabb_min->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "_DAT_0200e8ac = *(uint *)&aabb_min->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_0200e8b4",
+      "severity": "mild",
+      "text": "if (aabb_max != (CVector3f *)&DAT_0200e8b4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "_DAT_0200e8bc = *(uint *)&aabb_max->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "_DAT_0200e8b8 = *(uint *)&aabb_max->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_0200e8c0",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)&DAT_0200e8c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00530a1b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 52,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00530a1b: MOVSD.REP ES:EDI,ESI  ; DAT_0200e8c0 | DAT_0200e8c4",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

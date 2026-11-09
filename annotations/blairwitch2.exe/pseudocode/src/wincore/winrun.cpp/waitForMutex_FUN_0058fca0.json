@@ -1,0 +1,159 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 9,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
+  "cross_references": [
+    {
+      "addr": "005532f0",
+      "from_addr": "00553335",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005532f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a47c",
+      "from_addr": "0057a575",
+      "name": "support_trisock.cpp_FUN_0057a47c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a840",
+      "from_addr": "0057a877",
+      "name": "support_trisock.cpp_FUN_0057a840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a980",
+      "from_addr": "0057a9d7",
+      "name": "support_trisock.cpp_FUN_0057a980",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058fca0",
+    "address_range": [
+      [
+        "0058fca0",
+        "0058fcbd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_waitForMutex_FUN_0058fca0",
+    "signature": "int __cdecl wincore_winrun_cpp_waitForMutex_FUN_0058fca0(HANDLE mutex_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:000000a2",
+      "is_variadic": false,
+      "name": "WaitForSingleObject"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c866c",
+      "name": "PTR_WaitForSingleObject_005c866c",
+      "type": "void*",
+      "value": "001c9290"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00553335",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_lockSound_FUN_005532f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057a575",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0057a47c",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057a9d7",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0057a980",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057a877",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0057a840",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.454545454545454,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 3,
+      "INT_AND": 9,
+      "INT_EQUAL": 6,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 49
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mutex_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "HANDLE"
+      }
+    ]
+  },
+  "suspects": []
+}

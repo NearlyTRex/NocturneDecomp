@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0050f120(int *param_1)
+; void core_netgame_cpp_FUN_0050f120(CNetGame *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004b5190 at 004b51f9
+;   core_game.cpp_FUN_004b5190 at 004b51f9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e1060
@@ -26,19 +26,19 @@
 ;   undefined4 DAT_01d546b8
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_0050c190
-;   FUN_0050d840
-;   FUN_0050f370
-;   FUN_0050f4f0
-;   FUN_005ba1f0
+;   core_main.c_FUN_004e4500
+;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_0050f370
+;   core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190
+;   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0
+;   core_netgame.cpp_CNetGame_updatePing_FUN_0050d840
+;   crt_string.c_memmove_FUN_005ba1f0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0050f120
-        ;   Label: FUN_0050f120
+        ;   Label: core_netgame.cpp_FUN_0050f120
     PUSH ESI                            ; 0050f121
     PUSH EDI                            ; 0050f122
     PUSH EBP                            ; 0050f123
@@ -63,12 +63,12 @@ section .text
     PUSH 0x41200000                     ; 0050f162
     PUSH ECX                            ; 0050f167
     PUSH ESI                            ; 0050f168
-    CALL FUN_0050d840                   ; 0050f169
-        ;   XREF to: 0050d840 (UNCONDITIONAL_CALL)  ; undefined FUN_0050d840()
+    CALL core_netgame.cpp_CNetGame_updatePing_FUN_0050d840 ; 0050f169
+        ;   XREF to: 0050d840 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_updatePing_FUN_0050d840(CNetGame * this_ptr, int player_index, float max_ping)
     ADD ESP,0xc                         ; 0050f16e
     PUSH ESI                            ; 0050f171
-    CALL FUN_0050c190                   ; 0050f172
-        ;   XREF to: 0050c190 (UNCONDITIONAL_CALL)  ; undefined FUN_0050c190()
+    CALL core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190 ; 0050f172
+        ;   XREF to: 0050c190 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190(CNetGame * this_ptr)
     MOV EBX,dword ptr [ESI]             ; 0050f177
     ADD ESP,0x4                         ; 0050f179
     CMP EBX,0x2                         ; 0050f17c
@@ -96,12 +96,12 @@ section .text
     ADD EAX,0x1d54644                   ; 0050f1bd
     PUSH EAX                            ; 0050f1c2 | DAT_01d546b8
     PUSH ESI                            ; 0050f1c3
-    CALL FUN_0050f370                   ; 0050f1c4
-        ;   XREF to: 0050f370 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f370()
+    CALL core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_0050f370 ; 0050f1c4
+        ;   XREF to: 0050f370 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_0050f370(CNetGame * this_ptr, SSimFrame * sim_frame)
     ADD ESP,0x8                         ; 0050f1c9
     PUSH ESI                            ; 0050f1cc
-    CALL FUN_0050f4f0                   ; 0050f1cd
-        ;   XREF to: 0050f4f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4f0()
+    CALL core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0 ; 0050f1cd
+        ;   XREF to: 0050f4f0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0(CNetGame * this_ptr)
     MOV EAX,dword ptr [ESI + 0x124]     ; 0050f1d2
     XOR EBX,EDI                         ; 0050f1d8
     SHL EAX,0x7                         ; 0050f1da
@@ -133,8 +133,8 @@ section .text
     ADD EAX,EDI                         ; 0050f229
     PUSH EAX                            ; 0050f22b
     MOV dword ptr [0x01d54640],EDX      ; 0050f22c | DAT_01d54640
-    CALL FUN_005ba1f0                   ; 0050f232
-        ;   XREF to: 005ba1f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005ba1f0()
+    CALL crt_string.c_memmove_FUN_005ba1f0 ; 0050f232
+        ;   XREF to: 005ba1f0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005ba1f0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0050f237
     CMP EBX,dword ptr [0x01d54640]      ; 0050f23a | DAT_01d54640
         ;   Label: LAB_0050f23a
@@ -179,8 +179,8 @@ section .text
     PUSH 0x5e1074                       ; 0050f2a7 | = "CNetGame::processClientFrame - I'm no..."
     MOV [0x01d046a0],EAX                ; 0050f2ac | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0050f2b1 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050f2b7
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050f2b7
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050f2bc
     JMP 0x0050f15c                      ; 0050f2bf
         ;   XREF to: 0050f15c (UNCONDITIONAL_JUMP)  ; LAB_0050f15c
@@ -192,8 +192,8 @@ section .text
         ;   XREF to: 0050f1a7 (CONDITIONAL_JUMP)  ; LAB_0050f1a7
     PUSH ESI                            ; 0050f2d0
         ;   Label: LAB_0050f2d0
-    CALL FUN_0050c190                   ; 0050f2d1
-        ;   XREF to: 0050c190 (UNCONDITIONAL_CALL)  ; undefined FUN_0050c190()
+    CALL core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190 ; 0050f2d1
+        ;   XREF to: 0050c190 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190(CNetGame * this_ptr)
     MOV EAX,dword ptr [ESI]             ; 0050f2d6
     ADD ESP,0x4                         ; 0050f2d8
     CMP EAX,0x2                         ; 0050f2db
@@ -230,8 +230,8 @@ section .text
     JBE 0x0050f185                      ; 0050f32d
         ;   XREF to: 0050f185 (CONDITIONAL_JUMP)  ; LAB_0050f185
     PUSH ESI                            ; 0050f333
-    CALL FUN_0050f4f0                   ; 0050f334
-        ;   XREF to: 0050f4f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4f0()
+    CALL core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0 ; 0050f334
+        ;   XREF to: 0050f4f0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050f339
     JMP 0x0050f185                      ; 0050f33c
         ;   XREF to: 0050f185 (UNCONDITIONAL_JUMP)  ; LAB_0050f185

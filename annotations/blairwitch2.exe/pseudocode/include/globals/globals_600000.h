@@ -4,10 +4,96 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/watcom.h"
+#include "types/classes/CConsole.h"
+#include "types/classes/CDemonFilter.h"
+#include "types/classes/CFilterCache.h"
+#include "types/classes/CFilterFX.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x600000
 // =============================================================================
+
+// CConsole*
+extern CConsole* g_CConsolePtr;
+
+// CDemonFilter*
+extern CDemonFilter* g_GlobalFilters;
+extern CDemonFilter* g_PlayerFilters;
+
+// CFilterCache*
+extern CFilterCache* g_CFilterCachePtr;
+
+// CFilterFX*
+extern CFilterFX* g_CFilterFXPtr;
+
+// WatcomDestructorCall
+extern WatcomDestructorCall DAT_006002B0;
+
+// WatcomStaticDestructorNode
+extern WatcomStaticDestructorNode DAT_0060994C;
+extern WatcomStaticDestructorNode g_ConsoleDestructorNode;
+extern WatcomStaticDestructorNode g_CLZWDecompressDestructorNode;
+extern WatcomStaticDestructorNode DAT_0060A044;
+extern WatcomStaticDestructorNode DAT_0060A054;
+extern WatcomStaticDestructorNode g_CFilterCacheDestructorNode;
+extern WatcomStaticDestructorNode g_CFilterFXDestructorNode;
+extern WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode;
+
+// WatcomTypeInfo
+extern WatcomTypeInfo g_CCrossTypeInfo;
+extern WatcomTypeInfo g_CSimpleCrossTypeInfo;
+extern WatcomTypeInfo g_CGrandmaTypeInfo;
+extern WatcomTypeInfo g_CSearchPartyTypeInfo;
+extern WatcomTypeInfo g_CBellingTypeInfo;
+extern WatcomTypeInfo g_CGhostChildTypeInfo;
+extern WatcomTypeInfo g_CHandTypeInfo;
+extern WatcomTypeInfo g_CHagTypeInfo;
+extern WatcomTypeInfo g_CDogTypeInfo;
+extern WatcomTypeInfo g_CParticleBoxTypeInfo;
+extern WatcomTypeInfo g_CSpiritMineTypeInfo;
+extern WatcomTypeInfo g_CNecklaceTypeInfo;
+extern WatcomTypeInfo g_SClothVertexTypeInfo;
+extern WatcomTypeInfo g_SClothBoneTypeInfo;
+extern WatcomTypeInfo g_SScrapeTypeInfo;
+extern WatcomTypeInfo g_SChainVertexTypeInfo;
+extern WatcomTypeInfo g_CChainTypeInfo;
+extern WatcomTypeInfo g_CMorphModelTypeInfo;
+
+// int
+extern int g_CDemonActorClassVersion;
+extern int g_CAmmoClassVersion;
+extern int g_CAmmoBoxClassVersion;
+extern int g_CAnvilClassVersion;
+extern int g_CArmourClassVersion;
+extern int g_CBackgroundActorClassVersion;
+extern int g_CBaronClassVersion;
+extern int g_CBarrierClassVersion;
+extern int g_CBatClassVersion;
+extern int g_CBatCreatureClassVersion;
+extern int g_CBatmanClassVersion;
+extern int g_CBatteryClassVersion;
+extern int g_CBeastClassVersion;
+extern int g_CBiggsClassVersion;
+extern int g_CBodyPartClassVersion;
+extern int g_CBoneGuyClassVersion;
+extern int g_CBoxActorClassVersion;
+extern int g_CBrideClassVersion;
+extern int g_CBugsClassVersion;
+extern int g_CCharacterClassVersion;
+extern int g_CColonelClassVersion;
+extern int g_CConstructClassVersion;
+extern int g_CConveyorClassVersion;
+extern int g_CZombieCowClassVersion;
+extern int g_CCrateClassVersion;
+extern int g_CCrossbowClassVersion;
+extern int g_CActorDestinationClassVersion;
+extern int g_CDocClassVersion;
+extern int g_CZombieDogClassVersion;
+extern int g_CDoorClassVersion;
+extern int g_CDraculaBrideClassVersion;
+extern int g_CDripClassVersion;
+extern int g_CDroneClassVersion;
 
 // undefined1
 extern undefined1 DAT_0060958f;
@@ -21,6 +107,7 @@ extern undefined4 DAT_00609370;
 extern undefined4 DAT_006093c0;
 extern undefined4 DAT_006095f8;
 extern undefined4 DAT_006095fc;
+extern undefined4 DAT_00609b34;
 extern undefined4 DAT_00609f98;
 extern undefined4 DAT_00609f9c;
 extern undefined4 DAT_00609fa0;

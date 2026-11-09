@@ -4,6 +4,31 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x7B0000
 // =============================================================================
 
+// CDemonActorType
+CDemonActorType g_CDemonActorClassInfo = {};
+CDemonActorType g_CAmmoClassInfo = {};
+CDemonActorType g_CAmmoBoxClassInfo = {};
+CDemonActorType g_CAnvilClassInfo = {};
+CDemonActorType g_CArmourClassInfo = {};
+CDemonActorType g_CBackgroundActorClassInfo = {};
+CDemonActorType g_CBaronClassInfo = {};
+CDemonActorType g_CBarrierClassInfo = {};
+CDemonActorType g_CBatClassInfo = {};
+CDemonActorType g_CBatCreatureClassInfo = {};
+CDemonActorType g_CBatmanClassInfo = {};
+CDemonActorType g_CBatteryClassInfo = {};
+CDemonActorType g_CBeastClassInfo = {};
+CDemonActorType g_CBiggsClassInfo = {};
+CDemonActorType g_CBodyPartClassInfo = {};
+CDemonActorType g_CBoneGuyClassInfo = {};
+CDemonActorType g_CBoxActorClassInfo = {};
+CDemonActorType g_CBrideClassInfo = {};
+CDemonActorType g_CBugsClassInfo = {};
+CDemonActorType g_CCharacterClassInfo = {};
+
+// CDemonFilter[8]
+CDemonFilter CDemonFilter_ARRAY_007bc9ec[8] = {};
+
 // undefined1
 undefined1 DAT_007bcd0c = {};
 undefined1 DAT_007bda80 = {};
@@ -15,7 +40,6 @@ undefined1 DAT_007bfd10 = {};
 
 // undefined4
 undefined4 DAT_007bbff4 = {};
-undefined4 DAT_007bc030 = {};
 undefined4 DAT_007bc034 = {};
 undefined4 DAT_007bc038 = {};
 undefined4 DAT_007bc03c = {};
@@ -24,21 +48,16 @@ undefined4 DAT_007bc044 = {};
 undefined4 DAT_007bc048 = {};
 undefined4 DAT_007bc04c = {};
 undefined4 DAT_007bc368 = {};
-undefined4 DAT_007bc3a4 = {};
-undefined4 DAT_007bc3e0 = {};
 undefined4 DAT_007bc498 = {};
 undefined4 DAT_007bc4cc = {};
 undefined4 DAT_007bc4d0 = {};
 undefined4 DAT_007bc4dc = {};
-undefined4 DAT_007bc518 = {};
 undefined4 DAT_007bc74c = {};
 undefined4 DAT_007bc754 = {};
 undefined4 DAT_007bc7b8 = {};
 undefined4 DAT_007bc7c0 = {};
 undefined4 DAT_007bc7dc = {};
 undefined4 DAT_007bc7e4 = {};
-undefined4 DAT_007bc820 = {};
-undefined4 DAT_007bc85c = {};
 undefined4 DAT_007bc944 = {};
 undefined4 DAT_007bc948 = {};
 undefined4 DAT_007bc94c = {};
@@ -46,7 +65,6 @@ undefined4 DAT_007bc958 = {};
 undefined4 DAT_007bc95c = {};
 undefined4 DAT_007bc968 = {};
 undefined4 DAT_007bc96c = {};
-undefined4 DAT_007bc9e8 = {};
 undefined4 DAT_007bcc84 = {};
 undefined4 DAT_007bccdc = {};
 undefined4 DAT_007bcce0 = {};
@@ -62,7 +80,6 @@ undefined4 DAT_007bcf4c = {};
 undefined4 DAT_007bcf50 = {};
 undefined4 DAT_007bda74 = {};
 undefined4 DAT_007bda90 = {};
-undefined4 DAT_007bdc94 = {};
 undefined4 DAT_007bdc98 = {};
 undefined4 DAT_007bdc9c = {};
 undefined4 DAT_007bdca0 = {};

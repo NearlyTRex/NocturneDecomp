@@ -1,0 +1,204 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 54,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "00422930",
+      "from_addr": "00422aba",
+      "name": "core_charactr.cpp_FUN_00422930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042b440",
+      "from_addr": "0042b51f",
+      "name": "core_charactr.cpp_FUN_0042b440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056f3a0",
+      "from_addr": "0056f412",
+      "name": "core_succubus.cpp_FUN_0056f3a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b14a0",
+    "address_range": [
+      [
+        "005b14a0",
+        "005b1542"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CClothList_load_FUN_005b14a0",
+    "signature": "void __cdecl core_cloth_cpp_CClothList_load_FUN_005b14a0(CClothList *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005adeb0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_load_FUN_005adeb0"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005adda0",
+      "is_variadic": false,
+      "name": "core_necklace.cpp_FUN_005adda0"
+    },
+    {
+      "addr": "005ade00",
+      "is_variadic": false,
+      "name": "core_necklace.cpp_FUN_005ade00"
+    },
+    {
+      "addr": "005b7fdc",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7fdc"
+    },
+    {
+      "addr": "005b8be2",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8be2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f11a3",
+      "name": "s_core_cloth_cpp_005f11a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f11b5",
+      "name": "s_CClothList_load_out_of_m_005f11b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00422aba",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00422930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042b51f",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042b440",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056f412",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_FUN_0056f3a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.321428571428571,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 5,
+      "COPY": 43,
+      "INT_ADD": 19,
+      "INT_AND": 34,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 30,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 15,
+      "INT_SUB": 19,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 242
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

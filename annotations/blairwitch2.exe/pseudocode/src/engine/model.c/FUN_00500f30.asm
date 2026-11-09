@@ -1,15 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00500f30(undefined4 *param_1)
+; int __cdecl engine_model_c_FUN_00500f30(SMRGLHeaderExtended *header)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   header
 ; Local Variables:
 ; undefined        Stack[-0x100]:1  local_100
 ;
-; XREF[3]:
-;   FUN_004df770 at 004df78d
-;   FUN_004df960 at 004dfcc4
-;   FUN_004dfd50 at 004dfdba
+; XREF[4]:
+;   engine_3d.c_FUN_004079f0 at 00407a40
+;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004df960 at 004dfcc4
+;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004df770 at 004df78d
+;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004dfd50 at 004dfdba
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00500e1c = 00500f4f
@@ -19,15 +22,15 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b7790
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b7790
 ;
 ; *****************************************************************************
 
 section .text
 
     SUB ESP,0x100                       ; 00500f30
-        ;   Label: FUN_00500f30
+        ;   Label: engine_model.c_FUN_00500f30
     MOV EAX,dword ptr [ESP + 0x104]     ; 00500f36
     MOV EDX,dword ptr [EAX]             ; 00500f3d
     CMP EDX,0x42                        ; 00500f3f
@@ -130,8 +133,8 @@ section .text
     PUSH 0x5df0a3                       ; 00501056 | = "MRGLSize: Bad type : %d"
     LEA EAX,[ESP + 0x8]                 ; 0050105b
     PUSH EAX                            ; 0050105f
-    CALL FUN_005b7790                   ; 00501060
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 00501060
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     MOV EDX,0x5df0bb                    ; 00501065 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 0050106a
     MOV EAX,ESP                         ; 0050106d
@@ -139,8 +142,8 @@ section .text
     PUSH EAX                            ; 00501074
     MOV dword ptr [0x01d046a0],EDX      ; 00501075 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0050107b | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00501081
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00501081
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     MOV EAX,0x4                         ; 00501086
     ADD ESP,0x4                         ; 0050108b
     ADD ESP,0x100                       ; 0050108e

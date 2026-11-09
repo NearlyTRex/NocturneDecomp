@@ -1,0 +1,137 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 25,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 29
+  },
+  "cross_references": [
+    {
+      "addr": "0058ed90",
+      "from_addr": "0058eec2",
+      "name": "wincore_winrun.cpp_FUN_0058ed90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005897b0",
+    "address_range": [
+      [
+        "005897b0",
+        "005897da"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005897b0",
+    "signature": "void __cdecl wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005897b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055f8c0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_restoreVideoMode_FUN_0055f8c0"
+    },
+    {
+      "addr": "EXTERNAL:00000047",
+      "is_variadic": false,
+      "name": "ShowWindow"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c84fc",
+      "name": "PTR_ShowWindow_005c84fc",
+      "type": "void*",
+      "value": "001c8c00"
+    },
+    {
+      "addr": "0264bba0",
+      "name": "DAT_0264bba0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661af8",
+      "name": "DAT_02661af8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02664628",
+      "name": "DAT_02664628",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0058eec2",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_0058ed90",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8461538461538463,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 9,
+      "INT_ADD": 3,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 50
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

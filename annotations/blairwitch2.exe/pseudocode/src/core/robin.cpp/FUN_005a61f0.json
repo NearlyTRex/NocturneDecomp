@@ -1,0 +1,886 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 455,
+    "complexity_score": 1156,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 286,
+    "suspect_count": 83,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "stack_ref",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 741
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a61f0",
+    "address_range": [
+      [
+        "005a61f0",
+        "005a6715"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_robin.cpp_FUN_005a61f0",
+    "signature": "void core_robin_cpp_FUN_005a61f0(int param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cf60"
+    },
+    {
+      "addr": "00591530",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00591530"
+    },
+    {
+      "addr": "00593c60",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyQuaternion_FUN_00593c60"
+    },
+    {
+      "addr": "00593fa0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleX_FUN_00593fa0"
+    },
+    {
+      "addr": "00593fe0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleY_FUN_00593fe0"
+    },
+    {
+      "addr": "00594020",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleZ_FUN_00594020"
+    },
+    {
+      "addr": "00593a10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10"
+    },
+    {
+      "addr": "005a8130",
+      "is_variadic": false,
+      "name": "shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005a8130"
+    },
+    {
+      "addr": "0059daa0",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059daa0"
+    },
+    {
+      "addr": "005a7ed0",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_FUN_005a7ed0"
+    },
+    {
+      "addr": "005a8180",
+      "is_variadic": false,
+      "name": "unkafter_superopt.cpp_FUN_005a8180"
+    },
+    {
+      "addr": "005a8300",
+      "is_variadic": false,
+      "name": "unkafter_superopt.cpp_FUN_005a8300"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0693",
+      "name": "s_Death_005f0693",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0699",
+      "name": "s_Animation_005f0699",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f06a6",
+      "name": "DAT_005f06a6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f06ae",
+      "name": "DAT_005f06ae",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f06b6",
+      "name": "DAT_005f06b6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0265370c",
+      "name": "DAT_0265370c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02653710",
+      "name": "DAT_02653710",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02653714",
+      "name": "DAT_02653714",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.738271604938272,
+    "instruction_count": 405,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 4,
+      "BRANCH": 5,
+      "CALL": 24,
+      "CALLIND": 2,
+      "CALLOTHER": 2,
+      "CBRANCH": 14,
+      "COPY": 846,
+      "FLOAT2FLOAT": 48,
+      "FLOAT_ADD": 6,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 5,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 267,
+      "INT_AND": 124,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 107,
+      "INT_LEFT": 12,
+      "INT_LESS": 9,
+      "INT_MULT": 74,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 15,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 31,
+      "INT_SLESS": 52,
+      "INT_SUB": 176,
+      "INT_XOR": 7,
+      "INT_ZEXT": 86,
+      "LOAD": 99,
+      "POPCOUNT": 52,
+      "RETURN": 1,
+      "STORE": 181
+    },
+    "pcode_op_count": 2324
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_robin_cpp_FUN_005a61f0(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_robin_cpp_FUN_005a61f0(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "auStackY_196c",
+      "severity": "moderate",
+      "text": "uint auStackY_196c [1478];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Death\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Animation\"), iVar1 == 0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 98,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCStack_1c = (CComplexPolygon *)(param_1 + 0x154);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 101,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "unkafter_superopt_cpp_FUN_005a8180(pCStack_1c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unkafter_superopt_cpp_FUN_005a8180(param_1 + 0x198,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "unkafter_superopt_cpp_FUN_005a8180(param_1 + 0x198,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2 = *(float *)(param_1 + 0x2a8) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2a8) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x2a8) = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 <= 0.0) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 108,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x24))(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x24))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x24))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + 7) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 5) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 8) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + 10) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + 0xd) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xb) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xe) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 133,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2a8) = 0x3d4ccccd;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + (uint)bVar6 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(uint *)((int)auStack_12c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_12c + ((uint)bVar6 * -2 + 4) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(uint *)((int)auStack_12c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_12c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 5) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(uint *)((int)auStack_12c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_12c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 5) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(uint *)((int)auStack_10c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_10c + (uint)bVar6 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + 4) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(uint *)((int)auStack_10c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_10c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 5) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(uint *)((int)auStack_10c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_10c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 5) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(uint *)((int)auStack_13c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_13c + (uint)bVar6 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 168,
+      "match": "(uint *)((int)auStack_18c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_18c + (uint)bVar6 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(uint *)((int)auStack_13c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_13c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + -7) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 171,
+      "match": "(uint *)((int)auStack_13c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_13c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + -7) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 177,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + (uint)bVar6 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 178,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + 8) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 179,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_fc + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 9) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(uint *)((int)afStack_fc",
+      "severity": "moderate",
+      "text": "((uint *)((int)afStack_fc + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 9) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 187,
+      "match": "(uint *)((int)auStack_12c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_12c + (uint)bVar6 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + -4) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 189,
+      "match": "(uint *)((int)auStack_12c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_12c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 190,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + -3) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
+      "match": "(uint *)((int)auStack_12c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_12c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
+      "match": "(uint *)((int)auStack_16c",
+      "severity": "moderate",
+      "text": "((uint *)((int)auStack_16c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + -3) * 4))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(uint *)((int)afStack_5c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_5c + ((uint)bVar6 * -2 + 3) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(uint *)((int)auStack_b0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_b0 + (uint)bVar6 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 216,
+      "match": "(uint *)((int)afStack_5c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_5c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(uint *)((int)auStack_b0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_b0 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(uint *)((int)auStack_b0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_b0 + ((uint)bVar6 * -2 + 3) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 225,
+      "match": "(uint *)((int)auStack_b0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_b0 + ((uint)bVar6 * -2 + 6) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 226,
+      "match": "(uint *)((int)auStack_b0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_b0 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 227,
+      "match": "(uint *)((int)auStack_b0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_b0 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 7) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 236,
+      "match": "(uint *)((int)auStack_74",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_74 + (uint)bVar6 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 237,
+      "match": "(uint *)((int)afStack_5c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_5c + (uint)bVar6 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 238,
+      "match": "(uint *)((int)auStack_74",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_74 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 239,
+      "match": "(uint *)((int)afStack_5c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_5c + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 249,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 0x2a8) <= 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 251,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CComplexPolygon *)(param_1 + 0x198));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 254,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2a8) = 0x3d4ccccd;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 274,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "else if ((CDemonActorType *)&stack0x00000000 != &g_CCryptVesselClassInfo) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 284,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CComplexPolygon *)(param_1 + 0x198),0x3f800000,0x3f800000,0,0x3f000000,0,",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 111,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 198,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005a62d0, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 70,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a62d0: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005a6494, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 217,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a6494: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 340,
+        "vtable_addr": "005ffca4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,14 +1,14 @@
-// Name: FUN_00589430
+// Name: wincore_wddvmem.cpp_FUN_00589430
 // Address: 00589430
 // Address Range: [[00589430, 00589557]]
-// Convention: unknown
-// Signature: void FUN_00589430(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_FUN_00589430(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00589430(void)
+void __cdecl wincore_wddvmem_cpp_FUN_00589430(void)
 
 {
   int iVar1;
@@ -16,8 +16,8 @@ void FUN_00589430(void)
   int iVar3;
   
   if (_DAT_01c37788 != 0) {
-    (*_DAT_0264bc2c)(&DAT_01c35838,0x1c34910);
-    FUN_004d0d10();
+    (*_DAT_0264bc2c)(&DAT_01c35838,&DAT_01c34910);
+    wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10();
     return;
   }
   if (_DAT_02661aec != (int *)0x0) {
@@ -40,18 +40,18 @@ void FUN_00589430(void)
     if (iVar2 != 0) {
       _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
       _DAT_01d046a4 = 0x2d7;
-      FUN_004e4500("setpal - Unable to create palette object");
+      core_main_c_FUN_004e4500("setpal - Unable to create palette object");
     }
     iVar2 = (**(code **)(*_DAT_02661ae4 + 0x7c))(_DAT_02661ae4,_DAT_02661aec);
     if (iVar2 != 0) {
       _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
       _DAT_01d046a4 = 0x2dd;
-      FUN_004e4500("setpal - Unable to set front buffer palette");
+      core_main_c_FUN_004e4500("setpal - Unable to set front buffer palette");
     }
   }
   if (DAT_006141c0 < 9) {
     return;
   }
-  FUN_00589270();
+  wincore_wddvmem_cpp_analyzePixelFormat_FUN_00589270();
   return;
 }

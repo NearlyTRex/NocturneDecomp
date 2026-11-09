@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004a38e0(int param_1)
+; int core_fldnotes_cpp_FUN_004a38e0(int param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a41b0 at 004a42f8
+;   core_fldnotes.cpp_FUN_004a41b0 at 004a42f8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005d5dcd
@@ -16,18 +16,18 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_0040d460
-;   FUN_0040d5a0
-;   FUN_0040dd20
-;   FUN_004e4500
-;   FUN_005b8ce0
+;   core_main.c_FUN_004e4500
+;   crt_memory.c_realloc_FUN_005b8ce0
+;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
+;   engine_alphabit.cpp_FUN_0040d460
+;   engine_alphabit.cpp_FUN_0040dd20
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004a38e0
-        ;   Label: FUN_004a38e0
+        ;   Label: core_fldnotes.cpp_FUN_004a38e0
     PUSH ESI                            ; 004a38e1
     PUSH EDI                            ; 004a38e2
     PUSH EBP                            ; 004a38e3
@@ -41,16 +41,16 @@ section .text
     PUSH EAX                            ; 004a38f6
     LEA EAX,[EBX + 0x70]                ; 004a38f7
     PUSH EAX                            ; 004a38fa
-    CALL FUN_0040d5a0                   ; 004a38fb
-        ;   XREF to: 0040d5a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d5a0()
+    CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0 ; 004a38fb
+        ;   XREF to: 0040d5a0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
     MOV EAX,dword ptr [EBX + 0x7c]      ; 004a3900
     IMUL EAX,dword ptr [EBX + 0x80]     ; 004a3903
     ADD ESP,0x10                        ; 004a390a
     PUSH EAX                            ; 004a390d
     MOV EDI,dword ptr [EBX + 0x84]      ; 004a390e
     PUSH EDI                            ; 004a3914
-    CALL FUN_005b8ce0                   ; 004a3915
-        ;   XREF to: 005b8ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8ce0()
+    CALL crt_memory.c_realloc_FUN_005b8ce0 ; 004a3915
+        ;   XREF to: 005b8ce0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005b8ce0(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 004a391a
     MOV dword ptr [EBX + 0x84],EAX      ; 004a391d
     TEST EAX,EAX                        ; 004a3923
@@ -95,13 +95,13 @@ section .text
     PUSH ECX                            ; 004a397f
     LEA ESI,[EBX + 0x88]                ; 004a3980
     PUSH ESI                            ; 004a3986
-    CALL FUN_0040d460                   ; 004a3987
-        ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d460()
+    CALL engine_alphabit.cpp_FUN_0040d460 ; 004a3987
+        ;   XREF to: 0040d460 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d460()
     ADD ESP,0xc                         ; 004a398c
     PUSH 0x0                            ; 004a398f
     PUSH ESI                            ; 004a3991
-    CALL FUN_0040dd20                   ; 004a3992
-        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dd20()
+    CALL engine_alphabit.cpp_FUN_0040dd20 ; 004a3992
+        ;   XREF to: 0040dd20 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040dd20()
     ADD ESP,0x8                         ; 004a3997
     MOV ESI,dword ptr [EBX + 0x9c]      ; 004a399a
     XOR ECX,ECX                         ; 004a39a0
@@ -162,8 +162,8 @@ section .text
     PUSH 0x5d5de2                       ; 004a3a42 | = "Out of memory!"
     MOV [0x01d046a0],EAX                ; 004a3a47 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 004a3a4c | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004a3a52
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a3a52
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004a3a57
     JMP 0x004a392b                      ; 004a3a5a
         ;   XREF to: 004a392b (UNCONDITIONAL_JUMP)  ; LAB_004a392b

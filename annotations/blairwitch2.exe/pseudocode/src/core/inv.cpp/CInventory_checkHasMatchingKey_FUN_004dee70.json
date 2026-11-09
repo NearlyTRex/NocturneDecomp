@@ -1,0 +1,191 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 56,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [
+    {
+      "addr": "0048e7e0",
+      "from_addr": "0048f441",
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf230",
+      "from_addr": "004cf259",
+      "name": "core_hero.cpp_FUN_004cf230",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dee70",
+    "address_range": [
+      [
+        "004dee70",
+        "004def37"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004dee70",
+    "signature": "int __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004dee70(CInventory *this_ptr,uint key_mask,int show_message)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "004b31a0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004b31a0"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dbb2a",
+      "name": "s_You_used_a_key_005dbb29+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbb3a",
+      "name": "s_key_unlock_wav_005dbb3a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbb49",
+      "name": "s_This_door_will_not_open_005dbb49",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "01d02f80",
+      "name": "g_CKeyActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0048f441",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004cf259",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004cf230",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.485714285714286,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 8,
+      "COPY": 62,
+      "INT_ADD": 29,
+      "INT_AND": 41,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 36,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 18,
+      "INT_SUB": 25,
+      "INT_XOR": 2,
+      "LOAD": 21,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 314
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "key_mask",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "show_message",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar4 + 0x2b0) + 0x34))(iVar4,\"key-unlock.wav\");",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 25,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 60
+  },
+  "cross_references": [
+    {
+      "addr": "0047acc0",
+      "from_addr": "0047ad9e",
+      "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047ac10",
+    "address_range": [
+      [
+        "0047ac10",
+        "0047ac5c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0047ac10",
+    "signature": "void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047ac10(CInputString *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0047fc30",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047fc30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0047ad9e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047adc4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047ade1",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047ae85",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.896551724137931,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 24,
+      "INT_ADD": 12,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 113
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInputString *"
+      }
+    ]
+  },
+  "suspects": []
+}

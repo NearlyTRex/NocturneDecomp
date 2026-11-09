@@ -1,0 +1,426 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 110,
+    "cross_reference_count": 18,
+    "function_call_count": 0,
+    "global_count": 18,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 85,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 229
+  },
+  "cross_references": [
+    {
+      "addr": "00554e50",
+      "from_addr": "00554f35",
+      "name": "sound_snddx.cpp_FUN_00554e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555130",
+      "from_addr": "005551fc",
+      "name": "sound_snddx.cpp_FUN_00555130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005552a0",
+      "from_addr": "00555301",
+      "name": "sound_snddx.cpp_FUN_005552a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555560",
+      "from_addr": "0055592a",
+      "name": "sound_snddx.cpp_FUN_00555560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555a80",
+      "from_addr": "00555b09",
+      "name": "sound_snddx.cpp_FUN_00555a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555b60",
+      "from_addr": "00555bd9",
+      "name": "sound_snddx.cpp_FUN_00555b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555ce0",
+      "from_addr": "00555f68",
+      "name": "sound_snddx.cpp_FUN_00555ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556050",
+      "from_addr": "0055616a",
+      "name": "sound_snddx.cpp_FUN_00556050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005561b0",
+      "from_addr": "00556224",
+      "name": "sound_snddx.cpp_FUN_005561b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556290",
+      "from_addr": "00556474",
+      "name": "sound_snddx.cpp_FUN_00556290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556550",
+      "from_addr": "005568f8",
+      "name": "sound_snddx.cpp_FUN_00556550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556ed0",
+      "from_addr": "00556f3e",
+      "name": "sound_snddx.cpp_FUN_00556ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556f80",
+      "from_addr": "00557055",
+      "name": "sound_snddx.cpp_FUN_00556f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005570a0",
+      "from_addr": "00557345",
+      "name": "sound_snddx.cpp_FUN_005570a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055753e",
+      "from_addr": "005575a2",
+      "name": "sound_snddx.cpp_FUN_0055753e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557800",
+      "from_addr": "00557824",
+      "name": "sound_snddx.cpp_FUN_00557800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00554c80",
+      "from_addr": "00554dce",
+      "name": "sound_snddx.cpp_fillStreamBuffer_FUN_00554c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557910",
+      "from_addr": "00557987",
+      "name": "sound_snddx.cpp_getDirectSoundDevice_FUN_00557910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00554ad0",
+    "address_range": [
+      [
+        "00554ad0",
+        "00554c1b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_FUN_00554ad0",
+    "signature": "char * __cdecl sound_snddx_cpp_FUN_00554ad0(uint error_code)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e94c9",
+      "name": "s_DS_OK_The_request_comple_005e94c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e94f4",
+      "name": "s_DSERR_ALLOCATED_The_requ_005e94f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e956c",
+      "name": "s_DSERR_ALREADYINITIALIZED_005e956c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e95a9",
+      "name": "s_DSERR_BADFORMAT_The_spec_005e95a9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e95e6",
+      "name": "s_DSERR_BUFFERLOST_The_buf_005e95e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e962e",
+      "name": "s_DSERR_CONTROLUNAVAIL_The_005e962e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9697",
+      "name": "DAT_005e9697",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e96e8",
+      "name": "s_DSERR_INVALIDCALL_This_f_005e96e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e973c",
+      "name": "s_DSERR_INVALIDPARAM_An_in_005e973c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e978b",
+      "name": "s_DSERR_NOAGGREGATION_The_005e978b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e97c9",
+      "name": "s_DSERR_NODRIVER_No_sound_005e97c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e97ff",
+      "name": "s_DSERR_NOINTERFACE_The_re_005e97ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e983c",
+      "name": "s_DSERR_OTHERAPPHASPRIO_An_005e983c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e98a9",
+      "name": "DAT_005e98a9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e991d",
+      "name": "s_DSERR_PRIOLEVELNEEDED_Th_005e991d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9986",
+      "name": "s_DSERR_UNINITIALIZED_Dire_005e9986",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e99cb",
+      "name": "s_DSERR_UNSUPPORTED_The_fu_005e99cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9a11",
+      "name": "s_DSERR_ELIFINO_Unknown_er_005e9a11",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 46,
+    "call_sites": [
+      {
+        "call_addr": "00557987",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_getDirectSoundDevice_FUN_00557910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00557a7e",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_getDirectSoundDevice_FUN_00557910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00557aae",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_getDirectSoundDevice_FUN_00557910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00557b0d",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_getDirectSoundDevice_FUN_00557910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005575a2",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_0055753e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055765d",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_0055753e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005551fc",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_00555130",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00555263",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_00555130",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00554dce",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_fillStreamBuffer_FUN_00554c80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00554e07",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_fillStreamBuffer_FUN_00554c80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.1868131868131866,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 9,
+      "BRANCH": 2,
+      "CBRANCH": 26,
+      "COPY": 26,
+      "INT_ADD": 23,
+      "INT_AND": 35,
+      "INT_EQUAL": 34,
+      "INT_LESS": 16,
+      "INT_SBORROW": 16,
+      "INT_SLESS": 17,
+      "INT_SUB": 16,
+      "LOAD": 23,
+      "POPCOUNT": 17,
+      "RETURN": 22
+    },
+    "pcode_op_count": 290
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "error_code",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005e9697",
+      "severity": "mild",
+      "text": "return &DAT_005e9697;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005e98a9",
+      "severity": "mild",
+      "text": "return &DAT_005e98a9;",
+      "type": "undefined_data"
+    }
+  ]
+}

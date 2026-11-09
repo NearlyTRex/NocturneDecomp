@@ -1,19 +1,19 @@
-// Name: FUN_0050b160
+// Name: core_netgame.cpp_FUN_0050b160
 // Address: 0050b160
 // Address Range: [[0050b160, 0050b20b]]
 // Convention: unknown
-// Signature: int * FUN_0050b160(int param_1)
+// Signature: int * core_netgame_cpp_FUN_0050b160(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int * FUN_0050b160(int param_1)
+int * core_netgame_cpp_FUN_0050b160(int param_1)
 
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
+  int *dest;
   
   iVar2 = 0;
   if (0 < _DAT_01d54640) {
@@ -32,11 +32,11 @@ int * FUN_0050b160(int param_1)
   if (0x1ff < _DAT_01d54640) {
     _DAT_01d046a0 = "..\\core\\netgame.cpp";
     _DAT_01d046a4 = 299;
-    FUN_004e4500("allocSimFrame - sim history list full");
+    core_main_c_FUN_004e4500("allocSimFrame - sim history list full");
   }
-  piVar3 = (int *)(_DAT_01d54640 * 0x74 + 0x1d54644);
+  dest = (int *)(_DAT_01d54640 * 0x74 + 0x1d54644);
   _DAT_01d54640 = _DAT_01d54640 + 1;
-  FUN_005b77c0(piVar3,0,0x74);
-  *piVar3 = param_1;
-  return piVar3;
+  memset(dest,0,0x74);
+  *dest = param_1;
+  return dest;
 }

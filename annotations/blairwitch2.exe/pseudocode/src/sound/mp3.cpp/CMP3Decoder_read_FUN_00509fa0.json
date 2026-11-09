@@ -1,0 +1,402 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 127,
+    "complexity_score": 365,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 26,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 197
+  },
+  "cross_references": [
+    {
+      "addr": "0054c1c0",
+      "from_addr": "0054c6ea",
+      "name": "sound_sndmain.cpp_FUN_0054c1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ddf0",
+      "from_addr": "0054e3a2",
+      "name": "sound_sndmain.cpp_FUN_0054ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00509fa0",
+    "address_range": [
+      [
+        "00509fa0",
+        "0050a0d8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_00509fa0",
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00509fa0(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050a280",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0050a280"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d23558",
+      "name": "DAT_01d23558",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d23559",
+      "name": "DAT_01d23559",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2355a",
+      "name": "DAT_01d2355a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2355b",
+      "name": "DAT_01d2355b",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0054c6ea",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0054c1c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0054e3a2",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_0054ddf0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.339622641509434,
+    "instruction_count": 106,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 4,
+      "BRANCH": 4,
+      "CALL": 2,
+      "CBRANCH": 10,
+      "COPY": 87,
+      "INT_ADD": 58,
+      "INT_AND": 76,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 65,
+      "INT_LESS": 9,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 12,
+      "INT_SLESS": 31,
+      "INT_SUB": 28,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 41,
+      "POPCOUNT": 30,
+      "RETURN": 1,
+      "STORE": 24,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 566
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "short *"
+      },
+      {
+        "is_param": true,
+        "name": "samples_requested",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01d23558",
+      "severity": "mild",
+      "text": "pcVar7 = &DAT_01d23558;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "cVar1 = pCVar5->field_0x1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar5 = (CMP3Decoder *)&pCVar5->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&this_ptr->field_0x108;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "uVar3 = *(int *)&this_ptr->field_0x104 * iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "puVar6 = *(uint **)&this_ptr->field_0x10c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(uint *)((int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(short *)((int)psVar8",
+      "severity": "moderate",
+      "text": "psVar8 = (short *)((int)psVar8 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x108 = *(int *)&this_ptr->field_0x108 - iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x108 = *(int *)&this_ptr->field_0x108 - iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x10c =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x10c + *(int *)&this_ptr->field_0x104 * iVar2 * 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x10c + *(int *)&this_ptr->field_0x104 * iVar2 * 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "output_buffer = output_buffer + *(int *)&this_ptr->field_0x104 * iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "output_buffer = output_buffer + *(int *)&this_ptr->field_0x104 * iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "(this_ptr,(short *)&this_ptr->field_0x110);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x108 = iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr->field_0x10c = &this_ptr->field_0x110;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr->field_0x10c = &this_ptr->field_0x110;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `psVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)psVar8",
+      "severity": "moderate",
+      "text": "psVar8 = (short *)((int)psVar8 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 19,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = (uVar3 & 0x7fffffff) >> 1; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = (byte)((char)uVar3 * '\\x02') & 0xffffff03; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "severity": "moderate",
+      "text": "pCVar5 = (CMP3Decoder *)&pCVar5->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0050a01b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 54,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0050a01b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

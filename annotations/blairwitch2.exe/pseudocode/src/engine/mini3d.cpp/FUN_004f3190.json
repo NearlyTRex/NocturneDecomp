@@ -1,135 +1,16 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d0991c'; did you mean 'DAT_0060995c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d0991c'; did you mean 'DAT_0060995c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d0991c'; did you mean 'DAT_0060995c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 64,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "undefined_data",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -145,14 +26,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f3190",
-    "signature": "void FUN_004f3190(void)"
+    "name": "engine_mini3d.cpp_FUN_004f3190",
+    "signature": "void engine_mini3d_cpp_FUN_004f3190(void)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     }
   ],
   "globals": [
@@ -240,11 +121,27 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_01d09920",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)(&DAT_01d09920 + _DAT_01d0991c * 0x3c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_01d09920",
+      "severity": "mild",
+      "text": "_DAT_01d09918 = (uint *)(&DAT_01d09920 + _DAT_01d0991c * 0x3c);",
+      "type": "undefined_data"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 22,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar1 = 0xf; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

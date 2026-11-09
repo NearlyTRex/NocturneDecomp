@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0051b1e0(int *param_1)
+; void engine_pod_cpp_FUN_0051b1e0(int *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -11,15 +11,15 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00519f00
+;   core_main.c_FUN_004e4500
+;   engine_pod.cpp_FUN_00519f00
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0051b1e0
-        ;   Label: FUN_0051b1e0
+        ;   Label: engine_pod.cpp_FUN_0051b1e0
     PUSH ESI                            ; 0051b1e1
     PUSH EDI                            ; 0051b1e2
     PUSH EBP                            ; 0051b1e3
@@ -55,8 +55,8 @@ section .text
     PUSH EAX                            ; 0051b21f
     MOV ESI,dword ptr [EBX + 0x4]       ; 0051b220
     PUSH ESI                            ; 0051b223
-    CALL FUN_00519f00                   ; 0051b224
-        ;   XREF to: 00519f00 (UNCONDITIONAL_CALL)  ; undefined FUN_00519f00()
+    CALL engine_pod.cpp_FUN_00519f00    ; 0051b224
+        ;   XREF to: 00519f00 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_FUN_00519f00(CPodFile * this_ptr, char * pod_filename)
     ADD ESP,0x8                         ; 0051b229
     TEST EAX,EAX                        ; 0051b22c
     JZ 0x0051b24c                       ; 0051b22e
@@ -83,8 +83,8 @@ section .text
     MOV EDI,0x5e2805                    ; 0051b259 | = "..\\engine\\pod.cpp"
     PUSH 0x5e2817                       ; 0051b25e | = "Can't re-mount %s"
     MOV dword ptr [0x01d046a0],EDI      ; 0051b263 | DAT_01d046a0
-    CALL FUN_004e4500                   ; 0051b269
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0051b269
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 0051b26e
     JMP 0x0051b230                      ; 0051b271
         ;   XREF to: 0051b230 (UNCONDITIONAL_JUMP)  ; LAB_0051b230

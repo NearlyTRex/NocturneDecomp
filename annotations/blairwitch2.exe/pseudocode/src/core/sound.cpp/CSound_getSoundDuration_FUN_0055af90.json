@@ -1,0 +1,180 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 42,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [
+    {
+      "addr": "00500370",
+      "from_addr": "00500410",
+      "name": "core_mobster.cpp_FUN_00500370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529750",
+      "from_addr": "005297e0",
+      "name": "core_script.cpp_FUN_00529750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055af90",
+    "address_range": [
+      [
+        "0055af90",
+        "0055b041"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_getSoundDuration_FUN_0055af90",
+    "signature": "float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_0055af90(CSound *this_ptr,char *sound_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054fd20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_0054fd20"
+    },
+    {
+      "addr": "0054fcd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_init_FUN_0054fcd0"
+    },
+    {
+      "addr": "005519e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005519e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061ed94",
+      "name": "DAT_0061ed94",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005297e0",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00529750",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00500410",
+        "call_type": "direct",
+        "caller": "core_mobster.cpp_FUN_00500370",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.735849056603773,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 55,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 22,
+      "INT_AND": 37,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 32,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 16,
+      "INT_SUB": 10,
+      "LOAD": 13,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 251
+  },
+  "stack_frame": {
+    "frame_size": 364,
+    "local_size": 356,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_0061ed94",
+      "severity": "mild",
+      "text": "(CVar1 != (CSampleInfo)0x2a)) && (((&DAT_0061ed94)[(byte)((char)CVar1 + 1)] & 2) == 0))) {",
+      "type": "undefined_data"
+    }
+  ]
+}

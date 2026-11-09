@@ -1,15 +1,15 @@
-// Name: FUN_00511df0
+// Name: core_path.cpp_FUN_00511df0
 // Address: 00511df0
 // Address Range: [[00511df0, 0051219d]]
 // Convention: unknown
-// Signature: float FUN_00511df0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
+// Signature: float core_path_cpp_FUN_00511df0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float FUN_00511df0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
+float core_path_cpp_FUN_00511df0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
 
 {
   float fVar1;
@@ -50,7 +50,7 @@ float FUN_00511df0(float *param_1,int param_2,int param_3,int param_4,float *par
   local_60 = local_78;
   local_5c = fStack_74;
   local_58 = fStack_70;
-  FUN_005838f0(&stack0xffffff88);
+  core_vecdir_cpp_FUN_005838f0(&stack0xffffff88);
   local_90 = local_48;
   *(uint *)((int)&stack0xffffff74 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffbc + (uint)bVar2 * -8);
@@ -159,7 +159,7 @@ switchD_00511ebf_caseD_4:
     default:
       _DAT_01d046a0 = "..\\core\\path.cpp";
       _DAT_01d046a4 = 0x183;
-      FUN_004e4500("CPathMap::getDirection - Should never get here either");
+      core_main_c_FUN_004e4500("CPathMap::getDirection - Should never get here either");
     }
   }
   if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_005120c8_default;
@@ -191,7 +191,7 @@ switchD_005120c8_default:
        *(uint *)((int)&stack0xffffff5c + (uint)bVar2 * -8);
   *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)((int)&stack0xffffff60 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  FUN_005838f0(&stack0xffffffac);
+  core_vecdir_cpp_FUN_005838f0(&stack0xffffffac);
   local_9c = local_30;
   *(uint *)((int)&stack0xffffff68 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8);

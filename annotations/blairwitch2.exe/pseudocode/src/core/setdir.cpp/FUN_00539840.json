@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 33,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "004fce00",
+      "from_addr": "004fcef6",
+      "name": "core_mission.cpp_FUN_004fce00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005184c0",
+      "from_addr": "00518651",
+      "name": "core_platfrm.cpp_FUN_005184c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522350",
+      "from_addr": "005242ed",
+      "name": "core_script.cpp_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00539840",
+    "address_range": [
+      [
+        "00539840",
+        "0053985e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_FUN_00539840",
+    "signature": "void __cdecl core_setdir_cpp_FUN_00539840(CDemonSet *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004fcef6",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004fce00",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005242ed",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00518651",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_FUN_005184c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.1,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 1,
+      "COPY": 38,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 5,
+      "INT_AND": 5,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_ZEXT": 4,
+      "LOAD": 4,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x15aec8",
+      "severity": "mild",
+      "text": "if (*(float *)&this_ptr->field_0x15aec8 <= 0.0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x15aec8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x15aec8 = 0x1e3ce508;",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00504250(int *param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl core_motion_cpp_FUN_00504250(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
+; char *           Stack[0xc]:4   indent_prefix
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   FUN_0040bb60 at 0040bc1c
+;   core_actor.cpp_archiveMotionState_FUN_0040bb60 at 0040bc1c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005dfd85
@@ -18,16 +22,16 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005035c0
-;   FUN_005b8010
+;   core_main.c_FUN_004e4500
+;   core_motion.cpp_FUN_005035c0
+;   crt_unknown.c_FUN_005b8010
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00504250
-        ;   Label: FUN_00504250
+        ;   Label: core_motion.cpp_FUN_00504250
     PUSH EDI                            ; 00504251
     PUSH EBP                            ; 00504252
     MOV EBP,ESP                         ; 00504253
@@ -43,16 +47,16 @@ section .text
     PUSH 0x5dfd98                       ; 0050426d | = "Tried to save motion controller state..."
     MOV dword ptr [0x01d046a0],EDI      ; 00504272 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00504278 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050427d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050427d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00504282
     SUB ESP,0x8                         ; 00504285
         ;   Label: LAB_00504285
     FLD float ptr [EBX + 0x8]           ; 00504288
     FSTP double ptr [ESP]               ; 0050428b
     PUSH EBX                            ; 0050428e
-    CALL FUN_005035c0                   ; 0050428f
-        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005035c0()
+    CALL core_motion.cpp_FUN_005035c0   ; 0050428f
+        ;   XREF to: 005035c0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_FUN_005035c0()
     ADD ESP,0x4                         ; 00504294
     PUSH EAX                            ; 00504297
     MOV EDX,dword ptr [EBP + 0x18]      ; 00504298
@@ -60,8 +64,8 @@ section .text
     PUSH 0x5dfde3                       ; 0050429c | = "%s\"%s\",%g // current motion name, c..."
     MOV ECX,dword ptr [EBP + 0x14]      ; 005042a1
     PUSH ECX                            ; 005042a4
-    CALL FUN_005b8010                   ; 005042a5
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8010()
+    CALL crt_unknown.c_FUN_005b8010     ; 005042a5
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
     ADD ESP,0x18                        ; 005042aa
     POP EBP                             ; 005042ad
     POP EDI                             ; 005042ae
@@ -78,8 +82,8 @@ section .text
     PUSH 0x5dfe15                       ; 005042c2 | = "%s\"%s\",%g // current motion name, c..."
     MOV ECX,dword ptr [EBP + 0x14]      ; 005042c7
     PUSH ECX                            ; 005042ca
-    CALL FUN_005b8010                   ; 005042cb
-        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8010()
+    CALL crt_unknown.c_FUN_005b8010     ; 005042cb
+        ;   XREF to: 005b8010 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8010()
     ADD ESP,0x18                        ; 005042d0
     POP EBP                             ; 005042d3
     POP EDI                             ; 005042d4

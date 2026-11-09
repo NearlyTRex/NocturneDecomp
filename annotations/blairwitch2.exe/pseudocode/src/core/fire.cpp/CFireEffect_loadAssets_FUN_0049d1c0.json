@@ -1,0 +1,228 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 84,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [
+    {
+      "addr": "004bb050",
+      "from_addr": "004bb067",
+      "name": "core_game.cpp_CGame_loadAssets_FUN_004bb050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049d1c0",
+    "address_range": [
+      [
+        "0049d1c0",
+        "0049d22b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_loadAssets_FUN_0049d1c0",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0049d1c0(CFireEffect *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00494130",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_00494130"
+    },
+    {
+      "addr": "00496610",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_00496610"
+    },
+    {
+      "addr": "00496c40",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_00496c40"
+    },
+    {
+      "addr": "004995e0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_004995e0"
+    },
+    {
+      "addr": "00498c90",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadDebrisAssets_FUN_00498c90"
+    },
+    {
+      "addr": "00495900",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadFireBallAssets_FUN_00495900"
+    },
+    {
+      "addr": "0049a150",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadGunFlameAssets_FUN_0049a150"
+    },
+    {
+      "addr": "0049aab0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadLightningBoltAssets_FUN_0049aab0"
+    },
+    {
+      "addr": "0046ca00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00"
+    },
+    {
+      "addr": "0059d5f0",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059d5f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006150f4",
+      "name": "DAT_006150f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061510c",
+      "name": "DAT_0061510c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615124",
+      "name": "DAT_00615124",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bb067",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadAssets_FUN_004bb050",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4814814814814814,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "CALL": 12,
+      "COPY": 12,
+      "INT_ADD": 5,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 19,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 94
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006150f4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_006150f4",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_006150f4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_0061510c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_0061510c",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_0061510c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00615124);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00615124",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00615124);",
+      "type": "undefined_data"
+    }
+  ]
+}

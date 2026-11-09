@@ -1,0 +1,135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 82,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "004fb590",
+      "from_addr": "004fb700",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040c950",
+    "address_range": [
+      [
+        "0040c950",
+        "0040c987"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_resetActorTypeInfo_FUN_0040c950",
+    "signature": "void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c950(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "007bc044",
+      "name": "DAT_007bc044",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc048",
+      "name": "DAT_007bc048",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc04c",
+      "name": "DAT_007bc04c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 17,
+      "INT_ADD": 6,
+      "INT_AND": 13,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 2,
+      "INT_XOR": 2,
+      "LOAD": 4,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 81
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_007bc044",
+      "severity": "mild",
+      "text": "if (0 < DAT_007bc044) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_007bc048",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)&DAT_007bc048 + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_007bc044",
+      "severity": "mild",
+      "text": "} while (iVar3 < DAT_007bc044);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&DAT_007bc048` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)&DAT_007bc048",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&DAT_007bc048 + iVar2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 13,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&DAT_007bc048 + iVar2);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+// Name: crt_unknown.c_FUN_005b8580
+// Address: 005b8580
+// Address Range: [[005b8580, 005b858d]]
+// Convention: __cdecl
+// Signature: void * __cdecl crt_unknown_c_FUN_005b8580(ulong size)
+
+#include "nocturne.h"
+
+void * __cdecl FUN_005b8580(ulong size)
+
+{
+  void *pvVar1;
+  
+  pvVar1 = (void *)FUN_005b8590(size);
+  return pvVar1;
+}

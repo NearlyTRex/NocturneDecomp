@@ -1,0 +1,133 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 21,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "0044a3e0",
+      "from_addr": "0044a499",
+      "name": "core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_0044a3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044a020",
+      "from_addr": "0044a192",
+      "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_0044a020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044a4d0",
+      "from_addr": "0044a512",
+      "name": "core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_0044a4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044a2d0",
+      "from_addr": "0044a343",
+      "name": "core_dlight.cpp_CDemonLight_endScene_FUN_0044a2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5640",
+      "from_addr": "004c56bd",
+      "name": "core_glass.cpp_FUN_004c5640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538470",
+      "from_addr": "00538522",
+      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538d10",
+      "from_addr": "00538dbf",
+      "name": "core_setdir.cpp_FUN_00538d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004699a0",
+      "from_addr": "004699f6",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004699a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046b940",
+    "address_range": [
+      [
+        "0046b940",
+        "0046b950"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer *this_ptr,int value)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0070ca74",
+      "name": "DAT_0070ca74",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.6,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "COPY": 4,
+      "INT_ADD": 4,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 13
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_0070ca74",
+      "severity": "mild",
+      "text": "DAT_0070ca74 = value;",
+      "type": "undefined_data"
+    }
+  ]
+}

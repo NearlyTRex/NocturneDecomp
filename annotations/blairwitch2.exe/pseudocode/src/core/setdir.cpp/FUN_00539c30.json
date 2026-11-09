@@ -1,138 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 22,
-        "message": "use of undeclared identifier 'DAT_005e6050'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 22,
-        "message": "use of undeclared identifier 'DAT_005e604d'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 26,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 42,
-        "message": "no matching function for call to 'FUN_00538670'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 189,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 12,
+    "suspect_count": 6,
     "suspect_types": [
-      "raw_address_constant",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 165
@@ -141,7 +21,7 @@
     {
       "addr": "00539860",
       "from_addr": "00539892",
-      "name": "FUN_00539860",
+      "name": "core_setdir.cpp_FUN_00539860",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,30 +33,30 @@
         "00539d4f"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_00539c30",
-    "signature": "void FUN_00539c30(int *param_1,undefined4 param_2)"
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_FUN_00539c30",
+    "signature": "void __cdecl core_setdir_cpp_FUN_00539c30(CDemonSet *this_ptr,char *filename)"
   },
   "function_calls": [
     {
-      "addr": "00460c70",
-      "is_variadic": false,
-      "name": "FUN_00460c70"
-    },
-    {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "00538670",
       "is_variadic": false,
-      "name": "FUN_00538670"
+      "name": "core_setdir.cpp_CZThumb_write_FUN_00538670"
     },
     {
       "addr": "005b89c0",
       "is_variadic": false,
-      "name": "FUN_005b89c0"
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "00460c70",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00460c70"
     }
   ],
   "globals": [
@@ -235,22 +115,20 @@
       {
         "call_addr": "00539892",
         "call_type": "direct",
-        "caller": "FUN_00539860",
-        "estimated_params": 3,
+        "caller": "core_setdir.cpp_FUN_00539860",
+        "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.172043010752688,
@@ -281,10 +159,10 @@
     "pcode_op_count": 388
   },
   "stack_frame": {
-    "frame_size": 32,
+    "frame_size": 40,
     "local_size": 32,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -307,6 +185,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -320,35 +212,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void FUN_00539c30(int *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void FUN_00539c30(int *param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = FUN_00460c70(&DAT_005e6050,param_2,&DAT_005e604d);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 15,
       "match": "DAT_005e6050",
       "severity": "mild",
-      "text": "iVar1 = FUN_00460c70(&DAT_005e6050,param_2,&DAT_005e604d);",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(&DAT_005e6050,filename,&DAT_005e604d);",
       "type": "undefined_data"
     },
     {
@@ -356,56 +224,32 @@
       "line": 15,
       "match": "DAT_005e604d",
       "severity": "mild",
-      "text": "iVar1 = FUN_00460c70(&DAT_005e6050,param_2,&DAT_005e604d);",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(&DAT_005e6050,filename,&DAT_005e604d);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x144",
       "severity": "mild",
-      "text": "FUN_004e4500(\"Can't create %s\",param_2);",
-      "type": "unnamed_param"
+      "text": "if (*(int *)&local_18->field_0x144 != 0) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x1a4",
       "severity": "mild",
-      "text": "if (0 < *param_1) {",
-      "type": "unnamed_param"
+      "text": "local_18 = (CDemonSet *)&local_18->field_0x1a4;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_14 < *param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_004e4500(\"Error writing %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x2093d34 assigned to bare local `local_1c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_1c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 24,
-      "match": "0x2093d34",
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_18->owner`). Replace `local_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 40,
+      "match": "local_18 = (T *)&local_18->FIELD",
       "severity": "moderate",
-      "text": "local_1c = 0x2093d34;",
-      "type": "raw_address_constant"
+      "text": "local_18 = (CDemonSet *)&local_18->field_0x1a4;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

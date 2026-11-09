@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void engine_font_cpp_FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x16c]:1  local_16c
@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a7d00 at 004a7f40
+;   engine_font.cpp_FUN_004a7d00 at 004a7f40
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005d6940
@@ -32,18 +32,18 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004a8d90
-;   FUN_004e4500
-;   FUN_005b7790
-;   FUN_005b7fce
-;   FUN_005b8df8
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_FUN_005b7fce
+;   crt_unknown.c_FUN_005b8df8
+;   engine_font.cpp_FUN_004a8d90
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004a88e0
-        ;   Label: FUN_004a88e0
+        ;   Label: engine_font.cpp_FUN_004a88e0
     PUSH ESI                            ; 004a88e1
     PUSH EDI                            ; 004a88e2
     PUSH EBP                            ; 004a88e3
@@ -54,8 +54,8 @@ section .text
     IMUL EBX,EDX                        ; 004a88ff
     LEA EAX,[EDX*0x4 + 0x0]             ; 004a8902
     PUSH EAX                            ; 004a8909
-    CALL FUN_005b8df8                   ; 004a890a
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 004a890a
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     ADD ESP,0x4                         ; 004a890f
     MOV dword ptr [ESP + 0x12c],EAX     ; 004a8912
     TEST EAX,EAX                        ; 004a8919
@@ -94,16 +94,16 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004a8988
     PUSH EAX                            ; 004a898c
     MOV EBX,0x2db                       ; 004a898d
-    CALL FUN_005b7790                   ; 004a8992
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 004a8992
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     ADD ESP,0xc                         ; 004a8997
     MOV EAX,ESP                         ; 004a899a
     MOV ECX,0x5d698f                    ; 004a899c | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004a89a1
     MOV dword ptr [0x01d046a4],EBX      ; 004a89a2 | DAT_01d046a4
     MOV dword ptr [0x01d046a0],ECX      ; 004a89a8 | DAT_01d046a0
-    CALL FUN_004e4500                   ; 004a89ae
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a89ae
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004a89b3
     MOV EAX,dword ptr [ESP + 0x174]     ; 004a89b6
         ;   Label: LAB_004a89b6
@@ -218,8 +218,8 @@ section .text
     PUSH 0x5d6953                       ; 004a8b5b | = "Out of memory"
     MOV dword ptr [0x01d046a0],ECX      ; 004a8b60 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 004a8b66 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004a8b6c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a8b6c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004a8b71
     JMP 0x004a8921                      ; 004a8b74
         ;   XREF to: 004a8921 (UNCONDITIONAL_JUMP)  ; LAB_004a8921
@@ -253,8 +253,8 @@ section .text
     PUSH 0x5d69a2                       ; 004a8bc2 | = "Too many chars: fontfile %s, chars %d"
     LEA EAX,[ESP + 0xc]                 ; 004a8bc7
     PUSH EAX                            ; 004a8bcb
-    CALL FUN_005b7790                   ; 004a8bcc
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 004a8bcc
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     MOV EAX,0x30f                       ; 004a8bd1
     ADD ESP,0x10                        ; 004a8bd6
     MOV [0x01d046a4],EAX                ; 004a8bd9 | DAT_01d046a4
@@ -262,8 +262,8 @@ section .text
     MOV ECX,0x5d69c8                    ; 004a8be0 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004a8be5
     MOV dword ptr [0x01d046a0],ECX      ; 004a8be6 | DAT_01d046a0
-    CALL FUN_004e4500                   ; 004a8bec
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a8bec
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004a8bf1
     MOV EAX,dword ptr [ESP + 0x150]     ; 004a8bf4
         ;   Label: LAB_004a8bf4
@@ -301,8 +301,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1de8]    ; 004a8c65
     PUSH ECX                            ; 004a8c6b
     PUSH ESI                            ; 004a8c6c
-    CALL FUN_004a8d90                   ; 004a8c6d
-        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; undefined FUN_004a8d90()
+    CALL engine_font.cpp_FUN_004a8d90   ; 004a8c6d
+        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8d90()
     MOV dword ptr [EBX + 0x39e8],EAX    ; 004a8c72
     MOV EDX,dword ptr [ESI + 0x41ec]    ; 004a8c78
     ADD ESP,0x14                        ; 004a8c7e
@@ -341,8 +341,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1de8]    ; 004a8ce1
     PUSH ECX                            ; 004a8ce7
     PUSH ESI                            ; 004a8ce8
-    CALL FUN_004a8d90                   ; 004a8ce9
-        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; undefined FUN_004a8d90()
+    CALL engine_font.cpp_FUN_004a8d90   ; 004a8ce9
+        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8d90()
     MOV dword ptr [EBX + 0x39e8],EAX    ; 004a8cee
     MOV EDI,dword ptr [ESI + 0x41ec]    ; 004a8cf4
     ADD ESP,0x14                        ; 004a8cfa
@@ -383,8 +383,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x41ec]    ; 004a8d67
     PUSH EBX                            ; 004a8d6d
     MOV dword ptr [ESI + 0x41f0],EAX    ; 004a8d6e
-    CALL FUN_005b7fce                   ; 004a8d74
-        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fce()
+    CALL crt_unknown.c_FUN_005b7fce     ; 004a8d74
+        ;   XREF to: 005b7fce (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_005b7fce(void * ptr)
     ADD ESP,0x4                         ; 004a8d79
     ADD ESP,0x15c                       ; 004a8d7c
     POP EBP                             ; 004a8d82

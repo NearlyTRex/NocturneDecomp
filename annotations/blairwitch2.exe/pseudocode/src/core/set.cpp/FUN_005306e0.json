@@ -1,0 +1,204 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 104,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_stride_bytecount",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "004268b0",
+      "from_addr": "00426943",
+      "name": "core_charactr.cpp_FUN_004268b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e6c0",
+      "from_addr": "0053e7fb",
+      "name": "core_shadow.cpp_FUN_0053e6c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6bc0",
+      "from_addr": "005a6ccd",
+      "name": "unkafter_cross.cpp_FUN_005a6bc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005306e0",
+    "address_range": [
+      [
+        "005306e0",
+        "00530748"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_FUN_005306e0",
+    "signature": "void core_set_cpp_FUN_005306e0(undefined4 param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ba1f0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005ba1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01fc961c",
+      "name": "DAT_01fc961c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00426943",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_004268b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053e7fb",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_FUN_0053e6c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a6ccd",
+        "call_type": "direct",
+        "caller": "unkafter_cross.cpp_FUN_005a6bc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.428571428571429,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 19,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 22,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 12,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 186
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_set_cpp_FUN_005306e0(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_set_cpp_FUN_005306e0(uint param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == *(int *)(iVar2 + 0x1fc9620)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((_DAT_01fc961c - iVar3) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 18,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

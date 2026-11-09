@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0044ea80(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void core_dmodel_cpp_FUN_0044ea80(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
 ; XREF[2]:
-;   FUN_0044de20 at 0044dedf
-;   FUN_0044e010 at 0044e0f4
+;   core_dmodel.cpp_FUN_0044de20 at 0044dedf
+;   core_dmodel.cpp_FUN_0044e010 at 0044e0f4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005cf7af
@@ -21,23 +21,23 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_0044e590
-;   FUN_004e4500
-;   FUN_005b8df8
+;   core_dmodel.cpp_FUN_0044e590
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b8df8
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0044ea80
-        ;   Label: FUN_0044ea80
+        ;   Label: core_dmodel.cpp_FUN_0044ea80
     PUSH ESI                            ; 0044ea81
     PUSH EDI                            ; 0044ea82
     PUSH EBP                            ; 0044ea83
     MOV EBX,dword ptr [ESP + 0x14]      ; 0044ea84
     PUSH EBX                            ; 0044ea88
-    CALL FUN_0044e590                   ; 0044ea89
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined FUN_0044e590()
+    CALL core_dmodel.cpp_FUN_0044e590   ; 0044ea89
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044e590()
     ADD ESP,0x4                         ; 0044ea8e
     MOV EAX,dword ptr [ESP + 0x18]      ; 0044ea91
     MOV dword ptr [EBX + 0x104],EAX     ; 0044ea95
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5cf7e9                       ; 0044eae5 | = "Too many parts!"
     MOV dword ptr [0x01d046a0],EBP      ; 0044eaea | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0044eaf0 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0044eaf5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0044eaf5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0044eafa
     MOV EAX,dword ptr [EBX + 0x104]     ; 0044eafd
         ;   Label: LAB_0044eafd
@@ -73,8 +73,8 @@ section .text
     SUB EAX,EDX                         ; 0044eb13
     SHL EAX,0x2                         ; 0044eb15
     PUSH EAX                            ; 0044eb18
-    CALL FUN_005b8df8                   ; 0044eb19
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 0044eb19
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     MOV EDX,dword ptr [EBX + 0x110]     ; 0044eb1e
     MOV dword ptr [EBX + 0x10c],EAX     ; 0044eb24
     LEA EAX,[EDX*0x8 + 0x0]             ; 0044eb2a
@@ -82,15 +82,15 @@ section .text
     ADD ESP,0x4                         ; 0044eb33
     SHL EAX,0x3                         ; 0044eb36
     PUSH EAX                            ; 0044eb39
-    CALL FUN_005b8df8                   ; 0044eb3a
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 0044eb3a
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     MOV dword ptr [EBX + 0x114],EAX     ; 0044eb3f
     MOV EAX,dword ptr [EBX + 0x110]     ; 0044eb45
     ADD ESP,0x4                         ; 0044eb4b
     SHL EAX,0x2                         ; 0044eb4e
     PUSH EAX                            ; 0044eb51
-    CALL FUN_005b8df8                   ; 0044eb52
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 0044eb52
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     MOV EDX,dword ptr [EBX + 0x100]     ; 0044eb57
     MOV dword ptr [EBX + 0x118],EAX     ; 0044eb5d
     LEA EAX,[EDX*0x4 + 0x0]             ; 0044eb63
@@ -98,8 +98,8 @@ section .text
     ADD ESP,0x4                         ; 0044eb6c
     SHL EAX,0x3                         ; 0044eb6f
     PUSH EAX                            ; 0044eb72
-    CALL FUN_005b8df8                   ; 0044eb73
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 0044eb73
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     ADD ESP,0x4                         ; 0044eb78
     MOV ECX,dword ptr [EBX + 0x10c]     ; 0044eb7b
     MOV dword ptr [EBX + 0x350],EAX     ; 0044eb81
@@ -108,8 +108,8 @@ section .text
         ;   XREF to: 0044ec06 (CONDITIONAL_JUMP)  ; LAB_0044ec06
     PUSH EBX                            ; 0044eb8b
         ;   Label: LAB_0044eb8b
-    CALL FUN_0044e590                   ; 0044eb8c
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined FUN_0044e590()
+    CALL core_dmodel.cpp_FUN_0044e590   ; 0044eb8c
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044e590()
     ADD ESP,0x4                         ; 0044eb91
     MOV EDI,dword ptr [EBX + 0x110]     ; 0044eb94
     PUSH EDI                            ; 0044eb9a
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5cf80c                       ; 0044ebb3 | = "Out of memory in CKeyFramedModel::all..."
     MOV dword ptr [0x01d046a4],ESI      ; 0044ebb8 | DAT_01d046a4
     MOV dword ptr [0x01d046a0],ECX      ; 0044ebbe | DAT_01d046a0
-    CALL FUN_004e4500                   ; 0044ebc4
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0044ebc4
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x10                        ; 0044ebc9
     CMP dword ptr [EBX + 0x100],0x1     ; 0044ebcc
     JZ 0x0044ec4d                       ; 0044ebd3
@@ -140,8 +140,8 @@ section .text
     PUSH 0x5cf7c2                       ; 0044ebe8 | = "Too many materials!"
     MOV dword ptr [0x01d046a0],ECX      ; 0044ebed | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0044ebf3 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0044ebf9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0044ebf9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0044ebfe
     JMP 0x0044ead2                      ; 0044ec01
         ;   XREF to: 0044ead2 (UNCONDITIONAL_JUMP)  ; LAB_0044ead2
@@ -177,8 +177,8 @@ section .text
     SUB EAX,EDX                         ; 0044ec5a
     SHL EAX,0x2                         ; 0044ec5c
     PUSH EAX                            ; 0044ec5f
-    CALL FUN_005b8df8                   ; 0044ec60
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 0044ec60
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     ADD ESP,0x4                         ; 0044ec65
     MOV dword ptr [EBX + 0x108],EAX     ; 0044ec68
     TEST EAX,EAX                        ; 0044ec6e
@@ -191,8 +191,8 @@ section .text
     PUSH 0x5cf878                       ; 0044ec87 | = "Out of memory for vertex normals in C..."
     MOV dword ptr [0x01d046a0],ESI      ; 0044ec8c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0044ec92 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0044ec98
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0044ec98
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 0044ec9d
     POP EBP                             ; 0044eca0
     POP EDI                             ; 0044eca1

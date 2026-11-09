@@ -1,139 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 20,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 25,
-        "message": "no matching function for call to 'FUN_00519e50'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 25,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 202,
+    "complexity_score": 218,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
-    "suspect_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 17,
     "suspect_types": [
+      "pointer_truncation",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 113
+    "total_lines": 114
   },
   "cross_references": [],
   "function": {
@@ -145,29 +26,29 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_0051b110",
-    "signature": "void FUN_0051b110(int *param_1,undefined4 param_2)"
+    "name": "engine_pod.cpp_FUN_0051b110",
+    "signature": "void engine_pod_cpp_FUN_0051b110(int *param_1,char *param_2)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
-    },
-    {
-      "addr": "00519e50",
-      "is_variadic": false,
-      "name": "FUN_00519e50"
-    },
-    {
-      "addr": "00519f00",
-      "is_variadic": false,
-      "name": "FUN_00519f00"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "FUN_005b8be2"
+      "name": "crt_unknown.c_FUN_005b8be2"
+    },
+    {
+      "addr": "00519e50",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_00519e50"
+    },
+    {
+      "addr": "00519f00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_FUN_00519f00"
     }
   ],
   "globals": [
@@ -277,7 +158,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0051b110(int *param_1,uint param_2)",
+      "text": "void engine_pod_cpp_FUN_0051b110(int *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -285,12 +166,12 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_0051b110(int *param_1,uint param_2)",
+      "text": "void engine_pod_cpp_FUN_0051b110(int *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "if (99 < *param_1) {",
@@ -298,18 +179,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[*param_1 + 1] = iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[*param_1 + 1] = iVar2;",
+      "text": "param_1[*param_1 + 1] = (int)pCVar1;",
       "type": "unnamed_param"
     },
     {
@@ -317,12 +190,12 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[*param_1 + 1] == 0) {",
+      "text": "param_1[*param_1 + 1] = (int)pCVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[*param_1 + 1] == 0) {",
@@ -330,31 +203,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_00519f00(param_1[*param_1 + 1],param_2);",
+      "text": "if (param_1[*param_1 + 1] == 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_00519f00(param_1[*param_1 + 1],param_2);",
+      "text": "iVar2 = engine_pod_cpp_FUN_00519f00((CPodFile *)param_1[*param_1 + 1],param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = engine_pod_cpp_FUN_00519f00((CPodFile *)param_1[*param_1 + 1],param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_00519f00(param_1[*param_1 + 1],param_2);",
+      "text": "iVar2 = engine_pod_cpp_FUN_00519f00((CPodFile *)param_1[*param_1 + 1],param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
@@ -362,23 +243,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = *param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_004e4500(\"Can't mount %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
@@ -387,21 +252,45 @@
     {
       "description": "Unnamed function parameter",
       "line": 34,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4500(\"Can't mount %s\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_1 + 1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = *param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)pCVar1",
+      "severity": "moderate",
+      "text": "param_1[*param_1 + 1] = (int)pCVar1;",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CPod",
         "offset": 4,
         "vtable_addr": "005fad6c"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonPod",
         "offset": 12,
         "vtable_addr": "005fadd4"
       }

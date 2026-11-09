@@ -1,0 +1,903 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 376,
+    "complexity_score": 658,
+    "cross_reference_count": 0,
+    "function_call_count": 17,
+    "global_count": 53,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 123,
+    "suspect_count": 50,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 499
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00450620",
+    "address_range": [
+      [
+        "00450620",
+        "00450a5b"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_doc.cpp_FUN_00450620",
+    "signature": "void core_doc_cpp_FUN_00450620(CHero *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041be70",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_FUN_0041be70"
+    },
+    {
+      "addr": "005b1780",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_process_FUN_005b1780"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "0044fd70",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
+    },
+    {
+      "addr": "00453d80",
+      "is_variadic": false,
+      "name": "core_doc.cpp_FUN_00453d80"
+    },
+    {
+      "addr": "004ce4a0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004ce4a0"
+    },
+    {
+      "addr": "00502f10",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00502f10"
+    },
+    {
+      "addr": "00503860",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00503860"
+    },
+    {
+      "addr": "00547810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    },
+    {
+      "addr": "00544f50",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00540e80"
+    },
+    {
+      "addr": "005469a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_005469a0"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    },
+    {
+      "addr": "005a8030",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_FUN_005a8030"
+    },
+    {
+      "addr": "005a8050",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_FUN_005a8050"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cfce3",
+      "name": "s_Bip01_head_005cfce3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfcee",
+      "name": "s_Bip01_L_Clavicle_005cfcee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfcff",
+      "name": "s_Bip01_R_Clavicle_005cfcff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd10",
+      "name": "s_Bip01_L_UpperArm_005cfd10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd21",
+      "name": "s_Bip01_R_UpperArm_005cfd21",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd32",
+      "name": "s_Bip01_L_ForeArm_005cfd32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd42",
+      "name": "s_Bip01_R_ForeArm_005cfd42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd52",
+      "name": "s_Bip01_L_Foot_005cfd52",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd5f",
+      "name": "s_Bip01_R_Foot_005cfd5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd6c",
+      "name": "s_Bip01_L_Thigh_005cfd6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd7a",
+      "name": "s_Bip01_R_Thigh_005cfd7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd88",
+      "name": "s_Bip01_L_Calf_005cfd88",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfd95",
+      "name": "s_Bip01_R_Calf_005cfd95",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfda2",
+      "name": "s_Bip01_L_Hand_005cfda2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfdaf",
+      "name": "s_Bip01_R_Hand_005cfdaf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfdbc",
+      "name": "s_Bip01_Neck_005cfdbc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfdc7",
+      "name": "s_Bip01_Spine2_005cfdc7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfdd4",
+      "name": "s_Bip01_Spine1_005cfdd4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfde1",
+      "name": "s_Bip01_Spine_005cfde1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfded",
+      "name": "s_Bip01_Pelvis_005cfded",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfdfa",
+      "name": "s_turnlstart_005cfdfa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfe05",
+      "name": "s_turnrstart_005cfe05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfe10",
+      "name": "s_pickup_005cfe10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfe17",
+      "name": "DAT_005cfe17",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cfe18",
+      "name": "s_Bip01_head_005cfe18",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfe23",
+      "name": "s_LANTERN_005cfe23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cfe24",
+      "name": "s_ANTERN_005cfe23+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cfe25",
+      "name": "s_NTERN_005cfe23+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cfe26",
+      "name": "s_TERN_005cfe23+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cfe2b",
+      "name": "s_Lantern_kfm_005cfe2b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01b4d258",
+      "name": "DAT_01b4d258",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d25c",
+      "name": "DAT_01b4d25c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d260",
+      "name": "DAT_01b4d260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d264",
+      "name": "DAT_01b4d264",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d268",
+      "name": "DAT_01b4d268",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d26c",
+      "name": "DAT_01b4d26c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d270",
+      "name": "DAT_01b4d270",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d274",
+      "name": "DAT_01b4d274",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d278",
+      "name": "DAT_01b4d278",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d27c",
+      "name": "DAT_01b4d27c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d280",
+      "name": "DAT_01b4d280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d284",
+      "name": "DAT_01b4d284",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d288",
+      "name": "DAT_01b4d288",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d28c",
+      "name": "DAT_01b4d28c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d290",
+      "name": "DAT_01b4d290",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d294",
+      "name": "DAT_01b4d294",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d298",
+      "name": "DAT_01b4d298",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d29c",
+      "name": "DAT_01b4d29c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d2a0",
+      "name": "DAT_01b4d2a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d2a4",
+      "name": "DAT_01b4d2a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d2a8",
+      "name": "DAT_01b4d2a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d2ac",
+      "name": "DAT_01b4d2ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d2b0",
+      "name": "DAT_01b4d2b0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9247648902821317,
+    "instruction_count": 319,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 43,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 238,
+      "INT_ADD": 117,
+      "INT_AND": 112,
+      "INT_CARRY": 47,
+      "INT_EQUAL": 110,
+      "INT_LESS": 5,
+      "INT_MULT": 12,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 47,
+      "INT_SLESS": 55,
+      "INT_SUB": 175,
+      "INT_XOR": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 25,
+      "POPCOUNT": 55,
+      "RETURN": 1,
+      "STORE": 181
+    },
+    "pcode_op_count": 1252
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_doc_cpp_FUN_00450620(CHero *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "apCStackY_102c",
+      "severity": "moderate",
+      "text": "CSkeleton *apCStackY_102c [1012];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_hero_cpp_FUN_004ce4a0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (CDeformableModelInstance *)(param_1 + 0x2b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x2618) = _DAT_01b4d28c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x2690) = _DAT_01b4d290;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 + 0x25724 != (CHero *)&uStack_44) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x25724) = uStack_44;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x25728) = auStack_40[0];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2572c) = auStack_40[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_005469a0(param_1 + 0x2b4,_DAT_01b4d268);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 + 0x25730 != (CHero *)&uStack_38) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x25730) = uStack_38;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CSkeleton **)(param_1 + 0x25734) = apCStack_34[0];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CSkeleton **)(param_1 + 0x25738) = apCStack_34[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_doc_cpp_FUN_00453d80(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2573c) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x25750) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x257a8) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x256b0) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x256b4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x2b4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = _strcmp((char *)(param_1 + 0x2514),(char *)(param_1 + 0x257b0));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = _strcmp((char *)(param_1 + 0x2514),(char *)(param_1 + 0x257b0));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)(param_1 + 0x2d10),(char *)(param_1 + 0x258b0));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)(param_1 + 0x2d10),(char *)(param_1 + 0x258b0));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x2b4),&DAT_005cfe17);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 99,
+      "match": "DAT_005cfe17",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x2b4),&DAT_005cfe17);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 100,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x148))(param_1,param_1 + 0x257b0,param_1 + 0x258b0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x148))(param_1,param_1 + 0x257b0,param_1 + 0x258b0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x148))(param_1,param_1 + 0x257b0,param_1 + 0x258b0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x148))(param_1,param_1 + 0x257b0,param_1 + 0x258b0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x148))(param_1,param_1 + 0x257b0,param_1 + 0x258b0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x10a24) = iVar6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CClothList *)(param_1 + 0x2d0c),(CVector3f *)(param_1 + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CClothList *)(param_1 + 0x2d0c),(CVector3f *)(param_1 + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)(param_1 + 0x30),10.0,*(float *)(param_1 + 0x2574),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)(param_1 + 0x30),10.0,*(float *)(param_1 + 0x2574),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CDeformableModelInstance *)(param_1 + 0x2b4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unkaddr_005a7eb0_cpp_FUN_005a8030(param_1 + 0x154,0x100);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unkaddr_005a7eb0_cpp_FUN_005a8050(param_1 + 0x154,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unkaddr_005a7eb0_cpp_FUN_005a8050(param_1 + 0x154,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = (CBoxActor *)(param_1 + 0x259b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 118,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar3->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 119,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar3 = (CBoxActor *)&pCVar3->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 122,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 0x25c68),\"Lantern.kfm\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 124,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)(param_1 + 0x25c68));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 125,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_boxactor_cpp_FUN_0041be70((CBoxActor *)(param_1 + 0x259b4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 119,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CBoxActor *)&pCVar3->field_0x2;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f5174"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

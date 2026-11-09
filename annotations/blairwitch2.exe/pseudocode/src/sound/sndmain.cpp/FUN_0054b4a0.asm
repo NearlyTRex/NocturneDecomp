@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0054b4a0(int *param_1,int *param_2,int param_3)
+; undefined4 sound_sndmain_cpp_FUN_0054b4a0(int *param_1,int *param_2,int param_3)
 ;
 ;
 ; XREF[3]:
-;   FUN_0054c1c0 at 0054c356
-;   FUN_0054c7f0 at 0054caa8
-;   FUN_005519e0 at 00551b08
+;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c356
+;   sound_sndmain.cpp_FUN_0054c7f0 at 0054caa8
+;   sound_sndmain.cpp_FUN_005519e0 at 00551b08
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_RIFF_ID_not_found_at_off_005e788e
@@ -28,16 +28,16 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005549c0
-;   FUN_005b7790
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b7790
+;   sound_sndmain.cpp_FUN_005549c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0054b4a0
-        ;   Label: FUN_0054b4a0
+        ;   Label: sound_sndmain.cpp_FUN_0054b4a0
     PUSH ESI                            ; 0054b4a1
     PUSH EDI                            ; 0054b4a2
     PUSH EBP                            ; 0054b4a3
@@ -81,8 +81,8 @@ section .text
     PUSH EAX                            ; 0054b4f2 | = "\"RIFF\" ID not found at offset 00000..." | s_WAVE_ID_not_found_at_off_005e78cf | s_data_chunk_preceeds_fmt_005e78f7
         ;   Label: LAB_0054b4f2
     PUSH 0x5e78b6                       ; 0054b4f3 | = "WAV file is invalid: %s\n"
-    CALL FUN_005549c0                   ; 0054b4f8
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005549c0()
+    CALL sound_sndmain.cpp_FUN_005549c0 ; 0054b4f8
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
     ADD ESP,0x8                         ; 0054b4fd
     XOR EAX,EAX                         ; 0054b500
     ADD ESP,0x78                        ; 0054b502
@@ -290,8 +290,8 @@ section .text
     PUSH 0x5e7a18                       ; 0054b722 | = "Hell froze"
     MOV dword ptr [0x01d046a0],EDI      ; 0054b727 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 0054b72d | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0054b733
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0054b733
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0054b738
     MOV EDX,dword ptr [ESP + 0x94]      ; 0054b73b
         ;   Label: LAB_0054b73b
@@ -330,8 +330,8 @@ section .text
     PUSH 0x5e795a                       ; 0054b7ac | = "Invalid \"fmt\" chunk tag: %04X"
     LEA EAX,[ESP + 0x8]                 ; 0054b7b1
     PUSH EAX                            ; 0054b7b5
-    CALL FUN_005b7790                   ; 0054b7b6
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 0054b7b6
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     LEA EAX,[ESP + 0xc]                 ; 0054b7bb
     ADD ESP,0xc                         ; 0054b7bf
     JMP 0x0054b4f2                      ; 0054b7c2
@@ -343,8 +343,8 @@ section .text
     PUSH 0x5e7978                       ; 0054b7cf | = "Invalid number of channels: %u  (must..."
     LEA EAX,[ESP + 0x8]                 ; 0054b7d4
     PUSH EAX                            ; 0054b7d8
-    CALL FUN_005b7790                   ; 0054b7d9
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 0054b7d9
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     LEA EAX,[ESP + 0xc]                 ; 0054b7de
     ADD ESP,0xc                         ; 0054b7e2
     JMP 0x0054b4f2                      ; 0054b7e5
@@ -377,8 +377,8 @@ section .text
     PUSH 0x5e79a9                       ; 0054b836 | = "Invalid bytes/sec value: %u (%04Xh)"
     LEA EAX,[ESP + 0xc]                 ; 0054b83b
     PUSH EAX                            ; 0054b83f
-    CALL FUN_005b7790                   ; 0054b840
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 0054b840
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     LEA EAX,[ESP + 0x10]                ; 0054b845
     ADD ESP,0x10                        ; 0054b849
     JMP 0x0054b4f2                      ; 0054b84c
@@ -389,8 +389,8 @@ section .text
     PUSH 0x5e79e2                       ; 0054b85b | = "Hell froze"
     MOV [0x01d046a0],EAX                ; 0054b860 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0054b865 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0054b86b
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0054b86b
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0054b870
     JMP 0x0054b68d                      ; 0054b873
         ;   XREF to: 0054b68d (UNCONDITIONAL_JUMP)  ; LAB_0054b68d

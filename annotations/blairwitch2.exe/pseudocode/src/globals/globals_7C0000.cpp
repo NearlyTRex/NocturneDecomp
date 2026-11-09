@@ -4,6 +4,17 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x7C0000
 // =============================================================================
 
+// CConsole
+CConsole g_CConsoleInstance = {};
+
+// CDemonActorType
+CDemonActorType g_CColonelClassInfo = {};
+CDemonActorType g_CConstructClassInfo = {};
+CDemonActorType g_CConveyorClassInfo = {};
+CDemonActorType g_CZombieCowClassInfo = {};
+CDemonActorType g_CCrateClassInfo = {};
+CDemonActorType g_CCrossbowClassInfo = {};
+
 // undefined1
 undefined1 DAT_007c0310 = {};
 undefined1 DAT_007c0340 = {};
@@ -25,7 +36,6 @@ undefined4 DAT_007c0f14 = {};
 undefined4 DAT_007c0f40 = {};
 undefined4 DAT_007c0f44 = {};
 undefined4 DAT_007c150c = {};
-undefined4 DAT_007c158c = {};
 undefined4 DAT_007c254c = {};
 undefined4 DAT_007c2554 = {};
 undefined4 DAT_007c2560 = {};
@@ -33,5 +43,4 @@ undefined4 DAT_007c2568 = {};
 undefined4 DAT_007c256c = {};
 undefined4 DAT_007c2578 = {};
 undefined4 DAT_007c2580 = {};
-undefined4 DAT_007c2670 = {};
 

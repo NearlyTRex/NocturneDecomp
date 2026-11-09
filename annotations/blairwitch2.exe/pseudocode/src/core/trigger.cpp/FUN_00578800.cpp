@@ -1,15 +1,15 @@
-// Name: FUN_00578800
+// Name: core_trigger.cpp_FUN_00578800
 // Address: 00578800
 // Address Range: [[00578800, 00578b8c]]
 // Convention: unknown
-// Signature: undefined4 FUN_00578800(int param_1,int param_2)
+// Signature: undefined4 core_trigger_cpp_FUN_00578800(int param_1,int param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_00578800(int param_1,int param_2)
+uint core_trigger_cpp_FUN_00578800(int param_1,int param_2)
 
 {
   float fVar1;
@@ -81,14 +81,14 @@ uint FUN_00578800(int param_1,int param_2)
          *(uint *)((int)&stack0xffffffd8 + (uint)bVar7 * -8);
     *(uint *)(&stack0xffffffb8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
          *(uint *)((int)&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-    FUN_00408d70(param_2,pfVar8);
+    core_actor_cpp_FUN_00408d70(param_2,pfVar8);
     fStack_68 = fStack_38;
     (&stack0xffffff9c)[(uint)bVar7 * 0xfffffffe] =
          (float)*(uint *)(&stack0xffffffcc + (uint)bVar7 * -8);
     *(uint *)((int)&stack0xffffffa0 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
          *(uint *)(&stack0xffffffd0 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
     if (*(int *)(param_1 + 0x374) != 0) {
-      iVar4 = FUN_0040c8f0(param_2,DAT_007bdc94);
+      iVar4 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CCharacterClassInfo.name_hash);
       if ((iVar4 != 0) && (*(int *)(iVar4 + 0x2570) == 0)) {
         return 0;
       }
@@ -99,7 +99,7 @@ uint FUN_00578800(int param_1,int param_2)
     fVar2 = fStack_60 - *(float *)(param_1 + 0x28);
     if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
         *(float *)(param_1 + 0x2b4) * *(float *)(param_1 + 0x2b4)) {
-      FUN_00408de0(param_1,&stack0xffffff98);
+      core_actor_cpp_FUN_00408de0(param_1,&stack0xffffff98);
       fStack_44 = fStack_74;
       (&stack0xffffffc0)[(uint)bVar7 * 0xfffffffe] =
            (float)*(uint *)(&stack0xffffff90 + (uint)bVar7 * -8);
@@ -128,11 +128,11 @@ uint FUN_00578800(int param_1,int param_2)
         if (*(int *)(param_1 + 0x2cc) != 1) {
           _DAT_01d046a0 = "..\\core\\trigger.cpp";
           _DAT_01d046a4 = 0x391;
-          FUN_004e4500("CTrigger::containsActor - invalid trigger shape %d for %s",*(uint *)(param_1 + 0x2cc),param_1)
-          ;
+          core_main_c_FUN_004e4500
+                    ("CTrigger::containsActor - invalid trigger shape %d for %s",*(uint *)(param_1 + 0x2cc),param_1);
           _DAT_01d046a0 = "..\\core\\trigger.cpp";
           _DAT_01d046a4 = 0x397;
-          FUN_004e4500("Hell froze...");
+          core_main_c_FUN_004e4500("Hell froze...");
           return 0;
         }
         (**(code **)(*(int *)(param_1 + 0x2b0) + 0x24))(param_1);

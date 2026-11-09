@@ -1,0 +1,82 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 34,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "005badd7",
+      "from_addr": "005badda",
+      "name": "crt_unknown.c_FUN_005badd7",
+      "type": "CONDITIONAL_JUMP"
+    },
+    {
+      "addr": "005c045c",
+      "from_addr": "005c05df",
+      "name": "crt_unknown.c_FUN_005c045c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005badf6",
+    "address_range": [
+      [
+        "005badf6",
+        "005bae02"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005badf6",
+    "signature": "undefined4 crt_unknown_c_FUN_005badf6(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c1c20",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c1c20"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.25,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 1,
+      "INT_SUB": 3,
+      "LOAD": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 13
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(int *)(&stack0xfffffff4 + iVar5) = iVar5;",
+      "type": "stack_ref"
+    }
+  ]
+}

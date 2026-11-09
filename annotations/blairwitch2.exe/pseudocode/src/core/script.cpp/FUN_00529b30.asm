@@ -1,36 +1,38 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00529b30(int *param_1)
+; int __cdecl core_script_cpp_FUN_00529b30(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   FUN_004b6170 at 004b6bec
+;   core_game.cpp_FUN_004b6170 at 004b6bec
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_processing_script_005e4df8
 ;   TerminatedCString s_core_script_cpp_005e4e47
 ;   TerminatedCString s_Infinite_loop_detected_t_005e4e5a
-;   undefined4 DAT_006138e0
-;   undefined4 DAT_00616494
-;   undefined4 DAT_01cb6b44
+;   CEditorTools* g_CEditorToolsPtr = 01c25594
+;   CGame* g_CGamePtr = 01cb6900
+;   undefined4 g_CGameInstance.field580_0x244
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_0047be40
-;   FUN_004e4500
-;   FUN_00522350
-;   FUN_00529b00
+;   core_main.c_FUN_004e4500
+;   core_script.cpp_FUN_00522350
+;   core_script.cpp_FUN_00529b00
+;   shape_edittool.cpp_FUN_0047be40
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00529b30
-        ;   Label: FUN_00529b30
+        ;   Label: core_script.cpp_FUN_00529b30
     PUSH EBP                            ; 00529b31
     SUB ESP,0x4                         ; 00529b32
     MOV EBX,dword ptr [ESP + 0x10]      ; 00529b35
@@ -46,15 +48,15 @@ section .text
         ;   Label: LAB_00529b4a
     PUSH ESI                            ; 00529b4b
     PUSH EBX                            ; 00529b4c
-    CALL FUN_00529b00                   ; 00529b4d
-        ;   XREF to: 00529b00 (UNCONDITIONAL_CALL)  ; undefined FUN_00529b00()
+    CALL core_script.cpp_FUN_00529b00   ; 00529b4d
+        ;   XREF to: 00529b00 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00529b00()
     XOR ESI,ESI                         ; 00529b52
     MOV EAX,dword ptr [EBX + 0x454]     ; 00529b54
     ADD ESP,0x4                         ; 00529b5a
     MOV dword ptr [EBX + 0x44],EAX      ; 00529b5d
-    MOV EAX,[0x00616494]                ; 00529b60 | DAT_00616494
+    MOV EAX,[0x00616494]                ; 00529b60 | g_CGamePtr
         ;   Label: LAB_00529b60
-    CMP dword ptr [EAX + 0x244],0x0     ; 00529b65 | DAT_01cb6b44
+    CMP dword ptr [EAX + 0x244],0x0     ; 00529b65 | g_CGameInstance.field580_0x244
     JZ 0x00529bf7                       ; 00529b6c
         ;   XREF to: 00529bf7 (CONDITIONAL_JUMP)  ; LAB_00529bf7
     CMP dword ptr [EBX],0x0             ; 00529b72
@@ -66,8 +68,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EBP       ; 00529b85
     PUSH EBX                            ; 00529b89
     MOV EDI,dword ptr [EBX + 0x44]      ; 00529b8a
-    CALL FUN_00522350                   ; 00529b8d
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined FUN_00522350()
+    CALL core_script.cpp_FUN_00522350   ; 00529b8d
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00522350()
     ADD ESP,0x8                         ; 00529b92
     TEST EAX,EAX                        ; 00529b95
     JL 0x00529bd0                       ; 00529b97
@@ -86,8 +88,8 @@ section .text
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00529bbd
     PUSH EDX                            ; 00529bc0
     PUSH 0x5e4e5a                       ; 00529bc1 | = "Infinite loop detected trying to skip..."
-    CALL FUN_004e4500                   ; 00529bc6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00529bc6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 00529bcb
     JMP 0x00529b60                      ; 00529bce
         ;   XREF to: 00529b60 (UNCONDITIONAL_JUMP)  ; LAB_00529b60
@@ -99,10 +101,10 @@ section .text
     MOV ECX,dword ptr [EAX + EDI*0x8]   ; 00529bdd
     PUSH ECX                            ; 00529be0
     PUSH 0x5e4df8                       ; 00529be1 | = "Error processing script to skip cinem..."
-    MOV EDI,dword ptr [0x006138e0]      ; 00529be6 | DAT_006138e0
+    MOV EDI,dword ptr [0x006138e0]      ; 00529be6 | g_CEditorToolsPtr
     PUSH EDI                            ; 00529bec
-    CALL FUN_0047be40                   ; 00529bed
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined FUN_0047be40()
+    CALL shape_edittool.cpp_FUN_0047be40 ; 00529bed
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
     ADD ESP,0x14                        ; 00529bf2
     JMP 0x00529b99                      ; 00529bf5
         ;   XREF to: 00529b99 (UNCONDITIONAL_JUMP)  ; LAB_00529b99

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004d57e0(int param_1,int param_2)
+; void core_icepick_cpp_FUN_004d57e0(int param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -11,16 +11,16 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005916b0
-;   FUN_00591c10
+;   core_main.c_FUN_004e4500
+;   core_xform.cpp_FUN_00591c10
+;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004d57e0
-        ;   Label: FUN_004d57e0
+        ;   Label: core_icepick.cpp_FUN_004d57e0
     PUSH EDI                            ; 004d57e1
     PUSH EBP                            ; 004d57e2
     SUB ESP,0x9c                        ; 004d57e3
@@ -76,8 +76,8 @@ section .text
     PUSH EAX                            ; 004d58b2
     LEA EAX,[ESP + 0x38]                ; 004d58b3
     PUSH EAX                            ; 004d58b7
-    CALL FUN_00591c10                   ; 004d58b8
-        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined FUN_00591c10()
+    CALL core_xform.cpp_FUN_00591c10    ; 004d58b8
+        ;   XREF to: 00591c10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591c10()
     LEA EAX,[EBP*0x4 + 0x0]             ; 004d58bd
     ADD ESP,0xc                         ; 004d58c4
     SUB EAX,EBP                         ; 004d58c7
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 004d58e0
     LEA ESI,[ESP + 0x8]                 ; 004d58e1
     MOV EDI,EBX                         ; 004d58e5
-    CALL FUN_005916b0                   ; 004d58e7
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005916b0()
+    CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 004d58e7
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
     MOV ECX,0xc                         ; 004d58ec
     LEA ESI,[ESP + 0x8]                 ; 004d58f1
     ADD ESP,0x8                         ; 004d58f5
@@ -116,8 +116,8 @@ section .text
     PUSH 0x5da882                       ; 004d592b | = "CIcePick::getCarryObjToBodyXForm - wr..."
     MOV dword ptr [0x01d046a0],ECX      ; 004d5930 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004d5936 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004d593c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004d593c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004d5941
     JMP 0x004d58a6                      ; 004d5944
         ;   XREF to: 004d58a6 (UNCONDITIONAL_JUMP)  ; LAB_004d58a6

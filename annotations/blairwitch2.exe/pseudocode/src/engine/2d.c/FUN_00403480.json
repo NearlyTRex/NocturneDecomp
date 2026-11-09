@@ -1,129 +1,9 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_0070ca38'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 19,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 171,
     "complexity_score": 522,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 20,
     "max_suspect_severity": "mild",
@@ -136,7 +16,14 @@
     ],
     "total_lines": 238
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "004036a0",
+      "from_addr": "004036b3",
+      "name": "engine_2d.c_mapTextureFrameBuffer_FUN_004036a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "00403480",
     "address_range": [
@@ -146,14 +33,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00403480",
-    "signature": "int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)"
+    "name": "engine_2d.c_FUN_00403480",
+    "signature": "int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     }
   ],
   "globals": [
@@ -279,13 +166,27 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004036b3",
+        "call_type": "direct",
+        "caller": "engine_2d.c_mapTextureFrameBuffer_FUN_004036a0",
+        "estimated_params": 6,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
-    "matches_declared": true
+    "estimated_params": 6,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.898550724637682,
@@ -331,37 +232,6 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_00403480.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 31,
-          "line": 22,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 29,
-          "line": 30,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 37,
-          "line": 31,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -376,7 +246,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
+      "text": "int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -384,7 +254,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
+      "text": "int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -392,7 +262,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
+      "text": "int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -400,7 +270,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
+      "text": "int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -408,7 +278,7 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
+      "text": "int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -714,30 +584,6 @@
       "severity": "mild",
       "text": "} while (iVar1 < param_3 * 4);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 22,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar1 = param_2 * param_4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 30,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar1 = param_2 * param_4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 31,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "if ((int)((param_5 ^ (int)param_5 >> 0x1f) - ((int)param_5 >> 0x1f)) <",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

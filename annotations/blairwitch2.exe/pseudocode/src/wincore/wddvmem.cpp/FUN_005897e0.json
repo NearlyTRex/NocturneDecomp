@@ -1,146 +1,32 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 8,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_0264bba0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_02661af8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_02661ae4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_02661ae4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_02661ae4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_02661ae8'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 235,
-    "cross_reference_count": 1,
+    "complexity_score": 238,
+    "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 53,
     "suspect_count": 17,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 194
+    "total_lines": 197
   },
   "cross_references": [
     {
       "addr": "00589560",
       "from_addr": "0058962d",
-      "name": "FUN_00589560",
+      "name": "wincore_wddvmem.cpp_FUN_00589560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ed90",
+      "from_addr": "0058ee9c",
+      "name": "wincore_winrun.cpp_FUN_0058ed90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -156,35 +42,35 @@
         "00589951"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_005897e0",
-    "signature": "void FUN_005897e0(void)"
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_FUN_005897e0",
+    "signature": "void __cdecl wincore_wddvmem_cpp_FUN_005897e0(void)"
   },
   "function_calls": [
     {
-      "addr": "005c74ae",
-      "is_variadic": false,
-      "name": "DirectDrawCreate"
-    },
-    {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005c74ae",
+      "is_variadic": false,
+      "name": "crt_ddraw.c_DirectDrawCreate"
     },
     {
       "addr": "0055f770",
       "is_variadic": false,
-      "name": "FUN_0055f770"
-    },
-    {
-      "addr": "00588a50",
-      "is_variadic": false,
-      "name": "FUN_00588a50"
+      "name": "engine_special.cpp_setResolutionAndColorTable_FUN_0055f770"
     },
     {
       "addr": "EXTERNAL:00000044",
       "is_variadic": false,
       "name": "SetFocus"
+    },
+    {
+      "addr": "00588a50",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_00588a50"
     }
   ],
   "globals": [
@@ -325,7 +211,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
+      "line": 12,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661ae4 + 0x6c))(_DAT_02661ae4);",
@@ -333,7 +219,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
+      "line": 13,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661ae8 + 0x6c))(_DAT_02661ae8);",
@@ -341,7 +227,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 15,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*_DAT_02661ae4 + 0x7c))(_DAT_02661ae4,_DAT_02661aec);",
@@ -349,31 +235,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 27,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "iVar1 = FUN_0055f770(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
+      "text": "(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 27,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "iVar1 = FUN_0055f770(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
+      "text": "(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 27,
       "match": "DAT_006141c0",
       "severity": "mild",
-      "text": "iVar1 = FUN_0055f770(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
+      "text": "(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
+      "line": 31,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661aec + 8))(_DAT_02661aec);",
@@ -381,7 +267,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
+      "line": 35,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661ae8 + 8))(_DAT_02661ae8);",
@@ -389,7 +275,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661ae4 + 8))(_DAT_02661ae4);",
@@ -397,7 +283,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
+      "line": 43,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661ae0 + 0x4c))(_DAT_02661ae0);",
@@ -405,7 +291,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661ae0 + 8))(_DAT_02661ae0);",
@@ -413,15 +299,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 48,
       "match": "DAT_02661ae0",
       "severity": "mild",
-      "text": "iVar1 = DirectDrawCreate(0,&DAT_02661ae0,0);",
+      "text": "((GUID *)0x0,(LPDIRECTDRAW *)&DAT_02661ae0,(IUnknown *)0x0);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
+      "line": 50,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02661ae0 + 0x50))(_DAT_02661ae0,_DAT_02664628,0x11);",
@@ -429,26 +315,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 52,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
+      "text": "wincore_wddvmem_cpp_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 52,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
+      "text": "wincore_wddvmem_cpp_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 52,
       "match": "DAT_006141c0",
       "severity": "mild",
-      "text": "FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
+      "text": "wincore_wddvmem_cpp_FUN_00588a50(DAT_006141b8,DAT_006141bc,DAT_006141c0);",
       "type": "undefined_data"
     }
   ]

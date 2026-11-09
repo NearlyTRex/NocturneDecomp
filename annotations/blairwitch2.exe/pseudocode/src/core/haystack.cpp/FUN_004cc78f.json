@@ -1,0 +1,267 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 283,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 23,
+    "suspect_types": [
+      "concat_reconstruction",
+      "nonstandard_int",
+      "pointer_truncation",
+      "register_param",
+      "unaffected_reg",
+      "unnamed_field",
+      "unrolled_memset"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cc78f",
+    "address_range": [
+      [
+        "004cc78f",
+        "004cc7c3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_haystack.cpp_FUN_004cc78f",
+    "signature": "void core_haystack_cpp_FUN_004cc78f(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.375,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 11,
+      "INT_ADD": 12,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "LOAD": 19,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 86
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "char *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "CDeformableModelInstance *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cVar1 = (char)in_EAX + *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cVar1 = (char)in_EAX + *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "pcVar2 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 12,
+      "match": "int3",
+      "severity": "mild",
+      "text": "pcVar2 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar1);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(unaff_EBX,unaff_retaddr);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x860 = 0x3f800000;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x860",
+      "severity": "mild",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x860 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x85c = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x85c",
+      "severity": "mild",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x85c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x858 = *(uint *)&unaff_EBX[0x11].field_0x85c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x858 = *(uint *)&unaff_EBX[0x11].field_0x85c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x858",
+      "severity": "mild",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x858 = *(uint *)&unaff_EBX[0x11].field_0x85c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x85c",
+      "severity": "mild",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x858 = *(uint *)&unaff_EBX[0x11].field_0x85c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x854 = *(uint *)&unaff_EBX[0x11].field_0x858;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x854 = *(uint *)&unaff_EBX[0x11].field_0x858;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x854",
+      "severity": "mild",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x854 = *(uint *)&unaff_EBX[0x11].field_0x858;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x858",
+      "severity": "mild",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x854 = *(uint *)&unaff_EBX[0x11].field_0x858;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(char)in_EAX",
+      "severity": "moderate",
+      "text": "cVar1 = (char)in_EAX + *in_EAX;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(uint)in_EAX",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 17,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "*(uint *)&unaff_EBX[0x11].field_0x85c = 0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 12,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar1);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

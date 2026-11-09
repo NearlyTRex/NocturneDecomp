@@ -1,0 +1,132 @@
+// Name: core_fire.cpp_FUN_0049d840
+// Address: 0049d840
+// Address Range: [[0049d840, 0049dad3]]
+// Convention: __cdecl
+// Signature: void __cdecl core_fire_cpp_FUN_0049d840(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_fire_cpp_FUN_0049d840(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue)
+
+{
+  float fVar1;
+  float fVar2;
+  uint uVar3;
+  uint uVar4;
+  float fVar5;
+  byte bVar6;
+  float afStackY_1094 [1005];
+  float local_b8;
+  float local_b4;
+  float local_b0;
+  float local_ac;
+  float local_a8;
+  float local_a4;
+  byte local_a0 [4];
+  float local_9c [4];
+  float local_8c;
+  byte local_88 [8];
+  float local_80;
+  float local_7c;
+  float local_78;
+  float local_74;
+  float local_70;
+  float local_6c [4];
+  float local_5c;
+  float local_58;
+  float local_54;
+  float local_50;
+  float local_4c;
+  float local_48;
+  float local_44;
+  float local_40;
+  float local_3c;
+  float local_38;
+  float local_34;
+  float local_30;
+  float local_2c;
+  float local_28;
+  float local_24;
+  float local_20;
+  float local_14;
+  
+  bVar6 = 0;
+  local_b4 = total_time;
+  local_b0 = total_time * _DAT_005d57ce;
+  if (total_time * _DAT_005d57ce < (float)_DAT_005d57d2) {
+    local_b0 = 0.05;
+  }
+  local_88._0_4_ = *(float *)start_position;
+  local_88._4_4_ = *(float *)&start_position->field_0x4;
+  local_80 = *(float *)&start_position->field_0x8;
+  local_7c = *(float *)velocity;
+  local_78 = *(float *)&velocity->field_0x4;
+  local_74 = *(float *)&velocity->field_0x8;
+  while( true ) {
+    fVar5 = local_80;
+    uVar4 = local_88._4_4_;
+    uVar3 = local_88._0_4_;
+    local_b8 = local_b4;
+    if (local_b0 < local_b4) {
+      local_b8 = local_b0;
+    }
+    fVar1 = local_74 * local_b8;
+    local_14 = local_b8 * (float)_DAT_005d57da * local_b8;
+    local_28 = local_14 * 0.0;
+    local_40 = local_7c * local_b8;
+    fVar2 = local_b4 - local_b8;
+    local_3c = local_78 * local_b8;
+    local_20 = local_28;
+    local_24 = local_14 * _DAT_005d57e2;
+    local_58 = local_28;
+    local_6c[(uint)bVar6 * -2 + 6] = local_6c[(uint)bVar6 * -2 + 0x12];
+    local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
+         local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13];
+    local_38 = fVar1;
+    local_b4 = fVar2;
+    local_6c[2] = local_40;
+    local_6c[(uint)bVar6 * -2 + 3] = local_6c[(uint)bVar6 * -2 + 0xc];
+    local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+         local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
+    fVar1 = local_b4;
+    local_4c = (float)uVar3 + local_6c[2];
+    local_48 = (float)uVar4 + local_6c[3];
+    local_44 = fVar5 + local_5c;
+    local_9c[2] = (float)uVar3 + local_6c[2];
+    local_9c[(uint)bVar6 * -2 + 3] = local_6c[(uint)bVar6 * -2 + 9];
+    local_9c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+         local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
+    local_70 = local_9c[2] + local_58;
+    local_6c[0] = local_9c[3] + local_54;
+    local_6c[1] = local_8c + local_50;
+    local_a0 = (byte  [4])(local_9c[2] + local_58);
+    local_9c[(uint)bVar6 * -2] = local_6c[(uint)bVar6 * -2];
+    local_9c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+         local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    if (fVar1 <= 0.0) break;
+    core_fire_cpp_CFireEffect_createLaserSegment_FUN_0049d770
+              (this_ptr,(CVector3f *)local_88,(CVector3f *)local_a0,beam_width,0.0,reflection_normal
+               ,red,green,blue,0x3CA3D70A);
+    if (local_88 != local_a0) {
+      local_88._0_4_ = local_a0;
+      local_88._4_4_ = local_9c[0];
+      local_80 = local_9c[1];
+    }
+    local_34 = local_b8 * 0.0;
+    local_2c = local_34;
+    local_30 = local_b8 * _DAT_005d57e2;
+    local_ac = local_34;
+    *(float *)((int)&stack0xffffff58 + (uint)bVar6 * -8) = local_6c[(uint)bVar6 * -2 + 0xf];
+    *(float *)((int)&stack0xffffff5c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+         local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10];
+    local_7c = local_7c + local_ac;
+    local_78 = local_78 + local_a8;
+    local_74 = local_74 + local_a4;
+  }
+  core_fire_cpp_CFireEffect_createLaserSegment_FUN_0049d770
+            (this_ptr,(CVector3f *)local_88,(CVector3f *)local_a0,beam_width,reticle_intensity,
+             reflection_normal,red,green,blue,0x3CA3D70A);
+  return;
+}

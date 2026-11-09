@@ -1,98 +1,102 @@
-// Name: FUN_004accb0
+// Name: core_frankgen.cpp_FUN_004accb0
 // Address: 004accb0
 // Address Range: [[004accb0, 004ace5e]]
-// Convention: unknown
-// Signature: void FUN_004accb0(int param_1)
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_frankgen_cpp_FUN_004accb0(CFrankenstienMachine *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004accb0(int param_1)
+CVector3f * __cdecl core_frankgen_cpp_FUN_004accb0(CFrankenstienMachine *this_ptr)
 
 {
   int iVar1;
-  uint uVar2;
-  int iVar3;
-  int *piVar4;
-  int *piVar5;
-  byte bVar6;
-  float10 fVar7;
-  int aiStackY_102c [1015];
-  uint uVar8;
-  uint local_44;
+  CKeyFramedModel *this_ptr_00;
+  CVector3i *pCVar2;
+  byte bVar3;
+  float10 fVar4;
+  int aiStackY_102c [9];
+  CVector3f *apCStackY_1008 [1006];
+  float start_frame;
+  float end_frame;
+  int frame_index;
+  CVector3f local_44;
   int local_38;
-  int local_34;
-  int local_30;
+  int local_34 [2];
   float local_2c;
   float local_28;
   float local_24;
-  uint local_20;
-  int local_1c [3];
+  byte local_20 [8];
+  CVector3f *local_18;
+  int local_14;
   
-  bVar6 = 0;
-  switch(*(uint *)(param_1 + 0x2b4)) {
+  bVar3 = 0;
+  switch(*(uint *)&this_ptr->field_0x2b4) {
   case 0:
-    uVar8 = 0;
-    uVar2 = 0x450FC000;
+    start_frame = 0.0;
+    end_frame = 0x450FC000;
     goto LAB_004accd9;
   case 1:
-    FUN_004aced0(param_1,0x43030000,0x4427c000);
+    core_frankgen_cpp_FUN_004aced0(this_ptr,131.0,671.0);
     break;
   case 2:
-    FUN_004aced0(param_1,0x4403c000,0x445dc000);
+    core_frankgen_cpp_FUN_004aced0(this_ptr,527.0,887.0);
     break;
   case 3:
-    FUN_004aced0(param_1,0x44882000,0x44d9a000);
+    core_frankgen_cpp_FUN_004aced0(this_ptr,1089.0,1741.0);
     break;
   case 4:
-    FUN_004aced0(param_1,0x43af0000,0x43c80000);
+    core_frankgen_cpp_FUN_004aced0(this_ptr,350.0,400.0);
     break;
   case 5:
-    FUN_004aced0(param_1,0x44580000,0x44828000);
+    core_frankgen_cpp_FUN_004aced0(this_ptr,864.0,1044.0);
     break;
   case 6:
   case 7:
-    uVar8 = 0x44d4a000;
-    uVar2 = 0x44f14000;
+    start_frame = 1701.0;
+    end_frame = 1930.0;
     goto LAB_004accd9;
   case 8:
-    uVar8 = 0x44f3a000;
-    uVar2 = 0x450fc000;
+    start_frame = 1949.0;
+    end_frame = 2300.0;
 LAB_004accd9:
-    FUN_004acf60(param_1,uVar8,uVar2);
+    core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60
+              (this_ptr,start_frame,end_frame);
     break;
   default:
     _DAT_01d046a0 = "..\\core\\frankgen.cpp";
     _DAT_01d046a4 = 0x1bb;
-    FUN_004e4500(&DAT_005d6ce6);
+    core_main_c_FUN_004e4500(&DAT_005d6ce6);
   }
-  FUN_00408ae0(param_1);
-  fVar7 = (float10)*(float *)(param_1 + 0x2dc);
-  FUN_005b7ff0();
-  local_1c[2] = (int)ROUND(fVar7);
-  iVar1 = *(int *)(param_1 + 0x5e4);
-  uVar2 = FUN_0044fd20(param_1 + 0x2e0,local_1c[2]);
-  iVar3 = FUN_0044e6e0(uVar2);
-  piVar4 = (int *)(iVar1 * 0xc + iVar3);
-  piVar5 = piVar4 + (uint)bVar6 * -2 + 1;
-  local_38 = *piVar4;
-  *(int *)((int)&stack0xffffffcc + (uint)bVar6 * -8) = *piVar5;
-  *(int *)((int)&stack0xffffffd0 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       piVar5[(uint)bVar6 * -2 + 1];
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0((CDemonActor *)this_ptr);
+  fVar4 = (float10)*(float *)&this_ptr->field_0x2dc;
+  round();
+  frame_index = (int)ROUND(fVar4);
+  iVar1 = *(int *)&this_ptr->field_0x5e4;
+  local_14 = frame_index;
+  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
+                          ((CKeyFramedModelInstance *)&this_ptr->field_0x2e0);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0(this_ptr_00,frame_index);
+  pCVar2 = pCVar2 + iVar1 * 0xc;
+  local_38 = *(int *)pCVar2;
+  local_34[(uint)bVar3 * -2] = *(int *)(pCVar2 + (uint)bVar3 * -8 + 4);
+  local_34[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+       *(int *)(pCVar2 + (uint)bVar3 * -8 + 4 + (uint)bVar3 * -8 + 4);
   local_2c = (float)local_38 * _DAT_005f71d8;
-  local_28 = (float)local_34 * _DAT_005f71d8;
-  local_24 = (float)local_30 * _DAT_005f71d8;
-  FUN_00408d70(param_1,&local_2c);
-  local_20 = local_44;
-  local_1c[(uint)bVar6 * -2] = *(int *)(&stack0xffffffc0 + (uint)bVar6 * -8);
-  local_1c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-       *(int *)(&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-  if ((uint *)(param_1 + 0x5ec) != &local_20) {
-    *(uint *)(param_1 + 0x5ec) = local_20;
-    *(int *)(param_1 + 0x5f0) = local_1c[0];
-    *(int *)(param_1 + 0x5f4) = local_1c[1];
-    return;
+  local_28 = (float)local_34[0] * _DAT_005f71d8;
+  local_24 = (float)local_34[1] * _DAT_005f71d8;
+  core_actor_cpp_FUN_00408d70(this_ptr,&local_2c);
+  local_20._0_4_ = local_44._0_4_;
+  *(uint *)(local_20 + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&local_44 + (uint)bVar3 * -8 + 4);
+  (&local_18)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
+       *(CVector3f **)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  if ((CVector3f *)&this_ptr->field_0x5ec != (CVector3f *)local_20) {
+    *(uint *)&this_ptr->field_0x5ec = local_20._0_4_;
+    *(uint *)&this_ptr->field_0x5f0 = local_20._4_4_;
+    *(CVector3f **)&this_ptr->field_0x5f4 = local_18;
+    return local_18;
   }
-  return;
+  return (CVector3f *)local_20;
 }

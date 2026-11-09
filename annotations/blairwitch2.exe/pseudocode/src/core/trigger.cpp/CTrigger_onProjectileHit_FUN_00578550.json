@@ -1,0 +1,216 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 33,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "0043a7a0",
+      "from_addr": "0043aad8",
+      "name": "core_crossbow.cpp_FUN_0043a7a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485b40",
+      "from_addr": "0048606a",
+      "name": "core_elephant.cpp_FUN_00485b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cbdc0",
+      "from_addr": "004cc5c2",
+      "name": "core_gun.cpp_FUN_004cbdc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e2e70",
+      "from_addr": "004e32d8",
+      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f170",
+      "from_addr": "0053f68b",
+      "name": "core_shotgun.cpp_FUN_0053f170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575800",
+      "from_addr": "00576041",
+      "name": "core_tommygun.cpp_FUN_00575800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057fc20",
+      "from_addr": "00580101",
+      "name": "core_turret.cpp_FUN_0057fc20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00578550",
+    "address_range": [
+      [
+        "00578550",
+        "00578568"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_00578550",
+    "signature": "void __cdecl core_trigger_cpp_CTrigger_onProjectileHit_FUN_00578550(CTrigger *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0043aad8",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_FUN_0043a7a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048606a",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_FUN_00485b40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cc5c2",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_FUN_004cbdc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e32d8",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053f68b",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_FUN_0053f170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00576041",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_FUN_00575800",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00580101",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_FUN_0057fc20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.166666666666667,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 3,
+      "INT_ADD": 5,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 1
+    },
+    "pcode_op_count": 25
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x2d0",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2d0 != 4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x44c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x44c = 1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

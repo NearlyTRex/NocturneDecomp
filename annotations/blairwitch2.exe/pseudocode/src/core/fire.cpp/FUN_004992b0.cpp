@@ -1,61 +1,62 @@
-// Name: FUN_004992b0
+// Name: core_fire.cpp_FUN_004992b0
 // Address: 004992b0
 // Address Range: [[004992b0, 004993e0]]
 // Convention: unknown
-// Signature: void FUN_004992b0(int *param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,int param_6)
+// Signature: void core_fire_cpp_FUN_004992b0(int *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,CVector3f *param_5,int param_6)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004992b0(int *param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)
+void core_fire_cpp_FUN_004992b0(int *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,CVector3f *param_5,int param_6)
 
 {
-  int iVar1;
+  CKeyFramedModel *pCVar1;
   byte bVar2;
   float afStackY_1020 [1013];
-  uint uVar3;
+  float volume;
   float local_38;
   float local_34;
   float local_30;
-  float local_2c;
-  uint local_20;
-  uint local_1c;
-  uint local_18;
-  uint local_14;
+  CVector3f local_2c;
+  CVector3f local_20;
+  float local_14;
   
   bVar2 = 0;
   *param_1 = param_2;
   param_1[0xf7] = param_6;
   param_1[0xf8] = 0;
   if (*param_1 == 0) {
-    FUN_0044fd70(param_1 + 1,"@\\@dynamitestick.kfm" + 3);
-    local_14 = 0x3f800000;
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
+              ((CKeyFramedModelInstance *)(param_1 + 1),"@\\@dynamitestick.kfm" + 3);
+    local_14 = 1.0;
   }
   else {
     _DAT_01d046a0 = "..\\core\\fire.cpp";
     _DAT_01d046a4 = 0xd76;
-    FUN_004e4500("CToss::create - invalid toss type.");
+    core_main_c_FUN_004e4500("CToss::create - invalid toss type.");
   }
   if ((float)param_1[0xf7] <= 0.0) {
     param_1[0xf7] = 0x40a00000;
   }
-  FUN_0044fd00(param_1 + 1);
-  iVar1 = FUN_0044fd20(param_1 + 1);
-  uVar3 = local_14;
-  local_38 = *(float *)(iVar1 + 0x344) - *(float *)(iVar1 + 0x338);
-  local_34 = *(float *)(iVar1 + 0x348) - *(float *)(iVar1 + 0x33c);
-  local_30 = *(float *)(iVar1 + 0x34c) - *(float *)(iVar1 + 0x340);
-  local_2c = local_38;
-  *(uint *)((int)&stack0xffffffd8 + (uint)bVar2 * 0xfffffffe * 4) =
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
+            ((CKeyFramedModelInstance *)(param_1 + 1));
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
+                     ((CKeyFramedModelInstance *)(param_1 + 1));
+  volume = local_14;
+  local_38 = *(float *)&pCVar1->field_0x344 - *(float *)&pCVar1->field_0x338;
+  local_34 = *(float *)&pCVar1->field_0x348 - *(float *)&pCVar1->field_0x33c;
+  local_30 = *(float *)&pCVar1->field_0x34c - *(float *)&pCVar1->field_0x340;
+  local_2c._0_4_ = local_38;
+  *(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8);
-  *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+  *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  FUN_005b1c80(param_1 + 0x60,param_3,param_4,&stack0xffffffd4,uVar3);
-  local_18 = 0;
-  local_1c = 0;
-  local_20 = 0x4116cbe4;
-  FUN_005b4610(param_1 + 0x60,param_5,&stack0xffffffe0);
+  core_box_cpp_CBox_setupCorners_FUN_005b1c80
+            ((CBox *)(param_1 + 0x60),param_3,param_4,&local_2c,volume);
+  local_20._8_4_ = 0;
+  local_20._4_4_ = 0;
+  local_20._0_4_ = 0x4116cbe4;
+  core_box_cpp_CBox_setupVelocities_FUN_005b4610((CBox *)(param_1 + 0x60),param_5,&local_20);
   return;
 }

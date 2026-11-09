@@ -1,14 +1,14 @@
-// Name: FUN_00589560
+// Name: wincore_wddvmem.cpp_FUN_00589560
 // Address: 00589560
 // Address Range: [[00589560, 005897ad]]
-// Convention: unknown
-// Signature: void FUN_00589560(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_FUN_00589560(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00589560(void)
+void __cdecl wincore_wddvmem_cpp_FUN_00589560(void)
 {
 __asm {
         mov EBP,ESP
@@ -25,7 +25,7 @@ __asm {
         jz LAB_00589664
         mov ESI,dword ptr [DAT_00622010]
         mov dword ptr [DAT_02661afc],ECX
-        call FUN_005890c0
+        call wincore_wddvmem_cpp_FUN_005890c0
         mov EAX,[DAT_006141bc]
         xor EDI,EDI
         test EAX,EAX
@@ -58,7 +58,7 @@ __asm {
         jl LAB_005895bd
     LAB_005895fe:
         mov ESI,0x1
-        call FUN_00589170
+        call wincore_wddvmem_cpp_FUN_00589170
         mov dword ptr [DAT_02661afc],ESI
     LAB_0058960e:
         mov ESI,dword ptr [DAT_02661ae4]
@@ -73,11 +73,11 @@ __asm {
         jz LAB_00589632
         cmp EAX,0x887601c2
         jnz LAB_00589632
-        call FUN_005897e0
+        call wincore_wddvmem_cpp_FUN_005897e0
     LAB_00589632:
         xor EDI,EDI
         mov dword ptr [DAT_02661af4],EDI
-        call FUN_0058f270
+        call wincore_winrun_cpp_processWindowMessages_FUN_0058f270
         mov ESP,EBP
         pop EBP
         pop EDI
@@ -86,11 +86,11 @@ __asm {
         ret
     LAB_00589646:
         push 0x0
-        call FUN_0055ff40
+        call engine_special_cpp_presentToExternalRenderer_FUN_0055ff40
         add ESP,0x4
         xor EDI,EDI
         mov dword ptr [DAT_02661af4],EDI
-        call FUN_0058f270
+        call wincore_winrun_cpp_processWindowMessages_FUN_0058f270
         mov ESP,EBP
         pop EBP
         pop EDI
@@ -113,7 +113,7 @@ __asm {
         mov dword ptr [EBP + -0xc],EDX
         lea EAX,[EBP + -0x7c]
         push EAX
-        call FUN_005b77c0
+        call crt_memory_c_memset_FUN_005b77c0
         add ESP,0xc
         push EBX
         push 0x1
@@ -181,11 +181,11 @@ __asm {
         push 0x5ee453
         mov dword ptr [DAT_01d046a0],EDI
         mov [DAT_01d046a4],EAX
-        call FUN_004e4500
+        call core_main_c_FUN_004e4500
         add ESP,0x4
         xor EDI,EDI
         mov dword ptr [DAT_02661af4],EDI
-        call FUN_0058f270
+        call wincore_winrun_cpp_processWindowMessages_FUN_0058f270
         mov ESP,EBP
         pop EBP
         pop EDI

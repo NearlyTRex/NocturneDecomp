@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00428b10(int param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5)
+; void core_charactr_cpp_FUN_00428b10(int param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
 ; XREF[10]:
-;   FUN_004186c0 at 00418ac7
-;   FUN_0045bdc0 at 0045c889
-;   FUN_00489670 at 0048a20d
-;   FUN_004cff50 at 004cff70
-;   FUN_004d6140 at 004d61fe
-;   FUN_004fde80 at 004fe144
-;   FUN_0056db50 at 0056dd68
-;   FUN_00583160 at 00583369
-;   FUN_00583f20 at 0058470b
-;   FUN_00595f30 at 0059646d
+;   core_boneguy.cpp_FUN_004186c0 at 00418ac7
+;   core_event.cpp_FUN_00489670 at 0048a20d
+;   core_hero.cpp_FUN_004cff50 at 004cff70
+;   core_icepick.cpp_FUN_004d6140 at 004d61fe
+;   core_mobster.cpp_FUN_004fde80 at 004fe144
+;   core_stranger.cpp_FUN_0056db50 at 0056dd68
+;   core_vampboss.cpp_FUN_00583160 at 00583369
+;   core_vehicle.cpp_FUN_00583f20 at 0058470b
+;   core_zombie.cpp_FUN_00595f30 at 0059646d
+;   unkafter_stranger.cpp_FUN_0045bdc0 at 0045c889
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005ccf20
@@ -25,15 +25,15 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_00428bd0
-;   FUN_004e4500
+;   core_charactr.cpp_FUN_00428bd0
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00428b10
-        ;   Label: FUN_00428b10
+        ;   Label: core_charactr.cpp_FUN_00428b10
     PUSH ESI                            ; 00428b11
     PUSH EDI                            ; 00428b12
     PUSH EBP                            ; 00428b13
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5ccf35                       ; 00428b33 | = "CCharacter::pickupObjectNow - invalid..."
     MOV dword ptr [0x01d046a0],EDX      ; 00428b38 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00428b3e | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00428b44
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00428b44
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00428b49
     TEST ESI,ESI                        ; 00428b4c
         ;   Label: LAB_00428b4c
@@ -81,8 +81,8 @@ section .text
     PUSH 0x5ccf7b                       ; 00428b8a | = "CCharacter::pickupObjectNow - invalid..."
     MOV [0x01d046a0],EAX                ; 00428b8f | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00428b94 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00428b9a
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00428b9a
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00428b9f
     PUSH EBP                            ; 00428ba2
         ;   Label: LAB_00428ba2
@@ -96,8 +96,8 @@ section .text
     PUSH EDI                            ; 00428bbc
     PUSH EBP                            ; 00428bbd
     MOV dword ptr [EBX + 0x8],ESI       ; 00428bbe
-    CALL FUN_00428bd0                   ; 00428bc1
-        ;   XREF to: 00428bd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00428bd0()
+    CALL core_charactr.cpp_FUN_00428bd0 ; 00428bc1
+        ;   XREF to: 00428bd0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00428bd0()
     ADD ESP,0x10                        ; 00428bc6
     POP EBP                             ; 00428bc9
         ;   Label: LAB_00428bc9

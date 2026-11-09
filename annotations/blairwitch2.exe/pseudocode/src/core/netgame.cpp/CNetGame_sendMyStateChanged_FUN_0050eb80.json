@@ -1,0 +1,392 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 107,
+    "complexity_score": 222,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 15,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 159
+  },
+  "cross_references": [
+    {
+      "addr": "0050e020",
+      "from_addr": "0050e596",
+      "name": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cf50",
+      "from_addr": "0050cfb8",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050eb80",
+    "address_range": [
+      [
+        "0050eb80",
+        "0050ecac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0050eb80",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_0050eb80(CNetGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "0050cd90",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_send_FUN_0050cd90"
+    },
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_0058e9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0ea0",
+      "name": "s_core_netgame_cpp_005e0ea0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0eb4",
+      "name": "s_CNetGame_sendMyStateChan_005e0eb4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b124",
+      "name": "DAT_0061b124",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e34",
+      "name": "DAT_01d34e34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e38",
+      "name": "DAT_01d34e38",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0050e596",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050cfb8",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050d649",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050d7f5",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.055555555555555,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 32,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 72,
+      "INT_ADD": 38,
+      "INT_AND": 113,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 52,
+      "INT_LEFT": 11,
+      "INT_LESS": 7,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 30,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 8,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 33,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 25,
+      "INT_XOR": 6,
+      "INT_ZEXT": 2,
+      "LOAD": 20,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 21,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 545
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_37",
+        "offset": -55,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_33",
+        "offset": -51,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_32",
+        "offset": -50,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1f",
+        "offset": -31,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b",
+        "offset": -27,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_17",
+        "offset": -23,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "if ((*(int *)this_ptr != 2) || (*(int *)&this_ptr->field_0x4 != 1)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "local_1f = *(uint *)(&this_ptr->field_0x64 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "local_1f = *(uint *)(&this_ptr->field_0x64 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "local_1b = *(uint *)(&this_ptr->field_0x34 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "local_1b = *(uint *)(&this_ptr->field_0x34 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "local_17 = *(uint *)(&this_ptr->field_0x38 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "local_17 = *(uint *)(&this_ptr->field_0x38 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "pcVar3 = &this_ptr->field_0x20 + *(int *)&this_ptr->field_0x124 * 0x80;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "pcVar3 = &this_ptr->field_0x20 + *(int *)&this_ptr->field_0x124 * 0x80;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x120",
+      "severity": "mild",
+      "text": "(this_ptr,*(int *)&this_ptr->field_0x120,(SNetPacketHeader *)&local_3c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_0061b124",
+      "severity": "mild",
+      "text": "DAT_0061b124 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0x60 + *(int *)&this_ptr->field_0x124 * 0x80) = _DAT_01d34e38;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "*(int *)(&this_ptr->field_0x60 + *(int *)&this_ptr->field_0x124 * 0x80) = _DAT_01d34e38;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 40,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

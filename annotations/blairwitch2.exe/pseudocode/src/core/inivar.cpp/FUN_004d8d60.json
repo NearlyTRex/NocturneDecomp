@@ -1,146 +1,26 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 21,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 23,
-        "message": "no matching function for call to 'FUN_004d8910'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_004d89d0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 25,
-        "message": "no matching function for call to 'FUN_004d8b20'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 614,
-    "complexity_score": 183,
+    "complexity_score": 724,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 93,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 88,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 89,
+    "suspect_count": 62,
     "suspect_types": [
-      "raw_address_constant",
       "undefined_data",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 702
+    "total_lines": 703
   },
   "cross_references": [
     {
       "addr": "004e46c0",
       "from_addr": "004e4723",
-      "name": "FUN_004e46c0",
+      "name": "core_main.c_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,55 +32,55 @@
         "004d94ce"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_004d8d60",
-    "signature": "void FUN_004d8d60(void)"
+    "convention": "__cdecl",
+    "name": "core_inivar.cpp_FUN_004d8d60",
+    "signature": "void __cdecl core_inivar_cpp_FUN_004d8d60(void)"
   },
   "function_calls": [
     {
       "addr": "004b6e10",
       "is_variadic": false,
-      "name": "FUN_004b6e10"
-    },
-    {
-      "addr": "004d8910",
-      "is_variadic": false,
-      "name": "FUN_004d8910"
-    },
-    {
-      "addr": "004d8940",
-      "is_variadic": false,
-      "name": "FUN_004d8940"
-    },
-    {
-      "addr": "004d89d0",
-      "is_variadic": false,
-      "name": "FUN_004d89d0"
-    },
-    {
-      "addr": "004d8a10",
-      "is_variadic": false,
-      "name": "FUN_004d8a10"
-    },
-    {
-      "addr": "004d8b20",
-      "is_variadic": false,
-      "name": "FUN_004d8b20"
+      "name": "core_game.cpp_FUN_004b6e10"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
-    },
-    {
-      "addr": "00553680",
-      "is_variadic": false,
-      "name": "FUN_00553680"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "005b99e0",
       "is_variadic": false,
-      "name": "FUN_005b99e0"
+      "name": "crt_io.c__chmod_FUN_005b99e0"
+    },
+    {
+      "addr": "004d8940",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_dtor_FUN_004d8940"
+    },
+    {
+      "addr": "004d89d0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004d89d0"
+    },
+    {
+      "addr": "004d8910",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8910"
+    },
+    {
+      "addr": "004d8a10",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8a10"
+    },
+    {
+      "addr": "004d8b20",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8b20"
+    },
+    {
+      "addr": "00553680",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00553680"
     }
   ],
   "globals": [
@@ -572,15 +452,15 @@
     },
     {
       "addr": "00609ed0",
-      "name": "PTR_DAT_00609ed0",
-      "type": "void*",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
       "value": "007c158c"
     },
     {
       "addr": "00616494",
-      "name": "DAT_00616494",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
     },
     {
       "addr": "00617b50",
@@ -632,97 +512,97 @@
     },
     {
       "addr": "007c158c",
-      "name": "DAT_007c158c",
-      "type": "undefined4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
       "value": null
     },
     {
       "addr": "01cb6904",
-      "name": "DAT_01cb6904",
+      "name": "g_CGameInstance.field4_0x4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb690c",
-      "name": "DAT_01cb690c",
+      "name": "g_CGameInstance.field12_0xc",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6910",
-      "name": "DAT_01cb6910",
+      "name": "g_CGameInstance.field16_0x10",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6914",
-      "name": "DAT_01cb6914",
+      "name": "g_CGameInstance.field20_0x14",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6918",
-      "name": "DAT_01cb6918",
+      "name": "g_CGameInstance.field24_0x18",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb691c",
-      "name": "DAT_01cb691c",
+      "name": "g_CGameInstance.field28_0x1c",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6920",
-      "name": "DAT_01cb6920",
+      "name": "g_CGameInstance.field32_0x20",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69a8",
-      "name": "DAT_01cb69a8",
+      "name": "g_CGameInstance.field168_0xa8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69ac",
-      "name": "DAT_01cb69ac",
+      "name": "g_CGameInstance.field172_0xac",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69b0",
-      "name": "DAT_01cb69b0",
+      "name": "g_CGameInstance.field176_0xb0",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69b4",
-      "name": "DAT_01cb69b4",
+      "name": "g_CGameInstance.field180_0xb4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69b8",
-      "name": "DAT_01cb69b8",
+      "name": "g_CGameInstance.field184_0xb8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69d0",
-      "name": "DAT_01cb69d0",
+      "name": "g_CGameInstance.field208_0xd0",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69d8",
-      "name": "DAT_01cb69d8",
+      "name": "g_CGameInstance.field216_0xd8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69dc",
-      "name": "DAT_01cb69dc",
+      "name": "g_CGameInstance.field220_0xdc",
       "type": "undefined4",
       "value": null
     },
@@ -769,7 +649,7 @@
       {
         "call_addr": "004e4723",
         "call_type": "direct",
-        "caller": "FUN_004e46c0",
+        "caller": "core_main.c_FUN_004e46c0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -836,60 +716,492 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_0264bba0",
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
       "severity": "mild",
-      "text": "FUN_004d8b20(local_20c,\"useDirect3D\",&DAT_0264bba0);",
-      "type": "undefined_data"
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"gamePIXY\",&g_CGamePtr->field_0x4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"gameBPP\",&g_CGamePtr->field_0x8);",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 22,
-      "match": "DAT_0264bbac",
+      "match": "DAT_0264bba0",
       "severity": "mild",
-      "text": "FUN_004d8b20(local_20c,\"useAGPFlag\",&DAT_0264bbac);",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"useDirect3D\",&DAT_0264bba0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 23,
+      "match": "DAT_0264bbac",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"useAGPFlag\",&DAT_0264bbac);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
       "match": "DAT_0061e180",
       "severity": "mild",
-      "text": "FUN_004d8a10(local_20c,\"rendererDLLPath\",&DAT_0061e180,0xfa);",
+      "text": "engine_ini_cpp_FUN_004d8a10(&local_20c,\"rendererDLLPath\",&DAT_0061e180,0xfa);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x240",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"gamma\",&g_CGamePtr->field_0x240);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"heroNumber\",&g_CGamePtr->field_0xd4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
       "line": 27,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"haloMode\",&g_CGamePtr->field_0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
       "match": "DAT_01cee1a8",
       "severity": "mild",
-      "text": "FUN_004d8b20(local_20c,\"firstTimeFlag\",&DAT_01cee1a8);",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"firstTimeFlag\",&DAT_01cee1a8);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"subtitleMode\",&g_CGamePtr->field_0x10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"bloodFlag\",&g_CGamePtr->field_0x14);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"nudityFlag\",&g_CGamePtr->field_0x18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"foulLanguageFlag\",&g_CGamePtr->field_0x1c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"shadowFlag\",&g_CGamePtr->field_0x24);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
       "line": 34,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"quimbyFlag\",&g_CGamePtr->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
       "match": "DAT_0061ec60",
       "severity": "mild",
-      "text": "FUN_004d8b20(local_20c,\"particleDensity\",&DAT_0061ec60);",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"particleDensity\",&DAT_0061ec60);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CGamePtr->field_0x20 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&g_CGamePtr->field_0x18 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x14 = 0;",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 43,
       "match": "DAT_01d06a74",
       "severity": "mild",
-      "text": "FUN_004d8b20(local_20c,\"currentBoard\",&DAT_01d06a74);",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"currentBoard\",&DAT_01d06a74);",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x1cb6900 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 35,
-      "match": "0x1cb6900",
-      "severity": "moderate",
-      "text": "iVar1 = 0x01CB6900;",
-      "type": "raw_address_constant"
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0xe4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"puzzleDifficultyMode\",&g_CGamePtr->field_0xe4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0xe8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"combatDifficultyMode\",&g_CGamePtr->field_0xe8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0xd0",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"gameControl\",&g_CGamePtr->field_0xd0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyWalk\",&g_CGamePtr->field_0x28);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyBackup\",&g_CGamePtr->field_0x2c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyRun\",&g_CGamePtr->field_0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyStrafe\",&g_CGamePtr->field_0x34);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyStrafeLeft\",&g_CGamePtr->field_0x38);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyStrafeRight\",&g_CGamePtr->field_0x3c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyRight\",&g_CGamePtr->field_0x40);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyLeft\",&g_CGamePtr->field_0x44);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyFire\",&g_CGamePtr->field_0x48);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyUseItem\",&g_CGamePtr->field_0x4c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyLight\",&g_CGamePtr->field_0x50);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyDraw\",&g_CGamePtr->field_0x68);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x74",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyPointUp\",&g_CGamePtr->field_0x74);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyPointDown\",&g_CGamePtr->field_0x78);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x7c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyWeapon1\",&g_CGamePtr->field_0x7c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x80",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyWeapon2\",&g_CGamePtr->field_0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x84",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyWeapon3\",&g_CGamePtr->field_0x84);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0xaf0",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyDrop\",&g_CGamePtr->field_0xaf0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 69,
+      "match": "field_0x90",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyNextWeapon\",&g_CGamePtr->field_0x90);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x94",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyPrevWeapon\",&g_CGamePtr->field_0x94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0x98",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyNextItem\",&g_CGamePtr->field_0x98);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 72,
+      "match": "field_0x9c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyPrevItem\",&g_CGamePtr->field_0x9c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0xa0",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyItemDesc\",&g_CGamePtr->field_0xa0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0xa4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"keyNextAmmo\",&g_CGamePtr->field_0xa4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0xa8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"invertMouseYAxis\",&g_CGamePtr->field_0xa8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 76,
+      "match": "field_0xac",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"alwaysRun\",&g_CGamePtr->field_0xac);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 77,
+      "match": "field_0xb0",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"xMouseSensitivity\",&g_CGamePtr->field_0xb0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 78,
+      "match": "field_0xb4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"yMouseSensitivity\",&g_CGamePtr->field_0xb4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 79,
+      "match": "field_0xb8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"xCenter\",&g_CGamePtr->field_0xb8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 80,
+      "match": "field_0xbc",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"yCenter\",&g_CGamePtr->field_0xbc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 81,
+      "match": "field_0xc0",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"xStickMin\",&g_CGamePtr->field_0xc0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 82,
+      "match": "field_0xc4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"xStickMax\",&g_CGamePtr->field_0xc4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 83,
+      "match": "field_0xc8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"yStickMin\",&g_CGamePtr->field_0xc8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 84,
+      "match": "field_0xcc",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"yStickMax\",&g_CGamePtr->field_0xcc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0xd8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"aimMode\",&g_CGamePtr->field_0xd8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0xdc",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"autoUseHealth\",&g_CGamePtr->field_0xdc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x230",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b20(&local_20c,\"headOfHorrorCheat\",&g_CGamePtr->field_0x230);",
+      "type": "unnamed_field"
     }
   ]
 }

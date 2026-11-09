@@ -1,119 +1,15 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 23,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 161,
+    "complexity_score": 61,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 12,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -123,25 +19,25 @@
     {
       "addr": "004ed260",
       "from_addr": "004edc1e",
-      "name": "FUN_004ed260",
+      "name": "core_menu.cpp_FUN_004ed260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00552980",
       "from_addr": "005529a2",
-      "name": "FUN_00552980",
+      "name": "sound_sndmain.cpp_FUN_00552980",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00553680",
       "from_addr": "00553742",
-      "name": "FUN_00553680",
+      "name": "sound_sndmain.cpp_FUN_00553680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00553980",
       "from_addr": "005539c1",
-      "name": "FUN_00553980",
+      "name": "sound_sndmain.cpp_FUN_00553980",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,20 +49,20 @@
         "0055297c"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_00552920",
-    "signature": "void FUN_00552920(int param_1,undefined4 *param_2)"
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00552920",
+    "signature": "void __cdecl sound_sndmain_cpp_FUN_00552920(int device_id,SSoundDeviceInfo *device_info)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "00552890",
       "is_variadic": false,
-      "name": "FUN_00552890"
+      "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890"
     }
   ],
   "globals": [
@@ -201,128 +97,108 @@
       {
         "call_addr": "00553742",
         "call_type": "direct",
-        "caller": "FUN_00553680",
-        "estimated_params": 3,
+        "caller": "sound_sndmain.cpp_FUN_00553680",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "005529a2",
         "call_type": "direct",
-        "caller": "FUN_00552980",
-        "estimated_params": 4,
+        "caller": "sound_sndmain.cpp_FUN_00552980",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "005529cc",
         "call_type": "direct",
-        "caller": "FUN_00552980",
-        "estimated_params": 3,
+        "caller": "sound_sndmain.cpp_FUN_00552980",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "005529f6",
         "call_type": "direct",
-        "caller": "FUN_00552980",
-        "estimated_params": 3,
+        "caller": "sound_sndmain.cpp_FUN_00552980",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "00552a30",
         "call_type": "direct",
-        "caller": "FUN_00552980",
-        "estimated_params": 3,
+        "caller": "sound_sndmain.cpp_FUN_00552980",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "00552a60",
         "call_type": "direct",
-        "caller": "FUN_00552980",
-        "estimated_params": 3,
+        "caller": "sound_sndmain.cpp_FUN_00552980",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "005539c1",
         "call_type": "direct",
-        "caller": "FUN_00553980",
-        "estimated_params": 4,
+        "caller": "sound_sndmain.cpp_FUN_00553980",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "004edc1e",
         "call_type": "direct",
-        "caller": "FUN_004ed260",
-        "estimated_params": 3,
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "004ee0bb",
         "call_type": "direct",
-        "caller": "FUN_004ed260",
-        "estimated_params": 3,
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.344827586206897,
@@ -356,12 +232,27 @@
     "pcode_op_count": 155
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "device_id",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "device_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SSoundDeviceInfo *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -371,70 +262,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void FUN_00552920(int param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void FUN_00552920(int param_1,uint *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 < 0) || (iVar1 <= param_1)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 < 0) || (iVar1 <= param_1)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(param_1 * 0x118 + 0x26485c0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *puVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + (uint)bVar3 * -2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + (uint)bVar3 * -2 + 1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
@@ -451,17 +278,6 @@
       "severity": "moderate",
       "text": "// 00552952: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 9,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

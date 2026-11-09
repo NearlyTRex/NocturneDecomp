@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
+; CFlies * core_gore_cpp_FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
 ;
 ;
 ; XREF[1]:
-;   FUN_004c9cc0 at 004c9cdd
+;   core_gore.cpp_FUN_004c9cc0 at 004c9cdd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_gore_cpp_005d954a
@@ -17,25 +17,25 @@
 ;   undefined4 DAT_01d182f0
 ;
 ; Called Functions:
-;   FUN_004a6a90
-;   FUN_004e4500
-;   FUN_004fc200
-;   FUN_004fcda0
-;   FUN_005b8be2
+;   core_flies.cpp_CFlies_ctor_FUN_004a6a90
+;   core_main.c_FUN_004e4500
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
+;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
+;   crt_unknown.c_FUN_005b8be2
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004c9bd0
-        ;   Label: FUN_004c9bd0
+        ;   Label: core_gore.cpp_FUN_004c9bd0
     PUSH ESI                            ; 004c9bd1
     PUSH EDI                            ; 004c9bd2
     MOV EDI,dword ptr [ESP + 0x14]      ; 004c9bd3
     MOV ESI,dword ptr [ESP + 0x20]      ; 004c9bd7
     PUSH 0x2b7c                         ; 004c9bdb
-    CALL FUN_005b8be2                   ; 004c9be0
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8be2()
+    CALL crt_unknown.c_FUN_005b8be2     ; 004c9be0
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
     ADD ESP,0x4                         ; 004c9be5
     TEST EAX,EAX                        ; 004c9be8
     JNZ 0x004c9cab                      ; 004c9bea
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5d955b                       ; 004c9c00 | = "Can't create flies!"
     MOV dword ptr [0x01d046a0],EDX      ; 004c9c05 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004c9c0b | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004c9c11
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004c9c11
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004c9c16
     FLD float ptr [ESP + 0x1c]          ; 004c9c19
         ;   Label: LAB_004c9c19
@@ -91,14 +91,14 @@ section .text
     PUSH EBX                            ; 004c9c85
     MOV ESI,dword ptr [0x00618170]      ; 004c9c86 | DAT_00618170
     PUSH ESI                            ; 004c9c8c | DAT_01d182f0
-    CALL FUN_004fcda0                   ; 004c9c8d
-        ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; undefined FUN_004fcda0()
+    CALL core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0 ; 004c9c8d
+        ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004c9c92
     PUSH EBX                            ; 004c9c95
     MOV EDI,dword ptr [0x00618170]      ; 004c9c96 | DAT_00618170
     PUSH EDI                            ; 004c9c9c | DAT_01d182f0
-    CALL FUN_004fc200                   ; 004c9c9d
-        ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; undefined FUN_004fc200()
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200 ; 004c9c9d
+        ;   XREF to: 004fc200 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004c9ca2
     MOV EAX,EBX                         ; 004c9ca5
     POP EDI                             ; 004c9ca7
@@ -107,8 +107,8 @@ section .text
     RET                                 ; 004c9caa
     PUSH EAX                            ; 004c9cab
         ;   Label: LAB_004c9cab
-    CALL FUN_004a6a90                   ; 004c9cac
-        ;   XREF to: 004a6a90 (UNCONDITIONAL_CALL)  ; undefined FUN_004a6a90()
+    CALL core_flies.cpp_CFlies_ctor_FUN_004a6a90 ; 004c9cac
+        ;   XREF to: 004a6a90 (UNCONDITIONAL_CALL)  ; CFlies * core_flies.cpp_CFlies_ctor_FUN_004a6a90(CFlies * this_ptr)
     ADD ESP,0x4                         ; 004c9cb1
     JMP 0x004c9bf0                      ; 004c9cb4
         ;   XREF to: 004c9bf0 (UNCONDITIONAL_JUMP)  ; LAB_004c9bf0

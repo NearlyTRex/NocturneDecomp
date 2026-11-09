@@ -1,0 +1,136 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 19,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
+  "cross_references": [
+    {
+      "addr": "00481870",
+      "from_addr": "004818d1",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481a70",
+      "from_addr": "00481ad1",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051b580",
+    "address_range": [
+      [
+        "0051b580",
+        "0051b5ce"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_initSearch_FUN_0051b580",
+    "signature": "void __cdecl engine_pod_cpp_CPod_initSearch_FUN_0051b580(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)"
+  },
+  "function_calls": [
+    {
+      "addr": "0051b5d0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_0051b5d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004818d1",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00481ad1",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 21,
+      "INT_ADD": 15,
+      "INT_AND": 10,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "LOAD": 9,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      },
+      {
+        "is_param": true,
+        "name": "search_pattern",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "search_context",
+        "offset": 12,
+        "size": 4,
+        "type": "CPodSearchContext *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,0 +1,252 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 194,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 34,
+    "suspect_count": 15,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005aa4a0",
+    "address_range": [
+      [
+        "005aa4a0",
+        "005aa59e"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_hand.cpp_FUN_005aa4a0",
+    "signature": "bool core_hand_cpp_FUN_005aa4a0(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    },
+    {
+      "addr": "00503e60",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00503e60"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    },
+    {
+      "addr": "0059f980",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_0059f980"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0adf",
+      "name": "DAT_005f0adf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0ae4",
+      "name": "s_sleep_005f0ae4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0aea",
+      "name": "DAT_005f0aea",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.641025641025641,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CBRANCH": 5,
+      "COPY": 87,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 30,
+      "INT_AND": 44,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 38,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 19,
+      "INT_SUB": 30,
+      "LOAD": 9,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "STORE": 34
+    },
+    "pcode_op_count": 362
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "bool core_hand_cpp_FUN_005aa4a0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x113c4) = 0x3f800000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = core_motion_cpp_FUN_005035c0(param_1 + 0x2b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar1 = core_motion_cpp_FUN_005035c0(param_1 + 0x2b4), *(int *)(iVar1 + 0x24) == 6)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x113c4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005f0adf",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005f0adf;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar2 = (char *)core_motion_cpp_FUN_005035c0((CMotionController *)(param_1 + 0x2b4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = core_motion_cpp_FUN_00503e60((CMotionController *)(param_1 + 0x2b4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x113c4) = fVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar2 = (char *)core_motion_cpp_FUN_005035c0(param_1 + 0x2b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005f0aea",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005f0aea;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar2 = (char *)core_motion_cpp_FUN_005035c0(param_1 + 0x2b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = core_motion_cpp_FUN_00503e60((CMotionController *)(param_1 + 0x2b4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x113c4) = 1.0 - fVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = unkafter_basicene_cpp_FUN_0059f980(param_1);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "006008a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

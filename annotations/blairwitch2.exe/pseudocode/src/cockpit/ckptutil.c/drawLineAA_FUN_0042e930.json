@@ -1,0 +1,215 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 315,
+    "complexity_score": 108,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 93,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 408
+  },
+  "cross_references": [
+    {
+      "addr": "00467290",
+      "from_addr": "00467314",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00467290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042e930",
+    "address_range": [
+      [
+        "0042e930",
+        "0042ebe1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "cockpit_ckptutil.c_drawLineAA_FUN_0042e930",
+    "signature": "void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_0042e930(int x0,int y0,int x1,int y1,int color)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042ef90",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_0042ef90"
+    },
+    {
+      "addr": "0042f260",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_putPixel_FUN_0042f260"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00609b30",
+      "name": "DAT_00609b30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e48",
+      "name": "DAT_01c35e48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e4c",
+      "name": "DAT_01c35e4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e50",
+      "name": "DAT_01c35e50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e54",
+      "name": "DAT_01c35e54",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00467314",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00467290",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.277777777777778,
+    "instruction_count": 252,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 28,
+      "BOOL_OR": 5,
+      "BRANCH": 7,
+      "CALL": 9,
+      "CBRANCH": 22,
+      "COPY": 339,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 6,
+      "INT_2COMP": 1,
+      "INT_ADD": 111,
+      "INT_AND": 171,
+      "INT_CARRY": 17,
+      "INT_DIV": 2,
+      "INT_EQUAL": 127,
+      "INT_LEFT": 6,
+      "INT_LESS": 18,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 22,
+      "INT_REM": 2,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 66,
+      "INT_SUB": 70,
+      "INT_XOR": 9,
+      "INT_ZEXT": 6,
+      "LOAD": 67,
+      "POPCOUNT": 60,
+      "RETURN": 4,
+      "STORE": 71,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1330
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x0",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y0",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0042e939",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 248,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 67,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 315
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00590e90",
+    "address_range": [
+      [
+        "00590e90",
+        "00591113"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winvideo.cpp_openMovie_FUN_00590e90",
+    "signature": "void __cdecl wincore_winvideo_cpp_openMovie_FUN_00590e90(HWND parent_window,char *movie_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bad20",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_atoi_FUN_005bad20"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7790"
+    },
+    {
+      "addr": "00590e40",
+      "is_variadic": false,
+      "name": "wincore_winvideo.cpp_closeMovie_FUN_00590e40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02665a48",
+      "name": "DAT_02665a48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02665a50",
+      "name": "DAT_02665a50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02665a58",
+      "name": "DAT_02665a58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.091370558375634,
+    "instruction_count": 197,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 3,
+      "BRANCH": 8,
+      "CALL": 3,
+      "CALLIND": 9,
+      "CBRANCH": 18,
+      "COPY": 156,
+      "INT_ADD": 62,
+      "INT_AND": 163,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 117,
+      "INT_LESS": 24,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 16,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 18,
+      "INT_SEXT": 6,
+      "INT_SLESS": 56,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 82,
+      "INT_XOR": 3,
+      "LOAD": 40,
+      "POPCOUNT": 56,
+      "RETURN": 3,
+      "STORE": 58,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1003
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "parent_window",
+        "offset": 4,
+        "size": 4,
+        "type": "HWND"
+      },
+      {
+        "is_param": true,
+        "name": "movie_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

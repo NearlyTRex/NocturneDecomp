@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005897e0(void)
+; void __cdecl wincore_wddvmem_cpp_FUN_005897e0(void)
 ;
 ;
-; XREF[1]:
-;   FUN_00589560 at 0058962d
+; XREF[2]:
+;   wincore_wddvmem.cpp_FUN_00589560 at 0058962d
+;   wincore_winrun.cpp_FUN_0058ed90 at 0058ee9c
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFocus_005c84f0 = 001c8bce
@@ -25,18 +26,18 @@
 ;   undefined4 DAT_02664628
 ;
 ; Called Functions:
-;   DirectDrawCreate
-;   FUN_004e4500
-;   FUN_0055f770
-;   FUN_00588a50
+;   core_main.c_FUN_004e4500
+;   crt_ddraw.c_DirectDrawCreate
+;   engine_special.cpp_setResolutionAndColorTable_FUN_0055f770
 ;   SetFocus
+;   wincore_wddvmem.cpp_FUN_00588a50
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005897e0
-        ;   Label: FUN_005897e0
+        ;   Label: wincore_wddvmem.cpp_FUN_005897e0
     PUSH ESI                            ; 005897e1
     PUSH EBP                            ; 005897e2
     CMP dword ptr [0x0264bba0],0x0      ; 005897e3 | DAT_0264bba0
@@ -51,8 +52,8 @@ section .text
     PUSH ECX                            ; 0058980a
     MOV EBX,dword ptr [0x006141b8]      ; 0058980b | DAT_006141b8
     PUSH EBX                            ; 00589811
-    CALL FUN_0055f770                   ; 00589812
-        ;   XREF to: 0055f770 (UNCONDITIONAL_CALL)  ; undefined FUN_0055f770()
+    CALL engine_special.cpp_setResolutionAndColorTable_FUN_0055f770 ; 00589812
+        ;   XREF to: 0055f770 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_0055f770(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00589817
     TEST EAX,EAX                        ; 0058981a
     JNZ 0x005898c1                      ; 0058981c
@@ -106,8 +107,8 @@ section .text
         ;   Label: LAB_00589892
     PUSH 0x2661ae0                      ; 00589894 | DAT_02661ae0
     PUSH 0x0                            ; 00589899
-    CALL DirectDrawCreate               ; 0058989b
-        ;   XREF to: 005c74ae (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+    CALL crt_ddraw.c_DirectDrawCreate   ; 0058989b
+        ;   XREF to: 005c74ae (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 005898a0
     JZ 0x005898e1                       ; 005898a2
         ;   XREF to: 005898e1 (CONDITIONAL_JUMP)  ; LAB_005898e1
@@ -118,8 +119,8 @@ section .text
     PUSH EDX                            ; 005898b0
     MOV ECX,dword ptr [0x006141b8]      ; 005898b1 | DAT_006141b8
     PUSH ECX                            ; 005898b7
-    CALL FUN_00588a50                   ; 005898b8
-        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00588a50()
+    CALL wincore_wddvmem.cpp_FUN_00588a50 ; 005898b8
+        ;   XREF to: 00588a50 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_FUN_00588a50(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005898bd
     POP EDI                             ; 005898c0
     MOV EBX,dword ptr [0x02664628]      ; 005898c1 | DAT_02664628
@@ -172,8 +173,8 @@ section .text
     PUSH 0x5ee488                       ; 00589936 | = "videoRestore - Unable to set front bu..."
     MOV dword ptr [0x01d046a0],EBP      ; 0058993b | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00589941 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00589946
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00589946
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0058994b
     POP EBP                             ; 0058994e
     POP ESI                             ; 0058994f

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004accb0(int param_1)
+; CVector3f * __cdecl core_frankgen_cpp_FUN_004accb0(CFrankenstienMachine *this_ptr)
 ;
+; Parameters:
+; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined        Stack[-0x44]:1  local_44
 ; undefined4       Stack[-0x38]:4  local_38
@@ -17,9 +19,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_004ac230 at 004ac2d7
-;   FUN_004ac4c0 at 004ac516
-;   FUN_004aca90 at 004acabf
+;   core_frankgen.cpp_FUN_004ac230 at 004ac2d7
+;   core_frankgen.cpp_FUN_004ac4c0 at 004ac516
+;   core_frankgen.cpp_FUN_004aca90 at 004acabf
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004acc80 = 004accd1
@@ -31,21 +33,21 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_00408ae0
-;   FUN_00408d70
-;   FUN_0044e6e0
-;   FUN_0044fd20
-;   FUN_004aced0
-;   FUN_004acf60
-;   FUN_004e4500
-;   FUN_005b7ff0
+;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0
+;   core_actor.cpp_FUN_00408d70
+;   core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
+;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60
+;   core_frankgen.cpp_FUN_004aced0
+;   core_main.c_FUN_004e4500
+;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004accb0
-        ;   Label: FUN_004accb0
+        ;   Label: core_frankgen.cpp_FUN_004accb0
     PUSH ESI                            ; 004accb1
     PUSH EDI                            ; 004accb2
     PUSH EBP                            ; 004accb3
@@ -62,18 +64,18 @@ section .text
     PUSH 0x0                            ; 004accd7
     PUSH EBP                            ; 004accd9
         ;   Label: LAB_004accd9
-    CALL FUN_004acf60                   ; 004accda
-        ;   XREF to: 004acf60 (UNCONDITIONAL_CALL)  ; undefined FUN_004acf60()
+    CALL core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60 ; 004accda
+        ;   XREF to: 004acf60 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(CFrankenstienMachine * this_ptr, float start_frame, float end_frame)
     ADD ESP,0xc                         ; 004accdf
         ;   Label: LAB_004accdf
     PUSH EBP                            ; 004acce2
         ;   Label: LAB_004acce2
-    CALL FUN_00408ae0                   ; 004acce3
-        ;   XREF to: 00408ae0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408ae0()
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0 ; 004acce3
+        ;   XREF to: 00408ae0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(CDemonActor * this_ptr)
     FLD float ptr [EBP + 0x2dc]         ; 004acce8
     ADD ESP,0x4                         ; 004accee
-    CALL FUN_005b7ff0                   ; 004accf1
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7ff0()
+    CALL crt_math.c_round_FUN_005b7ff0  ; 004accf1
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
     FISTP dword ptr [ESP + 0x30]        ; 004accf6
     MOV EBX,dword ptr [ESP + 0x30]      ; 004accfa
     MOV EDX,dword ptr [EBP + 0x5e4]     ; 004accfe
@@ -82,15 +84,15 @@ section .text
     LEA ESI,[EDX*0x4 + 0x0]             ; 004acd0b
     PUSH EAX                            ; 004acd12
     SUB ESI,EDX                         ; 004acd13
-    CALL FUN_0044fd20                   ; 004acd15
-        ;   XREF to: 0044fd20 (UNCONDITIONAL_CALL)  ; undefined FUN_0044fd20()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20 ; 004acd15
+        ;   XREF to: 0044fd20 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004acd1a
     LEA EDI,[ESP + 0x10]                ; 004acd1d
     PUSH EAX                            ; 004acd21
     SHL ESI,0x2                         ; 004acd22
     LEA EBX,[ESP + 0x20]                ; 004acd25
-    CALL FUN_0044e6e0                   ; 004acd29
-        ;   XREF to: 0044e6e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044e6e0()
+    CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0 ; 004acd29
+        ;   XREF to: 0044e6e0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0(CKeyFramedModel * this_ptr, int frame_index)
     ADD ESI,EAX                         ; 004acd2e
     ADD ESP,0x8                         ; 004acd30
     LEA EAX,[ESP + 0xc]                 ; 004acd33
@@ -111,8 +113,8 @@ section .text
     PUSH EBP                            ; 004acd61
     LEA ESI,[ESP + 0x8]                 ; 004acd62
     LEA EDI,[ESP + 0x2c]                ; 004acd66
-    CALL FUN_00408d70                   ; 004acd6a
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined FUN_00408d70()
+    CALL core_actor.cpp_FUN_00408d70    ; 004acd6a
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
     LEA ESI,[ESP + 0x8]                 ; 004acd6f
     LEA EAX,[ESP + 0x2c]                ; 004acd73
     ADD ESP,0x8                         ; 004acd77
@@ -134,40 +136,40 @@ section .text
         ;   Label: caseD_1
     PUSH 0x43030000                     ; 004acd98
     PUSH EBP                            ; 004acd9d
-    CALL FUN_004aced0                   ; 004acd9e
-        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; undefined FUN_004aced0()
+    CALL core_frankgen.cpp_FUN_004aced0 ; 004acd9e
+        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004aced0(CFrankenstienMachine * this_ptr, float start_frame, float end_frame)
     JMP 0x004accdf                      ; 004acda3
         ;   XREF to: 004accdf (UNCONDITIONAL_JUMP)  ; LAB_004accdf
     PUSH 0x445dc000                     ; 004acda8
         ;   Label: caseD_2
     PUSH 0x4403c000                     ; 004acdad
     PUSH EBP                            ; 004acdb2
-    CALL FUN_004aced0                   ; 004acdb3
-        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; undefined FUN_004aced0()
+    CALL core_frankgen.cpp_FUN_004aced0 ; 004acdb3
+        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004aced0(CFrankenstienMachine * this_ptr, float start_frame, float end_frame)
     JMP 0x004accdf                      ; 004acdb8
         ;   XREF to: 004accdf (UNCONDITIONAL_JUMP)  ; LAB_004accdf
     PUSH 0x44d9a000                     ; 004acdbd
         ;   Label: caseD_3
     PUSH 0x44882000                     ; 004acdc2
     PUSH EBP                            ; 004acdc7
-    CALL FUN_004aced0                   ; 004acdc8
-        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; undefined FUN_004aced0()
+    CALL core_frankgen.cpp_FUN_004aced0 ; 004acdc8
+        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004aced0(CFrankenstienMachine * this_ptr, float start_frame, float end_frame)
     JMP 0x004accdf                      ; 004acdcd
         ;   XREF to: 004accdf (UNCONDITIONAL_JUMP)  ; LAB_004accdf
     PUSH 0x43c80000                     ; 004acdd2
         ;   Label: caseD_4
     PUSH 0x43af0000                     ; 004acdd7
     PUSH EBP                            ; 004acddc
-    CALL FUN_004aced0                   ; 004acddd
-        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; undefined FUN_004aced0()
+    CALL core_frankgen.cpp_FUN_004aced0 ; 004acddd
+        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004aced0(CFrankenstienMachine * this_ptr, float start_frame, float end_frame)
     JMP 0x004accdf                      ; 004acde2
         ;   XREF to: 004accdf (UNCONDITIONAL_JUMP)  ; LAB_004accdf
     PUSH 0x44828000                     ; 004acde7
         ;   Label: caseD_5
     PUSH 0x44580000                     ; 004acdec
     PUSH EBP                            ; 004acdf1
-    CALL FUN_004aced0                   ; 004acdf2
-        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; undefined FUN_004aced0()
+    CALL core_frankgen.cpp_FUN_004aced0 ; 004acdf2
+        ;   XREF to: 004aced0 (UNCONDITIONAL_CALL)  ; void core_frankgen.cpp_FUN_004aced0(CFrankenstienMachine * this_ptr, float start_frame, float end_frame)
     JMP 0x004accdf                      ; 004acdf7
         ;   XREF to: 004accdf (UNCONDITIONAL_JUMP)  ; LAB_004accdf
     PUSH 0x44f14000                     ; 004acdfc
@@ -186,8 +188,8 @@ section .text
     PUSH 0x5d6ce6                       ; 004ace24 | DAT_005d6ce6
     MOV dword ptr [0x01d046a0],EDX      ; 004ace29 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004ace2f | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004ace35
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004ace35
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004ace3a
     JMP 0x004acce2                      ; 004ace3d
         ;   XREF to: 004acce2 (UNCONDITIONAL_JUMP)  ; LAB_004acce2

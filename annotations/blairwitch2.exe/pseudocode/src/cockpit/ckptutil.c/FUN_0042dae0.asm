@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
+; void cockpit_ckptutil_c_FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
 ;
 ;
 ; Referenced Globals:
@@ -9,16 +9,16 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b7fdc
-;   FUN_005b8df8
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b7fdc
+;   crt_unknown.c_FUN_005b8df8
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0042dae0
-        ;   Label: FUN_0042dae0
+        ;   Label: cockpit_ckptutil.c_FUN_0042dae0
     PUSH EDI                            ; 0042dae1
     PUSH EBP                            ; 0042dae2
     SUB ESP,0x30                        ; 0042dae3
@@ -41,8 +41,8 @@ section .text
     LEA EAX,[EBP*0x4 + 0x0]             ; 0042db13
         ;   Label: LAB_0042db13
     PUSH EAX                            ; 0042db1a
-    CALL FUN_005b8df8                   ; 0042db1b
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 0042db1b
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     ADD ESP,0x4                         ; 0042db20
     MOV dword ptr [ESP + 0x20],EAX      ; 0042db23
     TEST EAX,EAX                        ; 0042db27
@@ -186,8 +186,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 0042dc6f
         ;   Label: LAB_0042dc6f
     PUSH ECX                            ; 0042dc73
-    CALL FUN_005b7fdc                   ; 0042dc74
-        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined FUN_005b7fdc()
+    CALL crt_unknown.c_FUN_005b7fdc     ; 0042dc74
+        ;   XREF to: 005b7fdc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7fdc()
     ADD ESP,0x4                         ; 0042dc79
     POP ESI                             ; 0042dc7c
     ADD ESP,0x30                        ; 0042dc7d
@@ -202,8 +202,8 @@ section .text
     PUSH 0x5cd447                       ; 0042dc8e
     MOV dword ptr [0x01d046a0],ECX      ; 0042dc93 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0042dc99 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0042dc9f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0042dc9f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0042dca4
     JMP 0x0042db13                      ; 0042dca7
         ;   XREF to: 0042db13 (UNCONDITIONAL_JUMP)  ; LAB_0042db13
@@ -213,8 +213,8 @@ section .text
     PUSH 0x5cd478                       ; 0042dcb6
     MOV [0x01d046a0],EAX                ; 0042dcbb | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0042dcc0 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0042dcc6
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0042dcc6
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0042dccb
     JMP 0x0042db2f                      ; 0042dcce
         ;   XREF to: 0042db2f (UNCONDITIONAL_JUMP)  ; LAB_0042db2f

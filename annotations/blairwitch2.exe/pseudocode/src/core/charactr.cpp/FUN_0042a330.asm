@@ -1,27 +1,33 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0042a330(int param_1,undefined4 param_2,undefined4 param_3,char *param_4,undefined4 param_5 )
+; void __cdecl core_charactr_cpp_FUN_0042a330(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   from_bone_index
+; int              Stack[0xc]:4   to_bone_index
+; char *           Stack[0x10]:4   motion_name
+; int              Stack[0x14]:4   direction
 ;
 ; XREF[3]:
-;   FUN_004501a2 at 004502eb
-;   FUN_0051e9a0 at 0051ea3f
-;   FUN_005628b4 at 00562a1a
+;   core_doc.cpp_FUN_004501a2 at 004502eb
+;   core_scat.cpp_CScat_ctor_FUN_0051e9a0 at 0051ea3f
+;   core_stranger.cpp_FUN_005628b4 at 00562a1a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0042a330
-        ;   Label: FUN_0042a330
+        ;   Label: core_charactr.cpp_FUN_0042a330
     PUSH ESI                            ; 0042a331
     PUSH EDI                            ; 0042a332
     MOV EBX,dword ptr [ESP + 0x10]      ; 0042a333
@@ -73,8 +79,8 @@ section .text
     PUSH 0x5cd1b2                       ; 0042a3a8
     MOV dword ptr [0x01d046a0],ECX      ; 0042a3ad | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0042a3b3 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0042a3b9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0042a3b9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0042a3be
     JMP 0x0042a340                      ; 0042a3c1
         ;   XREF to: 0042a340 (UNCONDITIONAL_JUMP)  ; LAB_0042a340

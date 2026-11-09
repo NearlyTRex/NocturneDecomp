@@ -1,0 +1,291 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 157,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 66
+  },
+  "cross_references": [
+    {
+      "addr": "00447ea0",
+      "from_addr": "0044849f",
+      "name": "core_dfont.cpp_FUN_00447ea0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058df90",
+    "address_range": [
+      [
+        "0058df90",
+        "0058e04f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_FUN_0058df90",
+    "signature": "CWinFont * __cdecl engine_winfont_cpp_FUN_0058df90(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000000a",
+      "is_variadic": false,
+      "name": "CreateFontA"
+    },
+    {
+      "addr": "00510ca0",
+      "is_variadic": false,
+      "name": "unkafter_npc.cpp_FUN_00510ca0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c8400",
+      "name": "PTR_CreateFontA_005c8400",
+      "type": "void*",
+      "value": "001c87fc"
+    },
+    {
+      "addr": "005fe274",
+      "name": "PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0058e050_005fe274",
+      "type": "undefined1*",
+      "value": "0058e050"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0044849f",
+        "call_type": "direct",
+        "caller": "core_dfont.cpp_FUN_00447ea0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0044850a",
+        "call_type": "direct",
+        "caller": "core_dfont.cpp_FUN_00447ea0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00448576",
+        "call_type": "direct",
+        "caller": "core_dfont.cpp_FUN_00447ea0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004485e2",
+        "call_type": "direct",
+        "caller": "core_dfont.cpp_FUN_00447ea0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.238095238095238,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "COPY": 39,
+      "INT_2COMP": 1,
+      "INT_ADD": 21,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 18,
+      "LOAD": 7,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 31
+    },
+    "pcode_op_count": 136
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWinFont *"
+      },
+      {
+        "is_param": true,
+        "name": "font_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "font_height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_offset1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_offset2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x6a44",
+      "severity": "mild",
+      "text": "*(byte ***)&pCVar1->field_0x6a44 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x6a48",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6a48 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x6a50",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6a50 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x6a54",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6a54 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x6a58",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6a58 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x6b64",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6b64 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x6b68",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6b68 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x6b6c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6b6c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x6b70",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6b70 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x6b74",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x6b74 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x6a50",
+      "severity": "mild",
+      "text": "*(HFONT *)&pCVar1->field_0x6a50 = pHVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x6b78",
+      "severity": "mild",
+      "text": "*(int *)&pCVar1->field_0x6b78 = y_offset1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x6b7c",
+      "severity": "mild",
+      "text": "*(int *)&pCVar1->field_0x6b7c = y_offset2;",
+      "type": "unnamed_field"
+    }
+  ]
+}

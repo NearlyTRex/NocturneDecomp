@@ -1,69 +1,62 @@
-// Name: FUN_0054e6e0
+// Name: sound_sndmain.cpp_FUN_0054e6e0
 // Address: 0054e6e0
 // Address Range: [[0054e6e0, 0054e816]]
-// Convention: unknown
-// Signature: float FUN_0054e6e0(undefined4 *param_1)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_FUN_0054e6e0(CSfxSlot *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float FUN_0054e6e0(uint *param_1)
+void __cdecl sound_sndmain_cpp_FUN_0054e6e0(CSfxSlot *this_ptr)
 
 {
   float fVar1;
-  float fVar2;
-  int iVar3;
-  uint *puVar4;
+  int iVar2;
+  CSfxSlot *pCVar3;
   float local_20;
   float local_14;
   
   if (_DAT_0264901c < 1) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
     _DAT_01d046a4 = 0xa98;
-    FUN_004e4500("SfxSlot::kill - must be locked!");
+    core_main_c_FUN_004e4500("SfxSlot::kill - must be locked!");
   }
-  fVar2 = (float)FUN_00551190(*param_1);
-  fVar1 = fVar2 * (float)param_1[0xe];
-  fVar2 = (float)(uint)CONCAT11(*(byte *)(param_1 + 0x13),SUB41(fVar2,0));
-  if ((*(byte *)(param_1 + 0x13) & 1) == 0) {
-    iVar3 = 0;
-    puVar4 = param_1;
+  fVar1 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00551190(*(uint *)this_ptr);
+  fVar1 = fVar1 * *(float *)&this_ptr->field_0x38;
+  if ((this_ptr->field_0x4c & 1) == 0) {
+    iVar2 = 0;
+    pCVar3 = this_ptr;
     if (0 < DAT_0061bc9c) {
       do {
-        local_14 = (float)puVar4[0x1c];
-        if ((float)puVar4[0x1c] < (float)param_1[0x3d]) {
-          local_14 = (float)param_1[0x3d];
+        local_14 = *(float *)&pCVar3->field_0x70;
+        if (*(float *)&pCVar3->field_0x70 < *(float *)&this_ptr->field_0xf4) {
+          local_14 = *(float *)&this_ptr->field_0xf4;
         }
-        if ((float)param_1[0x3e] < local_14) {
-          local_14 = (float)param_1[0x3e];
+        if (*(float *)&this_ptr->field_0xf8 < local_14) {
+          local_14 = *(float *)&this_ptr->field_0xf8;
         }
-        fVar2 = (float)param_1[0x3c] * _DAT_005e85a2;
-        if (fVar2 < local_14) {
-          local_20 = (float)param_1[0x3c] / local_14;
+        if (*(float *)&this_ptr->field_0xf0 * _DAT_005e85a2 < local_14) {
+          local_20 = *(float *)&this_ptr->field_0xf0 / local_14;
         }
         else {
           local_20 = 20.0;
         }
-        iVar3 = iVar3 + 1;
-        puVar4[0x24] = fVar1 * local_20;
-        fVar2 = (float)(uint)(ushort)((ushort)(fVar2 < local_14) << 8 |
-                                      (ushort)(NAN(fVar2) || NAN(local_14)) << 10 |
-                                     (ushort)(fVar2 == local_14) << 0xe);
-        puVar4 = puVar4 + 1;
-      } while (iVar3 < DAT_0061bc9c);
+        iVar2 = iVar2 + 1;
+        *(float *)&pCVar3->field_0x90 = fVar1 * local_20;
+        pCVar3 = (CSfxSlot *)&pCVar3->field_0x4;
+      } while (iVar2 < DAT_0061bc9c);
     }
   }
   else {
-    iVar3 = 0;
+    iVar2 = 0;
     if (0 < DAT_0061bc9c) {
       do {
-        iVar3 = iVar3 + 1;
-        param_1[0x24] = fVar1;
-        fVar2 = fVar1;
-        param_1 = param_1 + 1;
-      } while (iVar3 < DAT_0061bc9c);
+        iVar2 = iVar2 + 1;
+        *(float *)&this_ptr->field_0x90 = fVar1;
+        this_ptr = (CSfxSlot *)&this_ptr->field_0x4;
+      } while (iVar2 < DAT_0061bc9c);
     }
   }
-  return fVar2;
+  return;
 }

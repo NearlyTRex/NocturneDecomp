@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005890c0(void)
+; void __cdecl wincore_wddvmem_cpp_FUN_005890c0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ;
 ; XREF[4]:
-;   FUN_004b5190 at 004b5265
-;   FUN_004bcbf0 at 004bcddd
-;   FUN_0055ff40 at 0055ffaf
-;   FUN_00589560 at 005895ab
+;   core_game.cpp_FUN_004b5190 at 004b5265
+;   core_game.cpp_FUN_004bcbf0 at 004bcddd
+;   engine_special.cpp_presentToExternalRenderer_FUN_0055ff40 at 0055ffaf
+;   wincore_wddvmem.cpp_FUN_00589560 at 005895ab
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005ee2b0
@@ -25,15 +25,15 @@
 ;   undefined4 DAT_02661afc
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b77c0
+;   core_main.c_FUN_004e4500
+;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005890c0
-        ;   Label: FUN_005890c0
+        ;   Label: wincore_wddvmem.cpp_FUN_005890c0
     PUSH EBP                            ; 005890c1
     SUB ESP,0x6c                        ; 005890c2
     MOV EDX,dword ptr [0x02661afc]      ; 005890c5 | DAT_02661afc
@@ -55,8 +55,8 @@ section .text
     PUSH EDX                            ; 005890e8
     LEA EAX,[ESP + 0x8]                 ; 005890e9
     PUSH EAX                            ; 005890ed
-    CALL FUN_005b77c0                   ; 005890ee
-        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b77c0()
+    CALL crt_memory.c_memset_FUN_005b77c0 ; 005890ee
+        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005890f3
     PUSH 0x0                            ; 005890f6
     PUSH 0x1                            ; 005890f8
@@ -79,8 +79,8 @@ section .text
     PUSH 0x5ee2c7                       ; 00589125 | = "openScreenDevice - Unable to lock scr..."
     MOV dword ptr [0x01d046a0],ESI      ; 0058912a | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00589130 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00589136
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00589136
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0058913b
     POP ESI                             ; 0058913e
     POP EDI                             ; 0058913f

@@ -1,14 +1,14 @@
-// Name: FUN_00516e60
+// Name: cockpit_pkbitmap.cpp_FUN_00516e60
 // Address: 00516e60
 // Address Range: [[00516e60, 00516f2c]]
-// Convention: unknown
-// Signature: void FUN_00516e60(int param_1,int param_2)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_pkbitmap_cpp_FUN_00516e60(CPackedBitmap *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00516e60(int param_1,int param_2)
+void __cdecl cockpit_pkbitmap_cpp_FUN_00516e60(CPackedBitmap *this_ptr,_FILE *file_handle)
 
 {
   int iVar1;
@@ -29,21 +29,22 @@ void FUN_00516e60(int param_1,int param_2)
     puVar2 = (uint *)((int)puVar2 + 1);
     piVar3 = (uint *)((int)piVar3 + 1);
   }
-  aiStack_2c[1] = *(uint *)(param_1 + 0x18);
-  aiStack_2c[2] = *(uint *)(param_1 + 0x1c);
+  aiStack_2c[1] = *(int *)&this_ptr->field_0x18;
+  aiStack_2c[2] = *(int *)&this_ptr->field_0x1c;
   aiStack_2c[3] = 0;
   aiStack_2c[4] = 0;
-  aiStack_2c[5] = *(int *)(param_1 + 0x18) + -1;
-  iStack_14 = *(int *)(param_1 + 0x1c) + -1;
-  FUN_005b9690(aiStack_2c,0x1c,1,param_2);
-  FUN_005b9690(*(uint *)(param_1 + 0x20),4,*(int *)(param_1 + 0x1c) + 1,param_2);
-  FUN_005b9690(*(uint *)(param_1 + 0x14),
-               *(uint *)(*(int *)(param_1 + 0x20) + *(int *)(param_1 + 0x1c) * 4),1,param_2);
-  if ((*(byte *)(param_2 + 0xc) & 0x20) == 0) {
+  aiStack_2c[5] = *(int *)&this_ptr->field_0x18 + -1;
+  iStack_14 = *(int *)&this_ptr->field_0x1c + -1;
+  _fwrite(aiStack_2c,0x1c,1,file_handle);
+  _fwrite(*(uint *)&this_ptr->field_0x20,4,*(int *)&this_ptr->field_0x1c + 1,file_handle);
+  _fwrite(*(uint *)&this_ptr->field_0x14,
+             *(uint *)(*(int *)&this_ptr->field_0x20 + *(int *)&this_ptr->field_0x1c * 4),1,
+             file_handle);
+  if (((byte)file_handle[0xc] & 0x20) == 0) {
     return;
   }
   _DAT_01d046a0 = "..\\cockpit\\pkbitmap.cpp";
   _DAT_01d046a4 = 0x49c;
-  FUN_004e4500("Error writing PBM");
+  core_main_c_FUN_004e4500("Error writing PBM");
   return;
 }

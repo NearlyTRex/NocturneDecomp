@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004e68c0(int param_1,int param_2,float param_3)
+; void __cdecl core_manpuz_cpp_FUN_004e68c0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
+; float            Stack[0xc]:4   delta_time
 ;
 ; XREF[1]:
-;   FUN_004e57f0 at 004e5817
+;   core_manpuz.cpp_FUN_004e57f0 at 004e5817
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f98c0
@@ -13,15 +17,15 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_004e7560
+;   core_main.c_FUN_004e4500
+;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004e68c0
-        ;   Label: FUN_004e68c0
+        ;   Label: core_manpuz.cpp_FUN_004e68c0
     PUSH ESI                            ; 004e68c1
     PUSH EBP                            ; 004e68c2
     MOV ESI,dword ptr [ESP + 0x10]      ; 004e68c3
@@ -69,8 +73,8 @@ section .text
     PUSH EDI                            ; 004e692c
     PUSH ECX                            ; 004e692d
     PUSH ESI                            ; 004e692e
-    CALL FUN_004e7560                   ; 004e692f
-        ;   XREF to: 004e7560 (UNCONDITIONAL_CALL)  ; undefined FUN_004e7560()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560 ; 004e692f
+        ;   XREF to: 004e7560 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560(CMansionPuzzleCircle * this_ptr, int panel_index)
     MOV EDX,EAX                         ; 004e6934
     SHL EAX,0x2                         ; 004e6936
     SUB EAX,EDX                         ; 004e6939
@@ -89,8 +93,8 @@ section .text
     PUSH 0x5dc548                       ; 004e695e
     MOV dword ptr [0x01d046a0],EBP      ; 004e6963 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 004e6969 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004e696e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004e696e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004e6973
     MOV EAX,ESI                         ; 004e6976
         ;   Label: LAB_004e6976

@@ -1,138 +1,32 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 67,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01cb061c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 37,
+    "complexity_score": 80,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
     "suspect_types": [
+      "suspicious_cast",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 63
+    "total_lines": 66
   },
   "cross_references": [
     {
       "addr": "004ac4c0",
       "from_addr": "004ac4d9",
-      "name": "FUN_004ac4c0",
+      "name": "core_frankgen.cpp_FUN_004ac4c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004aca90",
       "from_addr": "004acaad",
-      "name": "FUN_004aca90",
+      "name": "core_frankgen.cpp_FUN_004aca90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -144,32 +38,32 @@
         "004acec3"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_004ace60",
-    "signature": "int FUN_004ace60(void)"
+    "convention": "__cdecl",
+    "name": "core_frankgen.cpp_FUN_004ace60",
+    "signature": "CDemonActor * __cdecl core_frankgen_cpp_FUN_004ace60(void)"
   },
   "function_calls": [
     {
       "addr": "0040c8f0",
       "is_variadic": false,
-      "name": "FUN_0040c8f0"
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     }
   ],
   "globals": [
     {
       "addr": "0061b5a8",
-      "name": "DAT_0061b5a8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
     },
     {
       "addr": "01cb061c",
-      "name": "DAT_01cb061c",
+      "name": "g_CFrankenstienMachineClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -229,6 +123,30 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x14d164",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CDemonSetPtr->field_0x14d164 <= iVar2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x14d168",
+      "severity": "mild",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_0061b5b8 (at 0x0061b5b8, +16 bytes).",
+      "line": 22,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
+      "type": "suspicious_cast"
     }
   ]
 }

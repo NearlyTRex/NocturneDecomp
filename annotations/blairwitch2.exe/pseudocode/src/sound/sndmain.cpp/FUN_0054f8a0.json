@@ -1,39 +1,28 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 0,
-        "line": 0,
-        "message": "Compilation timed out after 60s"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 144,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 10,
+    "pseudocode_lines": 26,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
+      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 80
+    "total_lines": 82
   },
   "cross_references": [
     {
       "addr": "00554510",
       "from_addr": "0055457c",
-      "name": "FUN_00554510",
+      "name": "sound_sndmain.cpp_FUN_00554510",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,29 +35,29 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_0054f8a0",
-    "signature": "void FUN_0054f8a0(int param_1)"
+    "name": "sound_sndmain.cpp_FUN_0054f8a0",
+    "signature": "void sound_sndmain_cpp_FUN_0054f8a0(CSfxSlot *param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
-    },
-    {
-      "addr": "0054f700",
-      "is_variadic": false,
-      "name": "FUN_0054f700"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "00550010",
       "is_variadic": false,
-      "name": "FUN_00550010"
+      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00550010"
+    },
+    {
+      "addr": "0054f700",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700"
     },
     {
       "addr": "005549c0",
       "is_variadic": false,
-      "name": "FUN_005549c0"
+      "name": "sound_sndmain.cpp_FUN_005549c0"
     }
   ],
   "globals": [
@@ -115,7 +104,7 @@
       {
         "call_addr": "0055457c",
         "call_type": "direct",
-        "caller": "FUN_00554510",
+        "caller": "sound_sndmain.cpp_FUN_00554510",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +166,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0054f8a0(int param_1)",
+      "text": "void sound_sndmain_cpp_FUN_0054f8a0(CSfxSlot *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -185,16 +174,32 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x60) != 0) {",
+      "text": "if (*(int *)&param_1->field_0x60 != 0) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0x60 != 0) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x68) == 0) {",
+      "text": "if (*(int *)&param_1->field_0x68 == 0) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0x68 == 0) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -214,26 +219,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00550010(*(uint *)(param_1 + 0x68));",
+      "text": "(*(CSfxSample **)&param_1->field_0x68);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x68",
       "severity": "mild",
-      "text": "FUN_005549c0(\"Killing looped sfx %s, which died??\\n\",*(uint *)(param_1 + 0x68));",
-      "type": "unnamed_param"
+      "text": "(*(CSfxSample **)&param_1->field_0x68);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0054f700(param_1);",
+      "text": "(\"Killing looped sfx %s, which died??\\n\",*(uint *)&param_1->field_0x68);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "(\"Killing looped sfx %s, which died??\\n\",*(uint *)&param_1->field_0x68);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_CSfxSlot_kill_FUN_0054f700(param_1);",
       "type": "unnamed_param"
     },
     {

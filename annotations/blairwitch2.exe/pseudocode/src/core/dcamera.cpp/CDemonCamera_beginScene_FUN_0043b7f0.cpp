@@ -1,0 +1,120 @@
+// Name: core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0
+// Address: 0043b7f0
+// Address Range: [[0043b7f0, 0043bb01]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_0043b7f0(CDemonCamera *this_ptr,int skip_clear_buffers)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_0043b7f0(CDemonCamera *this_ptr,int skip_clear_buffers)
+
+{
+  CDemonRenderer *this_ptr_00;
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  bool bVar4;
+  char *pcVar5;
+  
+  iVar3 = 0;
+  switch(DAT_00609fa0) {
+  case 0:
+    _DAT_01326d08 = _DAT_01326d08 + _DAT_01c2a370;
+    if (_DAT_01326d04 < _DAT_01326d08) {
+      _DAT_01326d08 = _DAT_01326d04;
+      DAT_00609fa0 = 1;
+      _DAT_01326d00 = DAT_00609f9c;
+    }
+    if (_DAT_01326d04 != 0) {
+      iVar3 = (int)(((longlong)DAT_00609f98 * (longlong)_DAT_01326d08) / (longlong)_DAT_01326d04);
+    }
+    pcVar5 = "Attack : ";
+    break;
+  case 1:
+    _DAT_01326d00 = _DAT_01326d00 - _DAT_01c2a370;
+    if (_DAT_01326d00 < 0) {
+      _DAT_01326d00 = 0;
+      DAT_00609fa0 = 2;
+      _DAT_01326d10 = _DAT_01326d0c;
+    }
+    pcVar5 = "Sustain : ";
+    iVar3 = DAT_00609f98;
+    break;
+  case 2:
+    _DAT_01326d10 = _DAT_01326d10 - _DAT_01c2a370;
+    if (_DAT_01326d10 < 0) {
+      _DAT_01326d10 = 0;
+      DAT_00609fa0 = 3;
+    }
+    if (_DAT_01326d0c != 0) {
+      iVar3 = (int)(((longlong)DAT_00609f98 * (longlong)_DAT_01326d10) / (longlong)_DAT_01326d0c);
+    }
+    pcVar5 = "Decay : ";
+    break;
+  default:
+    goto switchD_0043b808_caseD_3;
+  }
+  engine_console_cpp_FUN_00436710(g_CConsolePtr,pcVar5);
+switchD_0043b808_caseD_3:
+  _DAT_01326d14 =
+       _DAT_01326d14 +
+       ((uint)((longlong)iVar3 * (longlong)(int)_DAT_01c2a370) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar3 * (longlong)(int)_DAT_01c2a370) >> 0x20) << 0x10);
+  uVar2 = _DAT_01326d1c;
+  if (0xffff < _DAT_01326d14) {
+    uVar1 = _DAT_01c2a370 & 1;
+    _DAT_01326d14 = 0;
+    uVar2 = (int)(_DAT_01c2a370 & 2) >> 1;
+    bVar4 = _DAT_01326d18 == uVar1;
+    _DAT_01326d18 = uVar1;
+    if ((bVar4) && (_DAT_01326d1c == uVar2)) {
+      uVar2 = (uint)(uVar2 == 0);
+    }
+  }
+  _DAT_01326d1c = uVar2;
+  if ((*(int *)&this_ptr->field_0x148 < 0x1e0) || (DAT_00609fa0 == 3)) {
+    _DAT_01326d18 = 0;
+    _DAT_01326d1c = 0;
+  }
+  if (*(int *)&this_ptr->field_0x11e4 == 0) {
+    *(uint *)&this_ptr->field_0x11e4 = 1;
+  }
+  else {
+    _DAT_01d046a0 = "..\\core\\dcamera.cpp";
+    _DAT_01d046a4 = 0x2e7;
+    core_main_c_FUN_004e4500("CDemonCamera::beginScene - Scene already open!");
+  }
+  core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0043b7a0(this_ptr,skip_clear_buffers);
+  engine_matrix_c_FUN_0046b710
+            (DAT_0060b280,0,0,*(int *)&this_ptr->field_0x144 + -1,
+             *(int *)&this_ptr->field_0x148 + -1);
+  uVar2 = _DAT_01326d18;
+  *(uint *)&this_ptr->field_0x11d4 = 0;
+  *(uint *)&this_ptr->field_0x11d8 = 0;
+  *(uint *)&this_ptr->field_0x1d0 = 0;
+  _DAT_01c35e40 = _DAT_01c35e40 + uVar2 * 0x10000;
+  *(int *)&this_ptr->field_0x11dc = *(int *)&this_ptr->field_0x144 + -1;
+  _DAT_01c35e44 = _DAT_01c35e44 + _DAT_01326d1c * -0x10000;
+  *(int *)&this_ptr->field_0x11e0 = *(int *)&this_ptr->field_0x148 + -1;
+  this_ptr_00 = DAT_0060b280;
+  *(int *)&this_ptr->field_0x168 = skip_clear_buffers;
+  engine_drender_cpp_FUN_0046afb0(this_ptr_00,(CVector3f *)&this_ptr->field_0x4);
+  engine_matrix_c_FUN_0046b4b0(DAT_0060b280,*(uint *)&this_ptr->field_0x38);
+  engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
+            (DAT_0060b280,(CMatrix3x3f *)&this_ptr->field_0x10);
+  if (skip_clear_buffers == 0) {
+    if (_DAT_0264bba0 != 0) {
+      engine_special_cpp_FUN_0055f590();
+    }
+    engine_special_cpp_clearScreen_FUN_0055b1f0();
+    engine_special_cpp_clearZBufferNative_FUN_0055b254();
+    if (_DAT_01c37788 != 0) {
+      engine_special_cpp_clear_FUN_0055fd40();
+      engine_special_cpp_clearZBuffer_FUN_0055fef0();
+    }
+  }
+  core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0043c5d0(this_ptr);
+  return;
+}

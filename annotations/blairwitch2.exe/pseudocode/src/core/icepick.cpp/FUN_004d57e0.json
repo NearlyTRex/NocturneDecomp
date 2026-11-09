@@ -1,118 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 62,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 64,
-        "message": "no matching function for call to 'FUN_00591c10'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 65,
-        "message": "no matching function for call to 'FUN_005916b0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
@@ -141,24 +27,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004d57e0",
-    "signature": "void FUN_004d57e0(int param_1,int param_2)"
+    "name": "core_icepick.cpp_FUN_004d57e0",
+    "signature": "void core_icepick_cpp_FUN_004d57e0(int param_1,int param_2)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
-    },
-    {
-      "addr": "005916b0",
-      "is_variadic": false,
-      "name": "FUN_005916b0"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "00591c10",
       "is_variadic": false,
-      "name": "FUN_00591c10"
+      "name": "core_xform.cpp_FUN_00591c10"
+    },
+    {
+      "addr": "005916b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005916b0"
     }
   ],
   "globals": [
@@ -235,23 +121,6 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_004d57e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 68,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -266,7 +135,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004d57e0(int param_1,int param_2)",
+      "text": "void core_icepick_cpp_FUN_004d57e0(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +143,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004d57e0(int param_1,int param_2)",
+      "text": "void core_icepick_cpp_FUN_004d57e0(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +183,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005916b0(auStack_78,iVar1 * 0x30 + param_1 + 0x1134);",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(auStack_78,iVar1 * 0x30 + param_1 + 0x1134);",
       "type": "unnamed_param"
     },
     {
@@ -356,22 +225,14 @@
       "severity": "moderate",
       "text": "// 004d58f8: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 68,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {
     "entries": [
       {
         "class_name": "Unknown",
-        "offset": 44,
-        "vtable_addr": "005f8cac"
+        "offset": 308,
+        "vtable_addr": "005f8ba4"
       }
     ],
     "in_vtable": true,

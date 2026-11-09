@@ -1,14 +1,14 @@
-// Name: FUN_00504b00
+// Name: sound_mp3.cpp_FUN_00504b00
 // Address: 00504b00
 // Address Range: [[00504b00, 00504c72]]
-// Convention: unknown
-// Signature: uint FUN_00504b00(undefined4 *param_1,int param_2)
+// Convention: __cdecl
+// Signature: uint __cdecl sound_mp3_cpp_FUN_00504b00(CFileBitStream *this_ptr,int num_bits)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_00504b00(uint *param_1,int param_2)
+uint __cdecl sound_mp3_cpp_FUN_00504b00(CFileBitStream *this_ptr,int num_bits)
 
 {
   int iVar1;
@@ -16,69 +16,71 @@ uint FUN_00504b00(uint *param_1,int param_2)
   uint local_14;
   
   local_14 = 0;
-  if (0x20 < param_2) {
+  if (0x20 < num_bits) {
     _DAT_01d046a0 = "..\\sound\\mp3.cpp";
     _DAT_01d046a4 = 0x2ab;
-    FUN_004e4500("Cannot read or write more than %d bits at a time.  File: %s",0x20,&DAT_01d23558);
+    core_main_c_FUN_004e4500("Cannot read or write more than %d bits at a time.  File: %s",0x20,&DAT_01d23558);
   }
-  param_1[3] = param_1[3] + param_2;
+  *(int *)(this_ptr + 0xc) = *(int *)(this_ptr + 0xc) + num_bits;
   do {
-    if (param_2 < 1) {
+    if (num_bits < 1) {
       return local_14;
     }
-    if (param_1[5] == 0) {
-      param_1[5] = 8;
-      iVar2 = param_1[4] + -1;
-      param_1[4] = iVar2;
-      if ((iVar2 < 4) || (iVar2 < (int)param_1[6])) {
-        if (param_1[6] == 0) {
-          for (iVar2 = param_1[4]; -1 < iVar2; iVar2 = iVar2 + -1) {
-            *(byte *)(param_1[1] + ((param_1[2] + -1) - param_1[4]) + iVar2) =
-                 *(byte *)(param_1[1] + iVar2);
+    if (*(int *)(this_ptr + 0x14) == 0) {
+      *(uint *)(this_ptr + 0x14) = 8;
+      iVar2 = *(int *)(this_ptr + 0x10) + -1;
+      *(int *)(this_ptr + 0x10) = iVar2;
+      if ((iVar2 < 4) || (iVar2 < *(int *)(this_ptr + 0x18))) {
+        if (*(int *)(this_ptr + 0x18) == 0) {
+          for (iVar2 = *(int *)(this_ptr + 0x10); -1 < iVar2; iVar2 = iVar2 + -1) {
+            *(byte *)
+             (*(int *)(this_ptr + 4) +
+             ((*(int *)(this_ptr + 8) + -1) - *(int *)(this_ptr + 0x10)) + iVar2) =
+                 *(byte *)(*(int *)(this_ptr + 4) + iVar2);
           }
-          iVar2 = (param_1[2] + -2) - param_1[4];
+          iVar2 = (*(int *)(this_ptr + 8) + -2) - *(int *)(this_ptr + 0x10);
           if (iVar2 < 0) {
 LAB_00504c11:
-            param_1[4] = param_1[2] + -1;
+            *(int *)(this_ptr + 0x10) = *(int *)(this_ptr + 8) + -1;
           }
           else {
             do {
               while( true ) {
-                if (param_1[6] != 0) goto LAB_00504c11;
+                if (*(int *)(this_ptr + 0x18) != 0) goto LAB_00504c11;
                 iVar1 = 0;
-                if (0 < (int)param_1[10]) {
-                  iVar1 = iVar2 + param_1[1];
+                if (0 < *(int *)(this_ptr + 0x28)) {
+                  iVar1 = iVar2 + *(int *)(this_ptr + 4);
                   iVar2 = iVar2 + -1;
-                  iVar1 = FUN_005b87c0(iVar1,1,1,*param_1);
+                  iVar1 = _fread(iVar1,1,1,*(uint *)this_ptr);
                 }
                 if (iVar1 != 1) break;
-                param_1[10] = param_1[10] + -1;
+                *(int *)(this_ptr + 0x28) = *(int *)(this_ptr + 0x28) + -1;
                 if (iVar2 < 0) {
-                  param_1[4] = param_1[2] + -1;
+                  *(int *)(this_ptr + 0x10) = *(int *)(this_ptr + 8) + -1;
                   goto LAB_00504b2c;
                 }
               }
-              param_1[6] = iVar2 + 1;
+              *(int *)(this_ptr + 0x18) = iVar2 + 1;
             } while (-1 < iVar2);
-            param_1[4] = param_1[2] + -1;
+            *(int *)(this_ptr + 0x10) = *(int *)(this_ptr + 8) + -1;
           }
         }
         else {
-          param_1[7] = 1;
+          *(uint *)(this_ptr + 0x1c) = 1;
         }
       }
     }
 LAB_00504b2c:
-    iVar2 = param_1[5];
-    if (param_2 < iVar2) {
-      iVar2 = param_2;
+    iVar2 = *(int *)(this_ptr + 0x14);
+    if (num_bits < iVar2) {
+      iVar2 = num_bits;
     }
-    param_2 = param_2 - iVar2;
-    iVar2 = param_1[5] - iVar2;
+    num_bits = num_bits - iVar2;
+    iVar2 = *(int *)(this_ptr + 0x14) - iVar2;
     local_14 = local_14 |
-               ((int)((uint)*(byte *)(param_1[1] + param_1[4]) &
-                     *(uint *)(&DAT_00619250 + param_1[5] * 4)) >> ((byte)iVar2 & 0x1f)) <<
-               ((byte)param_2 & 0x1f);
-    param_1[5] = iVar2;
+               ((int)((uint)*(byte *)(*(int *)(this_ptr + 4) + *(int *)(this_ptr + 0x10)) &
+                     *(uint *)(&DAT_00619250 + *(int *)(this_ptr + 0x14) * 4)) >>
+               ((byte)iVar2 & 0x1f)) << ((byte)num_bits & 0x1f);
+    *(int *)(this_ptr + 0x14) = iVar2;
   } while( true );
 }

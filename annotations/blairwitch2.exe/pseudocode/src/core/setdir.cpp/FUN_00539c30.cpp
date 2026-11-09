@@ -1,60 +1,60 @@
-// Name: FUN_00539c30
+// Name: core_setdir.cpp_FUN_00539c30
 // Address: 00539c30
 // Address Range: [[00539c30, 00539d4f]]
-// Convention: unknown
-// Signature: void FUN_00539c30(int *param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_setdir_cpp_FUN_00539c30(CDemonSet *this_ptr,char *filename)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00539c30(int *param_1,uint param_2)
+void __cdecl core_setdir_cpp_FUN_00539c30(CDemonSet *this_ptr,char *filename)
 
 {
+  _FILE *file_handle;
+  CZThumb *this_ptr_00;
   int iVar1;
   int iVar2;
-  int iVar3;
-  int iVar4;
-  int local_1c;
-  int *local_18;
+  CZThumb *local_1c;
+  CDemonSet *local_18;
   int local_14;
   
-  iVar1 = FUN_00460c70(&DAT_005e6050,param_2,&DAT_005e604d);
-  if (iVar1 == 0) {
+  file_handle = engine_dosio_cpp_FUN_00460c70(&DAT_005e6050,filename,&DAT_005e604d);
+  if (file_handle == (_FILE *)0x0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x3cc;
-    FUN_004e4500("Can't create %s",param_2);
+    core_main_c_FUN_004e4500("Can't create %s",filename);
   }
   local_14 = 0;
-  if (0 < *param_1) {
-    local_18 = param_1;
-    local_1c = 0x2093d34;
+  if (0 < *(int *)this_ptr) {
+    local_18 = this_ptr;
+    local_1c = g_CZThumbPool;
     do {
-      iVar4 = 1;
-      if (local_18[0x51] != 0) {
-        iVar4 = 6;
+      iVar2 = 1;
+      if (*(int *)&local_18->field_0x144 != 0) {
+        iVar2 = 6;
       }
-      iVar3 = 0;
-      iVar2 = local_1c;
-      if (iVar4 != 0) {
+      iVar1 = 0;
+      this_ptr_00 = local_1c;
+      if (iVar2 != 0) {
         do {
-          iVar3 = iVar3 + 1;
-          FUN_00538670(iVar2,iVar1);
-          iVar2 = iVar2 + 0x28;
-        } while (iVar3 < iVar4);
+          iVar1 = iVar1 + 1;
+          core_setdir_cpp_CZThumb_write_FUN_00538670(this_ptr_00,file_handle);
+          this_ptr_00 = this_ptr_00 + 1;
+        } while (iVar1 < iVar2);
       }
-      local_1c = local_1c + 0xf0;
-      local_18 = local_18 + 0x69;
+      local_1c = local_1c + 6;
+      local_18 = (CDemonSet *)&local_18->field_0x1a4;
       local_14 = local_14 + 1;
-    } while (local_14 < *param_1);
+    } while (local_14 < *(int *)this_ptr);
   }
-  if ((*(byte *)(iVar1 + 0xc) & 0x20) != 0) {
+  if (((byte)file_handle[0xc] & 0x20) != 0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x3d7;
-    FUN_004e4500("Error writing %s",param_2);
-    FUN_005b89c0(iVar1);
+    core_main_c_FUN_004e4500("Error writing %s",filename);
+    _fclose(file_handle);
     return;
   }
-  FUN_005b89c0(iVar1);
+  _fclose(file_handle);
   return;
 }

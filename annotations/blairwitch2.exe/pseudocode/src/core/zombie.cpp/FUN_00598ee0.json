@@ -1,0 +1,155 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 44,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "005984e0",
+      "from_addr": "00598724",
+      "name": "core_zombie.cpp_FUN_005984e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00598ee0",
+    "address_range": [
+      [
+        "00598ee0",
+        "00598f18"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_FUN_00598ee0",
+    "signature": "int __cdecl core_zombie_cpp_FUN_00598ee0(CZombie *this_ptr,int object_shape_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00598e40",
+      "is_variadic": false,
+      "name": "core_zombie.cpp_FUN_00598e40"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00598724",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_005984e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00598c9c",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_005984e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.545454545454546,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 20,
+      "INT_ADD": 11,
+      "INT_AND": 38,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 11,
+      "INT_SUB": 7,
+      "INT_XOR": 3,
+      "LOAD": 8,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 166
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "object_shape_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x261c",
+      "severity": "mild",
+      "text": "if ((-1 < iVar1) && (-1 < *(int *)(&this_ptr->field_0x261c + iVar1 * 0x78))) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x23f4",
+      "severity": "mild",
+      "text": "return *(int *)(&this_ptr->field_0x23f4 + *(int *)(&this_ptr->field_0x261c + iVar1 * 0x78) * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x261c",
+      "severity": "mild",
+      "text": "return *(int *)(&this_ptr->field_0x23f4 + *(int *)(&this_ptr->field_0x261c + iVar1 * 0x78) * 4);",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 130,
+    "complexity_score": 440,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 37,
+    "suspect_types": [
+      "raw_address_constant",
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 185
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a3420",
+    "address_range": [
+      [
+        "005a3420",
+        "005a355b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_schngeis.cpp_FUN_005a3420",
+    "signature": "void core_schngeis_cpp_FUN_005a3420(CDemonActor *param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055ae50",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_0055ae50"
+    },
+    {
+      "addr": "0059e880",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_0059e880"
+    },
+    {
+      "addr": "0059f740",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_0059f740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005a33f4",
+      "name": "switchdataD_005a33f4",
+      "type": "undefined1*",
+      "value": "005a343d"
+    },
+    {
+      "addr": "005f0129",
+      "name": "s_schnellbreath01_005f0129",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0139",
+      "name": "s_schnellarm0_wav_005f0139",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f014a",
+      "name": "s_schnellbite01_wav_005f014a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f015c",
+      "name": "s_schnellfootsteps0_wav_005f015c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0173",
+      "name": "s_schnelljump_wav_005f0173",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0183",
+      "name": "s_schnelldeath01_wav_005f0183",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ff358",
+      "name": "DAT_005ff358",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ff35c",
+      "name": "DAT_005ff35c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ff360",
+      "name": "DAT_005ff360",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0618556701030926,
+    "instruction_count": 97,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "BRANCHIND": 1,
+      "CALL": 9,
+      "CBRANCH": 1,
+      "COPY": 80,
+      "INT_ADD": 29,
+      "INT_AND": 10,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 53,
+      "LOAD": 18,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 53
+    },
+    "pcode_op_count": 297
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_schngeis_cpp_FUN_005a3420(CDemonActor *param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_schngeis_cpp_FUN_005a3420(CDemonActor *param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "switch(param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&param_1[0x67].field_0x1ec;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x1ec",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&param_1[0x67].field_0x1ec;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[0x67].field_0x1f8 = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x1f8",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[0x67].field_0x1f8 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(this_ptr,param_1,\"schnellbreath01\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(this_ptr,param_1,\"schnellbreath01\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(this_ptr,param_1,\"schnellbreath01\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[0x67].field_0x1f8 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x1f8",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[0x67].field_0x1f8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unkafter_basicene_cpp_FUN_0059e880(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "unkafter_basicene_cpp_FUN_0059e880(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&param_1[0x67].field_0x1ec;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x1ec",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&param_1[0x67].field_0x1ec;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&param_1[0x67].field_0x1f0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x1f0",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&param_1[0x67].field_0x1f0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unkafter_basicene_cpp_FUN_0059f740(param_1,uVar1,uVar2,0x40000000);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnellarm0?.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnellarm0?.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnellarm0?.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnellbite01.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnellbite01.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnellbite01.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnellfootsteps0?.wav\",",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnelljump.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnelljump.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnelljump.wav\",(CVector3f *)&param_1->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnelldeath01.wav\",(CVector3f *)&param_1->field_0x20)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnelldeath01.wav\",(CVector3f *)&param_1->field_0x20)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x0264B290,param_1,\"schnelldeath01.wav\",(CVector3f *)&param_1->field_0x20)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unkafter_basicene_cpp_FUN_0059e880(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "unkafter_basicene_cpp_FUN_0059e880(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x264b290 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 9,
+      "match": "0x264b290",
+      "severity": "moderate",
+      "text": "this_ptr = 0x0264B290;",
+      "type": "raw_address_constant"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 360,
+        "vtable_addr": "005ff374"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

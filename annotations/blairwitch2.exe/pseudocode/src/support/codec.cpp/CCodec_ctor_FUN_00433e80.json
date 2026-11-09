@@ -1,0 +1,173 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "00434b70",
+      "from_addr": "00434b75",
+      "name": "support_codec.cpp_CAsciiArmor_ctor_FUN_00434b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434c70",
+      "from_addr": "00434c75",
+      "name": "support_codec.cpp_CAsciiUnarmor_ctor_FUN_00434c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434770",
+      "from_addr": "00434775",
+      "name": "support_codec.cpp_CLZWCompress_ctor_FUN_00434770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434990",
+      "from_addr": "00434995",
+      "name": "support_codec.cpp_CLZWDecompress_ctor_FUN_00434990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434ce0",
+      "from_addr": "00434ce7",
+      "name": "support_codec.cpp_FUN_00434ce0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00433e80",
+    "address_range": [
+      [
+        "00433e80",
+        "00433e8a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CCodec_ctor_FUN_00433e80",
+    "signature": "CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00433e80(CCodec *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005f4224",
+      "name": "g_CCodecVTable",
+      "type": "void*",
+      "value": "00433e90"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00434995",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CLZWDecompress_ctor_FUN_00434990",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00434775",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CLZWCompress_ctor_FUN_00434770",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00434b75",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CAsciiArmor_ctor_FUN_00434b70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00434c75",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CAsciiUnarmor_ctor_FUN_00434c70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00434ce7",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00434ce0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.6666666666666665,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 8
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCodec *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCodec",
+        "offset": 0,
+        "vtable_addr": "005f4374"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

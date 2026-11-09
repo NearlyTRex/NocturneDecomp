@@ -1,0 +1,203 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 12,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "004dbd80",
+      "from_addr": "004dbe71",
+      "name": "core_inv.cpp_FUN_004dbd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1600",
+      "from_addr": "004e178f",
+      "name": "core_level.cpp_FUN_004e1600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8a10",
+      "from_addr": "004e8a2b",
+      "name": "engine_matrix.c_buildRotationMatrix_FUN_004e8a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8fd0",
+      "from_addr": "004e9139",
+      "name": "engine_matrix.c_matrixPushAndTransform_FUN_004e8fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e86f0",
+    "address_range": [
+      [
+        "004e86f0",
+        "004e8728"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_FUN_004e86f0",
+    "signature": "int __cdecl engine_matrix_c_FUN_004e86f0(int angle)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "004e178f",
+        "call_type": "direct",
+        "caller": "core_level.cpp_FUN_004e1600",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e9139",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_matrixPushAndTransform_FUN_004e8fd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e9151",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_matrixPushAndTransform_FUN_004e8fd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e9169",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_matrixPushAndTransform_FUN_004e8fd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dbe71",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dbd80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e8a2b",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_buildRotationMatrix_FUN_004e8a10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e8a43",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_buildRotationMatrix_FUN_004e8a10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e8a61",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_buildRotationMatrix_FUN_004e8a10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 12.277777777777779,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "COPY": 17,
+      "INT_ADD": 6,
+      "INT_AND": 64,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 17,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SEXT": 3,
+      "INT_SLESS": 11,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 5,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 1,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 221
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "angle",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004728d0(int param_1,int param_2)
+; void core_dtrace_cpp_FUN_004728d0(CDemonRaytrace *param_1,_FILE *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00472ab0 at 00472ad6
+;   core_dtrace.cpp_FUN_00472ab0 at 00472ad6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005d1a3d
@@ -31,18 +31,18 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004467a0
-;   FUN_00472550
-;   FUN_004725c0
-;   FUN_004e4500
-;   FUN_005b87c0
+;   core_dcube.cpp_CDemonCube_load_FUN_004467a0
+;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00472550
+;   core_dtrace.cpp_FUN_004725c0
+;   core_main.c_FUN_004e4500
+;   crt_stdio.c_fread_FUN_005b87c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004728d0
-        ;   Label: FUN_004728d0
+        ;   Label: core_dtrace.cpp_FUN_004728d0
     PUSH ESI                            ; 004728d1
     PUSH EDI                            ; 004728d2
     PUSH EBP                            ; 004728d3
@@ -50,8 +50,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 004728d7
     MOV EBP,dword ptr [ESP + 0x34]      ; 004728db
     PUSH EBX                            ; 004728df
-    CALL FUN_004725c0                   ; 004728e0
-        ;   XREF to: 004725c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004725c0()
+    CALL core_dtrace.cpp_FUN_004725c0   ; 004728e0
+        ;   XREF to: 004725c0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_004725c0()
     ADD ESP,0x4                         ; 004728e5
     PUSH EBP                            ; 004728e8
     PUSH 0x1                            ; 004728e9
@@ -60,8 +60,8 @@ section .text
     XOR EDX,EDX                         ; 004728f1
     PUSH EAX                            ; 004728f3
     MOV dword ptr [0x01c21e64],EDX      ; 004728f4 | DAT_01c21e64
-    CALL FUN_005b87c0                   ; 004728fa
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b87c0()
+    CALL crt_stdio.c_fread_FUN_005b87c0 ; 004728fa
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
     ADD ESP,0x10                        ; 004728ff
     CMP dword ptr [ESP + 0x18],0x1      ; 00472902
     JL 0x00472a25                       ; 00472907
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5d1a90                       ; 00472923 | = "CDemonRaytrace::loadBinary - file is ..."
     MOV dword ptr [0x01d046a0],ECX      ; 00472928 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0047292e | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00472934
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00472934
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00472939
     PUSH EBP                            ; 0047293c
         ;   Label: LAB_0047293c
@@ -85,48 +85,48 @@ section .text
     PUSH 0x4                            ; 0047293f
     LEA EAX,[EBX + 0x40]                ; 00472941
     PUSH EAX                            ; 00472944
-    CALL FUN_005b87c0                   ; 00472945
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b87c0()
+    CALL crt_stdio.c_fread_FUN_005b87c0 ; 00472945
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
     ADD ESP,0x10                        ; 0047294a
     PUSH EBP                            ; 0047294d
     PUSH 0x1                            ; 0047294e
     PUSH 0x4                            ; 00472950
     LEA EAX,[EBX + 0x44]                ; 00472952
     PUSH EAX                            ; 00472955
-    CALL FUN_005b87c0                   ; 00472956
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b87c0()
+    CALL crt_stdio.c_fread_FUN_005b87c0 ; 00472956
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
     ADD ESP,0x10                        ; 0047295b
     PUSH EBP                            ; 0047295e
     PUSH 0x1                            ; 0047295f
     PUSH 0x4                            ; 00472961
     LEA EAX,[EBX + 0x48]                ; 00472963
     PUSH EAX                            ; 00472966
-    CALL FUN_005b87c0                   ; 00472967
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b87c0()
+    CALL crt_stdio.c_fread_FUN_005b87c0 ; 00472967
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
     ADD ESP,0x10                        ; 0047296c
     PUSH EBP                            ; 0047296f
     PUSH 0x1                            ; 00472970
     PUSH 0xc                            ; 00472972
     LEA EAX,[EBX + 0x10]                ; 00472974
     PUSH EAX                            ; 00472977
-    CALL FUN_005b87c0                   ; 00472978
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b87c0()
+    CALL crt_stdio.c_fread_FUN_005b87c0 ; 00472978
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
     ADD ESP,0x10                        ; 0047297d
     PUSH EBP                            ; 00472980
     PUSH 0x1                            ; 00472981
     PUSH 0xc                            ; 00472983
     LEA EAX,[EBX + 0x1c]                ; 00472985
     PUSH EAX                            ; 00472988
-    CALL FUN_005b87c0                   ; 00472989
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b87c0()
+    CALL crt_stdio.c_fread_FUN_005b87c0 ; 00472989
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
     ADD ESP,0x10                        ; 0047298e
     PUSH EBP                            ; 00472991
     PUSH 0x1                            ; 00472992
     PUSH 0xc                            ; 00472994
     LEA ESI,[EBX + 0x28]                ; 00472996
     PUSH ESI                            ; 00472999
-    CALL FUN_005b87c0                   ; 0047299a
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b87c0()
+    CALL crt_stdio.c_fread_FUN_005b87c0 ; 0047299a
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
     FLD float ptr [0x005d1b47]          ; 0047299f | DAT_005d1b47
     FLD float ptr [ESI]                 ; 004729a5
     FMUL ST1                            ; 004729a7
@@ -160,8 +160,8 @@ section .text
     JL 0x00472a4d                       ; 004729f0
         ;   XREF to: 00472a4d (CONDITIONAL_JUMP)  ; LAB_00472a4d
     PUSH EBX                            ; 004729f2
-    CALL FUN_00472550                   ; 004729f3
-        ;   XREF to: 00472550 (UNCONDITIONAL_CALL)  ; undefined FUN_00472550()
+    CALL core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00472550 ; 004729f3
+        ;   XREF to: 00472550 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00472550(CDemonRaytrace * this_ptr)
     XOR ESI,ESI                         ; 004729f8
     XOR EDI,EDI                         ; 004729fa
     ADD ESP,0x4                         ; 004729fc
@@ -178,8 +178,8 @@ section .text
     ADD EAX,EDI                         ; 00472a14
     PUSH EAX                            ; 00472a16
     INC ESI                             ; 00472a17
-    CALL FUN_004467a0                   ; 00472a18
-        ;   XREF to: 004467a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004467a0()
+    CALL core_dcube.cpp_CDemonCube_load_FUN_004467a0 ; 00472a18
+        ;   XREF to: 004467a0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_load_FUN_004467a0(CDemonCube * this_ptr, _FILE * file_handle)
     ADD EDI,0x34                        ; 00472a1d
     ADD ESP,0x8                         ; 00472a20
     JMP 0x004729ff                      ; 00472a23
@@ -190,8 +190,8 @@ section .text
     PUSH 0x5d1a50                       ; 00472a2f | = "CDemonRaytrace::loadBinary - invalid ..."
     MOV dword ptr [0x01d046a0],ESI      ; 00472a34 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00472a3a | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00472a40
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00472a40
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00472a45
     JMP 0x0047290d                      ; 00472a48
         ;   XREF to: 0047290d (UNCONDITIONAL_JUMP)  ; LAB_0047290d
@@ -201,8 +201,8 @@ section .text
     PUSH 0x5d1ad9                       ; 00472a57 | = "Release build doesn't support old geo..."
     MOV [0x01d046a0],EAX                ; 00472a5c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 00472a61 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00472a67
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00472a67
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00472a6c
     TEST byte ptr [EBP + 0xc],0x20      ; 00472a6f
         ;   Label: LAB_00472a6f
@@ -220,8 +220,8 @@ section .text
     PUSH 0x5d1b17                       ; 00472a87 | = "CDemonRaytrace::loadBinary - error re..."
     MOV dword ptr [0x01d046a0],ECX      ; 00472a8c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00472a92 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00472a98
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00472a98
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00472a9d
     ADD ESP,0x1c                        ; 00472aa0
     POP EBP                             ; 00472aa3

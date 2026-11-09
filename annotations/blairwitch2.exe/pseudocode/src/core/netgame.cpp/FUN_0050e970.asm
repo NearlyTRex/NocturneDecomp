@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0050e970(int *param_1,int param_2)
+; void __cdecl core_netgame_cpp_FUN_0050e970(CNetGame *this_ptr,int player_index)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   player_index
 ;
 ; XREF[1]:
-;   FUN_0050cf50 at 0050d4cf
+;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d4cf
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0
@@ -15,17 +18,17 @@
 ;   undefined4 DAT_01d34e44
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_0050cd90
-;   FUN_0058e9e0
-;   FUN_005b7f5f
+;   core_main.c_FUN_004e4500
+;   core_netgame.cpp_CNetGame_send_FUN_0050cd90
+;   crt_memory.c___arrinit_FUN_005b7f5f
+;   wincore_winrun.cpp_FUN_0058e9e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0050e970
-        ;   Label: FUN_0050e970
+        ;   Label: core_netgame.cpp_FUN_0050e970
     PUSH ESI                            ; 0050e971
     PUSH EDI                            ; 0050e972
     PUSH EBP                            ; 0050e973
@@ -44,8 +47,8 @@ section .text
     PUSH 0x5e0e18                       ; 0050e997
     MOV dword ptr [0x01d046a0],EBX      ; 0050e99c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0050e9a2 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050e9a8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050e9a8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050e9ad
     MOV EDI,dword ptr [ESP + 0xd0]      ; 0050e9b0
         ;   Label: LAB_0050e9b0
@@ -62,8 +65,8 @@ section .text
     PUSH 0x5e0e7a                       ; 0050e9d1
     MOV [0x01d046a0],EAX                ; 0050e9d6 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0050e9db | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050e9e1
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050e9e1
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050e9e6
     PUSH 0x5fa6a0                       ; 0050e9e9
         ;   Label: LAB_0050e9e9
@@ -74,8 +77,8 @@ section .text
     MOV ECX,0xb1                        ; 0050e9fa
     PUSH EAX                            ; 0050e9ff
     MOV dword ptr [ESP + 0xc],ECX       ; 0050ea00
-    CALL FUN_005b7f5f                   ; 0050ea04
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined FUN_005b7f5f()
+    CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0050ea04
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
     ADD ESP,0xc                         ; 0050ea09
     MOV EAX,dword ptr [ESP + 0xcc]      ; 0050ea0c
     MOV EAX,dword ptr [EAX + 0x17c]     ; 0050ea13
@@ -164,11 +167,11 @@ section .text
     PUSH EBX                            ; 0050eb0a
     MOV ESI,dword ptr [ESP + 0xd4]      ; 0050eb0b
     PUSH ESI                            ; 0050eb12
-    CALL FUN_0050cd90                   ; 0050eb13
-        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; undefined FUN_0050cd90()
+    CALL core_netgame.cpp_CNetGame_send_FUN_0050cd90 ; 0050eb13
+        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0050cd90(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0050eb18
-    CALL FUN_0058e9e0                   ; 0050eb1b
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0058e9e0()
+    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0050eb1b
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050eb20
     MOV ECX,0x12                        ; 0050eb22
     SAR EDX,0x1f                        ; 0050eb27

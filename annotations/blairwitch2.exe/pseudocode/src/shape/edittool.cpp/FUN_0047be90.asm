@@ -1,16 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0047be90(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,undefined4 param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[4]:
-;   FUN_004eed60 at 004efc56
-;   FUN_0050b4d0 at 0050b5a6
-;   FUN_0050b790 at 0050b7a3
-;   FUN_0050cf50 at 0050d538
+; XREF[7]:
+;   core_menu.cpp_FUN_004eed60 at 004efc56
+;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d538
+;   core_netgame.cpp_FUN_0050b420 at 0050b436
+;   core_netgame.cpp_FUN_0050b4d0 at 0050b5a6
+;   core_netgame.cpp_FUN_0050b790 at 0050b7a3
+;   engine_pod.cpp_FUN_0051aa7e at 0051aad6
+;   engine_pod.cpp_FUN_0051b6dc at 0051b6fe
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d1e6f
@@ -25,21 +28,21 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_00406da0
-;   FUN_004a92a0
-;   FUN_004ab560
-;   FUN_004e4500
-;   FUN_004f3570
-;   FUN_0055b1f0
-;   FUN_00589560
-;   FUN_005b7768
+;   core_main.c_FUN_004e4500
+;   crt_stdio.c_vsprintf_FUN_005b7768
+;   engine_3d.c_setRenderAlpha_FUN_00406da0
+;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0
+;   engine_font.cpp_FUN_004ab560
+;   engine_mini3d.cpp_FUN_004f3570
+;   engine_special.cpp_clearScreen_FUN_0055b1f0
+;   wincore_wddvmem.cpp_FUN_00589560
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0047be90
-        ;   Label: FUN_0047be90
+        ;   Label: shape_edittool.cpp_FUN_0047be90
     PUSH ESI                            ; 0047be91
     PUSH EDI                            ; 0047be92
     PUSH EBP                            ; 0047be93
@@ -53,8 +56,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047beab
     PUSH EAX                            ; 0047beb1
     MOV dword ptr [0x01c25f78],EDX      ; 0047beb2 | DAT_01c25f78
-    CALL FUN_004ab560                   ; 0047beb8
-        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; undefined FUN_004ab560()
+    CALL engine_font.cpp_FUN_004ab560   ; 0047beb8
+        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004ab560(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047bebd
     MOV [0x01c25f7c],EAX                ; 0047bec0 | DAT_01c25f7c
     LEA EAX,[ESP + 0x20]                ; 0047bec5
@@ -65,19 +68,19 @@ section .text
     PUSH ESI                            ; 0047bed3
     PUSH 0x1c231f0                      ; 0047bed4
     XOR EDI,EDI                         ; 0047bed9
-    CALL FUN_005b7768                   ; 0047bedb
-        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7768()
+    CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 0047bedb
+        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005b7768()
     ADD ESP,0xc                         ; 0047bee0
     MOV dword ptr [ESP],EDI             ; 0047bee3
-    CALL FUN_0055b1f0                   ; 0047bee6
-        ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0055b1f0()
+    CALL engine_special.cpp_clearScreen_FUN_0055b1f0 ; 0047bee6
+        ;   XREF to: 0055b1f0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0055b1f0()
     PUSH 0xffff                         ; 0047beeb
-    CALL FUN_00406da0                   ; 0047bef0
-        ;   XREF to: 00406da0 (UNCONDITIONAL_CALL)  ; undefined FUN_00406da0()
+    CALL engine_3d.c_setRenderAlpha_FUN_00406da0 ; 0047bef0
+        ;   XREF to: 00406da0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406da0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047bef5
     PUSH 0x3f800000                     ; 0047bef8
-    CALL FUN_004f3570                   ; 0047befd
-        ;   XREF to: 004f3570 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3570()
+    CALL engine_mini3d.cpp_FUN_004f3570 ; 0047befd
+        ;   XREF to: 004f3570 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3570()
     MOV EAX,[0x006141bc]                ; 0047bf02 | DAT_006141bc
     MOV EDX,EAX                         ; 0047bf07
     SAR EDX,0x1f                        ; 0047bf09
@@ -97,11 +100,11 @@ section .text
     PUSH EAX                            ; 0047bf30
     MOV EAX,[0x01c25590]                ; 0047bf31 | DAT_01c25590
     PUSH EAX                            ; 0047bf36
-    CALL FUN_004a92a0                   ; 0047bf37
-        ;   XREF to: 004a92a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004a92a0()
+    CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0 ; 0047bf37
+        ;   XREF to: 004a92a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 0047bf3c
-    CALL FUN_00589560                   ; 0047bf3f
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; undefined FUN_00589560()
+    CALL wincore_wddvmem.cpp_FUN_00589560 ; 0047bf3f
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
     ADD ESP,0x4                         ; 0047bf44
     POP EBP                             ; 0047bf47
     POP EDI                             ; 0047bf48
@@ -114,8 +117,8 @@ section .text
     PUSH 0x5d1e85                       ; 0047bf56 | = "gEdFont must be set by the application."
     MOV dword ptr [0x01d046a0],ECX      ; 0047bf5b | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0047bf61 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0047bf67
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0047bf67
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0047bf6c
     JMP 0x0047bea4                      ; 0047bf6f
         ;   XREF to: 0047bea4 (UNCONDITIONAL_JUMP)  ; LAB_0047bea4

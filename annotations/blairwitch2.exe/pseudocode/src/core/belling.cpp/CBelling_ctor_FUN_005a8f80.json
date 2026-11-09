@@ -1,0 +1,244 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 158,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [
+    {
+      "addr": "005a8f50",
+      "from_addr": "005a8f63",
+      "name": "core_belling.cpp_factoryFuncBelling_FUN_005a8f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a8f80",
+    "address_range": [
+      [
+        "005a8f80",
+        "005a9041"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_belling.cpp_CBelling_ctor_FUN_005a8f80",
+    "signature": "CBelling * core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a47b0",
+      "is_variadic": false,
+      "name": "core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0"
+    },
+    {
+      "addr": "005a9060",
+      "is_variadic": false,
+      "name": "core_belling.cpp_FUN_005a9060"
+    },
+    {
+      "addr": "005b15c0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_add_FUN_005b15c0"
+    },
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    },
+    {
+      "addr": "0059d990",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059d990"
+    },
+    {
+      "addr": "0059dc80",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059dc80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005a8f63",
+        "call_type": "direct",
+        "caller": "core_belling.cpp_factoryFuncBelling_FUN_005a8f50",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7209302325581395,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 32,
+      "INT_ADD": 22,
+      "INT_AND": 12,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 6,
+      "INT_SUB": 19,
+      "LOAD": 4,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 160
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBelling *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CBellingVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar1->field_0x2b4,\"Belling.dfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x3434",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3434 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x1134c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1134c = 0x3fc00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x11380",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x11380 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x11384",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x11384 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x11388",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x11388 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1138c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x1138c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x11390",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x11390 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x11394",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x11394 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x2d0c",
+      "severity": "mild",
+      "text": "((CClothList *)&pCVar1->field_0x2d0c,\"Bellingcloth.cth\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "unkaddr_0059d350_cpp_FUN_0059d990(&pCVar1->field_0x10af8,\"Animation\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "unkaddr_0059d350_cpp_FUN_0059dc80(&pCVar1->field_0x10af8);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBelling",
+        "offset": 0,
+        "vtable_addr": "00600674"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

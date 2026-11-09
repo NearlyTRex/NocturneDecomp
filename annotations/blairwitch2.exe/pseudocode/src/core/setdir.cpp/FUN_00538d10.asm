@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00538d10(int *param_1,int param_2,int param_3)
+; undefined4 core_setdir_cpp_FUN_00538d10(CDemonSet *param_1,CDemonActor *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x194]:1  local_194
@@ -11,12 +11,12 @@
 ; undefined4       Stack[-0x54]:4  local_54
 ;
 ; XREF[6]:
-;   FUN_004b6170 at 004b64b8
-;   FUN_004b7fc0 at 004b7ff7
-;   FUN_004b8030 at 004b8067
-;   FUN_004b82e0 at 004b89b4
-;   FUN_004bd570 at 004bda9b
-;   FUN_00522350 at 00525e3c
+;   core_game.cpp_FUN_004b6170 at 004b64b8
+;   core_game.cpp_FUN_004b7fc0 at 004b7ff7
+;   core_game.cpp_FUN_004b8030 at 004b8067
+;   core_game.cpp_FUN_004b82e0 at 004b89b4
+;   core_game.cpp_FUN_004bd570 at 004bda9b
+;   core_script.cpp_FUN_00522350 at 00525e3c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_005e5f5d
@@ -33,28 +33,28 @@
 ;   undefined4 DAT_005fb358
 ;   undefined4 DAT_0060b280
 ;   undefined4 DAT_006141bc
-;   undefined4 DAT_00616494
+;   CGame* g_CGamePtr = 01cb6900
 ;   ... and 28 more
 ;
 ; Called Functions:
-;   FUN_00408d70
-;   FUN_0041a600
-;   FUN_0041b6b0
-;   FUN_0046b940
-;   FUN_0046b960
-;   FUN_004e4500
-;   FUN_0052ddf0
-;   FUN_005386e0
-;   FUN_0053a760
-;   FUN_0053ae20
-;   FUN_005b7ff0
+;   core_actor.cpp_FUN_00408d70
+;   core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0
+;   core_box.cpp_FUN_0041a600
+;   core_main.c_FUN_004e4500
+;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0
+;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0
+;   core_setdir.cpp_FUN_0053a760
+;   core_setutil.cpp_FUN_0053ae20
+;   crt_math.c_round_FUN_005b7ff0
+;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
+;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00538d10
-        ;   Label: FUN_00538d10
+        ;   Label: core_setdir.cpp_FUN_00538d10
     PUSH ESI                            ; 00538d11
     PUSH EDI                            ; 00538d12
     PUSH EBP                            ; 00538d13
@@ -82,8 +82,8 @@ section .text
     PUSH EDX                            ; 00538d47
         ;   Label: LAB_00538d47
     PUSH EAX                            ; 00538d48
-    CALL FUN_0052ddf0                   ; 00538d49
-        ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ddf0()
+    CALL core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 ; 00538d49
+        ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 00538d4e
     JMP 0x00538d3b                      ; 00538d51
         ;   XREF to: 00538d3b (UNCONDITIONAL_JUMP)  ; LAB_00538d3b
@@ -113,15 +113,15 @@ section .text
     PUSH ECX                            ; 00538d99 | DAT_01ba5c50
     MOV dword ptr [ESP + 0x1c8],EAX     ; 00538d9a
     MOV dword ptr [0x01c37788],EDX      ; 00538da1 | DAT_01c37788
-    CALL FUN_0046b960                   ; 00538da7
-        ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; undefined FUN_0046b960()
+    CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960 ; 00538da7
+        ;   XREF to: 0046b960 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00538dac
     PUSH 0x0                            ; 00538daf
     MOV EBX,dword ptr [0x0060b280]      ; 00538db1 | DAT_0060b280
     PUSH EBX                            ; 00538db7 | DAT_01ba5c50
     MOV dword ptr [ESP + 0x1d0],EAX     ; 00538db8
-    CALL FUN_0046b940                   ; 00538dbf
-        ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; undefined FUN_0046b940()
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 00538dbf
+        ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 00538dc4
     MOV ESI,dword ptr [EBP + 0x18]      ; 00538dc7
     MOV EAX,dword ptr [EBP + 0x18]      ; 00538dca
@@ -145,8 +145,8 @@ section .text
     PUSH EAX                            ; 00538e19
     LEA ESI,[ESP + 0x130]               ; 00538e1a
     LEA EDI,[ESP + 0x190]               ; 00538e21
-    CALL FUN_0041a600                   ; 00538e28
-        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; undefined FUN_0041a600()
+    CALL core_box.cpp_FUN_0041a600      ; 00538e28
+        ;   XREF to: 0041a600 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a600()
     LEA ESI,[ESP + 0x130]               ; 00538e2d
     ADD ESP,0x8                         ; 00538e34
     LEA EAX,[ESP + 0x188]               ; 00538e37
@@ -262,8 +262,8 @@ section .text
     LEA ESI,[ESP + 0x74]                ; 00538fec
     PUSH EAX                            ; 00538ff0
     MOVSD.REP ES:EDI,ESI                ; 00538ff1
-    CALL FUN_0041b6b0                   ; 00538ff3
-        ;   XREF to: 0041b6b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041b6b0()
+    CALL core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0 ; 00538ff3
+        ;   XREF to: 0041b6b0 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_0041b6b0(CBoundingBox3D * this_ptr)
     MOV dword ptr [ESP + 0x20c],EAX     ; 00538ff8
     FLD float ptr [ESP + 0x20c]         ; 00538fff
     FMUL double ptr [0x005e5ffd]        ; 00539006 | DAT_005e5ffd
@@ -285,8 +285,8 @@ section .text
     FADD float ptr [0x005e6005]         ; 00539043 | DAT_005e6005
     PUSH EDI                            ; 00539049
     FSTP float ptr [ESP + 0x14c]        ; 0053904a
-    CALL FUN_0053a760                   ; 00539051
-        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; undefined FUN_0053a760()
+    CALL core_setdir.cpp_FUN_0053a760   ; 00539051
+        ;   XREF to: 0053a760 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0053a760()
     ADD ESP,0x8                         ; 00539056
     LEA EDI,[ESP + 0x110]               ; 00539059
     FLD float ptr [ESP + 0xec]          ; 00539060
@@ -329,8 +329,8 @@ section .text
     PUSH EAX                            ; 00539107
     LEA ESI,[ESP + 0x160]               ; 00539108
     LEA EDI,[ESP + 0x10c]               ; 0053910f
-    CALL FUN_00408d70                   ; 00539116
-        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined FUN_00408d70()
+    CALL core_actor.cpp_FUN_00408d70    ; 00539116
+        ;   XREF to: 00408d70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408d70()
     LEA ESI,[ESP + 0x160]               ; 0053911b
     LEA EAX,[ESP + 0x10c]               ; 00539122
     ADD ESP,0x8                         ; 00539129
@@ -379,8 +379,8 @@ section .text
     PUSH 0x5e5f70                       ; 005391d8 | = "saveZBufferTable - already saved!"
     MOV [0x01d046a0],EAX                ; 005391dd | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 005391e2 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 005391e8
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 005391e8
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 005391ed
     TEST EBX,EBX                        ; 005391f0
         ;   Label: LAB_005391f0
@@ -406,10 +406,10 @@ section .text
     MOV dword ptr [ESP + 0x1f0],ECX     ; 0053922d
     FSTP float ptr [ESP + 0x1d4]        ; 00539234
     MOV dword ptr [ESP + 0x1ec],EAX     ; 0053923b
-    MOV EAX,[0x0061b5a8]                ; 00539242 | DAT_0061b5a8
+    MOV EAX,[0x0061b5a8]                ; 00539242 | g_CDemonSetPtr
         ;   Label: LAB_00539242
     MOV EDX,dword ptr [ESP + 0x1f4]     ; 00539247
-    CMP EDX,dword ptr [EAX + 0x14d164]  ; 0053924e | DAT_01fb331c
+    CMP EDX,dword ptr [EAX + 0x14d164]  ; 0053924e | g_CDemonSetInstance.field1364324_0x14d164
     JL 0x00539513                       ; 00539254
         ;   XREF to: 00539513 (CONDITIONAL_JUMP)  ; LAB_00539513
     MOV EAX,dword ptr [EBP + 0x18]      ; 0053925a
@@ -442,8 +442,8 @@ section .text
     PUSH 0x5e5fa5                       ; 005392b8 | = "saveZBufferTable - not saved!"
     MOV dword ptr [0x01d046a0],EDX      ; 005392bd | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 005392c3 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 005392c9
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 005392c9
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 005392ce
     TEST EBX,EBX                        ; 005392d1
         ;   Label: LAB_005392d1
@@ -468,8 +468,8 @@ section .text
     XOR EAX,EAX                         ; 0053930e
     PUSH ECX                            ; 00539310 | DAT_01ba5c50
     MOV [0x020b0258],EAX                ; 00539311 | DAT_020b0258
-    CALL FUN_0046b940                   ; 00539316
-        ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; undefined FUN_0046b940()
+    CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940 ; 00539316
+        ;   XREF to: 0046b940 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0053931b
     MOV EAX,dword ptr [ESP + 0x1c4]     ; 0053931e
     MOV EDX,dword ptr [EBP + 0x14]      ; 00539325
@@ -543,8 +543,8 @@ section .text
     PUSH EDX                            ; 005393c2
     MOV ESI,0x1                         ; 005393c3
     MOV dword ptr [EDX + 0x15ae5c],EAX  ; 005393c8
-    CALL FUN_0052ddf0                   ; 005393ce
-        ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ddf0()
+    CALL core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 ; 005393ce
+        ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 005393d3
     MOV dword ptr [ESP + 0x1cc],ESI     ; 005393d6
     XOR EDI,EDI                         ; 005393dd
@@ -562,10 +562,10 @@ section .text
         ;   Label: LAB_005393f3
     JMP 0x00538d69                      ; 005393fa
         ;   XREF to: 00538d69 (UNCONDITIONAL_JUMP)  ; LAB_00538d69
-    MOV EDX,dword ptr [0x00616494]      ; 005393ff | DAT_00616494
+    MOV EDX,dword ptr [0x00616494]      ; 005393ff | g_CGamePtr
         ;   Label: LAB_005393ff
     MOV EAX,dword ptr [EBP + 0x14]      ; 00539405
-    FLD float ptr [EDX + 0x284]         ; 00539408 | DAT_01cb6b84
+    FLD float ptr [EDX + 0x284]         ; 00539408 | g_CGameInstance.field644_0x284
     FSUBR float ptr [EAX + 0x15aec8]    ; 0053940e
     FST float ptr [EAX + 0x15aec8]      ; 00539414
     FLDZ                                ; 0053941a
@@ -596,8 +596,8 @@ section .text
         ;   Label: LAB_00539446
     PUSH EBX                            ; 0053944c
     PUSH EDX                            ; 0053944d
-    CALL FUN_0052ddf0                   ; 0053944e
-        ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ddf0()
+    CALL core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 ; 0053944e
+        ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet * this_ptr, int index)
     MOV EAX,0x1                         ; 00539453
     ADD ESP,0x8                         ; 00539458
     MOV ESP,EBP                         ; 0053945b
@@ -617,11 +617,11 @@ section .text
     ADD EAX,EDX                         ; 0053947a
     ADD EAX,EAX                         ; 0053947c
     MOV dword ptr [ESP + 0x208],EAX     ; 0053947e
-    MOV EAX,[0x00616494]                ; 00539485 | DAT_00616494
+    MOV EAX,[0x00616494]                ; 00539485 | g_CGamePtr
     FILD dword ptr [ESP + 0x208]        ; 0053948a
-    FMUL float ptr [EAX + 0x284]        ; 00539491 | DAT_01cb6b84
-    CALL FUN_005b7ff0                   ; 00539497
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7ff0()
+    FMUL float ptr [EAX + 0x284]        ; 00539491 | g_CGameInstance.field644_0x284
+    CALL crt_math.c_round_FUN_005b7ff0  ; 00539497
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
     FISTP dword ptr [ESP + 0x1b4]       ; 0053949c
     CMP dword ptr [ESP + 0x1b4],0x3     ; 005394a3
     JGE 0x005394b8                      ; 005394ab
@@ -635,10 +635,10 @@ section .text
     JLE 0x005394cf                      ; 005394c6
         ;   XREF to: 005394cf (CONDITIONAL_JUMP)  ; LAB_005394cf
     MOV dword ptr [ESP + 0x1b4],ECX     ; 005394c8
-    MOV EDX,dword ptr [0x00616494]      ; 005394cf | DAT_00616494
+    MOV EDX,dword ptr [0x00616494]      ; 005394cf | g_CGamePtr
         ;   Label: LAB_005394cf
     MOV EAX,dword ptr [EBP + 0x14]      ; 005394d5
-    FLD float ptr [EDX + 0x284]         ; 005394d8 | DAT_01cb6b84
+    FLD float ptr [EDX + 0x284]         ; 005394d8 | g_CGameInstance.field644_0x284
     FSUBR float ptr [EAX + 0x15aec0]    ; 005394de
     FST float ptr [EAX + 0x15aec0]      ; 005394e4
     FLDZ                                ; 005394ea
@@ -654,7 +654,7 @@ section .text
         ;   XREF to: 00538fc2 (UNCONDITIONAL_JUMP)  ; LAB_00538fc2
     ADD EAX,dword ptr [ESP + 0x1f0]     ; 00539513
         ;   Label: LAB_00539513
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0053951a | DAT_01fb3320
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0053951a | g_CDemonSetInstance.field1364328_0x14d168
     PUSH EBX                            ; 00539520
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00539521
     CALL dword ptr [EAX + 0x50]         ; 00539527
@@ -795,8 +795,8 @@ section .text
         ;   Label: LAB_005396f3
     PUSH EDX                            ; 005396fa
     PUSH EBX                            ; 005396fb
-    CALL FUN_0053ae20                   ; 005396fc
-        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; undefined FUN_0053ae20()
+    CALL core_setutil.cpp_FUN_0053ae20  ; 005396fc
+        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_0053ae20()
     ADD ESP,0xc                         ; 00539701
     TEST EAX,EAX                        ; 00539704
     JZ 0x00539771                       ; 00539706
@@ -818,8 +818,8 @@ section .text
     PUSH EAX                            ; 0053973c
     PUSH EDI                            ; 0053973d
     PUSH EBX                            ; 0053973e
-    CALL FUN_005386e0                   ; 0053973f
-        ;   XREF to: 005386e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005386e0()
+    CALL core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0 ; 0053973f
+        ;   XREF to: 005386e0 (UNCONDITIONAL_CALL)  ; float core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0(CZThumb * this_ptr, CDemonActor * actor, CVector3i * bounding_box_vertices, SMRGLHeaderPrimitive * primitives, ...)
     MOV dword ptr [ESP + 0x21c],EAX     ; 00539744
     FLD float ptr [ESP + 0x21c]         ; 0053974b
     ADD ESP,0x14                        ; 00539752
@@ -841,8 +841,8 @@ section .text
     PUSH EBX                            ; 00539788
     PUSH EDI                            ; 00539789
     PUSH EAX                            ; 0053978a
-    CALL FUN_005386e0                   ; 0053978b
-        ;   XREF to: 005386e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005386e0()
+    CALL core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0 ; 0053978b
+        ;   XREF to: 005386e0 (UNCONDITIONAL_CALL)  ; float core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0(CZThumb * this_ptr, CDemonActor * actor, CVector3i * bounding_box_vertices, SMRGLHeaderPrimitive * primitives, ...)
     MOV dword ptr [ESP + 0x21c],EAX     ; 00539790
     FLD float ptr [ESP + 0x21c]         ; 00539797
     ADD ESP,0x14                        ; 0053979e

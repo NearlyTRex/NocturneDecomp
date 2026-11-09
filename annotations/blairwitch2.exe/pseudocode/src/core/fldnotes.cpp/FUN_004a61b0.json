@@ -1,149 +1,30 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_004a50b0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 31,
-        "message": "no matching function for call to 'FUN_005b8100'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 32,
-        "message": "no matching function for call to 'FUN_005b8100'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 33,
-        "message": "use of undeclared identifier 'DAT_005d6470'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 363,
+    "complexity_score": 379,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 24,
+    "pseudocode_lines": 94,
+    "suspect_count": 25,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "undefined_data",
+      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 315
+    "total_lines": 316
   },
   "cross_references": [
     {
       "addr": "004bbf70",
       "from_addr": "004bc770",
-      "name": "FUN_004bbf70",
+      "name": "core_game.cpp_FUN_004bbf70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -156,44 +37,44 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004a61b0",
-    "signature": "void FUN_004a61b0(undefined4 param_1,undefined4 param_2)"
+    "name": "core_fldnotes.cpp_FUN_004a61b0",
+    "signature": "void core_fldnotes_cpp_FUN_004a61b0(undefined4 param_1,undefined4 param_2)"
   },
   "function_calls": [
     {
-      "addr": "0040dd20",
-      "is_variadic": false,
-      "name": "FUN_0040dd20"
-    },
-    {
-      "addr": "0047bdf0",
-      "is_variadic": false,
-      "name": "FUN_0047bdf0"
-    },
-    {
       "addr": "004a35e0",
       "is_variadic": false,
-      "name": "FUN_004a35e0"
+      "name": "core_fldnotes.cpp_FUN_004a35e0"
     },
     {
       "addr": "004a41b0",
       "is_variadic": false,
-      "name": "FUN_004a41b0"
+      "name": "core_fldnotes.cpp_FUN_004a41b0"
     },
     {
       "addr": "004a50b0",
       "is_variadic": false,
-      "name": "FUN_004a50b0"
+      "name": "core_fldnotes.cpp_FUN_004a50b0"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "005b8100",
       "is_variadic": false,
-      "name": "FUN_005b8100"
+      "name": "crt_stdio.c_fscanf_FUN_005b8100"
+    },
+    {
+      "addr": "0040dd20",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040dd20"
+    },
+    {
+      "addr": "0047bdf0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047bdf0"
     }
   ],
   "globals": [
@@ -277,9 +158,9 @@
     },
     {
       "addr": "006138e0",
-      "name": "DAT_006138e0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
     },
     {
       "addr": "00616048",
@@ -336,7 +217,7 @@
       {
         "call_addr": "004bc770",
         "call_type": "direct",
-        "caller": "FUN_004bbf70",
+        "caller": "core_game.cpp_FUN_004bbf70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -434,23 +315,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_004a61b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 25,
-          "line": 75,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -465,7 +329,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004a61b0(uint param_1,uint param_2)",
+      "text": "void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
@@ -473,7 +337,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004a61b0(uint param_1,uint param_2)",
+      "text": "void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
@@ -481,7 +345,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004a50b0(param_1);",
+      "text": "core_fldnotes_cpp_FUN_004a50b0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -489,7 +353,7 @@
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -497,7 +361,7 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -505,7 +369,7 @@
       "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,&DAT_005d6470,&local_20);",
+      "text": "_fscanf(param_2,&DAT_005d6470,&local_20);",
       "type": "unnamed_param"
     },
     {
@@ -513,7 +377,7 @@
       "line": 26,
       "match": "DAT_005d6470",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,&DAT_005d6470,&local_20);",
+      "text": "_fscanf(param_2,&DAT_005d6470,&local_20);",
       "type": "undefined_data"
     },
     {
@@ -529,7 +393,7 @@
       "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -537,7 +401,7 @@
       "line": 40,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,\" \\\"%[^\\\"]\",local_120);",
+      "text": "_fscanf(param_2,\" \\\"%[^\\\"]\",local_120);",
       "type": "unnamed_param"
     },
     {
@@ -545,7 +409,7 @@
       "line": 41,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,&DAT_005d64df);",
+      "text": "_fscanf(param_2,&DAT_005d64df);",
       "type": "unnamed_param"
     },
     {
@@ -553,7 +417,7 @@
       "line": 41,
       "match": "DAT_005d64df",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,&DAT_005d64df);",
+      "text": "_fscanf(param_2,&DAT_005d64df);",
       "type": "undefined_data"
     },
     {
@@ -561,7 +425,7 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004a41b0(param_1,local_120,0);",
+      "text": "core_fldnotes_cpp_FUN_004a41b0(param_1,local_120,0);",
       "type": "unnamed_param"
     },
     {
@@ -569,7 +433,7 @@
       "line": 45,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
@@ -577,7 +441,7 @@
       "line": 46,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,&DAT_005d64ea,&local_1c);",
+      "text": "_fscanf(param_2,&DAT_005d64ea,&local_1c);",
       "type": "unnamed_param"
     },
     {
@@ -585,7 +449,7 @@
       "line": 46,
       "match": "DAT_005d64ea",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,&DAT_005d64ea,&local_1c);",
+      "text": "_fscanf(param_2,&DAT_005d64ea,&local_1c);",
       "type": "undefined_data"
     },
     {
@@ -593,31 +457,39 @@
       "line": 58,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,\"\\\"%[^\\\"]\\\", %d\\n\",local_220,&local_18);",
+      "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\", %d\\n\",local_220,&local_18);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0047bdf0(0x01C25594,\"Ignoring saved game reference to field notes entry %s which doesn't exist in %s\",local_220,param_1);",
+      "text": "(g_CEditorToolsPtr,\"Ignoring saved game reference to field notes entry %s which doesn't exist in %s\",local_220,param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 88,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "if (*(int *)(*(int *)(&SNotesMap_ARRAY_01cacb50[0].field_0x0 + iVar3) + 0x140) == 6) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 96,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005b8100(param_2,\"%*[^\\n]\\n\");",
+      "text": "_fscanf(param_2,\"%*[^\\n]\\n\");",
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x1cab9f4 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 61,
-      "match": "0x1cab9f4",
+      "description": "Raw hex literal 0x1cacbd8 matches address of SNotesMap_ARRAY_01cacb50 (+136 bytes into) (type SNotesMap[4]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 89,
+      "match": "0x1cacbd8",
       "severity": "moderate",
-      "text": "iVar6 = 0x1cab9f4;",
+      "text": "engine_alphabit_cpp_FUN_0040dd20(iVar3 + 0x1cacbd8,0xff);",
       "type": "raw_address_constant"
     },
     {
@@ -646,14 +518,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 75,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (iVar1 != 0) {",
-      "type": "static_identical_inner_condition"
     }
   ]
 }

@@ -1,37 +1,37 @@
-// Name: FUN_00502fa0
+// Name: core_motion.cpp_FUN_00502fa0
 // Address: 00502fa0
 // Address Range: [[00502fa0, 00503014]]
-// Convention: unknown
-// Signature: int FUN_00502fa0(int *param_1,undefined4 param_2,int param_3)
+// Convention: __cdecl
+// Signature: int __cdecl core_motion_cpp_FUN_00502fa0(CMotionList *this_ptr,char *state_name,int error_on_not_found)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_00502fa0(int *param_1,uint param_2,int param_3)
+int __cdecl core_motion_cpp_FUN_00502fa0(CMotionList *this_ptr,char *state_name,int error_on_not_found)
 
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
+  CMotionList *str1;
   
   iVar2 = 0;
-  if (0 < *param_1) {
-    piVar3 = param_1 + 1;
+  if (0 < *(int *)this_ptr) {
+    str1 = this_ptr + 4;
     do {
-      iVar1 = FUN_005b8130(piVar3,param_2);
+      iVar1 = _stricmp((char *)str1,state_name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      piVar3 = (int *)((int)piVar3 + 0x1e);
-    } while (iVar2 < *param_1);
+      str1 = str1 + 0x1e;
+    } while (iVar2 < *(int *)this_ptr);
   }
-  if (param_3 == 0) {
+  if (error_on_not_found == 0) {
     return -1;
   }
   _DAT_01d046a0 = "..\\core\\motion.cpp";
   _DAT_01d046a4 = 0x13e;
-  FUN_004e4500("Can't find state \"%s\" in motion list",param_2);
+  core_main_c_FUN_004e4500("Can't find state \"%s\" in motion list",state_name);
   return -1;
 }

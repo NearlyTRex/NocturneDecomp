@@ -1,0 +1,182 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 55,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [
+    {
+      "addr": "0051e9a0",
+      "from_addr": "0051e9f7",
+      "name": "core_scat.cpp_CScat_ctor_FUN_0051e9a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051ec20",
+    "address_range": [
+      [
+        "0051ec20",
+        "0051ec86"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_scat.cpp_FUN_0051ec20",
+    "signature": "void __cdecl core_scat_cpp_FUN_0051ec20(CScat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c5a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c5a0"
+    },
+    {
+      "addr": "004da900",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004da900"
+    },
+    {
+      "addr": "004dadb0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004dadb0"
+    },
+    {
+      "addr": "004db9d0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004db9d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e2afd",
+      "name": "s_CBaronWeapon_005e2afd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2b0a",
+      "name": "s_BaronProxy_005e2b0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2b0b",
+      "name": "s_aronProxy_005e2b0a+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e2b0c",
+      "name": "s_ronProxy_005e2b0a+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e2b0d",
+      "name": "s_onProxy_005e2b0a+3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051e9f7",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_CScat_ctor_FUN_0051e9a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.119047619047619,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 30,
+      "INT_ADD": 15,
+      "INT_AND": 18,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "LOAD": 8,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 173
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScat *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2437c",
+      "severity": "mild",
+      "text": "this_ptr_00 = &this_ptr->field_0x2437c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 16,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 332,
+        "vtable_addr": "005fae34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

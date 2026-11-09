@@ -1,0 +1,147 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00571a30",
+    "address_range": [
+      [
+        "00571a30",
+        "00571aa4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_svetlana.cpp_CSvetlana_dtor_FUN_00571a30",
+    "signature": "CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00571a30(CSvetlana *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ce3d0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_dtor_FUN_004ce3d0"
+    },
+    {
+      "addr": "005ade00",
+      "is_variadic": false,
+      "name": "core_necklace.cpp_FUN_005ade00"
+    },
+    {
+      "addr": "005b7fa7",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005b7fa7"
+    },
+    {
+      "addr": "005b7fce",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7fce"
+    },
+    {
+      "addr": "005b7fdc",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b7fdc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fc700",
+      "name": "g_CSvetlanaTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.285714285714286,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 6,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 17,
+      "INT_AND": 22,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 18,
+      "LOAD": 9,
+      "POPCOUNT": 10,
+      "RETURN": 3,
+      "STORE": 17
+    },
+    "pcode_op_count": 180
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSvetlana *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x60178",
+      "severity": "mild",
+      "text": "iVar1 = core_necklace_cpp_FUN_005ade00(&this_ptr->field_0x60178,0);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSvetlana",
+        "offset": 8,
+        "vtable_addr": "005fc704"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 216,
+        "vtable_addr": "005fc584"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

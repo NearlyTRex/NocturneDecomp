@@ -1,14 +1,14 @@
-// Name: FUN_0042dae0
+// Name: cockpit_ckptutil.c_FUN_0042dae0
 // Address: 0042dae0
 // Address Range: [[0042dae0, 0042dcf2]]
 // Convention: unknown
-// Signature: void FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
+// Signature: void cockpit_ckptutil_c_FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
+void cockpit_ckptutil_c_FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
 
 {
   int *piVar1;
@@ -26,13 +26,13 @@ void FUN_0042dae0(int param_1,int param_2,int param_3,int param_4,int *param_5,i
     if (param_6 < (param_2 - param_4) + 1) {
       _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
       _DAT_01d046a4 = 0x405;
-      FUN_004e4500("Invalid height array size.");
+      core_main_c_FUN_004e4500("Invalid height array size.");
     }
     piVar1 = (int *)FUN_005b8df8(param_4 * 4);
     if (piVar1 == (int *)0x0) {
       _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
       _DAT_01d046a4 = 0x40b;
-      FUN_004e4500("No room for scroll bitmap height table.");
+      core_main_c_FUN_004e4500("No room for scroll bitmap height table.");
     }
     iVar6 = 0;
     iStack_24 = 0;

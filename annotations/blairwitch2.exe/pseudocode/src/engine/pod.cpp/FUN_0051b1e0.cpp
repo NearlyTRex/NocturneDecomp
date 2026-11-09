@@ -1,14 +1,14 @@
-// Name: FUN_0051b1e0
+// Name: engine_pod.cpp_FUN_0051b1e0
 // Address: 0051b1e0
 // Address Range: [[0051b1e0, 0051b272]]
 // Convention: unknown
-// Signature: void FUN_0051b1e0(int *param_1)
+// Signature: void engine_pod_cpp_FUN_0051b1e0(int *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0051b1e0(int *param_1)
+void engine_pod_cpp_FUN_0051b1e0(int *param_1)
 
 {
   char cVar1;
@@ -34,11 +34,11 @@ void FUN_0051b1e0(int *param_1)
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      iVar2 = FUN_00519f00(piVar3[1],acStack_110);
+      iVar2 = engine_pod_cpp_FUN_00519f00((CPodFile *)piVar3[1],acStack_110);
       if (iVar2 == 0) {
         _DAT_01d046a4 = 0x404;
         _DAT_01d046a0 = "..\\engine\\pod.cpp";
-        FUN_004e4500("Can't re-mount %s",acStack_110);
+        core_main_c_FUN_004e4500("Can't re-mount %s",acStack_110);
       }
       iVar4 = iVar4 + 1;
       piVar3 = piVar3 + 1;

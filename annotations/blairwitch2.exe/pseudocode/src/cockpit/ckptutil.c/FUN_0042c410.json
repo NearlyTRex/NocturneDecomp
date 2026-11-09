@@ -1,0 +1,278 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 69,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "0042cc2e",
+      "from_addr": "0042cc8f",
+      "name": "cockpit_ckptutil.c_FUN_0042cc2e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042ce7c",
+      "from_addr": "0042cec8",
+      "name": "cockpit_ckptutil.c_FUN_0042ce7c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042cfec",
+      "from_addr": "0042d02c",
+      "name": "cockpit_ckptutil.c_FUN_0042cfec",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042d390",
+      "from_addr": "0042d3b8",
+      "name": "cockpit_ckptutil.c_blitDualModeSprite_FUN_0042d390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042d230",
+      "from_addr": "0042d268",
+      "name": "cockpit_ckptutil.c_blitSimpleSprite_FUN_0042d230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042d850",
+      "from_addr": "0042d85b",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c9f0",
+      "from_addr": "0042ca47",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSprite_FUN_0042c9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00516410",
+      "from_addr": "00516456",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00516410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042c410",
+    "address_range": [
+      [
+        "0042c410",
+        "0042c425"
+      ],
+      [
+        "0042c430",
+        "0042c444"
+      ],
+      [
+        "0042c450",
+        "0042c455"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_ckptutil.c_FUN_0042c410",
+    "signature": "code * cockpit_ckptutil_c_FUN_0042c410(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b40",
+      "name": "DAT_01c38b40",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0042d85b",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d850",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00516456",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_00516410",
+        "estimated_params": 3,
+        "instructions_analyzed": 12,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0042ca47",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSpanBasedSprite_FUN_0042c9f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0042cc8f",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_0042cc2e",
+        "estimated_params": 4,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0042cec8",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_0042ce7c",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0042d02c",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_0042cfec",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0042d268",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSimpleSprite_FUN_0042d230",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0042d3b8",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitDualModeSprite_FUN_0042d390",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3333333333333335,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CBRANCH": 3,
+      "COPY": 8,
+      "INT_ADD": 4,
+      "INT_AND": 6,
+      "INT_EQUAL": 6,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 4
+    },
+    "pcode_op_count": 50
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 4,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code * cockpit_ckptutil_c_FUN_0042c410(void)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 != 0x10) {",
+      "type": "undefined_data"
+    }
+  ]
+}

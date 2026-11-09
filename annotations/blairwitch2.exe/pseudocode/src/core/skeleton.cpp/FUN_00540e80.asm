@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00540e80(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_skeleton_cpp_FUN_00540e80(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found)
 ;
+; Parameters:
+; CSkeleton *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   bone_name
+; int              Stack[0xc]:4   assert_if_not_found
 ;
 ; XREF[59]:
-;   FUN_0040f780 at 0040f7a8
-;   FUN_004116f0 at 00411722
-;   FUN_00412be0 at 00412c12
-;   FUN_004184c0 at 004184e9
-;   FUN_0041d9c0 at 0041d9ec
-;   FUN_00422930 at 004229da
-;   FUN_004291f0 at 0042922c
-;   FUN_00429420 at 0042946c
-;   FUN_0042a7a0 at 0042a899
-;   FUN_0042aa00 at 0042aa45
+;   core_baron.cpp_FUN_0040f780 at 0040f7a8
+;   core_batcreat.cpp_FUN_004116f0 at 00411722
+;   core_batman.cpp_FUN_00412be0 at 00412c12
+;   core_boneguy.cpp_FUN_004184c0 at 004184e9
+;   core_bride.cpp_FUN_0041d9c0 at 0041d9ec
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_004291f0 at 0042922c
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00 at 0042aa45
+;   core_charactr.cpp_FUN_00422930 at 004229da
+;   core_charactr.cpp_FUN_00429420 at 0042946c
+;   core_charactr.cpp_FUN_0042a7a0 at 0042a899
 ;   ... and 49 more
 ;
 ; Referenced Globals:
@@ -24,15 +28,15 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b8130
+;   core_main.c_FUN_004e4500
+;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00540e80
-        ;   Label: FUN_00540e80
+        ;   Label: core_skeleton.cpp_FUN_00540e80
     PUSH ESI                            ; 00540e81
     PUSH EDI                            ; 00540e82
     PUSH EBP                            ; 00540e83
@@ -47,8 +51,8 @@ section .text
     PUSH EBP                            ; 00540e9e
         ;   Label: LAB_00540e9e
     PUSH ESI                            ; 00540e9f
-    CALL FUN_005b8130                   ; 00540ea0
-        ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8130()
+    CALL crt_string.c__stricmp_FUN_005b8130 ; 00540ea0
+        ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
     ADD ESP,0x8                         ; 00540ea5
     TEST EAX,EAX                        ; 00540ea8
     JZ 0x00540ecb                       ; 00540eaa
@@ -85,8 +89,8 @@ section .text
     PUSH 0x5e6b49                       ; 00540ee4 | = "Can't find bone %s in skeleton %s!"
     MOV dword ptr [0x01d046a0],ESI      ; 00540ee9 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00540eef | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00540ef4
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00540ef4
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0xc                         ; 00540ef9
     MOV EAX,0xffffffff                  ; 00540efc
     POP EBP                             ; 00540f01

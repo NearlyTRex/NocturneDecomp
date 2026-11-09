@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00573a60(int *param_1)
+; int engine_texture_cpp_FUN_00573a60(int *param_1)
 ;
 ;
-; XREF[1]:
-;   FUN_00573b80 at 00573c4c
+; XREF[3]:
+;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573c4c
+;   engine_texture.cpp_FUN_00574240 at 00574247
+;   engine_texture.cpp_FUN_005742b0 at 005742b7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_005ec65a
@@ -15,16 +17,16 @@
 ;   undefined4 DAT_02652eb4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b77c0
-;   FUN_005b86a0
+;   core_main.c_FUN_004e4500
+;   crt_memory.c_memset_FUN_005b77c0
+;   crt_unknown.c_FUN_005b86a0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00573a60
-        ;   Label: FUN_00573a60
+        ;   Label: engine_texture.cpp_FUN_00573a60
     PUSH ESI                            ; 00573a61
     PUSH EDI                            ; 00573a62
     PUSH EBP                            ; 00573a63
@@ -58,8 +60,8 @@ section .text
     JZ 0x00573ab5                       ; 00573aaa
         ;   XREF to: 00573ab5 (CONDITIONAL_JUMP)  ; LAB_00573ab5
     PUSH EAX                            ; 00573aac
-    CALL FUN_005b86a0                   ; 00573aad
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b86a0()
+    CALL crt_unknown.c_FUN_005b86a0     ; 00573aad
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
     ADD ESP,0x4                         ; 00573ab2
     MOV ECX,dword ptr [EBX + 0x48]      ; 00573ab5
         ;   Label: LAB_00573ab5
@@ -67,8 +69,8 @@ section .text
     JZ 0x00573ac5                       ; 00573aba
         ;   XREF to: 00573ac5 (CONDITIONAL_JUMP)  ; LAB_00573ac5
     PUSH ECX                            ; 00573abc
-    CALL FUN_005b86a0                   ; 00573abd
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b86a0()
+    CALL crt_unknown.c_FUN_005b86a0     ; 00573abd
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
     ADD ESP,0x4                         ; 00573ac2
     MOV EBP,dword ptr [EBX + 0x4c]      ; 00573ac5
         ;   Label: LAB_00573ac5
@@ -76,8 +78,8 @@ section .text
     JZ 0x00573ad5                       ; 00573aca
         ;   XREF to: 00573ad5 (CONDITIONAL_JUMP)  ; LAB_00573ad5
     PUSH EBP                            ; 00573acc
-    CALL FUN_005b86a0                   ; 00573acd
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b86a0()
+    CALL crt_unknown.c_FUN_005b86a0     ; 00573acd
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
     ADD ESP,0x4                         ; 00573ad2
     MOV EDX,dword ptr [EBX + 0x50]      ; 00573ad5
         ;   Label: LAB_00573ad5
@@ -87,8 +89,8 @@ section .text
     PUSH 0x60                           ; 00573ae0
     PUSH 0x0                            ; 00573ae2
     PUSH EBX                            ; 00573ae4
-    CALL FUN_005b77c0                   ; 00573ae5
-        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b77c0()
+    CALL crt_memory.c_memset_FUN_005b77c0 ; 00573ae5
+        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00573aea
     MOV EAX,EDI                         ; 00573aed
     POP EBP                             ; 00573aef
@@ -114,8 +116,8 @@ section .text
     PUSH 0x5ec670                       ; 00573b32 | = "CTextureCache::findFreeSlot - Cache h..."
     MOV dword ptr [0x01d046a0],EBP      ; 00573b37 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 00573b3d | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00573b42
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00573b42
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00573b47
     JMP 0x00573a94                      ; 00573b4a
         ;   XREF to: 00573a94 (UNCONDITIONAL_JUMP)  ; LAB_00573a94
@@ -130,14 +132,14 @@ section .text
         ;   XREF to: 00573a86 (UNCONDITIONAL_JUMP)  ; LAB_00573a86
     PUSH EDX                            ; 00573b63
         ;   Label: LAB_00573b63
-    CALL FUN_005b86a0                   ; 00573b64
-        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b86a0()
+    CALL crt_unknown.c_FUN_005b86a0     ; 00573b64
+        ;   XREF to: 005b86a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b86a0()
     ADD ESP,0x4                         ; 00573b69
     PUSH 0x60                           ; 00573b6c
     PUSH 0x0                            ; 00573b6e
     PUSH EBX                            ; 00573b70
-    CALL FUN_005b77c0                   ; 00573b71
-        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b77c0()
+    CALL crt_memory.c_memset_FUN_005b77c0 ; 00573b71
+        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00573b76
     MOV EAX,EDI                         ; 00573b79
     POP EBP                             ; 00573b7b

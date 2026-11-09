@@ -1,86 +1,90 @@
-// Name: FUN_0050f9e0
+// Name: support_newmsg.cpp_FUN_0050f9e0
 // Address: 0050f9e0
 // Address Range: [[0050f9e0, 0050fd9b]]
 // Convention: unknown
-// Signature: void FUN_0050f9e0(undefined4 param_1)
+// Signature: void support_newmsg_cpp_FUN_0050f9e0(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0050f9e0(uint param_1)
+void support_newmsg_cpp_FUN_0050f9e0(char *param_1)
 
 {
   char cVar1;
   uint uVar2;
   int iVar3;
-  int iVar4;
+  _FILE *p_Var4;
   int iVar5;
-  int iVar6;
-  uint uVar7;
-  int iVar8;
-  char *pcVar9;
-  char *pcVar10;
-  byte bVar11;
+  int iVar7;
+  void *pvVar8;
+  uint uVar9;
+  int iVar10;
+  char *pcVar11;
+  char *pcVar12;
+  byte bVar13;
   char local_31c [256];
   byte local_21c [256];
   char local_11c [256];
   int local_1c;
   int local_18;
   int local_14;
+  int iVar6;
   
-  bVar11 = 0;
+  bVar13 = 0;
   local_1c = 0;
-  iVar3 = FUN_00460aa0(&DAT_005e129d,param_1);
-  if ((iVar3 < 1) || (iVar4 = FUN_00460c70(&DAT_005e12a1,param_1,&DAT_005e129e), iVar4 == 0)) {
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_00460aa0(&DAT_005e129d,param_1);
+  if ((iVar3 < 1) ||
+     (p_Var4 = engine_dosio_cpp_FUN_00460c70(&DAT_005e12a1,param_1,&DAT_005e129e),
+     p_Var4 == (_FILE *)0x0)) {
     return;
   }
-  local_18 = FUN_005baab0(iVar4);
+  local_18 = _ftell(p_Var4);
   local_18 = iVar3 + local_18;
-  FUN_005b9600(local_21c,0xff,iVar4);
-  FUN_005b8100(iVar4,&DAT_005e12a2,&local_1c);
-  FUN_005b9600(local_21c,0xff,iVar4);
-  FUN_005b8100(iVar4,&DAT_005e12a6,&DAT_01d63250);
+  _fgets(local_21c,0xff,p_Var4);
+  _fscanf(p_Var4,&DAT_005e12a2,&local_1c);
+  _fgets(local_21c,0xff,p_Var4);
+  _fscanf(p_Var4,&DAT_005e12a6,&DAT_01d63250);
   if (local_1c != 0) {
     _DAT_01d046a0 = "..\\support\\newmsg.cpp";
     _DAT_01d046a4 = 0x57;
-    FUN_004e4500("Unknown message file version");
+    core_main_c_FUN_004e4500("Unknown message file version");
   }
-  FUN_005b9600(local_21c,0xff,iVar4);
-  FUN_005b8100(iVar4,"\"%[^\"]\"\n",&DAT_0061b190);
+  _fgets(local_21c,0xff,p_Var4);
+  _fscanf(p_Var4,"\"%[^\"]\"\n",&DAT_0061b190);
   do {
-    FUN_005b8100(iVar4,&DAT_005e12e6);
-    iVar3 = FUN_005baab0(iVar4);
+    _fscanf(p_Var4,&DAT_005e12e6);
+    iVar3 = _ftell(p_Var4);
     if (local_18 <= iVar3) {
-      FUN_005b89c0(iVar4);
+      _fclose(p_Var4);
       if (0 < _DAT_01d63258) {
         iVar3 = _DAT_01d63258 * 4;
-        iVar4 = 0;
+        iVar6 = 0;
         do {
-          iVar5 = iVar4 + 4;
-          *(uint *)(iVar4 + 0x1d6325c) = *(uint *)(iVar4 + 0x1d641fc);
-          *(uint *)(iVar4 + 0x1d63a2c) = *(uint *)(iVar4 + 0x1d649cc);
-          iVar4 = iVar5;
+          iVar5 = iVar6 + 4;
+          *(uint *)(iVar6 + 0x1d6325c) = *(uint *)(iVar6 + 0x1d641fc);
+          *(uint *)(iVar6 + 0x1d63a2c) = *(uint *)(iVar6 + 0x1d649cc);
+          iVar6 = iVar5;
         } while (iVar5 < iVar3);
       }
       local_14 = 0;
-      for (iVar3 = 0; iVar4 = local_14, iVar3 < _DAT_01d63258 + -1; iVar3 = iVar3 + 1) {
+      for (iVar3 = 0; iVar6 = local_14, iVar3 < _DAT_01d63258 + -1; iVar3 = iVar3 + 1) {
         iVar5 = iVar3 + 1;
         if (iVar5 < _DAT_01d63258) {
-          iVar8 = iVar5 * 4;
+          iVar10 = iVar5 * 4;
           do {
-            iVar6 = FUN_005b8c30(*(uint *)(iVar4 + 0x1d6325c),
-                                 *(uint *)(iVar8 + 0x1d6325c));
-            if (0 < iVar6) {
-              uVar2 = *(uint *)(iVar4 + 0x1d6325c);
-              *(uint *)(iVar4 + 0x1d6325c) = *(uint *)(iVar8 + 0x1d6325c);
-              *(uint *)(iVar8 + 0x1d6325c) = uVar2;
-              uVar2 = *(uint *)(iVar4 + 0x1d63a2c);
-              *(uint *)(iVar4 + 0x1d63a2c) = *(uint *)(iVar8 + 0x1d63a2c);
-              *(uint *)(iVar8 + 0x1d63a2c) = uVar2;
+            iVar7 = _strcmp
+                              (*(char **)(iVar6 + 0x1d6325c),*(char **)(iVar10 + 0x1d6325c));
+            if (0 < iVar7) {
+              uVar2 = *(uint *)(iVar6 + 0x1d6325c);
+              *(uint *)(iVar6 + 0x1d6325c) = *(uint *)(iVar10 + 0x1d6325c);
+              *(uint *)(iVar10 + 0x1d6325c) = uVar2;
+              uVar2 = *(uint *)(iVar6 + 0x1d63a2c);
+              *(uint *)(iVar6 + 0x1d63a2c) = *(uint *)(iVar10 + 0x1d63a2c);
+              *(uint *)(iVar10 + 0x1d63a2c) = uVar2;
             }
             iVar5 = iVar5 + 1;
-            iVar8 = iVar8 + 4;
+            iVar10 = iVar10 + 4;
           } while (iVar5 < _DAT_01d63258);
         }
         local_14 = local_14 + 4;
@@ -88,68 +92,68 @@ void FUN_0050f9e0(uint param_1)
       _DAT_01d63254 = 1;
       return;
     }
-    iVar3 = FUN_005b8100(iVar4,"\"%[^\"]\", \"%[^\"]\"\n",local_11c,local_31c);
+    iVar3 = _fscanf(p_Var4,"\"%[^\"]\", \"%[^\"]\"\n",local_11c,local_31c);
     if (iVar3 != 2) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";
       _DAT_01d046a4 = 0x68;
-      FUN_004e4500("Error reading %s",param_1);
+      core_main_c_FUN_004e4500("Error reading %s",param_1);
     }
     if (499 < _DAT_01d63258) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";
       _DAT_01d046a4 = 0x6d;
-      FUN_004e4500("Too many messages in %s",param_1);
+      core_main_c_FUN_004e4500("Too many messages in %s",param_1);
     }
-    uVar7 = 0xffffffff;
-    pcVar9 = local_11c;
+    uVar9 = 0xffffffff;
+    pcVar11 = local_11c;
     do {
-      if (uVar7 == 0) break;
-      uVar7 = uVar7 - 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar9 + (uint)bVar11 * -2 + 1;
+      if (uVar9 == 0) break;
+      uVar9 = uVar9 - 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
     } while (cVar1 != '\0');
-    iVar3 = FUN_005b8580(~uVar7);
-    *(int *)(_DAT_01d63258 * 4 + 0x1d641fc) = iVar3;
-    if (iVar3 == 0) {
+    pvVar8 = FUN_005b8580(~uVar9);
+    *(void **)(_DAT_01d63258 * 4 + 0x1d641fc) = pvVar8;
+    if (pvVar8 == (void *)0x0) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";
       _DAT_01d046a4 = 0x70;
-      FUN_004e4500("Out of memory mallocing message tag : %s",local_11c);
+      core_main_c_FUN_004e4500("Out of memory mallocing message tag : %s",local_11c);
     }
-    uVar7 = 0xffffffff;
-    pcVar9 = local_31c;
+    uVar9 = 0xffffffff;
+    pcVar11 = local_31c;
     do {
-      if (uVar7 == 0) break;
-      uVar7 = uVar7 - 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar9 + (uint)bVar11 * -2 + 1;
+      if (uVar9 == 0) break;
+      uVar9 = uVar9 - 1;
+      cVar1 = *pcVar11;
+      pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
     } while (cVar1 != '\0');
-    iVar3 = FUN_005b8580(~uVar7);
-    *(int *)(_DAT_01d63258 * 4 + 0x1d649cc) = iVar3;
-    if (iVar3 == 0) {
+    pvVar8 = FUN_005b8580(~uVar9);
+    *(void **)(_DAT_01d63258 * 4 + 0x1d649cc) = pvVar8;
+    if (pvVar8 == (void *)0x0) {
       _DAT_01d046a0 = "..\\support\\newmsg.cpp";
       _DAT_01d046a4 = 0x73;
-      FUN_004e4500("Out of memory mallocing message tag : %s",local_31c);
+      core_main_c_FUN_004e4500("Out of memory mallocing message tag : %s",local_31c);
     }
-    pcVar9 = local_11c;
-    pcVar10 = *(char **)(_DAT_01d63258 * 4 + 0x1d641fc);
+    pcVar11 = local_11c;
+    pcVar12 = *(char **)(_DAT_01d63258 * 4 + 0x1d641fc);
     do {
-      cVar1 = *pcVar9;
-      *pcVar10 = cVar1;
+      cVar1 = *pcVar11;
+      *pcVar12 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar10[1] = cVar1;
-      pcVar10 = pcVar10 + 2;
+      cVar1 = pcVar11[1];
+      pcVar11 = pcVar11 + 2;
+      pcVar12[1] = cVar1;
+      pcVar12 = pcVar12 + 2;
     } while (cVar1 != '\0');
-    pcVar9 = *(char **)(_DAT_01d63258 * 4 + 0x1d649cc);
-    pcVar10 = local_31c;
+    pcVar11 = *(char **)(_DAT_01d63258 * 4 + 0x1d649cc);
+    pcVar12 = local_31c;
     do {
-      cVar1 = *pcVar10;
-      *pcVar9 = cVar1;
+      cVar1 = *pcVar12;
+      *pcVar11 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      pcVar9[1] = cVar1;
-      pcVar9 = pcVar9 + 2;
+      cVar1 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      pcVar11[1] = cVar1;
+      pcVar11 = pcVar11 + 2;
     } while (cVar1 != '\0');
     _DAT_01d63258 = _DAT_01d63258 + 1;
   } while( true );

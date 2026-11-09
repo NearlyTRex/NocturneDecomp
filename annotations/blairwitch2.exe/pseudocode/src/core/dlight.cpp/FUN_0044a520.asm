@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0044a520(int param_1)
+; void core_dlight_cpp_FUN_0044a520(CDemonLight *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -15,8 +15,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_0052ddf0 at 0052de56
-;   FUN_0052f2a0 at 0052f58a
+;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052de56
+;   core_set.cpp_FUN_0052f2a0 at 0052f58a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005cf3f7
@@ -26,16 +26,16 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_0044a210
-;   FUN_00470201
-;   FUN_004e4500
+;   core_dlight.cpp_FUN_0044a210
+;   core_dstrendr.cpp_memcpyMMX_FUN_00470201
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0044a520
-        ;   Label: FUN_0044a520
+        ;   Label: core_dlight.cpp_FUN_0044a520
     PUSH ESI                            ; 0044a521
     PUSH EDI                            ; 0044a522
     PUSH EBP                            ; 0044a523
@@ -216,8 +216,8 @@ section .text
     PUSH EDX                            ; 0044a6f7
     ADD ESI,0x4                         ; 0044a6f8
     INC EDI                             ; 0044a6fb
-    CALL FUN_00470201                   ; 0044a6fc
-        ;   XREF to: 00470201 (UNCONDITIONAL_CALL)  ; undefined FUN_00470201()
+    CALL core_dstrendr.cpp_memcpyMMX_FUN_00470201 ; 0044a6fc
+        ;   XREF to: 00470201 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00470201(void * dest, void * src, int byte_count)
     MOV EAX,[0x01b13078]                ; 0044a701 | DAT_01b13078
     ADD ESP,0xc                         ; 0044a706
     CMP EDI,EAX                         ; 0044a709
@@ -252,8 +252,8 @@ section .text
     MOV EAX,ESP                         ; 0044a753
     PUSH EAX                            ; 0044a755
     PUSH EBP                            ; 0044a756
-    CALL FUN_0044a210                   ; 0044a757
-        ;   XREF to: 0044a210 (UNCONDITIONAL_CALL)  ; undefined FUN_0044a210()
+    CALL core_dlight.cpp_FUN_0044a210   ; 0044a757
+        ;   XREF to: 0044a210 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0044a210(CDemonLight * this_ptr, CRect * source_rect)
     ADD ESP,0x8                         ; 0044a75c
     MOV dword ptr [EBP + 0x1d0],0x0     ; 0044a75f
     ADD ESP,0x24                        ; 0044a769
@@ -268,8 +268,8 @@ section .text
     PUSH 0x5cf40a                       ; 0044a77b | = "CDemonLight::blitZBuffer - No master ..."
     MOV dword ptr [0x01d046a0],ESI      ; 0044a780 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0044a786 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0044a78c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0044a78c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0044a791
     JMP 0x0044a555                      ; 0044a794
         ;   XREF to: 0044a555 (UNCONDITIONAL_JUMP)  ; LAB_0044a555

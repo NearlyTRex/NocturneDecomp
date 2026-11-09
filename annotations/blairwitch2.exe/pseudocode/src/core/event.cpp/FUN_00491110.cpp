@@ -1,66 +1,70 @@
-// Name: FUN_00491110
+// Name: core_event.cpp_FUN_00491110
 // Address: 00491110
 // Address Range: [[00491110, 00491233]]
-// Convention: unknown
-// Signature: void FUN_00491110(int param_1,char *param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_event_cpp_FUN_00491110(CEventList *this_ptr,char *name,int add_flag)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00491110(int param_1,char *param_2,int param_3)
+void __cdecl core_event_cpp_FUN_00491110(CEventList *this_ptr,char *name,int add_flag)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  CEventList CVar2;
+  int iVar3;
   int iVar4;
-  char *pcVar5;
-  byte bVar6;
+  uint uVar5;
+  char *pcVar6;
+  CEventList *pCVar7;
+  byte bVar8;
   
-  bVar6 = 0;
-  if ((param_2 != (char *)0x0) && (*param_2 != '\0')) {
-    iVar2 = FUN_00491590(param_1,param_2);
-    if (param_3 == 0) {
-      if (-1 < iVar2) {
-        iVar4 = *(int *)(param_1 + 0x1908) + -1;
-        *(int *)(param_1 + 0x1908) = iVar4;
-        FUN_005ba1f0(iVar2 * 0x20 + param_1 + 0x190c,iVar2 * 0x20 + 0x20 + param_1 + 0x190c,
-                     (iVar4 - iVar2) * 0x20);
+  bVar8 = 0;
+  if ((name != (char *)0x0) && (*name != '\0')) {
+    iVar4 = core_event_cpp_CEventList_findGameFlag_FUN_00491590(this_ptr,name);
+    if (add_flag == 0) {
+      if (-1 < iVar4) {
+        iVar3 = *(int *)(this_ptr + 0x1908);
+        *(int *)(this_ptr + 0x1908) = iVar3 + -1;
+        memmove
+                  (this_ptr + iVar4 * 0x20 + 0x190c,this_ptr + iVar4 * 0x20 + 0x192c,
+                   ((iVar3 + -1) - iVar4) * 0x20);
         return;
       }
     }
-    else if (iVar2 < 0) {
-      if (9 < *(int *)(param_1 + 0x1908)) {
+    else if (iVar4 < 0) {
+      if (9 < *(int *)(this_ptr + 0x1908)) {
         _DAT_01d046a0 = "..\\core\\event.cpp";
         _DAT_01d046a4 = 0xd3d;
-        FUN_004e4500("Too many game flags!");
+        core_main_c_FUN_004e4500("Too many game flags!");
       }
-      uVar3 = 0xffffffff;
-      pcVar5 = param_2;
+      uVar5 = 0xffffffff;
+      pcVar6 = name;
       do {
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+        if (uVar5 == 0) break;
+        uVar5 = uVar5 - 1;
+        cVar1 = *pcVar6;
+        pcVar6 = pcVar6 + (uint)bVar8 * -2 + 1;
       } while (cVar1 != '\0');
-      if (0x1f < ~uVar3 - 1) {
+      if (0x1f < ~uVar5 - 1) {
         _DAT_01d046a0 = "..\\core\\event.cpp";
         _DAT_01d046a4 = 0xd43;
-        FUN_004e4500("Event name %s too long!",param_2);
+        core_main_c_FUN_004e4500("Event name %s too long!",name);
       }
-      pcVar5 = (char *)(*(int *)(param_1 + 0x1908) * 0x20 + param_1 + 0x190c);
+      pCVar7 = this_ptr + *(int *)(this_ptr + 0x1908) * 0x20 + 0x190c;
       do {
-        cVar1 = *param_2;
-        *pcVar5 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = param_2[1];
-        param_2 = param_2 + 2;
-        pcVar5[1] = cVar1;
-        pcVar5 = pcVar5 + 2;
-      } while (cVar1 != '\0');
-      FUN_005ba840(param_1 + 0x190c + *(int *)(param_1 + 0x1908) * 0x20);
-      *(int *)(param_1 + 0x1908) = *(int *)(param_1 + 0x1908) + 1;
+        CVar2 = (CEventList)*name;
+        *pCVar7 = CVar2;
+        if (CVar2 == (CEventList)0x0) break;
+        CVar2 = *(CEventList *)(name + 1);
+        name = name + 2;
+        pCVar7[1] = CVar2;
+        pCVar7 = pCVar7 + 2;
+      } while (CVar2 != (CEventList)0x0);
+      strupr
+                ((char *)(this_ptr + *(int *)(this_ptr + 0x1908) * 0x20 + 0x190c));
+      *(int *)(this_ptr + 0x1908) = *(int *)(this_ptr + 0x1908) + 1;
       return;
     }
   }

@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; byte * FUN_0050ff00(byte *param_1)
+; char * __cdecl support_newmsg_cpp_FUN_0050ff00(char *encrypted_msg)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   encrypted_msg
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_004b90d0 at 004b91ae
+;   core_game.cpp_FUN_004b90d0 at 004b91ae
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_newmsg_cpp_005e13cd
@@ -20,14 +22,14 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0050ff00
-        ;   Label: FUN_0050ff00
+        ;   Label: support_newmsg.cpp_FUN_0050ff00
     PUSH ESI                            ; 0050ff01
     PUSH EDI                            ; 0050ff02
     SUB ESP,0x4                         ; 0050ff03
@@ -76,8 +78,8 @@ section .text
     PUSH 0x5e13e3                       ; 0050ff61 | = "decryptMessage - invalid initial mask..."
     MOV dword ptr [0x01d046a0],ECX      ; 0050ff66 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0050ff6c | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050ff72
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050ff72
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050ff77
     JMP 0x0050ff35                      ; 0050ff7a
         ;   XREF to: 0050ff35 (UNCONDITIONAL_JUMP)  ; LAB_0050ff35
@@ -96,8 +98,8 @@ section .text
     PUSH 0x5e1426                       ; 0050ffa0 | = "decryptMessage - error decrypting text!"
     MOV [0x01d046a0],EAX                ; 0050ffa5 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDX      ; 0050ffaa | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050ffb0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050ffb0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050ffb5
     JMP 0x0050ff3d                      ; 0050ffb8
         ;   XREF to: 0050ff3d (UNCONDITIONAL_JUMP)  ; LAB_0050ff3d
@@ -107,8 +109,8 @@ section .text
     PUSH 0x5e1464                       ; 0050ffc4 | = "decryptMessage - premature null termi..."
     MOV dword ptr [0x01d046a0],ECX      ; 0050ffc9 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0050ffcf | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050ffd5
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050ffd5
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050ffda
     LEA EAX,[EDI + 0x17]                ; 0050ffdd
     ADD ESP,0x4                         ; 0050ffe0

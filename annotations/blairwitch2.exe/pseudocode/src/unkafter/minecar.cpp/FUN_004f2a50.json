@@ -1,0 +1,137 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 75,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f2a50",
+    "address_range": [
+      [
+        "004f2a50",
+        "004f2a8b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_minecar.cpp_FUN_004f2a50",
+    "signature": "void unkafter_minecar_cpp_FUN_004f2a50(float *param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d098b0",
+      "name": "DAT_01d098b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098b4",
+      "name": "DAT_01d098b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098b8",
+      "name": "DAT_01d098b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09918",
+      "name": "DAT_01d09918",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0c398",
+      "name": "DAT_01d0c398",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.0625,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "COPY": 69,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 7,
+      "LOAD": 5,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 97
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void unkafter_minecar_cpp_FUN_004f2a50(float *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(_DAT_01d09918 + 0x24) = _DAT_01d098b0 - *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(iVar3 + 0x28) = fVar1 - param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(iVar3 + 0x2c) = fVar2 - param_1[2];",
+      "type": "unnamed_param"
+    }
+  ]
+}

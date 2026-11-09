@@ -1,112 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 16,
-        "message": "no matching function for call to 'FUN_00460c70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 20,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
@@ -133,29 +25,29 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004fb530",
-    "signature": "void FUN_004fb530(undefined4 param_1,undefined4 param_2)"
+    "name": "core_mission.cpp_FUN_004fb530",
+    "signature": "void core_mission_cpp_FUN_004fb530(CDemonMission *param_1,char *param_2)"
   },
   "function_calls": [
     {
-      "addr": "00460c70",
-      "is_variadic": false,
-      "name": "FUN_00460c70"
-    },
-    {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "004fbce0",
       "is_variadic": false,
-      "name": "FUN_004fbce0"
+      "name": "core_mission.cpp_FUN_004fbce0"
     },
     {
       "addr": "005b89c0",
       "is_variadic": false,
-      "name": "FUN_005b89c0"
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "00460c70",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00460c70"
     }
   ],
   "globals": [
@@ -225,7 +117,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004fb530(uint param_1,uint param_2)",
+      "text": "void core_mission_cpp_FUN_004fb530(CDemonMission *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -233,7 +125,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004fb530(uint param_1,uint param_2)",
+      "text": "void core_mission_cpp_FUN_004fb530(CDemonMission *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -241,7 +133,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = FUN_00460c70(\"world\",param_2,0x5de08d);",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(\"world\",param_2,(char *)0x5de08d);",
       "type": "unnamed_param"
     },
     {
@@ -249,7 +141,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004fbce0(param_1,iVar1);",
+      "text": "core_mission_cpp_FUN_004fbce0(param_1,file_handle);",
       "type": "unnamed_param"
     }
   ]

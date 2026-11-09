@@ -1,0 +1,236 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 101,
+    "complexity_score": 131,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 41,
+    "suspect_count": 7,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 142
+  },
+  "cross_references": [
+    {
+      "addr": "00453d80",
+      "from_addr": "00454c69",
+      "name": "core_doc.cpp_FUN_00453d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004568e0",
+      "from_addr": "00457df7",
+      "name": "core_doc.cpp_FUN_004568e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044ffd0",
+    "address_range": [
+      [
+        "0044ffd0",
+        "00450098"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_doc.cpp_FUN_0044ffd0",
+    "signature": "float core_doc_cpp_FUN_0044ffd0(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cfb7f",
+      "name": "DAT_005cfb7f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc9e8",
+      "name": "g_CBoxActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0265378c",
+      "name": "g_CCryptVesselClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00454c69",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00453d80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00457df7",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_004568e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8076923076923075,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CBRANCH": 6,
+      "COPY": 81,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 31,
+      "INT_AND": 51,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 50,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 24,
+      "INT_SUB": 19,
+      "INT_XOR": 5,
+      "LOAD": 19,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 375
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "float core_doc_cpp_FUN_0044ffd0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1,g_CBoxActorClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (CCryptVessel *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_1,g_CCryptVesselClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "for (iVar3 = 0; iVar3 < *(int *)&pCVar5->field_0x104; iVar3 = iVar3 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "piVar2 = (int *)(*(int *)&pCVar5->field_0x10c + iVar4);",
+      "type": "unnamed_field"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

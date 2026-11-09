@@ -1,106 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 45,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 46,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 196,
@@ -124,37 +22,37 @@
     {
       "addr": "00426a10",
       "from_addr": "00426dab",
-      "name": "FUN_00426a10",
+      "name": "core_charactr.cpp_FUN_00426a10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00428bd0",
       "from_addr": "00428cb3",
-      "name": "FUN_00428bd0",
+      "name": "core_charactr.cpp_FUN_00428bd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00428e30",
       "from_addr": "00429076",
-      "name": "FUN_00428e30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f9990",
-      "from_addr": "004f9db1",
-      "name": "FUN_004f9990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005726c0",
-      "from_addr": "005729df",
-      "name": "FUN_005726c0",
+      "name": "core_charactr.cpp_FUN_00428e30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005af3b0",
       "from_addr": "005af400",
-      "name": "FUN_005af3b0",
+      "name": "core_cloth.cpp_FUN_005af3b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9990",
+      "from_addr": "004f9db1",
+      "name": "core_mirror.cpp_FUN_004f9990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005726c0",
+      "from_addr": "005729df",
+      "name": "core_tentacle.cpp_FUN_005726c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -167,19 +65,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00592830",
-    "signature": "void FUN_00592830(float *param_1)"
+    "name": "core_xform.cpp_FUN_00592830",
+    "signature": "void core_xform_cpp_FUN_00592830(float *param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "005927e0",
       "is_variadic": false,
-      "name": "FUN_005927e0"
+      "name": "core_xform.cpp_determinant_FUN_005927e0"
     }
   ],
   "globals": [
@@ -214,7 +112,7 @@
       {
         "call_addr": "00428cb3",
         "call_type": "direct",
-        "caller": "FUN_00428bd0",
+        "caller": "core_charactr.cpp_FUN_00428bd0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +126,7 @@
       {
         "call_addr": "004f9db1",
         "call_type": "direct",
-        "caller": "FUN_004f9990",
+        "caller": "core_mirror.cpp_FUN_004f9990",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -242,7 +140,7 @@
       {
         "call_addr": "004f9ddf",
         "call_type": "direct",
-        "caller": "FUN_004f9990",
+        "caller": "core_mirror.cpp_FUN_004f9990",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,7 +155,7 @@
       {
         "call_addr": "00429076",
         "call_type": "direct",
-        "caller": "FUN_00428e30",
+        "caller": "core_charactr.cpp_FUN_00428e30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -270,7 +168,7 @@
       {
         "call_addr": "005af400",
         "call_type": "direct",
-        "caller": "FUN_005af3b0",
+        "caller": "core_cloth.cpp_FUN_005af3b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -284,7 +182,7 @@
       {
         "call_addr": "005af49e",
         "call_type": "direct",
-        "caller": "FUN_005af3b0",
+        "caller": "core_cloth.cpp_FUN_005af3b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -299,7 +197,7 @@
       {
         "call_addr": "00426dab",
         "call_type": "direct",
-        "caller": "FUN_00426a10",
+        "caller": "core_charactr.cpp_FUN_00426a10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -313,7 +211,7 @@
       {
         "call_addr": "005729df",
         "call_type": "direct",
-        "caller": "FUN_005726c0",
+        "caller": "core_tentacle.cpp_FUN_005726c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -537,23 +435,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_00592830.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 70,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -568,7 +449,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00592830(float *param_1)",
+      "text": "void core_xform_cpp_FUN_00592830(float *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -584,7 +465,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_3c = (double)FUN_005927e0(param_1);",
+      "text": "local_3c = (double)core_xform_cpp_determinant_FUN_005927e0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -997,14 +878,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *pfVar2;",
-      "type": "static_uninitvar"
     }
   ]
 }

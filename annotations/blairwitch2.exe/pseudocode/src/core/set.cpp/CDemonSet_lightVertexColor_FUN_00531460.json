@@ -1,0 +1,593 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 317,
+    "complexity_score": 447,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 18,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 157,
+    "suspect_count": 27,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_field",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 474
+  },
+  "cross_references": [
+    {
+      "addr": "005317c0",
+      "from_addr": "005317dd",
+      "name": "core_set.cpp_CDemonSet_computeLighting_FUN_005317c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532190",
+      "from_addr": "00532287",
+      "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005344f0",
+      "from_addr": "0053453e",
+      "name": "core_set.cpp_FUN_005344f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00531460",
+    "address_range": [
+      [
+        "00531460",
+        "005317bc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_00531460",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00531460(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005311e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_005311e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e5982",
+      "name": "s_core_set_cpp_005e5982",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5992",
+      "name": "s_CDemonSet_lightVertexCol_005e5992",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622014",
+      "name": "DAT_00622014",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622034",
+      "name": "DAT_00622034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622038",
+      "name": "DAT_00622038",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062203c",
+      "name": "DAT_0062203c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622040",
+      "name": "DAT_00622040",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38aec",
+      "name": "DAT_01c38aec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b78",
+      "name": "DAT_01c38b78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b80",
+      "name": "DAT_01c38b80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc8a20",
+      "name": "g_CDemonCameraInstance.field4584_0x11e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200a38c",
+      "name": "DAT_0200a38c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e568",
+      "name": "DAT_0200e568",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8e8",
+      "name": "DAT_0200e8e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8ec",
+      "name": "DAT_0200e8ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8f0",
+      "name": "DAT_0200e8f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "005317dd",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_computeLighting_FUN_005317c0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00532287",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0053241b",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005324bb",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00532779",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00532afd",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00532fbd",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0053453e",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005344f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.793233082706767,
+    "instruction_count": 266,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 117,
+      "BOOL_OR": 8,
+      "BRANCH": 5,
+      "CALL": 3,
+      "CBRANCH": 22,
+      "COPY": 235,
+      "INT_2COMP": 1,
+      "INT_ADD": 81,
+      "INT_AND": 450,
+      "INT_CARRY": 17,
+      "INT_DIV": 6,
+      "INT_EQUAL": 191,
+      "INT_LEFT": 31,
+      "INT_LESS": 17,
+      "INT_MULT": 23,
+      "INT_NOTEQUAL": 97,
+      "INT_OR": 142,
+      "INT_REM": 6,
+      "INT_RIGHT": 42,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 17,
+      "INT_SEXT": 57,
+      "INT_SLESS": 129,
+      "INT_SUB": 78,
+      "INT_XOR": 38,
+      "INT_ZEXT": 18,
+      "LOAD": 57,
+      "POPCOUNT": 83,
+      "RETURN": 2,
+      "STORE": 31,
+      "SUBPIECE": 51
+    },
+    "pcode_op_count": 2073
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "surface_normal",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "skip_lighting_calculation",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x15ae84",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x15ae84 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x15ae88",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)*(int *)&this_ptr->field_0x15ae88 * (longlong)*(int *)surface_normal;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x15ae8c",
+      "severity": "mild",
+      "text": "lVar2 = (longlong)*(int *)&this_ptr->field_0x15ae8c * (longlong)*(int *)(surface_normal + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x15ae90",
+      "severity": "mild",
+      "text": "lVar3 = (longlong)*(int *)&this_ptr->field_0x15ae90 * (longlong)*(int *)(surface_normal + 8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x15ae94",
+      "severity": "mild",
+      "text": "iVar8 = iVar8 + *(int *)&this_ptr->field_0x15ae94;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x15ae9c",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)*(int *)&this_ptr->field_0x15ae9c * (longlong)iVar8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_00622034",
+      "severity": "mild",
+      "text": "(&DAT_00622034)[vertex_index * 0xc] =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x15aea0",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)*(int *)&this_ptr->field_0x15aea0 * (longlong)iVar8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00622038",
+      "severity": "mild",
+      "text": "(&DAT_00622038)[vertex_index * 0xc] =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x15aea4",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)*(int *)&this_ptr->field_0x15aea4 * (longlong)iVar8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_0062203c",
+      "severity": "mild",
+      "text": "(&DAT_0062203c)[vertex_index * 0xc] =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "(&DAT_00622040)[vertex_index * 0xc] = _DAT_01c38aec;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._4584_4_",
+      "severity": "mild",
+      "text": "local_18 = g_CDemonCameraInstance._4584_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._4584_4_",
+      "severity": "mild",
+      "text": "if ((0 < (int)g_CDemonCameraInstance._4584_4_) && (surface_normal != (CVector3i *)0x0)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._4584_4_",
+      "severity": "mild",
+      "text": "iVar10 = g_CDemonCameraInstance._4584_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._4584_4_",
+      "severity": "mild",
+      "text": "if (0x1000 < (int)g_CDemonCameraInstance._4584_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 96,
+      "match": "field_0x15ae9c",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)iVar8 * (longlong)*(int *)&this_ptr->field_0x15ae9c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 98,
+      "match": "field_0x15aea0",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)iVar8 * (longlong)*(int *)&this_ptr->field_0x15aea0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 100,
+      "match": "field_0x15aea4",
+      "severity": "mild",
+      "text": "iVar10 = *(int *)&this_ptr->field_0x15aea4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 106,
+      "match": "field_0x15ae9c",
+      "severity": "mild",
+      "text": "local_18) * (longlong)*(int *)&this_ptr->field_0x15ae9c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 111,
+      "match": "field_0x15aea0",
+      "severity": "mild",
+      "text": "local_18) * (longlong)*(int *)&this_ptr->field_0x15aea0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 113,
+      "match": "field_0x15aea4",
+      "severity": "mild",
+      "text": "iVar10 = *(int *)&this_ptr->field_0x15aea4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 120,
+      "match": "field_0x15f6f4",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x15f6f4 != 0) && (skip_lighting_calculation == 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 157,
+      "match": "DAT_00622034",
+      "severity": "mild",
+      "text": "(&DAT_00622034)[vertex_index * 0xc] = *(uint *)(local_14 * 4 + 0x1fca390);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_00622038",
+      "severity": "mild",
+      "text": "(&DAT_00622038)[vertex_index * 0xc] = *(uint *)(uVar4 * 4 + 0x1fca390);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 159,
+      "match": "DAT_0062203c",
+      "severity": "mild",
+      "text": "(&DAT_0062203c)[vertex_index * 0xc] = *(uint *)(uVar5 * 4 + 0x1fca390);",
+      "type": "undefined_data"
+    }
+  ]
+}

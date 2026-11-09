@@ -1,0 +1,1238 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 1551,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 131,
+    "suspect_count": 139,
+    "suspect_types": [
+      "negative_offset",
+      "raw_address_constant",
+      "stack_ref",
+      "unnamed_field",
+      "unrolled_memset",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 164
+  },
+  "cross_references": [
+    {
+      "addr": "004500a0",
+      "from_addr": "004500b3",
+      "name": "core_doc.cpp_factoryFuncDoc_FUN_004500a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004500d0",
+    "address_range": [
+      [
+        "004500d0",
+        "0045019e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_doc.cpp_CDoc_ctor_FUN_004500d0",
+    "signature": "CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041bd30",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_CBoxActor_ctor_FUN_0041bd30"
+    },
+    {
+      "addr": "004ce240",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004ce240"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004500b3",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_factoryFuncDoc_FUN_004500a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.566666666666667,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 25,
+      "INT_ADD": 21,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 9,
+      "LOAD": 1,
+      "POPCOUNT": 3,
+      "STORE": 25
+    },
+    "pcode_op_count": 107
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoc *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "this_ptr_00 = &pCVar4[-0x4d].field_0x110;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x3c0",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar4[-0x4d].field_0x3c0 = &g_CDocVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x5cc = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x5cc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x5cc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x460 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x460",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x460 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x464 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x464",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x464 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x468 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x468",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x468 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x46c = 0xbf060a92;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x46c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x46c = 0xbf060a92;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 25,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x48c = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x48c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x48c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x484 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x484",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x484 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 27,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x47c = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x47c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x47c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 28,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x474 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x474",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x474 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 29,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x488 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x488",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x488 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 30,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x490 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x490",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x490 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 31,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4ac = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x4ac",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4ac = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 32,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a4 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x4a4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x49c = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x49c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x49c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 34,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x494 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x494",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x494 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 35,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a8 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x4a8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 36,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4b0 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x4b0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4b0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 37,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x514 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x514",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x514 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4b4 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x4b4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4b4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 39,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4bc = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x4bc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4bc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4c8 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x4c8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4c8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 41,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4cc = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x4cc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4cc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 43,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x538 = 0xf149f2ca;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x538",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x538 = 0xf149f2ca;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x470 = uVar2;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x470",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x470 = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 45,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x520 = 0xf149f2ca;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x520",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x520 = 0xf149f2ca;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 46,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x7d0 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x7d0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x7d0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 47,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x480 = *(uint *)&pCVar4[-1].field_0x47c;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 47,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x480 = *(uint *)&pCVar4[-1].field_0x47c;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x480",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x480 = *(uint *)&pCVar4[-1].field_0x47c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x47c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x480 = *(uint *)&pCVar4[-1].field_0x47c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 48,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x478 = *(uint *)&pCVar4[-1].field_0x474;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 48,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x478 = *(uint *)&pCVar4[-1].field_0x474;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x478",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x478 = *(uint *)&pCVar4[-1].field_0x474;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x474",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x478 = *(uint *)&pCVar4[-1].field_0x474;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 49,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a0 = *(uint *)&pCVar4[-1].field_0x49c;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 49,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a0 = *(uint *)&pCVar4[-1].field_0x49c;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x4a0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a0 = *(uint *)&pCVar4[-1].field_0x49c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x49c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4a0 = *(uint *)&pCVar4[-1].field_0x49c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 50,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x498 = *(uint *)&pCVar4[-1].field_0x494;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 50,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x498 = *(uint *)&pCVar4[-1].field_0x494;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x498",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x498 = *(uint *)&pCVar4[-1].field_0x494;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x494",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x498 = *(uint *)&pCVar4[-1].field_0x494;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x3c4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar4[-0x4d].field_0x3c4,(char *)0x5cfb87);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x3c4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar4[-0x4d].field_0x3c4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x6f0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x48].field_0x6f0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 56,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4b8 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x4b8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4b8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 57,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4d8 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x4d8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4d8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 58,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4dc = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x4dc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4dc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 59,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x508 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x508",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x508 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 60,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x504 = *(uint *)&pCVar4[-1].field_0x508;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 60,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x504 = *(uint *)&pCVar4[-1].field_0x508;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x504",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x504 = *(uint *)&pCVar4[-1].field_0x508;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x508",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x504 = *(uint *)&pCVar4[-1].field_0x508;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 61,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x500 = *(uint *)&pCVar4[-1].field_0x504;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 61,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x500 = *(uint *)&pCVar4[-1].field_0x504;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x500",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x500 = *(uint *)&pCVar4[-1].field_0x504;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x504",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x500 = *(uint *)&pCVar4[-1].field_0x504;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 62,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x50c = 0xffffffff;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x50c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x50c = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 63,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4c0 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x4c0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4c0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 64,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4e0 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x4e0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4e0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 65,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4e4 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x4e4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4e4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 66,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4c4 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x4c4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x4c4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 67,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x510 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x510",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x510 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 68,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x518 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x518",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x518 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x6f8",
+      "severity": "mild",
+      "text": "((CClothList *)&pCVar4[-0x48].field_0x6f8,\"LAZ86CLOTH.cth\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 90,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x5c8 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 90,
+      "match": "field_0x5c8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x5c8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 91,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x578 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 91,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x578 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 92,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x5ac = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 92,
+      "match": "field_0x5ac",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x5ac = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 93,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x7d0 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 93,
+      "match": "field_0x7d0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-1].field_0x7d0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 94,
+      "match": "field_0x6d4",
+      "severity": "mild",
+      "text": "pcVar5 = &pCVar4[-0x49].field_0x6d4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 95,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-1].field_0x5d0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 95,
+      "match": "field_0x5d0",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-1].field_0x5d0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 105,
+      "match": "field_0x6fc",
+      "severity": "mild",
+      "text": "pcVar5 = &pCVar4[-0x48].field_0x6fc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 106,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-1].field_0x6d0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 106,
+      "match": "field_0x6d0",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4[-1].field_0x6d0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 116,
+      "match": "field_0x20c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x4d].field_0x20c = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 117,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0x110 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 118,
+      "match": "&stack0x00000110",
+      "severity": "moderate",
+      "text": "if (&pCVar4[-0x2b].field_0xf4 != &stack0x00000110) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 118,
+      "match": "field_0xf4",
+      "severity": "mild",
+      "text": "if (&pCVar4[-0x2b].field_0xf4 != &stack0x00000110) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 119,
+      "match": "field_0xf4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0xf4 = 0xbde76c8b;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 120,
+      "match": "field_0xf8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0xf8 = 0x3ec3126f;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 121,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0xfc = 0x3e79db23;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 123,
+      "match": "&stack0x00000128",
+      "severity": "moderate",
+      "text": "if (&pCVar4[-0x2b].field_0x100 != &stack0x00000128) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 123,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "if (&pCVar4[-0x2b].field_0x100 != &stack0x00000128) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 124,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0x100 = 0x3de76c8b;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 125,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0x104 = 0x3ec3126f;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 126,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0x108 = 0x3e79db23;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 128,
+      "match": "&stack0x0000011c",
+      "severity": "moderate",
+      "text": "if (&pCVar4[-0x2b].field_0x124 == &stack0x0000011c) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 128,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "if (&pCVar4[-0x2b].field_0x124 == &stack0x0000011c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 131,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0x124 = 0x3f000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 132,
+      "match": "field_0x128",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0x128 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 133,
+      "match": "field_0x12c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4[-0x2b].field_0x12c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Raw hex address 0x450430 assigned to bare local `uStack00000104`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack00000104` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 87,
+      "match": "0x450430",
+      "severity": "moderate",
+      "text": "uStack00000104 = 0x450430;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 96,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 107,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 59,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "*(uint *)&pCVar4[-1].field_0x508 = 0;",
+      "type": "unrolled_memset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDoc",
+        "offset": 0,
+        "vtable_addr": "005f52f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

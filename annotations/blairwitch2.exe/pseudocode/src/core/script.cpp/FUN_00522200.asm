@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00522200(int param_1)
+; void __cdecl core_script_cpp_FUN_00522200(CScript *this_ptr)
 ;
+; Parameters:
+; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_004fce00 at 004fcee7
+;   core_mission.cpp_FUN_004fce00 at 004fcee7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_initSection_005e2fc1
@@ -19,25 +21,25 @@
 ;   TerminatedCString s_Error_processing_script_005e3041
 ;   TerminatedCString s_core_script_cpp_005e307e
 ;   TerminatedCString s_Infinite_loop_detected_i_005e3091
-;   undefined4 DAT_00616494
-;   undefined4 DAT_01cb6900
+;   CGame* g_CGamePtr = 01cb6900
+;   CGame g_CGameInstance
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;   undefined4 DAT_01e650f8
 ;   undefined4 DAT_01e65904
 ;
 ; Called Functions:
-;   FUN_004b8250
-;   FUN_004e4500
-;   FUN_00522350
-;   FUN_005299b0
+;   core_game.cpp_FUN_004b8250
+;   core_main.c_FUN_004e4500
+;   core_script.cpp_FUN_00522350
+;   core_script.cpp_FUN_005299b0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00522200
-        ;   Label: FUN_00522200
+        ;   Label: core_script.cpp_FUN_00522200
     PUSH ESI                            ; 00522201
     PUSH EBP                            ; 00522202
     SUB ESP,0x8                         ; 00522203
@@ -60,8 +62,8 @@ section .text
     PUSH 0x5e2fc1                       ; 00522227 | = "initSection"
         ;   Label: LAB_00522227
     PUSH EBX                            ; 0052222c
-    CALL FUN_005299b0                   ; 0052222d
-        ;   XREF to: 005299b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005299b0()
+    CALL core_script.cpp_FUN_005299b0   ; 0052222d
+        ;   XREF to: 005299b0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_005299b0(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 00522232
     MOV ESI,EAX                         ; 00522235
     TEST EAX,EAX                        ; 00522237
@@ -70,8 +72,8 @@ section .text
     PUSH EDI                            ; 0052223b
     PUSH 0x5e2fcd                       ; 0052223c | = "initSectionEnd"
     PUSH EBX                            ; 00522241
-    CALL FUN_005299b0                   ; 00522242
-        ;   XREF to: 005299b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005299b0()
+    CALL core_script.cpp_FUN_005299b0   ; 00522242
+        ;   XREF to: 005299b0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_005299b0(CScript * this_ptr, char * label_name)
     ADD ESP,0x8                         ; 00522247
     MOV EBP,EAX                         ; 0052224a
     TEST EAX,EAX                        ; 0052224c
@@ -91,8 +93,8 @@ section .text
     PUSH EBX                            ; 0052226e
     MOV EDI,dword ptr [EBX + 0x44]      ; 0052226f
     MOV dword ptr [ESP + 0xc],ECX       ; 00522272
-    CALL FUN_00522350                   ; 00522276
-        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined FUN_00522350()
+    CALL core_script.cpp_FUN_00522350   ; 00522276
+        ;   XREF to: 00522350 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00522350()
     ADD ESP,0x8                         ; 0052227b
     TEST EAX,EAX                        ; 0052227e
     JL 0x005222e1                       ; 00522280
@@ -104,11 +106,11 @@ section .text
     CMP dword ptr [0x01e65904],0x0      ; 0052228b | DAT_01e65904
     JZ 0x005222ab                       ; 00522292
         ;   XREF to: 005222ab (CONDITIONAL_JUMP)  ; LAB_005222ab
-    MOV ECX,dword ptr [0x00616494]      ; 00522294 | DAT_00616494
-    PUSH ECX                            ; 0052229a | DAT_01cb6900
+    MOV ECX,dword ptr [0x00616494]      ; 00522294 | g_CGamePtr
+    PUSH ECX                            ; 0052229a | g_CGameInstance
     XOR ESI,ESI                         ; 0052229b
-    CALL FUN_004b8250                   ; 0052229d
-        ;   XREF to: 004b8250 (UNCONDITIONAL_CALL)  ; undefined FUN_004b8250()
+    CALL core_game.cpp_FUN_004b8250     ; 0052229d
+        ;   XREF to: 004b8250 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b8250(CGame * this_ptr)
     ADD ESP,0x4                         ; 005222a2
     MOV dword ptr [0x01e65904],ESI      ; 005222a5 | DAT_01e65904
     MOV EAX,dword ptr [ESP + 0x8]       ; 005222ab
@@ -126,8 +128,8 @@ section .text
     PUSH 0x5e2fef                       ; 005222c4 | = "Script has \"initSection\" label, but..."
     MOV dword ptr [0x01d046a0],EDI      ; 005222c9 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 005222cf | DAT_01d046a4
-    CALL FUN_004e4500                   ; 005222d4
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 005222d4
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 005222d9
     JMP 0x00522250                      ; 005222dc
         ;   XREF to: 00522250 (UNCONDITIONAL_JUMP)  ; LAB_00522250
@@ -143,8 +145,8 @@ section .text
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00522303
     PUSH EDX                            ; 00522306
     PUSH 0x5e3041                       ; 00522307 | = "Error processing script.\nLine: %d\nT..."
-    CALL FUN_004e4500                   ; 0052230c
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0052230c
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x10                        ; 00522311
     JMP 0x00522282                      ; 00522314
         ;   XREF to: 00522282 (UNCONDITIONAL_JUMP)  ; LAB_00522282
@@ -158,8 +160,8 @@ section .text
     PUSH 0x5e3091                       ; 00522330 | = "Infinite loop detected in initSection.\n"
     MOV dword ptr [0x01d046a0],EDI      ; 00522335 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0052233b | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00522340
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00522340
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00522345
     JMP 0x00522264                      ; 00522348
         ;   XREF to: 00522264 (UNCONDITIONAL_JUMP)  ; LAB_00522264

@@ -1,0 +1,510 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 196,
+    "complexity_score": 454,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 59,
+    "suspect_count": 38,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 255
+  },
+  "cross_references": [
+    {
+      "addr": "004674b0",
+      "from_addr": "004674f2",
+      "name": "cockpit_drawsurf.cpp_FUN_004674b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004677e0",
+      "from_addr": "004677f2",
+      "name": "cockpit_drawsurf.cpp_FUN_004677e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00467610",
+    "address_range": [
+      [
+        "00467610",
+        "004677df"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_drawsurf.cpp_FUN_00467610",
+    "signature": "void cockpit_drawsurf_cpp_FUN_00467610(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "00466360",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00466360"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d13b0",
+      "name": "DAT_005d13b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b270",
+      "name": "DAT_0060b270",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b274",
+      "name": "DAT_0060b274",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba599c",
+      "name": "DAT_01ba599c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba59a0",
+      "name": "DAT_01ba59a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba59a4",
+      "name": "DAT_01ba59a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a370",
+      "name": "DAT_01c2a370",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a374",
+      "name": "DAT_01c2a374",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004674f2",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_004674b0",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004677f2",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_004677e0",
+        "estimated_params": 6,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 9,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.758169934640523,
+    "instruction_count": 153,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 24,
+      "BOOL_OR": 7,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 17,
+      "COPY": 178,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 38,
+      "INT_AND": 134,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 91,
+      "INT_LEFT": 12,
+      "INT_LESS": 16,
+      "INT_NOTEQUAL": 29,
+      "INT_OR": 30,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 16,
+      "INT_SDIV": 4,
+      "INT_SEXT": 4,
+      "INT_SLESS": 40,
+      "INT_SREM": 4,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 43,
+      "INT_XOR": 2,
+      "INT_ZEXT": 16,
+      "LOAD": 27,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 29,
+      "SUBPIECE": 8,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 881
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467610(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467610(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467610(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467610(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void cockpit_drawsurf_cpp_FUN_00467610(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "x_00 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (param_4 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_4 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "x_00 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_4 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if (param_5 < param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_5 < param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_3 = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_5 = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "for (; iVar1 = param_3, x < param_4; x = x + 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "for (; iVar1 = param_3, x < param_4; x = x + 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,x,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,x,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "for (; iVar1 < param_5; iVar1 = iVar1 + 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,param_4,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,param_4,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "for (; x_00 < param_4; param_4 = param_4 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "for (; x_00 < param_4; param_4 = param_4 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "for (; x_00 < param_4; param_4 = param_4 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "for (; param_3 < param_5; param_5 = param_5 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "for (; param_3 < param_5; param_5 = param_5 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "for (; param_3 < param_5; param_5 = param_5 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "for (; param_3 < param_5; param_5 = param_5 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,x_00,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(param_1,x_00,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 9,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:9",
+      "param_delta": 9,
+      "text": "Function declares 0 params but call sites push 9 (9 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

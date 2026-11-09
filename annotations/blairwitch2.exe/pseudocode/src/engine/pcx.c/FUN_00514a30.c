@@ -1,14 +1,14 @@
-// Name: FUN_00514a30
+// Name: engine_pcx.c_FUN_00514a30
 // Address: 00514a30
 // Address Range: [[00514a30, 00514c6c]]
-// Convention: unknown
-// Signature: void FUN_00514a30(undefined4 param_1)
+// Convention: __cdecl
+// Signature: void __cdecl engine_pcx_c_FUN_00514a30(char *filename)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00514a30(uint param_1)
+void __cdecl engine_pcx_c_FUN_00514a30(char *filename)
 
 {
   int *piVar1;
@@ -30,14 +30,14 @@ void FUN_00514a30(uint param_1)
   short local_40;
   
   if (DAT_006141c0 == 0x10) {
-    FUN_005146c0(param_1);
+    engine_pcx_c_saveScreenRaw16_FUN_005146c0(filename);
     return;
   }
   if (DAT_006141c0 == 0x20) {
-    FUN_00514880(param_1);
+    engine_pcx_c_saveScreenRaw32_FUN_00514880(filename);
     return;
   }
-  FUN_005b77c0(&local_88,0,0x80);
+  memset(&local_88,0,0x80);
   local_88 = 10;
   local_87 = 5;
   local_85 = 8;
@@ -55,19 +55,19 @@ void FUN_00514a30(uint param_1)
     local_40 = 0x1e0;
     local_7e = 0x1df;
   }
-  piVar1 = (int *)FUN_005b910c(param_1,&DAT_005e19cd);
+  piVar1 = (int *)_fopen(filename,&DAT_005e19cd);
   if (piVar1 == (int *)0x0) {
     _DAT_01d046a0 = "..\\engine\\pcx.c";
     _DAT_01d046a4 = 0xed;
-    FUN_004e4500("Cannot write .PCX");
+    core_main_c_FUN_004e4500("Cannot write .PCX");
   }
   iVar2 = 0;
-  FUN_005b9690(&local_88,1,0x80,piVar1);
+  _fwrite(&local_88,1,0x80,piVar1);
   if (0 < DAT_006141bc) {
     do {
-      FUN_005145f0(iVar2,piVar1);
+      engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,piVar1);
       if ((DAT_006141b8 == 0x280) && (DAT_006141bc == 0xf0)) {
-        FUN_005145f0(iVar2,piVar1);
+        engine_pcx_c_writePCXScanline_FUN_005145f0(iVar2,piVar1);
       }
       iVar2 = iVar2 + 1;
     } while (iVar2 < DAT_006141bc);
@@ -85,7 +85,7 @@ void FUN_00514a30(uint param_1)
   else {
     uVar4 = 0xc;
   }
-  FUN_005bab40(uVar4,piVar1);
+  _fputc(uVar4,piVar1);
 LAB_00514b9e:
   iVar2 = 0;
   do {
@@ -102,11 +102,11 @@ LAB_00514b9e:
     else {
       uVar3 = (&DAT_01c35838)[iVar2];
 LAB_00514bb4:
-      FUN_005bab40(uVar3,piVar1);
+      _fputc(uVar3,piVar1);
     }
     iVar2 = iVar2 + 1;
     if (0x2ff < iVar2) {
-      FUN_005b89c0(piVar1);
+      _fclose(piVar1);
       return;
     }
   } while( true );

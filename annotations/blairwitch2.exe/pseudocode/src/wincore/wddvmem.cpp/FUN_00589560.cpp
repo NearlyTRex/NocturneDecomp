@@ -1,14 +1,14 @@
-// Name: FUN_00589560
+// Name: wincore_wddvmem.cpp_FUN_00589560
 // Address: 00589560
 // Address Range: [[00589560, 005897ad]]
-// Convention: unknown
-// Signature: void FUN_00589560(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_FUN_00589560(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00589560(void)
+void __cdecl wincore_wddvmem_cpp_FUN_00589560(void)
 
 {
   ulonglong uVar1;
@@ -37,9 +37,9 @@ void FUN_00589560(void)
   bVar13 = 0;
   if (DAT_0061e98c != 0) {
     if (_DAT_01c37788 != 0) {
-      FUN_0055ff40(0);
+      engine_special_cpp_presentToExternalRenderer_FUN_0055ff40(0);
       _DAT_02661af4 = 0;
-      FUN_0058f270();
+      wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
       return;
     }
     if (_DAT_02661af4 == 0) {
@@ -48,7 +48,7 @@ void FUN_00589560(void)
         local_1c = DAT_006141b8 *
                    ((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -
                          (uint)((DAT_006141c0 >> 0x1f) << 2 < 0)) >> 3);
-        FUN_005b77c0(local_8c,0,0x6c);
+        memset(local_8c,0,0x6c);
         local_8c[0] = 0x6c;
         iVar6 = (**(code **)(*_DAT_02661ae4 + 100))(_DAT_02661ae4,0,local_8c,1,0);
         local_18 = local_68;
@@ -96,16 +96,16 @@ void FUN_00589560(void)
           if (iVar12 != 0) {
             _DAT_01d046a0 = "..\\wincore\\wddvmem.cpp";
             _DAT_01d046a4 = 0x356;
-            FUN_004e4500("Unable to unlock front buffer");
+            core_main_c_FUN_004e4500("Unable to unlock front buffer");
             _DAT_02661af4 = 0;
-            FUN_0058f270();
+            wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
             return;
           }
         }
         goto LAB_00589632;
       }
       _DAT_02661afc = _DAT_01c37788;
-      FUN_005890c0();
+      wincore_wddvmem_cpp_FUN_005890c0();
       iVar12 = 0;
       if (0 < DAT_006141bc) {
         iVar6 = 0;
@@ -128,17 +128,17 @@ void FUN_00589560(void)
           iVar6 = iVar6 + 4;
         } while (iVar12 < DAT_006141bc);
       }
-      FUN_00589170();
+      wincore_wddvmem_cpp_FUN_00589170();
       _DAT_02661afc = 1;
     }
     if (((_DAT_02661ae4 != (int *)0x0) &&
         (iVar12 = (**(code **)(*_DAT_02661ae4 + 0x2c))(_DAT_02661ae4,0,1), iVar12 != 0)) &&
        (iVar12 == -0x7789fe3e)) {
-      FUN_005897e0();
+      wincore_wddvmem_cpp_FUN_005897e0();
     }
   }
 LAB_00589632:
   _DAT_02661af4 = 0;
-  FUN_0058f270();
+  wincore_winrun_cpp_processWindowMessages_FUN_0058f270();
   return;
 }

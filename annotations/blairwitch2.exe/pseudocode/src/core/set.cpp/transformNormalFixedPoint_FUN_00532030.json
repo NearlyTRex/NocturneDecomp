@@ -1,0 +1,402 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 310,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 24,
+    "suspect_types": [
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00532030",
+    "address_range": [
+      [
+        "00532030",
+        "00532180"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_transformNormalFixedPoint_FUN_00532030",
+    "signature": "void core_set_cpp_transformNormalFixedPoint_FUN_00532030(int *param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c38b9c",
+      "name": "DAT_01c38b9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38ba0",
+      "name": "DAT_01c38ba0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38ba4",
+      "name": "DAT_01c38ba4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38ba8",
+      "name": "DAT_01c38ba8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bac",
+      "name": "DAT_01c38bac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bb0",
+      "name": "DAT_01c38bb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bb4",
+      "name": "DAT_01c38bb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bb8",
+      "name": "DAT_01c38bb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bbc",
+      "name": "DAT_01c38bbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fb8",
+      "name": "DAT_01d04fb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fbc",
+      "name": "DAT_01d04fbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fc0",
+      "name": "DAT_01d04fc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fc4",
+      "name": "DAT_01d04fc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fc8",
+      "name": "DAT_01d04fc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fcc",
+      "name": "DAT_01d04fcc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fd0",
+      "name": "DAT_01d04fd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fd4",
+      "name": "DAT_01d04fd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fd8",
+      "name": "DAT_01d04fd8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 10.585585585585585,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 90,
+      "COPY": 104,
+      "INT_ADD": 40,
+      "INT_AND": 280,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 82,
+      "INT_LEFT": 18,
+      "INT_LESS": 1,
+      "INT_MULT": 24,
+      "INT_NOTEQUAL": 72,
+      "INT_OR": 108,
+      "INT_RIGHT": 36,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 54,
+      "INT_SLESS": 68,
+      "INT_SUB": 45,
+      "INT_XOR": 18,
+      "INT_ZEXT": 6,
+      "LOAD": 22,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 36
+    },
+    "pcode_op_count": 1175
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00532170",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_set_cpp_transformNormalFixedPoint_FUN_00532030(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar7 = ((uint)((longlong)_DAT_01c38b9c * (longlong)*param_1) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38b9c * (longlong)*param_1) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)((longlong)_DAT_01c38ba8 * (longlong)param_1[1]) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38ba8 * (longlong)param_1[1]) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)((longlong)_DAT_01c38bb4 * (longlong)param_1[2]) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38bb4 * (longlong)param_1[2]) >> 0x20) << 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar8 = ((uint)((longlong)_DAT_01c38ba0 * (longlong)*param_1) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38ba0 * (longlong)*param_1) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)((longlong)_DAT_01c38bac * (longlong)param_1[1]) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38bac * (longlong)param_1[1]) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)((longlong)_DAT_01c38bb8 * (longlong)param_1[2]) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38bb8 * (longlong)param_1[2]) >> 0x20) << 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar9 = ((uint)((longlong)_DAT_01c38ba4 * (longlong)*param_1) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38ba4 * (longlong)*param_1) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)((longlong)_DAT_01c38bb0 * (longlong)param_1[1]) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38bb0 * (longlong)param_1[1]) >> 0x20) << 0x10) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((uint)((longlong)_DAT_01c38bbc * (longlong)param_1[2]) >> 0x10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(int)((ulonglong)((longlong)_DAT_01c38bbc * (longlong)param_1[2]) >> 0x20) << 0x10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = ((uint)((longlong)_DAT_01d04fb8 * (longlong)iVar7) >> 0x10 |",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[1] = ((uint)(lVar1 * iVar7) >> 0x10 | (int)((ulonglong)(lVar1 * iVar7) >> 0x20) << 0x10)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[2] = ((uint)(lVar4 * iVar7) >> 0x10 | (int)((ulonglong)(lVar4 * iVar7) >> 0x20) << 0x10)",
+      "type": "unaffected_reg"
+    }
+  ]
+}

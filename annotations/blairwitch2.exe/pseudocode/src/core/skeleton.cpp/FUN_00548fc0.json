@@ -1,139 +1,17 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 21,
-        "message": "no matching function for call to 'FUN_005b8130'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 23,
-        "message": "use of undeclared identifier 'DAT_02628554'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_02628554'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 35,
-        "message": "no matching function for call to 'FUN_00540a10'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 36,
-        "message": "use of undeclared identifier 'DAT_02628554'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 152,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 37,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
-      "raw_address_constant",
       "undefined_data",
-      "unnamed_param",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 121
@@ -142,7 +20,7 @@
     {
       "addr": "00541540",
       "from_addr": "00541552",
-      "name": "FUN_00541540",
+      "name": "core_skeleton.cpp_FUN_00541540",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,25 +32,25 @@
         "00549086"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_00548fc0",
-    "signature": "int FUN_00548fc0(undefined4 param_1)"
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_FUN_00548fc0",
+    "signature": "CSkeleton * __cdecl core_skeleton_cpp_FUN_00548fc0(char *filename)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "00540a10",
       "is_variadic": false,
-      "name": "FUN_00540a10"
+      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00540a10"
     },
     {
       "addr": "005b8130",
       "is_variadic": false,
-      "name": "FUN_005b8130"
+      "name": "crt_string.c__stricmp_FUN_005b8130"
     }
   ],
   "globals": [
@@ -213,23 +91,20 @@
       {
         "call_addr": "00541552",
         "call_type": "direct",
-        "caller": "FUN_00541540",
-        "estimated_params": 3,
+        "caller": "core_skeleton.cpp_FUN_00541540",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.557142857142857,
@@ -261,12 +136,20 @@
     "pcode_op_count": 319
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -278,71 +161,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1d1a8",
       "severity": "mild",
-      "text": "int FUN_00548fc0(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005b8130(iVar3,param_1);",
-      "type": "unnamed_param"
+      "text": "str1 = &g_SkeletonPool[0].field_0x1d1a8;",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_02628554",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_02628554 + iVar2 * 4) = 1;",
+      "text": "*(uint *)(&DAT_02628554 + iVar3 * 4) = 1;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00540a10(iVar2,param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_02628554",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_02628554 + iVar3) = 1;",
+      "text": "*(uint *)(&DAT_02628554 + iVar1) = 1;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004e4500(\"Can't load %s because skeleton manager is full.  (Size is %d)\",param_1,0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x219529c assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 12,
-      "match": "0x219529c",
-      "severity": "moderate",
-      "text": "iVar3 = 0x219529c;",
-      "type": "raw_address_constant"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

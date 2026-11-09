@@ -1,136 +1,17 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 27,
-        "message": "no matching function for call to 'FUN_0040c840'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 27,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_0040c840'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 29,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 34,
-        "message": "no matching function for call to 'FUN_0040c840'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 34,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 537,
+    "complexity_score": 538,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 157,
-    "suspect_count": 34,
+    "pseudocode_lines": 163,
+    "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
+      "raw_address_pointer_store",
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
@@ -139,19 +20,19 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 564
+    "total_lines": 570
   },
   "cross_references": [
     {
       "addr": "004cfc80",
       "from_addr": "004cfd22",
-      "name": "FUN_004cfc80",
+      "name": "core_hero.cpp_FUN_004cfc80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004df010",
       "from_addr": "004df0aa",
-      "name": "FUN_004df010",
+      "name": "core_inv.cpp_FUN_004df010",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -165,69 +46,69 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_004dc8c0",
-    "signature": "undefined4 FUN_004dc8c0(int param_1,undefined4 param_2)"
+    "name": "core_inv.cpp_FUN_004dc8c0",
+    "signature": "undefined4 core_inv_cpp_FUN_004dc8c0(int param_1,CDemonActor *param_2)"
   },
   "function_calls": [
     {
-      "addr": "0040c840",
-      "is_variadic": false,
-      "name": "FUN_0040c840"
-    },
-    {
       "addr": "0040c8f0",
       "is_variadic": false,
-      "name": "FUN_0040c8f0"
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c840"
     },
     {
       "addr": "0040e450",
       "is_variadic": false,
-      "name": "FUN_0040e450"
-    },
-    {
-      "addr": "0045d260",
-      "is_variadic": false,
-      "name": "FUN_0045d260"
+      "name": "core_ammo.cpp_FUN_0040e450"
     },
     {
       "addr": "00490f80",
       "is_variadic": false,
-      "name": "FUN_00490f80"
+      "name": "core_event.cpp_FUN_00490f80"
     },
     {
       "addr": "004b31a0",
       "is_variadic": false,
-      "name": "FUN_004b31a0"
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004b31a0"
     },
     {
       "addr": "004cdf90",
       "is_variadic": false,
-      "name": "FUN_004cdf90"
-    },
-    {
-      "addr": "004d9f10",
-      "is_variadic": false,
-      "name": "FUN_004d9f10"
+      "name": "core_health.cpp_FUN_004cdf90"
     },
     {
       "addr": "004db8e0",
       "is_variadic": false,
-      "name": "FUN_004db8e0"
+      "name": "core_inv.cpp_FUN_004db8e0"
     },
     {
       "addr": "004db9d0",
       "is_variadic": false,
-      "name": "FUN_004db9d0"
+      "name": "core_inv.cpp_FUN_004db9d0"
+    },
+    {
+      "addr": "004d9f10",
+      "is_variadic": false,
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004d9f10"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "0050fe80",
       "is_variadic": false,
-      "name": "FUN_0050fe80"
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    },
+    {
+      "addr": "0045d260",
+      "is_variadic": false,
+      "name": "unkafter_stranger.cpp_FUN_0045d260"
     }
   ],
   "globals": [
@@ -323,43 +204,43 @@
     },
     {
       "addr": "00616494",
-      "name": "DAT_00616494",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
     },
     {
       "addr": "007bc3a4",
-      "name": "DAT_007bc3a4",
+      "name": "g_CAmmoClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007bc9e8",
-      "name": "DAT_007bc9e8",
+      "name": "g_CBoxActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01b4d2ec",
-      "name": "DAT_01b4d2ec",
+      "name": "g_CDocClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6900",
-      "name": "DAT_01cb6900",
-      "type": "undefined4",
+      "name": "g_CGameInstance",
+      "type": "CGame",
       "value": null
     },
     {
       "addr": "01cb81c4",
-      "name": "DAT_01cb81c4",
+      "name": "g_CGasMaskClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ceded8",
-      "name": "DAT_01ceded8",
+      "name": "g_CHealthItemClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -388,7 +269,7 @@
       {
         "call_addr": "004cfd22",
         "call_type": "direct",
-        "caller": "FUN_004cfc80",
+        "caller": "core_hero.cpp_FUN_004cfc80",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -401,7 +282,7 @@
       {
         "call_addr": "004cfd50",
         "call_type": "direct",
-        "caller": "FUN_004cfc80",
+        "caller": "core_hero.cpp_FUN_004cfc80",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -414,7 +295,7 @@
       {
         "call_addr": "004df0aa",
         "call_type": "direct",
-        "caller": "FUN_004df010",
+        "caller": "core_inv.cpp_FUN_004df010",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -425,7 +306,7 @@
       {
         "call_addr": "004df0b7",
         "call_type": "direct",
-        "caller": "FUN_004df010",
+        "caller": "core_inv.cpp_FUN_004df010",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -542,7 +423,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_004dc8c0(int param_1,uint param_2)",
+      "text": "uint core_inv_cpp_FUN_004dc8c0(int param_1,CDemonActor *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -550,68 +431,68 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint FUN_004dc8c0(int param_1,uint param_2)",
+      "text": "uint core_inv_cpp_FUN_004dc8c0(int param_1,CDemonActor *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c840(param_2,\"CAmmo\");",
+      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CAmmo\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c840(param_2,\"CWeapon\");",
+      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CWeapon\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004db9d0(param_1,param_2,5,1);",
+      "text": "core_inv_cpp_FUN_004db9d0(param_1,param_2,5,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004db9d0(param_1,param_2,5,1);",
+      "text": "core_inv_cpp_FUN_004db9d0(param_1,param_2,5,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c840(param_2,\"CHealthItem\");",
+      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CHealthItem\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c840(param_2,\"CGasMask\");",
+      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CGasMask\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c8f0(param_2,_DAT_01cb81c4);",
+      "text": "iVar2 = (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CGasMaskClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x458) = iVar2;",
@@ -619,87 +500,79 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c840(param_2,\"CBoxActor\");",
+      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CBoxActor\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c8f0(param_2,DAT_007bc9e8);",
+      "text": "iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CBoxActorClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2,g_CHealthItemClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar3 = (char *)core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_007bc9e8",
-      "severity": "mild",
-      "text": "iVar2 = FUN_0040c8f0(param_2,DAT_007bc9e8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = FUN_0040c8f0(param_2,_DAT_01ceded8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar3 = (char *)FUN_004d9f10(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
+      "line": 88,
       "match": "DAT_005db9ca",
       "severity": "mild",
-      "text": "pcVar3 = (char *)FUN_0050fe80(&DAT_005db9ca);",
+      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005db9ca);",
       "type": "undefined_data"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 110,
+      "match": "*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "iVar2 = core_health_cpp_FUN_004cdf90(local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4))",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004db8e0(param_1,param_2,1);",
+      "text": "core_inv_cpp_FUN_004db8e0(param_1,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 113,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004db8e0(param_1,param_2,1);",
+      "text": "core_inv_cpp_FUN_004db8e0(param_1,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 119,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_14 = FUN_0040c8f0(param_2,DAT_007bc3a4);",
+      "text": "local_14 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CAmmoClassInfo.name_hash);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
-      "match": "DAT_007bc3a4",
-      "severity": "mild",
-      "text": "local_14 = FUN_0040c8f0(param_2,DAT_007bc3a4);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 122,
+      "line": 126,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x154))(iVar2);",
@@ -707,31 +580,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 131,
       "match": "DAT_005db95d",
       "severity": "mild",
-      "text": "(iVar2 = FUN_0040c840(iVar2,&DAT_005db95d), iVar2 == 0)) {",
+      "text": "(iVar2 = core_actor_cpp_FUN_0040c840(actor_ptr,&DAT_005db95d), iVar2 == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 165,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004db8e0(param_1,param_2,1);",
+      "text": "core_inv_cpp_FUN_004db8e0(param_1,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 159,
+      "line": 165,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004db8e0(param_1,param_2,1);",
+      "text": "core_inv_cpp_FUN_004db8e0(param_1,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 58,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -739,7 +612,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 76,
+      "line": 79,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -747,7 +620,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 97,
+      "line": 100,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -755,7 +628,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 135,
+      "line": 140,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -763,7 +636,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 67,
+      "line": 70,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -771,7 +644,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 88,
+      "line": 91,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -779,7 +652,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 67,
+      "line": 70,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -787,7 +660,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 88,
+      "line": 91,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

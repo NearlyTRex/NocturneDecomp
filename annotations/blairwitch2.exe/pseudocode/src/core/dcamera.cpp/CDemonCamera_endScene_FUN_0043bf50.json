@@ -1,0 +1,317 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 111,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [
+    {
+      "addr": "0052ddf0",
+      "from_addr": "0052e56d",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052d3be",
+      "from_addr": "0052d6ec",
+      "name": "core_set.cpp_FUN_0052d3be",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052f2a0",
+      "from_addr": "0052f810",
+      "name": "core_set.cpp_FUN_0052f2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043bf50",
+    "address_range": [
+      [
+        "0043bf50",
+        "0043c031"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0043bf50",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_0043bf50(CDemonCamera *this_ptr,int skip_zbuffer_copy)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043b7d0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0043b7d0"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00492718",
+      "is_variadic": false,
+      "name": "crt_watcom.c__memcpy_FUN_00492718"
+    },
+    {
+      "addr": "0046b740",
+      "is_variadic": false,
+      "name": "engine_matrix.c_popViewport_FUN_0046b740"
+    },
+    {
+      "addr": "0055f5b0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0055f5b0"
+    },
+    {
+      "addr": "00560030",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_00560030"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ce33f",
+      "name": "s_core_dcamera_cpp_005ce33f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce353",
+      "name": "s_CDemonCamera_endScene_Sc_005ce353",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2b64c",
+      "name": "DAT_01c2b64c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bba0",
+      "name": "DAT_0264bba0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0052e56d",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052e883",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052f810",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052f2a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052d6ec",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052d3be",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052d914",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052d3be",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.564516129032258,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 7,
+      "COPY": 47,
+      "INT_ADD": 23,
+      "INT_AND": 60,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 22,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "LOAD": 15,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 345
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "skip_zbuffer_copy",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x11e4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x11e4 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x11e4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11e4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x168 == 0) && (skip_zbuffer_copy == 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x148) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "_memcpy(*(int *)&this_ptr->field_0x144 << 2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x148);",
+      "type": "unnamed_field"
+    }
+  ]
+}

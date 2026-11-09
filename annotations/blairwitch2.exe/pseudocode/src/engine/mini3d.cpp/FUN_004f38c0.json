@@ -1,129 +1,9 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 14,
-        "message": "use of undeclared identifier '_DAT_01d09b78'; did you mean 'DAT_00609478'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01d09b78'; did you mean 'DAT_00609478'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 17,
-        "message": "assigning to 'undefined1 *' (aka 'unsigned char *') from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d09b78'; did you mean 'DAT_00609478'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
     "complexity_score": 31,
-    "cross_reference_count": 2,
+    "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "mild",
@@ -136,15 +16,33 @@
   },
   "cross_references": [
     {
+      "addr": "004f3920",
+      "from_addr": "004f3998",
+      "name": "engine_mini3d.cpp_FUN_004f3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3c40",
+      "from_addr": "004f3cc0",
+      "name": "engine_mini3d.cpp_FUN_004f3c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3ef0",
+      "from_addr": "004f3f5b",
+      "name": "engine_mini3d.cpp_FUN_004f3ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f40a0",
       "from_addr": "004f4109",
-      "name": "FUN_004f40a0",
+      "name": "engine_mini3d.cpp_FUN_004f40a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f7e00",
       "from_addr": "004f7e2b",
-      "name": "FUN_004f7e00",
+      "name": "engine_mini3d.cpp_FUN_004f7e00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -157,19 +55,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f38c0",
-    "signature": "void FUN_004f38c0(void)"
+    "name": "engine_mini3d.cpp_FUN_004f38c0",
+    "signature": "void engine_mini3d_cpp_FUN_004f38c0(void)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "005b8580",
       "is_variadic": false,
-      "name": "FUN_005b8580"
+      "name": "crt_unknown.c_FUN_005b8580"
     }
   ],
   "globals": [

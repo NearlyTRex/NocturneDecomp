@@ -1,0 +1,269 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 24,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "004f2190",
+      "from_addr": "004f2195",
+      "name": "core_minecar.cpp_staticInit_FUN_004f2190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f21d0",
+    "address_range": [
+      [
+        "004f21d0",
+        "004f2285"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "unkafter_minecar.cpp_CMini3D_ctor_FUN_004f21d0",
+    "signature": "CMini3D * unkafter_minecar_cpp_CMini3D_ctor_FUN_004f21d0(CMini3D *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d09858",
+      "name": "DAT_01d09858",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0985c",
+      "name": "DAT_01d0985c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09860",
+      "name": "DAT_01d09860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09864",
+      "name": "DAT_01d09864",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09868",
+      "name": "DAT_01d09868",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098dc",
+      "name": "DAT_01d098dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098e0",
+      "name": "DAT_01d098e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098e4",
+      "name": "DAT_01d098e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098e8",
+      "name": "DAT_01d098e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098f0",
+      "name": "DAT_01d098f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0990c",
+      "name": "DAT_01d0990c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09910",
+      "name": "DAT_01d09910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09914",
+      "name": "DAT_01d09914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09918",
+      "name": "DAT_01d09918",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0991c",
+      "name": "DAT_01d0991c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09b78",
+      "name": "DAT_01d09b78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09b7c",
+      "name": "DAT_01d09b7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09b80",
+      "name": "DAT_01d09b80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0c398",
+      "name": "DAT_01d0c398",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0c39c",
+      "name": "DAT_01d0c39c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0d2b4",
+      "name": "DAT_01d0d2b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0d2cc",
+      "name": "DAT_01d0d2cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0d2d0",
+      "name": "DAT_01d0d2d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d12114",
+      "name": "DAT_01d12114",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f2195",
+        "call_type": "direct",
+        "caller": "core_minecar.cpp_staticInit_FUN_004f2190",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.7105263157894737,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "COPY": 41,
+      "INT_ADD": 5,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 65
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMini3D *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_01d09920",
+      "severity": "mild",
+      "text": "_DAT_01d09918 = &DAT_01d09920;",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMini3D",
+        "offset": 0,
+        "vtable_addr": "005fa174"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

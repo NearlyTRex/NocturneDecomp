@@ -1,0 +1,182 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 38,
+    "complexity_score": 70,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "005b0ce0",
+      "from_addr": "005b0ec1",
+      "name": "core_cloth.cpp_FUN_005b0ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047f210",
+      "from_addr": "0047f220",
+      "name": "shape_edittool.cpp_FUN_0047f210",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047f1c0",
+    "address_range": [
+      [
+        "0047f1c0",
+        "0047f207"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0",
+    "signature": "uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0(CEditorTools *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_0058e9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c2c910",
+      "name": "DAT_01c2c910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2ccf0",
+      "name": "DAT_01c2ccf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3452f",
+      "name": "DAT_01c3452f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3490f",
+      "name": "DAT_01c3490f",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0047f220",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047f210",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005b0ec1",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_FUN_005b0ce0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.52,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALL": 1,
+      "CBRANCH": 6,
+      "COPY": 16,
+      "INT_ADD": 5,
+      "INT_AND": 20,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 4,
+      "INT_XOR": 4,
+      "LOAD": 5,
+      "POPCOUNT": 9,
+      "RETURN": 5,
+      "STORE": 1
+    },
+    "pcode_op_count": 113
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_01c2c910",
+      "severity": "mild",
+      "text": "return (uint)DAT_01c2c910;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_01c3490f",
+      "severity": "mild",
+      "text": "return (uint)DAT_01c3490f;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_01c2ccf0",
+      "severity": "mild",
+      "text": "return (uint)DAT_01c2ccf0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_01c3452f",
+      "severity": "mild",
+      "text": "return (uint)DAT_01c3452f;",
+      "type": "undefined_data"
+    }
+  ]
+}

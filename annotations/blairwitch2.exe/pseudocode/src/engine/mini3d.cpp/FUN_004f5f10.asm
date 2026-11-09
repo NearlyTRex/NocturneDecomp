@@ -1,29 +1,32 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f5f10(int param_1)
+; void engine_mini3d_cpp_FUN_004f5f10(int param_1)
 ;
+;
+; XREF[1]:
+;   unkafter_minecar.cpp_FUN_004f229e at 004f22a5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b8580
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b8580
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f5f10
-        ;   Label: FUN_004f5f10
+        ;   Label: engine_mini3d.cpp_FUN_004f5f10
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f5f11
     SHL EAX,0x5                         ; 004f5f15
     ADD EAX,0x20                        ; 004f5f18
     PUSH EAX                            ; 004f5f1b
-    CALL FUN_005b8580                   ; 004f5f1c
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8580()
+    CALL crt_unknown.c_FUN_005b8580     ; 004f5f1c
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 004f5f21
     MOV EBX,EAX                         ; 004f5f24
     TEST EAX,EAX                        ; 004f5f26
@@ -45,8 +48,8 @@ section .text
     PUSH 0x5dde65                       ; 004f5f48
     MOV dword ptr [0x01d046a0],EDX      ; 004f5f4d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004f5f53 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004f5f59
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004f5f59
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 004f5f5e
     POP ESI                             ; 004f5f61
     LEA EAX,[EBX + 0x20]                ; 004f5f62

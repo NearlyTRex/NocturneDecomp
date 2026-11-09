@@ -1,0 +1,396 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 163,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 12,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "00412760",
+      "from_addr": "004127f8",
+      "name": "core_batcreat.cpp_FUN_00412760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414290",
+      "from_addr": "00414328",
+      "name": "core_batman.cpp_FUN_00414290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041ead0",
+      "from_addr": "0041eb57",
+      "name": "core_bride.cpp_FUN_0041ead0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00427fb0",
+      "from_addr": "0042806e",
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464f60",
+      "from_addr": "00464fe9",
+      "name": "core_dracbrid.cpp_FUN_00464f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486cb0",
+      "from_addr": "004873c7",
+      "name": "core_emitter.cpp_FUN_00486cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499fe0",
+      "from_addr": "0049a135",
+      "name": "core_fire.cpp_FUN_00499fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f2e0",
+      "from_addr": "0049f5d4",
+      "name": "core_flame.cpp_CFlame_process_FUN_0049f2e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00426e70",
+    "address_range": [
+      [
+        "00426e70",
+        "00426f22"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_00426e70(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c840"
+    },
+    {
+      "addr": "00425bb0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00425bb0"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00548250",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00548250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ccdaa",
+      "name": "s_KCHero_005ccda9+1",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0049a135",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_00499fe0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004873c7",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0042806e",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004127f8",
+        "call_type": "direct",
+        "caller": "core_batcreat.cpp_FUN_00412760",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00414328",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_FUN_00414290",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0049f5d4",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_process_FUN_0049f2e0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0049f832",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_process_FUN_0049f2e0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0041eb57",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_FUN_0041ead0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00464fe9",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_FUN_00464f60",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.387096774193548,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 53,
+      "INT_ADD": 31,
+      "INT_AND": 30,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 29,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 14,
+      "INT_SUB": 21,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 272
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "fire_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flame_type",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "flame_scale",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "include_hero",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x3564",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x3564 < 0x32) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2514",
+      "severity": "mild",
+      "text": "iVar1 == 0)) && (this_ptr->field_0x2514 != '\\0')))) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x2b4,position);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x3564",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x3564) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x3574",
+      "severity": "mild",
+      "text": "if (iVar1 == *(int *)&pCVar3->field_0x3574) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "pCVar3 = (CCharacter *)&pCVar3->field_0x18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x3564",
+      "severity": "mild",
+      "text": "} while (iVar2 < *(int *)&this_ptr->field_0x3564);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x3568",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x3568 = flame_type;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x356c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x356c = flame_scale;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x2b4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xfc = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CCharacter *)&pCVar3->field_0x18;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

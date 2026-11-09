@@ -1,0 +1,276 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 191,
+    "complexity_score": 149,
+    "cross_reference_count": 4,
+    "function_call_count": 5,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 84,
+    "suspect_count": 5,
+    "suspect_types": [
+      "raw_address_constant",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 275
+  },
+  "cross_references": [
+    {
+      "addr": "00534be0",
+      "from_addr": "00534bf0",
+      "name": "core_set.cpp_CDemonSet_expireDecals_FUN_00534be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534c20",
+      "from_addr": "00534c4b",
+      "name": "core_set.cpp_CDemonSet_renderDecals_FUN_00534c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052ddf0",
+      "from_addr": "0052e83d",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052f2a0",
+      "from_addr": "0052f70c",
+      "name": "core_set.cpp_FUN_0052f2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c94c0",
+    "address_range": [
+      [
+        "004c94c0",
+        "004c966e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_renderDecals_FUN_004c94c0",
+    "signature": "void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004c94c0(CGore *this_ptr,int render_all,int expire_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8800",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004c8800"
+    },
+    {
+      "addr": "004c7f80",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_setupRenderState_FUN_004c7f80"
+    },
+    {
+      "addr": "004c8010",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004c8010"
+    },
+    {
+      "addr": "004c88a0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004c88a0"
+    },
+    {
+      "addr": "004c9000",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004c9000"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "01cb6900",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01cb6914",
+      "name": "g_CGameInstance.field20_0x14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbcaf8",
+      "name": "DAT_01cbcaf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cdde40",
+      "name": "DAT_01cdde40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cde348",
+      "name": "DAT_01cde348",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0052e83d",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052f70c",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052f2a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00534bf0",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_expireDecals_FUN_00534be0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00534c4b",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderDecals_FUN_00534c20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.782608695652174,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 6,
+      "BRANCH": 6,
+      "CALL": 8,
+      "CBRANCH": 19,
+      "COPY": 105,
+      "INT_ADD": 39,
+      "INT_AND": 111,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 105,
+      "INT_LESS": 10,
+      "INT_NOTEQUAL": 9,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 51,
+      "INT_SUB": 36,
+      "INT_XOR": 9,
+      "LOAD": 16,
+      "POPCOUNT": 51,
+      "RETURN": 2,
+      "STORE": 26
+    },
+    "pcode_op_count": 660
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "render_all",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "expire_flag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CGamePtr->field_0x14 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Raw hex address 0x1cbcafc assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 28,
+      "match": "0x1cbcafc",
+      "severity": "moderate",
+      "text": "iVar1 = 0x1cbcafc;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1cdde44 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 53,
+      "match": "0x1cdde44",
+      "severity": "moderate",
+      "text": "iVar1 = 0x1cdde44;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1cde34c assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 77,
+      "match": "0x1cde34c",
+      "severity": "moderate",
+      "text": "iVar1 = 0x1cde34c;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

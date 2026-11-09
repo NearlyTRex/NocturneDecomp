@@ -1,46 +1,46 @@
-// Name: FUN_0042c520
+// Name: cockpit_ckptutil.c_FUN_0042c520
 // Address: 0042c520
 // Address Range: [[0042c520, 0042c666]]
-// Convention: unknown
-// Signature: int FUN_0042c520(undefined4 param_1,int param_2,int param_3)
+// Convention: __cdecl
+// Signature: void * __cdecl cockpit_ckptutil_c_FUN_0042c520(char *filename,void *buffer,int size)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_0042c520(uint param_1,int param_2,int param_3)
+void * __cdecl cockpit_ckptutil_c_FUN_0042c520(char *filename,void *buffer,int size)
 
 {
   int iVar1;
   byte local_88 [80];
-  byte local_38 [40];
+  CInStreamFile local_38;
   
-  if (param_2 == 0) {
-    param_2 = FUN_005b8580(param_3);
-    if (param_2 == 0) {
-      FUN_005b7790(local_88,"@Unable to allocate %u bytes for bitmap file (%s)." + 1,param_3,param_1);
+  if (buffer == (void *)0x0) {
+    buffer = FUN_005b8580(size);
+    if (buffer == (void *)0x0) {
+      FUN_005b7790(local_88,"@Unable to allocate %u bytes for bitmap file (%s)." + 1,size,filename);
       _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
       _DAT_01d046a4 = 0xe8;
-      FUN_004e4500(local_88);
+      core_main_c_FUN_004e4500(local_88);
     }
   }
-  FUN_0057cd50(local_38);
-  iVar1 = FUN_0057d390(local_38,&DAT_005cd38e,param_1);
+  unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&local_38);
+  iVar1 = support_trstream_cpp_FUN_0057d390(&local_38,&DAT_005cd38e,filename);
   if (iVar1 == 0) {
-    FUN_005b7790(local_88,"Unable to open bitmap file (%s).",param_1);
+    FUN_005b7790(local_88,"Unable to open bitmap file (%s).",filename);
     _DAT_01d046a4 = 0xf1;
     _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
-    FUN_004e4500(local_88);
+    core_main_c_FUN_004e4500(local_88);
   }
-  iVar1 = FUN_0057cfe0(local_38,param_2,param_3);
-  if (iVar1 != param_3) {
-    FUN_005b7790(local_88,"Unable to read bitmap file (%s).",param_1);
-    FUN_0057d180(local_38);
+  iVar1 = unkaddr_0057b9a0_cpp_FUN_0057cfe0(&local_38,buffer,size);
+  if (iVar1 != size) {
+    FUN_005b7790(local_88,"Unable to read bitmap file (%s).",filename);
+    unkaddr_0057b9a0_cpp_FUN_0057d180(&local_38);
     _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
     _DAT_01d046a4 = 0xf9;
-    FUN_004e4500(local_88);
+    core_main_c_FUN_004e4500(local_88);
   }
-  FUN_0057d180(local_38);
-  FUN_0057cec0(local_38,0);
-  return param_2;
+  unkaddr_0057b9a0_cpp_FUN_0057d180(&local_38);
+  unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_38,0);
+  return buffer;
 }

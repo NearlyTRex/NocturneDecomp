@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00504f10(undefined4 param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)
+; undefined4 sound_mp3_cpp_FUN_00504f10(CMP3Decoder *param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00507240 at 005073c4
+;   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240 at 005073c4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005dffbf
@@ -17,16 +17,16 @@
 ;   undefined4 DAT_01d23e7c
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00504d30
-;   FUN_00504e10
+;   core_main.c_FUN_004e4500
+;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30
+;   sound_mp3.cpp_FUN_00504e10
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00504f10
-        ;   Label: FUN_00504f10
+        ;   Label: sound_mp3.cpp_FUN_00504f10
     PUSH ESI                            ; 00504f11
     PUSH EDI                            ; 00504f12
     PUSH EBP                            ; 00504f13
@@ -98,8 +98,8 @@ section .text
     JZ 0x00504fe9                       ; 00504fd3
         ;   XREF to: 00504fe9 (CONDITIONAL_JUMP)  ; LAB_00504fe9
     PUSH EBP                            ; 00504fd5
-    CALL FUN_00504e10                   ; 00504fd6
-        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00504e10()
+    CALL sound_mp3.cpp_FUN_00504e10     ; 00504fd6
+        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00504e10(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00504fdb
     CMP EAX,0x1                         ; 00504fde
     JNZ 0x00504fe9                      ; 00504fe1
@@ -112,8 +112,8 @@ section .text
     JZ 0x00505006                       ; 00504ff0
         ;   XREF to: 00505006 (CONDITIONAL_JUMP)  ; LAB_00505006
     PUSH EBP                            ; 00504ff2
-    CALL FUN_00504e10                   ; 00504ff3
-        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00504e10()
+    CALL sound_mp3.cpp_FUN_00504e10     ; 00504ff3
+        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00504e10(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00504ff8
     CMP EAX,0x1                         ; 00504ffb
     JNZ 0x00505006                      ; 00504ffe
@@ -126,8 +126,8 @@ section .text
     JZ 0x00505023                       ; 0050500d
         ;   XREF to: 00505023 (CONDITIONAL_JUMP)  ; LAB_00505023
     PUSH EBP                            ; 0050500f
-    CALL FUN_00504e10                   ; 00505010
-        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00504e10()
+    CALL sound_mp3.cpp_FUN_00504e10     ; 00505010
+        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00504e10(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00505015
     CMP EAX,0x1                         ; 00505018
     JNZ 0x00505023                      ; 0050501b
@@ -140,8 +140,8 @@ section .text
     JZ 0x00505040                       ; 0050502a
         ;   XREF to: 00505040 (CONDITIONAL_JUMP)  ; LAB_00505040
     PUSH EBP                            ; 0050502c
-    CALL FUN_00504e10                   ; 0050502d
-        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00504e10()
+    CALL sound_mp3.cpp_FUN_00504e10     ; 0050502d
+        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00504e10(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00505032
     CMP EAX,0x1                         ; 00505035
     JNZ 0x00505040                      ; 00505038
@@ -178,8 +178,8 @@ section .text
     RET                                 ; 0050506d
     PUSH EBP                            ; 0050506e
         ;   Label: LAB_0050506e
-    CALL FUN_00504e10                   ; 0050506f
-        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00504e10()
+    CALL sound_mp3.cpp_FUN_00504e10     ; 0050506f
+        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00504e10(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00505074
     TEST EAX,EAX                        ; 00505077
     JZ 0x005050da                       ; 00505079
@@ -208,8 +208,8 @@ section .text
     PUSH 0x5dffd0                       ; 005050bc | = "Illegal Huffman code in data.  File: %s"
     MOV dword ptr [0x01d046a0],ECX      ; 005050c1 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 005050c7 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 005050cd
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 005050cd
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 005050d2
     JMP 0x00504f79                      ; 005050d5
         ;   XREF to: 00504f79 (UNCONDITIONAL_JUMP)  ; LAB_00504f79
@@ -239,8 +239,8 @@ section .text
         ;   XREF to: 00505119 (CONDITIONAL_JUMP)  ; LAB_00505119
     PUSH EDI                            ; 00505109
     PUSH EBP                            ; 0050510a
-    CALL FUN_00504d30                   ; 0050510b
-        ;   XREF to: 00504d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00504d30()
+    CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30 ; 0050510b
+        ;   XREF to: 00504d30 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30(CMP3Decoder * this_ptr, uint num_bits)
     MOV EDI,dword ptr [EBX]             ; 00505110
     ADD EDI,EAX                         ; 00505112
     ADD ESP,0x8                         ; 00505114
@@ -251,8 +251,8 @@ section .text
     JZ 0x00505136                       ; 00505120
         ;   XREF to: 00505136 (CONDITIONAL_JUMP)  ; LAB_00505136
     PUSH EBP                            ; 00505122
-    CALL FUN_00504e10                   ; 00505123
-        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; undefined FUN_00504e10()
+    CALL sound_mp3.cpp_FUN_00504e10     ; 00505123
+        ;   XREF to: 00504e10 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00504e10(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00505128
     CMP EAX,0x1                         ; 0050512b
     JNZ 0x00505136                      ; 0050512e
@@ -272,8 +272,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0xc]       ; 00505150
     PUSH EAX                            ; 00505153
     PUSH EBP                            ; 00505154
-    CALL FUN_00504d30                   ; 00505155
-        ;   XREF to: 00504d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00504d30()
+    CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30 ; 00505155
+        ;   XREF to: 00504d30 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30(CMP3Decoder * this_ptr, uint num_bits)
     MOV EDX,dword ptr [EBX]             ; 0050515a
     ADD EDX,EAX                         ; 0050515c
     ADD ESP,0x8                         ; 0050515e

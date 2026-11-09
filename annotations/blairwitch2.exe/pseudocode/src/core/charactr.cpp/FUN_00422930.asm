@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00422930(int param_1)
+; void __cdecl core_charactr_cpp_FUN_00422930(CCharacter *this_ptr)
 ;
+; Parameters:
+; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00487eb0 at 00487eb5
-;   FUN_004ce4a0 at 004ce4b5
-;   FUN_00510510 at 00510519
+;   core_enemy.cpp_CEnemy_setup_FUN_00487eb0 at 00487eb5
+;   core_hero.cpp_FUN_004ce4a0 at 004ce4b5
+;   core_npc.cpp_FUN_00510510 at 00510519
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stake_b_kfm_005ccab6
@@ -23,28 +25,28 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_00408a50
-;   FUN_00408a80
-;   FUN_00425bb0
-;   FUN_00429390
-;   FUN_0042a3d0
-;   FUN_0044fd00
-;   FUN_0044fd70
-;   FUN_004e4500
-;   FUN_00540e80
-;   FUN_00547480
-;   FUN_00547890
-;   FUN_005b14a0
-;   FUN_005b1740
-;   FUN_005b1780
-;   FUN_005b8130
+;   core_actor.cpp_FUN_00408a50
+;   core_actor.cpp_FUN_00408a80
+;   core_charactr.cpp_FUN_00425bb0
+;   core_charactr.cpp_FUN_00429390
+;   core_charactr.cpp_FUN_0042a3d0
+;   core_cloth.cpp_CClothList_load_FUN_005b14a0
+;   core_cloth.cpp_CClothList_process_FUN_005b1780
+;   core_cloth.cpp_CClothList_setup_FUN_005b1740
+;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
+;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
+;   core_main.c_FUN_004e4500
+;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
+;   core_skeleton.cpp_FUN_00540e80
+;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00422930
-        ;   Label: FUN_00422930
+        ;   Label: core_charactr.cpp_FUN_00422930
     PUSH ESI                            ; 00422931
     PUSH EDI                            ; 00422932
     PUSH EBP                            ; 00422933
@@ -52,8 +54,8 @@ section .text
     SUB ESP,0x4                         ; 00422936
     MOV EDX,dword ptr [EBP + 0x14]      ; 00422939
     PUSH EDX                            ; 0042293c
-    CALL FUN_00408a80                   ; 0042293d
-        ;   XREF to: 00408a80 (UNCONDITIONAL_CALL)  ; undefined FUN_00408a80()
+    CALL core_actor.cpp_FUN_00408a80    ; 0042293d
+        ;   XREF to: 00408a80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408a80(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00422942
     MOV EAX,dword ptr [EBP + 0x14]      ; 00422945
     PUSH 0x5ccab6                       ; 00422948 | = "stake_b.kfm"
@@ -61,14 +63,14 @@ section .text
     PUSH 0x7bdadc                       ; 00422953 | DAT_007bdadc
     FSTP float ptr [EAX + 0x2574]       ; 00422958
     MOV dword ptr [EAX + 0x3448],0x0    ; 0042295e
-    CALL FUN_0044fd70                   ; 00422968
-        ;   XREF to: 0044fd70 (UNCONDITIONAL_CALL)  ; undefined FUN_0044fd70()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70 ; 00422968
+        ;   XREF to: 0044fd70 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0042296d
     MOV ESI,dword ptr [EBP + 0x14]      ; 00422970
     PUSH 0x7bdadc                       ; 00422973 | DAT_007bdadc
     LEA EDI,[ESI + 0xf0]                ; 00422978
-    CALL FUN_0044fd00                   ; 0042297e
-        ;   XREF to: 0044fd00 (UNCONDITIONAL_CALL)  ; undefined FUN_0044fd00()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00 ; 0042297e
+        ;   XREF to: 0044fd00 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00422983
     MOV EBX,dword ptr [ESI + 0x2620]    ; 00422986
         ;   Label: LAB_00422986
@@ -90,26 +92,26 @@ section .text
     FLD float ptr [EAX + 0x2824]        ; 004229b1
     PUSH EBX                            ; 004229b7
     FSTP float ptr [EAX + 0x308]        ; 004229b8
-    CALL FUN_00547480                   ; 004229be
-        ;   XREF to: 00547480 (UNCONDITIONAL_CALL)  ; undefined FUN_00547480()
+    CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480 ; 004229be
+        ;   XREF to: 00547480 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004229c3
     PUSH 0x0                            ; 004229c6
     PUSH 0x5ccb12                       ; 004229c8 | = "bip01 head"
     PUSH EBX                            ; 004229cd
-    CALL FUN_00547890                   ; 004229ce
-        ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; undefined FUN_00547890()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890 ; 004229ce
+        ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004229d3
     PUSH EAX                            ; 004229d6
     MOV EBX,dword ptr [EBP + 0x14]      ; 004229d7
-    CALL FUN_00540e80                   ; 004229da
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; undefined FUN_00540e80()
+    CALL core_skeleton.cpp_FUN_00540e80 ; 004229da
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004229df
     MOV dword ptr [EBX + 0x27e0],EAX    ; 004229e2
     MOV ECX,dword ptr [EBP + 0x14]      ; 004229e8
         ;   Label: LAB_004229e8
     PUSH ECX                            ; 004229eb
-    CALL FUN_00429390                   ; 004229ec
-        ;   XREF to: 00429390 (UNCONDITIONAL_CALL)  ; undefined FUN_00429390()
+    CALL core_charactr.cpp_FUN_00429390 ; 004229ec
+        ;   XREF to: 00429390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00429390(CCharacter * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 004229f1
     MOV EBX,dword ptr [EAX + 0x2810]    ; 004229f4
     ADD ESP,0x4                         ; 004229fa
@@ -118,8 +120,8 @@ section .text
         ;   XREF to: 00422ab0 (CONDITIONAL_JUMP)  ; LAB_00422ab0
     ADD EAX,0x2b4                       ; 00422a05
     PUSH EAX                            ; 00422a0a
-    CALL FUN_00547890                   ; 00422a0b
-        ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; undefined FUN_00547890()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890 ; 00422a0b
+        ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00422a10
     MOV ESI,EAX                         ; 00422a13
     MOV EAX,dword ptr [EBP + 0x14]      ; 00422a15
@@ -128,8 +130,8 @@ section .text
     PUSH EAX                            ; 00422a22
     XOR EDI,EDI                         ; 00422a23
     MOV dword ptr [EAX + 0x1054],0x4    ; 00422a25
-    CALL FUN_005b8130                   ; 00422a2f
-        ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8130()
+    CALL crt_string.c__stricmp_FUN_005b8130 ; 00422a2f
+        ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
     ADD ESP,0x8                         ; 00422a34
     TEST EAX,EAX                        ; 00422a37
     JNZ 0x00422a40                      ; 00422a39
@@ -147,8 +149,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00422a4e
     PUSH EDX                            ; 00422a51
     INC EBX                             ; 00422a52
-    CALL FUN_00425bb0                   ; 00422a53
-        ;   XREF to: 00425bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00425bb0()
+    CALL core_charactr.cpp_FUN_00425bb0 ; 00422a53
+        ;   XREF to: 00425bb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00425bb0(CCharacter * this_ptr, CSkeleton * skeleton, int target_bone_index)
     MOV ECX,dword ptr [ESI + 0x1d1f8]   ; 00422a58
     ADD ESP,0xc                         ; 00422a5e
     CMP EBX,ECX                         ; 00422a61
@@ -182,8 +184,8 @@ section .text
         ;   Label: LAB_00422ab0
     ADD EBX,0x2d0c                      ; 00422ab3
     PUSH EBX                            ; 00422ab9
-    CALL FUN_005b14a0                   ; 00422aba
-        ;   XREF to: 005b14a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b14a0()
+    CALL core_cloth.cpp_CClothList_load_FUN_005b14a0 ; 00422aba
+        ;   XREF to: 005b14a0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_load_FUN_005b14a0(CClothList * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 00422abf
     ADD ESP,0x4                         ; 00422ac2
     ADD EAX,0x2b4                       ; 00422ac5
@@ -196,8 +198,8 @@ section .text
     PUSH EDI                            ; 00422ad8
     PUSH EBX                            ; 00422ad9
     MOV dword ptr [EBP + -0x4],EAX      ; 00422ada
-    CALL FUN_005b1740                   ; 00422add
-        ;   XREF to: 005b1740 (UNCONDITIONAL_CALL)  ; undefined FUN_005b1740()
+    CALL core_cloth.cpp_CClothList_setup_FUN_005b1740 ; 00422add
+        ;   XREF to: 005b1740 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_setup_FUN_005b1740(CClothList * this_ptr, CVector3f * position, CVector3f * euler, CDeformableModelInstance * model_ptr)
     ADD ESP,0x10                        ; 00422ae2
     MOV EAX,dword ptr [EBP + -0x4]      ; 00422ae5
     PUSH EAX                            ; 00422ae8
@@ -207,13 +209,13 @@ section .text
     PUSH ESI                            ; 00422af7
     PUSH EDI                            ; 00422af8
     PUSH EBX                            ; 00422af9
-    CALL FUN_005b1780                   ; 00422afa
-        ;   XREF to: 005b1780 (UNCONDITIONAL_CALL)  ; undefined FUN_005b1780()
+    CALL core_cloth.cpp_CClothList_process_FUN_005b1780 ; 00422afa
+        ;   XREF to: 005b1780 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_process_FUN_005b1780(CClothList * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 00422aff
     MOV EDX,dword ptr [EBP + 0x14]      ; 00422b02
     PUSH EDX                            ; 00422b05
-    CALL FUN_0042a3d0                   ; 00422b06
-        ;   XREF to: 0042a3d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0042a3d0()
+    CALL core_charactr.cpp_FUN_0042a3d0 ; 00422b06
+        ;   XREF to: 0042a3d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a3d0(CCharacter * this_ptr)
     MOV EAX,dword ptr [EBP + 0x14]      ; 00422b0b
     MOV DH,byte ptr [EAX + 0x25b4]      ; 00422b0e
     ADD ESP,0x4                         ; 00422b14
@@ -249,8 +251,8 @@ section .text
     PUSH 0x5ccad7                       ; 00422b5d | = "%s is carrying %s, but %s thinks it i..."
     MOV dword ptr [0x01d046a0],EDX      ; 00422b62 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00422b68 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00422b6e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00422b6e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x14                        ; 00422b73
     JMP 0x00422994                      ; 00422b76
         ;   XREF to: 00422994 (UNCONDITIONAL_JUMP)  ; LAB_00422994
@@ -266,8 +268,8 @@ section .text
     PUSH EAX                            ; 00422b94
         ;   Label: LAB_00422b94
     MOV EDI,dword ptr [EBP + 0x14]      ; 00422b95
-    CALL FUN_00408a50                   ; 00422b98
-        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined FUN_00408a50()
+    CALL core_actor.cpp_FUN_00408a50    ; 00422b98
+        ;   XREF to: 00408a50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408a50()
     ADD ESP,0x4                         ; 00422b9d
     LEA ESI,[EAX + 0x1]                 ; 00422ba0
     ADD EDI,0x25b4                      ; 00422ba3

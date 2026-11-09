@@ -1,0 +1,32 @@
+// Name: core_moloch.cpp_CMoloch_dtor_FUN_00501400
+// Address: 00501400
+// Address Range: [[00501400, 0050147e]]
+// Convention: __cdecl
+// Signature: CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00501400(CMoloch *this_ptr,uint flags)
+
+#include "nocturne.h"
+
+CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00501400(CMoloch *this_ptr,uint flags)
+
+{
+  CMorph *pCVar1;
+  CDeformableModelInstance *pCVar2;
+  CMoloch *pCVar3;
+  void *ptr;
+  
+  if ((flags & 4) != 0) {
+    ptr = (void *)__vec_delete(this_ptr,&g_CMolochTypeInfo);
+    FUN_005b7fce(ptr);
+    return this_ptr;
+  }
+  *(byte **)&this_ptr->field_0x2b0 = &g_CMolochVTable;
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_005b6e80((CMorph *)&this_ptr->field_0x279c8,0);
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
+                     ((CDeformableModelInstance *)(pCVar1 + -0x2388),0);
+  pCVar3 = (CMoloch *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)&pCVar2[-0x12].field_0x1a68,1);
+  if ((flags & 2) == 0) {
+    return pCVar3;
+  }
+  FUN_005b7fdc(pCVar3);
+  return pCVar3;
+}

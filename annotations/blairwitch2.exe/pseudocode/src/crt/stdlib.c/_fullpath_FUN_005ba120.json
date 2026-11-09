@@ -1,0 +1,241 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 109,
+    "complexity_score": 88,
+    "cross_reference_count": 3,
+    "function_call_count": 7,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 38,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unaffected_reg",
+      "undefined_data"
+    ],
+    "total_lines": 147
+  },
+  "cross_references": [
+    {
+      "addr": "005be9ac",
+      "from_addr": "005be9f7",
+      "name": "crt_unknown.c_FUN_005be9ac",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bfdd4",
+      "from_addr": "005bfe3d",
+      "name": "crt_unknown.c_FUN_005bfdd4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00461210",
+      "from_addr": "00461221",
+      "name": "engine_dosio.cpp_getFullPath_FUN_00461210",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ba120",
+    "address_range": [
+      [
+        "005ba120",
+        "005ba1df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdlib.c__fullpath_FUN_005ba120",
+    "signature": "char * __cdecl crt_stdlib_c__fullpath_FUN_005ba120(char *buffer,char *path,SIZE_T buffer_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "005be180",
+      "is_variadic": false,
+      "name": "crt_errno.c_setErrno_FUN_005be180"
+    },
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8580"
+    },
+    {
+      "addr": "005b86a0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b86a0"
+    },
+    {
+      "addr": "005c036c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c036c"
+    },
+    {
+      "addr": "005c0f10",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0f10"
+    },
+    {
+      "addr": "EXTERNAL:0000006e",
+      "is_variadic": false,
+      "name": "GetFullPathNameA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c859c",
+      "name": "PTR_GetFullPathNameA_005c859c",
+      "type": "void*",
+      "value": "001c8ec4"
+    },
+    {
+      "addr": "005f1854",
+      "name": "DAT_005f1854",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006e6f63",
+      "name": "DAT_006e6f63",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00461221",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_getFullPath_FUN_00461210",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005bfe3d",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005bfdd4",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005be9f7",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005be9ac",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.440476190476191,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 77,
+      "INT_ADD": 33,
+      "INT_AND": 47,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 42,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 21,
+      "INT_SUB": 27,
+      "INT_XOR": 3,
+      "LOAD": 24,
+      "POPCOUNT": 21,
+      "RETURN": 4,
+      "STORE": 25
+    },
+    "pcode_op_count": 373
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 12,
+        "size": 4,
+        "type": "SIZE_T"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "LPSTR unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = buffer;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005f1854",
+      "severity": "mild",
+      "text": "iVar2 = _stricmp(path,(char *)&DAT_005f1854);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "FUN_005b86a0(unaff_EBP);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

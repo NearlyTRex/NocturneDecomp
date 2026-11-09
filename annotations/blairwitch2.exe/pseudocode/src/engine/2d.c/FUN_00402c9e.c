@@ -1,0 +1,18 @@
+// Name: engine_2d.c_FUN_00402c9e
+// Address: 00402c9e
+// Address Range: [[00402c9e, 00402ce0]]
+// Convention: unknown
+// Signature: void engine_2d_c_FUN_00402c9e(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void engine_2d_c_FUN_00402c9e(uint param_1,uint param_2,uint param_3,uint param_4)
+
+{
+  engine_2d_c_FUN_00402cf0
+            (param_1,param_2,param_3,param_4,_DAT_01c35e48,_DAT_01c35e4c,_DAT_01c35e50,_DAT_01c35e54
+            );
+  return;
+}

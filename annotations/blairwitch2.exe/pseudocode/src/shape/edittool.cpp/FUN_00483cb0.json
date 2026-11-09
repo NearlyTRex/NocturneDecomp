@@ -1,0 +1,217 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 152,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00483cb0",
+    "address_range": [
+      [
+        "00483cb0",
+        "00483d0a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_FUN_00483cb0",
+    "signature": "void shape_edittool_cpp_FUN_00483cb0(CPickList *param_1,int param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "004839d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_enableItem_FUN_004839d0"
+    },
+    {
+      "addr": "00483bd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_getItemHotKey_FUN_00483bd0"
+    },
+    {
+      "addr": "00483aa0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_00483aa0"
+    },
+    {
+      "addr": "00483b00",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_setItemHotKey_FUN_00483b00"
+    },
+    {
+      "addr": "004810d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_remove_FUN_004810d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.214285714285714,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 29,
+      "INT_ADD": 17,
+      "INT_AND": 18,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 9,
+      "INT_SUB": 22,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 177
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00483cb0(CPickList *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00483cb0(CPickList *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00483cb0(CPickList *param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "item_index_00 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "item_index = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "while (item_index = item_index + 1, item_index < *(int *)param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00483aa0(param_1,item_index);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_004839d0(param_1,item_index_00,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_00483bd0(param_1,item_index);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00483b00(param_1,item_index_00,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_remove_FUN_004810d0((CStrList *)param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_remove_FUN_004810d0((CStrList *)param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_remove_FUN_004810d0((CStrList *)param_1,param_2,param_3);",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPickList",
+        "offset": 4,
+        "vtable_addr": "005f5d34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,138 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01cedf50'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 18,
-        "message": "no matching function for call to 'FUN_0040c8f0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 22,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_004fcda0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 185,
+    "complexity_score": 245,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 14,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
+      "unnamed_field",
       "unnamed_param",
-      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 93
@@ -141,7 +21,7 @@
     {
       "addr": "004fcf70",
       "from_addr": "004fd0aa",
-      "name": "FUN_004fcf70",
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_004fcf70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,34 +34,34 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004d0a40",
-    "signature": "int FUN_004d0a40(int param_1)"
+    "name": "core_hero.cpp_FUN_004d0a40",
+    "signature": "CDemonActor * core_hero_cpp_FUN_004d0a40(int param_1)"
   },
   "function_calls": [
     {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
       "addr": "00408ae0",
       "is_variadic": false,
-      "name": "FUN_00408ae0"
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0"
     },
     {
       "addr": "0040c5a0",
       "is_variadic": false,
-      "name": "FUN_0040c5a0"
-    },
-    {
-      "addr": "0040c8f0",
-      "is_variadic": false,
-      "name": "FUN_0040c8f0"
+      "name": "core_actor.cpp_createActorByName_FUN_0040c5a0"
     },
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "004fcda0",
       "is_variadic": false,
-      "name": "FUN_004fcda0"
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0"
     }
   ],
   "globals": [
@@ -205,7 +85,7 @@
     },
     {
       "addr": "01cedf50",
-      "name": "DAT_01cedf50",
+      "name": "g_CHeroClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -228,7 +108,7 @@
       {
         "call_addr": "004fd0aa",
         "call_type": "direct",
-        "caller": "FUN_004fcf70",
+        "caller": "core_mission.cpp_CDemonMission_createOneHero_FUN_004fcf70",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -292,7 +172,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_004d0a40(int param_1)",
+      "text": "CDemonActor * core_hero_cpp_FUN_004d0a40(int param_1)",
       "type": "unnamed_param"
     },
     {
@@ -300,7 +180,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_0040c5a0(param_1 + 0x2b8,_DAT_01cedf50);",
+      "text": "uVar1 = core_actor_cpp_createActorByName_FUN_0040c5a0(param_1 + 0x2b8,g_CHeroClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -308,80 +188,128 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x20) = *(uint *)(param_1 + 0x20);",
+      "text": "*(uint *)&actor->field_0x20 = *(uint *)(param_1 + 0x20);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x20 = *(uint *)(param_1 + 0x20);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x24) = *(uint *)(param_1 + 0x24);",
+      "text": "*(uint *)&actor->field_0x24 = *(uint *)(param_1 + 0x24);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x24 = *(uint *)(param_1 + 0x24);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x28) = *(uint *)(param_1 + 0x28);",
+      "text": "*(uint *)&actor->field_0x28 = *(uint *)(param_1 + 0x28);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x28 = *(uint *)(param_1 + 0x28);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x2c) = *(uint *)(param_1 + 0x2c);",
+      "text": "*(uint *)&actor->field_0x2c = *(uint *)(param_1 + 0x2c);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x2c = *(uint *)(param_1 + 0x2c);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)(iVar2 + 0x30) != (uint *)(param_1 + 0x30)) {",
+      "text": "if ((uint *)&actor->field_0x30 != (uint *)(param_1 + 0x30)) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "if ((uint *)&actor->field_0x30 != (uint *)(param_1 + 0x30)) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x30) = *(uint *)(param_1 + 0x30);",
+      "text": "*(uint *)&actor->field_0x30 = *(uint *)(param_1 + 0x30);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x30 = *(uint *)(param_1 + 0x30);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x34) = *(uint *)(param_1 + 0x34);",
+      "text": "*(uint *)&actor->field_0x34 = *(uint *)(param_1 + 0x34);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x34 = *(uint *)(param_1 + 0x34);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x38) = *(uint *)(param_1 + 0x38);",
+      "text": "*(uint *)&actor->field_0x38 = *(uint *)(param_1 + 0x38);",
       "type": "unnamed_param"
     },
     {
-      "description": "Watcom raw-offset struct copy (4 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 18,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(iVar2 + 0x20) = *(uint *)(param_1 + 0x20);",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 23,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(iVar2 + 0x30) = *(uint *)(param_1 + 0x30);",
-      "type": "unrolled_memcpy"
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(uint *)&actor->field_0x38 = *(uint *)(param_1 + 0x38);",
+      "type": "unnamed_field"
     },
     {
       "call_site_count": 1,

@@ -1,0 +1,230 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 53,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "005bfdd4",
+      "from_addr": "005bfeaf",
+      "name": "crt_unknown.c_FUN_005bfdd4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cb1e",
+      "from_addr": "0047ce90",
+      "name": "shape_edittool.cpp_FUN_0047cb1e",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ba2e0",
+    "address_range": [
+      [
+        "005ba2e0",
+        "005ba2f6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005ba2e0",
+    "signature": "undefined4 crt_unknown_c_FUN_005ba2e0(LPCSTR param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000008c",
+      "is_variadic": false,
+      "name": "SetCurrentDirectoryA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c8614",
+      "name": "PTR_SetCurrentDirectoryA_005c8614",
+      "type": "void*",
+      "value": "001c9104"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "005bfeaf",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005bfdd4",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005bfed3",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005bfdd4",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047ce90",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047cec4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d0a2",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d0c4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d0f2",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d163",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.571428571428571,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 2,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 32
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_005ba2e0(LPCSTR param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "BVar1 = SetCurrentDirectoryA(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 8,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

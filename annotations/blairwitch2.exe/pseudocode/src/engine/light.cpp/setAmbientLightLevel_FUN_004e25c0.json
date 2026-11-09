@@ -1,0 +1,123 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "0046b4f0",
+      "from_addr": "0046b509",
+      "name": "engine_matrix.c_FUN_0046b4f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e25c0",
+    "address_range": [
+      [
+        "004e25c0",
+        "004e25e1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_light.cpp_setAmbientLightLevel_FUN_004e25c0",
+    "signature": "void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004e25c0(int light_level)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00617e40",
+      "name": "DAT_00617e40",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0046b509",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_FUN_0046b4f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 2,
+      "COPY": 8,
+      "INT_ADD": 3,
+      "INT_AND": 7,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 1,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 2
+    },
+    "pcode_op_count": 44
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "light_level",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_00617e40",
+      "severity": "mild",
+      "text": "DAT_00617e40 = light_level;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_00617e40",
+      "severity": "mild",
+      "text": "DAT_00617e40 = 0;",
+      "type": "undefined_data"
+    }
+  ]
+}

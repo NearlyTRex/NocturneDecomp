@@ -1,14 +1,14 @@
-// Name: FUN_0054b4a0
+// Name: sound_sndmain.cpp_FUN_0054b4a0
 // Address: 0054b4a0
 // Address Range: [[0054b4a0, 0054b88d]]
 // Convention: unknown
-// Signature: undefined4 FUN_0054b4a0(int *param_1,int *param_2,int param_3)
+// Signature: undefined4 sound_sndmain_cpp_FUN_0054b4a0(int *param_1,int *param_2,int param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_0054b4a0(int *param_1,int *param_2,int param_3)
+uint sound_sndmain_cpp_FUN_0054b4a0(int *param_1,int *param_2,int param_3)
 
 {
   int iVar1;
@@ -72,7 +72,8 @@ uint FUN_0054b4a0(int *param_1,int *param_2,int param_3)
               }
               else {
                 if (sStack_24 != 0x20) {
-                  FUN_005b7790(&cStack_88,"Invalid \"fmt\" chunk tag: %04X",sStack_24);
+                  FUN_005b7790
+                            (&cStack_88,"Invalid \"fmt\" chunk tag: %04X",sStack_24);
                   pcVar2 = &cStack_88;
                   goto LAB_0054b4f2;
                 }
@@ -80,7 +81,8 @@ uint FUN_0054b4a0(int *param_1,int *param_2,int param_3)
               }
               *(uint *)(param_3 + 0x104) = 0;
               if ((uStack_22 == 0) || (2 < uStack_22)) {
-                FUN_005b7790(&cStack_88,"Invalid number of channels: %u  (must be 1 or 2)",uStack_22);
+                FUN_005b7790(&cStack_88,"Invalid number of channels: %u  (must be 1 or 2)",uStack_22)
+                ;
                 pcVar2 = &cStack_88;
                 goto LAB_0054b4f2;
               }
@@ -91,7 +93,7 @@ uint FUN_0054b4a0(int *param_1,int *param_2,int param_3)
                 else {
                   _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
                   _DAT_01d046a4 = 0x211;
-                  FUN_004e4500("Hell froze");
+                  core_main_c_FUN_004e4500("Hell froze");
                 }
                 goto LAB_0054b68d;
               }
@@ -118,7 +120,7 @@ LAB_0054b68d:
                     if ((*(int *)(param_3 + 0x100) != 0) && (*(int *)(param_3 + 0x100) != 2)) {
                       _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
                       _DAT_01d046a4 = 0x236;
-                      FUN_004e4500("Hell froze");
+                      core_main_c_FUN_004e4500("Hell froze");
                     }
                     *(uint *)(param_3 + 0x110) =
                          (uStack_14 << 3) /
@@ -131,8 +133,9 @@ LAB_0054b68d:
                 pcVar2 = "No \"data\" chunk found";
               }
               else {
-                FUN_005b7790(&cStack_88,"Invalid bytes/sec value: %u (%04Xh)",uStack_1c & 0xffff,
-                             uStack_1c & 0xffff);
+                FUN_005b7790
+                          (&cStack_88,"Invalid bytes/sec value: %u (%04Xh)",uStack_1c & 0xffff,
+                           uStack_1c & 0xffff);
                 pcVar2 = &cStack_88;
               }
               goto LAB_0054b4f2;
@@ -148,7 +151,7 @@ LAB_0054b68d:
         pcVar2 = "\"RIFF\" ID not found at offset 00000000h";
       }
 LAB_0054b4f2:
-      FUN_005549c0("WAV file is invalid: %s\n",pcVar2);
+      sound_sndmain_cpp_FUN_005549c0("WAV file is invalid: %s\n",pcVar2);
       return 0;
     }
   }

@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
+  "cross_references": [
+    {
+      "addr": "00441f50",
+      "from_addr": "004420f7",
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb9b0",
+      "from_addr": "004bbd0c",
+      "name": "core_game.cpp_FUN_004bb9b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00434770",
+    "address_range": [
+      [
+        "00434770",
+        "004347b2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWCompress_ctor_FUN_00434770",
+    "signature": "CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_ctor_FUN_00434770(CLZWCompress *this_ptr,int buffer_size,int num_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "00433e80",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CCodec_ctor_FUN_00433e80"
+    },
+    {
+      "addr": "00434250",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDictionary_ctor_FUN_00434250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4254",
+      "name": "PTR_support_codec.cpp_CLZWCompress_dtor_FUN_00435550_005f4254",
+      "type": "undefined1*",
+      "value": "00435550"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004bbd0c",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bb9b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004420f7",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.523809523809524,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 2,
+      "COPY": 13,
+      "INT_ADD": 12,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 11,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 116
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWCompress *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_bits",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

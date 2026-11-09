@@ -1,0 +1,348 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 44,
+    "cross_reference_count": 15,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 50
+  },
+  "cross_references": [
+    {
+      "addr": "0040f950",
+      "from_addr": "0040fbe5",
+      "name": "core_baron.cpp_FUN_0040f950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00412f40",
+      "from_addr": "004132df",
+      "name": "core_batman.cpp_FUN_00412f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042a7a0",
+      "from_addr": "0042a91e",
+      "name": "core_charactr.cpp_FUN_0042a7a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a14e0",
+      "from_addr": "005a1727",
+      "name": "core_confedrt.cpp_FUN_005a14e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00462ff0",
+      "from_addr": "0046367e",
+      "name": "core_dracbrid.cpp_FUN_00462ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046d110",
+      "from_addr": "0046d3be",
+      "name": "core_drip.cpp_FUN_0046d110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486cb0",
+      "from_addr": "004870f8",
+      "name": "core_emitter.cpp_FUN_00486cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049ccd0",
+      "from_addr": "0049cce8",
+      "name": "core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495960",
+      "from_addr": "00495a4f",
+      "name": "core_fire.cpp_FUN_00495960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499930",
+      "from_addr": "004999b1",
+      "name": "core_fire.cpp_FUN_00499930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a3a0",
+      "from_addr": "0049a496",
+      "name": "core_fire.cpp_FUN_0049a3a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f2e0",
+      "from_addr": "0049f3f1",
+      "name": "core_flame.cpp_CFlame_process_FUN_0049f2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a3560",
+      "from_addr": "005a39b1",
+      "name": "core_schngeis.cpp_FUN_005a3560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a5460",
+      "from_addr": "005a56a7",
+      "name": "core_union.cpp_FUN_005a5460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "0043720c",
+      "name": "unkafter_conveyor.cpp_FUN_00436e80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049d230",
+    "address_range": [
+      [
+        "0049d230",
+        "0049d287"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0049d230(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "00493510",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CSmokeParticle_init_FUN_00493510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c3f8dc",
+      "name": "DAT_01c3f8dc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 17,
+    "call_sites": [
+      {
+        "call_addr": "004999b1",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_00499930",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0049a496",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_0049a3a0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0049cce8",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0049ccd0",
+        "estimated_params": 4,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0040fbe5",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_FUN_0040f950",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004132df",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_FUN_00412f40",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00413548",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_FUN_00412f40",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0046367e",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004638fc",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004870f8",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0042a91e",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042a7a0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.40625,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 29,
+      "INT_ADD": 13,
+      "INT_AND": 40,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 13,
+      "INT_SUB": 15,
+      "INT_XOR": 3,
+      "LOAD": 9,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 205
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "drag_factor",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "wind_influence",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_value",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01c3f8e0",
+      "severity": "mild",
+      "text": "((CSmokeParticle *)(&DAT_01c3f8e0 + iVar1),position,drag_factor,wind_influence,",
+      "type": "undefined_data"
+    }
+  ]
+}

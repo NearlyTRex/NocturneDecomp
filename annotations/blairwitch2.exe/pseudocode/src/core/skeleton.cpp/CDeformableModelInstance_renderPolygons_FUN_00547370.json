@@ -1,0 +1,184 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 81,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "00426730",
+      "from_addr": "00426875",
+      "name": "core_charactr.cpp_FUN_00426730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547170",
+      "from_addr": "005471ab",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00547370",
+    "address_range": [
+      [
+        "00547370",
+        "005473db"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_00547370",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_00547370(CDeformableModelInstance *this_ptr,int render_flags,int skip_texture_capture)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00541a60",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_00541a60"
+    },
+    {
+      "addr": "00547810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e733f",
+      "name": "s_core_skeleton_cpp_005e733f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7354",
+      "name": "s_CDeformableModelInstance_005e7354",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 31,
+      "INT_ADD": 15,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 16,
+      "LOAD": 10,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 126
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "skip_texture_capture",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2230",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2230 < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x21b8",
+      "severity": "mild",
+      "text": "texture_set_indices = (int *)&this_ptr->field_0x21b8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x2140",
+      "severity": "mild",
+      "text": "part_visibility_flags = (int *)&this_ptr->field_0x2140;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x2230",
+      "severity": "mild",
+      "text": "lod_index = *(int *)&this_ptr->field_0x2230;",
+      "type": "unnamed_field"
+    }
+  ]
+}

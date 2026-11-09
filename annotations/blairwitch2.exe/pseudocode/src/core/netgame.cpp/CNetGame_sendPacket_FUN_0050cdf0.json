@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 21,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "0050f4b0",
+      "from_addr": "0050f4d7",
+      "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cd90",
+      "from_addr": "0050cdb8",
+      "name": "core_netgame.cpp_CNetGame_send_FUN_0050cd90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c280",
+      "from_addr": "0050c435",
+      "name": "core_netgame.cpp_FUN_0050c280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050db90",
+      "from_addr": "0050ded9",
+      "name": "core_netgame.cpp_FUN_0050db90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050cdf0",
+    "address_range": [
+      [
+        "0050cdf0",
+        "0050ce15"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_0050cdf0(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet)"
+  },
+  "function_calls": [
+    {
+      "addr": "005792e0",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_sendSocketData_FUN_005792e0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.142857142857143,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 9,
+      "INT_ADD": 7,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 58
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "packet",
+        "offset": 12,
+        "size": 4,
+        "type": "SNetPacketHeader *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x180",
+      "severity": "mild",
+      "text": "((CSocket *)&this_ptr->field_0x180,(char *)(packet + 4),*(int *)packet + -4,dest_addr);",
+      "type": "unnamed_field"
+    }
+  ]
+}

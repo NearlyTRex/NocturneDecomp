@@ -1,0 +1,262 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 218,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 18,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00460d30",
+    "address_range": [
+      [
+        "00460d30",
+        "00460e04"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_reopenFileStream_FUN_00460d30",
+    "signature": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *param_1,undefined4 param_2,uint param_3,int *param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b9bbc",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b9bbc"
+    },
+    {
+      "addr": "005b9bf7",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b9bf7"
+    },
+    {
+      "addr": "005b9c39",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b9c39"
+    },
+    {
+      "addr": "005b9c98",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b9c98"
+    },
+    {
+      "addr": "005b9c20",
+      "is_variadic": false,
+      "name": "crt_watcom.c__mkdir_FUN_005b9c20"
+    },
+    {
+      "addr": "00460980",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_findFile_FUN_00460980"
+    },
+    {
+      "addr": "00460910",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00460910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006013f0",
+      "name": "DAT_006013f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.277777777777778,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "CALL": 8,
+      "CBRANCH": 4,
+      "COPY": 55,
+      "INT_ADD": 31,
+      "INT_AND": 38,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 34,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 17,
+      "INT_SUB": 30,
+      "LOAD": 17,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 29
+    },
+    "pcode_op_count": 308
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00460d30(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b9bbc(param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b9bf7(*(int *)(*param_4 + 4) + (int)param_4,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b9bf7(*(int *)(*param_4 + 4) + (int)param_4,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_FUN_00460910(auStack_220,param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_FUN_00460910(auStack_220,param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((param_3 & 0x52) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b9c39(param_4,auStack_120,param_3,_DAT_006013f0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_005b9c39(param_4,auStack_120,param_3,_DAT_006013f0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b9c98(param_4 + 0x11,iStack_20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_mkdir(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "FUN_005b9c39(param_4,auStack_220,param_3,_DAT_006013f0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_005b9c39(param_4,auStack_220,param_3,_DAT_006013f0);",
+      "type": "unnamed_param"
+    }
+  ]
+}

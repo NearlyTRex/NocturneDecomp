@@ -1,26 +1,29 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00516e60(int param_1,int param_2)
+; void __cdecl cockpit_pkbitmap_cpp_FUN_00516e60(CPackedBitmap *this_ptr,_FILE *file_handle)
 ;
+; Parameters:
+; CPackedBitmap *  Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   FUN_00516de0 at 00516e03
+;   cockpit_pkbitmap.cpp_FUN_00516de0 at 00516e03
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b9690
+;   core_main.c_FUN_004e4500
+;   crt_stdio.c_fwrite_FUN_005b9690
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00516e60
-        ;   Label: FUN_00516e60
+        ;   Label: cockpit_pkbitmap.cpp_FUN_00516e60
     PUSH ESI                            ; 00516e61
     PUSH EDI                            ; 00516e62
     PUSH EBP                            ; 00516e63
@@ -56,8 +59,8 @@ section .text
     MOV dword ptr [ESP + 0x24],EAX      ; 00516eb4
     LEA EAX,[ESP + 0xc]                 ; 00516eb8
     PUSH EAX                            ; 00516ebc
-    CALL FUN_005b9690                   ; 00516ebd
-        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; undefined FUN_005b9690()
+    CALL crt_stdio.c_fwrite_FUN_005b9690 ; 00516ebd
+        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005b9690()
     ADD ESP,0x10                        ; 00516ec2
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00516ec5
     PUSH EBP                            ; 00516ec8
@@ -66,8 +69,8 @@ section .text
     PUSH 0x4                            ; 00516ecb
     MOV ESI,dword ptr [EBX + 0x20]      ; 00516ecd
     PUSH ESI                            ; 00516ed0
-    CALL FUN_005b9690                   ; 00516ed1
-        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; undefined FUN_005b9690()
+    CALL crt_stdio.c_fwrite_FUN_005b9690 ; 00516ed1
+        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005b9690()
     ADD ESP,0x10                        ; 00516ed6
     PUSH EBP                            ; 00516ed9
     MOV EDI,dword ptr [EBX + 0x1c]      ; 00516eda
@@ -77,8 +80,8 @@ section .text
     PUSH EDX                            ; 00516ee5
     MOV ECX,dword ptr [EBX + 0x14]      ; 00516ee6
     PUSH ECX                            ; 00516ee9
-    CALL FUN_005b9690                   ; 00516eea
-        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; undefined FUN_005b9690()
+    CALL crt_stdio.c_fwrite_FUN_005b9690 ; 00516eea
+        ;   XREF to: 005b9690 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fwrite_FUN_005b9690()
     MOV AH,byte ptr [EBP + 0xc]         ; 00516eef
     ADD ESP,0x10                        ; 00516ef2
     TEST AH,0x20                        ; 00516ef5
@@ -96,8 +99,8 @@ section .text
     PUSH 0x5e1c9b                       ; 00516f0c
     MOV dword ptr [0x01d046a0],EBX      ; 00516f11 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00516f17 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00516f1d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00516f1d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00516f22
     ADD ESP,0x1c                        ; 00516f25
     POP EBP                             ; 00516f28

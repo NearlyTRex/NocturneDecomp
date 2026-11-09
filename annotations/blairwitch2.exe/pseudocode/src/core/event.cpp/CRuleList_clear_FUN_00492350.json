@@ -1,0 +1,104 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "0045ed60",
+      "from_addr": "0045ed85",
+      "name": "core_door.cpp_CDoor_ctor_FUN_0045ed60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1c20",
+      "from_addr": "004e1c43",
+      "name": "core_lever.cpp_CLever_ctor_FUN_004e1c20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00492350",
+    "address_range": [
+      [
+        "00492350",
+        "0049235a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CRuleList_clear_FUN_00492350",
+    "signature": "void __cdecl core_event_cpp_CRuleList_clear_FUN_00492350(CRuleList *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0045ed85",
+        "call_type": "direct",
+        "caller": "core_door.cpp_CDoor_ctor_FUN_0045ed60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004e1c43",
+        "call_type": "direct",
+        "caller": "core_lever.cpp_CLever_ctor_FUN_004e1c20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.6666666666666665,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 8
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CRuleList *"
+      }
+    ]
+  },
+  "suspects": []
+}

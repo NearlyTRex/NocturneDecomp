@@ -1,0 +1,376 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 117,
+    "complexity_score": 358,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 73,
+    "suspect_count": 27,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 190
+  },
+  "cross_references": [
+    {
+      "addr": "005a2f80",
+      "from_addr": "005a2f93",
+      "name": "core_schngeis.cpp_factoryFuncSchnellGeist_FUN_005a2f80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a2fb0",
+    "address_range": [
+      [
+        "005a2fb0",
+        "005a313f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_schngeis.cpp_CSchnellGeist_ctor_FUN_005a2fb0",
+    "signature": "CSchnellGeist * core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(CSchnellGeist *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a31c0",
+      "is_variadic": false,
+      "name": "core_schngeis.cpp_FUN_005a31c0"
+    },
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    },
+    {
+      "addr": "0059d7f0",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059d7f0"
+    },
+    {
+      "addr": "0059d990",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059d990"
+    },
+    {
+      "addr": "0059dc80",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059dc80"
+    },
+    {
+      "addr": "0059e3b0",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_0059e3b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ff34c",
+      "name": "DAT_005ff34c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ff350",
+      "name": "DAT_005ff350",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005a2f93",
+        "call_type": "direct",
+        "caller": "core_schngeis.cpp_factoryFuncSchnellGeist_FUN_005a2f80",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.183673469387755,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 6,
+      "CBRANCH": 6,
+      "COPY": 105,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 49,
+      "INT_AND": 36,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 36,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 18,
+      "INT_SUB": 30,
+      "LOAD": 14,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 48
+    },
+    "pcode_op_count": 410
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSchnellGeist *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar4->field_0x2b0 = &g_CSchnellGeistVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar4->field_0x2b4,\"schnell.dfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x3434",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x3434 = 0x40000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x3444",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x3444 = 0x40a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x1134c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x1134c = 0x40200000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x11380",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11380 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x11384",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11384 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x11388",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11388 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x1138c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x1138c = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x11860",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11860 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x113d4",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4->field_0x113d4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x11864",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11864 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x11868",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11868 = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x11418",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11418 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x11370",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11370 = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x11398",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11398 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "puVar1 = &pCVar4->field_0x10af8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x1186c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x1186c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x11394",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11394 = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x11444",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4->field_0x11444;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x11741",
+      "severity": "mild",
+      "text": "pcVar6 = &pCVar4->field_0x11741;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x11844",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x11844 = 0x40a00000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0x2ac",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x2ac = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 34,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 54,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 65,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSchnellGeist",
+        "offset": 0,
+        "vtable_addr": "005ff504"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

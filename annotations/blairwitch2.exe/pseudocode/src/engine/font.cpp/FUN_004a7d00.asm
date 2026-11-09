@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004a7d00(int *param_1,char *param_2,int param_3,int param_4,undefined4 param_5)
+; void __cdecl engine_font_cpp_FUN_004a7d00(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
 ;
+; Parameters:
+; CBitFont *       Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
+; int              Stack[0xc]:4   width
+; int              Stack[0x10]:4   height
+; int              Stack[0x14]:4   first_char
 ; Local Variables:
 ; undefined        Stack[-0x464]:1  local_464
 ; undefined        Stack[-0x338]:1  local_338
@@ -11,7 +17,7 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; XREF[1]:
-;   FUN_004a8560 at 004a858f
+;   engine_font.cpp_FUN_004a8560 at 004a858f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005d672d
@@ -29,28 +35,28 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_0042c520
-;   FUN_00460aa0
-;   FUN_00461070
-;   FUN_004610a0
-;   FUN_004a88e0
-;   FUN_004ab630
-;   FUN_004e4500
-;   FUN_0057cd50
-;   FUN_0057cec0
-;   FUN_0057cf20
-;   FUN_0057d180
-;   FUN_0057d390
-;   FUN_005b7790
-;   FUN_005b8df8
-;   FUN_005ba840
+;   cockpit_ckptutil.c_FUN_0042c520
+;   core_main.c_FUN_004e4500
+;   crt_string.c_strupr_FUN_005ba840
+;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_FUN_005b8df8
+;   engine_dosio.cpp_FUN_00461070
+;   engine_dosio.cpp_FUN_004610a0
+;   engine_dosio.cpp_getFileSize_FUN_00460aa0
+;   engine_font.cpp_CBitFont_remapPalette_FUN_004ab630
+;   engine_font.cpp_FUN_004a88e0
+;   support_trstream.cpp_FUN_0057d390
+;   unkaddr_0057b9a0.cpp_FUN_0057cf20
+;   unkaddr_0057b9a0.cpp_FUN_0057d180
+;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50
+;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004a7d00
-        ;   Label: FUN_004a7d00
+        ;   Label: engine_font.cpp_FUN_004a7d00
     PUSH ESI                            ; 004a7d01
     PUSH EDI                            ; 004a7d02
     PUSH EBP                            ; 004a7d03
@@ -90,8 +96,8 @@ section .text
     SHL EAX,0x4                         ; 004a7d5c
     ADD EAX,ECX                         ; 004a7d5f
     PUSH EAX                            ; 004a7d61
-    CALL FUN_005ba840                   ; 004a7d62
-        ;   XREF to: 005ba840 (UNCONDITIONAL_CALL)  ; undefined FUN_005ba840()
+    CALL crt_string.c_strupr_FUN_005ba840 ; 004a7d62
+        ;   XREF to: 005ba840 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strupr_FUN_005ba840(char * string)
     ADD ESP,0x4                         ; 004a7d67
     MOV EDX,dword ptr [ESP + 0x470]     ; 004a7d6a
     MOV EDI,dword ptr [ESP + 0x474]     ; 004a7d71
@@ -101,8 +107,8 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 004a7d7e
     PUSH 0x5d6751                       ; 004a7d80 | DAT_005d6751
     MOV dword ptr [EBX + EAX*0x4 + 0x1a4],EDX ; 004a7d85
-    CALL FUN_00460aa0                   ; 004a7d8c
-        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; undefined FUN_00460aa0()
+    CALL engine_dosio.cpp_getFileSize_FUN_00460aa0 ; 004a7d8c
+        ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00460aa0(char * directory, char * filename)
     ADD ESP,0x8                         ; 004a7d91
     CMP EAX,ESI                         ; 004a7d94
     JGE 0x004a7dcb                      ; 004a7d96
@@ -111,8 +117,8 @@ section .text
     PUSH 0x5d6755                       ; 004a7d99 | = "Invalid font file size (%s)."
     LEA EAX,[ESP + 0x8]                 ; 004a7d9e
     PUSH EAX                            ; 004a7da2
-    CALL FUN_005b7790                   ; 004a7da3
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 004a7da3
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     MOV EAX,0x5d6772                    ; 004a7da8 | = "..\\engine\\font.cpp"
     ADD ESP,0xc                         ; 004a7dad
     MOV [0x01d046a0],EAX                ; 004a7db0 | DAT_01d046a0
@@ -120,13 +126,13 @@ section .text
     MOV EDX,0x10f                       ; 004a7db7
     PUSH EAX                            ; 004a7dbc
     MOV dword ptr [0x01d046a4],EDX      ; 004a7dbd | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004a7dc3
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a7dc3
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004a7dc8
     PUSH ESI                            ; 004a7dcb
         ;   Label: LAB_004a7dcb
-    CALL FUN_005b8df8                   ; 004a7dcc
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8df8()
+    CALL crt_unknown.c_FUN_005b8df8     ; 004a7dcc
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
     MOV EDX,dword ptr [EBX]             ; 004a7dd1
     MOV dword ptr [EBX + EDX*0x4 + 0x194],EAX ; 004a7dd3
     MOV EAX,dword ptr [EBX]             ; 004a7dda
@@ -139,8 +145,8 @@ section .text
     PUSH 0x5d6785                       ; 004a7deb | = "Unable to allocate memory for font bi..."
     LEA EAX,[ESP + 0x8]                 ; 004a7df0
     PUSH EAX                            ; 004a7df4
-    CALL FUN_005b7790                   ; 004a7df5
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 004a7df5
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     MOV EAX,0x117                       ; 004a7dfa
     ADD ESP,0xc                         ; 004a7dff
     MOV [0x01d046a4],EAX                ; 004a7e02 | DAT_01d046a4
@@ -148,8 +154,8 @@ section .text
     MOV EDI,0x5d67b5                    ; 004a7e09 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 004a7e0e
     MOV dword ptr [0x01d046a0],EDI      ; 004a7e0f | DAT_01d046a0
-    CALL FUN_004e4500                   ; 004a7e15
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a7e15
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004a7e1a
     MOV EAX,dword ptr [EBX]             ; 004a7e1d
         ;   Label: LAB_004a7e1d
@@ -157,8 +163,8 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x4 + 0x194] ; 004a7e20
     PUSH EDX                            ; 004a7e27
     PUSH EBP                            ; 004a7e28
-    CALL FUN_0042c520                   ; 004a7e29
-        ;   XREF to: 0042c520 (UNCONDITIONAL_CALL)  ; undefined FUN_0042c520()
+    CALL cockpit_ckptutil.c_FUN_0042c520 ; 004a7e29
+        ;   XREF to: 0042c520 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_FUN_0042c520(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 004a7e2e
     PUSH 0x0                            ; 004a7e31
     LEA EAX,[ESP + 0x330]               ; 004a7e33
@@ -167,8 +173,8 @@ section .text
     PUSH EAX                            ; 004a7e42
     PUSH 0x0                            ; 004a7e43
     PUSH EBP                            ; 004a7e45
-    CALL FUN_00461070                   ; 004a7e46
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; undefined FUN_00461070()
+    CALL engine_dosio.cpp_FUN_00461070  ; 004a7e46
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a7e4b
     PUSH 0x5d67c8                       ; 004a7e4e | DAT_005d67c8
     LEA EAX,[ESP + 0x330]               ; 004a7e53
@@ -178,21 +184,21 @@ section .text
     PUSH 0x0                            ; 004a7e63
     LEA EAX,[ESP + 0x13c]               ; 004a7e65
     PUSH EAX                            ; 004a7e6c
-    CALL FUN_004610a0                   ; 004a7e6d
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004610a0()
+    CALL engine_dosio.cpp_FUN_004610a0  ; 004a7e6d
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_004610a0(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a7e72
     LEA EAX,[ESP + 0x42c]               ; 004a7e75
     PUSH EAX                            ; 004a7e7c
-    CALL FUN_0057cd50                   ; 004a7e7d
-        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; undefined FUN_0057cd50()
+    CALL unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50 ; 004a7e7d
+        ;   XREF to: 0057cd50 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004a7e82
     LEA EAX,[ESP + 0x12c]               ; 004a7e85
     PUSH EAX                            ; 004a7e8c
     PUSH 0x5d67cc                       ; 004a7e8d | DAT_005d67cc
     LEA EAX,[ESP + 0x434]               ; 004a7e92
     PUSH EAX                            ; 004a7e99
-    CALL FUN_0057d390                   ; 004a7e9a
-        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined FUN_0057d390()
+    CALL support_trstream.cpp_FUN_0057d390 ; 004a7e9a
+        ;   XREF to: 0057d390 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d390()
     ADD ESP,0xc                         ; 004a7e9f
     TEST EAX,EAX                        ; 004a7ea2
     JZ 0x004a7f9b                       ; 004a7ea4
@@ -201,24 +207,24 @@ section .text
     LEA EAX,[ESP + 0x42c]               ; 004a7eac
         ;   Label: LAB_004a7eac
     PUSH EAX                            ; 004a7eb3
-    CALL FUN_0057cf20                   ; 004a7eb4
-        ;   XREF to: 0057cf20 (UNCONDITIONAL_CALL)  ; undefined FUN_0057cf20()
+    CALL unkaddr_0057b9a0.cpp_FUN_0057cf20 ; 004a7eb4
+        ;   XREF to: 0057cf20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cf20()
     IMUL EDX,dword ptr [EBX],0x300      ; 004a7eb9
     ADD EDX,EBX                         ; 004a7ebf
     ADD ESP,0x4                         ; 004a7ec1
     MOV byte ptr [EDX + ESI*0x1 + 0x1b4],AL ; 004a7ec4
     LEA EAX,[ESP + 0x42c]               ; 004a7ecb
     PUSH EAX                            ; 004a7ed2
-    CALL FUN_0057cf20                   ; 004a7ed3
-        ;   XREF to: 0057cf20 (UNCONDITIONAL_CALL)  ; undefined FUN_0057cf20()
+    CALL unkaddr_0057b9a0.cpp_FUN_0057cf20 ; 004a7ed3
+        ;   XREF to: 0057cf20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cf20()
     IMUL EDX,dword ptr [EBX],0x300      ; 004a7ed8
     ADD EDX,EBX                         ; 004a7ede
     ADD ESP,0x4                         ; 004a7ee0
     MOV byte ptr [EDX + ESI*0x1 + 0x1b5],AL ; 004a7ee3
     LEA EAX,[ESP + 0x42c]               ; 004a7eea
     PUSH EAX                            ; 004a7ef1
-    CALL FUN_0057cf20                   ; 004a7ef2
-        ;   XREF to: 0057cf20 (UNCONDITIONAL_CALL)  ; undefined FUN_0057cf20()
+    CALL unkaddr_0057b9a0.cpp_FUN_0057cf20 ; 004a7ef2
+        ;   XREF to: 0057cf20 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057cf20()
     IMUL EDX,dword ptr [EBX],0x300      ; 004a7ef7
     ADD ESI,0x3                         ; 004a7efd
     ADD EDX,EBX                         ; 004a7f00
@@ -229,8 +235,8 @@ section .text
         ;   XREF to: 004a7eac (CONDITIONAL_JUMP)  ; LAB_004a7eac
     LEA EAX,[ESP + 0x42c]               ; 004a7f14
     PUSH EAX                            ; 004a7f1b
-    CALL FUN_0057d180                   ; 004a7f1c
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined FUN_0057d180()
+    CALL unkaddr_0057b9a0.cpp_FUN_0057d180 ; 004a7f1c
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057d180()
     ADD ESP,0x4                         ; 004a7f21
     MOV ESI,dword ptr [ESP + 0x478]     ; 004a7f24
         ;   Label: LAB_004a7f24
@@ -242,21 +248,21 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 004a7f3c
     PUSH EAX                            ; 004a7f3e
     PUSH EBX                            ; 004a7f3f
-    CALL FUN_004a88e0                   ; 004a7f40
-        ;   XREF to: 004a88e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004a88e0()
+    CALL engine_font.cpp_FUN_004a88e0   ; 004a7f40
+        ;   XREF to: 004a88e0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a88e0()
     MOV EDX,dword ptr [EBX]             ; 004a7f45
     ADD ESP,0x14                        ; 004a7f47
     INC EDX                             ; 004a7f4a
     PUSH EBX                            ; 004a7f4b
     MOV dword ptr [EBX],EDX             ; 004a7f4c
-    CALL FUN_004ab630                   ; 004a7f4e
-        ;   XREF to: 004ab630 (UNCONDITIONAL_CALL)  ; undefined FUN_004ab630()
+    CALL engine_font.cpp_CBitFont_remapPalette_FUN_004ab630 ; 004a7f4e
+        ;   XREF to: 004ab630 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_remapPalette_FUN_004ab630(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 004a7f53
     PUSH 0x0                            ; 004a7f56
     LEA EAX,[ESP + 0x430]               ; 004a7f58
     PUSH EAX                            ; 004a7f5f
-    CALL FUN_0057cec0                   ; 004a7f60
-        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; undefined FUN_0057cec0()
+    CALL unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0 ; 004a7f60
+        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a7f65
     ADD ESP,0x454                       ; 004a7f68
     POP EBP                             ; 004a7f6e
@@ -270,8 +276,8 @@ section .text
     PUSH 0x5d6740                       ; 004a7f7d | = "Too many bitmaps"
     MOV dword ptr [0x01d046a0],ECX      ; 004a7f82 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004a7f88 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004a7f8e
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a7f8e
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004a7f93
     JMP 0x004a7d21                      ; 004a7f96
         ;   XREF to: 004a7d21 (UNCONDITIONAL_JUMP)  ; LAB_004a7d21
@@ -283,8 +289,8 @@ section .text
     PUSH 0x5d67e3                       ; 004a7fad | = "CBitFont::addBitmap - File not found ..."
     MOV dword ptr [0x01d046a0],ECX      ; 004a7fb2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004a7fb8 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004a7fbe
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a7fbe
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 004a7fc3
     JMP 0x004a7f24                      ; 004a7fc6
         ;   XREF to: 004a7f24 (UNCONDITIONAL_JUMP)  ; LAB_004a7f24

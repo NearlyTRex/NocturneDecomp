@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0051b110(int *param_1,undefined4 param_2)
+; void engine_pod_cpp_FUN_0051b110(int *param_1,char *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -15,17 +15,17 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00519e50
-;   FUN_00519f00
-;   FUN_005b8be2
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b8be2
+;   engine_pod.cpp_CPodFile_ctor_FUN_00519e50
+;   engine_pod.cpp_FUN_00519f00
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0051b110
-        ;   Label: FUN_0051b110
+        ;   Label: engine_pod.cpp_FUN_0051b110
     PUSH ESI                            ; 0051b111
     PUSH EBP                            ; 0051b112
     MOV EBX,dword ptr [ESP + 0x10]      ; 0051b113
@@ -34,15 +34,15 @@ section .text
         ;   XREF to: 0051b185 (CONDITIONAL_JUMP)  ; LAB_0051b185
     PUSH 0x42c                          ; 0051b11c
         ;   Label: LAB_0051b11c
-    CALL FUN_005b8be2                   ; 0051b121
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8be2()
+    CALL crt_unknown.c_FUN_005b8be2     ; 0051b121
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
     ADD ESP,0x4                         ; 0051b126
     TEST EAX,EAX                        ; 0051b129
     JZ 0x0051b136                       ; 0051b12b
         ;   XREF to: 0051b136 (CONDITIONAL_JUMP)  ; LAB_0051b136
     PUSH EAX                            ; 0051b12d
-    CALL FUN_00519e50                   ; 0051b12e
-        ;   XREF to: 00519e50 (UNCONDITIONAL_CALL)  ; undefined FUN_00519e50()
+    CALL engine_pod.cpp_CPodFile_ctor_FUN_00519e50 ; 0051b12e
+        ;   XREF to: 00519e50 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_ctor_FUN_00519e50(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 0051b133
     MOV EDX,dword ptr [EBX]             ; 0051b136
         ;   Label: LAB_0051b136
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5e27d5                       ; 0051b14f | = "Out of memory!"
     MOV dword ptr [0x01d046a0],EBP      ; 0051b154 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0051b15a | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0051b15f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0051b15f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0051b164
     MOV EDX,dword ptr [ESP + 0x14]      ; 0051b167
         ;   Label: LAB_0051b167
@@ -65,8 +65,8 @@ section .text
     PUSH EDX                            ; 0051b16d
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x4] ; 0051b16e
     PUSH ECX                            ; 0051b172
-    CALL FUN_00519f00                   ; 0051b173
-        ;   XREF to: 00519f00 (UNCONDITIONAL_CALL)  ; undefined FUN_00519f00()
+    CALL engine_pod.cpp_FUN_00519f00    ; 0051b173
+        ;   XREF to: 00519f00 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_FUN_00519f00(CPodFile * this_ptr, char * pod_filename)
     ADD ESP,0x8                         ; 0051b178
     TEST EAX,EAX                        ; 0051b17b
     JZ 0x0051b1ad                       ; 0051b17d
@@ -82,8 +82,8 @@ section .text
     PUSH 0x5e27a6                       ; 0051b18f | = "Too many .POD files at once!"
     MOV dword ptr [0x01d046a0],ECX      ; 0051b194 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 0051b19a | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0051b1a0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0051b1a0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0051b1a5
     JMP 0x0051b11c                      ; 0051b1a8
         ;   XREF to: 0051b11c (UNCONDITIONAL_JUMP)  ; LAB_0051b11c
@@ -96,8 +96,8 @@ section .text
     PUSH 0x5e27f6                       ; 0051b1bd | = "Can't mount %s"
     MOV dword ptr [0x01d046a0],ESI      ; 0051b1c2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 0051b1c8 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0051b1ce
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0051b1ce
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 0051b1d3
     POP EDI                             ; 0051b1d6
     INC dword ptr [EBX]                 ; 0051b1d7

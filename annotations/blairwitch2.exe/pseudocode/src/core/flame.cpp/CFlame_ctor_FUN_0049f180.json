@@ -1,0 +1,351 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 233,
+    "cross_reference_count": 5,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 20,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "00417cb0",
+      "from_addr": "00417cb8",
+      "name": "core_bodypart.cpp_SBodyPartFire_ctor_FUN_00417cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043a4c0",
+      "from_addr": "0043a4d4",
+      "name": "core_crossbow.cpp_CCrossbow_ctor_FUN_0043a4c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f150",
+      "from_addr": "0049f163",
+      "name": "core_flame.cpp_factoryFuncFlame_FUN_0049f150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a06c0",
+      "from_addr": "004a06e4",
+      "name": "core_flamecan.cpp_CFlameCan_ctor_FUN_004a06c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00584ed0",
+      "from_addr": "00584ef4",
+      "name": "core_vessel.cpp_CCryptVessel_ctor_FUN_00584ed0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049f180",
+    "address_range": [
+      [
+        "0049f180",
+        "0049f26e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flame.cpp_CFlame_ctor_FUN_0049f180",
+    "signature": "CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_0049f180(CFlame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00408790"
+    },
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cf60"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00417cb8",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_SBodyPartFire_ctor_FUN_00417cb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0043a4d4",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_CCrossbow_ctor_FUN_0043a4c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a06e4",
+        "call_type": "direct",
+        "caller": "core_flamecan.cpp_CFlameCan_ctor_FUN_004a06c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00584ef4",
+        "call_type": "direct",
+        "caller": "core_vessel.cpp_CCryptVessel_ctor_FUN_00584ed0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049f163",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_factoryFuncFlame_FUN_0049f150",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.054054054054054,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 47,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 28,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 27
+    },
+    "pcode_op_count": 150
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CFlameVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2b4 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2b8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2b8 = 0x40000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2bc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2bc = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x304",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x304 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x308",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x308 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x3ec",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3ec = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x30c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x30c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x314",
+      "severity": "mild",
+      "text": "pCVar1->field_0x314 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x378",
+      "severity": "mild",
+      "text": "pCVar1->field_0x378 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x310",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x310 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0xfc = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x3e0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3e0 = 0x3d4ccccd;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x3dc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3dc = 0x3f000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x3f4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3f4 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x3e4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3e4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x3e8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3e8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x3f8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3f8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x3fc",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x3fc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x2c0",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x2c0 = uVar2;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlame",
+        "offset": 0,
+        "vtable_addr": "005f2824"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

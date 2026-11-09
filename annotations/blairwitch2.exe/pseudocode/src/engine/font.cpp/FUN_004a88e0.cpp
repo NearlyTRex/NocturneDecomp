@@ -1,14 +1,14 @@
-// Name: FUN_004a88e0
+// Name: engine_font.cpp_FUN_004a88e0
 // Address: 004a88e0
 // Address Range: [[004a88e0, 004a8d86]]
 // Convention: unknown
-// Signature: void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
+// Signature: void engine_font_cpp_FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
+void engine_font_cpp_FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;
@@ -36,7 +36,7 @@ void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
   if (local_40 == (int *)0x0) {
     _DAT_01d046a0 = "..\\engine\\font.cpp";
     _DAT_01d046a4 = 0x2c6;
-    FUN_004e4500("Out of memory");
+    core_main_c_FUN_004e4500("Out of memory");
   }
   iVar3 = 0;
   pbVar4 = *(byte **)(param_1 + 0x194 + param_2 * 4);
@@ -51,10 +51,11 @@ void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
     } while (iVar3 < param_3 * param_4);
   }
   if (local_20 == *(uint *)(param_1 + 0x4208)) {
-    FUN_005b7790(local_16c,"No character markers found in font file (%s).",param_2 * 0x50 + param_1 + 4);
+    FUN_005b7790
+              (local_16c,"No character markers found in font file (%s).",param_2 * 0x50 + param_1 + 4);
     _DAT_01d046a4 = 0x2db;
     _DAT_01d046a0 = "..\\engine\\font.cpp";
-    FUN_004e4500(local_16c);
+    core_main_c_FUN_004e4500(local_16c);
   }
   iVar3 = 0;
   pbVar4 = *(byte **)(param_1 + 0x194 + param_2 * 4);
@@ -99,10 +100,11 @@ void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
             local_18 = 1;
             local_28 = iVar6;
             if (0xff < iVar3) {
-              FUN_005b7790(local_16c,"Too many chars: fontfile %s, chars %d",local_2c,iVar3);
+              FUN_005b7790
+                        (local_16c,"Too many chars: fontfile %s, chars %d",local_2c,iVar3);
               _DAT_01d046a4 = 0x30f;
               _DAT_01d046a0 = "..\\engine\\font.cpp";
-              FUN_004e4500(local_16c);
+              core_main_c_FUN_004e4500(local_16c);
             }
             *(byte **)(iVar5 + 0x1de8) = local_1c;
           }
@@ -113,9 +115,9 @@ void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
           if (*(int *)(param_1 + 0x41e8) < iVar1) {
             *(int *)(param_1 + 0x41e8) = iVar1;
           }
-          iVar1 = FUN_004a8d90(param_1,*(uint *)(iVar5 + 0x1de8),
-                               *(uint *)(iVar5 + 0x35e8),local_24[1] - (*local_24 + 1),param_3
-                              );
+          iVar1 = engine_font_cpp_FUN_004a8d90
+                            (param_1,*(uint *)(iVar5 + 0x1de8),*(uint *)(iVar5 + 0x35e8)
+                             ,local_24[1] - (*local_24 + 1),param_3);
           *(int *)(iVar5 + 0x39e8) = iVar1;
           if (*(int *)(param_1 + 0x41ec) < iVar1) {
             *(int *)(param_1 + 0x41ec) = iVar1;
@@ -132,8 +134,9 @@ void FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
           *(int *)(param_1 + 0x41e8) = iVar1;
         }
         iVar6 = iVar3 * 4 + param_1;
-        iVar5 = FUN_004a8d90(param_1,*(uint *)(iVar6 + 0x1de8),*(uint *)(iVar6 + 0x35e8)
-                             ,local_30[1] - (*local_30 + 1),param_3);
+        iVar5 = engine_font_cpp_FUN_004a8d90
+                          (param_1,*(uint *)(iVar6 + 0x1de8),*(uint *)(iVar6 + 0x35e8),
+                           local_30[1] - (*local_30 + 1),param_3);
         *(int *)(iVar6 + 0x39e8) = iVar5;
         if (*(int *)(param_1 + 0x41ec) < iVar5) {
           *(int *)(param_1 + 0x41ec) = iVar5;

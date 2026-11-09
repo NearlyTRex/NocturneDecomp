@@ -1,0 +1,224 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 148,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 12,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "004ac170",
+      "from_addr": "004ac183",
+      "name": "core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004ac170",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ac1a0",
+    "address_range": [
+      [
+        "004ac1a0",
+        "004ac209"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_frankgen.cpp_CFrankenstienMachine_ctor_FUN_004ac1a0",
+    "signature": "CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004ac1a0(CFrankenstienMachine *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_00408790"
+    },
+    {
+      "addr": "00438a50",
+      "is_variadic": false,
+      "name": "core_course.cpp_CCourse_ctor_FUN_00438a50"
+    },
+    {
+      "addr": "0044fc80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ac183",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004ac170",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.086956521739131,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 10,
+      "INT_ADD": 14,
+      "INT_AND": 16,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 8,
+      "INT_SUB": 9,
+      "LOAD": 2,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 117
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFrankenstienMachine *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&pCVar1[1].field_0x2c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar2[-2].",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar2[-2].field_0x140 = &g_CFrankenstienMachineVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x140",
+      "severity": "mild",
+      "text": "*(byte **)&pCVar2[-2].field_0x140 = &g_CFrankenstienMachineVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "pCVar2[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[-2].field_0x148 = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[-2].field_0x148 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar2[-2].",
+      "severity": "mild",
+      "text": "pCVar2[-2].field_0x14c = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x14c",
+      "severity": "mild",
+      "text": "pCVar2[-2].field_0x14c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar2[-2].",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[-2].field_0x16c = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[-2].field_0x16c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar2[1].field_0x4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar2[-3].",
+      "severity": "mild",
+      "text": "return (CFrankenstienMachine *)&pCVar2[-3].field_0xc;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "return (CFrankenstienMachine *)&pCVar2[-3].field_0xc;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFrankenstienMachine",
+        "offset": 0,
+        "vtable_addr": "005f72f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

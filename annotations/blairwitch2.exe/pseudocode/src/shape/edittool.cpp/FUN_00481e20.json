@@ -1,0 +1,187 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 136,
+    "complexity_score": 121,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unknown_field",
+      "unnamed_param"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00481e20",
+    "address_range": [
+      [
+        "00481e20",
+        "00481fbd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_edittool.cpp_FUN_00481e20",
+    "signature": "void shape_edittool_cpp_FUN_00481e20(CStrList *param_1,char *param_2,char *param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00460f50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00460f50"
+    },
+    {
+      "addr": "00460e10",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00460e10"
+    },
+    {
+      "addr": "00460e30",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_dtor_FUN_00460e30"
+    },
+    {
+      "addr": "00460ed0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00460ed0"
+    },
+    {
+      "addr": "00460e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00460e50"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00461070"
+    },
+    {
+      "addr": "004610a0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004610a0"
+    },
+    {
+      "addr": "00461210",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFullPath_FUN_00461210"
+    },
+    {
+      "addr": "00480e70",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_add_FUN_00480e70"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6403508771929824,
+    "instruction_count": 114,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 13,
+      "CBRANCH": 3,
+      "COPY": 83,
+      "INT_ADD": 49,
+      "INT_AND": 37,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 36,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 18,
+      "INT_SUB": 58,
+      "LOAD": 8,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 55
+    },
+    "pcode_op_count": 415
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00481e20(CStrList *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00481e20(CStrList *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void shape_edittool_cpp_FUN_00481e20(CStrList *param_1,char *param_2,char *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_FUN_00461070(param_2,acStack_8,acStack_108,acStack_308,acStack_408);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_FUN_00461070(param_3,(char *)0x0,(char *)0x0,acStack_308,acStack_408);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 21,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "while (CStack_828._0_1_ != '\\0') {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 22,
+      "match": "._256_1_",
+      "severity": "mild",
+      "text": "if ((CStack_828._256_1_ & 4) == 0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_00480e70(param_1,acStack_610);",
+      "type": "unnamed_param"
+    }
+  ]
+}

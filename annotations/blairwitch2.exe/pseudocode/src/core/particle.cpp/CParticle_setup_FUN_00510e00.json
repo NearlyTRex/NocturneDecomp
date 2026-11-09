@@ -1,0 +1,287 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 102,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 42,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 131
+  },
+  "cross_references": [
+    {
+      "addr": "004965f0",
+      "from_addr": "00496606",
+      "name": "core_fire.cpp_FUN_004965f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496750",
+      "from_addr": "00496767",
+      "name": "core_fire.cpp_FUN_00496750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00496c60",
+      "from_addr": "00497036",
+      "name": "core_fire.cpp_FUN_00496c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b660",
+      "from_addr": "0049b678",
+      "name": "core_fire.cpp_FUN_0049b660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c7460",
+      "from_addr": "004c7486",
+      "name": "core_gore.cpp_FUN_004c7460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00510e00",
+    "address_range": [
+      [
+        "00510e00",
+        "00510eeb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_particle.cpp_CParticle_setup_FUN_00510e00",
+    "signature": "void __cdecl core_particle_cpp_CParticle_setup_FUN_00510e00(CParticle *this_ptr,CVector3f *position,CVector3f *velocity)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cf60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1596",
+      "name": "DAT_005e1596",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00496606",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_004965f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00497036",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_00496c60",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c7486",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_FUN_004c7460",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00496767",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_00496750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0049b678",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_FUN_0049b660",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7631578947368425,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CALLOTHER": 4,
+      "CBRANCH": 3,
+      "COPY": 183,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_MULT": 5,
+      "INT_ADD": 36,
+      "INT_AND": 17,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
+      "LOAD": 16,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 26
+    },
+    "pcode_op_count": 362
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CParticle *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "velocity",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 4) = *(uint *)&position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 8) = *(uint *)&position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x10) = *(uint *)&velocity->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)(this_ptr + 0x14) = *(uint *)&velocity->field_0x8;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 0,
+        "vtable_addr": "005f6514"
+      },
+      {
+        "class_name": "CParticle",
+        "offset": 0,
+        "vtable_addr": "005f6614"
+      },
+      {
+        "class_name": "CParticle",
+        "offset": 0,
+        "vtable_addr": "005f6534"
+      },
+      {
+        "class_name": "CParticle",
+        "offset": 0,
+        "vtable_addr": "005f6554"
+      },
+      {
+        "class_name": "CParticle",
+        "offset": 0,
+        "vtable_addr": "005f6574"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 11
+  }
+}

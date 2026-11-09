@@ -1,14 +1,14 @@
-// Name: FUN_004d57e0
+// Name: core_icepick.cpp_FUN_004d57e0
 // Address: 004d57e0
 // Address Range: [[004d57e0, 004d5948]]
 // Convention: unknown
-// Signature: void FUN_004d57e0(int param_1,int param_2)
+// Signature: void core_icepick_cpp_FUN_004d57e0(int param_1,int param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004d57e0(int param_1,int param_2)
+void core_icepick_cpp_FUN_004d57e0(int param_1,int param_2)
 
 {
   int iVar1;
@@ -59,10 +59,10 @@ void FUN_004d57e0(int param_1,int param_2)
   else {
     _DAT_01d046a0 = "..\\core\\icepick.cpp";
     _DAT_01d046a4 = 0x289;
-    FUN_004e4500("CIcePick::getCarryObjToBodyXForm - wrong hand");
+    core_main_c_FUN_004e4500("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
-  FUN_00591c10(auStack_78,&uStack_3c,&uStack_24);
-  FUN_005916b0(auStack_78,iVar1 * 0x30 + param_1 + 0x1134);
+  core_xform_cpp_FUN_00591c10(auStack_78,&uStack_3c,&uStack_24);
+  core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(auStack_78,iVar1 * 0x30 + param_1 + 0x1134);
   puVar2 = auStack_a8;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;

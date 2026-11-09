@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0054e5d0(int param_1)
+; void __cdecl sound_sndmain_cpp_FUN_0054e5d0(CSfxSlot *this_ptr)
 ;
+; Parameters:
+; CSfxSlot *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_0054e8c0 at 0054ea4b
+;   sound_sndmain.cpp_CSfxSlot_compute_FUN_0054e8c0 at 0054ea4b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e8535
@@ -22,15 +24,15 @@
 ;   undefined4 DAT_0264901c
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b7ff0
+;   core_main.c_FUN_004e4500
+;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0054e5d0
-        ;   Label: FUN_0054e5d0
+        ;   Label: sound_sndmain.cpp_FUN_0054e5d0
     PUSH ESI                            ; 0054e5d1
     PUSH EDI                            ; 0054e5d2
     SUB ESP,0x8                         ; 0054e5d3
@@ -74,8 +76,8 @@ section .text
     PUSH 0x5e854a                       ; 0054e637 | = "SfxSlot::kill - must be locked!"
     MOV dword ptr [0x01d046a0],ECX      ; 0054e63c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0054e642 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0054e648
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0054e648
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0054e64d
     JMP 0x0054e5e9                      ; 0054e650
         ;   XREF to: 0054e5e9 (UNCONDITIONAL_JUMP)  ; LAB_0054e5e9
@@ -99,8 +101,8 @@ section .text
     FLD float ptr [EDX + 0x70]          ; 0054e685
         ;   Label: LAB_0054e685
     FMUL float ptr [ESP + 0x4]          ; 0054e688
-    CALL FUN_005b7ff0                   ; 0054e68c
-        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7ff0()
+    CALL crt_math.c_round_FUN_005b7ff0  ; 0054e68c
+        ;   XREF to: 005b7ff0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005b7ff0()
     FISTP dword ptr [ESP]               ; 0054e691
     MOV EAX,dword ptr [ESP]             ; 0054e694
     MOV dword ptr [EDX + 0xb0],EAX      ; 0054e697

@@ -1,0 +1,186 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 80,
+    "cross_reference_count": 10,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
+    "suspect_types": [
+      "concat_reconstruction",
+      "undefined_type",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "004b6170",
+      "from_addr": "004b6dc3",
+      "name": "core_game.cpp_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be40a",
+      "name": "core_game.cpp_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e45e0",
+      "from_addr": "004e4631",
+      "name": "core_main.c_FUN_004e45e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebce0",
+      "from_addr": "004ebe16",
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_004ebce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052c0e0",
+      "from_addr": "0052d0c0",
+      "name": "core_set.cpp_CDemonSet_load_FUN_0052c0e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040330e",
+      "from_addr": "00403368",
+      "name": "engine_2d.c_FUN_0040330e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dfe90",
+      "from_addr": "004dfe90",
+      "name": "engine_keys.cpp_CKeys_getInputKey_FUN_004dfe90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dfea0",
+      "from_addr": "004dfea0",
+      "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446f4e",
+      "from_addr": "00446fcc",
+      "name": "unkafter_dcube.cpp_FUN_00446f4e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588de0",
+      "from_addr": "00588fc8",
+      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058ead0",
+    "address_range": [
+      [
+        "0058ead0",
+        "0058eb36"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_getNextKeypress_FUN_0058ead0",
+    "signature": "int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_0058ead0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_00589560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02662dd8",
+      "name": "DAT_02662dd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02662ddc",
+      "name": "DAT_02662ddc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02664630",
+      "name": "DAT_02664630",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 35,
+      "INT_ADD": 10,
+      "INT_AND": 14,
+      "INT_EQUAL": 15,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_SBORROW": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 9,
+      "INT_XOR": 2,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 133
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 8,
+      "match": "undefined3 uVar2",
+      "severity": "moderate",
+      "text": "undefined3 uVar2;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 25,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "return CONCAT31(uVar2,uVar3);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 28,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "return CONCAT31(uVar2,uVar3);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

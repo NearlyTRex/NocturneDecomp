@@ -1,0 +1,270 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 133,
+    "complexity_score": 215,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 55,
+    "suspect_count": 15,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 188
+  },
+  "cross_references": [
+    {
+      "addr": "00434810",
+      "from_addr": "0043486f",
+      "name": "support_codec.cpp_FUN_00434810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434910",
+      "from_addr": "0043492b",
+      "name": "support_codec.cpp_FUN_00434910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00434570",
+    "address_range": [
+      [
+        "00434570",
+        "00434641"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "support_codec.cpp_FUN_00434570",
+    "signature": "undefined4 support_codec_cpp_FUN_00434570(int param_1,uint param_2,undefined4 param_3,undefined4 param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "004338f0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_FUN_004338f0"
+    },
+    {
+      "addr": "00433a90",
+      "is_variadic": false,
+      "name": "support_codec.cpp_FUN_00433a90"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0043486f",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00434810",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0043492b",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00434910",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 7,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.611650485436893,
+    "instruction_count": 103,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 14,
+      "COPY": 104,
+      "INT_ADD": 34,
+      "INT_AND": 81,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 55,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 29,
+      "INT_SRIGHT": 3,
+      "INT_SUB": 24,
+      "INT_XOR": 2,
+      "LOAD": 30,
+      "POPCOUNT": 27,
+      "RETURN": 4,
+      "STORE": 18
+    },
+    "pcode_op_count": 475
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint support_codec_cpp_FUN_00434570(int param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint support_codec_cpp_FUN_00434570(int param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint support_codec_cpp_FUN_00434570(int param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint support_codec_cpp_FUN_00434570(int param_1,uint param_2,uint param_3,uint param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = support_codec_cpp_FUN_00433a90(param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar1 = support_codec_cpp_FUN_00433a90(param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(param_1 + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar3 = 1 << ((char)*(uint *)(param_1 + 8) - 1U & 0x1f);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 & uVar3) == 0) break;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = support_codec_cpp_FUN_004338f0(param_3,1,1,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar2 = support_codec_cpp_FUN_004338f0(param_3,1,1,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = support_codec_cpp_FUN_004338f0(param_3,1,(uVar3 & param_2) != 0,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = support_codec_cpp_FUN_004338f0(param_3,1,(uVar3 & param_2) != 0,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar1 = support_codec_cpp_FUN_004338f0(param_3,1,(uVar3 & param_2) != 0,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 7,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:7",
+      "param_delta": 7,
+      "text": "Function declares 0 params but call sites push 7 (7 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

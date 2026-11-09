@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 0,
-        "line": 0,
-        "message": "Compilation timed out after 60s"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
@@ -32,25 +20,25 @@
     {
       "addr": "004b5190",
       "from_addr": "004b5265",
-      "name": "FUN_004b5190",
+      "name": "core_game.cpp_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bcbf0",
       "from_addr": "004bcddd",
-      "name": "FUN_004bcbf0",
+      "name": "core_game.cpp_FUN_004bcbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055ff40",
       "from_addr": "0055ffaf",
-      "name": "FUN_0055ff40",
+      "name": "engine_special.cpp_presentToExternalRenderer_FUN_0055ff40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00589560",
       "from_addr": "005895ab",
-      "name": "FUN_00589560",
+      "name": "wincore_wddvmem.cpp_FUN_00589560",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,20 +50,20 @@
         "0058916f"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_005890c0",
-    "signature": "void FUN_005890c0(void)"
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_FUN_005890c0",
+    "signature": "void __cdecl wincore_wddvmem_cpp_FUN_005890c0(void)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "005b77c0",
       "is_variadic": false,
-      "name": "FUN_005b77c0"
+      "name": "crt_memory.c_memset_FUN_005b77c0"
     }
   ],
   "globals": [
@@ -185,23 +173,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_005890c0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 43,
-          "line": 34,
-          "message": "Uninitialized variable: iStack_64",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -242,14 +213,6 @@
       "severity": "mild",
       "text": "*(int *)(&DAT_01c2a38c + iVar2) = iStack_64;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Uninitialized variable: iStack_64",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*(int *)(&DAT_01c2a38c + iVar2) = iStack_64;",
-      "type": "static_uninitvar"
     }
   ]
 }

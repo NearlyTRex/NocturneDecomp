@@ -1,14 +1,14 @@
-// Name: FUN_00550450
+// Name: sound_sndmain.cpp_FUN_00550450
 // Address: 00550450
 // Address Range: [[00550450, 005504c1]]
-// Convention: unknown
-// Signature: void FUN_00550450(void)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_FUN_00550450(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00550450(void)
+void __cdecl sound_sndmain_cpp_FUN_00550450(void)
 
 {
   int iVar1;
@@ -21,7 +21,7 @@ void FUN_00550450(void)
   if (7 < _DAT_0264161c) {
     _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
     _DAT_01d046a4 = 0xe98;
-    FUN_004e4500("pushSfxOptions - stack full");
+    core_main_c_FUN_004e4500("pushSfxOptions - stack full");
   }
   puVar2 = (uint *)((_DAT_0264161c + -1) * 0x60 + 0x2641620);
   puVar3 = (uint *)(_DAT_0264161c * 0x60 + 0x2641620);

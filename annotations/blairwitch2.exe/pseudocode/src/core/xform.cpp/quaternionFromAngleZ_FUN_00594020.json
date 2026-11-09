@@ -1,0 +1,406 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 134,
+    "cross_reference_count": 9,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "005a0bd0",
+      "from_addr": "005a0d20",
+      "name": "core_confedrt.cpp_FUN_005a0bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00450c60",
+      "from_addr": "004516f9",
+      "name": "core_doc.cpp_FUN_00450c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00455d10",
+      "from_addr": "00455de7",
+      "name": "core_doc.cpp_FUN_00455d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004562a0",
+      "from_addr": "00456301",
+      "name": "core_doc.cpp_FUN_004562a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004afa20",
+      "from_addr": "004afed3",
+      "name": "core_gabriela.cpp_FUN_004afa20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059c680",
+      "from_addr": "0059c74e",
+      "name": "core_patrpoin.cpp_FUN_0059c680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a61f0",
+      "from_addr": "005a63b7",
+      "name": "core_robin.cpp_FUN_005a61f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00520140",
+      "from_addr": "005201a9",
+      "name": "core_scat.cpp_FUN_00520140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00567fd0",
+      "from_addr": "00568031",
+      "name": "core_stranger.cpp_FUN_00567fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00594020",
+    "address_range": [
+      [
+        "00594020",
+        "00594059"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_xform.cpp_quaternionFromAngleZ_FUN_00594020",
+    "signature": "void core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005eedb2",
+      "name": "DAT_005eedb2",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 14,
+    "call_sites": [
+      {
+        "call_addr": "004516f9",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00450c60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00455de7",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00455d10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00456301",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_004562a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045634f",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_004562a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00456689",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_004562a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004566da",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_004562a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004afed3",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_FUN_004afa20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005201a9",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_FUN_00520140",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00520225",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_FUN_00520140",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00568031",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_FUN_00567fd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.28,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALLOTHER": 2,
+      "COPY": 69,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 15,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_MULT": 8,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 157
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0059403c",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_xform_cpp_quaternionFromAngleZ_FUN_00594020(float param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float10)fcos((float10)param_1 * (float10)_DAT_005eedb2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = (float10)fsin((float10)param_1 * (float10)_DAT_005eedb2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = (float)fVar1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[1] = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[2] = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[3] = (float)fVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 14,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

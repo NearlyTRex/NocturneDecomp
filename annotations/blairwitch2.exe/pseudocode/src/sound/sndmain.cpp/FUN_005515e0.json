@@ -1,0 +1,414 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 234,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 20,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "00411200",
+      "from_addr": "004113a0",
+      "name": "core_bat.cpp_FUN_00411200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004186c0",
+      "from_addr": "00418d1e",
+      "name": "core_boneguy.cpp_FUN_004186c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046d870",
+      "from_addr": "0046d9bc",
+      "name": "core_drone.cpp_FUN_0046d870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486cb0",
+      "from_addr": "00486d3e",
+      "name": "core_emitter.cpp_FUN_00486cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cd660",
+      "from_addr": "004cd707",
+      "name": "core_haystack.cpp_FUN_004cd660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00580610",
+      "from_addr": "00581209",
+      "name": "core_tvbat.cpp_FUN_00580610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "0043754f",
+      "name": "unkafter_conveyor.cpp_FUN_00436e80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005515e0",
+    "address_range": [
+      [
+        "00550510",
+        "00550512"
+      ],
+      [
+        "005515e0",
+        "00551642"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_sndmain.cpp_FUN_005515e0",
+    "signature": "undefined4 sound_sndmain_cpp_FUN_005515e0(double param_1,double param_2,double param_3,float param_4)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02648428",
+      "name": "DAT_02648428",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648438",
+      "name": "DAT_02648438",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648448",
+      "name": "DAT_02648448",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "026484b8",
+      "name": "DAT_026484b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "00418d1e",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_FUN_004186c0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
+        ],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0043754f",
+        "call_type": "direct",
+        "caller": "unkafter_conveyor.cpp_FUN_00436e80",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0046d9bc",
+        "call_type": "direct",
+        "caller": "core_drone.cpp_FUN_0046d870",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004cd707",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_FUN_004cd660",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004cd747",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_FUN_004cd660",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "00486d3e",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "00581209",
+        "call_type": "direct",
+        "caller": "core_tvbat.cpp_FUN_00580610",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004113a0",
+        "call_type": "direct",
+        "caller": "core_bat.cpp_FUN_00411200",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 7,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.666666666666667,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CBRANCH": 1,
+      "COPY": 107,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 15,
+      "INT_AND": 7,
+      "INT_EQUAL": 2,
+      "INT_LEFT": 4,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SLESS": 1,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 200
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint sound_sndmain_cpp_FUN_005515e0(double param_1,double param_2,double param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint sound_sndmain_cpp_FUN_005515e0(double param_1,double param_2,double param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint sound_sndmain_cpp_FUN_005515e0(double param_1,double param_2,double param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint sound_sndmain_cpp_FUN_005515e0(double param_1,double param_2,double param_3,float param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((param_3 - *(double *)(&DAT_02648448 + _DAT_026484b8 * 8)) *",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_02648448",
+      "severity": "mild",
+      "text": "if ((param_3 - *(double *)(&DAT_02648448 + _DAT_026484b8 * 8)) *",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(param_3 - *(double *)(&DAT_02648448 + _DAT_026484b8 * 8)) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_02648448",
+      "severity": "mild",
+      "text": "(param_3 - *(double *)(&DAT_02648448 + _DAT_026484b8 * 8)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 - *(double *)(&DAT_02648438 + _DAT_026484b8 * 8)) *",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_02648438",
+      "severity": "mild",
+      "text": "(param_2 - *(double *)(&DAT_02648438 + _DAT_026484b8 * 8)) *",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 - *(double *)(&DAT_02648438 + _DAT_026484b8 * 8)) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_02648438",
+      "severity": "mild",
+      "text": "(param_2 - *(double *)(&DAT_02648438 + _DAT_026484b8 * 8)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1 - *(double *)(&DAT_02648428 + _DAT_026484b8 * 8)) *",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02648428",
+      "severity": "mild",
+      "text": "(param_1 - *(double *)(&DAT_02648428 + _DAT_026484b8 * 8)) *",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1 - *(double *)(&DAT_02648428 + _DAT_026484b8 * 8)) <=",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_02648428",
+      "severity": "mild",
+      "text": "(param_1 - *(double *)(&DAT_02648428 + _DAT_026484b8 * 8)) <=",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(double)param_4 * (double)param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(double)param_4 * (double)param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 8,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 7,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:7",
+      "param_delta": 7,
+      "text": "Function declares 0 params but call sites push 7 (7 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

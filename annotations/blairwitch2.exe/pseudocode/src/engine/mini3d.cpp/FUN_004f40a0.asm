@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f40a0(float *param_1,int param_2,ushort *param_3,int param_4)
+; void engine_mini3d_cpp_FUN_004f40a0(float *param_1,int param_2,ushort *param_3,int param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x124]:1  local_124
@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_004a97a0 at 004a9845
-;   FUN_004f90d0 at 004f930c
+;   engine_font.cpp_FUN_004a97a0 at 004a9845
+;   engine_mini3d.cpp_FUN_004f90d0 at 004f930c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005dddf0
@@ -33,21 +33,21 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_004f3740
-;   FUN_004f38c0
-;   FUN_004f6be0
-;   FUN_004f6d00
-;   FUN_004f7a50
-;   FUN_004f7da0
-;   FUN_004f7e00
+;   core_main.c_FUN_004e4500
+;   engine_mini3d.cpp_FUN_004f3740
+;   engine_mini3d.cpp_FUN_004f38c0
+;   engine_mini3d.cpp_FUN_004f6be0
+;   engine_mini3d.cpp_FUN_004f6d00
+;   engine_mini3d.cpp_FUN_004f7a50
+;   engine_mini3d.cpp_FUN_004f7da0
+;   engine_mini3d.cpp_FUN_004f7e00
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f40a0
-        ;   Label: FUN_004f40a0
+        ;   Label: engine_mini3d.cpp_FUN_004f40a0
     PUSH ESI                            ; 004f40a1
     PUSH EDI                            ; 004f40a2
     PUSH EBP                            ; 004f40a3
@@ -65,18 +65,18 @@ section .text
     TEST ESI,ESI                        ; 004f40e1
     JNZ 0x004f437a                      ; 004f40e3
         ;   XREF to: 004f437a (CONDITIONAL_JUMP)  ; LAB_004f437a
-    CALL FUN_004f3740                   ; 004f40e9
-        ;   XREF to: 004f3740 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3740()
-    CALL FUN_004f7da0                   ; 004f40ee
-        ;   XREF to: 004f7da0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7da0()
+    CALL engine_mini3d.cpp_FUN_004f3740 ; 004f40e9
+        ;   XREF to: 004f3740 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3740()
+    CALL engine_mini3d.cpp_FUN_004f7da0 ; 004f40ee
+        ;   XREF to: 004f7da0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f7da0()
     CMP dword ptr [0x0264bc9c],0x0      ; 004f40f3 | DAT_0264bc9c
     JZ 0x004f4109                       ; 004f40fa
         ;   XREF to: 004f4109 (CONDITIONAL_JUMP)  ; LAB_004f4109
     CMP dword ptr [0x01c37788],0x0      ; 004f40fc | DAT_01c37788
     JNZ 0x004f4396                      ; 004f4103
         ;   XREF to: 004f4396 (CONDITIONAL_JUMP)  ; LAB_004f4396
-    CALL FUN_004f38c0                   ; 004f4109
-        ;   XREF to: 004f38c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f38c0()
+    CALL engine_mini3d.cpp_FUN_004f38c0 ; 004f4109
+        ;   XREF to: 004f38c0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f38c0()
         ;   Label: LAB_004f4109
     MOV EAX,dword ptr [ESP + 0x12c]     ; 004f410e
     CMP EAX,0x2710                      ; 004f4115
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5dde05                       ; 004f4127 | = "CMini3D::polyList - Too many verticie..."
     MOV dword ptr [0x01d046a0],EDX      ; 004f412c | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004f4132 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004f4138
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004f4138
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 004f413d
     MOV EDI,dword ptr [ESP + 0x12c]     ; 004f4140
         ;   Label: LAB_004f4140
@@ -270,8 +270,8 @@ section .text
     PUSH 0x4                            ; 004f4360
     LEA EAX,[ESP + 0x4]                 ; 004f4362
     PUSH EAX                            ; 004f4366
-    CALL FUN_004f7a50                   ; 004f4367
-        ;   XREF to: 004f7a50 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7a50()
+    CALL engine_mini3d.cpp_FUN_004f7a50 ; 004f4367
+        ;   XREF to: 004f7a50 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f7a50()
     ADD ESP,0x8                         ; 004f436c
     ADD ESP,0x114                       ; 004f436f
         ;   Label: LAB_004f436f
@@ -287,8 +287,8 @@ section .text
     PUSH EDI                            ; 004f4389
     PUSH EAX                            ; 004f438a
     PUSH EBX                            ; 004f438b
-    CALL FUN_004f7e00                   ; 004f438c
-        ;   XREF to: 004f7e00 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7e00()
+    CALL engine_mini3d.cpp_FUN_004f7e00 ; 004f438c
+        ;   XREF to: 004f7e00 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f7e00()
     ADD ESP,0x10                        ; 004f4391
     JMP 0x004f436f                      ; 004f4394
         ;   XREF to: 004f436f (UNCONDITIONAL_JUMP)  ; LAB_004f436f
@@ -310,8 +310,8 @@ section .text
         ;   Label: LAB_004f43c1
     LEA EAX,[ESP + 0x4]                 ; 004f43c3
     PUSH EAX                            ; 004f43c7
-    CALL FUN_004f6be0                   ; 004f43c8
-        ;   XREF to: 004f6be0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f6be0()
+    CALL engine_mini3d.cpp_FUN_004f6be0 ; 004f43c8
+        ;   XREF to: 004f6be0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f6be0()
     ADD ESP,0x8                         ; 004f43cd
     ADD ESP,0x114                       ; 004f43d0
     POP EBP                             ; 004f43d6
@@ -329,8 +329,8 @@ section .text
     PUSH EDI                            ; 004f43f3
     MOV EBP,dword ptr [0x01d09b7c]      ; 004f43f4 | DAT_01d09b7c
     PUSH EBP                            ; 004f43fa
-    CALL FUN_004f6d00                   ; 004f43fb
-        ;   XREF to: 004f6d00 (UNCONDITIONAL_CALL)  ; undefined FUN_004f6d00()
+    CALL engine_mini3d.cpp_FUN_004f6d00 ; 004f43fb
+        ;   XREF to: 004f6d00 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f6d00()
     ADD ESP,0x14                        ; 004f4400
     ADD ESP,0x114                       ; 004f4403
     POP EBP                             ; 004f4409

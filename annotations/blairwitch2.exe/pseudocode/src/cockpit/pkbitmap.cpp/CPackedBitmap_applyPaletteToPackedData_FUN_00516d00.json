@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 71,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "00516cb0",
+      "from_addr": "00516cd4",
+      "name": "cockpit_pkbitmap.cpp_FUN_00516cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00517e90",
+      "from_addr": "00517eae",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00517e90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00516d00",
+    "address_range": [
+      [
+        "00516d00",
+        "00516d5a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00516d00",
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00516d00(CPackedBitmap *this_ptr,uchar *palette_buffer)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00516cd4",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_FUN_00516cb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00517eae",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00517e90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.05,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 37,
+      "INT_ADD": 21,
+      "INT_AND": 30,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 28,
+      "INT_LESS": 4,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 14,
+      "INT_SUB": 7,
+      "INT_XOR": 3,
+      "LOAD": 15,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 202
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "palette_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "iVar2 = (*(int **)&this_ptr->field_0x20)[*(int *)&this_ptr->field_0x1c];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "iVar2 = (*(int **)&this_ptr->field_0x20)[*(int *)&this_ptr->field_0x1c];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "pbVar6 = (byte *)(**(int **)&this_ptr->field_0x20 + iVar1);",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 35,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "004d2da0",
+      "from_addr": "004d2de5",
+      "name": "core_hostage.cpp_FUN_004d2da0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005108d0",
+    "address_range": [
+      [
+        "005108d0",
+        "005108f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_FUN_005108d0",
+    "signature": "void __cdecl core_npc_cpp_FUN_005108d0(CNPC *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00425a00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00425a00"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.416666666666667,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 8,
+      "INT_ADD": 6,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 53
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x24340",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x24340 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x2568",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2568 = 1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

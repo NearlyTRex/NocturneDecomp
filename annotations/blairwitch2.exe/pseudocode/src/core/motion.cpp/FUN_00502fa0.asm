@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00502fa0(int *param_1,undefined4 param_2,int param_3)
+; int __cdecl core_motion_cpp_FUN_00502fa0(CMotionList *this_ptr,char *state_name,int error_on_not_found)
 ;
+; Parameters:
+; CMotionList *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   state_name
+; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[12]:
-;   FUN_004285f0 at 00428639
-;   FUN_00429ce0 at 00429d2e
-;   FUN_00489670 at 0048d2e1
-;   FUN_004cea00 at 004cea2f
-;   FUN_004cea50 at 004ceac7
-;   FUN_004ceb80 at 004cebc6
-;   FUN_005036b0 at 005036c0
-;   FUN_005105b0 at 00510895
-;   FUN_00510ab0 at 00510af5
-;   FUN_00522350 at 00527568
+;   core_charactr.cpp_FUN_004285f0 at 00428639
+;   core_charactr.cpp_FUN_00429ce0 at 00429d2e
+;   core_event.cpp_FUN_00489670 at 0048d2e1
+;   core_hero.cpp_FUN_004cea00 at 004cea2f
+;   core_hero.cpp_FUN_004cea50 at 004ceac7
+;   core_hero.cpp_FUN_004ceb80 at 004cebc6
+;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_005036b0 at 005036c0
+;   core_npc.cpp_CNPC_process_FUN_005105b0 at 00510895
+;   core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00510ab0 at 00510af5
+;   core_script.cpp_FUN_00522350 at 00527568
 ;   ... and 2 more
 ;
 ; Referenced Globals:
@@ -24,15 +28,15 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b8130
+;   core_main.c_FUN_004e4500
+;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00502fa0
-        ;   Label: FUN_00502fa0
+        ;   Label: core_motion.cpp_FUN_00502fa0
     PUSH ESI                            ; 00502fa1
     PUSH EDI                            ; 00502fa2
     PUSH EBP                            ; 00502fa3
@@ -47,8 +51,8 @@ section .text
     PUSH EBP                            ; 00502fb7
         ;   Label: LAB_00502fb7
     PUSH ESI                            ; 00502fb8
-    CALL FUN_005b8130                   ; 00502fb9
-        ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8130()
+    CALL crt_string.c__stricmp_FUN_005b8130 ; 00502fb9
+        ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
     ADD ESP,0x8                         ; 00502fbe
     TEST EAX,EAX                        ; 00502fc1
     JZ 0x00502fe0                       ; 00502fc3
@@ -83,8 +87,8 @@ section .text
     PUSH 0x5dfb41                       ; 00502ff2 | = "Can't find state \"%s\" in motion list"
     MOV dword ptr [0x01d046a0],ESI      ; 00502ff7 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00502ffd | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00503003
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00503003
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 00503008
     MOV EAX,0xffffffff                  ; 0050300b
     POP EBP                             ; 00503010

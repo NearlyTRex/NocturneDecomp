@@ -1,0 +1,342 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 108,
+    "complexity_score": 168,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 48,
+    "suspect_count": 11,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 156
+  },
+  "cross_references": [
+    {
+      "addr": "0057e630",
+      "from_addr": "0057e67e",
+      "name": "core_turret.cpp_FUN_0057e630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ec70",
+      "from_addr": "0057ec85",
+      "name": "core_turret.cpp_FUN_0057ec70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057ee90",
+    "address_range": [
+      [
+        "0057ee90",
+        "0057ef9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_turret.cpp_CTurret_getCurFrame_FUN_0057ee90",
+    "signature": "float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_0057ee90(CTurret *this_ptr,int model_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057ee70",
+      "name": "switchdataD_0057ee70",
+      "type": "undefined1*",
+      "value": "0057ef2d"
+    },
+    {
+      "addr": "005ed714",
+      "name": "s_core_turret_cpp_005ed714",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed727",
+      "name": "s_CTurret_getCurFrame_inva_005ed727",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0057ec85",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_FUN_0057ec70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057ed9a",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_FUN_0057ec70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057e67e",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_FUN_0057e630",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057e704",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_FUN_0057e630",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.843373493975903,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 6,
+      "BRANCH": 5,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 6,
+      "COPY": 242,
+      "FLOAT2FLOAT": 14,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 8,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 6,
+      "INT_ADD": 33,
+      "INT_AND": 43,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 16,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "INT_ZEXT": 16,
+      "LOAD": 22,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 568
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
+      },
+      {
+        "is_param": true,
+        "name": "model_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0057ee98",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x85c",
+      "severity": "mild",
+      "text": "switch(*(uint *)&this_ptr->field_0x85c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x8c4",
+      "severity": "mild",
+      "text": "if (0.0 < *(float *)&this_ptr->field_0x8c4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x8d8",
+      "severity": "mild",
+      "text": "local_18 = 1.0 - *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8c4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x8c4",
+      "severity": "mild",
+      "text": "local_18 = 1.0 - *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8c4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x8cc",
+      "severity": "mild",
+      "text": "if (0.0 < *(float *)&this_ptr->field_0x8cc) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x8d8",
+      "severity": "mild",
+      "text": "local_18 = *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8cc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x8cc",
+      "severity": "mild",
+      "text": "local_18 = *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8cc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "this_ptr_00 = (CKeyFramedModelInstance *)&this_ptr->field_0x2b4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x6e0",
+      "severity": "mild",
+      "text": "this_ptr_00 = (CKeyFramedModelInstance *)&this_ptr->field_0x6e0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "local_14 = (float)(*(int *)&pCVar1->field_0x100 + -1) * local_18;",
+      "type": "unnamed_field"
+    }
+  ]
+}

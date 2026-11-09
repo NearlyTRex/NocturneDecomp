@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00574d50(void)
+; void engine_texture_cpp_FUN_00574d50(void)
 ;
 ;
 ; XREF[1]:
-;   thunk_FUN_00574d50 at 004037e0
+;   engine_3d.c_initTextureCache_FUN_004037e0 at 004037e0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_005ec9e1
@@ -15,18 +15,18 @@
 ;   undefined4 DAT_02652eb0
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00573940
-;   FUN_005b8be2
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b8be2
+;   unkafter_texlist.cpp_FUN_00573940
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH 0x1800c                        ; 00574d50
-        ;   Label: FUN_00574d50
-    CALL FUN_005b8be2                   ; 00574d55
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8be2()
+        ;   Label: engine_texture.cpp_FUN_00574d50
+    CALL crt_unknown.c_FUN_005b8be2     ; 00574d55
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
     ADD ESP,0x4                         ; 00574d5a
     TEST EAX,EAX                        ; 00574d5d
     JNZ 0x00574d6b                      ; 00574d5f
@@ -38,8 +38,8 @@ section .text
     RET                                 ; 00574d6a
     PUSH EAX                            ; 00574d6b
         ;   Label: LAB_00574d6b
-    CALL FUN_00573940                   ; 00574d6c
-        ;   XREF to: 00573940 (UNCONDITIONAL_CALL)  ; undefined FUN_00573940()
+    CALL unkafter_texlist.cpp_FUN_00573940 ; 00574d6c
+        ;   XREF to: 00573940 (UNCONDITIONAL_CALL)  ; undefined unkafter_texlist.cpp_FUN_00573940()
     ADD ESP,0x4                         ; 00574d71
     MOV [0x02652eb0],EAX                ; 00574d74 | DAT_02652eb0
     TEST EAX,EAX                        ; 00574d79
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5ec9f7                       ; 00574d88 | = "initTexture - out of memory!"
     MOV dword ptr [0x01d046a0],EDX      ; 00574d8d | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 00574d93 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00574d99
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00574d99
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00574d9e
     RET                                 ; 00574da1
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005561b0(undefined4 param_1,int param_2)
+; void sound_snddx_cpp_FUN_005561b0(undefined4 param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -13,17 +13,17 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005549c0
-;   FUN_00554ad0
-;   FUN_005b7790
+;   core_main.c_FUN_004e4500
+;   crt_unknown.c_FUN_005b7790
+;   sound_snddx.cpp_FUN_00554ad0
+;   sound_sndmain.cpp_FUN_005549c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005561b0
-        ;   Label: FUN_005561b0
+        ;   Label: sound_snddx.cpp_FUN_005561b0
     PUSH EBP                            ; 005561b1
     SUB ESP,0x190                       ; 005561b2
     MOV EBX,dword ptr [ESP + 0x1a0]     ; 005561b8
@@ -42,8 +42,8 @@ section .text
     PUSH 0x5e9cb4                       ; 005561d9 | = "DirectSoundDevice::unlockSample - Can..."
     MOV dword ptr [0x01d046a0],ESI      ; 005561de | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 005561e4 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 005561ea
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 005561ea
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x8                         ; 005561ef
     POP ESI                             ; 005561f2
     POP EDI                             ; 005561f3
@@ -70,21 +70,21 @@ section .text
     JZ 0x0055624f                       ; 00556221
         ;   XREF to: 0055624f (CONDITIONAL_JUMP)  ; LAB_0055624f
     PUSH EAX                            ; 00556223
-    CALL FUN_00554ad0                   ; 00556224
-        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; undefined FUN_00554ad0()
+    CALL sound_snddx.cpp_FUN_00554ad0   ; 00556224
+        ;   XREF to: 00554ad0 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00554ad0(uint error_code)
     ADD ESP,0x4                         ; 00556229
     PUSH EAX                            ; 0055622c
     PUSH 0x5e9cf6                       ; 0055622d | = "Unlock hw sample buffer"
     PUSH 0x5e9a3b                       ; 00556232 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 00556237
     PUSH EAX                            ; 0055623b
-    CALL FUN_005b7790                   ; 0055623c
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined FUN_005b7790()
+    CALL crt_unknown.c_FUN_005b7790     ; 0055623c
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
     ADD ESP,0x10                        ; 00556241
     MOV EAX,ESP                         ; 00556244
     PUSH EAX                            ; 00556246
-    CALL FUN_005549c0                   ; 00556247
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005549c0()
+    CALL sound_sndmain.cpp_FUN_005549c0 ; 00556247
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
     ADD ESP,0x4                         ; 0055624c
     MOV dword ptr [EBX + 0x10],0x0      ; 0055624f
         ;   Label: LAB_0055624f

@@ -1,15 +1,15 @@
-// Name: FUN_004b22c0
+// Name: core_gabriela.cpp_FUN_004b22c0
 // Address: 004b22c0
 // Address Range: [[004b22c0, 004b27e5]]
 // Convention: unknown
-// Signature: void FUN_004b22c0(int param_1,float param_2)
+// Signature: void core_gabriela_cpp_FUN_004b22c0(int param_1,float param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004b22c0(int param_1,float param_2)
+void core_gabriela_cpp_FUN_004b22c0(int param_1,float param_2)
 
 {
   int iVar1;
@@ -83,7 +83,7 @@ void FUN_004b22c0(int param_1,float param_2)
   fStack_a8 = 0.0;
   fStack_ac = 0.0;
   fStack_b0 = 0.0;
-  iStack_10 = FUN_0040c8f0(iVar2,DAT_007bcc84);
+  iStack_10 = core_actor_cpp_castToClassHash_FUN_0040c8f0(iVar2,DAT_007bcc84);
   if (iStack_10 == 0) goto LAB_004b233f;
   (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x24))(iVar2);
   puVar3 = auStack_f8;
@@ -126,12 +126,12 @@ void FUN_004b22c0(int param_1,float param_2)
     else {
       _DAT_01d046a0 = "..\\core\\gabriela.cpp";
       _DAT_01d046a4 = 0x944;
-      FUN_004e4500("Don't know how to carry light %s",iStack_10);
+      core_main_c_FUN_004e4500("Don't know how to carry light %s",iStack_10);
     }
     goto LAB_004b233f;
   }
   if (param_2 == 0.0) {
-    FUN_005932c0(0xbfc90fdb);
+    core_xform_cpp_buildRotationY_FUN_005932c0(0xbfc90fdb);
     puVar3 = (uint *)&stack0xfffffe48;
 LAB_004b2627:
     puVar4 = auStack_188;
@@ -143,13 +143,13 @@ LAB_004b2627:
   }
   else {
     if (param_2 == 1.4013e-45) {
-      FUN_005932c0(0x3fc90fdb);
+      core_xform_cpp_buildRotationY_FUN_005932c0(0x3fc90fdb);
       puVar3 = (uint *)&stack0xfffffe18;
       goto LAB_004b2627;
     }
-    FUN_005918a0(auStack_188);
+    core_xform_cpp_setIdentityMatrix3x4_FUN_005918a0(auStack_188);
   }
-  FUN_005916b0(auStack_188,iStack_14 * 0x30 + param_1 + 0x1134);
+  core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(auStack_188,iStack_14 * 0x30 + param_1 + 0x1134);
   puVar3 = auStack_128;
   puVar4 = auStack_188;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -157,7 +157,7 @@ LAB_004b2627:
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  FUN_00591de0(auStack_188);
+  core_xform_cpp_FUN_00591de0(auStack_188);
   uStack_80 = uStack_bc;
   *(uint *)((int)afStack_94 + ((uint)bVar5 * -2 + 6) * 4) =
        *(uint *)((int)auStack_b8 + (uint)bVar5 * 0xfffffff8);
@@ -195,9 +195,10 @@ LAB_004b233f:
     fStack_20 = 0.0;
     fStack_18 = 0.0;
   }
-  FUN_005915b0(&fStack_20,param_1 + 0x1134 + iStack_14 * 0x30);
-  FUN_00591c10(auStack_158,&fStack_20,&uStack_c8);
-  FUN_00591530(&fStack_b0,auStack_158);
+  core_xform_cpp_transformVector3x4InPlace_FUN_005915b0
+            (&fStack_20,param_1 + 0x1134 + iStack_14 * 0x30);
+  core_xform_cpp_FUN_00591c10(auStack_158,&fStack_20,&uStack_c8);
+  core_xform_cpp_FUN_00591530(&fStack_b0,auStack_158);
   fStack_98 = fStack_44;
   *(uint *)((int)afStack_94 + (uint)bVar5 * 0xfffffff8) =
        *(uint *)((int)afStack_94 + ((uint)bVar5 * -2 + 0x15) * 4);

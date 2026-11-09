@@ -1,0 +1,344 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 237,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 19,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "00415f50",
+      "from_addr": "004160d5",
+      "name": "core_bodypart.cpp_CBodyPart_archive_FUN_00415f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041c7f0",
+      "from_addr": "0041c920",
+      "name": "core_boxactor.cpp_FUN_0041c7f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040bee0",
+    "address_range": [
+      [
+        "0040bee0",
+        "0040bfcb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_archiveBox_FUN_0040bee0",
+    "signature": "void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b050",
+      "is_variadic": false,
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040b050"
+    },
+    {
+      "addr": "0040b380",
+      "is_variadic": false,
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b380"
+    },
+    {
+      "addr": "005b44b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_saveToFile_FUN_005b44b0"
+    },
+    {
+      "addr": "005b4300",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_005b4300"
+    },
+    {
+      "addr": "005b8180",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005b8180"
+    },
+    {
+      "addr": "005b8010",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cac4c",
+      "name": "s_sim_box_state_info_openi_005cac4c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cac6d",
+      "name": "s_sim_box_state_info_closi_005cac6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cac8e",
+      "name": "s_s_s_005cac8e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cac99",
+      "name": "DAT_005cac99",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609590",
+      "name": "DAT_00609590",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "007bc034",
+      "name": "DAT_007bc034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc038",
+      "name": "DAT_007bc038",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004160d5",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_archive_FUN_00415f50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0041c920",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_FUN_0041c7f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.061728395061729,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 6,
+      "COPY": 63,
+      "INT_ADD": 26,
+      "INT_AND": 34,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 32,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 16,
+      "INT_SUB": 38,
+      "LOAD": 16,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 34
+    },
+    "pcode_op_count": 329
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_007bc038",
+      "severity": "mild",
+      "text": "if (DAT_007bc038 != 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(param_1,DAT_007bc034,&DAT_00609590);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(param_1,DAT_007bc034,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(param_1,DAT_007bc034,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac99,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005cac99",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac99,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_00609590",
+      "severity": "mild",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac99,&DAT_00609590);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(\"sim box state info opening brace\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_box_cpp_FUN_005b4300(param_1,DAT_007bc034);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "core_box_cpp_FUN_005b4300(param_1,DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_007bc034",
+      "severity": "mild",
+      "text": "iVar1 = _fgetc(DAT_007bc034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(\"sim box state info closing brace\",param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00551440(void)
+; void sound_sndmain_cpp_FUN_00551440(void)
 ;
 ;
-; XREF[28]:
-;   FUN_0054d3a0 at 0054d420
-;   FUN_005506b0 at 00550933
-;   FUN_00550b70 at 00550b8e
-;   FUN_00550bf0 at 00550c14
-;   FUN_00550c30 at 00550c98
-;   FUN_00550d30 at 00550d8b
-;   FUN_00550da0 at 00550dd1
-;   FUN_00550ea0 at 00550ed1
-;   FUN_00550f20 at 00550f42
-;   FUN_00550f50 at 00550f97
-;   ... and 18 more
+; XREF[36]:
+;   core_tommygun.cpp_FUN_00576130 at 00576344
+;   sound_sndmain.cpp_FUN_0054d3a0 at 0054d420
+;   sound_sndmain.cpp_FUN_005506b0 at 00550933
+;   sound_sndmain.cpp_FUN_00550b70 at 00550b8e
+;   sound_sndmain.cpp_FUN_00550bf0 at 00550c14
+;   sound_sndmain.cpp_FUN_00550d30 at 00550d8b
+;   sound_sndmain.cpp_FUN_00550da0 at 00550dd1
+;   sound_sndmain.cpp_FUN_00550ea0 at 00550ed1
+;   sound_sndmain.cpp_FUN_00550f20 at 00550f42
+;   sound_sndmain.cpp_FUN_00550f50 at 00550f97
+;   ... and 26 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e9231
@@ -26,16 +26,16 @@
 ;   undefined4 DAT_0264901c
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00553380
-;   FUN_0058fd00
+;   core_main.c_FUN_004e4500
+;   sound_sndmain.cpp_FUN_00553380
+;   wincore_winrun.cpp_releaseMutex_FUN_0058fd00
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EDI                            ; 00551440
-        ;   Label: FUN_00551440
+        ;   Label: sound_sndmain.cpp_FUN_00551440
     PUSH EBP                            ; 00551441
     CMP dword ptr [0x0264901c],0x1      ; 00551442 | DAT_0264901c
     JL 0x00553541                       ; 00551449
@@ -50,8 +50,8 @@ section .text
     DEC EBP                             ; 00551468
     PUSH EDI                            ; 00551469
     MOV dword ptr [0x0264901c],EBP      ; 0055146a | DAT_0264901c
-    CALL FUN_0058fd00                   ; 00551470
-        ;   XREF to: 0058fd00 (UNCONDITIONAL_CALL)  ; undefined FUN_0058fd00()
+    CALL wincore_winrun.cpp_releaseMutex_FUN_0058fd00 ; 00551470
+        ;   XREF to: 0058fd00 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_releaseMutex_FUN_0058fd00(HANDLE mutex_handle)
     ADD ESP,0x4                         ; 00551475
     POP EBP                             ; 00551478
     POP EDI                             ; 00551479
@@ -63,14 +63,14 @@ section .text
     PUSH 0x5e9246                       ; 0055354c | = "unlockSound - sound was not locked!"
     MOV dword ptr [0x01d046a0],ECX      ; 00553551 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00553557 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0055355d
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0055355d
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00553562
     POP EBX                             ; 00553565
     JMP 0x0055144f                      ; 00553566
         ;   XREF to: 0055144f (UNCONDITIONAL_JUMP)  ; LAB_0055144f
-    CALL FUN_00553380                   ; 0055356b
-        ;   XREF to: 00553380 (UNCONDITIONAL_CALL)  ; undefined FUN_00553380()
+    CALL sound_sndmain.cpp_FUN_00553380 ; 0055356b
+        ;   XREF to: 00553380 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00553380()
         ;   Label: LAB_0055356b
     JMP 0x0055145c                      ; 00553570
         ;   XREF to: 0055145c (UNCONDITIONAL_JUMP)  ; LAB_0055145c

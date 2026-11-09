@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00449370(float *param_1)
+; void core_dirmat_cpp_FUN_00449370(float *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -9,14 +9,14 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00449370
-        ;   Label: FUN_00449370
+        ;   Label: core_dirmat.cpp_FUN_00449370
     PUSH ESI                            ; 00449371
     PUSH EBP                            ; 00449372
     MOV EBP,ESP                         ; 00449373
@@ -172,8 +172,8 @@ section .text
     PUSH 0x5cf142                       ; 00449505
     MOV dword ptr [0x01d046a0],ECX      ; 0044950a | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 00449510 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00449516
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00449516
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0044951b
     JMP 0x004493c4                      ; 0044951e
         ;   XREF to: 004493c4 (UNCONDITIONAL_JUMP)  ; LAB_004493c4

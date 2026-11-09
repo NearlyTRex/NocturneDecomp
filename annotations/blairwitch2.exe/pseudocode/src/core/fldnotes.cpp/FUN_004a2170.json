@@ -1,0 +1,288 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 224,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 19,
+    "suspect_types": [
+      "negative_offset",
+      "param_count_too_few",
+      "unnamed_field",
+      "unnamed_param"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [
+    {
+      "addr": "004a2cc0",
+      "from_addr": "004a2e37",
+      "name": "core_fldnotes.cpp_FUN_004a2cc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a2170",
+    "address_range": [
+      [
+        "004a2170",
+        "004a21f0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_FUN_004a2170",
+    "signature": "undefined1 * core_fldnotes_cpp_FUN_004a2170(undefined4 param_1,char *param_2,int param_3,int param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d420",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d420"
+    },
+    {
+      "addr": "0040d5a0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00461070"
+    },
+    {
+      "addr": "004a1e60",
+      "is_variadic": false,
+      "name": "unkaddr_004a1200.cpp_FUN_004a1e60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f6ee4",
+      "name": "g_PageResource_BitmapVTable",
+      "type": "void*",
+      "value": "004a2200"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a2e37",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_FUN_004a2cc0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.926829268292683,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 31,
+      "INT_ADD": 22,
+      "INT_AND": 14,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 161
+  },
+  "stack_frame": {
+    "frame_size": 268,
+    "local_size": 268,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "byte * core_fldnotes_cpp_FUN_004a2170(uint param_1,char *param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "byte * core_fldnotes_cpp_FUN_004a2170(uint param_1,char *param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "byte * core_fldnotes_cpp_FUN_004a2170(uint param_1,char *param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "byte * core_fldnotes_cpp_FUN_004a2170(uint param_1,char *param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = unkaddr_004a1200_cpp_FUN_004a1e60(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "this_ptr[-1].",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr[-1].field_0x10 = &g_PageResource_BitmapVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr[-1].field_0x10 = &g_PageResource_BitmapVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_FUN_00461070(param_2,(char *)0x0,(char *)0x0,local_108,(char *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(this_ptr,local_108,param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(this_ptr,local_108,param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "this_ptr[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr[-1].field_0x4 = *(uint *)&this_ptr->field_0xc;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr[-1].field_0x4 = *(uint *)&this_ptr->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr[-1].field_0x4 = *(uint *)&this_ptr->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "this_ptr[-1].",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr[-1].field_0x8 = *(uint *)&this_ptr->field_0x10;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr[-1].field_0x8 = *(uint *)&this_ptr->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr[-1].field_0x8 = *(uint *)&this_ptr->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "this_ptr[-2].",
+      "severity": "mild",
+      "text": "return &this_ptr[-2].field_0x10;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "return &this_ptr[-2].field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

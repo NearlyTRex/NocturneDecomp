@@ -1,0 +1,173 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 90,
+    "complexity_score": 23,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 113
+  },
+  "cross_references": [
+    {
+      "addr": "0054dc50",
+      "from_addr": "0054dc81",
+      "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054fbe0",
+      "from_addr": "0054fc54",
+      "name": "sound_sndmain.cpp_CSfxSlot_seek_FUN_0054fbe0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054ff30",
+    "address_range": [
+      [
+        "0054ff30",
+        "00550006"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_0054ff30",
+    "signature": "double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_0054ff30(CSfxSample *this_ptr,double position,uint input_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b84d0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005b84d0"
+    },
+    {
+      "addr": "0054fdc0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_0054fdc0"
+    },
+    {
+      "addr": "00550010",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00550010"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0054dc81",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSample_seek_FUN_0054dc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054fc54",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSlot_seek_FUN_0054fbe0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "declared_stack_bytes": 16,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.363636363636363,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 146,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 38,
+      "INT_AND": 29,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 22,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 22,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 34
+    },
+    "pcode_op_count": 413
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "input_type",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

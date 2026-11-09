@@ -1,0 +1,29 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_partibox.cpp_CParticleBox_getActorType_FUN_005ac790
+# Entry:       005ac790
+# Signature:   CDemonActorType * core_partibox_cpp_CParticleBox_getActorType_FUN_005ac790(CParticleBox *this_ptr)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@005ac790 [ESP:+0]  # MOV EAX, 0x266895c
+COPY (register,0x0,4) /* EAX */ = (const,0x266895c,4)
+
+@005ac795 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 2 instructions, 4 P-code ops
+# ============================================================================

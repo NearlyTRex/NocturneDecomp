@@ -1,31 +1,34 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004e7220(int param_1,int param_2)
+; void __cdecl core_manpuz_cpp_FUN_004e7220(CMansionPuzzleCircle *this_ptr,int panel_index)
 ;
+; Parameters:
+; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   panel_index
 ;
 ; XREF[1]:
-;   FUN_004e6c40 at 004e6f0d
+;   core_manpuz.cpp_FUN_004e6c40 at 004e6f0d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_004e6240
-;   FUN_004e7570
-;   FUN_00550170
-;   FUN_00550450
-;   FUN_005504d0
-;   FUN_005506b0
+;   core_main.c_FUN_004e4500
+;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570
+;   core_manpuz.cpp_FUN_004e6240
+;   sound_sndmain.cpp_FUN_00550450
+;   sound_sndmain.cpp_FUN_005504d0
+;   sound_sndmain.cpp_FUN_005506b0
+;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004e7220
-        ;   Label: FUN_004e7220
+        ;   Label: core_manpuz.cpp_FUN_004e7220
     PUSH ESI                            ; 004e7221
     PUSH EDI                            ; 004e7222
     PUSH EBP                            ; 004e7223
@@ -34,8 +37,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004e722b
     PUSH EBX                            ; 004e722f
     PUSH EBP                            ; 004e7230
-    CALL FUN_004e7570                   ; 004e7231
-        ;   XREF to: 004e7570 (UNCONDITIONAL_CALL)  ; undefined FUN_004e7570()
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570 ; 004e7231
+        ;   XREF to: 004e7570 (UNCONDITIONAL_CALL)  ; int core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 004e7236
     MOV EDX,EAX                         ; 004e7239
     MOV dword ptr [ESP],EAX             ; 004e723b
@@ -65,8 +68,8 @@ section .text
     PUSH 0x5dc608                       ; 004e7284
     MOV dword ptr [0x01d046a0],EDX      ; 004e7289 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 004e728f | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004e7295
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004e7295
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004e729a
     MOV EAX,ESI                         ; 004e729d
         ;   Label: LAB_004e729d
@@ -145,22 +148,22 @@ section .text
     MOV dword ptr [ESI + 0x4],0x3f800000 ; 004e7357
     PUSH EBP                            ; 004e735e
     MOV dword ptr [ESI + 0x8],0xbf800000 ; 004e735f
-    CALL FUN_004e6240                   ; 004e7366
-        ;   XREF to: 004e6240 (UNCONDITIONAL_CALL)  ; undefined FUN_004e6240()
+    CALL core_manpuz.cpp_FUN_004e6240   ; 004e7366
+        ;   XREF to: 004e6240 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_004e6240()
     ADD ESP,0x8                         ; 004e736b
     ADD ESI,0x58                        ; 004e736e
-    CALL FUN_00550450                   ; 004e7371
-        ;   XREF to: 00550450 (UNCONDITIONAL_CALL)  ; undefined FUN_00550450()
+    CALL sound_sndmain.cpp_FUN_00550450 ; 004e7371
+        ;   XREF to: 00550450 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00550450()
     PUSH ESI                            ; 004e7376
-    CALL FUN_00550170                   ; 004e7377
-        ;   XREF to: 00550170 (UNCONDITIONAL_CALL)  ; undefined FUN_00550170()
+    CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170 ; 004e7377
+        ;   XREF to: 00550170 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 004e737c
     PUSH 0x5dc638                       ; 004e737f
-    CALL FUN_005506b0                   ; 004e7384
-        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005506b0()
+    CALL sound_sndmain.cpp_FUN_005506b0 ; 004e7384
+        ;   XREF to: 005506b0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005506b0()
     ADD ESP,0x4                         ; 004e7389
-    CALL FUN_005504d0                   ; 004e738c
-        ;   XREF to: 005504d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005504d0()
+    CALL sound_sndmain.cpp_FUN_005504d0 ; 004e738c
+        ;   XREF to: 005504d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005504d0()
     ADD ESP,0x4                         ; 004e7391
     POP EBP                             ; 004e7394
     POP EDI                             ; 004e7395

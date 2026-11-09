@@ -1,99 +1,102 @@
-// Name: FUN_00438060
+// Name: core_construc.cpp_FUN_00438060
 // Address: 00438060
 // Address Range: [[00438060, 00438291]]
 // Convention: unknown
-// Signature: void FUN_00438060(int param_1)
+// Signature: void core_construc_cpp_FUN_00438060(CCharacter *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00438060(int param_1)
+void core_construc_cpp_FUN_00438060(CCharacter *param_1)
 
 {
-  int iVar1;
-  uint *puVar2;
-  int iVar3;
-  uint *puVar4;
+  CCharacter *pCVar1;
+  CCharacter *pCVar2;
+  CBodyPart *body_part;
+  uint *puVar3;
+  int iVar4;
   uint *puVar5;
-  byte bVar6;
+  uint *puVar6;
+  byte bVar7;
   uint auStackY_1820 [1520];
   uint local_44;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
+  CVector3f local_34;
+  UOrientationVector *local_28;
+  CVector3f *local_24;
+  CDeformableModel *local_20;
+  byte *local_1c;
+  CCharacter *local_18;
   uint local_14;
   
-  bVar6 = 0;
-  FUN_00428e00(param_1);
-  *(uint *)(param_1 + 0x112d8) = 1;
-  *(uint *)(param_1 + 0x112dc) = 0;
-  local_20 = FUN_00547810(param_1 + 0x2b4);
-  iVar3 = *(int *)(local_20 + 0xc00);
-  *(int *)(param_1 + 0x10c14) = iVar3;
-  if (0x18 < iVar3) {
+  bVar7 = 0;
+  core_charactr_cpp_FUN_00428e00(param_1);
+  *(uint *)&param_1[1].field_0x878 = 1;
+  *(uint *)&param_1[1].field_0x87c = 0;
+  local_20 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
+                       ((CDeformableModelInstance *)&param_1->field_0x2b4);
+  iVar4 = *(int *)&local_20->field_0xc00;
+  *(int *)&param_1[1].field_0x1b4 = iVar4;
+  if (0x18 < iVar4) {
     _DAT_01d046a0 = "..\\core\\construc.cpp";
     _DAT_01d046a4 = 0x294;
-    FUN_004e4500("CConstruct::explode - Not enough containers");
+    core_main_c_FUN_004e4500("CConstruct::explode - Not enough containers");
   }
-  iVar3 = 0;
-  if (0 < *(int *)(local_20 + 0xc00)) {
-    local_1c = param_1 + 0x10c18;
-    local_28 = param_1 + 0x30;
-    local_24 = param_1 + 0x20;
-    puVar4 = (uint *)(param_1 + 0x10c24);
+  iVar4 = 0;
+  if (0 < *(int *)&local_20->field_0xc00) {
+    local_1c = &param_1[1].field_0x1b8;
+    local_28 = (UOrientationVector *)&param_1->field_0x30;
+    local_24 = (CVector3f *)&param_1->field_0x20;
+    puVar5 = (uint *)&param_1[1].field_0x1c4;
     local_18 = param_1;
     do {
-      local_34 = FUN_0040cf60(0xc0a00000,0x40a00000);
-      local_14 = local_34;
-      local_30 = FUN_0040cf60(0,0x41200000);
-      local_14 = local_30;
-      local_2c = FUN_0040cf60(0xc0a00000,0x40a00000);
-      local_14 = local_2c;
-      iVar1 = FUN_004154f0(local_24,local_28,&stack0xffffffcc,param_1,1,1,2);
-      FUN_004277e0(param_1,iVar1,iVar3,0);
-      if (iVar3 == *(int *)(param_1 + 0x10b60)) {
-        *(int *)(param_1 + 0x112e0) = *(int *)(param_1 + 0x10b60);
-        *(uint *)(iVar1 + 0x10d8) = 0;
+      local_34._0_4_ = core_actor_cpp_FUN_0040cf60(0xc0a00000,0x40a00000);
+      local_14 = local_34._0_4_;
+      local_34._4_4_ = core_actor_cpp_FUN_0040cf60(0,0x41200000);
+      local_14 = local_34._4_4_;
+      local_34._8_4_ = core_actor_cpp_FUN_0040cf60(0xc0a00000,0x40a00000);
+      local_14 = local_34._8_4_;
+      body_part = core_bodypart_cpp_FUN_004154f0
+                            (local_24,local_28,&local_34,(CDemonActor *)param_1,1,1,BLOOD_TYPE_NONE)
+      ;
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(param_1,body_part,iVar4,0);
+      if (iVar4 == *(int *)&param_1[1].field_0x100) {
+        *(int *)&param_1[1].field_0x880 = *(int *)&param_1[1].field_0x100;
+        *(uint *)&body_part->field_0x10d8 = 0;
       }
       else {
-        *(uint *)(iVar1 + 0x10d8) = 1;
+        *(uint *)&body_part->field_0x10d8 = 1;
       }
-      FUN_00416700(iVar1);
-      *(int *)(local_18 + 0x10c5c) = iVar1;
-      puVar2 = (uint *)(iVar3 * 0x48 + local_1c);
-      if (puVar2 != (uint *)(iVar1 + 0x20)) {
-        *puVar2 = *(uint *)(iVar1 + 0x20);
-        puVar2[1] = *(uint *)(iVar1 + 0x24);
-        puVar2[2] = *(uint *)(iVar1 + 0x28);
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_00416700(body_part);
+      *(CBodyPart **)&local_18[1].field_0x1fc = body_part;
+      puVar3 = (uint *)(local_1c + iVar4 * 0x48);
+      if (puVar3 != (uint *)&body_part->field_0x20) {
+        *puVar3 = *(uint *)&body_part->field_0x20;
+        puVar3[1] = *(uint *)&body_part->field_0x24;
+        puVar3[2] = *(uint *)&body_part->field_0x28;
       }
-      if (puVar4 != (uint *)(iVar1 + 0x30)) {
-        *puVar4 = *(uint *)(iVar1 + 0x30);
-        puVar4[1] = *(uint *)(iVar1 + 0x34);
-        puVar4[2] = *(uint *)(iVar1 + 0x38);
+      if (puVar5 != (uint *)&body_part->field_0x30) {
+        *puVar5 = *(uint *)&body_part->field_0x30;
+        puVar5[1] = *(uint *)&body_part->field_0x34;
+        puVar5[2] = *(uint *)&body_part->field_0x38;
       }
-      FUN_00594380(iVar1 + 0x30);
-      iVar1 = local_18;
-      puVar2 = (uint *)(local_18 + 0x10c40);
-      local_18 = local_18 + 0x48;
-      puVar5 = (uint *)(iVar1 + 0x10c44 + (uint)bVar6 * -8);
-      *puVar2 = local_44;
-      puVar2 = puVar5 + (uint)bVar6 * -2 + 1;
-      *puVar5 = *(uint *)(&stack0xffffffc0 + (uint)bVar6 * -8);
-      *puVar2 = *(uint *)(&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-      puVar2[(uint)bVar6 * -2 + 1] =
+      core_xform_cpp_FUN_00594380(&body_part->field_0x30);
+      pCVar2 = local_18;
+      pCVar1 = local_18 + 1;
+      local_18 = (CCharacter *)&local_18->field_0x48;
+      puVar3 = (uint *)((int)pCVar2 + (uint)bVar7 * -8 + 0x10c44);
+      *(uint *)&pCVar1->field_0x1e0 = local_44;
+      puVar6 = puVar3 + (uint)bVar7 * -2 + 1;
+      *puVar3 = *(uint *)(&stack0xffffffc0 + (uint)bVar7 * -8);
+      *puVar6 = *(uint *)(&stack0xffffffc4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);
+      puVar6[(uint)bVar7 * -2 + 1] =
            *(uint *)
-            ((int)(&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
-            ((uint)bVar6 * -2 + 1) * 4);
-      iVar3 = iVar3 + 1;
-      puVar4 = puVar4 + 0x12;
-    } while (iVar3 < *(int *)(local_20 + 0xc00));
+            ((int)(&stack0xffffffc4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +
+            ((uint)bVar7 * -2 + 1) * 4);
+      iVar4 = iVar4 + 1;
+      puVar5 = puVar5 + 0x12;
+    } while (iVar4 < *(int *)&local_20->field_0xc00);
   }
-  (**(code **)(*(int *)(param_1 + 0x2b0) + 0x34))(param_1,"boneguy-fallapart.wav");
+  (**(code **)(*(int *)&param_1->field_0x2b0 + 0x34))(param_1,"boneguy-fallapart.wav");
   return;
 }

@@ -1,0 +1,284 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 164,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 122
+  },
+  "cross_references": [
+    {
+      "addr": "00453d80",
+      "from_addr": "00453e2e",
+      "name": "core_doc.cpp_FUN_00453d80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00455170",
+    "address_range": [
+      [
+        "00455170",
+        "00455262"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_doc.cpp_FUN_00455170",
+    "signature": "void core_doc_cpp_FUN_00455170(int param_1,SPose *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00546f40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40"
+    },
+    {
+      "addr": "00544f80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00544f80"
+    },
+    {
+      "addr": "00548620",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00548620"
+    },
+    {
+      "addr": "005486f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_005486f0"
+    },
+    {
+      "addr": "005940b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_005940b0"
+    },
+    {
+      "addr": "00593fe0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleY_FUN_00593fe0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d01d7",
+      "name": "DAT_005d01d7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d258",
+      "name": "DAT_01b4d258",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00453e2e",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00453d80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.871428571428571,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 7,
+      "COPY": 99,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_MULT": 1,
+      "FLOAT_NEG": 1,
+      "INT_ADD": 43,
+      "INT_AND": 37,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 15,
+      "INT_SUB": 43,
+      "INT_XOR": 1,
+      "INT_ZEXT": 14,
+      "LOAD": 17,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 35
+    },
+    "pcode_op_count": 411
+  },
+  "stack_frame": {
+    "frame_size": 6896,
+    "local_size": 6896,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1aec",
+        "offset": -6892,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_doc_cpp_FUN_00455170(int param_1,SPose *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_doc_cpp_FUN_00455170(int param_1,SPose *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *blend_callback;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (CDeformableModelInstance *)(param_1 + 0x2b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(this_ptr,*(uint *)(param_1 + 0x256ec),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x256bc) * (float)_DAT_005d01d7,0xffffffff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_xform_cpp_FUN_005940b0(_DAT_01b4d258 * 0x10 + param_1 + 0x964);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_00548620(this_ptr,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

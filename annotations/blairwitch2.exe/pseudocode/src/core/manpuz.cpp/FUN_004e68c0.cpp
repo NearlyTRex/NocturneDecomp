@@ -1,14 +1,14 @@
-// Name: FUN_004e68c0
+// Name: core_manpuz.cpp_FUN_004e68c0
 // Address: 004e68c0
 // Address Range: [[004e68c0, 004e6a4c]]
-// Convention: unknown
-// Signature: void FUN_004e68c0(int param_1,int param_2,float param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_manpuz_cpp_FUN_004e68c0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004e68c0(int param_1,int param_2,float param_3)
+void __cdecl core_manpuz_cpp_FUN_004e68c0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 
 {
   float fVar1;
@@ -16,21 +16,22 @@ void FUN_004e68c0(int param_1,int param_2,float param_3)
   int *piVar3;
   int *piVar4;
   
-  piVar3 = (int *)(param_1 + 0x74c + param_2 * 100);
+  piVar3 = (int *)(&this_ptr->field_0x74c + panel_index * 100);
   if (*piVar3 != 0) {
-    fVar1 = ((float)piVar3[2] * param_3) / _DAT_005f98c0 + (float)piVar3[1];
+    fVar1 = ((float)piVar3[2] * delta_time) / _DAT_005f98c0 + (float)piVar3[1];
     piVar3[1] = (int)fVar1;
     if (fVar1 < 0.0) {
       piVar3[2] = 0;
       piVar3[1] = 0;
     }
     if (1.0 <= (float)piVar3[1]) {
-      iVar2 = FUN_004e7560(param_1,param_2);
-      piVar4 = (int *)(param_1 + 0x74c + iVar2 * 100);
+      iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004e7560
+                        (this_ptr,panel_index);
+      piVar4 = (int *)(&this_ptr->field_0x74c + iVar2 * 100);
       if (*piVar4 != 0) {
         _DAT_01d046a0 = "..\\core\\manpuz.cpp";
         _DAT_01d046a4 = 0x45d;
-        FUN_004e4500("CMansionPuzzleCircle::processPanel - Panel collision!");
+        core_main_c_FUN_004e4500("CMansionPuzzleCircle::processPanel - Panel collision!");
       }
       *piVar4 = *piVar3;
       piVar4[1] = piVar3[1];

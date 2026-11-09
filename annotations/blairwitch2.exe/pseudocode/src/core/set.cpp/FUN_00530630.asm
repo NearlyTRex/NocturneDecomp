@@ -1,17 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00530630(undefined4 param_1,int param_2)
+; void __cdecl core_set_cpp_FUN_00530630(CDemonSet *this_ptr,CDemonLight *light)
 ;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
 ;
 ; XREF[7]:
-;   FUN_0041d020 at 0041d251
-;   FUN_00455d10 at 0045622c
-;   FUN_00485a30 at 00485b23
-;   FUN_004e38d0 at 004e3a34
-;   FUN_0052f2a0 at 0052f2df
-;   FUN_0053f060 at 0053f153
-;   FUN_0059ccf0 at 0059ce91
+;   core_boxactor.cpp_FUN_0041d020 at 0041d251
+;   core_doc.cpp_FUN_00455d10 at 0045622c
+;   core_elephant.cpp_FUN_00485a30 at 00485b23
+;   core_lantern.cpp_FUN_0059ccf0 at 0059ce91
+;   core_lightgun.cpp_FUN_004e38d0 at 004e3a34
+;   core_set.cpp_FUN_0052f2a0 at 0052f2df
+;   core_shotgun.cpp_FUN_0053f060 at 0053f153
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e592a
@@ -21,14 +24,14 @@
 ;   undefined4 DAT_01fc9608
 ;
 ; Called Functions:
-;   FUN_004e4500
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00530630
-        ;   Label: FUN_00530630
+        ;   Label: core_set.cpp_FUN_00530630
     PUSH ESI                            ; 00530631
     MOV ESI,dword ptr [0x01fc9608]      ; 00530632 | DAT_01fc9608
     MOV EBX,dword ptr [ESP + 0x10]      ; 00530638
@@ -69,8 +72,8 @@ section .text
     PUSH 0x5e593a                       ; 0053068e | = "Too many dynamic lights!"
     MOV dword ptr [0x01d046a0],ECX      ; 00530693 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 00530699 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0053069f
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0053069f
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 005306a4
     POP EDI                             ; 005306a7
     JMP 0x0053066c                      ; 005306a8

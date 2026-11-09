@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0050c280(int *param_1,int *param_2,int param_3)
+; void __cdecl core_netgame_cpp_FUN_0050c280(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet)
 ;
+; Parameters:
+; CNetGame *       Stack[0x4]:4   this_ptr
+; SNetworkAddr *   Stack[0x8]:4   source_addr
+; UNetPacket *     Stack[0xc]:4   packet
 ; Local Variables:
 ; undefined4       Stack[-0xf8]:4  local_f8
 ; undefined4       Stack[-0xf4]:4  local_f4
@@ -39,7 +43,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_0050c190 at 0050c21a
+;   core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190 at 0050c21a
 ;
 ; Referenced Globals:
 ;   undefined4 caseD_0
@@ -60,27 +64,27 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_0050b8d0
-;   FUN_0050cd90
-;   FUN_0050cdf0
-;   FUN_0050ce20
-;   FUN_0050ce70
-;   FUN_0050df20
-;   FUN_0050e020
-;   FUN_0050e6c0
-;   FUN_0050e890
-;   FUN_0050f4b0
-;   FUN_00578e60
-;   FUN_005b77c0
-;   FUN_005b8c30
+;   core_main.c_FUN_004e4500
+;   core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20
+;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020
+;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890
+;   core_netgame.cpp_CNetGame_removePlayer_FUN_0050e6c0
+;   core_netgame.cpp_CNetGame_send_FUN_0050cd90
+;   core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0
+;   core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0
+;   core_netgame.cpp_FUN_0050b8d0
+;   core_netgame.cpp_FUN_0050ce20
+;   core_netgame.cpp_FUN_0050ce70
+;   crt_memory.c_memset_FUN_005b77c0
+;   crt_string.c__strcmp_FUN_005b8c30
+;   support_trisock.cpp_createNetworkAddr_FUN_00578e60
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0050c280
-        ;   Label: FUN_0050c280
+        ;   Label: core_netgame.cpp_FUN_0050c280
     PUSH ESI                            ; 0050c281
     PUSH EDI                            ; 0050c282
     PUSH EBP                            ; 0050c283
@@ -93,8 +97,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0050c296
     PUSH ECX                            ; 0050c299
     XOR EDI,EDI                         ; 0050c29a
-    CALL FUN_0050ce20                   ; 0050c29c
-        ;   XREF to: 0050ce20 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ce20()
+    CALL core_netgame.cpp_FUN_0050ce20  ; 0050c29c
+        ;   XREF to: 0050ce20 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_FUN_0050ce20(CNetGame * this_ptr, SNetworkAddr * addr)
     ADD ESP,0x8                         ; 0050c2a1
     MOV EBX,EAX                         ; 0050c2a4
     MOV dword ptr [ESP + 0xd8],EDI      ; 0050c2a6
@@ -132,8 +136,8 @@ section .text
     PUSH EAX                            ; 0050c30a
     MOV EAX,dword ptr [ESP + 0xdc]      ; 0050c30b
     PUSH EAX                            ; 0050c312
-    CALL FUN_005b8c30                   ; 0050c313
-        ;   XREF to: 005b8c30 (UNCONDITIONAL_CALL)  ; undefined FUN_005b8c30()
+    CALL crt_string.c__strcmp_FUN_005b8c30 ; 0050c313
+        ;   XREF to: 005b8c30 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005b8c30(char * str1, char * str2)
     ADD ESP,0x8                         ; 0050c318
     TEST EAX,EAX                        ; 0050c31b
     JZ 0x0050c469                       ; 0050c31d
@@ -166,8 +170,8 @@ section .text
     MOV dword ptr [EDI + 0x18],EAX      ; 0050c365
     MOV EDI,dword ptr [EBP + 0x14]      ; 0050c368
     PUSH EDI                            ; 0050c36b
-    CALL FUN_0050e890                   ; 0050c36c
-        ;   XREF to: 0050e890 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e890()
+    CALL core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890 ; 0050c36c
+        ;   XREF to: 0050e890 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050c371
     MOV EAX,0x71                        ; 0050c374
         ;   Label: LAB_0050c374
@@ -221,8 +225,8 @@ section .text
     PUSH EDX                            ; 0050c3de
     MOVSD ES:EDI,ESI                    ; 0050c3df
     MOVSD ES:EDI,ESI                    ; 0050c3e0
-    CALL FUN_0050cd90                   ; 0050c3e1
-        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; undefined FUN_0050cd90()
+    CALL core_netgame.cpp_CNetGame_send_FUN_0050cd90 ; 0050c3e1
+        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0050cd90(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0050c3e6
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050c3e9
     MOV EAX,dword ptr [EAX + 0x124]     ; 0050c3ec
@@ -251,8 +255,8 @@ section .text
     MOV DL,0x3                          ; 0050c42b
     PUSH EDI                            ; 0050c42d
     MOV byte ptr [ESP + 0xc0],DL        ; 0050c42e
-    CALL FUN_0050cdf0                   ; 0050c435
-        ;   XREF to: 0050cdf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050cdf0()
+    CALL core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0 ; 0050c435
+        ;   XREF to: 0050cdf0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0050c43a
     JMP 0x0050c2f8                      ; 0050c43d
         ;   XREF to: 0050c2f8 (UNCONDITIONAL_JUMP)  ; LAB_0050c2f8
@@ -267,8 +271,8 @@ section .text
     PUSH ESI                            ; 0050c455
     MOV EDI,dword ptr [EBP + 0x14]      ; 0050c456
     PUSH EDI                            ; 0050c459
-    CALL FUN_0050ce70                   ; 0050c45a
-        ;   XREF to: 0050ce70 (UNCONDITIONAL_CALL)  ; undefined FUN_0050ce70()
+    CALL core_netgame.cpp_FUN_0050ce70  ; 0050c45a
+        ;   XREF to: 0050ce70 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_0050ce70()
     ADD ESP,0x14                        ; 0050c45f
     MOV EBX,EAX                         ; 0050c462
     JMP 0x0050c374                      ; 0050c464
@@ -366,8 +370,8 @@ section .text
     PUSH EAX                            ; 0050c54f
     MOV EDX,dword ptr [EBP + 0x14]      ; 0050c550
     PUSH EDX                            ; 0050c553
-    CALL FUN_0050f4b0                   ; 0050c554
-        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4b0()
+    CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 ; 0050c554
+        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 0050c559
     MOV ESP,EBP                         ; 0050c55c
     POP EBP                             ; 0050c55e
@@ -385,8 +389,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x18]      ; 0050c56d
     PUSH ECX                            ; 0050c570
     PUSH EAX                            ; 0050c571
-    CALL FUN_0050f4b0                   ; 0050c572
-        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4b0()
+    CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 ; 0050c572
+        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 0050c577
     MOV ESP,EBP                         ; 0050c57a
     POP EBP                             ; 0050c57c
@@ -407,8 +411,8 @@ section .text
     PUSH EAX                            ; 0050c5ab
     MOV EDX,dword ptr [EBP + 0x14]      ; 0050c5ac
     PUSH EDX                            ; 0050c5af
-    CALL FUN_0050cdf0                   ; 0050c5b0
-        ;   XREF to: 0050cdf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050cdf0()
+    CALL core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0 ; 0050c5b0
+        ;   XREF to: 0050cdf0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0050c5b5
     MOV ESP,EBP                         ; 0050c5b8
     POP EBP                             ; 0050c5ba
@@ -504,8 +508,8 @@ section .text
     PUSH ECX                            ; 0050c6ae
     MOV EBX,dword ptr [EBP + 0x14]      ; 0050c6af
     PUSH EBX                            ; 0050c6b2
-    CALL FUN_0050f4b0                   ; 0050c6b3
-        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4b0()
+    CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 ; 0050c6b3
+        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 0050c6b8
     MOV ESP,EBP                         ; 0050c6bb
     POP EBP                             ; 0050c6bd
@@ -555,8 +559,8 @@ section .text
     PUSH ESI                            ; 0050c72b
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050c72c
     PUSH EAX                            ; 0050c72f
-    CALL FUN_0050df20                   ; 0050c730
-        ;   XREF to: 0050df20 (UNCONDITIONAL_CALL)  ; undefined FUN_0050df20()
+    CALL core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20 ; 0050c730
+        ;   XREF to: 0050df20 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20(CNetGame * this_ptr, SNetworkAddr * sender_addr, int message_id, char * sender_name, ...)
     ADD ESP,0x14                        ; 0050c735
     MOV EDX,0x9                         ; 0050c738
         ;   Label: LAB_0050c738
@@ -571,8 +575,8 @@ section .text
     PUSH ECX                            ; 0050c762
     MOV EBX,dword ptr [EBP + 0x14]      ; 0050c763
     PUSH EBX                            ; 0050c766
-    CALL FUN_0050cdf0                   ; 0050c767
-        ;   XREF to: 0050cdf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050cdf0()
+    CALL core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0 ; 0050c767
+        ;   XREF to: 0050cdf0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0050c76c
     MOV ESP,EBP                         ; 0050c76f
     POP EBP                             ; 0050c771
@@ -674,8 +678,8 @@ section .text
     MOV ECX,dword ptr [EDX + 0x120]     ; 0050c879
     PUSH ECX                            ; 0050c87f
     PUSH EDX                            ; 0050c880
-    CALL FUN_0050cd90                   ; 0050c881
-        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; undefined FUN_0050cd90()
+    CALL core_netgame.cpp_CNetGame_send_FUN_0050cd90 ; 0050c881
+        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0050cd90(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EDI,dword ptr [0x01d34e40]      ; 0050c886 | DAT_01d34e40
     MOV EAX,dword ptr [ESI + 0x5]       ; 0050c88c
     ADD ESP,0xc                         ; 0050c88f
@@ -718,8 +722,8 @@ section .text
     PUSH EBX                            ; 0050c8de
     MOV ESI,dword ptr [EBP + 0x14]      ; 0050c8df
     PUSH ESI                            ; 0050c8e2
-    CALL FUN_0050f4b0                   ; 0050c8e3
-        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4b0()
+    CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 ; 0050c8e3
+        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 0050c8e8
     MOV ESP,EBP                         ; 0050c8eb
     POP EBP                             ; 0050c8ed
@@ -797,8 +801,8 @@ section .text
         ;   Label: LAB_0050c9a9
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050c9aa
     PUSH EAX                            ; 0050c9ad
-    CALL FUN_0050e890                   ; 0050c9ae
-        ;   XREF to: 0050e890 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e890()
+    CALL core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890 ; 0050c9ae
+        ;   XREF to: 0050e890 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050c9b3
     MOV ESP,EBP                         ; 0050c9b6
     POP EBP                             ; 0050c9b8
@@ -812,8 +816,8 @@ section .text
     PUSH EDX                            ; 0050c9c2
     MOV ECX,dword ptr [EBP + 0x14]      ; 0050c9c3
     PUSH ECX                            ; 0050c9c6
-    CALL FUN_0050f4b0                   ; 0050c9c7
-        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4b0()
+    CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 ; 0050c9c7
+        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 0050c9cc
     MOV ESP,EBP                         ; 0050c9cf
     POP EBP                             ; 0050c9d1
@@ -846,8 +850,8 @@ section .text
     PUSH ESI                            ; 0050ca17
     MOV EDI,dword ptr [EBP + 0x14]      ; 0050ca18
     PUSH EDI                            ; 0050ca1b
-    CALL FUN_0050e020                   ; 0050ca1c
-        ;   XREF to: 0050e020 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e020()
+    CALL core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020 ; 0050ca1c
+        ;   XREF to: 0050e020 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0050e020(CNetGame * this_ptr, UNetPacket * packet)
     ADD ESP,0x8                         ; 0050ca21
     TEST EAX,EAX                        ; 0050ca24
     JZ 0x0050c026                       ; 0050ca26
@@ -865,8 +869,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x120]     ; 0050ca5e
     PUSH EDX                            ; 0050ca64
     PUSH EAX                            ; 0050ca65
-    CALL FUN_0050cd90                   ; 0050ca66
-        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; undefined FUN_0050cd90()
+    CALL core_netgame.cpp_CNetGame_send_FUN_0050cd90 ; 0050ca66
+        ;   XREF to: 0050cd90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0050cd90(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     ADD ESP,0xc                         ; 0050ca6b
     MOV ESP,EBP                         ; 0050ca6e
     POP EBP                             ; 0050ca70
@@ -913,14 +917,14 @@ section .text
         ;   XREF to: 0050cad8 (CONDITIONAL_JUMP)  ; LAB_0050cad8
     PUSH EBX                            ; 0050cace
     PUSH EAX                            ; 0050cacf
-    CALL FUN_0050e6c0                   ; 0050cad0
-        ;   XREF to: 0050e6c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e6c0()
+    CALL core_netgame.cpp_CNetGame_removePlayer_FUN_0050e6c0 ; 0050cad0
+        ;   XREF to: 0050e6c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_removePlayer_FUN_0050e6c0(CNetGame * this_ptr, int player_index)
     ADD ESP,0x8                         ; 0050cad5
     MOV ESI,dword ptr [EBP + 0x14]      ; 0050cad8
         ;   Label: LAB_0050cad8
     PUSH ESI                            ; 0050cadb
-    CALL FUN_0050e890                   ; 0050cadc
-        ;   XREF to: 0050e890 (UNCONDITIONAL_CALL)  ; undefined FUN_0050e890()
+    CALL core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890 ; 0050cadc
+        ;   XREF to: 0050e890 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0050e890(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050cae1
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050cae4
         ;   Label: LAB_0050cae4
@@ -935,8 +939,8 @@ section .text
         ;   XREF to: 0050c026 (CONDITIONAL_JUMP)  ; caseD_e
     PUSH 0x0                            ; 0050cb04
     PUSH EAX                            ; 0050cb06
-    CALL FUN_0050b8d0                   ; 0050cb07
-        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050b8d0()
+    CALL core_netgame.cpp_FUN_0050b8d0  ; 0050cb07
+        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0050b8d0(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 0050cb0c
     PUSH 0x5e09ab                       ; 0050cb0f | = "You have been disconnected from the game"
     PUSH 0x5e09d4                       ; 0050cb14 | DAT_005e09d4
@@ -946,14 +950,14 @@ section .text
     PUSH EBX                            ; 0050cb23
     LEA EAX,[ESP + 0xd0]                ; 0050cb24
     PUSH EAX                            ; 0050cb2b
-    CALL FUN_00578e60                   ; 0050cb2c
-        ;   XREF to: 00578e60 (UNCONDITIONAL_CALL)  ; undefined FUN_00578e60()
+    CALL support_trisock.cpp_createNetworkAddr_FUN_00578e60 ; 0050cb2c
+        ;   XREF to: 00578e60 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_createNetworkAddr_FUN_00578e60()
     ADD ESP,0xc                         ; 0050cb31
     PUSH EAX                            ; 0050cb34
     MOV ESI,dword ptr [EBP + 0x14]      ; 0050cb35
     PUSH ESI                            ; 0050cb38
-    CALL FUN_0050df20                   ; 0050cb39
-        ;   XREF to: 0050df20 (UNCONDITIONAL_CALL)  ; undefined FUN_0050df20()
+    CALL core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20 ; 0050cb39
+        ;   XREF to: 0050df20 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_addChatHistory_FUN_0050df20(CNetGame * this_ptr, SNetworkAddr * sender_addr, int message_id, char * sender_name, ...)
     ADD ESP,0x14                        ; 0050cb3e
     MOV ESP,EBP                         ; 0050cb41
     POP EBP                             ; 0050cb43
@@ -967,8 +971,8 @@ section .text
     PUSH ESI                            ; 0050cb4d
     MOV EDI,dword ptr [EBP + 0x14]      ; 0050cb4e
     PUSH EDI                            ; 0050cb51
-    CALL FUN_0050f4b0                   ; 0050cb52
-        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4b0()
+    CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 ; 0050cb52
+        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 0050cb57
     JMP 0x0050cac2                      ; 0050cb5a
         ;   XREF to: 0050cac2 (UNCONDITIONAL_JUMP)  ; LAB_0050cac2
@@ -1037,8 +1041,8 @@ section .text
     PUSH 0x5e0a35                       ; 0050cc22 | = "Player list mismatch!"
     MOV dword ptr [0x01d046a0],EDX      ; 0050cc27 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0050cc2d | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050cc33
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050cc33
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050cc38
     IMUL ESI,ESI,0x34                   ; 0050cc3b
         ;   Label: LAB_0050cc3b
@@ -1074,8 +1078,8 @@ section .text
     PUSH 0x5e03e3                       ; 0050cc9d | = "allocSimFrame - sim history list full"
     MOV dword ptr [0x01d046a0],EDX      ; 0050cca2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0050cca8 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050ccae
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050ccae
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050ccb3
     MOV EDX,dword ptr [0x01d54640]      ; 0050ccb6 | DAT_01d54640
         ;   Label: LAB_0050ccb6
@@ -1091,8 +1095,8 @@ section .text
     LEA ESI,[EDX + 0x1]                 ; 0050ccd8
     PUSH EBX                            ; 0050ccdb
     MOV dword ptr [0x01d54640],ESI      ; 0050ccdc | DAT_01d54640
-    CALL FUN_005b77c0                   ; 0050cce2
-        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b77c0()
+    CALL crt_memory.c_memset_FUN_005b77c0 ; 0050cce2
+        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0050cce7
     MOV EAX,dword ptr [ESP + 0xc4]      ; 0050ccea
     MOV dword ptr [EBX],EAX             ; 0050ccf1
@@ -1105,8 +1109,8 @@ section .text
     PUSH 0x5e09e9                       ; 0050cd04 | = "Player list mismatch processing SimFr..."
     MOV dword ptr [0x01d046a0],EDI      ; 0050cd09 | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0050cd0f | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050cd14
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050cd14
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050cd19
     JMP 0x0050cc14                      ; 0050cd1c
         ;   XREF to: 0050cc14 (UNCONDITIONAL_JUMP)  ; LAB_0050cc14
@@ -1145,8 +1149,8 @@ section .text
     PUSH ESI                            ; 0050cd6f
     MOV EDI,dword ptr [EBP + 0x14]      ; 0050cd70
     PUSH EDI                            ; 0050cd73
-    CALL FUN_0050f4b0                   ; 0050cd74
-        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; undefined FUN_0050f4b0()
+    CALL core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 ; 0050cd74
+        ;   XREF to: 0050f4b0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0(CNetGame * this_ptr, SNetworkAddr * dest_addr, int payload)
     ADD ESP,0xc                         ; 0050cd79
     MOV ESP,EBP                         ; 0050cd7c
     POP EBP                             ; 0050cd7e

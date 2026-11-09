@@ -4,10 +4,37 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonFilter.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7B0000
 // =============================================================================
+
+// CDemonActorType
+extern CDemonActorType g_CDemonActorClassInfo;
+extern CDemonActorType g_CAmmoClassInfo;
+extern CDemonActorType g_CAmmoBoxClassInfo;
+extern CDemonActorType g_CAnvilClassInfo;
+extern CDemonActorType g_CArmourClassInfo;
+extern CDemonActorType g_CBackgroundActorClassInfo;
+extern CDemonActorType g_CBaronClassInfo;
+extern CDemonActorType g_CBarrierClassInfo;
+extern CDemonActorType g_CBatClassInfo;
+extern CDemonActorType g_CBatCreatureClassInfo;
+extern CDemonActorType g_CBatmanClassInfo;
+extern CDemonActorType g_CBatteryClassInfo;
+extern CDemonActorType g_CBeastClassInfo;
+extern CDemonActorType g_CBiggsClassInfo;
+extern CDemonActorType g_CBodyPartClassInfo;
+extern CDemonActorType g_CBoneGuyClassInfo;
+extern CDemonActorType g_CBoxActorClassInfo;
+extern CDemonActorType g_CBrideClassInfo;
+extern CDemonActorType g_CBugsClassInfo;
+extern CDemonActorType g_CCharacterClassInfo;
+
+// CDemonFilter[8]
+extern CDemonFilter CDemonFilter_ARRAY_007bc9ec[8];
 
 // undefined1
 extern undefined1 DAT_007bcd0c;
@@ -20,7 +47,6 @@ extern undefined1 DAT_007bfd10;
 
 // undefined4
 extern undefined4 DAT_007bbff4;
-extern undefined4 DAT_007bc030;
 extern undefined4 DAT_007bc034;
 extern undefined4 DAT_007bc038;
 extern undefined4 DAT_007bc03c;
@@ -29,21 +55,16 @@ extern undefined4 DAT_007bc044;
 extern undefined4 DAT_007bc048;
 extern undefined4 DAT_007bc04c;
 extern undefined4 DAT_007bc368;
-extern undefined4 DAT_007bc3a4;
-extern undefined4 DAT_007bc3e0;
 extern undefined4 DAT_007bc498;
 extern undefined4 DAT_007bc4cc;
 extern undefined4 DAT_007bc4d0;
 extern undefined4 DAT_007bc4dc;
-extern undefined4 DAT_007bc518;
 extern undefined4 DAT_007bc74c;
 extern undefined4 DAT_007bc754;
 extern undefined4 DAT_007bc7b8;
 extern undefined4 DAT_007bc7c0;
 extern undefined4 DAT_007bc7dc;
 extern undefined4 DAT_007bc7e4;
-extern undefined4 DAT_007bc820;
-extern undefined4 DAT_007bc85c;
 extern undefined4 DAT_007bc944;
 extern undefined4 DAT_007bc948;
 extern undefined4 DAT_007bc94c;
@@ -51,7 +72,6 @@ extern undefined4 DAT_007bc958;
 extern undefined4 DAT_007bc95c;
 extern undefined4 DAT_007bc968;
 extern undefined4 DAT_007bc96c;
-extern undefined4 DAT_007bc9e8;
 extern undefined4 DAT_007bcc84;
 extern undefined4 DAT_007bccdc;
 extern undefined4 DAT_007bcce0;
@@ -67,7 +87,6 @@ extern undefined4 DAT_007bcf4c;
 extern undefined4 DAT_007bcf50;
 extern undefined4 DAT_007bda74;
 extern undefined4 DAT_007bda90;
-extern undefined4 DAT_007bdc94;
 extern undefined4 DAT_007bdc98;
 extern undefined4 DAT_007bdc9c;
 extern undefined4 DAT_007bdca0;

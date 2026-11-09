@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * FUN_0050b160(int param_1)
+; int * core_netgame_cpp_FUN_0050b160(int param_1)
 ;
 ;
 ; Referenced Globals:
@@ -10,15 +10,15 @@
 ;   undefined4 DAT_01d54640
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_005b77c0
+;   core_main.c_FUN_004e4500
+;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0050b160
-        ;   Label: FUN_0050b160
+        ;   Label: core_netgame.cpp_FUN_0050b160
     PUSH EBP                            ; 0050b161
     MOV EBX,dword ptr [ESP + 0xc]       ; 0050b162
     MOV ECX,dword ptr [0x01d54640]      ; 0050b166 | DAT_01d54640
@@ -61,8 +61,8 @@ section .text
     PUSH 0x5e03e3                       ; 0050b1b7
     MOV dword ptr [0x01d046a0],EBP      ; 0050b1bc | DAT_01d046a0
     MOV [0x01d046a4],EAX                ; 0050b1c2 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0050b1c7
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0050b1c7
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0050b1cc
     MOV EDX,dword ptr [0x01d54640]      ; 0050b1cf | DAT_01d54640
         ;   Label: LAB_0050b1cf
@@ -78,8 +78,8 @@ section .text
     INC EDX                             ; 0050b1f1
     PUSH EBX                            ; 0050b1f2
     MOV dword ptr [0x01d54640],EDX      ; 0050b1f3 | DAT_01d54640
-    CALL FUN_005b77c0                   ; 0050b1f9
-        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005b77c0()
+    CALL crt_memory.c_memset_FUN_005b77c0 ; 0050b1f9
+        ;   XREF to: 005b77c0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005b77c0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0050b1fe
     MOV EAX,dword ptr [ESP + 0xc]       ; 0050b201
     MOV dword ptr [EBX],EAX             ; 0050b205

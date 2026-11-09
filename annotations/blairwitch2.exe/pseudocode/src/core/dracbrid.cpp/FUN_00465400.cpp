@@ -1,0 +1,189 @@
+// Name: core_dracbrid.cpp_FUN_00465400
+// Address: 00465400
+// Address Range: [[00465400, 004658d4]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_FUN_00465400(CDraculaBride *this_ptr,char *sound_name,float volume)
+
+#include "nocturne.h"
+
+/* WARNING: Type propagation algorithm not settling */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_dracbrid_cpp_FUN_00465400(CDraculaBride *this_ptr,char *sound_name,float volume)
+
+{
+  int iVar1;
+  int iVar2;
+  float fVar3;
+  uint uVar4;
+  uint *puVar5;
+  byte bVar6;
+  float afStackY_10ac [954];
+  uint uVar7;
+  uint uVar8;
+  char local_1ac [200];
+  float local_e4 [8];
+  float local_c4;
+  float local_c0 [4];
+  float local_b0;
+  float local_ac;
+  float afStack_a8 [3];
+  uint local_9c;
+  uint local_98;
+  uint local_94;
+  float local_88;
+  uint local_7c [3];
+  float local_70;
+  float local_6c;
+  uint local_68;
+  float local_64;
+  uint local_60;
+  uint local_5c;
+  float local_58;
+  float local_4c;
+  uint local_48;
+  uint local_44;
+  float local_40;
+  float local_3c [5];
+  float local_28;
+  float local_24;
+  uint local_20;
+  float local_1c;
+  uint local_18;
+  uint local_14;
+  float local_10;
+  
+  bVar6 = 0;
+  local_10 = (float)core_actor_cpp_FUN_0040cf60(0x3f800000,0x40e00000);
+  *(float *)&this_ptr->field_0x10b8c = local_10;
+  iVar1 = sound_sndmain_cpp_FUN_00552b20();
+  if (iVar1 != 0) {
+    puVar5 = (uint *)&DAT_01ba5798;
+    iVar1 = 0;
+    do {
+      iVar2 = sound_sndmain_cpp_FUN_00550b70(*puVar5);
+      uVar7 = _DAT_01ba5778;
+      if (iVar2 == 0) {
+        puVar5[7] = 0;
+        core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,uVar7);
+        local_7c[0] = local_94;
+        afStack_a8[(uint)bVar6 * -2 + 0xc] = afStack_a8[(uint)bVar6 * -2 + 6];
+        afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd] =
+             afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+        core_actor_cpp_FUN_00408d70(this_ptr,local_7c);
+        local_4c = local_88;
+        (&local_6c)[(uint)bVar6 * -2 + 9] = afStack_a8[(uint)bVar6 * -2 + 9];
+        (&local_6c)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10] =
+             afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
+        if ((float *)(puVar5 + 0xb) != &local_4c) {
+          puVar5[0xb] = (uint)local_4c;
+          puVar5[0xc] = local_48;
+          puVar5[0xd] = local_44;
+        }
+        uVar8 = 0x40a00000;
+        uVar7 = 0xc0a00000;
+        local_c0[2] = (float)puVar5[0xb];
+        local_c0[(uint)bVar6 * -2 + 3] = (float)puVar5[(uint)bVar6 * -2 + 0xc];
+        local_c0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+             (float)(puVar5 + (uint)bVar6 * -2 + 0xc)[(uint)bVar6 * -2 + 1];
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(uVar7,uVar8);
+        local_c0[2] = local_10 + local_c0[2];
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(0xc0000000,0x40000000);
+        local_c0[3] = local_10 + local_c0[3];
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(0xc0a00000,0x40a00000);
+        local_b0 = local_10 + local_b0;
+        afStack_a8[2] = local_c0[2];
+        afStack_a8[(uint)bVar6 * -2 + 3] = local_c0[(uint)bVar6 * -2 + 3];
+        afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+             local_c0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+        if ((float *)(puVar5 + 8) != afStack_a8 + 2) {
+          puVar5[8] = (uint)afStack_a8[2];
+          puVar5[9] = local_9c;
+          puVar5[10] = local_98;
+        }
+        uVar8 = 0x40a00000;
+        uVar7 = 0xc0a00000;
+        local_40 = (float)puVar5[0xb];
+        local_3c[(uint)bVar6 * -2] = (float)puVar5[(uint)bVar6 * -2 + 0xc];
+        local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+             (float)(puVar5 + (uint)bVar6 * -2 + 0xc)[(uint)bVar6 * -2 + 1];
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(uVar7,uVar8);
+        local_40 = local_10 + local_40;
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(0xc0000000,0x40000000);
+        local_3c[0] = local_10 + local_3c[0];
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(0xc0a00000,0x40a00000);
+        local_3c[1] = local_10 + local_3c[1];
+        local_70 = local_40;
+        (&local_6c)[(uint)bVar6 * -2] = local_3c[(uint)bVar6 * -2];
+        (&local_6c)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+             local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+        if ((float *)(puVar5 + 0xe) != &local_70) {
+          puVar5[0xe] = (uint)local_70;
+          puVar5[0xf] = (uint)local_6c;
+          puVar5[0x10] = local_68;
+        }
+        uVar8 = 0x40a00000;
+        uVar7 = 0xc0a00000;
+        local_3c[2] = (float)g_CDemonCameraInstance._4_4_;
+        local_3c[(uint)bVar6 * -2 + 3] =
+             *(float *)((int)&g_CDemonCameraInstance + (uint)bVar6 * -8 + 8);
+        local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+             *(float *)((uint)bVar6 * -8 + 0x1fc7844 + (uint)bVar6 * -8);
+        fVar3 = (float)core_actor_cpp_FUN_0040cf60(uVar7,uVar8);
+        local_10 = fVar3;
+        local_c4 = local_3c[2];
+        local_c0[(uint)bVar6 * -2] = local_3c[(uint)bVar6 * -2 + 3];
+        local_c0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+             local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+        local_c4 = fVar3 + local_c4;
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(0xc0000000,0x40000000);
+        local_c0[0] = local_10 + local_c0[0];
+        local_10 = (float)core_actor_cpp_FUN_0040cf60(0xc0a00000,0x40a00000);
+        local_c0[1] = local_10 + local_c0[1];
+        local_28 = local_c4;
+        (&local_24)[(uint)bVar6 * -2] = local_c0[(uint)bVar6 * -2];
+        (&local_24)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+             local_c0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+        if ((float *)(puVar5 + 0x11) != local_3c + 5) {
+          puVar5[0x11] = (uint)local_28;
+          puVar5[0x12] = (uint)local_24;
+          puVar5[0x13] = local_20;
+        }
+        core_spline_cpp_FUN_00561310(local_e4,(float)puVar5[7],0.0);
+        core_spline_cpp_FUN_00561540(local_e4,puVar5 + 8,puVar5 + 0xb,puVar5 + 0xe,puVar5 + 0x11);
+        local_1c = local_58;
+        (&local_24)[(uint)bVar6 * -2 + 3] = (&local_6c)[(uint)bVar6 * -2 + 6];
+        (&local_24)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+             (&local_6c)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+        if ((float *)(puVar5 + 1) != &local_1c) {
+          puVar5[1] = (uint)local_1c;
+          puVar5[2] = local_18;
+          puVar5[3] = local_14;
+        }
+        core_spline_cpp_FUN_00561780(local_e4,puVar5 + 8,puVar5 + 0xb,puVar5 + 0xe,puVar5 + 0x11);
+        local_64 = local_ac;
+        (&local_6c)[(uint)bVar6 * -2 + 3] = afStack_a8[(uint)bVar6 * -2];
+        (&local_6c)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+             afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+        if ((float *)(puVar5 + 4) != &local_64) {
+          puVar5[4] = (uint)local_64;
+          puVar5[5] = local_60;
+          puVar5[6] = local_5c;
+        }
+        sound_sndmain_cpp_FUN_00550450();
+        sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00550170((CVector3f *)(puVar5 + 1));
+        sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_00550210((CVector3f *)(puVar5 + 4));
+        sound_sndmain_cpp_FUN_00550270(volume);
+        core_sound_cpp_FUN_005593d0(0x0264B290,local_1ac,sound_name);
+        uVar4 = sound_sndmain_cpp_FUN_005506b0(local_1ac);
+        *puVar5 = uVar4;
+        sound_sndmain_cpp_FUN_005504d0();
+        puVar5[0x14] = (uint)this_ptr;
+        return;
+      }
+      iVar1 = iVar1 + 1;
+      puVar5 = puVar5 + 0x15;
+    } while (iVar1 < 6);
+  }
+  return;
+}

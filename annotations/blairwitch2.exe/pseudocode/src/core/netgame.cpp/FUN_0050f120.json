@@ -1,147 +1,29 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 26,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 28,
-        "message": "no matching function for call to 'FUN_0050d840'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_0050c190'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01d54640'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 361,
+    "complexity_score": 505,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 91,
-    "suspect_count": 25,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 95,
+    "suspect_count": 38,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_stride_bytecount",
       "undefined_data",
+      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 309
+    "total_lines": 313
   },
   "cross_references": [
     {
       "addr": "004b5190",
       "from_addr": "004b51f9",
-      "name": "FUN_004b5190",
+      "name": "core_game.cpp_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -155,39 +37,39 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_0050f120",
-    "signature": "void FUN_0050f120(int *param_1)"
+    "name": "core_netgame.cpp_FUN_0050f120",
+    "signature": "void core_netgame_cpp_FUN_0050f120(CNetGame *param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
-    },
-    {
-      "addr": "0050c190",
-      "is_variadic": false,
-      "name": "FUN_0050c190"
-    },
-    {
-      "addr": "0050d840",
-      "is_variadic": false,
-      "name": "FUN_0050d840"
+      "name": "core_main.c_FUN_004e4500"
     },
     {
       "addr": "0050f370",
       "is_variadic": false,
-      "name": "FUN_0050f370"
+      "name": "core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_0050f370"
+    },
+    {
+      "addr": "0050c190",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190"
     },
     {
       "addr": "0050f4f0",
       "is_variadic": false,
-      "name": "FUN_0050f4f0"
+      "name": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0"
+    },
+    {
+      "addr": "0050d840",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_0050d840"
     },
     {
       "addr": "005ba1f0",
       "is_variadic": false,
-      "name": "FUN_005ba1f0"
+      "name": "crt_string.c_memmove_FUN_005ba1f0"
     }
   ],
   "globals": [
@@ -264,7 +146,7 @@
       {
         "call_addr": "004b51f9",
         "call_type": "direct",
-        "caller": "FUN_004b5190",
+        "caller": "core_game.cpp_FUN_004b5190",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -280,7 +162,7 @@
       {
         "call_addr": "004b52b2",
         "call_type": "direct",
-        "caller": "FUN_004b5190",
+        "caller": "core_game.cpp_FUN_004b5190",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -405,7 +287,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0050f120(int *param_1)",
+      "text": "void core_netgame_cpp_FUN_0050f120(CNetGame *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -413,7 +295,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*param_1 == 2) && (param_1[1] == 3)) && (-1 < param_1[0x48])) {",
+      "text": "if (((*(int *)param_1 == 2) && (*(int *)&param_1->field_0x4 == 3)) &&",
       "type": "unnamed_param"
     },
     {
@@ -421,39 +303,55 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*param_1 == 2) && (param_1[1] == 3)) && (-1 < param_1[0x48])) {",
+      "text": "if (((*(int *)param_1 == 2) && (*(int *)&param_1->field_0x4 == 3)) &&",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 15,
-      "match": "param_1",
+      "match": "field_0x4",
       "severity": "mild",
-      "text": "if (((*param_1 == 2) && (param_1[1] == 3)) && (-1 < param_1[0x48])) {",
-      "type": "unnamed_param"
+      "text": "if (((*(int *)param_1 == 2) && (*(int *)&param_1->field_0x4 == 3)) &&",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1[0x49] < 0) {",
+      "text": "(-1 < *(int *)&param_1->field_0x120)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x120",
       "severity": "mild",
-      "text": "FUN_0050d840(param_1,param_1[0x48],0x41200000);",
-      "type": "unnamed_param"
+      "text": "(-1 < *(int *)&param_1->field_0x120)) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0050d840(param_1,param_1[0x48],0x41200000);",
+      "text": "if (*(int *)&param_1->field_0x124 < 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0x124 < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,*(int *)&param_1->field_0x120,10.0);",
       "type": "unnamed_param"
     },
     {
@@ -461,47 +359,71 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0050c190(param_1);",
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,*(int *)&param_1->field_0x120,10.0);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x120",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,*(int *)&param_1->field_0x120,10.0);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*param_1 == 2) {",
+      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_0050c190(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = param_1[param_1[0x49] * 0x20 + 0x1a];",
+      "text": "if (*(int *)param_1 == 2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = param_1[param_1[0x49] * 0x20 + 0x1a];",
+      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0050f370(param_1,iVar2 + 0x1d54644);",
+      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
       "type": "unnamed_param"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0050f4f0(param_1);",
+      "text": "(param_1,(SSimFrame *)(iVar2 + 0x1d54644));",
       "type": "unnamed_param"
     },
     {
@@ -509,20 +431,44 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = param_1[param_1[0x49] * 0x20 + 0x1a];",
+      "text": "core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = param_1[param_1[0x49] * 0x20 + 0x1a];",
+      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 41,
       "match": "DAT_01d546b8",
       "severity": "mild",
       "text": "local_18 = &DAT_01d546b8;",
@@ -530,59 +476,99 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x5e] = 0;",
+      "text": "*(uint *)&param_1->field_0x178 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x178 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (param_1[param_1[0x49] * 0x20 + 0x1a] != *(int *)(iVar3 + 0x1d54644)) {",
+      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x178 = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x178 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_0050c190(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (param_1[param_1[0x49] * 0x20 + 0x1a] != *(int *)(iVar3 + 0x1d54644)) {",
+      "text": "if (*(int *)param_1 == 2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x5e] = 1;",
+      "text": "core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_0050f4f0(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0050c190(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 == 2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0050f4f0(param_1);",
-      "type": "unnamed_param"
+      "description": "mem* byte count hardcodes an element stride ((_DAT_01d54640 - uVar5) * 0x74) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 45,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
     },
     {
       "call_site_count": 2,

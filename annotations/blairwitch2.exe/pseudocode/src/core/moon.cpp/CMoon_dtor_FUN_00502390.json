@@ -1,0 +1,135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 51,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00502390",
+    "address_range": [
+      [
+        "00502390",
+        "005023d3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_moon.cpp_CMoon_dtor_FUN_00502390",
+    "signature": "CMoon * core_moon_cpp_CMoon_dtor_FUN_00502390(CMoon *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044dcb0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_0044dcb0"
+    },
+    {
+      "addr": "00502450",
+      "is_variadic": false,
+      "name": "core_moon.cpp_FUN_00502450"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.130434782608695,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 11,
+      "INT_ADD": 8,
+      "INT_AND": 16,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 8,
+      "INT_SUB": 15,
+      "LOAD": 3,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 118
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMoon *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x738",
+      "severity": "mild",
+      "text": "((CKeyFramedModel *)&this_ptr->field_0x738,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "return (CMoon *)&pCVar1[-1].field_0x390;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x390",
+      "severity": "mild",
+      "text": "return (CMoon *)&pCVar1[-1].field_0x390;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMoon",
+        "offset": 8,
+        "vtable_addr": "005f9e44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

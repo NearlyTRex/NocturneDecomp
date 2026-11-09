@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00552920(int param_1,undefined4 *param_2)
+; void __cdecl sound_sndmain_cpp_FUN_00552920(int device_id,SSoundDeviceInfo *device_info)
 ;
+; Parameters:
+; int              Stack[0x4]:4   device_id
+; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[4]:
-;   FUN_004ed260 at 004edc1e
-;   FUN_00552980 at 005529a2
-;   FUN_00553680 at 00553742
-;   FUN_00553980 at 005539c1
+;   core_menu.cpp_FUN_004ed260 at 004edc1e
+;   sound_sndmain.cpp_FUN_00552980 at 005529a2
+;   sound_sndmain.cpp_FUN_00553680 at 00553742
+;   sound_sndmain.cpp_FUN_00553980 at 005539c1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e9006
@@ -17,20 +20,20 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00552890
+;   core_main.c_FUN_004e4500
+;   sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00552920
-        ;   Label: FUN_00552920
+        ;   Label: sound_sndmain.cpp_FUN_00552920
     PUSH ESI                            ; 00552921
     PUSH EDI                            ; 00552922
     MOV EBX,dword ptr [ESP + 0x10]      ; 00552923
-    CALL FUN_00552890                   ; 00552927
-        ;   XREF to: 00552890 (UNCONDITIONAL_CALL)  ; undefined FUN_00552890()
+    CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890 ; 00552927
+        ;   XREF to: 00552890 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890()
     TEST EBX,EBX                        ; 0055292c
     JL 0x00552958                       ; 0055292e
         ;   XREF to: 00552958 (CONDITIONAL_JUMP)  ; LAB_00552958
@@ -56,8 +59,8 @@ section .text
     PUSH 0x5e901b                       ; 00552962 | = "getSoundDeviceInfo - invalid index"
     MOV dword ptr [0x01d046a0],EDX      ; 00552967 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0055296d | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00552973
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00552973
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00552978
     JMP 0x00552934                      ; 0055297b
         ;   XREF to: 00552934 (UNCONDITIONAL_JUMP)  ; LAB_00552934

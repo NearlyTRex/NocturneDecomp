@@ -1,0 +1,2772 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1165,
+    "complexity_score": 2795,
+    "cross_reference_count": 7,
+    "function_call_count": 5,
+    "global_count": 59,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 600,
+    "suspect_count": 215,
+    "suspect_types": [
+      "fast_inv_sqrt_inline",
+      "pointer_cast",
+      "pointer_stride_bytecount",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1765
+  },
+  "cross_references": [
+    {
+      "addr": "004159e0",
+      "from_addr": "00415a34",
+      "name": "core_bodypart.cpp_FUN_004159e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b0fe0",
+      "from_addr": "005b10bc",
+      "name": "core_cloth.cpp_CCloth_render_FUN_005b0fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044e720",
+      "from_addr": "0044e787",
+      "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_0044e720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c52a0",
+      "from_addr": "004c53f3",
+      "name": "core_glass.cpp_FUN_004c52a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5470",
+      "from_addr": "004c55bf",
+      "name": "core_glass.cpp_FUN_004c5470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b6a50",
+      "from_addr": "005b6c5f",
+      "name": "core_morph.cpp_CMorphModel_rotatePoints_FUN_005b6a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005419c0",
+      "from_addr": "005419ed",
+      "name": "core_skeleton.cpp_CDeformableModel_lightVertices_FUN_005419c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00532190",
+    "address_range": [
+      [
+        "00532190",
+        "00533007"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_00532190",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_00532190(CDemonSet *this_ptr,int vertex_count,int tri_count,void *face_data,CVector3i *vertex_positions,int vertices_per_face,CVector3i *vertex_normals)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00531460",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_00531460"
+    },
+    {
+      "addr": "00531f60",
+      "is_variadic": false,
+      "name": "core_set.cpp_transformToWorldSpace_FUN_00531f60"
+    },
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "0046b960",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e5a51",
+      "name": "s_core_set_cpp_005e5a51",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a61",
+      "name": "s_CDemonSet_lightVerticies_005e5a61",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5ab6",
+      "name": "s_core_set_cpp_005e5ab6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5ac6",
+      "name": "s_Too_many_normals_on_this_005e5ac6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5aef",
+      "name": "s_core_set_cpp_005e5aef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5aff",
+      "name": "s_Need_more_normals_for_pa_005e5aff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b2a",
+      "name": "DAT_005e5b2a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e5b32",
+      "name": "DAT_005e5b32",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622014",
+      "name": "DAT_00622014",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622018",
+      "name": "DAT_00622018",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062201c",
+      "name": "DAT_0062201c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622034",
+      "name": "DAT_00622034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622038",
+      "name": "DAT_00622038",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062203c",
+      "name": "DAT_0062203c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622040",
+      "name": "DAT_00622040",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622044",
+      "name": "DAT_00622044",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622048",
+      "name": "DAT_00622048",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062204c",
+      "name": "DAT_0062204c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622064",
+      "name": "DAT_00622064",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622068",
+      "name": "DAT_00622068",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062206c",
+      "name": "DAT_0062206c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622070",
+      "name": "DAT_00622070",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38aec",
+      "name": "DAT_01c38aec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b9c",
+      "name": "DAT_01c38b9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38ba0",
+      "name": "DAT_01c38ba0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38ba4",
+      "name": "DAT_01c38ba4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38ba8",
+      "name": "DAT_01c38ba8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bac",
+      "name": "DAT_01c38bac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bb0",
+      "name": "DAT_01c38bb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bb4",
+      "name": "DAT_01c38bb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bb8",
+      "name": "DAT_01c38bb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38bbc",
+      "name": "DAT_01c38bbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01caf5b8",
+      "name": "DAT_01caf5b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fb8",
+      "name": "DAT_01d04fb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fbc",
+      "name": "DAT_01d04fbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fc0",
+      "name": "DAT_01d04fc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fc4",
+      "name": "DAT_01d04fc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fc8",
+      "name": "DAT_01d04fc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fcc",
+      "name": "DAT_01d04fcc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fd0",
+      "name": "DAT_01d04fd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fd4",
+      "name": "DAT_01d04fd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d04fd8",
+      "name": "DAT_01d04fd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200a390",
+      "name": "DAT_0200a390",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8f4",
+      "name": "DAT_0200e8f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8f8",
+      "name": "DAT_0200e8f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e8fc",
+      "name": "DAT_0200e8fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e900",
+      "name": "DAT_0200e900",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e904",
+      "name": "DAT_0200e904",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0200e908",
+      "name": "DAT_0200e908",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02054df4",
+      "name": "DAT_02054df4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02054df8",
+      "name": "DAT_02054df8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02054dfc",
+      "name": "DAT_02054dfc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02054e00",
+      "name": "DAT_02054e00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02054e04",
+      "name": "DAT_02054e04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02054e08",
+      "name": "DAT_02054e08",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.3944069431051105,
+    "instruction_count": 1037,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 112,
+      "BOOL_OR": 28,
+      "BRANCH": 6,
+      "CALL": 16,
+      "CBRANCH": 57,
+      "COPY": 2208,
+      "FLOAT2FLOAT": 133,
+      "FLOAT_ABS": 3,
+      "FLOAT_ADD": 29,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 40,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 15,
+      "INT_ADD": 554,
+      "INT_AND": 709,
+      "INT_CARRY": 71,
+      "INT_EQUAL": 447,
+      "INT_LEFT": 36,
+      "INT_LESS": 58,
+      "INT_MULT": 73,
+      "INT_NOTEQUAL": 151,
+      "INT_OR": 138,
+      "INT_RIGHT": 36,
+      "INT_SBORROW": 58,
+      "INT_SCARRY": 82,
+      "INT_SEXT": 102,
+      "INT_SLESS": 254,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 204,
+      "INT_XOR": 51,
+      "INT_ZEXT": 48,
+      "LOAD": 361,
+      "POPCOUNT": 212,
+      "RETURN": 9,
+      "ROUND": 6,
+      "STORE": 228,
+      "SUBPIECE": 68,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 6631
+  },
+  "stack_frame": {
+    "frame_size": 408,
+    "local_size": 380,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_178",
+        "offset": -376,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_16c",
+        "offset": -364,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_15c",
+        "offset": -348,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_158",
+        "offset": -344,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_154",
+        "offset": -340,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_138",
+        "offset": -312,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_134",
+        "offset": -308,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_130",
+        "offset": -304,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "tri_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "face_data",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_positions",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "vertices_per_face",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_normals",
+        "offset": 28,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053219c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "0053253e",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 24,
+      "match": "aiStackY_1160",
+      "severity": "moderate",
+      "text": "int aiStackY_1160 [1013];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "iVar5 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 97,
+      "match": "field_0x15ac90",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x15ac90 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 98,
+      "match": "field_0x16166c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x16166c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 99,
+      "match": "field_0x15ac98",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x15ac98 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "local_13c = *(uint *)((int)&DAT_00622014 + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_00622018",
+      "severity": "mild",
+      "text": "local_138 = *(uint *)((int)&DAT_00622018 + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_0062201c",
+      "severity": "mild",
+      "text": "local_134 = *(uint *)((int)&DAT_0062201c + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar5) = _DAT_01c38aec;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 130,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "local_118 = *(uint *)((int)&DAT_00622014 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_00622018",
+      "severity": "mild",
+      "text": "local_114 = *(uint *)((int)&DAT_00622018 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 132,
+      "match": "DAT_0062201c",
+      "severity": "mild",
+      "text": "local_110 = *(uint *)((int)&DAT_0062201c + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 156,
+      "match": "DAT_0200e8f4",
+      "severity": "mild",
+      "text": "pfVar14 = (float *)&DAT_0200e8f4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 186,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "memset(&DAT_02054df4,0,vertex_count * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 189,
+      "match": "DAT_0200e8f4",
+      "severity": "mild",
+      "text": "pfVar14 = (float *)&DAT_0200e8f4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 192,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 192,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 194,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df8 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 195,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "pfVar14[1] + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 196,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054dfc + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 197,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "pfVar14[2] + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(ushort *)((int)face_data",
+      "severity": "moderate",
+      "text": "iVar8 = (uint)*(ushort *)((int)face_data + 2) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 199,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 199,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 201,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df8 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 202,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "pfVar14[1] + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 203,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054dfc + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 204,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "pfVar14[2] + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 205,
+      "match": "(ushort *)((int)face_data",
+      "severity": "moderate",
+      "text": "iVar8 = (uint)*(ushort *)((int)face_data + 4) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 206,
+      "match": "(void *)((int)face_data",
+      "severity": "moderate",
+      "text": "face_data = (void *)((int)face_data + 0x12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 207,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 207,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 209,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df8 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 210,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "pfVar14[1] + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 212,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054dfc + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 213,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "pfVar14[2] + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(int *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)pvVar7 + 0x24) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(int *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)((int)pvVar7 + 0x18) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 227,
+      "match": "(int *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)pvVar7 + 0x30) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 241,
+      "match": "(float *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar7 + 8) = fVar1 * fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 242,
+      "match": "(float *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar7 + 0xc) = fVar4 * fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 243,
+      "match": "(float *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar7 + 0x10) = fVar3 * fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 245,
+      "match": "(void *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "pvVar7 = (void *)((int)pvVar7 + 0x48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 248,
+      "match": "(void *)((int)pvVar7",
+      "severity": "moderate",
+      "text": "pvVar7 = (void *)((int)pvVar7 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 253,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "memset(&DAT_02054df4,0,vertex_count * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 257,
+      "match": "(int *)((int)face_data",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)face_data + 0x18) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 258,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "pfVar14 = (float *)((int)face_data + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 259,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 259,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 261,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df8 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 262,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 263,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054dfc + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 264,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 264,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 265,
+      "match": "(int *)((int)face_data",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)face_data + 0x24) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 266,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 266,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 268,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df8 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 269,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 269,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 270,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054dfc + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 271,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 271,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 272,
+      "match": "(int *)((int)face_data",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)face_data + 0x30) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 273,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 273,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) = *pfVar14 + *(float *)(&DAT_02054df4 + iVar8)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 275,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df8 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 276,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 276,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 277,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054dfc + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 278,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 278,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 279,
+      "match": "(int *)((int)face_data",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)face_data + 4) == 4) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 280,
+      "match": "(int *)((int)face_data",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)face_data + 0x3c) * 0xc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 281,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df4 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 282,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*pfVar14 + *(float *)(&DAT_02054df4 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 283,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054df8 + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 284,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 284,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0xc) + *(float *)(&DAT_02054df8 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 285,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_02054dfc + iVar8) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 286,
+      "match": "(float *)((int)face_data",
+      "severity": "moderate",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 286,
+      "match": "DAT_02054dfc",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0x10) + *(float *)(&DAT_02054dfc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 289,
+      "match": "(void *)((int)face_data",
+      "severity": "moderate",
+      "text": "face_data = (void *)((int)face_data + 0x48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 292,
+      "match": "(void *)((int)face_data",
+      "severity": "moderate",
+      "text": "face_data = (void *)((int)face_data + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 298,
+      "match": "field_0x15ae98",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x15ae98 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 301,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "pfVar14 = (float *)&DAT_02054df4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 318,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + local_58) = _DAT_01c38aec;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 330,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "local_38 = (float *)&DAT_02054df4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 355,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + local_60) = _DAT_01c38aec;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 365,
+      "match": "field_0x15ae84",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x15ae84 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 371,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "auStack_168[2] = *(uint *)((int)&DAT_00622014 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 372,
+      "match": "DAT_00622018",
+      "severity": "mild",
+      "text": "auStack_168[3] = *(uint *)((int)&DAT_00622018 + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 373,
+      "match": "DAT_0062201c",
+      "severity": "mild",
+      "text": "local_158 = *(uint *)((int)&DAT_0062201c + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 377,
+      "match": "&stack0xfffffe8c",
+      "severity": "moderate",
+      "text": "*puVar15 = *(uint *)(&stack0xfffffe8c + (uint)bVar17 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 379,
+      "match": "&stack0xfffffe90",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffe90 + (uint)bVar17 * -8 + (uint)bVar17 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 456,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_02054df4 + iVar5 * 0xc) = local_100;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 457,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 459,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(int *)((int)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 471,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02054df4 + iVar5 * 0xc) = *(uint *)vertex_normals;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 472,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc) =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 475,
+      "match": "DAT_02054df8",
+      "severity": "mild",
+      "text": "((int)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 488,
+      "match": "DAT_02054df4",
+      "severity": "mild",
+      "text": "pCVar18 = (CVector3i *)&DAT_02054df4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 494,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + local_64) = _DAT_01c38aec;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 507,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "local_fc[2] = *(uint *)((int)&DAT_00622014 + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 508,
+      "match": "DAT_00622018",
+      "severity": "mild",
+      "text": "local_fc[3] = *(uint *)((int)&DAT_00622018 + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 509,
+      "match": "DAT_0062201c",
+      "severity": "mild",
+      "text": "local_ec = *(uint *)((int)&DAT_0062201c + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 521,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar5) = _DAT_01c38aec;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 530,
+      "match": "DAT_00622034",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x161670;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 530,
+      "match": "field_0x161670",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x161670;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 531,
+      "match": "DAT_00622038",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x161674;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 531,
+      "match": "field_0x161674",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x161674;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 533,
+      "match": "DAT_0062203c",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x161678;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 533,
+      "match": "field_0x161678",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x161678;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 541,
+      "match": "field_0x15ac90",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x15ac90 == 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 546,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 555,
+      "match": "field_0x15ac90",
+      "severity": "mild",
+      "text": "else if (*(int *)&this_ptr->field_0x15ac90 == 3) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 559,
+      "match": "DAT_00622034",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x15ae9c",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 559,
+      "match": "field_0x15ae9c",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x15ae9c",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 561,
+      "match": "DAT_00622038",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x15aea0",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 561,
+      "match": "field_0x15aea0",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x15aea0",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 564,
+      "match": "DAT_0062203c",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x15aea4",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 564,
+      "match": "field_0x15aea4",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x15aea4",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 566,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 577,
+      "match": "DAT_00622034",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 578,
+      "match": "DAT_00622038",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 579,
+      "match": "DAT_0062203c",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 580,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 593,
+      "match": "DAT_00622034",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 594,
+      "match": "DAT_00622038",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 595,
+      "match": "DAT_0062203c",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 596,
+      "match": "DAT_00622040",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&DAT_00622014` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)&DAT_00622014",
+      "severity": "moderate",
+      "text": "local_13c = *(uint *)((int)&DAT_00622014 + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622018` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(int)&DAT_00622018",
+      "severity": "moderate",
+      "text": "local_138 = *(uint *)((int)&DAT_00622018 + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062201c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)&DAT_0062201c",
+      "severity": "moderate",
+      "text": "local_134 = *(uint *)((int)&DAT_0062201c + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 118,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar5) = _DAT_01c38aec;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622014` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 130,
+      "match": "(int)&DAT_00622014",
+      "severity": "moderate",
+      "text": "local_118 = *(uint *)((int)&DAT_00622014 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622018` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)&DAT_00622018",
+      "severity": "moderate",
+      "text": "local_114 = *(uint *)((int)&DAT_00622018 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062201c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
+      "match": "(int)&DAT_0062201c",
+      "severity": "moderate",
+      "text": "local_110 = *(uint *)((int)&DAT_0062201c + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 223,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)((int)pvVar7 + 0x24) * 0xc;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 224,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)((int)pvVar7 + 0x18) * 0xc;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 227,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)pvVar7 + 0x30) * 0xc;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 241,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar7 + 8) = fVar1 * fVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 242,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar7 + 0xc) = fVar4 * fVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 243,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar7 + 0x10) = fVar3 * fVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 245,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "pvVar7 = (void *)((int)pvVar7 + 0x48);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 248,
+      "match": "(int)pvVar7",
+      "severity": "moderate",
+      "text": "pvVar7 = (void *)((int)pvVar7 + 0x3c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 318,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + local_58) = _DAT_01c38aec;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 355,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + local_60) = _DAT_01c38aec;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622014` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 371,
+      "match": "(int)&DAT_00622014",
+      "severity": "moderate",
+      "text": "auStack_168[2] = *(uint *)((int)&DAT_00622014 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622018` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 372,
+      "match": "(int)&DAT_00622018",
+      "severity": "moderate",
+      "text": "auStack_168[3] = *(uint *)((int)&DAT_00622018 + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062201c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 373,
+      "match": "(int)&DAT_0062201c",
+      "severity": "moderate",
+      "text": "local_158 = *(uint *)((int)&DAT_0062201c + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 459,
+      "match": "(int)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc)",
+      "severity": "moderate",
+      "text": "*(int *)((int)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 475,
+      "match": "(int)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc)",
+      "severity": "moderate",
+      "text": "((int)(&DAT_02054df8 + (uint)bVar17 * -8 + iVar5 * 0xc) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 494,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + local_64) = _DAT_01c38aec;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622014` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 507,
+      "match": "(int)&DAT_00622014",
+      "severity": "moderate",
+      "text": "local_fc[2] = *(uint *)((int)&DAT_00622014 + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622018` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 508,
+      "match": "(int)&DAT_00622018",
+      "severity": "moderate",
+      "text": "local_fc[3] = *(uint *)((int)&DAT_00622018 + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062201c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 509,
+      "match": "(int)&DAT_0062201c",
+      "severity": "moderate",
+      "text": "local_ec = *(uint *)((int)&DAT_0062201c + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 521,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar5) = _DAT_01c38aec;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 530,
+      "match": "(int)&DAT_00622034",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x161670;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 531,
+      "match": "(int)&DAT_00622038",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x161674;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 533,
+      "match": "(int)&DAT_0062203c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x161678;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 546,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 559,
+      "match": "(int)&DAT_00622034",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x15ae9c",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 561,
+      "match": "(int)&DAT_00622038",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x15aea0",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 564,
+      "match": "(int)&DAT_0062203c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x15aea4",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 566,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 577,
+      "match": "(int)&DAT_00622034",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = 0xffff;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 578,
+      "match": "(int)&DAT_00622038",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = 0xffff;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 579,
+      "match": "(int)&DAT_0062203c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = 0xffff;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 580,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622034` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 593,
+      "match": "(int)&DAT_00622034",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622038` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 594,
+      "match": "(int)&DAT_00622038",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_0062203c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 595,
+      "match": "(int)&DAT_0062203c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00622040` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 596,
+      "match": "(int)&DAT_00622040",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_13c = *(uint *)((int)&DAT_00622014 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 107,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_138 = *(uint *)((int)&DAT_00622018 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 108,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_134 = *(uint *)((int)&DAT_0062201c + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 118,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar5) = _DAT_01c38aec;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 130,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_118 = *(uint *)((int)&DAT_00622014 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 131,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_114 = *(uint *)((int)&DAT_00622018 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 132,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_110 = *(uint *)((int)&DAT_0062201c + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 318,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + local_58) = _DAT_01c38aec;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 355,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + local_60) = _DAT_01c38aec;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 371,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "auStack_168[2] = *(uint *)((int)&DAT_00622014 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 372,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "auStack_168[3] = *(uint *)((int)&DAT_00622018 + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 373,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_158 = *(uint *)((int)&DAT_0062201c + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 494,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + local_64) = _DAT_01c38aec;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 507,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_fc[2] = *(uint *)((int)&DAT_00622014 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 508,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_fc[3] = *(uint *)((int)&DAT_00622018 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 509,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_ec = *(uint *)((int)&DAT_0062201c + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 521,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar5) = _DAT_01c38aec;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 530,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x161670;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 531,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x161674;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 533,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x161678;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 546,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 559,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = *(uint *)&this_ptr->field_0x15ae9c",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 561,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = *(uint *)&this_ptr->field_0x15aea0",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 564,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = *(uint *)&this_ptr->field_0x15aea4",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 566,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 577,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = 0xffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 578,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = 0xffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 579,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = 0xffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 580,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 593,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622034 + iVar8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 594,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622038 + iVar8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 595,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_0062203c + iVar8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 596,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_00622040 + iVar8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01caf5b8`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b8` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 176,
+      "match": "local_8c = (float)(_DAT_01caf5b8 - ((int)local_90 >> 1));",
+      "severity": "moderate",
+      "text": "local_8c = (float)(_DAT_01caf5b8 - ((int)local_90 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01caf5b8`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b8` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 239,
+      "match": "local_b4 = (float)(_DAT_01caf5b8 - ((int)local_b8 >> 1));",
+      "severity": "moderate",
+      "text": "local_b4 = (float)(_DAT_01caf5b8 - ((int)local_b8 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01caf5b8`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b8` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 307,
+      "match": "local_74 = (float)(_DAT_01caf5b8 - ((int)local_78 >> 1));",
+      "severity": "moderate",
+      "text": "local_74 = (float)(_DAT_01caf5b8 - ((int)local_78 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01caf5b8`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01caf5b8` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 337,
+      "match": "local_80 = (float)(_DAT_01caf5b8 - ((int)local_84 >> 1));",
+      "severity": "moderate",
+      "text": "local_80 = (float)(_DAT_01caf5b8 - ((int)local_84 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (vertex_count * 0xc) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 186,
+      "match": "memset",
+      "severity": "moderate",
+      "text": "memset(&DAT_02054df4,0,vertex_count * 0xc);",
+      "type": "pointer_stride_bytecount"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (vertex_count * 0xc) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 253,
+      "match": "memset",
+      "severity": "moderate",
+      "text": "memset(&DAT_02054df4,0,vertex_count * 0xc);",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

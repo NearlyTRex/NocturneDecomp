@@ -1,118 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 124,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 126,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 191,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 198,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 204,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 16,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 237,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 80,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 93,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 131,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 131,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01cedee0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01cedee0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01d046a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_01d046a4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 43,
-        "message": "no matching function for call to 'FUN_004e4500'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
@@ -134,13 +20,13 @@
     {
       "addr": "0042abe0",
       "from_addr": "0042ac9d",
-      "name": "FUN_0042abe0",
+      "name": "core_charactr.cpp_FUN_0042abe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486a80",
       "from_addr": "00486a9b",
-      "name": "FUN_00486a80",
+      "name": "core_emitter.cpp_FUN_00486a80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,14 +39,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004ce050",
-    "signature": "int FUN_004ce050(float *param_1)"
+    "name": "core_hero.cpp_FUN_004ce050",
+    "signature": "int core_hero_cpp_FUN_004ce050(float *param_1)"
   },
   "function_calls": [
     {
       "addr": "004e4500",
       "is_variadic": false,
-      "name": "FUN_004e4500"
+      "name": "core_main.c_FUN_004e4500"
     }
   ],
   "globals": [
@@ -201,7 +87,7 @@
       {
         "call_addr": "0042ac9d",
         "call_type": "direct",
-        "caller": "FUN_0042abe0",
+        "caller": "core_charactr.cpp_FUN_0042abe0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +100,7 @@
       {
         "call_addr": "00486a9b",
         "call_type": "direct",
-        "caller": "FUN_00486a80",
+        "caller": "core_emitter.cpp_FUN_00486a80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,7 +194,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_004ce050(float *param_1)",
+      "text": "int core_hero_cpp_FUN_004ce050(float *param_1)",
       "type": "unnamed_param"
     },
     {

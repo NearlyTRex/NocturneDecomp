@@ -1,19 +1,20 @@
-// Name: FUN_00447660
+// Name: core_dfilter.cpp_FUN_00447660
 // Address: 00447660
 // Address Range: [[00447660, 00447798]]
 // Convention: unknown
-// Signature: int FUN_00447660(int *param_1,char *param_2,int param_3)
+// Signature: int core_dfilter_cpp_FUN_00447660(int *param_1,char *param_2,int param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_00447660(int *param_1,char *param_2,int param_3)
+int core_dfilter_cpp_FUN_00447660(int *param_1,char *param_2,int param_3)
 
 {
   char cVar1;
   int iVar2;
-  int iVar3;
+  CDemonFilter *this_ptr;
+  CDemonFilter *pCVar3;
   int iVar4;
   char *pcVar5;
   int *piVar6;
@@ -22,7 +23,7 @@ int FUN_00447660(int *param_1,char *param_2,int param_3)
   if (0 < *param_1) {
     piVar6 = param_1 + 1;
     do {
-      iVar2 = FUN_005b8c30(piVar6,param_2);
+      iVar2 = _strcmp((char *)piVar6,param_2);
       if (iVar2 == 0) {
         return param_1[iVar4 + 0x281];
       }
@@ -33,7 +34,7 @@ int FUN_00447660(int *param_1,char *param_2,int param_3)
   if (0x3f < *param_1) {
     _DAT_01d046a0 = "..\\core\\dfilter.cpp";
     _DAT_01d046a4 = 0x55;
-    FUN_004e4500("CFilterCache::getFilter - Too many filters");
+    core_main_c_FUN_004e4500("CFilterCache::getFilter - Too many filters");
   }
   piVar6 = param_1 + iVar4 * 10 + 1;
   *param_1 = *param_1 + 1;
@@ -47,20 +48,20 @@ int FUN_00447660(int *param_1,char *param_2,int param_3)
     *(char *)((int)piVar6 + 1) = cVar1;
     piVar6 = (int *)((int)piVar6 + 2);
   } while (cVar1 != '\0');
-  iVar3 = FUN_005b8be2(0x4c);
-  iVar2 = 0;
-  if (iVar3 != 0) {
-    iVar2 = FUN_004477f0(iVar3);
+  this_ptr = (CDemonFilter *)FUN_005b8be2(0x4c);
+  pCVar3 = (CDemonFilter *)0x0;
+  if (this_ptr != (CDemonFilter *)0x0) {
+    pCVar3 = core_dfilter_cpp_CDemonFilter_ctor_FUN_004477f0(this_ptr);
   }
-  param_1[iVar4 + 0x281] = iVar2;
-  if (iVar2 == 0) {
+  param_1[iVar4 + 0x281] = (int)pCVar3;
+  if (pCVar3 == (CDemonFilter *)0x0) {
     _DAT_01d046a0 = "..\\core\\dfilter.cpp";
     _DAT_01d046a4 = 0x59;
-    FUN_004e4500("CFilterCache::getFilter - Out of memory");
+    core_main_c_FUN_004e4500("CFilterCache::getFilter - Out of memory");
   }
-  FUN_004478d0(param_1[iVar4 + 0x281],param_2);
+  core_dfilter_cpp_CDemonFilter_load_FUN_004478d0((CDemonFilter *)param_1[iVar4 + 0x281],param_2);
   if (param_3 != 0) {
-    FUN_00447ad0(param_1[iVar4 + 0x281],0x3faa9fbe,1);
+    core_dfilter_cpp_CDemonFilter_init_FUN_00447ad0((CDemonFilter *)param_1[iVar4 + 0x281],1.333,1);
   }
   return param_1[iVar4 + 0x281];
 }

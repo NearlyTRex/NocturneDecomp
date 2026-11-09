@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004fc7b0(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_mission_cpp_FUN_004fc7b0(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
 ; XREF[10]:
-;   FUN_004186c0 at 004189ec
-;   FUN_00436e80 at 004372b3
-;   FUN_0043a350 at 0043a3f6
-;   FUN_004a0920 at 004a099f
-;   FUN_004d1070 at 004d1102
-;   FUN_004dadb0 at 004db4cb
-;   FUN_004f1e90 at 004f1f54
-;   FUN_005117a0 at 005118e1
-;   FUN_0058b950 at 0058bac9
-;   FUN_005ac0c0 at 005ac1d5
+;   core_boneguy.cpp_FUN_004186c0 at 004189ec
+;   core_crate.cpp_FUN_0043a350 at 0043a3f6
+;   core_dog1.cpp_FUN_005ac0c0 at 005ac1d5
+;   core_flamecan.cpp_FUN_004a0920 at 004a099f
+;   core_hiram.cpp_FUN_004d1070 at 004d1102
+;   core_inv.cpp_FUN_004dadb0 at 004db4cb
+;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1f54
+;   core_passngr.cpp_FUN_005117a0 at 005118e1
+;   core_werewolf.cpp_FUN_0058b950 at 0058bac9
+;   unkafter_conveyor.cpp_FUN_00436e80 at 004372b3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_005de7c9
@@ -23,14 +23,14 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004fc7b0
-        ;   Label: FUN_004fc7b0
+        ;   Label: core_mission.cpp_FUN_004fc7b0
     MOV EDX,dword ptr [EAX + 0x112c]    ; 004fc7b4
     MOV ECX,dword ptr [ESP + 0x8]       ; 004fc7ba
     MOV dword ptr [EAX + EDX*0x4 + 0x1130],ECX ; 004fc7be
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5de7dd                       ; 004fc7f5 | = "CDemonMission::markActorToDelete - To..."
     MOV dword ptr [0x01d046a0],EBX      ; 004fc7fa | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ESI      ; 004fc800 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004fc806
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004fc806
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 004fc80b
     POP EBX                             ; 004fc80e
     POP ESI                             ; 004fc80f

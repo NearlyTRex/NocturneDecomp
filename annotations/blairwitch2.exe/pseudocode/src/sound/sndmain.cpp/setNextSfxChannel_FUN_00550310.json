@@ -1,0 +1,277 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 26,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "00489670",
+      "from_addr": "0048c22e",
+      "name": "core_event.cpp_FUN_00489670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be430",
+      "from_addr": "004be816",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004be430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529750",
+      "from_addr": "005298b6",
+      "name": "core_script.cpp_FUN_00529750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559b4e",
+      "from_addr": "00559f85",
+      "name": "core_sound.cpp_FUN_00559b4e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a1d0",
+      "from_addr": "0055a2ad",
+      "name": "core_sound.cpp_FUN_0055a1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a3c0",
+      "from_addr": "0055a765",
+      "name": "core_sound.cpp_FUN_0055a3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ac50",
+      "from_addr": "0055ad47",
+      "name": "core_sound.cpp_FUN_0055ac50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00550310",
+    "address_range": [
+      [
+        "00550310",
+        "0055035d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_00550310",
+    "signature": "void __cdecl sound_sndmain_cpp_setNextSfxChannel_FUN_00550310(int channel_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e8bdf",
+      "name": "s_sound_sndmain_cpp_005e8bdf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8bf4",
+      "name": "s_setNextSfxChannel_invali_005e8bf4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264161c",
+      "name": "DAT_0264161c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0048c22e",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_00489670",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004be816",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_rollCredits_FUN_004be430",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005298b6",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00529750",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a2ad",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055a1d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055a765",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055ab30",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055ad47",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055ac50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00559f85",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_00559b4e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00559c5f",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_00559b4e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.090909090909091,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 17,
+      "INT_ADD": 6,
+      "INT_AND": 22,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 7,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 112
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "channel_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 133,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 153
+  },
+  "cross_references": [
+    {
+      "addr": "004467a0",
+      "from_addr": "00446863",
+      "name": "core_dcube.cpp_CDemonCube_load_FUN_004467a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00446590",
+    "address_range": [
+      [
+        "00446590",
+        "004466bf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00446590",
+    "signature": "void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00446590(CDemonCube *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8580"
+    },
+    {
+      "addr": "005b8df8",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b8df8"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ce886",
+      "name": "s_core_dcube_cpp_005ce886",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce898",
+      "name": "s_CDemonCube_allocMemory_O_005ce898",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce8c7",
+      "name": "s_core_dcube_cpp_005ce8c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce8d9",
+      "name": "s_CDemonCube_allocMemory_O_005ce8d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce905",
+      "name": "s_core_dcube_cpp_005ce905",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce917",
+      "name": "s_CDemonCube_allocMemory_O_005ce917",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce94b",
+      "name": "s_core_dcube_cpp_005ce94b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce95d",
+      "name": "s_CDemonCube_allocMemory_O_005ce95d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce98b",
+      "name": "s_core_dcube_cpp_005ce98b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce99d",
+      "name": "s_CDemonCube_allocMemory_O_005ce99d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00446863",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_CDemonCube_load_FUN_004467a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.390804597701149,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 5,
+      "COPY": 70,
+      "INT_ADD": 28,
+      "INT_AND": 63,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 22,
+      "INT_SUB": 27,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 29
+    },
+    "pcode_op_count": 382
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCube *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "iVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x20 * 0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x24 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "iVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x28 << 5);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2c = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "pvVar2 = FUN_005b8580(*(ulong *)&this_ptr->field_0x28);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x30 = pvVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(void **)&this_ptr->field_0x4 = pvVar2;",
+      "type": "unnamed_field"
+    }
+  ]
+}

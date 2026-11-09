@@ -1,53 +1,62 @@
-// Name: FUN_00541370
+// Name: core_skeleton.cpp_FUN_00541370
 // Address: 00541370
 // Address Range: [[00541370, 005414f9]]
 // Convention: unknown
-// Signature: void FUN_00541370(int *param_1,int param_2,int param_3,int param_4,int param_5)
+// Signature: void core_skeleton_cpp_FUN_00541370(CDeformableModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00541370(int *param_1,int param_2,int param_3,int param_4,int param_5)
+void core_skeleton_cpp_FUN_00541370(CDeformableModel *param_1,int param_2,uint param_3,uint param_4,uint param_5)
 
 {
   uint uVar1;
-  int iVar2;
   
-  if ((param_2 < 0) || (*param_1 <= param_2)) {
+  if ((param_2 < 0) || (*(int *)param_1 <= param_2)) {
     _DAT_01d046a0 = "..\\core\\skeleton.cpp";
     _DAT_01d046a4 = 0x299;
-    FUN_004e4500("CDeformableModel::allocLOD - invalid lod number %d",param_2);
+    core_main_c_FUN_004e4500("CDeformableModel::allocLOD - invalid lod number %d",param_2);
   }
-  FUN_005b7fce(param_1[param_2 + 0x10]);
-  FUN_005b7fce(param_1[param_2 + 0x1f]);
-  FUN_005b7fce(param_1[param_2 + 0x24]);
-  FUN_005b7fce(param_1[param_2 + 0x29]);
-  param_1[param_2 + 0xb] = param_3;
-  param_1[param_2 + 0x15] = param_4;
-  param_1[param_2 + 0x1a] = param_5;
-  uVar1 = FUN_005b8df8(param_1[param_2 + 0xb] * 0x34,param_1[param_2 + 0xb],&DAT_005fb9d0);
-  iVar2 = FUN_005ba29a(uVar1);
-  param_1[param_2 + 0x10] = iVar2;
-  iVar2 = FUN_005b8df8((param_1[param_2 + 0x15] + param_1[param_2 + 0x1a]) * 0x12);
-  param_1[param_2 + 0x1f] = iVar2;
-  iVar2 = FUN_005b8df8((param_1[param_2 + 0x15] + param_1[param_2 + 0x1a]) * 4);
-  param_1[param_2 + 0x24] = iVar2;
-  if (param_1[param_2 + 0x1a] < 1) {
-    param_1[param_2 + 0x29] = 0;
+  FUN_005b7fce(*(void **)(&param_1->field_0x40 + param_2 * 4));
+  FUN_005b7fce(*(void **)(&param_1->field_0x7c + param_2 * 4));
+  FUN_005b7fce(*(void **)(&param_1->field_0x90 + param_2 * 4));
+  FUN_005b7fce(*(void **)(&param_1->field_0xa4 + param_2 * 4));
+  *(uint *)(&param_1->field_0x2c + param_2 * 4) = param_3;
+  *(uint *)(&param_1->field_0x54 + param_2 * 4) = param_4;
+  *(uint *)(&param_1->field_0x68 + param_2 * 4) = param_5;
+  uVar1 = FUN_005b8df8
+                    (*(int *)(&param_1->field_0x2c + param_2 * 4) * 0x34,
+                     *(int *)(&param_1->field_0x2c + param_2 * 4),&g_SVertTypeInfo);
+  uVar1 = FUN_005ba29a(uVar1);
+  *(uint *)(&param_1->field_0x40 + param_2 * 4) = uVar1;
+  uVar1 = FUN_005b8df8
+                    ((*(int *)(&param_1->field_0x54 + param_2 * 4) +
+                     *(int *)(&param_1->field_0x68 + param_2 * 4)) * 0x12);
+  *(uint *)(&param_1->field_0x7c + param_2 * 4) = uVar1;
+  uVar1 = FUN_005b8df8
+                    ((*(int *)(&param_1->field_0x54 + param_2 * 4) +
+                     *(int *)(&param_1->field_0x68 + param_2 * 4)) * 4);
+  *(uint *)(&param_1->field_0x90 + param_2 * 4) = uVar1;
+  if (*(int *)(&param_1->field_0x68 + param_2 * 4) < 1) {
+    *(uint *)(&param_1->field_0xa4 + param_2 * 4) = 0;
   }
   else {
-    iVar2 = FUN_005b8df8(param_1[param_2 + 0x1a] * 4);
-    param_1[param_2 + 0x29] = iVar2;
+    uVar1 = FUN_005b8df8(*(int *)(&param_1->field_0x68 + param_2 * 4) * 4);
+    *(uint *)(&param_1->field_0xa4 + param_2 * 4) = uVar1;
   }
-  if ((((param_1[param_2 + 0x10] != 0) && (param_1[param_2 + 0x1f] != 0)) &&
-      (param_1[param_2 + 0x24] != 0)) &&
-     ((param_1[param_2 + 0x1a] < 1 || (param_1[param_2 + 0x29] != 0)))) {
+  if ((((*(int *)(&param_1->field_0x40 + param_2 * 4) != 0) &&
+       (*(int *)(&param_1->field_0x7c + param_2 * 4) != 0)) &&
+      (*(int *)(&param_1->field_0x90 + param_2 * 4) != 0)) &&
+     ((*(int *)(&param_1->field_0x68 + param_2 * 4) < 1 ||
+      (*(int *)(&param_1->field_0xa4 + param_2 * 4) != 0)))) {
     return;
   }
-  FUN_00541160(param_1);
+  core_skeleton_cpp_CDeformableModel_free_FUN_00541160(param_1);
   _DAT_01d046a0 = "..\\core\\skeleton.cpp";
   _DAT_01d046a4 = 0x2bd;
-  FUN_004e4500("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",param_1 + 0xb,param_1 + 0x15,param_1 + 0x1a);
+  core_main_c_FUN_004e4500
+            ("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",&param_1->field_0x2c,&param_1->field_0x54,
+             &param_1->field_0x68);
   return;
 }

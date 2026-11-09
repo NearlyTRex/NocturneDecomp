@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0044a210(int param_1,int *param_2)
+; void __cdecl core_dlight_cpp_FUN_0044a210(CDemonLight *this_ptr,CRect *source_rect)
 ;
+; Parameters:
+; CDemonLight *    Stack[0x4]:4   this_ptr
+; CRect *          Stack[0x8]:4   source_rect
 ;
 ; XREF[1]:
-;   FUN_0044a520 at 0044a757
+;   core_dlight.cpp_FUN_0044a520 at 0044a757
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_005cf2df
@@ -14,15 +17,15 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_00470201
-;   FUN_004e4500
+;   core_dstrendr.cpp_memcpyMMX_FUN_00470201
+;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0044a210
-        ;   Label: FUN_0044a210
+        ;   Label: core_dlight.cpp_FUN_0044a210
     PUSH ESI                            ; 0044a211
     PUSH EDI                            ; 0044a212
     PUSH EBP                            ; 0044a213
@@ -71,8 +74,8 @@ section .text
     PUSH EDX                            ; 0044a28c
     PUSH ECX                            ; 0044a28d
     INC EDI                             ; 0044a28e
-    CALL FUN_00470201                   ; 0044a28f
-        ;   XREF to: 00470201 (UNCONDITIONAL_CALL)  ; undefined FUN_00470201()
+    CALL core_dstrendr.cpp_memcpyMMX_FUN_00470201 ; 0044a28f
+        ;   XREF to: 00470201 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00470201(void * dest, void * src, int byte_count)
     MOV EAX,dword ptr [ESI + 0xc]       ; 0044a294
     ADD ESP,0xc                         ; 0044a297
     CMP EDI,EAX                         ; 0044a29a
@@ -91,8 +94,8 @@ section .text
     PUSH 0x5cf2f2                       ; 0044a2af | = "CDemonLight::blitZBuffer - No master ..."
     MOV dword ptr [0x01d046a0],ECX      ; 0044a2b4 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 0044a2ba | DAT_01d046a4
-    CALL FUN_004e4500                   ; 0044a2c0
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 0044a2c0
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 0044a2c5
     JMP 0x0044a229                      ; 0044a2c8
         ;   XREF to: 0044a229 (UNCONDITIONAL_JUMP)  ; LAB_0044a229

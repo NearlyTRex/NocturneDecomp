@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005398d0(int *param_1,undefined4 param_2)
+; void core_setdir_cpp_FUN_005398d0(CDemonSet *param_1,_FILE *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xb8]:4  local_b8
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   FUN_00539860 at 0053989f
-;   FUN_00539d50 at 00539d57
+;   core_setdir.cpp_FUN_00539860 at 0053989f
+;   core_setdir.cpp_FUN_00539d50 at 00539d57
 ;
 ; Referenced Globals:
 ;   void* PTR_LAB_005398b4 = 0053992b
@@ -20,22 +20,22 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00538470
-;   FUN_00539be0
+;   core_main.c_FUN_004e4500
+;   core_setdir.cpp_CDemonSet_freeThumbs_FUN_00539be0
+;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBP                            ; 005398d0
-        ;   Label: FUN_005398d0
+        ;   Label: core_setdir.cpp_FUN_005398d0
     SUB ESP,0xa0                        ; 005398d1
     MOV EDX,dword ptr [ESP + 0xa8]      ; 005398d7
     PUSH EDX                            ; 005398de
     XOR EBP,EBP                         ; 005398df
-    CALL FUN_00539be0                   ; 005398e1
-        ;   XREF to: 00539be0 (UNCONDITIONAL_CALL)  ; undefined FUN_00539be0()
+    CALL core_setdir.cpp_CDemonSet_freeThumbs_FUN_00539be0 ; 005398e1
+        ;   XREF to: 00539be0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_freeThumbs_FUN_00539be0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 005398e6
     MOV EAX,dword ptr [ESP + 0xa8]      ; 005398e9
         ;   Label: LAB_005398e9
@@ -103,8 +103,8 @@ section .text
     ADD EAX,ECX                         ; 005399aa
     PUSH EAX                            ; 005399ac
     INC EBX                             ; 005399ad
-    CALL FUN_00538470                   ; 005399ae
-        ;   XREF to: 00538470 (UNCONDITIONAL_CALL)  ; undefined FUN_00538470()
+    CALL core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 ; 005399ae
+        ;   XREF to: 00538470 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb * this_ptr, CVector3f * camera_pos, CVector3f * look_at_pos, int width, ...)
     ADD ESP,0x1c                        ; 005399b3
     CMP EBX,0x6                         ; 005399b6
     JGE 0x005399ec                      ; 005399b9
@@ -117,8 +117,8 @@ section .text
     PUSH 0x5e6038                       ; 005399ce | = "Hell froze"
     MOV dword ptr [0x01d046a0],ESI      ; 005399d3 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EDI      ; 005399d9 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 005399df
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 005399df
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 005399e4
     JMP 0x00539968                      ; 005399e7
         ;   XREF to: 00539968 (UNCONDITIONAL_JUMP)  ; LAB_00539968
@@ -149,8 +149,8 @@ section .text
     SUB EAX,EBX                         ; 00539bbb
     ADD EAX,0x2093d34                   ; 00539bbd
     PUSH EAX                            ; 00539bc2
-    CALL FUN_00538470                   ; 00539bc3
-        ;   XREF to: 00538470 (UNCONDITIONAL_CALL)  ; undefined FUN_00538470()
+    CALL core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470 ; 00539bc3
+        ;   XREF to: 00538470 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb * this_ptr, CVector3f * camera_pos, CVector3f * look_at_pos, int width, ...)
     ADD ESP,0x1c                        ; 00539bc8
     INC EBP                             ; 00539bcb
     POP EBX                             ; 00539bcc

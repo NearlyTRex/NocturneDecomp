@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004a55b0(undefined4 param_1,undefined4 param_2)
+; void core_fldnotes_cpp_FUN_004a55b0(undefined4 param_1,undefined4 param_2)
 ;
 ;
 ; XREF[1]:
-;   FUN_00489670 at 0048a32b
+;   core_event.cpp_FUN_00489670 at 0048a32b
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004a5598 = 004a5601
@@ -13,23 +13,23 @@
 ;   TerminatedCString s_CFieldNotes_completeTask_005d63ee
 ;   TerminatedCString s_core_fldnotes_cpp_005d6424
 ;   TerminatedCString s_Field_note_s_has_invalid_005d6439
-;   undefined4 DAT_006138e0
+;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   undefined4 DAT_00616014
 ;   undefined4 DAT_01cab9f0
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_0047be40
-;   FUN_004a35e0
-;   FUN_004e4500
+;   core_fldnotes.cpp_FUN_004a35e0
+;   core_main.c_FUN_004e4500
+;   shape_edittool.cpp_FUN_0047be40
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004a55b0
-        ;   Label: FUN_004a55b0
+        ;   Label: core_fldnotes.cpp_FUN_004a55b0
     PUSH ESI                            ; 004a55b1
     PUSH EDI                            ; 004a55b2
     PUSH EBP                            ; 004a55b3
@@ -44,8 +44,8 @@ section .text
     PUSH EDI                            ; 004a55cf
         ;   Label: LAB_004a55cf
     PUSH ESI                            ; 004a55d0
-    CALL FUN_004a35e0                   ; 004a55d1
-        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004a35e0()
+    CALL core_fldnotes.cpp_FUN_004a35e0 ; 004a55d1
+        ;   XREF to: 004a35e0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a35e0()
     ADD ESP,0x8                         ; 004a55d6
     MOV EDX,EAX                         ; 004a55d9
     TEST EAX,EAX                        ; 004a55db
@@ -78,8 +78,8 @@ section .text
     PUSH 0x5d6439                       ; 004a5613 | = "Field note %s has invalid type %d"
     MOV dword ptr [0x01d046a0],EDI      ; 004a5618 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBP      ; 004a561e | DAT_01d046a4
-    CALL FUN_004e4500                   ; 004a5624
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 004a5624
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0xc                         ; 004a5629
     MOV dword ptr [0x00616014],0x1      ; 004a562c | DAT_00616014
         ;   Label: caseD_4
@@ -103,10 +103,10 @@ section .text
         ;   Label: LAB_004a5650
     PUSH EDX                            ; 004a5654
     PUSH 0x5d63bd                       ; 004a5655 | = "CFieldNotes::completeTask - entry '%s..."
-    MOV ECX,dword ptr [0x006138e0]      ; 004a565a | DAT_006138e0
+    MOV ECX,dword ptr [0x006138e0]      ; 004a565a | g_CEditorToolsPtr
     PUSH ECX                            ; 004a5660
-    CALL FUN_0047be40                   ; 004a5661
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined FUN_0047be40()
+    CALL shape_edittool.cpp_FUN_0047be40 ; 004a5661
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
     ADD ESP,0xc                         ; 004a5666
     MOV dword ptr [0x00616014],0x1      ; 004a5669 | DAT_00616014
     POP EBP                             ; 004a5673
@@ -118,10 +118,10 @@ section .text
         ;   Label: caseD_0
     PUSH EBX                            ; 004a567c
     PUSH 0x5d63ee                       ; 004a567d | = "CFieldNotes::completeTask - entry '%s..."
-    MOV ESI,dword ptr [0x006138e0]      ; 004a5682 | DAT_006138e0
+    MOV ESI,dword ptr [0x006138e0]      ; 004a5682 | g_CEditorToolsPtr
     PUSH ESI                            ; 004a5688
-    CALL FUN_0047be40                   ; 004a5689
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined FUN_0047be40()
+    CALL shape_edittool.cpp_FUN_0047be40 ; 004a5689
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
     ADD ESP,0xc                         ; 004a568e
     MOV dword ptr [0x00616014],0x1      ; 004a5691 | DAT_00616014
     POP EBP                             ; 004a569b

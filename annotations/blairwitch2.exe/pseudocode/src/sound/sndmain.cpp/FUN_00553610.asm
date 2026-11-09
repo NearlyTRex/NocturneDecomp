@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00553610(float param_1)
+; void __cdecl sound_sndmain_cpp_FUN_00553610(float latency)
 ;
+; Parameters:
+; float            Stack[0x4]:4   latency
 ;
 ; XREF[1]:
-;   FUN_00553680 at 005537e3
+;   sound_sndmain.cpp_FUN_00553680 at 005537e3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e926e
@@ -17,16 +19,16 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_004e4500
-;   FUN_00552b20
+;   core_main.c_FUN_004e4500
+;   sound_sndmain.cpp_FUN_00552b20
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL FUN_00552b20                   ; 00553610
-        ;   XREF to: 00552b20 (UNCONDITIONAL_CALL)  ; undefined FUN_00552b20()
-        ;   Label: FUN_00553610
+    CALL sound_sndmain.cpp_FUN_00552b20 ; 00553610
+        ;   XREF to: 00552b20 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00552b20()
+        ;   Label: sound_sndmain.cpp_FUN_00553610
     TEST EAX,EAX                        ; 00553615
     JNZ 0x00553649                      ; 00553617
         ;   XREF to: 00553649 (CONDITIONAL_JUMP)  ; LAB_00553649
@@ -54,8 +56,8 @@ section .text
     PUSH 0x5e9283                       ; 00553653 | = "setMaxSwSoundLatency - can't do this ..."
     MOV dword ptr [0x01d046a0],EDX      ; 00553658 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],ECX      ; 0055365e | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00553664
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00553664
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00553669
     JMP 0x00553619                      ; 0055366c
         ;   XREF to: 00553619 (UNCONDITIONAL_JUMP)  ; LAB_00553619

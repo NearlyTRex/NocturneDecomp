@@ -1,0 +1,144 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 94,
+    "complexity_score": 51,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004407f0",
+    "address_range": [
+      [
+        "004407f0",
+        "004408db"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_testCoronaVisibility_FUN_004407f0",
+    "signature": "int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_004407f0(int start_x,int start_y,int depth_reciprocal)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0151071c",
+      "name": "DAT_0151071c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01510720",
+      "name": "DAT_01510720",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01510724",
+      "name": "DAT_01510724",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01510728",
+      "name": "DAT_01510728",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.181818181818182,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 52,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 3,
+      "CBRANCH": 5,
+      "COPY": 65,
+      "INT_ADD": 25,
+      "INT_AND": 165,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 64,
+      "INT_LEFT": 11,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 46,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 4,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 36,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 10,
+      "INT_SUB": 23,
+      "INT_XOR": 6,
+      "INT_ZEXT": 3,
+      "LOAD": 14,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 9,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 630
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "start_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "depth_reciprocal",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 361,
+    "complexity_score": 416,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 151,
+    "suspect_count": 25,
+    "suspect_types": [
+      "extra_output",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 512
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004df960",
+    "address_range": [
+      [
+        "004df960",
+        "004dfd4e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_004df960",
+    "signature": "int __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df960(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "004078b0",
+      "is_variadic": false,
+      "name": "engine_3d.c_FUN_004078b0"
+    },
+    {
+      "addr": "004df430",
+      "is_variadic": false,
+      "name": "engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004df430"
+    },
+    {
+      "addr": "004df5f0",
+      "is_variadic": false,
+      "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0"
+    },
+    {
+      "addr": "004df770",
+      "is_variadic": false,
+      "name": "engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004df770"
+    },
+    {
+      "addr": "00500f30",
+      "is_variadic": false,
+      "name": "engine_model.c_FUN_00500f30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dbc58",
+      "name": "s_engine_keyframe_c_005dbc58",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbc6d",
+      "name": "s_Bad_keyframe_1_005dbc6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbc7c",
+      "name": "s_engine_keyframe_c_005dbc7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbc91",
+      "name": "s_ZBP_not_found_005dbc91",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbca6",
+      "name": "DAT_005dbca6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbcae",
+      "name": "DAT_005dbcae",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbcb2",
+      "name": "DAT_005dbcb2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbcb6",
+      "name": "DAT_005dbcb6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbcbe",
+      "name": "DAT_005dbcbe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbcc2",
+      "name": "DAT_005dbcc2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbcc6",
+      "name": "DAT_005dbcc6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dbcca",
+      "name": "DAT_005dbcca",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a374",
+      "name": "DAT_01c2a374",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.875796178343949,
+    "instruction_count": 314,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 98,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 11,
+      "CBRANCH": 13,
+      "COPY": 453,
+      "FLOAT2FLOAT": 16,
+      "FLOAT_ADD": 5,
+      "FLOAT_MULT": 15,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 139,
+      "INT_AND": 380,
+      "INT_CARRY": 33,
+      "INT_DIV": 2,
+      "INT_EQUAL": 171,
+      "INT_LEFT": 22,
+      "INT_LESS": 10,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 72,
+      "INT_OR": 109,
+      "INT_REM": 2,
+      "INT_RIGHT": 28,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 34,
+      "INT_SDIV": 1,
+      "INT_SEXT": 41,
+      "INT_SLESS": 109,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 68,
+      "INT_XOR": 23,
+      "INT_ZEXT": 8,
+      "LOAD": 84,
+      "POPCOUNT": 76,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 52,
+      "SUBPIECE": 33,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 2159
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004df969",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_004df960(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x14) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004df770(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar8 = *(uint *)(param_1 + 0xc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar11 = (int)*(uint *)(param_1 + 0x10) >> 0x1f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar6 = *(uint *)(param_1 + 0x10) ^ uVar11;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x10) = _DAT_01c2a374 % (int)(*(int *)(param_1 + 8) * uVar8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x10) = _DAT_01c2a374 % (int)(*(int *)(param_1 + 8) * uVar8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 8) <= iVar14) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 8) <= iStack_1c) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar17 = *(int *)(param_1 + 8) + -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)(param_1 + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piStack_18 = (int *)(*(int *)(param_1 + 0x118 + iVar14 * 4) + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar13 = (int *)(*(int *)(iVar12 * 4 + param_1 + 0x118) + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar15 = (int *)(*(int *)(iVar14 + param_1 + 0x118) + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar16 = (int *)(*(int *)(iVar17 * 4 + param_1 + 0x118) + 0x14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 93,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "piVar9 = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 94,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "piVar10 = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 95,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "if (0 < extraout_EDX) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 139,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar14 = *(int *)(param_1 + 0x14) + 0x14;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 153,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_3d_c_FUN_004078b0(*(uint *)(param_1 + 0x14));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 154,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1 + 0x158;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 128,
+        "vtable_addr": "006093c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

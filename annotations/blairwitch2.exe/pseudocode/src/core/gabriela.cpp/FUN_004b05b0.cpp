@@ -1,24 +1,23 @@
-// Name: FUN_004b05b0
+// Name: core_gabriela.cpp_FUN_004b05b0
 // Address: 004b05b0
 // Address Range: [[004b05b0, 004b0a3a]]
-// Convention: unknown
-// Signature: undefined4 FUN_004b05b0(int param_1)
+// Convention: __cdecl
+// Signature: int __cdecl core_gabriela_cpp_FUN_004b05b0(CGabriella *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_004b05b0(int param_1)
+int __cdecl core_gabriela_cpp_FUN_004b05b0(CGabriella *this_ptr)
 
 {
-  int iVar1;
-  float fVar2;
-  uint uVar3;
-  int iVar4;
-  byte bVar5;
+  float fVar1;
+  uint uVar2;
+  int iVar3;
+  byte bVar4;
   uint auStackY_10b8 [1003];
-  uint uVar6;
+  int iVar5;
   float local_100 [3];
   uint local_f4;
   uint local_f0;
@@ -59,7 +58,7 @@ uint FUN_004b05b0(int param_1)
   uint local_3c;
   uint local_38;
   uint uStack_34;
-  int local_2c;
+  byte *local_2c;
   float local_28;
   float fStack_24;
   uint uStack_20;
@@ -67,18 +66,18 @@ uint FUN_004b05b0(int param_1)
   int local_18;
   int local_14;
   
-  bVar5 = 0;
-  *(uint *)(param_1 + 0x25608) = 0;
-  FUN_005b7f5f(local_100,4,&DAT_005f22b0);
+  bVar4 = 0;
+  *(uint *)&this_ptr->field_0x25608 = 0;
+  __arrinit(local_100,4,&g_CVectorTypeInfo);
   local_a0 = 0xbda3d70a;
   local_9c = 0x3ee147ae;
   local_98 = 0x3ff5c28f;
-  FUN_00408d70(param_1,&local_a0);
+  core_actor_cpp_FUN_00408d70(this_ptr,&local_a0);
   local_40 = local_ac;
-  *(uint *)((int)auStack_48 + ((uint)bVar5 * -2 + 3) * 4) =
-       *(uint *)((int)local_cc + ((uint)bVar5 * -2 + 9) * 4);
-  *(uint *)((int)auStack_48 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 4) * 4) =
-       *(uint *)((int)local_cc + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 10) * 4);
+  *(uint *)((int)auStack_48 + ((uint)bVar4 * -2 + 3) * 4) =
+       *(uint *)((int)local_cc + ((uint)bVar4 * -2 + 9) * 4);
+  *(uint *)((int)auStack_48 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 4) * 4) =
+       *(uint *)((int)local_cc + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 10) * 4);
   if (&local_f4 != &local_40) {
     local_f4 = local_40;
     local_f0 = local_3c;
@@ -87,12 +86,12 @@ uint FUN_004b05b0(int param_1)
   local_54 = 0;
   local_58 = 0xbf266666;
   local_50 = 0x4007ae14;
-  FUN_00408d70(param_1,&local_58);
+  core_actor_cpp_FUN_00408d70(this_ptr,&local_58);
   local_d0 = local_4c;
-  *(uint *)((int)local_cc + (uint)bVar5 * 0xfffffff8) =
-       *(uint *)((int)auStack_48 + (uint)bVar5 * 0xfffffff8);
-  *(uint *)((int)local_cc + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4) =
-       *(uint *)((int)auStack_48 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4);
+  *(uint *)((int)local_cc + (uint)bVar4 * 0xfffffff8) =
+       *(uint *)((int)auStack_48 + (uint)bVar4 * 0xfffffff8);
+  *(uint *)((int)local_cc + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 1) * 4) =
+       *(uint *)((int)auStack_48 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 1) * 4);
   if (&local_e8 != &local_d0) {
     local_e8 = local_d0;
     local_e4 = local_cc[0];
@@ -101,12 +100,12 @@ uint FUN_004b05b0(int param_1)
   local_70 = 0;
   local_6c = 0;
   local_68 = 0x40000000;
-  FUN_00408d70(param_1,&local_70);
+  core_actor_cpp_FUN_00408d70(this_ptr,&local_70);
   local_c4 = local_64;
-  *(uint *)((int)local_cc + ((uint)bVar5 * -2 + 3) * 4) =
-       *(uint *)((int)auStack_60 + (uint)bVar5 * 0xfffffff8);
-  *(uint *)((int)local_cc + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 4) * 4) =
-       *(uint *)((int)auStack_60 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4);
+  *(uint *)((int)local_cc + ((uint)bVar4 * -2 + 3) * 4) =
+       *(uint *)((int)auStack_60 + (uint)bVar4 * 0xfffffff8);
+  *(uint *)((int)local_cc + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 4) * 4) =
+       *(uint *)((int)auStack_60 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 1) * 4);
   if (&local_dc != &local_c4) {
     local_dc = local_c4;
     local_d8 = local_c0;
@@ -114,20 +113,20 @@ uint FUN_004b05b0(int param_1)
   }
   local_28 = 4.0;
   local_14 = 0;
-  local_2c = param_1 + 0x20;
-  for (local_18 = 0; local_18 < *(int *)(0x01E661B8 + 0x14d164); local_18 = local_18 + 1) {
-    iVar1 = *(int *)(0x01E661B8 + local_14 + 0x14d168);
-    iVar4 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x9c))(iVar1);
-    if (iVar4 == 0) {
-      uStack_20 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x8c))(iVar1,param_1);
+  local_2c = &this_ptr->field_0x20;
+  for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_18 = local_18 + 1) {
+    iVar5 = *(int *)(&g_CDemonSetPtr->field_0x14d168 + local_14);
+    iVar3 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x9c))(iVar5);
+    if (iVar3 == 0) {
+      uStack_20 = (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x8c))(iVar5,this_ptr);
       if (uStack_20 < 2) {
-        if ((uStack_20 == 1) && (*(int *)(param_1 + 0x2620) == 0)) {
-          FUN_00408de0(iVar1,local_2c);
+        if ((uStack_20 == 1) && (*(int *)&this_ptr->field_0x2620 == 0)) {
+          core_actor_cpp_FUN_00408de0(iVar5,local_2c);
           fStack_7c = fStack_b8;
-          *(uint *)((int)afStack_90 + ((uint)bVar5 * -2 + 6) * 4) =
-               *(uint *)((int)local_cc + ((uint)bVar5 * -2 + 6) * 4);
-          *(uint *)((int)afStack_90 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 7) * 4) =
-               *(uint *)((int)local_cc + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 7) * 4);
+          *(uint *)((int)afStack_90 + ((uint)bVar4 * -2 + 6) * 4) =
+               *(uint *)((int)local_cc + ((uint)bVar4 * -2 + 6) * 4);
+          *(uint *)((int)afStack_90 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 7) * 4) =
+               *(uint *)((int)local_cc + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 7) * 4);
           fStack_1c = SQRT(fStack_74 * fStack_74 + fStack_7c * fStack_7c + fStack_78 * fStack_78);
           if (fStack_1c <= 0.0) {
             fStack_78 = 0.0;
@@ -135,30 +134,30 @@ uint FUN_004b05b0(int param_1)
             fStack_74 = 0.0;
           }
           else {
-            fVar2 = 1.0 / fStack_1c;
-            fStack_7c = fStack_7c * fVar2;
-            fStack_78 = fStack_78 * fVar2;
-            fStack_74 = fStack_74 * fVar2;
+            fVar1 = 1.0 / fStack_1c;
+            fStack_7c = fStack_7c * fVar1;
+            fStack_78 = fStack_78 * fVar1;
+            fStack_74 = fStack_74 * fVar1;
           }
           if (fStack_74 <= (float)_DAT_005d70b3) goto LAB_004b07bf;
         }
       }
-      else if (((uStack_20 < 3) || (uStack_20 == 3)) && (*(int *)(param_1 + 0x2620) == 0)) {
+      else if (((uStack_20 < 3) || (uStack_20 == 3)) && (*(int *)&this_ptr->field_0x2620 == 0)) {
 LAB_004b07bf:
-        uVar3 = uStack_20;
-        fStack_94 = *(float *)(iVar1 + 0x20) - *(float *)((int)local_100 + uStack_20 * 0xc);
-        afStack_90[0] = *(float *)(iVar1 + 0x24) - local_100[uStack_20 * 3 + 1];
-        afStack_90[1] = *(float *)(iVar1 + 0x28) - local_100[uStack_20 * 3 + 2];
+        uVar2 = uStack_20;
+        fStack_94 = *(float *)(iVar5 + 0x20) - *(float *)((int)local_100 + uStack_20 * 0xc);
+        afStack_90[0] = *(float *)(iVar5 + 0x24) - local_100[uStack_20 * 3 + 1];
+        afStack_90[1] = *(float *)(iVar5 + 0x28) - local_100[uStack_20 * 3 + 2];
         afStack_90[2] = fStack_94;
-        *(uint *)((int)afStack_90 + ((uint)bVar5 * -2 + 3) * 4) =
-             *(uint *)((int)afStack_90 + (uint)bVar5 * 0xfffffff8);
-        *(uint *)((int)afStack_90 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 4) * 4) =
-             *(uint *)((int)afStack_90 + ((uint)bVar5 * -2 + (uint)bVar5 * -2 + 1) * 4);
+        *(uint *)((int)afStack_90 + ((uint)bVar4 * -2 + 3) * 4) =
+             *(uint *)((int)afStack_90 + (uint)bVar4 * 0xfffffff8);
+        *(uint *)((int)afStack_90 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 4) * 4) =
+             *(uint *)((int)afStack_90 + ((uint)bVar4 * -2 + (uint)bVar4 * -2 + 1) * 4);
         if (ABS(afStack_90[3]) <= (float)_DAT_005d70bb) {
           fStack_24 = afStack_90[2] * afStack_90[2] + fStack_80 * fStack_80;
           if (fStack_24 <= local_28) {
-            *(int *)(param_1 + 0x25608) = iVar1;
-            uStack_34 = uVar3;
+            *(int *)&this_ptr->field_0x25608 = iVar5;
+            uStack_34 = uVar2;
             local_28 = fStack_24;
           }
         }
@@ -166,32 +165,33 @@ LAB_004b07bf:
     }
     local_14 = local_14 + 4;
   }
-  if (*(int *)(param_1 + 0x25608) == 0) {
+  if (*(int *)&this_ptr->field_0x25608 == 0) {
     return 0;
   }
-  *(float *)(param_1 + 0x20) =
-       (*(float *)(*(int *)(param_1 + 0x25608) + 0x20) -
-       *(float *)((int)local_100 + uStack_34 * 0xc)) + *(float *)(param_1 + 0x20);
-  *(float *)(param_1 + 0x28) =
-       (*(float *)(*(int *)(param_1 + 0x25608) + 0x28) - local_100[uStack_34 * 3 + 2]) +
-       *(float *)(param_1 + 0x28);
+  *(float *)&this_ptr->field_0x20 =
+       (*(float *)(*(int *)&this_ptr->field_0x25608 + 0x20) -
+       *(float *)((int)local_100 + uStack_34 * 0xc)) + *(float *)&this_ptr->field_0x20;
+  *(float *)&this_ptr->field_0x28 =
+       (*(float *)(*(int *)&this_ptr->field_0x25608 + 0x28) - local_100[uStack_34 * 3 + 2]) +
+       *(float *)&this_ptr->field_0x28;
   if (uStack_34 < 2) {
     if (uStack_34 != 1) {
 LAB_004b0a06:
       _DAT_01d046a0 = "..\\core\\gabriela.cpp";
       _DAT_01d046a4 = 0x637;
-      FUN_004e4500("Hell froze - invalid pickUpType: %d",uStack_34);
+      core_main_c_FUN_004e4500("Hell froze - invalid pickUpType: %d",uStack_34);
       return 1;
     }
-    uVar6 = 0xe;
+    iVar5 = 0xe;
   }
   else if (uStack_34 < 3) {
-    uVar6 = 0xf;
+    iVar5 = 0xf;
   }
   else {
     if (uStack_34 != 3) goto LAB_004b0a06;
-    uVar6 = 4;
+    iVar5 = 4;
   }
-  FUN_00503620(param_1 + 0x2b4,uVar6,1);
+  core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
+            ((CMotionController *)&this_ptr->field_0x2b4,iVar5,1);
   return 1;
 }

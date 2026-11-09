@@ -1,0 +1,159 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 47,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 23
+  },
+  "cross_references": [
+    {
+      "addr": "0040bc50",
+      "from_addr": "0040bd05",
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040bc50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042b440",
+      "from_addr": "0042b482",
+      "name": "core_charactr.cpp_FUN_0042b440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005478b0",
+      "from_addr": "005478ef",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00547460",
+    "address_range": [
+      [
+        "00547460",
+        "0054747a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460(CDeformableModelInstance *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005478ef",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042b482",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042b440",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040bd05",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archivePartStatus_FUN_0040bc50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 1,
+      "COPY": 4,
+      "INT_ADD": 5,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 1,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 40
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "puVar2 = &pCVar1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x21b8",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1->field_0x21b8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "} while (puVar2 != &this_ptr->field_0x78);",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 177,
+    "cross_reference_count": 2,
+    "function_call_count": 8,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 67,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 159
+  },
+  "cross_references": [
+    {
+      "addr": "0047ac10",
+      "from_addr": "0047ac49",
+      "name": "shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0047ac10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481540",
+      "from_addr": "004815fe",
+      "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_00481540",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047fc30",
+    "address_range": [
+      [
+        "0047fc30",
+        "0047fcfa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_FUN_0047fc30",
+    "signature": "void __cdecl shape_edittool_cpp_FUN_0047fc30(CEditorTools *this_ptr,char *text_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000002e",
+      "is_variadic": false,
+      "name": "CloseClipboard"
+    },
+    {
+      "addr": "005b8ce0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005b8ce0"
+    },
+    {
+      "addr": "EXTERNAL:00000079",
+      "is_variadic": false,
+      "name": "GlobalAlloc"
+    },
+    {
+      "addr": "EXTERNAL:0000007a",
+      "is_variadic": false,
+      "name": "GlobalFree"
+    },
+    {
+      "addr": "EXTERNAL:0000007b",
+      "is_variadic": false,
+      "name": "GlobalLock"
+    },
+    {
+      "addr": "EXTERNAL:0000007d",
+      "is_variadic": false,
+      "name": "GlobalUnlock"
+    },
+    {
+      "addr": "EXTERNAL:0000003d",
+      "is_variadic": false,
+      "name": "OpenClipboard"
+    },
+    {
+      "addr": "EXTERNAL:00000041",
+      "is_variadic": false,
+      "name": "SetClipboardData"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c8498",
+      "name": "PTR_CloseClipboard_005c8498",
+      "type": "void*",
+      "value": "001c8a62"
+    },
+    {
+      "addr": "005c84d4",
+      "name": "PTR_OpenClipboard_005c84d4",
+      "type": "void*",
+      "value": "001c8b5a"
+    },
+    {
+      "addr": "005c84e4",
+      "name": "PTR_SetClipboardData_005c84e4",
+      "type": "void*",
+      "value": "001c8b9e"
+    },
+    {
+      "addr": "005c85c8",
+      "name": "PTR_GlobalAlloc_005c85c8",
+      "type": "void*",
+      "value": "001c8f8e"
+    },
+    {
+      "addr": "005c85cc",
+      "name": "PTR_GlobalFree_005c85cc",
+      "type": "void*",
+      "value": "001c8f9c"
+    },
+    {
+      "addr": "005c85d0",
+      "name": "PTR_GlobalLock_005c85d0",
+      "type": "void*",
+      "value": "001c8faa"
+    },
+    {
+      "addr": "005c85d8",
+      "name": "PTR_GlobalUnlock_005c85d8",
+      "type": "void*",
+      "value": "001c8fce"
+    },
+    {
+      "addr": "005d24d0",
+      "name": "DAT_005d24d0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d24d1",
+      "name": "DAT_005d24d1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "01c25598",
+      "name": "DAT_01c25598",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02664628",
+      "name": "DAT_02664628",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0047ac49",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0047ac10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004815fe",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_00481540",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.481012658227848,
+    "instruction_count": 79,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BRANCH": 5,
+      "CALL": 1,
+      "CALLIND": 7,
+      "CBRANCH": 11,
+      "COPY": 90,
+      "INT_ADD": 28,
+      "INT_AND": 60,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 37,
+      "INT_LESS": 3,
+      "INT_MULT": 9,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 17,
+      "INT_SUB": 45,
+      "INT_XOR": 1,
+      "INT_ZEXT": 9,
+      "LOAD": 23,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 29
+    },
+    "pcode_op_count": 433
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "text_data",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_005d24d0",
+      "severity": "mild",
+      "text": "text_data = &DAT_005d24d0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 39,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 44,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar5 = uVar4 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 60,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 65,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 22,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0047fc93, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0047fc93: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0047fcec, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 83,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0047fcec: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

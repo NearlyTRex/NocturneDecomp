@@ -1,0 +1,260 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 193,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 16,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_memset"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "0051e970",
+      "from_addr": "0051e983",
+      "name": "core_scat.cpp_factoryFuncScat_FUN_0051e970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051e9a0",
+    "address_range": [
+      [
+        "0051e9a0",
+        "0051ea5e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_scat.cpp_CScat_ctor_FUN_0051e9a0",
+    "signature": "CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_0051e9a0(CScat *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042a330",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042a330"
+    },
+    {
+      "addr": "004ce240",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004ce240"
+    },
+    {
+      "addr": "0051ec20",
+      "is_variadic": false,
+      "name": "core_scat.cpp_FUN_0051ec20"
+    },
+    {
+      "addr": "005478b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051e983",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_factoryFuncScat_FUN_0051e970",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.065217391304348,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "CALL": 5,
+      "COPY": 51,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 23,
+      "INT_AND": 12,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 6,
+      "INT_SUB": 20,
+      "LOAD": 6,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 31
+    },
+    "pcode_op_count": 187
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScat *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "*(byte **)&this_ptr_00->field_0x2b0 = &g_CScatVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x25640",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25640 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr_00->field_0x2b4,(char *)0x5e29b7);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x25650",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25650 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2564c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x2564c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x25648",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25648 = *(uint *)&this_ptr_00->field_0x2564c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2564c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25648 = *(uint *)&this_ptr_00->field_0x2564c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x25644",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25644 = *(uint *)&this_ptr_00->field_0x25648;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x25648",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25644 = *(uint *)&this_ptr_00->field_0x25648;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x25654",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25654 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x2565c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x2565c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x25664",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25664 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x25668",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25668 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x25658",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25658 = *(uint *)&this_ptr_00->field_0x2565c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x2565c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr_00->field_0x25658 = *(uint *)&this_ptr_00->field_0x2565c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 13,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "*(uint *)&this_ptr_00->field_0x2564c = 0;",
+      "type": "unrolled_memset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CScat",
+        "offset": 0,
+        "vtable_addr": "005fafb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

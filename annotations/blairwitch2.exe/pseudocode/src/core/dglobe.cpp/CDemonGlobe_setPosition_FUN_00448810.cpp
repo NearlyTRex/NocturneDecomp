@@ -1,0 +1,37 @@
+// Name: core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00448810
+// Address: 00448810
+// Address Range: [[00448810, 0044885c]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(CDemonGlobe *this_ptr,CVector3f *position)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(CDemonGlobe *this_ptr,CVector3f *position)
+
+{
+  int iVar1;
+  int *extraout_ECX;
+  int extraout_ECX_00;
+  int extraout_ECX_01;
+  float10 fVar2;
+  float10 fVar3;
+  
+  if ((CVector3f *)(this_ptr + 0x24) != position) {
+    *(uint *)(this_ptr + 0x24) = *(uint *)position;
+    *(uint *)(this_ptr + 0x28) = *(uint *)&position->field_0x4;
+    *(uint *)(this_ptr + 0x2c) = *(uint *)&position->field_0x8;
+  }
+  fVar2 = (float10)_DAT_005ceffa;
+  fVar3 = (float10)*(float *)position * fVar2;
+  iVar1 = round();
+  *extraout_ECX = (int)ROUND(fVar3);
+  fVar3 = (float10)*(float *)(iVar1 + 4) * fVar2;
+  iVar1 = round();
+  *(int *)(extraout_ECX_00 + 4) = (int)ROUND(fVar3);
+  fVar2 = fVar2 * (float10)*(float *)(iVar1 + 8);
+  round();
+  *(int *)(extraout_ECX_01 + 8) = (int)ROUND(fVar2);
+  return;
+}

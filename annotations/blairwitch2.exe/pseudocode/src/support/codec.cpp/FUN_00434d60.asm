@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint FUN_00434d60(int param_1,byte param_2)
+; uint support_codec_cpp_FUN_00434d60(int param_1,byte param_2)
 ;
 ;
 ; XREF[1]:
-;   FUN_00434dd0 at 00434e0d
+;   support_codec.cpp_FUN_00434dd0 at 00434e0d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005cd9d0
@@ -16,19 +16,19 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   FUN_00434e50
-;   FUN_004e4500
+;   core_main.c_FUN_004e4500
+;   support_codec.cpp_FUN_00434e50
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00434d60
-        ;   Label: FUN_00434d60
+        ;   Label: support_codec.cpp_FUN_00434d60
     MOV EBX,dword ptr [ESP + 0x8]       ; 00434d61
     PUSH EBX                            ; 00434d65
-    CALL FUN_00434e50                   ; 00434d66
-        ;   XREF to: 00434e50 (UNCONDITIONAL_CALL)  ; undefined FUN_00434e50()
+    CALL support_codec.cpp_FUN_00434e50 ; 00434d66
+        ;   XREF to: 00434e50 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00434e50()
     MOV EAX,dword ptr [EBX + 0x4]       ; 00434d6b
     ADD ESP,0x4                         ; 00434d6e
     TEST EAX,EAX                        ; 00434d71
@@ -58,8 +58,8 @@ section .text
     PUSH 0x5cd9e5                       ; 00434dad | = "Invalid mode."
     MOV dword ptr [0x01d046a0],ECX      ; 00434db2 | DAT_01d046a0
     MOV dword ptr [0x01d046a4],EBX      ; 00434db8 | DAT_01d046a4
-    CALL FUN_004e4500                   ; 00434dbe
-        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined FUN_004e4500()
+    CALL core_main.c_FUN_004e4500       ; 00434dbe
+        ;   XREF to: 004e4500 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004e4500()
     ADD ESP,0x4                         ; 00434dc3
     XOR AL,AL                           ; 00434dc6
     POP EBX                             ; 00434dc8
