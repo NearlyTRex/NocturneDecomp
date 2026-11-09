@@ -5,46 +5,27 @@ GLOBALS GAP ANALYSIS REPORT
 Total globals analyzed:      668
   Named globals:             442
   DAT_ globals:              226
-Gaps found:                  206
-  With exact size bounds:    179
-  With estimated bounds:     27
-Total gap bytes:             1,741,407
-  Exact gap bytes:           91,699
+Gaps found:                  199
+  With exact size bounds:    181
+  With estimated bounds:     18
+Total gap bytes:             97,022
+  Exact gap bytes:           91,707
 Overlaps (size <= 0):        174
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          63
+  1-4 bytes (likely padding/alignment)          65
   5-16 bytes (small vars)                       34
-  17-64 bytes (structs/small arrays)            44
-  65-256 bytes (medium data)                    28
+  17-64 bytes (structs/small arrays)            43
+  65-256 bytes (medium data)                    26
   257-1024 bytes (large structs/arrays)         14
   1-4 KB                                        7
-  4-64 KB                                       11
-  64+ KB                                        5
+  4-64 KB                                       10
 
 --------------------------------------------------------------------------------
 LARGEST GAPS (top 50)
 --------------------------------------------------------------------------------
-     448,000 bytes ~  at 0x1014b2d8
-    after: g_VertexBuffer                           SScreenVertex[16000] at 0x1013b8d8  size=64,000
-    before: g_HWBlueScale                            uint                 at 0x101b88d8
-     294,927 bytes ~  at 0x10018661
-    after: CDX7TextureCache_10018660                CDX7TextureCache     at 0x10018660  size=?
-    before: g_MipMapFlag                             int                  at 0x10060670
-     294,927 bytes ~  at 0x10060679
-    after: CDX7TextureCache_10060678                CDX7TextureCache     at 0x10060678  size=?
-    before: CDX7TextureCache_100a8688                CDX7TextureCache     at 0x100a8688
-     294,927 bytes ~  at 0x100a8689
-    after: CDX7TextureCache_100a8688                CDX7TextureCache     at 0x100a8688  size=?
-    before: CDX7TextureCache_100f0698                CDX7TextureCache     at 0x100f0698
-     294,927 bytes ~  at 0x100f0699
-    after: CDX7TextureCache_100f0698                CDX7TextureCache     at 0x100f0698  size=?
-    before: g_HWRedShift                             int                  at 0x101386a8
-      16,384 bytes ~  at 0x10211e40
-    after: g_TextureSurfaces                        SDX7TextureSurfaceSl at 0x1020de40  size=16,384
-    before: g_ColorPalette                           uchar*               at 0x10215e40
       11,111 bytes  at 0x10003ca9
     after: switchdataD_10003ca8                     byte                 at 0x10003ca8  size=1
     before: switchdataD_10006810                     void*                at 0x10006810
@@ -177,9 +158,27 @@ LARGEST GAPS (top 50)
          155 bytes  at 0x100167c5
     after: s_FATAL_ERROR_Unable_to_cr_100167c0+1    undefined4           at 0x100167c1  size=4
     before: s_s_3D_Adapter_Error_10016860            TerminatedCString    at 0x10016860
+         148 bytes  at 0x1000a4dc
+    after: switchdataD_1000a4d8                     void*                at 0x1000a4d8  size=4
+    before: switchdataD_1000a570                     void*                at 0x1000a570
+         129 bytes  at 0x100177ef
+    after: DAT_100177eb                             undefined4           at 0x100177eb  size=4
+    before: DAT_10017870                             undefined1           at 0x10017870
+         127 bytes ~  at 0x10012179
+    after: g_Direct3DDeviceGUID                     GUID                 at 0x10012178  size=?
+    before: g_IID_IDirect3DTexture2                  GUID                 at 0x100121f8
+         125 bytes  at 0x10017877
+    after: DAT_10017873                             undefined4           at 0x10017873  size=4
+    before: DAT_100178f4                             undefined4           at 0x100178f4
+         123 bytes ~  at 0x10016cbd
+    after: LPCRITICAL_SECTION_10016cbc              LPCRITICAL_SECTION   at 0x10016cbc  size=?
+    before: DAT_10016d38                             undefined4           at 0x10016d38
+         119 bytes  at 0x1000f63d
+    after: PTR_caseD_41_1000f638+1                  undefined4           at 0x1000f639  size=4
+    before: switchdataD_1000f6b4                     void*                at 0x1000f6b4
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (179) - size bounds are known precisely
+ALL EXACT GAPS (181) - size bounds are known precisely
 --------------------------------------------------------------------------------
       11,111 bytes  at 0x10003ca9  between switchdataD_10003ca8           and switchdataD_10006810
        9,004 bytes  at 0x1000ceb4  between switchdataD_1000ceb0           and switchdataD_1000f1e0
@@ -341,9 +340,11 @@ ALL EXACT GAPS (179) - size bounds are known precisely
            4 bytes  at 0x10215e44  between g_ColorPalette                 and g_VertexBatchStamp
            4 bytes  at 0x1022686c  between g_DX7ColorTable16              and g_AdapterGuids
            4 bytes  at 0x102268b4  between g_HWGreenScale                 and g_ExternalRendererBridge
+           4 bytes  at 0x10226944  between g_ExternalRendererBridge       and g_AdapterGuidStorage
            4 bytes  at 0x10226a50  between g_RedShift                     and g_GreenShift
            4 bytes  at 0x10226a7c  between g_HWRedScale                   and g_PackedPalette
            4 bytes  at 0x10226e84  between g_HWBlueShift                  and g_PrimarySurfaceDesc
+           4 bytes  at 0x10226f04  between g_PrimarySurfaceDesc           and g_VertexCacheIndex
            4 bytes  at 0x1023690c  between g_LightingAlpha                and g_AdapterDescription
            4 bytes  at 0x10240618  between g_TextureLodScale              and g_TextureOpacity
            4 bytes  at 0x102407a4  between DAT_102407a0                   and DAT_102407a8
