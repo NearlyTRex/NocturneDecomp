@@ -1,0 +1,399 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 185,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 16,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "00467c00",
+      "from_addr": "00467de0",
+      "name": "core_dmodel.cpp_FUN_00467c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00468420",
+      "from_addr": "004686c0",
+      "name": "core_dmodel.cpp_FUN_00468420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00503c90",
+      "from_addr": "005040b1",
+      "name": "core_manpuz.cpp_FUN_00503c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005562c0",
+      "from_addr": "00556746",
+      "name": "core_setcolid.cpp_FUN_005562c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005580d0",
+      "from_addr": "005581e4",
+      "name": "core_setcolid.cpp_FUN_005580d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005660c0",
+      "from_addr": "00566223",
+      "name": "core_skeleton.cpp_FUN_005660c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00584cc0",
+      "from_addr": "00584db6",
+      "name": "core_stairs.cpp_CStairs_buildCollision_FUN_00584cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ab530",
+      "from_addr": "005ab60e",
+      "name": "core_wateract.cpp_FUN_005ab530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048fed0",
+    "address_range": [
+      [
+        "0048fed0",
+        "0048ff31"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0048fed0",
+    "signature": "void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0048fed0(CDemonTriangle *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048fd80",
+      "is_variadic": false,
+      "name": "core_dtri.cpp_CDemonTriangle_calculateData_FUN_0048fd80"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 32,
+    "call_sites": [
+      {
+        "call_addr": "004686c0",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_FUN_00468420",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00556746",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00556788",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0055685e",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005568a8",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0055697d",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005569c5",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00556a9e",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00556ae8",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00556bbd",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_FUN_005562c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.358974358974359,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 34,
+      "INT_ADD": 22,
+      "INT_AND": 8,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 16,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 131
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonTriangle *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex1",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex2",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex3",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&vertex1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&vertex1->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&vertex1->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&vertex1->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "if ((CVector3f *)&this_ptr->field_0xc != vertex2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)vertex2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&vertex2->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&vertex2->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&vertex2->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&vertex2->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "if ((CVector3f *)&this_ptr->field_0x18 != vertex3) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x18 = *(uint *)vertex3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&vertex3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&vertex3->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&vertex3->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&vertex3->field_0x8;",
+      "type": "unnamed_field"
+    }
+  ]
+}

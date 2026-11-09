@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00525ff0(int param_1,undefined4 param_2,int param_3)
+; void __cdecl sound_mp3_cpp_FUN_00525ff0(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte)
 ;
+; Parameters:
+; CMP3Decoder *    Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   byte_value
+; uint             Stack[0xc]:4   bits_per_byte
 ;
 ; XREF[1]:
-;   FUN_0052b450 at 0052ba43
+;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450 at 0052ba43
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005eb1e1
@@ -14,14 +18,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00525ff0
-        ;   Label: FUN_00525ff0
+        ;   Label: sound_mp3.cpp_FUN_00525ff0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00525ff1
     CMP dword ptr [ESP + 0x10],0x8      ; 00525ff5
     JNZ 0x0052601a                      ; 00525ffa
@@ -42,8 +46,8 @@ section .text
     PUSH 0x5eb1f2                       ; 0052602a | = "hputbuf - Not Supported yet!!  File: %s"
     MOV dword ptr [0x01d1d400],ECX      ; 0052602f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00526035 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0052603b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0052603b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 00526040
     POP ESI                             ; 00526043
     JMP 0x00525ffc                      ; 00526044

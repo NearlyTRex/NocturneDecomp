@@ -4,10 +4,55 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CAudioRecPuzzle.h"
+#include "types/classes/CChemPuzzle.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonFilter.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7C0000
 // =============================================================================
+
+// CAlphaBitmap[4]
+extern CAlphaBitmap CAlphaBitmap_ARRAY_007c3984[4];
+
+// CAlphaBitmap[5]
+extern CAlphaBitmap CAlphaBitmap_ARRAY_007c39d4[5];
+
+// CAudioRecPuzzle
+extern CAudioRecPuzzle g_CAudioRecPuzzleInstance;
+
+// CChemPuzzle
+extern CChemPuzzle g_CChemPuzzleInstance;
+
+// CDemonActorType
+extern CDemonActorType g_CDemonActorClassInfo;
+extern CDemonActorType g_CAmmoClassInfo;
+extern CDemonActorType g_CAmmoBoxClassInfo;
+extern CDemonActorType g_CAnvilClassInfo;
+extern CDemonActorType g_CArmourClassInfo;
+extern CDemonActorType g_CBackgroundActorClassInfo;
+extern CDemonActorType g_CBaronClassInfo;
+extern CDemonActorType g_CBarrierClassInfo;
+extern CDemonActorType g_CBatClassInfo;
+extern CDemonActorType g_CBatCreatureClassInfo;
+extern CDemonActorType g_CBatmanClassInfo;
+extern CDemonActorType g_CBatteryClassInfo;
+extern CDemonActorType g_CBeastClassInfo;
+extern CDemonActorType g_CBiggsClassInfo;
+extern CDemonActorType g_CBirdClassInfo;
+extern CDemonActorType g_CBodyPartClassInfo;
+extern CDemonActorType g_CBoneGuyClassInfo;
+extern CDemonActorType g_CBoxActorClassInfo;
+extern CDemonActorType g_CBrideClassInfo;
+extern CDemonActorType g_CBugsClassInfo;
+extern CDemonActorType g_CCarvedClassInfo;
+extern CDemonActorType g_CCharacterClassInfo;
+extern CDemonActorType g_CChainClassInfo;
+
+// CDemonFilter[8]
+extern CDemonFilter CDemonFilter_ARRAY_007c5098[8];
 
 // undefined1
 extern undefined1 DAT_007c53b8;
@@ -22,7 +67,6 @@ extern undefined1 DAT_007c8a64;
 
 // undefined4
 extern undefined4 DAT_007c2ff4;
-extern undefined4 DAT_007c3030;
 extern undefined4 DAT_007c3034;
 extern undefined4 DAT_007c3038;
 extern undefined4 DAT_007c303c;
@@ -31,21 +75,16 @@ extern undefined4 DAT_007c3044;
 extern undefined4 DAT_007c3048;
 extern undefined4 DAT_007c304c;
 extern undefined4 DAT_007c3368;
-extern undefined4 DAT_007c33a4;
-extern undefined4 DAT_007c33e0;
 extern undefined4 DAT_007c3498;
 extern undefined4 DAT_007c34cc;
 extern undefined4 DAT_007c34d0;
 extern undefined4 DAT_007c34dc;
-extern undefined4 DAT_007c3518;
 extern undefined4 DAT_007c374c;
 extern undefined4 DAT_007c3754;
 extern undefined4 DAT_007c37b8;
 extern undefined4 DAT_007c37c0;
 extern undefined4 DAT_007c37dc;
 extern undefined4 DAT_007c37e4;
-extern undefined4 DAT_007c3820;
-extern undefined4 DAT_007c385c;
 extern undefined4 DAT_007c3908;
 extern undefined4 DAT_007c394c;
 extern undefined4 DAT_007c3950;
@@ -53,7 +92,6 @@ extern undefined4 DAT_007c3954;
 extern undefined4 DAT_007c3978;
 extern undefined4 DAT_007c397c;
 extern undefined4 DAT_007c3980;
-extern undefined4 DAT_007c4fec;
 extern undefined4 DAT_007c4ff0;
 extern undefined4 DAT_007c4ff4;
 extern undefined4 DAT_007c4ff8;
@@ -61,7 +99,6 @@ extern undefined4 DAT_007c5004;
 extern undefined4 DAT_007c5008;
 extern undefined4 DAT_007c5014;
 extern undefined4 DAT_007c5018;
-extern undefined4 DAT_007c5094;
 extern undefined4 DAT_007c5330;
 extern undefined4 DAT_007c5388;
 extern undefined4 DAT_007c538c;
@@ -77,11 +114,9 @@ extern undefined4 DAT_007c55f8;
 extern undefined4 DAT_007c55fc;
 extern undefined4 DAT_007c6120;
 extern undefined4 DAT_007c6178;
-extern undefined4 DAT_007c637c;
 extern undefined4 DAT_007c6380;
 extern undefined4 DAT_007c6384;
 extern undefined4 DAT_007c6388;
-extern undefined4 DAT_007c654c;
 extern undefined4 DAT_007c7554;
 extern undefined4 DAT_007c7558;
 extern undefined4 DAT_007c755c;

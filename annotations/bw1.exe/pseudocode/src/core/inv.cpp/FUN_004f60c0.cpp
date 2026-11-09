@@ -1,70 +1,70 @@
-// Name: FUN_004f60c0
+// Name: core_inv.cpp_FUN_004f60c0
 // Address: 004f60c0
 // Address Range: [[004f60c0, 004f62d0]]
 // Convention: unknown
-// Signature: int FUN_004f60c0(undefined4 param_1)
+// Signature: int core_inv_cpp_FUN_004f60c0(CDemonActor *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004f60c0(uint param_1)
+int core_inv_cpp_FUN_004f60c0(CDemonActor *param_1)
 
 {
   int iVar1;
   
-  iVar1 = FUN_0040c550(param_1,"CWeapon");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CWeapon");
   if (iVar1 != 0) {
-    iVar1 = FUN_0040c600(param_1,_DAT_02c99770);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CWeaponClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = FUN_0040c550(param_1,"CAmmo");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CAmmo");
   if (iVar1 != 0) {
-    iVar1 = FUN_0040c600(param_1,DAT_007c33a4);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CAmmoClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = FUN_0040c550(param_1,"CKeyActor");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CKeyActor");
   if (iVar1 != 0) {
-    iVar1 = FUN_0040c600(param_1,_DAT_01d1bc9c);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CKeyActorClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = FUN_0040c550(param_1,"CBoxActor");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CBoxActor");
   if (iVar1 != 0) {
-    iVar1 = FUN_0040c600(param_1,DAT_007c5094);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CBoxActorClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = FUN_0040c550(param_1,"CHealthItem");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CHealthItem");
   if (iVar1 != 0) {
-    iVar1 = FUN_0040c600(param_1,_DAT_01d06a90);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CHealthItemClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = FUN_0040c550(param_1,"CGasMask");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CGasMask");
   if (iVar1 != 0) {
-    iVar1 = FUN_0040c600(param_1,_DAT_01cd0d40);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CGasMaskClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = FUN_0040c550(param_1,"CGoggles");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CGoggles");
   if (iVar1 != 0) {
-    iVar1 = FUN_0040c600(param_1,_DAT_01cd0e38);
+    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CGogglesClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = FUN_0040c550(param_1,"CFilmReel");
+  iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CFilmReel");
   if (iVar1 == 0) {
-    iVar1 = FUN_0040c550(param_1,"CTrap");
+    iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CTrap");
     if (iVar1 != 0) {
-      iVar1 = FUN_0040c600(param_1,_DAT_02c8adcc);
+      iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CTrapClassInfo.name_hash);
       return iVar1 + 0x158;
     }
-    iVar1 = FUN_0040c550(param_1,"CBattery");
+    iVar1 = core_actor_cpp_FUN_0040c550(param_1,"CBattery");
     if (iVar1 != 0) {
-      iVar1 = FUN_0040c600(param_1,DAT_007c385c);
+      iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CBatteryClassInfo.name_hash);
       return iVar1 + 0x158;
     }
     _DAT_01d1d400 = "..\\core\\inv.cpp";
     _DAT_01d1d404 = 0xaf;
-    FUN_005030e0("getModel - Can't classify : %s",param_1);
+    core_main_c_FUN_005030e0("getModel - Can't classify : %s",param_1);
     return 0;
   }
-  iVar1 = FUN_0040c600(param_1,_DAT_01c57034);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CFilmReelClassInfo.name_hash);
   return iVar1 + 0x158;
 }

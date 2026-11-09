@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00497870(undefined4 param_1,int param_2)
+; void shape_edittool_cpp_FUN_00497870(CEditorTools *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -10,11 +10,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   FUN_00493720 at 0049395f
-;   FUN_00493d40 at 00493fba
-;   FUN_00494690 at 00494cf7
-;   FUN_0049b830 at 0049be32
-;   FUN_004ce580 at 004cefbc
+;   core_game.cpp_FUN_004ce580 at 004cefbc
+;   shape_edittool.cpp_FUN_00494690 at 00494cf7
+;   shape_edittool.cpp_FUN_0049b830 at 0049be32
+;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40 at 00493fba
+;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 0049395f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc220
@@ -35,18 +35,18 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   FUN_00401130
-;   FUN_00497830
-;   FUN_005030e0
-;   FUN_00517d50
-;   FUN_00517f10
+;   core_main.c_FUN_005030e0
+;   engine_2d.c_plotPixel_FUN_00401130
+;   engine_mini3d.cpp_FUN_00517d50
+;   engine_mini3d.cpp_FUN_00517f10
+;   shape_edittool.cpp_FUN_00497830
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00497870
-        ;   Label: FUN_00497870
+        ;   Label: shape_edittool.cpp_FUN_00497870
     PUSH ESI                            ; 00497871
     PUSH EDI                            ; 00497872
     PUSH EBP                            ; 00497873
@@ -54,8 +54,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 00497877
     MOV EDX,dword ptr [ESP + 0x24]      ; 0049787b
     PUSH EDX                            ; 0049787f
-    CALL FUN_00497830                   ; 00497880
-        ;   XREF to: 00497830 (UNCONDITIONAL_CALL)  ; undefined FUN_00497830()
+    CALL shape_edittool.cpp_FUN_00497830 ; 00497880
+        ;   XREF to: 00497830 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_FUN_00497830(CEditorTools * this_ptr)
     MOV ECX,dword ptr [0x01c3f544]      ; 00497885 | DAT_01c3f544
     ADD ESP,0x4                         ; 0049788b
     TEST ECX,ECX                        ; 0049788e
@@ -152,8 +152,8 @@ section .text
     AND EAX,0xff                        ; 0049797f
     OR EAX,EDX                          ; 00497984
     PUSH EAX                            ; 00497986
-    CALL FUN_00517d50                   ; 00497987
-        ;   XREF to: 00517d50 (UNCONDITIONAL_CALL)  ; undefined FUN_00517d50()
+    CALL engine_mini3d.cpp_FUN_00517d50 ; 00497987
+        ;   XREF to: 00517d50 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517d50()
     ADD ESP,0x4                         ; 0049798c
     JMP 0x0049789b                      ; 0049798f
         ;   XREF to: 0049789b (UNCONDITIONAL_JUMP)  ; LAB_0049789b
@@ -182,16 +182,16 @@ section .text
         ;   XREF to: 004979ec (CONDITIONAL_JUMP)  ; LAB_004979ec
     PUSH EAX                            ; 004979dd
     PUSH EDX                            ; 004979de
-    CALL FUN_00517f10                   ; 004979df
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 004979df
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 004979e4
     JMP 0x004978d0                      ; 004979e7
         ;   XREF to: 004978d0 (UNCONDITIONAL_JUMP)  ; LAB_004978d0
     PUSH EAX                            ; 004979ec
         ;   Label: LAB_004979ec
     PUSH EDX                            ; 004979ed
-    CALL FUN_00401130                   ; 004979ee
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 004979ee
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 004979f3
     JMP 0x004978d0                      ; 004979f6
         ;   XREF to: 004978d0 (UNCONDITIONAL_JUMP)  ; LAB_004978d0
@@ -247,8 +247,8 @@ section .text
         ;   XREF to: 00497b03 (CONDITIONAL_JUMP)  ; LAB_00497b03
     PUSH EAX                            ; 00497a91
     PUSH EDX                            ; 00497a92
-    CALL FUN_00517f10                   ; 00497a93
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497a93
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497a98
     JMP 0x00497b0d                      ; 00497a9b
         ;   XREF to: 00497b0d (UNCONDITIONAL_JUMP)  ; LAB_00497b0d
@@ -277,24 +277,24 @@ section .text
         ;   XREF to: 00497af4 (CONDITIONAL_JUMP)  ; LAB_00497af4
     PUSH EAX                            ; 00497ae5
     PUSH EDX                            ; 00497ae6
-    CALL FUN_00517f10                   ; 00497ae7
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497ae7
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497aec
     JMP 0x00497a1e                      ; 00497aef
         ;   XREF to: 00497a1e (UNCONDITIONAL_JUMP)  ; LAB_00497a1e
     PUSH EAX                            ; 00497af4
         ;   Label: LAB_00497af4
     PUSH EDX                            ; 00497af5
-    CALL FUN_00401130                   ; 00497af6
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497af6
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497afb
     JMP 0x00497a1e                      ; 00497afe
         ;   XREF to: 00497a1e (UNCONDITIONAL_JUMP)  ; LAB_00497a1e
     PUSH EAX                            ; 00497b03
         ;   Label: LAB_00497b03
     PUSH EDX                            ; 00497b04
-    CALL FUN_00401130                   ; 00497b05
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497b05
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497b0a
     INC EDI                             ; 00497b0d
         ;   Label: LAB_00497b0d
@@ -325,16 +325,16 @@ section .text
         ;   XREF to: 00497b6a (CONDITIONAL_JUMP)  ; LAB_00497b6a
     PUSH EDX                            ; 00497b5b
     PUSH EAX                            ; 00497b5c
-    CALL FUN_00517f10                   ; 00497b5d
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497b5d
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497b62
     JMP 0x0049792d                      ; 00497b65
         ;   XREF to: 0049792d (UNCONDITIONAL_JUMP)  ; LAB_0049792d
     PUSH EDX                            ; 00497b6a
         ;   Label: LAB_00497b6a
     PUSH EAX                            ; 00497b6b
-    CALL FUN_00401130                   ; 00497b6c
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497b6c
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497b71
     JMP 0x0049792d                      ; 00497b74
         ;   XREF to: 0049792d (UNCONDITIONAL_JUMP)  ; LAB_0049792d
@@ -363,8 +363,8 @@ section .text
         ;   XREF to: 00497bd1 (CONDITIONAL_JUMP)  ; LAB_00497bd1
     PUSH EDX                            ; 00497bc1
     PUSH EAX                            ; 00497bc2
-    CALL FUN_00517f10                   ; 00497bc3
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497bc3
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497bc8
     INC EDI                             ; 00497bcb
     JMP 0x004978f4                      ; 00497bcc
@@ -372,8 +372,8 @@ section .text
     PUSH EDX                            ; 00497bd1
         ;   Label: LAB_00497bd1
     PUSH EAX                            ; 00497bd2
-    CALL FUN_00401130                   ; 00497bd3
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497bd3
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497bd8
     INC EDI                             ; 00497bdb
     JMP 0x004978f4                      ; 00497bdc
@@ -493,16 +493,16 @@ section .text
         ;   XREF to: 00497d15 (CONDITIONAL_JUMP)  ; LAB_00497d15
     PUSH EDX                            ; 00497d06
     PUSH EAX                            ; 00497d07
-    CALL FUN_00517f10                   ; 00497d08
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497d08
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497d0d
     JMP 0x00497c00                      ; 00497d10
         ;   XREF to: 00497c00 (UNCONDITIONAL_JUMP)  ; LAB_00497c00
     PUSH EDX                            ; 00497d15
         ;   Label: LAB_00497d15
     PUSH EAX                            ; 00497d16
-    CALL FUN_00401130                   ; 00497d17
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497d17
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497d1c
     JMP 0x00497c00                      ; 00497d1f
         ;   XREF to: 00497c00 (UNCONDITIONAL_JUMP)  ; LAB_00497c00
@@ -531,16 +531,16 @@ section .text
         ;   XREF to: 00497d7c (CONDITIONAL_JUMP)  ; LAB_00497d7c
     PUSH EDX                            ; 00497d6d
     PUSH EBP                            ; 00497d6e
-    CALL FUN_00517f10                   ; 00497d6f
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497d6f
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497d74
     JMP 0x00497c42                      ; 00497d77
         ;   XREF to: 00497c42 (UNCONDITIONAL_JUMP)  ; LAB_00497c42
     PUSH EDX                            ; 00497d7c
         ;   Label: LAB_00497d7c
     PUSH EBP                            ; 00497d7d
-    CALL FUN_00401130                   ; 00497d7e
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497d7e
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497d83
     JMP 0x00497c42                      ; 00497d86
         ;   XREF to: 00497c42 (UNCONDITIONAL_JUMP)  ; LAB_00497c42
@@ -569,16 +569,16 @@ section .text
         ;   XREF to: 00497de3 (CONDITIONAL_JUMP)  ; LAB_00497de3
     PUSH EBP                            ; 00497dd4
     PUSH EDX                            ; 00497dd5
-    CALL FUN_00517f10                   ; 00497dd6
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497dd6
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497ddb
     JMP 0x00497c69                      ; 00497dde
         ;   XREF to: 00497c69 (UNCONDITIONAL_JUMP)  ; LAB_00497c69
     PUSH EBP                            ; 00497de3
         ;   Label: LAB_00497de3
     PUSH EDX                            ; 00497de4
-    CALL FUN_00401130                   ; 00497de5
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497de5
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497dea
     JMP 0x00497c69                      ; 00497ded
         ;   XREF to: 00497c69 (UNCONDITIONAL_JUMP)  ; LAB_00497c69
@@ -607,16 +607,16 @@ section .text
         ;   XREF to: 00497e4a (CONDITIONAL_JUMP)  ; LAB_00497e4a
     PUSH EBP                            ; 00497e3b
     PUSH EDX                            ; 00497e3c
-    CALL FUN_00517f10                   ; 00497e3d
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497e3d
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497e42
     JMP 0x00497c90                      ; 00497e45
         ;   XREF to: 00497c90 (UNCONDITIONAL_JUMP)  ; LAB_00497c90
     PUSH EBP                            ; 00497e4a
         ;   Label: LAB_00497e4a
     PUSH EDX                            ; 00497e4b
-    CALL FUN_00401130                   ; 00497e4c
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497e4c
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497e51
     JMP 0x00497c90                      ; 00497e54
         ;   XREF to: 00497c90 (UNCONDITIONAL_JUMP)  ; LAB_00497c90
@@ -645,8 +645,8 @@ section .text
         ;   XREF to: 00497eb2 (CONDITIONAL_JUMP)  ; LAB_00497eb2
     PUSH EBP                            ; 00497ea2
     PUSH EDX                            ; 00497ea3
-    CALL FUN_00517f10                   ; 00497ea4
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497ea4
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497ea9
     INC ESI                             ; 00497eac
     JMP 0x00497c05                      ; 00497ead
@@ -654,8 +654,8 @@ section .text
     PUSH EBP                            ; 00497eb2
         ;   Label: LAB_00497eb2
     PUSH EDX                            ; 00497eb3
-    CALL FUN_00401130                   ; 00497eb4
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00497eb4
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00497eb9
     INC ESI                             ; 00497ebc
     JMP 0x00497c05                      ; 00497ebd
@@ -787,16 +787,16 @@ section .text
         ;   XREF to: 00498004 (CONDITIONAL_JUMP)  ; LAB_00498004
     PUSH EDX                            ; 00497ff5
     PUSH EAX                            ; 00497ff6
-    CALL FUN_00517f10                   ; 00497ff7
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00497ff7
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00497ffc
     JMP 0x00497f03                      ; 00497fff
         ;   XREF to: 00497f03 (UNCONDITIONAL_JUMP)  ; LAB_00497f03
     PUSH EDX                            ; 00498004
         ;   Label: LAB_00498004
     PUSH EAX                            ; 00498005
-    CALL FUN_00401130                   ; 00498006
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00498006
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 0049800b
     JMP 0x00497f03                      ; 0049800e
         ;   XREF to: 00497f03 (UNCONDITIONAL_JUMP)  ; LAB_00497f03
@@ -826,8 +826,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 0049805c
     PUSH EAX                            ; 00498060
     PUSH EDX                            ; 00498061
-    CALL FUN_00517f10                   ; 00498062
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 00498062
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00498067
     JMP 0x00497f44                      ; 0049806a
         ;   XREF to: 00497f44 (UNCONDITIONAL_JUMP)  ; LAB_00497f44
@@ -835,8 +835,8 @@ section .text
         ;   Label: LAB_0049806f
     PUSH ECX                            ; 00498073
     PUSH EDX                            ; 00498074
-    CALL FUN_00401130                   ; 00498075
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00498075
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 0049807a
     JMP 0x00497f44                      ; 0049807d
         ;   XREF to: 00497f44 (UNCONDITIONAL_JUMP)  ; LAB_00497f44
@@ -866,8 +866,8 @@ section .text
     PUSH EDX                            ; 004980cb
     MOV ECX,dword ptr [ESP + 0xc]       ; 004980cc
     PUSH ECX                            ; 004980d0
-    CALL FUN_00517f10                   ; 004980d1
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 004980d1
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 004980d6
     JMP 0x00497f65                      ; 004980d9
         ;   XREF to: 00497f65 (UNCONDITIONAL_JUMP)  ; LAB_00497f65
@@ -875,8 +875,8 @@ section .text
         ;   Label: LAB_004980de
     MOV EDX,dword ptr [ESP + 0xc]       ; 004980df
     PUSH EDX                            ; 004980e3
-    CALL FUN_00401130                   ; 004980e4
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 004980e4
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 004980e9
     JMP 0x00497f65                      ; 004980ec
         ;   XREF to: 00497f65 (UNCONDITIONAL_JUMP)  ; LAB_00497f65
@@ -906,8 +906,8 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0049813a
     PUSH EAX                            ; 0049813d
     PUSH EDX                            ; 0049813e
-    CALL FUN_00517f10                   ; 0049813f
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 0049813f
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 00498144
     JMP 0x00497f85                      ; 00498147
         ;   XREF to: 00497f85 (UNCONDITIONAL_JUMP)  ; LAB_00497f85
@@ -915,8 +915,8 @@ section .text
         ;   Label: LAB_0049814c
     PUSH ECX                            ; 0049814f
     PUSH EDX                            ; 00498150
-    CALL FUN_00401130                   ; 00498151
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 00498151
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 00498156
     JMP 0x00497f85                      ; 00498159
         ;   XREF to: 00497f85 (UNCONDITIONAL_JUMP)  ; LAB_00497f85
@@ -946,8 +946,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004981a7
     PUSH EAX                            ; 004981ab
     PUSH EDX                            ; 004981ac
-    CALL FUN_00517f10                   ; 004981ad
-        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined FUN_00517f10()
+    CALL engine_mini3d.cpp_FUN_00517f10 ; 004981ad
+        ;   XREF to: 00517f10 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517f10()
     ADD ESP,0x8                         ; 004981b2
     INC EBP                             ; 004981b5
     JMP 0x00497f0d                      ; 004981b6
@@ -956,8 +956,8 @@ section .text
         ;   Label: LAB_004981bb
     PUSH ECX                            ; 004981bf
     PUSH EDX                            ; 004981c0
-    CALL FUN_00401130                   ; 004981c1
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; undefined FUN_00401130()
+    CALL engine_2d.c_plotPixel_FUN_00401130 ; 004981c1
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401130(int x, int y)
     ADD ESP,0x8                         ; 004981c6
     INC EBP                             ; 004981c9
     JMP 0x00497f0d                      ; 004981ca
@@ -974,8 +974,8 @@ section .text
     PUSH 0x5dc236                       ; 004981e8 | = "CEditorTools::setMousePointerType - i..."
     MOV [0x01d1d400],EAX                ; 004981ed | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 004981f2 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004981f8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004981f8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004981fd
     ADD ESP,0x10                        ; 00498200
         ;   Label: LAB_00498200

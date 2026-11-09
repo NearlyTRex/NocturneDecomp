@@ -1,0 +1,328 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 178,
+    "complexity_score": 129,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unknown_field",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 242
+  },
+  "cross_references": [
+    {
+      "addr": "00494fd0",
+      "from_addr": "00495001",
+      "name": "shape_edittool.cpp_FUN_00494fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00499ed0",
+    "address_range": [
+      [
+        "00499ed0",
+        "0049a0c4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00499ed0",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00499ed0(CStrList *this_ptr,char *directory_path,char *file_pattern)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c25d0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005c25d0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "00479460",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00479460"
+    },
+    {
+      "addr": "00479320",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00479320"
+    },
+    {
+      "addr": "00479340",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_dtor_FUN_00479340"
+    },
+    {
+      "addr": "004793e0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_004793e0"
+    },
+    {
+      "addr": "00479360",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00479360"
+    },
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00479580"
+    },
+    {
+      "addr": "004795b0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004795b0"
+    },
+    {
+      "addr": "0053cb50",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_0053cb50"
+    },
+    {
+      "addr": "0053cb00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPod_initSearch_FUN_0053cb00"
+    },
+    {
+      "addr": "00499c80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00499c80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dc5f1",
+      "name": "s_s_s_005dc5f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622a6c",
+      "name": "g_CDemonPodPtr",
+      "type": "CDemonPod*",
+      "value": "01e7d420"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00495001",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00494fd0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.180555555555555,
+    "instruction_count": 144,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 1,
+      "CALL": 13,
+      "CBRANCH": 12,
+      "COPY": 104,
+      "INT_ADD": 56,
+      "INT_AND": 66,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 65,
+      "INT_LESS": 11,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 32,
+      "INT_SUB": 72,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 24,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 59
+    },
+    "pcode_op_count": 602
+  },
+  "stack_frame": {
+    "frame_size": 2132,
+    "local_size": 2120,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_844",
+        "offset": -2116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_744",
+        "offset": -1860,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_640",
+        "offset": -1600,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_638",
+        "offset": -1592,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_528",
+        "offset": -1320,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_424",
+        "offset": -1060,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_420",
+        "offset": -1056,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_414",
+        "offset": -1044,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_310",
+        "offset": -784,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30f",
+        "offset": -783,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_210",
+        "offset": -528,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20f",
+        "offset": -527,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "directory_path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_pattern",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "while (local_528._0_1_ != '\\0') {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._260_4_",
+      "severity": "mild",
+      "text": "(this_ptr,(char *)&local_528,(char *)0x0,local_528._260_4_,local_528._264_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._264_4_",
+      "severity": "mild",
+      "text": "(this_ptr,(char *)&local_528,(char *)0x0,local_528._260_4_,local_528._264_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 23,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 43,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

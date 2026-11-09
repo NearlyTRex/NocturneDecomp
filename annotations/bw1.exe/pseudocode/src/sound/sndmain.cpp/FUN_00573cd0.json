@@ -1,119 +1,15 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 19,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 106,
-    "cross_reference_count": 8,
+    "complexity_score": 26,
+    "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 36
@@ -122,49 +18,55 @@
     {
       "addr": "004a1d00",
       "from_addr": "004a4a59",
-      "name": "FUN_004a1d00",
+      "name": "core_event.cpp_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d8e50",
       "from_addr": "004d8f3f",
-      "name": "FUN_004d8e50",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050ba70",
       "from_addr": "0050bb92",
-      "name": "FUN_0050ba70",
+      "name": "core_menu.cpp_FUN_0050ba70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00572d20",
-      "from_addr": "00572dc2",
-      "name": "FUN_00572d20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005760b0",
-      "from_addr": "005762f5",
-      "name": "FUN_005760b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005763b0",
-      "from_addr": "0057650e",
-      "name": "FUN_005763b0",
+      "addr": "0057cb9e",
+      "from_addr": "0057cba5",
+      "name": "core_sound.cpp_FUN_0057cb9e",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057cc00",
       "from_addr": "0057cc92",
-      "name": "FUN_0057cc00",
+      "name": "core_sound.cpp_FUN_0057cc00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057ce10",
       "from_addr": "0057d05d",
-      "name": "FUN_0057ce10",
+      "name": "core_sound.cpp_FUN_0057ce10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005760b0",
+      "from_addr": "005762f5",
+      "name": "sound_sndmain.cpp_FUN_005760b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005763b0",
+      "from_addr": "0057650e",
+      "name": "sound_sndmain.cpp_FUN_005763b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572d20",
+      "from_addr": "00572dc2",
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -176,15 +78,15 @@
         "00573d13"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_00573cd0",
-    "signature": "undefined4 FUN_00573cd0(int param_1)"
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_FUN_00573cd0",
+    "signature": "int __cdecl sound_sndmain_cpp_FUN_00573cd0(int channel_index)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     }
   ],
   "globals": [
@@ -214,12 +116,12 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 16,
+    "call_site_count": 17,
     "call_sites": [
       {
         "call_addr": "004a4a59",
         "call_type": "direct",
-        "caller": "FUN_004a1d00",
+        "caller": "core_event.cpp_FUN_004a1d00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -230,35 +132,29 @@
       {
         "call_addr": "004d8f3f",
         "call_type": "direct",
-        "caller": "FUN_004d8e50",
-        "estimated_params": 2,
+        "caller": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00572dc2",
         "call_type": "direct",
-        "caller": "FUN_00572d20",
-        "estimated_params": 4,
+        "caller": "sound_sndmain.cpp_startSfx_FUN_00572d20",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "005762f5",
         "call_type": "direct",
-        "caller": "FUN_005760b0",
+        "caller": "sound_sndmain.cpp_FUN_005760b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +165,7 @@
       {
         "call_addr": "0057650e",
         "call_type": "direct",
-        "caller": "FUN_005763b0",
+        "caller": "sound_sndmain.cpp_FUN_005763b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -280,21 +176,18 @@
       {
         "call_addr": "0057cc92",
         "call_type": "direct",
-        "caller": "FUN_0057cc00",
-        "estimated_params": 3,
+        "caller": "core_sound.cpp_FUN_0057cc00",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0057d05d",
         "call_type": "direct",
-        "caller": "FUN_0057ce10",
+        "caller": "core_sound.cpp_FUN_0057ce10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,20 +198,18 @@
       {
         "call_addr": "0050bb92",
         "call_type": "direct",
-        "caller": "FUN_0050ba70",
-        "estimated_params": 2,
+        "caller": "core_menu.cpp_FUN_0050ba70",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0050bc8d",
         "call_type": "direct",
-        "caller": "FUN_0050ba70",
+        "caller": "core_menu.cpp_FUN_0050ba70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -329,7 +220,7 @@
       {
         "call_addr": "0050bd91",
         "call_type": "direct",
-        "caller": "FUN_0050ba70",
+        "caller": "core_menu.cpp_FUN_0050ba70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,11 +229,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.65,
@@ -370,12 +261,20 @@
     "pcode_op_count": 73
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "channel_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
   "suspects": [
     {
@@ -385,65 +284,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint FUN_00573cd0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((-1 < param_1) && (param_1 < 0x20)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((-1 < param_1) && (param_1 < 0x20)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(uint *)(param_1 * 4 + 0x2c7fd10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005030e0(\"isSfxChannelEnabled - invalid channel index: %d\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(uint *)(param_1 * 4 + 0x2c7fd10);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 16,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

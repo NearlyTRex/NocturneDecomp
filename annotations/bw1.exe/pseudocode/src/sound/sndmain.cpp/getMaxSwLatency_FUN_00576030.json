@@ -1,0 +1,93 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 19,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 7
+  },
+  "cross_references": [
+    {
+      "addr": "00577f90",
+      "from_addr": "00578251",
+      "name": "sound_snddx.cpp_FUN_00577f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005760b0",
+      "from_addr": "005761dc",
+      "name": "sound_sndmain.cpp_FUN_005760b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005763b0",
+      "from_addr": "005764ac",
+      "name": "sound_sndmain.cpp_FUN_005763b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a930",
+      "from_addr": "0057a975",
+      "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0057a930",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00576030",
+    "address_range": [
+      [
+        "00576030",
+        "00576035"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_00576030",
+    "signature": "undefined4 __cdecl sound_sndmain_cpp_getMaxSwLatency_FUN_00576030(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00623314",
+      "name": "DAT_00623314",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_00623314",
+      "severity": "mild",
+      "text": "return DAT_00623314;",
+      "type": "undefined_data"
+    }
+  ]
+}

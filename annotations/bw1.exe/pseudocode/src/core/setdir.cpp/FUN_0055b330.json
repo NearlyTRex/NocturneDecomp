@@ -1,0 +1,449 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 135,
+    "complexity_score": 334,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 59,
+    "suspect_count": 24,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 194
+  },
+  "cross_references": [
+    {
+      "addr": "0055b220",
+      "from_addr": "0055b244",
+      "name": "core_setdir.cpp_FUN_0055b220",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055b330",
+    "address_range": [
+      [
+        "0055b330",
+        "0055b4b6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_setdir.cpp_FUN_0055b330",
+    "signature": "void core_setdir_cpp_FUN_0055b330(CDemonSet *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054e3c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0"
+    },
+    {
+      "addr": "00483780",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780"
+    },
+    {
+      "addr": "00483e60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60"
+    },
+    {
+      "addr": "00483e40",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40"
+    },
+    {
+      "addr": "00483530",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530"
+    },
+    {
+      "addr": "004834b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_FUN_004834b0"
+    },
+    {
+      "addr": "004839b0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_FUN_004839b0"
+    },
+    {
+      "addr": "00483c10",
+      "is_variadic": false,
+      "name": "engine_matrix.c_FUN_00483c10"
+    },
+    {
+      "addr": "00483c40",
+      "is_variadic": false,
+      "name": "engine_matrix.c_popViewport_FUN_00483c40"
+    },
+    {
+      "addr": "0057dca4",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearZBufferNative_FUN_0057dca4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061255c",
+      "name": "DAT_0061255c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4480c",
+      "name": "DAT_01c4480c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c44810",
+      "name": "DAT_01c44810",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020b28f4",
+      "name": "DAT_020b28f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020b28f8",
+      "name": "DAT_020b28f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020b28f9",
+      "name": "DAT_020b28f9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020b29f4",
+      "name": "DAT_020b29f4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055b244",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_0055b220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.794871794871795,
+    "instruction_count": 117,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CBRANCH": 5,
+      "COPY": 93,
+      "INT_ADD": 53,
+      "INT_AND": 72,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 61,
+      "INT_LESS": 3,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 3,
+      "INT_SLESS": 30,
+      "INT_SUB": 48,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 25,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 561
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_setdir_cpp_FUN_0055b330(CDemonSet *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "value = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(DAT_00612560,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_matrix_c_FUN_00483c10(DAT_00612560,0,0,0x40,0x30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_1c = (CVector3f *)&param_1->field_0x110;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "local_1c = (CVector3f *)&param_1->field_0x110;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_14 = (CVector3f *)&param_1->field_0x104;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "local_14 = (CVector3f *)&param_1->field_0x104;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_020b28f4",
+      "severity": "mild",
+      "text": "local_18 = (uint *)&DAT_020b28f4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0x01BC120C,*(uint *)(&param_1->field_0x148 + iVar4 * 0x1a4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x148",
+      "severity": "mild",
+      "text": "(0x01BC120C,*(uint *)(&param_1->field_0x148 + iVar4 * 0x1a4));",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(param_1,9999.9,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01c4480c",
+      "severity": "mild",
+      "text": "puVar5 = *(uint **)(&DAT_01c4480c + iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(DAT_00612560,value);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)puVar6",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 40,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 45,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0055b43a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 92,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0055b43a: MOVSD.REP ES:EDI,ESI  ; DAT_020b28f4 | DAT_020b28f8 | DAT_020b29f4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

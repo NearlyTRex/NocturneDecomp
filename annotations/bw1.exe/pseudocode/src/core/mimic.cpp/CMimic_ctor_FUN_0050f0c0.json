@@ -1,0 +1,160 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 73,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 101
+  },
+  "cross_references": [
+    {
+      "addr": "0050f090",
+      "from_addr": "0050f0a3",
+      "name": "shape_meshlod.cpp_factoryFuncMimic_FUN_0050f090",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050f0c0",
+    "address_range": [
+      [
+        "0050f0c0",
+        "0050f1a6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_ctor_FUN_0050f0c0",
+    "signature": "CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0050f0c0(CMimic *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e5c0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_0043e5c0"
+    },
+    {
+      "addr": "004a0410",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a0410"
+    },
+    {
+      "addr": "00522fa0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_ctor_FUN_00522fa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006039cc",
+      "name": "DAT_006039cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006039d0",
+      "name": "DAT_006039d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050f0a3",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_factoryFuncMimic_FUN_0050f090",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.58,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 73,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 30,
+      "INT_AND": 18,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 11,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 25
+    },
+    "pcode_op_count": 229
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0xc8",
+      "severity": "mild",
+      "text": "pCVar5 = core_cloth_cpp_FUN_0043e5c0((CCloth *)&pCVar4[1].field_0xc8);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMimic",
+        "offset": 0,
+        "vtable_addr": "00603b34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

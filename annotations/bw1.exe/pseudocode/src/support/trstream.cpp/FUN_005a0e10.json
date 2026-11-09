@@ -1,112 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 18,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 23,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
@@ -127,19 +19,19 @@
     {
       "addr": "005a0f60",
       "from_addr": "005a0fab",
-      "name": "FUN_005a0f60",
+      "name": "support_trstream.cpp_FUN_005a0f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a0fd0",
       "from_addr": "005a105d",
-      "name": "FUN_005a0fd0",
+      "name": "support_trstream.cpp_FUN_005a0fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a1090",
       "from_addr": "005a1101",
-      "name": "FUN_005a1090",
+      "name": "support_trstream.cpp_FUN_005a1090",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,24 +44,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_005a0e10",
-    "signature": "void FUN_005a0e10(int param_1)"
+    "name": "support_trstream.cpp_FUN_005a0e10",
+    "signature": "void support_trstream_cpp_FUN_005a0e10(int param_1)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "005a0e80",
-      "is_variadic": false,
-      "name": "FUN_005a0e80"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "FUN_005c08d0"
+      "name": "crt_unknown.c_FUN_005c08d0"
+    },
+    {
+      "addr": "005a0e80",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_FUN_005a0e80"
     }
   ],
   "globals": [
@@ -242,7 +134,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005a0e10(int param_1)",
+      "text": "void support_trstream_cpp_FUN_005a0e10(int param_1)",
       "type": "unnamed_param"
     },
     {
@@ -250,7 +142,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005a0e80(param_1);",
+      "text": "support_trstream_cpp_FUN_005a0e80(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -266,7 +158,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_005c08d0(*(int *)(param_1 + 0x20) + 0x1f);",
+      "text": "pvVar1 = FUN_005c08d0(*(int *)(param_1 + 0x20) + 0x1f);",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +166,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x14) = iVar1;",
+      "text": "*(void **)(param_1 + 0x14) = pvVar1;",
       "type": "unnamed_param"
     },
     {

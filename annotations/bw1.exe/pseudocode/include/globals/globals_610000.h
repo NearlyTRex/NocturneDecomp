@@ -4,10 +4,217 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/watcom.h"
+#include "types/classes/CConsole.h"
+#include "types/classes/CDemonFilter.h"
+#include "types/classes/CEditorTools.h"
+#include "types/classes/CFieldNotes.h"
+#include "types/classes/CFilterCache.h"
+#include "types/classes/CFilterFX.h"
+#include "types/classes/CGame.h"
+#include "types/classes/CGore.h"
+#include "types/classes/CGround.h"
+#include "types/classes/CMini3D.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x610000
 // =============================================================================
+
+// CConsole*
+extern CConsole* g_CConsolePtr;
+
+// CDemonFilter*
+extern CDemonFilter* g_GlobalFilters;
+extern CDemonFilter* g_PlayerFilters;
+
+// CEditorTools*
+extern CEditorTools* g_CEditorToolsPtr;
+
+// CFieldNotes*
+extern CFieldNotes* g_CFieldNotesPtr;
+
+// CFilterCache*
+extern CFilterCache* g_CFilterCachePtr;
+
+// CFilterFX*
+extern CFilterFX* g_CFilterFXPtr;
+
+// CGame*
+extern CGame* g_CGamePtr;
+
+// CGore*
+extern CGore* g_CGorePtr;
+
+// CGround*
+extern CGround* g_CGroundPtr;
+
+// CMini3D*
+extern CMini3D* g_CMini3DPtr;
+
+// WatcomStaticDestructorNode
+extern WatcomStaticDestructorNode DAT_00610A05;
+extern WatcomStaticDestructorNode DAT_00610A15;
+extern WatcomStaticDestructorNode DAT_00610A25;
+extern WatcomStaticDestructorNode DAT_00610A35;
+extern WatcomStaticDestructorNode DAT_00610B4C;
+extern WatcomStaticDestructorNode g_ConsoleDestructorNode;
+extern WatcomStaticDestructorNode g_CLZWDecompressDestructorNode;
+extern WatcomStaticDestructorNode DAT_006112E8;
+extern WatcomStaticDestructorNode DAT_006112F8;
+extern WatcomStaticDestructorNode g_CFilterCacheDestructorNode;
+extern WatcomStaticDestructorNode g_CFilterFXDestructorNode;
+extern WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode;
+extern WatcomStaticDestructorNode g_CEditorToolsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectStakesDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectSparksDestructorNode;
+extern WatcomStaticDestructorNode DAT_0061BF80;
+extern WatcomStaticDestructorNode g_CFireEffectGlassParticlesDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectFireballsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectRocksDestructorNode;
+extern WatcomStaticDestructorNode DAT_0061BFC0;
+extern WatcomStaticDestructorNode g_CFireEffectTossesDestructorNodes;
+extern WatcomStaticDestructorNode g_CFireEffectShellsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectPopcornsDestructorNode;
+extern WatcomStaticDestructorNode g_CFireEffectRainDropsDestructorNode;
+extern WatcomStaticDestructorNode DAT_0061D1F0;
+extern WatcomStaticDestructorNode DAT_0061D200;
+extern WatcomStaticDestructorNode DAT_0061D210;
+extern WatcomStaticDestructorNode DAT_0061D220;
+extern WatcomStaticDestructorNode DAT_0061D230;
+extern WatcomStaticDestructorNode DAT_0061D240;
+extern WatcomStaticDestructorNode DAT_0061D250;
+extern WatcomStaticDestructorNode DAT_0061D260;
+extern WatcomStaticDestructorNode DAT_0061D270;
+extern WatcomStaticDestructorNode DAT_0061D280;
+extern WatcomStaticDestructorNode DAT_0061D290;
+extern WatcomStaticDestructorNode DAT_0061D2A0;
+extern WatcomStaticDestructorNode DAT_0061D2B0;
+extern WatcomStaticDestructorNode DAT_0061D2C0;
+extern WatcomStaticDestructorNode DAT_0061D2D0;
+extern WatcomStaticDestructorNode g_CDemonLightDestructorNode;
+extern WatcomStaticDestructorNode g_CGameDestructorNode;
+extern WatcomStaticDestructorNode g_CPickListDestructorNode;
+extern WatcomStaticDestructorNode DAT_0061D8D0;
+extern WatcomStaticDestructorNode DAT_0061D8E0;
+extern WatcomStaticDestructorNode g_CGoreDestructorNode;
+extern WatcomStaticDestructorNode DAT_0061DC94;
+extern WatcomStaticDestructorNode g_CGroundDestructorNode;
+extern WatcomStaticDestructorNode DAT_0061F090;
+extern WatcomStaticDestructorNode DAT_0061F0A0;
+extern WatcomStaticDestructorNode DAT_0061F0B0;
+extern WatcomStaticDestructorNode DAT_0061F0C0;
+extern WatcomStaticDestructorNode DAT_0061F0D0;
+extern WatcomStaticDestructorNode DAT_0061F0E0;
+extern WatcomStaticDestructorNode DAT_0061F0F0;
+extern WatcomStaticDestructorNode DAT_0061F100;
+extern WatcomStaticDestructorNode DAT_0061F110;
+extern WatcomStaticDestructorNode DAT_0061F120;
+extern WatcomStaticDestructorNode DAT_0061F130;
+extern WatcomStaticDestructorNode DAT_0061F140;
+extern WatcomStaticDestructorNode DAT_0061F150;
+extern WatcomStaticDestructorNode DAT_0061F160;
+extern WatcomStaticDestructorNode DAT_0061F170;
+extern WatcomStaticDestructorNode DAT_0061F180;
+extern WatcomStaticDestructorNode DAT_0061F190;
+extern WatcomStaticDestructorNode g_LoadingMoonModelDestructorNode;
+extern WatcomStaticDestructorNode DAT_0061F366;
+extern WatcomStaticDestructorNode DAT_0061F376;
+extern WatcomStaticDestructorNode DAT_0061F386;
+extern WatcomStaticDestructorNode DAT_0061F396;
+extern WatcomStaticDestructorNode DAT_0061F450;
+extern WatcomStaticDestructorNode DAT_0061F460;
+extern WatcomStaticDestructorNode DAT_0061F470;
+extern WatcomStaticDestructorNode DAT_0061F480;
+extern WatcomStaticDestructorNode DAT_0061F490;
+extern WatcomStaticDestructorNode DAT_0061F4A0;
+extern WatcomStaticDestructorNode DAT_0061F5C8;
+extern WatcomStaticDestructorNode DAT_0061F800;
+extern WatcomStaticDestructorNode DAT_0061F810;
+extern WatcomStaticDestructorNode DAT_0061F820;
+
+// int
+extern int g_CDemonActorClassVersion;
+extern int g_CAmmoClassVersion;
+extern int g_CAmmoBoxClassVersion;
+extern int g_CAnvilClassVersion;
+extern int g_CArmourClassVersion;
+extern int g_CBackgroundActorClassVersion;
+extern int g_CBaronClassVersion;
+extern int g_CBarrierClassVersion;
+extern int g_CBatClassVersion;
+extern int g_CBatCreatureClassVersion;
+extern int g_CBatmanClassVersion;
+extern int g_CBatteryClassVersion;
+extern int g_CBeastClassVersion;
+extern int g_CBiggsClassVersion;
+extern int g_CBirdClassVersion;
+extern int g_CBodyPartClassVersion;
+extern int g_CBoneGuyClassVersion;
+extern int g_CBoxActorClassVersion;
+extern int g_CBrideClassVersion;
+extern int g_CBugsClassVersion;
+extern int g_CCarvedClassVersion;
+extern int g_CCharacterClassVersion;
+extern int g_CChainClassVersion;
+extern int g_CColonelClassVersion;
+extern int g_CConstructClassVersion;
+extern int g_CConveyorClassVersion;
+extern int g_CZombieCowClassVersion;
+extern int g_CCrateClassVersion;
+extern int g_CCrossbowClassVersion;
+extern int g_CCurtainClassVersion;
+extern int g_CDemnfolkClassVersion;
+extern int g_CActorDestinationClassVersion;
+extern int g_CDjienClassVersion;
+extern int g_CDocClassVersion;
+extern int g_CZombieDogClassVersion;
+extern int g_CDoorClassVersion;
+extern int g_CDraculaBrideClassVersion;
+extern int g_CDripClassVersion;
+extern int g_CDroneClassVersion;
+extern int g_CDynamiteClassVersion;
+extern int g_CElephantGunClassVersion;
+extern int g_CEmitterClassVersion;
+extern int g_CEnemyClassVersion;
+extern int g_CFilmReelClassVersion;
+extern int g_CFlameClassVersion;
+extern int g_CFlameCanClassVersion;
+extern int g_CFlameThrowerClassVersion;
+extern int g_CFlashlightClassVersion;
+extern int g_CFliesClassVersion;
+extern int g_CFrankenstienMachineClassVersion;
+extern int g_CGabriellaClassVersion;
+extern int g_CGargoyleClassVersion;
+extern int g_CGasMaskClassVersion;
+extern int g_CGhoulClassVersion;
+extern int g_CGlassClassVersion;
+extern int g_CGogglesClassVersion;
+extern int g_CGraveClassVersion;
+extern int g_CGunClassVersion;
+extern int g_CHaystackClassVersion;
+extern int g_CHealthItemClassVersion;
+extern int g_CHeroClassVersion;
+extern int g_CHiramClassVersion;
+extern int g_CHostageClassVersion;
+extern int g_CHotDemonClassVersion;
+extern int g_CHighPriestOfGardathClassVersion;
+extern int g_CIcePickClassVersion;
+extern int g_CImpClassVersion;
+extern int g_CKeyActorClassVersion;
+extern int g_CLadderClassVersion;
+extern int g_CLarvaClassVersion;
+extern int g_CLeverClassVersion;
+extern int g_CLightGunClassVersion;
+extern int g_CLightPisClassVersion;
+extern int g_CLightConeClassVersion;
+extern int g_CMansionPuzzleCircleClassVersion;
+extern int g_CMarqueeClassVersion;
+extern int g_CMeleeClassVersion;
+extern int g_CMimicClassVersion;
+extern int g_CMineCarClassVersion;
+extern int g_CMobsterClassVersion;
+extern int g_CMolochClassVersion;
+extern int g_CMooCowClassVersion;
 
 // undefined1
 extern undefined1 DAT_006106bf;
@@ -26,6 +233,7 @@ extern undefined4 DAT_006104a0;
 extern undefined4 DAT_006104f0;
 extern undefined4 DAT_00610728;
 extern undefined4 DAT_0061072c;
+extern undefined4 DAT_00610d44;
 extern undefined4 DAT_00611224;
 extern undefined4 DAT_00611228;
 extern undefined4 DAT_0061122c;
@@ -82,6 +290,9 @@ extern undefined4 DAT_0061f1ac;
 extern undefined4 DAT_0061f210;
 extern undefined4 DAT_0061f214;
 extern undefined4 DAT_0061f310;
+extern undefined4 DAT_0061f314;
+extern undefined4 DAT_0061f318;
+extern undefined4 DAT_0061f31c;
 extern undefined4 DAT_0061f6c0;
 extern undefined4 DAT_0061f6c4;
 extern undefined4 DAT_0061f728;

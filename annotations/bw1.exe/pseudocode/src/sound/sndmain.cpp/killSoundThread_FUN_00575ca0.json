@@ -1,0 +1,142 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 32,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "00577cd0",
+      "from_addr": "00577d0e",
+      "name": "sound_snddx.cpp_FUN_00577cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575c00",
+      "from_addr": "00575c08",
+      "name": "sound_sndmain.cpp_FUN_00575c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a8c0",
+      "from_addr": "0057a8f6",
+      "name": "sound_sndwav.cpp_CWavOutDevice_reset_FUN_0057a8c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00575ca0",
+    "address_range": [
+      [
+        "00575ca0",
+        "00575d1c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "sound_sndmain.cpp_killSoundThread_FUN_00575ca0",
+    "signature": "int __cdecl sound_sndmain_cpp_killSoundThread_FUN_00575ca0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
+    },
+    {
+      "addr": "005b3860",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_sleep_FUN_005b3860"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f43a0",
+      "name": "s_Mb_killSoundThread_faile_005f439c+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c807e0",
+      "name": "DAT_02c807e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c807e4",
+      "name": "DAT_02c807e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7105263157894735,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 36,
+      "INT_ADD": 9,
+      "INT_AND": 30,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 27,
+      "INT_LESS": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 13,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 179
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00575ca4",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

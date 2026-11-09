@@ -1,0 +1,80 @@
+// Name: core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00559060
+// Address: 00559060
+// Address Range: [[00559060, 0055920e]]
+// Convention: __cdecl
+// Signature: void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00559060(CDemonSet *this_ptr)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00559060(CDemonSet *this_ptr)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  CDemonSet *pCVar4;
+  uint *puVar5;
+  
+  if (_DAT_020af5c8 < 1) {
+    _DAT_01d1d400 = "..\\core\\setcolid.cpp";
+    _DAT_01d1d404 = 0x42a;
+    core_main_c_FUN_005030e0("CDemonSet::popRaytraceState - stack empty");
+  }
+  _DAT_020af5c8 = _DAT_020af5c8 + -1;
+  iVar2 = _DAT_020af5c8 * 0xa0;
+  puVar5 = (uint *)(iVar2 + 0x20af5cc);
+  *(uint *)&this_ptr->field_0x15f698 = *puVar5;
+  *(uint *)&this_ptr->field_0x15f69c = *(uint *)(iVar2 + 0x20af5d0);
+  *(uint *)&this_ptr->field_0x15f6a0 = *(uint *)(iVar2 + 0x20af5d4);
+  *(uint *)&this_ptr->field_0x15f6a4 = *(uint *)(iVar2 + 0x20af5d8);
+  *(uint *)&this_ptr->field_0x15f6a8 = *(uint *)(iVar2 + 0x20af5dc);
+  iVar1 = *(int *)(iVar2 + 0x20af5e0);
+  iVar3 = 0;
+  *(int *)&this_ptr->field_0x15f6ac = iVar1;
+  pCVar4 = this_ptr;
+  if (0 < iVar1) {
+    do {
+      *(uint *)&pCVar4->field_0x15f6b4 = puVar5[7];
+      iVar3 = iVar3 + 1;
+      puVar5 = puVar5 + 1;
+      pCVar4 = (CDemonSet *)&pCVar4->field_0x4;
+    } while (iVar3 < *(int *)&this_ptr->field_0x15f6ac);
+  }
+  *(uint *)&this_ptr->field_0x15f6b0 = *(uint *)(iVar2 + 0x20af5e4);
+  if ((uint *)&this_ptr->field_0x14d110 != (uint *)(iVar2 + 0x20af610)) {
+    *(uint *)&this_ptr->field_0x14d110 = *(uint *)(iVar2 + 0x20af610);
+    *(uint *)&this_ptr->field_0x14d114 = *(uint *)(iVar2 + 0x20af614);
+    *(uint *)&this_ptr->field_0x14d118 = *(uint *)(iVar2 + 0x20af618);
+  }
+  if ((uint *)&this_ptr->field_0x14d11c != (uint *)(iVar2 + 0x20af61c)) {
+    *(uint *)&this_ptr->field_0x14d11c = *(uint *)(iVar2 + 0x20af61c);
+    *(uint *)&this_ptr->field_0x14d120 = *(uint *)(iVar2 + 0x20af620);
+    *(uint *)&this_ptr->field_0x14d124 = *(uint *)(iVar2 + 0x20af624);
+  }
+  *(uint *)&this_ptr->field_0x15f6dc = *(uint *)(iVar2 + 0x20af628);
+  *(uint *)&this_ptr->field_0x15f6e0 = *(uint *)(iVar2 + 0x20af62c);
+  if ((uint *)&this_ptr->field_0x15f6e4 != (uint *)(iVar2 + 0x20af630)) {
+    *(uint *)&this_ptr->field_0x15f6e4 = *(uint *)(iVar2 + 0x20af630);
+    *(uint *)&this_ptr->field_0x15f6e8 = *(uint *)(iVar2 + 0x20af634);
+    *(uint *)&this_ptr->field_0x15f6ec = *(uint *)(iVar2 + 0x20af638);
+  }
+  *(uint *)&this_ptr->field_0x15f6f0 = *(uint *)(iVar2 + 0x20af63c);
+  if ((uint *)&this_ptr->field_0x14d128 != (uint *)(iVar2 + 0x20af644)) {
+    *(uint *)&this_ptr->field_0x14d128 = *(uint *)(iVar2 + 0x20af644);
+    *(uint *)&this_ptr->field_0x14d12c = *(uint *)(iVar2 + 0x20af648);
+    *(uint *)&this_ptr->field_0x14d130 = *(uint *)(iVar2 + 0x20af64c);
+  }
+  *(uint *)&this_ptr->field_0x14d134 = *(uint *)(iVar2 + 0x20af650);
+  if ((uint *)&this_ptr->field_0x14d138 != (uint *)(iVar2 + 0x20af654)) {
+    *(uint *)&this_ptr->field_0x14d138 = *(uint *)(iVar2 + 0x20af654);
+    *(uint *)&this_ptr->field_0x14d13c = *(uint *)(iVar2 + 0x20af658);
+    *(uint *)&this_ptr->field_0x14d140 = *(uint *)(iVar2 + 0x20af65c);
+  }
+  *(uint *)&this_ptr->field_0x14d144 = *(uint *)(iVar2 + 0x20af660);
+  *(uint *)&this_ptr->field_0x14d148 = *(uint *)(iVar2 + 0x20af664);
+  *(uint *)&this_ptr->field_0x14d14c = *(uint *)(iVar2 + 0x20af668);
+  *(uint *)&this_ptr->field_0x15f6f4 = *(uint *)(iVar2 + 0x20af640);
+  return;
+}

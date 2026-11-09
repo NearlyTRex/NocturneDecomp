@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float FUN_00558450(int param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
+; float core_setcolid_cpp_FUN_00558450(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1a8]:4  local_1a8
@@ -33,13 +33,13 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   FUN_0042d750 at 0042d9f1
-;   FUN_00459100 at 0045a255
-;   FUN_004712b0 at 00471763
-;   FUN_004de330 at 004df179
-;   FUN_0058d910 at 0058e00b
-;   FUN_0059a370 at 0059aa12
-;   FUN_005bafb0 at 005bc13e
+;   core_charactr.cpp_FUN_0042d750 at 0042d9f1
+;   core_demnfolk.cpp_FUN_00459100 at 0045a255
+;   core_doc.cpp_FUN_004712b0 at 00471763
+;   core_ghoul.cpp_FUN_004de330 at 004df179
+;   core_stranger.cpp_FUN_0058d910 at 0058e00b
+;   core_trash.cpp_FUN_0059a370 at 0059aa12
+;   core_zombie.cpp_FUN_005bafb0 at 005bc13e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005f0e35
@@ -49,29 +49,29 @@
 ;   undefined4 DAT_005f0ec5
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01fe5c1c
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   FUN_00408ac0
-;   FUN_00408b00
-;   FUN_00408bb0
-;   FUN_00408ec0
-;   FUN_004215d0
-;   FUN_00468160
-;   FUN_00468900
-;   FUN_0048c230
-;   FUN_0048c300
-;   FUN_005030e0
-;   FUN_00557db0
-;   FUN_005580d0
-;   FUN_005593c0
+;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_FUN_00408ec0
+;   core_box.cpp_FUN_004215d0
+;   core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00468160
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
+;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_0048c300
+;   core_dtrace.cpp_initIntersectionCylinder_FUN_0048c230
+;   core_main.c_FUN_005030e0
+;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00557db0
+;   core_setcolid.cpp_FUN_005580d0
+;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00558450
-        ;   Label: FUN_00558450
+        ;   Label: core_setcolid.cpp_FUN_00558450
     PUSH ESI                            ; 00558451
     PUSH EDI                            ; 00558452
     PUSH EBP                            ; 00558453
@@ -87,8 +87,8 @@ section .text
     LEA EAX,[ESP + 0x170]               ; 00558471
     PUSH dword ptr [EBP + 0x18]         ; 00558478
     PUSH EAX                            ; 0055847b
-    CALL FUN_0048c230                   ; 0055847c
-        ;   XREF to: 0048c230 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c230()
+    CALL core_dtrace.cpp_initIntersectionCylinder_FUN_0048c230 ; 0055847c
+        ;   XREF to: 0048c230 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_initIntersectionCylinder_FUN_0048c230()
     ADD ESP,0x20                        ; 00558481
     TEST dword ptr [EBP + 0x20],0x7fffffff ; 00558484
     JNZ 0x00558496                      ; 0055848b
@@ -99,9 +99,9 @@ section .text
     LEA EAX,[ESP + 0x158]               ; 00558496
         ;   Label: LAB_00558496
     PUSH EAX                            ; 0055849d
-    PUSH 0x1fe5c1c                      ; 0055849e | DAT_01fe5c1c
-    CALL FUN_0048c300                   ; 005584a3
-        ;   XREF to: 0048c300 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c300()
+    PUSH 0x1fe5c1c                      ; 0055849e | g_CDemonRaytraceInstance
+    CALL core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_0048c300 ; 005584a3
+        ;   XREF to: 0048c300 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_0048c300(CDemonRaytrace * this_ptr, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 005584a8
     MOV EAX,dword ptr [EBP + 0x14]      ; 005584ab
         ;   Label: LAB_005584ab
@@ -163,8 +163,8 @@ section .text
     LEA EAX,[ESP + 0x1b4]               ; 005585b0
         ;   Label: LAB_005585b0
     PUSH EAX                            ; 005585b7
-    CALL FUN_005593c0                   ; 005585b8
-        ;   XREF to: 005593c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005593c0()
+    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0 ; 005585b8
+        ;   XREF to: 005593c0 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005593c0(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 005585bd
     MOV EAX,dword ptr [EBP + 0x14]      ; 005585c0
     MOV EAX,dword ptr [EAX + 0x15f698]  ; 005585c3
@@ -195,8 +195,8 @@ section .text
     PUSH EBX                            ; 0055863a
     MOV ESI,dword ptr [EBP + 0x14]      ; 0055863b
     PUSH ESI                            ; 0055863e
-    CALL FUN_00557db0                   ; 0055863f
-        ;   XREF to: 00557db0 (UNCONDITIONAL_CALL)  ; undefined FUN_00557db0()
+    CALL core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00557db0 ; 0055863f
+        ;   XREF to: 00557db0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00557db0(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00558644
     TEST EAX,EAX                        ; 00558647
     JZ 0x00558739                       ; 00558649
@@ -288,8 +288,8 @@ section .text
     PUSH EBX                            ; 00558774
     LEA ESI,[ESP + 0x248]               ; 00558775
     LEA EDI,[ESP + 0x218]               ; 0055877c
-    CALL FUN_00408ec0                   ; 00558783
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408ec0()
+    CALL core_actor.cpp_FUN_00408ec0    ; 00558783
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ec0()
     ADD ESP,0xc                         ; 00558788
     LEA EAX,[ESP + 0x20c]               ; 0055878b
     MOV ECX,0x6                         ; 00558792
@@ -298,8 +298,8 @@ section .text
     LEA ESI,[ESP + 0x240]               ; 0055879f
     PUSH EAX                            ; 005587a6
     MOVSD.REP ES:EDI,ESI                ; 005587a7
-    CALL FUN_004215d0                   ; 005587a9
-        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004215d0()
+    CALL core_box.cpp_FUN_004215d0      ; 005587a9
+        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_004215d0(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 005587ae
     TEST EAX,EAX                        ; 005587b1
     JZ 0x0055864f                       ; 005587b3
@@ -309,8 +309,8 @@ section .text
     JZ 0x00558df1                       ; 005587c2
         ;   XREF to: 00558df1 (CONDITIONAL_JUMP)  ; LAB_00558df1
     PUSH ESI                            ; 005587c8
-    CALL FUN_00468900                   ; 005587c9
-        ;   XREF to: 00468900 (UNCONDITIONAL_CALL)  ; undefined FUN_00468900()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900 ; 005587c9
+        ;   XREF to: 00468900 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005587ce
     MOV EDI,dword ptr [EAX + 0x358]     ; 005587d1
     MOV ESI,EAX                         ; 005587d7
@@ -323,8 +323,8 @@ section .text
     PUSH 0x5f0e4a                       ; 005587e8 | = "info.keyFramedModelInstancePtr != NUL..."
     MOV dword ptr [0x01d1d400],EDX      ; 005587ed | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005587f3 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005587f9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005587f9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 005587fe
     FLD float ptr [EBP + 0x30]          ; 00558801
         ;   Label: LAB_00558801
@@ -349,8 +349,8 @@ section .text
     LEA EAX,[ESP + 0x118]               ; 00558849
     FSTP float ptr [ESP]                ; 00558850
     PUSH EAX                            ; 00558853
-    CALL FUN_0048c230                   ; 00558854
-        ;   XREF to: 0048c230 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c230()
+    CALL core_dtrace.cpp_initIntersectionCylinder_FUN_0048c230 ; 00558854
+        ;   XREF to: 0048c230 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_initIntersectionCylinder_FUN_0048c230()
     ADD ESP,0x20                        ; 00558859
     MOV EAX,dword ptr [ESP + 0x158]     ; 0055885c
     MOV dword ptr [ESP + 0xfc],EAX      ; 00558863
@@ -360,8 +360,8 @@ section .text
     PUSH EAX                            ; 00558875
     PUSH 0x0                            ; 00558876
     PUSH ESI                            ; 00558878
-    CALL FUN_00468160                   ; 00558879
-        ;   XREF to: 00468160 (UNCONDITIONAL_CALL)  ; undefined FUN_00468160()
+    CALL core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00468160 ; 00558879
+        ;   XREF to: 00468160 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00468160(CKeyFramedModel * this_ptr, int frame_index, SIntersectXZCylinder * cylinder, CVector3f * transform_vector)
     ADD ESP,0x10                        ; 0055887e
     FLD float ptr [ESP + 0xfc]          ; 00558881
     FCOMP float ptr [ESP + 0x158]       ; 00558888
@@ -407,8 +407,8 @@ section .text
     LEA ESI,[ESP + 0x1ec]               ; 0055892b
     PUSH EDX                            ; 00558932
     MOVSD.REP ES:EDI,ESI                ; 00558933
-    CALL FUN_005580d0                   ; 00558935
-        ;   XREF to: 005580d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005580d0()
+    CALL core_setcolid.cpp_FUN_005580d0 ; 00558935
+        ;   XREF to: 005580d0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_FUN_005580d0(CDemonSet * this_ptr, SIntersectXZCylinder * cylinder, CBoundingBox3D * bounding_box, CVector3f * position, ...)
     ADD ESP,0x14                        ; 0055893a
     TEST EAX,EAX                        ; 0055893d
     JZ 0x0055864f                       ; 0055893f
@@ -630,8 +630,8 @@ section .text
     PUSH EBX                            ; 00558c74
     MOV dword ptr [ESP + 0x26c],ESI     ; 00558c75
     LEA ESI,[ESP + 0x280]               ; 00558c7c
-    CALL FUN_00408bb0                   ; 00558c83
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408bb0()
+    CALL core_actor.cpp_FUN_00408bb0    ; 00558c83
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
     ADD ESP,0x8                         ; 00558c88
     LEA EDI,[ESP + 0x254]               ; 00558c8b
     MOV EAX,dword ptr [ESP + 0x170]     ; 00558c92
@@ -649,8 +649,8 @@ section .text
     PUSH EBX                            ; 00558cc9
     LEA ESI,[ESP + 0x298]               ; 00558cca
     LEA EDI,[ESP + 0x28c]               ; 00558cd1
-    CALL FUN_00408b00                   ; 00558cd8
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b00()
+    CALL core_actor.cpp_FUN_00408b00    ; 00558cd8
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
     ADD ESP,0x8                         ; 00558cdd
     LEA ESI,[ESP + 0x290]               ; 00558ce0
     FLD float ptr [EBP + 0x30]          ; 00558ce7
@@ -672,8 +672,8 @@ section .text
     LEA EAX,[ESP + 0xb8]                ; 00558d1c
     PUSH dword ptr [ESP + 0x26c]        ; 00558d23
     PUSH EAX                            ; 00558d2a
-    CALL FUN_0048c230                   ; 00558d2b
-        ;   XREF to: 0048c230 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c230()
+    CALL core_dtrace.cpp_initIntersectionCylinder_FUN_0048c230 ; 00558d2b
+        ;   XREF to: 0048c230 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_initIntersectionCylinder_FUN_0048c230()
     ADD ESP,0x20                        ; 00558d30
     MOV EAX,dword ptr [ESP + 0x158]     ; 00558d33
     MOV dword ptr [ESP + 0xa0],EAX      ; 00558d3a
@@ -696,8 +696,8 @@ section .text
     PUSH EBX                            ; 00558d86
     LEA ESI,[ESP + 0x274]               ; 00558d87
     LEA EDI,[ESP + 0x2a4]               ; 00558d8e
-    CALL FUN_00408ac0                   ; 00558d95
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408ac0()
+    CALL core_actor.cpp_FUN_00408ac0    ; 00558d95
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
     LEA ESI,[ESP + 0x274]               ; 00558d9a
     ADD ESP,0x8                         ; 00558da1
     MOVSD ES:EDI,ESI                    ; 00558da4
@@ -741,8 +741,8 @@ section .text
     PUSH 0x5f0eab                       ; 00558e21 | = "Invalid collision type!"
     MOV dword ptr [0x01d1d400],EDI      ; 00558e26 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 00558e2c | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00558e31
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00558e31
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00558e36
     JMP 0x0055864f                      ; 00558e39
         ;   XREF to: 0055864f (UNCONDITIONAL_JUMP)  ; LAB_0055864f

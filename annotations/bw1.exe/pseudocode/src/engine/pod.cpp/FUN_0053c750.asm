@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0053c750(int *param_1)
+; void engine_pod_cpp_FUN_0053c750(int *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -11,15 +11,15 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_0053b250
+;   core_main.c_FUN_005030e0
+;   engine_pod.cpp_FUN_0053b250
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0053c750
-        ;   Label: FUN_0053c750
+        ;   Label: engine_pod.cpp_FUN_0053c750
     PUSH ESI                            ; 0053c751
     PUSH EDI                            ; 0053c752
     PUSH EBP                            ; 0053c753
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 0053c79c
     MOV ESI,dword ptr [EBX + 0x4]       ; 0053c79d
     PUSH ESI                            ; 0053c7a0
-    CALL FUN_0053b250                   ; 0053c7a1
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; undefined FUN_0053b250()
+    CALL engine_pod.cpp_FUN_0053b250    ; 0053c7a1
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_0053b250()
     ADD ESP,0xc                         ; 0053c7a6
     TEST EAX,EAX                        ; 0053c7a9
     JZ 0x0053c7c9                       ; 0053c7ab
@@ -87,8 +87,8 @@ section .text
     MOV EDI,0x5eda07                    ; 0053c7de | = "..\\engine\\pod.cpp"
     PUSH 0x5eda19                       ; 0053c7e3 | = "Can't re-mount %s: %s"
     MOV dword ptr [0x01d1d400],EDI      ; 0053c7e8 | DAT_01d1d400
-    CALL FUN_005030e0                   ; 0053c7ee
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0053c7ee
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 0053c7f3
     JMP 0x0053c7ad                      ; 0053c7f6
         ;   XREF to: 0053c7ad (UNCONDITIONAL_JUMP)  ; LAB_0053c7ad

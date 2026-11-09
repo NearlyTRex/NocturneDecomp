@@ -1,0 +1,38 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    sound_sndwav.cpp_staticInit_FUN_0057a570
+# Entry:       0057a570
+# Signature:   void __cdecl sound_sndwav_cpp_staticInit_FUN_0057a570(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@0057a570 [ESP:+0]  # MOV ECX, 0x605bf8
+COPY (register,0x4,4) /* ECX */ = (const,0x605bf8,4)
+
+@0057a575 [ESP:+0]  # MOV EDX, 0x605c10
+COPY (register,0x8,4) /* EDX */ = (const,0x605c10,4)
+
+@0057a57a [ESP:+0]  # MOV dword ptr [0x02c82a50], ECX
+COPY (ram,0x2c82a50,4) = (register,0x4,4) /* ECX */
+
+@0057a580 [ESP:+0]  # MOV dword ptr [0x02c82a4c], EDX
+COPY (ram,0x2c82a4c,4) = (register,0x8,4) /* EDX */
+
+@0057a586 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 5 instructions, 7 P-code ops
+# ============================================================================

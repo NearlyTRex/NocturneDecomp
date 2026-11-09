@@ -1,0 +1,662 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 274,
+    "complexity_score": 440,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 46,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 110,
+    "suspect_count": 31,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_ref",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 384
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00469060",
+    "address_range": [
+      [
+        "00469060",
+        "004693a4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_doc.cpp_FUN_00469060",
+    "signature": "void core_doc_cpp_FUN_00469060(CHero *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046caa0",
+      "is_variadic": false,
+      "name": "core_doc.cpp_FUN_0046caa0"
+    },
+    {
+      "addr": "004eaa10",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004eaa10"
+    },
+    {
+      "addr": "005240c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005240c0"
+    },
+    {
+      "addr": "00524a00",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_00524a00"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    },
+    {
+      "addr": "005675f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_005675f0"
+    },
+    {
+      "addr": "005634f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0"
+    },
+    {
+      "addr": "00569040",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00569040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d9aac",
+      "name": "s_Bip01_head_005d9aac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9ab7",
+      "name": "s_Bip01_L_Clavicle_005d9ab7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9ac8",
+      "name": "s_Bip01_R_Clavicle_005d9ac8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9ad9",
+      "name": "s_Bip01_L_UpperArm_005d9ad9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9aea",
+      "name": "s_Bip01_R_UpperArm_005d9aea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9afb",
+      "name": "s_Bip01_L_ForeArm_005d9afb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b0b",
+      "name": "s_Bip01_R_ForeArm_005d9b0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b1b",
+      "name": "s_Bip01_L_Foot_005d9b1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b28",
+      "name": "s_Bip01_R_Foot_005d9b28",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b35",
+      "name": "s_Bip01_L_Thigh_005d9b35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b43",
+      "name": "s_Bip01_R_Thigh_005d9b43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b51",
+      "name": "s_Bip01_L_Calf_005d9b51",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b5e",
+      "name": "s_Bip01_R_Calf_005d9b5e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b6b",
+      "name": "s_Bip01_L_Hand_005d9b6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b78",
+      "name": "s_Bip01_R_Hand_005d9b78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b85",
+      "name": "s_Bip01_Neck_005d9b85",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b90",
+      "name": "s_Bip01_Spine2_005d9b90",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9b9d",
+      "name": "s_Bip01_Spine1_005d9b9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9baa",
+      "name": "s_Bip01_Spine_005d9baa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9bb6",
+      "name": "s_Bip01_Pelvis_005d9bb6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9bc3",
+      "name": "s_turnlstart_005d9bc3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9bce",
+      "name": "s_turnrstart_005d9bce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9bd9",
+      "name": "s_pickup_005d9bd9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01b68814",
+      "name": "DAT_01b68814",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68818",
+      "name": "DAT_01b68818",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b6881c",
+      "name": "DAT_01b6881c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68820",
+      "name": "DAT_01b68820",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68824",
+      "name": "DAT_01b68824",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68828",
+      "name": "DAT_01b68828",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b6882c",
+      "name": "DAT_01b6882c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68830",
+      "name": "DAT_01b68830",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68834",
+      "name": "DAT_01b68834",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68838",
+      "name": "DAT_01b68838",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b6883c",
+      "name": "DAT_01b6883c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68840",
+      "name": "DAT_01b68840",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68844",
+      "name": "DAT_01b68844",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68848",
+      "name": "DAT_01b68848",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b6884c",
+      "name": "DAT_01b6884c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68850",
+      "name": "DAT_01b68850",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68854",
+      "name": "DAT_01b68854",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68858",
+      "name": "DAT_01b68858",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b6885c",
+      "name": "DAT_01b6885c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68860",
+      "name": "DAT_01b68860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68864",
+      "name": "DAT_01b68864",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b68868",
+      "name": "DAT_01b68868",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b6886c",
+      "name": "DAT_01b6886c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9279661016949152,
+    "instruction_count": 236,
+    "opcode_distribution": {
+      "CALL": 33,
+      "CBRANCH": 2,
+      "COPY": 182,
+      "INT_ADD": 86,
+      "INT_AND": 76,
+      "INT_CARRY": 34,
+      "INT_EQUAL": 76,
+      "INT_LESS": 3,
+      "INT_MULT": 12,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 34,
+      "INT_SLESS": 38,
+      "INT_SUB": 135,
+      "INT_XOR": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 18,
+      "POPCOUNT": 38,
+      "RETURN": 1,
+      "STORE": 143
+    },
+    "pcode_op_count": 927
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_doc_cpp_FUN_00469060(CHero *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "auStackY_1028",
+      "severity": "moderate",
+      "text": "uint auStackY_1028 [1015];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_hero_cpp_FUN_004eaa10(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x25a8) = _DAT_01b68848;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x2620) = _DAT_01b6884c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 82,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "auStack_24[(uint)bVar2 * -2] = *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 84,
+      "match": "&stack0xffffffc8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 + 0x20090 != (CHero *)&uStack_28) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20090) = uStack_28;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20094) = auStack_24[0];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20098) = auStack_24[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_00569040(param_1 + 0x158,_DAT_01b68824);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 92,
+      "match": "&stack0xffffffd0",
+      "severity": "moderate",
+      "text": "auStack_18[(uint)bVar2 * -2] = *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 94,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 + 0x2009c != (CHero *)&uStack_1c) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2009c) = uStack_1c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200a0) = auStack_18[0];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200a4) = auStack_18[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_doc_cpp_FUN_0046caa0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 101,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200a8) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200bc) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200d0) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20020) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200e0) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 106,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x20018) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2001c) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x158));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200d8) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x200dc) = 0;",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005fece4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

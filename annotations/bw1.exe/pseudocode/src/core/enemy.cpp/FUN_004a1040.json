@@ -1,0 +1,364 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 321,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 27,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_field",
+      "unnamed_field",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a1040",
+    "address_range": [
+      [
+        "004a1040",
+        "004a10ea"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_enemy.cpp_FUN_004a1040",
+    "signature": "void core_enemy_cpp_FUN_004a1040(CCharacter *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042d750",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042d750"
+    },
+    {
+      "addr": "00445430",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00445430"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dcbab",
+      "name": "s_CEnemy_stopGrabbing_s_005dcbab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00611100",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007db5f0"
+    },
+    {
+      "addr": "0078a123",
+      "name": "DAT_0078a123",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007db5f0",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.480769230769231,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 2,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 44,
+      "INT_ADD": 29,
+      "INT_AND": 25,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 24,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 12,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 233
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_enemy_cpp_FUN_004a1040(CCharacter *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[1].field_0x18 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[1].field_0x18 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(g_CConsolePtr,\"CEnemy::stopGrabbing %s\\n\",*(int *)&param_1[1].field_0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(g_CConsolePtr,\"CEnemy::stopGrabbing %s\\n\",*(int *)&param_1[1].field_0x18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(*(int *)&param_1[1].field_0x18 + 0x154) + 0xf4))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(*(int *)&param_1[1].field_0x18 + 0x154) + 0xf4))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(*(int *)&param_1[1].field_0x18 + 0x154) + 0xf4))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)&param_1[1].field_0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(*(int *)&param_1[1].field_0x18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (pCVar1 == param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(*(int *)&param_1[1].field_0x18 + 0x154) + 0xf0))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(*(int *)&param_1[1].field_0x18 + 0x154) + 0xf0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(*(int *)&param_1[1].field_0x18 + 0x154) + 0xf0))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)&param_1[1].field_0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(*(int *)&param_1[1].field_0x18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(byte **)&param_1->field_0x68 == &DAT_0078a123) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0078a123",
+      "severity": "mild",
+      "text": "if ((*(byte **)&param_1->field_0x68 == &DAT_0078a123) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "if ((*(byte **)&param_1->field_0x68 == &DAT_0078a123) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)&param_1->field_0x24f8 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x24f8",
+      "severity": "mild",
+      "text": "(*(int *)&param_1->field_0x24f8 != 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 19,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_14._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 20,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_14._4_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 21,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_14._8_4_ = 0xba83126f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_0042d750(param_1,&CStack_14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x18 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&param_1[1].field_0x18 = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 248,
+        "vtable_addr": "00606e04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 248,
+        "vtable_addr": "00601014"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 248,
+        "vtable_addr": "00602314"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 248,
+        "vtable_addr": "00607624"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 248,
+        "vtable_addr": "00608224"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 36
+  }
+}

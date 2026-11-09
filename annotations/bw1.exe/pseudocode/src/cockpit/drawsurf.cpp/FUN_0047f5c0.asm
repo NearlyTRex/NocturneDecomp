@@ -1,14 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0047f5c0(int param_1,int param_2,int param_3,int param_4)
+; void __cdecl cockpit_drawsurf_cpp_FUN_0047f5c0(CDrawSurface *this_ptr,int x,int start_y,int end_y)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   start_y
+; int              Stack[0x10]:4   end_y
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0047f860 at 0047f89c
+;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0047f860 at 0047f89c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005db14c
@@ -26,14 +31,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0047f5c0
-        ;   Label: FUN_0047f5c0
+        ;   Label: cockpit_drawsurf.cpp_FUN_0047f5c0
     PUSH ESI                            ; 0047f5c1
     PUSH EDI                            ; 0047f5c2
     PUSH EBP                            ; 0047f5c3
@@ -136,8 +141,8 @@ section .text
     PUSH 0x5db164                       ; 0047f6ad | = "Invalid bitsPerPixel!"
     MOV dword ptr [0x01d1d400],ECX      ; 0047f6b2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0047f6b8 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0047f6be
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0047f6be
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0047f6c3
     ADD ESP,0x8                         ; 0047f6c6
     POP EBP                             ; 0047f6c9
@@ -224,8 +229,8 @@ section .text
     PUSH 0x5db192                       ; 0047f771 | = "Invalid bitsPerPixel!"
     MOV [0x01d1d400],EAX                ; 0047f776 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0047f77b | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0047f781
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0047f781
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0047f786
     ADD ESP,0x8                         ; 0047f789
     POP EBP                             ; 0047f78c

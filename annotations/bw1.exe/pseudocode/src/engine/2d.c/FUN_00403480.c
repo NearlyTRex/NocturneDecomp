@@ -1,14 +1,14 @@
-// Name: FUN_00403480
+// Name: engine_2d.c_FUN_00403480
 // Address: 00403480
 // Address Range: [[00403480, 00403699]]
 // Convention: unknown
-// Signature: int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)
+// Signature: int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)
+int engine_2d_c_FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)
   if (_DAT_00713a38 != 0) {
     _DAT_01d1d400 = "..\\engine\\2d.c";
     _DAT_01d1d404 = 0x995;
-    FUN_005030e0("mapFrameBuffer - already mapped!");
+    core_main_c_FUN_005030e0("mapFrameBuffer - already mapped!");
   }
   if (param_5 == 0) {
     iVar1 = param_2 * param_4 >> 0x1f;
@@ -25,29 +25,29 @@ int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5)
   if (((param_4 != 8) && (param_4 != 0x10)) && (param_4 != 0x20)) {
     _DAT_01d1d400 = "..\\engine\\2d.c";
     _DAT_01d1d404 = 0x99d;
-    FUN_005030e0("mapFrameBuffer - invalid bits/pixel");
+    core_main_c_FUN_005030e0("mapFrameBuffer - invalid bits/pixel");
   }
   iVar1 = param_2 * param_4 >> 0x1f;
   if ((int)((param_5 ^ (int)param_5 >> 0x1f) - ((int)param_5 >> 0x1f)) <
       (int)((param_2 * param_4 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3) {
     _DAT_01d1d400 = "..\\engine\\2d.c";
     _DAT_01d1d404 = 0x99e;
-    FUN_005030e0("mapFrameBuffer - invalid stride");
+    core_main_c_FUN_005030e0("mapFrameBuffer - invalid stride");
   }
   if ((param_2 < 1) || (param_3 < 1)) {
     _DAT_01d1d400 = "..\\engine\\2d.c";
     _DAT_01d1d404 = 0x99f;
-    FUN_005030e0("mapFrameBuffer - invalid size");
+    core_main_c_FUN_005030e0("mapFrameBuffer - invalid size");
   }
   if (0x4b0 < param_3) {
     _DAT_01d1d400 = "..\\engine\\2d.c";
     _DAT_01d1d404 = 0x9a0;
-    FUN_005030e0("mapFrameBuffer - ySize too big!");
+    core_main_c_FUN_005030e0("mapFrameBuffer - ySize too big!");
   }
   if (param_1 == 0) {
     _DAT_01d1d400 = "..\\engine\\2d.c";
     _DAT_01d1d404 = 0x9a1;
-    FUN_005030e0("mapFrameBuffer - invalid buffer!");
+    core_main_c_FUN_005030e0("mapFrameBuffer - invalid buffer!");
   }
   _DAT_00713a38 = DAT_0061b498;
   _DAT_00713a3c = DAT_0061b49c;

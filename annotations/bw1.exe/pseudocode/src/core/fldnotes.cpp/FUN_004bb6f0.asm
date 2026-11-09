@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_004bb6f0(int param_1,int param_2)
+; undefined4 core_fldnotes_cpp_FUN_004bb6f0(int param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x220]:1  local_220
@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004bb2f0 at 004bb417
+;   core_fldnotes.cpp_FUN_004bb2f0 at 004bb417
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dfa0c
@@ -33,26 +33,26 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   FUN_004baa40
-;   FUN_004bab60
-;   FUN_004bac90
-;   FUN_004bb5f0
-;   FUN_004bb630
-;   FUN_004bb6c0
-;   FUN_004bbad0
-;   FUN_005030e0
-;   FUN_005bfb40
-;   FUN_005c04e0
-;   FUN_005c0f32
-;   FUN_005c1210
-;   FUN_005c2cac
+;   core_fldnotes.cpp_FUN_004baa40
+;   core_fldnotes.cpp_FUN_004bab60
+;   core_fldnotes.cpp_FUN_004bb5f0
+;   core_fldnotes.cpp_FUN_004bb630
+;   core_fldnotes.cpp_FUN_004bb6c0
+;   core_fldnotes.cpp_FUN_004bbad0
+;   core_fldnotes.cpp_PageResource_TwanaEntry_ctor_FUN_004bac90
+;   core_main.c_FUN_005030e0
+;   crt_stdio.c_sscanf_FUN_005c2cac
+;   crt_string.c__stricmp_FUN_005c04e0
+;   crt_string.c__strnicmp_FUN_005c1210
+;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_FUN_005c0f32
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004bb6f0
-        ;   Label: FUN_004bb6f0
+        ;   Label: core_fldnotes.cpp_FUN_004bb6f0
     PUSH ESI                            ; 004bb6f1
     PUSH EDI                            ; 004bb6f2
     PUSH EBP                            ; 004bb6f3
@@ -61,8 +61,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x228]     ; 004bb701
     PUSH 0x5dfa0c                       ; 004bb708 | DAT_005dfa0c
     PUSH ESI                            ; 004bb70d
-    CALL FUN_005c04e0                   ; 004bb70e
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 004bb70e
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004bb713
     TEST EAX,EAX                        ; 004bb716
     JNZ 0x004bb743                      ; 004bb718
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 004bb733 (CONDITIONAL_JUMP)  ; LAB_004bb733
     PUSH EBX                            ; 004bb72a
         ;   Label: LAB_004bb72a
-    CALL FUN_004bb630                   ; 004bb72b
-        ;   XREF to: 004bb630 (UNCONDITIONAL_CALL)  ; undefined FUN_004bb630()
+    CALL core_fldnotes.cpp_FUN_004bb630 ; 004bb72b
+        ;   XREF to: 004bb630 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bb630()
     ADD ESP,0x4                         ; 004bb730
     MOV EAX,0x1                         ; 004bb733
         ;   Label: LAB_004bb733
@@ -92,16 +92,16 @@ section .text
     PUSH 0x5dfa0f                       ; 004bb743 | DAT_005dfa0f
         ;   Label: LAB_004bb743
     PUSH ESI                            ; 004bb748
-    CALL FUN_005c04e0                   ; 004bb749
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 004bb749
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004bb74e
     TEST EAX,EAX                        ; 004bb751
     JZ 0x004bb77e                       ; 004bb753
         ;   XREF to: 004bb77e (CONDITIONAL_JUMP)  ; LAB_004bb77e
     PUSH 0x5dfa12                       ; 004bb755 | DAT_005dfa12
     PUSH ESI                            ; 004bb75a
-    CALL FUN_005c04e0                   ; 004bb75b
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 004bb75b
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004bb760
     TEST EAX,EAX                        ; 004bb763
     JNZ 0x004bb797                      ; 004bb765
@@ -116,8 +116,8 @@ section .text
     RET                                 ; 004bb77d
     PUSH EBX                            ; 004bb77e
         ;   Label: LAB_004bb77e
-    CALL FUN_004bb6c0                   ; 004bb77f
-        ;   XREF to: 004bb6c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bb6c0()
+    CALL core_fldnotes.cpp_FUN_004bb6c0 ; 004bb77f
+        ;   XREF to: 004bb6c0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bb6c0()
     MOV EAX,0x1                         ; 004bb784
     ADD ESP,0x4                         ; 004bb789
     ADD ESP,0x210                       ; 004bb78c
@@ -129,8 +129,8 @@ section .text
     PUSH 0x5dfa15                       ; 004bb797 | DAT_005dfa15
         ;   Label: LAB_004bb797
     PUSH ESI                            ; 004bb79c
-    CALL FUN_005c04e0                   ; 004bb79d
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 004bb79d
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004bb7a2
     TEST EAX,EAX                        ; 004bb7a5
     JNZ 0x004bb7bc                      ; 004bb7a7
@@ -147,8 +147,8 @@ section .text
         ;   Label: LAB_004bb7bc
     PUSH 0x5dfa19                       ; 004bb7be | = "image"
     PUSH ESI                            ; 004bb7c3
-    CALL FUN_005c1210                   ; 004bb7c4
-        ;   XREF to: 005c1210 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1210()
+    CALL crt_string.c__strnicmp_FUN_005c1210 ; 004bb7c4
+        ;   XREF to: 005c1210 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005c1210(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004bb7c9
     TEST EAX,EAX                        ; 004bb7cc
     JNZ 0x004bb8eb                      ; 004bb7ce
@@ -166,8 +166,8 @@ section .text
     MOV EBP,0xffffffff                  ; 004bb7fc
     PUSH EAX                            ; 004bb801
     MOV dword ptr [ESP + 0x220],EBP     ; 004bb802
-    CALL FUN_005c2cac                   ; 004bb809
-        ;   XREF to: 005c2cac (UNCONDITIONAL_CALL)  ; undefined FUN_005c2cac()
+    CALL crt_stdio.c_sscanf_FUN_005c2cac ; 004bb809
+        ;   XREF to: 005c2cac (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_005c2cac(char * str, char * format)
     ADD ESP,0x18                        ; 004bb80e
     CMP dword ptr [ESP + 0x208],0x3     ; 004bb811
     JL 0x004bb8cb                       ; 004bb819
@@ -177,15 +177,15 @@ section .text
     MOV ECX,dword ptr [ESP + 0x204]     ; 004bb827
     PUSH ECX                            ; 004bb82e
     PUSH EBX                            ; 004bb82f
-    CALL FUN_004bbad0                   ; 004bb830
-        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bbad0()
+    CALL core_fldnotes.cpp_FUN_004bbad0 ; 004bb830
+        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bbad0()
     ADD ESP,0xc                         ; 004bb835
     TEST EAX,EAX                        ; 004bb838
     JZ 0x004bb738                       ; 004bb83a
         ;   XREF to: 004bb738 (CONDITIONAL_JUMP)  ; LAB_004bb738
     PUSH 0x2c                           ; 004bb840
-    CALL FUN_005c0f32                   ; 004bb842
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0f32()
+    CALL crt_unknown.c_FUN_005c0f32     ; 004bb842
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bb847
     TEST EAX,EAX                        ; 004bb84a
     JZ 0x004bb86f                       ; 004bb84c
@@ -197,8 +197,8 @@ section .text
     LEA ESI,[ESP + 0x108]               ; 004bb85e
     PUSH ESI                            ; 004bb865
     PUSH EAX                            ; 004bb866
-    CALL FUN_004baa40                   ; 004bb867
-        ;   XREF to: 004baa40 (UNCONDITIONAL_CALL)  ; undefined FUN_004baa40()
+    CALL core_fldnotes.cpp_FUN_004baa40 ; 004bb867
+        ;   XREF to: 004baa40 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004baa40()
     ADD ESP,0x10                        ; 004bb86c
     MOV ESI,EAX                         ; 004bb86f
         ;   Label: LAB_004bb86f
@@ -210,8 +210,8 @@ section .text
     PUSH 0x5dfa65                       ; 004bb87f | = "Out of memory"
     MOV dword ptr [0x01d1d400],EBP      ; 004bb884 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004bb88a | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bb88f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bb88f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004bb894
     MOV EAX,dword ptr [EBX + 0x14]      ; 004bb897
         ;   Label: LAB_004bb897
@@ -224,8 +224,8 @@ section .text
     ADD EDX,EAX                         ; 004bb8ad
     PUSH EBX                            ; 004bb8af
     MOV dword ptr [EBX + 0x14],EDX      ; 004bb8b0
-    CALL FUN_004bb5f0                   ; 004bb8b3
-        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bb5f0()
+    CALL core_fldnotes.cpp_FUN_004bb5f0 ; 004bb8b3
+        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bb5f0()
     MOV EAX,0x1                         ; 004bb8b8
     ADD ESP,0x8                         ; 004bb8bd
     ADD ESP,0x210                       ; 004bb8c0
@@ -238,8 +238,8 @@ section .text
         ;   Label: LAB_004bb8cb
     PUSH 0x5dfa2a                       ; 004bb8cc | = "Error parsing 'image' tag parms: '%s'"
     PUSH 0x1cc4270                      ; 004bb8d1 | DAT_01cc4270
-    CALL FUN_005bfb40                   ; 004bb8d6
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 004bb8d6
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     ADD ESP,0xc                         ; 004bb8db
     MOV EAX,EBP                         ; 004bb8de
     ADD ESP,0x210                       ; 004bb8e0
@@ -252,8 +252,8 @@ section .text
         ;   Label: LAB_004bb8eb
     PUSH 0x5dfa73                       ; 004bb8ed | = "twanachar"
     PUSH ESI                            ; 004bb8f2
-    CALL FUN_005c1210                   ; 004bb8f3
-        ;   XREF to: 005c1210 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1210()
+    CALL crt_string.c__strnicmp_FUN_005c1210 ; 004bb8f3
+        ;   XREF to: 005c1210 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005c1210(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 004bb8f8
     TEST EAX,EAX                        ; 004bb8fb
     JNZ 0x004bb9fd                      ; 004bb8fd
@@ -267,15 +267,15 @@ section .text
     MOV ECX,0xffffffff                  ; 004bb918
     PUSH EAX                            ; 004bb91d
     MOV dword ptr [ESP + 0x21c],ECX     ; 004bb91e
-    CALL FUN_005c2cac                   ; 004bb925
-        ;   XREF to: 005c2cac (UNCONDITIONAL_CALL)  ; undefined FUN_005c2cac()
+    CALL crt_stdio.c_sscanf_FUN_005c2cac ; 004bb925
+        ;   XREF to: 005c2cac (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_005c2cac(char * str, char * format)
     ADD ESP,0x10                        ; 004bb92a
     CMP dword ptr [ESP + 0x20c],0x3     ; 004bb92d
     JL 0x004bb9c2                       ; 004bb935
         ;   XREF to: 004bb9c2 (CONDITIONAL_JUMP)  ; LAB_004bb9c2
     PUSH 0x4c                           ; 004bb93b
-    CALL FUN_005c0f32                   ; 004bb93d
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0f32()
+    CALL crt_unknown.c_FUN_005c0f32     ; 004bb93d
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bb942
     TEST EAX,EAX                        ; 004bb945
     JZ 0x004bb955                       ; 004bb947
@@ -283,8 +283,8 @@ section .text
     MOV ESI,ESP                         ; 004bb949
     PUSH ESI                            ; 004bb94b
     PUSH EAX                            ; 004bb94c
-    CALL FUN_004bab60                   ; 004bb94d
-        ;   XREF to: 004bab60 (UNCONDITIONAL_CALL)  ; undefined FUN_004bab60()
+    CALL core_fldnotes.cpp_FUN_004bab60 ; 004bb94d
+        ;   XREF to: 004bab60 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bab60()
     ADD ESP,0x8                         ; 004bb952
     MOV ESI,EAX                         ; 004bb955
         ;   Label: LAB_004bb955
@@ -296,8 +296,8 @@ section .text
     PUSH 0x5dfabe                       ; 004bb965 | = "Out of memory"
     MOV dword ptr [0x01d1d400],EBP      ; 004bb96a | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004bb970 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bb975
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bb975
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004bb97a
     MOV EDX,dword ptr [ESI + 0xc]       ; 004bb97d
         ;   Label: LAB_004bb97d
@@ -305,8 +305,8 @@ section .text
     MOV ECX,dword ptr [ESI + 0x8]       ; 004bb981
     PUSH ECX                            ; 004bb984
     PUSH EBX                            ; 004bb985
-    CALL FUN_004bbad0                   ; 004bb986
-        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bbad0()
+    CALL core_fldnotes.cpp_FUN_004bbad0 ; 004bb986
+        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bbad0()
     ADD ESP,0xc                         ; 004bb98b
     TEST EAX,EAX                        ; 004bb98e
     JZ 0x004bb9e5                       ; 004bb990
@@ -321,8 +321,8 @@ section .text
     ADD EDI,EAX                         ; 004bb9a4
     PUSH EBX                            ; 004bb9a6
     MOV dword ptr [EBX + 0x14],EDI      ; 004bb9a7
-    CALL FUN_004bb5f0                   ; 004bb9aa
-        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bb5f0()
+    CALL core_fldnotes.cpp_FUN_004bb5f0 ; 004bb9aa
+        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bb5f0()
     MOV EAX,0x1                         ; 004bb9af
     ADD ESP,0x8                         ; 004bb9b4
     ADD ESP,0x210                       ; 004bb9b7
@@ -335,8 +335,8 @@ section .text
         ;   Label: LAB_004bb9c2
     PUSH 0x5dfa83                       ; 004bb9c3 | = "Error parsing 'twanachar' parms: '%s'"
     PUSH 0x1cc4270                      ; 004bb9c8 | DAT_01cc4270
-    CALL FUN_005bfb40                   ; 004bb9cd
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 004bb9cd
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     MOV EAX,0xffffffff                  ; 004bb9d2
     ADD ESP,0xc                         ; 004bb9d7
     ADD ESP,0x210                       ; 004bb9da
@@ -361,22 +361,22 @@ section .text
     PUSH 0x5dfacc                       ; 004bb9fd | = "twanaentry"
         ;   Label: LAB_004bb9fd
     PUSH ESI                            ; 004bba02
-    CALL FUN_005c04e0                   ; 004bba03
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 004bba03
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004bba08
     TEST EAX,EAX                        ; 004bba0b
     JNZ 0x004bba9f                      ; 004bba0d
         ;   XREF to: 004bba9f (CONDITIONAL_JUMP)  ; LAB_004bba9f
     PUSH 0x118                          ; 004bba13
-    CALL FUN_005c0f32                   ; 004bba18
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0f32()
+    CALL crt_unknown.c_FUN_005c0f32     ; 004bba18
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bba1d
     TEST EAX,EAX                        ; 004bba20
     JZ 0x004bba2d                       ; 004bba22
         ;   XREF to: 004bba2d (CONDITIONAL_JUMP)  ; LAB_004bba2d
     PUSH EAX                            ; 004bba24
-    CALL FUN_004bac90                   ; 004bba25
-        ;   XREF to: 004bac90 (UNCONDITIONAL_CALL)  ; undefined FUN_004bac90()
+    CALL core_fldnotes.cpp_PageResource_TwanaEntry_ctor_FUN_004bac90 ; 004bba25
+        ;   XREF to: 004bac90 (UNCONDITIONAL_CALL)  ; SPageResourceTwanaEntry * core_fldnotes.cpp_PageResource_TwanaEntry_ctor_FUN_004bac90(SPageResourceTwanaEntry * this_ptr)
     ADD ESP,0x4                         ; 004bba2a
     MOV ESI,EAX                         ; 004bba2d
         ;   Label: LAB_004bba2d
@@ -388,8 +388,8 @@ section .text
     PUSH 0x5dfaec                       ; 004bba3d | = "Out of memory"
     MOV dword ptr [0x01d1d400],EDX      ; 004bba42 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004bba48 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bba4e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bba4e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004bba53
     MOV EDI,dword ptr [ESI + 0xc]       ; 004bba56
         ;   Label: LAB_004bba56
@@ -397,8 +397,8 @@ section .text
     MOV EBP,dword ptr [ESI + 0x8]       ; 004bba5a
     PUSH EBP                            ; 004bba5d
     PUSH EBX                            ; 004bba5e
-    CALL FUN_004bbad0                   ; 004bba5f
-        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bbad0()
+    CALL core_fldnotes.cpp_FUN_004bbad0 ; 004bba5f
+        ;   XREF to: 004bbad0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bbad0()
     ADD ESP,0xc                         ; 004bba64
     TEST EAX,EAX                        ; 004bba67
     JZ 0x004bb9e5                       ; 004bba69
@@ -413,8 +413,8 @@ section .text
     ADD EDX,EAX                         ; 004bba81
     PUSH EBX                            ; 004bba83
     MOV dword ptr [EBX + 0x14],EDX      ; 004bba84
-    CALL FUN_004bb5f0                   ; 004bba87
-        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bb5f0()
+    CALL core_fldnotes.cpp_FUN_004bb5f0 ; 004bba87
+        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bb5f0()
     MOV EAX,0x1                         ; 004bba8c
     ADD ESP,0x8                         ; 004bba91
     ADD ESP,0x210                       ; 004bba94
@@ -427,8 +427,8 @@ section .text
         ;   Label: LAB_004bba9f
     PUSH 0x5dfafa                       ; 004bbaa0 | = "Ignoring unknown markup tag: %s"
     PUSH 0x1cc4270                      ; 004bbaa5 | DAT_01cc4270
-    CALL FUN_005bfb40                   ; 004bbaaa
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 004bbaaa
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     MOV EAX,0xffffffff                  ; 004bbaaf
     ADD ESP,0xc                         ; 004bbab4
     ADD ESP,0x210                       ; 004bbab7

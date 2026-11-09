@@ -1,15 +1,15 @@
-// Name: FUN_00473160
+// Name: core_doc.cpp_FUN_00473160
 // Address: 00473160
 // Address Range: [[00473160, 004737a5]]
 // Convention: unknown
-// Signature: void FUN_00473160(int param_1)
+// Signature: void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00473160(int param_1)
+void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
 
 {
   float fVar1;
@@ -18,12 +18,12 @@ void FUN_00473160(int param_1)
   byte bVar4;
   float10 fVar5;
   float afStackY_112c [1000];
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  uint uVar10;
-  float *pfVar11;
+  CDemonSet *this_ptr;
+  int laser_type;
+  int color_r;
+  int color_g;
+  int color_b;
+  float *pfVar6;
   float fStack_150;
   float fStack_144;
   float fStack_138;
@@ -88,13 +88,14 @@ void FUN_00473160(int param_1)
   float fStack_18;
   
   bVar4 = 0;
-  if (*(int *)(param_1 + 0x20004) == 0) {
+  if (*(int *)&param_1[0x17d].field_0xc == 0) {
     _DAT_01d1d400 = "..\\core\\doc.cpp";
     _DAT_01d1d404 = 0x11e0;
-    FUN_005030e0("CDoc::aimLeftPistol - no weapon?");
+    core_main_c_FUN_005030e0("CDoc::aimLeftPistol - no weapon?");
   }
-  (**(code **)(*(int *)(*(int *)(param_1 + 0x20004) + 0x154) + 0xe0))(*(int *)(param_1 + 0x20004));
-  pfStack_20 = (float *)(param_1 + 0x1ffe0);
+  (**(code **)(*(int *)(*(int *)&param_1[0x17d].field_0xc + 0x154) + 0xe0))
+            (*(int *)&param_1[0x17d].field_0xc);
+  pfStack_20 = (float *)&param_1[0x17c].field_0x140;
   uStack_2c = _DAT_01b68820;
   fStack_120 = local_6c;
   (&stack0xfffffee4)[(uint)bVar4 * 0xfffffffe] =
@@ -103,7 +104,7 @@ void FUN_00473160(int param_1)
        *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   fStack_30 = 0.5235988;
   fStack_34 = -1.3089969;
-  FUN_00408b40(*(uint *)(param_1 + 0x20004),&stack0xfffffee0);
+  core_actor_cpp_FUN_00408b40(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffee0);
   fStack_f0 = fStack_9c;
   (&stack0xffffff14)[(uint)bVar4 * 0xfffffffe] =
        (float)*(uint *)(&stack0xffffff68 + (uint)bVar4 * -8);
@@ -112,7 +113,7 @@ void FUN_00473160(int param_1)
   uStack_12c = 0;
   uStack_128 = 0;
   uStack_124 = 0x447a0000;
-  FUN_00408ac0(*(uint *)(param_1 + 0x20004),&stack0xfffffed4);
+  core_actor_cpp_FUN_00408ac0(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffed4);
   fVar3 = fStack_e8;
   fVar1 = fStack_ec;
   fVar2 = fStack_f0;
@@ -121,25 +122,28 @@ void FUN_00473160(int param_1)
        *(uint *)(&stack0xfffffec0 + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffffb4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xfffffec4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  uVar10 = 0;
-  uVar9 = 0;
-  uVar8 = 0xff;
+  color_b = 0;
+  color_g = 0;
+  color_r = 0xff;
   fStack_48 = fVar2 + fStack_54;
   fStack_44 = fVar1 + fStack_50;
-  uVar7 = 1;
+  laser_type = 1;
   fStack_40 = fVar3 + fStack_4c;
   fStack_60 = fVar2 + fStack_54;
   (&stack0xffffffa4)[(uint)bVar4 * 0xfffffffe] =
        (float)*(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8);
-  uVar6 = 0x01E82168;
+  this_ptr = g_CDemonSetPtr;
   *(uint *)((int)&stack0xffffffa8 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  FUN_00559310(uVar6,uVar7,uVar8,uVar9,uVar10);
-  FUN_00559250(0x01E82168,*(uint *)(param_1 + 0x20004));
-  FUN_00559250(0x01E82168,param_1);
-  fStack_150 = (float)FUN_00557300(0x01E82168,&stack0xffffff10,&stack0xffffffa0);
+  core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00559310
+            (this_ptr,laser_type,color_r,color_g,color_b);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
+            (g_CDemonSetPtr,*(CDemonActor **)&param_1[0x17d].field_0xc);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,param_1);
+  fStack_150 = (float)core_setcolid_cpp_FUN_00557300
+                                (g_CDemonSetPtr,&stack0xffffff10,&stack0xffffffa0);
   fStack_18 = fStack_150;
-  FUN_00559220(0x01E82168);
+  core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
   fVar2 = fStack_f0;
   if ((fStack_150 < 0.0) || (1.0 < fStack_150)) {
     fStack_150 = 1.0;
@@ -165,14 +169,14 @@ void FUN_00473160(int param_1)
     fStack_5c = fStack_e0;
     uStack_58 = uStack_dc;
   }
-  FUN_00569040(param_1 + 0x158,uStack_2c);
-  pfVar11 = &stack0xffffffa0;
+  core_skeleton_cpp_FUN_00569040(param_1 + 1,uStack_2c);
+  pfVar6 = &stack0xffffffa0;
   fStack_114 = fStack_d8;
   *(uint *)((int)&stack0xfffffef0 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffff2c + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xfffffef4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffff30 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  FUN_00408bb0(param_1,pfVar11);
+  core_actor_cpp_FUN_00408bb0(param_1,pfVar6);
   fStack_b4 = fStack_c0;
   *(uint *)((int)&stack0xffffff50 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffff44 + (uint)bVar4 * -8);
@@ -186,7 +190,7 @@ void FUN_00473160(int param_1)
        (float)*(uint *)((int)&stack0xffffff80 + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffff3c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffff84 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  FUN_005a7520(&stack0xffffff34);
+  core_vecdir_cpp_FUN_005a7520(&stack0xffffff34);
   fVar2 = SQRT(fStack_c4 * fStack_c4 + fStack_cc * fStack_cc + fStack_c8 * fStack_c8);
   fStack_90 = fStack_fc;
   *(uint *)((int)&stack0xffffff74 + (uint)bVar4 * -8) =
@@ -199,7 +203,7 @@ void FUN_00473160(int param_1)
         (fVar1 = SQRT(fVar2 * fVar2 - fStack_28 * fStack_28) / fVar2, fVar1 < 1.0)) &&
        (0.0 <= fVar1)) {
       fVar5 = (float10)fVar1;
-      FUN_005c1d04();
+      acos();
       fStack_38 = (float)fVar5;
       if (0.0 <= fStack_28) {
         fStack_8c = fStack_8c + fStack_38;
@@ -207,14 +211,14 @@ void FUN_00473160(int param_1)
       else {
         fStack_8c = fStack_8c - fStack_38;
       }
-      fStack_18 = (float)FUN_0040cd60(fStack_8c);
+      fStack_18 = (float)core_actor_cpp_FUN_0040cd60(fStack_8c);
       fStack_8c = fStack_18;
     }
     if ((((float)_DAT_005da33c <= fVar2) &&
         (fVar2 = SQRT(fVar2 * fVar2 - fStack_11c * fStack_11c) / fVar2, fVar2 < 1.0)) &&
        (0.0 <= fVar2)) {
       fVar5 = (float10)fVar2;
-      FUN_005c1d04();
+      acos();
       fStack_3c = (float)fVar5;
       if (0.0 <= fStack_11c) {
         fStack_90 = fStack_90 + fStack_3c;
@@ -222,7 +226,7 @@ void FUN_00473160(int param_1)
       else {
         fStack_90 = fStack_90 - fStack_3c;
       }
-      fStack_18 = (float)FUN_0040cd60(fStack_90);
+      fStack_18 = (float)core_actor_cpp_FUN_0040cd60(fStack_90);
       fStack_90 = fStack_18;
     }
   }

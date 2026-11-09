@@ -1,0 +1,193 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 45,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [
+    {
+      "addr": "0049c3e0",
+      "from_addr": "0049c459",
+      "name": "shape_edittool.cpp_FUN_0049c3e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00499830",
+    "address_range": [
+      [
+        "00499830",
+        "00499893"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_sort_FUN_00499830",
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00499830(CStrList *this_ptr,int start_index,int end_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005bfc68",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__qsort_FUN_005bfc68"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dc48f",
+      "name": "s_shape_edittool_cpp_005dc48f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc4a5",
+      "name": "s_CStrList_sort_invalid_ra_005dc4a5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0049c459",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0049c3e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.055555555555555,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 29,
+      "INT_ADD": 13,
+      "INT_AND": 30,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 182
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "start_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x8 + start_index * 4,(end_index - start_index) + 1,4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "_qsort element width is the literal 4 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 13,
+      "match": "_qsort",
+      "severity": "moderate",
+      "text": "_qsort",
+      "type": "pointer_stride_bytecount"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStrList",
+        "offset": 8,
+        "vtable_addr": "005ff814"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

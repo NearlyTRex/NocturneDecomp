@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 51,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "004eaf20",
+      "from_addr": "004eaf9e",
+      "name": "core_hero.cpp_FUN_004eaf20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00431440",
+    "address_range": [
+      [
+        "00431440",
+        "0043146f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_FUN_00431440",
+    "signature": "void __cdecl core_charactr_cpp_FUN_00431440(CCharacter *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004eaf9e",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004eaf20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.769230769230769,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 7,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 49
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x26fc",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&this_ptr->field_0x26fc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x26fc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x26fc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xfc))(iVar1,this_ptr);",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 240,
+        "vtable_addr": "00606e04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 240,
+        "vtable_addr": "00601014"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 240,
+        "vtable_addr": "00602314"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 240,
+        "vtable_addr": "00604614"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 240,
+        "vtable_addr": "00606714"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 46
+  }
+}

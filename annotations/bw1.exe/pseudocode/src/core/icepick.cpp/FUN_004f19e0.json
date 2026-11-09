@@ -1,135 +1,22 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 62,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 64,
-        "message": "no matching function for call to 'FUN_005b5760'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 65,
-        "message": "no matching function for call to 'FUN_005b5200'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 212,
+    "complexity_score": 329,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
-    "suspect_count": 13,
+    "pseudocode_lines": 54,
+    "suspect_count": 25,
     "suspect_types": [
       "unaffected_reg",
+      "unknown_field",
       "unnamed_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 164
+    "total_lines": 156
   },
   "cross_references": [],
   "function": {
@@ -141,24 +28,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f19e0",
-    "signature": "void FUN_004f19e0(int param_1,int param_2)"
+    "name": "core_icepick.cpp_FUN_004f19e0",
+    "signature": "void core_icepick_cpp_FUN_004f19e0(int param_1,int param_2)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "005b5200",
-      "is_variadic": false,
-      "name": "FUN_005b5200"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005b5760",
       "is_variadic": false,
-      "name": "FUN_005b5760"
+      "name": "core_xform.cpp_FUN_005b5760"
+    },
+    {
+      "addr": "005b5200",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005b5200"
     }
   ],
   "globals": [
@@ -235,23 +122,6 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_004f19e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 6,
-          "line": 68,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -266,7 +136,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004f19e0(int param_1,int param_2)",
+      "text": "void core_icepick_cpp_FUN_004f19e0(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +144,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004f19e0(int param_1,int param_2)",
+      "text": "void core_icepick_cpp_FUN_004f19e0(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -287,7 +157,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_2 * 0x78 + param_1 + 0x25a8);",
@@ -295,7 +165,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_2 * 0x78 + param_1 + 0x25a8);",
@@ -303,23 +173,119 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 1) {",
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 24,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_30._4_4_ = 0xbe6a7efa;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 25,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_30._8_4_ = 0xbca3d70a;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 26,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_30._0_4_ = 0x3ee66666;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_3c._0_4_ = 0x3ee66666;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 29,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_3c._4_4_ = 0xbe6a7efa;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_3c._8_4_ = 0xbca3d70a;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 35,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_48._0_4_ = 0xbec7ae14;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_48._4_4_ = 0x3f96872b;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_48._8_4_ = 0x3fb76c8b;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_24._0_4_ = 0xbec7ae14;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_24._4_4_ = 0x3f96872b;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_24._8_4_ = 0x3fb76c8b;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005b5200(auStack_78,iVar1 * 0x30 + param_1 + 0xfd8);",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(aCStack_78,iVar1 * 0x30 + param_1 + 0xfd8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 53,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *puVar2;",
@@ -327,7 +293,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 55,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -335,7 +301,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 55,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -343,7 +309,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 60,
+      "line": 52,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -356,22 +322,14 @@
       "severity": "moderate",
       "text": "// 004f1af8: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 68,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*unaff_ESI = *puVar2;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {
     "entries": [
       {
         "class_name": "Unknown",
-        "offset": 44,
-        "vtable_addr": "00602734"
+        "offset": 300,
+        "vtable_addr": "00602634"
       }
     ],
     "in_vtable": true,

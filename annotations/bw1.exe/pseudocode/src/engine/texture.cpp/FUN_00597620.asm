@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00597620(int param_1,int param_2)
+; void engine_texture_cpp_FUN_00597620(int param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -10,14 +10,14 @@
 ;   undefined4 DAT_02c83488
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00597620
-        ;   Label: FUN_00597620
+        ;   Label: engine_texture.cpp_FUN_00597620
     PUSH EBP                            ; 00597621
     MOV EBX,dword ptr [ESP + 0x10]      ; 00597622
     MOV EDX,dword ptr [EBX + 0x4]       ; 00597626
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5f7b6c                       ; 00597677
     MOV dword ptr [0x01d1d400],ESI      ; 0059767c | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00597682 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00597688
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00597688
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 0059768d
     POP ESI                             ; 00597690
     POP EDI                             ; 00597691

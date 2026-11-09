@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00511fc0(void)
+; void engine_mini3d_cpp_FUN_00511fc0(void)
 ;
 ;
 ; Referenced Globals:
@@ -11,14 +11,14 @@
 ;   undefined4 DAT_01d22580
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 00511fc0
-        ;   Label: FUN_00511fc0
+        ;   Label: engine_mini3d.cpp_FUN_00511fc0
     PUSH EDI                            ; 00511fc1
     MOV EDX,dword ptr [0x01d22580]      ; 00511fc2 | DAT_01d22580
     INC EDX                             ; 00511fc8
@@ -48,8 +48,8 @@ section .text
     PUSH 0x5e8bfe                       ; 0051200a
     MOV dword ptr [0x01d1d400],EBX      ; 0051200f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00512015 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0051201b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0051201b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00512020
     POP EBX                             ; 00512023
     JMP 0x00511fd4                      ; 00512024

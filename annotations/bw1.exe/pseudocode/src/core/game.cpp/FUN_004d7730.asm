@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004d7730(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5)
+; void core_game_cpp_FUN_004d7730(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5)
 ;
 ;
 ; XREF[1]:
-;   FUN_004a1d00 at 004a3004
+;   core_event.cpp_FUN_004a1d00 at 004a3004
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005e3252
@@ -15,14 +15,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004d7730
-        ;   Label: FUN_004d7730
+        ;   Label: core_game.cpp_FUN_004d7730
     PUSH ESI                            ; 004d7731
     PUSH EDI                            ; 004d7732
     MOV EBX,dword ptr [ESP + 0x10]      ; 004d7733
@@ -71,8 +71,8 @@ section .text
     PUSH 0x5e3263                       ; 004d77ad | = "CGame::displayBitmap - tried to queue..."
     MOV dword ptr [0x01d1d400],EDX      ; 004d77b2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004d77b8 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004d77be
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004d77be
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 004d77c3
     JMP 0x004d7744                      ; 004d77c6
         ;   XREF to: 004d7744 (UNCONDITIONAL_JUMP)  ; LAB_004d7744

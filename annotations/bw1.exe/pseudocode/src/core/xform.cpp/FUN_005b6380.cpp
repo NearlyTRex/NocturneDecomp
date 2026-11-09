@@ -1,14 +1,14 @@
-// Name: FUN_005b6380
+// Name: core_xform.cpp_FUN_005b6380
 // Address: 005b6380
 // Address Range: [[005b6380, 005b65a9]]
 // Convention: unknown
-// Signature: void FUN_005b6380(float *param_1)
+// Signature: void core_xform_cpp_FUN_005b6380(float *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_005b6380(float *param_1)
+void core_xform_cpp_FUN_005b6380(float *param_1)
 
 {
   int iVar1;
@@ -38,12 +38,12 @@ void FUN_005b6380(float *param_1)
   float local_10;
   
   bVar3 = 0;
-  local_3c = (double)FUN_005b6330(param_1);
+  local_3c = (double)core_xform_cpp_determinant_FUN_005b6330(param_1);
   local_10 = (float)local_3c;
   if (ABS(local_10) == 0.0) {
     _DAT_01d1d400 = "..\\core\\xform.cpp";
     _DAT_01d1d404 = 0x23d;
-    FUN_005030e0("inverse() - Singular matrix");
+    core_main_c_FUN_005030e0("inverse() - Singular matrix");
   }
   local_14 = param_1[5] * param_1[10] - param_1[6] * param_1[9];
   local_34 = -(param_1[4] * param_1[10] - param_1[6] * param_1[8]);

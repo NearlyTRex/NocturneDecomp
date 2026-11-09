@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_005a1090(int *param_1,int param_2,int param_3,int param_4)
+; undefined4 support_trstream_cpp_FUN_005a1090(int *param_1,int param_2,int param_3,int param_4)
 ;
 ;
 ; Referenced Globals:
@@ -11,16 +11,16 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005a0e10
-;   FUN_005c170c
+;   core_main.c_FUN_005030e0
+;   crt_stdio.c_fseek_FUN_005c170c
+;   support_trstream.cpp_FUN_005a0e10
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005a1090
-        ;   Label: FUN_005a1090
+        ;   Label: support_trstream.cpp_FUN_005a1090
     PUSH ESI                            ; 005a1091
     PUSH EDI                            ; 005a1092
     MOV EBX,dword ptr [ESP + 0x10]      ; 005a1093
@@ -29,8 +29,8 @@ section .text
     PUSH 0x5f88eb                       ; 005a10a1 | = "Hey, we're using windows handles for ..."
     MOV dword ptr [0x01d1d400],EDX      ; 005a10a6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005a10ac | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005a10b2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005a10b2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005a10b7
     MOV EAX,dword ptr [EBX]             ; 005a10ba
     PUSH EBX                            ; 005a10bc
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 005a10e6
     MOV EDI,dword ptr [EBX + 0x4]       ; 005a10e7
     PUSH EDI                            ; 005a10ea
-    CALL FUN_005c170c                   ; 005a10eb
-        ;   XREF to: 005c170c (UNCONDITIONAL_CALL)  ; undefined FUN_005c170c()
+    CALL crt_stdio.c_fseek_FUN_005c170c ; 005a10eb
+        ;   XREF to: 005c170c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005c170c()
     ADD ESP,0xc                         ; 005a10f0
     MOV EAX,dword ptr [EBX]             ; 005a10f3
     PUSH EBX                            ; 005a10f5
@@ -60,8 +60,8 @@ section .text
     JZ 0x005a1112                       ; 005a10fe
         ;   XREF to: 005a1112 (CONDITIONAL_JUMP)  ; LAB_005a1112
     PUSH EBX                            ; 005a1100
-    CALL FUN_005a0e10                   ; 005a1101
-        ;   XREF to: 005a0e10 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0e10()
+    CALL support_trstream.cpp_FUN_005a0e10 ; 005a1101
+        ;   XREF to: 005a0e10 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0e10()
     MOV EAX,0x1                         ; 005a1106
     ADD ESP,0x4                         ; 005a110b
     POP EDI                             ; 005a110e

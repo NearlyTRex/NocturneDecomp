@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_005ac040(void)
+; int __cdecl wincore_wddvmem_cpp_FUN_005ac040(int width,int height)
 ;
+; Parameters:
+; int              Stack[0x4]:4   width
+; int              Stack[0x8]:4   height
 ;
 ; XREF[1]:
-;   FUN_00401010 at 00401029
+;   engine_2d.c_FUN_00401010 at 00401029
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005f9478
@@ -26,17 +29,17 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   DirectDrawCreate
-;   FUN_005030e0
-;   FUN_00581310
-;   FUN_005c08d0
+;   core_main.c_FUN_005030e0
+;   crt_ddraw.c_DirectDrawCreate
+;   crt_unknown.c_FUN_005c08d0
+;   engine_special.cpp_FUN_00581310
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005ac040
-        ;   Label: FUN_005ac040
+        ;   Label: wincore_wddvmem.cpp_FUN_005ac040
     PUSH ESI                            ; 005ac041
     PUSH EDI                            ; 005ac042
     PUSH EBP                            ; 005ac043
@@ -50,8 +53,8 @@ section .text
     SAR EAX,0x3                         ; 005ac060
     IMUL EAX,ECX                        ; 005ac063
     PUSH EAX                            ; 005ac066
-    CALL FUN_005c08d0                   ; 005ac067
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 005ac067
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005ac06c
     MOV [0x00629010],EAX                ; 005ac06f | DAT_00629010
     TEST EAX,EAX                        ; 005ac074
@@ -63,8 +66,8 @@ section .text
     SHL EAX,0x2                         ; 005ac088
     ADD EAX,0x40                        ; 005ac08b
     PUSH EAX                            ; 005ac08e
-    CALL FUN_005c08d0                   ; 005ac08f
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 005ac08f
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005ac094
     MOV [0x02c99310],EAX                ; 005ac097 | DAT_02c99310
     TEST EAX,EAX                        ; 005ac09c
@@ -75,8 +78,8 @@ section .text
     PUSH 0x5f94d2                       ; 005ac0aa | = "WDDVMEM: Fatal - out of Z buffer memory"
     MOV dword ptr [0x01d1d400],EDI      ; 005ac0af | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 005ac0b5 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005ac0bb
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005ac0bb
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005ac0c0
     MOV EAX,[0x02c99310]                ; 005ac0c3 | DAT_02c99310
         ;   Label: LAB_005ac0c3
@@ -130,16 +133,16 @@ section .text
         ;   Label: LAB_005ac13c
     PUSH 0x2c99300                      ; 005ac13e | DAT_02c99300
     PUSH 0x0                            ; 005ac143
-    CALL DirectDrawCreate               ; 005ac145
-        ;   XREF to: 005cf7ba (UNCONDITIONAL_CALL)  ; undefined DirectDrawCreate()
+    CALL crt_ddraw.c_DirectDrawCreate   ; 005ac145
+        ;   XREF to: 005cf7ba (UNCONDITIONAL_CALL)  ; HRESULT crt_ddraw.c_DirectDrawCreate(GUID * lp_guid, LPDIRECTDRAW * lplp_dd, IUnknown * p_unk_outer)
     TEST EAX,EAX                        ; 005ac14a
     JZ 0x005ac18f                       ; 005ac14c
         ;   XREF to: 005ac18f (CONDITIONAL_JUMP)  ; LAB_005ac18f
     MOV EBX,dword ptr [0x02c9be68]      ; 005ac14e | DAT_02c9be68
         ;   Label: LAB_005ac14e
     PUSH EBX                            ; 005ac154
-    CALL FUN_00581310                   ; 005ac155
-        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; undefined FUN_00581310()
+    CALL engine_special.cpp_FUN_00581310 ; 005ac155
+        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581310(HWND window_handle)
     MOV EAX,0x1                         ; 005ac15a
     ADD ESP,0x4                         ; 005ac15f
     POP EBP                             ; 005ac162
@@ -153,8 +156,8 @@ section .text
     PUSH 0x5f948f                       ; 005ac171 | = "WDDVMEM: Fatal - out of frame buffer ..."
     MOV dword ptr [0x01d1d400],ECX      ; 005ac176 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 005ac17c | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005ac182
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005ac182
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005ac187
     JMP 0x005ac07c                      ; 005ac18a
         ;   XREF to: 005ac07c (UNCONDITIONAL_JUMP)  ; LAB_005ac07c

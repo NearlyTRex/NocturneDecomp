@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0056f470(int param_1,int param_2)
+; void __cdecl sound_sndmain_cpp_FUN_0056f470(int requested_size,int num_buffers)
 ;
+; Parameters:
+; int              Stack[0x4]:4   requested_size
+; int              Stack[0x8]:4   num_buffers
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -10,7 +13,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_00575120 at 005751aa
+;   sound_sndmain.cpp_setSoundOutputMode_FUN_00575120 at 005751aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f314c
@@ -27,15 +30,15 @@
 ;   undefined4 DAT_02c806b8
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005c10d0
+;   core_main.c_FUN_005030e0
+;   crt_memory.c_realloc_FUN_005c10d0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0056f470
-        ;   Label: FUN_0056f470
+        ;   Label: sound_sndmain.cpp_FUN_0056f470
     PUSH ESI                            ; 0056f471
     PUSH EBP                            ; 0056f472
     SUB ESP,0x10                        ; 0056f473
@@ -66,8 +69,8 @@ section .text
     PUSH EBP                            ; 0056f4c5
     MOV dword ptr [0x02c80664],EDX      ; 0056f4c6 | DAT_02c80664
     MOV dword ptr [0x02c80668],EBX      ; 0056f4cc | DAT_02c80668
-    CALL FUN_005c10d0                   ; 0056f4d2
-        ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c10d0()
+    CALL crt_memory.c_realloc_FUN_005c10d0 ; 0056f4d2
+        ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
     MOV [0x02c80694],EAX                ; 0056f4d7 | DAT_02c80694
     MOV EAX,[0x006232ec]                ; 0056f4dc | DAT_006232ec
     IMUL EAX,ESI                        ; 0056f4e1
@@ -76,16 +79,16 @@ section .text
     PUSH EAX                            ; 0056f4e9
     MOV EAX,[0x02c806b8]                ; 0056f4ea | DAT_02c806b8
     PUSH EAX                            ; 0056f4ef
-    CALL FUN_005c10d0                   ; 0056f4f0
-        ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c10d0()
+    CALL crt_memory.c_realloc_FUN_005c10d0 ; 0056f4f0
+        ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
     IMUL ESI,dword ptr [0x006232ec]     ; 0056f4f5 | DAT_006232ec
     ADD ESP,0x8                         ; 0056f4fc
     PUSH ESI                            ; 0056f4ff
     MOV ECX,dword ptr [0x02c80670]      ; 0056f500 | DAT_02c80670
     PUSH ECX                            ; 0056f506
     MOV [0x02c806b8],EAX                ; 0056f507 | DAT_02c806b8
-    CALL FUN_005c10d0                   ; 0056f50c
-        ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c10d0()
+    CALL crt_memory.c_realloc_FUN_005c10d0 ; 0056f50c
+        ;   XREF to: 005c10d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005c10d0(void * ptr, ulong new_size)
     MOV EBX,dword ptr [0x02c80668]      ; 0056f511 | DAT_02c80668
     MOV ESI,dword ptr [0x02c80694]      ; 0056f517 | DAT_02c80694
     ADD ESP,0x8                         ; 0056f51d
@@ -99,8 +102,8 @@ section .text
     PUSH 0x5f3161                       ; 0056f537 | = "allocMixBuffers - out of memory"
     MOV dword ptr [0x01d1d400],EBP      ; 0056f53c | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 0056f542 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0056f547
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0056f547
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0056f54c
     MOV ECX,dword ptr [0x006232ec]      ; 0056f54f | DAT_006232ec
         ;   Label: LAB_0056f54f

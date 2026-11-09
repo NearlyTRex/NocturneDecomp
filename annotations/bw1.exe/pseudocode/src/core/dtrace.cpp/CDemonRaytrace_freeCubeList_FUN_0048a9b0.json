@@ -1,0 +1,180 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 102,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "0048a930",
+      "from_addr": "0048a936",
+      "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_0048a930",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048a9b0",
+    "address_range": [
+      [
+        "0048a9b0",
+        "0048aa35"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_0048a9b0",
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_0048a9b0(CDemonRaytrace *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004799c0",
+      "is_variadic": false,
+      "name": "core_dpart.cpp_FUN_004799c0"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    },
+    {
+      "addr": "005c09f0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c09f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0048a936",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_0048a930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.531914893617022,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 38,
+      "INT_ADD": 23,
+      "INT_AND": 23,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 23,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SEXT": 6,
+      "INT_SLESS": 11,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 213
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x4c != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "iVar3 < *(int *)&this_ptr->field_0x48 *",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44; iVar3 = iVar3 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44; iVar3 = iVar3 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "puVar2 = (uint *)(*(int *)&this_ptr->field_0x4c + iVar4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "FUN_005c09f0(*(uint *)&this_ptr->field_0x4c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4c = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,147 +1,26 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 22,
-        "message": "no matching function for call to 'FUN_0054ae10'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 28,
-        "message": "no matching function for call to 'FUN_00544460'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_01e810b0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 38,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 202,
+    "complexity_score": 160,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
-    "suspect_count": 15,
+    "pseudocode_lines": 35,
+    "suspect_count": 11,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 117
+    "total_lines": 120
   },
   "cross_references": [
     {
       "addr": "004cf5e0",
       "from_addr": "004d0114",
-      "name": "FUN_004cf5e0",
+      "name": "core_game.cpp_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,30 +32,30 @@
         "0054af13"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_0054ae40",
-    "signature": "undefined4 FUN_0054ae40(int *param_1)"
+    "convention": "__cdecl",
+    "name": "core_script.cpp_FUN_0054ae40",
+    "signature": "int __cdecl core_script_cpp_FUN_0054ae40(CScript *this_ptr)"
   },
   "function_calls": [
     {
-      "addr": "004943a0",
-      "is_variadic": false,
-      "name": "FUN_004943a0"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "00544460",
       "is_variadic": false,
-      "name": "FUN_00544460"
+      "name": "core_script.cpp_CScript_step_FUN_00544460"
     },
     {
       "addr": "0054ae10",
       "is_variadic": false,
-      "name": "FUN_0054ae10"
+      "name": "core_script.cpp_FUN_0054ae10"
+    },
+    {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_004943a0"
     }
   ],
   "globals": [
@@ -200,19 +79,19 @@
     },
     {
       "addr": "0061abc0",
-      "name": "DAT_0061abc0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
     },
     {
       "addr": "0061d95c",
-      "name": "DAT_0061d95c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
     },
     {
       "addr": "01ccf5d4",
-      "name": "DAT_01ccf5d4",
+      "name": "g_CGameInstance.field580_0x244",
       "type": "undefined4",
       "value": null
     },
@@ -235,7 +114,7 @@
       {
         "call_addr": "004d0114",
         "call_type": "direct",
-        "caller": "FUN_004cf5e0",
+        "caller": "core_game.cpp_FUN_004cf5e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,11 +123,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.205882352941177,
@@ -280,10 +159,10 @@
     "pcode_op_count": 286
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 20,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -292,6 +171,13 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
       }
     ]
   },
@@ -305,119 +191,84 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint FUN_0054ae40(int *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 12,
-      "match": "param_1",
+      "match": "field_0x454",
       "severity": "mild",
-      "text": "if (param_1[0x115] < 0) {",
-      "type": "unnamed_param"
+      "text": "if (*(int *)&this_ptr->field_0x454 < 0) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0054ae10(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 17,
-      "match": "param_1",
+      "match": "field_0x44",
       "severity": "mild",
-      "text": "param_1[0x11] = param_1[0x115];",
-      "type": "unnamed_param"
+      "text": "*(uint *)&this_ptr->field_0x44 = *(uint *)&this_ptr->field_0x454;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 17,
-      "match": "param_1",
+      "match": "field_0x454",
       "severity": "mild",
-      "text": "param_1[0x11] = param_1[0x115];",
-      "type": "unnamed_param"
+      "text": "*(uint *)&this_ptr->field_0x44 = *(uint *)&this_ptr->field_0x454;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 18,
-      "match": "param_1",
+      "match": "field_0x244",
       "severity": "mild",
-      "text": "while ((*(int *)(0x01CCF390 + 0x244) != 0 && (*param_1 == 0))) {",
-      "type": "unnamed_param"
+      "text": "while ((*(int *)&g_CGamePtr->field_0x244 != 0 && (*(int *)this_ptr == 0))) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 20,
-      "match": "param_1",
+      "match": "field_0x44",
       "severity": "mild",
-      "text": "iVar1 = param_1[0x11];",
-      "type": "unnamed_param"
+      "text": "iVar1 = *(int *)&this_ptr->field_0x44;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = FUN_00544460(param_1,&local_c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1[0xc] + iVar1 * 8),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 25,
-      "match": "param_1",
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "*(uint *)(param_1[0xc] + 4 + iVar1 * 8),&DAT_01e810b0);",
-      "type": "unnamed_param"
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x30 + iVar1 * 8),",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "*(uint *)(param_1[0xc] + 4 + iVar1 * 8),&DAT_01e810b0);",
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x30 + 4 + iVar1 * 8),&DAT_01e810b0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "*(uint *)(param_1[0xc] + param_1[0x11] * 8));",
-      "type": "unnamed_param"
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x30 + 4 + iVar1 * 8),&DAT_01e810b0);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "*(uint *)(param_1[0xc] + param_1[0x11] * 8));",
-      "type": "unnamed_param"
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x30 + *(int *)&this_ptr->field_0x44 * 8))",
+      "type": "unnamed_field"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)&this_ptr->field_0x30 + *(int *)&this_ptr->field_0x44 * 8))",
+      "type": "unnamed_field"
     }
   ]
 }

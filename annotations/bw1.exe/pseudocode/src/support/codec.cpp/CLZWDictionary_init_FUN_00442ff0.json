@@ -1,0 +1,186 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 36,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "004434e0",
+      "from_addr": "004434f5",
+      "name": "support_codec.cpp_FUN_004434e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004436f0",
+      "from_addr": "00443705",
+      "name": "support_codec.cpp_FUN_004436f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00442ff0",
+    "address_range": [
+      [
+        "00442ff0",
+        "00443067"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDictionary_init_FUN_00442ff0",
+    "signature": "void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_00442ff0(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c10d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005c10d0"
+    },
+    {
+      "addr": "00443070",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_00443070"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d6a58",
+      "name": "s_support_codec_cpp_005d6a58",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6a6d",
+      "name": "s_CLZWDictionary_init_out_005d6a6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00443705",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_004436f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004434f5",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_004434e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.681818181818182,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 38,
+      "INT_ADD": 21,
+      "INT_AND": 28,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 17,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 206
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      },
+      {
+        "is_param": true,
+        "name": "new_dict_size",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "new_num_bits",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

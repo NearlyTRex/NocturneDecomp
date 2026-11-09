@@ -1,0 +1,142 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 7,
+    "suspect_count": 6,
+    "suspect_types": [
+      "fast_sqrt_inline",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00442380",
+    "address_range": [
+      [
+        "00442380",
+        "004423ac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_vectorLengthFast_FUN_00442380",
+    "signature": "float __cdecl core_cloth_cpp_vectorLengthFast_FUN_00442380(CVector3f *v)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01cc804c",
+      "name": "DAT_01cc804c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.9411764705882355,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "COPY": 61,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 6,
+      "INT_AND": 9,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SRIGHT": 1,
+      "INT_SUB": 1,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 118
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "v",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "return (float)(((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "return (float)(((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)v * *(float *)v + *(float *)&v->field_0x4 * *(float *)&v->field_0x4",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(float *)v * *(float *)v + *(float *)&v->field_0x4 * *(float *)&v->field_0x4",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 7,
+      "match": "return (float)(((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 + *(floa",
+      "severity": "moderate",
+      "text": "return (float)(((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 + *(float *)v * *(float *)v + *(float *)&v->fiel",
+      "type": "fast_sqrt_inline"
+    }
+  ]
+}

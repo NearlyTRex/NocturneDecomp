@@ -1,0 +1,137 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 84,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 49,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 133
+  },
+  "cross_references": [
+    {
+      "addr": "00532740",
+      "from_addr": "00532753",
+      "name": "core_passngr.cpp_factoryFuncPassenger_FUN_00532740",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00532770",
+    "address_range": [
+      [
+        "00532770",
+        "00532841"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_passngr.cpp_CPassenger_ctor_FUN_00532770",
+    "signature": "CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00532770(CPassenger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00522fa0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_ctor_FUN_00522fa0"
+    },
+    {
+      "addr": "00531670",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_ctor_FUN_00531670"
+    },
+    {
+      "addr": "00569f50",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00569f50"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00532753",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_factoryFuncPassenger_FUN_00532740",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.088235294117647,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 48,
+      "INT_ADD": 33,
+      "INT_AND": 32,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 32,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 16,
+      "INT_SUB": 19,
+      "LOAD": 14,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 278
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPassenger *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)&pCVar2[1].field_0x10c);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPassenger",
+        "offset": 0,
+        "vtable_addr": "00604764"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004c5470(int param_1,float param_2)
+; void core_frankgen_cpp_FUN_004c5470(CFrankenstienMachine *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -12,22 +12,22 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_004c5c60
-;   FUN_004c5e10
-;   FUN_005030e0
+;   core_frankgen.cpp_FUN_004c5c60
+;   core_frankgen.cpp_FUN_004c5e10
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBP                            ; 004c5470
-        ;   Label: FUN_004c5470
+        ;   Label: core_frankgen.cpp_FUN_004c5470
     SUB ESP,0xb8                        ; 004c5471
     MOV EBP,dword ptr [ESP + 0xc0]      ; 004c5477
     MOV EAX,dword ptr [EBP + 0x15c]     ; 004c547e
     MOV [0x01cc90b0],EAX                ; 004c5484 | DAT_01cc90b0
-    CALL FUN_004c5e10                   ; 004c5489
-        ;   XREF to: 004c5e10 (UNCONDITIONAL_CALL)  ; undefined FUN_004c5e10()
+    CALL core_frankgen.cpp_FUN_004c5e10 ; 004c5489
+        ;   XREF to: 004c5e10 (UNCONDITIONAL_CALL)  ; CDemonActor * core_frankgen.cpp_FUN_004c5e10()
     CMP EAX,EBP                         ; 004c548e
     JZ 0x004c5845                       ; 004c5490
         ;   XREF to: 004c5845 (CONDITIONAL_JUMP)  ; LAB_004c5845
@@ -45,8 +45,8 @@ section .text
     FSTP float ptr [0x01cc90b0]         ; 004c54bf | DAT_01cc90b0
     PUSH EBP                            ; 004c54c5
         ;   Label: LAB_004c54c5
-    CALL FUN_004c5c60                   ; 004c54c6
-        ;   XREF to: 004c5c60 (UNCONDITIONAL_CALL)  ; undefined FUN_004c5c60()
+    CALL core_frankgen.cpp_FUN_004c5c60 ; 004c54c6
+        ;   XREF to: 004c5c60 (UNCONDITIONAL_CALL)  ; CVector3f * core_frankgen.cpp_FUN_004c5c60(CFrankenstienMachine * this_ptr)
     MOV EAX,dword ptr [EBP + 0x158]     ; 004c54cb
     ADD ESP,0x4                         ; 004c54d1
     CMP EAX,0x8                         ; 004c54d4
@@ -74,8 +74,8 @@ section .text
     PUSH 0x5e0cec                       ; 004c5960
     MOV dword ptr [0x01d1d400],EDX      ; 004c5965 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004c596b | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004c5971
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004c5971
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004c5976
     ADD ESP,0xb8                        ; 004c5979
     POP EBP                             ; 004c597f

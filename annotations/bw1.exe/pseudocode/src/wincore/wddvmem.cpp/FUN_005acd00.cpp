@@ -1,14 +1,14 @@
-// Name: FUN_005acd00
+// Name: wincore_wddvmem.cpp_FUN_005acd00
 // Address: 005acd00
 // Address Range: [[005acd00, 005aceb4]]
-// Convention: unknown
-// Signature: void FUN_005acd00(void)
+// Convention: __cdecl
+// Signature: void __cdecl wincore_wddvmem_cpp_FUN_005acd00(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_005acd00(void)
+void __cdecl wincore_wddvmem_cpp_FUN_005acd00(void)
 
 {
   int iVar1;
@@ -18,19 +18,19 @@ void FUN_005acd00(void)
   uint uStack_30;
   uint uStack_2c;
   
-  FUN_005bfb70(local_70,0,0x6c);
+  memset(local_70,0,0x6c);
   local_70[0] = 0x6c;
   iVar1 = (**(code **)(*_DAT_02c99308 + 100))(_DAT_02c99308,0,local_70,1,0);
   if (iVar1 != 0) {
     _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d1d404 = 0x2be;
-    FUN_005030e0("setColorTable16 - Unable to lock back buffer!");
+    core_main_c_FUN_005030e0("setColorTable16 - Unable to lock back buffer!");
   }
   iVar1 = (**(code **)(*_DAT_02c99308 + 0x80))(_DAT_02c99308,0);
   if (iVar1 != 0) {
     _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d1d404 = 0x2c0;
-    FUN_005030e0("setColorTable16 - Unable to unlock back buffer!");
+    core_main_c_FUN_005030e0("setColorTable16 - Unable to unlock back buffer!");
   }
   _DAT_01c4e9d4 = 0;
   for (uVar2 = uStack_34; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1) {
@@ -71,12 +71,12 @@ void FUN_005acd00(void)
   uVar2 = _DAT_01c4e9f0;
   if (_DAT_01c4e9f0 == 0) {
     _DAT_01c4e9f4 = 0x20;
-    FUN_004ecf70();
+    wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70();
     return;
   }
   for (; 1 < uVar2; uVar2 = uVar2 >> 1) {
     _DAT_01c4e9f4 = _DAT_01c4e9f4 + 1;
   }
-  FUN_004ecf70();
+  wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004ecf70();
   return;
 }

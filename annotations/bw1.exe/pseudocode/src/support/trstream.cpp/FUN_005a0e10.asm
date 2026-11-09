@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005a0e10(int param_1)
+; void support_trstream_cpp_FUN_005a0e10(int param_1)
 ;
 ;
 ; XREF[3]:
-;   FUN_005a0f60 at 005a0fab
-;   FUN_005a0fd0 at 005a105d
-;   FUN_005a1090 at 005a1101
+;   support_trstream.cpp_FUN_005a0f60 at 005a0fab
+;   support_trstream.cpp_FUN_005a0fd0 at 005a105d
+;   support_trstream.cpp_FUN_005a1090 at 005a1101
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trstream_cpp_005f88ad
@@ -16,27 +16,27 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005a0e80
-;   FUN_005c08d0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c08d0
+;   support_trstream.cpp_FUN_005a0e80
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005a0e10
-        ;   Label: FUN_005a0e10
+        ;   Label: support_trstream.cpp_FUN_005a0e10
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a0e11
     PUSH EBX                            ; 005a0e15
-    CALL FUN_005a0e80                   ; 005a0e16
-        ;   XREF to: 005a0e80 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0e80()
+    CALL support_trstream.cpp_FUN_005a0e80 ; 005a0e16
+        ;   XREF to: 005a0e80 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0e80()
     MOV dword ptr [EBX + 0x20],0x1000   ; 005a0e1b
     MOV EAX,dword ptr [EBX + 0x20]      ; 005a0e22
     ADD ESP,0x4                         ; 005a0e25
     ADD EAX,0x1f                        ; 005a0e28
     PUSH EAX                            ; 005a0e2b
-    CALL FUN_005c08d0                   ; 005a0e2c
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 005a0e2c
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005a0e31
     MOV dword ptr [EBX + 0x14],EAX      ; 005a0e34
     TEST EAX,EAX                        ; 005a0e37
@@ -58,8 +58,8 @@ section .text
     PUSH 0x5f88c5                       ; 005a0e61 | = "Out of memory"
     MOV dword ptr [0x01d1d400],ECX      ; 005a0e66 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 005a0e6c | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005a0e72
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005a0e72
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005a0e77
     POP ESI                             ; 005a0e7a
     JMP 0x005a0e3b                      ; 005a0e7b

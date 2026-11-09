@@ -1,0 +1,310 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 97,
+    "complexity_score": 241,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 17,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 143
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00406870",
+    "address_range": [
+      [
+        "00406870",
+        "00406987"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonSolidLitOp62_FUN_00406870",
+    "signature": "int __cdecl engine_3d_c_renderPolygonSolidLitOp62_FUN_00406870(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004039d0",
+      "is_variadic": false,
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_004039d0"
+    },
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "0043cbf0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_0043cbf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4b8",
+      "name": "DAT_0061b4b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062902c",
+      "name": "DAT_0062902c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629030",
+      "name": "DAT_00629030",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713a98",
+      "name": "DAT_00713a98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713a9c",
+      "name": "DAT_00713a9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f02c",
+      "name": "DAT_01c4f02c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d00",
+      "name": "DAT_01c51d00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d14",
+      "name": "DAT_01c51d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d18",
+      "name": "DAT_01c51d18",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.36986301369863,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 5,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 59,
+      "INT_ADD": 27,
+      "INT_AND": 41,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 41,
+      "INT_LESS": 6,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 6,
+      "INT_SLESS": 20,
+      "INT_SUB": 17,
+      "INT_XOR": 4,
+      "LOAD": 12,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 14,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 319
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int __cdecl engine_3d_c_renderPolygonSolidLitOp62_FUN_00406870(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "else if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_3d_c_calculatePolygonLighting_FUN_004039d0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0061b4b8",
+      "severity": "mild",
+      "text": "if (DAT_0061b4b8 < 0xff) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar3 = (int *)(param_1 + 0x18);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "for (iVar2 = 0; iVar2 < *(int *)(param_1 + 4) * 3; iVar2 = iVar2 + 3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_00713a98",
+      "severity": "mild",
+      "text": "*(int *)((int)&DAT_00713a98 + iVar4) = iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_0062902c",
+      "severity": "mild",
+      "text": "(&DAT_0062902c)[iVar1 * 0xc] = piVar3[1];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_00629030",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_00629030 + *piVar3 * 0x30) = piVar3[2];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_00713a98",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_0043cbf0(vertex_count,&DAT_00713a98);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&DAT_00713a98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&DAT_00713a98",
+      "severity": "moderate",
+      "text": "*(int *)((int)&DAT_00713a98 + iVar4) = iVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&DAT_00713a98 + iVar4) = iVar1;",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 248,
+        "vtable_addr": "006104f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00467650(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void core_dmodel_cpp_FUN_00467650(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
 ; XREF[2]:
-;   FUN_004669f0 at 00466aaf
-;   FUN_00466be0 at 00466cc4
+;   core_dmodel.cpp_FUN_004669f0 at 00466aaf
+;   core_dmodel.cpp_FUN_00466be0 at 00466cc4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d94cc
@@ -21,23 +21,23 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_00467160
-;   FUN_005030e0
-;   FUN_005c1268
+;   core_dmodel.cpp_FUN_00467160
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c1268
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00467650
-        ;   Label: FUN_00467650
+        ;   Label: core_dmodel.cpp_FUN_00467650
     PUSH ESI                            ; 00467651
     PUSH EDI                            ; 00467652
     PUSH EBP                            ; 00467653
     MOV EBX,dword ptr [ESP + 0x14]      ; 00467654
     PUSH EBX                            ; 00467658
-    CALL FUN_00467160                   ; 00467659
-        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; undefined FUN_00467160()
+    CALL core_dmodel.cpp_FUN_00467160   ; 00467659
+        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00467160()
     ADD ESP,0x4                         ; 0046765e
     MOV EAX,dword ptr [ESP + 0x18]      ; 00467661
     MOV dword ptr [EBX + 0x104],EAX     ; 00467665
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5d9506                       ; 004676b5 | = "Too many parts!"
     MOV dword ptr [0x01d1d400],EBP      ; 004676ba | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004676c0 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004676c5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004676c5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004676ca
     MOV EAX,dword ptr [EBX + 0x104]     ; 004676cd
         ;   Label: LAB_004676cd
@@ -73,8 +73,8 @@ section .text
     SUB EAX,EDX                         ; 004676e3
     SHL EAX,0x2                         ; 004676e5
     PUSH EAX                            ; 004676e8
-    CALL FUN_005c1268                   ; 004676e9
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1268()
+    CALL crt_unknown.c_FUN_005c1268     ; 004676e9
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
     MOV EDX,dword ptr [EBX + 0x110]     ; 004676ee
     MOV dword ptr [EBX + 0x10c],EAX     ; 004676f4
     LEA EAX,[EDX*0x8 + 0x0]             ; 004676fa
@@ -82,15 +82,15 @@ section .text
     ADD ESP,0x4                         ; 00467703
     SHL EAX,0x3                         ; 00467706
     PUSH EAX                            ; 00467709
-    CALL FUN_005c1268                   ; 0046770a
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1268()
+    CALL crt_unknown.c_FUN_005c1268     ; 0046770a
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
     MOV dword ptr [EBX + 0x114],EAX     ; 0046770f
     MOV EAX,dword ptr [EBX + 0x110]     ; 00467715
     ADD ESP,0x4                         ; 0046771b
     SHL EAX,0x2                         ; 0046771e
     PUSH EAX                            ; 00467721
-    CALL FUN_005c1268                   ; 00467722
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1268()
+    CALL crt_unknown.c_FUN_005c1268     ; 00467722
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
     MOV EDX,dword ptr [EBX + 0x100]     ; 00467727
     MOV dword ptr [EBX + 0x118],EAX     ; 0046772d
     LEA EAX,[EDX*0x4 + 0x0]             ; 00467733
@@ -98,8 +98,8 @@ section .text
     ADD ESP,0x4                         ; 0046773c
     SHL EAX,0x3                         ; 0046773f
     PUSH EAX                            ; 00467742
-    CALL FUN_005c1268                   ; 00467743
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1268()
+    CALL crt_unknown.c_FUN_005c1268     ; 00467743
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
     ADD ESP,0x4                         ; 00467748
     MOV ECX,dword ptr [EBX + 0x10c]     ; 0046774b
     MOV dword ptr [EBX + 0x350],EAX     ; 00467751
@@ -108,8 +108,8 @@ section .text
         ;   XREF to: 004677d6 (CONDITIONAL_JUMP)  ; LAB_004677d6
     PUSH EBX                            ; 0046775b
         ;   Label: LAB_0046775b
-    CALL FUN_00467160                   ; 0046775c
-        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; undefined FUN_00467160()
+    CALL core_dmodel.cpp_FUN_00467160   ; 0046775c
+        ;   XREF to: 00467160 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00467160()
     ADD ESP,0x4                         ; 00467761
     MOV EDI,dword ptr [EBX + 0x110]     ; 00467764
     PUSH EDI                            ; 0046776a
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5d9529                       ; 00467783 | = "Out of memory in CKeyFramedModel::all..."
     MOV dword ptr [0x01d1d404],ESI      ; 00467788 | DAT_01d1d404
     MOV dword ptr [0x01d1d400],ECX      ; 0046778e | DAT_01d1d400
-    CALL FUN_005030e0                   ; 00467794
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00467794
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x10                        ; 00467799
     CMP dword ptr [EBX + 0x100],0x1     ; 0046779c
     JZ 0x0046781d                       ; 004677a3
@@ -140,8 +140,8 @@ section .text
     PUSH 0x5d94df                       ; 004677b8 | = "Too many materials!"
     MOV dword ptr [0x01d1d400],ECX      ; 004677bd | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004677c3 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004677c9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004677c9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004677ce
     JMP 0x004676a2                      ; 004677d1
         ;   XREF to: 004676a2 (UNCONDITIONAL_JUMP)  ; LAB_004676a2
@@ -177,8 +177,8 @@ section .text
     SUB EAX,EDX                         ; 0046782a
     SHL EAX,0x2                         ; 0046782c
     PUSH EAX                            ; 0046782f
-    CALL FUN_005c1268                   ; 00467830
-        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined FUN_005c1268()
+    CALL crt_unknown.c_FUN_005c1268     ; 00467830
+        ;   XREF to: 005c1268 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1268()
     ADD ESP,0x4                         ; 00467835
     MOV dword ptr [EBX + 0x108],EAX     ; 00467838
     TEST EAX,EAX                        ; 0046783e
@@ -191,8 +191,8 @@ section .text
     PUSH 0x5d9595                       ; 00467857 | = "Out of memory for vertex normals in C..."
     MOV dword ptr [0x01d1d400],ESI      ; 0046785c | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00467862 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00467868
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00467868
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 0046786d
     POP EBP                             ; 00467870
     POP EDI                             ; 00467871

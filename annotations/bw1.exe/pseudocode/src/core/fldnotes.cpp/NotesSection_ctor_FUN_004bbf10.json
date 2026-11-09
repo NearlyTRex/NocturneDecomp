@@ -1,0 +1,114 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004bbf10",
+    "address_range": [
+      [
+        "004bbf10",
+        "004bbf39"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_fldnotes.cpp_NotesSection_ctor_FUN_004bbf10",
+    "signature": "SNotesSection * core_fldnotes_cpp_NotesSection_ctor_FUN_004bbf10(SNotesSection *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "COPY": 6,
+      "INT_ADD": 6,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 20
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesSection *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "this_ptr->field_0x40 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x150 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x140",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x140 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x144 = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "00600984"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

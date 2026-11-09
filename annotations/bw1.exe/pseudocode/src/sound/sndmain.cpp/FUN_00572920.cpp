@@ -1,21 +1,21 @@
-// Name: FUN_00572920
+// Name: sound_sndmain.cpp_FUN_00572920
 // Address: 00572920
 // Address Range: [[00572920, 00572972]]
-// Convention: unknown
-// Signature: void FUN_00572920(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_FUN_00572920(int index,void *userdata)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00572920(int param_1,uint param_2)
+void __cdecl sound_sndmain_cpp_FUN_00572920(int index,void *userdata)
 
 {
-  if ((param_1 < 0) || (1 < param_1)) {
+  if ((index < 0) || (1 < index)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0xe6b;
-    FUN_005030e0("setNextSfxUserData - invalid user data index: %d",param_1);
+    core_main_c_FUN_005030e0("setNextSfxUserData - invalid user data index: %d",index);
   }
-  *(uint *)(_DAT_02c78cec * 0x60 + 0x2c78d34 + param_1 * 4) = param_2;
+  *(void **)(_DAT_02c78cec * 0x60 + 0x2c78d34 + index * 4) = userdata;
   return;
 }

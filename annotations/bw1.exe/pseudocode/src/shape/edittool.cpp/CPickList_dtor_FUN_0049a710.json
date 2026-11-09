@@ -1,0 +1,354 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 75,
+    "cross_reference_count": 9,
+    "function_call_count": 7,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004d0172",
+      "name": "core_game.cpp_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7250",
+      "from_addr": "004d76ac",
+      "name": "core_game.cpp_FUN_004d7250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ba70",
+      "from_addr": "0050c92d",
+      "name": "core_menu.cpp_FUN_0050ba70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050d640",
+      "from_addr": "0050e6ce",
+      "name": "core_menu.cpp_FUN_0050d640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051c240",
+      "from_addr": "0051c3a8",
+      "name": "core_mission.cpp_FUN_0051c240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057db60",
+      "from_addr": "0057dbcd",
+      "name": "core_sound.cpp_FUN_0057db60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053bfbe",
+      "from_addr": "0053c1f6",
+      "name": "engine_pod.cpp_FUN_0053bfbe",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494fd0",
+      "from_addr": "00495122",
+      "name": "shape_edittool.cpp_FUN_00494fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049517e",
+      "from_addr": "0049546e",
+      "name": "shape_edittool.cpp_FUN_0049517e",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049a710",
+    "address_range": [
+      [
+        "0049a710",
+        "0049a7a2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_dtor_FUN_0049a710",
+    "signature": "CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_0049a710(CPickList *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c030f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005c030f"
+    },
+    {
+      "addr": "005c0336",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0336"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    },
+    {
+      "addr": "0049d4b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdButton_dtor_FUN_0049d4b0"
+    },
+    {
+      "addr": "0049c9b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_dtor_FUN_0049c9b0"
+    },
+    {
+      "addr": "004993a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004993a0"
+    },
+    {
+      "addr": "0049c370",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0049c370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ff834",
+      "name": "g_CPickListVTable",
+      "type": "undefined1*",
+      "value": "0049a710"
+    },
+    {
+      "addr": "005ff8b0",
+      "name": "g_CPickListTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 21,
+    "call_sites": [
+      {
+        "call_addr": "004d76ac",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d7250",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d76cc",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d7250",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00495122",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00494fd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d0172",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cf5e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d024e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cf5e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cfc94",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cf5e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051c3a8",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_0051c240",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051c3cf",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_0051c240",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051c3fc",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_0051c240",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050e6ce",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_0050d640",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.411764705882353,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 8,
+      "CBRANCH": 2,
+      "COPY": 32,
+      "INT_ADD": 20,
+      "INT_AND": 28,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 24,
+      "LOAD": 9,
+      "POPCOUNT": 13,
+      "RETURN": 3,
+      "STORE": 23
+    },
+    "pcode_op_count": 225
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(byte ***)&this_ptr->field_0xc = &g_CPickListVTable;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x2d8",
+      "severity": "mild",
+      "text": "pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_0049d4b0((CEdButton *)&this_ptr->field_0x2d8,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "((CEdScrollBar *)&pCVar1[-1].field_0xac,0);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0xac",
+      "severity": "mild",
+      "text": "((CEdScrollBar *)&pCVar1[-1].field_0xac,0);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPickList",
+        "offset": 0,
+        "vtable_addr": "005ff834"
+      },
+      {
+        "class_name": "CPickList",
+        "offset": 8,
+        "vtable_addr": "005ff8b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

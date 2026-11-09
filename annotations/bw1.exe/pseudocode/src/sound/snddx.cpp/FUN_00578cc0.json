@@ -1,141 +1,21 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 33,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_02c81d94'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 279,
+    "complexity_score": 265,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
-    "suspect_count": 15,
+    "pseudocode_lines": 105,
+    "suspect_count": 14,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 347
+    "total_lines": 343
   },
   "cross_references": [],
   "function": {
@@ -147,39 +27,39 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00578cc0",
-    "signature": "int FUN_00578cc0(undefined4 param_1,int param_2)"
+    "name": "sound_snddx.cpp_FUN_00578cc0",
+    "signature": "int sound_snddx_cpp_FUN_00578cc0(undefined4 param_1,int param_2)"
   },
   "function_calls": [
     {
-      "addr": "00445430",
-      "is_variadic": false,
-      "name": "FUN_00445430"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "005773f0",
-      "is_variadic": false,
-      "name": "FUN_005773f0"
-    },
-    {
-      "addr": "00577500",
-      "is_variadic": false,
-      "name": "FUN_00577500"
-    },
-    {
-      "addr": "00577880",
-      "is_variadic": false,
-      "name": "FUN_00577880"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "FUN_005bfb40"
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "00445430",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00445430"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577500"
+    },
+    {
+      "addr": "00577880",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577880"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
     }
   ],
   "globals": [
@@ -233,8 +113,8 @@
     },
     {
       "addr": "00611100",
-      "name": "PTR_DAT_00611100",
-      "type": "void*",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
       "value": "007db5f0"
     },
     {
@@ -245,8 +125,8 @@
     },
     {
       "addr": "007db5f0",
-      "name": "DAT_007db5f0",
-      "type": "undefined4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
       "value": null
     },
     {
@@ -405,7 +285,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_00578cc0(uint param_1,int param_2)",
+      "text": "int sound_snddx_cpp_FUN_00578cc0(uint param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -413,28 +293,12 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "int FUN_00578cc0(uint param_1,int param_2)",
+      "text": "int sound_snddx_cpp_FUN_00578cc0(uint param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
@@ -445,7 +309,15 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*(int *)(param_2 * 0x18 + 0x2c81dcc) < 1)) {",
+      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x2c81dc4) == 0)) ||",
       "type": "unnamed_param"
     },
     {
@@ -453,63 +325,63 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "piStack_334 = (int *)param_2;",
+      "text": "(*(int *)(param_2 * 0x18 + 0x2c81dcc) < 1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 40,
       "match": "DAT_02c82404",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(&DAT_02c82404 + iVar1);",
+      "text": "iVar1 = *(int *)(&DAT_02c82404 + iVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = param_2 * 0x18;",
+      "text": "iVar3 = param_2 * 0x18;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)(iVar2 + 0x2c823e8) = param_2;",
+      "text": "*(int *)(iVar4 + 0x2c823e8) = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
+      "line": 67,
       "match": "code *",
       "severity": "moderate",
-      "text": "piStack_334 = (int *)(**(code **)(*_DAT_02c81d94 + 0x14))();",
+      "text": "uVar5 = (**(code **)(*_DAT_02c81d94 + 0x14))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)(iVar2 + 0x2c823e8) = param_2;",
+      "text": "*(int *)(iVar4 + 0x2c823e8) = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 90,
       "match": "DAT_00627870",
       "severity": "mild",
-      "text": "pcStack_338 = &DAT_00627870;",
+      "text": "pCStack_338 = (CConsole *)&DAT_00627870;",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 96,
+      "line": 91,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar3 = (**(code **)*piStack_33c)();",
+      "text": "uVar5 = (**(code **)*piStack_33c)();",
       "type": "unresolved_funcptr"
     }
   ],

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f4c00(char *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void engine_ini_cpp_FUN_004f4c00(char *param_1,char *param_2,char *param_3,int param_4)
 ;
 ;
 ; XREF[1]:
-;   FUN_004f4f50 at 004f502b
+;   core_inivar.cpp_FUN_004f4f50 at 004f502b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_ini_cpp_005e5802
@@ -16,15 +16,15 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_004f49f0
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
+;   engine_ini.cpp_getProfileString_FUN_004f49f0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f4c00
-        ;   Label: FUN_004f4c00
+        ;   Label: engine_ini.cpp_FUN_004f4c00
     PUSH EBP                            ; 004f4c01
     MOV EBX,dword ptr [ESP + 0xc]       ; 004f4c02
     CMP byte ptr [EBX],0x0              ; 004f4c06
@@ -45,8 +45,8 @@ section .text
     PUSH ECX                            ; 004f4c24
     ADD EBX,0x100                       ; 004f4c25
     PUSH EBX                            ; 004f4c2b
-    CALL FUN_004f49f0                   ; 004f4c2c
-        ;   XREF to: 004f49f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f49f0()
+    CALL engine_ini.cpp_getProfileString_FUN_004f49f0 ; 004f4c2c
+        ;   XREF to: 004f49f0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_getProfileString_FUN_004f49f0(char * section, char * key, char * default_value, char * output_buffer, ...)
     ADD ESP,0x18                        ; 004f4c31
     POP EBP                             ; 004f4c34
     POP EBX                             ; 004f4c35
@@ -57,8 +57,8 @@ section .text
     PUSH 0x5e5814                       ; 004f4c41 | = "CIniFile::getString - filename not set!"
     MOV dword ptr [0x01d1d400],EDX      ; 004f4c46 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004f4c4c | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004f4c52
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004f4c52
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004f4c57
     JMP 0x004f4c0b                      ; 004f4c5a
         ;   XREF to: 004f4c0b (UNCONDITIONAL_JUMP)  ; LAB_004f4c0b
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5e584e                       ; 004f4c68 | = "CIniFile::getString - section not set!"
     MOV dword ptr [0x01d1d400],ESI      ; 004f4c6d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004f4c73 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004f4c79
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004f4c79
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004f4c7e
     POP ESI                             ; 004f4c81
     POP EDI                             ; 004f4c82

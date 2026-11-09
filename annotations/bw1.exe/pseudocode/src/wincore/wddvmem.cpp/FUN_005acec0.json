@@ -1,134 +1,14 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01c50948'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_02c833fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 19,
-        "message": "use of undeclared identifier 'DAT_01c4e9f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_02c9930c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02c9930c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02c9930c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 171,
+    "complexity_score": 181,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
       "unresolved_funcptr",
@@ -140,13 +20,13 @@
     {
       "addr": "00401010",
       "from_addr": "0040106f",
-      "name": "FUN_00401010",
+      "name": "engine_2d.c_FUN_00401010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ac300",
       "from_addr": "005ac6f0",
-      "name": "FUN_005ac300",
+      "name": "wincore_wddvmem.cpp_FUN_005ac300",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -158,25 +38,25 @@
         "005acfe7"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_005acec0",
-    "signature": "void FUN_005acec0(void)"
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_FUN_005acec0",
+    "signature": "void __cdecl wincore_wddvmem_cpp_FUN_005acec0(void)"
   },
   "function_calls": [
     {
-      "addr": "004ecf70",
-      "is_variadic": false,
-      "name": "FUN_004ecf70"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "004ecf70",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70"
     },
     {
       "addr": "005acd00",
       "is_variadic": false,
-      "name": "FUN_005acd00"
+      "name": "wincore_wddvmem.cpp_FUN_005acd00"
     }
   ],
   "globals": [
@@ -277,7 +157,7 @@
       {
         "call_addr": "0040106f",
         "call_type": "direct",
-        "caller": "FUN_00401010",
+        "caller": "engine_2d.c_FUN_00401010",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -288,18 +168,16 @@
       {
         "call_addr": "005ac6f0",
         "call_type": "direct",
-        "caller": "FUN_005ac300",
-        "estimated_params": 1,
+        "caller": "wincore_wddvmem.cpp_FUN_005ac300",
+        "estimated_params": 0,
         "instructions_analyzed": 3,
         "method": "push_count",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 0,
         "stack_params": 0
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 1,
@@ -355,7 +233,15 @@
       "line": 12,
       "match": "DAT_01c4e9f8",
       "severity": "mild",
-      "text": "(*_DAT_02c833fc)(&DAT_01c4e9f8,0x1c4dad0);",
+      "text": "(*_DAT_02c833fc)(&DAT_01c4e9f8,&DAT_01c4dad0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_01c4dad0",
+      "severity": "mild",
+      "text": "(*_DAT_02c833fc)(&DAT_01c4e9f8,&DAT_01c4dad0);",
       "type": "undefined_data"
     },
     {

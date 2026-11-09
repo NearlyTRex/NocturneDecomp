@@ -1,106 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 14,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 15,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 16,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
@@ -127,14 +25,14 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00408800",
-    "signature": "undefined4 FUN_00408800(undefined4 param_1)"
+    "name": "core_actor.cpp_FUN_00408800",
+    "signature": "undefined4 core_actor_cpp_FUN_00408800(undefined4 param_1)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     }
   ],
   "globals": [
@@ -215,7 +113,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_00408800(uint param_1)",
+      "text": "uint core_actor_cpp_FUN_00408800(uint param_1)",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +121,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005030e0(\"CDemonActor::getActorType called for %s.  Should never be called for this base class!\",param_1);",
+      "text": "core_main_c_FUN_005030e0(\"CDemonActor::getActorType called for %s.  Should never be called for this base class!\",param_1);",
       "type": "unnamed_param"
     }
   ],
@@ -231,28 +129,28 @@
     "entries": [
       {
         "class_name": "Unknown",
-        "offset": 4,
-        "vtable_addr": "005ffc1c"
+        "offset": 204,
+        "vtable_addr": "005fd624"
       },
       {
         "class_name": "Unknown",
-        "offset": 4,
-        "vtable_addr": "00607f3c"
+        "offset": 204,
+        "vtable_addr": "005fb334"
       },
       {
         "class_name": "Unknown",
-        "offset": 36,
-        "vtable_addr": "00601ddc"
+        "offset": 204,
+        "vtable_addr": "00601d34"
       },
       {
-        "class_name": "Unknown",
-        "offset": 4,
-        "vtable_addr": "005fd6ec"
+        "class_name": "CEnemy",
+        "offset": 204,
+        "vtable_addr": "005ffb54"
       },
       {
-        "class_name": "Unknown",
-        "offset": 4,
-        "vtable_addr": "005fb3fc"
+        "class_name": "CWeapon",
+        "offset": 204,
+        "vtable_addr": "00607e74"
       }
     ],
     "in_vtable": true,

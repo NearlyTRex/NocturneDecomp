@@ -1,15 +1,15 @@
-// Name: FUN_00597970
+// Name: engine_texture.cpp_FUN_00597970
 // Address: 00597970
 // Address Range: [[00597970, 005979c1]]
 // Convention: unknown
-// Signature: void FUN_00597970(void)
+// Signature: void engine_texture_cpp_FUN_00597970(void)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0059798a) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00597970(void)
+void engine_texture_cpp_FUN_00597970(void)
 
 {
   int iVar1;
@@ -19,13 +19,13 @@ void FUN_00597970(void)
     _DAT_02c8a680 = 0;
   }
   else {
-    _DAT_02c8a680 = FUN_00596560(iVar1);
+    _DAT_02c8a680 = unkafter_texlist_cpp_FUN_00596560(iVar1);
     if (_DAT_02c8a680 != 0) {
       return;
     }
   }
   _DAT_01d1d400 = "..\\engine\\texture.cpp";
   _DAT_01d1d404 = 0x3c2;
-  FUN_005030e0("initTexture - out of memory!");
+  core_main_c_FUN_005030e0("initTexture - out of memory!");
   return;
 }

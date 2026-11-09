@@ -1,0 +1,140 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 31,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 11
+  },
+  "cross_references": [
+    {
+      "addr": "0044d610",
+      "from_addr": "0044d6b0",
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044d610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00462ad0",
+      "from_addr": "00462b91",
+      "name": "core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044ce90",
+    "address_range": [
+      [
+        "0044ce90",
+        "0044ce9e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90(CDemonCamera *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "007c6120",
+      "name": "DAT_007c6120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00857cd4",
+      "name": "DAT_00857cd4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00462b91",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044d6b0",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044d610",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "COPY": 4,
+      "INT_ADD": 1,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_XOR": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 14
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_00857cd4",
+      "severity": "mild",
+      "text": "DAT_00857cd4 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_007c6120",
+      "severity": "mild",
+      "text": "DAT_007c6120 = 0;",
+      "type": "undefined_data"
+    }
+  ]
+}

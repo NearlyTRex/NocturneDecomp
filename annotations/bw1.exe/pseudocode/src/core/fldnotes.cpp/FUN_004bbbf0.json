@@ -1,146 +1,32 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 18,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 23,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 25,
-        "message": "no matching function for call to 'FUN_004bb070'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 165,
+    "complexity_score": 167,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 22,
     "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 71
+    "total_lines": 73
   },
   "cross_references": [
     {
       "addr": "004bb5f0",
       "from_addr": "004bb5f6",
-      "name": "FUN_004bb5f0",
+      "name": "core_fldnotes.cpp_FUN_004bb5f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bb6c0",
       "from_addr": "004bb6e2",
-      "name": "FUN_004bb6c0",
+      "name": "core_fldnotes.cpp_FUN_004bb6c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,24 +39,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004bbbf0",
-    "signature": "void FUN_004bbbf0(int param_1)"
+    "name": "core_fldnotes.cpp_FUN_004bbbf0",
+    "signature": "void core_fldnotes_cpp_FUN_004bbbf0(int param_1)"
   },
   "function_calls": [
     {
       "addr": "004bb070",
       "is_variadic": false,
-      "name": "FUN_004bb070"
+      "name": "core_fldnotes.cpp_FUN_004bb070"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005c10d0",
       "is_variadic": false,
-      "name": "FUN_005c10d0"
+      "name": "crt_memory.c_realloc_FUN_005c10d0"
     }
   ],
   "globals": [
@@ -205,7 +91,7 @@
       {
         "call_addr": "004bb5f6",
         "call_type": "direct",
-        "caller": "FUN_004bb5f0",
+        "caller": "core_fldnotes.cpp_FUN_004bb5f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -218,7 +104,7 @@
       {
         "call_addr": "004bb6e2",
         "call_type": "direct",
-        "caller": "FUN_004bb6c0",
+        "caller": "core_fldnotes.cpp_FUN_004bb6c0",
         "estimated_params": 3,
         "instructions_analyzed": 10,
         "method": "push_count",
@@ -286,12 +172,12 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004bbbf0(int param_1)",
+      "text": "void core_fldnotes_cpp_FUN_004bbbf0(int param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x38) <= *(int *)(param_1 + 0x10)) {",
@@ -299,7 +185,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x38) <= *(int *)(param_1 + 0x10)) {",
@@ -307,50 +193,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_005c10d0(*(uint *)(param_1 + 0x3c),(*(int *)(param_1 + 0x38) + 1) * 0x144);",
+      "text": "(*(void **)(param_1 + 0x3c),(*(int *)(param_1 + 0x38) + 1) * 0x144);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_005c10d0(*(uint *)(param_1 + 0x3c),(*(int *)(param_1 + 0x38) + 1) * 0x144);",
+      "text": "(*(void **)(param_1 + 0x3c),(*(int *)(param_1 + 0x38) + 1) * 0x144);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x3c) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004bb070(*(int *)(param_1 + 0x38) * 0x144 + *(int *)(param_1 + 0x3c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004bb070(*(int *)(param_1 + 0x38) * 0x144 + *(int *)(param_1 + 0x3c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_1 + 0x38) + 1;",
+      "text": "*(void **)(param_1 + 0x3c) = pvVar1;",
       "type": "unnamed_param"
     },
     {
@@ -358,7 +220,15 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x38) = iVar1;",
+      "text": "core_fldnotes_cpp_FUN_004bb070(*(int *)(param_1 + 0x38) * 0x144 + *(int *)(param_1 + 0x3c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_fldnotes_cpp_FUN_004bb070(*(int *)(param_1 + 0x38) * 0x144 + *(int *)(param_1 + 0x3c));",
       "type": "unnamed_param"
     },
     {
@@ -366,7 +236,23 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 <= *(int *)(param_1 + 0x10));",
+      "text": "iVar2 = *(int *)(param_1 + 0x38) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x38) = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar2 <= *(int *)(param_1 + 0x10));",
       "type": "unnamed_param"
     },
     {

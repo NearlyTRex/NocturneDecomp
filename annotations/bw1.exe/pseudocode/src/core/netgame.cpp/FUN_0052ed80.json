@@ -1,149 +1,30 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01d51d9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01d51d9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_01d51d9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_01d51d9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_01d51d9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 45,
-        "message": "use of undeclared identifier '_DAT_01d51d9c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 321,
+    "complexity_score": 328,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 123,
     "suspect_count": 17,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
+      "pointer_stride_bytecount",
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
+      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 393
+    "total_lines": 395
   },
   "cross_references": [
     {
       "addr": "0052d360",
       "from_addr": "0052d3f5",
-      "name": "FUN_0052d360",
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -155,31 +36,31 @@
         "0052f0ff"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "is_ebp_frame": true,
-    "name": "FUN_0052ed80",
-    "signature": "void FUN_0052ed80(int param_1)"
+    "name": "core_netgame.cpp_FUN_0052ed80",
+    "signature": "void __cdecl core_netgame_cpp_FUN_0052ed80(CNetGame *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "0052dfc0",
       "is_variadic": false,
-      "name": "FUN_0052dfc0"
-    },
-    {
-      "addr": "005b2420",
-      "is_variadic": false,
-      "name": "FUN_005b2420"
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_0052dfc0"
     },
     {
       "addr": "005c25d0",
       "is_variadic": false,
-      "name": "FUN_005c25d0"
+      "name": "crt_string.c_memmove_FUN_005c25d0"
+    },
+    {
+      "addr": "005b2420",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_005b2420"
     }
   ],
   "globals": [
@@ -322,7 +203,7 @@
       {
         "call_addr": "0052d3f5",
         "call_type": "direct",
-        "caller": "FUN_0052d360",
+        "caller": "core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -331,11 +212,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.63963963963964,
@@ -381,10 +262,10 @@
     "pcode_op_count": 1252
   },
   "stack_frame": {
-    "frame_size": 348,
+    "frame_size": 352,
     "local_size": 348,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -519,6 +400,13 @@
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
       }
     ]
   },
@@ -549,20 +437,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void FUN_0052ed80(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 44,
-      "match": "param_1",
+      "match": "field_0x20",
       "severity": "mild",
-      "text": "local_40 = param_1 + 0x20;",
-      "type": "unnamed_param"
+      "text": "local_40 = &this_ptr->field_0x20;",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -573,20 +453,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 57,
-      "match": "param_1",
+      "match": "field_0x1c",
       "severity": "mild",
-      "text": "if ((local_154 < (float)_DAT_005ebee8) && (local_28 = 0, 0 < *(int *)(param_1 + 0x1c))) {",
-      "type": "unnamed_param"
+      "text": "if ((local_154 < (float)_DAT_005ebee8) && (local_28 = 0, 0 < *(int *)&this_ptr->field_0x1c)) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "local_24 = param_1;",
-      "type": "unnamed_param"
+      "text": "local_150 = *(float *)&local_24->field_0x48 * (float)_DAT_005ebed8;",
+      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
@@ -605,43 +485,43 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 96,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_0052dfc0(param_1,local_1c,&local_14c);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 102,
       "match": "(int *)((int)local_20",
       "severity": "moderate",
       "text": "local_20 = (int *)((int)local_20 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 103,
+      "match": "field_0x7c",
       "severity": "mild",
-      "text": "} while (local_28 < *(int *)(param_1 + 0x1c));",
-      "type": "unnamed_param"
+      "text": "local_24 = (CNetGame *)&local_24->field_0x7c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 106,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "} while (local_28 < *(int *)&this_ptr->field_0x1c);",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 121,
       "match": "DAT_01d6dfbc",
       "severity": "mild",
-      "text": "FUN_005c25d0(&DAT_01d6dfbc + iVar2 * 0x114,&DAT_01d6dfbc + (iVar2 + 1) * 0x114,",
+      "text": "(&DAT_01d6dfbc + iVar2 * 0x114,&DAT_01d6dfbc + (iVar2 + 1) * 0x114,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 121,
       "match": "DAT_01d6dfbc",
       "severity": "mild",
-      "text": "FUN_005c25d0(&DAT_01d6dfbc + iVar2 * 0x114,&DAT_01d6dfbc + (iVar2 + 1) * 0x114,",
+      "text": "(&DAT_01d6dfbc + iVar2 * 0x114,&DAT_01d6dfbc + (iVar2 + 1) * 0x114,",
       "type": "undefined_data"
     },
     {
@@ -662,22 +542,27 @@
     },
     {
       "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 101,
+      "line": 102,
       "match": "(int)local_20",
       "severity": "moderate",
       "text": "local_20 = (int *)((int)local_20 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_24->owner`). Replace `local_24->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 103,
+      "match": "local_24 = (T *)&local_24->FIELD",
+      "severity": "moderate",
+      "text": "local_24 = (CNetGame *)&local_24->field_0x7c;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((_DAT_01d6dfb8 - iVar2) * 0x114) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 120,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
     }
   ]
 }

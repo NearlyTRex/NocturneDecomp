@@ -1,0 +1,258 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 111,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [
+    {
+      "addr": "00522150",
+      "from_addr": "00522156",
+      "name": "core_morph.cpp_CMorphModel_dtor_FUN_00522150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522fe0",
+      "from_addr": "00522fe5",
+      "name": "core_morph.cpp_CMorph_free_FUN_00522fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005230c0",
+      "from_addr": "005230dd",
+      "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_005230c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523100",
+      "from_addr": "0052311d",
+      "name": "core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_00523100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00523000",
+      "from_addr": "00523020",
+      "name": "core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_00523000",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00522170",
+    "address_range": [
+      [
+        "00522170",
+        "005221c5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_free_FUN_00522170",
+    "signature": "void __cdecl core_morph_cpp_CMorphModel_free_FUN_00522170(CMorphModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c09f0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c09f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "005230dd",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_005230c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0052311d",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_00523100",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00522fe5",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_free_FUN_00522fe0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00522ff7",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_free_FUN_00522fe0",
+        "estimated_params": 1,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00523020",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_00523000",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00522156",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorphModel_dtor_FUN_00522150",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.730769230769231,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 21,
+      "INT_ADD": 13,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 6,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 97
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x58 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "FUN_005c09f0(*(int *)&this_ptr->field_0x58);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x58 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x60 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "FUN_005c09f0(*(int *)&this_ptr->field_0x60);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x60 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x5c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x64 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x54 = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

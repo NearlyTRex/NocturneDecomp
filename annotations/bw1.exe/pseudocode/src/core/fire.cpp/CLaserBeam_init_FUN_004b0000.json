@@ -1,0 +1,390 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 72,
+    "complexity_score": 272,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 24,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "004b60e0",
+      "from_addr": "004b6127",
+      "name": "core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b6070",
+      "from_addr": "004b60b8",
+      "name": "core_fire.cpp_CFireEffect_createLaserSegment_FUN_004b6070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b0000",
+    "address_range": [
+      [
+        "004b0000",
+        "004b00a0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CLaserBeam_init_FUN_004b0000",
+    "signature": "void __cdecl core_fire_cpp_CLaserBeam_init_FUN_004b0000(CLaserBeam *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b60b8",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createLaserSegment_FUN_004b6070",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "004b6127",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 11,
+    "declared_stack_bytes": 44,
+    "estimated_params": 11,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.683333333333334,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CBRANCH": 4,
+      "COPY": 86,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 36,
+      "INT_AND": 50,
+      "INT_EQUAL": 15,
+      "INT_LEFT": 10,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 20,
+      "INT_SBORROW": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 8,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 24,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 341
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 44,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLaserBeam *"
+      },
+      {
+        "is_param": true,
+        "name": "origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "beam_width",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "reticle_intensity",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "reflection_normal",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "halo_spread",
+        "offset": 40,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "cone_angle",
+        "offset": 44,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&origin->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&origin->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&origin->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&origin->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "if ((CVector3f *)&this_ptr->field_0xc != hit_position) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)hit_position;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&hit_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&hit_position->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&hit_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&hit_position->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x18 = beam_width;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1c = reticle_intensity;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "if ((0.0 < *(float *)&this_ptr->field_0x1c) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "((CVector3f *)&this_ptr->field_0x20 != reflection_normal)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)reflection_normal;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&reflection_normal->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&reflection_normal->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&reflection_normal->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&reflection_normal->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2c = red << 7;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x30 = green << 7;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x34 = blue << 7;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x38 = halo_spread;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3c = cone_angle;",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 172,
+    "complexity_score": 366,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 28,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_field",
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 238
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a95c0",
+    "address_range": [
+      [
+        "005a95c0",
+        "005a970f"
+      ],
+      [
+        "005a9711",
+        "005a9789"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005a95c0",
+    "signature": "int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005a95c0(CCryptVessel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00468900",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900"
+    },
+    {
+      "addr": "004688a0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0"
+    },
+    {
+      "addr": "004b8100",
+      "is_variadic": false,
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004b8100"
+    },
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "00483850",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850"
+    },
+    {
+      "addr": "004837b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "00483de0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0"
+    },
+    {
+      "addr": "004839a0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pop_FUN_004839a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f9166",
+      "name": "s_MENUCLD2_RAW_005f9165+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f9167",
+      "name": "s_MENUCLD2_RAW_005f9165+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f9168",
+      "name": "s_MENUCLD2_RAW_005f9165+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f9169",
+      "name": "s_MENUCLD2_RAW_005f9165+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f9173",
+      "name": "s_BWATER_d_RAW_005f9173",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.108695652173913,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 16,
+      "CBRANCH": 6,
+      "COPY": 122,
+      "FLOAT2FLOAT": 1,
+      "INT_ADD": 51,
+      "INT_AND": 59,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 58,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 29,
+      "INT_SUB": 57,
+      "INT_XOR": 4,
+      "LOAD": 20,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 59,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 567
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x7e8",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x7e8 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x3b4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x3b4 == 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x3c4",
+      "severity": "mild",
+      "text": "core_flame_cpp_CFlame_renderTransparent_FUN_004b8100((CFlame *)&this_ptr->field_0x3c4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x30,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x30,(CVector3f *)0x0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 25,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_20._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 26,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_20._8_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 27,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_20._4_4_ = *(uint *)&this_ptr->field_0x668;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x668",
+      "severity": "mild",
+      "text": "CStack_20._4_4_ = *(uint *)&this_ptr->field_0x668;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "CStack_2c._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 29,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "CStack_2c._4_4_ = 0x400ccccd;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "CStack_2c._8_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,&CStack_20,&CStack_2c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x3b4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x3b4 == 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x7ec",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(float *)&this_ptr->field_0x7ec;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x12c",
+      "severity": "mild",
+      "text": "FUN_005bfb40(&pCVar2->field_0x12c,\"BWATER%d.RAW\",uStack_14 & 0xf);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,48000);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x66c",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x66c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x12c",
+      "severity": "mild",
+      "text": "pcVar4 = &pCVar2->field_0x12c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x3b4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x3b4 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0x4000);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x66c",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x66c,0.0,0x267);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 47,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "00607aa4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

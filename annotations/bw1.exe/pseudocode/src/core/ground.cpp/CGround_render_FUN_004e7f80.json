@@ -1,0 +1,275 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 149,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "0059f3e0",
+      "from_addr": "0059f4c3",
+      "name": "core_terrain.cpp_CTerrain_render_FUN_0059f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e7f80",
+    "address_range": [
+      [
+        "004e7f80",
+        "004e8011"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_render_FUN_004e7f80",
+    "signature": "void __cdecl core_ground_cpp_CGround_render_FUN_004e7f80(CGround *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e7e60",
+      "is_variadic": false,
+      "name": "core_ground.cpp_CGround_renderVisibleTerrain_FUN_004e7e60"
+    },
+    {
+      "addr": "004e7780",
+      "is_variadic": false,
+      "name": "core_ground.cpp_CGround_transformAndStoreVertices_FUN_004e7780"
+    },
+    {
+      "addr": "00483d80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80"
+    },
+    {
+      "addr": "00509050",
+      "is_variadic": false,
+      "name": "engine_matrix.c_FUN_00509050"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0059f4c3",
+        "call_type": "direct",
+        "caller": "core_terrain.cpp_CTerrain_render_FUN_0059f3e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.125,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 44,
+      "INT_ADD": 22,
+      "INT_AND": 70,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 28,
+      "INT_LEFT": 6,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 20,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SDIV": 2,
+      "INT_SEXT": 2,
+      "INT_SLESS": 16,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 20,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 19,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 343
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGround *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004e7f8a",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2c = local_18 / (*(int *)&this_ptr->field_0x1c << 8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2c = local_18 / (*(int *)&this_ptr->field_0x1c << 8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x30 = local_10 / (*(int *)&this_ptr->field_0x1c << 8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x30 = local_10 / (*(int *)&this_ptr->field_0x1c << 8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2c < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2c = *(int *)&this_ptr->field_0x2c + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2c = *(int *)&this_ptr->field_0x2c + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x30 < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x30 = *(int *)&this_ptr->field_0x30 + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x30 = *(int *)&this_ptr->field_0x30 + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);",
+      "type": "undefined_data"
+    }
+  ]
+}

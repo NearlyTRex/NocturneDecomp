@@ -1,0 +1,63 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_ground_cpp_CGround_free_FUN_004e72e0(CGround *this_ptr)
+;
+; Parameters:
+; CGround *        Stack[0x4]:4   this_ptr
+;
+; XREF[3]:
+;   core_ground.cpp_CGround_dtor_FUN_004e7220 at 004e7226
+;   core_ground.cpp_CGround_init_FUN_004e7240 at 004e7246
+;   core_terrain.cpp_CTerrain_free_FUN_0059f3c0 at 0059f3c7
+;
+; Called Functions:
+;   core_texlist.cpp_CTextureList_dtor_FUN_005960c0
+;   crt_unknown.c_FUN_005c0344
+;   crt_unknown.c_FUN_005c09f0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004e72e0
+        ;   Label: core_ground.cpp_CGround_free_FUN_004e72e0
+    MOV EBX,dword ptr [ESP + 0x8]       ; 004e72e1
+    MOV EDX,dword ptr [EBX + 0x24]      ; 004e72e5
+    TEST EDX,EDX                        ; 004e72e8
+    JNZ 0x004e72fc                      ; 004e72ea
+        ;   XREF to: 004e72fc (CONDITIONAL_JUMP)  ; LAB_004e72fc
+    MOV EAX,dword ptr [EBX + 0x28]      ; 004e72ec
+    TEST EAX,EAX                        ; 004e72ef
+    JNZ 0x004e731c                      ; 004e72f1
+        ;   XREF to: 004e731c (CONDITIONAL_JUMP)  ; LAB_004e731c
+    MOV dword ptr [EBX + 0x28],0x0      ; 004e72f3
+    POP EBX                             ; 004e72fa
+    RET                                 ; 004e72fb
+    PUSH EDX                            ; 004e72fc
+        ;   Label: LAB_004e72fc
+    CALL crt_unknown.c_FUN_005c09f0     ; 004e72fd
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
+    ADD ESP,0x4                         ; 004e7302
+    MOV dword ptr [EBX + 0x24],0x0      ; 004e7305
+    MOV EAX,dword ptr [EBX + 0x28]      ; 004e730c
+    TEST EAX,EAX                        ; 004e730f
+    JNZ 0x004e731c                      ; 004e7311
+        ;   XREF to: 004e731c (CONDITIONAL_JUMP)  ; LAB_004e731c
+    MOV dword ptr [EBX + 0x28],0x0      ; 004e7313
+    POP EBX                             ; 004e731a
+    RET                                 ; 004e731b
+    PUSH 0x0                            ; 004e731c
+        ;   Label: LAB_004e731c
+    PUSH EAX                            ; 004e731e
+    CALL core_texlist.cpp_CTextureList_dtor_FUN_005960c0 ; 004e731f
+        ;   XREF to: 005960c0 (UNCONDITIONAL_CALL)  ; CTextureList * core_texlist.cpp_CTextureList_dtor_FUN_005960c0(CTextureList * this_ptr, uint flags)
+    ADD ESP,0x8                         ; 004e7324
+    PUSH EAX                            ; 004e7327
+    CALL crt_unknown.c_FUN_005c0344     ; 004e7328
+        ;   XREF to: 005c0344 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0344()
+    ADD ESP,0x4                         ; 004e732d
+    MOV dword ptr [EBX + 0x28],0x0      ; 004e7330
+    POP EBX                             ; 004e7337
+    RET                                 ; 004e7338
+

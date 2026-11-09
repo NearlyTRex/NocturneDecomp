@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01c3eb5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01c3eb5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_01c4354c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
@@ -143,13 +23,13 @@
     {
       "addr": "00496dd0",
       "from_addr": "00496dd0",
-      "name": "FUN_00496dd0",
+      "name": "shape_edittool.cpp_FUN_00496dd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00496ee0",
       "from_addr": "00496f5d",
-      "name": "FUN_00496ee0",
+      "name": "shape_edittool.cpp_FUN_00496ee0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -161,15 +41,15 @@
         "004942d7"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_004941e0",
-    "signature": "void FUN_004941e0(void)"
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_FUN_004941e0",
+    "signature": "void __cdecl shape_edittool_cpp_FUN_004941e0(void)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     }
   ],
   "globals": [
@@ -222,7 +102,7 @@
       {
         "call_addr": "00496dd0",
         "call_type": "direct",
-        "caller": "FUN_00496dd0",
+        "caller": "shape_edittool.cpp_FUN_00496dd0",
         "estimated_params": 0,
         "instructions_analyzed": 0,
         "method": "push_count",
@@ -233,19 +113,16 @@
       {
         "call_addr": "00496f5d",
         "call_type": "direct",
-        "caller": "FUN_00496ee0",
-        "estimated_params": 2,
+        "caller": "shape_edittool.cpp_FUN_00496ee0",
+        "estimated_params": 0,
         "instructions_analyzed": 10,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 0,
         "stack_params": 0
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 0,
@@ -310,30 +187,6 @@
         "type": "undefined4"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "FUN_004941e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 19,
-          "line": 35,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 25,
-          "line": 42,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -455,22 +308,6 @@
       "severity": "moderate",
       "text": "// 004942cc: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 35,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar5 = iVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 42,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar6 = iVar5 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

@@ -1,14 +1,14 @@
-// Name: FUN_00512de0
+// Name: engine_mini3d.cpp_FUN_00512de0
 // Address: 00512de0
 // Address Range: [[00512de0, 0051315d]]
 // Convention: unknown
-// Signature: void FUN_00512de0(float *param_1,int param_2,ushort *param_3,int param_4)
+// Signature: void engine_mini3d_cpp_FUN_00512de0(float *param_1,int param_2,ushort *param_3,int param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00512de0(float *param_1,int param_2,ushort *param_3,int param_4)
+void engine_mini3d_cpp_FUN_00512de0(float *param_1,int param_2,ushort *param_3,int param_4)
 
 {
   float fVar1;
@@ -35,14 +35,14 @@ void FUN_00512de0(float *param_1,int param_2,ushort *param_3,int param_4)
   _DAT_01e7dac8 = _DAT_01e7dac8 + param_4;
   _DAT_01d224b4 = _DAT_01d224b4 + param_2;
   if (_DAT_01d25f14 == 0) {
-    FUN_005124f0();
-    FUN_00516c60();
+    engine_mini3d_cpp_FUN_005124f0();
+    engine_mini3d_cpp_FUN_00516c60();
     if ((_DAT_02c8346c == (code *)0x0) || (_DAT_01c50948 == 0)) {
-      FUN_00512670();
+      engine_mini3d_cpp_FUN_00512670();
       if (10000 < param_2) {
         _DAT_01d1d400 = "..\\engine\\mini3d.cpp";
         _DAT_01d1d404 = 0x844;
-        FUN_005030e0("CMini3D::polyList - Too many verticies : %d",param_2);
+        core_main_c_FUN_005030e0("CMini3D::polyList - Too many verticies : %d",param_2);
       }
       uVar10 = 0;
       iVar9 = 0;
@@ -97,7 +97,7 @@ void FUN_00512de0(float *param_1,int param_2,ushort *param_3,int param_4)
         } while (iVar9 < param_2);
       }
       if (((_DAT_01c50948 != 0) || (param_2 != 4)) || (param_4 != 2)) {
-        FUN_00515ae0(_DAT_01d227e0,param_2,param_3,param_4,uVar10);
+        engine_mini3d_cpp_FUN_00515ae0(_DAT_01d227e0,param_2,param_3,param_4,uVar10);
         return;
       }
       local_14 = _DAT_01d2adfc;
@@ -131,17 +131,17 @@ void FUN_00512de0(float *param_1,int param_2,ushort *param_3,int param_4)
       }
 LAB_005130ac:
       if (uVar10 != 0) {
-        FUN_005159c0(local_124,4);
+        engine_mini3d_cpp_FUN_005159c0(local_124,4);
         return;
       }
-      FUN_005168c0(local_124,4);
+      engine_mini3d_cpp_FUN_005168c0(local_124,4);
     }
     else {
       (*_DAT_02c8346c)(param_1,param_2,param_3,param_4,_DAT_01c51d14);
     }
   }
   else {
-    FUN_00516cc0(param_1,param_2,param_3,param_4);
+    engine_mini3d_cpp_FUN_00516cc0(param_1,param_2,param_3,param_4);
   }
   return;
 }

@@ -1,12 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0047e870(int param_1,int param_2,int param_3)
+; void __cdecl cockpit_drawsurf_cpp_FUN_0047e870(CDrawSurface *this_ptr,int x,int y)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
-; XREF[2]:
-;   FUN_0047ee70 at 0047eedc
-;   FUN_0047ef60 at 0047f0e5
+; XREF[5]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0047ee70 at 0047eedc
+;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0047ec80 at 0047ec9f
+;   cockpit_drawsurf.cpp_FUN_0047ef60 at 0047f0e5
+;   cockpit_drawsurf.cpp_FUN_0047fb20 at 0047fb98
+;   cockpit_drawsurf.cpp_FUN_00481090 at 00481355
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0
@@ -18,14 +25,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0047e870
-        ;   Label: FUN_0047e870
+        ;   Label: cockpit_drawsurf.cpp_FUN_0047e870
     PUSH ESI                            ; 0047e871
     PUSH EDI                            ; 0047e872
     PUSH EBP                            ; 0047e873
@@ -99,8 +106,8 @@ section .text
     PUSH 0x5db093                       ; 0047e914
     MOV dword ptr [0x01d1d400],ECX      ; 0047e919 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0047e91f | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0047e925
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0047e925
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0047e92a
     POP EBP                             ; 0047e92d
     POP EDI                             ; 0047e92e
@@ -165,8 +172,8 @@ section .text
     PUSH 0x5db0c1                       ; 0047e9a8
     MOV [0x01d1d400],EAX                ; 0047e9ad | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0047e9b2 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0047e9b8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0047e9b8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0047e9bd
     POP EBP                             ; 0047e9c0
     POP EDI                             ; 0047e9c1

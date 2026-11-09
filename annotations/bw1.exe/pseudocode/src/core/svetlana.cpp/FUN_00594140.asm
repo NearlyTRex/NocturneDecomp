@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00594140(int param_1,int param_2)
+; void __cdecl core_svetlana_cpp_FUN_00594140(CSvetlana *this_ptr,int bone_index)
 ;
+; Parameters:
+; CSvetlana *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; undefined        Stack[-0xb4]:1  local_b4
 ; undefined4       Stack[-0xb0]:4  local_b0
@@ -21,32 +24,32 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_005940a0 at 005940d0
+;   core_svetlana.cpp_FUN_005940a0 at 005940d0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_svetlana_cpp_005f75c7
 ;   TerminatedCString s_Can_t_find_svetlana_s_pa_005f75dc
 ;   TerminatedCString s_svetlana_attack_wav_005f75fe
 ;   TerminatedCString s_svetlana_miss_wav_005f7613
-;   undefined4 DAT_00622c18
+;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01fd1210
-;   undefined4 DAT_01fd1214
+;   undefined4 g_CDemonSetInstance.field1372328_0x14f0a8
+;   undefined4 g_CDemonSetInstance.field1372332_0x14f0ac
 ;
 ; Called Functions:
-;   FUN_00408b40
-;   FUN_0042c010
-;   FUN_005030e0
-;   FUN_00569130
-;   FUN_00569f30
+;   core_actor.cpp_FUN_00408b40
+;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
+;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
+;   core_skeleton.cpp_FUN_00569130
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00594140
-        ;   Label: FUN_00594140
+        ;   Label: core_svetlana.cpp_FUN_00594140
     PUSH ESI                            ; 00594141
     PUSH EDI                            ; 00594142
     PUSH EBP                            ; 00594143
@@ -56,8 +59,8 @@ section .text
     LEA EAX,[EBP + 0x158]               ; 00594158
     PUSH EAX                            ; 0059415e
     XOR EBX,EBX                         ; 0059415f
-    CALL FUN_00569f30                   ; 00594161
-        ;   XREF to: 00569f30 (UNCONDITIONAL_CALL)  ; undefined FUN_00569f30()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30 ; 00594161
+        ;   XREF to: 00569f30 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(CDeformableModelInstance * this_ptr)
     MOV ECX,0xffffffff                  ; 00594166
     ADD ESP,0x4                         ; 0059416b
     MOV EDX,EAX                         ; 0059416e
@@ -86,8 +89,8 @@ section .text
     PUSH EBX                            ; 005941b0
     LEA ESI,[ESP + 0x50]                ; 005941b1
     LEA EDI,[ESP + 0x8c]                ; 005941b5
-    CALL FUN_00569130                   ; 005941bc
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined FUN_00569130()
+    CALL core_skeleton.cpp_FUN_00569130 ; 005941bc
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
     ADD ESP,0x8                         ; 005941c1
     LEA EAX,[ESP + 0x84]                ; 005941c4
     LEA ESI,[ESP + 0x48]                ; 005941cb
@@ -98,8 +101,8 @@ section .text
     PUSH EBP                            ; 005941d3
     LEA ESI,[ESP + 0x98]                ; 005941d4
     LEA EDI,[ESP + 0x74]                ; 005941db
-    CALL FUN_00408b40                   ; 005941df
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b40()
+    CALL core_actor.cpp_FUN_00408b40    ; 005941df
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
     LEA ESI,[ESP + 0x98]                ; 005941e4
     ADD ESP,0x8                         ; 005941eb
     MOVSD ES:EDI,ESI                    ; 005941ee
@@ -110,8 +113,8 @@ section .text
     PUSH EBX                            ; 005941f9
     LEA ESI,[ESP + 0x44]                ; 005941fa
     LEA EDI,[ESP + 0x80]                ; 005941fe
-    CALL FUN_00569130                   ; 00594205
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined FUN_00569130()
+    CALL core_skeleton.cpp_FUN_00569130 ; 00594205
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
     ADD ESP,0x8                         ; 0059420a
     LEA EAX,[ESP + 0x78]                ; 0059420d
     LEA ESI,[ESP + 0x3c]                ; 00594211
@@ -122,8 +125,8 @@ section .text
     PUSH EBP                            ; 00594219
     LEA ESI,[ESP + 0x5c]                ; 0059421a
     LEA EDI,[ESP + 0x68]                ; 0059421e
-    CALL FUN_00408b40                   ; 00594222
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b40()
+    CALL core_actor.cpp_FUN_00408b40    ; 00594222
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
     LEA ESI,[ESP + 0x5c]                ; 00594227
     ADD ESP,0x8                         ; 0059422b
     MOVSD ES:EDI,ESI                    ; 0059422e
@@ -132,12 +135,12 @@ section .text
     XOR EDI,EDI                         ; 00594231
     XOR ESI,ESI                         ; 00594233
     MOV dword ptr [ESP + 0xa0],EDI      ; 00594235
-    MOV EAX,[0x00622c18]                ; 0059423c | DAT_00622c18
+    MOV EAX,[0x00622c18]                ; 0059423c | g_CDemonSetPtr
         ;   Label: LAB_0059423c
-    CMP ESI,dword ptr [EAX + 0x14f0a8]  ; 00594241 | DAT_01fd1210
+    CMP ESI,dword ptr [EAX + 0x14f0a8]  ; 00594241 | g_CDemonSetInstance.field1372328_0x14f0a8
     JGE 0x005942fe                      ; 00594247
         ;   XREF to: 005942fe (CONDITIONAL_JUMP)  ; LAB_005942fe
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f0ac] ; 0059424d | DAT_01fd1214
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f0ac] ; 0059424d | g_CDemonSetInstance.field1372332_0x14f0ac
     CMP EBX,EBP                         ; 00594254
     JNZ 0x00594292                      ; 00594256
         ;   XREF to: 00594292 (CONDITIONAL_JUMP)  ; LAB_00594292
@@ -156,16 +159,16 @@ section .text
     PUSH 0x5f75dc                       ; 00594274 | = "Can't find svetlana's parent bone"
     MOV dword ptr [0x01d1d400],EDX      ; 00594279 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0059427f | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00594285
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00594285
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0059428a
     JMP 0x005941a9                      ; 0059428d
         ;   XREF to: 005941a9 (UNCONDITIONAL_JUMP)  ; LAB_005941a9
     MOV EAX,ESP                         ; 00594292
         ;   Label: LAB_00594292
     PUSH EAX                            ; 00594294
-    CALL FUN_0042c010                   ; 00594295
-        ;   XREF to: 0042c010 (UNCONDITIONAL_CALL)  ; undefined FUN_0042c010()
+    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010 ; 00594295
+        ;   XREF to: 0042c010 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010(SDamageInfo * this_ptr)
     MOV EAX,0x41700000                  ; 0059429a
     ADD ESP,0x4                         ; 0059429f
     MOV EDX,0x3f333333                  ; 005942a2

@@ -1,0 +1,16 @@
+// Name: engine_keys.cpp_staticInit_FUN_004fd210
+// Address: 004fd210
+// Address Range: [[004fd210, 004fd21a]]
+// Convention: unknown
+// Signature: void engine_keys_cpp_staticInit_FUN_004fd210(void)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void engine_keys_cpp_staticInit_FUN_004fd210(void)
+
+{
+  _DAT_01d1bca0 = 0x602bcc;
+  return;
+}

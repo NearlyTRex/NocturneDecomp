@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00401590(undefined4 param_1)
+; void engine_2d_c_FUN_00401590(undefined4 param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x2c]:1  local_2c
 ;
 ; XREF[1]:
-;   FUN_00401010 at 0040104a
+;   engine_2d.c_FUN_00401010 at 0040104a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_art_005d205c
@@ -18,23 +18,23 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005a08d0
-;   FUN_005a0a50
-;   FUN_005a0c10
-;   FUN_005a0dc0
-;   FUN_005a0fd0
+;   core_main.c_FUN_005030e0
+;   support_trstream.cpp_FUN_005a0fd0
+;   unkaddr_0059f520.cpp_FUN_005a0c10
+;   unkaddr_0059f520.cpp_FUN_005a0dc0
+;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0
+;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50
 ;
 ; *****************************************************************************
 
 section .text
 
     SUB ESP,0x2c                        ; 00401590
-        ;   Label: FUN_00401590
+        ;   Label: engine_2d.c_FUN_00401590
     MOV EAX,ESP                         ; 00401593
     PUSH EAX                            ; 00401595
-    CALL FUN_005a08d0                   ; 00401596
-        ;   XREF to: 005a08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a08d0()
+    CALL unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0 ; 00401596
+        ;   XREF to: 005a08d0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0040159b
     PUSH 0x1                            ; 0040159e
     MOV EDX,dword ptr [ESP + 0x34]      ; 004015a0
@@ -42,8 +42,8 @@ section .text
     PUSH 0x5d205c                       ; 004015a5 | = "art"
     LEA EAX,[ESP + 0xc]                 ; 004015aa
     PUSH EAX                            ; 004015ae
-    CALL FUN_005a0fd0                   ; 004015af
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0fd0()
+    CALL support_trstream.cpp_FUN_005a0fd0 ; 004015af
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0fd0()
     ADD ESP,0x10                        ; 004015b4
     TEST EAX,EAX                        ; 004015b7
     JZ 0x004015f0                       ; 004015b9
@@ -53,19 +53,19 @@ section .text
     PUSH 0x1c4e9f8                      ; 004015c0 | DAT_01c4e9f8
     LEA EAX,[ESP + 0x8]                 ; 004015c5
     PUSH EAX                            ; 004015c9
-    CALL FUN_005a0c10                   ; 004015ca
-        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0c10()
+    CALL unkaddr_0059f520.cpp_FUN_005a0c10 ; 004015ca
+        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0c10()
     ADD ESP,0xc                         ; 004015cf
     MOV EAX,ESP                         ; 004015d2
     PUSH EAX                            ; 004015d4
-    CALL FUN_005a0dc0                   ; 004015d5
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 004015d5
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
     ADD ESP,0x4                         ; 004015da
     PUSH 0x0                            ; 004015dd
     LEA EAX,[ESP + 0x4]                 ; 004015df
     PUSH EAX                            ; 004015e3
-    CALL FUN_005a0a50                   ; 004015e4
-        ;   XREF to: 005a0a50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0a50()
+    CALL unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50 ; 004015e4
+        ;   XREF to: 005a0a50 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004015e9
     ADD ESP,0x2c                        ; 004015ec
     RET                                 ; 004015ef
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5d206f                       ; 004015fb | = "Unable to open VGA palette"
     MOV dword ptr [0x01d1d400],ECX      ; 00401600 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00401606 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0040160c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0040160c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00401611
     POP EBX                             ; 00401614
     JMP 0x004015bb                      ; 00401615

@@ -1,32 +1,32 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004ab6c0(int param_1,float param_2)
+; void core_filmreel_cpp_FUN_004ab6c0(CActorDestination *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df15f
-;   undefined4 DAT_0061135c
+;   CFilterFX* g_CFilterFXPtr = 0152d230
 ;   undefined4 DAT_0061b4d0
-;   undefined4 DAT_01c57034
+;   undefined4 g_CFilmReelClassInfo.name_hash
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_0040c600
-;   FUN_0045d2a0
-;   FUN_0045ddb0
-;   FUN_004a1b70
-;   FUN_005030e0
-;   FUN_005735a0
-;   FUN_00573a80
+;   core_actor.cpp_castToClassHash_FUN_0040c600
+;   core_dest.cpp_FUN_0045d2a0
+;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0
+;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
+;   core_main.c_FUN_005030e0
+;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004ab6c0
-        ;   Label: FUN_004ab6c0
+        ;   Label: core_filmreel.cpp_FUN_004ab6c0
     PUSH ESI                            ; 004ab6c1
     PUSH EDI                            ; 004ab6c2
     PUSH EBP                            ; 004ab6c3
@@ -44,8 +44,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x184]     ; 004ab6e6
     PUSH EBX                            ; 004ab6ec
     MOV dword ptr [EBX + 0x3dc],EAX     ; 004ab6ed
-    CALL FUN_0045d2a0                   ; 004ab6f3
-        ;   XREF to: 0045d2a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045d2a0()
+    CALL core_dest.cpp_FUN_0045d2a0     ; 004ab6f3
+        ;   XREF to: 0045d2a0 (UNCONDITIONAL_CALL)  ; void core_dest.cpp_FUN_0045d2a0(CActorDestination * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004ab6f8
     ADD ESP,0x4                         ; 004ab6fb
     POP EBP                             ; 004ab6fe
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 004ab787 (CONDITIONAL_JUMP)  ; LAB_004ab787
     MOV EDX,dword ptr [EBX + 0x3e0]     ; 004ab731
     PUSH EDX                            ; 004ab737
-    CALL FUN_005735a0                   ; 004ab738
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005735a0()
+    CALL sound_sndmain.cpp_FUN_005735a0 ; 004ab738
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 004ab73d
     TEST EAX,EAX                        ; 004ab740
     JZ 0x004ab76d                       ; 004ab742
@@ -83,8 +83,8 @@ section .text
     PUSH EAX                            ; 004ab758
     MOV ESI,dword ptr [0x0061b4d0]      ; 004ab759 | DAT_0061b4d0
     PUSH ESI                            ; 004ab75f
-    CALL FUN_004a1b70                   ; 004ab760
-        ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; undefined FUN_004a1b70()
+    CALL core_event.cpp_CEventList_executeCommands_FUN_004a1b70 ; 004ab760
+        ;   XREF to: 004a1b70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_004a1b70(CEventList * this_ptr, char * commands)
     ADD ESP,0x8                         ; 004ab765
     JMP 0x004ab6e2                      ; 004ab768
         ;   XREF to: 004ab6e2 (UNCONDITIONAL_JUMP)  ; LAB_004ab6e2
@@ -97,13 +97,13 @@ section .text
     MOV dword ptr [EBX + 0x3e0],EAX     ; 004ab77f
     JMP 0x004ab744                      ; 004ab785
         ;   XREF to: 004ab744 (UNCONDITIONAL_JUMP)  ; LAB_004ab744
-    MOV EAX,[0x01c57034]                ; 004ab787 | DAT_01c57034
+    MOV EAX,[0x01c57034]                ; 004ab787 | g_CFilmReelClassInfo.name_hash
         ;   Label: LAB_004ab787
     PUSH EAX                            ; 004ab78c
     MOV EDX,dword ptr [EBX + 0x158]     ; 004ab78d
     PUSH EDX                            ; 004ab793
-    CALL FUN_0040c600                   ; 004ab794
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c600()
+    CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004ab794
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
     ADD ESP,0x8                         ; 004ab799
     MOV ESI,EAX                         ; 004ab79c
     TEST EAX,EAX                        ; 004ab79e
@@ -114,21 +114,21 @@ section .text
     PUSH 0x5df116                       ; 004ab7ac
     MOV dword ptr [0x01d1d400],ECX      ; 004ab7b1 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004ab7b7 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004ab7bd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004ab7bd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004ab7c2
     LEA EAX,[ESI + 0x2d8]               ; 004ab7c5
         ;   Label: LAB_004ab7c5
     PUSH EAX                            ; 004ab7cb
-    MOV EBP,dword ptr [0x0061135c]      ; 004ab7cc | DAT_0061135c
+    MOV EBP,dword ptr [0x0061135c]      ; 004ab7cc | g_CFilterFXPtr
     PUSH EBP                            ; 004ab7d2
-    CALL FUN_0045ddb0                   ; 004ab7d3
-        ;   XREF to: 0045ddb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045ddb0()
+    CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0 ; 004ab7d3
+        ;   XREF to: 0045ddb0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0(CFilterFX * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004ab7d8
     MOV EAX,dword ptr [EBX + 0x3e0]     ; 004ab7db
     PUSH EAX                            ; 004ab7e1
-    CALL FUN_00573a80                   ; 004ab7e2
-        ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; undefined FUN_00573a80()
+    CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 004ab7e2
+        ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00573a80(uint sfx_handle)
     ADD ESP,0x4                         ; 004ab7e7
     PUSH 0x5df145                       ; 004ab7ea
     MOV EAX,dword ptr [EBX + 0x154]     ; 004ab7ef
@@ -140,15 +140,15 @@ section .text
         ;   XREF to: 004ab744 (UNCONDITIONAL_JUMP)  ; LAB_004ab744
     PUSH EDX                            ; 004ab807
         ;   Label: LAB_004ab807
-    MOV ESI,dword ptr [0x0061135c]      ; 004ab808 | DAT_0061135c
+    MOV ESI,dword ptr [0x0061135c]      ; 004ab808 | g_CFilterFXPtr
     PUSH ESI                            ; 004ab80e
-    CALL FUN_0045ddb0                   ; 004ab80f
-        ;   XREF to: 0045ddb0 (UNCONDITIONAL_CALL)  ; undefined FUN_0045ddb0()
+    CALL core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0 ; 004ab80f
+        ;   XREF to: 0045ddb0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0(CFilterFX * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004ab814
     MOV EDI,dword ptr [EBX + 0x3e0]     ; 004ab817
     PUSH EDI                            ; 004ab81d
-    CALL FUN_00573a80                   ; 004ab81e
-        ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; undefined FUN_00573a80()
+    CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 004ab81e
+        ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00573a80(uint sfx_handle)
     ADD ESP,0x4                         ; 004ab823
     PUSH 0x5df152                       ; 004ab826
     MOV EAX,dword ptr [EBX + 0x154]     ; 004ab82b

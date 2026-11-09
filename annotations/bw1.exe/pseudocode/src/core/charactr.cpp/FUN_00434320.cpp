@@ -1,41 +1,41 @@
-// Name: FUN_00434320
+// Name: core_charactr.cpp_FUN_00434320
 // Address: 00434320
 // Address Range: [[00434320, 004343b5]]
-// Convention: unknown
-// Signature: void FUN_00434320(int param_1,undefined4 param_2,undefined4 param_3,char *param_4,undefined4 param_5 )
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_FUN_00434320(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00434320(int param_1,uint param_2,uint param_3,char *param_4,uint param_5 )
+void __cdecl core_charactr_cpp_FUN_00434320(CCharacter *this_ptr,int from_bone_index,int to_bone_index,char *motion_name,int direction)
 
 {
   char cVar1;
   int iVar2;
-  uint *puVar3;
-  char *pcVar4;
+  int *piVar3;
+  int *piVar4;
   
-  if (0x15 < *(int *)(param_1 + 0x27c4)) {
+  if (0x15 < *(int *)&this_ptr->field_0x27c4) {
     _DAT_01d1d400 = "..\\core\\charactr.cpp";
     _DAT_01d1d404 = 0x117a;
-    FUN_005030e0("CCharacter::addLayerAction - too many");
+    core_main_c_FUN_005030e0("CCharacter::addLayerAction - too many");
   }
-  iVar2 = *(int *)(param_1 + 0x27c4);
-  *(int *)(param_1 + 0x27c4) = *(int *)(param_1 + 0x27c4) + 1;
-  puVar3 = (uint *)(param_1 + 0x27c8 + iVar2 * 0x38);
-  *puVar3 = param_2;
-  pcVar4 = (char *)(puVar3 + 2);
-  puVar3[1] = param_3;
+  iVar2 = *(int *)&this_ptr->field_0x27c4;
+  *(int *)&this_ptr->field_0x27c4 = *(int *)&this_ptr->field_0x27c4 + 1;
+  piVar3 = (int *)(&this_ptr->field_0x27c8 + iVar2 * 0x38);
+  *piVar3 = from_bone_index;
+  piVar4 = piVar3 + 2;
+  piVar3[1] = to_bone_index;
   do {
-    cVar1 = *param_4;
-    *pcVar4 = cVar1;
+    cVar1 = *motion_name;
+    *(char *)piVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_4[1];
-    param_4 = param_4 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = motion_name[1];
+    motion_name = motion_name + 2;
+    *(char *)((int)piVar4 + 1) = cVar1;
+    piVar4 = (int *)((int)piVar4 + 2);
   } while (cVar1 != '\0');
-  puVar3[10] = param_5;
+  piVar3[10] = direction;
   return;
 }

@@ -1,44 +1,52 @@
-// Name: FUN_00522340
+// Name: core_morph.cpp_FUN_00522340
 // Address: 00522340
 // Address Range: [[00522340, 00522483]]
-// Convention: unknown
-// Signature: void FUN_00522340(int *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7)
+// Convention: __cdecl
+// Signature: void __cdecl core_morph_cpp_FUN_00522340(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count,SInputFace *tri_data,STextureSet *texture_sets,int *index_data)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00522340(int *param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7)
+void __cdecl core_morph_cpp_FUN_00522340(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count,SInputFace *tri_data,STextureSet *texture_sets,int *index_data)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  if (4 < *param_1) {
+  if (4 < *(int *)this_ptr) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0xac;
-    FUN_005030e0("CMorphModel::addPart - too many parts!");
+    core_main_c_FUN_005030e0("CMorphModel::addPart - too many parts!");
   }
-  param_1[*param_1 * 4 + 3] = param_1[0x15];
-  param_1[*param_1 * 4 + 1] = param_2;
-  param_1[*param_1 * 4 + 4] = param_1[0x17];
-  param_1[*param_1 * 4 + 2] = param_4;
-  param_1[0x15] = param_1[0x15] + param_1[*param_1 * 4 + 1];
-  param_1[0x17] = param_1[0x17] + param_1[*param_1 * 4 + 2];
-  iVar1 = FUN_005c10d0(param_1[0x16],param_1[0x15] << 4);
-  param_1[0x16] = iVar1;
-  iVar1 = FUN_005c10d0(param_1[0x18],param_1[0x17] * 0x3c);
-  param_1[0x18] = iVar1;
-  *param_1 = *param_1 + 1;
-  if ((param_1[0x16] == 0) || (param_1[0x18] == 0)) {
+  *(uint *)(&this_ptr->field_0xc + *(int *)this_ptr * 0x10) =
+       *(uint *)&this_ptr->field_0x54;
+  *(int *)(&this_ptr->field_0x4 + *(int *)this_ptr * 0x10) = vertex_count;
+  *(uint *)(&this_ptr->field_0x10 + *(int *)this_ptr * 0x10) =
+       *(uint *)&this_ptr->field_0x5c;
+  *(int *)(&this_ptr->field_0x8 + *(int *)this_ptr * 0x10) = tri_count;
+  *(int *)&this_ptr->field_0x54 =
+       *(int *)&this_ptr->field_0x54 + *(int *)(&this_ptr->field_0x4 + *(int *)this_ptr * 0x10);
+  *(int *)&this_ptr->field_0x5c =
+       *(int *)&this_ptr->field_0x5c + *(int *)(&this_ptr->field_0x8 + *(int *)this_ptr * 0x10);
+  pvVar1 = realloc
+                     (*(void **)&this_ptr->field_0x58,*(int *)&this_ptr->field_0x54 << 4);
+  *(void **)&this_ptr->field_0x58 = pvVar1;
+  pvVar1 = realloc
+                     (*(void **)&this_ptr->field_0x60,*(int *)&this_ptr->field_0x5c * 0x3c);
+  *(void **)&this_ptr->field_0x60 = pvVar1;
+  *(int *)this_ptr = *(int *)this_ptr + 1;
+  if ((*(int *)&this_ptr->field_0x58 == 0) || (*(int *)&this_ptr->field_0x60 == 0)) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0xc5;
-    FUN_005030e0("CMorphModel::setup - out of memory!");
+    core_main_c_FUN_005030e0("CMorphModel::setup - out of memory!");
   }
-  if (param_3 != 0) {
-    FUN_00522540(param_1,*param_1 + -1,param_3,0,param_2);
+  if (skinned_vertices != (CVector3i *)0x0) {
+    core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_00522540
+              (this_ptr,*(int *)this_ptr + -1,skinned_vertices,0,vertex_count);
   }
-  if (param_5 != 0) {
-    FUN_005228c0(param_1,*param_1 + -1,param_5,param_6,param_7,0,param_4);
+  if (tri_data != (SInputFace *)0x0) {
+    core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0
+              (this_ptr,*(int *)this_ptr + -1,tri_data,texture_sets,index_data,0,tri_count);
     return;
   }
   return;

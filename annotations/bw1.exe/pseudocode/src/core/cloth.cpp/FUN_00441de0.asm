@@ -1,26 +1,29 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00441de0(int *param_1,char *param_2)
+; void __cdecl core_cloth_cpp_FUN_00441de0(CClothList *this_ptr,char *filename)
 ;
+; Parameters:
+; CClothList *     Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filename
 ;
 ; XREF[2]:
-;   FUN_00468c80 at 0046903c
-;   FUN_00585270 at 0058564b
+;   core_doc.cpp_CDoc_ctor_FUN_00468c80 at 0046903c
+;   core_stranger.cpp_CStranger_ctor_FUN_00585270 at 0058564b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00441de0
-        ;   Label: FUN_00441de0
+        ;   Label: core_cloth.cpp_FUN_00441de0
     PUSH ESI                            ; 00441de1
     PUSH EDI                            ; 00441de2
     MOV EBX,dword ptr [ESP + 0x10]      ; 00441de3
@@ -64,8 +67,8 @@ section .text
     PUSH 0x5d69c8                       ; 00441e3a
     MOV dword ptr [0x01d1d400],ECX      ; 00441e3f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00441e45 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00441e4b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00441e4b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00441e50
     JMP 0x00441dec                      ; 00441e53
         ;   XREF to: 00441dec (UNCONDITIONAL_JUMP)  ; LAB_00441dec

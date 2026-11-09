@@ -1,0 +1,241 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 47,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 157
+  },
+  "cross_references": [
+    {
+      "addr": "00435380",
+      "from_addr": "0043540f",
+      "name": "core_charactr.cpp_FUN_00435380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004de100",
+      "from_addr": "004de1bf",
+      "name": "core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004de100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "00549242",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057be00",
+      "from_addr": "0057be46",
+      "name": "core_sound.cpp_FUN_0057be00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057b6e0",
+      "from_addr": "0057b712",
+      "name": "core_sound.cpp_filterSoundFilesByPattern_FUN_0057b6e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059bdf0",
+      "from_addr": "0059be25",
+      "name": "core_trigger.cpp_FUN_0059bdf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053cb50",
+      "from_addr": "0053cbf8",
+      "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_0053cb50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a300",
+      "from_addr": "0049a41d",
+      "name": "shape_edittool.cpp_FUN_0049a300",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049dea0",
+    "address_range": [
+      [
+        "0049dea0",
+        "0049df41"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0",
+    "signature": "int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_0049dea0(char *pattern,char *target_string,int case_sensitive)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c0820",
+      "is_variadic": false,
+      "name": "crt_ctype.c_tolower_FUN_005c0820"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0053cbf8",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_getNextSearchResult_FUN_0053cb50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00549242",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0057be46",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0057be00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043540f",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00435380",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004de1bf",
+        "call_type": "direct",
+        "caller": "core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004de100",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0059be25",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_FUN_0059bdf0",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0049a41d",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0049a300",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0057b712",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_filterSoundFilesByPattern_FUN_0057b6e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.555555555555555,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 11,
+      "COPY": 77,
+      "INT_ADD": 31,
+      "INT_AND": 51,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 46,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 23,
+      "INT_SUB": 19,
+      "INT_XOR": 4,
+      "LOAD": 33,
+      "POPCOUNT": 23,
+      "RETURN": 4,
+      "STORE": 12
+    },
+    "pcode_op_count": 369
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pattern",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "target_string",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "case_sensitive",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

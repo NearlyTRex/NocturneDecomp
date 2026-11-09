@@ -1,0 +1,392 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 166,
+    "complexity_score": 400,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 31,
+    "suspect_types": [
+      "extra_output",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 236
+  },
+  "cross_references": [
+    {
+      "addr": "005572b0",
+      "from_addr": "005572bd",
+      "name": "core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005572b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048e7f0",
+    "address_range": [
+      [
+        "0048e7f0",
+        "0048e9a9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0048e7f0",
+    "signature": "float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0048e7f0(CDemonRaytrace *this_ptr,CVector3f *world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048afe0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0"
+    },
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dbb1c",
+      "name": "DAT_005dbb1c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005572bd",
+        "call_type": "direct",
+        "caller": "core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005572b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.7214285714285715,
+    "instruction_count": 140,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 10,
+      "COPY": 333,
+      "FLOAT2FLOAT": 27,
+      "FLOAT_ADD": 5,
+      "FLOAT_DIV": 6,
+      "FLOAT_MULT": 9,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 5,
+      "INT_ADD": 77,
+      "INT_AND": 60,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 22,
+      "INT_SUB": 22,
+      "INT_XOR": 1,
+      "LOAD": 61,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "ROUND": 6,
+      "STORE": 32,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 801
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "float *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "int extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "int extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EDX_02",
+      "severity": "moderate",
+      "text": "int extraout_EDX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "fVar3 = ((float10)*(float *)world_position - (float10)*(float *)&this_ptr->field_0x10) /",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "(float10)*(float *)&this_ptr->field_0x28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar4 = ((float10)*(float *)&world_position->field_0x4 - (float10)*(float *)&this_ptr->field_0x14)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "fVar4 = ((float10)*(float *)&world_position->field_0x4 - (float10)*(float *)&this_ptr->field_0x14)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "/ (float10)*(float *)&this_ptr->field_0x2c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar5 = ((float10)*(float *)&world_position->field_0x8 - (float10)*(float *)&this_ptr->field_0x18)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "fVar5 = ((float10)*(float *)&world_position->field_0x8 - (float10)*(float *)&this_ptr->field_0x18)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "/ (float10)*(float *)&this_ptr->field_0x30;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "fVar7 = ((float10)*extraout_EDX -",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "((float10)(int)ROUND(fVar3) * (float10)*(float *)&this_ptr->field_0x28 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "(float10)*(float *)&this_ptr->field_0x10)) /",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "((float10)*(float *)&this_ptr->field_0x28 * fVar6);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "fVar4 = ((float10)*(float *)(extraout_EDX_00 + 4) -",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "((float10)iStack_1c * (float10)*(float *)&this_ptr->field_0x2c +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "(float10)*(float *)&this_ptr->field_0x14)) /",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "((float10)*(float *)&this_ptr->field_0x2c * fVar6);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 41,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "fVar6 = ((float10)*(float *)(extraout_EDX_01 + 8) -",
+      "type": "extra_output"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "((float10)(int)ROUND(fVar5) * (float10)*(float *)&this_ptr->field_0x30 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "(float10)*(float *)&this_ptr->field_0x18)) /",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "((float10)*(float *)&this_ptr->field_0x30 * fVar6);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 50,
+      "match": "extraout_EDX_02",
+      "severity": "moderate",
+      "text": "if (((((extraout_EDX_02 < 0) || (iStack_18 < 0)) || (iVar1 < 0)) ||",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_EDX_02",
+      "severity": "moderate",
+      "text": "((7 < extraout_EDX_02 || (7 < iStack_18)))) || (7 < iVar1)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_0061ab68",
+      "severity": "mild",
+      "text": "((*(byte *)(iStack_18 + iVar1 * 8 + *(int *)pCVar2) & (&DAT_0061ab68)[(int)ROUND(fVar7)])",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "return (float)iStack_18 * *(float *)&this_ptr->field_0x2c * _DAT_005dbb1c +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "(float)iStack_1c * *(float *)&this_ptr->field_0x2c + *(float *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "(float)iStack_1c * *(float *)&this_ptr->field_0x2c + *(float *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    }
+  ]
+}

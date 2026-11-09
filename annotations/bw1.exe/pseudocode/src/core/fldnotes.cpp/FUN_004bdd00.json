@@ -1,149 +1,28 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01cc4470'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01cc4470'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 51,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 52,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 53,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 59,
-        "message": "no matching function for call to 'FUN_004943a0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 211,
+    "complexity_score": 197,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 52,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "raw_address_constant",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 161
+    "total_lines": 162
   },
   "cross_references": [
     {
       "addr": "004a1d00",
       "from_addr": "004a251b",
-      "name": "FUN_004a1d00",
+      "name": "core_event.cpp_FUN_004a1d00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -156,24 +35,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004bdd00",
-    "signature": "void FUN_004bdd00(undefined4 param_1,undefined4 param_2)"
+    "name": "core_fldnotes.cpp_FUN_004bdd00",
+    "signature": "void core_fldnotes_cpp_FUN_004bdd00(undefined4 param_1,undefined4 param_2)"
   },
   "function_calls": [
     {
-      "addr": "004943a0",
-      "is_variadic": false,
-      "name": "FUN_004943a0"
-    },
-    {
       "addr": "004bbfd0",
       "is_variadic": false,
-      "name": "FUN_004bbfd0"
+      "name": "core_fldnotes.cpp_FUN_004bbfd0"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_004943a0"
     }
   ],
   "globals": [
@@ -203,9 +82,9 @@
     },
     {
       "addr": "0061abc0",
-      "name": "DAT_0061abc0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
     },
     {
       "addr": "0061d2e4",
@@ -238,7 +117,7 @@
       {
         "call_addr": "004a251b",
         "call_type": "direct",
-        "caller": "FUN_004a1d00",
+        "caller": "core_event.cpp_FUN_004a1d00",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +131,7 @@
       {
         "call_addr": "004a35be",
         "call_type": "direct",
-        "caller": "FUN_004a1d00",
+        "caller": "core_event.cpp_FUN_004a1d00",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,7 +209,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004bdd00(uint param_1,uint param_2)",
+      "text": "void core_fldnotes_cpp_FUN_004bdd00(uint param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
@@ -338,7 +217,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004bdd00(uint param_1,uint param_2)",
+      "text": "void core_fldnotes_cpp_FUN_004bdd00(uint param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
@@ -346,7 +225,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = FUN_004bbfd0(iVar3,param_2);",
+      "text": "iVar1 = core_fldnotes_cpp_FUN_004bbfd0(pSVar3,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -375,7 +254,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 49,
       "match": "DAT_0061d2e4",
       "severity": "mild",
       "text": "DAT_0061d2e4 = 1;",
@@ -383,27 +262,19 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004943a0(0x01C3EB54,\"CFieldNotes::enableEntry - entry '%s' not found\",param_2);",
+      "text": "shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,\"CFieldNotes::enableEntry - entry '%s' not found\",param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 54,
       "match": "DAT_0061d2e4",
       "severity": "mild",
       "text": "DAT_0061d2e4 = 1;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex address 0x1cc4474 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 14,
-      "match": "0x1cc4474",
-      "severity": "moderate",
-      "text": "iVar3 = 0x1cc4474;",
-      "type": "raw_address_constant"
     },
     {
       "call_site_count": 2,

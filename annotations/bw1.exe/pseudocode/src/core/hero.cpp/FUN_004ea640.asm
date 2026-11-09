@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004ea640(float *param_1)
+; int core_hero_cpp_FUN_004ea640(float *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_00434c60 at 00434d1d
-;   FUN_0049f0e0 at 0049f0fb
+;   core_charactr.cpp_FUN_00434c60 at 00434d1d
+;   core_emitter.cpp_FUN_0049f0e0 at 0049f0fb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_005e4614
@@ -19,14 +19,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004ea640
-        ;   Label: FUN_004ea640
+        ;   Label: core_hero.cpp_FUN_004ea640
     PUSH ESI                            ; 004ea641
     PUSH EDI                            ; 004ea642
     PUSH EBP                            ; 004ea643
@@ -94,8 +94,8 @@ section .text
     PUSH 0x5e4625                       ; 004ea6cc | = "closestHeroToPoint - no heros!"
     MOV dword ptr [0x01d1d400],EBX      ; 004ea6d1 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004ea6d7 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004ea6dd
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004ea6dd
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004ea6e2
     MOV EAX,ESI                         ; 004ea6e5
     ADD ESP,0x14                        ; 004ea6e7

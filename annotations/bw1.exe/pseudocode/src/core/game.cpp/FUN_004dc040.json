@@ -1,0 +1,290 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 94,
+    "complexity_score": 98,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 24,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 4,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 137
+  },
+  "cross_references": [
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004cf83f",
+      "name": "core_game.cpp_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dc040",
+    "address_range": [
+      [
+        "004dc040",
+        "004dc17d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004dc040",
+    "signature": "void core_game_cpp_FUN_004dc040(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d220",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220"
+    },
+    {
+      "addr": "0040d1c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040d1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e3654",
+      "name": "s_cursor_005e3653+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e365b",
+      "name": "s_upwhite_005e365b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3663",
+      "name": "s_downwhite_005e3663",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e366d",
+      "name": "s_leftwhite_005e366d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3677",
+      "name": "s_rightwhite_005e3677",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3682",
+      "name": "s_crosshairsgreen_005e3682",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e3692",
+      "name": "s_crosshairsred_005e3692",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e36a0",
+      "name": "DAT_005e36a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0be4",
+      "name": "DAT_01cd0be4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0be8",
+      "name": "DAT_01cd0be8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0bec",
+      "name": "DAT_01cd0bec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0bf0",
+      "name": "DAT_01cd0bf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0bf4",
+      "name": "DAT_01cd0bf4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0bf8",
+      "name": "DAT_01cd0bf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0bfc",
+      "name": "DAT_01cd0bfc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c00",
+      "name": "DAT_01cd0c00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c04",
+      "name": "DAT_01cd0c04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c08",
+      "name": "DAT_01cd0c08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c0c",
+      "name": "DAT_01cd0c0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c10",
+      "name": "DAT_01cd0c10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c14",
+      "name": "DAT_01cd0c14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c18",
+      "name": "DAT_01cd0c18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c1c",
+      "name": "DAT_01cd0c1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd0c20",
+      "name": "DAT_01cd0c20",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cf83f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004cf5e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4390243902439024,
+    "instruction_count": 82,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 9,
+      "CBRANCH": 1,
+      "COPY": 65,
+      "INT_ADD": 15,
+      "INT_AND": 24,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 24,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 12,
+      "INT_SUB": 46,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 45
+    },
+    "pcode_op_count": 282
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_01cd0be4",
+      "severity": "mild",
+      "text": "} while (this_ptr != (CAlphaBitmap *)&DAT_01cd0be4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005e36a0",
+      "severity": "mild",
+      "text": "(CAlphaBitmap_ARRAY_01cd0b44 + 7,&DAT_005e36a0,0x10,0x10);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

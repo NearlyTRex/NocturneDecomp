@@ -1,159 +1,43 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 165,
-        "message": "use of undeclared identifier '_DAT_02c99770'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 182,
-        "message": "no matching function for call to 'FUN_005b5760'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 195,
-        "message": "no matching function for call to 'FUN_005b5760'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 196,
-        "message": "no matching function for call to 'FUN_00434590'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 197,
-        "message": "no matching function for call to 'FUN_005b72c0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 205,
-        "message": "no matching function for call to 'FUN_005b5200'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1133,
-    "complexity_score": 1533,
+    "complexity_score": 2837,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 653,
-    "suspect_count": 83,
+    "pseudocode_lines": 677,
+    "suspect_count": 209,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
+      "pointer_truncation",
+      "sibling_array_undersized",
       "stack_alignment_array",
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
+      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 1786
+    "total_lines": 1810
   },
   "cross_references": [
     {
       "addr": "0046f610",
       "from_addr": "0046f66a",
-      "name": "FUN_0046f610",
+      "name": "core_doc.cpp_FUN_0046f610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00474250",
       "from_addr": "00474279",
-      "name": "FUN_00474250",
+      "name": "core_doc.cpp_FUN_00474250",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -167,69 +51,69 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_0046f740",
-    "signature": "undefined4 * FUN_0046f740(int param_1,int param_2,int param_3)"
+    "name": "core_doc.cpp_FUN_0046f740",
+    "signature": "undefined4 * core_doc_cpp_FUN_0046f740(int param_1,int param_2,int param_3)"
   },
   "function_calls": [
     {
       "addr": "0040c600",
       "is_variadic": false,
-      "name": "FUN_0040c600"
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
     },
     {
       "addr": "00434590",
       "is_variadic": false,
-      "name": "FUN_00434590"
+      "name": "core_charactr.cpp_FUN_00434590"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "005b5080",
-      "is_variadic": false,
-      "name": "FUN_005b5080"
-    },
-    {
-      "addr": "005b5100",
-      "is_variadic": false,
-      "name": "FUN_005b5100"
-    },
-    {
-      "addr": "005b5200",
-      "is_variadic": false,
-      "name": "FUN_005b5200"
-    },
-    {
-      "addr": "005b53f0",
-      "is_variadic": false,
-      "name": "FUN_005b53f0"
-    },
-    {
-      "addr": "005b5760",
-      "is_variadic": false,
-      "name": "FUN_005b5760"
-    },
-    {
-      "addr": "005b5930",
-      "is_variadic": false,
-      "name": "FUN_005b5930"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005b6d90",
       "is_variadic": false,
-      "name": "FUN_005b6d90"
+      "name": "core_xform.cpp_buildRotationX_FUN_005b6d90"
     },
     {
       "addr": "005b6e10",
       "is_variadic": false,
-      "name": "FUN_005b6e10"
+      "name": "core_xform.cpp_buildRotationY_FUN_005b6e10"
+    },
+    {
+      "addr": "005b5080",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_005b5080"
+    },
+    {
+      "addr": "005b5760",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_005b5760"
+    },
+    {
+      "addr": "005b5930",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_005b5930"
     },
     {
       "addr": "005b72c0",
       "is_variadic": false,
-      "name": "FUN_005b72c0"
+      "name": "core_xform.cpp_FUN_005b72c0"
+    },
+    {
+      "addr": "005b5200",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005b5200"
+    },
+    {
+      "addr": "005b53f0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0"
+    },
+    {
+      "addr": "005b5100",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4InPlace_FUN_005b5100"
     }
   ],
   "globals": [
@@ -289,7 +173,7 @@
     },
     {
       "addr": "02c99770",
-      "name": "DAT_02c99770",
+      "name": "g_CWeaponClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -300,7 +184,7 @@
       {
         "call_addr": "0046f66a",
         "call_type": "direct",
-        "caller": "FUN_0046f610",
+        "caller": "core_doc.cpp_FUN_0046f610",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -315,7 +199,7 @@
       {
         "call_addr": "00474279",
         "call_type": "direct",
-        "caller": "FUN_00474250",
+        "caller": "core_doc.cpp_FUN_00474250",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1920,216 +1804,18 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_0046f740.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 28,
-      "diagnostics": [
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 40,
-          "line": 182,
-          "message": "Undefined behaviour, pointer arithmetic 'local_180+0x35' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 28,
-          "line": 184,
-          "message": "Undefined behaviour, pointer arithmetic 'afStack_2dc+0x14' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 28,
-          "line": 187,
-          "message": "Undefined behaviour, pointer arithmetic 'afStack_2dc+0x17' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 53,
-          "line": 220,
-          "message": "Undefined behaviour, pointer arithmetic 'local_180+0x32' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 28,
-          "line": 244,
-          "message": "Undefined behaviour, pointer arithmetic 'afStack_2dc+0xe' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 42,
-          "line": 256,
-          "message": "Undefined behaviour, pointer arithmetic 'afStack_2dc+0x11' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 42,
-          "line": 304,
-          "message": "Undefined behaviour, pointer arithmetic 'afStack_1bc+0xb' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 58,
-          "line": 304,
-          "message": "Undefined behaviour, pointer arithmetic 'local_270+0xe' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 26,
-          "line": 323,
-          "message": "Undefined behaviour, pointer arithmetic 'local_180+0x29' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 26,
-          "line": 324,
-          "message": "Undefined behaviour, pointer arithmetic 'local_180+0x26' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 40,
-          "line": 347,
-          "message": "Undefined behaviour, pointer arithmetic 'local_180+8' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 23,
-          "line": 533,
-          "message": "Undefined behaviour, pointer arithmetic 'local_270+0x11' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 45,
-          "line": 533,
-          "message": "Undefined behaviour, pointer arithmetic 'afStack_2dc+0x1a' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 24,
-          "line": 567,
-          "message": "Undefined behaviour, pointer arithmetic 'local_180+0x1a' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 19,
-          "line": 598,
-          "message": "Undefined behaviour, pointer arithmetic 'local_270+0x11' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 39,
-          "line": 598,
-          "message": "Undefined behaviour, pointer arithmetic 'local_180+0x20' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 23,
-          "line": 608,
-          "message": "Undefined behaviour, pointer arithmetic 'local_9c+0x14' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "pointerOutOfBounds",
-          "column": 47,
-          "line": 631,
-          "message": "Undefined behaviour, pointer arithmetic 'local_270+0x11' is out of bounds.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 16,
-          "line": 480,
-          "message": "Uninitialized variable: local_2f4",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 16,
-          "line": 481,
-          "message": "Uninitialized variable: local_2f0",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 28,
-          "line": 479,
-          "message": "Uninitialized variable: local_2ec",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 28,
-          "line": 480,
-          "message": "Uninitialized variable: local_2e8",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 28,
-          "line": 481,
-          "message": "Uninitialized variable: local_2e4",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 39,
-          "line": 490,
-          "message": "Uninitialized variable: local_270",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 19,
-          "line": 495,
-          "message": "Uninitialized variable: local_168",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 19,
-          "line": 496,
-          "message": "Uninitialized variable: local_164",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 17,
-          "line": 487,
-          "message": "Uninitialized variable: local_c0",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 17,
-          "line": 488,
-          "message": "Uninitialized variable: local_bc",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -2137,31 +1823,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint * FUN_0046f740(int param_1,int param_2,int param_3)",
+      "text": "uint * core_doc_cpp_FUN_0046f740(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint * FUN_0046f740(int param_1,int param_2,int param_3)",
+      "text": "uint * core_doc_cpp_FUN_0046f740(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint * FUN_0046f740(int param_1,int param_2,int param_3)",
+      "text": "uint * core_doc_cpp_FUN_0046f740(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 13,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint *unaff_ESI;",
@@ -2169,7 +1855,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 19,
       "match": "afStackY_12c8",
       "severity": "moderate",
       "text": "float afStackY_12c8 [270];",
@@ -2177,7 +1863,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 176,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar4 = *(int *)(param_3 * 0x78 + param_1 + 0x25a8);",
@@ -2185,87 +1871,583 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = *(int *)(param_3 * 0x78 + param_1 + 0x25a8);",
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 177,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_22c._0_4_ =",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 178,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_22c = (float)FUN_0040c600(param_2,_DAT_02c99770);",
+      "text": "core_actor_cpp_castToClassHash_FUN_0040c600(param_2,g_CWeaponClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(int *)((int)local_22c",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)local_22c + 0x2e0);",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 179,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((float)local_22c._0_4_ != 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 180,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(local_22c._0_4_ + 0x2e0);",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 161,
+      "line": 181,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = param_1 + 0xfd8 + iVar4 * 0x30;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 189,
-      "match": "param_1",
+      "description": "Unknown/mangled field access",
+      "line": 187,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "fVar1 = (float)FUN_00434590(param_1,3,iVar4);",
-      "type": "unnamed_param"
+      "text": "local_ac._4_4_ = 0xbe7183f9;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 188,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1a8._0_4_ = 0x3e44330d;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 192,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_ac._8_4_ = 0xbed321a3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 193,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_ac._0_4_ = 0x3f0a1c04;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 199,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_280._0_4_ = 0x3ece4b88;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 201,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_280._4_4_ = 0x3dc29521;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 203,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_28c._0_4_ = 0xbed430d3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 207,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_280._8_4_ = 0x3e85d4e9;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 224,
+      "line": 209,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (float)FUN_00434590(param_1,3,iVar4);",
+      "text": "fVar1 = (float)core_charactr_cpp_FUN_00434590(param_1,3,iVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 225,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_88._0_4_ = 0xbe2e6ff8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 226,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_88._4_4_ = 0xbe81ffb5;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 227,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_b8._0_4_ = 0xbedec58f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 231,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_88._8_4_ = 0xbea706b3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 232,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_124._0_4_ = 0xbc44e436;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 234,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_124._8_4_ = 0x3fc9f99c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 235,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_124._4_4_ = 0x3fca29c7;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 236,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1f0._0_4_ = 0x3f2a5237;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 237,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_70._0_4_ = local_124._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 237,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_70._0_4_ = local_124._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 242,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_1f0._4_4_ = 0xbd821d61;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 243,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_1f0._8_4_ = 0x3e68f473;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 245,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float)core_charactr_cpp_FUN_00434590(param_1,3,iVar4);",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 226,
+      "line": 247,
       "match": "&stack0xfffff180",
       "severity": "moderate",
       "text": "puVar7 = (uint *)&stack0xfffff180;",
       "type": "stack_ref"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
+      "line": 262,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_298._4_4_ = 0xbdc42bdf;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 263,
-      "match": "param_1",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar1 = (float)FUN_00434590(param_1,3,iVar4);",
-      "type": "unnamed_param"
+      "text": "local_2a4._0_4_ = 0x3e3b65aa;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 267,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_298._8_4_ = 0xbe6ec850;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 268,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_298._0_4_ = 0x3ed3380d;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 274,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_268._0_4_ = 0x3ef7baed;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 276,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_268._4_4_ = 0x3d957802;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 278,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_25c._0_4_ = 0xbe93c947;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 282,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_268._8_4_ = 0x3d95d158;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 298,
+      "line": 284,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (float)FUN_00434590(param_1,3,iVar4);",
+      "text": "fVar1 = (float)core_charactr_cpp_FUN_00434590(param_1,3,iVar4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 367,
-      "match": "param_1",
+      "description": "Unknown/mangled field access",
+      "line": 300,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "fVar1 = (float)FUN_00434590(param_1,0,iVar4);",
-      "type": "unnamed_param"
+      "text": "local_64._0_4_ = 0x3eab23dd;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 301,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_64._4_4_ = 0xbe3daa50;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 302,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1c0._0_4_ = 0x3e44c7f3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 306,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_64._8_4_ = 0xbed19f3c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 307,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_58._0_4_ = 0xbeedcbbc;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 309,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_58._8_4_ = 0x3fe3381d;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 310,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_58._4_4_ = 0x3f93df3b;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 311,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_190._0_4_ = 0x3ec327aa;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 312,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_238._0_4_ = local_58._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 312,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_238._0_4_ = local_58._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 317,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_190._4_4_ = 0x3d8dbbaa;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 318,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_190._8_4_ = 0xbe66cd6c;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 320,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float)core_charactr_cpp_FUN_00434590(param_1,3,iVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 333,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_e8._0_4_ = 0x3e740e9d;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 334,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_e8._4_4_ = 0xbd868280;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 335,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_e8._8_4_ = 0x3d093cf5;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 342,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_dc._0_4_ = 0xbf3e6506;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 355,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_160._4_4_ = 0xbd7a7e66;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 356,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1e4._0_4_ = 0xbaa302fa;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 360,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_160._8_4_ = 0x3da1174a;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 361,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_160._0_4_ = 0x3e37a249;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 370,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_1b4._0_4_ = 0x3e21cfff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 371,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_1b4._4_4_ = 0xbdbd8a62;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 372,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_250._0_4_ = 0xbc09b6b8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 376,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_1b4._8_4_ = 0xbe0d6239;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 377,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_13c._0_4_ = 0xbc09b6b8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 379,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_13c._8_4_ = 0x3c8a096e;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 380,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_13c._4_4_ = 0x3d59e1a3;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 381,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_220._0_4_ = 0x3e21cfff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 382,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_2e0._0_4_ = local_13c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 382,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_2e0._0_4_ = local_13c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 387,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_220._4_4_ = 0xbdbd8a62;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 388,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_220._8_4_ = 0xbe0d6239;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 390,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float)core_charactr_cpp_FUN_00434590(param_1,0,iVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 402,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 == 0) {",
@@ -2273,55 +2455,103 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 380,
+      "line": 403,
       "match": "DAT_01b68804",
       "severity": "mild",
-      "text": "FUN_005b5760(local_c10,&DAT_01b68804,&DAT_02c8af28);",
+      "text": "core_xform_cpp_FUN_005b5760(local_c10,(CVector3f *)&DAT_01b68804,(CVector3f *)&DAT_02c8af28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 380,
+      "line": 403,
       "match": "DAT_02c8af28",
       "severity": "mild",
-      "text": "FUN_005b5760(local_c10,&DAT_01b68804,&DAT_02c8af28);",
+      "text": "core_xform_cpp_FUN_005b5760(local_c10,(CVector3f *)&DAT_01b68804,(CVector3f *)&DAT_02c8af28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 417,
+      "line": 440,
       "match": "DAT_01b687f8",
       "severity": "mild",
-      "text": "FUN_005b5760(local_a30,&DAT_01b687f8,&DAT_02c8af28);",
+      "text": "core_xform_cpp_FUN_005b5760(local_a30,(CVector3f *)&DAT_01b687f8,(CVector3f *)&DAT_02c8af28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 417,
+      "line": 440,
       "match": "DAT_02c8af28",
       "severity": "mild",
-      "text": "FUN_005b5760(local_a30,&DAT_01b687f8,&DAT_02c8af28);",
+      "text": "core_xform_cpp_FUN_005b5760(local_a30,(CVector3f *)&DAT_01b687f8,(CVector3f *)&DAT_02c8af28);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 480,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_22c._4_4_ = local_22c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 480,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_22c._4_4_ = local_22c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 481,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_224 = (float)local_22c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 482,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "afStack_1dc[1] = (float)local_22c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 483,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "afStack_1dc[2] = (float)local_22c._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 484,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "afStack_1dc[3] = (float)local_22c._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 462,
+      "line": 485,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c600(param_2,DAT_007c5330);",
+      "text": "iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(param_2,DAT_007c5330);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 462,
+      "line": 485,
       "match": "DAT_007c5330",
       "severity": "mild",
-      "text": "iVar2 = FUN_0040c600(param_2,DAT_007c5330);",
+      "text": "iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(param_2,DAT_007c5330);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 464,
+      "line": 487,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_2 + 0x154) + 0x1c))(param_2);",
@@ -2329,7 +2559,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 464,
+      "line": 487,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x154) + 0x1c))(param_2);",
@@ -2337,7 +2567,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 464,
+      "line": 487,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x154) + 0x1c))(param_2);",
@@ -2345,7 +2575,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 494,
+      "line": 517,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -2353,7 +2583,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 506,
+      "line": 529,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 1) {",
@@ -2361,15 +2591,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 513,
+      "line": 536,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005b5200(local_700,iVar4 * 0x30 + param_1 + 0xfd8);",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(local_700,iVar4 * 0x30 + param_1 + 0xfd8);",
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 550,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_22c._0_4_ = local_274;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 551,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_22c._4_4_ = local_270[0];",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 544,
+      "line": 567,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(param_2 + 0x154) + 0x74))(param_2);",
@@ -2377,7 +2623,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 544,
+      "line": 567,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = (**(code **)(*(int *)(param_2 + 0x154) + 0x74))(param_2);",
@@ -2385,31 +2631,143 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 544,
+      "line": 567,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = (**(code **)(*(int *)(param_2 + 0x154) + 0x74))(param_2);",
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 572,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_2d4._0_4_ = 0x3ed45e4e;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 573,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_2d4._4_4_ = 0xbe258d9b;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 574,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_214._0_4_ = 0xbdb87c8b;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 578,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_2d4._8_4_ = 0xbefad3c8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 579,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_178._0_4_ = 0x3e99e450;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 581,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_208._4_4_ = 0xbc47e649;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 582,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_178._8_4_ = 0x3f252f1b;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 584,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_178._4_4_ = 0xbe083dff;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 585,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_118._0_4_ = local_178._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 585,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_118._0_4_ = local_178._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 590,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_208._0_4_ = 0x3ec5521a;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 591,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_208._8_4_ = 0xbefd0529;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 569,
+      "line": 593,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (float)FUN_00434590(param_1,0,iVar4 * 0x30 + param_1 + 0xfd8);",
+      "text": "fVar1 = (float)core_charactr_cpp_FUN_00434590(param_1,0,iVar4 * 0x30 + param_1 + 0xfd8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 569,
+      "line": 593,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = (float)FUN_00434590(param_1,0,iVar4 * 0x30 + param_1 + 0xfd8);",
+      "text": "fVar1 = (float)core_charactr_cpp_FUN_00434590(param_1,0,iVar4 * 0x30 + param_1 + 0xfd8);",
       "type": "unnamed_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 616,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_22c._0_4_ = local_108[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 617,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_22c._4_4_ = local_108[3];",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 597,
+      "line": 621,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -2417,7 +2775,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 599,
+      "line": 623,
       "match": "param_3",
       "severity": "mild",
       "text": "local_48 = param_3;",
@@ -2425,7 +2783,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 600,
+      "line": 624,
       "match": "param_3",
       "severity": "mild",
       "text": "local_44 = param_3;",
@@ -2433,7 +2791,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 611,
+      "line": 635,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 1) {",
@@ -2441,71 +2799,191 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 623,
+      "line": 647,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005b5100(&local_1cc,iVar4 * 0x30 + param_1 + 0xfd8);",
+      "text": "core_xform_cpp_transformVector3x4InPlace_FUN_005b5100(local_1cc,iVar4 * 0x30 + param_1 + 0xfd8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 650,
+      "line": 674,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "puVar6 = unaff_ESI;",
+      "text": "puVar8 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 656,
+      "line": 680,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 193,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `&local_28c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 204,
+      "match": "(int)&local_28c",
       "severity": "moderate",
-      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "*(uint *)((int)&local_28c + (uint)bVar10 * -8 + 4) = local_150[(uint)bVar10 * -2 + 3];",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 228,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `&local_28c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 205,
+      "match": "(int)&local_28c",
       "severity": "moderate",
-      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "*(uint *)((int)&local_28c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 267,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `&local_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 238,
+      "match": "(int)&local_70",
       "severity": "moderate",
-      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "*(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 302,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 239,
+      "match": "(int)&local_124",
       "severity": "moderate",
-      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "*(uint *)((int)&local_124 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 371,
-      "match": "for (...; != 0; ... + -1)",
+      "description": "Pointer value `&local_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 240,
+      "match": "(int)&local_70",
       "severity": "moderate",
-      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
+      "text": "*(uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 241,
+      "match": "(int)&local_124",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_124 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 314,
+      "match": "(int)&local_58",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 316,
+      "match": "(int)&local_58",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 343,
+      "match": "(int)&local_dc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_dc + (uint)bVar10 * -8 + 4) = local_78[(uint)bVar10 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 344,
+      "match": "(int)&local_dc",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_dc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_250` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 373,
+      "match": "(int)&local_250",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_250 + (uint)bVar10 * -8 + 4) = local_150[(uint)bVar10 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_250` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 374,
+      "match": "(int)&local_250",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_250 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_2e0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 383,
+      "match": "(int)&local_2e0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_2e0 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_13c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 384,
+      "match": "(int)&local_13c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_13c + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_2e0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 385,
+      "match": "(int)&local_2e0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_2e0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_13c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 386,
+      "match": "(int)&local_13c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_13c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_118` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 586,
+      "match": "(int)&local_118",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_118 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_178` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 587,
+      "match": "(int)&local_178",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_178 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_118` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 588,
+      "match": "(int)&local_118",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_118 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_178` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 589,
+      "match": "(int)&local_178",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_178 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 213,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2513,7 +2991,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 392,
+      "line": 249,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2521,7 +2999,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 400,
+      "line": 288,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2529,7 +3007,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 408,
+      "line": 324,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2537,7 +3015,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 421,
+      "line": 394,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2545,7 +3023,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 429,
+      "line": 407,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2553,7 +3031,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 437,
+      "line": 415,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2561,7 +3039,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 445,
+      "line": 423,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2569,7 +3047,47 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 467,
+      "line": 431,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 444,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 452,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 460,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 468,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 490,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -2577,7 +3095,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 499,
+      "line": 522,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -2585,7 +3103,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 516,
+      "line": 539,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -2593,7 +3111,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 573,
+      "line": 597,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -2601,7 +3119,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 581,
+      "line": 605,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -2609,7 +3127,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 644,
+      "line": 668,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -2617,11 +3135,179 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 651,
+      "line": 675,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "CMatrix3x4f local_b20[12] is smaller than sibling CMatrix3x4f arrays in this function (largest is [48]). Likely Ghidra split a CMatrix3x4f[48] source array; cross-check the asm loop bound and resize in a .keep.",
+      "line": 39,
+      "match": "CMatrix3x4f local_b20[12] vs sibling CMatrix3x4f[48]",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_b20[12];",
+      "type": "sibling_array_undersized"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 204,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_28c + (uint)bVar10 * -8 + 4) = local_150[(uint)bVar10 * -2 + 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 205,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_28c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 238,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 239,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_124 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 240,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 241,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_124 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 314,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 316,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 343,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_dc + (uint)bVar10 * -8 + 4) = local_78[(uint)bVar10 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 344,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_dc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 373,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_250 + (uint)bVar10 * -8 + 4) = local_150[(uint)bVar10 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 374,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_250 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 383,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_2e0 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 384,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_13c + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 385,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_2e0 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 386,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_13c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 586,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_118 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 587,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_178 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 588,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_118 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 589,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_178 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0046f84e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -2793,86 +3479,6 @@
       "param_delta": 6,
       "text": "Function declares 0 params but call sites push 6 (6 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: local_2f4",
-      "line": 480,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_f0 = local_2f4 + local_2e8;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2f0",
-      "line": 481,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_ec = local_2f0 + local_2e4;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2ec",
-      "line": 479,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_f4 = local_2f8 + local_2ec;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2e8",
-      "line": 480,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_f0 = local_2f4 + local_2e8;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2e4",
-      "line": 481,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_ec = local_2f0 + local_2e4;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_270",
-      "line": 490,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_180[(uint)bVar9 * -2 + 6] = local_270[(uint)bVar9 * -2 + 0xc];",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_168",
-      "line": 495,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_1d4 = local_168;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_164",
-      "line": 496,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_1d0 = local_164;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_c0",
-      "line": 487,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_240 = local_c0 * _DAT_005da0e8;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_bc",
-      "line": 488,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_23c = local_bc * _DAT_005da0e8;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

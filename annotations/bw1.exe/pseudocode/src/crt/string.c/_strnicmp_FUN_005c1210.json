@@ -1,0 +1,367 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 63,
+    "cross_reference_count": 22,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
+    "suspect_types": [
+      "concat_reconstruction"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "0042a4f0",
+      "from_addr": "0042a54f",
+      "name": "core_carved.cpp_FUN_0042a4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042b290",
+      "from_addr": "0042b2c6",
+      "name": "core_carved.cpp_FUN_0042b290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042d750",
+      "from_addr": "0042dd25",
+      "name": "core_charactr.cpp_FUN_0042d750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00431c30",
+      "from_addr": "00431c58",
+      "name": "core_charactr.cpp_FUN_00431c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00435320",
+      "from_addr": "00435352",
+      "name": "core_charactr.cpp_FUN_00435320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045b120",
+      "from_addr": "0045b17f",
+      "name": "core_demnfolk.cpp_FUN_0045b120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f310",
+      "from_addr": "0049f57e",
+      "name": "core_emitter.cpp_FUN_0049f310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1d00",
+      "from_addr": "004a1f58",
+      "name": "core_event.cpp_FUN_004a1d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb6f0",
+      "from_addr": "004bb7c4",
+      "name": "core_fldnotes.cpp_FUN_004bb6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d6990",
+      "from_addr": "004d6dae",
+      "name": "core_game.cpp_FUN_004d6990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051bcc0",
+      "from_addr": "0051bcef",
+      "name": "core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_0051bcc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "00544686",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ad20",
+      "from_addr": "0054ad9f",
+      "name": "core_script.cpp_FUN_0054ad20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054d3c0",
+      "from_addr": "0054e0a3",
+      "name": "core_set.cpp_FUN_0054d3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005542c0",
+      "from_addr": "005543dd",
+      "name": "core_set.cpp_FUN_005542c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ce10",
+      "from_addr": "0057cf24",
+      "name": "core_sound.cpp_FUN_0057ce10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057b780",
+      "from_addr": "0057bab2",
+      "name": "core_sound.cpp_updateListeners_FUN_0057b780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bd120",
+      "from_addr": "005bd17f",
+      "name": "core_zombie.cpp_FUN_005bd120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bdec0",
+      "from_addr": "005bdef6",
+      "name": "core_zombie.cpp_FUN_005bdec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d4b0",
+      "from_addr": "0059d6e3",
+      "name": "support_trisock.cpp_FUN_0059d4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d9d0",
+      "from_addr": "0059d9fb",
+      "name": "support_trisock.cpp_FUN_0059d9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045bec0",
+      "from_addr": "0045bef6",
+      "name": "unkafter_demnfolk.cpp_FUN_0045bec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c1210",
+    "address_range": [
+      [
+        "005c1210",
+        "005c1267"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c__strnicmp_FUN_005c1210",
+    "signature": "int __cdecl crt_string_c__strnicmp_FUN_005c1210(char *str1,char *str2,int count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "004d6dae",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d6990",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004bb7c4",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_FUN_004bb6f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004bb8f3",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_FUN_004bb6f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a1f58",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a227e",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a2412",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a2591",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a268f",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a292a",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a2aaa",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.955555555555556,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CBRANCH": 8,
+      "COPY": 37,
+      "INT_ADD": 16,
+      "INT_AND": 37,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 34,
+      "INT_LESS": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 17,
+      "INT_SUB": 9,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 17,
+      "RETURN": 3,
+      "STORE": 2
+    },
+    "pcode_op_count": 223
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str1",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "str2",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 13,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)CONCAT11(*str2,bVar2);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 15,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)CONCAT11(*str2,bVar2 + 0x20);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 19,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)CONCAT11(bVar2 + 0x20,(char)uVar1);",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

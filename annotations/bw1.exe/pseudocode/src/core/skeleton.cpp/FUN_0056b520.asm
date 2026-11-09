@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0056b520(undefined4 param_1)
+; CDeformableModel * core_skeleton_cpp_FUN_0056b520(char *param_1)
 ;
 ;
 ; XREF[2]:
-;   FUN_004104c0 at 004104d2
-;   FUN_00569b20 at 00569b2a
+;   core_baron.cpp_CBaronWeapon_setup_FUN_004104c0 at 004104d2
+;   core_skeleton.cpp_FUN_00569b20 at 00569b2a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f2739
@@ -16,17 +16,17 @@
 ;   undefined4 DAT_027902bc
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_00563bb0
-;   FUN_00564e40
-;   FUN_005c04e0
+;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CDeformableModel_load_FUN_00564e40
+;   core_skeleton.cpp_FUN_00563bb0
+;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0056b520
-        ;   Label: FUN_0056b520
+        ;   Label: core_skeleton.cpp_FUN_0056b520
     PUSH ESI                            ; 0056b521
     PUSH EDI                            ; 0056b522
     PUSH EBP                            ; 0056b523
@@ -41,8 +41,8 @@ section .text
     MOV EDI,0x26b82bc                   ; 0056b53d
     PUSH ESI                            ; 0056b542
     ADD EDI,EAX                         ; 0056b543
-    CALL FUN_005c04e0                   ; 0056b545
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 0056b545
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0056b54a
     TEST EAX,EAX                        ; 0056b54d
     JZ 0x0056b5c4                       ; 0056b54f
@@ -80,12 +80,12 @@ section .text
     PUSH EDX                            ; 0056b59d
     ADD ESI,EAX                         ; 0056b59e
     PUSH ESI                            ; 0056b5a0
-    CALL FUN_00564e40                   ; 0056b5a1
-        ;   XREF to: 00564e40 (UNCONDITIONAL_CALL)  ; undefined FUN_00564e40()
+    CALL core_skeleton.cpp_CDeformableModel_load_FUN_00564e40 ; 0056b5a1
+        ;   XREF to: 00564e40 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_load_FUN_00564e40(CDeformableModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0056b5a6
     PUSH ESI                            ; 0056b5a9
-    CALL FUN_00563bb0                   ; 0056b5aa
-        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563bb0()
+    CALL core_skeleton.cpp_FUN_00563bb0 ; 0056b5aa
+        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00563bb0(CDeformableModel * this_ptr)
     MOV ECX,0x1                         ; 0056b5af
     ADD ESP,0x4                         ; 0056b5b4
     MOV EAX,ESI                         ; 0056b5b7
@@ -98,8 +98,8 @@ section .text
     PUSH EDI                            ; 0056b5c4
         ;   Label: LAB_0056b5c4
     MOV ESI,0x1                         ; 0056b5c5
-    CALL FUN_00563bb0                   ; 0056b5ca
-        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00563bb0()
+    CALL core_skeleton.cpp_FUN_00563bb0 ; 0056b5ca
+        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00563bb0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0056b5cf
     MOV EAX,EDI                         ; 0056b5d2
     MOV dword ptr [EBX*0x4 + 0x27902bc],ESI ; 0056b5d4 | DAT_027902bc
@@ -117,8 +117,8 @@ section .text
     PUSH 0x5f274e                       ; 0056b5f0 | = "Can't load %s because deformable mode..."
     MOV dword ptr [0x01d1d400],EBX      ; 0056b5f5 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0056b5fb | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0056b601
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0056b601
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 0056b606
     XOR EAX,EAX                         ; 0056b609
     POP EBP                             ; 0056b60b

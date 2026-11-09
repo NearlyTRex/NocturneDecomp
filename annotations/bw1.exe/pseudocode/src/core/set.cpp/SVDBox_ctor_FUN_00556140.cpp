@@ -1,0 +1,15 @@
+// Name: core_set.cpp_SVDBox_ctor_FUN_00556140
+// Address: 00556140
+// Address Range: [[00556140, 00556144]]
+// Convention: unknown
+// Signature: SVDBox * core_set_cpp_SVDBox_ctor_FUN_00556140(SVDBox *this_ptr)
+
+#include "nocturne.h"
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+SVDBox * core_set_cpp_SVDBox_ctor_FUN_00556140(SVDBox *this_ptr)
+
+{
+  return this_ptr;
+}

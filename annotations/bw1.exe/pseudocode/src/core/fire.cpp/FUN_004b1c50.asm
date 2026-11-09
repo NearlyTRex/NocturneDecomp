@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004b1c50(int *param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,int param_6)
+; void core_fire_cpp_FUN_004b1c50(int *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,CVector3f *param_5,int param_6)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004b6ed0 at 004b6efe
+;   core_fire.cpp_CFireEffect_allocateToss_FUN_004b6ed0 at 004b6efe
 ;
 ; Referenced Globals:
 ;   undefined4 s_dynamitestick_kfm_005df389+3
@@ -24,19 +24,19 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_0041dac0
-;   FUN_00420450
-;   FUN_004688e0
-;   FUN_00468900
-;   FUN_00468950
-;   FUN_005030e0
+;   core_box.cpp_CBox_setupCorners_FUN_0041dac0
+;   core_box.cpp_CBox_setupVelocities_FUN_00420450
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
+;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
+;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004b1c50
-        ;   Label: FUN_004b1c50
+        ;   Label: core_fire.cpp_FUN_004b1c50
     PUSH ESI                            ; 004b1c51
     PUSH EDI                            ; 004b1c52
     PUSH EBP                            ; 004b1c53
@@ -56,8 +56,8 @@ section .text
     PUSH 0x5df3af                       ; 004b1c89 | = "CToss::create - invalid toss type."
     MOV dword ptr [0x01d1d400],EDX      ; 004b1c8e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004b1c94 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004b1c9a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004b1c9a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004b1c9f
     FLD float ptr [EBX + 0x3dc]         ; 004b1ca2
         ;   Label: LAB_004b1ca2
@@ -71,13 +71,13 @@ section .text
     LEA ESI,[EBX + 0x4]                 ; 004b1cbb
         ;   Label: LAB_004b1cbb
     PUSH ESI                            ; 004b1cbe
-    CALL FUN_004688e0                   ; 004b1cbf
-        ;   XREF to: 004688e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004688e0()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0 ; 004b1cbf
+        ;   XREF to: 004688e0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004b1cc4
     PUSH ESI                            ; 004b1cc7
     LEA EDI,[ESP + 0x10]                ; 004b1cc8
-    CALL FUN_00468900                   ; 004b1ccc
-        ;   XREF to: 00468900 (UNCONDITIONAL_CALL)  ; undefined FUN_00468900()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900 ; 004b1ccc
+        ;   XREF to: 00468900 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(CKeyFramedModelInstance * this_ptr)
     LEA ESI,[ESP + 0x4]                 ; 004b1cd1
     ADD ESP,0x4                         ; 004b1cd5
     MOV EDX,EAX                         ; 004b1cd8
@@ -108,8 +108,8 @@ section .text
     PUSH EBP                            ; 004b1d24
     ADD EBX,0x180                       ; 004b1d25
     PUSH EBX                            ; 004b1d2b
-    CALL FUN_0041dac0                   ; 004b1d2c
-        ;   XREF to: 0041dac0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041dac0()
+    CALL core_box.cpp_CBox_setupCorners_FUN_0041dac0 ; 004b1d2c
+        ;   XREF to: 0041dac0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041dac0(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     ADD ESP,0x14                        ; 004b1d31
     XOR EAX,EAX                         ; 004b1d34
     MOV dword ptr [ESP + 0x20],EAX      ; 004b1d36
@@ -121,8 +121,8 @@ section .text
     MOV ECX,0x4116cbe4                  ; 004b1d48
     PUSH EBX                            ; 004b1d4d
     MOV dword ptr [ESP + 0x24],ECX      ; 004b1d4e
-    CALL FUN_00420450                   ; 004b1d52
-        ;   XREF to: 00420450 (UNCONDITIONAL_CALL)  ; undefined FUN_00420450()
+    CALL core_box.cpp_CBox_setupVelocities_FUN_00420450 ; 004b1d52
+        ;   XREF to: 00420450 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupVelocities_FUN_00420450(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
     ADD ESP,0xc                         ; 004b1d57
     ADD ESP,0x28                        ; 004b1d5a
     POP EBP                             ; 004b1d5d
@@ -135,8 +135,8 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 004b1d67
     PUSH EAX                            ; 004b1d6a
     MOV ESI,0x3f800000                  ; 004b1d6b
-    CALL FUN_00468950                   ; 004b1d70
-        ;   XREF to: 00468950 (UNCONDITIONAL_CALL)  ; undefined FUN_00468950()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950 ; 004b1d70
+        ;   XREF to: 00468950 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004b1d75
     MOV dword ptr [ESP + 0x24],ESI      ; 004b1d78
     JMP 0x004b1ca2                      ; 004b1d7c

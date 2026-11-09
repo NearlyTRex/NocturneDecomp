@@ -1,14 +1,14 @@
-// Name: FUN_0051b740
+// Name: core_mission.cpp_FUN_0051b740
 // Address: 0051b740
 // Address Range: [[0051b740, 0051b7a0]]
 // Convention: unknown
-// Signature: void FUN_0051b740(int param_1,undefined4 param_2,undefined4 param_3)
+// Signature: void core_mission_cpp_FUN_0051b740(int param_1,undefined4 param_2,undefined4 param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0051b740(int param_1,uint param_2,uint param_3)
+void core_mission_cpp_FUN_0051b740(int param_1,uint param_2,uint param_3)
 
 {
   int iVar1;
@@ -22,6 +22,6 @@ void FUN_0051b740(int param_1,uint param_2,uint param_3)
   }
   _DAT_01d1d400 = "..\\core\\mission.cpp";
   _DAT_01d1d404 = 0x453;
-  FUN_005030e0("CDemonMission::markActorToDelete - Too many of them!");
+  core_main_c_FUN_005030e0("CDemonMission::markActorToDelete - Too many of them!");
   return;
 }

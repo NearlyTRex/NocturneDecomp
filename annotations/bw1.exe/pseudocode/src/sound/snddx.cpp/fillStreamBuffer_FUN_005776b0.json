@@ -1,0 +1,242 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 133,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 78,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 248
+  },
+  "cross_references": [
+    {
+      "addr": "00577b60",
+      "from_addr": "00577bca",
+      "name": "sound_snddx.cpp_FUN_00577b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005784b0",
+      "from_addr": "00578572",
+      "name": "sound_snddx.cpp_FUN_005784b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005776b0",
+    "address_range": [
+      [
+        "005776b0",
+        "00577876"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_fillStreamBuffer_FUN_005776b0",
+    "signature": "int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005776b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577500"
+    },
+    {
+      "addr": "00576c20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00576c20"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4c54",
+      "name": "s_Lock_secondary_buffer_005f4c54",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f4c6a",
+      "name": "s_Unlock_secondary_buffer_005f4c6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02c81d9c",
+      "name": "DAT_02c81d9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81da8",
+      "name": "DAT_02c81da8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81dac",
+      "name": "DAT_02c81dac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81db0",
+      "name": "DAT_02c81db0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81db4",
+      "name": "DAT_02c81db4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81db8",
+      "name": "DAT_02c81db8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81dbc",
+      "name": "DAT_02c81dbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81dc0",
+      "name": "DAT_02c81dc0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.082191780821918,
+    "instruction_count": 146,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 25,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 1,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 8,
+      "COPY": 134,
+      "INT_ADD": 54,
+      "INT_AND": 116,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 72,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 18,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 9,
+      "INT_SLESS": 38,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 55,
+      "INT_XOR": 7,
+      "INT_ZEXT": 1,
+      "LOAD": 33,
+      "POPCOUNT": 34,
+      "RETURN": 4,
+      "STORE": 45,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 742
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*_DAT_02c81d9c + 0x2c))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)aiStack_60",
+      "severity": "moderate",
+      "text": "*(int *)((int)aiStack_60 + iVar3) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 68,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (**(code **)(*_DAT_02c81d9c + 0x4c))",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

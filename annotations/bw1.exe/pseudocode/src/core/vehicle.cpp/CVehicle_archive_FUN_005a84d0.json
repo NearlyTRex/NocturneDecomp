@@ -1,0 +1,306 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 133,
+    "complexity_score": 179,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 44,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 177
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a84d0",
+    "address_range": [
+      [
+        "005a84d0",
+        "005a8650"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vehicle.cpp_CVehicle_archive_FUN_005a84d0",
+    "signature": "void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005a84d0(CVehicle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040b1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b1c0"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f9093",
+      "name": "s_modelName_005f9091+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f909d",
+      "name": "s_tireCount_005f909d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90a7",
+      "name": "s_static_bpos_005f90a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90b3",
+      "name": "s_radius_005f90b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90ba",
+      "name": "s_width_005f90ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90c0",
+      "name": "s_curTime_005f90c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90c8",
+      "name": "s_totalTime_005f90c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90d2",
+      "name": "s_courseName_005f90d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90dd",
+      "name": "s_lastMobsterLeft_005f90dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f90ed",
+      "name": "s_lastMobsterRight_005f90ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00625c44",
+      "name": "g_CVehicleClassVersion",
+      "type": "int",
+      "value": "0x3"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.108108108108108,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 12,
+      "CBRANCH": 5,
+      "COPY": 70,
+      "INT_ADD": 59,
+      "INT_AND": 75,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 77,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 30,
+      "INT_SEXT": 3,
+      "INT_SLESS": 37,
+      "INT_SUB": 44,
+      "INT_XOR": 1,
+      "LOAD": 27,
+      "POPCOUNT": 37,
+      "RETURN": 3,
+      "STORE": 41,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 567
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVehicle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x158,\">@modelName\" + 2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x938",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x938,\"tireCount\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x938",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x938) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x94c",
+      "severity": "mild",
+      "text": "puVar3 = &this_ptr->field_0x94c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x948",
+      "severity": "mild",
+      "text": "puVar2 = &this_ptr->field_0x948;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x950",
+      "severity": "mild",
+      "text": "puVar4 = &this_ptr->field_0x950;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x93c",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x93c + iVar1 * 0x1b4,\"static_bpos\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x938",
+      "severity": "mild",
+      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x938);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x102c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x102c,\"curTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x1030",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x1030,\"totalTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x1034",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1034,\"courseName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x1070",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1070,\"lastMobsterLeft\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x1070",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1070,\"lastMobsterRight\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "00607964"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

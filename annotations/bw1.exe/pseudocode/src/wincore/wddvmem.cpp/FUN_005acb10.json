@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 8,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_02c9931c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01c50948'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 21,
-        "message": "no matching function for call to 'FUN_005bfb70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02c99308'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02c99308'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 26,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
@@ -140,25 +20,25 @@
     {
       "addr": "004ce580",
       "from_addr": "004ce649",
-      "name": "FUN_004ce580",
+      "name": "core_game.cpp_FUN_004ce580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d77d0",
       "from_addr": "004d798f",
-      "name": "FUN_004d77d0",
+      "name": "core_game.cpp_FUN_004d77d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00582990",
       "from_addr": "005829ff",
-      "name": "FUN_00582990",
+      "name": "engine_special.cpp_presentToExternalRenderer_FUN_00582990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005acff0",
       "from_addr": "005ad03b",
-      "name": "FUN_005acff0",
+      "name": "wincore_wddvmem.cpp_FUN_005acff0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -171,19 +51,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_005acb10",
-    "signature": "void FUN_005acb10(void)"
+    "name": "wincore_wddvmem.cpp_FUN_005acb10",
+    "signature": "void wincore_wddvmem_cpp_FUN_005acb10(void)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005bfb70",
       "is_variadic": false,
-      "name": "FUN_005bfb70"
+      "name": "crt_memory.c_memset_FUN_005bfb70"
     }
   ],
   "globals": [
@@ -319,23 +199,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_005acb10.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "legacyUninitvar",
-          "column": 19,
-          "line": 32,
-          "message": "Uninitialized variable: iStack_6c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -376,14 +239,6 @@
       "severity": "mild",
       "text": "*(int *)(&DAT_01c4354c + iVar2) = iStack_6c;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Uninitialized variable: iStack_6c",
-      "line": 32,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iStack_6c = iStack_6c +",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

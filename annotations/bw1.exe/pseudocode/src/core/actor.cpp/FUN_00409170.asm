@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float FUN_00409170(int param_1,float *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,int param_7)
+; float core_actor_cpp_FUN_00409170(int param_1,float *param_2,float *param_3,float *param_4,int param_5,uint param_6,CBoundingBox3D *param_7)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x120]:8  local_120
@@ -29,16 +29,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_005578b0 at 00557ba7
-;   FUN_00583700 at 00583b70
+;   core_setcolid.cpp_FUN_005578b0 at 00557ba7
+;   core_spike.cpp_FUN_00583700 at 00583b70
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005d2520
 ;   TerminatedCString s_CDemonActor_rayIntersect_005d2532
-;   undefined4 DAT_00622c18
+;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
-;   undefined4 DAT_01fe185c
+;   undefined4 g_CDemonSetInstance.field1439476_0x15f6f4
 ;   undefined4 DAT_026b82a4
 ;   undefined4 DAT_026b82a8
 ;   undefined4 DAT_026b82ac
@@ -47,27 +47,27 @@
 ;   undefined4 DAT_026b82b8
 ;
 ; Called Functions:
-;   FUN_004080c0
-;   FUN_00408ac0
-;   FUN_00408b00
-;   FUN_00408bb0
-;   FUN_00408ec0
-;   FUN_00420500
-;   FUN_00420ee0
-;   FUN_004215d0
-;   FUN_00467c00
-;   FUN_00468900
-;   FUN_005030e0
-;   FUN_00567250
-;   FUN_00569eb0
-;   FUN_0056a870
+;   core_actor.cpp_FUN_004080c0
+;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_FUN_00408b00
+;   core_actor.cpp_FUN_00408bb0
+;   core_actor.cpp_FUN_00408ec0
+;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
+;   core_box.cpp_FUN_00420ee0
+;   core_box.cpp_FUN_004215d0
+;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
+;   core_dmodel.cpp_FUN_00467c00
+;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_00567250
+;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
+;   core_skeleton.cpp_FUN_0056a870
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00409170
-        ;   Label: FUN_00409170
+        ;   Label: core_actor.cpp_FUN_00409170
     PUSH ESI                            ; 00409171
     PUSH EDI                            ; 00409172
     PUSH EBP                            ; 00409173
@@ -95,8 +95,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004091a7
     PUSH EDI                            ; 004091aa
     LEA ESI,[ESP + 0x28]                ; 004091ab
-    CALL FUN_00408ec0                   ; 004091af
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408ec0()
+    CALL core_actor.cpp_FUN_00408ec0    ; 004091af
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ec0()
     MOV ECX,0x6                         ; 004091b4
     LEA EDI,[ESP + 0x40]                ; 004091b9
     ADD ESP,0xc                         ; 004091bd
@@ -156,15 +156,15 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00409264
     MOVSD ES:EDI,ESI                    ; 00409265
     MOVSD ES:EDI,ESI                    ; 00409266
-    CALL FUN_00420500                   ; 00409267
-        ;   XREF to: 00420500 (UNCONDITIONAL_CALL)  ; undefined FUN_00420500()
+    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420500 ; 00409267
+        ;   XREF to: 00420500 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_00420500(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0040926c
     LEA EAX,[ESP + 0x34]                ; 0040926f
     PUSH EAX                            ; 00409273
     LEA EAX,[ESP + 0x50]                ; 00409274
     PUSH EAX                            ; 00409278
-    CALL FUN_004215d0                   ; 00409279
-        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004215d0()
+    CALL core_box.cpp_FUN_004215d0      ; 00409279
+        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_004215d0(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 0040927e
     TEST EAX,EAX                        ; 00409281
     JZ 0x00409189                       ; 00409283
@@ -176,8 +176,8 @@ section .text
     PUSH EDX                            ; 00409290
     LEA ESI,[ESP + 0xe4]                ; 00409291
     LEA EDI,[ESP + 0xc0]                ; 00409298
-    CALL FUN_00408bb0                   ; 0040929f
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408bb0()
+    CALL core_actor.cpp_FUN_00408bb0    ; 0040929f
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
     ADD ESP,0x8                         ; 004092a4
     LEA ESI,[ESP + 0xdc]                ; 004092a7
     MOV ECX,dword ptr [EBP + 0x1c]      ; 004092ae
@@ -189,8 +189,8 @@ section .text
     PUSH ESI                            ; 004092b8
     LEA ESI,[ESP + 0xd8]                ; 004092b9
     LEA EDI,[ESP + 0xfc]                ; 004092c0
-    CALL FUN_00408b00                   ; 004092c7
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b00()
+    CALL core_actor.cpp_FUN_00408b00    ; 004092c7
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
     LEA ESI,[ESP + 0xd8]                ; 004092cc
     ADD ESP,0x8                         ; 004092d3
     MOVSD ES:EDI,ESI                    ; 004092d6
@@ -226,8 +226,8 @@ section .text
     LEA ESI,[ESP + 0x88]                ; 00409349
     PUSH EAX                            ; 00409350
     MOVSD.REP ES:EDI,ESI                ; 00409351
-    CALL FUN_00420ee0                   ; 00409353
-        ;   XREF to: 00420ee0 (UNCONDITIONAL_CALL)  ; undefined FUN_00420ee0()
+    CALL core_box.cpp_FUN_00420ee0      ; 00409353
+        ;   XREF to: 00420ee0 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_00420ee0()
     MOV dword ptr [ESP + 0x12c],EAX     ; 00409358
         ;   Label: LAB_00409358
     FLD float ptr [ESP + 0x12c]         ; 0040935f
@@ -249,8 +249,8 @@ section .text
     SAHF                                ; 0040938e
     JC 0x00409189                       ; 0040938f
         ;   XREF to: 00409189 (CONDITIONAL_JUMP)  ; LAB_00409189
-    MOV EAX,[0x00622c18]                ; 00409395 | DAT_00622c18
-    MOV EAX,dword ptr [EAX + 0x15f6f4]  ; 0040939a | DAT_01fe185c
+    MOV EAX,[0x00622c18]                ; 00409395 | g_CDemonSetPtr
+    MOV EAX,dword ptr [EAX + 0x15f6f4]  ; 0040939a | g_CDemonSetInstance.field1439476_0x15f6f4
     TEST EAX,EAX                        ; 004093a0
     JZ 0x00409533                       ; 004093a2
         ;   XREF to: 00409533 (CONDITIONAL_JUMP)  ; LAB_00409533
@@ -260,8 +260,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004093b0
     PUSH EDI                            ; 004093b3
     LEA ESI,[ESP + 0xb4]                ; 004093b4
-    CALL FUN_00408ac0                   ; 004093bb
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408ac0()
+    CALL core_actor.cpp_FUN_00408ac0    ; 004093bb
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
     LEA EDI,[ESP + 0xa8]                ; 004093c0
     LEA ESI,[ESP + 0xb4]                ; 004093c7
     ADD ESP,0x8                         ; 004093ce
@@ -293,8 +293,8 @@ section .text
     PUSH EAX                            ; 00409419
     MOV ESI,dword ptr [EBP + 0x2c]      ; 0040941a
     PUSH ESI                            ; 0040941d
-    CALL FUN_004215d0                   ; 0040941e
-        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004215d0()
+    CALL core_box.cpp_FUN_004215d0      ; 0040941e
+        ;   XREF to: 004215d0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_FUN_004215d0(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 00409423
     TEST EAX,EAX                        ; 00409426
     JNZ 0x00409289                      ; 00409428
@@ -310,8 +310,8 @@ section .text
     PUSH EAX                            ; 0040944a
     MOV EDI,dword ptr [EBP + 0x24]      ; 0040944b
     PUSH EDI                            ; 0040944e
-    CALL FUN_004080c0                   ; 0040944f
-        ;   XREF to: 004080c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004080c0()
+    CALL core_actor.cpp_FUN_004080c0    ; 0040944f
+        ;   XREF to: 004080c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_004080c0()
     JMP 0x00409358                      ; 00409454
         ;   XREF to: 00409358 (UNCONDITIONAL_JUMP)  ; LAB_00409358
     PUSH EBX                            ; 00409459
@@ -334,8 +334,8 @@ section .text
     PUSH ESI                            ; 00409499
     LEA ESI,[ESP + 0x108]               ; 0040949a
     FSTP float ptr [ESP + 0x20]         ; 004094a1
-    CALL FUN_00408b00                   ; 004094a5
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b00()
+    CALL core_actor.cpp_FUN_00408b00    ; 004094a5
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b00()
     LEA ESI,[ESP + 0x108]               ; 004094aa
     LEA EAX,[ESP + 0xcc]                ; 004094b1
     ADD ESP,0x8                         ; 004094b8
@@ -366,8 +366,8 @@ section .text
     PUSH 0x5d2532                       ; 00409515 | = "CDemonActor::rayIntersect - Invalid c..."
     MOV dword ptr [0x01d1d400],EDX      ; 0040951a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00409520 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00409526
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00409526
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0040952b
     JMP 0x0040936d                      ; 0040952e
         ;   XREF to: 0040936d (UNCONDITIONAL_JUMP)  ; LAB_0040936d
@@ -390,12 +390,12 @@ section .text
     PUSH EDI                            ; 00409562
     MOV ECX,dword ptr [EAX + 0x24]      ; 00409563
     PUSH ECX                            ; 00409566
-    CALL FUN_00468900                   ; 00409567
-        ;   XREF to: 00468900 (UNCONDITIONAL_CALL)  ; undefined FUN_00468900()
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900 ; 00409567
+        ;   XREF to: 00468900 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040956c
     PUSH EAX                            ; 0040956f
-    CALL FUN_00467c00                   ; 00409570
-        ;   XREF to: 00467c00 (UNCONDITIONAL_CALL)  ; undefined FUN_00467c00()
+    CALL core_dmodel.cpp_FUN_00467c00   ; 00409570
+        ;   XREF to: 00467c00 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00467c00()
     MOV dword ptr [ESP + 0x130],EAX     ; 00409575
     FLD float ptr [ESP + 0x130]         ; 0040957c
     ADD ESP,0x14                        ; 00409583
@@ -424,8 +424,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x24]      ; 004095c3
     MOV EDI,dword ptr [EAX + 0x20]      ; 004095c6
     PUSH EDI                            ; 004095c9
-    CALL FUN_0056a870                   ; 004095ca
-        ;   XREF to: 0056a870 (UNCONDITIONAL_CALL)  ; undefined FUN_0056a870()
+    CALL core_skeleton.cpp_FUN_0056a870 ; 004095ca
+        ;   XREF to: 0056a870 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0056a870()
     MOV dword ptr [ESP + 0x128],EAX     ; 004095cf
     FLD float ptr [ESP + 0x128]         ; 004095d6
     ADD ESP,0xc                         ; 004095dd
@@ -456,12 +456,12 @@ section .text
     PUSH EDX                            ; 00409627
     MOV ECX,dword ptr [EAX + 0x20]      ; 00409628
     PUSH ECX                            ; 0040962b
-    CALL FUN_00569eb0                   ; 0040962c
-        ;   XREF to: 00569eb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00569eb0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0 ; 0040962c
+        ;   XREF to: 00569eb0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00409631
     PUSH EAX                            ; 00409634
-    CALL FUN_00567250                   ; 00409635
-        ;   XREF to: 00567250 (UNCONDITIONAL_CALL)  ; undefined FUN_00567250()
+    CALL core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_00567250 ; 00409635
+        ;   XREF to: 00567250 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_00567250(CDeformableModel * this_ptr, int lod_level, int triangle_index)
     MOV dword ptr [EBX + 0x18],EAX      ; 0040963a
     LEA EAX,[ESP + 0xf4]                ; 0040963d
     ADD ESP,0xc                         ; 00409644

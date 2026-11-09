@@ -1,29 +1,33 @@
-// Name: FUN_00525420
+// Name: core_motion.cpp_FUN_00525420
 // Address: 00525420
 // Address Range: [[00525420, 005254a6]]
-// Convention: unknown
-// Signature: void FUN_00525420(int *param_1,undefined4 param_2,undefined4 param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_motion_cpp_FUN_00525420(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00525420(int *param_1,uint param_2,uint param_3)
+void __cdecl core_motion_cpp_FUN_00525420(CMotionController *this_ptr,_FILE *file_handle,char *indent_prefix)
 
 {
-  uint uVar1;
+  SMotion *pSVar1;
+  double dVar2;
   
-  if ((char)param_1[0xc] == '\0') {
-    if (*param_1 == 0) {
+  if (this_ptr->field_0x30 == '\0') {
+    if (*(int *)this_ptr == 0) {
       _DAT_01d1d400 = "..\\core\\motion.cpp";
       _DAT_01d1d404 = 0x596;
-      FUN_005030e0();
+      core_main_c_FUN_005030e0();
     }
-    uVar1 = FUN_00524770(param_1,(double)(float)param_1[2]);
-    FUN_005c03c0(param_2,"%s\"%s\",%g // current motion name, curFrameNumber\n",param_3,uVar1);
+    dVar2 = (double)*(float *)&this_ptr->field_0x8;
+    pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(this_ptr);
+    FUN_005c03c0
+              (file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",indent_prefix,pSVar1,dVar2);
     return;
   }
-  FUN_005c03c0(param_2,"%s\"%s\",%g // current motion name, curFrameNumber\n",param_3,param_1 + 0xc,
-               (double)(float)param_1[2]);
+  FUN_005c03c0
+            (file_handle,"%s\"%s\",%g // current motion name, curFrameNumber\n",indent_prefix,&this_ptr->field_0x30,
+             (double)*(float *)&this_ptr->field_0x8);
   return;
 }

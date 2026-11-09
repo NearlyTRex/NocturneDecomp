@@ -1,0 +1,255 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 27,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "0049eb30",
+      "from_addr": "0049ed0e",
+      "name": "core_elephant.cpp_FUN_0049eb30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00500f90",
+      "from_addr": "0050121c",
+      "name": "core_lightgun.cpp_FUN_00500f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005026f0",
+      "from_addr": "0050297c",
+      "name": "core_lightpis.cpp_FUN_005026f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00562100",
+      "from_addr": "005622de",
+      "name": "core_shotgun.cpp_FUN_00562100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b60e0",
+    "address_range": [
+      [
+        "004b60e0",
+        "004b613e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createLaserCone_FUN_004b60e0",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004b60e0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b0000",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CLaserBeam_init_FUN_004b0000"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fffac",
+      "name": "DAT_005fffac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01caf068",
+      "name": "DAT_01caf068",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0049ed0e",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_FUN_0049eb30",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0050121c",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_00500f90",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "00501285",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_FUN_00500f90",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0050297c",
+        "call_type": "direct",
+        "caller": "core_lightpis.cpp_FUN_005026f0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "005029e5",
+        "call_type": "direct",
+        "caller": "core_lightpis.cpp_FUN_005026f0",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "005622de",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_FUN_00562100",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 8,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.526315789473684,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 36,
+      "INT_ADD": 17,
+      "INT_AND": 21,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 11,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 172
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "beam_width",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "cone_angle",
+        "offset": 32,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

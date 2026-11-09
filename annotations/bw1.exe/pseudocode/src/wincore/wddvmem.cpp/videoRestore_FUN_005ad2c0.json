@@ -1,0 +1,366 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 150,
+    "complexity_score": 250,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 18,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 205
+  },
+  "cross_references": [
+    {
+      "addr": "005acff0",
+      "from_addr": "005ad0bc",
+      "name": "wincore_wddvmem.cpp_FUN_005acff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b27d0",
+      "from_addr": "005b28dc",
+      "name": "wincore_winrun.cpp_FUN_005b27d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ad2c0",
+    "address_range": [
+      [
+        "005ad2c0",
+        "005ad3cf"
+      ],
+      [
+        "005ad3d1",
+        "005ad441"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_videoRestore_FUN_005ad2c0",
+    "signature": "void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005ad2c0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005cf7ba",
+      "is_variadic": false,
+      "name": "crt_ddraw.c_DirectDrawCreate"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    },
+    {
+      "addr": "005821c0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_005821c0"
+    },
+    {
+      "addr": "EXTERNAL:00000045",
+      "is_variadic": false,
+      "name": "SetFocus"
+    },
+    {
+      "addr": "005ac300",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_005ac300"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0500",
+      "name": "PTR_SetFocus_005d0500",
+      "type": "void*",
+      "value": "001d0bf6"
+    },
+    {
+      "addr": "005f983f",
+      "name": "s_trigl_dll_005f983f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f9849",
+      "name": "s_wincore_wddvmem_cpp_005f9849",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f9860",
+      "name": "s_videoRestore_Unable_to_s_005f9860",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b498",
+      "name": "DAT_0061b498",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b49c",
+      "name": "DAT_0061b49c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006257d0",
+      "name": "DAT_006257d0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83370",
+      "name": "DAT_02c83370",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99300",
+      "name": "DAT_02c99300",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99304",
+      "name": "DAT_02c99304",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99308",
+      "name": "DAT_02c99308",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9930c",
+      "name": "DAT_02c9930c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99318",
+      "name": "DAT_02c99318",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9be68",
+      "name": "DAT_02c9be68",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5491803278688523,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 10,
+      "CBRANCH": 12,
+      "COPY": 120,
+      "INT_ADD": 21,
+      "INT_AND": 50,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 40,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 20,
+      "INT_SUB": 46,
+      "INT_XOR": 4,
+      "LOAD": 26,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 44
+    },
+    "pcode_op_count": 433
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c99304 + 0x6c))(_DAT_02c99304);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c99308 + 0x6c))(_DAT_02c99308);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c99304 + 0x7c))(_DAT_02c99304,_DAT_02c9930c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_006257d0",
+      "severity": "mild",
+      "text": "iVar1 = _stricmp(&DAT_006257d0,\"trigl.dll\");",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0061b498",
+      "severity": "mild",
+      "text": "iVar1 = engine_special_cpp_FUN_005821c0(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0061b49c",
+      "severity": "mild",
+      "text": "iVar1 = engine_special_cpp_FUN_005821c0(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "iVar1 = engine_special_cpp_FUN_005821c0(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 32,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c9930c + 8))(_DAT_02c9930c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 36,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c99308 + 8))(_DAT_02c99308);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c99304 + 8))(_DAT_02c99304);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 44,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c99300 + 0x4c))(_DAT_02c99300);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c99300 + 8))(_DAT_02c99300);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_02c99300",
+      "severity": "mild",
+      "text": "((GUID *)0x0,(LPDIRECTDRAW *)&DAT_02c99300,(IUnknown *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 51,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02c99300 + 0x50))(_DAT_02c99300,_DAT_02c9be68,0x11);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_0061b498",
+      "severity": "mild",
+      "text": "wincore_wddvmem_cpp_FUN_005ac300(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_0061b49c",
+      "severity": "mild",
+      "text": "wincore_wddvmem_cpp_FUN_005ac300(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "wincore_wddvmem_cpp_FUN_005ac300(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);",
+      "type": "undefined_data"
+    }
+  ]
+}

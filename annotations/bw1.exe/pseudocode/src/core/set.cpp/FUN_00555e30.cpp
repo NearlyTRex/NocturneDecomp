@@ -1,14 +1,14 @@
-// Name: FUN_00555e30
+// Name: core_set.cpp_FUN_00555e30
 // Address: 00555e30
 // Address Range: [[00555e30, 00555fde]]
 // Convention: unknown
-// Signature: void FUN_00555e30(int *param_1,undefined4 param_2)
+// Signature: void core_set_cpp_FUN_00555e30(int *param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00555e30(int *param_1,uint param_2)
+void core_set_cpp_FUN_00555e30(int *param_1,uint param_2)
 
 {
   int iVar1;
@@ -19,23 +19,23 @@ void FUN_00555e30(int *param_1,uint param_2)
   int local_18;
   int local_14;
   
-  FUN_005c04b0(param_2,"%*[^\n]\n");
-  FUN_005c04b0(param_2,&DAT_005f0c7a,&local_24);
+  _fscanf(param_2,"%*[^\n]\n");
+  _fscanf(param_2,&DAT_005f0c7a,&local_24);
   if ((local_24 < 1) || (3 < local_24)) {
     _DAT_01d1d400 = "..\\core\\set.cpp";
     _DAT_01d1d404 = 0x1494;
-    FUN_005030e0("Set saveState info is invalid version %d",local_24);
+    core_main_c_FUN_005030e0("Set saveState info is invalid version %d",local_24);
   }
-  FUN_005c04b0(param_2,"%*[^\n]\n");
-  FUN_005c04b0(param_2,&DAT_005f0cbf,&local_20);
+  _fscanf(param_2,"%*[^\n]\n");
+  _fscanf(param_2,&DAT_005f0cbf,&local_20);
   if (*param_1 != local_20) {
-    FUN_00494340(0x01C3EB54,"The set has changed since you saved you game last.\nThere might be problems with the virtual director.");
+    shape_edittool_cpp_FUN_00494340(g_CEditorToolsPtr,"The set has changed since you saved you game last.\nThere might be problems with the virtual director.");
   }
   iVar1 = 0;
   piVar2 = param_1;
   if (0 < local_20) {
     do {
-      FUN_005c04b0(param_2,&DAT_005f0d29,&local_1c);
+      _fscanf(param_2,&DAT_005f0d29,&local_1c);
       if (iVar1 < *param_1) {
         piVar2[0x69] = local_1c;
       }
@@ -45,12 +45,12 @@ void FUN_00555e30(int *param_1,uint param_2)
   }
   if ((1 < local_24) && (0 < local_20)) {
     do {
-      FUN_005c04b0(param_2,"%*[^\n]\n");
+      _fscanf(param_2,"%*[^\n]\n");
       iVar1 = 0;
       piVar2 = param_1;
       if (0 < local_20) {
         do {
-          FUN_005c04b0(param_2,&DAT_005f0d35,&local_18);
+          _fscanf(param_2,&DAT_005f0d35,&local_18);
           if (iVar1 < *param_1) {
             piVar2[0x53] = local_18;
           }
@@ -62,12 +62,12 @@ void FUN_00555e30(int *param_1,uint param_2)
   }
   if ((2 < local_24) && (0 < local_20)) {
     do {
-      FUN_005c04b0(param_2,"%*[^\n]\n");
+      _fscanf(param_2,"%*[^\n]\n");
       iVar1 = 0;
       piVar2 = param_1;
       if (0 < local_20) {
         do {
-          FUN_005c04b0(param_2,&DAT_005f0d41,&local_14);
+          _fscanf(param_2,&DAT_005f0d41,&local_14);
           if (iVar1 < *param_1) {
             piVar2[0x54] = local_14;
           }

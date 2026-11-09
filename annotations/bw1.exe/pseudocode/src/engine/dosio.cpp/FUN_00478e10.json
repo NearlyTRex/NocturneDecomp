@@ -1,0 +1,85 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00478e10",
+    "address_range": [
+      [
+        "00478e10",
+        "00478e19"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_dosio.cpp_FUN_00478e10",
+    "signature": "void engine_dosio_cpp_FUN_00478e10(undefined *param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00612508",
+      "name": "PTR_engine_dosio.cpp_getRelativeFilePath_FUN_00478dc0_00612508",
+      "type": "void*",
+      "value": "00478dc0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.3333333333333335,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 7
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void engine_dosio_cpp_FUN_00478e10(byte *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "PTR_engine_dosio_cpp_getRelativeFilePath_FUN_00478dc0_00612508 = param_1;",
+      "type": "unnamed_param"
+    }
+  ]
+}

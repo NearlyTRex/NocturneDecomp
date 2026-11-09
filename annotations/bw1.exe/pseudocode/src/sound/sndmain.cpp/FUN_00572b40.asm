@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00572b40(void)
+; void __cdecl sound_sndmain_cpp_FUN_00572b40(void)
 ;
 ;
-; XREF[28]:
-;   FUN_0041bb40 at 0041c207
-;   FUN_00422000 at 00422291
-;   FUN_0042f8e0 at 0042fcd7
-;   FUN_00469550 at 0046bd0f
-;   FUN_0047d920 at 0047dddb
-;   FUN_00485d70 at 00486447
-;   FUN_004a1d00 at 004a4a97
-;   FUN_004aa550 at 004aa5b4
-;   FUN_004aee60 at 004aef0e
-;   FUN_004b7b90 at 004b7f60
-;   ... and 18 more
+; XREF[29]:
+;   core_boneguy.cpp_FUN_0041bb40 at 0041c207
+;   core_boxactor.cpp_FUN_00422000 at 00422291
+;   core_charactr.cpp_FUN_0042f8e0 at 0042fcd7
+;   core_doc.cpp_FUN_00469550 at 0046bd0f
+;   core_dracbrid.cpp_FUN_0047d920 at 0047dddb
+;   core_drone.cpp_FUN_00485d70 at 00486447
+;   core_event.cpp_CEventList_restartSfxEntries_FUN_004aa550 at 004aa5b4
+;   core_event.cpp_FUN_004a1d00 at 004a4a97
+;   core_fire.cpp_FUN_004aee60 at 004aef0e
+;   core_flame.cpp_FUN_004b7b90 at 004b7f60
+;   ... and 19 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3e4d
@@ -25,14 +25,14 @@
 ;   undefined4 DAT_02c78cec
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     MOV EDX,dword ptr [0x02c78cec]      ; 00572b40 | DAT_02c78cec
-        ;   Label: FUN_00572b40
+        ;   Label: sound_sndmain.cpp_FUN_00572b40
     DEC EDX                             ; 00572b46
     MOV dword ptr [0x02c78cec],EDX      ; 00572b47 | DAT_02c78cec
     TEST EDX,EDX                        ; 00572b4d
@@ -47,8 +47,8 @@ section .text
     PUSH 0x5f3e62                       ; 00572b5e | = "popSfxOptions - stack empty"
     MOV dword ptr [0x01d1d400],EBX      ; 00572b63 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00572b69 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00572b6f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00572b6f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00572b74
     POP EBX                             ; 00572b77
     POP ESI                             ; 00572b78

@@ -1,0 +1,389 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 140,
+    "complexity_score": 453,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 93,
+    "suspect_count": 31,
+    "suspect_types": [
+      "concat_reconstruction",
+      "fpu_register_input",
+      "nonstandard_int",
+      "pointer_truncation",
+      "register_param",
+      "unaffected_reg",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_spacebase"
+    ],
+    "total_lines": 233
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055f9c0",
+    "address_range": [
+      [
+        "0055f9c0",
+        "0055fbef"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_shadow.cpp_FUN_0055f9c0",
+    "signature": "void core_shadow_cpp_FUN_0055f9c0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    },
+    {
+      "addr": "00482e30",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "00580173",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_00580173"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00605170",
+      "name": "DAT_00605170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.121212121212121,
+    "instruction_count": 132,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 202,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 74,
+      "INT_AND": 27,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 22,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 46,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 62,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 544
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that severely impacts decompilation quality.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "pop_esp"
+    ],
+    "patterns": [
+      {
+        "address": "0055f9ca",
+        "description": "POP into ESP",
+        "impact": "Direct modification of ESP from stack. Ghidra cannot track this.",
+        "instruction": "POP ESP",
+        "pattern_id": "pop_esp"
+      }
+    ],
+    "severity": "high"
+  },
+  "suspects": [
+    {
+      "description": "Stack frame tracking failed",
+      "line": 2,
+      "match": "WARNING: Unable to track spacebase fully for stack",
+      "severity": "severe",
+      "text": "/* WARNING: Unable to track spacebase fully for stack */",
+      "type": "warning_spacebase"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "char *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 12,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 13,
+      "match": "in_ST1",
+      "severity": "mild",
+      "text": "float10 in_ST1;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 14,
+      "match": "in_ST2",
+      "severity": "mild",
+      "text": "float10 in_ST2;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*in_EAX = *in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*in_EAX = *in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*in_EAX = *in_EAX + (char)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "*(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 18,
+      "match": "int3",
+      "severity": "mild",
+      "text": "*(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(char)((uint)unaff_EBX >> 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 20,
+      "match": "in_ST2",
+      "severity": "mild",
+      "text": "*(float *)(unaff_retaddr + 0xd0) = (float)in_ST2;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 21,
+      "match": "in_ST1",
+      "severity": "mild",
+      "text": "*(float *)(unaff_retaddr + 0xd4) = (float)in_ST1;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 22,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "*(float *)(unaff_retaddr + 0xd8) = (float)in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if (unaff_EBX != unaff_retaddr + 0x100) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "piVar2 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "piVar2 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "*(uint *)(*DAT_00612560 + 0x20) = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 81,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "*(int **)(unaff_retaddr + -8) = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "*(int **)(unaff_retaddr + -8) = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 92,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "*(int **)(unaff_retaddr + -8) = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(char)in_EAX",
+      "severity": "moderate",
+      "text": "*in_EAX = *in_EAX + (char)in_EAX;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(uint)in_EAX",
+      "severity": "moderate",
+      "text": "*(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(char)in_EAX",
+      "severity": "moderate",
+      "text": "*(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 23,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_retaddr + 0x100) = *(uint *)(unaff_retaddr + 0xd0);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 27,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_retaddr + 0x4c) = *(uint *)(unaff_retaddr + 0x100);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 18,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "*(char *)(CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + (char)unaff_EBX) + -0x72ffffd9) =",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

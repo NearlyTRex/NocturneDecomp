@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0047fe30(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void __cdecl cockpit_drawsurf_cpp_FUN_0047fe30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 ;
+; Parameters:
+; CDrawSurface *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   x1
+; int              Stack[0xc]:4   y1
+; int              Stack[0x10]:4   x2
+; int              Stack[0x14]:4   y2
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -11,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0047ffd0 at 0047ffe2
+;   cockpit_drawsurf.cpp_FUN_0047ffd0 at 0047ffe2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005db1ad
@@ -25,16 +31,16 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_0047e9d0
-;   FUN_005030e0
-;   FUN_005bfb70
+;   cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0
+;   core_main.c_FUN_005030e0
+;   crt_memory.c_memset_FUN_005bfb70
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0047fe30
-        ;   Label: FUN_0047fe30
+        ;   Label: cockpit_drawsurf.cpp_FUN_0047fe30
     PUSH ESI                            ; 0047fe31
     PUSH EDI                            ; 0047fe32
     PUSH EBP                            ; 0047fe33
@@ -88,8 +94,8 @@ section .text
     PUSH EBX                            ; 0047fe93
     PUSH EDI                            ; 0047fe94
     INC ESI                             ; 0047fe95
-    CALL FUN_0047e9d0                   ; 0047fe96
-        ;   XREF to: 0047e9d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0047e9d0()
+    CALL cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0 ; 0047fe96
+        ;   XREF to: 0047e9d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0(int start_x, int end_x, int y)
     ADD ESP,0xc                         ; 0047fe9b
     CMP ESI,EBP                         ; 0047fe9e
     JLE 0x0047fe92                      ; 0047fea0
@@ -120,8 +126,8 @@ section .text
     PUSH EAX                            ; 0047fed5
     ADD EBX,0x4                         ; 0047fed6
     INC ESI                             ; 0047fed9
-    CALL FUN_005bfb70                   ; 0047feda
-        ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb70()
+    CALL crt_memory.c_memset_FUN_005bfb70 ; 0047feda
+        ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0047fedf
     CMP EBX,EBP                         ; 0047fee2
     JLE 0x0047fec2                      ; 0047fee4
@@ -214,8 +220,8 @@ section .text
     PUSH 0x5db1c5                       ; 0047ffa8 | = "Invalid bitsPerPixel!"
     MOV dword ptr [0x01d1d400],EDX      ; 0047ffad | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0047ffb3 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0047ffb9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0047ffb9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0047ffbe
     ADD ESP,0x14                        ; 0047ffc1
     POP EBP                             ; 0047ffc4

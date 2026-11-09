@@ -1,0 +1,353 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 107,
+    "complexity_score": 225,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 50,
+    "suspect_count": 14,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "raw_address_pointer_store",
+      "suspicious_cast",
+      "unnamed_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 157
+  },
+  "cross_references": [
+    {
+      "addr": "00433f10",
+      "from_addr": "00433fa2",
+      "name": "core_charactr.cpp_FUN_00433f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055de50",
+      "from_addr": "0055e47e",
+      "name": "core_shadow.cpp_FUN_0055de50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00460230",
+      "from_addr": "00460688",
+      "name": "unkafter_djien.cpp_FUN_00460230",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00435380",
+    "address_range": [
+      [
+        "00435380",
+        "00435494"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_charactr.cpp_FUN_00435380",
+    "signature": "int core_charactr_cpp_FUN_00435380(int param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040cc60"
+    },
+    {
+      "addr": "004354a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_004354a0"
+    },
+    {
+      "addr": "0049dea0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d5feb",
+      "name": "DAT_005d5feb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01fd6fdc",
+      "name": "g_CDemonSetInstance.field1396340_0x154e74",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00433fa2",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_00433f10",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055e47e",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_FUN_0055de50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055f029",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_FUN_0055de50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055f2eb",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_FUN_0055de50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ECX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00460688",
+        "call_type": "direct",
+        "caller": "unkafter_djien.cpp_FUN_00460230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.430232558139535,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 7,
+      "COPY": 126,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 40,
+      "INT_AND": 54,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 46,
+      "INT_LEFT": 4,
+      "INT_LESS": 4,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 23,
+      "INT_SUB": 18,
+      "INT_XOR": 6,
+      "INT_ZEXT": 4,
+      "LOAD": 21,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 467
+  },
+  "stack_frame": {
+    "frame_size": 8040,
+    "local_size": 8040,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1f64",
+        "offset": -8036,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int core_charactr_cpp_FUN_00435380(int param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int core_charactr_cpp_FUN_00435380(int param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x154e74",
+      "severity": "mild",
+      "text": "for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x154e74; local_18 = local_18 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 23,
+      "match": "*(char **)(&g_CDemonSetPtr->field_0x154e78",
+      "severity": "moderate",
+      "text": "target_string = *(char **)(&g_CDemonSetPtr->field_0x154e78 + iVar7);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x154e78",
+      "severity": "mild",
+      "text": "target_string = *(char **)(&g_CDemonSetPtr->field_0x154e78 + iVar7);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_0049dea0(param_2,target_string,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(fVar1 = *(float *)(param_1 + 0x20) - *(float *)(target_string + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)(param_1 + 0x24) - *(float *)(target_string + 0x24),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)(param_1 + 0x28) - *(float *)(target_string + 0x28),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(char **)((int)local_1f64",
+      "severity": "moderate",
+      "text": "*(char **)((int)local_1f64 + iVar6) = target_string;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = core_charactr_cpp_FUN_004354a0(param_1,local_1f64[iVar4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
+      "line": 23,
+      "match": "g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "target_string = *(char **)(&g_CDemonSetPtr->field_0x154e78 + iVar7);",
+      "type": "suspicious_cast"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

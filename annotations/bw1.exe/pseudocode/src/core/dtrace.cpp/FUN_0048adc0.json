@@ -1,150 +1,29 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01c3d420'; did you mean 'DAT_0061d420'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_005c0b10'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 33,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 565,
+    "complexity_score": 607,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 46,
+    "pseudocode_lines": 67,
+    "suspect_count": 51,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast",
-      "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
+      "unnamed_field",
       "unnamed_param",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 258
+    "total_lines": 255
   },
   "cross_references": [
     {
       "addr": "0048afa0",
       "from_addr": "0048afc6",
-      "name": "FUN_0048afa0",
+      "name": "core_dtrace.cpp_FUN_0048afa0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -157,34 +36,34 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_0048adc0",
-    "signature": "void FUN_0048adc0(int param_1,int param_2)"
+    "name": "core_dtrace.cpp_FUN_0048adc0",
+    "signature": "void core_dtrace_cpp_FUN_0048adc0(CDemonRaytrace *param_1,_FILE *param_2)"
   },
   "function_calls": [
     {
       "addr": "00457e50",
       "is_variadic": false,
-      "name": "FUN_00457e50"
+      "name": "core_dcube.cpp_CDemonCube_load_FUN_00457e50"
     },
     {
       "addr": "0048aa40",
       "is_variadic": false,
-      "name": "FUN_0048aa40"
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40"
     },
     {
       "addr": "0048aab0",
       "is_variadic": false,
-      "name": "FUN_0048aab0"
+      "name": "core_dtrace.cpp_FUN_0048aab0"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005c0b10",
       "is_variadic": false,
-      "name": "FUN_005c0b10"
+      "name": "crt_stdio.c_fread_FUN_005c0b10"
     }
   ],
   "globals": [
@@ -273,7 +152,7 @@
       {
         "call_addr": "0048afc6",
         "call_type": "direct",
-        "caller": "FUN_0048afa0",
+        "caller": "core_dtrace.cpp_FUN_0048afa0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -401,8 +280,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -410,50 +297,98 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0048adc0(int param_1,int param_2)",
+      "text": "void core_dtrace_cpp_FUN_0048adc0(CDemonRaytrace *param_1,_FILE *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_0048adc0(int param_1,int param_2)",
+      "text": "void core_dtrace_cpp_FUN_0048adc0(CDemonRaytrace *param_1,_FILE *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
-      "match": "afStackY_1014",
+      "line": 11,
+      "match": "aiStackY_1014",
       "severity": "moderate",
-      "text": "float afStackY_1014 [1014];",
+      "text": "int aiStackY_1014 [1014];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_dtrace_cpp_FUN_0048aab0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 20,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "FUN_0048aab0(param_1);",
+      "text": "_fread(&local_14,4,1,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x40,4,1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005c0b10(&local_14,4,1,param_2);",
+      "text": "_fread(&param_1->field_0x40,4,1,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x40,4,1,param_2);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x44,4,1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x44,4,1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x44,4,1,param_2);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x40,4,1,param_2);",
+      "text": "_fread(&param_1->field_0x48,4,1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -461,15 +396,23 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x40,4,1,param_2);",
+      "text": "_fread(&param_1->field_0x48,4,1,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x48,4,1,param_2);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x44,4,1,param_2);",
+      "text": "_fread(&param_1->field_0x10,0xc,1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -477,15 +420,23 @@
       "line": 34,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x44,4,1,param_2);",
+      "text": "_fread(&param_1->field_0x10,0xc,1,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x10,0xc,1,param_2);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x48,4,1,param_2);",
+      "text": "_fread(&param_1->field_0x1c,0xc,1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -493,15 +444,23 @@
       "line": 35,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x48,4,1,param_2);",
+      "text": "_fread(&param_1->field_0x1c,0xc,1,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x1c,0xc,1,param_2);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x10,0xc,1,param_2);",
+      "text": "_fread(&param_1->field_0x28,0xc,1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -509,256 +468,216 @@
       "line": 36,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x10,0xc,1,param_2);",
+      "text": "_fread(&param_1->field_0x28,0xc,1,param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "_fread(&param_1->field_0x28,0xc,1,param_2);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x1c,0xc,1,param_2);",
+      "text": "local_28[0] = *(float *)&param_1->field_0x2c * _DAT_005db940;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 37,
-      "match": "param_2",
+      "match": "field_0x2c",
       "severity": "mild",
-      "text": "FUN_005c0b10(param_1 + 0x1c,0xc,1,param_2);",
-      "type": "unnamed_param"
+      "text": "local_28[0] = *(float *)&param_1->field_0x2c * _DAT_005db940;",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c0b10((float *)(param_1 + 0x28),0xc,1,param_2);",
+      "text": "local_28[1] = *(float *)&param_1->field_0x30 * _DAT_005db940;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 38,
-      "match": "param_2",
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "FUN_005c0b10((float *)(param_1 + 0x28),0xc,1,param_2);",
-      "type": "unnamed_param"
+      "text": "local_28[1] = *(float *)&param_1->field_0x30 * _DAT_005db940;",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = *(float *)(param_1 + 0x28) * _DAT_005db940;",
+      "text": "local_28[2] = *(float *)&param_1->field_0x28 * _DAT_005db940;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "local_28[2] = *(float *)&param_1->field_0x28 * _DAT_005db940;",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_28 = *(float *)(param_1 + 0x2c) * _DAT_005db940;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = *(float *)(param_1 + 0x30) * _DAT_005db940;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 43,
-      "match": "&stack0xffffffe4",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * -8) =",
-      "type": "stack_ref"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((float *)&param_1->field_0x34 != local_28 + 2) {",
+      "type": "unnamed_param"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "if ((float *)&param_1->field_0x34 != local_28 + 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 44,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x34 = local_28[2];",
+      "type": "unnamed_param"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(float *)&param_1->field_0x34 = local_28[2];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 45,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
-      "type": "stack_ref"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)&param_1->field_0x38 = local_1c;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "*(int *)&param_1->field_0x38 = local_1c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 46,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x3c = local_18;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "if ((float *)(param_1 + 0x34) != &stack0xffffffe0) {",
-      "type": "stack_ref"
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "*(uint *)&param_1->field_0x3c = local_18;",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((float *)(param_1 + 0x34) != &stack0xffffffe0) {",
+      "text": "core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) = local_20;",
+      "text": "iVar1 < *(int *)&param_1->field_0x40 * *(int *)&param_1->field_0x44 *",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x38) = local_1c;",
+      "text": "iVar1 < *(int *)&param_1->field_0x40 * *(int *)&param_1->field_0x44 *",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x40",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x3c) = local_18;",
-      "type": "unnamed_param"
+      "text": "iVar1 < *(int *)&param_1->field_0x40 * *(int *)&param_1->field_0x44 *",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "iVar1 < *(int *)&param_1->field_0x40 * *(int *)&param_1->field_0x44 *",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0048aa40(param_1);",
+      "text": "*(int *)&param_1->field_0x48; iVar1 = iVar1 + 1) {",
       "type": "unnamed_param"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&param_1->field_0x48; iVar1 = iVar1 + 1) {",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 < *(int *)(param_1 + 0x40) * *(int *)(param_1 + 0x44) * *(int *)(param_1 + 0x48);",
+      "text": "((CDemonCube *)(*(int *)&param_1->field_0x50 + iVar2),param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 < *(int *)(param_1 + 0x40) * *(int *)(param_1 + 0x44) * *(int *)(param_1 + 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 < *(int *)(param_1 + 0x40) * *(int *)(param_1 + 0x44) * *(int *)(param_1 + 0x48);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_00457e50(*(int *)(param_1 + 0x50) + iVar2,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 60,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00457e50(*(int *)(param_1 + 0x50) + iVar2,param_2);",
+      "text": "((CDemonCube *)(*(int *)&param_1->field_0x50 + iVar2),param_2);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "((CDemonCube *)(*(int *)&param_1->field_0x50 + iVar2),param_2);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 64,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_2 + 0xc) & 0x20) == 0) {",
+      "text": "if (((byte)param_2[0xc] & 0x20) == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Pointer value `&stack0xffffffe4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
-      "match": "(int)&stack0xffffffe4",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * -8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&stack0xffffffd8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
-      "match": "(int)&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * -8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&stack0xffffffe8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
-      "match": "(int)&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&stack0xffffffdc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(int)&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * -8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 44,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 45,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

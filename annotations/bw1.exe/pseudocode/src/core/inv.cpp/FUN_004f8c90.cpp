@@ -1,0 +1,29 @@
+// Name: core_inv.cpp_FUN_004f8c90
+// Address: 004f8c90
+// Address Range: [[004f8c90, 004f8cd1]]
+// Convention: __cdecl
+// Signature: int __cdecl core_inv_cpp_FUN_004f8c90(CInventory *this_ptr,char *class_name)
+
+#include "nocturne.h"
+
+int __cdecl core_inv_cpp_FUN_004f8c90(CInventory *this_ptr,char *class_name)
+
+{
+  int iVar1;
+  CInventory *pCVar2;
+  int iVar3;
+  
+  iVar3 = 0;
+  pCVar2 = this_ptr;
+  if (0 < *(int *)(this_ptr + 0x10)) {
+    do {
+      iVar1 = core_actor_cpp_FUN_0040c550(*(CDemonActor **)(pCVar2 + 0x14),class_name);
+      if (iVar1 != 0) {
+        return *(int *)(pCVar2 + 0x14);
+      }
+      iVar3 = iVar3 + 1;
+      pCVar2 = pCVar2 + 4;
+    } while (iVar3 < *(int *)(this_ptr + 0x10));
+  }
+  return 0;
+}

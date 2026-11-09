@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005acc00(void)
+; void __cdecl wincore_wddvmem_cpp_FUN_005acc00(void)
 ;
 ;
 ; XREF[4]:
-;   FUN_004ce580 at 004cf03c
-;   FUN_004d77d0 at 004d79a8
-;   FUN_00582990 at 00582a4a
-;   FUN_005acff0 at 005ad08e
+;   core_game.cpp_FUN_004ce580 at 004cf03c
+;   core_game.cpp_FUN_004d77d0 at 004d79a8
+;   engine_special.cpp_presentToExternalRenderer_FUN_00582990 at 00582a4a
+;   wincore_wddvmem.cpp_FUN_005acff0 at 005ad08e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005f96b5
@@ -29,14 +29,14 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBP                            ; 005acc00
-        ;   Label: FUN_005acc00
+        ;   Label: wincore_wddvmem.cpp_FUN_005acc00
     CMP dword ptr [0x02c9931c],0x0      ; 005acc01 | DAT_02c9931c
     JNZ 0x005accca                      ; 005acc08
         ;   XREF to: 005accca (CONDITIONAL_JUMP)  ; LAB_005accca
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5f96cc                       ; 005acca5 | = "closeScreenDevice - Unable to unlock"
     MOV dword ptr [0x01d1d400],ESI      ; 005accaa | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 005accb0 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005accb6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005accb6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005accbb
     MOV dword ptr [0x02c99314],0x1      ; 005accbe | DAT_02c99314
         ;   Label: LAB_005accbe

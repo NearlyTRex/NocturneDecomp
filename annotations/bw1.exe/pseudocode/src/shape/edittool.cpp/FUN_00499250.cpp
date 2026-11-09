@@ -1,14 +1,14 @@
-// Name: FUN_00499250
+// Name: shape_edittool.cpp_FUN_00499250
 // Address: 00499250
 // Address Range: [[00499250, 00499349]]
 // Convention: unknown
-// Signature: void FUN_00499250(undefined4 param_1,uint param_2,uint param_3,uint param_4)
+// Signature: void shape_edittool_cpp_FUN_00499250(undefined4 param_1,uint param_2,uint param_3,uint param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00499250(uint param_1,uint param_2,uint param_3,uint param_4)
+void shape_edittool_cpp_FUN_00499250(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   int iVar1;
@@ -28,7 +28,7 @@ void FUN_00499250(uint param_1,uint param_2,uint param_3,uint param_4)
     if (param_2 != 2) {
       _DAT_01d1d400 = "..\\shape\\edittool.cpp";
       _DAT_01d1d404 = 0xb9a;
-      FUN_005030e0("CEditorTools::setMousePointerType - invalid type!");
+      core_main_c_FUN_005030e0("CEditorTools::setMousePointerType - invalid type!");
       DAT_0061abc4 = param_4;
       DAT_0061abc8 = param_3;
       return;

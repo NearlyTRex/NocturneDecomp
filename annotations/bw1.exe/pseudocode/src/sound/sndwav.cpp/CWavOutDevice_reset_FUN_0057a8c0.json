@@ -1,0 +1,151 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057a8c0",
+    "address_range": [
+      [
+        "0057a8c0",
+        "0057a929"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_CWavOutDevice_reset_FUN_0057a8c0",
+    "signature": "int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_0057a8c0(CWavOutDevice *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
+    },
+    {
+      "addr": "00575ca0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_00575ca0"
+    },
+    {
+      "addr": "EXTERNAL:00000029",
+      "is_variadic": false,
+      "name": "waveOutReset"
+    },
+    {
+      "addr": "EXTERNAL:0000002a",
+      "is_variadic": false,
+      "name": "waveOutUnprepareHeader"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d048c",
+      "name": "PTR_waveOutReset_005d048c",
+      "type": "void*",
+      "value": "001d0a1a"
+    },
+    {
+      "addr": "005d0490",
+      "name": "PTR_waveOutUnprepareHeader_005d0490",
+      "type": "void*",
+      "value": "001d0a2a"
+    },
+    {
+      "addr": "005f5777",
+      "name": "s_waveOutReset_failed_005f5776+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c82840",
+      "name": "DAT_02c82840",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.166666666666667,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 43,
+      "INT_ADD": 11,
+      "INT_AND": 24,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 20,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 10,
+      "INT_SUB": 13,
+      "INT_XOR": 3,
+      "LOAD": 9,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 175
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWavOutDevice",
+        "offset": 8,
+        "vtable_addr": "00605c10"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

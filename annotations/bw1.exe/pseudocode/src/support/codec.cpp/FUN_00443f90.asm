@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00443f90(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5 )
+; undefined4 support_codec_cpp_FUN_00443f90(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,ulong param_5)
 ;
 ;
 ; Referenced Globals:
@@ -9,21 +9,21 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_00443f00
-;   FUN_005030e0
-;   FUN_005c08d0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c08d0
+;   support_codec.cpp_FUN_00443f00
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00443f90
-        ;   Label: FUN_00443f90
+        ;   Label: support_codec.cpp_FUN_00443f90
     PUSH EBP                            ; 00443f91
     MOV EBX,dword ptr [ESP + 0xc]       ; 00443f92
     PUSH EBX                            ; 00443f96
-    CALL FUN_00443f00                   ; 00443f97
-        ;   XREF to: 00443f00 (UNCONDITIONAL_CALL)  ; undefined FUN_00443f00()
+    CALL support_codec.cpp_FUN_00443f00 ; 00443f97
+        ;   XREF to: 00443f00 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00443f00()
     ADD ESP,0x4                         ; 00443f9c
     MOV EAX,dword ptr [ESP + 0x10]      ; 00443f9f
     MOV dword ptr [EBX + 0x4],EAX       ; 00443fa3
@@ -34,8 +34,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00443fb4
     PUSH EAX                            ; 00443fb8
     MOV dword ptr [EBX + 0x14],EAX      ; 00443fb9
-    CALL FUN_005c08d0                   ; 00443fbc
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 00443fbc
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00443fc1
     MOV dword ptr [EBX + 0x10],EAX      ; 00443fc4
     TEST EAX,EAX                        ; 00443fc7
@@ -64,8 +64,8 @@ section .text
     PUSH 0x5d6b38                       ; 00444001
     MOV dword ptr [0x01d1d400],ESI      ; 00444006 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0044400c | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00444012
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00444012
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 00444017
     POP ESI                             ; 0044401a
     POP EDI                             ; 0044401b

@@ -1,0 +1,337 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 104,
+    "complexity_score": 139,
+    "cross_reference_count": 9,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 158
+  },
+  "cross_references": [
+    {
+      "addr": "004101f0",
+      "from_addr": "0041037e",
+      "name": "core_baron.cpp_FUN_004101f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00413970",
+      "from_addr": "00413b0f",
+      "name": "core_batman.cpp_FUN_00413970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041d000",
+      "from_addr": "0041d0ad",
+      "name": "core_boneguy.cpp_FUN_0041d000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cfe0",
+      "from_addr": "0047d18e",
+      "name": "core_dracbrid.cpp_FUN_0047cfe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f90d0",
+      "from_addr": "004f94ff",
+      "name": "core_inv.cpp_FUN_004f90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522dd0",
+      "from_addr": "00522eaf",
+      "name": "core_morph.cpp_CMorphModel_renderFaces_FUN_00522dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fc60",
+      "from_addr": "0055fd60",
+      "name": "core_shadow.cpp_FUN_0055fc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005611a0",
+      "from_addr": "0056128e",
+      "name": "core_shadowsc.cpp_FUN_005611a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9440",
+      "from_addr": "005a957a",
+      "name": "core_vessel.cpp_FUN_005a9440",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00484e00",
+    "address_range": [
+      [
+        "00484e00",
+        "00484ef7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(CDemonRenderer *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfc68",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__qsort_FUN_005bfc68"
+    },
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    },
+    {
+      "addr": "00482390",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_00482390"
+    },
+    {
+      "addr": "00483d80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01bc1280",
+      "name": "DAT_01bc1280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc1288",
+      "name": "DAT_01bc1288",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc128c",
+      "name": "DAT_01bc128c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004f94ff",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004f90d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0041037e",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_FUN_004101f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00413b0f",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_FUN_00413970",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00522eaf",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorphModel_renderFaces_FUN_00522dd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0041d0ad",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_FUN_0041d000",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047d18e",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_FUN_0047cfe0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055fd60",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_FUN_0055fc60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056128e",
+        "call_type": "direct",
+        "caller": "core_shadowsc.cpp_FUN_005611a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a957a",
+        "call_type": "direct",
+        "caller": "core_vessel.cpp_FUN_005a9440",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4875,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 64,
+      "INT_ADD": 26,
+      "INT_AND": 47,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 44,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 3,
+      "INT_SLESS": 22,
+      "INT_SUB": 30,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 27,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 359
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar7;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01bc1288",
+      "severity": "mild",
+      "text": "puVar4 = &DAT_01bc1288;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 21,
+      "match": "*(byte **)(iVar3 + 0x1be8388",
+      "severity": "moderate",
+      "text": "*(byte **)(iVar3 + 0x1be8388) = puVar4;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 42,
+      "match": "*(int **)(iVar5 + 0x1be8388",
+      "severity": "moderate",
+      "text": "iVar2 = **(int **)(iVar5 + 0x1be8388);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "_qsort element width is the literal 4 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
+      "line": 32,
+      "match": "_qsort",
+      "severity": "moderate",
+      "text": "_qsort(0x1be8388,_DAT_01bc1280,4,pcVar7);",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

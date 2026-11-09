@@ -1,12 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00570160(int param_1,int param_2,int param_3)
+; int sound_sndmain_cpp_FUN_00570160(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[2]:
-;   FUN_0056e830 at 0056ea6f
-;   FUN_00570460 at 005706f3
+; XREF[3]:
+;   sound_sndmain.cpp_FUN_0056e830 at 0056ea6f
+;   sound_sndmain.cpp_FUN_00570460 at 005706f3
+;   sound_sndmain.cpp_FUN_00574230 at 0057426c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3318
@@ -20,15 +21,15 @@
 ;   undefined4 DAT_02c80650
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_00572400
+;   core_main.c_FUN_005030e0
+;   sound_sndmain.cpp_FUN_00572400
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00570160
-        ;   Label: FUN_00570160
+        ;   Label: sound_sndmain.cpp_FUN_00570160
     PUSH ESI                            ; 00570161
     PUSH EDI                            ; 00570162
     PUSH EBP                            ; 00570163
@@ -53,8 +54,8 @@ section .text
     PUSH 0x5f3364                       ; 00570198 | = "SfxSample::lock - invalid region"
     MOV dword ptr [0x01d1d400],ECX      ; 0057019d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 005701a3 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005701a9
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005701a9
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005701ae
     CMP dword ptr [EBX + 0x158],0x0     ; 005701b1
         ;   Label: LAB_005701b1
@@ -68,14 +69,14 @@ section .text
     PUSH 0x5f339a                       ; 005701d1 | = "SfxSample::lock - nothing allocated!"
     MOV [0x01d1d400],EAX                ; 005701d6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 005701db | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005701e1
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005701e1
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005701e6
     PUSH ESI                            ; 005701e9
         ;   Label: LAB_005701e9
     PUSH EBX                            ; 005701ea
-    CALL FUN_00572400                   ; 005701eb
-        ;   XREF to: 00572400 (UNCONDITIONAL_CALL)  ; undefined FUN_00572400()
+    CALL sound_sndmain.cpp_FUN_00572400 ; 005701eb
+        ;   XREF to: 00572400 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00572400()
     MOV EDX,dword ptr [EBX + 0x120]     ; 005701f0
     ADD ESP,0x8                         ; 005701f6
     ADD EAX,EDX                         ; 005701f9
@@ -97,8 +98,8 @@ section .text
     PUSH 0x5f332d                       ; 0057021a | = "SfxSample::lock - already locked!"
     MOV dword ptr [0x01d1d400],ECX      ; 0057021f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00570225 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0057022b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0057022b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00570230
     JMP 0x0057017d                      ; 00570233
         ;   XREF to: 0057017d (UNCONDITIONAL_JUMP)  ; LAB_0057017d

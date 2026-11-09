@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00578a80(undefined4 param_1,int param_2,int param_3,int param_4)
+; int sound_snddx_cpp_FUN_00578a80(undefined4 param_1,int param_2,int param_3,int param_4)
 ;
 ;
 ; Referenced Globals:
@@ -13,18 +13,18 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005773f0
-;   FUN_00577500
-;   FUN_005bfb40
-;   FUN_005bfb70
+;   core_main.c_FUN_005030e0
+;   crt_memory.c_memset_FUN_005bfb70
+;   crt_unknown.c_FUN_005bfb40
+;   sound_snddx.cpp_FUN_00577500
+;   sound_sndmain.cpp_FUN_005773f0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00578a80
-        ;   Label: FUN_00578a80
+        ;   Label: sound_snddx.cpp_FUN_00578a80
     PUSH ESI                            ; 00578a81
     PUSH EDI                            ; 00578a82
     PUSH EBP                            ; 00578a83
@@ -66,8 +66,8 @@ section .text
     PUSH 0x5f4e55                       ; 00578ae7 | = "DirectSoundDevice::lockSample - alrea..."
     MOV dword ptr [0x01d1d400],EDI      ; 00578aec | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 00578af2 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00578af8
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00578af8
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00578afd
     MOV EDX,dword ptr [ESP + 0x1b4]     ; 00578b00
         ;   Label: LAB_00578b00
@@ -122,8 +122,8 @@ section .text
     PUSH 0x0                            ; 00578b79
     SUB EAX,0x20                        ; 00578b7b
     PUSH EAX                            ; 00578b7e
-    CALL FUN_005bfb70                   ; 00578b7f
-        ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb70()
+    CALL crt_memory.c_memset_FUN_005bfb70 ; 00578b7f
+        ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00578b84
     MOV EAX,dword ptr [EBX + 0x10]      ; 00578b87
         ;   Label: LAB_00578b87
@@ -137,21 +137,21 @@ section .text
     RET                                 ; 00578b98
     PUSH EAX                            ; 00578b99
         ;   Label: LAB_00578b99
-    CALL FUN_00577500                   ; 00578b9a
-        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; undefined FUN_00577500()
+    CALL sound_snddx.cpp_FUN_00577500   ; 00578b9a
+        ;   XREF to: 00577500 (UNCONDITIONAL_CALL)  ; char * sound_snddx.cpp_FUN_00577500(uint error_code)
     ADD ESP,0x4                         ; 00578b9f
     PUSH EAX                            ; 00578ba2
     PUSH 0x5f4e85                       ; 00578ba3 | = "Lock hw sample buffer"
     PUSH 0x5f4c35                       ; 00578ba8 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 00578bad
     PUSH EAX                            ; 00578bb1
-    CALL FUN_005bfb40                   ; 00578bb2
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 00578bb2
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     ADD ESP,0x10                        ; 00578bb7
     MOV EAX,ESP                         ; 00578bba
     PUSH EAX                            ; 00578bbc
-    CALL FUN_005773f0                   ; 00578bbd
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005773f0()
+    CALL sound_sndmain.cpp_FUN_005773f0 ; 00578bbd
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
     ADD ESP,0x4                         ; 00578bc2
     XOR EAX,EAX                         ; 00578bc5
     ADD ESP,0x198                       ; 00578bc7

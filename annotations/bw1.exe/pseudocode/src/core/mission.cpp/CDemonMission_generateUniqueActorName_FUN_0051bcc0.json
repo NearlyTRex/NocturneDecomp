@@ -1,0 +1,170 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strlen"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [
+    {
+      "addr": "0051bd60",
+      "from_addr": "0051bd8d",
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051bcc0",
+    "address_range": [
+      [
+        "0051bcc0",
+        "0051bd5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_0051bcc0",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_0051bcc0(CDemonMission *this_ptr,char *out_buf,char *base_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0051b6c0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_0051b6c0"
+    },
+    {
+      "addr": "005c2cac",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005c2cac"
+    },
+    {
+      "addr": "005c1210",
+      "is_variadic": false,
+      "name": "crt_string.c__strnicmp_FUN_005c1210"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9938",
+      "name": "s_d_005e9938",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e993b",
+      "name": "s_s_d_005e993b",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051bd8d",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.553846153846154,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 8,
+      "COPY": 51,
+      "INT_ADD": 20,
+      "INT_AND": 40,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 38,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 18,
+      "INT_SUB": 29,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 16,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 296
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "out_buf",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "base_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 16,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

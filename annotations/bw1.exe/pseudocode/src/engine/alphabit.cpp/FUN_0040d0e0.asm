@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0040d0e0(int *param_1,int param_2,int param_3)
+; void engine_alphabit_cpp_FUN_0040d0e0(CAlphaBitmap *param_1,int param_2,int param_3)
 ;
 ;
 ; XREF[2]:
-;   FUN_0040d220 at 0040d242
-;   FUN_004bc2d0 at 004bc377
+;   core_fldnotes.cpp_FUN_004bc2d0 at 004bc377
+;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220 at 0040d242
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_alphabit_cpp_005d2ee1
@@ -19,16 +19,16 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_0040d1c0
-;   FUN_005030e0
-;   FUN_005c08d0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c08d0
+;   engine_alphabit.cpp_FUN_0040d1c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0040d0e0
-        ;   Label: FUN_0040d0e0
+        ;   Label: engine_alphabit.cpp_FUN_0040d0e0
     PUSH ESI                            ; 0040d0e1
     PUSH EDI                            ; 0040d0e2
     PUSH EBP                            ; 0040d0e3
@@ -36,16 +36,16 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 0040d0e8
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040d0ec
     PUSH EBX                            ; 0040d0f0
-    CALL FUN_0040d1c0                   ; 0040d0f1
-        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d1c0()
+    CALL engine_alphabit.cpp_FUN_0040d1c0 ; 0040d0f1
+        ;   XREF to: 0040d1c0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d1c0(CAlphaBitmap * this_ptr)
     MOV EAX,EDI                         ; 0040d0f6
     IMUL EAX,ESI                        ; 0040d0f8
     ADD ESP,0x4                         ; 0040d0fb
     MOV dword ptr [EBX + 0xc],EDI       ; 0040d0fe
     PUSH EAX                            ; 0040d101
     MOV dword ptr [EBX + 0x10],ESI      ; 0040d102
-    CALL FUN_005c08d0                   ; 0040d105
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 0040d105
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0040d10a
     MOV dword ptr [EBX],EAX             ; 0040d10d
     TEST EAX,EAX                        ; 0040d10f
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_0040d113
     IMUL EAX,ESI                        ; 0040d115
     PUSH EAX                            ; 0040d118
-    CALL FUN_005c08d0                   ; 0040d119
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 0040d119
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0040d11e
     MOV dword ptr [EBX + 0x4],EAX       ; 0040d121
     TEST EAX,EAX                        ; 0040d124
@@ -67,13 +67,13 @@ section .text
     PUSH 0x5d2f36                       ; 0040d132 | = "CAlphaBitmap::allocate - Out of memory"
     MOV dword ptr [0x01d1d400],EDX      ; 0040d137 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0040d13d | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0040d143
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0040d143
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0040d148
     PUSH 0x400                          ; 0040d14b
         ;   Label: LAB_0040d14b
-    CALL FUN_005c08d0                   ; 0040d150
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 0040d150
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0040d155
     MOV dword ptr [EBX + 0x8],EAX       ; 0040d158
     TEST EAX,EAX                        ; 0040d15b
@@ -90,8 +90,8 @@ section .text
     PUSH 0x5d2ef8                       ; 0040d16e | = "CAlphaBitmap::allocate - Out of memory"
     MOV dword ptr [0x01d1d400],ECX      ; 0040d173 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 0040d179 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0040d17f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0040d17f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0040d184
     JMP 0x0040d113                      ; 0040d187
         ;   XREF to: 0040d113 (UNCONDITIONAL_JUMP)  ; LAB_0040d113
@@ -101,8 +101,8 @@ section .text
     PUSH 0x5d2f74                       ; 0040d193 | = "CAlphaBitmap::allocate - Out of memory"
     MOV dword ptr [0x01d1d400],EDI      ; 0040d198 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 0040d19e | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0040d1a4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0040d1a4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0040d1a9
     POP EBP                             ; 0040d1ac
     POP EDI                             ; 0040d1ad

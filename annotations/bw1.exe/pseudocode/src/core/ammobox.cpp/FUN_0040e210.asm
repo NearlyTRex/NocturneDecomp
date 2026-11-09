@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0040e210(int param_1,undefined4 param_2)
+; void __cdecl core_ammobox_cpp_FUN_0040e210(CAmmoBox *this_ptr,CInventory *inventory)
 ;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
+; CInventory *     Stack[0x8]:4   inventory
 ;
 ; XREF[3]:
-;   FUN_00470750 at 0047078c
-;   FUN_004c9990 at 004c99bd
-;   FUN_0058cda0 at 0058cddc
+;   core_doc.cpp_FUN_00470750 at 0047078c
+;   core_gabriela.cpp_FUN_004c9990 at 004c99bd
+;   core_stranger.cpp_FUN_0058cda0 at 0058cddc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ammobox_cpp_005d31dc
@@ -20,19 +23,19 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_0040dbc0
-;   FUN_0040ddd0
-;   FUN_0040dfd0
-;   FUN_004f7690
-;   FUN_005030e0
-;   FUN_005c0f32
+;   core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0
+;   core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0
+;   core_ammo.cpp_FUN_0040ddd0
+;   core_inv.cpp_FUN_004f7690
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c0f32
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0040e210
-        ;   Label: FUN_0040e210
+        ;   Label: core_ammobox.cpp_FUN_0040e210
     PUSH EBP                            ; 0040e211
     MOV EBP,dword ptr [ESP + 0xc]       ; 0040e212
     MOV EDX,dword ptr [EBP + 0x320]     ; 0040e216
@@ -50,8 +53,8 @@ section .text
     PUSH EDX                            ; 0040e22e
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040e22f
     PUSH EBX                            ; 0040e233
-    CALL FUN_004f7690                   ; 0040e234
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7690()
+    CALL core_inv.cpp_FUN_004f7690      ; 0040e234
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     MOV dword ptr [EBP + 0x320],0x0     ; 0040e239
     ADD ESP,0xc                         ; 0040e243
     MOV dword ptr [EBP + 0x314],0x0     ; 0040e246
@@ -60,15 +63,15 @@ section .text
     RET                                 ; 0040e252
     PUSH 0x31c                          ; 0040e253
         ;   Label: LAB_0040e253
-    CALL FUN_005c0f32                   ; 0040e258
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0f32()
+    CALL crt_unknown.c_FUN_005c0f32     ; 0040e258
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
     ADD ESP,0x4                         ; 0040e25d
     TEST EAX,EAX                        ; 0040e260
     JZ 0x0040e26d                       ; 0040e262
         ;   XREF to: 0040e26d (CONDITIONAL_JUMP)  ; LAB_0040e26d
     PUSH EAX                            ; 0040e264
-    CALL FUN_0040dbc0                   ; 0040e265
-        ;   XREF to: 0040dbc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dbc0()
+    CALL core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0 ; 0040e265
+        ;   XREF to: 0040dbc0 (UNCONDITIONAL_CALL)  ; CAmmo * core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0(CAmmo * this_ptr)
     ADD ESP,0x4                         ; 0040e26a
     PUSH EDI                            ; 0040e26d
         ;   Label: LAB_0040e26d
@@ -82,21 +85,21 @@ section .text
     PUSH 0x5d31f0                       ; 0040e27f | = "Out of memory"
     MOV dword ptr [0x01d1d400],ESI      ; 0040e284 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0040e28a | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0040e290
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0040e290
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0040e295
     LEA ESI,[EBP + 0x2d4]               ; 0040e298
         ;   Label: LAB_0040e298
     PUSH ESI                            ; 0040e29e
     PUSH EBX                            ; 0040e29f
-    CALL FUN_0040ddd0                   ; 0040e2a0
-        ;   XREF to: 0040ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ddd0()
+    CALL core_ammo.cpp_FUN_0040ddd0     ; 0040e2a0
+        ;   XREF to: 0040ddd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_FUN_0040ddd0(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 0040e2a5
     MOV EAX,dword ptr [EBP + 0x314]     ; 0040e2a8
     PUSH EAX                            ; 0040e2ae
     PUSH EBX                            ; 0040e2af
-    CALL FUN_0040dfd0                   ; 0040e2b0
-        ;   XREF to: 0040dfd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dfd0()
+    CALL core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0 ; 0040e2b0
+        ;   XREF to: 0040dfd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0(CAmmo * this_ptr, int ammo_count)
     MOV EAX,dword ptr [EBP + 0x318]     ; 0040e2b5
     ADD ESP,0x8                         ; 0040e2bb
     MOV dword ptr [EBX + 0x318],EAX     ; 0040e2be
@@ -106,8 +109,8 @@ section .text
     ADD ESP,0x4                         ; 0040e2cd
     PUSH ESI                            ; 0040e2d0
     PUSH EBX                            ; 0040e2d1
-    CALL FUN_0040ddd0                   ; 0040e2d2
-        ;   XREF to: 0040ddd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ddd0()
+    CALL core_ammo.cpp_FUN_0040ddd0     ; 0040e2d2
+        ;   XREF to: 0040ddd0 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_FUN_0040ddd0(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 0040e2d7
     MOV EDI,EBX                         ; 0040e2da
     MOV ESI,0x5d31fe                    ; 0040e2dc | = "Some_ammo"
@@ -131,8 +134,8 @@ section .text
     PUSH EBX                            ; 0040e2fd
     MOV EDX,dword ptr [ESP + 0x20]      ; 0040e2fe
     PUSH EDX                            ; 0040e302
-    CALL FUN_004f7690                   ; 0040e303
-        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; undefined FUN_004f7690()
+    CALL core_inv.cpp_FUN_004f7690      ; 0040e303
+        ;   XREF to: 004f7690 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004f7690(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 0040e308
     MOV dword ptr [EBP + 0x314],0x0     ; 0040e30b
     POP ESI                             ; 0040e315

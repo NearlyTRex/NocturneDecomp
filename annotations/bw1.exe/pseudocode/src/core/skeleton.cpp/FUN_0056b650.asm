@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0056b650(undefined4 param_1)
+; CSkeleton * core_skeleton_cpp_FUN_0056b650(char *param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_00563bb0 at 00563bc2
+;   core_skeleton.cpp_FUN_00563bb0 at 00563bc2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f2794
@@ -15,16 +15,16 @@
 ;   undefined4 DAT_02c5fc1c
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_00563000
-;   FUN_005c04e0
+;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CSkeleton_load_FUN_00563000
+;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0056b650
-        ;   Label: FUN_0056b650
+        ;   Label: core_skeleton.cpp_FUN_0056b650
     PUSH ESI                            ; 0056b651
     PUSH EDI                            ; 0056b652
     PUSH EBP                            ; 0056b653
@@ -38,8 +38,8 @@ section .text
     MOV EDI,0x27903bc                   ; 0056b66c
     PUSH ESI                            ; 0056b671
     ADD EDI,EAX                         ; 0056b672
-    CALL FUN_005c04e0                   ; 0056b674
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 0056b674
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0056b679
     TEST EAX,EAX                        ; 0056b67c
     JZ 0x0056b6f3                       ; 0056b67e
@@ -82,8 +82,8 @@ section .text
     ADD ESI,EAX                         ; 0056b6d6
     PUSH ESI                            ; 0056b6d8
     MOV EDI,0x1                         ; 0056b6d9
-    CALL FUN_00563000                   ; 0056b6de
-        ;   XREF to: 00563000 (UNCONDITIONAL_CALL)  ; undefined FUN_00563000()
+    CALL core_skeleton.cpp_CSkeleton_load_FUN_00563000 ; 0056b6de
+        ;   XREF to: 00563000 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_load_FUN_00563000(CSkeleton * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0056b6e3
     MOV EAX,ESI                         ; 0056b6e6
     MOV dword ptr [EBX + 0x2c5fc1c],EDI ; 0056b6e8
@@ -109,8 +109,8 @@ section .text
     PUSH 0x5f27a9                       ; 0056b713 | = "Can't load %s because skeleton manage..."
     MOV [0x01d1d400],EAX                ; 0056b718 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0056b71d | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0056b723
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0056b723
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 0056b728
     XOR EAX,EAX                         ; 0056b72b
     POP EBP                             ; 0056b72d

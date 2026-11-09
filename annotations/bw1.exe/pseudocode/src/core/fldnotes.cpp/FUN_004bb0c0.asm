@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004bb0c0(int *param_1,int param_2)
+; void core_fldnotes_cpp_FUN_004bb0c0(int *param_1,int param_2)
 ;
 ;
 ; XREF[1]:
-;   FUN_004bb5f0 at 004bb61d
+;   core_fldnotes.cpp_FUN_004bb5f0 at 004bb61d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005df912
@@ -14,14 +14,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004bb0c0
-        ;   Label: FUN_004bb0c0
+        ;   Label: core_fldnotes.cpp_FUN_004bb0c0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004bb0c1
     CMP dword ptr [EBX],0x50            ; 004bb0c5
     JGE 0x004bb0d8                      ; 004bb0c8
@@ -39,8 +39,8 @@ section .text
     PUSH 0x5df927                       ; 004bb0e3 | = "TextPage::addResource - too many reso..."
     MOV dword ptr [0x01d1d400],ECX      ; 004bb0e8 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004bb0ee | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bb0f4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bb0f4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004bb0f9
     POP ESI                             ; 004bb0fc
     MOV EAX,dword ptr [EBX]             ; 004bb0fd

@@ -1,0 +1,412 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 168,
+    "complexity_score": 345,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 26,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_stride_bytecount",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 223
+  },
+  "cross_references": [
+    {
+      "addr": "0052f200",
+      "from_addr": "0052f3fe",
+      "name": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0052f200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052d450",
+      "from_addr": "0052dc93",
+      "name": "core_netgame.cpp_FUN_0052d450",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052f890",
+    "address_range": [
+      [
+        "0052f890",
+        "0052fa75"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_removePlayer_FUN_0052f890",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_0052f890(CNetGame *this_ptr,int player_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c25d0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005c25d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ebf7f",
+      "name": "s_core_netgame_cpp_005ebf7f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebf93",
+      "name": "s_CNetGame_removePlayer_in_005ebf93",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebfc1",
+      "name": "s_core_netgame_cpp_005ebfc1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebfd5",
+      "name": "s_CNetGame_removePlayer_tr_005ebfd5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d6dfb8",
+      "name": "DAT_01d6dfb8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0052f3fe",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0052f200",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052dc93",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_FUN_0052d450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.402777777777778,
+    "instruction_count": 144,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 43,
+      "BOOL_OR": 1,
+      "CALL": 5,
+      "CBRANCH": 9,
+      "COPY": 109,
+      "INT_ADD": 77,
+      "INT_AND": 186,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 105,
+      "INT_LEFT": 16,
+      "INT_LESS": 14,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 40,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 64,
+      "INT_SUB": 43,
+      "INT_XOR": 9,
+      "LOAD": 44,
+      "POPCOUNT": 48,
+      "RETURN": 2,
+      "STORE": 28
+    },
+    "pcode_op_count": 922
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "player_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "if ((player_index < 0) || (*(int *)&this_ptr->field_0x1c <= player_index)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "if (player_index == *(int *)&this_ptr->field_0x11c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "if (player_index == *(int *)&this_ptr->field_0x118) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x118 = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "if (player_index == *(int *)&this_ptr->field_0x11c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11c = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&this_ptr->field_0x1c + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1c = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x20 + player_index * 0x7c,&this_ptr->field_0x9c + player_index * 0x7c",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x9c",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x20 + player_index * 0x7c,&this_ptr->field_0x9c + player_index * 0x7c",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_01d6dfc4",
+      "severity": "mild",
+      "text": "dest_00 = &DAT_01d6dfc4 + player_index;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_01d6dfc5",
+      "severity": "mild",
+      "text": "src = &DAT_01d6dfc5 + player_index;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_01d6dfcc",
+      "severity": "mild",
+      "text": "local_14 = &DAT_01d6dfcc + player_index * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "memmove(dest_00,src,*(int *)&this_ptr->field_0x1c - player_index);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "(dest,local_14,(*(int *)&this_ptr->field_0x1c - player_index) * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(void *)((int)dest",
+      "severity": "moderate",
+      "text": "dest = (void *)((int)dest + 0x114);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "if (player_index < *(int *)&this_ptr->field_0x118) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x118 = *(int *)&this_ptr->field_0x118 + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x118 = *(int *)&this_ptr->field_0x118 + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "if (player_index < *(int *)&this_ptr->field_0x11c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x11c = *(int *)&this_ptr->field_0x11c + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x11c = *(int *)&this_ptr->field_0x11c + -1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)dest",
+      "severity": "moderate",
+      "text": "dest = (void *)((int)dest + 0x114);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar1 - player_index) * 0x7c) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 31,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((*(int *)&this_ptr->field_0x1c - player_index) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 44,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

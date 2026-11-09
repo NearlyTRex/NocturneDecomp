@@ -1,0 +1,127 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 4,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 6
+  },
+  "cross_references": [
+    {
+      "addr": "005c5348",
+      "from_addr": "005c538d",
+      "name": "crt_unknown.c_FUN_005c5348",
+      "type": "COMPUTED_CALL"
+    },
+    {
+      "addr": "005cea10",
+      "from_addr": "005cea8f",
+      "name": "unkafter_2d.cpp_FUN_005cea10",
+      "type": "COMPUTED_CALL"
+    },
+    {
+      "addr": "005ceba8",
+      "from_addr": "005ceba8",
+      "name": "unkafter_2d.cpp_FUN_005ceba8",
+      "type": "COMPUTED_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c50f8",
+    "address_range": [
+      [
+        "005c50f8",
+        "005c50f8"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c50f8",
+    "signature": "void crt_unknown_c_FUN_005c50f8(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005c538d",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c5348",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005ceba8",
+        "call_type": "direct",
+        "caller": "unkafter_2d.cpp_FUN_005ceba8",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005cea8f",
+        "call_type": "direct",
+        "caller": "unkafter_2d.cpp_FUN_005cea10",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 3
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 64,
+        "vtable_addr": "006265fc"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 68,
+        "vtable_addr": "006265fc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

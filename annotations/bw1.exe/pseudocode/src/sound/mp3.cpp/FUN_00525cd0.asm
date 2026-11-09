@@ -1,22 +1,25 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint FUN_00525cd0(undefined4 *param_1,int param_2)
+; uint __cdecl sound_mp3_cpp_FUN_00525cd0(CFileBitStream *this_ptr,int num_bits)
 ;
+; Parameters:
+; CFileBitStream * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   num_bits
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
-;   FUN_00525e70 at 00525e94
-;   FUN_00526340 at 0052635a
-;   FUN_00526400 at 00526458
-;   FUN_00526530 at 00526574
-;   FUN_005265e0 at 00526647
-;   FUN_00526670 at 00526837
-;   FUN_005268e0 at 005269b4
-;   FUN_005269e0 at 00526bd2
-;   FUN_00527530 at 00527554
-;   FUN_0052b450 at 0052ba35
+;   sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_00526530 at 00526574
+;   sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_00526400 at 00526458
+;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340 at 0052635a
+;   sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_005269e0 at 00526bd2
+;   sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_005268e0 at 005269b4
+;   sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_00526670 at 00526837
+;   sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_005265e0 at 00526647
+;   sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00525e70 at 00525e94
+;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450 at 0052ba35
+;   sound_mp3.cpp_FUN_00527530 at 00527554
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005eb167
@@ -27,15 +30,15 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005c0b10
+;   core_main.c_FUN_005030e0
+;   crt_stdio.c_fread_FUN_005c0b10
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00525cd0
-        ;   Label: FUN_00525cd0
+        ;   Label: sound_mp3.cpp_FUN_00525cd0
     PUSH ESI                            ; 00525cd1
     PUSH EDI                            ; 00525cd2
     PUSH EBP                            ; 00525cd3
@@ -102,8 +105,8 @@ section .text
     PUSH 0x5eb178                       ; 00525d5a | = "Cannot read or write more than %d bit..."
     MOV dword ptr [0x01d1d400],ECX      ; 00525d5f | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 00525d65 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00525d6b
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00525d6b
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 00525d70
     JMP 0x00525ceb                      ; 00525d73
         ;   XREF to: 00525ceb (UNCONDITIONAL_JUMP)  ; LAB_00525ceb
@@ -182,8 +185,8 @@ section .text
     ADD EAX,EDX                         ; 00525e02
     PUSH EAX                            ; 00525e04
     DEC ESI                             ; 00525e05
-    CALL FUN_005c0b10                   ; 00525e06
-        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0b10()
+    CALL crt_stdio.c_fread_FUN_005c0b10 ; 00525e06
+        ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005c0b10()
     ADD ESP,0x10                        ; 00525e0b
     CMP EAX,0x1                         ; 00525e0e
         ;   Label: LAB_00525e0e

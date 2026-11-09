@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00565780(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_skeleton_cpp_FUN_00565780(CDeformableModel *this_ptr,char *part_name,int error_if_not_found)
 ;
+; Parameters:
+; CDeformableModel * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   part_name
+; int              Stack[0xc]:4   error_if_not_found
 ;
 ; XREF[21]:
-;   FUN_00411280 at 0041142d
-;   FUN_00412840 at 004129ec
-;   FUN_00423940 at 00423a68
-;   FUN_004287e0 at 00428934
-;   FUN_0042e580 at 0042e74e
-;   FUN_004459c0 at 00445b5a
-;   FUN_00448410 at 00448479
-;   FUN_00458bc0 at 00458d19
-;   FUN_0045ff00 at 00460102
-;   FUN_0047b1b0 at 0047b31a
+;   core_batcreat.cpp_FUN_00411280 at 0041142d
+;   core_batman.cpp_FUN_00412840 at 004129ec
+;   core_bride.cpp_FUN_00423940 at 00423a68
+;   core_carved.cpp_FUN_004287e0 at 00428934
+;   core_charactr.cpp_FUN_0042e580 at 0042e74e
+;   core_constrct.cpp_FUN_004459c0 at 00445b5a
+;   core_cow.cpp_FUN_00448410 at 00448479
+;   core_demnfolk.cpp_FUN_00458bc0 at 00458d19
+;   core_dracbrid.cpp_FUN_0047b1b0 at 0047b31a
+;   core_gargoyle.cpp_FUN_004dc370 at 004dc512
 ;   ... and 11 more
 ;
 ; Referenced Globals:
@@ -24,15 +28,15 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005c04e0
+;   core_main.c_FUN_005030e0
+;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00565780
-        ;   Label: FUN_00565780
+        ;   Label: core_skeleton.cpp_FUN_00565780
     PUSH ESI                            ; 00565781
     PUSH EDI                            ; 00565782
     PUSH EBP                            ; 00565783
@@ -47,8 +51,8 @@ section .text
     PUSH ESI                            ; 0056579e
         ;   Label: LAB_0056579e
     PUSH EBP                            ; 0056579f
-    CALL FUN_005c04e0                   ; 005657a0
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 005657a0
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005657a5
     TEST EAX,EAX                        ; 005657a8
     JZ 0x005657cb                       ; 005657aa
@@ -85,8 +89,8 @@ section .text
     PUSH 0x5f2234                       ; 005657e4 | = "Can't find part %s in model %s"
     MOV dword ptr [0x01d1d400],ESI      ; 005657e9 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 005657ef | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005657f4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005657f4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 005657f9
     MOV EAX,0xffffffff                  ; 005657fc
     POP EBP                             ; 00565801

@@ -1,17 +1,18 @@
-// Name: FUN_00496920
+// Name: shape_edittool.cpp_FUN_00496920
 // Address: 00496920
 // Address Range: [[00496920, 00496dcb]]
-// Convention: unknown
-// Signature: void FUN_00496920(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6,byte param_7)
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_FUN_00496920(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00496920(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,byte param_7)
+void __cdecl shape_edittool_cpp_FUN_00496920(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
 
 {
   int iVar1;
+  CBitFont *this_ptr_00;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -24,43 +25,43 @@ void FUN_00496920(uint param_1,int param_2,int param_3,int param_4,int param_5,i
   int iVar11;
   uint *puVar12;
   byte bVar13;
-  int iVar14;
+  int local_28;
   uint *local_18;
   
   bVar13 = 0;
-  if (_DAT_01c3eb50 == 0) {
+  if (_DAT_01c3eb50 == (CBitFont *)0x0) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xa4;
-    FUN_005030e0("gEdFont must be set by the application.");
+    core_main_c_FUN_005030e0("gEdFont must be set by the application.");
   }
   _DAT_01c3f538 = *(uint *)(_DAT_01c3eb50 + 0x41e8);
-  _DAT_01c3f53c = FUN_004c4510(_DAT_01c3eb50,0x6a);
+  _DAT_01c3f53c = engine_font_cpp_FUN_004c4510(_DAT_01c3eb50,0x6a);
   if (4 < _DAT_01c3eb5c) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x864;
-    FUN_005030e0("Can't open another window!");
+    core_main_c_FUN_005030e0("Can't open another window!");
   }
   iVar1 = _DAT_01c3eb5c * 0x1f8;
   iVar2 = (int)((DAT_0061b498 + (DAT_0061b498 >> 0x1f) * -0x80) -
                (uint)((DAT_0061b498 >> 0x1f) << 6 < 0)) >> 7;
   iVar3 = DAT_0061b49c / 0x60;
   _DAT_01c3eb5c = _DAT_01c3eb5c + 1;
-  param_2 = param_2 - iVar2;
-  param_3 = param_3 - iVar3;
-  param_4 = param_4 + iVar2;
-  param_5 = param_5 + iVar3;
-  if (param_2 < 0) {
-    param_2 = 0;
+  left = left - iVar2;
+  top = top - iVar3;
+  right = right + iVar2;
+  bottom = bottom + iVar3;
+  if (left < 0) {
+    left = 0;
   }
-  if (DAT_0061b498 < param_4) {
-    param_4 = DAT_0061b498;
+  if (DAT_0061b498 < right) {
+    right = DAT_0061b498;
   }
   *(byte *)(iVar1 + 0x1c3eba8) = 0;
-  iVar14 = 0;
-  if (param_6 != 0) {
+  local_28 = 0;
+  if (text_content != (char *)0x0) {
     iVar8 = iVar1 + 0x1c3eba8;
-    iVar4 = FUN_004c4260(_DAT_01c3eb50,param_6,0x1c3dbb0,0x14,200,(param_4 - param_2) + iVar2 * -2,
-                         iVar3,0);
+    iVar4 = engine_font_cpp_FUN_004c4260
+                      (_DAT_01c3eb50,text_content,0x1c3dbb0,0x14,200,(right - left) + iVar2 * -2);
     iVar11 = 0;
     if (0 < iVar4) {
       iVar9 = 0x1c3dbb0;
@@ -71,32 +72,32 @@ void FUN_00496920(uint param_1,int param_2,int param_3,int param_4,int param_5,i
         iVar9 = iVar9 + 200;
       } while (iVar11 < iVar4);
     }
-    iVar11 = _DAT_01c3eb50;
+    this_ptr_00 = _DAT_01c3eb50;
     if (0 < iVar4) {
       *(byte *)(iVar8 + -1) = 0;
-      iVar14 = FUN_004c3f50(iVar11,iVar1 + 0x1c3eba8);
-      iVar14 = _DAT_01c3f53c + iVar14;
-      iVar8 = FUN_004c3f50(_DAT_01c3eb50,&DAT_005dc125);
-      if (iVar14 < iVar8 + _DAT_01c3f53c) {
-        iVar14 = iVar8 + _DAT_01c3f53c;
+      local_28 = engine_font_cpp_FUN_004c3f50(this_ptr_00,(char *)(iVar1 + 0x1c3eba8));
+      local_28 = _DAT_01c3f53c + local_28;
+      iVar8 = engine_font_cpp_FUN_004c3f50(_DAT_01c3eb50,&DAT_005dc125);
+      if (local_28 < iVar8 + _DAT_01c3f53c) {
+        local_28 = iVar8 + _DAT_01c3f53c;
       }
-      param_5 = param_5 + iVar14 / 2;
-      param_3 = param_3 - iVar14 / 2;
+      bottom = bottom + local_28 / 2;
+      top = top - local_28 / 2;
     }
   }
-  if (param_3 < 0) {
-    param_3 = 0;
+  if (top < 0) {
+    top = 0;
   }
-  if (DAT_0061b49c < param_5) {
-    param_5 = DAT_0061b49c;
+  if (DAT_0061b49c < bottom) {
+    bottom = DAT_0061b49c;
   }
   if (_DAT_01c3f544 != 0) {
-    param_7 = param_7 | 1;
+    window_flags = window_flags | 1;
   }
   *(uint *)(iVar1 + 0x1c3ed38) = 0;
-  if ((param_7 & 1) == 0) {
+  if ((window_flags & 1) == 0) {
     if (_DAT_01c3eb5c == 1) {
-      FUN_00494030(param_1);
+      shape_edittool_cpp_FUN_00494030(this_ptr);
     }
     if (_DAT_01c4354c != 0) {
       *(int *)(iVar1 + 0x1c3ed44) = DAT_0061b498;
@@ -106,7 +107,7 @@ void FUN_00496920(uint param_1,int param_2,int param_3,int param_4,int param_5,i
       uVar6 = (int)((iVar8 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
       *(uint *)(iVar1 + 0x1c3ed3c) = 0;
       *(uint *)(iVar1 + 0x1c3ed40) = 0;
-      local_18 = (uint *)FUN_005c08d0(*(int *)(iVar1 + 0x1c3ed48) * uVar6);
+      local_18 = FUN_005c08d0(*(int *)(iVar1 + 0x1c3ed48) * uVar6);
       *(uint **)(iVar1 + 0x1c3ed38) = local_18;
       if ((local_18 != (uint *)0x0) && (iVar8 = 0, 0 < *(int *)(iVar1 + 0x1c3ed48))) {
         do {
@@ -142,13 +143,14 @@ void FUN_00496920(uint param_1,int param_2,int param_3,int param_4,int param_5,i
   *(uint *)(iVar1 + 0x1c3eb9c) = _DAT_01c4f004;
   *(uint *)(iVar1 + 0x1c3eba0) = _DAT_01c4f018;
   *(uint *)(iVar1 + 0x1c3eba4) = _DAT_01c4f01c;
-  FUN_00511980(iVar1 + 0x1c3eb80,iVar1 + 0x1c3eb84,iVar1 + 0x1c3eb88,iVar1 + 0x1c3eb8c);
-  FUN_00511850((float)param_2,(float)param_3,(float)param_4,(float)param_5);
-  *(int *)(iVar1 + 0x1c3eb60) = param_2;
-  *(int *)(iVar1 + 0x1c3eb64) = param_3;
-  *(int *)(iVar1 + 0x1c3eb68) = param_4;
-  *(int *)(iVar1 + 0x1c3eb6c) = param_5;
-  FUN_00401810(param_2 + iVar2,param_3 + iVar3 + iVar14,(param_4 - iVar2) + -1,
-               (param_5 - iVar3) + -1);
+  unkafter_minecar_cpp_FUN_00511980
+            (iVar1 + 0x1c3eb80,iVar1 + 0x1c3eb84,iVar1 + 0x1c3eb88,iVar1 + 0x1c3eb8c);
+  unkafter_minecar_cpp_FUN_00511850((float)left,(float)top,(float)right,(float)bottom);
+  *(int *)(iVar1 + 0x1c3eb60) = left;
+  *(int *)(iVar1 + 0x1c3eb64) = top;
+  *(int *)(iVar1 + 0x1c3eb68) = right;
+  *(int *)(iVar1 + 0x1c3eb6c) = bottom;
+  engine_2d_c_setupViewportAndClipping_FUN_00401810
+            (left + iVar2,top + iVar3 + local_28,(right - iVar2) + -1,(bottom - iVar3) + -1);
   return;
 }

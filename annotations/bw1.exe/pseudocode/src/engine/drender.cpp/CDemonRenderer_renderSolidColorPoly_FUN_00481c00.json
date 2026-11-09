@@ -1,0 +1,315 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 74,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "0048c510",
+      "from_addr": "0048c924",
+      "name": "core_dtrace.cpp_FUN_0048c510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004922fc",
+      "from_addr": "0049243d",
+      "name": "core_dtri.cpp_FUN_004922fc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005553e0",
+      "from_addr": "00555446",
+      "name": "core_set.cpp_FUN_005553e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559c10",
+      "from_addr": "00559d06",
+      "name": "core_setdir.cpp_FUN_00559c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559f80",
+      "from_addr": "0055ae9b",
+      "name": "core_setdir.cpp_FUN_00559f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005640d0",
+      "from_addr": "00564861",
+      "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_005640d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9f10",
+      "from_addr": "005aa522",
+      "name": "core_water.cpp_FUN_005a9f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481c00",
+    "address_range": [
+      [
+        "00481c00",
+        "00481ca9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_00481c00(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403920",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403920"
+    },
+    {
+      "addr": "00481aa0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01bc1240",
+      "name": "DAT_01bc1240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc1244",
+      "name": "DAT_01bc1244",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f02c",
+      "name": "DAT_01c4f02c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d14",
+      "name": "DAT_01c51d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d18",
+      "name": "DAT_01c51d18",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "0055ae9b",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00559f80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005aa522",
+        "call_type": "direct",
+        "caller": "core_water.cpp_FUN_005a9f10",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00564861",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_005640d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00555446",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005553e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048c924",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048c95a",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048c995",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048c9bb",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048c9e2",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048ca10",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048c510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9107142857142856,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 50,
+      "INT_ADD": 20,
+      "INT_AND": 28,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 26,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 13,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 219
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "poly",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLPrimitivePoly *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_01bc1240",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_01bc1240 + iVar2) = *(uint *)(pSVar1 + 0x18);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01bc1240",
+      "severity": "mild",
+      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01bc1240);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 382,
+    "complexity_score": 276,
+    "cross_reference_count": 5,
+    "function_call_count": 7,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 121,
+    "suspect_count": 13,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_strchr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 503
+  },
+  "cross_references": [
+    {
+      "addr": "0050aa90",
+      "from_addr": "0050ae98",
+      "name": "core_menu.cpp_FUN_0050aa90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b470",
+      "from_addr": "0050b787",
+      "name": "core_menu.cpp_FUN_0050b470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ba70",
+      "from_addr": "0050c2eb",
+      "name": "core_menu.cpp_FUN_0050ba70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c990",
+      "from_addr": "0050cb23",
+      "name": "core_menu.cpp_FUN_0050c990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cc90",
+      "from_addr": "0050cec4",
+      "name": "core_menu.cpp_FUN_0050cc90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00509e20",
+    "address_range": [
+      [
+        "00509e20",
+        "0050a1ec"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20",
+    "signature": "int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)"
+  },
+  "function_calls": [
+    {
+      "addr": "005220b0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_005220b0"
+    },
+    {
+      "addr": "005c084c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005c084c"
+    },
+    {
+      "addr": "00406bd0",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406bd0"
+    },
+    {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c1dd0"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c3ea0"
+    },
+    {
+      "addr": "004c3f50",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c3f50"
+    },
+    {
+      "addr": "004c4510",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c4510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e7a0a",
+      "name": "s_Blair_Witch_Volume_I_Rus_005e7a0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7a5c",
+      "name": "s_Blair_Witch_Volume_I_Rus_005e7a5c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e7aac",
+      "name": "DAT_005e7aac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f2a4",
+      "name": "DAT_0061f2a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0152d244",
+      "name": "DAT_0152d244",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0152d248",
+      "name": "DAT_0152d248",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1bca0",
+      "name": "DAT_01d1bca0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1ee8c",
+      "name": "DAT_01d1ee8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1ee9c",
+      "name": "DAT_01d1ee9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d7f1b8",
+      "name": "DAT_01d7f1b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0050cec4",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_0050cc90",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0050cb23",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_0050c990",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0050ae98",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_0050aa90",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0050c2eb",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_0050ba70",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0050b787",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_0050b470",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.3312101910828025,
+    "instruction_count": 314,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "CALL": 21,
+      "CALLIND": 5,
+      "CBRANCH": 21,
+      "COPY": 248,
+      "INT_ADD": 99,
+      "INT_AND": 192,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 156,
+      "INT_LEFT": 3,
+      "INT_LESS": 14,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 11,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 39,
+      "INT_SEXT": 3,
+      "INT_SLESS": 81,
+      "INT_SUB": 115,
+      "INT_XOR": 7,
+      "LOAD": 66,
+      "POPCOUNT": 77,
+      "RETURN": 3,
+      "STORE": 111,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1360
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "menu_text_array",
+        "offset": 4,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "menu_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "selected_index_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "y_position",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "title",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_005e7aac",
+      "severity": "mild",
+      "text": "engine_font_cpp_FUN_004c1dd0(_DAT_0152d248,&DAT_005e7aac,0x206,399,0xf8,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 91,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 91,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x48);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 100,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 100,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x50);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 111,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 111,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4b);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 116,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 116,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x4d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 119,
+      "match": "*(code **)(*0x01D1BCA0",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 119,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0,0x1c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
+      "line": 80,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

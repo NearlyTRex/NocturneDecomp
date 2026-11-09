@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_005a23b0(int param_1,float param_2)
+; void core_turret_cpp_FUN_005a23b0(CTurret *param_1,float param_2)
 ;
 ;
 ; Referenced Globals:
@@ -11,19 +11,19 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_0040cc00
-;   FUN_005030e0
-;   FUN_00573660
-;   FUN_00573980
-;   FUN_00573a80
-;   FUN_005bfb40
+;   core_actor.cpp_FUN_0040cc00
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005bfb40
+;   sound_sndmain.cpp_FUN_00573980
+;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660
+;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005a23b0
-        ;   Label: FUN_005a23b0
+        ;   Label: core_turret.cpp_FUN_005a23b0
     PUSH ESI                            ; 005a23b1
     PUSH EDI                            ; 005a23b2
     PUSH EBP                            ; 005a23b3
@@ -73,8 +73,8 @@ section .text
     DEC ECX                             ; 005a24c0
     PUSH 0x3f666666                     ; 005a24c1
     MOV dword ptr [EBX + 0x8b0],ECX     ; 005a24c6
-    CALL FUN_0040cc00                   ; 005a24cc
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cc00()
+    CALL core_actor.cpp_FUN_0040cc00    ; 005a24cc
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
     MOV dword ptr [ESP + 0xf8],EAX      ; 005a24d1
     FLD float ptr [ESP + 0xf8]          ; 005a24d8
     ADD ESP,0x8                         ; 005a24df
@@ -82,8 +82,8 @@ section .text
     FSTP float ptr [ESP]                ; 005a24e8
     PUSH dword ptr [ESP]                ; 005a24eb
     PUSH ESI                            ; 005a24ee
-    CALL FUN_00573980                   ; 005a24ef
-        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; undefined FUN_00573980()
+    CALL sound_sndmain.cpp_FUN_00573980 ; 005a24ef
+        ;   XREF to: 00573980 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00573980(uint sfx_handle, float base_frequency)
     ADD ESP,0x8                         ; 005a24f4
     TEST EAX,EAX                        ; 005a24f7
     JZ 0x005a281c                       ; 005a24f9
@@ -101,8 +101,8 @@ section .text
     PUSH 0x5f8a1b                       ; 005a27fe
     MOV dword ptr [0x01d1d400],EDX      ; 005a2803 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005a2809 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005a280f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005a280f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005a2814
     JMP 0x005a245a                      ; 005a2817
         ;   XREF to: 005a245a (UNCONDITIONAL_JUMP)  ; LAB_005a245a
@@ -113,8 +113,8 @@ section .text
     PUSH 0x5f8a3c                       ; 005a2825 | = "turret-loop.wav * %f"
     LEA EAX,[ESP + 0x10]                ; 005a282a
     PUSH EAX                            ; 005a282e
-    CALL FUN_005bfb40                   ; 005a282f
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 005a282f
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     ADD ESP,0x10                        ; 005a2834
     LEA EAX,[ESP + 0x4]                 ; 005a2837
     PUSH EAX                            ; 005a283b
@@ -133,8 +133,8 @@ section .text
         ;   Label: LAB_005a2856
     MOV EAX,dword ptr [EBX + 0x8b4]     ; 005a2858
     PUSH EAX                            ; 005a285e
-    CALL FUN_00573660                   ; 005a285f
-        ;   XREF to: 00573660 (UNCONDITIONAL_CALL)  ; undefined FUN_00573660()
+    CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660 ; 005a285f
+        ;   XREF to: 00573660 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660(uint sfx_handle, uint output_format)
     MOV dword ptr [ESP + 0xe8],EAX      ; 005a2864
     MOV dword ptr [ESP + 0xec],EDX      ; 005a286b
     FLD double ptr [ESP + 0xe8]         ; 005a2872
@@ -147,8 +147,8 @@ section .text
         ;   XREF to: 005a24ff (CONDITIONAL_JUMP)  ; LAB_005a24ff
     MOV EDX,dword ptr [EBX + 0x8b4]     ; 005a2889
     PUSH EDX                            ; 005a288f
-    CALL FUN_00573a80                   ; 005a2890
-        ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; undefined FUN_00573a80()
+    CALL sound_sndmain.cpp_killSfx_FUN_00573a80 ; 005a2890
+        ;   XREF to: 00573a80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_00573a80(uint sfx_handle)
     ADD ESP,0x4                         ; 005a2895
     PUSH 0x5f8a51                       ; 005a2898 | = "turret-tail.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 005a289d

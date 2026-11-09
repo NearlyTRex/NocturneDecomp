@@ -1,0 +1,208 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
+  "cross_references": [
+    {
+      "addr": "00581310",
+      "from_addr": "00581377",
+      "name": "engine_special.cpp_FUN_00581310",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ad470",
+    "address_range": [
+      [
+        "005ad470",
+        "005ad481"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_getProcAddress_FUN_005ad470",
+    "signature": "FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_005ad470(HMODULE hModule,LPCSTR lpProcName)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000076",
+      "is_variadic": false,
+      "name": "GetProcAddress"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d05c8",
+      "name": "PTR_GetProcAddress_005d05c8",
+      "type": "void*",
+      "value": "001d0f6c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "00581377",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005813d9",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005813ff",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00581426",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0058144d",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00581473",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0058149a",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005814c1",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005814e7",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0058150e",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00581310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.1666666666666665,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 5,
+      "INT_ADD": 3,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 19
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hModule",
+        "offset": 4,
+        "size": 4,
+        "type": "HMODULE"
+      },
+      {
+        "is_param": true,
+        "name": "lpProcName",
+        "offset": 8,
+        "size": 4,
+        "type": "LPCSTR"
+      }
+    ]
+  },
+  "suspects": []
+}

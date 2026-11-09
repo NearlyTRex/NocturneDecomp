@@ -1,0 +1,298 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 70,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "raw_address_pointer_store",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "004ea980",
+      "from_addr": "004ea9ba",
+      "name": "core_hero.cpp_FUN_004ea980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed1f0",
+      "from_addr": "004ed20f",
+      "name": "core_hiram.cpp_CHiram_dtor_FUN_004ed1f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed400",
+      "from_addr": "004ed415",
+      "name": "core_hiram.cpp_CNPC_dtor_FUN_004ed400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ef910",
+      "from_addr": "004ef925",
+      "name": "core_hostage.cpp_CHostage_dtor_FUN_004ef910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f0a90",
+      "from_addr": "004f0aa5",
+      "name": "core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f0a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532850",
+      "from_addr": "005328a3",
+      "name": "core_passngr.cpp_CPassenger_dtor_FUN_00532850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00594d50",
+      "from_addr": "00594d65",
+      "name": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_00594d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00594cb0",
+      "from_addr": "00594cc5",
+      "name": "core_tbplayer.cpp_CDrummer_dtor_FUN_00594cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004159f0",
+      "from_addr": "00415a05",
+      "name": "unkafter_bird.cpp_CBird_dtor_FUN_004159f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00533060",
+    "address_range": [
+      [
+        "00533060",
+        "005330e1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_dtor_FUN_00533060",
+    "signature": "CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_00533060(CPathMap *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c25d0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005c25d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01e6be48",
+      "name": "DAT_01e6be48",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004ea9ba",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004ea980",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00415a05",
+        "call_type": "direct",
+        "caller": "unkafter_bird.cpp_CBird_dtor_FUN_004159f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ed20f",
+        "call_type": "direct",
+        "caller": "core_hiram.cpp_CHiram_dtor_FUN_004ed1f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ef925",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_dtor_FUN_004ef910",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f0aa5",
+        "call_type": "direct",
+        "caller": "core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f0a90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ed415",
+        "call_type": "direct",
+        "caller": "core_hiram.cpp_CNPC_dtor_FUN_004ed400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005328a3",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_dtor_FUN_00532850",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00594d65",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_00594d50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00594cc5",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CDrummer_dtor_FUN_00594cb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.229166666666667,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 48,
+      "INT_ADD": 20,
+      "INT_AND": 25,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 24,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 12,
+      "INT_SUB": 12,
+      "INT_XOR": 3,
+      "LOAD": 12,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 203
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 16,
+      "match": "*(CPathMap **)(iVar2 + 0x1e6be4c",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CPathMap **)(iVar2 + 0x1e6be4c)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((_DAT_01e6be48 - iVar3) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 18,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPathMap",
+        "offset": 8,
+        "vtable_addr": "006047b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

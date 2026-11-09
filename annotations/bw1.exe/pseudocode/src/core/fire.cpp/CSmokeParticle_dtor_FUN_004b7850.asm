@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CSmokeParticle * core_fire_cpp_CSmokeParticle_dtor_FUN_004b7850(CSmokeParticle *this_ptr,uint flags)
+;
+; Parameters:
+; CSmokeParticle * Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   flags
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 004b7850
+        ;   Label: core_fire.cpp_CSmokeParticle_dtor_FUN_004b7850
+    RET                                 ; 004b7854
+

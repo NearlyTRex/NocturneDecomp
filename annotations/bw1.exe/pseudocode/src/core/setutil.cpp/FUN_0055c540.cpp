@@ -1,38 +1,40 @@
-// Name: FUN_0055c540
+// Name: core_setutil.cpp_FUN_0055c540
 // Address: 0055c540
 // Address Range: [[0055c540, 0055c5ea]]
-// Convention: unknown
-// Signature: void FUN_0055c540(int param_1,undefined4 param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_setutil_cpp_FUN_0055c540(C3DSCamera *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0055c540(int param_1,uint param_2)
+void __cdecl core_setutil_cpp_FUN_0055c540(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
-  int iVar1;
+  void *pvVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
   
-  FUN_005c04b0(param_2,&DAT_005f1115,param_1 + 0x194);
-  iVar1 = FUN_005c10d0(*(uint *)(param_1 + 0x198),*(int *)(param_1 + 0x194) << 2);
-  *(int *)(param_1 + 0x198) = iVar1;
-  if (0 < *(int *)(param_1 + 0x194)) {
-    if (iVar1 == 0) {
+  _fscanf(file_handle,&DAT_005f1115,&this_ptr->field_0x194);
+  pvVar1 = realloc
+                     (*(void **)&this_ptr->field_0x198,*(int *)&this_ptr->field_0x194 << 2);
+  *(void **)&this_ptr->field_0x198 = pvVar1;
+  if (0 < *(int *)&this_ptr->field_0x194) {
+    if (pvVar1 == (void *)0x0) {
       _DAT_01d1d400 = "..\\core\\setutil.cpp";
       _DAT_01d1d404 = 0xe4;
-      FUN_005030e0("Out of memory for pvsList - %d",*(int *)(param_1 + 0x194));
+      core_main_c_FUN_005030e0("Out of memory for pvsList - %d",*(int *)&this_ptr->field_0x194);
     }
-    iVar1 = 0;
-    if (0 < *(int *)(param_1 + 0x194)) {
+    iVar4 = 0;
+    if (0 < *(int *)&this_ptr->field_0x194) {
       iVar3 = 0;
       do {
-        iVar2 = *(int *)(param_1 + 0x198) + iVar3;
-        iVar1 = iVar1 + 1;
+        iVar2 = *(int *)&this_ptr->field_0x198 + iVar3;
+        iVar4 = iVar4 + 1;
         iVar3 = iVar3 + 4;
-        FUN_005c04b0(param_2,&DAT_005f114c,iVar2);
-      } while (iVar1 < *(int *)(param_1 + 0x194));
+        _fscanf(file_handle,&DAT_005f114c,iVar2);
+      } while (iVar4 < *(int *)&this_ptr->field_0x194);
     }
   }
   return;

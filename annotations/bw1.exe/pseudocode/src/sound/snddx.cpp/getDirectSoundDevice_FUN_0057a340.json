@@ -1,0 +1,370 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 200,
+    "complexity_score": 290,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 75,
+    "suspect_count": 19,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 275
+  },
+  "cross_references": [
+    {
+      "addr": "005755c0",
+      "from_addr": "0057563c",
+      "name": "sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057a340",
+    "address_range": [
+      [
+        "0057a340",
+        "0057a56b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340",
+    "signature": "undefined * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0057a340(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005cf862",
+      "is_variadic": false,
+      "name": "crt_dsound.c_DirectSoundCreate"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005bfb40"
+    },
+    {
+      "addr": "0057a290",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290"
+    },
+    {
+      "addr": "00577500",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577500"
+    },
+    {
+      "addr": "00577a90",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_FUN_00577a90"
+    },
+    {
+      "addr": "00575570",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00575570"
+    },
+    {
+      "addr": "005773f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005773f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4c35",
+      "name": "s_DirectSux_Unable_to_s_s_005f4c35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56a3",
+      "name": "s_create_DirectSound_objec_005f56a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56bd",
+      "name": "s_Set_cooperative_level_005f56bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56d3",
+      "name": "s_Create_the_primary_buffe_005f56d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f56ed",
+      "name": "s_Create_the_primary_buffe_005f56ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00627880",
+      "name": "DAT_00627880",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81d94",
+      "name": "DAT_02c81d94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81d98",
+      "name": "DAT_02c81d98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c81da0",
+      "name": "DAT_02c81da0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9be68",
+      "name": "DAT_02c9be68",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0057563c",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7607361963190185,
+    "instruction_count": 163,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "BRANCH": 2,
+      "CALL": 16,
+      "CALLIND": 4,
+      "CBRANCH": 9,
+      "COPY": 129,
+      "INT_ADD": 56,
+      "INT_AND": 117,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 6,
+      "INT_LESS": 5,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 44,
+      "INT_SUB": 77,
+      "INT_XOR": 5,
+      "LOAD": 24,
+      "POPCOUNT": 38,
+      "RETURN": 3,
+      "STORE": 72
+    },
+    "pcode_op_count": 776
+  },
+  "stack_frame": {
+    "frame_size": 332,
+    "local_size": 332,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0057a340(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_02c8283c",
+      "severity": "mild",
+      "text": "iVar1 = sound_snddx_cpp_FUN_00577a90((CDirectSoundDevice *)&DAT_02c8283c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0057a290(param_1,local_148);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 * 0x11c + 0x2c81044) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "lp_guid = (LPGUID)(param_1 * 0x11c + 0x2c81048);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_02c81d94",
+      "severity": "mild",
+      "text": "uVar2 = DirectSoundCreate(lp_guid,(LPDIRECTSOUND *)&DAT_02c81d94,(LPUNKNOWN)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 30,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*_DAT_02c81d94 + 0x18))(_DAT_02c81d94,_DAT_02c9be68,2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 35,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_30,&DAT_02c81d98,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_02c81d98",
+      "severity": "mild",
+      "text": "uVar2 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_30,&DAT_02c81d98,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 43,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_30,&DAT_02c81d98,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_02c81d98",
+      "severity": "mild",
+      "text": "uVar2 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_30,&DAT_02c81d98,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((1 < iVar1) && (1 < *(int *)(param_1 * 0x11c + 0x2c8115c))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_00627880",
+      "severity": "mild",
+      "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_02c81da0",
+      "severity": "mild",
+      "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_02c8283c",
+      "severity": "mild",
+      "text": "return &DAT_02c8283c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_02c8283c",
+      "severity": "mild",
+      "text": "sound_snddx_cpp_FUN_00577a90((CDirectSoundDevice *)&DAT_02c8283c);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

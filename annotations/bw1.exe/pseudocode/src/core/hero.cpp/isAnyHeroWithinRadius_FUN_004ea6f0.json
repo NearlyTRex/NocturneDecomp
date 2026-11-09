@@ -1,0 +1,252 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 130,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 9,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "004b2880",
+      "from_addr": "004b28e2",
+      "name": "core_fire.cpp_initProcess_FUN_004b2880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00504400",
+      "from_addr": "0050440e",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a370",
+      "from_addr": "0059a38b",
+      "name": "core_trash.cpp_FUN_0059a370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a5550",
+      "from_addr": "005a6634",
+      "name": "core_vampboss.cpp_FUN_005a5550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ea6f0",
+    "address_range": [
+      [
+        "004ea6f0",
+        "004ea763"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0",
+    "signature": "undefined4 __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(float *param_1,float param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d06aa0",
+      "name": "DAT_01d06aa0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004b28e2",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_initProcess_FUN_004b2880",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a6634",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_FUN_005a5550",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059a38b",
+        "call_type": "direct",
+        "caller": "core_trash.cpp_FUN_0059a370",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059ad03",
+        "call_type": "direct",
+        "caller": "core_trash.cpp_FUN_0059a370",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050440e",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.826086956521739,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 2,
+      "CBRANCH": 4,
+      "COPY": 111,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 19,
+      "INT_AND": 38,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 21,
+      "INT_LEFT": 6,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 5,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 16,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 314
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(float *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(float *param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)(iVar1 + 0x20) - *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)(iVar1 + 0x24) - param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = *(float *)(iVar1 + 0x28) - param_1[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 < param_2 * param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 < param_2 * param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

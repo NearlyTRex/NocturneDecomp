@@ -1,0 +1,212 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 136,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 123
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00403f70",
+    "address_range": [
+      [
+        "00403f70",
+        "00404069"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00403f70",
+    "signature": "void * __cdecl engine_3d_c_renderPolygonTexturedUVLitPlaneMasked_FUN_00403f70(SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "004039d0",
+      "is_variadic": false,
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_004039d0"
+    },
+    {
+      "addr": "0043cbf0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_0043cbf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00713a60",
+      "name": "DAT_00713a60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4f02c",
+      "name": "DAT_01c4f02c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d00",
+      "name": "DAT_01c51d00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d14",
+      "name": "DAT_01c51d14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d18",
+      "name": "DAT_01c51d18",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.571428571428571,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 4,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 55,
+      "INT_ADD": 26,
+      "INT_AND": 48,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 10,
+      "INT_SEXT": 6,
+      "INT_SLESS": 20,
+      "INT_SUB": 14,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 12,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 320
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "else if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00713a98",
+      "severity": "mild",
+      "text": "piVar3 = &DAT_00713a98;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00713a60",
+      "severity": "mild",
+      "text": "for (iVar4 = 0; iVar1 = DAT_00713a60, iVar4 < *(int *)(prim + 4) * 3; iVar4 = iVar4 + 3) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_00713a60",
+      "severity": "mild",
+      "text": "*piVar3 = *(int *)pSVar2 + DAT_00713a60;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0062902c",
+      "severity": "mild",
+      "text": "(&DAT_0062902c)[(*(int *)pSVar2 + iVar1) * 0xc] = *(int *)(pSVar2 + 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_00629030",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_00629030 + (*(int *)pSVar2 + iVar1) * 0x30) = *(int *)(pSVar2 + 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_00713a98",
+      "severity": "mild",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_0043cbf0(*(int *)(prim + 4),&DAT_00713a98);",
+      "type": "undefined_data"
+    }
+  ]
+}

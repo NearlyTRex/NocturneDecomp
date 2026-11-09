@@ -1,0 +1,17 @@
+// Name: core_constrct.cpp_staticInit_FUN_004457c0
+// Address: 004457c0
+// Address Range: [[004457c0, 004457e3]]
+// Convention: unknown
+// Signature: void core_constrct_cpp_staticInit_FUN_004457c0(void)
+
+#include "nocturne.h"
+
+void core_constrct_cpp_staticInit_FUN_004457c0(void)
+
+{
+  core_actor_cpp_registerActorClass_FUN_0040c160
+            (&g_CConstructClassInfo,"CConstruct",
+             core_constrct_cpp_factoryFuncConstruct_FUN_004457f0,&g_CConstructClassVersion,3,
+             &g_CEnemyClassInfo);
+  return;
+}

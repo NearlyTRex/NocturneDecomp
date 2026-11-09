@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint FUN_00443a80(int param_1,byte param_2)
+; uint support_codec_cpp_FUN_00443a80(int param_1,byte param_2)
 ;
 ;
 ; XREF[1]:
-;   FUN_00443af0 at 00443b2d
+;   support_codec.cpp_FUN_00443af0 at 00443b2d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005d6a92
@@ -16,19 +16,19 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_00443b70
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
+;   support_codec.cpp_FUN_00443b70
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00443a80
-        ;   Label: FUN_00443a80
+        ;   Label: support_codec.cpp_FUN_00443a80
     MOV EBX,dword ptr [ESP + 0x8]       ; 00443a81
     PUSH EBX                            ; 00443a85
-    CALL FUN_00443b70                   ; 00443a86
-        ;   XREF to: 00443b70 (UNCONDITIONAL_CALL)  ; undefined FUN_00443b70()
+    CALL support_codec.cpp_FUN_00443b70 ; 00443a86
+        ;   XREF to: 00443b70 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00443b70()
     MOV EAX,dword ptr [EBX + 0x4]       ; 00443a8b
     ADD ESP,0x4                         ; 00443a8e
     TEST EAX,EAX                        ; 00443a91
@@ -58,8 +58,8 @@ section .text
     PUSH 0x5d6aa7                       ; 00443acd | = "Invalid mode."
     MOV dword ptr [0x01d1d400],ECX      ; 00443ad2 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 00443ad8 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00443ade
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00443ade
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00443ae3
     XOR AL,AL                           ; 00443ae6
     POP EBX                             ; 00443ae8

@@ -1,137 +1,16 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 16,
-        "message": "no matching function for call to 'FUN_0040c550'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 16,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_02c99770'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 21,
-        "message": "no matching function for call to 'FUN_0040c550'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 21,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 26,
-        "message": "no matching function for call to 'FUN_0040c550'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 349,
+    "complexity_score": 314,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 24,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 59,
-    "suspect_count": 27,
+    "suspect_count": 24,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -139,21 +18,21 @@
   },
   "cross_references": [
     {
-      "addr": "004f62e0",
-      "from_addr": "004f62f1",
-      "name": "FUN_004f62e0",
+      "addr": "004f90d0",
+      "from_addr": "004f921e",
+      "name": "core_inv.cpp_FUN_004f90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f6350",
       "from_addr": "004f6361",
-      "name": "FUN_004f6350",
+      "name": "core_inv.cpp_getItemDescription_FUN_004f6350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f90d0",
-      "from_addr": "004f921e",
-      "name": "FUN_004f90d0",
+      "addr": "004f62e0",
+      "from_addr": "004f62f1",
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004f62e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -166,24 +45,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f60c0",
-    "signature": "int FUN_004f60c0(undefined4 param_1)"
+    "name": "core_inv.cpp_FUN_004f60c0",
+    "signature": "int core_inv_cpp_FUN_004f60c0(CDemonActor *param_1)"
   },
   "function_calls": [
     {
-      "addr": "0040c550",
-      "is_variadic": false,
-      "name": "FUN_0040c550"
-    },
-    {
       "addr": "0040c600",
       "is_variadic": false,
-      "name": "FUN_0040c600"
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "0040c550",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_0040c550"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     }
   ],
   "globals": [
@@ -261,49 +140,49 @@
     },
     {
       "addr": "007c33a4",
-      "name": "DAT_007c33a4",
+      "name": "g_CAmmoClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c385c",
-      "name": "DAT_007c385c",
+      "name": "g_CBatteryClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "007c5094",
-      "name": "DAT_007c5094",
+      "name": "g_CBoxActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c57034",
-      "name": "DAT_01c57034",
+      "name": "g_CFilmReelClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0d40",
-      "name": "DAT_01cd0d40",
+      "name": "g_CGasMaskClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e38",
-      "name": "DAT_01cd0e38",
+      "name": "g_CGogglesClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d06a90",
-      "name": "DAT_01d06a90",
+      "name": "g_CHealthItemClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d1bc9c",
-      "name": "DAT_01d1bc9c",
+      "name": "g_CKeyActorClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -321,13 +200,13 @@
     },
     {
       "addr": "02c8adcc",
-      "name": "DAT_02c8adcc",
+      "name": "g_CTrapClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c99770",
-      "name": "DAT_02c99770",
+      "name": "g_CWeaponClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -338,7 +217,7 @@
       {
         "call_addr": "004f62f1",
         "call_type": "direct",
-        "caller": "FUN_004f62e0",
+        "caller": "core_inv.cpp_getItemDisplayName_FUN_004f62e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -352,7 +231,7 @@
       {
         "call_addr": "004f6361",
         "call_type": "direct",
-        "caller": "FUN_004f6350",
+        "caller": "core_inv.cpp_getItemDescription_FUN_004f6350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -366,7 +245,7 @@
       {
         "call_addr": "004f921e",
         "call_type": "direct",
-        "caller": "FUN_004f90d0",
+        "caller": "core_inv.cpp_FUN_004f90d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -426,7 +305,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_004f60c0(uint param_1)",
+      "text": "int core_inv_cpp_FUN_004f60c0(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -434,7 +313,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CWeapon\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CWeapon\");",
       "type": "unnamed_param"
     },
     {
@@ -442,7 +321,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,_DAT_02c99770);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CWeaponClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -450,7 +329,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CAmmo\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CAmmo\");",
       "type": "unnamed_param"
     },
     {
@@ -458,23 +337,15 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,DAT_007c33a4);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CAmmoClassInfo.name_hash);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_007c33a4",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,DAT_007c33a4);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CKeyActor\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CKeyActor\");",
       "type": "unnamed_param"
     },
     {
@@ -482,7 +353,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,_DAT_01d1bc9c);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CKeyActorClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -490,7 +361,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CBoxActor\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CBoxActor\");",
       "type": "unnamed_param"
     },
     {
@@ -498,23 +369,15 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,DAT_007c5094);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CBoxActorClassInfo.name_hash);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_007c5094",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,DAT_007c5094);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CHealthItem\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CHealthItem\");",
       "type": "unnamed_param"
     },
     {
@@ -522,7 +385,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,_DAT_01d06a90);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CHealthItemClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -530,7 +393,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CGasMask\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CGasMask\");",
       "type": "unnamed_param"
     },
     {
@@ -538,7 +401,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,_DAT_01cd0d40);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CGasMaskClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -546,7 +409,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CGoggles\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CGoggles\");",
       "type": "unnamed_param"
     },
     {
@@ -554,7 +417,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,_DAT_01cd0e38);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CGogglesClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -562,7 +425,7 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CFilmReel\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CFilmReel\");",
       "type": "unnamed_param"
     },
     {
@@ -570,7 +433,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CTrap\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CTrap\");",
       "type": "unnamed_param"
     },
     {
@@ -578,7 +441,7 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,_DAT_02c8adcc);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CTrapClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
@@ -586,7 +449,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c550(param_1,\"CBattery\");",
+      "text": "iVar1 = core_actor_cpp_FUN_0040c550(param_1,\"CBattery\");",
       "type": "unnamed_param"
     },
     {
@@ -594,23 +457,15 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,DAT_007c385c);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CBatteryClassInfo.name_hash);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_007c385c",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,DAT_007c385c);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005030e0(\"getModel - Can't classify : %s\",param_1);",
+      "text": "core_main_c_FUN_005030e0(\"getModel - Can't classify : %s\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -618,7 +473,7 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_0040c600(param_1,_DAT_01c57034);",
+      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CFilmReelClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {

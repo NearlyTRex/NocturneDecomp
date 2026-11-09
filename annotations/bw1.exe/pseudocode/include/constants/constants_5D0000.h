@@ -2992,37 +2992,6 @@ static undefined1 DAT_005dfe38 = 0x61;
 static undefined1 DAT_005dff53 = 0x73;
 static undefined1 DAT_005dff54 = 0x65;
 
-// void* constants
-static void* DAT_005D03E4 = (void*)0x001D076E;
-static void* DAT_005D03F0 = (void*)0x001D079E;
-static void* DAT_005D03F4 = (void*)0x001D07AE;
-static void* DAT_005D0448 = (void*)0x001D08EE;
-static void* DAT_005D04B0 = (void*)0x001D0AB0;
-static void* DAT_005D0534 = (void*)0x001D0CBA;
-static void* DAT_005D053C = (void*)0x001D0CE0;
-static void* DAT_005D0564 = (void*)0x001D0DA0;
-static void* DAT_005D056C = (void*)0x001D0DC8;
-static void* DAT_005D0570 = (void*)0x001D0DD2;
-static void* DAT_005D057C = (void*)0x001D0E02;
-static void* DAT_005D059C = (void*)0x001D0EAC;
-static void* DAT_005D05A4 = (void*)0x001D0ED0;
-static void* DAT_005D05B4 = (void*)0x001D0F10;
-static void* DAT_005D05C4 = (void*)0x001D0F60;
-static void* DAT_005D05FC = (void*)0x001D105E;
-static void* DAT_005D062C = (void*)0x001D1158;
-static void* DAT_005D0630 = (void*)0x001D1168;
-static void* DAT_005D0634 = (void*)0x001D1182;
-static void* DAT_005D0644 = (void*)0x001D11D0;
-static void* DAT_005D064C = (void*)0x001D11EE;
-static void* DAT_005D065C = (void*)0x001D1238;
-static void* DAT_005D069C = (void*)0x80000033;
-static void* DAT_005D06B0 = (void*)0x80000007;
-static void* DAT_005D06B4 = (void*)0x80000015;
-static void* DAT_005D06C0 = (void*)0x80000001;
-static void* DAT_005D06C4 = (void*)0x8000000D;
-static void* DAT_005D06F8 = (void*)0x80000008;
-static void* DAT_005D06FC = (void*)0x8000000E;
-
 // word constants
 static word DAT_005D076E = 0x1;
 static word DAT_005D077E = 0x2;

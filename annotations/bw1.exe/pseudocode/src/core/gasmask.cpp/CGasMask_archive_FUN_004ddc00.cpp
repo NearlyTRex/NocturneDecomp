@@ -1,0 +1,16 @@
+// Name: core_gasmask.cpp_CGasMask_archive_FUN_004ddc00
+// Address: 004ddc00
+// Address Range: [[004ddc00, 004ddc24]]
+// Convention: __cdecl
+// Signature: void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004ddc00(CGasMask *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004ddc00(CGasMask *this_ptr)
+
+{
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
+            (&this_ptr->field_0x158,"modelName");
+  return;
+}

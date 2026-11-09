@@ -1,52 +1,52 @@
-// Name: FUN_0056b520
+// Name: core_skeleton.cpp_FUN_0056b520
 // Address: 0056b520
 // Address Range: [[0056b520, 0056b60f]]
 // Convention: unknown
-// Signature: int FUN_0056b520(undefined4 param_1)
+// Signature: CDeformableModel * core_skeleton_cpp_FUN_0056b520(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_0056b520(uint param_1)
+CDeformableModel * core_skeleton_cpp_FUN_0056b520(char *param_1)
 
 {
   int iVar1;
   int iVar2;
-  byte *puVar3;
-  int iVar4;
+  int iVar3;
+  char *str1;
+  CDeformableModel *this_ptr;
   
-  iVar2 = 0;
-  puVar3 = &DAT_026bb86c;
+  iVar3 = 0;
+  str1 = &g_DeformableModelPool[0].field_0x35b0;
   do {
-    iVar4 = iVar2 * 0x3600 + 0x26b82bc;
-    iVar1 = FUN_005c04e0(puVar3,param_1);
+    iVar1 = _stricmp(str1,param_1);
     if (iVar1 == 0) {
-      FUN_00563bb0(iVar4);
-      *(uint *)(&DAT_027902bc + iVar2 * 4) = 1;
-      return iVar4;
+      core_skeleton_cpp_FUN_00563bb0(g_DeformableModelPool + iVar3);
+      *(uint *)(&DAT_027902bc + iVar3 * 4) = 1;
+      return g_DeformableModelPool + iVar3;
+    }
+    iVar3 = iVar3 + 1;
+    str1 = str1 + 0x3600;
+  } while (iVar3 < 0x40);
+  iVar2 = 0;
+  iVar1 = 0;
+  iVar3 = _DAT_027902bc;
+  while( true ) {
+    if (iVar3 == 0) {
+      this_ptr = g_DeformableModelPool + iVar2;
+      core_skeleton_cpp_CDeformableModel_load_FUN_00564e40(this_ptr,param_1);
+      core_skeleton_cpp_FUN_00563bb0(this_ptr);
+      *(uint *)(&DAT_027902bc + iVar1) = 1;
+      return this_ptr;
     }
     iVar2 = iVar2 + 1;
-    puVar3 = puVar3 + 0x3600;
-  } while (iVar2 < 0x40);
-  iVar4 = 0;
-  iVar1 = 0;
-  iVar2 = _DAT_027902bc;
-  while( true ) {
-    if (iVar2 == 0) {
-      iVar2 = iVar4 * 0x3600 + 0x26b82bc;
-      FUN_00564e40(iVar2,param_1);
-      FUN_00563bb0(iVar2);
-      *(uint *)(&DAT_027902bc + iVar1) = 1;
-      return iVar2;
-    }
-    iVar4 = iVar4 + 1;
     if (0xff < iVar1 + 4) break;
-    iVar2 = *(int *)(iVar1 + 0x27902c0);
+    iVar3 = *(int *)(iVar1 + 0x27902c0);
     iVar1 = iVar1 + 4;
   }
   _DAT_01d1d400 = "..\\core\\skeleton.cpp";
   _DAT_01d1d404 = 0x1086;
-  FUN_005030e0("Can't load %s because deformable model manager is full.  (Size is %d)",param_1,0x40);
-  return 0;
+  core_main_c_FUN_005030e0("Can't load %s because deformable model manager is full.  (Size is %d)",param_1,0x40);
+  return (CDeformableModel *)0x0;
 }

@@ -1,128 +1,8 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 20,
-        "message": "use of undeclared identifier 'DAT_026bb86c'; did you mean 'DAT_0062716c'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 23,
-        "message": "no matching function for call to 'FUN_005c04e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 26,
-        "message": "use of undeclared identifier 'DAT_027902bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_027902bc'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 38,
-        "message": "no matching function for call to 'FUN_00564e40'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 40,
-        "message": "use of undeclared identifier 'DAT_027902bc'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 151,
+    "complexity_score": 156,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
@@ -132,6 +12,7 @@
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
+      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -141,13 +22,13 @@
     {
       "addr": "004104c0",
       "from_addr": "004104d2",
-      "name": "FUN_004104c0",
+      "name": "core_baron.cpp_CBaronWeapon_setup_FUN_004104c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00569b20",
       "from_addr": "00569b2a",
-      "name": "FUN_00569b20",
+      "name": "core_skeleton.cpp_FUN_00569b20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -161,29 +42,29 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_0056b520",
-    "signature": "int FUN_0056b520(undefined4 param_1)"
+    "name": "core_skeleton.cpp_FUN_0056b520",
+    "signature": "CDeformableModel * core_skeleton_cpp_FUN_0056b520(char *param_1)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "00563bb0",
-      "is_variadic": false,
-      "name": "FUN_00563bb0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "00564e40",
       "is_variadic": false,
-      "name": "FUN_00564e40"
+      "name": "core_skeleton.cpp_CDeformableModel_load_FUN_00564e40"
+    },
+    {
+      "addr": "00563bb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00563bb0"
     },
     {
       "addr": "005c04e0",
       "is_variadic": false,
-      "name": "FUN_005c04e0"
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
     }
   ],
   "globals": [
@@ -224,7 +105,7 @@
       {
         "call_addr": "00569b2a",
         "call_type": "direct",
-        "caller": "FUN_00569b20",
+        "caller": "core_skeleton.cpp_FUN_00569b20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -237,7 +118,7 @@
       {
         "call_addr": "004104d2",
         "call_type": "direct",
-        "caller": "FUN_004104c0",
+        "caller": "core_baron.cpp_CBaronWeapon_setup_FUN_004104c0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -305,23 +186,23 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_0056b520(uint param_1)",
+      "text": "CDeformableModel * core_skeleton_cpp_FUN_0056b520(char *param_1)",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_026bb86c",
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x35b0",
       "severity": "mild",
-      "text": "puVar3 = &DAT_026bb86c;",
-      "type": "undefined_data"
+      "text": "str1 = &g_DeformableModelPool[0].field_0x35b0;",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_005c04e0(puVar3,param_1);",
+      "text": "iVar1 = _stricmp(str1,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -329,7 +210,7 @@
       "line": 19,
       "match": "DAT_027902bc",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_027902bc + iVar2 * 4) = 1;",
+      "text": "*(uint *)(&DAT_027902bc + iVar3 * 4) = 1;",
       "type": "undefined_data"
     },
     {
@@ -337,7 +218,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00564e40(iVar2,param_1);",
+      "text": "core_skeleton_cpp_CDeformableModel_load_FUN_00564e40(this_ptr,param_1);",
       "type": "unnamed_param"
     },
     {
@@ -353,7 +234,7 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005030e0(\"Can't load %s because deformable model manager is full.  (Size is %d)\",param_1,0x40);",
+      "text": "core_main_c_FUN_005030e0(\"Can't load %s because deformable model manager is full.  (Size is %d)\",param_1,0x40);",
       "type": "unnamed_param"
     },
     {

@@ -1,0 +1,252 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 35,
+    "cross_reference_count": 3,
+    "function_call_count": 7,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "004d7250",
+      "from_addr": "004d7511",
+      "name": "core_game.cpp_FUN_004d7250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051bad0",
+      "from_addr": "0051bc1f",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_0051bad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052e120",
+      "from_addr": "0052e740",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0052e120",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051a3f0",
+    "address_range": [
+      [
+        "0051a3f0",
+        "0051a482"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_load_FUN_0051a3f0",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_load_FUN_0051a3f0(CDemonMission *this_ptr,char *mission_filename,int load_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fe9c0",
+      "is_variadic": false,
+      "name": "core_level.cpp_FUN_004fe9c0"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0051a4f0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0"
+    },
+    {
+      "addr": "0051c240",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_0051c240"
+    },
+    {
+      "addr": "005c0d10",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005c0d10"
+    },
+    {
+      "addr": "00479180",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00479180"
+    },
+    {
+      "addr": "00531090",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9079",
+      "name": "s_rt_005e9079",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e907c",
+      "name": "s_world_005e907c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9082",
+      "name": "s_core_mission_cpp_005e9082",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9096",
+      "name": "s_CDemonMission_load_Unabl_005e9096",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e90c0",
+      "name": "s_Loading_mission_005e90c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f2e0",
+      "name": "DAT_0061f2e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004d7511",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d7250",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0051bc1f",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_run_FUN_0051bad0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052e740",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0052e120",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052e912",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_runLobby_FUN_0052e120",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7346938775510203,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 1,
+      "COPY": 37,
+      "INT_ADD": 16,
+      "INT_AND": 17,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 8,
+      "INT_SUB": 24,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 183
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "mission_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "load_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

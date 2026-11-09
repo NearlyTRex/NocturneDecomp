@@ -1,0 +1,115 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "00480480",
+      "from_addr": "00480729",
+      "name": "cockpit_drawsurf.cpp_FUN_00480480",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00402850",
+    "address_range": [
+      [
+        "00402850",
+        "00402859"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_FUN_00402850",
+    "signature": "void __cdecl engine_2d_c_FUN_00402850(int color)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006104a0",
+      "name": "DAT_006104a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00480729",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004806a6",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.3333333333333335,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 7
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_006104a0",
+      "severity": "mild",
+      "text": "DAT_006104a0 = color;",
+      "type": "undefined_data"
+    }
+  ]
+}

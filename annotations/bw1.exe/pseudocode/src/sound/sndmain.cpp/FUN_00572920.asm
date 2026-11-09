@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00572920(int param_1,undefined4 param_2)
+; void __cdecl sound_sndmain_cpp_FUN_00572920(int index,void *userdata)
 ;
+; Parameters:
+; int              Stack[0x4]:4   index
+; void *           Stack[0x8]:4   userdata
 ;
 ; XREF[1]:
-;   FUN_0057bef0 at 0057c100
+;   core_sound.cpp_FUN_0057bef0 at 0057c100
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3d93
@@ -15,14 +18,14 @@
 ;   undefined4 DAT_02c78cec
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00572920
-        ;   Label: FUN_00572920
+        ;   Label: sound_sndmain.cpp_FUN_00572920
     MOV EBX,dword ptr [ESP + 0x8]       ; 00572921
     TEST EBX,EBX                        ; 00572925
     JL 0x0057294d                       ; 00572927
@@ -46,8 +49,8 @@ section .text
     PUSH 0x5f3da8                       ; 00572958 | = "setNextSfxUserData - invalid user dat..."
     MOV dword ptr [0x01d1d400],EDX      ; 0057295d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00572963 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00572969
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00572969
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 0057296e
     JMP 0x0057292e                      ; 00572971
         ;   XREF to: 0057292e (UNCONDITIONAL_JUMP)  ; LAB_0057292e

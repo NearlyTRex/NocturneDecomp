@@ -4,6 +4,46 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x7C0000
 // =============================================================================
 
+// CAlphaBitmap[4]
+CAlphaBitmap CAlphaBitmap_ARRAY_007c3984[4] = {};
+
+// CAlphaBitmap[5]
+CAlphaBitmap CAlphaBitmap_ARRAY_007c39d4[5] = {};
+
+// CAudioRecPuzzle
+CAudioRecPuzzle g_CAudioRecPuzzleInstance = {};
+
+// CChemPuzzle
+CChemPuzzle g_CChemPuzzleInstance = {};
+
+// CDemonActorType
+CDemonActorType g_CDemonActorClassInfo = {};
+CDemonActorType g_CAmmoClassInfo = {};
+CDemonActorType g_CAmmoBoxClassInfo = {};
+CDemonActorType g_CAnvilClassInfo = {};
+CDemonActorType g_CArmourClassInfo = {};
+CDemonActorType g_CBackgroundActorClassInfo = {};
+CDemonActorType g_CBaronClassInfo = {};
+CDemonActorType g_CBarrierClassInfo = {};
+CDemonActorType g_CBatClassInfo = {};
+CDemonActorType g_CBatCreatureClassInfo = {};
+CDemonActorType g_CBatmanClassInfo = {};
+CDemonActorType g_CBatteryClassInfo = {};
+CDemonActorType g_CBeastClassInfo = {};
+CDemonActorType g_CBiggsClassInfo = {};
+CDemonActorType g_CBirdClassInfo = {};
+CDemonActorType g_CBodyPartClassInfo = {};
+CDemonActorType g_CBoneGuyClassInfo = {};
+CDemonActorType g_CBoxActorClassInfo = {};
+CDemonActorType g_CBrideClassInfo = {};
+CDemonActorType g_CBugsClassInfo = {};
+CDemonActorType g_CCarvedClassInfo = {};
+CDemonActorType g_CCharacterClassInfo = {};
+CDemonActorType g_CChainClassInfo = {};
+
+// CDemonFilter[8]
+CDemonFilter CDemonFilter_ARRAY_007c5098[8] = {};
+
 // undefined1
 undefined1 DAT_007c53b8 = {};
 undefined1 DAT_007c6168 = {};
@@ -17,7 +57,6 @@ undefined1 DAT_007c8a64 = {};
 
 // undefined4
 undefined4 DAT_007c2ff4 = {};
-undefined4 DAT_007c3030 = {};
 undefined4 DAT_007c3034 = {};
 undefined4 DAT_007c3038 = {};
 undefined4 DAT_007c303c = {};
@@ -26,21 +65,16 @@ undefined4 DAT_007c3044 = {};
 undefined4 DAT_007c3048 = {};
 undefined4 DAT_007c304c = {};
 undefined4 DAT_007c3368 = {};
-undefined4 DAT_007c33a4 = {};
-undefined4 DAT_007c33e0 = {};
 undefined4 DAT_007c3498 = {};
 undefined4 DAT_007c34cc = {};
 undefined4 DAT_007c34d0 = {};
 undefined4 DAT_007c34dc = {};
-undefined4 DAT_007c3518 = {};
 undefined4 DAT_007c374c = {};
 undefined4 DAT_007c3754 = {};
 undefined4 DAT_007c37b8 = {};
 undefined4 DAT_007c37c0 = {};
 undefined4 DAT_007c37dc = {};
 undefined4 DAT_007c37e4 = {};
-undefined4 DAT_007c3820 = {};
-undefined4 DAT_007c385c = {};
 undefined4 DAT_007c3908 = {};
 undefined4 DAT_007c394c = {};
 undefined4 DAT_007c3950 = {};
@@ -48,7 +82,6 @@ undefined4 DAT_007c3954 = {};
 undefined4 DAT_007c3978 = {};
 undefined4 DAT_007c397c = {};
 undefined4 DAT_007c3980 = {};
-undefined4 DAT_007c4fec = {};
 undefined4 DAT_007c4ff0 = {};
 undefined4 DAT_007c4ff4 = {};
 undefined4 DAT_007c4ff8 = {};
@@ -56,7 +89,6 @@ undefined4 DAT_007c5004 = {};
 undefined4 DAT_007c5008 = {};
 undefined4 DAT_007c5014 = {};
 undefined4 DAT_007c5018 = {};
-undefined4 DAT_007c5094 = {};
 undefined4 DAT_007c5330 = {};
 undefined4 DAT_007c5388 = {};
 undefined4 DAT_007c538c = {};
@@ -72,11 +104,9 @@ undefined4 DAT_007c55f8 = {};
 undefined4 DAT_007c55fc = {};
 undefined4 DAT_007c6120 = {};
 undefined4 DAT_007c6178 = {};
-undefined4 DAT_007c637c = {};
 undefined4 DAT_007c6380 = {};
 undefined4 DAT_007c6384 = {};
 undefined4 DAT_007c6388 = {};
-undefined4 DAT_007c654c = {};
 undefined4 DAT_007c7554 = {};
 undefined4 DAT_007c7558 = {};
 undefined4 DAT_007c755c = {};

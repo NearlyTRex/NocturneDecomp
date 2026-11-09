@@ -1,0 +1,225 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 126,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 101
+  },
+  "cross_references": [
+    {
+      "addr": "00462d20",
+      "from_addr": "00462f57",
+      "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00462d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00462a10",
+    "address_range": [
+      [
+        "00462a10",
+        "00462acc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00462a10",
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_00462a10(CDemonLight *this_ptr,CRect *source_rect)"
+  },
+  "function_calls": [
+    {
+      "addr": "004886f1",
+      "is_variadic": false,
+      "name": "core_dstrendr.cpp_memcpyMMX_FUN_004886f1"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d8ffc",
+      "name": "s_core_dlight_cpp_005d8ffc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d900f",
+      "name": "s_CDemonLight_blitZBuffer_005d900f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00462f57",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00462d20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.733333333333333,
+    "instruction_count": 60,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 7,
+      "COPY": 44,
+      "INT_ADD": 30,
+      "INT_AND": 32,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 36,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 16,
+      "INT_SUB": 18,
+      "LOAD": 26,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 10,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 284
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "source_rect",
+        "offset": 8,
+        "size": 4,
+        "type": "CRect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2f9c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2f9c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x11d4",
+      "severity": "mild",
+      "text": "if ((((*(int *)&this_ptr->field_0x11d4 < *(int *)(source_rect + 4)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x11d8",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x11d8 < *(int *)(source_rect + 0xc))) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x11dc",
+      "severity": "mild",
+      "text": "(*(int *)source_rect < *(int *)&this_ptr->field_0x11dc)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x11e0",
+      "severity": "mild",
+      "text": "((iVar2 = *(int *)(source_rect + 8), iVar2 < *(int *)&this_ptr->field_0x11e0 &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x1cc0",
+      "severity": "mild",
+      "text": "iVar1 = (*(int *)&this_ptr->field_0x1cc0 * iVar2 + *(int *)source_rect) * 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2f94",
+      "severity": "mild",
+      "text": "((void *)(*(int *)&this_ptr->field_0x2f94 + iVar1),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2f9c",
+      "severity": "mild",
+      "text": "(void *)(*(int *)&this_ptr->field_0x2f9c + iVar1),",
+      "type": "unnamed_field"
+    }
+  ]
+}

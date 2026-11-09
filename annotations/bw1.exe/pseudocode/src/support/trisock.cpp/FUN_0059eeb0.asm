@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0059eeb0(void)
+; void support_trisock_cpp_FUN_0059eeb0(void)
 ;
 ;
 ; XREF[1]:
-;   FUN_0052c520 at 0052c550
+;   core_netgame.cpp_CNetGame_init_FUN_0052c520 at 0052c550
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_initSockets_005f8851
@@ -16,34 +16,34 @@
 ;   undefined4 DAT_02c8ae58
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005b3740
-;   FUN_005b3a90
-;   Ordinal_115
+;   core_main.c_FUN_005030e0
+;   crt_wsock32.c_WSAStartup
+;   wincore_winrun.cpp_createMutex_FUN_005b3740
+;   wincore_winrun.cpp_FUN_005b3a90
 ;
 ; *****************************************************************************
 
 section .text
 
     SUB ESP,0x190                       ; 0059eeb0
-        ;   Label: FUN_0059eeb0
+        ;   Label: support_trisock.cpp_FUN_0059eeb0
     PUSH 0x5f8851                       ; 0059eeb6 | = "initSockets\n"
-    CALL FUN_005b3a90                   ; 0059eebb
-        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined FUN_005b3a90()
+    CALL wincore_winrun.cpp_FUN_005b3a90 ; 0059eebb
+        ;   XREF to: 005b3a90 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b3a90()
     ADD ESP,0x4                         ; 0059eec0
     MOV EAX,ESP                         ; 0059eec3
     PUSH EAX                            ; 0059eec5
     PUSH 0x101                          ; 0059eec6
-    CALL Ordinal_115                    ; 0059eecb
-        ;   XREF to: 005cf7d8 (UNCONDITIONAL_CALL)  ; undefined Ordinal_115()
+    CALL crt_wsock32.c_WSAStartup       ; 0059eecb
+        ;   XREF to: 005cf7d8 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_WSAStartup(WORD wVersionRequired, LPWSADATA lpWSAData)
     CMP dword ptr [0x02c8ae58],0x0      ; 0059eed0 | DAT_02c8ae58
     JZ 0x0059eee0                       ; 0059eed7
         ;   XREF to: 0059eee0 (CONDITIONAL_JUMP)  ; LAB_0059eee0
     ADD ESP,0x190                       ; 0059eed9
         ;   Label: LAB_0059eed9
     RET                                 ; 0059eedf
-    CALL FUN_005b3740                   ; 0059eee0
-        ;   XREF to: 005b3740 (UNCONDITIONAL_CALL)  ; undefined FUN_005b3740()
+    CALL wincore_winrun.cpp_createMutex_FUN_005b3740 ; 0059eee0
+        ;   XREF to: 005b3740 (UNCONDITIONAL_CALL)  ; HANDLE wincore_winrun.cpp_createMutex_FUN_005b3740()
         ;   Label: LAB_0059eee0
     MOV [0x02c8ae58],EAX                ; 0059eee5 | DAT_02c8ae58
     TEST EAX,EAX                        ; 0059eeea
@@ -55,8 +55,8 @@ section .text
     PUSH 0x5f8875                       ; 0059eef9 | = "Can't create mutex"
     MOV dword ptr [0x01d1d400],ECX      ; 0059eefe | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0059ef04 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0059ef0a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0059ef0a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0059ef0f
     POP EBX                             ; 0059ef12
     ADD ESP,0x190                       ; 0059ef13

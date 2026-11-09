@@ -1,16 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00572980(int param_1)
+; void __cdecl sound_sndmain_cpp_FUN_00572980(int channel_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel_index
 ;
-; XREF[6]:
-;   FUN_004a1d00 at 004a4a70
-;   FUN_004d8e50 at 004d91bb
-;   FUN_0054aa60 at 0054abc6
-;   FUN_0057cc00 at 0057ccdc
-;   FUN_0057ce10 at 0057d101
-;   FUN_0057d6a0 at 0057d797
+; XREF[7]:
+;   core_event.cpp_FUN_004a1d00 at 004a4a70
+;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d91bb
+;   core_script.cpp_FUN_0054aa60 at 0054abc6
+;   core_sound.cpp_FUN_0057c57e at 0057c9b5
+;   core_sound.cpp_FUN_0057cc00 at 0057ccdc
+;   core_sound.cpp_FUN_0057ce10 at 0057d101
+;   core_sound.cpp_FUN_0057d6a0 at 0057d797
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3dd9
@@ -20,14 +23,14 @@
 ;   undefined4 DAT_02c78cec
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00572980
-        ;   Label: FUN_00572980
+        ;   Label: sound_sndmain.cpp_FUN_00572980
     MOV EBX,dword ptr [ESP + 0x8]       ; 00572981
     TEST EBX,EBX                        ; 00572985
     JL 0x005729a8                       ; 00572987
@@ -50,8 +53,8 @@ section .text
     PUSH 0x5f3dee                       ; 005729b3 | = "setNextSfxChannel - invalid channel i..."
     MOV dword ptr [0x01d1d400],EDX      ; 005729b8 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 005729be | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005729c4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005729c4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 005729c9
     JMP 0x0057298e                      ; 005729cc
         ;   XREF to: 0057298e (UNCONDITIONAL_JUMP)  ; LAB_0057298e

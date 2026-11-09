@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004941e0(void)
+; void __cdecl shape_edittool_cpp_FUN_004941e0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00496dd0 at 00496dd0
-;   FUN_00496ee0 at 00496f5d
+;   shape_edittool.cpp_FUN_00496dd0 at 00496dd0
+;   shape_edittool.cpp_FUN_00496ee0 at 00496f5d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbd65
@@ -21,14 +21,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004941e0
-        ;   Label: FUN_004941e0
+        ;   Label: shape_edittool.cpp_FUN_004941e0
     PUSH ESI                            ; 004941e1
     PUSH EDI                            ; 004941e2
     PUSH EBP                            ; 004941e3
@@ -93,8 +93,8 @@ section .text
     PUSH 0x5dbd7b                       ; 00494281 | = "paintWindowBackground called but no w..."
     MOV dword ptr [0x01d1d400],ECX      ; 00494286 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 0049428c | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00494292
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00494292
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00494297
     JMP 0x004941f4                      ; 0049429a
         ;   XREF to: 004941f4 (UNCONDITIONAL_JUMP)  ; LAB_004941f4

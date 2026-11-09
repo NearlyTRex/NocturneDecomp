@@ -1,14 +1,14 @@
-// Name: FUN_005acb10
+// Name: wincore_wddvmem.cpp_FUN_005acb10
 // Address: 005acb10
 // Address Range: [[005acb10, 005acbf8]]
 // Convention: unknown
-// Signature: void FUN_005acb10(void)
+// Signature: void wincore_wddvmem_cpp_FUN_005acb10(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_005acb10(void)
+void wincore_wddvmem_cpp_FUN_005acb10(void)
 
 {
   int iVar1;
@@ -18,14 +18,14 @@ void FUN_005acb10(void)
   int iStack_6c;
   
   if ((_DAT_02c9931c == 0) && (_DAT_01c50948 == 0)) {
-    FUN_005bfb70(local_7c,0,0x6c);
+    memset(local_7c,0,0x6c);
     iVar3 = 0;
     local_7c[0] = 0x6c;
     iVar1 = (**(code **)(*_DAT_02c99308 + 100))(_DAT_02c99308,0,local_7c,1);
     if (iVar1 != 0) {
       _DAT_01d1d400 = "..\\wincore\\wddvmem.cpp";
       _DAT_01d1d404 = 0x262;
-      FUN_005030e0("openScreenDevice - Unable to lock screen!");
+      core_main_c_FUN_005030e0("openScreenDevice - Unable to lock screen!");
     }
     if (_DAT_02c9931c == 0) {
       iVar1 = _DAT_02c9932c * _DAT_02c99328 >> 0x1f;

@@ -1,16 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0043b2e0(undefined4 param_1,int param_2,int param_3)
+; void * __cdecl cockpit_ckptutil_c_FUN_0043b2e0(char *filename,void *buffer,int size)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; void *           Stack[0x8]:4   buffer
+; int              Stack[0xc]:4   size
 ; Local Variables:
 ; undefined        Stack[-0x8c]:1  local_8c
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[3]:
-;   FUN_004c0cd0 at 004c0df9
-;   FUN_00537c30 at 00537c5e
-;   FUN_00537cb0 at 00537cc1
+;   cockpit_pkbitmap.cpp_FUN_00537c30 at 00537c5e
+;   cockpit_pkbitmap.cpp_FUN_00537cb0 at 00537cc1
+;   engine_font.cpp_FUN_004c0cd0 at 004c0df9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_allocate_u_byt_005d6620
@@ -24,21 +28,21 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005a08d0
-;   FUN_005a0a50
-;   FUN_005a0c10
-;   FUN_005a0dc0
-;   FUN_005a0fd0
-;   FUN_005bfb40
-;   FUN_005c08d0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_FUN_005c08d0
+;   support_trstream.cpp_FUN_005a0fd0
+;   unkaddr_0059f520.cpp_FUN_005a0c10
+;   unkaddr_0059f520.cpp_FUN_005a0dc0
+;   unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0
+;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0043b2e0
-        ;   Label: FUN_0043b2e0
+        ;   Label: cockpit_ckptutil.c_FUN_0043b2e0
     PUSH ESI                            ; 0043b2e1
     PUSH EDI                            ; 0043b2e2
     PUSH EBP                            ; 0043b2e3
@@ -52,16 +56,16 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0043b304
         ;   Label: LAB_0043b304
     PUSH EAX                            ; 0043b308
-    CALL FUN_005a08d0                   ; 0043b309
-        ;   XREF to: 005a08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a08d0()
+    CALL unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0 ; 0043b309
+        ;   XREF to: 005a08d0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0043b30e
     PUSH 0x1                            ; 0043b311
     PUSH ESI                            ; 0043b313
     PUSH 0x5d6668                       ; 0043b314 | DAT_005d6668
     LEA EAX,[ESP + 0x5c]                ; 0043b319
     PUSH EAX                            ; 0043b31d
-    CALL FUN_005a0fd0                   ; 0043b31e
-        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0fd0()
+    CALL support_trstream.cpp_FUN_005a0fd0 ; 0043b31e
+        ;   XREF to: 005a0fd0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a0fd0()
     ADD ESP,0x10                        ; 0043b323
     TEST EAX,EAX                        ; 0043b326
     JNZ 0x0043b35d                      ; 0043b328
@@ -70,8 +74,8 @@ section .text
     PUSH 0x5d666c                       ; 0043b32b | = "Unable to open bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 0043b330
     PUSH EAX                            ; 0043b334
-    CALL FUN_005bfb40                   ; 0043b335
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 0043b335
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     MOV EAX,0x994                       ; 0043b33a
     ADD ESP,0xc                         ; 0043b33f
     MOV [0x01d1d404],EAX                ; 0043b342 | DAT_01d1d404
@@ -79,16 +83,16 @@ section .text
     MOV EBP,0x5d668d                    ; 0043b349 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 0043b34e
     MOV dword ptr [0x01d1d400],EBP      ; 0043b34f | DAT_01d1d400
-    CALL FUN_005030e0                   ; 0043b355
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0043b355
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0043b35a
     PUSH EDI                            ; 0043b35d
         ;   Label: LAB_0043b35d
     PUSH EBX                            ; 0043b35e
     LEA EAX,[ESP + 0x58]                ; 0043b35f
     PUSH EAX                            ; 0043b363
-    CALL FUN_005a0c10                   ; 0043b364
-        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0c10()
+    CALL unkaddr_0059f520.cpp_FUN_005a0c10 ; 0043b364
+        ;   XREF to: 005a0c10 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0c10()
     ADD ESP,0xc                         ; 0043b369
     CMP EAX,EDI                         ; 0043b36c
     JNZ 0x0043b3e3                      ; 0043b36e
@@ -96,14 +100,14 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 0043b370
         ;   Label: LAB_0043b370
     PUSH EAX                            ; 0043b374
-    CALL FUN_005a0dc0                   ; 0043b375
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 0043b375
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
     ADD ESP,0x4                         ; 0043b37a
     PUSH 0x0                            ; 0043b37d
     LEA EAX,[ESP + 0x54]                ; 0043b37f
     PUSH EAX                            ; 0043b383
-    CALL FUN_005a0a50                   ; 0043b384
-        ;   XREF to: 005a0a50 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0a50()
+    CALL unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50 ; 0043b384
+        ;   XREF to: 005a0a50 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043b389
     MOV EAX,EBX                         ; 0043b38c
     ADD ESP,0x7c                        ; 0043b38e
@@ -114,8 +118,8 @@ section .text
     RET                                 ; 0043b395
     PUSH EDI                            ; 0043b396
         ;   Label: LAB_0043b396
-    CALL FUN_005c08d0                   ; 0043b397
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 0043b397
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0043b39c
     MOV EBX,EAX                         ; 0043b39f
     TEST EAX,EAX                        ; 0043b3a1
@@ -126,8 +130,8 @@ section .text
     PUSH 0x5d6620                       ; 0043b3ab | = "Unable to allocate %u bytes for bitma..."
     LEA EAX,[ESP + 0xc]                 ; 0043b3b0
     PUSH EAX                            ; 0043b3b4
-    CALL FUN_005bfb40                   ; 0043b3b5
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 0043b3b5
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     MOV EDX,0x5d6652                    ; 0043b3ba | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 0043b3bf
     MOV EAX,ESP                         ; 0043b3c2
@@ -135,8 +139,8 @@ section .text
     PUSH EAX                            ; 0043b3c9
     MOV dword ptr [0x01d1d400],EDX      ; 0043b3ca | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0043b3d0 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0043b3d6
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0043b3d6
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0043b3db
     JMP 0x0043b304                      ; 0043b3de
         ;   XREF to: 0043b304 (UNCONDITIONAL_JUMP)  ; LAB_0043b304
@@ -145,13 +149,13 @@ section .text
     PUSH 0x5d66a3                       ; 0043b3e4 | = "Unable to read bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 0043b3e9
     PUSH EAX                            ; 0043b3ed
-    CALL FUN_005bfb40                   ; 0043b3ee
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 0043b3ee
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     ADD ESP,0xc                         ; 0043b3f3
     LEA EAX,[ESP + 0x50]                ; 0043b3f6
     PUSH EAX                            ; 0043b3fa
-    CALL FUN_005a0dc0                   ; 0043b3fb
-        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined FUN_005a0dc0()
+    CALL unkaddr_0059f520.cpp_FUN_005a0dc0 ; 0043b3fb
+        ;   XREF to: 005a0dc0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059f520.cpp_FUN_005a0dc0()
     MOV EDX,0x5d66c4                    ; 0043b400 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x4                         ; 0043b405
     MOV EAX,ESP                         ; 0043b408
@@ -159,8 +163,8 @@ section .text
     PUSH EAX                            ; 0043b40f
     MOV dword ptr [0x01d1d400],EDX      ; 0043b410 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0043b416 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0043b41c
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0043b41c
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0043b421
     JMP 0x0043b370                      ; 0043b424
         ;   XREF to: 0043b370 (UNCONDITIONAL_JUMP)  ; LAB_0043b370

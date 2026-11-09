@@ -1,0 +1,375 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 181,
+    "complexity_score": 351,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 91,
+    "suspect_count": 25,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 272
+  },
+  "cross_references": [
+    {
+      "addr": "00565730",
+      "from_addr": "00565740",
+      "name": "core_skeleton.cpp_FUN_00565730",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566fd0",
+    "address_range": [
+      [
+        "00566fd0",
+        "00567174"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_FUN_00566fd0",
+    "signature": "void __cdecl core_skeleton_cpp_FUN_00566fd0(CDeformableModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00420500",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420500"
+    },
+    {
+      "addr": "00421570",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_00421570"
+    },
+    {
+      "addr": "00563c40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00563c40"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00565740",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_00565730",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.079710144927536,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "BRANCH": 4,
+      "CALL": 3,
+      "CBRANCH": 18,
+      "COPY": 107,
+      "INT_ADD": 69,
+      "INT_AND": 105,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 101,
+      "INT_LESS": 14,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 15,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 6,
+      "INT_SLESS": 50,
+      "INT_SUB": 25,
+      "INT_XOR": 9,
+      "LOAD": 35,
+      "POPCOUNT": 50,
+      "RETURN": 1,
+      "STORE": 24,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 701
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x1de78",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&pCVar3->field_0x1de78;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x274c",
+      "severity": "mild",
+      "text": "this_ptr_00 = (CBoundingBox3D *)&this_ptr->field_0x274c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x30ac",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar6->field_0x30ac = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar6 = (CDeformableModel *)&pCVar6->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&this_ptr->field_0x2c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "pbVar5 = (byte *)(local_28 + *(int *)&this_ptr->field_0x40);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x274c",
+      "severity": "mild",
+      "text": "((CBoundingBox3D *)(&this_ptr->field_0x274c + (uint)*pbVar1 * 0x18),point);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x30ac",
+      "severity": "mild",
+      "text": "*(uint *)(&this_ptr->field_0x30ac + (uint)*pbVar8 * 4) = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x2c",
+      "severity": "mild",
+      "text": "} while (local_24 < *(int *)&this_ptr->field_0x2c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x30ac",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar6->field_0x30ac == 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x1de9c",
+      "severity": "mild",
+      "text": "if (-1 < *(int *)&local_2c->field_0x1de9c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x1de9c",
+      "severity": "mild",
+      "text": "if ((iVar7 == *(int *)&pCVar9->field_0x1de9c) && (*(int *)&pCVar11->field_0x30ac != 0)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x30ac",
+      "severity": "mild",
+      "text": "if ((iVar7 == *(int *)&pCVar9->field_0x1de9c) && (*(int *)&pCVar11->field_0x30ac != 0)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "pCVar9 = (CSkeleton *)&pCVar9->field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar11 = (CDeformableModel *)&pCVar11->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 78,
+      "match": "field_0x1de9c",
+      "severity": "mild",
+      "text": "iVar4 = *(int *)(&pCVar3->field_0x1de9c + iVar4 * 0x24);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 79,
+      "match": "field_0x30ac",
+      "severity": "mild",
+      "text": "if ((iVar4 < 0) || (*(int *)(&this_ptr->field_0x30ac + iVar4 * 4) == 2)) break;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0x30ac",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar6->field_0x30ac = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "pCVar6 = (CDeformableModel *)&pCVar6->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 90,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "local_2c = (CSkeleton *)&local_2c->field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDeformableModel *)&pCVar6->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar9->owner`). Replace `pCVar9->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 70,
+      "match": "pCVar9 = (T *)&pCVar9->FIELD",
+      "severity": "moderate",
+      "text": "pCVar9 = (CSkeleton *)&pCVar9->field_0x24;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 71,
+      "match": "pCVar11 = (T *)&pCVar11->FIELD",
+      "severity": "moderate",
+      "text": "pCVar11 = (CDeformableModel *)&pCVar11->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 89,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDeformableModel *)&pCVar6->field_0x4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_2c->owner`). Replace `local_2c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 90,
+      "match": "local_2c = (T *)&local_2c->FIELD",
+      "severity": "moderate",
+      "text": "local_2c = (CSkeleton *)&local_2c->field_0x24;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

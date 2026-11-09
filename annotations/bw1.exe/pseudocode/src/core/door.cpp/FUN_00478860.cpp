@@ -1,15 +1,15 @@
-// Name: FUN_00478860
+// Name: core_door.cpp_FUN_00478860
 // Address: 00478860
 // Address Range: [[00478860, 00478ae3]]
 // Convention: unknown
-// Signature: float * FUN_00478860(int param_1,float *param_2,undefined4 param_3)
+// Signature: float * core_door_cpp_FUN_00478860(int param_1,float *param_2,undefined4 param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float * FUN_00478860(int param_1,float *param_2,uint param_3)
+float * core_door_cpp_FUN_00478860(int param_1,float *param_2,uint param_3)
 
 {
   float *unaff_ESI;
@@ -70,14 +70,14 @@ float * FUN_00478860(int param_1,float *param_2,uint param_3)
   case 0:
   case 1:
   case 2:
-    FUN_00408bb0(param_1,param_3);
+    core_actor_cpp_FUN_00408bb0(param_1,param_3);
     local_4c = local_70;
     *(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffff94 + (uint)bVar1 * -8);
     *(uint *)((int)&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
          *(uint *)(&stack0xffffff98 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
     if (local_44 <= 0.0) {
-      FUN_00408ac0(param_1,&stack0xffffffa8);
+      core_actor_cpp_FUN_00408ac0(param_1,&stack0xffffffa8);
       local_64 = local_7c;
       *(uint *)((int)&stack0xffffffa0 + (uint)bVar1 * -8) =
            *(uint *)(&stack0xffffff88 + (uint)bVar1 * -8);
@@ -97,7 +97,7 @@ float * FUN_00478860(int param_1,float *param_2,uint param_3)
       }
     }
     else {
-      FUN_00408ac0(param_1,&stack0xffffffa8);
+      core_actor_cpp_FUN_00408ac0(param_1,&stack0xffffffa8);
       local_28 = local_b8;
       (&stack0xffffffdc)[(uint)bVar1 * 0xfffffffe] =
            (float)*(uint *)(&stack0xffffff4c + (uint)bVar1 * -8);
@@ -126,7 +126,7 @@ float * FUN_00478860(int param_1,float *param_2,uint param_3)
   default:
     _DAT_01d1d400 = "..\\core\\door.cpp";
     _DAT_01d1d404 = 0x37e;
-    FUN_005030e0("CDoor::getOpenStandPos - invalid doorType");
+    core_main_c_FUN_005030e0("CDoor::getOpenStandPos - invalid doorType");
   }
   local_84 = *(float *)(param_1 + 0x24);
   *unaff_ESI = local_88;

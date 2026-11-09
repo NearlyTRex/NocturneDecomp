@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004a9a60(int param_1,char *param_2,int param_3)
+; void core_event_cpp_FUN_004a9a60(CEventList *param_1,CEventList *param_2,int param_3)
 ;
 ;
 ; XREF[3]:
-;   FUN_004a1d00 at 004a3bf1
-;   FUN_004a9a00 at 004a9a38
-;   FUN_004d27b0 at 004d5415
+;   core_event.cpp_FUN_004a1d00 at 004a3bf1
+;   core_event.cpp_FUN_004a9a00 at 004a9a38
+;   core_game.cpp_FUN_004d27b0 at 004d5415
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005deb4e
@@ -21,20 +21,20 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_004a9f00
-;   FUN_005030e0
-;   FUN_005c03c0
-;   FUN_005c0d10
-;   FUN_005c157c
-;   FUN_005c25d0
-;   FUN_005c2c20
+;   core_event.cpp_CEventList_findGameFlag_FUN_004a9f00
+;   core_main.c_FUN_005030e0
+;   crt_stdio.c_fclose_FUN_005c0d10
+;   crt_stdio.c_fopen_FUN_005c157c
+;   crt_string.c_memmove_FUN_005c25d0
+;   crt_string.c_strupr_FUN_005c2c20
+;   crt_unknown.c_FUN_005c03c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004a9a60
-        ;   Label: FUN_004a9a60
+        ;   Label: core_event.cpp_FUN_004a9a60
     PUSH ESI                            ; 004a9a61
     PUSH EDI                            ; 004a9a62
     PUSH EBP                            ; 004a9a63
@@ -56,8 +56,8 @@ section .text
         ;   Label: LAB_004a9a7a
     PUSH ECX                            ; 004a9a7e
     PUSH EBP                            ; 004a9a7f
-    CALL FUN_004a9f00                   ; 004a9a80
-        ;   XREF to: 004a9f00 (UNCONDITIONAL_CALL)  ; undefined FUN_004a9f00()
+    CALL core_event.cpp_CEventList_findGameFlag_FUN_004a9f00 ; 004a9a80
+        ;   XREF to: 004a9f00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_findGameFlag_FUN_004a9f00(CEventList * this_ptr, char * name)
     ADD ESP,0x8                         ; 004a9a85
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004a9a88
     LEA ESI,[EBP + 0x190c]              ; 004a9a8c
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5debac                       ; 004a9acd | = "Event name %s too long!"
     MOV dword ptr [0x01d1d400],EDI      ; 004a9ad2 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004a9ad8 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004a9add
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004a9add
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 004a9ae2
     MOV EDI,dword ptr [EBP + 0x1908]    ; 004a9ae5
         ;   Label: LAB_004a9ae5
@@ -117,8 +117,8 @@ section .text
     SHL EAX,0x5                         ; 004a9b1a
     ADD EAX,ECX                         ; 004a9b1d
     PUSH EAX                            ; 004a9b1f
-    CALL FUN_005c2c20                   ; 004a9b20
-        ;   XREF to: 005c2c20 (UNCONDITIONAL_CALL)  ; undefined FUN_005c2c20()
+    CALL crt_string.c_strupr_FUN_005c2c20 ; 004a9b20
+        ;   XREF to: 005c2c20 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strupr_FUN_005c2c20(char * string)
     MOV ECX,dword ptr [EBP + 0x1908]    ; 004a9b25
     INC ECX                             ; 004a9b2b
     ADD ESP,0x4                         ; 004a9b2c
@@ -131,8 +131,8 @@ section .text
     PUSH 0x5deb4e                       ; 004a9b3a | DAT_005deb4e
         ;   Label: LAB_004a9b3a
     PUSH 0x5deb51                       ; 004a9b3f | = "events.txt"
-    CALL FUN_005c157c                   ; 004a9b44
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined FUN_005c157c()
+    CALL crt_stdio.c_fopen_FUN_005c157c ; 004a9b44
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
     ADD ESP,0x8                         ; 004a9b49
     MOV EDI,EAX                         ; 004a9b4c
     TEST EAX,EAX                        ; 004a9b4e
@@ -149,8 +149,8 @@ section .text
     PUSH EDI                            ; 004a9b64
     INC EBX                             ; 004a9b65
     ADD ESI,0x20                        ; 004a9b66
-    CALL FUN_005c03c0                   ; 004a9b69
-        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c03c0()
+    CALL crt_unknown.c_FUN_005c03c0     ; 004a9b69
+        ;   XREF to: 005c03c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c03c0()
     MOV ECX,dword ptr [EBP + 0x1908]    ; 004a9b6e
     ADD ESP,0xc                         ; 004a9b74
     CMP EBX,ECX                         ; 004a9b77
@@ -160,8 +160,8 @@ section .text
     MOV ECX,ECX                         ; 004a9b7e
     PUSH EDI                            ; 004a9b80
         ;   Label: LAB_004a9b80
-    CALL FUN_005c0d10                   ; 004a9b81
-        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0d10()
+    CALL crt_stdio.c_fclose_FUN_005c0d10 ; 004a9b81
+        ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
     ADD ESP,0x4                         ; 004a9b86
     MOV EBX,0x5deb60                    ; 004a9b89 | = "..\\core\\event.cpp"
         ;   Label: LAB_004a9b89
@@ -169,8 +169,8 @@ section .text
     PUSH 0x5deb72                       ; 004a9b93 | = "Too many game flags - check events.txt!"
     MOV dword ptr [0x01d1d400],EBX      ; 004a9b98 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004a9b9e | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004a9ba4
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004a9ba4
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004a9ba9
     JMP 0x004a9aab                      ; 004a9bac
         ;   XREF to: 004a9aab (UNCONDITIONAL_JUMP)  ; LAB_004a9aab
@@ -191,8 +191,8 @@ section .text
     ADD EAX,ESI                         ; 004a9bd1
     PUSH EAX                            ; 004a9bd3
     MOV dword ptr [EBP + 0x1908],EDI    ; 004a9bd4
-    CALL FUN_005c25d0                   ; 004a9bda
-        ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c25d0()
+    CALL crt_string.c_memmove_FUN_005c25d0 ; 004a9bda
+        ;   XREF to: 005c25d0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005c25d0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004a9bdf
     POP EBP                             ; 004a9be2
     POP EDI                             ; 004a9be3

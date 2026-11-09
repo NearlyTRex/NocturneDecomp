@@ -1,0 +1,129 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 4,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 6
+  },
+  "cross_references": [
+    {
+      "addr": "0042c7a0",
+      "from_addr": "0042c7a5",
+      "name": "core_charactr.cpp_FUN_0042c7a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c7d0",
+      "from_addr": "0042c7e7",
+      "name": "core_charactr.cpp_FUN_0042c7d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00408890",
+    "address_range": [
+      [
+        "00408890",
+        "00408890"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_actor.cpp_FUN_00408890",
+    "signature": "void core_actor_cpp_FUN_00408890(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0042c7a5",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042c7a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042c7e7",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042c7d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 3
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLadder",
+        "offset": 4,
+        "vtable_addr": "00602c04"
+      },
+      {
+        "class_name": "CLadder",
+        "offset": 8,
+        "vtable_addr": "00602c04"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "00604b04"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "00604b04"
+      },
+      {
+        "class_name": "CBattery",
+        "offset": 4,
+        "vtable_addr": "005fc314"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 140
+  }
+}

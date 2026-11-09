@@ -4,180 +4,260 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonPod.h"
+#include "types/classes/CFont.h"
+#include "types/classes/CLocation.h"
+#include "types/classes/CMouse.h"
+#include "types/classes/CNPC.h"
+#include "types/classes/CNetGame.h"
+#include "types/classes/CPackedBitmap.h"
+#include "types/classes/CPackedBitmapSet.h"
+#include "types/classes/CParticle.h"
+#include "types/classes/CPassenger.h"
+#include "types/classes/CPathMap.h"
+#include "types/classes/CPendulum.h"
+#include "types/classes/CPlatform.h"
+#include "types/classes/CPod.h"
+#include "types/classes/CPodFile.h"
+#include "types/classes/CPodSearchContext.h"
+#include "types/classes/CRifle.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
+#include "types/structs/SChatHistory.h"
+#include "types/structs/SDamageInfo.h"
+#include "types/structs/SFoundFileInfo.h"
+#include "types/structs/SIpAddr.h"
+#include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SNetPlayer.h"
+#include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPlayer.h"
+#include "types/structs/SPlayerInput.h"
+#include "types/structs/SRenderVertex.h"
+#include "types/structs/SSimFrame.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x530000
 // =============================================================================
 
-void FUN_00530340(int *param_1);
-void FUN_005305a0(int param_1,int *param_2);
-int * FUN_00530660(int *param_1);
-void FUN_005306d0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void FUN_00530710(int *param_1);
-undefined4 FUN_00530a50(undefined4 param_1);
-undefined4 FUN_00530a60(undefined4 param_1);
-undefined4 FUN_00530a70(undefined4 param_1);
-undefined4 FUN_00530a80(undefined4 param_1);
-undefined4 * FUN_00530bd0(undefined4 *param_1,undefined4 *param_2);
-void FUN_00530bf0(undefined4 param_1);
-undefined4 FUN_00531010(undefined4 param_1,int param_2,int param_3);
-undefined4 FUN_00531090(undefined4 param_1);
-byte * FUN_00531110(byte *param_1);
-void FUN_00531200(void);
-int FUN_00531220(undefined4 param_1);
-void FUN_00531280(int param_1);
-undefined4 FUN_005312c0(int param_1);
-void FUN_005313a0(void);
-void FUN_005315d0(undefined4 param_1);
-void FUN_005315f0(undefined4 param_1);
-void FUN_00531610(void);
-undefined4 FUN_00531660(void);
-int FUN_00531670(undefined4 param_1);
-void FUN_00531720(int param_1);
-void FUN_005317c0(int param_1,float param_2);
-void FUN_00531ae0(int param_1,int param_2);
-undefined4 FUN_00531b10(int param_1);
-undefined4 FUN_00531ba0(int param_1);
-void FUN_00531bf0(int param_1);
-undefined4 FUN_00531cc0(undefined4 param_1,char *param_2);
-void FUN_00531da0(int param_1,int param_2);
-bool FUN_00531e80(int param_1);
-int FUN_00531ea0(int param_1);
-void FUN_00531eb0(undefined4 *param_1);
-void FUN_00531ed0(int param_1);
-undefined4 FUN_00531ee0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
-void FUN_005320b0(int *param_1);
-undefined4 FUN_00532120(void);
-void FUN_00532130(int param_1);
-void FUN_00532150(int param_1);
-void FUN_00532160(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
-void FUN_00532250(float *param_1);
-void FUN_005326d0(void);
-undefined4 FUN_00532700(void);
-void FUN_00532710(void);
-undefined4 FUN_00532760(void);
-int FUN_00532770(undefined4 param_1);
-int FUN_00532850(int param_1,byte param_2);
-void FUN_00532930(int param_1);
-void FUN_00532af0(int param_1,float param_2);
-int FUN_00532cd0(int param_1);
-void FUN_00532dc0(int param_1);
-int FUN_00532fe0(int param_1);
-int FUN_00533060(int param_1);
-float FUN_00533140(float *param_1,int param_2,int param_3,int param_4,float *param_5);
-void FUN_005334f0(float *param_1,float *param_2,int param_3);
-undefined4 FUN_00533640(int param_1,int param_2,int param_3,int param_4);
-undefined4 FUN_005336e0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
-undefined4 FUN_00533930(int param_1,int param_2,int param_3,int param_4,int param_5);
-undefined4 FUN_00533dc0(float *param_1,float *param_2,float *param_3,int param_4);
-undefined4 FUN_005349a0(int param_1,float *param_2,undefined4 *param_3,undefined4 param_4);
-void FUN_00534ca0(int param_1,int param_2,int param_3,int param_4,int param_5);
-int FUN_00535080(undefined4 *param_1);
-void FUN_005351f0(undefined4 param_1);
-void FUN_00535200(int param_1);
-void FUN_00535280(void);
-uint FUN_00535490(undefined4 param_1,undefined4 param_2);
-void FUN_00535920(undefined4 param_1);
-void FUN_00535940(int param_1,int *param_2);
-void FUN_00535a10(char *param_1);
-void FUN_00535bd0(char *param_1);
-void FUN_00535d80(undefined4 param_1);
-void FUN_00535fc0(void);
-undefined4 FUN_00536010(void);
-int FUN_00536020(undefined4 param_1);
-void FUN_00536130(int param_1);
-void FUN_00536290(int param_1,int param_2,int param_3,int param_4);
-void FUN_00536a20(int param_1,float param_2);
-void FUN_00537020(int param_1,undefined4 param_2);
-int FUN_00537190(int param_1);
-void FUN_00537210(int param_1);
-void FUN_00537250(int param_1);
-undefined4 FUN_005373f0(int param_1,int param_2);
-undefined4 FUN_00537430(int param_1);
-undefined4 FUN_00537440(undefined4 param_1,byte param_2);
-undefined4 FUN_00537490(undefined4 param_1);
-undefined4 FUN_005374b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-undefined4 FUN_00537500(undefined4 param_1);
-void FUN_00537520(int param_1);
-void FUN_00537550(int param_1);
-int FUN_005375a0(int param_1);
-void FUN_005375c0(int param_1,undefined4 param_2);
-void FUN_00537760(int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6,int param_7);
-void FUN_005378e0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
-void FUN_00537c30(undefined4 param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,int param_6);
-void FUN_00537cb0(int param_1,int param_2);
-void FUN_00537d00(int param_1,int param_2,int param_3);
-void FUN_00537db0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,uint param_5,int param_6);
-void FUN_00537fd8(void);
-undefined4 FUN_00538000(undefined4 param_1,undefined4 param_2);
-void FUN_00538050(int param_1,int param_2);
-void FUN_005380b0(undefined4 param_1);
-void FUN_005380c0(char *param_1,undefined4 param_2);
-void FUN_00538130(undefined4 param_1,undefined4 param_2);
-void FUN_005381b0(int param_1,int param_2);
-undefined8 FUN_00538280(int param_1,undefined4 param_2,int param_3);
-void FUN_00538480(undefined4 param_1,undefined4 param_2,int param_3);
-void FUN_00538530(undefined4 param_1,undefined4 param_2);
-int FUN_00539260(int *param_1);
-void FUN_005393a0(void);
-undefined4 FUN_005393f0(void);
-int FUN_00539400(undefined4 param_1);
-void FUN_005395d0(int param_1);
-void FUN_00539660(int param_1);
-void FUN_00539810(int param_1,float param_2);
-void FUN_0053a340(int param_1,float param_2,undefined4 param_3);
-int FUN_0053a3d0(int param_1);
-void FUN_0053a520(int param_1,int param_2);
-void FUN_0053a700(int param_1);
-void FUN_0053a740(int param_1);
-undefined4 FUN_0053ab00(int param_1,int param_2);
-undefined4 FUN_0053ad50(int param_1,int param_2);
-undefined4 FUN_0053ad90(int param_1);
-undefined4 FUN_0053ada0(int param_1);
-void FUN_0053adb0(int param_1,int param_2);
-void FUN_0053aef0(int param_1);
-void FUN_0053b1a0(undefined4 *param_1);
-undefined4 FUN_0053b210(undefined4 param_1);
-undefined4 FUN_0053b250(undefined4 *param_1,undefined4 param_2,char *param_3);
-void FUN_0053be30(undefined4 *param_1);
-int FUN_0053bed0(int param_1,undefined4 param_2);
-void FUN_0053bf40(int param_1,int param_2,int param_3);
-void FUN_0053c290(int param_1,int param_2);
-void FUN_0053c3b0(int param_1,int param_2);
-undefined4 * FUN_0053c5c0(undefined4 *param_1);
-int FUN_0053c5f0(int param_1,byte param_2);
-undefined4 FUN_0053c650(int *param_1,undefined4 param_2,char *param_3);
-void FUN_0053c750(int *param_1);
-void FUN_0053c800(int *param_1,char *param_2);
-void FUN_0053c8a0(int *param_1);
-void FUN_0053c8f0(int *param_1);
-int FUN_0053c940(int *param_1,char *param_2,int param_3,int param_4,int param_5);
-void FUN_0053cb00(undefined4 param_1,char *param_2,int param_3);
-undefined4 FUN_0053cb50(int *param_1,char *param_2);
-undefined4 FUN_0053cf50(int *param_1,undefined4 param_2);
-void FUN_0053cfa0(int *param_1);
-int FUN_0053d3f0(int *param_1,undefined4 param_2);
-void FUN_0053d490(int *param_1,int param_2);
-void FUN_0053d550(void);
-void FUN_0053d580(int param_1);
-void FUN_0053d710(undefined4 param_1);
-undefined4 FUN_0053d730(undefined4 param_1,byte param_2);
-void FUN_0053d7a0(undefined4 param_1);
-int * FUN_0053db80(int param_1,int *param_2);
-void FUN_0053dbc0(int param_1,int param_2);
-void FUN_0053dc30(int param_1,int param_2);
-void FUN_0053dcb0(int param_1,int param_2);
-void FUN_0053dd20(int param_1,int param_2);
-bool FUN_0053dd60(int param_1,int param_2,int param_3);
-bool FUN_0053de20(int param_1);
-bool FUN_0053e000(ushort *param_1);
-void FUN_0053e120(int *param_1,int param_2);
-void FUN_0053e650(int *param_1,int param_2);
-void FUN_0053eda0(int param_1,int param_2);
-void FUN_0053f080(int *param_1,int param_2);
-void FUN_0053f720(int *param_1,int param_2);
-void FUN_0053fec0(void);
-undefined4 FUN_0053ff10(void);
-int FUN_0053ff20(undefined4 param_1);
-void FUN_0053ffb0(int param_1);
+void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_00530340(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0(CNetGame *this_ptr,SSimFrame *sim_frame);
+SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_00530660(CNetGame *this_ptr);
+void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_005306d0(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload);
+void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00530710(CNetGame *this_ptr);
+SPlayer * core_netgame_cpp_SPlayer_ctor_FUN_00530a50(SPlayer *this_ptr);
+SChatHistory * core_netgame_cpp_SChatHistory_ctor_FUN_00530a60(SChatHistory *this_ptr);
+SChatHistory * core_netgame_cpp_SChatHistory_dtor_FUN_00530a70(SChatHistory *this_ptr,uint flags);
+SNetPlayer * core_netgame_cpp_SNetPlayer_ctor_FUN_00530a80(SNetPlayer *this_ptr);
+SNetPlayer * core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other);
+SIpAddr * __cdecl core_netgame_cpp_IpAddr_copy_FUN_00530bd0(SIpAddr *this_ptr,SIpAddr *other);
+void support_newmsg_cpp_FUN_00530bf0(char *param_1);
+char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_00531010(char *key,int lower_bound,int upper_bound);
+char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_00531090(char *key);
+char * __cdecl support_newmsg_cpp_FUN_00531110(char *encrypted_msg);
+void engine_ncursfx_cpp_staticInit_FUN_00531200(void);
+CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_00531220(CMouse *this_ptr);
+CMouse * __cdecl engine_ncursfx_cpp_CMouse_dtor_FUN_00531280(CMouse *this_ptr,uint flags);
+void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_005312c0(CMouse *this_ptr);
+void __cdecl engine_ncursfx_cpp_FUN_005313a0(CMouse *this_ptr);
+int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_005313b0(CMouse *this_ptr,uint button_mask);
+int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_005313e0(CMouse *this_ptr,uint button_mask,int use_skull_effect);
+void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_00531440(CMouse *this_ptr,int *out_x,int *out_y);
+void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_00531460(CMouse *this_ptr);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor7_FUN_005315d0(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_FUN_005315f0(CAlphaBitmap *this_ptr,uint flags);
+void core_npc_cpp_staticInit_FUN_00531610(void);
+void core_npc_cpp_factoryFuncNPC_FUN_00531640(void);
+CDemonActorType * core_npc_cpp_CNPC_getActorType_FUN_00531660(CNPC *this_ptr);
+CNPC * core_npc_cpp_CNPC_ctor_FUN_00531670(CNPC *this_ptr);
+void core_npc_cpp_FUN_00531720(CCharacter *param_1);
+void __cdecl core_npc_cpp_CNPC_process_FUN_005317c0(CNPC *this_ptr,float delta_time);
+void __cdecl core_npc_cpp_FUN_00531ae0(CNPC *this_ptr,int layer_flag);
+int core_npc_cpp_FUN_00531b10(CCharacter *param_1);
+undefined4 core_npc_cpp_FUN_00531ba0(int param_1);
+void __cdecl core_npc_cpp_FUN_00531bf0(CNPC *this_ptr);
+int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00531cc0(CNPC *this_ptr,char *motion_name);
+void __cdecl core_npc_cpp_FUN_00531da0(CNPC *this_ptr,SDamageInfo *damage_info);
+bool unkafter_npc_cpp_FUN_00531e80(int param_1);
+int unkafter_npc_cpp_FUN_00531ea0(int param_1);
+void unkafter_npc_cpp_FUN_00531eb0(undefined4 *param_1);
+CFont * __cdecl engine_palette_cpp_FUN_00531ed0(CFont *this_ptr,uint flags);
+undefined4 unkafter_palette_cpp_FUN_00531ee0(int *param_1,char *param_2,int param_3,int param_4,int param_5,int param_6);
+void unkafter_palette_cpp_FUN_005320b0(int *param_1);
+undefined4 unkafter_palette_cpp_FUN_00532120(void);
+CParticle * __cdecl core_particle_cpp_FUN_00532130(CParticle *this_ptr);
+CParticle * __cdecl core_particle_cpp_FUN_00532150(CParticle *this_ptr,uint flags);
+void __cdecl core_particle_cpp_CParticle_setup_FUN_00532160(CParticle *this_ptr,CVector3f *position,CVector3f *velocity);
+void core_particle_cpp_FUN_00532250(float *param_1);
+void core_particle_cpp_FUN_005326d0(void);
+undefined4 core_particle_cpp_FUN_00532700(void);
+void core_passngr_cpp_staticInit_FUN_00532710(void);
+void core_passngr_cpp_factoryFuncPassenger_FUN_00532740(void);
+CDemonActorType * core_passngr_cpp_CPassenger_getActorType_FUN_00532760(CPassenger *this_ptr);
+CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00532770(CPassenger *this_ptr);
+CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags);
+void core_passngr_cpp_FUN_00532930(int param_1);
+void core_passngr_cpp_FUN_00532af0(CCharacter *param_1,float param_2);
+int core_passngr_cpp_FUN_00532cd0(CCharacter *param_1);
+void core_passngr_cpp_FUN_00532dc0(CNPC *param_1);
+void unkafter_passngr_cpp_FUN_00532ea0(void);
+bool unkafter_passngr_cpp_FUN_00532ebe(void);
+void unkafter_passngr_cpp_FUN_00532edc(int param_1,undefined4 param_2,int param_3,undefined1 param_4);
+void core_path_cpp_FUN_00532f5c(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00532fe0(CPathMap *this_ptr);
+CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_00533060(CPathMap *this_ptr,uint flags);
+float core_path_cpp_FUN_00533140(float *param_1,int param_2,int param_3,int param_4,float *param_5);
+void __cdecl core_path_cpp_FUN_005334f0(CPathMap *this_ptr,CVector3f *source_position,int force_update);
+int __cdecl core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00533640(CPathMap *this_ptr,int grid_z,int grid_x,int current_height);
+int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_005336e0(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z,int end_height);
+int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00533930(CPathMap *this_ptr,int start_x,int start_z,int end_x,int end_z);
+int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00533dc0(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
+void core_path_cpp_FUN_0053489e(void);
+int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
+void core_path_cpp_FUN_00534a70(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
+void core_path_cpp_FUN_00534ca0(int param_1,int param_2,int param_3,int param_4,int param_5);
+CPathMap * __cdecl core_path_cpp_FUN_00535080(CLocation *location);
+CPathMap * __cdecl core_path_cpp_getPathMap_FUN_005351f0(CLocation *location);
+void __cdecl core_path_cpp_CPathMap_reset_FUN_00535200(CPathMap *this_ptr);
+void __cdecl core_path_cpp_resetAllPathMaps_FUN_00535280(void);
+void core_path_cpp_FUN_005352e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void core_path_cpp_FUN_00535370(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void core_path_cpp_FUN_0053543e(CPathMap *param_1);
+uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_00535490(CPathMap *this_ptr,int start_height);
+CPathMap * core_path_cpp_CPathMap_arrdtor12_FUN_00535920(CPathMap *this_ptr,uint flags);
+void __cdecl engine_pcx_c_writePCXScanline_FUN_00535940(int param_1,int *param_2);
+void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00535a10(char *filename);
+void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00535bd0(char *filename);
+void __cdecl engine_pcx_c_FUN_00535d80(char *filename);
+void core_pendulum_cpp_staticInit_FUN_00535fc0(void);
+void core_pendulum_cpp_factoryFuncPendulum_FUN_00535ff0(void);
+CDemonActorType * core_pendulum_cpp_CPendulum_getActorType_FUN_00536010(CPendulum *this_ptr);
+CPendulum * __cdecl core_pendulum_cpp_CPendulum_ctor_FUN_00536020(CPendulum *this_ptr);
+void core_pendulum_cpp_FUN_00536130(CDemonActor *param_1);
+void __cdecl core_pendulum_cpp_FUN_00536290(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor);
+bool core_pendulum_cpp_FUN_0053692e(float param_1,float param_2,float param_3);
+void __cdecl core_pendulum_cpp_FUN_00536a20(CPendulum *this_ptr,float delta_time);
+void core_pendulum_cpp_FUN_00537020(CPendulum *param_1,float param_2);
+int core_pendulum_cpp_FUN_00537190(CDemonActor *param_1);
+void core_pendulum_cpp_FUN_00537210(int param_1);
+void __cdecl core_pendulum_cpp_CPendulum_archive_FUN_00537250(CPendulum *this_ptr);
+undefined4 core_pendulum_cpp_FUN_005373f0(int param_1,int param_2);
+EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_00537430(CPendulum *this_ptr);
+CPendulum * __cdecl core_pendulum_cpp_CPendulum_dtor_FUN_00537440(CPendulum *this_ptr,uint flags);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_00537490(CPackedBitmap *this_ptr);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_005374b0(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_00537500(CPackedBitmap *this_ptr,uint flags);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_00537520(CPackedBitmap *this_ptr);
+void cockpit_pkbitmap_cpp_FUN_00537550(CPackedBitmap *param_1);
+int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_005375a0(CPackedBitmap *this_ptr);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_005375c0(CPackedBitmap *this_ptr,char *filename);
+int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_005375e0(CPackedBitmap *this_ptr,int x_coordinate,int row_index);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_00537760(CPackedBitmap *this_ptr,int dest_x,int dest_y,int clip_left,int start_row,int clip_right,int end_row);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_005378e0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height);
+void cockpit_pkbitmap_cpp_FUN_005379de(CPackedBitmap *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7);
+void __cdecl cockpit_pkbitmap_cpp_FUN_00537c30(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
+void __cdecl cockpit_pkbitmap_cpp_FUN_00537cb0(CPackedBitmap *this_ptr,int apply_palette_flag);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_00537d00(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_00537db0(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride);
+void cockpit_pkbitmap_cpp_FUN_00537fd8(void);
+void __cdecl cockpit_pkbitmap_cpp_FUN_00538000(CPackedBitmap *this_ptr,char *act_filename);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00538050(CPackedBitmap *this_ptr,uchar *palette_buffer);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_005380b0(CPackedBitmap *this_ptr);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_005380c0(CPackedBitmap *this_ptr,int apply_palette_flag);
+void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,undefined4 param_2);
+void __cdecl cockpit_pkbitmap_cpp_FUN_005381b0(CPackedBitmap *this_ptr,_FILE *file_handle);
+void __cdecl cockpit_pkbitmap_cpp_FUN_00538280(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00538480(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_00538530(CPackedBitmap *this_ptr,int apply_palette_flag);
+void cockpit_pkbitmap_cpp_FUN_00538550(undefined4 param_1,int param_2);
+CPackedBitmap * cockpit_pkbitmap_cpp_FUN_005385d0(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6);
+void unkafter_pkbitmap_cpp_FUN_00538990(undefined4 *param_1);
+void cockpit_pkbmpset_cpp_FUN_005389c0(int *param_1,int param_2);
+void cockpit_pkbmpset_cpp_FUN_00538b2e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8);
+void cockpit_pkbmpset_cpp_FUN_00538db0(CPackedBitmapSet *param_1,int param_2,int param_3);
+void cockpit_pkbmpset_cpp_FUN_00539100(void);
+void cockpit_pkbmpset_cpp_FUN_00539190(undefined4 param_1,char *param_2,CPackedBitmapSet *param_3);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_005391e0(CPackedBitmapSet *this_ptr,char *palette_data);
+int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_00539260(CPackedBitmapSet *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_005392b0(CPackedBitmapSet *this_ptr,char *filename);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_005392d0(CPackedBitmapSet *this_ptr);
+void core_platfrm_cpp_staticInit_FUN_005393a0(void);
+void core_platfrm_cpp_factoryFuncPlatform_FUN_005393d0(void);
+CDemonActorType * core_platfrm_cpp_CPlatform_getActorType_FUN_005393f0(CPlatform *this_ptr);
+CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_00539400(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_005395d0(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00539660(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_FUN_00539810(CPlatform *this_ptr,float delta_time);
+void __cdecl core_platfrm_cpp_FUN_0053a340(CPlatform *this_ptr,float goal_param,float movement_rate);
+int core_platfrm_cpp_FUN_0053a3d0(CDemonActor *param_1);
+void core_platfrm_cpp_FUN_0053a520(CDemonActor *param_1,int param_2);
+void core_platfrm_cpp_FUN_0053a700(int param_1);
+void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0053a740(CPlatform *this_ptr);
+int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform *this_ptr,CDemonActor *actor);
+undefined4 core_platfrm_cpp_FUN_0053ad50(int param_1,int param_2);
+undefined4 core_platfrm_cpp_FUN_0053ad70(void);
+EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0053ad90(CPlatform *this_ptr);
+int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0053ada0(CPlatform *this_ptr);
+void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0053adb0(CPlatform *this_ptr,CDemonActor *actor);
+void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr);
+uint __cdecl engine_pod_cpp_crc32UpdateByte_FUN_0053b000(uint current_crc,uchar data_byte);
+uint engine_pod_cpp_FUN_0053b110(char *param_1,int param_2);
+CPodFile * __cdecl engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(CPodFile *this_ptr);
+CPodFile * __cdecl engine_pod_cpp_CPodFile_dtor_FUN_0053b210(CPodFile *this_ptr,uint flags);
+void engine_pod_cpp_FUN_0053b230(undefined4 *param_1,undefined4 *param_2);
+undefined4 engine_pod_cpp_FUN_0053b250(CPodFile *param_1,char *param_2,char *param_3);
+void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(CPodFile *this_ptr);
+int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_0053bed0(CPodFile *this_ptr,char *filename);
+void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_0053bf40(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
+bool engine_pod_cpp_FUN_0053bfbe(int *param_1);
+void engine_pod_cpp_FUN_0053c290(int param_1,int param_2);
+void engine_pod_cpp_FUN_0053c3b0(int param_1,int param_2);
+uint engine_pod_cpp_FUN_0053c4c0(int param_1,int param_2);
+CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_0053c5c0(CPod *this_ptr);
+CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0053c5f0(CPod *this_ptr,uint flags);
+undefined4 engine_pod_cpp_FUN_0053c650(int *param_1,undefined4 param_2,char *param_3);
+void engine_pod_cpp_FUN_0053c750(int *param_1);
+void __cdecl engine_pod_cpp_CPod_dismount_FUN_0053c800(CPod *this_ptr,char *filename);
+void __cdecl engine_pod_cpp_CPod_init_FUN_0053c8a0(CPod *this_ptr);
+void __cdecl engine_pod_cpp_CPod_cleanup_FUN_0053c8f0(CPod *this_ptr);
+int __cdecl engine_pod_cpp_findFilesByExtension_FUN_0053c940(int *param_1,byte *param_2,int param_3,int param_4,int param_5);
+void __cdecl engine_pod_cpp_CPod_initSearch_FUN_0053cb00(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
+int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_0053cb50(CPod *this_ptr,CPodSearchContext *search_context);
+void engine_pod_cpp_FUN_0053cc5c(undefined4 param_1,char *param_2);
+int __cdecl engine_pod_cpp_CPod_findFile_FUN_0053cf50(CPod *this_ptr,SFoundFileInfo *found_file_info);
+void __cdecl engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_0053cfa0(CPod *this_ptr);
+int __cdecl engine_pod_cpp_CPod_getPodIndexByFilename_FUN_0053d3f0(CPod *this_ptr,char *target_filename);
+void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_0053d490(CPod *this_ptr,int index);
+int __cdecl engine_pod_cpp_findFileInPod_FUN_0053d520(SFoundFileInfo *info);
+void __cdecl core_podmain_cpp_staticInit_FUN_0053d550(void);
+void core_podmain_cpp_FUN_0053d580(int param_1);
+CDemonPod * __cdecl core_podmain_cpp_CDemonPod_ctor_FUN_0053d710(CDemonPod *this_ptr);
+CDemonPod * __cdecl core_podmain_cpp_CDemonPod_dtor_FUN_0053d730(CDemonPod *this_ptr,uint flags);
+void unkafter_podmain_cpp_FUN_0053d78e(undefined4 param_1);
+void __cdecl engine_prim_c_FUN_0053d7a0(int culling_mode);
+void engine_prim_c_FUN_0053d7b0(int param_1,int param_2);
+SSoftwareEdge * __cdecl engine_prim_c_FUN_0053db80(int y_value,SSoftwareEdge *edge_ptr);
+void __cdecl engine_prim_c_prepareDepthBuffer_FUN_0053dbc0(int param_1,int param_2);
+void __cdecl engine_prim_c_normalizeTextureCoords_FUN_0053dc30(int param_1,int param_2);
+void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_0053dcb0(int param_1,int param_2);
+void __cdecl engine_prim_c_replaceWWithDepth_FUN_0053dd20(int param_1,int param_2);
+bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_0053dd60(int param_1,int param_2,int param_3);
+int __cdecl engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_0053de20(SMRGLPrimitiveTriangle *triangle);
+undefined4 engine_prim_c_FUN_0053df50(void);
+bool __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(ushort *param_1);
+void __cdecl engine_prim_c_FUN_0053e120(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_FUN_0053e650(int *vertex_indices,int vertex_count);
+void engine_prim_c_FUN_0053eda0(int param_1,int param_2);
+void __cdecl engine_prim_c_FUN_0053f080(SRenderVertex *vertices,int vertex_count);
+void __cdecl engine_prim_c_FUN_0053f720(int *vertex_indices,int vertex_count);
+void core_rifle_cpp_staticInit_FUN_0053fec0(void);
+void core_rifle_cpp_factoryFuncRifle_FUN_0053fef0(void);
+CDemonActorType * core_rifle_cpp_CRifle_getActorType_FUN_0053ff10(CRifle *this_ptr);
+CRifle * core_rifle_cpp_CRifle_ctor_FUN_0053ff20(CRifle *this_ptr);
+void core_rifle_cpp_FUN_0053ffb0(int param_1);
 

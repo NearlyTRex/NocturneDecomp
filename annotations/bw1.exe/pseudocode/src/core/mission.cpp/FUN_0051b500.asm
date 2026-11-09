@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0051b500(int *param_1,int param_2,char *param_3)
+; void core_mission_cpp_FUN_0051b500(int *param_1,int param_2,char *param_3)
 ;
 ;
 ; XREF[1]:
-;   FUN_00544460 at 005464ae
+;   core_script.cpp_CScript_step_FUN_00544460 at 005464ae
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_005e974e
@@ -16,14 +16,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0051b500
-        ;   Label: FUN_0051b500
+        ;   Label: core_mission.cpp_FUN_0051b500
     PUSH ESI                            ; 0051b501
     PUSH EDI                            ; 0051b502
     PUSH EBP                            ; 0051b503
@@ -44,8 +44,8 @@ section .text
     PUSH 0x5e9762                       ; 0051b524 | = "CDemonMission::changeSetName - invali..."
     MOV dword ptr [0x01d1d400],ECX      ; 0051b529 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 0051b52f | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0051b535
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0051b535
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 0051b53a
     MOV EAX,EBX                         ; 0051b53d
         ;   Label: LAB_0051b53d
@@ -83,8 +83,8 @@ section .text
     PUSH 0x5e97b3                       ; 0051b579 | = "Tried to change the set file for the ..."
     MOV dword ptr [0x01d1d400],EDX      ; 0051b57e | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0051b584 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0051b58a
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0051b58a
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0051b58f
     POP EBP                             ; 0051b592
     POP EDI                             ; 0051b593

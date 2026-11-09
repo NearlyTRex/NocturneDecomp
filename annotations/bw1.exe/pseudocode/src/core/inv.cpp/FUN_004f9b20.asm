@@ -1,30 +1,30 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f9b20(int param_1)
+; void core_inv_cpp_FUN_004f9b20(int param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_004eaa10 at 004eaa3e
+;   core_hero.cpp_FUN_004eaa10 at 004eaa3e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_inv_cpp_005e66f7
 ;   TerminatedCString s_CInventory_setupItems_we_005e6707
-;   undefined4 DAT_01cd0d40
-;   undefined4 DAT_01cd0e38
+;   undefined4 g_CGasMaskClassInfo.name_hash
+;   undefined4 g_CGogglesClassInfo.name_hash
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_0040c600
-;   FUN_005030e0
+;   core_actor.cpp_castToClassHash_FUN_0040c600
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f9b20
-        ;   Label: FUN_004f9b20
+        ;   Label: core_inv.cpp_FUN_004f9b20
     PUSH ESI                            ; 004f9b21
     PUSH EDI                            ; 004f9b22
     PUSH EBP                            ; 004f9b23
@@ -53,11 +53,11 @@ section .text
         ;   Label: LAB_004f9b55
     JNZ 0x004f9b74                      ; 004f9b5c
         ;   XREF to: 004f9b74 (CONDITIONAL_JUMP)  ; LAB_004f9b74
-    MOV EDX,dword ptr [0x01cd0d40]      ; 004f9b5e | DAT_01cd0d40
+    MOV EDX,dword ptr [0x01cd0d40]      ; 004f9b5e | g_CGasMaskClassInfo.name_hash
     PUSH EDX                            ; 004f9b64
     PUSH ESI                            ; 004f9b65
-    CALL FUN_0040c600                   ; 004f9b66
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c600()
+    CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004f9b66
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
     ADD ESP,0x8                         ; 004f9b6b
     MOV dword ptr [EBX + 0x45c],EAX     ; 004f9b6e
     INC EDI                             ; 004f9b74
@@ -79,17 +79,17 @@ section .text
     PUSH 0x5e6707                       ; 004f9b8e | = "CInventory::setupItems - we should ow..."
     MOV dword ptr [0x01d1d400],ECX      ; 004f9b93 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ESI      ; 004f9b99 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004f9b9f
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004f9b9f
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004f9ba4
     JMP 0x004f9b31                      ; 004f9ba7
         ;   XREF to: 004f9b31 (UNCONDITIONAL_JUMP)  ; LAB_004f9b31
-    MOV ECX,dword ptr [0x01cd0e38]      ; 004f9ba9 | DAT_01cd0e38
+    MOV ECX,dword ptr [0x01cd0e38]      ; 004f9ba9 | g_CGogglesClassInfo.name_hash
         ;   Label: LAB_004f9ba9
     PUSH ECX                            ; 004f9baf
     PUSH ESI                            ; 004f9bb0
-    CALL FUN_0040c600                   ; 004f9bb1
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c600()
+    CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004f9bb1
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
     ADD ESP,0x8                         ; 004f9bb6
     MOV dword ptr [EBX + 0x460],EAX     ; 004f9bb9
     JMP 0x004f9b55                      ; 004f9bbf

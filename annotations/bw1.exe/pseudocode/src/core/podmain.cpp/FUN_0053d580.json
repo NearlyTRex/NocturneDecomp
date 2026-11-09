@@ -1,136 +1,17 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 22,
-        "message": "use of undeclared identifier 'DAT_005edb98'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_00479320'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 25,
-        "message": "no matching function for call to 'FUN_00479360'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 15,
-        "line": 27,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 30,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 174,
+    "complexity_score": 189,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
+      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -147,54 +28,54 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_0053d580",
-    "signature": "void FUN_0053d580(int param_1)"
+    "name": "core_podmain.cpp_FUN_0053d580",
+    "signature": "void core_podmain_cpp_FUN_0053d580(int param_1)"
   },
   "function_calls": [
     {
-      "addr": "00479320",
-      "is_variadic": false,
-      "name": "FUN_00479320"
-    },
-    {
-      "addr": "00479340",
-      "is_variadic": false,
-      "name": "FUN_00479340"
-    },
-    {
-      "addr": "00479360",
-      "is_variadic": false,
-      "name": "FUN_00479360"
-    },
-    {
-      "addr": "004793e0",
-      "is_variadic": false,
-      "name": "FUN_004793e0"
-    },
-    {
-      "addr": "00479460",
-      "is_variadic": false,
-      "name": "FUN_00479460"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "005c04b0",
-      "is_variadic": false,
-      "name": "FUN_005c04b0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005c0d10",
       "is_variadic": false,
-      "name": "FUN_005c0d10"
+      "name": "crt_stdio.c_fclose_FUN_005c0d10"
     },
     {
       "addr": "005c157c",
       "is_variadic": false,
-      "name": "FUN_005c157c"
+      "name": "crt_stdio.c_fopen_FUN_005c157c"
+    },
+    {
+      "addr": "005c04b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005c04b0"
+    },
+    {
+      "addr": "00479460",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00479460"
+    },
+    {
+      "addr": "00479320",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_ctor_FUN_00479320"
+    },
+    {
+      "addr": "00479340",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_dtor_FUN_00479340"
+    },
+    {
+      "addr": "004793e0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_004793e0"
+    },
+    {
+      "addr": "00479360",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00479360"
     }
   ],
   "globals": [
@@ -325,7 +206,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0053d580(int param_1)",
+      "text": "void core_podmain_cpp_FUN_0053d580(int param_1)",
       "type": "unnamed_param"
     },
     {
@@ -333,15 +214,23 @@
       "line": 15,
       "match": "DAT_005edb98",
       "severity": "mild",
-      "text": "iVar1 = FUN_005c157c(\"pod.ini\",&DAT_005edb98);",
+      "text": "iVar1 = _fopen(\"pod.ini\",&DAT_005edb98);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 19,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "while (CStack_328._0_1_ != '\\0') {",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 20,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,acStack_328,auStack_114);",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_328,auStack_114);",
       "type": "unresolved_funcptr"
     },
     {
@@ -349,7 +238,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,acStack_328,auStack_114);",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_328,auStack_114);",
       "type": "unnamed_param"
     },
     {
@@ -357,7 +246,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,acStack_328,auStack_114);",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_328,auStack_114);",
       "type": "unnamed_param"
     },
     {
@@ -365,7 +254,7 @@
       "line": 32,
       "match": "DAT_005edbd0",
       "severity": "mild",
-      "text": "FUN_005c04b0(iVar1,&DAT_005edbd0,&iStack_14);",
+      "text": "_fscanf(iVar1,&DAT_005edbd0,&iStack_14);",
       "type": "undefined_data"
     },
     {
@@ -373,7 +262,7 @@
       "line": 36,
       "match": "DAT_005edbd4",
       "severity": "mild",
-      "text": "FUN_005c04b0(iVar1,&DAT_005edbd4,auStack_214);",
+      "text": "_fscanf(iVar1,&DAT_005edbd4,auStack_214);",
       "type": "undefined_data"
     },
     {
@@ -404,7 +293,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonPod",
         "offset": 4,
         "vtable_addr": "00604aa4"
       }

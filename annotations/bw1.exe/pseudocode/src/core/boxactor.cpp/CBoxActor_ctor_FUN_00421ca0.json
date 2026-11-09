@@ -1,0 +1,172 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 55,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 40,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [
+    {
+      "addr": "00422ed0",
+      "from_addr": "00422ed5",
+      "name": "core_boxactor.cpp_CLightActor_ctor_FUN_00422ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00421c70",
+      "from_addr": "00421c83",
+      "name": "core_boxactor.cpp_factoryFuncBoxActor_FUN_00421c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00584eb0",
+      "from_addr": "00584eb5",
+      "name": "core_stone.cpp_CTempleStone_ctor_FUN_00584eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00421ca0",
+    "address_range": [
+      [
+        "00421ca0",
+        "00421ddd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_ctor_FUN_00421ca0",
+    "signature": "CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421ca0(CBoxActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004085c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004085c0"
+    },
+    {
+      "addr": "0041da00",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_ctor_FUN_0041da00"
+    },
+    {
+      "addr": "00468860",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00468860"
+    },
+    {
+      "addr": "00468950",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00422ed5",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CLightActor_ctor_FUN_00422ed0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00584eb5",
+        "call_type": "direct",
+        "caller": "core_stone.cpp_CTempleStone_ctor_FUN_00584eb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00421c83",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_factoryFuncBoxActor_FUN_00421c70",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5272727272727273,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 45,
+      "INT_ADD": 42,
+      "INT_AND": 12,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 6,
+      "INT_SUB": 10,
+      "LOAD": 7,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 37
+    },
+    "pcode_op_count": 194
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0xc0",
+      "severity": "mild",
+      "text": "pCVar3 = core_box_cpp_CBox_ctor_FUN_0041da00((CBox *)&pCVar2[1].field_0xc0);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoxActor",
+        "offset": 0,
+        "vtable_addr": "005fd054"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

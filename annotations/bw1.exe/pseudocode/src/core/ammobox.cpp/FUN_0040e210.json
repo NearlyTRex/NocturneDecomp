@@ -1,160 +1,39 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 37,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 39,
-        "message": "no matching function for call to 'FUN_0040ddd0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 40,
-        "message": "no matching function for call to 'FUN_0040dfd0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 43,
-        "message": "no matching function for call to 'FUN_0040ddd0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 252,
+    "complexity_score": 236,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 18,
+    "pseudocode_lines": 46,
+    "suspect_count": 17,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
+      "shadow_pointer_walk",
+      "unnamed_field",
       "unresolved_funcptr",
-      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 156
+    "total_lines": 155
   },
   "cross_references": [
     {
       "addr": "00470750",
       "from_addr": "0047078c",
-      "name": "FUN_00470750",
+      "name": "core_doc.cpp_FUN_00470750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c9990",
       "from_addr": "004c99bd",
-      "name": "FUN_004c9990",
+      "name": "core_gabriela.cpp_FUN_004c9990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058cda0",
       "from_addr": "0058cddc",
-      "name": "FUN_0058cda0",
+      "name": "core_stranger.cpp_FUN_0058cda0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -166,40 +45,40 @@
         "0040e319"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_0040e210",
-    "signature": "void FUN_0040e210(int param_1,undefined4 param_2)"
+    "convention": "__cdecl",
+    "name": "core_ammobox.cpp_FUN_0040e210",
+    "signature": "void __cdecl core_ammobox_cpp_FUN_0040e210(CAmmoBox *this_ptr,CInventory *inventory)"
   },
   "function_calls": [
     {
       "addr": "0040dbc0",
       "is_variadic": false,
-      "name": "FUN_0040dbc0"
-    },
-    {
-      "addr": "0040ddd0",
-      "is_variadic": false,
-      "name": "FUN_0040ddd0"
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0"
     },
     {
       "addr": "0040dfd0",
       "is_variadic": false,
-      "name": "FUN_0040dfd0"
+      "name": "core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0"
+    },
+    {
+      "addr": "0040ddd0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_FUN_0040ddd0"
     },
     {
       "addr": "004f7690",
       "is_variadic": false,
-      "name": "FUN_004f7690"
+      "name": "core_inv.cpp_FUN_004f7690"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005c0f32",
       "is_variadic": false,
-      "name": "FUN_005c0f32"
+      "name": "crt_unknown.c_FUN_005c0f32"
     }
   ],
   "globals": [
@@ -258,48 +137,42 @@
       {
         "call_addr": "0047078c",
         "call_type": "direct",
-        "caller": "FUN_00470750",
-        "estimated_params": 3,
+        "caller": "core_doc.cpp_FUN_00470750",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "004c99bd",
         "call_type": "direct",
-        "caller": "FUN_004c9990",
-        "estimated_params": 3,
+        "caller": "core_gabriela.cpp_FUN_004c9990",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "0058cddc",
         "call_type": "direct",
-        "caller": "FUN_0058cda0",
-        "estimated_params": 3,
+        "caller": "core_stranger.cpp_FUN_0058cda0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.034090909090909,
@@ -327,12 +200,27 @@
     "pcode_op_count": 355
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmoBox *"
+      },
+      {
+        "is_param": true,
+        "name": "inventory",
+        "offset": 8,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -344,143 +232,132 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x320",
       "severity": "mild",
-      "text": "void FUN_0040e210(int param_1,uint param_2)",
-      "type": "unnamed_param"
+      "text": "if (*(CDemonActor **)&this_ptr->field_0x320 != (CDemonActor *)0x0) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void FUN_0040e210(int param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 13,
-      "match": "param_1",
+      "match": "field_0x320",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 800) != 0) {",
-      "type": "unnamed_param"
+      "text": "core_inv_cpp_FUN_004f7690(inventory,*(CDemonActor **)&this_ptr->field_0x320,1);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 14,
-      "match": "param_2",
+      "match": "field_0x320",
       "severity": "mild",
-      "text": "FUN_004f7690(param_2,*(int *)(param_1 + 800),1);",
-      "type": "unnamed_param"
+      "text": "*(uint *)&this_ptr->field_0x320 = 0;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_004f7690(param_2,*(int *)(param_1 + 800),1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 15,
-      "match": "param_1",
+      "match": "field_0x314",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 800) = 0;",
-      "type": "unnamed_param"
+      "text": "*(uint *)&this_ptr->field_0x314 = 0;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x314",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x314) = 0;",
-      "type": "unnamed_param"
+      "text": "if (*(int *)&this_ptr->field_0x314 == 0) {",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x2d4",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x314) == 0) {",
-      "type": "unnamed_param"
+      "text": "core_ammo_cpp_FUN_0040ddd0(this_ptr_00,&this_ptr->field_0x2d4);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 32,
-      "match": "param_1",
+      "match": "field_0x314",
       "severity": "mild",
-      "text": "FUN_0040ddd0(pcVar3,param_1 + 0x2d4);",
-      "type": "unnamed_param"
+      "text": "core_ammo_cpp_CAmmo_setAmmoCount_FUN_0040dfd0(this_ptr_00,*(int *)&this_ptr->field_0x314);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
       "line": 33,
-      "match": "param_1",
+      "match": "field_0x318",
       "severity": "mild",
-      "text": "FUN_0040dfd0(pcVar3,*(uint *)(param_1 + 0x314));",
-      "type": "unnamed_param"
+      "text": "*(uint *)&this_ptr_00->field_0x318 = *(uint *)&this_ptr->field_0x318;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x318",
       "severity": "mild",
-      "text": "*(uint *)(pcVar3 + 0x318) = *(uint *)(param_1 + 0x318);",
-      "type": "unnamed_param"
+      "text": "*(uint *)&this_ptr_00->field_0x318 = *(uint *)&this_ptr->field_0x318;",
+      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
+      "line": 34,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)(pcVar3 + 0x154))(pcVar3);",
+      "text": "(*(code *)**(uint **)&this_ptr_00->field_0x154)(this_ptr_00);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x154",
       "severity": "mild",
-      "text": "FUN_0040ddd0(pcVar3,param_1 + 0x2d4);",
-      "type": "unnamed_param"
+      "text": "(*(code *)**(uint **)&this_ptr_00->field_0x154)(this_ptr_00);",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "core_ammo_cpp_FUN_0040ddd0(this_ptr_00,&this_ptr->field_0x2d4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pCVar2->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pCVar2 = (CAmmo *)&pCVar2->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
       "line": 48,
-      "match": "param_2",
+      "match": "field_0x314",
       "severity": "mild",
-      "text": "FUN_004f7690(param_2,pcVar3,1);",
-      "type": "unnamed_param"
+      "text": "*(uint *)&this_ptr->field_0x314 = 0;",
+      "type": "unnamed_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x314) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 39,
-      "match": "do {",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "text": "pCVar2 = (CAmmo *)&pCVar2->field_0x2;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

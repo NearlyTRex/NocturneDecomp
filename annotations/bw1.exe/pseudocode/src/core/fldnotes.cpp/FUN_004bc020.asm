@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * FUN_004bc020(int param_1,char *param_2,undefined4 param_3)
+; char * core_fldnotes_cpp_FUN_004bc020(int param_1,char *param_2,undefined4 param_3)
 ;
 ;
 ; XREF[1]:
-;   FUN_004bcba0 at 004bd1eb
+;   core_fldnotes.cpp_FUN_004bcba0 at 004bd1eb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005dfb94
@@ -18,16 +18,16 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_004bbcb0
-;   FUN_005030e0
-;   FUN_005c0f32
+;   core_fldnotes.cpp_FUN_004bbcb0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c0f32
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004bc020
-        ;   Label: FUN_004bc020
+        ;   Label: core_fldnotes.cpp_FUN_004bc020
     PUSH ESI                            ; 004bc021
     PUSH EDI                            ; 004bc022
     PUSH EBP                            ; 004bc023
@@ -38,15 +38,15 @@ section .text
         ;   XREF to: 004bc0d3 (CONDITIONAL_JUMP)  ; LAB_004bc0d3
     PUSH 0x15c                          ; 004bc039
         ;   Label: LAB_004bc039
-    CALL FUN_005c0f32                   ; 004bc03e
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0f32()
+    CALL crt_unknown.c_FUN_005c0f32     ; 004bc03e
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bc043
     TEST EAX,EAX                        ; 004bc046
     JZ 0x004bc053                       ; 004bc048
         ;   XREF to: 004bc053 (CONDITIONAL_JUMP)  ; LAB_004bc053
     PUSH EAX                            ; 004bc04a
-    CALL FUN_004bbcb0                   ; 004bc04b
-        ;   XREF to: 004bbcb0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bbcb0()
+    CALL core_fldnotes.cpp_FUN_004bbcb0 ; 004bc04b
+        ;   XREF to: 004bbcb0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bbcb0()
     ADD ESP,0x4                         ; 004bc050
     MOV EBX,EAX                         ; 004bc053
         ;   Label: LAB_004bc053
@@ -58,8 +58,8 @@ section .text
     PUSH 0x5dfbf9                       ; 004bc063 | = "Out of memory!"
     MOV dword ptr [0x01d1d400],EDI      ; 004bc068 | DAT_01d1d400
     MOV [0x01d1d404],EAX                ; 004bc06e | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bc073
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bc073
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004bc078
     MOV EDI,ESI                         ; 004bc07b
         ;   Label: LAB_004bc07b
@@ -111,8 +111,8 @@ section .text
     PUSH 0x5dfba9                       ; 004bc0df | = "Too many field note entries in sectio..."
     MOV dword ptr [0x01d1d400],ECX      ; 004bc0e4 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 004bc0ea | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bc0f0
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bc0f0
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 004bc0f5
     JMP 0x004bc039                      ; 004bc0f8
         ;   XREF to: 004bc039 (UNCONDITIONAL_JUMP)  ; LAB_004bc039
@@ -123,8 +123,8 @@ section .text
     PUSH 0x5dfc1d                       ; 004bc108 | = "Entry name '%s' is too long"
     MOV dword ptr [0x01d1d400],EDX      ; 004bc10d | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 004bc113 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bc119
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bc119
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 004bc11e
     JMP 0x004bc08c                      ; 004bc121
         ;   XREF to: 004bc08c (UNCONDITIONAL_JUMP)  ; LAB_004bc08c

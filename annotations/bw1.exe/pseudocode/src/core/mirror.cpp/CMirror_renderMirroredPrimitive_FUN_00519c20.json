@@ -1,0 +1,196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 51,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [
+    {
+      "addr": "005553e0",
+      "from_addr": "0055541d",
+      "name": "core_set.cpp_FUN_005553e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00519c20",
+    "address_range": [
+      [
+        "00519c20",
+        "00519ca4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_00519c20",
+    "signature": "void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_00519c20(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00519960",
+      "is_variadic": false,
+      "name": "core_mirror.cpp_FUN_00519960"
+    },
+    {
+      "addr": "00481b80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_00481b80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8dc",
+      "name": "DAT_01d2c8dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8e0",
+      "name": "DAT_01d2c8e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8e4",
+      "name": "DAT_01d2c8e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8e8",
+      "name": "DAT_01d2c8e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8ec",
+      "name": "DAT_01d2c8ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8f0",
+      "name": "DAT_01d2c8f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8f4",
+      "name": "DAT_01d2c8f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8f8",
+      "name": "DAT_01d2c8f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c8fc",
+      "name": "DAT_01d2c8fc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055541d",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_005553e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.085714285714286,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 28,
+      "INT_ADD": 17,
+      "INT_AND": 9,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 6,
+      "LOAD": 14,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirror *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,(SMRGLHeaderPrimitive *)(this_ptr + 0xe8));",
+      "type": "undefined_data"
+    }
+  ]
+}

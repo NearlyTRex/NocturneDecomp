@@ -1,0 +1,304 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 101,
+    "complexity_score": 168,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 13,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 129
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004854e0",
+    "address_range": [
+      [
+        "004854e0",
+        "00485605"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_drip.cpp_CDrip_archive_FUN_004854e0",
+    "signature": "void __cdecl core_drip_cpp_CDrip_archive_FUN_004854e0(CDrip *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040b1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b1c0"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db58f",
+      "name": "s_modelName_005db58f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db599",
+      "name": "DAT_005db599",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005db59e",
+      "name": "s_autoDrop_005db59e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db5a7",
+      "name": "s_homePos_005db5a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db5af",
+      "name": "DAT_005db5af",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005db5b3",
+      "name": "s_minAutoDripTime_005db5b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db5c3",
+      "name": "s_maxAutoDripTime_005db5c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db5d3",
+      "name": "s_dripRadius_005db5d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db5de",
+      "name": "s_damage_005db5de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db5e5",
+      "name": "s_hitSound_005db5e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db5ee",
+      "name": "s_noRockFlag_005db5ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006144a8",
+      "name": "g_CDripClassVersion",
+      "type": "int",
+      "value": "0x6"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2631578947368425,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 5,
+      "COPY": 45,
+      "INT_ADD": 28,
+      "INT_AND": 36,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 38,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 18,
+      "INT_SUB": 41,
+      "LOAD": 5,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 36
+    },
+    "pcode_op_count": 324
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrip *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x158,\"modelName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005db599",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x2d4,&DAT_005db599);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x2d4,&DAT_005db599);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2d8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x2d8,\"autoDrop\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2f8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x2f8,\"homePos\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005db5af",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x304,&DAT_005db5af);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x304",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x304,&DAT_005db5af);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2e0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x2e0,\"minAutoDripTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2e4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x2e4,\"maxAutoDripTime\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x2e8",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x2e8,\"dripRadius\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x310",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x310,\"damage\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x314",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x314,\"hitSound\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x334",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x334,\"noRockFlag\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDrip",
+        "offset": 212,
+        "vtable_addr": "005ff374"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

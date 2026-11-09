@@ -1,0 +1,27 @@
+// Name: core_stairs.cpp_CStairs_customGetFloorHeight_FUN_00584c60
+// Address: 00584c60
+// Address Range: [[00584c60, 00584caa]]
+// Convention: __cdecl
+// Signature: int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00584c60(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height)
+
+#include "nocturne.h"
+
+int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00584c60(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height)
+
+{
+  int iVar1;
+  int iVar2;
+  CDemonTriangle *triangle;
+  int iVar3;
+  
+  triangle = (CDemonTriangle *)&this_ptr->field_0x170;
+  iVar3 = 0;
+  for (iVar2 = 0; iVar2 < *(int *)&this_ptr->field_0x16c * 2; iVar2 = iVar2 + 1) {
+    iVar1 = core_dtri_cpp_FUN_00490a40(triangle,position,search_radius,out_floor_height);
+    if (iVar1 != 0) {
+      iVar3 = 1;
+    }
+    triangle = triangle + 1;
+  }
+  return iVar3;
+}

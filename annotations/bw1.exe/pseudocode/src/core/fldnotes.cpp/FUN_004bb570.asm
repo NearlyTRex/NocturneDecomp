@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004bb570(int param_1)
+; void core_fldnotes_cpp_FUN_004bb570(int param_1)
 ;
 ;
 ; XREF[4]:
-;   FUN_004bb2f0 at 004bb3bd
-;   FUN_004bb510 at 004bb51b
-;   FUN_004bb630 at 004bb639
-;   FUN_004bb6c0 at 004bb6c6
+;   core_fldnotes.cpp_FUN_004bb2f0 at 004bb3bd
+;   core_fldnotes.cpp_FUN_004bb510 at 004bb51b
+;   core_fldnotes.cpp_FUN_004bb630 at 004bb639
+;   core_fldnotes.cpp_FUN_004bb6c0 at 004bb6c6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fldnotes_cpp_005df9e9
@@ -17,17 +17,17 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_004ba850
-;   FUN_004bb5f0
-;   FUN_005030e0
-;   FUN_005c0f32
+;   core_fldnotes.cpp_FUN_004ba850
+;   core_fldnotes.cpp_FUN_004bb5f0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c0f32
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004bb570
-        ;   Label: FUN_004bb570
+        ;   Label: core_fldnotes.cpp_FUN_004bb570
     MOV EBX,dword ptr [ESP + 0x8]       ; 004bb571
     CMP byte ptr [EBX + 0x48],0x0       ; 004bb575
     JNZ 0x004bb57d                      ; 004bb579
@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 004bb57d
         ;   Label: LAB_004bb57d
     PUSH 0x120                          ; 004bb57e
-    CALL FUN_005c0f32                   ; 004bb583
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined FUN_005c0f32()
+    CALL crt_unknown.c_FUN_005c0f32     ; 004bb583
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bb588
     TEST EAX,EAX                        ; 004bb58b
     JZ 0x004bb5a0                       ; 004bb58d
@@ -48,8 +48,8 @@ section .text
     LEA ESI,[EBX + 0x48]                ; 004bb593
     PUSH ESI                            ; 004bb596
     PUSH EAX                            ; 004bb597
-    CALL FUN_004ba850                   ; 004bb598
-        ;   XREF to: 004ba850 (UNCONDITIONAL_CALL)  ; undefined FUN_004ba850()
+    CALL core_fldnotes.cpp_FUN_004ba850 ; 004bb598
+        ;   XREF to: 004ba850 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ba850()
     ADD ESP,0xc                         ; 004bb59d
     MOV ESI,EAX                         ; 004bb5a0
         ;   Label: LAB_004bb5a0
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5df9fe                       ; 004bb5b1 | = "Out of memory"
     MOV dword ptr [0x01d1d400],ECX      ; 004bb5b6 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 004bb5bc | DAT_01d1d404
-    CALL FUN_005030e0                   ; 004bb5c2
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 004bb5c2
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 004bb5c7
     POP EDI                             ; 004bb5ca
     MOV EAX,dword ptr [EBX + 0x40]      ; 004bb5cb
@@ -75,8 +75,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x34]      ; 004bb5d7
     PUSH EBX                            ; 004bb5da
     MOV dword ptr [ESI + 0x18],EAX      ; 004bb5db
-    CALL FUN_004bb5f0                   ; 004bb5de
-        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004bb5f0()
+    CALL core_fldnotes.cpp_FUN_004bb5f0 ; 004bb5de
+        ;   XREF to: 004bb5f0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bb5f0()
     ADD ESP,0x8                         ; 004bb5e3
     MOV byte ptr [EBX + 0x48],0x0       ; 004bb5e6
     POP ESI                             ; 004bb5ea

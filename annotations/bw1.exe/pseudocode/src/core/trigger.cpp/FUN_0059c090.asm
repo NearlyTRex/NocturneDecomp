@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0059c090(int param_1,int param_2)
+; undefined4 core_trigger_cpp_FUN_0059c090(int param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xe0]:1  local_e0
@@ -14,22 +14,22 @@
 ;   TerminatedCString s_Hell_froze_005f828a
 ;   undefined4 DAT_005f8298
 ;   undefined4 DAT_005f829c
-;   undefined4 DAT_007c637c
+;   undefined4 g_CCharacterClassInfo.name_hash
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_00408b40
-;   FUN_00408bb0
-;   FUN_0040c600
-;   FUN_005030e0
+;   core_actor.cpp_castToClassHash_FUN_0040c600
+;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_FUN_00408bb0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0059c090
-        ;   Label: FUN_0059c090
+        ;   Label: core_trigger.cpp_FUN_0059c090
     PUSH ESI                            ; 0059c091
     PUSH EDI                            ; 0059c092
     PUSH EBP                            ; 0059c093
@@ -98,8 +98,8 @@ section .text
     PUSH EBP                            ; 0059c173
     LEA ESI,[ESP + 0xe0]                ; 0059c174
     LEA EDI,[ESP + 0xb0]                ; 0059c17b
-    CALL FUN_00408b40                   ; 0059c182
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b40()
+    CALL core_actor.cpp_FUN_00408b40    ; 0059c182
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
     LEA ESI,[ESP + 0xe0]                ; 0059c187
     ADD ESP,0x8                         ; 0059c18e
     MOVSD ES:EDI,ESI                    ; 0059c191
@@ -136,8 +136,8 @@ section .text
     PUSH EBX                            ; 0059c1f0
     LEA ESI,[ESP + 0xa4]                ; 0059c1f1
     LEA EDI,[ESP + 0xd4]                ; 0059c1f8
-    CALL FUN_00408bb0                   ; 0059c1ff
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408bb0()
+    CALL core_actor.cpp_FUN_00408bb0    ; 0059c1ff
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
     LEA ESI,[ESP + 0xa4]                ; 0059c204
     ADD ESP,0x8                         ; 0059c20b
     MOVSD ES:EDI,ESI                    ; 0059c20e
@@ -203,12 +203,12 @@ section .text
     POP ESI                             ; 0059c2e7
     POP EBX                             ; 0059c2e8
     RET                                 ; 0059c2e9
-    MOV ECX,dword ptr [0x007c637c]      ; 0059c2ea | DAT_007c637c
+    MOV ECX,dword ptr [0x007c637c]      ; 0059c2ea | g_CCharacterClassInfo.name_hash
         ;   Label: LAB_0059c2ea
     PUSH ECX                            ; 0059c2f0
     PUSH EBP                            ; 0059c2f1
-    CALL FUN_0040c600                   ; 0059c2f2
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c600()
+    CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 0059c2f2
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
     ADD ESP,0x8                         ; 0059c2f7
     TEST EAX,EAX                        ; 0059c2fa
     JZ 0x0059c30b                       ; 0059c2fc
@@ -284,16 +284,16 @@ section .text
     PUSH 0x5f823c                       ; 0059c3d4 | = "CTrigger::containsActor - invalid tri..."
     MOV dword ptr [0x01d1d400],EDI      ; 0059c3d9 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBP      ; 0059c3df | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0059c3e5
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0059c3e5
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0xc                         ; 0059c3ea
     MOV EDX,0x5f8276                    ; 0059c3ed | = "..\\core\\trigger.cpp"
     MOV ECX,0x394                       ; 0059c3f2
     PUSH 0x5f828a                       ; 0059c3f7 | = "Hell froze..."
     MOV dword ptr [0x01d1d400],EDX      ; 0059c3fc | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 0059c402 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0059c408
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0059c408
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0059c40d
     XOR EAX,EAX                         ; 0059c410
     ADD ESP,0x100                       ; 0059c412

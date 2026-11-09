@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_0042a930(int param_1,float param_2)
+; undefined4 core_carved_cpp_FUN_0042a930(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1c8]:1  local_1c8
@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_00428ae0 at 00429ed1
+;   core_carved.cpp_FUN_00428ae0 at 00429ed1
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_can_t_pick_up_s_sombod_005d54ec+1
@@ -28,34 +28,34 @@
 ;   undefined4 DAT_005d55cd
 ;   undefined4 DAT_005d55d5
 ;   undefined4 DAT_005d55dd
-;   void* PTR_DAT_00611100 = 007db5f0
-;   undefined4 DAT_00622c18
-;   undefined4 DAT_007db5f0
+;   CConsole* g_CConsolePtr = 007db5f0
+;   CDemonSet* g_CDemonSetPtr = 01e82168
+;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01d1d400
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   FUN_00408b40
-;   FUN_0040c550
-;   FUN_0040cc00
-;   FUN_0040cc60
-;   FUN_0041afa0
-;   FUN_0041b020
-;   FUN_00428550
-;   FUN_0042b290
-;   FUN_0042b330
-;   FUN_0042be20
-;   FUN_0042ccf0
-;   FUN_00445430
-;   FUN_005030e0
-;   FUN_005247c0
+;   core_actor.cpp_FUN_00408b40
+;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_FUN_0040cc60
+;   core_bodypart.cpp_FUN_0041afa0
+;   core_bodypart.cpp_FUN_0041b020
+;   core_carved.cpp_FUN_00428550
+;   core_carved.cpp_FUN_0042b290
+;   core_carved.cpp_FUN_0042b330
+;   core_carved.cpp_FUN_0042be20
+;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0
+;   core_main.c_FUN_005030e0
+;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
+;   engine_console.cpp_FUN_00445430
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0042a930
-        ;   Label: FUN_0042a930
+        ;   Label: core_carved.cpp_FUN_0042a930
     PUSH ESI                            ; 0042a931
     PUSH EDI                            ; 0042a932
     PUSH EBP                            ; 0042a933
@@ -119,8 +119,8 @@ section .text
     INC ECX                             ; 0042a9c4
     PUSH 0x40a00000                     ; 0042a9c5
     MOV dword ptr [EAX + 0xc26c],ECX    ; 0042a9ca
-    CALL FUN_0040cc00                   ; 0042a9d0
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cc00()
+    CALL core_actor.cpp_FUN_0040cc00    ; 0042a9d0
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
     MOV dword ptr [ESP + 0x228],EAX     ; 0042a9d5
     FLD float ptr [ESP + 0x228]         ; 0042a9dc
     ADD ESP,0x8                         ; 0042a9e3
@@ -144,14 +144,14 @@ section .text
     ADD EAX,0xc                         ; 0042aa2b
     MOV dword ptr [ESP + 0x21c],ESI     ; 0042aa2e
     MOV dword ptr [ESP + 0x210],EAX     ; 0042aa35
-    MOV EAX,[0x00622c18]                ; 0042aa3c | DAT_00622c18
+    MOV EAX,[0x00622c18]                ; 0042aa3c | g_CDemonSetPtr
         ;   Label: LAB_0042aa3c
     MOV EBX,dword ptr [ESP + 0x218]     ; 0042aa41
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0042aa48 | DAT_01fcf2cc
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0042aa48 | g_CDemonSetInstance.field1364324_0x14d164
     JGE 0x0042b210                      ; 0042aa4e
         ;   XREF to: 0042b210 (CONDITIONAL_JUMP)  ; LAB_0042b210
     ADD EAX,dword ptr [ESP + 0x214]     ; 0042aa54
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0042aa5b | DAT_01fcf2d0
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0042aa5b | g_CDemonSetInstance.field1364328_0x14d168
     PUSH EBX                            ; 0042aa61
     MOV EAX,dword ptr [EBX + 0x154]     ; 0042aa62
     CALL dword ptr [EAX + 0x94]         ; 0042aa68
@@ -205,8 +205,8 @@ section .text
     FADD float ptr [EAX + 0xc274]       ; 0042ab01
     PUSH EAX                            ; 0042ab07
     FSTP float ptr [EAX + 0xc274]       ; 0042ab08
-    CALL FUN_0042b290                   ; 0042ab0e
-        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined FUN_0042b290()
+    CALL core_carved.cpp_FUN_0042b290   ; 0042ab0e
+        ;   XREF to: 0042b290 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b290()
     ADD ESP,0x8                         ; 0042ab13
     MOV ESI,0xffffffff                  ; 0042ab16
     MOV dword ptr [ESP + 0x200],EAX     ; 0042ab1b
@@ -236,8 +236,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0xc27c]    ; 0042ab69
     PUSH ECX                            ; 0042ab6f
     PUSH EAX                            ; 0042ab70
-    CALL FUN_0042b330                   ; 0042ab71
-        ;   XREF to: 0042b330 (UNCONDITIONAL_CALL)  ; undefined FUN_0042b330()
+    CALL core_carved.cpp_FUN_0042b330   ; 0042ab71
+        ;   XREF to: 0042b330 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b330()
     ADD ESP,0x8                         ; 0042ab76
     TEST EAX,EAX                        ; 0042ab79
     JZ 0x0042ad94                       ; 0042ab7b
@@ -272,8 +272,8 @@ section .text
     PUSH EAX                            ; 0042abf1
     MOV dword ptr [ESP + 0x204],EDI     ; 0042abf2
     LEA EDI,[ESP + 0x19c]               ; 0042abf9
-    CALL FUN_0041b020                   ; 0042ac00
-        ;   XREF to: 0041b020 (UNCONDITIONAL_CALL)  ; undefined FUN_0041b020()
+    CALL core_bodypart.cpp_FUN_0041b020 ; 0042ac00
+        ;   XREF to: 0041b020 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b020()
     LEA ESI,[ESP + 0x1c0]               ; 0042ac05
     ADD ESP,0x8                         ; 0042ac0c
     LEA EAX,[ESP + 0x194]               ; 0042ac0f
@@ -283,8 +283,8 @@ section .text
     PUSH EAX                            ; 0042ac19
     LEA ESI,[ESP + 0x1ec]               ; 0042ac1a
     LEA EDI,[ESP + 0x150]               ; 0042ac21
-    CALL FUN_0041afa0                   ; 0042ac28
-        ;   XREF to: 0041afa0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041afa0()
+    CALL core_bodypart.cpp_FUN_0041afa0 ; 0042ac28
+        ;   XREF to: 0041afa0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041afa0()
     LEA ESI,[ESP + 0x1ec]               ; 0042ac2d
     ADD ESP,0x8                         ; 0042ac34
     LEA EAX,[ESP + 0x1cc]               ; 0042ac37
@@ -304,8 +304,8 @@ section .text
     LEA EBX,[ESP + 0x1e0]               ; 0042ac68
     LEA ESI,[ESP + 0xfc]                ; 0042ac6f
     LEA EDI,[ESP + 0x1c8]               ; 0042ac76
-    CALL FUN_00408b40                   ; 0042ac7d
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b40()
+    CALL core_actor.cpp_FUN_00408b40    ; 0042ac7d
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
     LEA ESI,[ESP + 0xfc]                ; 0042ac82
     ADD ESP,0x8                         ; 0042ac89
     LEA EAX,[ESP + 0x1c0]               ; 0042ac8c
@@ -373,8 +373,8 @@ section .text
     PUSH EAX                            ; 0042ad85
     MOV ECX,dword ptr [EBP + 0x14]      ; 0042ad86
     PUSH ECX                            ; 0042ad89
-    CALL FUN_0042ccf0                   ; 0042ad8a
-        ;   XREF to: 0042ccf0 (UNCONDITIONAL_CALL)  ; undefined FUN_0042ccf0()
+    CALL core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0 ; 0042ad8a
+        ;   XREF to: 0042ccf0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0(CCharacter * this_ptr, CVector3f * target_pos, CPathMap * path_map, CVector3f * direction, ...)
     ADD ESP,0x18                        ; 0042ad8f
     MOV ESI,EAX                         ; 0042ad92
     TEST ESI,ESI                        ; 0042ad94
@@ -396,17 +396,17 @@ section .text
     PUSH EDX                            ; 0042adb7
     PUSH EAX                            ; 0042adb8
     PUSH 0x5d54ed                       ; 0042adb9 | s_s_can_t_pick_up_s_sombod_005d54ec+1
-    MOV EBX,dword ptr [0x00611100]      ; 0042adbe | PTR_DAT_00611100
-    PUSH EBX                            ; 0042adc4 | DAT_007db5f0
-    CALL FUN_00445430                   ; 0042adc5
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    MOV EBX,dword ptr [0x00611100]      ; 0042adbe | g_CConsolePtr
+    PUSH EBX                            ; 0042adc4 | g_CConsoleInstance
+    CALL engine_console.cpp_FUN_00445430 ; 0042adc5
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
     ADD ESP,0x10                        ; 0042adca
     MOV EAX,dword ptr [EBP + 0x14]      ; 0042adcd
     MOV dword ptr [EAX + 0xc278],0x0    ; 0042add0
     PUSH EAX                            ; 0042adda
     MOV dword ptr [EAX + 0xc274],0x0    ; 0042addb
-    CALL FUN_0042be20                   ; 0042ade5
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined FUN_0042be20()
+    CALL core_carved.cpp_FUN_0042be20   ; 0042ade5
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
     ADD ESP,0x4                         ; 0042adea
     XOR EAX,EAX                         ; 0042aded
     MOV ESP,EBP                         ; 0042adef
@@ -437,8 +437,8 @@ section .text
     PUSH EAX                            ; 0042ae4b
     LEA ESI,[ESP + 0x178]               ; 0042ae4c
     LEA EDI,[ESP + 0x1b4]               ; 0042ae53
-    CALL FUN_0041b020                   ; 0042ae5a
-        ;   XREF to: 0041b020 (UNCONDITIONAL_CALL)  ; undefined FUN_0041b020()
+    CALL core_bodypart.cpp_FUN_0041b020 ; 0042ae5a
+        ;   XREF to: 0041b020 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041b020()
     LEA ESI,[ESP + 0x178]               ; 0042ae5f
     ADD ESP,0x8                         ; 0042ae66
     LEA EAX,[ESP + 0x1ac]               ; 0042ae69
@@ -448,8 +448,8 @@ section .text
     PUSH EAX                            ; 0042ae73
     LEA ESI,[ESP + 0x114]               ; 0042ae74
     LEA EDI,[ESP + 0x12c]               ; 0042ae7b
-    CALL FUN_0041afa0                   ; 0042ae82
-        ;   XREF to: 0041afa0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041afa0()
+    CALL core_bodypart.cpp_FUN_0041afa0 ; 0042ae82
+        ;   XREF to: 0041afa0 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041afa0()
     LEA ESI,[ESP + 0x114]               ; 0042ae87
     ADD ESP,0x8                         ; 0042ae8e
     LEA EAX,[ESP + 0x100]               ; 0042ae91
@@ -469,8 +469,8 @@ section .text
     LEA EBX,[ESP + 0x168]               ; 0042aec2
     LEA ESI,[ESP + 0x144]               ; 0042aec9
     LEA EDI,[ESP + 0x168]               ; 0042aed0
-    CALL FUN_00408b40                   ; 0042aed7
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined FUN_00408b40()
+    CALL core_actor.cpp_FUN_00408b40    ; 0042aed7
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408b40()
     LEA ESI,[ESP + 0x144]               ; 0042aedc
     ADD ESP,0x8                         ; 0042aee3
     LEA EAX,[ESP + 0x1d8]               ; 0042aee6
@@ -514,18 +514,18 @@ section .text
     PUSH ECX                            ; 0042af6e
     PUSH EAX                            ; 0042af6f
     PUSH 0x5d551f                       ; 0042af70 | = "%s can't pick up %s, giving up\n"
-    MOV ESI,dword ptr [0x00611100]      ; 0042af75 | PTR_DAT_00611100
-    PUSH ESI                            ; 0042af7b | DAT_007db5f0
+    MOV ESI,dword ptr [0x00611100]      ; 0042af75 | g_CConsolePtr
+    PUSH ESI                            ; 0042af7b | g_CConsoleInstance
     MOV EBX,EAX                         ; 0042af7c
-    CALL FUN_00445430                   ; 0042af7e
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    CALL engine_console.cpp_FUN_00445430 ; 0042af7e
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
     MOV EAX,EBX                         ; 0042af83
     ADD ESP,0x10                        ; 0042af85
     MOV dword ptr [EAX + 0xc278],0x0    ; 0042af88
     PUSH EAX                            ; 0042af92
     MOV dword ptr [EAX + 0xc274],0x41a00000 ; 0042af93
-    CALL FUN_0042be20                   ; 0042af9d
-        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined FUN_0042be20()
+    CALL core_carved.cpp_FUN_0042be20   ; 0042af9d
+        ;   XREF to: 0042be20 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042be20()
     ADD ESP,0x4                         ; 0042afa2
     XOR EAX,EAX                         ; 0042afa5
     MOV ESP,EBP                         ; 0042afa7
@@ -540,8 +540,8 @@ section .text
     PUSH 0x19                           ; 0042afb3
     ADD EAX,0x158                       ; 0042afb5
     PUSH EAX                            ; 0042afba
-    CALL FUN_005247c0                   ; 0042afbb
-        ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005247c0()
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0 ; 0042afbb
+        ;   XREF to: 005247c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0042afc0
     MOV EAX,0x1                         ; 0042afc3
         ;   Label: LAB_0042afc3
@@ -557,11 +557,11 @@ section .text
     PUSH EBX                            ; 0042afd8
     PUSH EAX                            ; 0042afd9
     PUSH 0x5d553f                       ; 0042afda | = "%s beginning to pickup %s\n"
-    MOV EDI,dword ptr [0x00611100]      ; 0042afdf | PTR_DAT_00611100
-    PUSH EDI                            ; 0042afe5 | DAT_007db5f0
+    MOV EDI,dword ptr [0x00611100]      ; 0042afdf | g_CConsolePtr
+    PUSH EDI                            ; 0042afe5 | g_CConsoleInstance
     MOV ESI,EAX                         ; 0042afe6
-    CALL FUN_00445430                   ; 0042afe8
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    CALL engine_console.cpp_FUN_00445430 ; 0042afe8
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
     MOV EAX,ESI                         ; 0042afed
     MOV EAX,dword ptr [EAX + 0xc27c]    ; 0042afef
     ADD ESP,0x10                        ; 0042aff5
@@ -585,8 +585,8 @@ section .text
     PUSH 0x5d556d                       ; 0042b015 | = "Invalid demon townsfolk object shape!"
     MOV [0x01d1d400],EAX                ; 0042b01a | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 0042b01f | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0042b025
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0042b025
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0042b02a
     MOV EAX,0x1                         ; 0042b02d
     MOV ESP,EBP                         ; 0042b032
@@ -634,8 +634,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042b0c2
     MOVSD ES:EDI,ESI                    ; 0042b0c3
     MOVSD ES:EDI,ESI                    ; 0042b0c4
-    CALL FUN_00428550                   ; 0042b0c5
-        ;   XREF to: 00428550 (UNCONDITIONAL_CALL)  ; undefined FUN_00428550()
+    CALL core_carved.cpp_FUN_00428550   ; 0042b0c5
+        ;   XREF to: 00428550 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_00428550()
     ADD ESP,0x4                         ; 0042b0ca
     MOV dword ptr [ESP + 0x204],EAX     ; 0042b0cd
     TEST EAX,EAX                        ; 0042b0d4
@@ -644,16 +644,16 @@ section .text
     PUSH EAX                            ; 0042b0dc
     MOV ESI,dword ptr [EBP + 0x14]      ; 0042b0dd
     PUSH ESI                            ; 0042b0e0
-    CALL FUN_0042b330                   ; 0042b0e1
-        ;   XREF to: 0042b330 (UNCONDITIONAL_CALL)  ; undefined FUN_0042b330()
+    CALL core_carved.cpp_FUN_0042b330   ; 0042b0e1
+        ;   XREF to: 0042b330 (UNCONDITIONAL_CALL)  ; undefined core_carved.cpp_FUN_0042b330()
     ADD ESP,0x8                         ; 0042b0e6
     TEST EAX,EAX                        ; 0042b0e9
     JZ 0x0042aa79                       ; 0042b0eb
         ;   XREF to: 0042aa79 (CONDITIONAL_JUMP)  ; LAB_0042aa79
     PUSH 0x5d5593                       ; 0042b0f1 | = "CBodyPart"
     PUSH EBX                            ; 0042b0f6
-    CALL FUN_0040c550                   ; 0042b0f7
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c550()
+    CALL core_actor.cpp_FUN_0040c550    ; 0042b0f7
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0042b0fc
     TEST EAX,EAX                        ; 0042b0ff
     JZ 0x0042b11d                       ; 0042b101
@@ -736,8 +736,8 @@ section .text
     LEA EAX,[ECX + -0x1]                ; 0042b220
     PUSH EAX                            ; 0042b223
     PUSH 0x0                            ; 0042b224
-    CALL FUN_0040cc60                   ; 0042b226
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; undefined FUN_0040cc60()
+    CALL core_actor.cpp_FUN_0040cc60    ; 0042b226
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0042b22b
     MOV ESI,dword ptr [EBP + 0x14]      ; 0042b22e
     MOV EBX,dword ptr [ESP + EAX*0x4 + 0x30] ; 0042b231
@@ -753,10 +753,10 @@ section .text
     PUSH ESI                            ; 0042b264
     PUSH EDI                            ; 0042b265
     PUSH 0x5d559d                       ; 0042b266 | = "%s is going to try to pick up %s\n"
-    MOV EAX,[0x00611100]                ; 0042b26b | PTR_DAT_00611100
-    PUSH EAX                            ; 0042b270 | DAT_007db5f0
-    CALL FUN_00445430                   ; 0042b271
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined FUN_00445430()
+    MOV EAX,[0x00611100]                ; 0042b26b | g_CConsolePtr
+    PUSH EAX                            ; 0042b270 | g_CConsoleInstance
+    CALL engine_console.cpp_FUN_00445430 ; 0042b271
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
     MOV EAX,0x1                         ; 0042b276
     ADD ESP,0x10                        ; 0042b27b
     MOV ESP,EBP                         ; 0042b27e

@@ -1,0 +1,25 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void core_passngr_cpp_staticInit_FUN_00532710(void)
+;
+;
+; Called Functions:
+;   core_actor.cpp_registerActorClass_FUN_0040c160
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x1d8136c                      ; 00532710
+        ;   Label: core_passngr.cpp_staticInit_FUN_00532710
+    PUSH 0x6                            ; 00532715
+    PUSH 0x622718                       ; 00532717
+    PUSH 0x532740                       ; 0053271c
+    PUSH 0x5ec832                       ; 00532721
+    PUSH 0x1d813a8                      ; 00532726
+    CALL core_actor.cpp_registerActorClass_FUN_0040c160 ; 0053272b
+        ;   XREF to: 0040c160 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c160(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factory_func, int * max_version, ...)
+    ADD ESP,0x18                        ; 00532730
+    RET                                 ; 00532733
+

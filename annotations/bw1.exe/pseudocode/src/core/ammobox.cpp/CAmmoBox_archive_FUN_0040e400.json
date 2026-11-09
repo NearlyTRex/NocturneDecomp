@@ -1,0 +1,248 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 122,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040e400",
+    "address_range": [
+      [
+        "0040e400",
+        "0040e4cd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammobox.cpp_CAmmoBox_archive_FUN_0040e400",
+    "signature": "void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040e400(CAmmoBox *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d3208",
+      "name": "s_modelName_005d3208",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3212",
+      "name": "s_weaponClassName_005d3212",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3222",
+      "name": "s_ammoCount_005d3222",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d322c",
+      "name": "s_ammoType_005d322c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3235",
+      "name": "DAT_005d3235",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d323a",
+      "name": "s_hasCollision_005d323a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3247",
+      "name": "s_openSound_005d3247",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00610898",
+      "name": "g_CAmmoBoxClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2105263157894735,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 34,
+      "INT_ADD": 22,
+      "INT_AND": 26,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 13,
+      "INT_SUB": 30,
+      "LOAD": 5,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 240
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmoBox *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x158,\"modelName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x2d4,\"weaponClassName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x314",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x314,\"ammoCount\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x318",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x318,\"ammoType\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x31c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x31c,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005d3235",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x320,&DAT_005d3235);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x320",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x320,&DAT_005d3235);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x324",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x324,\"hasCollision\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x328",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x328,\"openSound\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "005fb594"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

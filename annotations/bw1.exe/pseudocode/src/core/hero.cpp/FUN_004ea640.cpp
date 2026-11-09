@@ -1,14 +1,14 @@
-// Name: FUN_004ea640
+// Name: core_hero.cpp_FUN_004ea640
 // Address: 004ea640
 // Address Range: [[004ea640, 004ea6ee]]
 // Convention: unknown
-// Signature: int FUN_004ea640(float *param_1)
+// Signature: int core_hero_cpp_FUN_004ea640(float *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004ea640(float *param_1)
+int core_hero_cpp_FUN_004ea640(float *param_1)
 
 {
   int iVar1;
@@ -40,6 +40,6 @@ int FUN_004ea640(float *param_1)
   }
   _DAT_01d1d400 = "..\\core\\hero.cpp";
   _DAT_01d1d404 = 0x38;
-  FUN_005030e0("closestHeroToPoint - no heros!");
+  core_main_c_FUN_005030e0("closestHeroToPoint - no heros!");
   return 0;
 }

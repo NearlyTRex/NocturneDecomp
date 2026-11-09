@@ -1,0 +1,484 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 210,
+    "complexity_score": 93,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 29,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 78,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 288
+  },
+  "cross_references": [
+    {
+      "addr": "004f655e",
+      "from_addr": "004f668c",
+      "name": "core_inv.cpp_FUN_004f655e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fae10",
+      "from_addr": "004fb8ff",
+      "name": "core_inv.cpp_FUN_004fae10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483560",
+      "from_addr": "00483772",
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005076b0",
+      "from_addr": "00507994",
+      "name": "engine_matrix.c_buildRotationMatrix_FUN_005076b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005073d0",
+    "address_range": [
+      [
+        "005073d0",
+        "005076a9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "engine_matrix.c_invertTransformMatrix_FUN_005073d0",
+    "signature": "void __cdecl engine_matrix_c_invertTransformMatrix_FUN_005073d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e76de",
+      "name": "DAT_005e76de",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e76e6",
+      "name": "DAT_005e76e6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d5c",
+      "name": "DAT_01c51d5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d60",
+      "name": "DAT_01c51d60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d64",
+      "name": "DAT_01c51d64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d68",
+      "name": "DAT_01c51d68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d6c",
+      "name": "DAT_01c51d6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d70",
+      "name": "DAT_01c51d70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d74",
+      "name": "DAT_01c51d74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d78",
+      "name": "DAT_01c51d78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d7c",
+      "name": "DAT_01c51d7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd18",
+      "name": "DAT_01d1dd18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd1c",
+      "name": "DAT_01d1dd1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd20",
+      "name": "DAT_01d1dd20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd24",
+      "name": "DAT_01d1dd24",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd28",
+      "name": "DAT_01d1dd28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd2c",
+      "name": "DAT_01d1dd2c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd30",
+      "name": "DAT_01d1dd30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd34",
+      "name": "DAT_01d1dd34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd38",
+      "name": "DAT_01d1dd38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd40",
+      "name": "DAT_01d1dd40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd44",
+      "name": "DAT_01d1dd44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd48",
+      "name": "DAT_01d1dd48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd4c",
+      "name": "DAT_01d1dd4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd50",
+      "name": "DAT_01d1dd50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd54",
+      "name": "DAT_01d1dd54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd58",
+      "name": "DAT_01d1dd58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd5c",
+      "name": "DAT_01d1dd5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1dd60",
+      "name": "DAT_01d1dd60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00483772",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560",
+        "estimated_params": 0,
+        "instructions_analyzed": 30,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004fb8ff",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004fae10",
+        "estimated_params": 0,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004f668c",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004f655e",
+        "estimated_params": 0,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00507994",
+        "call_type": "direct",
+        "caller": "engine_matrix.c_buildRotationMatrix_FUN_005076b0",
+        "estimated_params": 0,
+        "instructions_analyzed": 30,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.355,
+    "instruction_count": 200,
+    "opcode_distribution": {
+      "CALL": 9,
+      "COPY": 916,
+      "FLOAT2FLOAT": 85,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 39,
+      "FLOAT_NEG": 4,
+      "FLOAT_SUB": 10,
+      "INT2FLOAT": 9,
+      "INT_ADD": 65,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 11,
+      "LOAD": 57,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "ROUND": 9,
+      "STORE": 30,
+      "TRUNC": 9
+    },
+    "pcode_op_count": 1271
+  },
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005073d6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

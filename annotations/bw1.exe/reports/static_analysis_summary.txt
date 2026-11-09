@@ -9,42 +9,8 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 919
-  Functions flagged by multiple tools: 3
+  Functions with static analysis data: 0
+  Functions flagged by multiple tools: 0
 
-  Clang-Tidy (quick):
-    Files analyzed:      6
-    Files with findings: 6
-    Total diagnostics:   17
-
-  Cppcheck (quick):
-    Files analyzed:      916
-    Files with findings: 916
-    Total diagnostics:   7010
-
-====================================================================================================
-TOP FINDINGS - Clang-Tidy (quick)
-====================================================================================================
-
-  bugprone-integer-division                                  13  [likely decompiler artifact]
-  bugprone-swapped-arguments                                  4  [likely decompiler artifact]
-
-====================================================================================================
-TOP FINDINGS - Cppcheck (quick)
-====================================================================================================
-
-  uninitvar                                                4150  [likely decompiler artifact]
-  pointerOutOfBounds                                        982  [likely decompiler artifact]
-  arrayIndexOutOfBounds                                     562  [likely decompiler artifact]
-  objectIndex                                               526  [likely decompiler artifact]
-  legacyUninitvar                                           497  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                    193
-  nullPointer                                                20
-  identicalInnerCondition                                    15
-  selfAssignment                                             13
-  invalidPointerCast                                         12
-  nullPointerArithmetic                                      10
-  negativeIndex                                               7
-  oppositeInnerCondition                                      6
-  shiftNegativeLHS                                            4
-  identicalConditionAfterEarlyExit                            3
+  No static analysis results found.
+  Run static analysis tools first (see static_analysis.py).

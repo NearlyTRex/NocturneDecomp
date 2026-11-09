@@ -4,81 +4,108 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CGame.h"
+#include "types/classes/CGargoyle.h"
+#include "types/classes/CGasMask.h"
+#include "types/classes/CGhoul.h"
+#include "types/classes/CSkeleton.h"
+#include "types/enums/ECollisionType.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
+#include "types/structs/SPlayerInput.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4D0000
 // =============================================================================
 
-void FUN_004d0400(int param_1);
-void FUN_004d0860(int param_1);
-void FUN_004d0960(int param_1);
-undefined4 FUN_004d0d30(undefined4 param_1,undefined4 param_2);
-void FUN_004d0ee0(int param_1,uint *param_2);
-void FUN_004d1760(int param_1,int param_2);
-void FUN_004d17c0(int param_1,int param_2);
-void FUN_004d1820(int param_1,int param_2);
-void FUN_004d19d0(void);
-void FUN_004d1a80(int param_1);
-undefined4 FUN_004d24c0(char *param_1);
-void FUN_004d2540(undefined4 param_1);
-void FUN_004d2740(int param_1,int param_2,float param_3,int param_4);
-void FUN_004d27b0(int param_1);
-void FUN_004d5e40(void);
-void FUN_004d5e80(void);
-void FUN_004d6030(void);
-int FUN_004d6070(void);
-void FUN_004d60b0(void);
-void FUN_004d60e0(int param_1);
-void FUN_004d61e0(void);
-undefined4 FUN_004d62e0(void);
-void FUN_004d6300(void);
-void FUN_004d6320(void);
-void FUN_004d6340(int param_1,char *param_2,undefined4 param_3,float param_4);
-void FUN_004d6420(int param_1,char *param_2);
-void FUN_004d6990(int param_1,char *param_2,int param_3);
-void FUN_004d7250(int param_1,int param_2);
-void FUN_004d7730(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5);
-void FUN_004d77d0(int param_1);
-void FUN_004d7e90(void);
-void FUN_004d7f50(int param_1,float param_2);
-void FUN_004d8060(int param_1);
-void FUN_004d85f0(int param_1);
-void FUN_004d8700(int param_1);
-void FUN_004d8a90(int param_1);
-void FUN_004d8e50(int param_1);
-void FUN_004d9260(int param_1,undefined4 *param_2);
-void FUN_004dc000(int param_1);
-void FUN_004dc040(void);
-void FUN_004dc180(void);
-void FUN_004dc1a0(void);
-void FUN_004dc1f0(undefined4 param_1);
-void FUN_004dc210(void);
-undefined4 FUN_004dc260(void);
-int FUN_004dc270(undefined4 param_1);
-void FUN_004dc370(int param_1);
-undefined4 FUN_004dc630(int param_1);
-void FUN_004dc7e0(int param_1,float param_2);
-void FUN_004dd2c0(undefined4 param_1);
-void FUN_004dd2d0(int param_1);
-void FUN_004dd390(int param_1,int *param_2);
-void FUN_004dd630(int param_1,int param_2);
-int FUN_004dd790(int param_1,undefined4 *param_2);
-void FUN_004dd9b0(undefined4 param_1,undefined4 param_2);
-int FUN_004dd9d0(int param_1,byte param_2);
-void FUN_004dda60(void);
-undefined4 FUN_004ddab0(void);
-int FUN_004ddac0(undefined4 param_1);
-void FUN_004ddb10(int param_1);
-undefined4 FUN_004ddb30(undefined4 param_1,undefined4 param_2);
-int FUN_004ddb60(int param_1);
-void FUN_004ddc00(int param_1);
-undefined4 FUN_004ddc30(void);
-void FUN_004ddc40(int param_1);
-undefined4 FUN_004ddc80(undefined4 param_1,byte param_2);
-void FUN_004ddcd0(void);
-undefined4 FUN_004ddd50(void);
-int FUN_004ddd60(undefined4 param_1);
-void FUN_004dde90(int param_1);
-void FUN_004de100(int param_1,float param_2);
-void FUN_004de330(int param_1,float param_2);
+void core_game_cpp_FUN_004d0400(int param_1);
+void __cdecl core_game_cpp_CGame_playerControls_FUN_004d0860(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004d0960(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004d0d30(CGame *this_ptr,SPlayerInput *player_control);
+void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004d0d70(int key_index,int *output_state);
+void core_game_cpp_FUN_004d0d9e(int param_1,uint *param_2);
+void core_game_cpp_FUN_004d0dce(int param_1,int param_2,float *param_3,float param_4,float param_5);
+void core_game_cpp_FUN_004d0e6e(float *param_1,float param_2,float param_3);
+void __cdecl core_game_cpp_FUN_004d0ee0(CGame *this_ptr,SPlayerInput *player_control);
+void core_game_cpp_FUN_004d1760(int param_1,int param_2);
+void core_game_cpp_FUN_004d17c0(int param_1,int param_2);
+void __cdecl core_game_cpp_FUN_004d1820(CGame *this_ptr,SPlayerInput *player_control);
+void core_game_cpp_FUN_004d19d0(void);
+void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004d1a80(CGame *this_ptr);
+int __cdecl core_game_cpp_checkCheatCode_FUN_004d24c0(char *cheat_string);
+void __cdecl core_game_cpp_FUN_004d2540(char *class_name);
+void core_game_cpp_FUN_004d25fe(char *param_1,undefined4 param_2);
+void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004d2690(char *cheat_code,char *class_name,char *message);
+void __cdecl core_game_cpp_FUN_004d2740(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
+void __cdecl core_game_cpp_FUN_004d27b0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_loadAssets_FUN_004d5e40(CGame *this_ptr);
+void core_game_cpp_FUN_004d5e80(void);
+void __cdecl core_game_cpp_FUN_004d6030(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004d6070(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d60b0(void);
+void __cdecl core_game_cpp_FUN_004d60e0(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d61e0(CGame *this_ptr);
+uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004d62e0(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d6300(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d6320(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d6340(CGame *this_ptr,char *name,float value,float duration);
+void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename);
+void __cdecl core_game_cpp_FUN_004d6990(CGame *this_ptr,char *save_filename,int load_mode);
+void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2);
+void core_game_cpp_FUN_004d7730(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5);
+void core_game_cpp_FUN_004d77d0(CGame *param_1);
+void __cdecl core_game_cpp_joinNetworkGame_FUN_004d7e90(void);
+void __cdecl core_game_cpp_CGame_slamDT_FUN_004d7f50(CGame *this_ptr,float delta_time);
+void core_game_cpp_FUN_004d7fbc(void);
+void core_game_cpp_FUN_004d7fe0(undefined4 param_1);
+void __cdecl core_game_cpp_FUN_004d8060(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d85f0(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d8700(CGame *this_ptr);
+void __cdecl core_game_cpp_FUN_004d8a90(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr);
+void core_game_cpp_FUN_004d9260(int param_1,undefined4 *param_2);
+void core_game_cpp_FUN_004dc000(int param_1);
+void core_game_cpp_FUN_004dc040(void);
+void core_game_cpp_FUN_004dc180(void);
+void core_game_cpp_FUN_004dc1a0(void);
+CAlphaBitmap * __cdecl core_game_cpp_CAlphaBitmap_arrdtor8_FUN_004dc1f0(CAlphaBitmap *this_ptr,uint flags);
+void core_gargoyle_cpp_staticInit_FUN_004dc210(void);
+void core_gargoyle_cpp_factoryFuncGargoyle_FUN_004dc240(void);
+CDemonActorType * core_gargoyle_cpp_CGargoyle_getActorType_FUN_004dc260(CGargoyle *this_ptr);
+CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004dc270(CGargoyle *this_ptr);
+void core_gargoyle_cpp_FUN_004dc370(CEnemy *param_1);
+undefined4 core_gargoyle_cpp_FUN_004dc630(int param_1);
+void core_gargoyle_cpp_FUN_004dc7e0(CEnemy *param_1,float param_2);
+void core_gargoyle_cpp_FUN_004dd2c0(CCharacter *param_1);
+void core_gargoyle_cpp_FUN_004dd2d0(CEnemy *param_1);
+void __cdecl core_gargoyle_cpp_FUN_004dd390(CGargoyle *this_ptr,SDamageInfo *damage_info);
+void core_gargoyle_cpp_FUN_004dd630(CGargoyle *param_1,SDamageInfo *param_2);
+int core_gargoyle_cpp_FUN_004dd790(int param_1,undefined4 *param_2);
+ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004dd9b0(CGargoyle *this_ptr,SCollisionInfo *collision_info);
+CGargoyle * core_gargoyle_cpp_CGargoyle_dtor_FUN_004dd9d0(CGargoyle *this_ptr,uint flags);
+void core_gasmask_cpp_staticInit_FUN_004dda60(void);
+void core_gasmask_cpp_factoryFuncGasMask_FUN_004dda90(void);
+CDemonActorType * core_gasmask_cpp_CGasMask_getActorType_FUN_004ddab0(CGasMask *this_ptr);
+CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004ddac0(CGasMask *this_ptr);
+void __cdecl core_gasmask_cpp_CGasMask_setup_FUN_004ddb10(CGasMask *this_ptr);
+int __cdecl core_gasmask_cpp_CGasMask_canPickup_FUN_004ddb30(CGasMask *this_ptr,CDemonActor *picker);
+void core_gasmask_cpp_FUN_004ddb50(void);
+int core_gasmask_cpp_FUN_004ddb60(int param_1);
+void __cdecl core_gasmask_cpp_CGasMask_archive_FUN_004ddc00(CGasMask *this_ptr);
+undefined4 core_gasmask_cpp_FUN_004ddc30(void);
+void core_gasmask_cpp_FUN_004ddc40(int param_1);
+CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004ddc80(CGasMask *this_ptr,uint flags);
+void __cdecl core_ghoul_cpp_staticInit_FUN_004ddcd0(void);
+void core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30(void);
+CDemonActorType * core_ghoul_cpp_CGhoul_getActorType_FUN_004ddd50(CGhoul *this_ptr);
+CGhoul * core_ghoul_cpp_CGhoul_ctor_FUN_004ddd60(CGhoul *this_ptr);
+void core_ghoul_cpp_FUN_004dde90(CEnemy *param_1);
+void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004de100(CGhoul *this_ptr,float delta_time);
+void core_ghoul_cpp_FUN_004de330(CGhoul *param_1,float param_2);
 

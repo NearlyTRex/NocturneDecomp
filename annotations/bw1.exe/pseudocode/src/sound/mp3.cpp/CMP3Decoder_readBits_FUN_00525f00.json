@@ -1,0 +1,427 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 210,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 35,
+    "suspect_count": 16,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "0052b450",
+      "from_addr": "0052ba80",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527e80",
+      "from_addr": "005281ef",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_00527e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528410",
+      "from_addr": "00528acc",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527ab0",
+      "from_addr": "00527b8c",
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00525fe0",
+      "from_addr": "00525fe7",
+      "name": "sound_mp3.cpp_FUN_00525fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005260e0",
+      "from_addr": "005262db",
+      "name": "sound_mp3.cpp_FUN_005260e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00525f00",
+    "address_range": [
+      [
+        "00525f00",
+        "00525fde"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_00525f00",
+    "signature": "uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00(CMP3Decoder *this_ptr,uint num_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb1b4",
+      "name": "s_sound_mp3_cpp_005eb1b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb1c5",
+      "name": "s_Buffer_overflow_File_s_005eb1c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006206b0",
+      "name": "DAT_006206b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006206d0",
+      "name": "DAT_006206d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "0052ba80",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052bb16",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527b8c",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527c25",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527c88",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527d05",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00527dda",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005281ef",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_00527e80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00528acc",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005262db",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_FUN_005260e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.265625,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 58,
+      "INT_ADD": 25,
+      "INT_AND": 63,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 2,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 11,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 21,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 337
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "num_bits",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1314",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 + num_bits;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1314",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 + num_bits;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x531c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x531c = 8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x1318",
+      "severity": "mild",
+      "text": "uVar2 = *(int *)&this_ptr->field_0x1318 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1318",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1318 = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x1310",
+      "severity": "mild",
+      "text": "if (*(uint *)&this_ptr->field_0x1310 < uVar2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_01d404c8",
+      "severity": "mild",
+      "text": "core_main_c_FUN_005030e0(\"Buffer overflow!!  File: %s\",&DAT_01d404c8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)&this_ptr->field_0x531c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&this_ptr->field_0x531c - uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x131c",
+      "severity": "mild",
+      "text": "uVar3 = uVar3 | ((*(uint *)(&this_ptr->field_0x131c +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x1318",
+      "severity": "mild",
+      "text": "(*(uint *)&this_ptr->field_0x1318 & 0xfff) * 4) &",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_006206b0",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_006206b0 + *(int *)&this_ptr->field_0x531c * 4)) >>",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_006206b0 + *(int *)&this_ptr->field_0x531c * 4)) >>",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x531c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x531c = iVar1;",
+      "type": "unnamed_field"
+    }
+  ]
+}

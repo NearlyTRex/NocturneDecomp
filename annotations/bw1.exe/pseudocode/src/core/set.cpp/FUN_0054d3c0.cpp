@@ -1,467 +1,473 @@
-// Name: FUN_0054d3c0
+// Name: core_set.cpp_FUN_0054d3c0
 // Address: 0054d3c0
 // Address Range: [[0054d3c0, 0054e3ba]]
 // Convention: unknown
-// Signature: int * FUN_0054d3c0(int *param_1,undefined4 param_2)
+// Signature: CDemonSet * core_set_cpp_FUN_0054d3c0(CDemonSet *param_1,char *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int * FUN_0054d3c0(int *param_1,uint param_2)
+CDemonSet * core_set_cpp_FUN_0054d3c0(CDemonSet *param_1,char *param_2)
 
 {
-  char cVar1;
-  float fVar2;
-  uint uVar3;
-  int iVar4;
-  int iVar5;
-  float *pfVar6;
-  char *pcVar7;
-  int *piVar8;
+  uint uVar1;
+  char cVar2;
+  float fVar3;
+  CTerrain *this_ptr;
+  char *pcVar4;
+  _FILE *p_Var5;
+  CDemonSet *pCVar6;
+  C3DSLight *this_ptr_00;
+  C3DSCamera *pCVar7;
+  byte *puVar8;
   char *pcVar9;
-  int *piVar10;
+  int iVar10;
   byte local_330 [256];
-  byte local_230 [256];
+  char local_230 [256];
   char local_130 [100];
   char local_cc [100];
-  byte local_68 [4];
-  byte local_64 [4];
-  byte local_60 [4];
-  byte local_5c [4];
-  byte local_58 [4];
-  byte local_54 [8];
+  CVector3f local_68;
+  CVector3f local_5c;
   byte local_4c [4];
   float local_48;
-  int *local_44;
-  int *local_40;
-  int *local_3c;
-  int *local_38;
-  int *local_34;
-  int *local_30;
-  int *local_2c;
-  int *local_28;
-  int *local_24;
-  int *local_20;
-  int *local_1c;
-  int *local_18;
-  int *local_14;
+  byte *local_44;
+  byte *local_40;
+  byte *local_3c;
+  byte *local_38;
+  CMatrix3x3f *local_34;
+  byte *local_30;
+  byte *local_2c;
+  byte *local_28;
+  byte *local_24;
+  CMatrix3x3f *local_20;
+  byte *local_1c;
+  byte *local_18;
+  byte *local_14;
   
-  uVar3 = FUN_00531090("Loading set",0);
-  FUN_004fe9c0(0x01D1BD1C,uVar3);
-  FUN_0054d370(param_1);
-  iVar4 = FUN_00479180("models",param_2,&DAT_005f0490);
-  if (iVar4 == 0) {
+  iVar10 = 0;
+  pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading set");
+  core_level_cpp_FUN_004fe9c0(0x01D1BD1C,pcVar4,iVar10);
+  core_set_cpp_CDemonSet_clear_FUN_0054d370(param_1);
+  p_Var5 = engine_dosio_cpp_FUN_00479180("models",param_2,&DAT_005f0490);
+  if (p_Var5 == (_FILE *)0x0) {
     _DAT_01d1d400 = "..\\core\\set.cpp";
     _DAT_01d1d404 = 0x15c;
-    FUN_005030e0("CDemonSet::Unable to open %s",param_2);
+    core_main_c_FUN_005030e0("CDemonSet::Unable to open %s",param_2);
   }
-  FUN_005c04b0(iVar4,&DAT_005f04c7,param_1 + 0x56b30);
-  FUN_005c04b0(iVar4,&DAT_005f04cb,param_1 + 0x56baa);
-  FUN_005c04b0(iVar4,&DAT_005f04cf,local_330);
-  FUN_005c04b0(iVar4,&DAT_005f04d3,local_130);
-  FUN_005c04b0(iVar4,&DAT_005f04d7,param_1 + 0x53454);
-  pfVar6 = (float *)(param_1 + 0x53455);
-  if (param_1[0x56b30] < 0x1e) {
-    param_1[0x53455] = -0x40800000;
-    param_1[0x53456] = -0x40800000;
-    param_1[0x53457] = -0x40800000;
-    local_48 = SQRT((float)param_1[0x53457] * (float)param_1[0x53457] +
-                    *pfVar6 * *pfVar6 + (float)param_1[0x53456] * (float)param_1[0x53456]);
+  _fscanf(p_Var5,&DAT_005f04c7,&param_1->field_0x15acc0);
+  _fscanf(p_Var5,&DAT_005f04cb,&param_1->field_0x15aea8);
+  _fscanf(p_Var5,&DAT_005f04cf,local_330);
+  _fscanf(p_Var5,&DAT_005f04d3,local_130);
+  _fscanf(p_Var5,&DAT_005f04d7,&param_1->field_0x14d150);
+  puVar8 = &param_1->field_0x14d154;
+  if (*(int *)&param_1->field_0x15acc0 < 0x1e) {
+    *(uint *)&param_1->field_0x14d154 = 0xbf800000;
+    *(uint *)&param_1->field_0x14d158 = 0xbf800000;
+    *(uint *)&param_1->field_0x14d15c = 0xbf800000;
+    local_48 = SQRT(*(float *)&param_1->field_0x14d15c * *(float *)&param_1->field_0x14d15c +
+                    *(float *)puVar8 * *(float *)puVar8 +
+                    *(float *)&param_1->field_0x14d158 * *(float *)&param_1->field_0x14d158);
     if (local_48 <= 0.0) {
-      param_1[0x53457] = 0;
-      param_1[0x53456] = param_1[0x53457];
-      *pfVar6 = (float)param_1[0x53456];
-      param_1[0x53458] = 0;
+      *(uint *)&param_1->field_0x14d15c = 0;
+      *(uint *)&param_1->field_0x14d158 = *(uint *)&param_1->field_0x14d15c;
+      *(uint *)puVar8 = *(uint *)&param_1->field_0x14d158;
+      *(uint *)&param_1->field_0x14d160 = 0;
     }
     else {
-      fVar2 = 1.0 / local_48;
-      *pfVar6 = *pfVar6 * fVar2;
-      param_1[0x53456] = (int)((float)param_1[0x53456] * fVar2);
-      param_1[0x53457] = (int)((float)param_1[0x53457] * fVar2);
-      param_1[0x53458] = 0;
+      fVar3 = 1.0 / local_48;
+      *(float *)puVar8 = *(float *)puVar8 * fVar3;
+      *(float *)&param_1->field_0x14d158 = *(float *)&param_1->field_0x14d158 * fVar3;
+      *(float *)&param_1->field_0x14d15c = *(float *)&param_1->field_0x14d15c * fVar3;
+      *(uint *)&param_1->field_0x14d160 = 0;
     }
   }
   else {
-    FUN_005c04b0(iVar4,"%f,%f,%f,%f\n",pfVar6,param_1 + 0x53456,param_1 + 0x53457,
-                 param_1 + 0x53458);
+    _fscanf(p_Var5,"%f,%f,%f,%f\n",puVar8,&param_1->field_0x14d158,&param_1->field_0x14d15c,
+               &param_1->field_0x14d160);
   }
-  if (param_1[0x56b30] == 0) {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c1180(local_330,0xff,iVar4);
+  if (*(int *)&param_1->field_0x15acc0 == 0) {
+    _fgets(local_330,0xff,p_Var5);
+    _fgets(local_330,0xff,p_Var5);
+    _fgets(local_330,0xff,p_Var5);
   }
-  if (param_1[0x56b30] < 0x11) {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,"%d,%d,%d,%d\n",local_4c,param_1 + 0x56b10,param_1 + 0x56b11,
-                 param_1 + 0x56b12);
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,"%f,%f,%f\n",param_1 + 0x56b13,param_1 + 0x56b14,param_1 + 0x56b15);
-    FUN_005c04b0(iVar4,"%f,%f,%f,%f\n",param_1 + 0x56b16,param_1 + 0x56b17,local_4c,local_4c);
-    param_1[0x56b18] = 0x42480000;
+  if (*(int *)&param_1->field_0x15acc0 < 0x11) {
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,"%d,%d,%d,%d\n",local_4c,&param_1->field_0x15ac40,&param_1->field_0x15ac44,
+               &param_1->field_0x15ac48);
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,"%f,%f,%f\n",&param_1->field_0x15ac4c,&param_1->field_0x15ac50,
+               &param_1->field_0x15ac54);
+    _fscanf(p_Var5,"%f,%f,%f,%f\n",&param_1->field_0x15ac58,&param_1->field_0x15ac5c,local_4c,
+               local_4c);
+    *(uint *)&param_1->field_0x15ac60 = 0x42480000;
   }
   else {
-    FUN_00454ab0(param_1 + 0x56b10,iVar4,param_1[0x56b30]);
+    core_dcamera_cpp_loadCameraFog_FUN_00454ab0
+              (&param_1->field_0x15ac40,p_Var5,*(int *)&param_1->field_0x15acc0);
   }
-  FUN_005c1180(local_330,0xff,iVar4);
-  FUN_005c04b0(iVar4,"%f,%f\n",0x02C8AFB0 + 1,0x02C8AFB0 + 2);
-  if (param_1[0x56b30] < 0x1f) {
+  _fgets(local_330,0xff,p_Var5);
+  _fscanf(p_Var5,"%f,%f\n",&g_CWaterPtr->field_0x4,&g_CWaterPtr->field_0x8);
+  if (*(int *)&param_1->field_0x15acc0 < 0x1f) {
     DAT_00625c98 = 0x2000;
     _DAT_02c8afc0 = 0;
     _DAT_02c8afc4 = 0;
     _DAT_00625c94 = 0x3e800000;
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,"%f,%d,%f,%f\n",&DAT_00625c94,&DAT_00625c98,&DAT_02c8afc0,&DAT_02c8afc4);
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,"%f,%d,%f,%f\n",&DAT_00625c94,&DAT_00625c98,&DAT_02c8afc0,&DAT_02c8afc4);
   }
-  FUN_005c1180(local_330,0xff,iVar4);
-  FUN_005c04b0(iVar4,"%d,%s\n",param_1 + 0x56b29,param_1 + 0x56b2a);
-  if (param_1[0x56b30] < 5) {
-    iVar5 = FUN_005c1210(local_130,&DAT_005f052b,4);
-    if (iVar5 == 0) {
-      *0x02C8AFB0 = 1;
+  _fgets(local_330,0xff,p_Var5);
+  _fscanf(p_Var5,"%d,%s\n",&param_1->field_0x15aca4,&param_1->field_0x15aca8);
+  if (*(int *)&param_1->field_0x15acc0 < 5) {
+    iVar10 = _strnicmp(local_130,&DAT_005f052b,4);
+    if (iVar10 == 0) {
+      *(uint *)g_CWaterPtr = 1;
     }
     else {
-      *0x02C8AFB0 = 0;
+      *(uint *)g_CWaterPtr = 0;
     }
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f0527,0x02C8AFB0);
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f0527,g_CWaterPtr);
   }
-  if (param_1[0x56b30] < 6) {
-    param_1[0x58590] = 1;
+  if (*(int *)&param_1->field_0x15acc0 < 6) {
+    *(uint *)&param_1->field_0x161640 = 1;
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f0530,param_1 + 0x58590);
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f0530,&param_1->field_0x161640);
   }
-  piVar8 = param_1 + 0x58591;
-  if (param_1[0x56b30] < 0xc) {
-    pcVar7 = "NITESKY.RAW";
+  pcVar4 = &param_1->field_0x161644;
+  if (*(int *)&param_1->field_0x15acc0 < 0xc) {
+    pcVar9 = "NITESKY.RAW";
     do {
-      cVar1 = *pcVar7;
-      *(char *)piVar8 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      *(char *)((int)piVar8 + 1) = cVar1;
-      piVar8 = (int *)((int)piVar8 + 2);
-    } while (cVar1 != '\0');
-    param_1[0x58599] = 0x4000;
+      cVar2 = *pcVar9;
+      *pcVar4 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
+      pcVar4[1] = cVar2;
+      pcVar4 = pcVar4 + 2;
+    } while (cVar2 != '\0');
+    *(uint *)&param_1->field_0x161664 = 0x4000;
   }
   else {
-    FUN_005c04b0(iVar4,"%d,%s\n",param_1 + 0x58599,piVar8);
+    _fscanf(p_Var5,"%d,%s\n",&param_1->field_0x161664,pcVar4);
   }
-  piVar8 = param_1 + 0x56b99;
-  if (param_1[0x56b30] < 0xd) {
-    pcVar7 = &DAT_005f054e;
-    param_1[0x56b98] = 0;
+  pcVar4 = &param_1->field_0x15ae64;
+  if (*(int *)&param_1->field_0x15acc0 < 0xd) {
+    pcVar9 = &DAT_005f054e;
+    *(uint *)&param_1->field_0x15ae60 = 0;
     do {
-      cVar1 = *pcVar7;
-      *(char *)piVar8 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      *(char *)((int)piVar8 + 1) = cVar1;
-      piVar8 = (int *)((int)piVar8 + 2);
-    } while (cVar1 != '\0');
+      cVar2 = *pcVar9;
+      *pcVar4 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar9[1];
+      pcVar9 = pcVar9 + 2;
+      pcVar4[1] = cVar2;
+      pcVar4 = pcVar4 + 2;
+    } while (cVar2 != '\0');
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,"%d,%s\n",param_1 + 0x56b98,piVar8);
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,"%d,%s\n",&param_1->field_0x15ae60,pcVar4);
   }
-  if (param_1[0x56b30] < 0x19) {
-    param_1[0x585a0] = 0;
-  }
-  else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f0553,param_1 + 0x585a0);
-  }
-  if (param_1[0x56b30] < 0x1d) {
-    param_1[0x56b2f] = 0;
+  if (*(int *)&param_1->field_0x15acc0 < 0x19) {
+    *(uint *)&param_1->field_0x161680 = 0;
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f0557,param_1 + 0x56b2f);
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f0553,&param_1->field_0x161680);
   }
-  FUN_00479580(local_130,0,0,local_230,0);
-  iVar5 = FUN_005c04e0(local_230,"train");
-  uVar3 = 0x02C8AE68;
-  if (iVar5 == 0) {
-    param_1[0x56b2e] = 1;
-    FUN_0059f380(uVar3);
+  if (*(int *)&param_1->field_0x15acc0 < 0x1d) {
+    *(uint *)&param_1->field_0x15acbc = 0;
   }
   else {
-    FUN_0059f3c0(0x02C8AE68);
-    param_1[0x56b2e] = 0;
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f0557,&param_1->field_0x15acbc);
   }
-  if (10 < param_1[0x56b30]) {
-    FUN_005c1180(local_330,0xff,iVar4);
+  engine_dosio_cpp_FUN_00479580(local_130,(char *)0x0,(char *)0x0,local_230,(char *)0x0);
+  iVar10 = _stricmp(local_230,"train");
+  this_ptr = 0x02C8AE68;
+  if (iVar10 == 0) {
+    *(uint *)&param_1->field_0x15acb8 = 1;
+    core_terrain_cpp_CTerrain_init_FUN_0059f380(this_ptr);
   }
-  FUN_005c04b0(iVar4,&DAT_005f0561,param_1 + 0x668b);
-  iVar5 = 0;
-  if (0 < param_1[0x668b]) {
-    piVar8 = param_1 + 0x668c;
+  else {
+    core_terrain_cpp_CTerrain_free_FUN_0059f3c0(0x02C8AE68);
+    *(uint *)&param_1->field_0x15acb8 = 0;
+  }
+  if (10 < *(int *)&param_1->field_0x15acc0) {
+    _fgets(local_330,0xff,p_Var5);
+  }
+  _fscanf(p_Var5,&DAT_005f0561,&param_1->field_0x19a2c);
+  iVar10 = 0;
+  if (0 < *(int *)&param_1->field_0x19a2c) {
+    this_ptr_00 = (C3DSLight *)&param_1->field_0x19a30;
     do {
-      FUN_0055c800(piVar8,iVar4);
-      iVar5 = iVar5 + 1;
-      piVar8 = piVar8 + 0x626;
-    } while (iVar5 < param_1[0x668b]);
+      core_setutil_cpp_FUN_0055c800(this_ptr_00,p_Var5);
+      iVar10 = iVar10 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
+    } while (iVar10 < *(int *)&param_1->field_0x19a2c);
   }
-  if (10 < param_1[0x56b30]) {
-    FUN_005c1180(local_330,0xff,iVar4);
+  if (10 < *(int *)&param_1->field_0x15acc0) {
+    _fgets(local_330,0xff,p_Var5);
   }
-  FUN_005c04b0(iVar4,&DAT_005f0565,param_1);
-  iVar5 = 0;
-  if (0 < *param_1) {
-    piVar8 = param_1 + 1;
+  _fscanf(p_Var5,&DAT_005f0565,param_1);
+  iVar10 = 0;
+  if (0 < *(int *)param_1) {
+    pCVar7 = (C3DSCamera *)&param_1->field_0x4;
     do {
-      FUN_0055c1b0(piVar8,iVar4);
-      iVar5 = iVar5 + 1;
-      piVar8 = piVar8 + 0x69;
-    } while (iVar5 < *param_1);
+      core_setutil_cpp_FUN_0055c1b0(pCVar7,p_Var5);
+      iVar10 = iVar10 + 1;
+      pCVar7 = pCVar7 + 1;
+    } while (iVar10 < *(int *)param_1);
   }
-  if (param_1[0x56b30] < 1) {
-    param_1[0x56bb4] = 0;
-    iVar5 = FUN_005c1210(local_130,"mauso",5);
-    if (iVar5 == 0) {
-      param_1[0x56bb4] = 2;
+  if (*(int *)&param_1->field_0x15acc0 < 1) {
+    *(uint *)&param_1->field_0x15aed0 = 0;
+    iVar10 = _strnicmp(local_130,"mauso",5);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15aed0 = 2;
     }
-    iVar5 = FUN_005c1210(local_130,&DAT_005f0599,4);
-    if (iVar5 == 0) {
-      param_1[0x56bb4] = 0;
+    iVar10 = _strnicmp(local_130,&DAT_005f0599,4);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15aed0 = 0;
     }
-    iVar5 = FUN_005c1210(local_130,"smill",5);
-    if (iVar5 == 0) {
-      param_1[0x56bb4] = 3;
+    iVar10 = _strnicmp(local_130,"smill",5);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15aed0 = 3;
     }
-    iVar5 = FUN_005c1210(local_130,"pier59",6);
-    if (iVar5 == 0) {
-      param_1[0x56bb4] = 0;
+    iVar10 = _strnicmp(local_130,"pier59",6);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15aed0 = 0;
     }
-    iVar5 = FUN_005c1210(local_130,&DAT_005f05ab,4);
-    if (iVar5 == 0) {
-      param_1[0x56bb4] = 3;
+    iVar10 = _strnicmp(local_130,&DAT_005f05ab,4);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15aed0 = 3;
     }
-    param_1[0x56bb5] = 0;
+    *(uint *)&param_1->field_0x15aed4 = 0;
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f0569,param_1 + 0x56bb4);
-    FUN_005c04b0(iVar4,&DAT_005f056d,param_1 + 0x56bb5);
-    iVar5 = 0;
-    if (0 < param_1[0x56bb5]) {
-      local_44 = param_1 + 0x56bb6;
-      local_14 = param_1 + 0x56bc6;
-      local_34 = param_1 + 0x56bbc;
-      local_18 = param_1 + 0x56bb9;
-      local_2c = param_1 + 0x56bba;
-      local_30 = param_1 + 0x56bbb;
-      local_24 = param_1 + 0x56bb8;
-      piVar8 = param_1 + 0x56bb7;
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f0569,&param_1->field_0x15aed0);
+    _fscanf(p_Var5,&DAT_005f056d,&param_1->field_0x15aed4);
+    iVar10 = 0;
+    if (0 < *(int *)&param_1->field_0x15aed4) {
+      local_44 = &param_1->field_0x15aed8;
+      local_14 = &param_1->field_0x15af18;
+      local_34 = (CMatrix3x3f *)&param_1->field_0x15aef0;
+      local_18 = &param_1->field_0x15aee4;
+      local_2c = &param_1->field_0x15aee8;
+      local_30 = &param_1->field_0x15aeec;
+      local_24 = &param_1->field_0x15aee0;
+      puVar8 = &param_1->field_0x15aedc;
       do {
-        FUN_005c04b0(iVar4,"%f,%f,%f\n",local_44 + iVar5 * 0x11,piVar8,local_24);
-        FUN_005c04b0(iVar4,"%f,%f,%f\n",local_18,local_2c,local_30);
-        FUN_005c04b0(iVar4,"%f,%f,%f\n",local_5c,local_54,local_58);
-        FUN_0045f3e0(local_34,local_5c);
-        piVar8 = piVar8 + 0x11;
-        FUN_005c04b0(iVar4,&DAT_005f058f,local_14);
-        iVar5 = iVar5 + 1;
-        local_14 = local_14 + 0x11;
-        local_34 = local_34 + 0x11;
-        local_18 = local_18 + 0x11;
-        local_30 = local_30 + 0x11;
-        local_2c = local_2c + 0x11;
-        local_24 = local_24 + 0x11;
-      } while (iVar5 < param_1[0x56bb5]);
+        _fscanf(p_Var5,"%f,%f,%f\n",local_44 + iVar10 * 0x44,puVar8,local_24);
+        _fscanf(p_Var5,"%f,%f,%f\n",local_18,local_2c,local_30);
+        _fscanf(p_Var5,"%f,%f,%f\n",&local_5c,&local_5c.field_0x8,&local_5c.field_0x4);
+        core_dirmat_cpp_FUN_0045f3e0(local_34,&local_5c);
+        puVar8 = puVar8 + 0x44;
+        _fscanf(p_Var5,&DAT_005f058f,local_14);
+        iVar10 = iVar10 + 1;
+        local_14 = local_14 + 0x44;
+        local_34 = local_34 + 0x44;
+        local_18 = local_18 + 0x44;
+        local_30 = local_30 + 0x44;
+        local_2c = local_2c + 0x44;
+        local_24 = local_24 + 0x44;
+      } while (iVar10 < *(int *)&param_1->field_0x15aed4);
     }
   }
-  if (param_1[0x56b30] < 3) {
-    param_1[0x57da5] = 2;
-    iVar5 = FUN_005c1210(local_130,"mauso",5);
-    if (iVar5 == 0) {
-      param_1[0x57da5] = 8;
+  if (*(int *)&param_1->field_0x15acc0 < 3) {
+    *(uint *)&param_1->field_0x15f694 = 2;
+    iVar10 = _strnicmp(local_130,"mauso",5);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15f694 = 8;
     }
-    iVar5 = FUN_005c1210(local_130,&DAT_005f05ba,4);
-    if (iVar5 == 0) {
-      param_1[0x57da5] = 3;
+    iVar10 = _strnicmp(local_130,&DAT_005f05ba,4);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15f694 = 3;
     }
-    iVar5 = FUN_005c1210(local_130,"smill",5);
-    if (iVar5 == 0) {
-      param_1[0x57da5] = 2;
+    iVar10 = _strnicmp(local_130,"smill",5);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15f694 = 2;
     }
-    iVar5 = FUN_005c1210(local_130,"pier59",6);
-    if (iVar5 == 0) {
-      param_1[0x57da5] = 7;
+    iVar10 = _strnicmp(local_130,"pier59",6);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15f694 = 7;
     }
-    iVar5 = FUN_005c1210(local_130,"castle",6);
-    if (iVar5 == 0) {
-      param_1[0x57da5] = 2;
+    iVar10 = _strnicmp(local_130,"castle",6);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15f694 = 2;
     }
-    iVar5 = FUN_005c1210(local_130,&DAT_005f05d3,4);
-    if (iVar5 == 0) {
-      param_1[0x57da5] = 8;
+    iVar10 = _strnicmp(local_130,&DAT_005f05d3,4);
+    if (iVar10 == 0) {
+      *(uint *)&param_1->field_0x15f694 = 8;
     }
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f05b0,param_1 + 0x57da5);
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f05b0,&param_1->field_0x15f694);
   }
-  if (param_1[0x56b30] < 0x18) {
-    param_1[0x56b23] = 0;
-  }
-  else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f05d8,param_1 + 0x56b23);
-  }
-  if ((3 < param_1[0x56b30]) && (param_1[0x56b30] < 10)) {
-    FUN_0055b8f0(param_1,iVar4);
-  }
-  if (param_1[0x56b30] < 5) {
-    param_1[0x56d0a] = 0;
+  if (*(int *)&param_1->field_0x15acc0 < 0x18) {
+    *(uint *)&param_1->field_0x15ac8c = 0;
   }
   else {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c04b0(iVar4,&DAT_005f05dc,param_1 + 0x56d0a);
-    iVar5 = 0;
-    if (0 < param_1[0x56d0a]) {
-      local_40 = param_1 + 0x56d0b;
-      local_20 = param_1 + 0x56d11;
-      local_28 = param_1 + 0x56d0f;
-      local_1c = param_1 + 0x56d10;
-      local_3c = param_1 + 0x56d0c;
-      local_38 = param_1 + 0x56d0d;
-      piVar8 = param_1 + 0x56d0e;
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f05d8,&param_1->field_0x15ac8c);
+  }
+  if ((3 < *(int *)&param_1->field_0x15acc0) && (*(int *)&param_1->field_0x15acc0 < 10)) {
+    core_setdir_cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_0055b8f0(param_1,p_Var5);
+  }
+  if (*(int *)&param_1->field_0x15acc0 < 5) {
+    *(uint *)&param_1->field_0x15b428 = 0;
+  }
+  else {
+    _fgets(local_330,0xff,p_Var5);
+    _fscanf(p_Var5,&DAT_005f05dc,&param_1->field_0x15b428);
+    iVar10 = 0;
+    if (0 < *(int *)&param_1->field_0x15b428) {
+      local_40 = &param_1->field_0x15b42c;
+      local_20 = (CMatrix3x3f *)&param_1->field_0x15b444;
+      local_28 = &param_1->field_0x15b43c;
+      local_1c = &param_1->field_0x15b440;
+      local_3c = &param_1->field_0x15b430;
+      local_38 = &param_1->field_0x15b434;
+      puVar8 = &param_1->field_0x15b438;
       do {
-        FUN_005c04b0(iVar4,"%f,%f,%f\n",local_40 + iVar5 * 0x11,local_3c,local_38);
-        FUN_005c04b0(iVar4,"%f,%f,%f\n",piVar8,local_28,local_1c);
-        FUN_005c04b0(iVar4,"%f,%f,%f\n",local_68,local_60,local_64);
-        iVar5 = iVar5 + 1;
-        FUN_0045f3e0(local_20,local_68);
-        piVar8 = piVar8 + 0x11;
-        local_20 = local_20 + 0x11;
-        local_28 = local_28 + 0x11;
-        local_1c = local_1c + 0x11;
-        local_3c = local_3c + 0x11;
-        local_38 = local_38 + 0x11;
-      } while (iVar5 < param_1[0x56d0a]);
+        _fscanf(p_Var5,"%f,%f,%f\n",local_40 + iVar10 * 0x44,local_3c,local_38);
+        _fscanf(p_Var5,"%f,%f,%f\n",puVar8,local_28,local_1c);
+        _fscanf(p_Var5,"%f,%f,%f\n",&local_68,&local_68.field_0x8,&local_68.field_0x4);
+        iVar10 = iVar10 + 1;
+        core_dirmat_cpp_FUN_0045f3e0(local_20,&local_68);
+        puVar8 = puVar8 + 0x44;
+        local_20 = local_20 + 0x44;
+        local_28 = local_28 + 0x44;
+        local_1c = local_1c + 0x44;
+        local_3c = local_3c + 0x44;
+        local_38 = local_38 + 0x44;
+      } while (iVar10 < *(int *)&param_1->field_0x15b428);
     }
-    FUN_0055bf10(param_1);
+    core_setdir_cpp_FUN_0055bf10(param_1);
   }
-  if (param_1[0x56b30] == 0xe) {
-    FUN_005c1180(local_330,0xff,iVar4);
-    FUN_005c1180(local_330,0xff,iVar4);
+  if (*(int *)&param_1->field_0x15acc0 == 0xe) {
+    _fgets(local_330,0xff,p_Var5);
+    _fgets(local_330,0xff,p_Var5);
   }
-  if (0x13 < param_1[0x56b30]) {
-    FUN_005c1180(local_330,0xff,iVar4);
-    iVar5 = 0;
-    if (0 < *param_1) {
-      piVar8 = param_1 + 1;
+  if (0x13 < *(int *)&param_1->field_0x15acc0) {
+    _fgets(local_330,0xff,p_Var5);
+    iVar10 = 0;
+    if (0 < *(int *)param_1) {
+      pCVar7 = (C3DSCamera *)&param_1->field_0x4;
       do {
-        FUN_0055c540(piVar8,iVar4);
-        iVar5 = iVar5 + 1;
-        piVar8 = piVar8 + 0x69;
-      } while (iVar5 < *param_1);
+        core_setutil_cpp_FUN_0055c540(pCVar7,p_Var5);
+        iVar10 = iVar10 + 1;
+        pCVar7 = pCVar7 + 1;
+      } while (iVar10 < *(int *)param_1);
     }
   }
-  FUN_005c0d10(iVar4);
-  uVar3 = FUN_00531090("Loading set geometry",0);
-  FUN_004fe9c0(0x01D1BD1C,uVar3);
-  piVar8 = param_1 + 0x5343c;
-  iVar4 = FUN_005c04e0(piVar8,local_130);
-  if (iVar4 == 0) {
-    FUN_00559580(param_1);
+  _fclose(p_Var5);
+  iVar10 = 0;
+  pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading set geometry");
+  core_level_cpp_FUN_004fe9c0(0x01D1BD1C,pcVar4,iVar10);
+  puVar8 = &param_1->field_0x14d0f0;
+  iVar10 = _stricmp(puVar8,local_130);
+  if (iVar10 == 0) {
+    core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00559580(param_1);
   }
   else {
-    pcVar7 = local_130;
-    piVar10 = piVar8;
+    pcVar4 = local_130;
+    pcVar9 = puVar8;
     do {
-      cVar1 = *pcVar7;
-      *(char *)piVar10 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      *(char *)((int)piVar10 + 1) = cVar1;
-      piVar10 = (int *)((int)piVar10 + 2);
-    } while (cVar1 != '\0');
-    iVar4 = FUN_00479180(&DAT_005f0616,piVar8,&DAT_005f0613);
-    if (iVar4 == 0) {
-      FUN_0057dc40();
-      FUN_00401fe0("Warning!  No .GEO file.  Press any key",0,0);
-      FUN_005acff0();
-      FUN_004032b0();
-      FUN_005b2510();
+      cVar2 = *pcVar4;
+      *pcVar9 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar4[1];
+      pcVar4 = pcVar4 + 2;
+      pcVar9[1] = cVar2;
+      pcVar9 = pcVar9 + 2;
+    } while (cVar2 != '\0');
+    p_Var5 = engine_dosio_cpp_FUN_00479180(&DAT_005f0616,puVar8,&DAT_005f0613);
+    if (p_Var5 == (_FILE *)0x0) {
+      engine_special_cpp_clearScreen_FUN_0057dc40();
+      engine_2d_c_drawText_FUN_00401fe0("Warning!  No .GEO file.  Press any key",0,0);
+      wincore_wddvmem_cpp_FUN_005acff0();
+      engine_2d_c_clearInputAndWait_FUN_004032b0();
+      wincore_winrun_cpp_getNextKeypress_FUN_005b2510();
     }
     else {
-      FUN_005c0d10(iVar4);
-      FUN_0048afa0(&DAT_01fe5c1c,piVar8);
+      _fclose(p_Var5);
+      core_dtrace_cpp_FUN_0048afa0(&g_CDemonRaytraceInstance,puVar8);
     }
-    FUN_00535280();
+    core_path_cpp_resetAllPathMaps_FUN_00535280();
   }
-  uVar3 = FUN_00531090("Loading thumbs",0);
-  FUN_004fe9c0(0x01D1BD1C,uVar3);
-  pcVar7 = local_cc;
-  piVar8 = param_1 + 0x5343c;
+  iVar10 = 0;
+  pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading thumbs");
+  core_level_cpp_FUN_004fe9c0(0x01D1BD1C,pcVar4,iVar10);
+  pcVar4 = local_cc;
+  pcVar9 = &param_1->field_0x14d0f0;
   do {
-    iVar4 = *piVar8;
-    *pcVar7 = (char)iVar4;
-    if ((char)iVar4 == '\0') break;
-    cVar1 = *(char *)((int)piVar8 + 1);
-    piVar8 = (int *)((int)piVar8 + 2);
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
-  pcVar7 = local_cc;
+    cVar2 = *pcVar9;
+    *pcVar4 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar9[1];
+    pcVar9 = pcVar9 + 2;
+    pcVar4[1] = cVar2;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar2 != '\0');
+  pcVar4 = local_cc;
   do {
-    pcVar9 = pcVar7;
-    if (*pcVar7 == '.') goto LAB_0054debe;
-    if (*pcVar7 == '\0') break;
-    pcVar9 = pcVar7 + 1;
+    pcVar9 = pcVar4;
+    if (*pcVar4 == '.') goto LAB_0054debe;
+    if (*pcVar4 == '\0') break;
+    pcVar9 = pcVar4 + 1;
     if (*pcVar9 == '.') goto LAB_0054debe;
-    pcVar7 = pcVar7 + 2;
+    pcVar4 = pcVar4 + 2;
   } while (*pcVar9 != '\0');
   pcVar9 = (char *)0x0;
 LAB_0054debe:
   if (pcVar9 == (char *)0x0) {
-    pcVar7 = local_cc;
+    pcVar4 = local_cc;
     do {
-      pcVar9 = pcVar7;
-      if (*pcVar7 == '\0') goto LAB_0054dee7;
-      if (*pcVar7 == '\0') break;
-      pcVar9 = pcVar7 + 1;
+      pcVar9 = pcVar4;
+      if (*pcVar4 == '\0') goto LAB_0054dee7;
+      if (*pcVar4 == '\0') break;
+      pcVar9 = pcVar4 + 1;
       if (*pcVar9 == '\0') goto LAB_0054dee7;
-      pcVar7 = pcVar7 + 2;
+      pcVar4 = pcVar4 + 2;
     } while (*pcVar9 != '\0');
     pcVar9 = (char *)0x0;
   }
 LAB_0054dee7:
-  pcVar7 = &DAT_005f0651;
+  pcVar4 = &DAT_005f0651;
   do {
-    cVar1 = *pcVar7;
-    *pcVar9 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    pcVar9[1] = cVar1;
+    cVar2 = *pcVar4;
+    *pcVar9 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
-  } while (cVar1 != '\0');
-  FUN_0055b220(param_1,local_cc);
-  if (param_1[0x56b29] != 0) {
-    FUN_004668a0(0x1fe5fac,param_1 + 0x56b2a);
+  } while (cVar2 != '\0');
+  core_setdir_cpp_FUN_0055b220(param_1,local_cc);
+  if (*(int *)&param_1->field_0x15aca4 != 0) {
+    core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0
+              (&g_CKeyFramedModelInstance,&param_1->field_0x15aca8);
   }
-  iVar4 = 0;
-  piVar8 = param_1;
-  if (0 < *param_1) {
+  iVar10 = 0;
+  pCVar6 = param_1;
+  if (0 < *(int *)param_1) {
     do {
-      iVar5 = param_1[0x53454];
-      piVar8[0x54] = 0;
-      piVar8[0x69] = 1;
-      iVar4 = iVar4 + 1;
-      piVar8[0x53] = iVar5;
-      piVar8 = piVar8 + 0x69;
-    } while (iVar4 < *param_1);
+      uVar1 = *(uint *)&param_1->field_0x14d150;
+      *(uint *)&pCVar6->field_0x150 = 0;
+      *(uint *)&pCVar6->field_0x1a4 = 1;
+      iVar10 = iVar10 + 1;
+      *(uint *)&pCVar6->field_0x14c = uVar1;
+      pCVar6 = (CDemonSet *)&pCVar6->field_0x1a4;
+    } while (iVar10 < *(int *)param_1);
   }
   _DAT_02026348 = 1;
   return param_1;

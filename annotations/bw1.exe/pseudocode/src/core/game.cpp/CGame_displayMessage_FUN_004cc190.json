@@ -1,0 +1,183 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 87,
+    "cross_reference_count": 9,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 70
+  },
+  "cross_references": [
+    {
+      "addr": "00478b40",
+      "from_addr": "00478c0d",
+      "name": "core_door.cpp_CDoor_getMoveType_FUN_00478b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1a80",
+      "from_addr": "004d1e0b",
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004d1a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d2819",
+      "name": "core_game.cpp_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2690",
+      "from_addr": "004d2715",
+      "name": "core_game.cpp_checkCheatAndGiveWeapon_FUN_004d2690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fc240",
+      "from_addr": "004fc2a2",
+      "name": "core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004fc240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9bd0",
+      "from_addr": "004f9d9c",
+      "name": "core_inv.cpp_CInventory_select_FUN_004f9bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7690",
+      "from_addr": "004f83b8",
+      "name": "core_inv.cpp_FUN_004f7690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052f100",
+      "from_addr": "0052f1b9",
+      "name": "core_netgame.cpp_CNetGame_addChatHistory_FUN_0052f100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "00546166",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cc190",
+    "address_range": [
+      [
+        "004cc190",
+        "004cc1e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_displayMessage_FUN_004cc190",
+    "signature": "void __cdecl core_game_cpp_CGame_displayMessage_FUN_004cc190(CGame *this_ptr,char *message,float duration)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.264705882352941,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CBRANCH": 4,
+      "COPY": 30,
+      "INT_ADD": 21,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 6,
+      "LOAD": 16,
+      "POPCOUNT": 7,
+      "RETURN": 3,
+      "STORE": 8
+    },
+    "pcode_op_count": 145
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "message",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "duration",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x3b4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x3b4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "pcVar2 = &this_ptr->field_0x2b4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x3b4",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3b4 = duration;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x3b4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x3b4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 15,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

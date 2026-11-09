@@ -1,0 +1,143 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 23,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "004ec300",
+      "from_addr": "004ec30f",
+      "name": "core_hero.cpp_FUN_004ec300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec570",
+      "from_addr": "004ec5ce",
+      "name": "core_hero.cpp_FUN_004ec570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fc310",
+    "address_range": [
+      [
+        "004fc310",
+        "004fc36b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004fc310",
+    "signature": "void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_004fc310(CInventory *this_ptr,uint key_mask)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "004f8d00",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f8d00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d1bc9c",
+      "name": "g_CKeyActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004ec30f",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004ec300",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec5ce",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004ec570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.511627906976744,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 42,
+      "INT_ADD": 22,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "LOAD": 18,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 194
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "key_mask",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

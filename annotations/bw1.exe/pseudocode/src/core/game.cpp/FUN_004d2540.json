@@ -1,147 +1,32 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 18,
-        "message": "no matching function for call to 'FUN_0051bd60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_02c99770'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 24,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01d06ab4'; did you mean 'DAT_006060b4'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 100,
-    "cross_reference_count": 1,
+    "complexity_score": 86,
+    "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 20,
-    "suspect_count": 6,
+    "pseudocode_lines": 21,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
+      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 86
+    "total_lines": 87
   },
   "cross_references": [
     {
       "addr": "004d27b0",
       "from_addr": "004d3533",
-      "name": "FUN_004d27b0",
+      "name": "core_game.cpp_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2690",
+      "from_addr": "004d26fc",
+      "name": "core_game.cpp_checkCheatAndGiveWeapon_FUN_004d2690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,35 +38,35 @@
         "004d25f4"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_004d2540",
-    "signature": "void FUN_004d2540(undefined4 param_1)"
+    "convention": "__cdecl",
+    "name": "core_game.cpp_FUN_004d2540",
+    "signature": "void __cdecl core_game_cpp_FUN_004d2540(char *class_name)"
   },
   "function_calls": [
     {
-      "addr": "0040c2b0",
-      "is_variadic": false,
-      "name": "FUN_0040c2b0"
-    },
-    {
       "addr": "0040c600",
       "is_variadic": false,
-      "name": "FUN_0040c600"
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "0040c2b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c2b0"
     },
     {
       "addr": "004f7690",
       "is_variadic": false,
-      "name": "FUN_004f7690"
+      "name": "core_inv.cpp_FUN_004f7690"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "0051bd60",
       "is_variadic": false,
-      "name": "FUN_0051bd60"
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
     }
   ],
   "globals": [
@@ -229,143 +114,117 @@
     },
     {
       "addr": "02c99770",
-      "name": "DAT_02c99770",
+      "name": "g_CWeaponClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 16,
+    "call_site_count": 17,
     "call_sites": [
       {
         "call_addr": "004d3533",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 4,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d361b",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 2,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d3703",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d37e9",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d38d1",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 2,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d39b8",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d3a9e",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 4,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d3b84",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 3,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d3cd4",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
-        "estimated_params": 2,
+        "caller": "core_game.cpp_FUN_004d27b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004d3ce1",
         "call_type": "direct",
-        "caller": "FUN_004d27b0",
+        "caller": "core_game.cpp_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -374,11 +233,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6964285714285716,
@@ -405,12 +264,20 @@
     "pcode_op_count": 207
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -422,47 +289,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void FUN_004d2540(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0040c2b0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 12,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)(iVar1 + 0x154))(iVar1);",
+      "text": "(*(code *)**(uint **)&actor->field_0x154)(actor);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(*(code *)**(uint **)&actor->field_0x154)(actor);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 20,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x88))",
+      "text": "(**(code **)(*(int *)&actor->field_0x154 + 0x88))",
       "type": "unresolved_funcptr"
     },
     {
-      "call_site_count": 16,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&actor->field_0x154 + 0x88))",
+      "type": "unnamed_field"
     }
   ]
 }

@@ -1,184 +1,66 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_02c9930c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_02c9930c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 41,
-        "message": "use of undeclared identifier '_DAT_02c9930c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_02c9930c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 44,
-        "message": "use of undeclared identifier '_DAT_02c99308'; did you mean 'DAT_00591108'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 45,
-        "message": "use of undeclared identifier '_DAT_02c99308'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 447,
-    "complexity_score": 973,
+    "complexity_score": 928,
     "cross_reference_count": 7,
     "function_call_count": 7,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 208,
-    "suspect_count": 74,
+    "pseudocode_lines": 183,
+    "suspect_count": 71,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 655
+    "total_lines": 630
   },
   "cross_references": [
     {
-      "addr": "00401010",
-      "from_addr": "0040103d",
-      "name": "FUN_00401010",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004cf430",
       "from_addr": "004cf45f",
-      "name": "FUN_004cf430",
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004cf430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cf530",
       "from_addr": "004cf55b",
-      "name": "FUN_004cf530",
+      "name": "core_game.cpp_FUN_004cf530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005032a0",
       "from_addr": "005033a7",
-      "name": "FUN_005032a0",
+      "name": "core_main.c_FUN_005032a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005ac830",
-      "from_addr": "005ac994",
-      "name": "FUN_005ac830",
+      "addr": "00401010",
+      "from_addr": "0040103d",
+      "name": "engine_2d.c_FUN_00401010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005aca40",
       "from_addr": "005acb01",
-      "name": "FUN_005aca40",
+      "name": "wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005aca40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ac830",
+      "from_addr": "005ac994",
+      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ac830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ad2c0",
       "from_addr": "005ad3b2",
-      "name": "FUN_005ad2c0",
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005ad2c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -191,44 +73,44 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_005ac300",
-    "signature": "undefined4 FUN_005ac300(int param_1,int param_2,int param_3)"
+    "name": "wincore_wddvmem.cpp_FUN_005ac300",
+    "signature": "undefined4 wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)"
   },
   "function_calls": [
     {
-      "addr": "00401810",
-      "is_variadic": false,
-      "name": "FUN_00401810"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "005acec0",
-      "is_variadic": false,
-      "name": "FUN_005acec0"
-    },
-    {
-      "addr": "005acff0",
-      "is_variadic": false,
-      "name": "FUN_005acff0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005bfb70",
       "is_variadic": false,
-      "name": "FUN_005bfb70"
+      "name": "crt_memory.c_memset_FUN_005bfb70"
     },
     {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "FUN_005c08d0"
+      "name": "crt_unknown.c_FUN_005c08d0"
     },
     {
       "addr": "005c09f0",
       "is_variadic": false,
-      "name": "FUN_005c09f0"
+      "name": "crt_unknown.c_FUN_005c09f0"
+    },
+    {
+      "addr": "00401810",
+      "is_variadic": false,
+      "name": "engine_2d.c_setupViewportAndClipping_FUN_00401810"
+    },
+    {
+      "addr": "005acec0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_005acec0"
+    },
+    {
+      "addr": "005acff0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_005acff0"
     }
   ],
   "globals": [
@@ -476,44 +358,6 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "FUN_005ac300.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 22,
-          "line": 180,
-          "message": "Uninitialized variable: iStack_28",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 37,
-          "line": 180,
-          "message": "Uninitialized variable: iStack_24",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 193,
-          "message": "Uninitialized variable: iStack_a0",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 200,
-          "message": "Uninitialized variable: iStack_b4",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -528,7 +372,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_005ac300(int param_1,int param_2,int param_3)",
+      "text": "uint wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -536,7 +380,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint FUN_005ac300(int param_1,int param_2,int param_3)",
+      "text": "uint wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -544,12 +388,12 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint FUN_005ac300(int param_1,int param_2,int param_3)",
+      "text": "uint wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 34,
+      "line": 29,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c9930c + 8))();",
@@ -557,7 +401,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 34,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c99308 + 8))();",
@@ -565,7 +409,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c99304 + 8))();",
@@ -573,7 +417,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 42,
       "match": "param_3",
       "severity": "mild",
       "text": "if (((param_3 != 8) && (param_3 != 0x10)) && (param_3 != 0x20)) {",
@@ -581,7 +425,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 42,
       "match": "param_3",
       "severity": "mild",
       "text": "if (((param_3 != 8) && (param_3 != 0x10)) && (param_3 != 0x20)) {",
@@ -589,7 +433,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 42,
       "match": "param_3",
       "severity": "mild",
       "text": "if (((param_3 != 8) && (param_3 != 0x10)) && (param_3 != 0x20)) {",
@@ -597,7 +441,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
       "text": "DAT_0061b4a0 = param_3;",
@@ -605,7 +449,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 45,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "DAT_0061b4a0 = param_3;",
@@ -613,7 +457,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 46,
       "match": "param_3",
       "severity": "mild",
       "text": "_DAT_02c99328 = param_3;",
@@ -621,7 +465,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "DAT_0061b498 = param_1;",
@@ -629,7 +473,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 47,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "DAT_0061b498 = param_1;",
@@ -637,7 +481,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "DAT_0061b49c = param_2;",
@@ -645,7 +489,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 49,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "DAT_0061b49c = param_2;",
@@ -653,7 +497,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "_DAT_02c99320 = param_1;",
@@ -661,7 +505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "_DAT_02c99324 = param_2;",
@@ -669,31 +513,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 54,
       "match": "DAT_00629010",
       "severity": "mild",
-      "text": "if (DAT_00629010 != 0) {",
+      "text": "if (DAT_00629010 != (void *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00629010",
+      "severity": "mild",
+      "text": "DAT_00629010 = (void *)0x0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 62,
-      "match": "DAT_00629010",
-      "severity": "mild",
-      "text": "piStack_f4 = (int *)DAT_00629010;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_00629010",
-      "severity": "mild",
-      "text": "DAT_00629010 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
       "match": "DAT_0071362c",
       "severity": "mild",
       "text": "DAT_0071362c = 0;",
@@ -701,23 +537,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
-      "match": "DAT_0061b4a0",
+      "line": 65,
+      "match": "DAT_00629010",
       "severity": "mild",
-      "text": "piStack_f4 = (int *)(((int)((DAT_0061b4a0 + (DAT_0061b4a0 >> 0x1f) * -8) -",
+      "text": "DAT_00629010 = FUN_005c08d0",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 66,
       "match": "DAT_0061b4a0",
       "severity": "mild",
-      "text": "piStack_f4 = (int *)(((int)((DAT_0061b4a0 + (DAT_0061b4a0 >> 0x1f) * -8) -",
+      "text": "(((int)((DAT_0061b4a0 + (DAT_0061b4a0 >> 0x1f) * -8) -",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 66,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "(((int)((DAT_0061b4a0 + (DAT_0061b4a0 >> 0x1f) * -8) -",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "(uint)((DAT_0061b4a0 >> 0x1f) << 2 < 0)) >> 3) *",
@@ -725,7 +569,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 68,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "DAT_0061b498 * DAT_0061b49c);",
@@ -733,7 +577,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 68,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "DAT_0061b498 * DAT_0061b49c);",
@@ -741,47 +585,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 69,
       "match": "DAT_00629010",
       "severity": "mild",
-      "text": "DAT_00629010 = FUN_005c08d0();",
+      "text": "if (DAT_00629010 == (void *)0x0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_00629010",
-      "severity": "mild",
-      "text": "if (DAT_00629010 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
+      "line": 76,
       "match": "DAT_0061b498",
       "severity": "mild",
-      "text": "piStack_f4 = (int *)(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
+      "text": "_DAT_02c99310 = FUN_005c08d0(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 76,
       "match": "DAT_0061b49c",
       "severity": "mild",
-      "text": "piStack_f4 = (int *)(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
+      "text": "_DAT_02c99310 = FUN_005c08d0(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "piStack_f4 = (int *)param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 83,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_f8 = param_2;",
@@ -789,18 +617,66 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 84,
       "match": "DAT_0071362c",
       "severity": "mild",
-      "text": "DAT_0071362c = _DAT_02c99310 + 0x10U & 0xfffffff0;",
+      "text": "DAT_0071362c = (int)_DAT_02c99310 + 0x10U & 0xfffffff0;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_fc = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 87,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x54))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((iVar1 != 0) && (param_2 < 0x1e0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_DAT_02c9932c = (0x280 - param_1) / 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_DAT_02c99330 = (0x1e0 - param_2) / 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 94,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x54))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 != 0x20) {",
       "type": "unnamed_param"
     },
     {
@@ -812,72 +688,8 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((iVar1 != 0) && (param_2 < 0x1e0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_02c9932c = (0x280 - param_1) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 105,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "_DAT_02c99330 = (0x1e0 - param_2) / 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iStack_104 = param_3;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 111,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x54))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 114,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 0x20) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 121,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x54))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 137,
-      "match": "DAT_02c99304",
-      "severity": "mild",
-      "text": "puStack_108 = &DAT_02c99304;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 141,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x18))();",
@@ -885,7 +697,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 144,
+      "line": 117,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x18))(_DAT_02c99300,&piStack_110,&DAT_02c99304,0);",
@@ -893,7 +705,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 117,
       "match": "DAT_02c99304",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x18))(_DAT_02c99300,&piStack_110,&DAT_02c99304,0);",
@@ -901,7 +713,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 147,
+      "line": 120,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x18))(_DAT_02c99300,&piStack_110,&DAT_02c99304,0);",
@@ -909,7 +721,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 120,
       "match": "DAT_02c99304",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*_DAT_02c99300 + 0x18))(_DAT_02c99300,&piStack_110,&DAT_02c99304,0);",
@@ -917,7 +729,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 155,
+      "line": 128,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*_DAT_02c99304 + 0x30))(_DAT_02c99304,auStack_38,&DAT_02c99308);",
@@ -925,7 +737,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 128,
       "match": "DAT_02c99308",
       "severity": "mild",
       "text": "iVar1 = (**(code **)(*_DAT_02c99304 + 0x30))(_DAT_02c99304,auStack_38,&DAT_02c99308);",
@@ -933,7 +745,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 131,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "if (0 < DAT_0061b49c) {",
@@ -941,7 +753,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 159,
+      "line": 132,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "iVar3 = DAT_0061b4a0 >> 0x1f;",
@@ -949,7 +761,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 160,
+      "line": 133,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "iVar2 = DAT_0061b4a0 + iVar3 * -8;",
@@ -957,7 +769,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 161,
+      "line": 134,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "iStack_40 = DAT_0061b498 * 4;",
@@ -965,31 +777,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 165,
+      "line": 138,
       "match": "DAT_01c4354c",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01c4354c + iVar5) =",
+      "text": "*(void **)(&DAT_01c4354c + iVar5) =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 166,
+      "line": 139,
       "match": "DAT_0061b498",
       "severity": "mild",
-      "text": "DAT_0061b498 * iVar1 * ((int)(iVar2 - (uint)(iVar3 << 2 < 0)) >> 3) + DAT_00629010;",
+      "text": "(void *)(DAT_0061b498 * iVar1 * ((int)(iVar2 - (uint)(iVar3 << 2 < 0)) >> 3) +",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 166,
+      "line": 140,
       "match": "DAT_00629010",
       "severity": "mild",
-      "text": "DAT_0061b498 * iVar1 * ((int)(iVar2 - (uint)(iVar3 << 2 < 0)) >> 3) + DAT_00629010;",
+      "text": "(int)DAT_00629010);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 142,
       "match": "DAT_01c4480c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01c4480c + iVar5) = DAT_0071362c + iVar4;",
@@ -997,7 +809,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 142,
       "match": "DAT_0071362c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01c4480c + iVar5) = DAT_0071362c + iVar4;",
@@ -1005,7 +817,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 171,
+      "line": 145,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "} while (iVar1 < DAT_0061b49c);",
@@ -1013,23 +825,39 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 179,
+      "line": 153,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*_DAT_02c99308 + 100))(_DAT_02c99308,0,auStack_b0,1,0);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 168,
+      "match": "(void *)((int)dest",
+      "severity": "moderate",
+      "text": "dest = (void *)((int)dest + iStack_b4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 196,
+      "line": 171,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*_DAT_02c99308 + 0x80))(_DAT_02c99308,0);",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 168,
+      "match": "(int)dest",
+      "severity": "moderate",
+      "text": "dest = (void *)((int)dest + iStack_b4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex address 0x5ac527 assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 33,
+      "line": 28,
       "match": "0x5ac527",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac527;",
@@ -1037,7 +865,7 @@
     },
     {
       "description": "Raw hex address 0x5ac331 assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 39,
+      "line": 33,
       "match": "0x5ac331",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac331;",
@@ -1045,7 +873,7 @@
     },
     {
       "description": "Raw hex address 0x5ac348 assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 45,
+      "line": 38,
       "match": "0x5ac348",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac348;",
@@ -1053,7 +881,7 @@
     },
     {
       "description": "Raw hex address 0x5ac3c2 assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 63,
+      "line": 55,
       "match": "0x5ac3c2",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac3c2;",
@@ -1061,7 +889,7 @@
     },
     {
       "description": "Raw hex address 0x5ac3dc assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 69,
+      "line": 60,
       "match": "0x5ac3dc",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac3dc;",
@@ -1069,7 +897,7 @@
     },
     {
       "description": "Raw hex address 0x5ac40f assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 76,
+      "line": 64,
       "match": "0x5ac40f",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac40f;",
@@ -1077,7 +905,7 @@
     },
     {
       "description": "Raw hex address 0x5ac43a assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 82,
+      "line": 72,
       "match": "0x5ac43a",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac43a;",
@@ -1085,7 +913,7 @@
     },
     {
       "description": "Raw hex address 0x5ac455 assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 86,
+      "line": 75,
       "match": "0x5ac455",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac455;",
@@ -1093,51 +921,11 @@
     },
     {
       "description": "Raw hex address 0x5ac481 assigned to bare local `iStack_f8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_f8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 92,
+      "line": 80,
       "match": "0x5ac481",
       "severity": "moderate",
       "text": "iStack_f8 = 0x5ac481;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x5ac4af assigned to bare local `iStack_104`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_104` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 100,
-      "match": "0x5ac4af",
-      "severity": "moderate",
-      "text": "iStack_104 = 0x5ac4af;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Uninitialized variable: iStack_28",
-      "line": 180,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "FUN_00401810(0,0,iStack_28 + -1,iStack_24 + -1);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_24",
-      "line": 180,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "FUN_00401810(0,0,iStack_28 + -1,iStack_24 + -1);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_a0",
-      "line": 193,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar2 = iStack_a0;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_b4",
-      "line": 200,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar2 = iVar2 + iStack_b4;",
-      "type": "static_uninitvar"
     }
   ]
 }

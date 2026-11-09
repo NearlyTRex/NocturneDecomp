@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 85,
+    "complexity_score": 91,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 136
+  },
+  "cross_references": [
+    {
+      "addr": "00479770",
+      "from_addr": "004797fa",
+      "name": "unkafter_dosio.cpp_FUN_00479770",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004795e0",
+    "address_range": [
+      [
+        "004795e0",
+        "00479698"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_FUN_004795e0",
+    "signature": "void __cdecl engine_dosio_cpp_FUN_004795e0(char *input_path,char *drive,char *output_path)"
+  },
+  "function_calls": [
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00479580"
+    },
+    {
+      "addr": "004795b0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004795b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004797fa",
+        "call_type": "direct",
+        "caller": "unkafter_dosio.cpp_FUN_00479770",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.944444444444445,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CALL": 2,
+      "CBRANCH": 10,
+      "COPY": 53,
+      "INT_ADD": 27,
+      "INT_AND": 47,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 48,
+      "INT_LESS": 10,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 23,
+      "INT_SUB": 34,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 21,
+      "POPCOUNT": 23,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 356
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "input_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "drive",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_path",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 39,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 21,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 30,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

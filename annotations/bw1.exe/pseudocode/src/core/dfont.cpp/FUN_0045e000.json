@@ -1,145 +1,25 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_0152d23c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 26,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_0152d23c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 29,
-        "message": "use of undeclared identifier '_DAT_0152d23c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 604,
-    "complexity_score": 276,
+    "complexity_score": 285,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 45,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 216,
+    "pseudocode_lines": 225,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 820
+    "total_lines": 829
   },
   "cross_references": [
     {
       "addr": "005032a0",
       "from_addr": "005033d5",
-      "name": "FUN_005032a0",
+      "name": "core_main.c_FUN_005032a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -151,50 +31,50 @@
         "0045e795"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_0045e000",
-    "signature": "void FUN_0045e000(void)"
+    "convention": "__cdecl",
+    "name": "core_dfont.cpp_FUN_0045e000",
+    "signature": "void __cdecl core_dfont_cpp_FUN_0045e000(void)"
   },
   "function_calls": [
     {
-      "addr": "004c0b40",
-      "is_variadic": false,
-      "name": "FUN_004c0b40"
-    },
-    {
-      "addr": "004c0ca0",
-      "is_variadic": false,
-      "name": "FUN_004c0ca0"
-    },
-    {
-      "addr": "004c18b0",
-      "is_variadic": false,
-      "name": "FUN_004c18b0"
-    },
-    {
-      "addr": "004c4570",
-      "is_variadic": false,
-      "name": "FUN_004c4570"
-    },
-    {
-      "addr": "004c45d0",
-      "is_variadic": false,
-      "name": "FUN_004c45d0"
-    },
-    {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "005b1ad0",
-      "is_variadic": false,
-      "name": "FUN_005b1ad0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005c0f32",
       "is_variadic": false,
-      "name": "FUN_005c0f32"
+      "name": "crt_unknown.c_FUN_005c0f32"
+    },
+    {
+      "addr": "004c0ca0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_openFontFile_FUN_004c0ca0"
+    },
+    {
+      "addr": "004c0b40",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c0b40"
+    },
+    {
+      "addr": "004c18b0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c18b0"
+    },
+    {
+      "addr": "004c4570",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c4570"
+    },
+    {
+      "addr": "004c45d0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c45d0"
+    },
+    {
+      "addr": "005b1ad0",
+      "is_variadic": false,
+      "name": "engine_winfont.cpp_FUN_005b1ad0"
     }
   ],
   "globals": [
@@ -475,7 +355,7 @@
       {
         "call_addr": "005033d5",
         "call_type": "direct",
-        "caller": "FUN_005032a0",
+        "caller": "core_main.c_FUN_005032a0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -532,34 +412,34 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 171,
       "match": "DAT_006225f0",
       "severity": "mild",
-      "text": "iVar2 = FUN_005b1ad0(iVar1,&DAT_006225f0,0xe,2,2);",
+      "text": "pCVar4 = engine_winfont_cpp_FUN_005b1ad0(pCVar3,&DAT_006225f0,0xe,2,2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 186,
       "match": "DAT_006225f0",
       "severity": "mild",
-      "text": "iVar2 = FUN_005b1ad0(iVar1,&DAT_006225f0,0x12,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_FUN_005b1ad0(pCVar3,&DAT_006225f0,0x12,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 192,
+      "line": 201,
       "match": "DAT_006225f0",
       "severity": "mild",
-      "text": "iVar2 = FUN_005b1ad0(iVar1,&DAT_006225f0,0xc,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_FUN_005b1ad0(pCVar3,&DAT_006225f0,0xc,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 216,
       "match": "DAT_006225f0",
       "severity": "mild",
-      "text": "iVar2 = FUN_005b1ad0(iVar1,&DAT_006225f0,10,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_FUN_005b1ad0(pCVar3,&DAT_006225f0,10,0,0);",
       "type": "undefined_data"
     }
   ]

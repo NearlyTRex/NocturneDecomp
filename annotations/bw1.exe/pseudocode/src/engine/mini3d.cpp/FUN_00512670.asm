@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00512670(void)
+; void engine_mini3d_cpp_FUN_00512670(void)
 ;
 ;
-; XREF[2]:
-;   FUN_00512de0 at 00512e49
-;   FUN_00516cc0 at 00516ceb
+; XREF[5]:
+;   engine_mini3d.cpp_FUN_005126d0 at 0051272d
+;   engine_mini3d.cpp_FUN_005129d0 at 00512a2d
+;   engine_mini3d.cpp_FUN_00512c60 at 00512cba
+;   engine_mini3d.cpp_FUN_00512de0 at 00512e49
+;   engine_mini3d.cpp_FUN_00516cc0 at 00516ceb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_mini3d_cpp_005e8c93
@@ -18,22 +21,22 @@
 ;   undefined4 DAT_01d227e4
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005c08d0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005c08d0
 ;
 ; *****************************************************************************
 
 section .text
 
     CMP dword ptr [0x01d227dc],0x0      ; 00512670 | DAT_01d227dc
-        ;   Label: FUN_00512670
+        ;   Label: engine_mini3d.cpp_FUN_00512670
     JZ 0x0051267a                       ; 00512677
         ;   XREF to: 0051267a (CONDITIONAL_JUMP)  ; LAB_0051267a
     RET                                 ; 00512679
     PUSH 0x9c440                        ; 0051267a
         ;   Label: LAB_0051267a
-    CALL FUN_005c08d0                   ; 0051267f
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 0051267f
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00512684
     MOV [0x01d227dc],EAX                ; 00512687 | DAT_01d227dc
     TEST EAX,EAX                        ; 0051268c
@@ -45,8 +48,8 @@ section .text
     PUSH 0x5e8ca8                       ; 0051269b | = "CMini3D::allocVertexList - Out of mem..."
     MOV dword ptr [0x01d1d400],ECX      ; 005126a0 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EBX      ; 005126a6 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 005126ac
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 005126ac
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 005126b1
     POP EBX                             ; 005126b4
     MOV EAX,[0x01d227dc]                ; 005126b5 | DAT_01d227dc

@@ -1,0 +1,182 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 45,
+    "complexity_score": 19,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
+  "cross_references": [
+    {
+      "addr": "00442d10",
+      "from_addr": "00442d6f",
+      "name": "support_codec.cpp_FUN_00442d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442d90",
+      "from_addr": "00442def",
+      "name": "support_codec.cpp_FUN_00442d90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a11e0",
+    "address_range": [
+      [
+        "005a11e0",
+        "005a123c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "support_trstream.cpp_CInStreamMemory_dtor_FUN_005a11e0",
+    "signature": "CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c030f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005c030f"
+    },
+    {
+      "addr": "005c0336",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0336"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    },
+    {
+      "addr": "005a1400",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_FUN_005a1400"
+    },
+    {
+      "addr": "0059f550",
+      "is_variadic": false,
+      "name": "unkaddr_0059f520.cpp_FUN_0059f550"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fdae0",
+      "name": "g_CInStreamMemoryTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "006073c4",
+      "name": "g_CInStreamMemoryVTable",
+      "type": "undefined1*",
+      "value": "005a11e0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00442def",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00442d90",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00442d6f",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00442d10",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0285714285714285,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 25,
+      "INT_ADD": 14,
+      "INT_AND": 16,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 13,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 141
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInStreamMemory *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CInStreamMemory",
+        "offset": 0,
+        "vtable_addr": "006073c4"
+      },
+      {
+        "class_name": "CInStreamMemory",
+        "offset": 8,
+        "vtable_addr": "005fdae4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

@@ -1,129 +1,9 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 14,
-        "message": "use of undeclared identifier '_DAT_01d227dc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01d227dc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d227dc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 21,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
     "complexity_score": 31,
-    "cross_reference_count": 2,
+    "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "mild",
@@ -136,15 +16,33 @@
   },
   "cross_references": [
     {
+      "addr": "005126d0",
+      "from_addr": "0051272d",
+      "name": "engine_mini3d.cpp_FUN_005126d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005129d0",
+      "from_addr": "00512a2d",
+      "name": "engine_mini3d.cpp_FUN_005129d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512c60",
+      "from_addr": "00512cba",
+      "name": "engine_mini3d.cpp_FUN_00512c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00512de0",
       "from_addr": "00512e49",
-      "name": "FUN_00512de0",
+      "name": "engine_mini3d.cpp_FUN_00512de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00516cc0",
       "from_addr": "00516ceb",
-      "name": "FUN_00516cc0",
+      "name": "engine_mini3d.cpp_FUN_00516cc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -157,19 +55,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00512670",
-    "signature": "void FUN_00512670(void)"
+    "name": "engine_mini3d.cpp_FUN_00512670",
+    "signature": "void engine_mini3d_cpp_FUN_00512670(void)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "FUN_005c08d0"
+      "name": "crt_unknown.c_FUN_005c08d0"
     }
   ],
   "globals": [

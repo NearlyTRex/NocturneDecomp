@@ -1,0 +1,110 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 28,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0054cec0",
+    "address_range": [
+      [
+        "0054cec0",
+        "0054cf3f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_staticInit_FUN_0054cec0",
+    "signature": "void __cdecl core_set_cpp_staticInit_FUN_0054cec0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044caa0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_0044caa0"
+    },
+    {
+      "addr": "004667e0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_ctor_FUN_004667e0"
+    },
+    {
+      "addr": "0048a8f0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_ctor_FUN_0048a8f0"
+    },
+    {
+      "addr": "0054d000",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_ctor_FUN_0054d000"
+    },
+    {
+      "addr": "005c0357",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005c0357"
+    },
+    {
+      "addr": "005c1093",
+      "is_variadic": false,
+      "name": "crt_stdlib.c__atexit_FUN_005c1093"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "CALL": 9,
+      "COPY": 11,
+      "INT_ADD": 10,
+      "INT_AND": 18,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 18,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "LOAD": 1,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 144
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0202a8a8",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_0202a8a8);",
+      "type": "undefined_data"
+    }
+  ]
+}

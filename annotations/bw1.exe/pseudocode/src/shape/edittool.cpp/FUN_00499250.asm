@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00499250(undefined4 param_1,uint param_2,uint param_3,uint param_4)
+; void shape_edittool_cpp_FUN_00499250(undefined4 param_1,uint param_2,uint param_3,uint param_4)
 ;
 ;
 ; Referenced Globals:
@@ -14,14 +14,14 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00499250
-        ;   Label: FUN_00499250
+        ;   Label: shape_edittool.cpp_FUN_00499250
     MOV EDX,dword ptr [ESP + 0xc]       ; 00499251
     MOV EBX,dword ptr [ESP + 0x14]      ; 00499255
     MOV dword ptr [0x01c3f540],EDX      ; 00499259 | DAT_01c3f540
@@ -115,8 +115,8 @@ section .text
     PUSH 0x5dc306                       ; 0049931d
     MOV dword ptr [0x01d1d400],ESI      ; 00499322 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 00499328 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 0049932e
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0049932e
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00499333
     POP ESI                             ; 00499336
     POP EDI                             ; 00499337

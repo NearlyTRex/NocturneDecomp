@@ -1,0 +1,283 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 123,
+    "complexity_score": 215,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 50,
+    "suspect_count": 16,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 173
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00504400",
+    "address_range": [
+      [
+        "00504400",
+        "0050450d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_00504400(CMansionPuzzleCircle *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045f3e0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045f3e0"
+    },
+    {
+      "addr": "004cc9a0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_setFudgeTarget_FUN_004cc9a0"
+    },
+    {
+      "addr": "004ea6f0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0"
+    },
+    {
+      "addr": "00505560",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_00505560"
+    },
+    {
+      "addr": "005058e0",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0"
+    },
+    {
+      "addr": "00505bc0",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0"
+    },
+    {
+      "addr": "00506220",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_00506220"
+    },
+    {
+      "addr": "00504ee0",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_00504ee0"
+    },
+    {
+      "addr": "005062a0",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_005062a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.90625,
+    "instruction_count": 96,
+    "opcode_distribution": {
+      "CALL": 10,
+      "CBRANCH": 8,
+      "COPY": 70,
+      "INT_ADD": 37,
+      "INT_AND": 65,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 64,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 32,
+      "INT_SUB": 44,
+      "INT_XOR": 7,
+      "LOAD": 12,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 41
+    },
+    "pcode_op_count": 471
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "iVar1 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&this_ptr->field_0x20,0x41f00000);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x13c8",
+      "severity": "mild",
+      "text": "if (&this_ptr->field_0x13c8 != &this_ptr->field_0x1368) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x1368",
+      "severity": "mild",
+      "text": "if (&this_ptr->field_0x13c8 != &this_ptr->field_0x1368) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x13c8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x13c8 = *(uint *)&this_ptr->field_0x1368;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x1368",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x13c8 = *(uint *)&this_ptr->field_0x1368;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x13cc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x13cc = *(uint *)&this_ptr->field_0x136c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x136c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x13cc = *(uint *)&this_ptr->field_0x136c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x13d0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x13d0 = *(uint *)&this_ptr->field_0x1370;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x1370",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x13d0 = *(uint *)&this_ptr->field_0x1370;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x13cf",
+      "severity": "mild",
+      "text": "this_ptr->field_0x13cf = this_ptr->field_0x13cf ^ 0x80;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x13cf",
+      "severity": "mild",
+      "text": "this_ptr->field_0x13cf = this_ptr->field_0x13cf ^ 0x80;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x1374",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&this_ptr->field_0x1374,(CVector3f *)&this_ptr->field_0x1368);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x1368",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&this_ptr->field_0x1374,(CVector3f *)&this_ptr->field_0x1368);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x13d4",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&this_ptr->field_0x13d4,(CVector3f *)&this_ptr->field_0x13c8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x13c8",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&this_ptr->field_0x13d4,(CVector3f *)&this_ptr->field_0x13c8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x1368",
+      "severity": "mild",
+      "text": "(g_CGamePtr,(CVector3f *)&this_ptr->field_0x1368,0.017453292);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "00603454"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

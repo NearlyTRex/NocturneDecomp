@@ -1,147 +1,28 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_02c80650'; did you mean 'DAT_00480450'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 19,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 21,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_02c80650'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 23,
-        "message": "use of undeclared identifier '_DAT_02c80650'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 144,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 10,
+    "pseudocode_lines": 26,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
+      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 80
+    "total_lines": 82
   },
   "cross_references": [
     {
       "addr": "00576f40",
       "from_addr": "00576fac",
-      "name": "FUN_00576f40",
+      "name": "sound_sndmain.cpp_FUN_00576f40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,29 +35,29 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00571f10",
-    "signature": "void FUN_00571f10(int param_1)"
+    "name": "sound_sndmain.cpp_FUN_00571f10",
+    "signature": "void sound_sndmain_cpp_FUN_00571f10(CSfxSlot *param_1)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
-    },
-    {
-      "addr": "00571d70",
-      "is_variadic": false,
-      "name": "FUN_00571d70"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "00572680",
       "is_variadic": false,
-      "name": "FUN_00572680"
+      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00572680"
+    },
+    {
+      "addr": "00571d70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70"
     },
     {
       "addr": "005773f0",
       "is_variadic": false,
-      "name": "FUN_005773f0"
+      "name": "sound_sndmain.cpp_FUN_005773f0"
     }
   ],
   "globals": [
@@ -223,7 +104,7 @@
       {
         "call_addr": "00576fac",
         "call_type": "direct",
-        "caller": "FUN_00576f40",
+        "caller": "sound_sndmain.cpp_FUN_00576f40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -285,7 +166,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00571f10(int param_1)",
+      "text": "void sound_sndmain_cpp_FUN_00571f10(CSfxSlot *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -293,16 +174,32 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x60) != 0) {",
+      "text": "if (*(int *)&param_1->field_0x60 != 0) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0x60 != 0) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x68) == 0) {",
+      "text": "if (*(int *)&param_1->field_0x68 == 0) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1->field_0x68 == 0) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -322,26 +219,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00572680(*(uint *)(param_1 + 0x68));",
+      "text": "(*(CSfxSample **)&param_1->field_0x68);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x68",
       "severity": "mild",
-      "text": "FUN_005773f0(\"Killing looped sfx %s, which died??\\n\",*(uint *)(param_1 + 0x68));",
-      "type": "unnamed_param"
+      "text": "(*(CSfxSample **)&param_1->field_0x68);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00571d70(param_1);",
+      "text": "(\"Killing looped sfx %s, which died??\\n\",*(uint *)&param_1->field_0x68);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "(\"Killing looped sfx %s, which died??\\n\",*(uint *)&param_1->field_0x68);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_CSfxSlot_kill_FUN_00571d70(param_1);",
       "type": "unnamed_param"
     },
     {

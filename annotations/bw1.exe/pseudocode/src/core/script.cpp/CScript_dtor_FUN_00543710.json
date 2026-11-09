@@ -1,0 +1,135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 47,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 3,
+    "suspect_types": [
+      "negative_offset",
+      "unnamed_field"
+    ],
+    "total_lines": 23
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00543710",
+    "address_range": [
+      [
+        "00543710",
+        "00543730"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_dtor_FUN_00543710",
+    "signature": "CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00543710(CScript *this_ptr,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00543740",
+      "is_variadic": false,
+      "name": "core_script.cpp_FUN_00543740"
+    },
+    {
+      "addr": "004993a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004993a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.923076923076923,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 7,
+      "INT_ADD": 6,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 64
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "pCVar1 = shape_edittool_cpp_CStrList_dtor_FUN_004993a0((CStrList *)&this_ptr->field_0x34,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 9,
+      "match": "pCVar1[-4].",
+      "severity": "mild",
+      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CScript",
+        "offset": 8,
+        "vtable_addr": "00604e14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,129 +1,9 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_02c8a684'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 9,
-        "line": 29,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 59,
-        "message": "no matching function for call to 'FUN_005bfb70'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 62,
-        "message": "no matching function for call to 'FUN_005bfb70'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 122,
     "complexity_score": 278,
-    "cross_reference_count": 1,
+    "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
@@ -140,7 +20,19 @@
     {
       "addr": "005967a0",
       "from_addr": "0059686c",
-      "name": "FUN_005967a0",
+      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00596e60",
+      "from_addr": "00596e67",
+      "name": "engine_texture.cpp_FUN_00596e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00596ed0",
+      "from_addr": "00596ed7",
+      "name": "engine_texture.cpp_FUN_00596ed0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,24 +45,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00596680",
-    "signature": "int FUN_00596680(int *param_1)"
+    "name": "engine_texture.cpp_FUN_00596680",
+    "signature": "int engine_texture_cpp_FUN_00596680(int *param_1)"
   },
   "function_calls": [
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     },
     {
       "addr": "005bfb70",
       "is_variadic": false,
-      "name": "FUN_005bfb70"
+      "name": "crt_memory.c_memset_FUN_005bfb70"
     },
     {
       "addr": "005c09f0",
       "is_variadic": false,
-      "name": "FUN_005c09f0"
+      "name": "crt_unknown.c_FUN_005c09f0"
     }
   ],
   "globals": [
@@ -206,12 +98,12 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0059686c",
         "call_type": "direct",
-        "caller": "FUN_005967a0",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,9 +112,35 @@
         ],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "00596e67",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_FUN_00596e60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00596ed7",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_FUN_00596ed0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 2,
@@ -281,7 +199,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_00596680(int *param_1)",
+      "text": "int engine_texture_cpp_FUN_00596680(int *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -417,7 +335,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005bfb70(param_1,0,0x60);",
+      "text": "memset(param_1,0,0x60);",
       "type": "unnamed_param"
     },
     {
@@ -425,11 +343,11 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005bfb70(param_1,0,0x60);",
+      "text": "memset(param_1,0,0x60);",
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 1,
+      "call_site_count": 3,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

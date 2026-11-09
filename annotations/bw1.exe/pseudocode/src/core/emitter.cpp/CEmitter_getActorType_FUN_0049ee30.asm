@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_emitter_cpp_CEmitter_getActorType_FUN_0049ee30(CEmitter *this_ptr)
+;
+; Parameters:
+; CEmitter *       Stack[0x4]:4   this_ptr
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x1c3f62c                   ; 0049ee30
+        ;   Label: core_emitter.cpp_CEmitter_getActorType_FUN_0049ee30
+    RET                                 ; 0049ee35
+

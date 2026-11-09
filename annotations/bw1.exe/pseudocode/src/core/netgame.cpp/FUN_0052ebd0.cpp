@@ -1,33 +1,33 @@
-// Name: FUN_0052ebd0
+// Name: core_netgame.cpp_FUN_0052ebd0
 // Address: 0052ebd0
 // Address Range: [[0052ebd0, 0052ed72]]
-// Convention: unknown
-// Signature: void FUN_0052ebd0(int param_1,undefined4 param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl core_netgame_cpp_FUN_0052ebd0(CNetGame *this_ptr,char *message,int target_player)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0052ebd0(int param_1,uint param_2,int param_3)
+void __cdecl core_netgame_cpp_FUN_0052ebd0(CNetGame *this_ptr,char *message,int target_player)
 
 {
-  byte *puVar1;
+  char *dest;
+  int iVar1;
   int iVar2;
-  int iVar3;
+  int *piVar3;
   int *piVar4;
   int *piVar5;
-  int *piVar6;
   
   if (0x31 < _DAT_01d6dfb8) {
     _DAT_01d1d400 = "..\\core\\netgame.cpp";
     _DAT_01d1d404 = 0x76c;
-    FUN_005030e0("CNetGame::processChatOut - too many pending outgoing chat messages");
+    core_main_c_FUN_005030e0("CNetGame::processChatOut - too many pending outgoing chat messages");
   }
-  iVar2 = _DAT_01d6dfb8 * 0x114;
-  piVar6 = (int *)(&DAT_01d6dfbc + iVar2);
+  iVar1 = _DAT_01d6dfb8 * 0x114;
+  piVar5 = (int *)(&DAT_01d6dfbc + iVar1);
   _DAT_01d6dfb8 = _DAT_01d6dfb8 + 1;
-  iVar3 = FUN_005b2420();
-  _DAT_01d51d9c = iVar3 / 0x12 - _DAT_01d51d9c;
+  iVar2 = wincore_winrun_cpp_FUN_005b2420();
+  _DAT_01d51d9c = iVar2 / 0x12 - _DAT_01d51d9c;
   if (_DAT_01d51d9c < 0) {
     _DAT_01d51d9c = 0;
   }
@@ -36,33 +36,35 @@ void FUN_0052ebd0(int param_1,uint param_2,int param_3)
   }
   _DAT_01d51da0 = _DAT_01d51da0 + _DAT_01d51d9c;
   _DAT_01d715a4 = _DAT_01d715a4 + 1;
-  _DAT_01d51d9c = iVar3 / 0x12;
-  *(int *)(&DAT_01d6dfc0 + iVar2) = _DAT_01d715a4;
-  *piVar6 = _DAT_01d51da0;
-  FUN_005bfb70(&DAT_01d6dfc4 + iVar2,1,2);
-  if (param_3 < 0) {
-    iVar3 = 0;
-    piVar4 = piVar6;
-    piVar5 = piVar6;
-    if (0 < *(int *)(param_1 + 0x1c)) {
+  _DAT_01d51d9c = iVar2 / 0x12;
+  *(int *)(&DAT_01d6dfc0 + iVar1) = _DAT_01d715a4;
+  *piVar5 = _DAT_01d51da0;
+  memset(&DAT_01d6dfc4 + iVar1,1,2);
+  if (target_player < 0) {
+    iVar2 = 0;
+    piVar3 = piVar5;
+    piVar4 = piVar5;
+    if (0 < *(int *)&this_ptr->field_0x1c) {
       do {
-        *(byte *)(piVar5 + 2) = 0;
-        piVar4[3] = _DAT_01d51da0 + -0x3c0000;
-        iVar3 = iVar3 + 1;
-        piVar4 = piVar4 + 1;
-        piVar5 = (int *)((int)piVar5 + 1);
-      } while (iVar3 < *(int *)(param_1 + 0x1c));
+        *(byte *)(piVar4 + 2) = 0;
+        piVar3[3] = _DAT_01d51da0 + -0x3c0000;
+        iVar2 = iVar2 + 1;
+        piVar3 = piVar3 + 1;
+        piVar4 = (int *)((int)piVar4 + 1);
+      } while (iVar2 < *(int *)&this_ptr->field_0x1c);
     }
   }
   else {
-    *(byte *)((int)piVar6 + param_3 + 8) = 0;
-    *(int *)(iVar2 + 0x1d6dfc8 + param_3 * 4) = _DAT_01d51da0 + -0x3c0000;
+    *(byte *)((int)piVar5 + target_player + 8) = 0;
+    *(int *)(iVar1 + 0x1d6dfc8 + target_player * 4) = _DAT_01d51da0 + -0x3c0000;
   }
-  puVar1 = &DAT_01d6dfd0 + iVar2;
-  *(byte *)(*(int *)(param_1 + 0x11c) + 8 + (int)piVar6) = 1;
-  FUN_005bfb70(puVar1,0,0x100);
-  FUN_005c20d0(puVar1,param_2,0xff);
-  FUN_0052f100(param_1,param_1 + *(int *)(param_1 + 0x11c) * 0x7c + 0x3c,
-               *(uint *)(&DAT_01d6dfc0 + iVar2),param_1 + 8,puVar1);
+  dest = &DAT_01d6dfd0 + iVar1;
+  *(byte *)(*(int *)&this_ptr->field_0x11c + 8 + (int)piVar5) = 1;
+  memset(dest,0,0x100);
+  _strncpy(dest,message,0xff);
+  core_netgame_cpp_CNetGame_addChatHistory_FUN_0052f100
+            (this_ptr,(SNetworkAddr *)
+                      (&this_ptr->field_0x3c + *(int *)&this_ptr->field_0x11c * 0x7c),
+             *(int *)(&DAT_01d6dfc0 + iVar1),&this_ptr->field_0x8,dest);
   return;
 }

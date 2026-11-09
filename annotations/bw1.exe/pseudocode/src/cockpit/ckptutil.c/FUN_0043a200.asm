@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0043a200(undefined4 *param_1,int param_2,uint param_3,uint param_4)
+; void cockpit_ckptutil_c_FUN_0043a200(undefined4 *param_1,int param_2,uint param_3,uint param_4)
 ;
 ;
 ; Referenced Globals:
@@ -9,17 +9,17 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005bfb40
-;   FUN_005c08d0
-;   FUN_005c09f0
+;   core_main.c_FUN_005030e0
+;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_FUN_005c08d0
+;   crt_unknown.c_FUN_005c09f0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0043a200
-        ;   Label: FUN_0043a200
+        ;   Label: cockpit_ckptutil.c_FUN_0043a200
     PUSH ESI                            ; 0043a201
     PUSH EDI                            ; 0043a202
     PUSH EBP                            ; 0043a203
@@ -32,8 +32,8 @@ section .text
     IMUL EBX,EBP                        ; 0043a227
     PUSH EBX                            ; 0043a22a
     MOV dword ptr [ESP + 0x64],EAX      ; 0043a22b
-    CALL FUN_005c08d0                   ; 0043a22f
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c08d0()
+    CALL crt_unknown.c_FUN_005c08d0     ; 0043a22f
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 0043a234
     MOV dword ptr [ESP + 0x54],EAX      ; 0043a237
     TEST EAX,EAX                        ; 0043a23b
@@ -99,8 +99,8 @@ section .text
     POP EDI                             ; 0043a2d6
     MOV ESI,dword ptr [ESP + 0x54]      ; 0043a2d7
     PUSH ESI                            ; 0043a2db
-    CALL FUN_005c09f0                   ; 0043a2dc
-        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c09f0()
+    CALL crt_unknown.c_FUN_005c09f0     ; 0043a2dc
+        ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
     ADD ESP,0x4                         ; 0043a2e1
     ADD ESP,0x68                        ; 0043a2e4
     POP EBP                             ; 0043a2e7
@@ -114,16 +114,16 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0043a2f2
     PUSH EAX                            ; 0043a2f6
     MOV EBX,0x801                       ; 0043a2f7
-    CALL FUN_005bfb40                   ; 0043a2fc
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined FUN_005bfb40()
+    CALL crt_unknown.c_FUN_005bfb40     ; 0043a2fc
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
     ADD ESP,0xc                         ; 0043a301
     MOV EAX,ESP                         ; 0043a304
     MOV ECX,0x5d64be                    ; 0043a306
     PUSH EAX                            ; 0043a30b
     MOV dword ptr [0x01d1d404],EBX      ; 0043a30c | DAT_01d1d404
     MOV dword ptr [0x01d1d400],ECX      ; 0043a312 | DAT_01d1d400
-    CALL FUN_005030e0                   ; 0043a318
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 0043a318
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0043a31d
     JMP 0x0043a243                      ; 0043a320
         ;   XREF to: 0043a243 (UNCONDITIONAL_JUMP)  ; LAB_0043a243

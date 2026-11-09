@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * FUN_00478860(int param_1,float *param_2,undefined4 param_3)
+; float * core_door_cpp_FUN_00478860(int param_1,float *param_2,undefined4 param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0xb8]:1  local_b8
@@ -42,7 +42,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_00432240 at 0043233e
+;   core_charactr.cpp_FUN_00432240 at 0043233e
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0047884c = 004788a9
@@ -52,16 +52,16 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_00408ac0
-;   FUN_00408bb0
-;   FUN_005030e0
+;   core_actor.cpp_FUN_00408ac0
+;   core_actor.cpp_FUN_00408bb0
+;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00478860
-        ;   Label: FUN_00478860
+        ;   Label: core_door.cpp_FUN_00478860
     PUSH EDI                            ; 00478861
     PUSH EBP                            ; 00478862
     MOV EBP,ESP                         ; 00478863
@@ -95,8 +95,8 @@ section .text
     PUSH ESI                            ; 004788b0
     LEA ESI,[ESP + 0x50]                ; 004788b1
     LEA EDI,[ESP + 0x74]                ; 004788b5
-    CALL FUN_00408bb0                   ; 004788b9
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408bb0()
+    CALL core_actor.cpp_FUN_00408bb0    ; 004788b9
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408bb0()
     LEA ESI,[ESP + 0x50]                ; 004788be
     ADD ESP,0x8                         ; 004788c2
     FLDZ                                ; 004788c5
@@ -116,8 +116,8 @@ section .text
     PUSH EAX                            ; 004788e8
     LEA ESI,[ESP + 0x8]                 ; 004788e9
     LEA EDI,[ESP + 0x98]                ; 004788ed
-    CALL FUN_00408ac0                   ; 004788f4
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408ac0()
+    CALL core_actor.cpp_FUN_00408ac0    ; 004788f4
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
     LEA ESI,[ESP + 0x8]                 ; 004788f9
     ADD ESP,0x8                         ; 004788fd
     MOVSD ES:EDI,ESI                    ; 00478900
@@ -208,8 +208,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x10]      ; 00478a06
     PUSH EDI                            ; 00478a09
     LEA ESI,[ESP + 0x44]                ; 00478a0a
-    CALL FUN_00408ac0                   ; 00478a0e
-        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined FUN_00408ac0()
+    CALL core_actor.cpp_FUN_00408ac0    ; 00478a0e
+        ;   XREF to: 00408ac0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00408ac0()
     LEA EDI,[ESP + 0x5c]                ; 00478a13
     LEA ESI,[ESP + 0x44]                ; 00478a17
     ADD ESP,0x8                         ; 00478a1b
@@ -267,8 +267,8 @@ section .text
     PUSH 0x5da9ac                       ; 00478ac6 | = "CDoor::getOpenStandPos - invalid door..."
     MOV dword ptr [0x01d1d400],EDX      ; 00478acb | DAT_01d1d400
     MOV dword ptr [0x01d1d404],ECX      ; 00478ad1 | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00478ad7
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00478ad7
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 00478adc
     JMP 0x00478950                      ; 00478adf
         ;   XREF to: 00478950 (UNCONDITIONAL_JUMP)  ; LAB_00478950

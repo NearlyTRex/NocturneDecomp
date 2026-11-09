@@ -1,20 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_005240c0(int param_1,undefined4 param_2,int param_3)
+; int __cdecl core_motion_cpp_FUN_005240c0(CMotionList *this_ptr,char *motion_name,int error_on_not_found)
 ;
+; Parameters:
+; CMotionList *    Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   motion_name
+; int              Stack[0xc]:4   error_on_not_found
 ;
 ; XREF[23]:
-;   FUN_00432c70 at 00432c96
-;   FUN_004343c0 at 00434448
-;   FUN_00469060 at 00469250
-;   FUN_0046caa0 at 0046e5d9
-;   FUN_0046ea80 at 0046ed28
-;   FUN_0046f200 at 0046f2f6
-;   FUN_004a1d00 at 004a631f
-;   FUN_004c6390 at 004c6564
-;   FUN_004e0870 at 004e0c15
-;   FUN_004ed630 at 004ed7ea
+;   core_charactr.cpp_FUN_00432c70 at 00432c96
+;   core_charactr.cpp_FUN_004343c0 at 00434448
+;   core_doc.cpp_FUN_00469060 at 00469250
+;   core_doc.cpp_FUN_0046caa0 at 0046e5d9
+;   core_doc.cpp_FUN_0046ea80 at 0046ed28
+;   core_doc.cpp_FUN_0046f200 at 0046f2f6
+;   core_event.cpp_FUN_004a1d00 at 004a631f
+;   core_gabriela.cpp_FUN_004c6390 at 004c6564
+;   core_ghoul.cpp_FUN_004e0870 at 004e0c15
+;   core_hostage.cpp_FUN_004ed630 at 004ed7ea
 ;   ... and 13 more
 ;
 ; Referenced Globals:
@@ -24,15 +28,15 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   FUN_005030e0
-;   FUN_005c04e0
+;   core_main.c_FUN_005030e0
+;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005240c0
-        ;   Label: FUN_005240c0
+        ;   Label: core_motion.cpp_FUN_005240c0
     PUSH ESI                            ; 005240c1
     PUSH EDI                            ; 005240c2
     PUSH EBP                            ; 005240c3
@@ -47,8 +51,8 @@ section .text
     PUSH EBP                            ; 005240de
         ;   Label: LAB_005240de
     PUSH ESI                            ; 005240df
-    CALL FUN_005c04e0                   ; 005240e0
-        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005c04e0()
+    CALL crt_string.c__stricmp_FUN_005c04e0 ; 005240e0
+        ;   XREF to: 005c04e0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005c04e0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005240e5
     TEST EAX,EAX                        ; 005240e8
     JZ 0x0052410e                       ; 005240ea
@@ -83,8 +87,8 @@ section .text
     PUSH 0x5ead63                       ; 00524120 | = "Can't find motion \"%s\" in motion list"
     MOV dword ptr [0x01d1d400],ESI      ; 00524125 | DAT_01d1d400
     MOV dword ptr [0x01d1d404],EDI      ; 0052412b | DAT_01d1d404
-    CALL FUN_005030e0                   ; 00524131
-        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005030e0()
+    CALL core_main.c_FUN_005030e0       ; 00524131
+        ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x8                         ; 00524136
     MOV EAX,0xffffffff                  ; 00524139
     POP EBP                             ; 0052413e

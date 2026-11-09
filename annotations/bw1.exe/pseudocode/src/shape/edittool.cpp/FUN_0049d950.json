@@ -1,165 +1,43 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 16,
-        "message": "use of undeclared identifier '_DAT_01c3eb50'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 17,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 18,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 19,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c3f538'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c3eb50'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 117,
+    "complexity_score": 57,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 8,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 65
   },
   "cross_references": [
     {
-      "addr": "00493720",
-      "from_addr": "00493802",
-      "name": "FUN_00493720",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00493d40",
-      "from_addr": "00493d97",
-      "name": "FUN_00493d40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00494690",
       "from_addr": "004947e8",
-      "name": "FUN_00494690",
+      "name": "shape_edittool.cpp_FUN_00494690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049b060",
       "from_addr": "0049b484",
-      "name": "FUN_0049b060",
+      "name": "shape_edittool.cpp_FUN_0049b060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493d40",
+      "from_addr": "00493d97",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493720",
+      "from_addr": "00493802",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_00493720",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -171,25 +49,25 @@
         "0049d9d5"
       ]
     ],
-    "convention": "unknown",
-    "name": "FUN_0049d950",
-    "signature": "int FUN_0049d950(undefined *param_1)"
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_FUN_0049d950",
+    "signature": "int __cdecl shape_edittool_cpp_FUN_0049d950(char *button_text)"
   },
   "function_calls": [
     {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
       "addr": "004c3ea0",
       "is_variadic": false,
-      "name": "FUN_004c3ea0"
+      "name": "engine_font.cpp_FUN_004c3ea0"
     },
     {
       "addr": "004c4510",
       "is_variadic": false,
-      "name": "FUN_004c4510"
-    },
-    {
-      "addr": "005030e0",
-      "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "engine_font.cpp_FUN_004c4510"
     }
   ],
   "globals": [
@@ -254,22 +132,18 @@
       {
         "call_addr": "00493d97",
         "call_type": "direct",
-        "caller": "FUN_00493d40",
-        "estimated_params": 4,
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00493e52",
         "call_type": "direct",
-        "caller": "FUN_00493d40",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -280,77 +154,62 @@
       {
         "call_addr": "0049b484",
         "call_type": "direct",
-        "caller": "FUN_0049b060",
-        "estimated_params": 5,
+        "caller": "shape_edittool.cpp_FUN_0049b060",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0049b4b0",
         "call_type": "direct",
-        "caller": "FUN_0049b060",
-        "estimated_params": 4,
+        "caller": "shape_edittool.cpp_FUN_0049b060",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0049b4d8",
         "call_type": "direct",
-        "caller": "FUN_0049b060",
-        "estimated_params": 2,
+        "caller": "shape_edittool.cpp_FUN_0049b060",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004947e8",
         "call_type": "direct",
-        "caller": "FUN_00494690",
-        "estimated_params": 2,
+        "caller": "shape_edittool.cpp_FUN_00494690",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00494821",
         "call_type": "direct",
-        "caller": "FUN_00494690",
-        "estimated_params": 2,
+        "caller": "shape_edittool.cpp_FUN_00494690",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00494837",
         "call_type": "direct",
-        "caller": "FUN_00494690",
+        "caller": "shape_edittool.cpp_FUN_00494690",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -361,7 +220,7 @@
       {
         "call_addr": "00493802",
         "call_type": "direct",
-        "caller": "FUN_00493720",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_00493720",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -370,11 +229,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.225,
@@ -410,12 +269,20 @@
     "pcode_op_count": 169
   },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "button_text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -427,44 +294,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int FUN_0049d950(byte *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == (byte *)0x0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = &DAT_005dc89d;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_005dc89d",
       "severity": "mild",
-      "text": "param_1 = &DAT_005dc89d;",
+      "text": "button_text = &DAT_005dc89d;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_004c3ea0(_DAT_01c3eb50,param_1);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -473,17 +308,6 @@
       "severity": "mild",
       "text": "return DAT_0061b498 / 0x28 + iVar1;",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 9,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,118 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 25,
-        "line": 28,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 211,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 213,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 42,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 49,
-        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 55,
-        "message": "unknown type name 'MMRESULT'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 60,
-        "message": "unknown type name 'HWND'"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 155,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 1,
-        "line": 337,
-        "message": "unknown type name 'LPCRITICAL_SECTION'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 350,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 388,
-        "message": "unknown type name 'FILETIME'"
-      },
-      {
-        "category": "other",
-        "column": 37,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 388,
-        "message": "unknown type name 'LPWORD'; did you mean 'LPDWORD'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 20,
-        "message": "use of undeclared identifier '_DAT_01d1d400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01d1d404'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 22,
-        "message": "no matching function for call to 'FUN_005030e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_01cd0e38'; did you mean 'DAT_005dfe38'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01cd0d40'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
@@ -135,7 +21,7 @@
     {
       "addr": "004eaa10",
       "from_addr": "004eaa3e",
-      "name": "FUN_004eaa10",
+      "name": "core_hero.cpp_FUN_004eaa10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -148,19 +34,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f9b20",
-    "signature": "void FUN_004f9b20(int param_1)"
+    "name": "core_inv.cpp_FUN_004f9b20",
+    "signature": "void core_inv_cpp_FUN_004f9b20(int param_1)"
   },
   "function_calls": [
     {
       "addr": "0040c600",
       "is_variadic": false,
-      "name": "FUN_0040c600"
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
-      "name": "FUN_005030e0"
+      "name": "core_main.c_FUN_005030e0"
     }
   ],
   "globals": [
@@ -178,13 +64,13 @@
     },
     {
       "addr": "01cd0d40",
-      "name": "DAT_01cd0d40",
+      "name": "g_CGasMaskClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e38",
-      "name": "DAT_01cd0e38",
+      "name": "g_CGogglesClassInfo.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -207,7 +93,7 @@
       {
         "call_addr": "004eaa3e",
         "call_type": "direct",
-        "caller": "FUN_004eaa10",
+        "caller": "core_hero.cpp_FUN_004eaa10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -275,7 +161,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004f9b20(int param_1)",
+      "text": "void core_inv_cpp_FUN_004f9b20(int param_1)",
       "type": "unnamed_param"
     },
     {

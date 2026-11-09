@@ -1,0 +1,118 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 7,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "0042c080",
+      "from_addr": "0042c0a8",
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_0042c080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591f10",
+      "from_addr": "00591f34",
+      "name": "core_succubus.cpp_CSuccubus_ctor_FUN_00591f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00441c60",
+    "address_range": [
+      [
+        "00441c60",
+        "00441c94"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CClothList_ctor_FUN_00441c60",
+    "signature": "CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_00441c60(CClothList *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0042c0a8",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_ctor_FUN_0042c080",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00591f34",
+        "call_type": "direct",
+        "caller": "core_succubus.cpp_CSuccubus_ctor_FUN_00591f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4444444444444446,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 14,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 9,
+      "LOAD": 3,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 62
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      }
+    ]
+  },
+  "suspects": []
+}

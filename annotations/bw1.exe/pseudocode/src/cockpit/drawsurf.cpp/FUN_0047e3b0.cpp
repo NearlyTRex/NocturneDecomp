@@ -1,24 +1,24 @@
-// Name: FUN_0047e3b0
+// Name: cockpit_drawsurf.cpp_FUN_0047e3b0
 // Address: 0047e3b0
 // Address Range: [[0047e3b0, 0047e5b8]]
-// Convention: unknown
-// Signature: void FUN_0047e3b0(uint param_1)
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_drawsurf_cpp_FUN_0047e3b0(int color_value)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0047e55e) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0047e3b0(uint param_1)
+void __cdecl cockpit_drawsurf_cpp_FUN_0047e3b0(int color_value)
 
 {
   int iVar1;
   byte bVar2;
   bool bVar3;
   
-  bVar3 = (int)param_1 < 0;
+  bVar3 = color_value < 0;
   if (bVar3) {
-    _DAT_01bc11f4 = -param_1;
+    _DAT_01bc11f4 = -color_value;
     bVar2 = (byte)_DAT_01bc11f4;
     _DAT_01bc11f8 = (uint)(0xff / (ulonglong)_DAT_01c4e9d8) >> (bVar2 & 0x1f);
     _DAT_01bc11fc = (uint)(0xff / (ulonglong)_DAT_01c4e9e4) >> (bVar2 & 0x1f);
@@ -27,10 +27,10 @@ void FUN_0047e3b0(uint param_1)
          _DAT_01bc11f8 << (DAT_01c4e9d4 & 0x1f) | _DAT_01bc11fc << (DAT_01c4e9e0 & 0x1f) |
          _DAT_01bc1200 << (DAT_01c4e9ec & 0x1f);
     _DAT_01bc1208 = _DAT_01bc1204 | _DAT_01bc1204 << 0x10;
-    param_1 = 0;
+    color_value = 0;
   }
   _DAT_01bc11f0 = (uint)bVar3;
-  _DAT_01bc11e8 = param_1 & 0xff;
+  _DAT_01bc11e8 = color_value & 0xff;
   if (DAT_0061b4a0 < 0x10) {
     if (DAT_0061b4a0 == 8) {
       _DAT_01bc11e4 = _DAT_01bc11e8;
@@ -56,6 +56,6 @@ void FUN_0047e3b0(uint param_1)
   }
   _DAT_01d1d400 = "..\\cockpit\\drawsurf.cpp";
   _DAT_01d1d404 = 0xf8;
-  FUN_005030e0("Invalid bitsPerPixel in CDrawSurface::setColor");
+  core_main_c_FUN_005030e0("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

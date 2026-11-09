@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 45,
+    "cross_reference_count": 8,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [
+    {
+      "addr": "004d8e50",
+      "from_addr": "004d8f2a",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050ba70",
+      "from_addr": "0050c7ab",
+      "name": "core_menu.cpp_FUN_0050ba70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057cdb0",
+      "from_addr": "0057cdf4",
+      "name": "core_sound.cpp_CSound_shutdown_FUN_0057cdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057d800",
+      "from_addr": "0057d800",
+      "name": "core_sound.cpp_FUN_0057d800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575670",
+      "from_addr": "00575672",
+      "name": "sound_sndmain.cpp_closeSoundDevice_FUN_00575670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574ee0",
+      "from_addr": "00574f0e",
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573600",
+      "from_addr": "0057360b",
+      "name": "sound_sndmain.cpp_setSoundMuted_FUN_00573600",
+      "type": "CONDITIONAL_JUMP"
+    },
+    {
+      "addr": "00574ea0",
+      "from_addr": "00574eb4",
+      "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_00574ea0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005750e0",
+    "address_range": [
+      [
+        "005750e0",
+        "00575111"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005750e0",
+    "signature": "int __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_005750e0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056f630",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_0056f630"
+    },
+    {
+      "addr": "00573b00",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573b00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c80650",
+      "name": "DAT_02c80650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80654",
+      "name": "DAT_02c80654",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8823529411764706,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 13,
+      "INT_ADD": 4,
+      "INT_AND": 10,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 4,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c80650 + 8))(_DAT_02c80650);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

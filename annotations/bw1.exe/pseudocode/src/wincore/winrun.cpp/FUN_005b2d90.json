@@ -1,0 +1,166 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_noreturn",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [
+    {
+      "addr": "005b2e00",
+      "from_addr": "005b2fd4",
+      "name": "wincore_winrun.cpp_FUN_005b2e00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b2d90",
+    "address_range": [
+      [
+        "005b2d90",
+        "005b2dd8"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "wincore_winrun.cpp_FUN_005b2d90",
+    "signature": "void wincore_winrun_cpp_FUN_005b2d90(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000002f",
+      "is_variadic": false,
+      "name": "CreateWindowExA"
+    },
+    {
+      "addr": "EXTERNAL:00000055",
+      "is_variadic": false,
+      "name": "ExitProcess"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d04a8",
+      "name": "PTR_CreateWindowExA_005d04a8",
+      "type": "void*",
+      "value": "001d0a8c"
+    },
+    {
+      "addr": "005d0544",
+      "name": "PTR_ExitProcess_005d0544",
+      "type": "void*",
+      "value": "001d0d10"
+    },
+    {
+      "addr": "005f9e9d",
+      "name": "s_Nocturne_005f9e9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f9ea6",
+      "name": "s_Nocturne_005f9ea6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006260dc",
+      "name": "PTR_s_Nocturne_006260dc",
+      "type": "void*",
+      "value": "005f9e9d"
+    },
+    {
+      "addr": "006260e0",
+      "name": "PTR_s_Nocturne_006260e0",
+      "type": "void*",
+      "value": "005f9ea6"
+    },
+    {
+      "addr": "02c9be68",
+      "name": "DAT_02c9be68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9be6c",
+      "name": "DAT_02c9be6c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005b2fd4",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_FUN_005b2e00",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.9583333333333335,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "CALLIND": 2,
+      "CBRANCH": 1,
+      "COPY": 24,
+      "INT_ADD": 2,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_SUB": 16,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 71
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 13,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ]
+}

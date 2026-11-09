@@ -1,0 +1,19 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; CDemonActorType * core_ammobox_cpp_CAmmoBox_getActorType_FUN_0040e0a0(CAmmoBox *this_ptr)
+;
+; Parameters:
+; CAmmoBox *       Stack[0x4]:4   this_ptr
+;
+; Referenced Globals:
+;   CDemonActorType g_CAmmoBoxClassInfo
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x7c33a8                    ; 0040e0a0 | g_CAmmoBoxClassInfo
+        ;   Label: core_ammobox.cpp_CAmmoBox_getActorType_FUN_0040e0a0
+    RET                                 ; 0040e0a5
+
