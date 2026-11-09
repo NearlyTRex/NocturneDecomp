@@ -54,13 +54,13 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
       iVar5 = iVar5 + 1;
     } while (iVar5 < this_ptr->actor_count);
   }
-  if (g_CGame_PTR_005b9354->profile_mode != 0) {
+  if (g_CGamePtr->profile_mode != 0) {
     local_44 = (float)wincore_winrun_cpp_getTime_FUN_00558a30();
     local_20 = 0;
   }
   _DAT_01fba2d8 = 0;
   _DAT_01fba2ec = 0;
-  damage_info = (CPathMap *)g_CGame_PTR_005b9354->delta_time_float;
+  damage_info = (CPathMap *)g_CGamePtr->delta_time_float;
   if (0.0 < (float)damage_info) {
     local_50 = damage_info;
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(this_ptr);
@@ -92,16 +92,16 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
                 local_58 = (pCVar3->orient).vec.y;
                 local_54 = (pCVar3->orient).vec.z;
                 DAT_00763e44 = pCVar3;
-                if (g_CGame_PTR_005b9354->profile_mode == 2) {
+                if (g_CGamePtr->profile_mode == 2) {
                   local_28 = wincore_winrun_cpp_getTime_FUN_00558a30();
                 }
                 (*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)damage_info);
-                if (g_CGame_PTR_005b9354->profile_mode == 2) {
+                if (g_CGamePtr->profile_mode == 2) {
                   iVar10 = wincore_winrun_cpp_getTime_FUN_00558a30();
                   *(int *)(iVar8 + 0x1ffb078) = iVar10 - local_20;
                   *(CDemonActor **)(iVar8 + 0x1ffcfb8) = DAT_00763e44;
                 }
-                if (g_CGame_PTR_005b9354->profile_mode != 0) {
+                if (g_CGamePtr->profile_mode != 0) {
                   iStack_18 = iStack_18 + 1;
                   iVar8 = iVar8 + 4;
                 }
@@ -203,8 +203,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
         pCVar7 = (CDemonSet *)pCVar7->cameras;
       } while (iVar5 < this_ptr->actor_count);
     }
-    if (g_CGame_PTR_005b9354->profile_mode != 0) {
-      if (g_CGame_PTR_005b9354->profile_mode == 2) {
+    if (g_CGamePtr->profile_mode != 0) {
+      if (g_CGamePtr->profile_mode == 2) {
         local_3c = (float)(local_20 + -1);
         local_30 = 0;
         local_2c = 0;
@@ -242,7 +242,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
             iVar10 = iVar10 + 4;
             iVar9 = iVar8 + 1;
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"%d. %s : %3.2f ms\n",iVar8,*puVar2,
+                      (g_CConsolePtr,"%d. %s : %3.2f ms\n",iVar8,*puVar2,
                        ((double)*piVar1 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                        (double)(float)damage_info);
             iVar8 = iVar9;
@@ -252,7 +252,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
       iStack_18 = wincore_winrun_cpp_getTime_FUN_00558a30();
       iStack_18 = iStack_18 - (int)local_44;
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"Process time (%d actors) : %3.2f ms\n",local_20,
+                (g_CConsolePtr,"Process time (%d actors) : %3.2f ms\n",local_20,
                  ((double)iStack_18 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                  (double)(float)damage_info);
     }

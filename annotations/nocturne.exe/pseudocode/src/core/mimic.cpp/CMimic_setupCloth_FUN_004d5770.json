@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 60,
-        "line": 53,
-        "message": "format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
@@ -89,13 +77,13 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -189,23 +177,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMimic_setupCloth_FUN_004d5770.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 31,
-          "line": 35,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -254,14 +225,6 @@
       "severity": "moderate",
       "text": "// 004d5849: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 35,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(pSVar5->position).x = *(float *)pcVar4;",
-      "type": "static_invalid_pointer_cast"
     }
   ]
 }

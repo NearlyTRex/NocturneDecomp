@@ -33,7 +33,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00446fe0(CDemonCam
     output_buffer = (uint *)&DAT_012ceb78;
     source2_buffer = &g_VOID_PTR_012e1778 + iVar1 * 0x4b00;
     do {
-      core_dstrender_cpp_alphaBlendPixelsMMX_FUN_00465f50
+      core_dstrendr_cpp_alphaBlendPixelsMMX_FUN_00465f50
                 (output_buffer,(uint *)source1_buffer,(uint *)source2_buffer,
                  blend_alpha | blend_alpha << 0x10,
                  0xffff - blend_alpha | (0xffff - blend_alpha) * 0x10000,this_ptr->display_width);

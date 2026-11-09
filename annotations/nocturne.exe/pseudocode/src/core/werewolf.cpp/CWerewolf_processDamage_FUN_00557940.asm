@@ -17,8 +17,8 @@
 ;   double DOUBLE_00597ee1 = 5
 ;   double DOUBLE_00597ee9 = -5
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 g_CDemonSet_01e57284.last_switch_area_invalid
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -92,8 +92,8 @@ section .text
     TEST EBX,EBX                        ; 005579dd
     JNZ 0x00557a0b                      ; 005579df
         ;   XREF to: 00557a0b (CONDITIONAL_JUMP)  ; LAB_00557a0b
-    MOV EAX,[0x005be368]                ; 005579e1 | g_CDemonSet_PTR_005be368
-    CMP dword ptr [EAX + 0x15aa60],0x0  ; 005579e6 | g_CDemonSet_01e57284.last_switch_area_invalid
+    MOV EAX,[0x005be368]                ; 005579e1 | g_CDemonSetPtr
+    CMP dword ptr [EAX + 0x15aa60],0x0  ; 005579e6 | g_CDemonSetInstance.last_switch_area_invalid
     JZ 0x00557a0b                       ; 005579ed
         ;   XREF to: 00557a0b (CONDITIONAL_JUMP)  ; LAB_00557a0b
     FLD float ptr [ESI + 0x20]          ; 005579ef

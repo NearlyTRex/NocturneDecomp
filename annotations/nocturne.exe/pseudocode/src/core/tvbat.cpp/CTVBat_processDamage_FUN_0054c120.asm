@@ -8,7 +8,7 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
-;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CGore* g_CGorePtr = 01c78c7c
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
@@ -45,7 +45,7 @@ section .text
     PUSH 0x0                            ; 0054c155
     LEA EAX,[EBX + 0x20]                ; 0054c157
     PUSH EAX                            ; 0054c15a
-    MOV EDX,dword ptr [0x005b96c4]      ; 0054c15b | g_CGore_PTR_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 0054c15b | g_CGorePtr
     PUSH EDX                            ; 0054c161
     MOV dword ptr [EBX + 0x2434],0x0    ; 0054c162
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 0054c16c

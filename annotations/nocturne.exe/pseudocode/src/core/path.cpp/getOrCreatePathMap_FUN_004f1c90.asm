@@ -19,11 +19,11 @@
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPathMapTypeInfo_005a1200
-;   WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005be0a8
+;   WatcomStaticDestructorNode g_PathMapCacheDestructorNode
 ;   undefined4 DAT_005be0b8
 ;   undefined4 DAT_005be0bc
 ;   undefined4 DAT_01e312f0
-;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
@@ -55,7 +55,7 @@ section .text
     PUSH EBP                            ; 004f1cc0
         ;   Label: LAB_004f1cc0
     LEA ESI,[ESP + 0x4]                 ; 004f1cc1
-    PUSH 0x1fba938                      ; 004f1cc5 | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 004f1cc5 | g_CDemonRaytraceInstance
     LEA EDI,[ESP + 0x20]                ; 004f1cca
     XOR EBX,EBX                         ; 004f1cce
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f1cd0
@@ -134,7 +134,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004f1da0
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004f1da5
-    PUSH 0x5be0a8                       ; 004f1da8 | g_WatcomStaticDestructorNode_005be0a8
+    PUSH 0x5be0a8                       ; 004f1da8 | g_PathMapCacheDestructorNode
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 004f1dad
         ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004f1db2

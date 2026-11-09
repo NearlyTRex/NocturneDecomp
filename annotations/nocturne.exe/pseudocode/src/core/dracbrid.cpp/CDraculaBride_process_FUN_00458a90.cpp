@@ -205,7 +205,7 @@ LAB_00458f79:
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                 (&(this_ptr->base).base.model.base,0,1);
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -231,17 +231,16 @@ LAB_00458f79:
                           (&((this_ptr->base).victim)->base,"CHero"), iVar8 != 0)) {
       iVar10 = 0;
       iVar8 = 0;
-      while ((iVar10 < g_CDemonSet_PTR_005be368->enemy_count &&
+      while ((iVar10 < g_CDemonSetPtr->enemy_count &&
              ((pCVar15 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                   (*(CDemonActor **)
-                                     ((int)g_CDemonSet_PTR_005be368->enemies + iVar8),
+                                   (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar8),
                                     g_CDraculaBrideActorType_01b4d224.name_hash),
               pCVar15 == (CDemonActor *)0x0 || (*(int *)(pCVar15[0x90].create_event + 0x38) == 0))))
             ) {
         iVar10 = iVar10 + 1;
         iVar8 = iVar8 + 4;
       }
-      if (iVar10 == g_CDemonSet_PTR_005be368->enemy_count) {
+      if (iVar10 == g_CDemonSetPtr->enemy_count) {
         _sprintf(local_430,"bride-%d?.wav",this_ptr->freaky_voice_number);
         core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(this_ptr,local_430,1.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
@@ -369,7 +368,7 @@ LAB_00458f79:
                            fVar19,fVar21);
         if (iVar8 < 0) {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,8,1);
         }
         else if (iVar8 < 1) {
@@ -467,7 +466,7 @@ LAB_00459978:
                          ,pCVar16,pCVar13,fVar19,fVar21);
       if (iVar8 < 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s gave up chase - I'm confused\n",this_ptr);
+                  (g_CConsolePtr,"%s gave up chase - I'm confused\n",this_ptr);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
       }
       else if ((0 < iVar8) && ((this_ptr->base).attack_cooldown <= 0.0)) {
@@ -506,7 +505,7 @@ LAB_00459978:
                         (&(this_ptr->base).base.model,&local_1b4,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&local_1cc,pCVar13);
-    core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_1cc,0);
+    core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_1cc,0);
     goto switchD_00459f4d_caseD_10;
   case 0x12:
     EVar14 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
@@ -611,9 +610,9 @@ LAB_00459978:
     case 2:
       local_30 = 1;
       local_1c = 0;
-      for (local_18 = 0; fVar19 = 1.0f,
-          local_18 < g_CDemonSet_PTR_005be368->character_count; local_18 = local_18 + 1) {
-        pCVar11 = *(CDraculaBride **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);
+      for (local_18 = 0; fVar19 = 1.0f, local_18 < g_CDemonSetPtr->character_count;
+          local_18 = local_18 + 1) {
+        pCVar11 = *(CDraculaBride **)((int)g_CDemonSetPtr->characters + local_1c);
         if (((pCVar11 != (CDraculaBride *)0x0) && (pCVar11 != this_ptr)) &&
            (EVar14 = (*(((pCVar11->base).base.base.vtable._uc)->_uc).getDeathState)
                                ((CCharacter *)pCVar11), (int)EVar14 < 1)) {
@@ -709,7 +708,7 @@ switchD_00458fa0_default:
        (pCVar11 = (CDraculaBride *)(*(((pCVar7->base).vtable._uc)->_uc).getGrabber)(pCVar7),
        pCVar11 == this_ptr)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;

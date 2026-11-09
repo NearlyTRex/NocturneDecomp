@@ -149,7 +149,7 @@ LAB_004bbb59:
                                     (float)0.25));
         local_3c = (int)ROUND(dVar15);
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                  (g_CGore_PTR_005b96c4,&local_8c,(CVector3f *)0x0,local_3c,iVar7);
+                  (g_CGorePtr,&local_8c,(CVector3f *)0x0,local_3c,iVar7);
         pCVar3 = (this_ptr->base).victim;
         EVar11 = (*(((pCVar3->base).vtable._uc)->_uc).getDeathState)(pCVar3);
         if ((int)EVar11 < 1) {
@@ -388,10 +388,9 @@ LAB_004bbb59:
       if (iVar7 != 0) {
         iVar13 = 0;
         iVar7 = 0;
-        while (iVar7 < g_CDemonSet_PTR_005be368->enemy_count) {
+        while (iVar7 < g_CDemonSetPtr->enemy_count) {
           pCVar14 = (CImp *)core_actor_cpp_castToClassHash_FUN_0040d890
-                                      (*(CDemonActor **)
-                                        ((int)g_CDemonSet_PTR_005be368->enemies + iVar13),
+                                      (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar13),
                                        g_CImpActorType_01cae33c.name_hash);
           if (((pCVar14 == (CImp *)0x0) || (pCVar14 == this_ptr)) ||
              ((this_ptr->base).victim != (pCVar14->base).victim)) {
@@ -414,7 +413,7 @@ LAB_004bbb59:
                             (pCVar1,&local_f8,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_c8,pCVar10);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_c8,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_c8,0);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -460,7 +459,7 @@ LAB_004bc023:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(this_ptr->base).base.model.base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

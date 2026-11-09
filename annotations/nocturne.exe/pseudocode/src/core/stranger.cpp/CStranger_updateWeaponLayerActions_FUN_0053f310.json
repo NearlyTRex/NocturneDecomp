@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 217,
-        "message": "use of undeclared identifier 'stack0xffffffa4'; did you mean 'in_stack_ffffffa4'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 869,
@@ -201,7 +189,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -441,30 +429,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CStranger_updateWeaponLayerActions_FUN_0053f310.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 12,
-          "line": 61,
-          "message": "Uninitialized variable: local_14",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 47,
-          "line": 61,
-          "message": "Uninitialized variable: local_38",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unreachable code block removed",
@@ -617,22 +581,6 @@
       "severity": "moderate",
       "text": "if ((((int)local_24 < 0x3f28f5c3) && (0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t))",
       "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Uninitialized variable: local_14",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((local_14 == (CCharacter *)0x0) && (local_38 < 0)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_38",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((local_14 == (CCharacter *)0x0) && (local_38 < 0)) {",
-      "type": "static_uninitvar"
     }
   ]
 }

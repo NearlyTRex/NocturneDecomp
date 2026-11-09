@@ -45,7 +45,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
   _DAT_01c20144 = 0;
   _DAT_01c20140 = 0;
   _DAT_01c49d50 = 0;
-  pCVar1 = g_CSpark_ARRAY_01c49d54;
+  pCVar1 = g_SparkPool;
   do {
     pCVar2 = pCVar1 + 1;
     (pCVar1->base).lifetime_remaining = 0.0;
@@ -59,7 +59,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
   _DAT_01c23d48 = 0;
   _DAT_01c4f088 = 0;
   _DAT_01c23d4c = 0;
-  pCVar4 = g_CGlassParticle_ARRAY_01c4f08c;
+  pCVar4 = g_GlassParticlePool;
   do {
     pCVar5 = pCVar4 + 1;
     (pCVar4->base).lifetime_remaining = 0.0;
@@ -72,14 +72,14 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
     pCVar6 = pCVar7;
   } while (pCVar7 != (CBulletTrail *)&DAT_01c58df8);
   _DAT_01c58df8 = 0;
-  pCVar8 = g_CFireball_ARRAY_01c58dfc;
+  pCVar8 = g_FireballPool;
   do {
     pCVar9 = pCVar8 + 1;
     (pCVar8->base).lifetime_remaining = 0.0;
     pCVar8 = pCVar9;
   } while (pCVar9 != (CFireball *)&DAT_01c5b4fc);
   _DAT_01c5b4fc = 0;
-  pCVar10 = g_CRock_ARRAY_01c5b500;
+  pCVar10 = g_RockPool;
   do {
     pCVar11 = pCVar10 + 1;
     (pCVar10->base).lifetime_remaining = 0.0;
@@ -91,13 +91,13 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
     core_fire_cpp_CExplosion_ctor_FUN_00486d90(this_ptr_01);
     this_ptr_01 = this_ptr_01 + 1;
   } while (this_ptr_01 != (CExplosion *)&DAT_01c5d820);
-  this_ptr_02 = g_CToss_ARRAY_01c5d824;
+  this_ptr_02 = g_TossPool;
   _DAT_01c5d820 = 0;
   do {
     core_fire_cpp_CToss_reset_FUN_004873a0(this_ptr_02);
     this_ptr_02 = this_ptr_02 + 1;
   } while (this_ptr_02 != (CToss *)&DAT_01c625f4);
-  this_ptr_03 = g_CCrater_ARRAY_01c625f8;
+  this_ptr_03 = g_CraterPool;
   _DAT_01c625f4 = 0;
   do {
     core_fire_cpp_CCrater_reset_FUN_004876b0(this_ptr_03);
@@ -122,25 +122,25 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_0048a150(CFireEffect *this_ptr)
     this_ptr_06 = this_ptr_06 + 1;
   } while (this_ptr_06 != (CTrail *)&DAT_01c684dc);
   _DAT_01c684dc = 0;
-  pCVar12 = g_CShell_ARRAY_01c684e0;
+  pCVar12 = g_ShellPool;
   do {
     pCVar13 = pCVar12 + 1;
     (pCVar12->base).lifetime_remaining = 0.0;
     pCVar12 = pCVar13;
   } while (pCVar13 != (CShell *)&DAT_01c69610);
   _DAT_01c69610 = 0;
-  pCVar14 = g_CPopcorn_ARRAY_01c69614;
+  pCVar14 = g_PopcornPool;
   do {
     pCVar15 = pCVar14 + 1;
     (pCVar14->base).lifetime_remaining = 0.0;
     pCVar14 = pCVar15;
   } while (pCVar15 != (CPopcorn *)&DAT_01c6ce14);
   _DAT_01c6ce14 = 0;
-  pCVar16 = g_CRainDrop_ARRAY_01c6ce18;
+  pCVar16 = g_RainDropPool;
   do {
     pCVar17 = pCVar16 + 1;
     (pCVar16->base).lifetime_remaining = 0.0;
     pCVar16 = pCVar17;
-  } while (pCVar17 != g_CRainDrop_ARRAY_01c6ce18 + sizeof(g_CRainDrop_ARRAY_01c6ce18) / sizeof(g_CRainDrop_ARRAY_01c6ce18[0]));
+  } while (pCVar17 != g_RainDropPool + sizeof(g_RainDropPool) / sizeof(g_RainDropPool[0]));
   return;
 }

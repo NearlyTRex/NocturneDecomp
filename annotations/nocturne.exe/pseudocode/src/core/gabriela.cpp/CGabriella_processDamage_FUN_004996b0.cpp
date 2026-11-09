@@ -18,10 +18,10 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
   if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
+  if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
+  if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
   (this_ptr->base).invincibility_timer = 0.5f;
@@ -33,7 +33,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
       if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,8,1);
       }
-      if (g_CGame_PTR_005b9354->hero_number != HERO_TYPE_STRANGER) {
+      if (g_CGamePtr->hero_number != HERO_TYPE_STRANGER) {
         pCVar1 = (this_ptr->base).base.base.vtable._ub;
         fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.25,0.4);
         (*pCVar1->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-hit[1,6].wav",fVar3);
@@ -51,13 +51,13 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
         fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&(this_ptr->base).base.model.base,(fVar3 <= 50.0f) + 9,force_immediate);
-        if (g_CGame_PTR_005b9354->hero_number != HERO_TYPE_STRANGER) {
+        if (g_CGamePtr->hero_number != HERO_TYPE_STRANGER) {
           pCVar1 = (this_ptr->base).base.base.vtable._ub;
           fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.25,0.4);
           (*pCVar1->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-die[1,6].wav",fVar3);
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                  (g_CGore_PTR_005b96c4,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
       }
     }
   }
@@ -65,7 +65,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004996b0(CGabriella 
     core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
     return;
   }
-  core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(g_CGame_PTR_005b9354);
+  core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(g_CGamePtr);
   core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
   return;
 }

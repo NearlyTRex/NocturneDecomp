@@ -18,12 +18,12 @@
 ;   TerminatedCString s_CDemonMission_run_no_gLo_00589e18
 ;   TerminatedCString s_hq_geo_00589e3b
 ;   TerminatedCString s_Press_any_key_to_continu_00589e42
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CBitFont* g_CBitFont_PTR_014b9900
-;   CGame g_CGame_01c775ec
-;   undefined4 g_CGame_01c775ec.act_completion_state
+;   CGame g_CGameInstance
+;   undefined4 g_CGameInstance.act_completion_state
 ;   undefined4 DAT_01cae0d4
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
@@ -90,8 +90,8 @@ section .text
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180 ; 004d94ac
         ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d94b1
-    MOV ESI,dword ptr [0x005b9354]      ; 004d94b4 | g_CGame_PTR_005b9354
-    PUSH ESI                            ; 004d94ba | g_CGame_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004d94b4 | g_CGamePtr
+    PUSH ESI                            ; 004d94ba | g_CGameInstance
     CALL core_game.cpp_CGame_runGameSession_FUN_0049da10 ; 004d94bb
         ;   XREF to: 0049da10 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_runGameSession_FUN_0049da10(CGame * this_ptr)
     MOV ESI,dword ptr [0x01cae0e8]      ; 004d94c0 | g_LocalHeroIndex
@@ -124,9 +124,9 @@ section .text
     CALL core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90 ; 004d9506
         ;   XREF to: 004d8f90 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90(CDemonMission * this_ptr, CDemonActor * actor, int should_delete)
     ADD ESP,0xc                         ; 004d950b
-    MOV EAX,[0x005b9354]                ; 004d950e | g_CGame_PTR_005b9354 | g_CGame_01c775ec
+    MOV EAX,[0x005b9354]                ; 004d950e | g_CGamePtr | g_CGameInstance
         ;   Label: LAB_004d950e
-    CMP dword ptr [EAX + 0x258],0x0     ; 004d9513 | g_CGame_01c775ec.act_completion_state
+    CMP dword ptr [EAX + 0x258],0x0     ; 004d9513 | g_CGameInstance.act_completion_state
     JNZ 0x004d9636                      ; 004d951a
         ;   XREF to: 004d9636 (CONDITIONAL_JUMP)  ; LAB_004d9636
     POP EBP                             ; 004d9520
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0x4                         ; 004d9545
     JMP 0x004d9459                      ; 004d9548
         ;   XREF to: 004d9459 (UNCONDITIONAL_JUMP)  ; LAB_004d9459
-    MOV EAX,[0x005be368]                ; 004d954d | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004d954d | g_CDemonSetPtr
         ;   Label: LAB_004d954d
     PUSH 0x589e3b                       ; 004d9552 | = "hq.geo"
     ADD EAX,0x14cd08                    ; 004d9557
@@ -222,9 +222,9 @@ section .text
         ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_00558b00()
     JMP 0x004d944d                      ; 004d9612
         ;   XREF to: 004d944d (UNCONDITIONAL_JUMP)  ; LAB_004d944d
-    MOV EAX,[0x005b9354]                ; 004d9617 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d9617 | g_CGamePtr
         ;   Label: LAB_004d9617
-    PUSH EAX                            ; 004d961c | g_CGame_01c775ec
+    PUSH EAX                            ; 004d961c | g_CGameInstance
     CALL core_game.cpp_CGame_displayActStats_FUN_004a6680 ; 004d961d
         ;   XREF to: 004a6680 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayActStats_FUN_004a6680(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d9622
@@ -235,7 +235,7 @@ section .text
     PUSH EDX                            ; 004d9630
     JMP 0x004d957c                      ; 004d9631
         ;   XREF to: 004d957c (UNCONDITIONAL_JUMP)  ; LAB_004d957c
-    PUSH EAX                            ; 004d9636 | g_CGame_01c775ec
+    PUSH EAX                            ; 004d9636 | g_CGameInstance
         ;   Label: LAB_004d9636
     CALL core_game.cpp_CGame_finishAct_FUN_004a6a10 ; 004d9637
         ;   XREF to: 004a6a10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_finishAct_FUN_004a6a10(CGame * this_ptr)

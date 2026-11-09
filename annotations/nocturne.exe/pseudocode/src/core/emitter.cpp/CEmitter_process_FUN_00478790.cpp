@@ -51,8 +51,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *this_ptr,f
   iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,this_ptr->event_on), pCVar3 = g_CDemonSet_PTR_005be368,
-     iVar4 != 0)) {
+                        (0x01C03A10,this_ptr->event_on), pCVar3 = g_CDemonSetPtr, iVar4 != 0)) {
     iVar8 = 1;
     this_ptr->emitter_state = 1;
     this_ptr->state_timer = this_ptr->max_emit_time;
@@ -69,7 +68,7 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *this_ptr,f
                       ((double)(this_ptr->base).location.position.x,
                        (double)(this_ptr->base).location.position.y,
                        (double)(this_ptr->base).location.position.z,50.0);
-    if (((iVar4 == 0) || (iVar8 = 1, g_CGame_PTR_005b9354->foul_language_flag != 0)) ||
+    if (((iVar4 == 0) || (iVar8 = 1, g_CGamePtr->foul_language_flag != 0)) ||
        (iVar4 = _strnicmp(this_ptr->wav_name,"mob",3), iVar4 != 0
        )) {
       if (iVar8 != 0) goto LAB_0047883d;
@@ -190,7 +189,7 @@ LAB_0047883d:
     fVar13 = (this_ptr->emitter_size).y;
 LAB_00478902:
     core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(&this_ptr->globe,fVar13);
-    pCVar3 = g_CDemonSet_PTR_005be368;
+    pCVar3 = g_CDemonSetPtr;
     (this_ptr->globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(pCVar3,&this_ptr->globe);
     break;

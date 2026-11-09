@@ -29,8 +29,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,in
             (g_CDemonRenderer_PTR_005ae704,&local_30);
   local_24 = 0x40800;
   local_1c = 0;
-  iVar3 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0
-                    ((CGround *)INT_005ba8ec,0,0x40800);
+  iVar3 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004b21b0(g_CGroundPtr,0,0x40800);
   iVar2 = local_1c;
   iVar1 = local_24;
   dVar5 = (double)local_30.y * 256;
@@ -46,7 +45,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_00549310(CTerrain *this_ptr,in
   local_30.x = (float)(iVar1 + (int)ROUND(dVar4));
   engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0
             (g_CDemonRenderer_PTR_005ae704,(CVector3i *)&local_30);
-  core_ground_cpp_CGround_render_FUN_004b2110((CGround *)INT_005ba8ec);
+  core_ground_cpp_CGround_render_FUN_004b2110(g_CGroundPtr);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffc4);
   return;

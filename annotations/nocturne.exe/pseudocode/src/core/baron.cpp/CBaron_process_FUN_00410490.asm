@@ -37,15 +37,15 @@
 ;   double DOUBLE_00578660 = 0.333333333333333
 ;   double DOUBLE_00578668 = 32
 ;   undefined4 DAT_005acf40
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
 ;   undefined4 DAT_005b7650
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   undefined4 DAT_007642e8
 ;   undefined4 DAT_0076431c
 ;   undefined4 DAT_00764320
 ;   undefined4 DAT_0076432c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole g_CConsoleInstance
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -146,9 +146,9 @@ section .text
     FLD float ptr [ESP + 0xac]          ; 00410551
         ;   Label: LAB_00410551
     FMUL double ptr [0x00578658]        ; 00410558 | DOUBLE_00578658
-    MOV EAX,[0x005b9354]                ; 0041055e | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 0041055e | g_CGamePtr
     FSTP float ptr [EBP + 0x2430]       ; 00410563
-    CMP dword ptr [EAX + 0x228],0x0     ; 00410569 | g_CGame_01c775ec.letterbox_mode
+    CMP dword ptr [EAX + 0x228],0x0     ; 00410569 | g_CGameInstance.letterbox_mode
     JZ 0x00410584                       ; 00410570
         ;   XREF to: 00410584 (CONDITIONAL_JUMP)  ; LAB_00410584
     FLD float ptr [EBP + 0x2430]        ; 00410572
@@ -364,8 +364,8 @@ section .text
     ADD ESP,0xc                         ; 0041081e
     PUSH EBP                            ; 00410821
     PUSH 0x57862e                       ; 00410822 | = "%s confused while walking to scriptDe..."
-    MOV EAX,[0x005ad350]                ; 00410827 | g_CConsole_PTR_005ad350
-    PUSH EAX                            ; 0041082c | g_CConsole_0077ad0c
+    MOV EAX,[0x005ad350]                ; 00410827 | g_CConsolePtr
+    PUSH EAX                            ; 0041082c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0041082d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00410621                      ; 00410832

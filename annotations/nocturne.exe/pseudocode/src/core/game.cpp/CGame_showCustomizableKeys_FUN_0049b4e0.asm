@@ -520,9 +520,9 @@ section .text
     MOV EAX,EBX                         ; 0049bab3
     IDIV ECX                            ; 0049bab5
     ADD dword ptr [0x01c78adc],EAX      ; 0049bab7 | DAT_01c78adc
-    MOV EAX,[0x005b9354]                ; 0049babd | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 0049babd | g_CGamePtr
         ;   Label: LAB_0049babd
-    CMP dword ptr [EAX + 0x98],0x0      ; 0049bac2 | g_CGame_01c775ec.always_run
+    CMP dword ptr [EAX + 0x98],0x0      ; 0049bac2 | g_CGameInstance.always_run
     JZ 0x0049cb4f                       ; 0049bac9
         ;   XREF to: 0049cb4f (CONDITIONAL_JUMP)  ; LAB_0049cb4f
     PUSH 0x582496                       ; 0049bacf | = "Walk"

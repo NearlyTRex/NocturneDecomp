@@ -24,8 +24,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *this_ptr)
     if (this_ptr->sample != (CSfxSample *)0x0) {
       pCVar2 = this_ptr->sample;
     }
-    engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"Killing sfx %s\n",pCVar2);
+    engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"Killing sfx %s\n",pCVar2);
   }
   if (this_ptr->hardware_buffer_handle != 0) {
     if (_DAT_02dc8318 != (int *)0x0) {

@@ -114,7 +114,7 @@ section .text
         ;   XREF to: 0048ee80 (UNCONDITIONAL_CALL)  ; void core_flattn.cpp_doNothing_FUN_0048ee80()
     CALL core_inivar.cpp_readIniData_FUN_004bdb80 ; 004c86bb
         ;   XREF to: 004bdb80 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_readIniData_FUN_004bdb80()
-    MOV EDI,dword ptr [0x005be1cc]      ; 004c86c0 | g_CPod_PTR_005be1cc
+    MOV EDI,dword ptr [0x005be1cc]      ; 004c86c0 | g_CDemonPodPtr
     MOV ESI,0x2                         ; 004c86c6
     PUSH EDI                            ; 004c86cb
     MOV dword ptr [0x02dc9d6c],ESI      ; 004c86cc | g_AGPTextureMode
@@ -468,7 +468,7 @@ section .text
         ;   Label: LAB_004c89fa
     LEA EAX,[ESP + 0x200]               ; 004c89fb
     PUSH EAX                            ; 004c8a02
-    MOV EAX,[0x005b6d50]                ; 004c8a03 | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 004c8a03 | g_CEditorToolsPtr
     PUSH EAX                            ; 004c8a08
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 004c8a09
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
@@ -661,7 +661,7 @@ section .text
         ;   Label: LAB_004c8b88
     MOV EAX,ESP                         ; 004c8b89
     PUSH EAX                            ; 004c8b8b
-    MOV ECX,dword ptr [0x005b6d50]      ; 004c8b8c | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004c8b8c | g_CEditorToolsPtr
     PUSH ECX                            ; 004c8b92
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 004c8b93
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
@@ -762,7 +762,7 @@ section .text
     FADD double ptr [0x00587e68]        ; 004c8cad | DOUBLE_00587e68
     SUB ESP,0x4                         ; 004c8cb3
     FSTP float ptr [ESP]                ; 004c8cb6
-    MOV EDI,dword ptr [ESI + 0x5ad51c]  ; 004c8cb9 | DAT_005ad51c | DAT_005ad520
+    MOV EDI,dword ptr [ESI + 0x5ad51c]  ; 004c8cb9 | g_GlobalFilters | DAT_005ad520
     PUSH EDI                            ; 004c8cbf
     ADD ESI,0x4                         ; 004c8cc0
     INC EBX                             ; 004c8cc3
@@ -777,17 +777,17 @@ section .text
     XOR EBX,EBX                         ; 004c8cd8
     MOV dword ptr [ESP + 0x714],ESI     ; 004c8cda
         ;   Label: LAB_004c8cda
-    MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8ce1 | DAT_005ad53c | DAT_005ad540
+    MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8ce1 | g_PlayerFilters | DAT_005ad540
     FILD dword ptr [ESP + 0x714]        ; 004c8ce7
     MOV dword ptr [EAX],EDI             ; 004c8cee | g_CDemonFilter_ARRAY_014b8a58 | g_CDemonFilter_ARRAY_014b8a58[1].size
     FMUL double ptr [0x00587e70]        ; 004c8cf0 | DOUBLE_00587e70
-    MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8cf6 | DAT_005ad53c | DAT_005ad540
+    MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8cf6 | g_PlayerFilters | DAT_005ad540
     PUSH 0x0                            ; 004c8cfc
     MOV dword ptr [EAX + 0x4],EDI       ; 004c8cfe | g_CDemonFilter_ARRAY_014b8a58[0].count | g_CDemonFilter_ARRAY_014b8a58[1].count
     FADD double ptr [0x00587e70]        ; 004c8d01 | DOUBLE_00587e70
     SUB ESP,0x4                         ; 004c8d07
     FSTP float ptr [ESP]                ; 004c8d0a
-    MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8d0d | DAT_005ad53c | DAT_005ad540
+    MOV EAX,dword ptr [EBX + 0x5ad53c]  ; 004c8d0d | g_PlayerFilters | DAT_005ad540
     PUSH EAX                            ; 004c8d13 | g_CDemonFilter_ARRAY_014b8a58 | g_CDemonFilter_ARRAY_014b8a58[1].size
     ADD EBX,0x4                         ; 004c8d14
     INC ESI                             ; 004c8d17
@@ -797,7 +797,7 @@ section .text
     CMP ESI,0x4                         ; 004c8d20
     JL 0x004c8cda                       ; 004c8d23
         ;   XREF to: 004c8cda (CONDITIONAL_JUMP)  ; LAB_004c8cda
-    MOV EDX,dword ptr [0x005be060]      ; 004c8d25 | g_CMouse_PTR_005be060
+    MOV EDX,dword ptr [0x005be060]      ; 004c8d25 | g_CMousePtr
     PUSH EDX                            ; 004c8d2b
     CALL engine_ncursfx.cpp_CMouse_load_FUN_004ee5a0 ; 004c8d2c
         ;   XREF to: 004ee5a0 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_load_FUN_004ee5a0(CMouse * this_ptr)
@@ -807,8 +807,8 @@ section .text
     CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 004c8d3b
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 004c8d40
-    MOV EBX,dword ptr [0x005bdee0]      ; 004c8d43 | g_CNetGame_PTR_005bdee0
-    PUSH EBX                            ; 004c8d49 | g_CNetGame_01cea280
+    MOV EBX,dword ptr [0x005bdee0]      ; 004c8d43 | g_CNetGamePtr
+    PUSH EBX                            ; 004c8d49 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_init_FUN_004e9910 ; 004c8d4a
         ;   XREF to: 004e9910 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_init_FUN_004e9910(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004c8d4f
@@ -829,14 +829,14 @@ section .text
     MOV dword ptr [0x01c038f0],EBX      ; 004c8d76 | DAT_01c038f0
     JMP 0x004c863c                      ; 004c8d7c
         ;   XREF to: 004c863c (UNCONDITIONAL_JUMP)  ; LAB_004c863c
-    MOV EAX,[0x005b9354]                ; 004c8d81 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004c8d81 | g_CGamePtr
         ;   Label: LAB_004c8d81
     XOR ESI,ESI                         ; 004c8d86
-    MOV dword ptr [EAX],0x280           ; 004c8d88 | g_CGame_01c775ec
+    MOV dword ptr [EAX],0x280           ; 004c8d88 | g_CGameInstance
     MOV dword ptr [0x01cae37c],ESI      ; 004c8d8e | DAT_01cae37c
-    MOV dword ptr [EAX + 0x4],0x1e0     ; 004c8d94 | g_CGame_01c775ec.game_pixy
+    MOV dword ptr [EAX + 0x4],0x1e0     ; 004c8d94 | g_CGameInstance.game_pixy
     MOV dword ptr [0x02dc9d60],ESI      ; 004c8d9b | g_UseDirect3D
-    MOV dword ptr [EAX + 0x8],0x20      ; 004c8da1 | g_CGame_01c775ec.game_bpp
+    MOV dword ptr [EAX + 0x8],0x20      ; 004c8da1 | g_CGameInstance.game_bpp
     CALL core_menu.cpp_showCalibrationTest_FUN_004cffa0 ; 004c8da8
         ;   XREF to: 004cffa0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTest_FUN_004cffa0()
     JMP 0x004c8ba8                      ; 004c8dad

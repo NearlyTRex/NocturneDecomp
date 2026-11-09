@@ -48,7 +48,7 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0052dff0(CSound *this_ptr)
   float local_14;
   
   bVar11 = 0;
-  local_3c = g_CGame_PTR_005b9354->delta_time_float;
+  local_3c = g_CGamePtr->delta_time_float;
   local_20 = local_3c * (float)0.5;
   local_30 = local_3c;
   core_sound_cpp_updateListeners_FUN_0052c9d0();
@@ -73,11 +73,11 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0052dff0(CSound *this_ptr)
     sound_sndmain_cpp_setSfxVolume_FUN_005270d0(_DAT_02dc9454,_DAT_02dc946c);
   }
   local_138 = 0.0;
-  if (((0.0 < *(float *)(0x02DD1210 + 0xc)) &&
+  if (((0.0 < g_CWaterPtr->visible_area_sqft) &&
       (iVar4 = _strnicmp
-                         (g_CDemonSet_PTR_005be368->geometry_filename,"NDUN",4), iVar4 == 0
-      )) && (local_138 = SQRT(*(float *)(0x02DD1210 + 0xc)) * (float)0.027777777777777801 +
-                         (float)0.20000000000000001, (float)0.69999999999999996 < local_138)) {
+                         (g_CDemonSetPtr->geometry_filename,"NDUN",4), iVar4 == 0)) &&
+     (local_138 = SQRT(g_CWaterPtr->visible_area_sqft) * (float)0.027777777777777801 +
+                  (float)0.20000000000000001, (float)0.69999999999999996 < local_138)) {
     local_138 = 0.7;
   }
   local_34 = -local_20;
@@ -118,12 +118,12 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0052dff0(CSound *this_ptr)
     local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(0);
     sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(3,local_14 * _DAT_02dc9c98);
   }
-  if (g_CDemonSet_PTR_005be368->player_on_train != 0) {
-    local_18 = g_CGame_PTR_005b9354->delta_time_float;
-    if (g_CGame_PTR_005b9354->goggles_active == 0) {
-      if (_DAT_02dc9d54 != g_CDemonSet_PTR_005be368->selected_camera_index) {
-        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-        core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSet_PTR_005be368);
+  if (g_CDemonSetPtr->player_on_train != 0) {
+    local_18 = g_CGamePtr->delta_time_float;
+    if (g_CGamePtr->goggles_active == 0) {
+      if (_DAT_02dc9d54 != g_CDemonSetPtr->selected_camera_index) {
+        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+        core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSetPtr);
         local_54.x = _DAT_02dc945c;
         local_54.y = _DAT_02dc9460;
         local_54.z = _DAT_02dc9464;
@@ -134,15 +134,15 @@ void __cdecl core_sound_cpp_CSound_process_FUN_0052dff0(CSound *this_ptr)
         local_64 = 0;
         local_48.y = _DAT_02dc9460 + 20.0f;
         iVar4 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                          (g_CDemonSet_PTR_005be368,&local_54,&local_48);
+                          (g_CDemonSetPtr,&local_54,&local_48);
         if (iVar4 == 0) {
           PTR_s_int_005bed60 = "ext";
         }
         else {
           PTR_s_int_005bed60 = "int";
         }
-        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-        _DAT_02dc9d54 = g_CDemonSet_PTR_005be368->selected_camera_index;
+        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+        _DAT_02dc9d54 = g_CDemonSetPtr->selected_camera_index;
       }
     }
     else {

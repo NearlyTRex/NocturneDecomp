@@ -1,49 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 19,
-        "message": "use of undeclared identifier 'stack0xffffff8c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 26,
-        "message": "use of undeclared identifier 'stack0xffffff8c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 30,
-        "message": "use of undeclared identifier 'stack0xffffff8c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 34,
-        "message": "use of undeclared identifier 'DAT_01c78598'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 85,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 34,
     "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "undefined_data"
     ],
-    "total_lines": 123
+    "total_lines": 122
   },
   "cross_references": [],
   "function": {
@@ -99,7 +69,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -117,7 +87,7 @@
     },
     {
       "addr": "005bdee0",
-      "name": "g_CNetGame_PTR_005bdee0",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "01cea280"
     },
@@ -187,7 +157,7 @@
       "line": 19,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
-      "text": "(g_CEditorTools_PTR_005b6d50,\"Enter Server IP\",&stack0xffffff8c,100,1);",
+      "text": "(g_CEditorToolsPtr,\"Enter Server IP\",&stack0xffffff8c,100,1);",
       "type": "stack_ref"
     },
     {
@@ -200,7 +170,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 26,
       "match": "DAT_01c78598",
       "severity": "mild",
       "text": "DAT_01c78598 = 0;",

@@ -15,8 +15,8 @@
 ;   TerminatedCString s_rock_x_wav_0058111c
 ;   TerminatedCString s_rock_x_wav_00581127
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createFireball_FUN_0048b270
@@ -78,9 +78,9 @@ section .text
     PUSH 0x3f800000                     ; 00484bbd
     PUSH 0x0                            ; 00484bc2
     PUSH 0x0                            ; 00484bc4
-    MOV ECX,dword ptr [0x005be368]      ; 00484bc6 | g_CDemonSet_PTR_005be368
+    MOV ECX,dword ptr [0x005be368]      ; 00484bc6 | g_CDemonSetPtr
     PUSH 0x42c80000                     ; 00484bcc
-    PUSH ECX                            ; 00484bd1 | g_CDemonSet_01e57284
+    PUSH ECX                            ; 00484bd1 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660 ; 00484bd2
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 00484bd7

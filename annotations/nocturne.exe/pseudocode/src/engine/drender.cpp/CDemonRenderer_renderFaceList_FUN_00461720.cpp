@@ -81,7 +81,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_00461720(CDemo
         }
       }
       else {
-        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00463a79;
         g_RenderStateFlags.dword = 0;
         g_VertexPreprocessMode = 0;
         _Var1.dword = 0;

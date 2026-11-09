@@ -11,7 +11,7 @@ void __cdecl core_set_cpp_CDemonSet_clear_FUN_00506ec0(CDemonSet *this_ptr)
 {
   C3DSCamera *this_ptr_00;
   
-  core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(&g_CKeyFramedModel_01fbacc8);
+  core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(&g_CKeyFramedModelInstance);
   this_ptr_00 = this_ptr->cameras;
   do {
     core_setutil_cpp_C3DSCamera_free_FUN_00514430(this_ptr_00);

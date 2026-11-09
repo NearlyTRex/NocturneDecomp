@@ -15,7 +15,7 @@ void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(CFireEff
   int iVar1;
   
   iVar1 = _DAT_01c4f088 + 1;
-  this_ptr_00 = g_CGlassParticle_ARRAY_01c4f08c + _DAT_01c4f088;
+  this_ptr_00 = g_GlassParticlePool + _DAT_01c4f088;
   _DAT_01c4f088 = iVar1;
   if (0xff < iVar1) {
     _DAT_01c4f088 = 0;

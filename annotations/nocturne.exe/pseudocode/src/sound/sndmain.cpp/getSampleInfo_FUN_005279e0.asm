@@ -23,11 +23,11 @@
 ;   TerminatedCString s_Unknown_sample_file_form_00593760
 ;   TerminatedCString s_sound_sndmain_cpp_00593789
 ;   TerminatedCString s_getSampleInfo_can_t_dete_0059379e
-;   WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005bea44
+;   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CMP3Decoder_02db4d18.sample_rate
-;   undefined4 g_CMP3Decoder_02db4d18.num_channels
+;   undefined4 g_CMP3DecoderInstanceOther.sample_rate
+;   undefined4 g_CMP3DecoderInstanceOther.num_channels
 ;   undefined4 DAT_02dbd348
 ;
 ; Called Functions:
@@ -232,7 +232,7 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90 ; 00527b70
         ;   XREF to: 004e7d90 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 00527b75
-    PUSH 0x5bea44                       ; 00527b78 | g_WatcomStaticDestructorNode_005bea44
+    PUSH 0x5bea44                       ; 00527b78 | g_CMP3DecoderDestructorNode2
     CALL crt_unknown.c__atexit_FUN_00564bb0 ; 00527b7d
         ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c__atexit_FUN_00564bb0(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00527b82
@@ -242,10 +242,10 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0 ; 00527b8b
         ;   XREF to: 004e7df0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0(CMP3Decoder * this_ptr, char * filename)
     MOV dword ptr [EBP + 0x104],0x10    ; 00527b90
-    MOV EAX,[0x02db4e1c]                ; 00527b9a | g_CMP3Decoder_02db4d18.num_channels
+    MOV EAX,[0x02db4e1c]                ; 00527b9a | g_CMP3DecoderInstanceOther.num_channels
     MOV dword ptr [EBP + 0x108],EAX     ; 00527b9f
     ADD ESP,0x8                         ; 00527ba5
-    MOV EAX,[0x02db4e18]                ; 00527ba8 | g_CMP3Decoder_02db4d18.sample_rate
+    MOV EAX,[0x02db4e18]                ; 00527ba8 | g_CMP3DecoderInstanceOther.sample_rate
     MOV dword ptr [EBP + 0x110],0xffffffff ; 00527bad
     PUSH 0x2db4d18                      ; 00527bb7
     MOV dword ptr [EBP + 0x10c],EAX     ; 00527bbc

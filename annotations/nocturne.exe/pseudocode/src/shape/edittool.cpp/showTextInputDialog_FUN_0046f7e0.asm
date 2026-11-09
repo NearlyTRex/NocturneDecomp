@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   int g_WindowWidth = 0x140
 ;   int INT_005b7630 = 0x7f
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
@@ -104,7 +104,7 @@ section .text
     SAR EDX,0x1f                        ; 0046f871
     IDIV EBX                            ; 0046f874
     PUSH EAX                            ; 0046f876
-    MOV ECX,dword ptr [0x005b6d50]      ; 0046f877 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 0046f877 | g_CEditorToolsPtr
     PUSH ECX                            ; 0046f87d
     MOV ESI,0x8                         ; 0046f87e
     MOV EBX,0x7f                        ; 0046f883
@@ -113,7 +113,7 @@ section .text
     MOV EBP,dword ptr [0x005b7630]      ; 0046f88d | INT_005b7630
     ADD ESP,0x14                        ; 0046f893
     MOV dword ptr [0x005b7630],EBX      ; 0046f896 | INT_005b7630
-    MOV EAX,[0x005b6d50]                ; 0046f89c | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 0046f89c | g_CEditorToolsPtr
         ;   Label: LAB_0046f89c
     PUSH EAX                            ; 0046f8a1
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 ; 0046f8a2
@@ -183,7 +183,7 @@ section .text
     ADD ESP,0x4                         ; 0046f939
     JMP 0x0046f8ca                      ; 0046f93c
         ;   XREF to: 0046f8ca (UNCONDITIONAL_JUMP)  ; LAB_0046f8ca
-    MOV EDI,dword ptr [0x005b6d50]      ; 0046f93e | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 0046f93e | g_CEditorToolsPtr
         ;   Label: LAB_0046f93e
     PUSH EDI                            ; 0046f944
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 0046f945
@@ -218,7 +218,7 @@ section .text
         ;   XREF to: 0046f968 (CONDITIONAL_JUMP)  ; LAB_0046f968
     POP EDI                             ; 0046f980
         ;   Label: LAB_0046f980
-    MOV ESI,dword ptr [0x005b6d50]      ; 0046f981 | g_CEditorTools_PTR_005b6d50
+    MOV ESI,dword ptr [0x005b6d50]      ; 0046f981 | g_CEditorToolsPtr
     PUSH ESI                            ; 0046f987
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 0046f988
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)

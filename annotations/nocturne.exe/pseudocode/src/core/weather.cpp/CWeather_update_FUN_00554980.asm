@@ -31,10 +31,10 @@
 ;   float FLOAT_00597c69 = 100
 ;   undefined4 DAT_005b7650
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 g_CGame_01c775ec.delta_time_float
-;   undefined4 g_CDemonCamera_01fb8508.corona_blend_factor
+;   undefined4 g_CGameInstance.delta_time_float
+;   undefined4 g_CDemonCameraInstance.corona_blend_factor
 ;   undefined4 DAT_02de0770
 ;
 ; Called Functions:
@@ -61,8 +61,8 @@ section .text
     MOV EBP,ESP                         ; 00554984
     SUB ESP,0x28                        ; 00554986
     AND ESP,0xfffffff8                  ; 00554989
-    MOV EAX,[0x005b9354]                ; 0055498c | g_CGame_PTR_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 00554991 | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0055498c | g_CGamePtr
+    MOV EAX,dword ptr [EAX + 0x264]     ; 00554991 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x1c],EAX      ; 00554997
     MOV dword ptr [ESP + 0x8],EAX       ; 0055499b
     MOV EAX,dword ptr [EBP + 0x14]      ; 0055499f
@@ -253,7 +253,7 @@ section .text
     TEST EAX,EAX                        ; 00554b9e
     JNZ 0x00554bf9                      ; 00554ba0
         ;   XREF to: 00554bf9 (CONDITIONAL_JUMP)  ; LAB_00554bf9
-    MOV EAX,[0x01fb96f0]                ; 00554ba2 | g_CDemonCamera_01fb8508.corona_blend_factor
+    MOV EAX,[0x01fb96f0]                ; 00554ba2 | g_CDemonCameraInstance.corona_blend_factor
     MOV dword ptr [ESP + 0x24],EAX      ; 00554ba7
     FILD dword ptr [ESP + 0x24]         ; 00554bab
     FMUL double ptr [0x00597c49]        ; 00554baf | DOUBLE_00597c49
@@ -331,7 +331,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00554c71
         ;   Label: LAB_00554c71
     MOV dword ptr [EAX + 0x24],EBX      ; 00554c74
-    MOV EAX,[0x01fb96f0]                ; 00554c77 | g_CDemonCamera_01fb8508.corona_blend_factor
+    MOV EAX,[0x01fb96f0]                ; 00554c77 | g_CDemonCameraInstance.corona_blend_factor
     MOV dword ptr [ESP + 0x24],EAX      ; 00554c7c
     FILD dword ptr [ESP + 0x24]         ; 00554c80
     FMUL double ptr [0x00597c49]        ; 00554c84 | DOUBLE_00597c49

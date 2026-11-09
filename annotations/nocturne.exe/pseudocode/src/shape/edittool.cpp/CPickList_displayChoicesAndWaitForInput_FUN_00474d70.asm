@@ -26,7 +26,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   int INT_005b7630 = 0x7f
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
@@ -121,7 +121,7 @@ section .text
     ADD ESP,0x8                         ; 00474e2f
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 00474e32
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV EDI,dword ptr [0x005b6d50]      ; 00474e37 | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 00474e37 | g_CEditorToolsPtr
     PUSH EDI                            ; 00474e3d
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 00474e3e
         ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(CEditorTools * this_ptr)

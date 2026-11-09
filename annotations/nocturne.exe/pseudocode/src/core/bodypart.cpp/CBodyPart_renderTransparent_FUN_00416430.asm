@@ -8,9 +8,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -41,10 +41,10 @@ section .text
     CMP dword ptr [EDI + 0xc9c],0x0     ; 0041645a
     JZ 0x004164b9                       ; 00416461
         ;   XREF to: 004164b9 (CONDITIONAL_JUMP)  ; LAB_004164b9
-    MOV EBX,dword ptr [0x005be368]      ; 00416463 | g_CDemonSet_PTR_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 00416463 | g_CDemonSetPtr
     MOV EAX,dword ptr [EDI + 0xc98]     ; 00416469
     PUSH EDI                            ; 0041646f
-    MOV dword ptr [EBX + 0x15a8a0],EAX  ; 00416470 | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV dword ptr [EBX + 0x15a8a0],EAX  ; 00416470 | g_CDemonSetInstance.disable_directional_lighting
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 00416476
         ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041647b
@@ -63,9 +63,9 @@ section .text
     PUSH EDI                            ; 004164a1
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 ; 004164a2
         ;   XREF to: 00409f60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60(CDemonActor * this_ptr)
-    MOV EAX,[0x005be368]                ; 004164a7 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004164a7 | g_CDemonSetPtr
     ADD ESP,0x4                         ; 004164ac
-    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004164af | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004164af | g_CDemonSetInstance.disable_directional_lighting
     MOV EDX,dword ptr [EDI + 0x744]     ; 004164b9
         ;   Label: LAB_004164b9
     XOR EBX,EBX                         ; 004164bf

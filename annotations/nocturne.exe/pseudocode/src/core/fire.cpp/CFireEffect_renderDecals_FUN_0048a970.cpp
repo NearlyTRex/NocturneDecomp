@@ -48,19 +48,17 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_0048a970(CFireEffect *th
     }
   }
   if ((render_mode != 0) && (iVar2 = 0, 0 < _DAT_01c23d48)) {
-    pCVar3 = g_CStake_ARRAY_01c23d50;
+    pCVar3 = g_StakePool;
     iVar1 = 0;
     do {
       if ((pCVar3->physics_box).is_valid == 0) {
-        *(uint *)
-         ((int)g_CStake_ARRAY_01c23d50[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;
+        *(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;
 LAB_0048a9ef:
         core_fire_cpp_CStake_render_FUN_004835d0
-                  ((CStake *)
-                   ((int)g_CStake_ARRAY_01c23d50[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
+                  ((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
       }
-      else if (*(int *)((int)g_CStake_ARRAY_01c23d50[0].physics_box.rotation_matrix.m +
-                       iVar1 + -0x1c) != 0) goto LAB_0048a9ef;
+      else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)
+      goto LAB_0048a9ef;
       iVar1 = iVar1 + 0x260;
       iVar2 = iVar2 + 1;
       pCVar3 = pCVar3 + 1;
@@ -69,16 +67,16 @@ LAB_0048a9ef:
   if (render_mode == 0) {
     iVar2 = 0;
     do {
-      if (*(int *)((int)(g_CCrater_ARRAY_01c625f8[0].smoke_positions + -2) + iVar2) != 0) {
+      if (*(int *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) != 0) {
         core_fire_cpp_CCrater_render_FUN_00487af0
-                  ((CCrater *)((int)g_CCrater_ARRAY_01c625f8[0].smoke_positions + iVar2 + -0x1c));
-        *(uint *)((int)(g_CCrater_ARRAY_01c625f8[0].smoke_positions + -2) + iVar2) = 0;
+                  ((CCrater *)((int)g_CraterPool[0].smoke_positions + iVar2 + -0x1c));
+        *(uint *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) = 0;
       }
       iVar2 = iVar2 + 0x70;
     } while (iVar2 != 0x8c0);
   }
   else {
-    this_ptr_00 = g_CCrater_ARRAY_01c625f8;
+    this_ptr_00 = g_CraterPool;
     do {
       core_fire_cpp_CCrater_render_FUN_00487af0(this_ptr_00);
       this_ptr_00 = this_ptr_00 + 1;

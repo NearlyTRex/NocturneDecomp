@@ -10,9 +10,12 @@
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonActor_vtable.h"
+#include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonPod_vtable.h"
 #include "types/classes/CDemonRenderer.h"
 #include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CFilterCache.h"
+#include "types/classes/CFilterFX.h"
 #include "types/classes/CFont_vtable.h"
 #include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CMobster_full_vtable.h"
@@ -37,7 +40,7 @@ extern CCharacter_full_vtable g_CBassPlayerVTable;
 extern CCharacter_full_vtable g_CDrummerVTable;
 
 // CConsole*
-extern CConsole* g_CConsole_PTR_005ad350;
+extern CConsole* g_CConsolePtr;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CMansionPuzzleCircleVTable;
@@ -60,6 +63,10 @@ extern CDemonActor_vtable g_CCryptVesselVTable;
 extern CDemonActor_vtable g_CWaterActorVTable;
 extern CDemonActor_vtable g_CWayPointVTable;
 
+// CDemonFilter*
+extern CDemonFilter* g_GlobalFilters;
+extern CDemonFilter* g_PlayerFilters;
+
 // CDemonPod_vtable
 extern CDemonPod_vtable g_CDemonPodVTable;
 
@@ -75,6 +82,12 @@ extern CEnemy_full_vtable g_CTVBatVTable;
 extern CEnemy_full_vtable g_CVampireBossVTable;
 extern CEnemy_full_vtable g_CWerewolfVTable;
 extern CEnemy_full_vtable g_CZombieVTable;
+
+// CFilterCache*
+extern CFilterCache* g_CFilterCachePtr;
+
+// CFilterFX*
+extern CFilterFX* g_CFilterFXPtr;
 
 // CFont_vtable
 extern CFont_vtable g_CFontVTable;
@@ -137,7 +150,7 @@ extern WatcomDestructorCall g_WatcomDestructorCall_005a0c54;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a0d90;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a0e40;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a11d0;
-extern WatcomDestructorCall g_WatcomDestructorCall_005a14e0;
+extern WatcomDestructorCall g_CDemonPodDestructorCall;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a16c0;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a16cc;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a18c0;
@@ -155,13 +168,13 @@ extern WatcomDestructorCall g_WatcomDestructorCall_005a3e80;
 
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad08c;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad340;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad434;
+extern WatcomStaticDestructorNode g_ConsoleDestructorNode;
+extern WatcomStaticDestructorNode g_CLZWDecompressDestructorNode;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad4dc;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad4ec;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad4fc;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad50c;
-extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ae638;
+extern WatcomStaticDestructorNode g_CFilterCacheDestructorNode;
+extern WatcomStaticDestructorNode g_CFilterFXDestructorNode;
+extern WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ae6b8;
 
 // WatcomTypeInfo

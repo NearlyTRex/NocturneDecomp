@@ -20,9 +20,9 @@
 ;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
-;   CMouse* g_CMouse_PTR_005be060 = 01d465c0
-;   CPod* g_CPod_PTR_005be1cc = 01e528d0
+;   CNetGame* g_CNetGamePtr = 01cea280
+;   CMouse* g_CMousePtr = 01d465c0
+;   CDemonPod* g_CDemonPodPtr = 01e528d0
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   ... and 4 more
@@ -254,8 +254,8 @@ section .text
         ;   XREF to: 0040e360 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004c9305
         ;   Label: LAB_004c9305
-    MOV EBX,dword ptr [0x005bdee0]      ; 004c9308 | g_CNetGame_PTR_005bdee0
-    PUSH EBX                            ; 004c930e | g_CNetGame_01cea280
+    MOV EBX,dword ptr [0x005bdee0]      ; 004c9308 | g_CNetGamePtr
+    PUSH EBX                            ; 004c930e | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0 ; 004c930f
         ;   XREF to: 004e99c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 004c9314
@@ -264,7 +264,7 @@ section .text
     CALL engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0 ; 004c931e
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; void engine_force.cpp_CForceFeedback_processEvent_FUN_004940d0(CForceFeedback * this_ptr)
     ADD ESP,0x4                         ; 004c9323
-    MOV EDI,dword ptr [0x005be060]      ; 004c9326 | g_CMouse_PTR_005be060
+    MOV EDI,dword ptr [0x005be060]      ; 004c9326 | g_CMousePtr
     PUSH EDI                            ; 004c932c
     CALL engine_ncursfx.cpp_CMouse_reset_FUN_004ee680 ; 004c932d
         ;   XREF to: 004ee680 (UNCONDITIONAL_CALL)  ; void engine_ncursfx.cpp_CMouse_reset_FUN_004ee680(CMouse * this_ptr)
@@ -297,7 +297,7 @@ section .text
         ;   XREF to: 0044cc00 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_freeFonts_FUN_0044cc00()
     CALL wincore_winrun.cpp_doNothing2_FUN_00559e90 ; 004c937a
         ;   XREF to: 00559e90 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing2_FUN_00559e90()
-    MOV EDX,dword ptr [0x005be1cc]      ; 004c937f | g_CPod_PTR_005be1cc
+    MOV EDX,dword ptr [0x005be1cc]      ; 004c937f | g_CDemonPodPtr
     PUSH EDX                            ; 004c9385
     CALL engine_pod.cpp_CPod_cleanup_FUN_004f8b40 ; 004c9386
         ;   XREF to: 004f8b40 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_cleanup_FUN_004f8b40(CPod * this_ptr)

@@ -37,7 +37,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayDirect_FUN_004604c0(
       }
       else {
         g_RenderStateFlags.dword = 0;
-        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_00463a79;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00463a79;
       }
       g_VertexPreprocessMode = 0;
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80

@@ -8,10 +8,10 @@
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01cc9450
 ;   undefined4 DAT_01cc9454
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_reposition_FUN_004552a0
@@ -40,8 +40,8 @@ section .text
         ;   XREF to: 004552a0 (UNCONDITIONAL_CALL)  ; void core_door.cpp_CDoor_reposition_FUN_004552a0(CDoor * this_ptr)
     ADD ESP,0x4                         ; 00456481
     PUSH EBX                            ; 00456484
-    MOV EBX,dword ptr [0x005be368]      ; 00456485 | g_CDemonSet_PTR_005be368
-    PUSH EBX                            ; 0045648b | g_CDemonSet_01e57284
+    MOV EBX,dword ptr [0x005be368]      ; 00456485 | g_CDemonSetPtr
+    PUSH EBX                            ; 0045648b | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10 ; 0045648c
         ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00511a10(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00456491

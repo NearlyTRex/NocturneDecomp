@@ -34,9 +34,9 @@
 ;   float FLOAT_0057a492 = 0.2000000
 ;   float FLOAT_0057a496 = 1.5
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.active_fog.temperature
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.active_fog.temperature
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -63,8 +63,8 @@ section .text
     CMP dword ptr [EBX + 0x2618],0x0    ; 0042abdc
     JZ 0x0042abfb                       ; 0042abe3
         ;   XREF to: 0042abfb (CONDITIONAL_JUMP)  ; LAB_0042abfb
-    MOV EAX,[0x005be368]                ; 0042abe5 | g_CDemonSet_PTR_005be368
-    FLD float ptr [EAX + 0x15a88c]      ; 0042abea | g_CDemonSet_01e57284.active_fog.temperature
+    MOV EAX,[0x005be368]                ; 0042abe5 | g_CDemonSetPtr
+    FLD float ptr [EAX + 0x15a88c]      ; 0042abea | g_CDemonSetInstance.active_fog.temperature
     FCOMP double ptr [0x0057a48a]       ; 0042abf0 | DOUBLE_0057a48a
     FNSTSW AX                           ; 0042abf6
     SAHF                                ; 0042abf8
@@ -146,8 +146,8 @@ section .text
     ADD ESP,0xc                         ; 0042acb6
     LEA EAX,[EBP + -0x18]               ; 0042acb9
     PUSH EAX                            ; 0042acbc
-    MOV EDI,dword ptr [0x005be368]      ; 0042acbd | g_CDemonSet_PTR_005be368
-    PUSH EDI                            ; 0042acc3 | g_CDemonSet_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 0042acbd | g_CDemonSetPtr
+    PUSH EDI                            ; 0042acc3 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50 ; 0042acc4
         ;   XREF to: 00511b50 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0042acc9

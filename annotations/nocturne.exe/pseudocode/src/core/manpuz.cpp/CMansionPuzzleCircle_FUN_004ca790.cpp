@@ -45,11 +45,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_FUN_004ca790(CMansionPuzzleCir
   dVar6 = round((double)fVar3);
   local_20 = (int)ROUND(dVar6);
   core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340
-            (g_CDemonSet_PTR_005be368,local_20,(int)ROUND(dVar7),fog_scale.i);
+            (g_CDemonSetPtr,local_20,(int)ROUND(dVar7),fog_scale.i);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
             (&this_ptr->gem_model,0.0,-1);
-  core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(g_CDemonSet_PTR_005be368,0x10000,0x10000,0x10000)
-  ;
+  core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(g_CDemonSetPtr,0x10000,0x10000,0x10000);
   iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if ((iVar4 == 0) &&

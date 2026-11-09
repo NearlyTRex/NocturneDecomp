@@ -56,7 +56,7 @@
 ;   double DOUBLE_00590abd = -0.00100000000000000
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
@@ -107,7 +107,7 @@ section .text
     LEA EAX,[ESP + 0x15c]               ; 00510a89
         ;   Label: LAB_00510a89
     PUSH EAX                            ; 00510a90
-    PUSH 0x1fba938                      ; 00510a91 | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 00510a91 | g_CDemonRaytraceInstance
     CALL core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0 ; 00510a96
         ;   XREF to: 00468af0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0(CDemonRaytrace * this_ptr, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00510a9b

@@ -21,7 +21,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(CToss *this_ptr)
   float local_c;
   
   if (0.0 < this_ptr->fuse_timer) {
-    local_c = g_CGame_PTR_005b9354->delta_time_float;
+    local_c = g_CGamePtr->delta_time_float;
     fVar1 = this_ptr->fuse_timer - local_c;
     this_ptr_00 = &this_ptr->physics_box;
     this_ptr->fuse_timer = fVar1;

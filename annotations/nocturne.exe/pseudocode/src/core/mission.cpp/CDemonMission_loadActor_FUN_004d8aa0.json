@@ -1,46 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 24,
-        "line": 43,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 31,
-        "line": 54,
-        "message": "format specifies type 'unsigned int *' but the argument has type 'CDemonActor **' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 77,
-        "line": 62,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 56,
-        "message": "variable 'unaff_ESI' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 32,
-        "message": "variable 'unaff_ESI' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 29,
-        "message": "variable 'unaff_ESI' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
@@ -158,7 +116,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -285,23 +243,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonMission_loadActor_FUN_004d8aa0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "legacyUninitvar",
-          "column": 14,
-          "line": 63,
-          "message": "Uninitialized variable: unaff_ESI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unaffected register variable",
@@ -374,14 +315,6 @@
       "severity": "moderate",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Uninitialized variable: unaff_ESI",
-      "line": 63,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "pCVar1 = unaff_ESI;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

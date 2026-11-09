@@ -11,8 +11,8 @@
 // =============================================================================
 
 // CAlphaBitmap
-extern CAlphaBitmap g_CAlphaBitmap_01cb0380;
-extern CAlphaBitmap g_CAlphaBitmap_01cb0394;
-extern CAlphaBitmap g_CAlphaBitmap_01cb03a8;
-extern CAlphaBitmap g_CAlphaBitmap_01cb03bc;
+extern CAlphaBitmap g_InvBackgroundBitmap;
+extern CAlphaBitmap g_InvBackground2Bitmap;
+extern CAlphaBitmap g_WeapBackgroundBitmap;
+extern CAlphaBitmap g_WeapBackground2Bitmap;
 

@@ -39,7 +39,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050aba0(CDemonSet *this_ptr)
   local_2c[0].y = (float)fVar7;
   local_2c[0].x = (float)-fVar8;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
-            (&g_CDemonCamera_01fb8508.rotation_matrix,local_2c);
+            (&g_CDemonCameraInstance.rotation_matrix,local_2c);
   iVar5 = this_ptr->selected_camera_index;
   pCVar1 = &this_ptr->cameras[iVar5].orientation;
   if (pCVar1 != local_2c) {
@@ -47,11 +47,11 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0050aba0(CDemonSet *this_ptr)
     this_ptr->cameras[iVar5].orientation.y = local_2c[0].y;
     this_ptr->cameras[iVar5].orientation.z = local_2c[0].z;
   }
-  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCamera_01fb8508,0);
+  core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(&g_CDemonCameraInstance,0);
   core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(this_ptr,0x10);
   core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0050a640(this_ptr);
   iVar5 = 0;
-  core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCamera_01fb8508,0);
+  core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCameraInstance,0);
   if (0 < _DAT_01fb9b54) {
     iVar6 = 0;
     do {

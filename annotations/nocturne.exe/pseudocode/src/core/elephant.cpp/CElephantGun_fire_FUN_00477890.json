@@ -1,133 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 16,
-        "line": 70,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 20,
-        "line": 75,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 76,
-        "line": 79,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 38,
-        "line": 80,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 38,
-        "line": 81,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 46,
-        "line": 82,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 46,
-        "line": 83,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 20,
-        "line": 95,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 33,
-        "line": 96,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 33,
-        "line": 97,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 33,
-        "line": 98,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 112,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 48,
-        "line": 115,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 48,
-        "line": 116,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 124,
-        "message": "assigning to 'EDeathState' (aka 'int') from incompatible type 'void'"
-      },
-      {
-        "category": "cast_error",
-        "column": 46,
-        "line": 147,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 80,
-        "line": 175,
-        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 195,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 198,
-        "message": "use of undeclared identifier 'stack0xfffffedc'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 563,
-    "complexity_score": 760,
+    "complexity_score": 754,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 250,
+    "pseudocode_lines": 244,
     "suspect_count": 46,
     "suspect_types": [
       "pointer_cast",
@@ -141,7 +21,7 @@
       "unresolved_register",
       "unrolled_memcpy"
     ],
-    "total_lines": 813
+    "total_lines": 807
   },
   "cross_references": [],
   "function": {
@@ -331,7 +211,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -373,73 +253,73 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fac",
-      "name": "g_CDemonSet_01e57284.ray_origin.x",
+      "name": "g_CDemonSetInstance.ray_origin.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb0",
-      "name": "g_CDemonSet_01e57284.ray_origin.y",
+      "name": "g_CDemonSetInstance.ray_origin.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb4",
-      "name": "g_CDemonSet_01e57284.ray_origin.z",
+      "name": "g_CDemonSetInstance.ray_origin.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fb8",
-      "name": "g_CDemonSet_01e57284.ray_target.x",
+      "name": "g_CDemonSetInstance.ray_target.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fbc",
-      "name": "g_CDemonSet_01e57284.ray_target.y",
+      "name": "g_CDemonSetInstance.ray_target.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc0",
-      "name": "g_CDemonSet_01e57284.ray_target.z",
+      "name": "g_CDemonSetInstance.ray_target.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc4",
-      "name": "g_CDemonSet_01e57284.collision_normal.x",
+      "name": "g_CDemonSetInstance.collision_normal.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd0",
-      "name": "g_CDemonSet_01e57284.ground_type",
+      "name": "g_CDemonSetInstance.ground_type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd4",
-      "name": "g_CDemonSet_01e57284.collision_impact_position.x",
+      "name": "g_CDemonSetInstance.collision_impact_position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "g_CDemonSet_01e57284.collision_actor",
+      "name": "g_CDemonSetInstance.collision_actor",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe4",
-      "name": "g_CDemonSet_01e57284.collision_part_index",
+      "name": "g_CDemonSetInstance.collision_part_index",
       "type": "undefined4",
       "value": null
     },
@@ -543,37 +423,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CElephantGun_fire_FUN_00477890.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 146,
-          "message": "Uninitialized variable: fStack_44",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 81,
-          "line": 145,
-          "message": "Uninitialized variable: in_stack_fffffec4",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 15,
-          "line": 149,
-          "message": "Uninitialized variable: pCStack_2c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -593,7 +442,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 105,
+      "line": 104,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_120._4_4_ =",
@@ -601,7 +450,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 108,
+      "line": 106,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dStack_124 = (double)(float)auStack_120._4_4_;",
@@ -609,7 +458,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 107,
       "match": "._4_4_",
       "severity": "mild",
       "text": "pCStack_14 = (CDemonActor *)auStack_120._4_4_;",
@@ -617,7 +466,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
+      "line": 115,
       "match": "code *",
       "severity": "moderate",
       "text": "EVar5 = (**(code **)(this_ptr_00->cameras[0].camera_group + 0x104))",
@@ -625,7 +474,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 136,
       "match": "in_stack_fffffec0",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
@@ -633,7 +482,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 136,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
@@ -641,23 +490,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 146,
+      "line": 144,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
-      "text": "in_stack_fffffec4 = (CDemonSet *)g_CDemonSet_PTR_005be368->ground_type;",
+      "text": "in_stack_fffffec4 = (CDemonSet *)g_CDemonSetPtr->ground_type;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 145,
       "match": "in_stack_fffffec0",
       "severity": "moderate",
-      "text": "in_stack_fffffec0 = (CDemonActor *)&g_CDemonSet_PTR_005be368->collision_normal;",
+      "text": "in_stack_fffffec0 = (CDemonActor *)&g_CDemonSetPtr->collision_normal;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 148,
       "match": "in_stack_fffffec0",
       "severity": "moderate",
       "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
@@ -665,7 +514,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 148,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
@@ -673,7 +522,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 152,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x477f6f;",
@@ -681,7 +530,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 159,
+      "line": 156,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x477f7a;",
@@ -689,7 +538,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 170,
+      "line": 167,
       "match": "in_stack_fffffec0",
       "severity": "moderate",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x477d6e;",
@@ -697,15 +546,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 171,
+      "line": 168,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
-      "text": "in_stack_fffffec4 = g_CDemonSet_PTR_005be368;",
+      "text": "in_stack_fffffec4 = g_CDemonSetPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
+      "line": 173,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x477f2b;",
@@ -713,7 +562,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
+      "line": 177,
       "match": "in_stack_fffffec0",
       "severity": "moderate",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x477f4e;",
@@ -721,7 +570,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 181,
+      "line": 178,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "in_stack_fffffec4 = pCStack_2c;",
@@ -729,7 +578,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
+      "line": 184,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "in_stack_fffffec4 = (CDemonSet *)0x477d83;",
@@ -737,7 +586,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 188,
+      "line": 185,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(this_ptr_00->cameras[0].camera_group + 0xd8))",
@@ -745,7 +594,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 191,
+      "line": 188,
       "match": "&stack0xfffffedc",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)&stack0xfffffedc);",
@@ -753,7 +602,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 192,
+      "line": 189,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dStack_124._4_4_ = pCStack_34;",
@@ -761,15 +610,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 193,
+      "line": 190,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "dStack_124._0_4_ = g_CDemonSet_PTR_005be368->collision_part_index;",
+      "text": "dStack_124._0_4_ = g_CDemonSetPtr->collision_part_index;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 194,
+      "line": 191,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_120._4_4_ = 0.4;",
@@ -777,7 +626,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 201,
       "match": "(byte *)((int)register0x00000010",
       "severity": "moderate",
       "text": "if ((CVector3f *)((byte *)((int)register0x00000010 + -0x120) + 8) != aCStack_d0) {",
@@ -785,7 +634,7 @@
     },
     {
       "description": "Unresolved register reference",
-      "line": 207,
+      "line": 201,
       "match": "register0x00000010",
       "severity": "mild",
       "text": "if ((CVector3f *)((byte *)((int)register0x00000010 + -0x120) + 8) != aCStack_d0) {",
@@ -793,7 +642,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 208,
+      "line": 202,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_120._8_4_ = aCStack_d0[0].x;",
@@ -801,7 +650,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 212,
+      "line": 206,
       "match": "in_stack_fffffec0",
       "severity": "moderate",
       "text": "in_stack_fffffec0 = (CDemonActor *)0x477e96;",
@@ -809,7 +658,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 207,
       "match": "in_stack_fffffec4",
       "severity": "moderate",
       "text": "in_stack_fffffec4 = this_ptr_00;",
@@ -817,7 +666,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 211,
       "match": "(byte *)((int)register0x00000010",
       "severity": "moderate",
       "text": "if ((CVector3f *)((byte *)((int)register0x00000010 + -0x120) + 0x18) != pCVar2) {",
@@ -825,7 +674,7 @@
     },
     {
       "description": "Unresolved register reference",
-      "line": 217,
+      "line": 211,
       "match": "register0x00000010",
       "severity": "mild",
       "text": "if ((CVector3f *)((byte *)((int)register0x00000010 + -0x120) + 0x18) != pCVar2) {",
@@ -833,7 +682,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 223,
+      "line": 217,
       "match": "1.49939e-43",
       "severity": "mild",
       "text": "fStack_f4 = 1.49939e-43;",
@@ -841,7 +690,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 227,
+      "line": 221,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(this_ptr_00->cameras[0].camera_group + 0x100))",
@@ -849,7 +698,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 222,
       "match": "(SDamageInfo *)((int)register0x00000010",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr_00,(SDamageInfo *)((int)register0x00000010 + -0x120));",
@@ -857,7 +706,7 @@
     },
     {
       "description": "Unresolved register reference",
-      "line": 228,
+      "line": 222,
       "match": "register0x00000010",
       "severity": "mild",
       "text": "((CCharacter *)this_ptr_00,(SDamageInfo *)((int)register0x00000010 + -0x120));",
@@ -865,7 +714,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 240,
+      "line": 234,
       "match": "._0_4_",
       "severity": "mild",
       "text": "CStack_7c.y = aCStack_d0[0].y + 1.574918751107038e-314._0_4_;",
@@ -873,7 +722,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 249,
+      "line": 243,
       "match": "._0_4_",
       "severity": "mild",
       "text": "dStack_124._0_4_ = g_CForceFeedback_PTR_005b9284;",
@@ -889,7 +738,7 @@
     },
     {
       "description": "Pointer value `in_stack_fffffec4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 138,
+      "line": 136,
       "match": "(int)in_stack_fffffec4",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
@@ -897,7 +746,7 @@
     },
     {
       "description": "Pointer value `in_stack_fffffec4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 151,
+      "line": 148,
       "match": "(int)in_stack_fffffec4",
       "severity": "moderate",
       "text": "(CVector3f *)in_stack_fffffec0,(int)in_stack_fffffec4,",
@@ -905,7 +754,7 @@
     },
     {
       "description": "Pointer value `pCStack_3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 236,
+      "line": 230,
       "match": "(int)pCStack_3c",
       "severity": "moderate",
       "text": "} while ((int)pCStack_3c < (int)pCStack_34);",
@@ -913,7 +762,7 @@
     },
     {
       "description": "Pointer value `pCStack_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 236,
+      "line": 230,
       "match": "(int)pCStack_34",
       "severity": "moderate",
       "text": "} while ((int)pCStack_3c < (int)pCStack_34);",
@@ -929,7 +778,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 218,
+      "line": 212,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_108.x = pCVar2->x;",
@@ -937,35 +786,11 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCStack_3c` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCStack_3c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 235,
+      "line": 229,
       "match": "pCStack_3c = (T *)((pCStack_3c->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCStack_3c = (CFlameCan *)((pCStack_3c->base).actor_name + 1);",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: fStack_44",
-      "line": 146,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_24 = fStack_44;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_fffffec4",
-      "line": 145,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "((CCharacter *)this_ptr,in_stack_fffffec0,(int)in_stack_fffffec4);",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: pCStack_2c",
-      "line": 149,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if (pCStack_2c == (CDemonSet *)0x0) {",
-      "type": "static_legacy_uninitvar"
     }
   ],
   "vtable_info": {

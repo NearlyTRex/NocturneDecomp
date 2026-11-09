@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 315,
@@ -208,49 +203,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "drawLineAA_FUN_0042f600.c",
-    "clang_tidy_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 27,
-          "line": 56,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        }
-      ],
-      "error": null
-    },
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 41,
-          "line": 82,
-          "message": "Uninitialized variable: unaff_retaddr",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 64,
-          "line": 65,
-          "message": "Uninitialized variable: in_stack_ffffffcc",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 64,
-          "line": 81,
-          "message": "Uninitialized variable: in_stack_ffffffcc",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -307,38 +259,6 @@
       "severity": "moderate",
       "text": "((int)in_stack_ffffffcc,y0,blend_factor,color);",
       "type": "stack_param"
-    },
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 56,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "fVar1 = (float)((uint)((int)fVar1 * 0x10000) / (uint)blend_factor);",
-      "type": "static_integer_division"
-    },
-    {
-      "description": "Uninitialized variable: unaff_retaddr",
-      "line": 82,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "in_stack_ffffffcc = (float)(unaff_retaddr + (int)x);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_ffffffcc",
-      "line": 65,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "((int)x,y0,((float)(uVar2 >> 8) + 1.0) * in_stack_ffffffcc,color);",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_ffffffcc",
-      "line": 81,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "((int)x,y0,((float)(uVar4 >> 8) + 1.0) * in_stack_ffffffcc,color);",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

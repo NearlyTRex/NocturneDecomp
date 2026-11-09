@@ -19,16 +19,16 @@ extern CDemonActorType g_CScatActorType_01e533d0;
 extern CDemonActorType g_CSentinelActorType_01e57248;
 
 // CDemonPod
-extern CDemonPod g_CDemonPod_01e528d0;
+extern CDemonPod g_CDemonPodInstance;
 
 // CDemonSet
-extern CDemonSet g_CDemonSet_01e57284;
+extern CDemonSet g_CDemonSetInstance;
 
 // CPickList
-extern CPickList g_CPickList_01e56c30;
+extern CPickList g_ScriptPickList;
 
 // CScript
-extern CScript g_CScript_01e56da0;
+extern CScript g_CScriptInstance;
 
 // int
 extern int g_RenderedTriangleCount;

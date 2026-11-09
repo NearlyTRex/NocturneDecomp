@@ -1,46 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 30,
-        "line": 67,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 59,
-        "line": 67,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 103,
-        "line": 68,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 33,
-        "line": 73,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 62,
-        "line": 110,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 60,
-        "line": 113,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 369,
@@ -390,58 +348,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "parseWavFile_FUN_00521830.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 35,
-          "line": 34,
-          "message": "Uninitialized variable: local_17",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 57,
-          "line": 34,
-          "message": "Uninitialized variable: local_16",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 79,
-          "line": 34,
-          "message": "Uninitialized variable: local_15",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 38,
-          "line": 38,
-          "message": "Uninitialized variable: local_87",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 61,
-          "line": 38,
-          "message": "Uninitialized variable: local_86",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 81,
-          "line": 38,
-          "message": "Uninitialized variable: local_85",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unknown/mangled field access",
@@ -490,54 +396,6 @@
       "severity": "mild",
       "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
       "type": "unknown_field"
-    },
-    {
-      "description": "Uninitialized variable: local_17",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_16",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_15",
-      "line": 34,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((((local_18 == 'R') && (local_17 == 'I')) && (local_16 == 'F')) && (local_15 == 'F')) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_87",
-      "line": 38,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_86",
-      "line": 38,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_85",
-      "line": 38,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((local_88 == 'W') && (local_87 == 'A')) && ((local_86 == 'V' && (local_85 == 'E'))))",
-      "type": "static_uninitvar"
     }
   ]
 }

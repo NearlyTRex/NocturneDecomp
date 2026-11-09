@@ -95,8 +95,8 @@ section .text
     MOV EBP,ESP                         ; 004c2474
     SUB ESP,0x678                       ; 004c2476
     AND ESP,0xfffffff8                  ; 004c247c
-    MOV EAX,[0x005b9354]                ; 004c247f | g_CGame_PTR_005b9354 | g_CGame_01c775ec
-    CMP dword ptr [EAX + 0x228],0x0     ; 004c2484 | g_CGame_01c775ec.letterbox_mode
+    MOV EAX,[0x005b9354]                ; 004c247f | g_CGamePtr | g_CGameInstance
+    CMP dword ptr [EAX + 0x228],0x0     ; 004c2484 | g_CGameInstance.letterbox_mode
     JNZ 0x004c2dcc                      ; 004c248b
         ;   XREF to: 004c2dcc (CONDITIONAL_JUMP)  ; LAB_004c2dcc
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c2491
@@ -545,9 +545,9 @@ section .text
     JL 0x004c2a42                       ; 004c2a7c
         ;   XREF to: 004c2a42 (CONDITIONAL_JUMP)  ; LAB_004c2a42
     MOV EAX,EAX                         ; 004c2a7e
-    MOV EAX,[0x005b9354]                ; 004c2a80 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004c2a80 | g_CGamePtr
         ;   Label: LAB_004c2a80
-    CMP dword ptr [EAX + 0x244],0x0     ; 004c2a85 | g_CGame_01c775ec.flashlight_active
+    CMP dword ptr [EAX + 0x244],0x0     ; 004c2a85 | g_CGameInstance.flashlight_active
     JZ 0x004c317d                       ; 004c2a8c
         ;   XREF to: 004c317d (CONDITIONAL_JUMP)  ; LAB_004c317d
     MOV EAX,[0x005b7620]                ; 004c2a92 | g_WindowHeight
@@ -1148,7 +1148,7 @@ section .text
     MOV ESI,EAX                         ; 004c3176
     JMP 0x004c2805                      ; 004c3178
         ;   XREF to: 004c2805 (UNCONDITIONAL_JUMP)  ; LAB_004c2805
-    CMP dword ptr [EAX + 0x240],0x0     ; 004c317d | g_CGame_01c775ec.goggles_active
+    CMP dword ptr [EAX + 0x240],0x0     ; 004c317d | g_CGameInstance.goggles_active
         ;   Label: LAB_004c317d
     JNZ 0x004c2a92                      ; 004c3184
         ;   XREF to: 004c2a92 (CONDITIONAL_JUMP)  ; LAB_004c2a92

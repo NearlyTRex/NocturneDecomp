@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
@@ -228,30 +223,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonFilter_init_FUN_0044c190.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 27,
-          "line": 32,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 32,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "fVar2 = (float)(this_ptr->count / 2 - iVar5);",
-      "type": "static_integer_division"
-    }
-  ]
+  "suspects": []
 }

@@ -36,7 +36,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetG
   
   bVar7 = 0;
   core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,0);
-  pCVar2 = g_CGame_PTR_005b9354;
+  pCVar2 = g_CGamePtr;
   this_ptr->player_count = 0;
   aim_mode = pCVar2->aim_mode;
   hero_number = pCVar2->hero_number;
@@ -55,7 +55,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetG
                     (this_ptr,&SStack_24,"TheServer",0,0);
   iVar3 = _DAT_01cea3f8;
   this_ptr->connection_type = CONNECTION_CLIENT;
-  this_ptr_00 = g_CEditorTools_PTR_005b6d50;
+  this_ptr_00 = g_CEditorToolsPtr;
   this_ptr->network_mode = NET_MODE_LOBBY;
   this_ptr->server_player_index = iVar4;
   iVar3 = iVar3 + -0x50000;
@@ -106,7 +106,7 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetG
       if (_DAT_01cea3fc < 3) {
         if (_DAT_01cea3fc == 2) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                    (g_CEditorTools_PTR_005b6d50,"Connection refused - computer is not a server");
+                    (g_CEditorToolsPtr,"Connection refused - computer is not a server");
           core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,0);
           return 0;
         }
@@ -114,13 +114,13 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(CNetG
       else {
         if (_DAT_01cea3fc < 4) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                    (g_CEditorTools_PTR_005b6d50,"Connection refused - game is full");
+                    (g_CEditorToolsPtr,"Connection refused - game is full");
           core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(this_ptr,0);
           return 0;
         }
         if (_DAT_01cea3fc == 4) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                    (g_CEditorTools_PTR_005b6d50,"Connection refused - already in the game");
+                    (g_CEditorToolsPtr,"Connection refused - already in the game");
           goto LAB_004e9d11;
         }
       }

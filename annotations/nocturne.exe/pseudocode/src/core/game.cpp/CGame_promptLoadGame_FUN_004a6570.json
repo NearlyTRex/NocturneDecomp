@@ -1,37 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 25,
-        "message": "use of undeclared identifier 'DAT_01c78598'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 30,
-        "message": "use of undeclared identifier 'DAT_01c78598'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 110,
+    "complexity_score": 109,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 59,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unrolled_strcpy"
     ],
-    "total_lines": 168
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -114,7 +96,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -300,7 +282,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 51,
+      "line": 50,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

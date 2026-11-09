@@ -35,17 +35,16 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
     this_ptr->right_clavicle_blend = 0.0;
   }
   if (has_carried_objects != 0) {
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-              (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,(CDemonActor *)this_ptr);
     pCVar1 = (this_ptr->base).base.carry_hands[0].carry_actor;
     if (pCVar1 != (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar1);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,pCVar1);
     }
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     if (pCVar1 != (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar1);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,pCVar1);
     }
-    core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSetPtr);
     local_2c.z = 0.0;
     local_2c.y = 0.0;
     local_2c.x = 0.0;
@@ -77,7 +76,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
     core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00
               (this_ptr,delta_time,&this_ptr->right_clavicle_blend,_DAT_01c713dc,_DAT_01c713a0,
                &local_2c);
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
     return;
   }
   this_ptr_00 = &(this_ptr->base).base.model;

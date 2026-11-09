@@ -21,7 +21,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *thi
   int local_84 [30];
   CSvetlana *pCVar6;
   
-  g_CDemonSet_PTR_005be368->skip_normal_normalization = 1;
+  g_CDemonSetPtr->skip_normal_normalization = 1;
   iVar4 = 0;
   pCVar5 = this_ptr;
   do {
@@ -44,15 +44,15 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *thi
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] = 1;
     this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] = 1;
-    iVar3 = g_CGame_PTR_005b9354->render_mode;
-    g_CGame_PTR_005b9354->render_mode = 2;
+    iVar3 = g_CGamePtr->render_mode;
+    g_CGamePtr->render_mode = 2;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(this_ptr_00,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
               (g_CDemonRenderer_PTR_005ae704,48000);
     if (iVar4 != 0) {
       core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
     }
-    g_CGame_PTR_005b9354->render_mode = iVar3;
+    g_CGamePtr->render_mode = iVar3;
     iVar3 = 0;
     pCVar5 = this_ptr;
     do {
@@ -62,7 +62,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *thi
       pCVar5 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
     } while (iVar3 < 0x1e);
   }
-  g_CDemonSet_PTR_005be368->skip_normal_normalization = 0;
+  g_CDemonSetPtr->skip_normal_normalization = 0;
   if (iVar4 != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)this_ptr);
     core_cloth_cpp_CCloth_render_FUN_00437db0(&this_ptr->cape_cloth,(CDeformableModelInstance *)0x0)

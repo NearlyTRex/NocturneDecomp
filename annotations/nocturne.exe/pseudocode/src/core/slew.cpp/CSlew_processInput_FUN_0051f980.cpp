@@ -18,7 +18,7 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_0051f980(CSlew *this_ptr)
   float10 fVar7;
   float local_2c;
   
-  local_2c = g_CGame_PTR_005b9354->delta_time_float;
+  local_2c = g_CGamePtr->delta_time_float;
   iVar5 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LMENU);
   dVar4 = 0.050000000000000003;
   if ((iVar5 != 0) ||

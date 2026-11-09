@@ -10,9 +10,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -70,9 +70,9 @@ section .text
     ADD ESP,0x8                         ; 00419c76
     PUSH 0xffff                         ; 00419c79
     MOV EDI,dword ptr [0x005ae704]      ; 00419c7e | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,[0x005be368]                ; 00419c84 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 00419c84 | g_CDemonSetPtr
     PUSH EDI                            ; 00419c89 | DAT_01b4d738
-    MOV dword ptr [EAX + 0x15a8a0],0x1  ; 00419c8a | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV dword ptr [EAX + 0x15a8a0],0x1  ; 00419c8a | g_CDemonSetInstance.disable_directional_lighting
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00419c94
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00419c99
@@ -81,9 +81,9 @@ section .text
         ;   XREF to: 00425c20 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00419ca2
     MOV EBP,dword ptr [0x005ae704]      ; 00419ca5 | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,[0x005be368]                ; 00419cab | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 00419cab | g_CDemonSetPtr
     PUSH EBP                            ; 00419cb0 | DAT_01b4d738
-    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 00419cb1 | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 00419cb1 | g_CDemonSetInstance.disable_directional_lighting
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 ; 00419cbb
         ;   XREF to: 00461db0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00419cc0

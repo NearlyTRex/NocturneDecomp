@@ -22,13 +22,13 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_
   char *text;
   CBitFont *this_ptr_00;
   
-  if (g_CGame_PTR_005b9354->letterbox_mode == 0) {
-    fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGame_PTR_005b9354);
+  if (g_CGamePtr->letterbox_mode == 0) {
+    fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGamePtr);
     _DAT_01e56c20 = _DAT_01e56c20 - fVar3 / 0.35f;
   }
   else {
-    _DAT_01e53410 = g_CGame_PTR_005b9354->letterbox_mode;
-    fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGame_PTR_005b9354);
+    _DAT_01e53410 = g_CGamePtr->letterbox_mode;
+    fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGamePtr);
     _DAT_01e56c20 = fVar3 / 0.35f + _DAT_01e56c20;
   }
   iVar8 = g_WindowHeight;
@@ -47,7 +47,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_
     engine_2d_c_fillRectColor_FUN_00403e60(0,iVar8 - iVar4,iVar1 + -1,iVar8 + -1,0);
   }
   iVar2 = g_ClipTop;
-  if ((this_ptr->current_message[0] != '\0') && (g_CGame_PTR_005b9354->subtitle_mode != 0)) {
+  if ((this_ptr->current_message[0] != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
     this_ptr_00 = g_CBitFont_PTR_014b98f8;
     if (g_WindowHeight < 0x1e0) {
       this_ptr_00 = g_CBitFont_PTR_014b98fc;

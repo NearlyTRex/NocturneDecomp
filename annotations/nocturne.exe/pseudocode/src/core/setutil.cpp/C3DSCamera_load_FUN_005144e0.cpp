@@ -15,22 +15,22 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,
   char local_110 [256];
   
   core_setutil_cpp_C3DSCamera_reset_FUN_00514470(this_ptr);
-  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
+  if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fgets(local_110,0xff,file_handle);
   sscanf(local_110,"%s\n",this_ptr);
-  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
+  if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
              &(this_ptr->position).z);
-  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
+  if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->orientation,&(this_ptr->orientation).z,
              &(this_ptr->orientation).y);
-  if (10 < g_CDemonSet_PTR_005be368->set_file_version) {
+  if (10 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
   }
   _fscanf(file_handle,"%f\n",&this_ptr->projection_scale);
@@ -41,8 +41,8 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,
              &(this_ptr->rotation_matrix).m[1].y,&(this_ptr->rotation_matrix).m[1].z);
   _fscanf(file_handle,"%f,%f,%f\n",(this_ptr->rotation_matrix).m + 2,
              &(this_ptr->rotation_matrix).m[2].y,&(this_ptr->rotation_matrix).m[2].z);
-  pCVar1 = g_CDemonSet_PTR_005be368;
-  if (g_CDemonSet_PTR_005be368->set_file_version < 0x12) {
+  pCVar1 = g_CDemonSetPtr;
+  if (g_CDemonSetPtr->set_file_version < 0x12) {
     this_ptr->use_global_fog = 1;
     (this_ptr->fog).color_index.r = (pCVar1->scene_fog).color_index.r;
     (this_ptr->fog).color_index.g = (pCVar1->scene_fog).color_index.g;
@@ -62,17 +62,17 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(C3DSCamera *this_ptr,
     _fscanf(file_handle,"%d\n",&this_ptr->use_global_fog);
     if (this_ptr->use_global_fog == 0) {
       core_dcamera_cpp_loadCameraFog_FUN_00447d10
-                (&this_ptr->fog,file_handle,g_CDemonSet_PTR_005be368->set_file_version);
+                (&this_ptr->fog,file_handle,g_CDemonSetPtr->set_file_version);
     }
   }
-  if (0x16 < g_CDemonSet_PTR_005be368->set_file_version) {
+  if (0x16 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
     _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->box,&(this_ptr->box).min.y,
                &(this_ptr->box).min.z);
     _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->box).max,&(this_ptr->box).max.y,
                &(this_ptr->box).max.z);
   }
-  if (g_CDemonSet_PTR_005be368->set_file_version < 0x17) {
+  if (g_CDemonSetPtr->set_file_version < 0x17) {
     return;
   }
   _fgets(local_110,0xff,file_handle);

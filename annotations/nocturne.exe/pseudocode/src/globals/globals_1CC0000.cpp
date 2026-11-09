@@ -5,34 +5,34 @@
 // =============================================================================
 
 // CAlphaBitmap
-CAlphaBitmap g_CAlphaBitmap_01cc2fd8 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc2fec = {};
-CAlphaBitmap g_CAlphaBitmap_01cc3000 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc3014 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc3028 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc303c = {};
-CAlphaBitmap g_CAlphaBitmap_01cc3050 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc3064 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc3078 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc308c = {};
-CAlphaBitmap g_CAlphaBitmap_01cc480c = {};
-CAlphaBitmap g_CAlphaBitmap_01cc4820 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc4834 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc4848 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc5b20 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc5b34 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc5b48 = {};
-CAlphaBitmap g_CAlphaBitmap_01cc5b6c = {};
-CAlphaBitmap g_CAlphaBitmap_01ccdc50 = {};
+CAlphaBitmap g_BatteryIconBitmap = {};
+CAlphaBitmap g_HealthBar1Bitmap = {};
+CAlphaBitmap g_HealthBar2Bitmap = {};
+CAlphaBitmap g_TommyClipIconBitmap = {};
+CAlphaBitmap g_BulletIconBitmap = {};
+CAlphaBitmap g_LithiumIconBitmap = {};
+CAlphaBitmap g_MercuryBulletIconBitmap = {};
+CAlphaBitmap g_ShotShellIconBitmap = {};
+CAlphaBitmap g_SilverBulletIconBitmap = {};
+CAlphaBitmap g_HolyBulletIconBitmap = {};
+CAlphaBitmap g_LoadingScreenBitmap1 = {};
+CAlphaBitmap g_LoadingScreenBitmap2 = {};
+CAlphaBitmap g_LoadingScreenBitmap3 = {};
+CAlphaBitmap g_LoadingScreenBitmap4 = {};
+CAlphaBitmap g_MenuBlurLeft = {};
+CAlphaBitmap g_MenuBlurMiddle = {};
+CAlphaBitmap g_MenuBlurRight = {};
+CAlphaBitmap g_CalibrationBitmap = {};
+CAlphaBitmap g_MoonCloudTexture = {};
 
 // CAlphaBitmap[30]
-CAlphaBitmap g_CAlphaBitmap_ARRAY_01ccdc64[30] = {};
+CAlphaBitmap g_MoonAnimTextures[30] = {};
 
 // CAlphaBitmap[8]
-CAlphaBitmap g_CAlphaBitmap_ARRAY_01cc56e0[8] = {};
+CAlphaBitmap g_MenuBitmaps[8] = {};
 
 // CCourse[3]
-CCourse g_CCourse_ARRAY_01ccdec8[3] = {};
+CCourse g_MoonBatCourses[3] = {};
 
 // CDemonActorType
 CDemonActorType g_CKeyActorActorType_01cc30a8 = {};
@@ -52,7 +52,7 @@ CDemonActorType g_CMolochActorType_01ccdc14 = {};
 
 // CKeyFramedModel
 CKeyFramedModel g_LoadingMoonModel = {};
-CKeyFramedModel g_CKeyFramedModel_01cce1bc = {};
+CKeyFramedModel g_MoonBatModel = {};
 
 // CKeys
 CKeys g_CKeys_01cc30e4 = {};
@@ -61,7 +61,7 @@ CKeys g_CKeys_01cc30e4 = {};
 CLevelLoader g_CLevelLoader = {};
 
 // CMoon
-CMoon g_CMoon_01cc5780 = {};
+CMoon g_CMoonInstance = {};
 
 // CVector3f[32]
 CVector3f g_CVector3f_ARRAY_01cc9124[32] = {};

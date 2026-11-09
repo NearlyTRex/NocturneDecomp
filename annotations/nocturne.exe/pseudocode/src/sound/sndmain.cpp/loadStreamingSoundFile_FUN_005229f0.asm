@@ -22,8 +22,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc1ed8
-;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].taken
-;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+;   undefined4 g_SfxSamples[1].taken
+;   undefined4 g_SfxSamples[1].ref_count
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -64,7 +64,7 @@ section .text
     MOV EBX,EBP                         ; 00522a11
     IMUL EAX,EBX,0x168                  ; 00522a13
         ;   Label: LAB_00522a13
-    MOV ECX,dword ptr [EAX + 0x2dc2004] ; 00522a19 | g_CSfxSample_ARRAY_02dc1edc[1].taken
+    MOV ECX,dword ptr [EAX + 0x2dc2004] ; 00522a19 | g_SfxSamples[1].taken
     CMP EBP,ECX                         ; 00522a1f
     JZ 0x00522a56                       ; 00522a21
         ;   XREF to: 00522a56 (CONDITIONAL_JUMP)  ; LAB_00522a56
@@ -89,7 +89,7 @@ section .text
     POP ESI                             ; 00522a53
     POP EBX                             ; 00522a54
     RET                                 ; 00522a55
-    CMP ECX,dword ptr [EAX + 0x2dc2008] ; 00522a56 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+    CMP ECX,dword ptr [EAX + 0x2dc2008] ; 00522a56 | g_SfxSamples[1].ref_count
         ;   Label: LAB_00522a56
     JNZ 0x00522a23                      ; 00522a5c
         ;   XREF to: 00522a23 (CONDITIONAL_JUMP)  ; LAB_00522a23

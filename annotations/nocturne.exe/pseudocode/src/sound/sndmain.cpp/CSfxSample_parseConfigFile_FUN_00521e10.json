@@ -1,76 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_005bea88'"
-      },
-      {
-        "category": "format_error",
-        "column": 81,
-        "line": 131,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 91,
-        "line": 131,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 102,
-        "line": 131,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 83,
-        "line": 156,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 93,
-        "line": 156,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 104,
-        "line": 156,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 68,
-        "line": 183,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 78,
-        "line": 183,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 89,
-        "line": 183,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 96,
-        "line": 196,
-        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 528,
@@ -749,23 +677,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CSfxSample_parseConfigFile_FUN_00521e10.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 52,
-          "line": 98,
-          "message": "Possible null pointer dereference: pcVar9",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -806,14 +717,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "description": "Possible null pointer dereference: pcVar9",
-      "line": 98,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "((g_CharacterClassificationTable[(byte)(pcVar9[-1] + 1)] & 2) != 0))) {",
-      "type": "static_null_pointer"
     }
   ]
 }

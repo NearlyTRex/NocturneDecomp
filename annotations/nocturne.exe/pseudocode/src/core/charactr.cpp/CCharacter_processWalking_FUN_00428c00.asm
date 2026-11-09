@@ -25,8 +25,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_can_t_figure_out_next_0057a106
 ;   double DOUBLE_0057a142 = 0.628318530700000
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CConsole g_CConsoleInstance
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_CWayPointActorType_02ddf514.name_hash
 ;
@@ -304,8 +304,8 @@ section .text
     PUSH EAX                            ; 00428eb3
     PUSH EBX                            ; 00428eb4
     PUSH 0x57a106                       ; 00428eb5 | = "%s can't figure out next waypoint try..."
-    MOV EDX,dword ptr [0x005ad350]      ; 00428eba | g_CConsole_PTR_005ad350
-    PUSH EDX                            ; 00428ec0 | g_CConsole_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00428eba | g_CConsolePtr
+    PUSH EDX                            ; 00428ec0 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00428ec1
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     MOV EAX,0x1                         ; 00428ec6

@@ -1,100 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 99,
-        "message": "use of undeclared identifier '_DAT_01c038f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 110,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 111,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 112,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 118,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 118,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 119,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 120,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 127,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 128,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 129,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 135,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 136,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 137,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 166,
-        "message": "use of undeclared identifier 'DAT_005ae470'; did you mean 'DAT_005ae4b0'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 377,
@@ -674,37 +578,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonLight_renderLightBloomQuad_FUN_0044f430.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 34,
-          "line": 87,
-          "message": "Uninitialized variable: local_50",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 78,
-          "line": 87,
-          "message": "Uninitialized variable: local_54",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 106,
-          "message": "Uninitialized variable: local_20",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -777,30 +650,6 @@
       "severity": "moderate",
       "text": "*(int *)((int)&local_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_50",
-      "line": 87,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_d8.base.type = (int)SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_54",
-      "line": 87,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_d8.base.type = (int)SQRT(local_50 * local_50 + local_58 * local_58 + local_54 * local_54);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 106,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0.0 < local_20) {",
-      "type": "static_uninitvar"
     }
   ]
 }

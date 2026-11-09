@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 61,
-        "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_01fba2ec'"
-      },
-      {
-        "category": "cast_error",
-        "column": 17,
-        "line": 63,
-        "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 13,
-        "line": 64,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 15,
-        "line": 76,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 32,
-        "line": 94,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 98,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "cast_error",
-        "column": 71,
-        "line": 98,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 58,
-        "line": 102,
-        "message": "incompatible integer to pointer conversion assigning to 'CDemonActor *' from 'undefined4' (aka 'unsigned int')"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 109,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 58,
-        "line": 112,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 115,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "cast_error",
-        "column": 22,
-        "line": 116,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 116,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 117,
-        "message": "member reference type 'undefined4' (aka 'unsigned int') is not a pointer"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 118,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 121,
-        "message": "no matching function for call to 'core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 34,
-        "line": 122,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CDemonActor *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 77,
-        "line": 153,
-        "message": "use of undeclared identifier 'stack0xffffff60'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 553,
@@ -255,7 +135,7 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
@@ -267,7 +147,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -285,7 +165,7 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -297,13 +177,13 @@
     },
     {
       "addr": "01c777f8",
-      "name": "g_CGame_01c775ec.profile_mode",
+      "name": "g_CGameInstance.profile_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "g_CGame_01c775ec.delta_time_float",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -531,37 +411,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_processActors_FUN_00509140.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 117,
-          "message": "Uninitialized variable: fStack_48",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 23,
-          "line": 115,
-          "message": "Uninitialized variable: fStack_4c",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 31,
-          "line": 105,
-          "message": "Uninitialized variable: iStack_18",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -730,30 +579,6 @@
       "severity": "moderate",
       "text": "pCVar7 = (CDemonSet *)pCVar7->cameras;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: fStack_48",
-      "line": 117,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(fStack_48 == (DAT_00763e44->orient).vec.z)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_4c",
-      "line": 115,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_18",
-      "line": 105,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iStack_18 = iStack_18 + 1;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

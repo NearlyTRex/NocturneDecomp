@@ -32,23 +32,23 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_004df040(CMoon *t
   local_1c.z = 36.0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,&local_1c);
-  g_CDemonSet_PTR_005be368->rendering_mode = 1;
+  g_CDemonSetPtr->rendering_mode = 1;
   local_28.x = _DAT_01c038f8 + -0x8000;
   local_28.y = _DAT_01c038fc + -0x8000;
   local_28.z = 0x8000;
   engine_matrix_c_normalizeVector3DFloat_FUN_004cde90(&local_28,&local_34);
-  pCVar1 = g_CDemonSet_PTR_005be368;
+  pCVar1 = g_CDemonSetPtr;
   local_28.x = local_34.x;
   *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4);
   *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        *(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  (g_CDemonSet_PTR_005be368->light_direction).x = local_28.x;
+  (g_CDemonSetPtr->light_direction).x = local_28.x;
   (pCVar1->light_direction).y = local_28.y;
   (pCVar1->light_direction).z = local_28.z;
   pCVar1->ambient_base_quick = 0x280;
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
             (&this_ptr->moon,0,(CKeyFramedModelInstance *)0x0,0x205);
-  g_CDemonSet_PTR_005be368->rendering_mode = 0;
+  g_CDemonSetPtr->rendering_mode = 0;
   return;
 }

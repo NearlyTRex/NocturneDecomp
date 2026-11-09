@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
@@ -135,23 +130,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModelInstance_showAllParts_FUN_0051dc90.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 12,
-          "line": 20,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar1` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar1 = pCVar1;` self-assign, two-var `tmp = &pCVar1->field; pCVar1 = tmp;` ping-pong, or a bare `pCVar1 = pCVar1 + N;` advance followed by a `*pCVar1 =` store \u2014 plus a constant-index store on `pCVar1`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
@@ -160,14 +138,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "preinc_loop_idiom"
-    },
-    {
-      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 20,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "} while ((float *)piVar2 != &this_ptr->bone_origins[2].z);",
-      "type": "static_invalid_pointer_cast"
     }
   ]
 }

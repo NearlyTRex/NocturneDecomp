@@ -1,38 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 25,
-        "message": "use of undeclared identifier '_DAT_02dd10cc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 51,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 87,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 41,
     "suspect_count": 3,
     "suspect_types": [
       "stack_ref",
       "vector_type_pun",
       "warning_overlapping_globals"
     ],
-    "total_lines": 139
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -108,9 +90,9 @@
     },
     {
       "addr": "005ba8ec",
-      "name": "INT_005ba8ec",
-      "type": "int",
-      "value": "0x1cadf80"
+      "name": "g_CGroundPtr",
+      "type": "CGround*",
+      "value": "01cadf80"
     },
     {
       "addr": "01b4d738",
@@ -286,7 +268,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 43,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffc4);",
@@ -294,7 +276,7 @@
     },
     {
       "description": "Vector type-pun \u2014 `local_30` is declared `CVector3f` but its address is cast to `(CVector3i *)` and read as the other element kind, so integer bits are reinterpreted as floats (or vice-versa). Stack-slot reuse Ghidra mistyped (\u00a713): retype the local to the element kind the .asm stores/reads (FSTP/FLD = float, MOV = int), drop the `(int)`/`(float)` truncation on its components, and drop the cast.",
-      "line": 41,
+      "line": 40,
       "match": "(CVector3i *)&local_30",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&local_30);",

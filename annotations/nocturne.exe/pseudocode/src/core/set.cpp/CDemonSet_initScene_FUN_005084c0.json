@@ -1,122 +1,14 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 26,
-        "message": "no matching function for call to 'core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 27,
-        "message": "use of undeclared identifier '_DAT_01fba2d8'; did you mean 'DAT_005bacd8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 49,
-        "message": "use of undeclared identifier 'DAT_01fb99d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 57,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 63,
-        "message": "use of undeclared identifier 'DAT_01fb99d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 65,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 65,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 66,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 77,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 80,
-        "message": "use of undeclared identifier 'DAT_01fb99d4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 87,
-        "message": "use of undeclared identifier '_DAT_01fb99d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 92,
-        "message": "use of undeclared identifier '_DAT_01fb9b54'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_01fba9a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_01fba2ec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_01fba480'; did you mean 'DAT_005b6480'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 109,
-        "message": "no matching function for call to 'core_weather_cpp_CWeather_setWeatherType_FUN_00555750'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 235,
+    "complexity_score": 225,
     "cross_reference_count": 3,
     "function_call_count": 17,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 100,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "raw_address_constant",
       "shadow_pointer_walk",
@@ -278,9 +170,9 @@
     },
     {
       "addr": "005ad54c",
-      "name": "DAT_005ad54c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "014b8de8"
     },
     {
       "addr": "005baca0",
@@ -484,14 +376,6 @@
       "severity": "mild",
       "text": "pCVar1 = *(CDemonLight **)(&DAT_01fb99d4 + iVar2);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Raw hex literal 0x14b8de8 matches address of g_CFilterCache_014b8de8 (type CFilterCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 19,
-      "match": "0x14b8de8",
-      "severity": "moderate",
-      "text": "core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(0x014B8DE8);",
-      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",

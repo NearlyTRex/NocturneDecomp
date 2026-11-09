@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
@@ -113,23 +108,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "trimLineAndRemoveComments_FUN_00521d80.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 68,
-          "line": 34,
-          "message": "Possible null pointer dereference: pcVar2",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
@@ -138,14 +116,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "description": "Possible null pointer dereference: pcVar2",
-      "line": 34,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "while ((line < pcVar2 && ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
-      "type": "static_null_pointer"
     }
   ]
 }

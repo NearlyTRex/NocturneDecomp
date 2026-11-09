@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 27,
-        "line": 155,
-        "message": "cast from pointer to smaller type 'ushort' (aka 'unsigned short') loses information"
-      },
-      {
-        "category": "format_error",
-        "column": 69,
-        "line": 344,
-        "message": "format specifies type 'unsigned int' but the argument has type 'ulong' (aka 'unsigned long') [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 700,
@@ -699,30 +681,6 @@
         "type": "int"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "traceConnectedEdges_FUN_00430630.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 43,
-          "line": 182,
-          "message": "Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 43,
-          "line": 285,
-          "message": "Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -1844,22 +1802,6 @@
       "severity": "moderate",
       "text": "// 004310c8: MOVSD.REP ES:EDI,ESI  ; DAT_00765c6c | DAT_00765c70",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.",
-      "line": 182,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "(&DAT_00765c72)[uVar12 * 4] = (&DAT_00765c72)[uVar12 * 4];",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of '(&DAT_00765c72)[uVar12*4]' to itself.",
-      "line": 285,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "(&DAT_00765c72)[uVar12 * 4] = (&DAT_00765c72)[uVar12 * 4];",
-      "type": "static_self_assignment"
     }
   ]
 }

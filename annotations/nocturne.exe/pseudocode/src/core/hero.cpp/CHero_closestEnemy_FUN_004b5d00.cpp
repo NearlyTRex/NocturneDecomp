@@ -27,8 +27,8 @@ CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(CHero *this_ptr,f
   iVar4 = 0;
   local_14 = &(this_ptr->base).base.location;
   local_1c = (CEnemy *)0x0;
-  for (iVar5 = 0; iVar5 < g_CDemonSet_PTR_005be368->enemy_count; iVar5 = iVar5 + 1) {
-    this_ptr_00 = *(CEnemy **)((int)g_CDemonSet_PTR_005be368->enemies + iVar4);
+  for (iVar5 = 0; iVar5 < g_CDemonSetPtr->enemy_count; iVar5 = iVar5 + 1) {
+    this_ptr_00 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + iVar4);
     pCVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
                        ((CDemonActor *)this_ptr_00,g_CVehicleActorType_02dd1190.name_hash);
     if (pCVar1 == (CDemonActor *)0x0) {

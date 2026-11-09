@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 42,
-        "line": 67,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
@@ -115,7 +103,7 @@
     },
     {
       "addr": "01fba938",
-      "name": "g_CDemonRaytrace_01fba938",
+      "name": "g_CDemonRaytraceInstance",
       "type": "CDemonRaytrace",
       "value": null
     }
@@ -435,23 +423,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CBugs_updateGroundHeightGrid_FUN_00421b80.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 72,
-          "message": "Uninitialized variable: unaff_EBX",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -676,14 +647,6 @@
       "severity": "moderate",
       "text": "// 00421d51: MOVSD.REP ES:EDI,ESI  ; DAT_00764b58 | DAT_00764b5c",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EBX",
-      "line": 72,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_20 = *(int *)(unaff_EBX + 0x1984c) - iStack_3c;",
-      "type": "static_uninitvar"
     }
   ]
 }

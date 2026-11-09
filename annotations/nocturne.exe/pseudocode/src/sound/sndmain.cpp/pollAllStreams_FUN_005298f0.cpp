@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_005298f0(int paused_mode)
     dVar1 = -0.20000000000000001;
   }
   local_14 = 2.0f + (float)dVar1;
-  this_ptr = g_CSfxSample_ARRAY_02dc1edc;
+  this_ptr = g_SfxSamples;
   do {
     sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(this_ptr,local_14,local_18);
     this_ptr = this_ptr + 1;

@@ -1,18 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 224,
-    "complexity_score": 226,
+    "complexity_score": 225,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 95,
     "suspect_count": 11,
     "suspect_types": [
       "unnamed_param",
@@ -20,7 +15,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 320
+    "total_lines": 319
   },
   "cross_references": [
     {
@@ -187,7 +182,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -366,12 +361,12 @@
       "line": 70,
       "match": "param_2",
       "severity": "mild",
-      "text": "(g_CEditorTools_PTR_005b6d50,\"Probable non-text file %s detected near line %d.  Cannot use script.\",param_2,",
+      "text": "(g_CEditorToolsPtr,\"Probable non-text file %s detected near line %d.  Cannot use script.\",param_2,iVar3 + 1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 85,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",
@@ -379,7 +374,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 96,
       "match": "param_2",
       "severity": "mild",
       "text": "(\"%s failed syntax check on line %d: %s\",param_2,local_18 + 1,pcVar6);",

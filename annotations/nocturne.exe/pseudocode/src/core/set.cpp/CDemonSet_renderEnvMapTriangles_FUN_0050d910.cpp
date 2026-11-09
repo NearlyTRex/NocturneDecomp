@@ -30,7 +30,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_0050d910(CDemonSet
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005be680);
-  if (g_CGame_PTR_005b9354->render_mode == 2) {
+  if (g_CGamePtr->render_mode == 2) {
     alpha = g_CurrentAlphaValue << 8;
   }
   else {

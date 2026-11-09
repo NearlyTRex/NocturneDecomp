@@ -68,8 +68,7 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_004282d0(CCharacter 
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                 (&this_ptr->base,&CStack_28,(CVector3f *)(auStack_6c + 8));
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (g_CGore_PTR_005b96c4,&CStack_28,(CVector3f *)(local_48 + 8),iVar2,
-                 this_ptr->blood_type);
+                (g_CGorePtr,&CStack_28,(CVector3f *)(local_48 + 8),iVar2,this_ptr->blood_type);
     }
     fStack_34 = (local_54.z + local_60.z) * 0.5f;
     fStack_30 = ((float)local_48._0_4_ + local_54.x) * 0.5f;

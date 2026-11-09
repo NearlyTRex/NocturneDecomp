@@ -41,12 +41,12 @@
 ;   double DOUBLE_00582172 = -0.800000000000000
 ;   double DOUBLE_0058217a = 2
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CDemonSet_01e57284.actor_count
-;   undefined4 g_CDemonSet_01e57284.actors[0]
-;   undefined4 g_CDemonSet_01e57284.actors[1]
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -154,13 +154,13 @@ section .text
     LEA EAX,[ESI + 0x20]                ; 004984fb
     MOV dword ptr [ESP + 0xa8],EDX      ; 004984fe
     MOV dword ptr [ESP + 0x94],EAX      ; 00498505
-    MOV EAX,[0x005be368]                ; 0049850c | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0049850c | g_CDemonSetPtr
         ;   Label: LAB_0049850c
     MOV EDX,dword ptr [ESP + 0xa8]      ; 00498511
-    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 00498518 | g_CDemonSet_01e57284.actor_count
+    CMP EDX,dword ptr [EAX + 0x14cd6c]  ; 00498518 | g_CDemonSetInstance.actor_count
     JGE 0x004986e0                      ; 0049851e
         ;   XREF to: 004986e0 (CONDITIONAL_JUMP)  ; LAB_004986e0
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 00498524 | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 00498524 | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EBX                            ; 0049852b
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0049852c
     CALL dword ptr [EAX + 0x8c]         ; 00498532

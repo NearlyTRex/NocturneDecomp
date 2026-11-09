@@ -32,7 +32,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *thi
   uint local_24;
   int local_14;
   
-  if (g_CGame_PTR_005b9354->profile_mode != 0) {
+  if (g_CGamePtr->profile_mode != 0) {
     local_28 = wincore_winrun_cpp_getTime_FUN_00558a30();
   }
   _DAT_02080430 = 0;
@@ -46,7 +46,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(CDemonSet *thi
     core_main_c_displayErrorAndQuit_FUN_004c8440("CSet::buildActorDisplayList - Don't have a camera!");
   }
   local_24 = 0xc;
-  if ((_DAT_01fba2d8 != 0) || (g_CGame_PTR_005b9354->goggles_active != 0)) {
+  if ((_DAT_01fba2d8 != 0) || (g_CGamePtr->goggles_active != 0)) {
     local_24 = 0xd;
   }
   if (_DAT_01fb9b54 != 0) {
@@ -140,13 +140,13 @@ LAB_0050d39b:
     SVar4 = _DAT_02080430 + 1;
   }
   this_ptr->sorted_render_actor_count = SVar4;
-  if (g_CGame_PTR_005b9354->profile_mode != 0) {
+  if (g_CGamePtr->profile_mode != 0) {
     local_14 = wincore_winrun_cpp_getTime_FUN_00558a30();
     local_14 = local_14 - local_28;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"buildDispList %d items : %3.2f ms\n",_DAT_02080430,
+              (g_CConsolePtr,"buildDispList %d items : %3.2f ms\n",_DAT_02080430,
                ((double)local_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-               (double)g_CGame_PTR_005b9354->delta_time_float);
+               (double)g_CGamePtr->delta_time_float);
     return;
   }
   return;

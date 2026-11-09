@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_fire_cpp_0058134a
 ;   TerminatedCString s_CGunFlame_initProcess_to_0058135b
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01c09e08
 ;   undefined4 DAT_01c09e0c
 ;   undefined4 DAT_01c09ed4
@@ -18,10 +18,10 @@
 ;   undefined4 g_CFlameCanActorType_01c70654.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.actor_count
-;   undefined4 g_CDemonSet_01e57284.actors[0]
-;   undefined4 g_CDemonSet_01e57284.character_count
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -41,17 +41,17 @@ section .text
     XOR EDI,EDI                         ; 00487fd6
     XOR ESI,ESI                         ; 00487fd8
     MOV dword ptr [0x01c09e08],EDX      ; 00487fda | DAT_01c09e08
-    MOV EBX,dword ptr [0x005be368]      ; 00487fe0 | g_CDemonSet_PTR_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 00487fe0 | g_CDemonSetPtr
         ;   Label: LAB_00487fe0
-    CMP EDI,dword ptr [EBX + 0x14ecb0]  ; 00487fe6 | g_CDemonSet_01e57284.character_count
+    CMP EDI,dword ptr [EBX + 0x14ecb0]  ; 00487fe6 | g_CDemonSetInstance.character_count
     JL 0x0048800e                       ; 00487fec
         ;   XREF to: 0048800e (CONDITIONAL_JUMP)  ; LAB_0048800e
     XOR EBX,EBX                         ; 00487fee
     XOR ESI,ESI                         ; 00487ff0
     MOV dword ptr [0x01c09ed4],EBX      ; 00487ff2 | DAT_01c09ed4
-    MOV EAX,[0x005be368]                ; 00487ff8 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 00487ff8 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_00487ff8
-    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 00487ffd | g_CDemonSet_01e57284.actor_count
+    CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 00487ffd | g_CDemonSetInstance.actor_count
     JL 0x00488089                       ; 00488003
         ;   XREF to: 00488089 (CONDITIONAL_JUMP)  ; LAB_00488089
     POP EBP                             ; 00488009
@@ -104,7 +104,7 @@ section .text
     MOV EBP,dword ptr [0x01c7068c]      ; 00488089 | g_CFlameCanActorType_01c70654.name_hash
         ;   Label: LAB_00488089
     PUSH EBP                            ; 0048808f
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 00488090 | g_CDemonSet_01e57284.actors[0]
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 00488090 | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 00488097
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 00488098
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)

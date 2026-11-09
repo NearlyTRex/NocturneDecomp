@@ -11,8 +11,8 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(CDemonSe
 {
   int iVar1;
   
-  if (g_CGame_PTR_005b9354->suppress_set_geometry == 0) {
-    if (g_CGame_PTR_005b9354->render_mode != 0) {
+  if (g_CGamePtr->suppress_set_geometry == 0) {
+    if (g_CGamePtr->render_mode != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704);
       if (iVar1 == 0) {

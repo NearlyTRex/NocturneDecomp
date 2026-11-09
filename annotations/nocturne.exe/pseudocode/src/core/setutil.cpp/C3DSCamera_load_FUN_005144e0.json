@@ -1,58 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 27,
-        "line": 22,
-        "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 26,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 31,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 38,
-        "message": "format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 40,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 36,
-        "line": 42,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 38,
-        "line": 70,
-        "message": "format specifies type 'float *' but the argument has type 'CBoundingBox3D *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 38,
-        "line": 72,
-        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 272,
@@ -184,73 +130,73 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb1acc",
-      "name": "g_CDemonSet_01e57284.scene_fog.color_index.r",
+      "name": "g_CDemonSetInstance.scene_fog.color_index.r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1ad0",
-      "name": "g_CDemonSet_01e57284.scene_fog.color_index.g",
+      "name": "g_CDemonSetInstance.scene_fog.color_index.g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1ad4",
-      "name": "g_CDemonSet_01e57284.scene_fog.color_index.b",
+      "name": "g_CDemonSetInstance.scene_fog.color_index.b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1ad8",
-      "name": "g_CDemonSet_01e57284.scene_fog.scroll.x",
+      "name": "g_CDemonSetInstance.scene_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1adc",
-      "name": "g_CDemonSet_01e57284.scene_fog.scroll.y",
+      "name": "g_CDemonSetInstance.scene_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1ae0",
-      "name": "g_CDemonSet_01e57284.scene_fog.scroll.z",
+      "name": "g_CDemonSetInstance.scene_fog.scroll.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1ae4",
-      "name": "g_CDemonSet_01e57284.scene_fog.height_threshold",
+      "name": "g_CDemonSetInstance.scene_fog.height_threshold",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1ae8",
-      "name": "g_CDemonSet_01e57284.scene_fog.density_multiplier",
+      "name": "g_CDemonSetInstance.scene_fog.density_multiplier",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1aec",
-      "name": "g_CDemonSet_01e57284.scene_fog.temperature",
+      "name": "g_CDemonSetInstance.scene_fog.temperature",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb1b48",
-      "name": "g_CDemonSet_01e57284.set_file_version",
+      "name": "g_CDemonSetInstance.set_file_version",
       "type": "undefined4",
       "value": null
     }
@@ -331,23 +277,6 @@
         "type": "_FILE *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "C3DSCamera_load_FUN_005144e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidscanf",
-          "column": 3,
-          "line": 22,
-          "message": "sscanf() without field width limits can crash with huge input data.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {

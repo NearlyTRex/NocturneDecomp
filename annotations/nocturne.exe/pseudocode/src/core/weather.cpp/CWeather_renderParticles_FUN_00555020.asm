@@ -68,13 +68,13 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a4290
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_005c15bc
 ;   undefined4 DAT_005c15d4
 ;   undefined4 DAT_005c15ec
 ;   undefined4 DAT_00780000
 ;   undefined4 DAT_01b4d738
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;   CVector3f[200] g_CVector3f_ARRAY_02ddfa28
 ;   undefined4 g_CVector3f_ARRAY_02ddfa28[0].y
 ;   undefined4 g_CVector3f_ARRAY_02ddfa28[0].z
@@ -163,8 +163,8 @@ section .text
     PUSH 0x0                            ; 005550df
     PUSH 0x0                            ; 005550e1
     PUSH 0x0                            ; 005550e3
-    MOV EDX,dword ptr [0x005be368]      ; 005550e5 | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 005550eb | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 005550e5 | g_CDemonSetPtr
+    PUSH EDX                            ; 005550eb | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0 ; 005550ec
         ;   XREF to: 0050adc0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setLightingParameters_FUN_0050adc0(CDemonSet * this_ptr, CVector3f * position, UOrientationVector * orientation, CVector3f * aabb_min, ...)
     ADD ESP,0x18                        ; 005550f1
@@ -265,8 +265,8 @@ section .text
     PUSH 0x0                            ; 0055522d
     LEA EAX,[ESP + 0x80]                ; 0055522f
     PUSH EAX                            ; 00555236
-    MOV ECX,dword ptr [0x005be368]      ; 00555237 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 0055523d | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 00555237 | g_CDemonSetPtr
+    PUSH ECX                            ; 0055523d | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 ; 0055523e
         ;   XREF to: 0050bb50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00555243

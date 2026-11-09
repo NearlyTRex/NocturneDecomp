@@ -16,7 +16,7 @@ void __cdecl core_gore_cpp_CGore_process_FUN_004b0030(CGore *this_ptr)
   CBloodPool *this_ptr_01;
   CBloodSplat *this_ptr_02;
   
-  this_ptr_00 = g_CBloodParticle_ARRAY_01c78cec;
+  this_ptr_00 = g_BloodParticles;
   do {
     if (0.0 < (this_ptr_00->base).lifetime_remaining) {
       (*((this_ptr_00->base).vtable)->process)(&this_ptr_00->base);

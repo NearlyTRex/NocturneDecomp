@@ -11,9 +11,9 @@
 ;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004d93d0 at 004d940c
 ;
 ; Referenced Globals:
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01cae0d4
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0
@@ -51,9 +51,9 @@ section .text
     CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0 ; 004d8fef
         ;   XREF to: 004d8ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d8ff4
-    MOV EBP,dword ptr [0x005be368]      ; 004d8ff7 | g_CDemonSet_PTR_005be368
+    MOV EBP,dword ptr [0x005be368]      ; 004d8ff7 | g_CDemonSetPtr
     XOR EDI,EDI                         ; 004d8ffd
-    PUSH EBP                            ; 004d8fff | g_CDemonSet_01e57284
+    PUSH EBP                            ; 004d8fff | g_CDemonSetInstance
     MOV dword ptr [0x01cae0d4],EDI      ; 004d9000 | DAT_01cae0d4
     MOV dword ptr [EBX + 0x850],EDI     ; 004d9006
     CALL core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30 ; 004d900c

@@ -56,8 +56,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
       if (this_ptr->open_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
       }
-      core_setcolid_cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0
-                (g_CDemonSet_PTR_005be368,&this_ptr->base);
+      core_setcolid_cpp_CDemonSet_transferVoxelShadow_FUN_00511aa0(g_CDemonSetPtr,&this_ptr->base);
     }
     this_ptr->param = 0.0;
     break;
@@ -98,8 +97,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
         if (this_ptr->one_shot != ONE_SHOT_NO) {
           this_ptr->one_shot = ONE_SHOT_DONE;
         }
-        core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10
-                  (g_CDemonSet_PTR_005be368,&this_ptr->base);
+        core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10(g_CDemonSetPtr,&this_ptr->base);
       }
     }
     else if (this_ptr->param < 0.0) {
@@ -108,8 +106,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_00455640(CDoor *this_ptr,float delt
       if (this_ptr->one_shot != ONE_SHOT_NO) {
         this_ptr->one_shot = ONE_SHOT_DONE;
       }
-      core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10
-                (g_CDemonSet_PTR_005be368,&this_ptr->base);
+      core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00511a10(g_CDemonSetPtr,&this_ptr->base);
     }
   }
   if (this_ptr->door_state == DOOR_STATE_CLOSED) {
@@ -131,8 +128,8 @@ LAB_00455728:
     pCStack_4c = &(this_ptr->base).orient_matrix;
     iStack_18 = 0;
     while( true ) {
-      if (g_CDemonSet_PTR_005be368->character_count <= iStack_18) break;
-      iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);
+      if (g_CDemonSetPtr->character_count <= iStack_18) break;
+      iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(&SStack_d0);
       iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x34))(iVar1,&SStack_d0);
       if (((iVar2 == 2) &&

@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_00585827'; did you mean 'DAT_00575828'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 36,
-        "message": "use of undeclared identifier '_DAT_00585827'; did you mean 'DAT_00575828'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 37,
-        "message": "use of undeclared identifier '_DAT_00585827'; did you mean 'DAT_00575828'?"
-      },
-      {
-        "category": "cast_error",
-        "column": 17,
-        "line": 48,
-        "message": "C-style cast from 'void' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 56,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
@@ -119,19 +83,19 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -304,9 +268,9 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iVar3);",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
       "type": "pointer_cast"
     },
     {
@@ -320,9 +284,9 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar5 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iVar3);",
+      "text": "iVar5 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
       "type": "pointer_cast"
     },
     {

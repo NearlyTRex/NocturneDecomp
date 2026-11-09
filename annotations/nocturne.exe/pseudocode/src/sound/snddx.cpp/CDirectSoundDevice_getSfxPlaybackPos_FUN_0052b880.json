@@ -1,28 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 11,
-        "line": 26,
-        "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0xfffffe44'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 31,
-        "message": "use of undeclared identifier 'stack0xfffffe44'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
@@ -220,22 +196,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 19,
-          "line": 35,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
@@ -268,14 +228,6 @@
       "severity": "moderate",
       "text": "sound_sndmain_cpp_logSoundError_FUN_00529980(&stack0xfffffe44);",
       "type": "stack_ref"
-    },
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 35,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "return (double)(uStack_20 / uVar3);",
-      "type": "static_integer_division"
     }
   ],
   "vtable_info": {

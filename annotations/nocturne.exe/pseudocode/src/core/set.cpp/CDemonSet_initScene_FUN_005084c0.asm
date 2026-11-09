@@ -19,7 +19,7 @@
 ;   TerminatedCString s_CDemonSet_initScene_Memo_005903a5
 ;   TerminatedCString s_core_set_cpp_005903e6
 ;   TerminatedCString s_CDemonSet_initScene_Too_005903f6
-;   undefined4 DAT_005ad54c
+;   CFilterCache* g_CFilterCachePtr = 014b8de8
 ;   CLevelLoader* g_CLevelLoader_PTR_005baca0 = 01cc3160
 ;   undefined4 DAT_005c15b8
 ;   char* g_CurrentFilename
@@ -73,7 +73,7 @@ section .text
     ADD ESP,0xc                         ; 005084e7
     CALL core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0 ; 005084ea
         ;   XREF to: 0044e3b0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0()
-    MOV ECX,dword ptr [0x005ad54c]      ; 005084ef | DAT_005ad54c
+    MOV ECX,dword ptr [0x005ad54c]      ; 005084ef | g_CFilterCachePtr
     PUSH ECX                            ; 005084f5
     CALL core_dfilter.cpp_CFilterCache_free_FUN_0044bcd0 ; 005084f6
         ;   XREF to: 0044bcd0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterCache_free_FUN_0044bcd0(CFilterCache * this_ptr)

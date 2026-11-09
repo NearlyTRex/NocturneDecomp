@@ -61,7 +61,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetla
   local_14 = 0;
   do {
     while( true ) {
-      if (g_CDemonSet_PTR_005be368->character_count <= iVar4) {
+      if (g_CDemonSetPtr->character_count <= iVar4) {
         if (local_14 == 0) {
           sound_name = "svetlana-miss?.wav";
         }
@@ -71,7 +71,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(CSvetla
         (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
         return;
       }
-      this_ptr_01 = *(CSvetlana **)((int)g_CDemonSet_PTR_005be368->characters + iVar6);
+      this_ptr_01 = *(CSvetlana **)((int)g_CDemonSetPtr->characters + iVar6);
       if (this_ptr_01 != this_ptr) break;
 LAB_00542c3c:
       iVar4 = iVar4 + 1;

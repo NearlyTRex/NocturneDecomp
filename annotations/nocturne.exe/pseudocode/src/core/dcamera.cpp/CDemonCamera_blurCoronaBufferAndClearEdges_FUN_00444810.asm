@@ -12,7 +12,7 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_004470f0 at 0044715b
 ;
 ; Called Functions:
-;   core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00465382
+;   core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_00465382
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     PUSH EBP                            ; 004448cf
     MOV EBX,dword ptr [ESP + 0x8]       ; 004448d0
     PUSH EBX                            ; 004448d4
-    CALL core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00465382 ; 004448d5
-        ;   XREF to: 00465382 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00465382(ulonglong * output_buffer, ulonglong * input_buffer, int pixel_count)
+    CALL core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_00465382 ; 004448d5
+        ;   XREF to: 00465382 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_00465382(ulonglong * output_buffer, ulonglong * input_buffer, int pixel_count)
     ADD ESP,0xc                         ; 004448da
     MOV EAX,dword ptr [ESP]             ; 004448dd
     INC EDI                             ; 004448e0

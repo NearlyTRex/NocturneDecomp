@@ -55,14 +55,13 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_004d2d00(void)
   int local_c;
   
   bVar36 = 0;
-  if (((g_CGame_PTR_005b9354->game_control != CONTROL_MODE_GAMEPAD) ||
-      (g_CGame_PTR_005b9354->x_center != 0)) ||
+  if (((g_CGamePtr->game_control != CONTROL_MODE_GAMEPAD) || (g_CGamePtr->x_center != 0)) ||
      (iVar30 = core_menu_cpp_calibrateGamepad_FUN_004cf8d0(), iVar30 != 0)) {
     local_c = 0;
 LAB_004d2d2e:
     _DAT_01cc8120 = 0;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Forward");
-    piVar27 = &g_CGame_PTR_005b9354->key_walk;
+    piVar27 = &g_CGamePtr->key_walk;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -81,7 +80,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Back");
-    piVar27 = &g_CGame_PTR_005b9354->key_backup;
+    piVar27 = &g_CGamePtr->key_backup;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -99,14 +98,14 @@ LAB_004d2d2e:
       pcVar32 = pcVar32 + 2;
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
-    if (g_CGame_PTR_005b9354->always_run == 0) {
+    if (g_CGamePtr->always_run == 0) {
       pcVar2 = "Run";
     }
     else {
       pcVar2 = "Walk";
     }
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar2);
-    piVar27 = &g_CGame_PTR_005b9354->key_run;
+    piVar27 = &g_CGamePtr->key_run;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -125,7 +124,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Strafe on");
-    piVar27 = &g_CGame_PTR_005b9354->key_strafe;
+    piVar27 = &g_CGamePtr->key_strafe;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -144,7 +143,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Strafe left");
-    piVar27 = &g_CGame_PTR_005b9354->key_strafe_left;
+    piVar27 = &g_CGamePtr->key_strafe_left;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -163,7 +162,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Strafe right");
-    piVar27 = &g_CGame_PTR_005b9354->key_strafe_right;
+    piVar27 = &g_CGamePtr->key_strafe_right;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -182,7 +181,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Turn left");
-    piVar27 = &g_CGame_PTR_005b9354->key_left;
+    piVar27 = &g_CGamePtr->key_left;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -201,7 +200,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Turn right");
-    piVar27 = &g_CGame_PTR_005b9354->key_right;
+    piVar27 = &g_CGamePtr->key_right;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -220,7 +219,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Fire / Action");
-    piVar27 = &g_CGame_PTR_005b9354->key_fire;
+    piVar27 = &g_CGamePtr->key_fire;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -239,7 +238,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Use item");
-    piVar27 = &g_CGame_PTR_005b9354->key_use_item;
+    piVar27 = &g_CGamePtr->key_use_item;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -258,7 +257,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Light");
-    piVar27 = &g_CGame_PTR_005b9354->key_light;
+    piVar27 = &g_CGamePtr->key_light;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -277,7 +276,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Night Vision");
-    piVar27 = &g_CGame_PTR_005b9354->key_infrared;
+    piVar27 = &g_CGamePtr->key_infrared;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -296,7 +295,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Draw");
-    piVar27 = &g_CGame_PTR_005b9354->key_draw;
+    piVar27 = &g_CGamePtr->key_draw;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -315,7 +314,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Point up");
-    piVar27 = &g_CGame_PTR_005b9354->key_point_up;
+    piVar27 = &g_CGamePtr->key_point_up;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -334,7 +333,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Point down");
-    piVar27 = &g_CGame_PTR_005b9354->key_point_down;
+    piVar27 = &g_CGamePtr->key_point_down;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -353,7 +352,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Jump");
-    piVar27 = &g_CGame_PTR_005b9354->key_jump;
+    piVar27 = &g_CGamePtr->key_jump;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -372,7 +371,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select pistol weapons");
-    piVar27 = &g_CGame_PTR_005b9354->key_weapon_1;
+    piVar27 = &g_CGamePtr->key_weapon_1;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -391,7 +390,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select assault weapons");
-    piVar27 = &g_CGame_PTR_005b9354->key_weapon_2;
+    piVar27 = &g_CGamePtr->key_weapon_2;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -410,7 +409,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select flame weapons");
-    piVar27 = &g_CGame_PTR_005b9354->key_weapon_3;
+    piVar27 = &g_CGamePtr->key_weapon_3;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -429,7 +428,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select grenade weapons");
-    piVar27 = &g_CGame_PTR_005b9354->key_weapon_4;
+    piVar27 = &g_CGamePtr->key_weapon_4;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -448,7 +447,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select melee weapons");
-    piVar27 = &g_CGame_PTR_005b9354->key_weapon_5;
+    piVar27 = &g_CGamePtr->key_weapon_5;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -467,7 +466,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Next weapon");
-    piVar27 = &g_CGame_PTR_005b9354->key_next_weapon;
+    piVar27 = &g_CGamePtr->key_next_weapon;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -486,7 +485,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Previous weapon");
-    piVar27 = &g_CGame_PTR_005b9354->key_prev_weapon;
+    piVar27 = &g_CGamePtr->key_prev_weapon;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -505,7 +504,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Next item");
-    piVar27 = &g_CGame_PTR_005b9354->key_next_item;
+    piVar27 = &g_CGamePtr->key_next_item;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -524,7 +523,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Previous item");
-    piVar27 = &g_CGame_PTR_005b9354->key_prev_item;
+    piVar27 = &g_CGamePtr->key_prev_item;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -543,7 +542,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Item description");
-    piVar27 = &g_CGame_PTR_005b9354->key_item_desc;
+    piVar27 = &g_CGamePtr->key_item_desc;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -562,7 +561,7 @@ LAB_004d2d2e:
     } while (cVar1 != '\0');
     _DAT_01cc8120 = _DAT_01cc8120 + 1;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Next ammo");
-    piVar27 = &g_CGame_PTR_005b9354->key_next_ammo;
+    piVar27 = &g_CGamePtr->key_next_ammo;
     if (0x1d < _DAT_01cc8120) {
       g_CurrentFilename = "..\\core\\menu.cpp";
       g_CurrentLineNumber = 2087;
@@ -606,7 +605,7 @@ LAB_004d2d2e:
                        (&local_244,pcVar2,iVar30);
     if (-1 < iVar30) {
       if (iVar30 == 0) {
-        core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(g_CGame_PTR_005b9354);
+        core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(g_CGamePtr);
         shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_244,0);
       }
       else {
@@ -651,7 +650,7 @@ LAB_004d2d2e:
             pcVar34 = pcVar34 + 2;
           } while (cVar1 != '\0');
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                    (g_CEditorTools_PTR_005b6d50,local_644);
+                    (g_CEditorToolsPtr,local_644);
           break;
         case 0x255:
         case 0x256:
@@ -688,13 +687,12 @@ LAB_004d2d2e:
             pcVar34[1] = cVar1;
             pcVar34 = pcVar34 + 2;
           } while (cVar1 != '\0');
-          shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                    (g_CEditorTools_PTR_005b6d50,local_844);
+          shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0(g_CEditorToolsPtr,local_844);
           break;
         default:
           while( true ) {
-            if (g_CGame_PTR_005b9354->game_control == CONTROL_MODE_GAMEPAD) {
-              core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGame_PTR_005b9354);
+            if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
+              core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGamePtr);
             }
             EVar31 = 0xffffffff;
             EVar29 = 0;
@@ -709,7 +707,7 @@ LAB_004d3d37:
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                ("OK - you can release the key now...");
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                      (g_CEditorTools_PTR_005b6d50,pcVar2);
+                      (g_CEditorToolsPtr,pcVar2);
             iVar30 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);
             if (iVar30 != 0) break;
             wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
@@ -750,13 +748,13 @@ LAB_004d3d37:
               pcVar34 = pcVar34 + 2;
             } while (cVar1 != '\0');
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                      (g_CEditorTools_PTR_005b6d50,acStack_444);
+                      (g_CEditorToolsPtr,acStack_444);
             engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(g_CKeys_PTR_005bac64,1);
 LAB_004d3e28:
             do {
               wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-              if (g_CGame_PTR_005b9354->game_control == CONTROL_MODE_GAMEPAD) {
-                core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGame_PTR_005b9354);
+              if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
+                core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGamePtr);
               }
               EVar31 = 0xffffffff;
               EVar29 = 0;
@@ -771,10 +769,10 @@ LAB_004d3e28:
             pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                ("OK - you can release the key now...");
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-                      (g_CEditorTools_PTR_005b6d50,pcVar2);
+                      (g_CEditorToolsPtr,pcVar2);
             while( true ) {
-              if (g_CGame_PTR_005b9354->game_control == CONTROL_MODE_GAMEPAD) {
-                core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGame_PTR_005b9354);
+              if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
+                core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(g_CGamePtr);
               }
               EVar31 = 0xffffffff;
               EVar29 = 0;
@@ -813,11 +811,11 @@ LAB_004d3ec0:
     shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(&local_244,0);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Forward");
     iVar30 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_walk,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_walk,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Back");
     iVar28 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_backup,pcVar2);
-    if (g_CGame_PTR_005b9354->always_run == 0) {
+                       ((EInputCodeType *)&g_CGamePtr->key_backup,pcVar2);
+    if (g_CGamePtr->always_run == 0) {
       pcVar2 = "Run";
     }
     else {
@@ -825,88 +823,88 @@ LAB_004d3ec0:
     }
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370(pcVar2);
     iVar33 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_run,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_run,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Strafe on");
     iVar3 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                      ((EInputCodeType *)&g_CGame_PTR_005b9354->key_strafe,pcVar2);
+                      ((EInputCodeType *)&g_CGamePtr->key_strafe,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Strafe left");
     iVar4 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                      ((EInputCodeType *)&g_CGame_PTR_005b9354->key_strafe_left,pcVar2);
+                      ((EInputCodeType *)&g_CGamePtr->key_strafe_left,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Strafe right");
     iVar5 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                      ((EInputCodeType *)&g_CGame_PTR_005b9354->key_strafe_right,pcVar2);
+                      ((EInputCodeType *)&g_CGamePtr->key_strafe_right,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Turn left");
     iVar6 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                      ((EInputCodeType *)&g_CGame_PTR_005b9354->key_left,pcVar2);
+                      ((EInputCodeType *)&g_CGamePtr->key_left,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Turn right");
     iVar7 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                      ((EInputCodeType *)&g_CGame_PTR_005b9354->key_right,pcVar2);
+                      ((EInputCodeType *)&g_CGamePtr->key_right,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Fire / Action");
     iVar8 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                      ((EInputCodeType *)&g_CGame_PTR_005b9354->key_fire,pcVar2);
+                      ((EInputCodeType *)&g_CGamePtr->key_fire,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Use item");
     iVar9 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                      ((EInputCodeType *)&g_CGame_PTR_005b9354->key_use_item,pcVar2);
+                      ((EInputCodeType *)&g_CGamePtr->key_use_item,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Light");
     iVar10 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_light,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_light,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Night Vision");
     iVar11 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_infrared,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_infrared,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Draw");
     iVar12 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_draw,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_draw,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Point up");
     iVar13 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_point_up,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_point_up,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Point down");
     iVar14 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_point_down,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_point_down,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Jump");
     iVar15 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_jump,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_jump,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select pistol weapons");
     iVar16 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_weapon_1,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_weapon_1,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select assault weapons");
     iVar17 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_weapon_2,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_weapon_2,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select flame weapons");
     iVar18 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_weapon_3,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_weapon_3,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select grenade weapons");
     iVar19 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_weapon_4,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_weapon_4,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select melee weapons");
     iVar20 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_weapon_5,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_weapon_5,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Next weapon");
     iVar21 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_next_weapon,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_next_weapon,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Previous weapon");
     iVar22 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_prev_weapon,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_prev_weapon,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Next item");
     iVar23 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_next_item,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_next_item,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Previous item");
     iVar24 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_prev_item,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_prev_item,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Item description");
     iVar25 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_item_desc,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_item_desc,pcVar2);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Next ammo");
     iVar26 = core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40
-                       ((EInputCodeType *)&g_CGame_PTR_005b9354->key_next_ammo,pcVar2);
+                       ((EInputCodeType *)&g_CGamePtr->key_next_ammo,pcVar2);
     if ((((((((((((((((((((((((((iVar30 != 0 || iVar28 != 0) || iVar33 != 0) || iVar3 != 0) ||
                              iVar4 != 0) || iVar5 != 0) || iVar6 != 0) || iVar7 != 0) || iVar8 != 0)
                         || iVar9 != 0) || iVar10 != 0) || iVar11 != 0) || iVar12 != 0) ||
                     iVar13 != 0) || iVar14 != 0) || iVar15 != 0) || iVar16 != 0) || iVar17 != 0) ||
                iVar18 != 0) || iVar19 != 0) || iVar20 != 0) || iVar21 != 0) || iVar22 != 0) ||
           iVar23 != 0) || iVar24 != 0) || iVar25 != 0) || iVar26 != 0) {
-      core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(g_CGame_PTR_005b9354);
+      core_game_cpp_CGame_restoreDefaultControls_FUN_0049e610(g_CGamePtr);
       shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                (g_CEditorTools_PTR_005b6d50,"One or more keys not valid.  Restoring default controls.");
+                (g_CEditorToolsPtr,"One or more keys not valid.  Restoring default controls.");
       return;
     }
   }

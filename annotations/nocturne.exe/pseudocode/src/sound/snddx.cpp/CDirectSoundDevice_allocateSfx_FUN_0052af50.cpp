@@ -47,7 +47,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50(CDirectS
   }
   if (0x1e < iVar7) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"DirectSoundDevice::allocateSfx - no free buffers\n");
+              (g_CConsolePtr,"DirectSoundDevice::allocateSfx - no free buffers\n");
     return 0;
   }
   piVar2 = *(int **)(iVar7 * 4 + 0x2dc92a8);

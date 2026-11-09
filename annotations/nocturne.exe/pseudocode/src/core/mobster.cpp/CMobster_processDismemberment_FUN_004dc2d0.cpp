@@ -68,10 +68,10 @@ LAB_004dc363:
   if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
     local_1c = 0.06;
   }
-  if (g_CGame_PTR_005b9354->gratuitous_dismemberment != 0) {
+  if (g_CGamePtr->gratuitous_dismemberment != 0) {
     local_1c = 1.0;
   }
-  if (g_CGame_PTR_005b9354->blood_flag == 0) {
+  if (g_CGamePtr->blood_flag == 0) {
     local_1c = 0.0;
   }
   iVar1 = core_actor_cpp_randomChance_FUN_0040dea0(local_1c);

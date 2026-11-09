@@ -23,12 +23,12 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045
   if (this_ptr->shadow_pass_active == 0) {
     g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     g_VertexPreprocessMode = 6;
-    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00463f77;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_00463f77;
   }
   else {
     g_RenderStateFlags.dword = 0;
     g_VertexPreprocessMode = 0;
-    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5;
   }
   iVar1 = this_ptr->shadow_pass_active;
   if (g_UseExternalRenderer != 0) {

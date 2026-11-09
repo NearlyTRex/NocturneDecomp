@@ -33,8 +33,8 @@ void __cdecl core_conveyor_cpp_CConveyor_process_FUN_0043b1a0(CConveyor *this_pt
       iVar3 = 0;
       local_14 = this_ptr->actor_class;
       iVar1 = 0;
-      while (iVar3 < g_CDemonSet_PTR_005be368->actor_count) {
-        actor_ptr = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar1);
+      while (iVar3 < g_CDemonSetPtr->actor_count) {
+        actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1);
         if (this_ptr == (CConveyor *)actor_ptr->standing_platform) {
           if (((CConveyor *)actor_ptr->standing_platform)->actor_class[0] == '\0') {
 LAB_0043b24d:

@@ -5,5 +5,5 @@
 // =============================================================================
 
 // CSkeleton[40]
-CSkeleton g_CSkeleton_ARRAY_02737ef8[40] = {};
+CSkeleton g_SkeletonPool[40] = {};
 

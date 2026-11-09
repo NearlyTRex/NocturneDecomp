@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 335,
@@ -367,23 +362,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CGround_load_FUN_004b14d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 9,
-          "line": 47,
-          "message": "Uninitialized variable: *pcVar6",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -432,14 +410,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
-    },
-    {
-      "description": "Uninitialized variable: *pcVar6",
-      "line": 47,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (*pcVar6 == '.') goto LAB_004b153d;",
-      "type": "static_uninitvar"
     }
   ]
 }

@@ -129,7 +129,7 @@ CDemonActorType g_CTentacleActorType_02dca1e0 = {};
 CSfxOptions g_CSfxOptions_ARRAY_02dc1b78[8] = {};
 
 // CSfxSample[64]
-CSfxSample g_CSfxSample_ARRAY_02dc1edc[64] = {};
+CSfxSample g_SfxSamples[64] = {};
 
 // CSound
 CSound g_CSound_02dc9450 = {};
@@ -138,7 +138,7 @@ CSound g_CSound_02dc9450 = {};
 CStrList g_CStrList_02dc9610 = {};
 
 // CTextureList
-CTextureList g_CTextureList_02dca21c = {};
+CTextureList g_CTextureListInstance = {};
 
 // CVector3f
 CVector3f CVector3f_02dc9f34 = {};

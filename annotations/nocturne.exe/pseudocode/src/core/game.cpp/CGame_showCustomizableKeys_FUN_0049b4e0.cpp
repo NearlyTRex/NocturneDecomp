@@ -134,7 +134,7 @@ void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_0049b4e0(CGame *this_p
     _DAT_01c78ae0 = _DAT_01c78ae4 * 6;
     _DAT_01c78adc = _DAT_01c78adc + g_WindowWidth / 3;
   }
-  if (g_CGame_PTR_005b9354->always_run == 0) {
+  if (g_CGamePtr->always_run == 0) {
     pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Run");
     pcVar2 = core_menu_cpp_getKeyDisplayName_FUN_004d2900(this_ptr->key_run);
     _sprintf(local_610,"%s = %s",pcVar2,pcVar1);

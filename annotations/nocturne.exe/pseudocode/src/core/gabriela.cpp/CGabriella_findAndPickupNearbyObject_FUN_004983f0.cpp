@@ -72,8 +72,8 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0(
   iVar5 = 0;
   local_24 = 4.0;
   local_2c = &(this_ptr->base).base.base.location.position;
-  for (local_18 = 0; local_18 < g_CDemonSet_PTR_005be368->actor_count; local_18 = local_18 + 1) {
-    pCVar1 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar5);
+  for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
+    pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
     pCVar4 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
     if (pCVar4 == (CDemonActor *)0x0) {
       uStack_20 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);

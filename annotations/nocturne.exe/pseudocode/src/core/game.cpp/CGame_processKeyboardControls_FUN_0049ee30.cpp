@@ -26,14 +26,14 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(CGame *thi
   pfVar1 = &player_control->strafe_speed;
   if ((&DAT_01c02598)[this_ptr->key_strafe_left] == '\0') {
     if ((((&DAT_01c02598)[this_ptr->key_strafe_right] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
-       (*pfVar1 = g_CGame_PTR_005b9354->delta_time_float / 0.01f + *pfVar1,
-       0x3f800000 < (int)*pfVar1)) {
+       (*pfVar1 = g_CGamePtr->delta_time_float / 0.01f + *pfVar1, 0x3f800000 < (int)*pfVar1
+       )) {
       *pfVar1 = 1.0;
     }
   }
   else if ((-1.0f < *pfVar1) &&
-          (fVar2 = *pfVar1 - g_CGame_PTR_005b9354->delta_time_float / 0.01f,
-          *pfVar1 = fVar2, fVar2 < -1.0f)) {
+          (fVar2 = *pfVar1 - g_CGamePtr->delta_time_float / 0.01f, *pfVar1 = fVar2,
+          fVar2 < -1.0f)) {
     *pfVar1 = -1.0;
   }
   if ((&DAT_01c02598)[this_ptr->key_strafe] == '\0') {
@@ -44,19 +44,19 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(CGame *thi
       pfVar1 = &player_control->turn_speed;
       if ((&DAT_01c02598)[this_ptr->key_left] == '\0') {
         if ((((&DAT_01c02598)[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
-           (*pfVar1 = (g_CGame_PTR_005b9354->delta_time_float * 0.25f) / fVar2 + *pfVar1,
+           (*pfVar1 = (g_CGamePtr->delta_time_float * 0.25f) / fVar2 + *pfVar1,
            0x3e800000 < (int)*pfVar1)) {
           *pfVar1 = 0.25;
         }
       }
       else if ((-0.25f < *pfVar1) &&
-              (fVar2 = *pfVar1 - (g_CGame_PTR_005b9354->delta_time_float * 0.25f) / fVar2,
+              (fVar2 = *pfVar1 - (g_CGamePtr->delta_time_float * 0.25f) / fVar2,
               *pfVar1 = fVar2, fVar2 < -0.25f)) {
         *pfVar1 = -0.25;
       }
       goto LAB_0049ef39;
     }
-    fVar2 = (g_CGame_PTR_005b9354->delta_time_float * 0.25f) / 0.05f;
+    fVar2 = (g_CGamePtr->delta_time_float * 0.25f) / 0.05f;
     pfVar1 = &player_control->turn_speed;
     if (0.0 <= *pfVar1) {
       *pfVar1 = *pfVar1 - fVar2;
@@ -72,17 +72,17 @@ LAB_0049ef26:
     pfVar1 = &player_control->strafe_speed;
     if ((&DAT_01c02598)[this_ptr->key_left] == '\0') {
       if ((((&DAT_01c02598)[this_ptr->key_right] != '\0') && ((int)*pfVar1 < 0x3f800000)) &&
-         (*pfVar1 = g_CGame_PTR_005b9354->delta_time_float / 0.01f + *pfVar1,
+         (*pfVar1 = g_CGamePtr->delta_time_float / 0.01f + *pfVar1,
          0x3f800000 < (int)*pfVar1)) {
         *pfVar1 = 1.0;
       }
     }
     else if ((-1.0f < *pfVar1) &&
-            (fVar2 = *pfVar1 - g_CGame_PTR_005b9354->delta_time_float / 0.01f,
-            *pfVar1 = fVar2, fVar2 < -1.0f)) {
+            (fVar2 = *pfVar1 - g_CGamePtr->delta_time_float / 0.01f, *pfVar1 = fVar2,
+            fVar2 < -1.0f)) {
       *pfVar1 = -1.0;
     }
-    fVar2 = (g_CGame_PTR_005b9354->delta_time_float * 0.25f) / 0.05f;
+    fVar2 = (g_CGamePtr->delta_time_float * 0.25f) / 0.05f;
     pfVar1 = &player_control->turn_speed;
     if (*pfVar1 < 0.0) {
       fVar2 = *pfVar1 + fVar2;
@@ -97,7 +97,7 @@ joined_r0x0049f5c7:
 LAB_0049ef39:
   if (((&DAT_01c02598)[this_ptr->key_point_up] == '\0') &&
      ((&DAT_01c02598)[this_ptr->key_point_down] == '\0')) {
-    fVar2 = (g_CGame_PTR_005b9354->delta_time_float * 0.25f) / 0.1f;
+    fVar2 = (g_CGamePtr->delta_time_float * 0.25f) / 0.1f;
     pfVar1 = &player_control->look_up_down_speed;
     if (0.0 <= *pfVar1) {
       *pfVar1 = *pfVar1 - fVar2;
@@ -117,13 +117,13 @@ LAB_0049ef39:
     pfVar1 = &player_control->look_up_down_speed;
     if ((&DAT_01c02598)[this_ptr->key_point_up] == '\0') {
       if ((((&DAT_01c02598)[this_ptr->key_point_down] != '\0') && ((int)*pfVar1 < 0x3e800000)) &&
-         (*pfVar1 = (g_CGame_PTR_005b9354->delta_time_float * 0.25f) / fVar2 + *pfVar1,
+         (*pfVar1 = (g_CGamePtr->delta_time_float * 0.25f) / fVar2 + *pfVar1,
          0x3e800000 < (int)*pfVar1)) {
         *pfVar1 = 0.25;
       }
     }
     else if ((-0.25f < *pfVar1) &&
-            (fVar2 = *pfVar1 - (g_CGame_PTR_005b9354->delta_time_float * 0.25f) / fVar2,
+            (fVar2 = *pfVar1 - (g_CGamePtr->delta_time_float * 0.25f) / fVar2,
             *pfVar1 = fVar2, fVar2 < -0.25f)) {
       *pfVar1 = -0.25;
     }
@@ -262,13 +262,12 @@ LAB_0049ef39:
     else {
       this_ptr->goggles_active = 0;
     }
-    iVar4 = g_CDemonSet_PTR_005be368->selected_camera_index;
-    core_setdir_cpp_CDemonSet_FUN_005125a0
-              (g_CDemonSet_PTR_005be368,*(CDemonActor **)(0x01E56DA0 + 0xc),1);
-    *(uint *)(0x01E56DA0 + 0x10) = 0;
-    if (iVar4 == g_CDemonSet_PTR_005be368->selected_camera_index) {
+    iVar4 = g_CDemonSetPtr->selected_camera_index;
+    core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+    g_CScriptPtr->focus_actor_changed = 0;
+    if (iVar4 == g_CDemonSetPtr->selected_camera_index) {
       core_set_cpp_CDemonSet_setCameraView_FUN_005088f0
-                (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->selected_camera_index);
+                (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
       return;
     }
   }

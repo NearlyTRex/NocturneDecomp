@@ -47,7 +47,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_0055eac0(CZombie *this_ptr)
   pCVar3->pickup_scan_timer = 0.0;
   pCVar3->target_door = (CDoor *)0x0;
   pCVar3->pickup_seed = iVar5;
-  pcVar7 = g_CDemonSet_PTR_005be368->geometry_filename;
+  pcVar7 = g_CDemonSetPtr->geometry_filename;
   pCVar3->is_miner_zombie = 0;
   pCVar3->pain_cooldown = 0.0;
   iVar5 = _stricmp(pcVar7,"mine.geo");

@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 71,
-        "message": "use of undeclared identifier 'DAT_005ad1d0'"
-      },
-      {
-        "category": "format_error",
-        "column": 108,
-        "line": 150,
-        "message": "format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 407,
@@ -185,13 +167,13 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -425,34 +407,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_moveOutOfHeroWay_FUN_0042af70.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_name": "cert-flp30-c",
-          "column": 24,
-          "line": 77,
-          "message": "loop induction expression should not have floating-point type"
-        },
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 29,
-          "line": 115,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        },
-        {
-          "check_name": "cert-flp30-c",
-          "column": 24,
-          "line": 125,
-          "message": "loop induction expression should not have floating-point type"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -485,14 +439,6 @@
       "severity": "moderate",
       "text": "pCVar5->x = CStack_98.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 115,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "fStack_20 = (float)((int)uStack_18 / 2) * (float)1.57079632675 * (float)0.25;",
-      "type": "static_integer_division"
     }
   ]
 }

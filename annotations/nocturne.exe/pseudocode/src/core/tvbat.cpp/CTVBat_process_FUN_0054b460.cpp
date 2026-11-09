@@ -74,12 +74,12 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
   
   if ((this_ptr->follow_orders != 0) && (this_ptr->boss_actor == (CDemonActor *)0x0)) {
     iVar16 = 0;
-    for (iVar18 = 0; iVar18 < g_CDemonSet_PTR_005be368->enemy_count; iVar18 = iVar18 + 1) {
+    for (iVar18 = 0; iVar18 < g_CDemonSetPtr->enemy_count; iVar18 = iVar18 + 1) {
       iVar12 = core_actor_cpp_isOfClass_FUN_0040d7e0
-                         (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),
                           "CVampireBoss");
       if (iVar12 != 0) {
-        this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16);
+        this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16);
         break;
       }
       iVar16 = iVar16 + 4;
@@ -121,8 +121,8 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_0054b460(CTVBat *this_ptr,float d
          delta_time * this_ptr->rot_speed * 2.0f + (this_ptr->base).base.base.orient.vec.z
     ;
     fVar15 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                       (&g_CDemonRaytrace_01fba938,&local_dc,&pCVar17->position,&local_a0,(int *)0x0
-                       );
+                       (&g_CDemonRaytraceInstance,&local_dc,&pCVar17->position,&local_a0,(int *)0x0)
+    ;
     if ((0.0 <= fVar15) && (fVar15 < 1.0)) {
       fVar3 = ((this_ptr->base).base.base.location.position.y - local_dc.y) * fVar15 *
               0.8f;
@@ -197,7 +197,7 @@ LAB_0054b592:
     if (fVar15 < 0.0) {
       this_ptr->attack_timer = 0.0;
     }
-    if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+    if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
       g_CurrentFilename = "..\\core\\tvbat.cpp";
       g_CurrentLineNumber = 266;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CTVBat::process - can't follow orders in network game!");
@@ -249,8 +249,7 @@ LAB_0054b592:
       (*(((pCVar11->base).vtable._uc)->_uc).processDamage)(pCVar11,&local_16c);
       if (0.0 < local_16c.damage_amount) {
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                  (g_CGore_PTR_005b96c4,&(this_ptr->base).base.base.location.position,
-                   (CVector3f *)0x0,3,0);
+                  (g_CGorePtr,&(this_ptr->base).base.base.location.position,(CVector3f *)0x0,3,0);
       }
     }
   }

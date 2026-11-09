@@ -1,68 +1,14 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 28,
-        "line": 53,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 78,
-        "line": 57,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 60,
-        "line": 183,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 32,
-        "line": 193,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 80,
-        "line": 197,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 32,
-        "line": 206,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 80,
-        "line": 210,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 78,
-        "line": 220,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 543,
-    "complexity_score": 378,
+    "complexity_score": 387,
     "cross_reference_count": 6,
     "function_call_count": 16,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 233,
-    "suspect_count": 11,
+    "pseudocode_lines": 232,
+    "suspect_count": 12,
     "suspect_types": [
       "format_string_mismatch",
       "undefined_data",
@@ -72,7 +18,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 776
+    "total_lines": 775
   },
   "cross_references": [
     {
@@ -318,13 +264,13 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -354,7 +300,7 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -372,7 +318,7 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     }
@@ -728,51 +674,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "playSfxInternal_FUN_0052d120.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 9,
-          "line": 53,
-          "message": "sscanf format string requires 3 parameters but only 0 are given.",
-          "severity": "error"
-        },
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 11,
-          "line": 193,
-          "message": "sscanf format string requires 2 parameters but only 1 is given.",
-          "severity": "error"
-        },
-        {
-          "check_id": "wrongPrintfScanfArgNum",
-          "column": 11,
-          "line": 206,
-          "message": "sscanf format string requires 2 parameters but only 1 is given.",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 17,
-          "line": 61,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 43,
-          "line": 54,
-          "message": "Uninitialized variable: local_30",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Undefined global data reference",
@@ -795,11 +696,22 @@
     },
     {
       "actual_args": 0,
+      "description": "Format \"Can't find wav: %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't find wav: %s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_0043ac60",
+      "line_number": 175,
+      "match": "engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,\"Can't find wav: %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
       "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 190,
+      "line_number": 189,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -810,7 +722,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 203,
+      "line_number": 202,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -821,7 +733,7 @@
       "expected_args": 1,
       "format_string": "Invalid sfx string: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_004c8440",
-      "line_number": 213,
+      "line_number": 212,
       "match": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Invalid sfx string: %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -873,22 +785,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (9 < local_2c) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_30",
-      "line": 54,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "if ((local_34 < 5) || (local_2c < local_30)) {",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

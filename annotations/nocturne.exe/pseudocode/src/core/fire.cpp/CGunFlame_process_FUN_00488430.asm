@@ -23,8 +23,8 @@
 ;   double DOUBLE_005813c4 = 1.60496654306895E-314
 ;   float FLOAT_0059d218 = 15
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CGame* g_CGamePtr = 01c775ec
+;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
 ;   core_actor.cpp_randomChance_FUN_0040dea0
@@ -43,8 +43,8 @@ section .text
     SUB ESP,0x24                        ; 00488435
     AND ESP,0xfffffff8                  ; 00488438
     MOV EBX,dword ptr [EBP + 0x10]      ; 0048843b
-    MOV EAX,[0x005b9354]                ; 0048843e | g_CGame_PTR_005b9354
-    MOV EAX,dword ptr [EAX + 0x264]     ; 00488443 | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0048843e | g_CGamePtr
+    MOV EAX,dword ptr [EAX + 0x264]     ; 00488443 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EAX             ; 00488449
     FLD float ptr [EBX]                 ; 0048844c
     FSUB float ptr [ESP]                ; 0048844e

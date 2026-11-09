@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057c946 = 7
 ;   double DOUBLE_0057c94e = 3
-;   undefined4 DAT_005ad51c
-;   undefined4 DAT_005ad53c
+;   CDemonFilter* g_GlobalFilters = 014b8a58
+;   CDemonFilter* g_PlayerFilters = 014b8a58
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0
@@ -49,7 +49,7 @@ section .text
     FISTP dword ptr [ESP + 0xc]         ; 004520b3
     MOV EDX,dword ptr [ESP + 0xc]       ; 004520b7
     PUSH 0x0                            ; 004520bb
-    MOV EBX,dword ptr [EDX*0x4 + 0x5ad53c] ; 004520bd | DAT_005ad53c
+    MOV EBX,dword ptr [EDX*0x4 + 0x5ad53c] ; 004520bd | g_PlayerFilters
     PUSH EBX                            ; 004520c4
     PUSH EAX                            ; 004520c5
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 004520c6
@@ -68,7 +68,7 @@ section .text
     FISTP dword ptr [ESP + 0x8]         ; 004520e8
     MOV EDX,dword ptr [ESP + 0x8]       ; 004520ec
     PUSH 0x0                            ; 004520f0
-    MOV ECX,dword ptr [EDX*0x4 + 0x5ad51c] ; 004520f2 | DAT_005ad51c
+    MOV ECX,dword ptr [EDX*0x4 + 0x5ad51c] ; 004520f2 | g_GlobalFilters
     PUSH ECX                            ; 004520f9
     PUSH EAX                            ; 004520fa
     CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0 ; 004520fb

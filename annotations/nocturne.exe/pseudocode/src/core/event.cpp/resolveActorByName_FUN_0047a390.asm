@@ -25,7 +25,7 @@
 ;   undefined4 DAT_0059cf1c
 ;   undefined4 DAT_005b7650
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   CNetGame* g_CNetGame_PTR_005bdee0 = 01cea280
+;   CNetGame* g_CNetGamePtr = 01cea280
 ;   undefined4 DAT_01c08b60
 ;   undefined4 DAT_01c08b61
 ;   undefined4 DAT_01c08b62
@@ -110,8 +110,8 @@ section .text
     TEST EAX,EAX                        ; 0047a400
     JNZ 0x0047a45d                      ; 0047a402
         ;   XREF to: 0047a45d (CONDITIONAL_JUMP)  ; LAB_0047a45d
-    MOV EAX,[0x005bdee0]                ; 0047a404 | g_CNetGame_PTR_005bdee0
-    CMP dword ptr [EAX],0x0             ; 0047a409 | g_CNetGame_01cea280
+    MOV EAX,[0x005bdee0]                ; 0047a404 | g_CNetGamePtr
+    CMP dword ptr [EAX],0x0             ; 0047a409 | g_CNetGameInstance
     JNZ 0x0047a444                      ; 0047a40c
         ;   XREF to: 0047a444 (CONDITIONAL_JUMP)  ; LAB_0047a444
     MOV ESI,dword ptr [0x01cae0e8]      ; 0047a40e | g_LocalHeroIndex

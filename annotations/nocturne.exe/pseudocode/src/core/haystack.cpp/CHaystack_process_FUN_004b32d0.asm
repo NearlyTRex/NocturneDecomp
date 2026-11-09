@@ -33,10 +33,10 @@
 ;   double DOUBLE_005855a5 = 1.57079632675000
 ;   double DOUBLE_005855ad = 1.59386252192652E-314
 ;   double DOUBLE_005855b5 = 3.14159265350000
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   CConsole g_CConsole_0077ad0c
-;   undefined4 g_CGame_01c775ec.letterbox_mode
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CGame* g_CGamePtr = 01c775ec
+;   CConsole g_CConsoleInstance
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01cae018
 ;
 ; Called Functions:
@@ -84,9 +84,9 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 004b3300
         ;   Label: LAB_004b3300
     FMUL double ptr [0x0058557d]        ; 004b3303 | DOUBLE_0058557d
-    MOV EAX,[0x005b9354]                ; 004b3309 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004b3309 | g_CGamePtr
     FSTP float ptr [EBX + 0x2430]       ; 004b330e
-    CMP dword ptr [EAX + 0x228],0x0     ; 004b3314 | g_CGame_01c775ec.letterbox_mode
+    CMP dword ptr [EAX + 0x228],0x0     ; 004b3314 | g_CGameInstance.letterbox_mode
     JZ 0x004b332f                       ; 004b331b
         ;   XREF to: 004b332f (CONDITIONAL_JUMP)  ; LAB_004b332f
     FLD float ptr [EBX + 0x2430]        ; 004b331d
@@ -333,8 +333,8 @@ section .text
     ADD ESP,0xc                         ; 004b359a
     PUSH EBX                            ; 004b359d
     PUSH 0x58554e                       ; 004b359e | = "%s confused while walking to scriptDe..."
-    MOV EDI,dword ptr [0x005ad350]      ; 004b35a3 | g_CConsole_PTR_005ad350
-    PUSH EDI                            ; 004b35a9 | g_CConsole_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 004b35a3 | g_CConsolePtr
+    PUSH EDI                            ; 004b35a9 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004b35aa
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004b33b1                      ; 004b35af

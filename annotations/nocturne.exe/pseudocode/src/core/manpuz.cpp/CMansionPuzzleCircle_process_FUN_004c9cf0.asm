@@ -8,8 +8,8 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   CGame g_CGame_01c775ec
+;   CGame* g_CGamePtr = 01c775ec
+;   CGame g_CGameInstance
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -140,8 +140,8 @@ section .text
     ADD ESP,0x8                         ; 004c9de3
     PUSH 0x3c8efa35                     ; 004c9de6
     PUSH ESI                            ; 004c9deb
-    MOV EDX,dword ptr [0x005b9354]      ; 004c9dec | g_CGame_PTR_005b9354
-    PUSH EDX                            ; 004c9df2 | g_CGame_01c775ec
+    MOV EDX,dword ptr [0x005b9354]      ; 004c9dec | g_CGamePtr
+    PUSH EDX                            ; 004c9df2 | g_CGameInstance
     CALL core_game.cpp_CGame_setFudgeTarget_FUN_0049b240 ; 004c9df3
         ;   XREF to: 0049b240 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setFudgeTarget_FUN_0049b240(CGame * this_ptr, CVector3f * fudge_target, float fudge_step)
     ADD ESP,0xc                         ; 004c9df8

@@ -15,7 +15,7 @@ void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_0048b320(CFireEffect *this
   int iVar1;
   
   iVar1 = _DAT_01c5b4fc + 1;
-  this_ptr_00 = g_CRock_ARRAY_01c5b500 + _DAT_01c5b4fc;
+  this_ptr_00 = g_RockPool + _DAT_01c5b4fc;
   _DAT_01c5b4fc = iVar1;
   if (0x3f < iVar1) {
     _DAT_01c5b4fc = 0;

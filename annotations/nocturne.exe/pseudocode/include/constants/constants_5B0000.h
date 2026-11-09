@@ -464,7 +464,6 @@ static undefined4 DAT_005b9368 = 0x00000040;
 static undefined4 DAT_005bc00c = 0x00000080;
 static undefined4 DAT_005bc030 = 0x000000FF;
 static undefined4 DAT_005be180 = 0x1A474250;
-static undefined4 DAT_005be220 = 0x01E56DA0;
 static undefined4 DAT_005be37c = 0x00000180;
 static undefined4 DAT_005be380 = 0x00000200;
 static undefined4 DAT_005be384 = 0x00000180;

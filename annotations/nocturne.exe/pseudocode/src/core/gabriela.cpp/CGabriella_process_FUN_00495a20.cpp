@@ -169,7 +169,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
     local_14 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                          (&pCVar2->base,0x15);
-    pCVar10 = g_CGame_PTR_005b9354;
+    pCVar10 = g_CGamePtr;
     fVar3 = (float)local_14 * 2.0f;
     (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;
     local_20 = fVar3 + local_20;
@@ -300,7 +300,7 @@ LAB_00496679:
           if (EVar8 == WALK_STATE_NO_PATH) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
             engine_console_cpp_CConsole_printf_FUN_0043ac60
-                      (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+                      (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
             goto LAB_00495d9d;
           }
           goto LAB_00495d8e;
@@ -522,7 +522,7 @@ LAB_00496834:
     }
     local_40 = 0.64f + (float)-0.14999999999999999;
     if ((local_44 <= local_40) && (local_40 < this_ptr->draw_blend)) {
-      core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004a3a70(g_CGame_PTR_005b9354);
+      core_game_cpp_CGame_resetWeaponSwitchTimers_FUN_004a3a70(g_CGamePtr);
       sound_name = "draw-f.wav @ 1.5";
 LAB_00495f6c:
       (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);

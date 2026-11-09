@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 247,
@@ -387,23 +382,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_spawnFireOnBone_FUN_004266a0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 23,
-          "line": 95,
-          "message": "Uninitialized variable: local_78",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -492,14 +470,6 @@
       "severity": "moderate",
       "text": "pCVar6 = (CSkeleton *)((pCVar6->motion_list).state_names[1] + 2);",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_78",
-      "line": 95,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_54 = local_78 * local_20 * local_4c;",
-      "type": "static_uninitvar"
     }
   ]
 }

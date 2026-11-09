@@ -117,17 +117,16 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
                               (&((this_ptr->base).victim)->base,"CHero"), iVar7 != 0)) {
           iVar9 = 0;
           iVar7 = 0;
-          while ((iVar7 < g_CDemonSet_PTR_005be368->enemy_count &&
+          while ((iVar7 < g_CDemonSetPtr->enemy_count &&
                  ((pCVar13 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                       (*(CDemonActor **)
-                                         ((int)g_CDemonSet_PTR_005be368->enemies + iVar9),
+                                       (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar9),
                                         g_CBatmanActorType_00764638.name_hash),
                   pCVar13 == (CDemonActor *)0x0 ||
                   (*(int *)(pCVar13[0x90].create_event + 0x48) == 0))))) {
             iVar7 = iVar7 + 1;
             iVar9 = iVar9 + 4;
           }
-          if (iVar7 == g_CDemonSet_PTR_005be368->enemy_count) {
+          if (iVar7 == g_CDemonSetPtr->enemy_count) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                       (&(this_ptr->base).base.model.base,0xd,1);
             pCVar6 = (this_ptr->base).victim;
@@ -262,7 +261,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
                             (pCVar2,&local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_74,pCVar11);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_74,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_74,0);
         (this_ptr->base).pool_me = 1;
       }
       break;
@@ -324,9 +323,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
       case 2:
         local_30 = 1;
         local_1c = 0;
-        for (local_18 = 0; fVar15 = 1.0f,
-            local_18 < g_CDemonSet_PTR_005be368->character_count; local_18 = local_18 + 1) {
-          this_ptr_00 = *(CBatman **)((int)g_CDemonSet_PTR_005be368->characters + local_1c);
+        for (local_18 = 0; fVar15 = 1.0f, local_18 < g_CDemonSetPtr->character_count;
+            local_18 = local_18 + 1) {
+          this_ptr_00 = *(CBatman **)((int)g_CDemonSetPtr->characters + local_1c);
           if (((this_ptr_00 != (CBatman *)0x0) && (this_ptr_00 != this_ptr)) &&
              (EVar10 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
                                  ((CCharacter *)this_ptr_00), (int)EVar10 < 1)) {
@@ -414,7 +413,7 @@ LAB_00413a93:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(this_ptr->base).base.model.base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n",this_ptr);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =

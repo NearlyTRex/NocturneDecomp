@@ -58,10 +58,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
   if (skip_lighting_calculation == 0) {
     iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
                       (this_ptr,world_position,surface_normal);
-    local_14 = g_CDemonCamera_01fb8508.corona_blend_factor;
-    if ((0 < g_CDemonCamera_01fb8508.corona_blend_factor) && (surface_normal != (CVector3i *)0x0)) {
-      iVar10 = g_CDemonCamera_01fb8508.corona_blend_factor;
-      if (0x1000 < g_CDemonCamera_01fb8508.corona_blend_factor) {
+    local_14 = g_CDemonCameraInstance.corona_blend_factor;
+    if ((0 < g_CDemonCameraInstance.corona_blend_factor) && (surface_normal != (CVector3i *)0x0)) {
+      iVar10 = g_CDemonCameraInstance.corona_blend_factor;
+      if (0x1000 < g_CDemonCameraInstance.corona_blend_factor) {
         iVar10 = 0x1000;
       }
       if (g_CameraOriginX < 0) {

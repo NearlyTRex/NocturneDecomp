@@ -237,10 +237,9 @@ LAB_004a96cf:
               dVar23 = round(local_ac * 2.5 * 0.25);
               local_70 = (float)(int)ROUND(dVar23);
               in_stack_fffffc8c = &local_168;
-              in_stack_fffffc88 = &g_CGore_PTR_005b96c4->singleton;
+              in_stack_fffffc88 = &g_CGorePtr->singleton;
               core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                        (g_CGore_PTR_005b96c4,in_stack_fffffc8c,(CVector3f *)0x0,(int)local_70,iVar8
-                        );
+                        (g_CGorePtr,in_stack_fffffc8c,(CVector3f *)0x0,(int)local_70,iVar8);
             }
             pCVar4 = (this_ptr->base).victim;
             if (pCVar4->hit_points <= 0.0) {
@@ -285,7 +284,7 @@ LAB_004a96cf:
       dVar23 = round((double)((float)local_14 * (float)0.25));
       local_58 = (int)ROUND(dVar23);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (g_CGore_PTR_005b96c4,&local_1d4,(CVector3f *)0x0,local_58,iVar8);
+                (g_CGorePtr,&local_1d4,(CVector3f *)0x0,local_58,iVar8);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"ghoul-dig-?.wav @1.3");
       break;
@@ -301,7 +300,7 @@ LAB_004a96cf:
       dVar23 = round((double)((float)local_14 * (float)0.25));
       local_54 = (int)ROUND(dVar23);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (g_CGore_PTR_005b96c4,&local_228,(CVector3f *)0x0,local_54,iVar8);
+                (g_CGorePtr,&local_228,(CVector3f *)0x0,local_54,iVar8);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"ghoul-eat-?.wav @1.3");
       break;
@@ -321,7 +320,7 @@ LAB_004a96cf:
       dVar23 = round((double)((float)local_14 * (float)0.25));
       local_84 = (CDemonActor *)(int)ROUND(dVar23);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (g_CGore_PTR_005b96c4,&local_15c,(CVector3f *)0x0,(int)local_84,iVar8);
+                (g_CGorePtr,&local_15c,(CVector3f *)0x0,(int)local_84,iVar8);
       iVar8 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
       if (iVar8 == 0) {
         pcVar18 = "ghoul-dig-?.wav @1.3";
@@ -443,7 +442,7 @@ LAB_004a96cf:
         }
         EVar14 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                            (&g_HeroActors[g_LocalHeroIndex]->base);
-        pCVar7 = g_CGame_PTR_005b9354;
+        pCVar7 = g_CGamePtr;
         if (EVar14 == DEATH_STATE_ALIVE) {
           (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time)
           ;
@@ -582,7 +581,7 @@ LAB_004a96cf:
               else {
                 iVar10 = core_actor_cpp_randomChance_FUN_0040dea0(0.5);
                 this_ptr->pending_eat_state = (iVar10 == 0) + 0xd;
-                g_CGame_PTR_005b9354->player_hit_flag = 1;
+                g_CGamePtr->player_hit_flag = 1;
               }
               goto LAB_004aa6a3;
             }
@@ -703,7 +702,7 @@ LAB_004aa1e6:
                             ((CDeformableModelInstance *)pCVar12,&local_12c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                   ((CDemonActor *)this_ptr,&local_108,pCVar13);
-        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGore_PTR_005b96c4,&local_108,0);
+        core_gore_cpp_CGore_createBloodPool_FUN_004b0480(g_CGorePtr,&local_108,0);
         (this_ptr->base).pool_me = 1;
       }
       this_ptr->is_berserk = 0;
@@ -765,15 +764,14 @@ LAB_004a9eb3:
             do {
               local_68 = (float)(int)fVar26 * (float)6.2831853070000001 * (float)0.25;
               local_14 = (SMotionTransition *)fVar26;
-              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
               core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                        (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+                        (g_CDemonSetPtr,(CDemonActor *)this_ptr);
               fVar21 = (float10)fcos((float10)local_68);
               fVar22 = (float10)fsin((float10)local_68);
               local_6c = (SMotionTransition *)
                          core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                                   (g_CDemonSet_PTR_005be368,
-                                    (this_ptr->base).base.base.location.position.x,
+                                   (g_CDemonSetPtr,(this_ptr->base).base.base.location.position.x,
                                     (this_ptr->base).base.base.location.position.z,
                                     (float)(fVar22 * (float10)0.050000000000000003),
                                     (float)(fVar21 * (float10)0.050000000000000003),
@@ -782,7 +780,7 @@ LAB_004a9eb3:
                                     (this_ptr->base).base.collision_cylinder_bottom,
                                     (this_ptr->base).base.base.location.position.y + local_1c);
               local_14 = local_6c;
-              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+              core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
               if ((float)local_6c < 1.0) break;
               fVar26 = (float)((int)fVar26 + 1);
             } while ((int)fVar26 < 4);
@@ -954,7 +952,7 @@ LAB_004a939d:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
               (&(this_ptr->base).base.model.base,0,1);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s confused while walking to scriptDest!\n");
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.y =
@@ -973,7 +971,7 @@ LAB_004a93c4:
        (pCVar11 = (CGhoul *)(*(((pCVar4->base).vtable._uc)->_uc).getGrabber)(pCVar4),
        pCVar11 == this_ptr)) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,&((this_ptr->base).victim)->base);
+                (g_CDemonSetPtr,&((this_ptr->base).victim)->base);
     }
     (this_ptr->base).base.velocity.y =
          (this_ptr->base).base.velocity.y - delta_time * (float)32;

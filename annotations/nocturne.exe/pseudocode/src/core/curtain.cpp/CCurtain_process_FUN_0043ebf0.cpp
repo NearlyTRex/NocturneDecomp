@@ -109,9 +109,9 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,f
       }
       iStack_28 = 0;
       DAT_0077bdb8 = 0;
-      for (iStack_20 = 0; iVar6 = DAT_0077bdb8,
-          iStack_20 < g_CDemonSet_PTR_005be368->character_count; iStack_20 = iStack_20 + 1) {
-        iVar10 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iStack_28);
+      for (iStack_20 = 0; iVar6 = DAT_0077bdb8, iStack_20 < g_CDemonSetPtr->character_count;
+          iStack_20 = iStack_20 + 1) {
+        iVar10 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);
         pSVar11 = g_SCollisionInfo_ARRAY_0077c26c + DAT_0077bdb8;
         if (g_CVector3f_ARRAY_0077bdbc + DAT_0077bdb8 != (CVector3f *)(iVar10 + 0x20)) {
           g_CVector3f_ARRAY_0077bdbc[DAT_0077bdb8].x = ((CVector3f *)(iVar10 + 0x20))->x;

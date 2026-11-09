@@ -196,9 +196,9 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
   local_114 = local_1d8.m[0].z;
   local_110 = local_1d8.m[1].z;
   local_10c = local_1d8.m[2].z;
-  local_90 = (g_CDemonSet_PTR_005be368->active_fog).scroll.x;
-  local_8c = (g_CDemonSet_PTR_005be368->active_fog).scroll.y;
-  local_88 = (g_CDemonSet_PTR_005be368->active_fog).scroll.z;
+  local_90 = (g_CDemonSetPtr->active_fog).scroll.x;
+  local_8c = (g_CDemonSetPtr->active_fog).scroll.y;
+  local_88 = (g_CDemonSetPtr->active_fog).scroll.z;
   fVar5 = SQRT(local_88 * local_88 + local_90 * local_90 + local_8c * local_8c);
   if (fVar5 <= 0.0) {
     local_8c = 0.0;
@@ -218,9 +218,9 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_00436e80(CCloth *this_ptr,CVector3f 
     local_1e0 = 0.0;
   }
   local_d8.z = local_1e0 * (float)_DAT_0057ae35;
-  local_d8.x = (g_CDemonSet_PTR_005be368->active_fog).scroll.x * local_d8.z;
-  local_d8.y = (g_CDemonSet_PTR_005be368->active_fog).scroll.y * local_d8.z;
-  local_d8.z = (g_CDemonSet_PTR_005be368->active_fog).scroll.z * local_d8.z;
+  local_d8.x = (g_CDemonSetPtr->active_fog).scroll.x * local_d8.z;
+  local_d8.y = (g_CDemonSetPtr->active_fog).scroll.y * local_d8.z;
+  local_d8.z = (g_CDemonSetPtr->active_fog).scroll.z * local_d8.z;
   pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0
                      (&local_1d8,&local_a8,&local_d8);
   local_198 = pCVar4->x + (this_ptr->wind_velocity).x;

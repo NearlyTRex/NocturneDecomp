@@ -11,5 +11,5 @@
 // =============================================================================
 
 // CLZWDecompress
-extern CLZWDecompress g_CLZWDecompress_012cdb28;
+extern CLZWDecompress g_CLZWDecompressInstance;
 

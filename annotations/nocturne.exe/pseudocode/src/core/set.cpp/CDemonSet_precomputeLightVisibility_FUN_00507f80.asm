@@ -16,7 +16,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_01fb99d0
-;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
@@ -94,7 +94,7 @@ section .text
     PUSH 0x461c3f9a                     ; 00508050
     MOV ESI,0x1                         ; 00508055
     PUSH EDI                            ; 0050805a
-    MOV dword ptr [0x01fba938],ESI      ; 0050805b | g_CDemonRaytrace_01fba938
+    MOV dword ptr [0x01fba938],ESI      ; 0050805b | g_CDemonRaytraceInstance
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80 ; 00508061
         ;   XREF to: 00507c80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00508066
@@ -343,7 +343,7 @@ section .text
     JNZ 0x0050848e                      ; 005083ca
         ;   XREF to: 0050848e (CONDITIONAL_JUMP)  ; LAB_0050848e
     XOR ECX,ECX                         ; 005083d0
-    MOV dword ptr [0x01fba938],ECX      ; 005083d2 | g_CDemonRaytrace_01fba938
+    MOV dword ptr [0x01fba938],ECX      ; 005083d2 | g_CDemonRaytraceInstance
     ADD ESP,0x160                       ; 005083d8
     POP EBP                             ; 005083de
     POP EDI                             ; 005083df
@@ -401,7 +401,7 @@ section .text
         ;   XREF to: 0050ad20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0050ad20(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0050849b
     XOR ECX,ECX                         ; 0050849e
-    MOV dword ptr [0x01fba938],ECX      ; 005084a0 | g_CDemonRaytrace_01fba938
+    MOV dword ptr [0x01fba938],ECX      ; 005084a0 | g_CDemonRaytraceInstance
     ADD ESP,0x160                       ; 005084a6
     POP EBP                             ; 005084ac
     POP EDI                             ; 005084ad

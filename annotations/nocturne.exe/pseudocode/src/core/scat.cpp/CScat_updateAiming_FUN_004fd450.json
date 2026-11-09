@@ -1,31 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 129,
-        "message": "use of undeclared identifier '_DAT_01e533a0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 415,
-    "complexity_score": 188,
+    "complexity_score": 187,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 158,
+    "pseudocode_lines": 157,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 573
+    "total_lines": 572
   },
   "cross_references": [
     {
@@ -135,7 +123,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -147,13 +135,13 @@
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -385,10 +373,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "line": 69,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "target = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3);",
+      "text": "target = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);",
       "type": "pointer_cast"
     }
   ]

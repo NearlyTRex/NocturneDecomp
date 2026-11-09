@@ -536,8 +536,8 @@ section .text
         ;   XREF to: 00418eca (CONDITIONAL_JUMP)  ; LAB_00418eca
     MOV EAX,dword ptr [EBX + 0xbca4]    ; 00418eb4
     PUSH EAX                            ; 00418eba
-    MOV EDX,dword ptr [0x005be368]      ; 00418ebb | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 00418ec1 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 00418ebb | g_CDemonSetPtr
+    PUSH EDX                            ; 00418ec1 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 00418ec2
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00418ec7
@@ -683,8 +683,8 @@ section .text
     ADD ESP,0xc                         ; 00419057
     PUSH EBX                            ; 0041905a
     PUSH 0x5792c0                       ; 0041905b | = "%s confused while walking to scriptDe..."
-    MOV ESI,dword ptr [0x005ad350]      ; 00419060 | g_CConsole_PTR_005ad350
-    PUSH ESI                            ; 00419066 | g_CConsole_0077ad0c
+    MOV ESI,dword ptr [0x005ad350]      ; 00419060 | g_CConsolePtr
+    PUSH ESI                            ; 00419066 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00419067
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00418e49                      ; 0041906c
@@ -1044,8 +1044,8 @@ section .text
     PUSH EBX                            ; 00419470
         ;   Label: LAB_00419470
     PUSH 0x5792ea                       ; 00419471 | = "%s gave up chase - I'm confused\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 00419476 | g_CConsole_PTR_005ad350
-    PUSH EDX                            ; 0041947c | g_CConsole_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 00419476 | g_CConsolePtr
+    PUSH EDX                            ; 0041947c | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0041947d
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00419482

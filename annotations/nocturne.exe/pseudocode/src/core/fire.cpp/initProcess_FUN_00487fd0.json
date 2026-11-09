@@ -1,88 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 21,
-        "message": "use of undeclared identifier '_DAT_01c09e08'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 24,
-        "message": "assigning to 'int' from incompatible type 'void'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 28,
-        "message": "use of undeclared identifier '_DAT_01c09e08'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 33,
-        "message": "use of undeclared identifier 'DAT_01c09e0c'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_01c09e08'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c09e08'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_01c09e08'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 40,
-        "message": "use of undeclared identifier '_DAT_01c09ed4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 45,
-        "message": "use of undeclared identifier '_DAT_01c09ed4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 46,
-        "message": "use of undeclared identifier 'DAT_01c09ed8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_01c09ed4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 47,
-        "message": "use of undeclared identifier '_DAT_01c09ed4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 47,
-        "message": "use of undeclared identifier '_DAT_01c09ed4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
@@ -153,7 +69,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -201,25 +117,25 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     }
@@ -273,9 +189,9 @@
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(int *)((int)g_CDemonSet_PTR_005be368",
+      "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -297,9 +213,9 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar5),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),",
       "type": "pointer_cast"
     },
     {

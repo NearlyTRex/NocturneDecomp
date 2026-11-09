@@ -20,9 +20,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bea94
-;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].taken
-;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].ref_count
-;   undefined4 g_CSfxSample_ARRAY_02dc1edc[1].streaming_buffer_size
+;   undefined4 g_SfxSamples[1].taken
+;   undefined4 g_SfxSamples[1].ref_count
+;   undefined4 g_SfxSamples[1].streaming_buffer_size
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
@@ -46,7 +46,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EDX       ; 00527c89
     IMUL EAX,ESI,0x168                  ; 00527c8d
         ;   Label: LAB_00527c8d
-    CMP dword ptr [EAX + 0x2dc2014],0x1 ; 00527c93 | g_CSfxSample_ARRAY_02dc1edc[1].streaming_buffer_size
+    CMP dword ptr [EAX + 0x2dc2014],0x1 ; 00527c93 | g_SfxSamples[1].streaming_buffer_size
     JGE 0x00527d1f                      ; 00527c9a
         ;   XREF to: 00527d1f (CONDITIONAL_JUMP)  ; LAB_00527d1f
     INC ESI                             ; 00527ca0
@@ -112,18 +112,18 @@ section .text
     POP ESI                             ; 00527d1c
     POP EBX                             ; 00527d1d
     RET                                 ; 00527d1e
-    CMP dword ptr [EAX + 0x2dc2008],0x0 ; 00527d1f | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+    CMP dword ptr [EAX + 0x2dc2008],0x0 ; 00527d1f | g_SfxSamples[1].ref_count
         ;   Label: LAB_00527d1f
     JNZ 0x00527d31                      ; 00527d26
         ;   XREF to: 00527d31 (CONDITIONAL_JUMP)  ; LAB_00527d31
-    CMP dword ptr [EAX + 0x2dc2004],0x0 ; 00527d28 | g_CSfxSample_ARRAY_02dc1edc[1].taken
+    CMP dword ptr [EAX + 0x2dc2004],0x0 ; 00527d28 | g_SfxSamples[1].taken
     JZ 0x00527d4c                       ; 00527d2f
         ;   XREF to: 00527d4c (CONDITIONAL_JUMP)  ; LAB_00527d4c
     PUSH EBX                            ; 00527d31
         ;   Label: LAB_00527d31
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00527d32
         ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
-    IMUL EAX,dword ptr [EBX + 0x138]    ; 00527d37 | g_CSfxSample_ARRAY_02dc1edc[1].streaming_buffer_size
+    IMUL EAX,dword ptr [EBX + 0x138]    ; 00527d37 | g_SfxSamples[1].streaming_buffer_size
     INC dword ptr [ESP + 0x8]           ; 00527d3e
     ADD ESP,0x4                         ; 00527d42
     ADD EBP,EAX                         ; 00527d45
@@ -136,7 +136,7 @@ section .text
     PUSH EDI                            ; 00527d56
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40 ; 00527d57
         ;   XREF to: 00525c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(CSfxSample * this_ptr)
-    IMUL EAX,dword ptr [EDI + 0x138]    ; 00527d5c | g_CSfxSample_ARRAY_02dc1edc[1].streaming_buffer_size
+    IMUL EAX,dword ptr [EDI + 0x138]    ; 00527d5c | g_SfxSamples[1].streaming_buffer_size
     ADD ESP,0x4                         ; 00527d63
     ADD dword ptr [ESP + 0x8],EAX       ; 00527d66
     JMP 0x00527ca0                      ; 00527d6a

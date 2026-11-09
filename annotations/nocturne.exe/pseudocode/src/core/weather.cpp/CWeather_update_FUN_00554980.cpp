@@ -27,7 +27,7 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr)
   float local_18;
   float local_14;
   
-  fVar1 = g_CGame_PTR_005b9354->delta_time_float;
+  fVar1 = g_CGamePtr->delta_time_float;
   local_1c = fVar1;
   if (this_ptr->lightning_active != 0) {
     fVar2 = this_ptr->flash_timer - fVar1;
@@ -36,8 +36,8 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr)
       iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                         (0x01C03A10,"noLightningFlash");
       if (iVar4 == 0) {
-        local_14 = (float)g_CDemonCamera_01fb8508.corona_blend_factor;
-        local_18 = (float)g_CDemonCamera_01fb8508.corona_blend_factor * (float)1.5259021896696401e-05 -
+        local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
+        local_18 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 -
                    local_1c;
         if (local_18 < this_ptr->base_ambient) {
           local_18 = this_ptr->base_ambient;
@@ -45,12 +45,12 @@ void __cdecl core_weather_cpp_CWeather_update_FUN_00554980(CWeather *this_ptr)
           this_ptr->flash_timer = 0.0;
         }
         core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-                  (&g_CDemonCamera_01fb8508,local_18);
+                  (&g_CDemonCameraInstance,local_18);
         goto LAB_005549ac;
       }
     }
     core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-              (&g_CDemonCamera_01fb8508,this_ptr->base_ambient);
+              (&g_CDemonCameraInstance,this_ptr->base_ambient);
     this_ptr->lightning_active = 0;
     this_ptr->flash_timer = 0.0;
   }
@@ -111,8 +111,8 @@ LAB_005549ac:
                           (this_ptr_00,"noLightningFlash");
         if (iVar4 == 0) {
           this_ptr->lightning_active = 1;
-          local_14 = (float)g_CDemonCamera_01fb8508.corona_blend_factor;
-          fVar3 = (float)g_CDemonCamera_01fb8508.corona_blend_factor;
+          local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
+          fVar3 = (float)g_CDemonCameraInstance.corona_blend_factor;
           fVar2 = (float)1.5259021896696401e-05;
           this_ptr->base_ambient = fVar3 * fVar2;
           local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.1,0.3);
@@ -124,7 +124,7 @@ LAB_005549ac:
                                (0.01,local_2c * (float)0.59999999999999998);
           this_ptr->flash_timer = local_14;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740
-                    (&g_CDemonCamera_01fb8508,local_2c);
+                    (&g_CDemonCameraInstance,local_2c);
         }
       }
     }

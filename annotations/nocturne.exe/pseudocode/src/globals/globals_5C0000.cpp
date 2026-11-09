@@ -4,6 +4,12 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x5C0000
 // =============================================================================
 
+// CTextureList*
+CTextureList* g_CTextureListPtr = (CTextureList*)&g_CTextureListInstance;
+
+// CWater*
+CWater* g_CWaterPtr = (CWater*)&g_CWaterInstance;
+
 // RuntimeHandlerEntry
 RuntimeHandlerEntry g_FirstInitHandler = {
     .status = 0x00,
@@ -860,17 +866,17 @@ RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6] = {
 };
 
 // WatcomStaticDestructorNode
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c10c8 = {
+WatcomStaticDestructorNode g_CTextureListDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a3270,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CTextureList_02dca21c
+    .object_instance = (void *)&g_CTextureListInstance
 };
-WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005c11dc = {
+WatcomStaticDestructorNode g_CWaterDestructorNode = {
     .next = nullptr,
     .destructor_info = (WatcomDestructorCall *)&g_WatcomDestructorCall_005a3e80,
     .registration_type = 0x00000001,
-    .object_instance = (void *)&g_CWater_02dd1210
+    .object_instance = (void *)&g_CWaterInstance
 };
 
 // char[256]

@@ -40,7 +40,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(CGame *this_ptr)
   bVar12 = 0;
   if (this_ptr->act_completion_state == 2) {
     pCVar9 = g_CBitFont_PTR_014b9900;
-    if (g_CDemonCamera_01fb8508.screen_width < 0x1e0) {
+    if (g_CDemonCameraInstance.screen_width < 0x1e0) {
       pCVar9 = g_CBitFont_PTR_014b9904;
     }
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(pCVar9,0x58);

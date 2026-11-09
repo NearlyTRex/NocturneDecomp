@@ -9,8 +9,8 @@
 ;   core_game.cpp_CGame_renderIrisFade_FUN_004a3960 at 004a399d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be220
-;   undefined4 g_CScript_01e56da0.focus_actor
+;   CScript* g_CScriptPtr = 01e56da0
+;   undefined4 g_CScriptInstance.focus_actor
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH ESI                            ; 004a3861
     PUSH EDI                            ; 004a3862
     SUB ESP,0x60                        ; 004a3863
-    MOV EAX,[0x005be220]                ; 004a3866 | DAT_005be220
-    MOV EDX,dword ptr [EAX + 0xc]       ; 004a386b | g_CScript_01e56da0.focus_actor
+    MOV EAX,[0x005be220]                ; 004a3866 | g_CScriptPtr
+    MOV EDX,dword ptr [EAX + 0xc]       ; 004a386b | g_CScriptInstance.focus_actor
     TEST EDX,EDX                        ; 004a386e
     JNZ 0x004a3695                      ; 004a3870
         ;   XREF to: 004a3695 (CONDITIONAL_JUMP)  ; LAB_004a3695

@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_00590f8a
 ;   TerminatedCString s_C3DSLight_addFilter_too_00590f9e
-;   undefined4 DAT_005ad54c
+;   CFilterCache* g_CFilterCachePtr = 014b8de8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -74,7 +74,7 @@ section .text
     PUSH EDI                            ; 00515798
     ADD ECX,EAX                         ; 00515799
     PUSH ECX                            ; 0051579b
-    MOV EBP,dword ptr [0x005ad54c]      ; 0051579c | DAT_005ad54c
+    MOV EBP,dword ptr [0x005ad54c]      ; 0051579c | g_CFilterCachePtr
     PUSH EBP                            ; 005157a2
     CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 ; 005157a3
         ;   XREF to: 0044bd20 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20(CFilterCache * this_ptr, char * filter_name, int blend_filter)

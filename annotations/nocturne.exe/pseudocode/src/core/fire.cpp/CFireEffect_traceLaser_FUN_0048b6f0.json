@@ -1,61 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 18,
-        "line": 113,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 26,
-        "line": 115,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 36,
-        "line": 140,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 36,
-        "line": 141,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 21,
-        "line": 142,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
-      },
-      {
-        "category": "type_error",
-        "column": 100,
-        "line": 234,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 481,
+    "complexity_score": 480,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 341,
+    "pseudocode_lines": 340,
     "suspect_count": 13,
     "suspect_types": [
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 1158
+    "total_lines": 1157
   },
   "cross_references": [
     {
@@ -168,7 +126,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -180,37 +138,37 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fa3fc4",
-      "name": "g_CDemonSet_01e57284.collision_normal.x",
+      "name": "g_CDemonSetInstance.collision_normal.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fc8",
-      "name": "g_CDemonSet_01e57284.collision_normal.y",
+      "name": "g_CDemonSetInstance.collision_normal.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fcc",
-      "name": "g_CDemonSet_01e57284.collision_normal.z",
+      "name": "g_CDemonSetInstance.collision_normal.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fd4",
-      "name": "g_CDemonSet_01e57284.collision_impact_position.x",
+      "name": "g_CDemonSetInstance.collision_impact_position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3fe0",
-      "name": "g_CDemonSet_01e57284.collision_actor",
+      "name": "g_CDemonSetInstance.collision_actor",
       "type": "undefined4",
       "value": null
     }
@@ -1406,7 +1364,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 227,
+      "line": 226,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_a4.x * direction->x + local_a4.y * direction->y) * 5.3049894774131808e-315._0_4_;",
@@ -1433,7 +1391,7 @@
       "line": 145,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_a4.x = (g_CDemonSet_PTR_005be368->collision_normal).x;",
+      "text": "local_a4.x = (g_CDemonSetPtr->collision_normal).x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1446,7 +1404,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 167,
+      "line": 166,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_1c->x = pCVar2->x;",
@@ -1454,7 +1412,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 174,
+      "line": 173,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_18->x = pCVar2->x;",
@@ -1462,7 +1420,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 238,
+      "line": 237,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_bc.x = local_f8.x;",
@@ -1470,7 +1428,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 248,
+      "line": 247,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_23c.intensity = laser_info->intensity;",
@@ -1478,7 +1436,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 265,
+      "line": 264,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_23c.incidence_angle = laser_info->incidence_angle;",
@@ -1486,7 +1444,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 279,
+      "line": 278,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_104.x = direction->x;",
@@ -1494,7 +1452,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 313,
+      "line": 312,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_1e8.intensity = laser_info->intensity;",
@@ -1502,7 +1460,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 330,
+      "line": 329,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_1e8.incidence_angle = laser_info->incidence_angle;",

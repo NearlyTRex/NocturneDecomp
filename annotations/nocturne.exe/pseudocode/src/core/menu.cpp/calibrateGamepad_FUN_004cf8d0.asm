@@ -16,18 +16,18 @@
 ;   TerminatedCString s_d_d_x_005884ec
 ;   TerminatedCString s_Center_gamepad_press_ENT_005884f5
 ;   TerminatedCString s_Move_gamepad_in_all_dire_00588511
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   undefined4 DAT_01c038f8
 ;   undefined4 DAT_01c038fc
 ;   undefined4 DAT_01c03908
-;   undefined4 g_CGame_01c775ec.x_center
-;   undefined4 g_CGame_01c775ec.y_center
-;   undefined4 g_CGame_01c775ec.x_stick_min
-;   undefined4 g_CGame_01c775ec.x_stick_max
-;   undefined4 g_CGame_01c775ec.y_stick_min
-;   undefined4 g_CGame_01c775ec.y_stick_max
+;   undefined4 g_CGameInstance.x_center
+;   undefined4 g_CGameInstance.y_center
+;   undefined4 g_CGameInstance.x_stick_min
+;   undefined4 g_CGameInstance.x_stick_max
+;   undefined4 g_CGameInstance.y_stick_min
+;   undefined4 g_CGameInstance.y_stick_max
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -120,7 +120,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00402600 ; 004cf999
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004cf99e
-    MOV ECX,dword ptr [0x005b9354]      ; 004cf9a1 | g_CGame_PTR_005b9354
+    MOV ECX,dword ptr [0x005b9354]      ; 004cf9a1 | g_CGamePtr
     PUSH ECX                            ; 004cf9a7
     CALL core_game.cpp_CGame_resetKeyState_FUN_0049e8b0 ; 004cf9a8
         ;   XREF to: 0049e8b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_0049e8b0(CGame * this_ptr)
@@ -201,7 +201,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00402600 ; 004cfa82
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00402600(char * text, int x, int y)
     ADD ESP,0xc                         ; 004cfa87
-    MOV EBX,dword ptr [0x005b9354]      ; 004cfa8a | g_CGame_PTR_005b9354
+    MOV EBX,dword ptr [0x005b9354]      ; 004cfa8a | g_CGamePtr
     PUSH EBX                            ; 004cfa90
     CALL core_game.cpp_CGame_resetKeyState_FUN_0049e8b0 ; 004cfa91
         ;   XREF to: 0049e8b0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_0049e8b0(CGame * this_ptr)
@@ -268,10 +268,10 @@ section .text
     MOV dword ptr [ESP + 0x20c],EAX     ; 004cfb37
     JMP 0x004cf8ea                      ; 004cfb3e
         ;   XREF to: 004cf8ea (UNCONDITIONAL_JUMP)  ; LAB_004cf8ea
-    MOV EAX,[0x005b9354]                ; 004cfb43 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004cfb43 | g_CGamePtr
         ;   Label: LAB_004cfb43
-    MOV dword ptr [EAX + 0xa4],0x0      ; 004cfb48 | g_CGame_01c775ec.x_center
-    MOV dword ptr [EAX + 0xbc],0x0      ; 004cfb52 | g_CGame_01c775ec.game_control
+    MOV dword ptr [EAX + 0xa4],0x0      ; 004cfb48 | g_CGameInstance.x_center
+    MOV dword ptr [EAX + 0xbc],0x0      ; 004cfb52 | g_CGameInstance.game_control
     XOR EAX,EAX                         ; 004cfb5c
     ADD ESP,0x214                       ; 004cfb5e
     POP EBP                             ; 004cfb64
@@ -279,17 +279,17 @@ section .text
     POP ESI                             ; 004cfb66
     POP EBX                             ; 004cfb67
     RET                                 ; 004cfb68
-    MOV EAX,[0x005b9354]                ; 004cfb69 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004cfb69 | g_CGamePtr
         ;   Label: LAB_004cfb69
     MOV EDX,dword ptr [ESP + 0x208]     ; 004cfb6e
-    MOV dword ptr [EAX + 0xa4],EDX      ; 004cfb75 | g_CGame_01c775ec.x_center
-    MOV dword ptr [EAX + 0xac],ESI      ; 004cfb7b | g_CGame_01c775ec.x_stick_min
-    MOV dword ptr [EAX + 0xb0],EBP      ; 004cfb81 | g_CGame_01c775ec.x_stick_max
-    MOV dword ptr [EAX + 0xb8],EDI      ; 004cfb87 | g_CGame_01c775ec.y_stick_max
+    MOV dword ptr [EAX + 0xa4],EDX      ; 004cfb75 | g_CGameInstance.x_center
+    MOV dword ptr [EAX + 0xac],ESI      ; 004cfb7b | g_CGameInstance.x_stick_min
+    MOV dword ptr [EAX + 0xb0],EBP      ; 004cfb81 | g_CGameInstance.x_stick_max
+    MOV dword ptr [EAX + 0xb8],EDI      ; 004cfb87 | g_CGameInstance.y_stick_max
     MOV EDX,dword ptr [ESP + 0x20c]     ; 004cfb8d
-    MOV dword ptr [EAX + 0xa8],EDX      ; 004cfb94 | g_CGame_01c775ec.y_center
+    MOV dword ptr [EAX + 0xa8],EDX      ; 004cfb94 | g_CGameInstance.y_center
     MOV EDX,dword ptr [ESP + 0x210]     ; 004cfb9a
-    MOV dword ptr [EAX + 0xb4],EDX      ; 004cfba1 | g_CGame_01c775ec.y_stick_min
+    MOV dword ptr [EAX + 0xb4],EDX      ; 004cfba1 | g_CGameInstance.y_stick_min
     MOV EAX,0x1                         ; 004cfba7
     ADD ESP,0x214                       ; 004cfbac
     POP EBP                             ; 004cfbb2

@@ -1,64 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 89,
-        "line": 32,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 76,
-        "line": 37,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 39,
-        "message": "use of undeclared identifier 'DAT_0078a123'"
-      },
-      {
-        "category": "format_error",
-        "column": 95,
-        "line": 55,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 60,
-        "message": "use of undeclared identifier '_DAT_005779d5'"
-      },
-      {
-        "category": "format_error",
-        "column": 138,
-        "line": 80,
-        "message": "format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 147,
-        "line": 80,
-        "message": "format specifies type 'char *' but the argument has type 'undefined4 *' (aka 'unsigned int *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 124,
-        "line": 110,
-        "message": "format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 18,
-        "line": 111,
-        "message": "format specifies type 'char *' but the argument has type 'undefined4 *' (aka 'unsigned int *') [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 228,
@@ -322,44 +262,6 @@
         "type": "int"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "CDemonActor_doCheckForInvalidPointers_FUN_0040bd90.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 11,
-          "line": 83,
-          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 25,
-          "line": 89,
-          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 25,
-          "line": 90,
-          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 25,
-          "line": 91,
-          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -642,38 +544,6 @@
       "severity": "moderate",
       "text": "// 0040bf4a: MOVSD.REP ES:EDI,ESI  ; DAT_00763e10 | DAT_00763e14",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-      "line": 83,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "cVar4 = this_ptr->actor_name[0];",
-      "type": "static_null_pointer_redundant_check"
-    },
-    {
-      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-      "line": 89,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "dVar12 = (double)(this_ptr->location).position.z;",
-      "type": "static_null_pointer_redundant_check"
-    },
-    {
-      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-      "line": 90,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "dVar11 = (double)(this_ptr->location).position.y;",
-      "type": "static_null_pointer_redundant_check"
-    },
-    {
-      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-      "line": 91,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "dVar10 = (double)(this_ptr->location).position.x;",
-      "type": "static_null_pointer_redundant_check"
     }
   ]
 }

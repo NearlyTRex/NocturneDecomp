@@ -1,31 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 63,
-        "line": 60,
-        "message": "use of undeclared identifier 'stack0xffffffcc'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 414,
-    "complexity_score": 207,
+    "complexity_score": 206,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 157,
+    "pseudocode_lines": 156,
     "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 571
+    "total_lines": 570
   },
   "cross_references": [],
   "function": {
@@ -180,7 +168,7 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
@@ -192,43 +180,43 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005b96c4",
-      "name": "g_CGore_PTR_005b96c4",
+      "name": "g_CGorePtr",
       "type": "CGore*",
       "value": "01c78c7c"
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
     {
       "addr": "01c775ec",
-      "name": "g_CGame_01c775ec",
+      "name": "g_CGameInstance",
       "type": "CGame",
       "value": null
     },
     {
       "addr": "01c776b4",
-      "name": "g_CGame_01c775ec.auto_use_health",
+      "name": "g_CGameInstance.auto_use_health",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c777bc",
-      "name": "g_CGame_01c775ec.god_mode_enabled",
+      "name": "g_CGameInstance.god_mode_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77818",
-      "name": "g_CGame_01c775ec.allow_damage_flag",
+      "name": "g_CGameInstance.allow_damage_flag",
       "type": "undefined4",
       "value": null
     },
@@ -373,7 +361,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 53,
+      "line": 52,
       "match": "&stack0xffffffcc",
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xffffffcc,",
@@ -381,7 +369,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 97,
+      "line": 96,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar8 = 1.4013e-45;",
@@ -389,7 +377,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 100,
+      "line": 99,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar8 = 1.4013e-45;",
@@ -397,7 +385,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 106,
+      "line": 105,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "fVar8 = 1.4013e-45;",

@@ -13,7 +13,7 @@ void __cdecl core_skeleton_cpp_freeAllSkeletons_FUN_0051f730(void)
 {
   CSkeleton *this_ptr;
   
-  this_ptr = g_CSkeleton_ARRAY_02737ef8;
+  this_ptr = g_SkeletonPool;
   core_skeleton_cpp_freeAllModels_FUN_0051f650();
   do {
     core_skeleton_cpp_CSkeleton_FUN_005174e0(this_ptr);

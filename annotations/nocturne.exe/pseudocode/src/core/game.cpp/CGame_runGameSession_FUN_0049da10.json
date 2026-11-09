@@ -1,142 +1,21 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 39,
-        "message": "use of undeclared identifier '_DAT_02de20a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 56,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_02de20ac'"
-      },
-      {
-        "category": "format_error",
-        "column": 52,
-        "line": 48,
-        "message": "format specifies type 'unsigned int' but the argument has type 'CPickList *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 80,
-        "message": "use of undeclared identifier '_DAT_01c78420'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 102,
-        "message": "use of undeclared identifier '_DAT_01c78698'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 106,
-        "message": "use of undeclared identifier '_DAT_01c78698'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 108,
-        "message": "use of undeclared identifier 'DAT_01c7869c'"
-      },
-      {
-        "category": "other",
-        "column": 81,
-        "line": 125,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 141,
-        "message": "use of undeclared identifier '_DAT_01c78420'"
-      },
-      {
-        "category": "other",
-        "column": 65,
-        "line": 153,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 154,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 21,
-        "line": 158,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 161,
-        "message": "use of undeclared identifier '_DAT_01c78420'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 162,
-        "message": "use of undeclared identifier '_DAT_01c78420'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 182,
-        "message": "use of undeclared identifier '_DAT_01c78420'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 195,
-        "message": "use of undeclared identifier '_DAT_01c78420'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 233,
-        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 31,
-        "line": 233,
-        "message": "incompatible pointer to integer conversion assigning to 'undefined4' (aka 'unsigned int') from 'CBitFont *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 235,
-        "message": "use of undeclared identifier '_DAT_01bcd070'; did you mean 'DAT_005c5070'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 481,
+    "complexity_score": 410,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 356,
-    "suspect_count": 10,
+    "pseudocode_lines": 350,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_constant",
       "shadow_pointer_walk",
       "undefined_data",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1376
+    "total_lines": 1370
   },
   "cross_references": [
     {
@@ -635,13 +514,13 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -683,19 +562,19 @@
     },
     {
       "addr": "005bdee0",
-      "name": "g_CNetGame_PTR_005bdee0",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "01cea280"
     },
     {
       "addr": "005be220",
-      "name": "DAT_005be220",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e56da0"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -707,7 +586,7 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
@@ -731,37 +610,37 @@
     },
     {
       "addr": "01c74640",
-      "name": "g_CDemonLight_01c74640",
+      "name": "g_CDemonLightInstance",
       "type": "CDemonLight",
       "value": null
     },
     {
       "addr": "01c74641",
-      "name": "g_CDemonLight_01c74640.base.camera_name[1]",
+      "name": "g_CDemonLightInstance.base.camera_name[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74642",
-      "name": "g_CDemonLight_01c74640.base.camera_name[2]",
+      "name": "g_CDemonLightInstance.base.camera_name[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74643",
-      "name": "g_CDemonLight_01c74640.base.camera_name[3]",
+      "name": "g_CDemonLightInstance.base.camera_name[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74740",
-      "name": "g_CDemonLight_01c74640.base.fixed_point_scale",
+      "name": "g_CDemonLightInstance.base.fixed_point_scale",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762f4",
-      "name": "g_CDemonLight_01c74640.light_enabled_flag",
+      "name": "g_CDemonLightInstance.light_enabled_flag",
       "type": "undefined4",
       "value": null
     },
@@ -773,7 +652,7 @@
     },
     {
       "addr": "01c78424",
-      "name": "g_CPickList_01c78424",
+      "name": "g_CPickList",
       "type": "CPickList",
       "value": null
     },
@@ -803,49 +682,49 @@
     },
     {
       "addr": "01cea280",
-      "name": "g_CNetGame_01cea280",
+      "name": "g_CNetGameInstance",
       "type": "CNetGame",
       "value": null
     },
     {
       "addr": "01cea284",
-      "name": "g_CNetGame_01cea280.network_mode",
+      "name": "g_CNetGameInstance.network_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cea3e8",
-      "name": "g_CNetGame_01cea280.has_pending_sim_frame",
+      "name": "g_CNetGameInstance.has_pending_sim_frame",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e56da0",
-      "name": "g_CScript_01e56da0",
+      "name": "g_CScriptInstance",
       "type": "CScript",
       "value": null
     },
     {
       "addr": "01e56dac",
-      "name": "g_CScript_01e56da0.focus_actor",
+      "name": "g_CScriptInstance.focus_actor",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e56db0",
-      "name": "g_CScript_01e56da0.focus_actor_changed",
+      "name": "g_CScriptInstance.focus_actor_changed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "01fb1d40",
-      "name": "g_CDemonSet_01e57284.selected_camera_index",
+      "name": "g_CDemonSetInstance.selected_camera_index",
       "type": "undefined4",
       "value": null
     },
@@ -1005,63 +884,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 99,
       "match": "DAT_01c7869c",
       "severity": "mild",
-      "text": "(g_CDemonSet_PTR_005be368,(int *)&DAT_01c7869c);",
+      "text": "core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(g_CDemonSetPtr,(int *)&DAT_01c7869c);",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 118,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,1);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 146,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 147,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "0x01E56DA0->focus_actor_changed);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 151,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "0x01E56DA0->focus_actor_changed = 0;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 246,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "iVar3 = core_script_cpp_CScript_skipCinematic_FUN_00504d90(0x01E56DA0);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 308,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "if (0x01E56DA0->mission_ended != 0) {",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 83,
+      "line": 82,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1069,7 +900,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 90,
+      "line": 89,
       "match": "pCVar7 = (T *)((pCVar7->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar7 = (CDemonLight *)((pCVar7->base).camera_name + 2);",

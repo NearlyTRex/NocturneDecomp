@@ -126,7 +126,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     iVar4 = iVar4 + iVar7;
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
-            (g_CEditorTools_PTR_005b6d50,iVar9,iVar4,dialog_title,window_flags);
+            (g_CEditorToolsPtr,iVar9,iVar4,dialog_title,window_flags);
   iVar9 = (g_ClipRight - g_ClipLeft) + 1;
   iVar4 = (g_ClipBottom - g_ClipTop) + 1;
   if (this_ptr->scroll_mode == 1) {

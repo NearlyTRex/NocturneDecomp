@@ -13,12 +13,12 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
   CDemonSet *pCVar2;
   int iVar3;
   
-  g_CDemonSet_PTR_005be368->actor_count = 0;
+  g_CDemonSetPtr->actor_count = 0;
   pCVar1 = this_ptr->first_actor;
   do {
     if (pCVar1 == (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(g_CDemonSet_PTR_005be368);
-      core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(g_CDemonSet_PTR_005be368);
+      core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005119b0(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(g_CDemonSetPtr);
       return;
     }
     if (this_ptr->current_set_index == (pCVar1->location).area_id) {
@@ -36,13 +36,13 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
         else {
           pCVar1->lifecycle_state = ACTOR_CREATED;
 LAB_004d91fc:
-          if (1999 < g_CDemonSet_PTR_005be368->actor_count) {
+          if (1999 < g_CDemonSetPtr->actor_count) {
             g_CurrentFilename = "..\\core\\mission.cpp";
             g_CurrentLineNumber = 1102;
             core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
           }
-          pCVar2 = g_CDemonSet_PTR_005be368;
-          g_CDemonSet_PTR_005be368->actors[g_CDemonSet_PTR_005be368->actor_count] = pCVar1;
+          pCVar2 = g_CDemonSetPtr;
+          g_CDemonSetPtr->actors[g_CDemonSetPtr->actor_count] = pCVar1;
           pCVar2->actor_count = pCVar2->actor_count + 1;
         }
       }

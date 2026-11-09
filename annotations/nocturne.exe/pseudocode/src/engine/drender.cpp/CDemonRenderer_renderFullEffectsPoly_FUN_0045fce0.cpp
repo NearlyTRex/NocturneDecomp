@@ -57,7 +57,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0045fce
       else {
         g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
         g_VertexPreprocessMode = 0;
-        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                 (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);

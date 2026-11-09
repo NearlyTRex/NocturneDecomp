@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 156,
@@ -218,23 +213,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "loadACTPaletteFile_FUN_0042d480.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 6,
-          "line": 63,
-          "message": "Possible null pointer dereference: pcVar7",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -283,14 +261,6 @@
       "severity": "moderate",
       "text": "// 0042d5a2: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Possible null pointer dereference: pcVar7",
-      "line": 63,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "*pcVar7 = cVar1;",
-      "type": "static_null_pointer"
     }
   ]
 }

@@ -38,7 +38,7 @@ extern CVector3f g_CVector3f_ARRAY_02dd9268[100];
 extern CVector3f g_CVector3f_ARRAY_02ddfa28[200];
 
 // CWater
-extern CWater g_CWater_02dd1210;
+extern CWater g_CWaterInstance;
 
 // CWeather
 extern CWeather g_CWeather_02ddf9f0;

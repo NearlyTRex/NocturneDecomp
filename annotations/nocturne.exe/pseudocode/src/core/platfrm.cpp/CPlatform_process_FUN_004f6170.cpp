@@ -179,11 +179,9 @@ joined_r0x004f6259:
       if (local_324[0] != '\0') {
         if (*pcVar8 == ';') {
           *pcVar8 = '\0';
-          iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                            (g_CDemonSet_PTR_005be368,name);
-          if ((iVar3 != -1) && (iVar3 != g_CDemonSet_PTR_005be368->selected_camera_index)) {
-            core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0
-                      (g_CDemonSet_PTR_005be368,iVar3,999.0);
+          iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(g_CDemonSetPtr,name);
+          if ((iVar3 != -1) && (iVar3 != g_CDemonSetPtr->selected_camera_index)) {
+            core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(g_CDemonSetPtr,iVar3,999.0);
             this_ptr->rendered_in_background = 0;
             goto LAB_004f62b0;
           }
@@ -198,15 +196,14 @@ joined_r0x004f6259:
         goto joined_r0x004f6259;
       }
 LAB_004f62b0:
-      iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(g_CDemonSet_PTR_005be368,name);
-      if ((iVar3 != -1) && (iVar3 != g_CDemonSet_PTR_005be368->selected_camera_index)) {
-        core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0
-                  (g_CDemonSet_PTR_005be368,iVar3,999.0);
+      iVar3 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0(g_CDemonSetPtr,name);
+      if ((iVar3 != -1) && (iVar3 != g_CDemonSetPtr->selected_camera_index)) {
+        core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(g_CDemonSetPtr,iVar3,999.0);
         this_ptr->rendered_in_background = 0;
       }
     }
     if (local_30 != 0) {
-      core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(g_CDemonSet_PTR_005be368);
+      core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(g_CDemonSetPtr);
     }
   }
   if (this_ptr->param == local_34) {
@@ -237,11 +234,10 @@ LAB_004f62b0:
   iVar12 = 0;
   do {
     while( true ) {
-      if (g_CDemonSet_PTR_005be368->character_count <= iVar12) {
+      if (g_CDemonSetPtr->character_count <= iVar12) {
         iStack_24 = 0;
-        for (iStack_20 = 0; iStack_20 < g_CDemonSet_PTR_005be368->actor_count;
-            iStack_20 = iStack_20 + 1) {
-          iVar3 = *(int *)((int)g_CDemonSet_PTR_005be368->actors + iStack_24);
+        for (iStack_20 = 0; iStack_20 < g_CDemonSetPtr->actor_count; iStack_20 = iStack_20 + 1) {
+          iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);
           if (this_ptr == *(CPlatform **)(iVar3 + 0xdc)) {
             pCStack_18 = (CVector3f *)(iVar3 + 0x20);
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
@@ -286,7 +282,7 @@ LAB_004f62b0:
         core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_004f7700(this_ptr);
         return;
       }
-      this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iVar3);
+      this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar3);
       EVar5 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (((int)EVar5 < 1) &&
          (iVar6 = (*((this_ptr_00->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr_00->base),

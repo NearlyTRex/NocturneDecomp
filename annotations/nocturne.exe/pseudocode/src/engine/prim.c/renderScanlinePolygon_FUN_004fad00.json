@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 97,
-        "message": "use of undeclared identifier '_DAT_01e53384'; did you mean 'DAT_02DF3384'?"
-      },
-      {
-        "category": "other",
-        "column": 17,
-        "line": 97,
-        "message": "no viable overloaded '='"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 98,
-        "message": "use of undeclared identifier '_DAT_01e52efc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 100,
-        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 120,
-        "message": "use of undeclared identifier '_DAT_01e52efc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 121,
-        "message": "use of undeclared identifier 'DAT_01e52f00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 122,
-        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 125,
-        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 127,
-        "message": "use of undeclared identifier '_DAT_01e53384'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 128,
-        "message": "use of undeclared identifier '_DAT_01e53384'; did you mean 'DAT_02DF3384'?"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 128,
-        "message": "no viable overloaded '='"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 193,
-        "message": "use of undeclared identifier '_DAT_01e52efc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 193,
-        "message": "use of undeclared identifier '_DAT_01e52efc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 198,
-        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 199,
-        "message": "use of undeclared identifier 'DAT_01e52f00'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 201,
-        "message": "use of undeclared identifier '_DAT_01e52efc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 203,
-        "message": "use of undeclared identifier '_DAT_01e53380'; did you mean 'DAT_02DF3380'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 207,
-        "message": "use of undeclared identifier '_DAT_01e52efc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 213,
-        "message": "use of undeclared identifier 'DAT_01e52f00'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 649,
@@ -416,23 +296,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "renderScanlinePolygon_FUN_004fad00.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 29,
-          "line": 251,
-          "message": "Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -489,14 +352,6 @@
       "severity": "mild",
       "text": "local_14 = (SSoftwareEdge *)&DAT_01e52f00;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.",
-      "line": 251,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "while ((iVar8 != (local_14->base).y_min || (local_14 == right))) {",
-      "type": "static_null_pointer_redundant_check"
     }
   ]
 }

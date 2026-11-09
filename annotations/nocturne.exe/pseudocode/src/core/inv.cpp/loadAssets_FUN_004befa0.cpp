@@ -22,45 +22,45 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004befa0(void)
     _fclose(p_Var1);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cb0380,"invback",INT_005bab60,INT_005bab64);
+            (&g_InvBackgroundBitmap,"invback",INT_005bab60,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cb0394,"invback2",INT_005bab64,INT_005bab64);
+            (&g_InvBackground2Bitmap,"invback2",INT_005bab64,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cb03a8,"weapback",INT_005bab60,INT_005bab64);
+            (&g_WeapBackgroundBitmap,"weapback",INT_005bab60,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cb03bc,"weapback2",INT_005bab64,INT_005bab64);
+            (&g_WeapBackground2Bitmap,"weapback2",INT_005bab64,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc2fd8,"battery",0x10,0x20);
+            (&g_BatteryIconBitmap,"battery",0x10,0x20);
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(&g_HealthBar1Bitmap,"hbar1",0x1b,0x40)
+  ;
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(&g_HealthBar2Bitmap,"hbar2",0x1b,0x40)
+  ;
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc2fec,"hbar1",0x1b,0x40);
+            (&g_TommyClipIconBitmap,"tommyclip24x24",0x18,0x18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc3000,"hbar2",0x1b,0x40);
+            (&g_BulletIconBitmap,"bullet24x24",0x18,0x18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc3014,"tommyclip24x24",0x18,0x18);
+            (&g_LithiumIconBitmap,"lithium24x24",0x18,0x18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc3028,"bullet24x24",0x18,0x18);
+            (&g_MercuryBulletIconBitmap,"mercurybullet24x24",0x18,0x18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc303c,"lithium24x24",0x18,0x18);
+            (&g_ShotShellIconBitmap,"shotshell24x24",0x18,0x18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc3050,"mercurybullet24x24",0x18,0x18);
+            (&g_SilverBulletIconBitmap,"silverbullet24x24",0x18,0x18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc3064,"shotshell24x24",0x18,0x18);
-  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc3078,"silverbullet24x24",0x18,0x18);
-  engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (&g_CAlphaBitmap_01cc308c,"holybullet24x24",0x18,0x18);
-  if (g_CGame_PTR_005b9354->game_pixy < 0x180) {
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cb0394,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cb03bc,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc2fec,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc3000,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc3014,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc3028,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc303c,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc3050,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc3064,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc3078,2,2);
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_CAlphaBitmap_01cc308c,2,2);
+            (&g_HolyBulletIconBitmap,"holybullet24x24",0x18,0x18);
+  if (g_CGamePtr->game_pixy < 0x180) {
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_InvBackground2Bitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_WeapBackground2Bitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_HealthBar1Bitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_HealthBar2Bitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_TommyClipIconBitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_BulletIconBitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_LithiumIconBitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_MercuryBulletIconBitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_ShotShellIconBitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_SilverBulletIconBitmap,2,2);
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_HolyBulletIconBitmap,2,2);
   }
   _DAT_01cb03d0 = 0;
   p_Var1 = engine_dosio_cpp_getFile_FUN_00456a60

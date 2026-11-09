@@ -1,36 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 65,
-        "message": "no matching function for call to 'core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 69,
-        "message": "no matching function for call to 'core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 219,
-    "complexity_score": 98,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 19,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 2,
+    "pseudocode_lines": 71,
+    "suspect_count": 1,
     "suspect_types": [
       "raw_address_constant"
     ],
-    "total_lines": 292
+    "total_lines": 290
   },
   "cross_references": [],
   "function": {
@@ -217,9 +199,9 @@
     },
     {
       "addr": "005ad54c",
-      "name": "DAT_005ad54c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "014b8de8"
     },
     {
       "addr": "005b9284",
@@ -229,7 +211,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -241,13 +223,13 @@
     },
     {
       "addr": "01c74640",
-      "name": "g_CDemonLight_01c74640",
+      "name": "g_CDemonLightInstance",
       "type": "CDemonLight",
       "value": null
     },
     {
       "addr": "01c76310",
-      "name": "g_CDemonLight_01c74640.antialiasing_enabled",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
       "type": "undefined4",
       "value": null
     },
@@ -259,7 +241,7 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     }
@@ -361,16 +343,8 @@
   },
   "suspects": [
     {
-      "description": "Raw hex literal 0x14b8de8 matches address of g_CFilterCache_014b8de8 (type CFilterCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 59,
-      "match": "0x14b8de8",
-      "severity": "moderate",
-      "text": "(0x014B8DE8,\"lgunmask.raw\",0);",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 62,
+      "line": 61,
       "match": "0x2ddf9f0",
       "severity": "moderate",
       "text": "core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);",

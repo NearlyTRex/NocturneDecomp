@@ -35,8 +35,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_5_2f_5_2f_5_2f_0057d86e
 ;   float FLOAT_0057d882 = -1
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CConsole g_CConsoleInstance
 ;   SFreaky[6] g_SFreaky_ARRAY_01b4d280
 ;   undefined4 g_SFreaky_ARRAY_01b4d280[0].owner
 ;   undefined4 g_SFreaky_ARRAY_01b4d280[1].sfx_handle
@@ -83,10 +83,10 @@ section .text
     MOV EAX,0x1fb860c                   ; 0045b047
         ;   Label: LAB_0045b047
     ADD EAX,0x4                         ; 0045b04c
-    MOV dword ptr [ESP + 0x64],EAX      ; 0045b04f | g_CDemonCamera_01fb8508.position.y
+    MOV dword ptr [ESP + 0x64],EAX      ; 0045b04f | g_CDemonCameraInstance.position.y
     MOV EAX,0x1fb860c                   ; 0045b053
     ADD EAX,0x8                         ; 0045b058
-    MOV dword ptr [ESP + 0x60],EAX      ; 0045b05b | g_CDemonCamera_01fb8508.position.z
+    MOV dword ptr [ESP + 0x60],EAX      ; 0045b05b | g_CDemonCameraInstance.position.z
     LEA EAX,[ESP + 0x20]                ; 0045b05f
     ADD EAX,0x4                         ; 0045b063
     MOV dword ptr [ESP + 0x58],EAX      ; 0045b066
@@ -185,15 +185,15 @@ section .text
     MOV dword ptr [ESI + 0x4],EAX       ; 0045b150 | g_SFreaky_ARRAY_01b4d280[1].control_points[2].y
     MOV EAX,dword ptr [EDI + 0x8]       ; 0045b153 | g_SFreaky_ARRAY_01b4d280[1].control_points[3].z
     MOV dword ptr [ESI + 0x8],EAX       ; 0045b156 | g_SFreaky_ARRAY_01b4d280[1].control_points[2].z
-    MOV EAX,[0x01fb860c]                ; 0045b159 | g_CDemonCamera_01fb8508.position.x
+    MOV EAX,[0x01fb860c]                ; 0045b159 | g_CDemonCameraInstance.position.x
         ;   Label: LAB_0045b159
     MOV dword ptr [ESP + 0x20],EAX      ; 0045b15e
     MOV EAX,dword ptr [ESP + 0x64]      ; 0045b162
-    MOV EAX,dword ptr [EAX]             ; 0045b166 | g_CDemonCamera_01fb8508.position.y
+    MOV EAX,dword ptr [EAX]             ; 0045b166 | g_CDemonCameraInstance.position.y
     MOV dword ptr [ESP + 0x24],EAX      ; 0045b168
     MOV EAX,dword ptr [ESP + 0x60]      ; 0045b16c
     PUSH 0x40a00000                     ; 0045b170
-    MOV EAX,dword ptr [EAX]             ; 0045b175 | g_CDemonCamera_01fb8508.position.z
+    MOV EAX,dword ptr [EAX]             ; 0045b175 | g_CDemonCameraInstance.position.z
     PUSH 0xc0a00000                     ; 0045b177
     MOV dword ptr [ESP + 0x30],EAX      ; 0045b17c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0045b180
@@ -294,8 +294,8 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0045b29f | g_SFreaky_ARRAY_01b4d280[1].position.x
     FSTP double ptr [ESP]               ; 0045b2a2
     PUSH 0x57d86e                       ; 0045b2a5 | = "%5.2f %5.2f %5.2f\n"
-    MOV EDI,dword ptr [0x005ad350]      ; 0045b2aa | g_CConsole_PTR_005ad350
-    PUSH EDI                            ; 0045b2b0 | g_CConsole_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 0045b2aa | g_CConsolePtr
+    PUSH EDI                            ; 0045b2b0 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0045b2b1
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 0045b2b6

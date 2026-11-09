@@ -76,46 +76,45 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
   CStack_50.x = aCStack_a4[0].x - fStack_38;
   CStack_50.y = aCStack_a4[0].y - fStack_34;
   CStack_50.z = aCStack_a4[0].z - fStack_30;
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
-  core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00511740(g_CDemonSet_PTR_005be368);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSetPtr,1);
+  core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00511740(g_CDemonSetPtr);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   if ((this_ptr->base).carried_by_actor != (CDemonActor *)0x0) {
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-              (g_CDemonSet_PTR_005be368,(this_ptr->base).carried_by_actor);
+              (g_CDemonSetPtr,(this_ptr->base).carried_by_actor);
   }
   iVar8 = 0;
-  core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
+  core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSetPtr);
   do {
     fVar2 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
-                      (g_CDemonSet_PTR_005be368,&CStack_50,(CVector3f *)auStack_44);
+                      (g_CDemonSetPtr,&CStack_50,(CVector3f *)auStack_44);
     dVar9 = (double)fVar2;
     if ((dVar9 < 0.0) || (1.0 < dVar9)) break;
     this_ptr->beam_length = (this_ptr->base).bolt_velocity * fVar2;
     pCStack_18 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040d890
-                           (g_CDemonSet_PTR_005be368->collision_actor,
-                            g_CCharacterActorType_00765a60.name_hash);
+                           (g_CDemonSetPtr->collision_actor,g_CCharacterActorType_00765a60.name_hash
+                           );
     if ((pCStack_18 != (CCharacter *)0x0) &&
        (EVar4 = (*(((pCStack_18->base).vtable._uc)->_uc).getDeathState)(pCStack_18), 0 < (int)EVar4)
        ) {
       uStack_14 = 0;
     }
     pCVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                       (g_CDemonSet_PTR_005be368->collision_actor,
-                        g_CGlassActorType_01c78c40.name_hash);
+                       (g_CDemonSetPtr->collision_actor,g_CGlassActorType_01c78c40.name_hash);
     this_ptr_02 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (g_CDemonSet_PTR_005be368->collision_actor,
-                             g_CTriggerActorType_02dd1084.name_hash);
+                            (g_CDemonSetPtr->collision_actor,g_CTriggerActorType_02dd1084.name_hash)
+    ;
     pCStack_28 = this_ptr_02;
     if (pCStack_18 != (CCharacter *)0x0) {
       iVar6 = (*(((pCStack_18->base).vtable._uc)->_uc).isInvulnerable)(pCStack_18);
-      this_ptr_01 = g_CDemonSet_PTR_005be368;
+      this_ptr_01 = g_CDemonSetPtr;
       if ((iVar6 != 0) && (iVar8 == 0)) {
         this_ptr->charge_level = 30.0f;
         core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(this_ptr_01);
-        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+        core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
         return 0;
       }
       break;
@@ -131,22 +130,22 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
                                     (int)((ulonglong)dVar9 >> 0x20));
           core_trigger_cpp_CTrigger_applyDamage_FUN_005485e0(this_ptr_02,fVar2);
         }
-        core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&pCStack_28->base);
+        core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,&pCStack_28->base);
         break;
       }
     }
     else {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,pCVar5);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,pCVar5);
     }
     iVar8 = iVar8 + 1;
   } while (iVar8 < 1);
-  core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSet_PTR_005be368);
+  core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSetPtr);
   core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(this_ptr);
   iStack_1c = 0;
   iStack_20 = 0;
   do {
-    if (g_CDemonSet_PTR_005be368->character_count <= iStack_1c) {
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    if (g_CDemonSetPtr->character_count <= iStack_1c) {
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
       core_sound_cpp_CSound_playActorSound_FUN_0052ea60
                 (g_CSound_PTR_005bed68,(CDemonActor *)this_ptr,"cre-fire.wav",aCStack_a4);
       sound_sndmain_cpp_setSfxVolume_FUN_005270d0(this_ptr->sfx_handle,2.0f);
@@ -158,7 +157,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
       this_ptr->fire_flash_pending = 1;
       return 1;
     }
-    this_ptr_00 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_20);
+    this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_20);
     iVar8 = (*(((this_ptr_00->base).vtable._uc)->_uc).isInvulnerable)(this_ptr_00);
     if (((iVar8 == 0) &&
         ((((iVar8 = core_actor_cpp_isOfClass_FUN_0040d7e0(&this_ptr_00->base,"CGhoul"),
@@ -182,12 +181,12 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
       (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
                 (&this_ptr_00->base,(CBoundingBox3D *)(auStack_c8 + 0x10));
       iVar8 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00445fe0
-                        (&g_CDemonLight_01c74640.base,&(this_ptr_00->base).location.position,
+                        (&g_CDemonLightInstance.base,&(this_ptr_00->base).location.position,
                          &(this_ptr_00->base).orient.vec,&CStack_b0,aCStack_a4);
       if (iVar8 != 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s in volume\n",this_ptr_00);
-        core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSet_PTR_005be368);
+                  (g_CConsolePtr,"%s in volume\n",this_ptr_00);
+        core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(g_CDemonSetPtr);
         pCVar3 = (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
                            (&this_ptr_00->base,(CBoundingBox3D *)auStack_c8);
         this_ptr = (CLightGun *)&pCVar3->max;
@@ -205,9 +204,8 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
         bVar1 = false;
         do {
           core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
-                    (g_CDemonSet_PTR_005be368,(CVector3f *)(auStack_44 + 8),(CVector3f *)auStack_6c)
-          ;
-          pCVar5 = g_CDemonSet_PTR_005be368->collision_actor;
+                    (g_CDemonSetPtr,(CVector3f *)(auStack_44 + 8),(CVector3f *)auStack_6c);
+          pCVar5 = g_CDemonSetPtr->collision_actor;
           if (pCVar5 == (CDemonActor *)0x0) break;
           if (pCVar5 == unaff_retaddr) {
             bVar1 = true;
@@ -217,9 +215,9 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_004c71a0(CLightGun *this_ptr)
           if (iVar6 == 0) break;
           iVar8 = iVar8 + 1;
           core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                    (g_CDemonSet_PTR_005be368,g_CDemonSet_PTR_005be368->collision_actor);
+                    (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
         } while (iVar8 < 3);
-        core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSet_PTR_005be368);
+        core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(g_CDemonSetPtr);
         if (bVar1) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0((SDamageInfo *)auStack_fc);
           auStack_fc._4_4_ = 0.1;

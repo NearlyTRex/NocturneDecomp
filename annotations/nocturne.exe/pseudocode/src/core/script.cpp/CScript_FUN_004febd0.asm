@@ -28,7 +28,7 @@
 ;   TerminatedCString s_Probable_non_text_file_s_0058e279
 ;   TerminatedCString s_core_script_cpp_0058e2be
 ;   TerminatedCString s_s_failed_syntax_check_on_0058e2d1
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -248,7 +248,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x328]     ; 004fedca
     PUSH EAX                            ; 004fedd1
     PUSH 0x58e279                       ; 004fedd2 | = "Probable non-text file %s detected ne..."
-    MOV EDX,dword ptr [0x005b6d50]      ; 004fedd7 | g_CEditorTools_PTR_005b6d50
+    MOV EDX,dword ptr [0x005b6d50]      ; 004fedd7 | g_CEditorToolsPtr
     PUSH EDX                            ; 004feddd
     CALL shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0 ; 004fedde
         ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0046fcd0(CEditorTools * this_ptr, char * format)

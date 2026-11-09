@@ -75,12 +75,12 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDe
   
   if (0.0 < radius) {
     local_14 = core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0
-                         (&g_CDemonRaytrace_01fba938,position,radius,&this_ptr->ground_type,
+                         (&g_CDemonRaytraceInstance,position,radius,&this_ptr->ground_type,
                           &this_ptr->collision_normal);
   }
   else {
     local_14 = core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
-                         (&g_CDemonRaytrace_01fba938,position,&this_ptr->ground_type,
+                         (&g_CDemonRaytraceInstance,position,&this_ptr->ground_type,
                           &this_ptr->collision_normal);
   }
   if (this_ptr->ground_type == 0) {

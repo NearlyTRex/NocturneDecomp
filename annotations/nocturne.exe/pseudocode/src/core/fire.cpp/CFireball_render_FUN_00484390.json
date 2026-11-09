@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 89,
-        "message": "use of undeclared identifier '_DAT_005c5030'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 90,
-        "message": "use of undeclared identifier '_DAT_005c505c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 91,
-        "message": "use of undeclared identifier '_DAT_005c5060'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 92,
-        "message": "use of undeclared identifier '_DAT_005c508c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_005c5090'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 94,
-        "message": "use of undeclared identifier '_DAT_005c50bc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_005c50c0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 97,
-        "message": "use of undeclared identifier 'DAT_01c08d08'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 118,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 13,
-        "line": 127,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 134,
-        "message": "use of undeclared identifier 'DAT_005b8514'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 137,
-        "message": "use of undeclared identifier 'DAT_005b84fc'; did you mean 'DAT_005be4fc'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 140,
-        "message": "use of undeclared identifier 'DAT_005b84cc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 61,
-        "line": 144,
-        "message": "use of undeclared identifier '_DAT_01c038f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 159,
-        "message": "use of undeclared identifier '_DAT_005c50a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 160,
-        "message": "use of undeclared identifier '_DAT_005c50d0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 64,
-        "line": 189,
-        "message": "use of undeclared identifier 'DAT_01c08d08'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "type_error",
-        "column": 17,
-        "line": 202,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 17,
-        "line": 203,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 580,
@@ -258,7 +138,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -432,7 +312,7 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
@@ -859,30 +739,6 @@
       }
     ],
     "severity": "medium"
-  },
-  "static_analysis": {
-    "analyzed_file": "CFireball_render_FUN_00484390.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 17,
-          "line": 98,
-          "message": "Uninitialized variable: local_1c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 190,
-          "message": "Uninitialized variable: local_18",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -1324,22 +1180,6 @@
       "severity": "moderate",
       "text": "local_48.x = (this_ptr->base).position.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_1c",
-      "line": 98,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_70 = -local_1c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_18",
-      "line": 190,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_6c = -local_18 * local_e0.min.x;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

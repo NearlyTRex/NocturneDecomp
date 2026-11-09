@@ -99,7 +99,7 @@ LAB_0040a899:
   out_hit->lod_index = -1;
   out_hit->triangle_index = -1;
   out_hit->bone_index = -1;
-  pCVar1 = g_CDemonSet_PTR_005be368;
+  pCVar1 = g_CDemonSetPtr;
   out_hit->part_index = -1;
   if (pCVar1->skip_exact_collisions == 0) {
     frame_index = collision_info->deformable_model;
@@ -141,8 +141,7 @@ LAB_0040a899:
       iVar2 = core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0051b540
                         (this_ptr_02,iVar2,triangle_index);
       out_hit->bone_index = iVar2;
-      if ((int *)&stack0x00000000 !=
-          &g_CDeformableModel_ARRAY_0268cef4[0].lod_info[2].shadow_only_flag) {
+      if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {
         local_30.x = _DAT_0268cedc;
         local_30.y = _DAT_0268cee0;
         local_30.z = _DAT_0268cee4;

@@ -14,9 +14,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_movscrn_raw_0057c0f5
 ;   double DOUBLE_0057c105 = 30
-;   undefined4 DAT_005ad54c
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CFilterCache* g_CFilterCachePtr = 014b8de8
+;   CGame* g_CGamePtr = 01c775ec
+;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60
@@ -32,7 +32,7 @@ section .text
     SUB ESP,0xc                         ; 0044c4a2
     MOV EBX,dword ptr [ESP + 0x18]      ; 0044c4a5
     PUSH 0x57c0f5                       ; 0044c4a9 | = "movscrn.raw"
-    MOV EDX,dword ptr [0x005ad54c]      ; 0044c4ae | DAT_005ad54c
+    MOV EDX,dword ptr [0x005ad54c]      ; 0044c4ae | g_CFilterCachePtr
     PUSH EDX                            ; 0044c4b4
     CALL core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60 ; 0044c4b5
         ;   XREF to: 0044be60 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_findFilter_FUN_0044be60(CFilterCache * this_ptr, char * filter_name)
@@ -45,8 +45,8 @@ section .text
     JZ 0x0044c52b                       ; 0044c4c7
         ;   XREF to: 0044c52b (CONDITIONAL_JUMP)  ; LAB_0044c52b
     PUSH ESI                            ; 0044c4c9
-    MOV ESI,dword ptr [0x005b9354]      ; 0044c4ca | g_CGame_PTR_005b9354
-    FLD float ptr [ESI + 0x264]         ; 0044c4d0 | g_CGame_01c775ec.delta_time_float
+    MOV ESI,dword ptr [0x005b9354]      ; 0044c4ca | g_CGamePtr
+    FLD float ptr [ESI + 0x264]         ; 0044c4d0 | g_CGameInstance.delta_time_float
     FMUL double ptr [0x0057c105]        ; 0044c4d6 | DOUBLE_0057c105
     LEA EAX,[EBX + 0x8]                 ; 0044c4dc
     FADD float ptr [EAX]                ; 0044c4df

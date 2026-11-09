@@ -92,27 +92,25 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
       start_pos = &(this_ptr->weapon->base).location.position;
     }
     if (start_pos != (CVector3f *)0x0) {
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-      core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSet_PTR_005be368,1);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(g_CDemonSetPtr,1);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,(CDemonActor *)this_ptr);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,&this_ptr->weapon->base);
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,&this_ptr->weapon->base);
-      core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-                (g_CDemonSet_PTR_005be368,(this_ptr->base).base.carry_hands[1].carry_actor);
+                (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
       input = core_stranger_cpp_CStranger_getThrowDirection_FUN_0053f260(this_ptr,&local_70);
       core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
                 ((CDemonActor *)this_ptr,&local_7c,input);
       local_14 = core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0
-                           (g_CDemonSet_PTR_005be368,start_pos,&local_7c);
+                           (g_CDemonSetPtr,start_pos,&local_7c);
       local_18 = local_14;
       if (local_14 < 0.0) {
         local_18 = 10.0;
       }
       core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440
                 (g_CFireEffect_PTR_005b80f0,start_pos,&local_7c,1.0,1.0,
-                 &g_CDemonSet_PTR_005be368->collision_normal,local_18,0xff,0,0);
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+                 &g_CDemonSetPtr->collision_normal,local_18,0xff,0,0);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
     }
   }
   pCVar2 = this_ptr->weapon;

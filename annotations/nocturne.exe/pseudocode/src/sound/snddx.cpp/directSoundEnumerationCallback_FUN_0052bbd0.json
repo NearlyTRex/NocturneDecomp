@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 36,
-        "line": 52,
-        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'LPDIRECTSOUND' (aka 'IDirectSound *')"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 188,
@@ -254,23 +242,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "directSoundEnumerationCallback_FUN_0052bbd0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 18,
-          "line": 51,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Decompiler iteration limit exceeded",
@@ -343,14 +314,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 51,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (local_10 != (LPDIRECTSOUND)0x0) {",
-      "type": "static_identical_inner_condition"
     }
   ]
 }

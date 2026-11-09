@@ -90,7 +90,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
   if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
     (this_ptr->velocity).z = 0.0;
     (this_ptr->velocity).y = (this_ptr->velocity).z;
     (this_ptr->velocity).x = (this_ptr->velocity).y;
@@ -155,7 +155,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
   local_ac = (pCVar1->position).x;
   local_a8 = (this_ptr->base).location.position.y;
   local_a4 = (this_ptr->base).location.position.z;
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&this_ptr->base);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,&this_ptr->base);
   local_3c = 0;
   local_20 = velocity->y;
   local_24 = this_ptr->collision_test_normals;
@@ -177,14 +177,14 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
       local_38 = this_ptr->size_scale * (float)0.5 + fVar3;
     }
     local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                         (g_CDemonSet_PTR_005be368,(this_ptr->base).location.position.x,
+                         (g_CDemonSetPtr,(this_ptr->base).location.position.x,
                           (this_ptr->base).location.position.z,local_94.x,local_94.z,
                           this_ptr->collision_cylinder_radius * this_ptr->size_scale,
                           this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
                           (this_ptr->base).location.position.y,
                           (this_ptr->base).location.position.y + local_38);
     if (DAT_00765a9c == (CDemonActor *)0x0) {
-      DAT_00765a9c = g_CDemonSet_PTR_005be368->collision_actor;
+      DAT_00765a9c = g_CDemonSetPtr->collision_actor;
     }
     pCVar7 = local_58 + local_3c * 3;
     if (pCVar7 != (CVector3f *)&DAT_014b89e8) {
@@ -212,7 +212,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
       local_68 = local_94.z * local_c8;
       (local_34->position).x = (local_34->position).x + afStack_78[2];
       (local_34->position).y = (local_34->position).y + afStack_78[3];
-      pCVar5 = g_CDemonSet_PTR_005be368;
+      pCVar5 = g_CDemonSetPtr;
       (local_34->position).z = (local_34->position).z + local_68;
       local_b8 = (pCVar5->collision_normal).x;
       local_b4 = (pCVar5->collision_normal).y;
@@ -240,7 +240,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
       if (((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) && (local_c8 < 1.0)) {
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
                   ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&CStack_c4,
-                   &g_CDemonSet_PTR_005be368->collision_normal);
+                   &g_CDemonSetPtr->collision_normal);
         engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0
                   (g_CForceFeedback_PTR_005b9284,CStack_c4.x,CStack_c4.z);
       }
@@ -273,9 +273,9 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
     }
     else {
       local_48 = local_14 + (float)-0.01;
-      local_a0 = (g_CDemonSet_PTR_005be368->collision_normal).x * local_48;
-      local_9c = (g_CDemonSet_PTR_005be368->collision_normal).y * local_48;
-      local_98 = (g_CDemonSet_PTR_005be368->collision_normal).z * local_48;
+      local_a0 = (g_CDemonSetPtr->collision_normal).x * local_48;
+      local_9c = (g_CDemonSetPtr->collision_normal).y * local_48;
+      local_98 = (g_CDemonSetPtr->collision_normal).z * local_48;
       (local_30->position).x = (local_30->position).x - local_a0;
       (local_30->position).y = (local_30->position).y - local_9c;
       local_54 = 1;
@@ -308,9 +308,9 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(CCharacter
   (this_ptr->velocity).z = 0.0;
   (this_ptr->velocity).y = (this_ptr->velocity).z;
   (this_ptr->velocity).x = (this_ptr->velocity).y;
-  pCVar5 = g_CDemonSet_PTR_005be368;
+  pCVar5 = g_CDemonSetPtr;
   (this_ptr->velocity).y =
-       ((this_ptr->base).location.position.y - local_a8) / g_CGame_PTR_005b9354->delta_time_float;
+       ((this_ptr->base).location.position.y - local_a8) / g_CGamePtr->delta_time_float;
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(pCVar5);
   return;
 }

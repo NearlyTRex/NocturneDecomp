@@ -1,46 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 78,
-        "line": 60,
-        "message": "use of undeclared identifier 'DAT_01cd8b28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 90,
-        "message": "use of undeclared identifier 'DAT_005bbc88'; did you mean 'DAT_005bbc08'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 94,
-        "message": "use of undeclared identifier 'DAT_005bbc48'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 112,
-        "line": 119,
-        "message": "use of undeclared identifier 'DAT_01cd8b28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 77,
-        "line": 135,
-        "message": "use of undeclared identifier 'DAT_01cd8b28'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 142,
-        "message": "use of undeclared identifier 'DAT_005bbc48'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 326,
@@ -436,30 +394,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMP3Decoder_parseHeader_FUN_004e7ed0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 3,
-          "line": 144,
-          "message": "Uninitialized variable: unaff_retaddr",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 33,
-          "line": 145,
-          "message": "Uninitialized variable: iStack_40",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Undefined global data reference",
@@ -532,22 +466,6 @@
       "severity": "moderate",
       "text": "(*(double *)",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: unaff_retaddr",
-      "line": 144,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "unaff_retaddr->sample_rate = (int)ROUND(dVar9);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_40",
-      "line": 145,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "unaff_retaddr->num_channels = iStack_40;",
-      "type": "static_uninitvar"
     }
   ]
 }

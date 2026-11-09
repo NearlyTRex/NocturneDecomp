@@ -37,8 +37,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDr
   if (fVar2 < 0.0) {
     this_ptr->freaky_timer = 0.0;
   }
-  local_24 = &g_CDemonCamera_01fb8508.position.y;
-  local_28 = &g_CDemonCamera_01fb8508.position.z;
+  local_24 = &g_CDemonCameraInstance.position.y;
+  local_28 = &g_CDemonCameraInstance.position.z;
   local_30 = &local_64;
   local_2c = &local_60;
   local_34 = g_SFreaky_ARRAY_01b4d280;
@@ -74,7 +74,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDr
             pSVar3->control_points[2].y = pSVar3->control_points[3].y;
             pSVar3->control_points[2].z = pSVar3->control_points[3].z;
           }
-          local_68 = g_CDemonCamera_01fb8508.position.x;
+          local_68 = g_CDemonCameraInstance.position.x;
           local_64 = *local_24;
           local_60 = *local_28;
           local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
@@ -102,9 +102,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_0045b020(CDr
           (local_20->position).z = pCVar5->z;
         }
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%5.2f %5.2f %5.2f\n",
-                   (double)(local_20->position).x,(double)(local_20->position).y,
-                   (double)(local_20->position).z);
+                  (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",(double)(local_20->position).x,
+                   (double)(local_20->position).y,(double)(local_20->position).z);
         pCVar5 = core_spline_cpp_evaluateSplineTangent3D_FUN_005340d0
                            (local_88,&local_5c,local_20->control_points,local_20->control_points + 1
                             ,local_20->control_points + 2,local_20->control_points + 3);

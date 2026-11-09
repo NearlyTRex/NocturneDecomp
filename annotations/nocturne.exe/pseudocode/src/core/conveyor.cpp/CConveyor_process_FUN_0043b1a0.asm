@@ -18,12 +18,12 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.actor_count
-;   undefined4 g_CDemonSet_01e57284.actors[0]
-;   undefined4 g_CDemonSet_01e57284.actors[1]
-;   undefined4 g_CDemonSet_01e57284.actors[2]
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.actors[1]
+;   undefined4 g_CDemonSetInstance.actors[2]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
@@ -72,12 +72,12 @@ section .text
     LEA EAX,[ESI + 0x804]               ; 0043b1fe
     XOR EBP,EBP                         ; 0043b204
     MOV dword ptr [ESP + 0x1c],EAX      ; 0043b206
-    MOV EAX,[0x005be368]                ; 0043b20a | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 0043b20a | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0043b20a
-    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 0043b20f | g_CDemonSet_01e57284.actor_count
+    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 0043b20f | g_CDemonSetInstance.actor_count
     JGE 0x0043b238                      ; 0043b215
         ;   XREF to: 0043b238 (CONDITIONAL_JUMP)  ; LAB_0043b238
-    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14cd70] ; 0043b217 | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1] | g_CDemonSet_01e57284.actors[2]
+    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14cd70] ; 0043b217 | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1] | g_CDemonSetInstance.actors[2]
     MOV ECX,dword ptr [EBX + 0xdc]      ; 0043b21e
     CMP ESI,ECX                         ; 0043b224
     JZ 0x0043b240                       ; 0043b226

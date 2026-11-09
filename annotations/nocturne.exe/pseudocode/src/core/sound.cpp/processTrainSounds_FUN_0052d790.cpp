@@ -40,11 +40,11 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_0052d790(void)
   float fStack_14;
   
   bVar11 = 0;
-  fStack_18 = g_CGame_PTR_005b9354->delta_time_float;
-  if (g_CGame_PTR_005b9354->goggles_active == 0) {
-    if (_DAT_02dc9d54 != g_CDemonSet_PTR_005be368->selected_camera_index) {
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSet_PTR_005be368);
+  fStack_18 = g_CGamePtr->delta_time_float;
+  if (g_CGamePtr->goggles_active == 0) {
+    if (_DAT_02dc9d54 != g_CDemonSetPtr->selected_camera_index) {
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSetPtr);
       CStack_50.x = _DAT_02dc945c;
       CStack_50.y = _DAT_02dc9460;
       CStack_50.z = _DAT_02dc9464;
@@ -55,15 +55,15 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_0052d790(void)
       uStack_30 = 0;
       CStack_44.y = _DAT_02dc9460 + 20.0f;
       iVar4 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                        (g_CDemonSet_PTR_005be368,&CStack_50,&CStack_44);
+                        (g_CDemonSetPtr,&CStack_50,&CStack_44);
       if (iVar4 == 0) {
         PTR_s_int_005bed60 = "ext";
       }
       else {
         PTR_s_int_005bed60 = "int";
       }
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-      _DAT_02dc9d54 = g_CDemonSet_PTR_005be368->selected_camera_index;
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+      _DAT_02dc9d54 = g_CDemonSetPtr->selected_camera_index;
     }
   }
   else {

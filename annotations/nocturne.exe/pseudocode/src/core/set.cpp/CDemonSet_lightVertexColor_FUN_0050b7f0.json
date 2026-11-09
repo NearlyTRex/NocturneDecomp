@@ -1,58 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 55,
-        "message": "use of undeclared identifier '_DAT_01c038f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 95,
-        "message": "use of undeclared identifier '_DAT_01fff224'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 105,
-        "message": "use of undeclared identifier '_DAT_01fff5a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 106,
-        "message": "use of undeclared identifier '_DAT_01fff5a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 110,
-        "message": "use of undeclared identifier '_DAT_01fff5a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 111,
-        "message": "use of undeclared identifier '_DAT_01fff5a8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 115,
-        "message": "use of undeclared identifier '_DAT_01fff5ac'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 59,
-        "line": 116,
-        "message": "use of undeclared identifier '_DAT_01fff5ac'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 317,
@@ -188,7 +134,7 @@
     },
     {
       "addr": "01fb96f0",
-      "name": "g_CDemonCamera_01fb8508.corona_blend_factor",
+      "name": "g_CDemonCameraInstance.corona_blend_factor",
       "type": "undefined4",
       "value": null
     },
@@ -424,58 +370,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_lightVertexColor_FUN_0050b7f0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 40,
-          "line": 126,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 49,
-          "line": 132,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 34,
-          "line": 133,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 43,
-          "line": 139,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 34,
-          "line": 140,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 43,
-          "line": 146,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -540,54 +434,6 @@
       "severity": "mild",
       "text": "(&DAT_005c503c)[vertex_index * 0xc] = *(uint *)(uVar5 * 4 + 0x1fbb060);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 126,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar6 = local_18 ^ (int)local_18 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 132,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar7 << 0x10) ^ (int)local_18 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 133,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar6 = uVar4 ^ (int)uVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 139,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar7 << 0x10) ^ (int)uVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 140,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar6 = uVar5 ^ (int)uVar5 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 146,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar7 << 0x10) ^ (int)uVar5 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

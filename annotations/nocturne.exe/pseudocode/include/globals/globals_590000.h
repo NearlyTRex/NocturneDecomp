@@ -129,7 +129,7 @@ extern CWeapon_full_vtable g_CLightGunVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall g_WatcomDestructorCall_0059aaa0;
-extern WatcomDestructorCall g_WatcomDestructorCall_0059b6e0;
+extern WatcomDestructorCall g_CConsoleDestructorCall;
 extern WatcomDestructorCall g_WatcomDestructorCall_0059bdd0;
 extern WatcomDestructorCall g_WatcomDestructorCall_0059bf60;
 extern WatcomDestructorCall g_WatcomDestructorCall_0059bf6c;

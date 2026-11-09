@@ -12,7 +12,7 @@ int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004d2b40(EInputCodeType *key
   EControlMode EVar1;
   EInputCodeType EVar2;
   
-  EVar1 = g_CGame_PTR_005b9354->game_control;
+  EVar1 = g_CGamePtr->game_control;
   if (EVar1 == CONTROL_MODE_KEYBOARD) {
     EVar2 = *key_code_ptr;
     if (EVar2 < DIJ_BUTTON8) {

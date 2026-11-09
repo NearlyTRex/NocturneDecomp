@@ -1,28 +1,15 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 33,
-        "message": "incompatible integer to pointer conversion assigning to 'CScript *' from 'int'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 119,
+    "complexity_score": 104,
     "cross_reference_count": 38,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 74,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_constant",
       "shadow_pointer_walk",
       "unrolled_memset"
     ],
@@ -322,25 +309,25 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005be220",
-      "name": "DAT_005be220",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e56da0"
     },
     {
       "addr": "01c775ec",
-      "name": "g_CGame_01c775ec",
+      "name": "g_CGameInstance",
       "type": "CGame",
       "value": null
     },
     {
       "addr": "01e56da0",
-      "name": "g_CScript_01e56da0",
+      "name": "g_CScriptInstance",
       "type": "CScript",
       "value": null
     }
@@ -536,14 +523,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 26,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01E56DA0, fVar3 < 0.0)) {",
-      "type": "raw_address_constant"
-    },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 59,

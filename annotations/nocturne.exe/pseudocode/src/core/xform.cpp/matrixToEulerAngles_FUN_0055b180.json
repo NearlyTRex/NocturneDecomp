@@ -1,52 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 62,
-        "line": 67,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 56,
-        "line": 96,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 56,
-        "line": 99,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 56,
-        "line": 126,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 56,
-        "line": 129,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 50,
-        "line": 166,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 50,
-        "line": 169,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 454,
@@ -638,51 +590,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "matrixToEulerAngles_FUN_0055b180.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 11,
-          "line": 123,
-          "message": "Return value of function asin() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 9,
-          "line": 149,
-          "message": "Return value of function acos() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 5,
-          "line": 163,
-          "message": "Return value of function asin() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 125,
-          "message": "Uninitialized variable: local_20",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 165,
-          "message": "Uninitialized variable: local_18",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -859,22 +766,6 @@
       "severity": "mild",
       "text": "local_18 = local_18 + 1.5980070449557469e-314._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 125,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_20 < (float)-3.1415926535900001) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_18",
-      "line": 165,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_18 < (float)-3.1415926535900001) {",
-      "type": "static_uninitvar"
     }
   ]
 }

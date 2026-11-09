@@ -72,11 +72,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
   if ((pCVar10 == (CDemonActor *)0x0) ||
      (iVar6 = (*((pCVar10->vtable)._ub)->canPickup)(pCVar10,(CDemonActor *)this_ptr), iVar6 != 4)) {
     iStack_1c = 0;
-    for (iStack_20 = 0; iStack_20 < g_CDemonSet_PTR_005be368->actor_count; iStack_20 = iStack_20 + 1
-        ) {
+    for (iStack_20 = 0; iStack_20 < g_CDemonSetPtr->actor_count; iStack_20 = iStack_20 + 1) {
       pCVar4 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iStack_1c),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c),
                           g_CActorDestinationActorType_014b8a1c.name_hash);
       local_30 = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
@@ -94,8 +93,8 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
         fVar2 = pCVar8->y - pCVar7->y;
         fVar3 = pCVar8->z - pCVar7->z;
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"Delta to dest : %3.2f,%3.2f,%3.2f\n",(double)fVar9,
-                   (double)fVar2,(double)fVar3);
+                  (g_CConsolePtr,"Delta to dest : %3.2f,%3.2f,%3.2f\n",(double)fVar9,(double)fVar2,
+                   (double)fVar3);
         if ((((0.0 < fVar3) &&
              ((fVar3 < (float)3 && (ABS(fVar9) < (float)2)))) &&
             (dVar1 = (double)fVar2, 0.0 < dVar1)) && (dVar1 < 4)) {
@@ -123,10 +122,10 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
   }
   else {
     local_18 = 0.0;
-    for (local_24 = 0; local_24 < g_CDemonSet_PTR_005be368->actor_count; local_24 = local_24 + 1) {
+    for (local_24 = 0; local_24 < g_CDemonSetPtr->actor_count; local_24 = local_24 + 1) {
       pCVar4 = (CActorDestination *)
                core_actor_cpp_castToClassHash_FUN_0040d890
-                         (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + (int)local_18),
+                         (*(CDemonActor **)((int)g_CDemonSetPtr->actors + (int)local_18),
                           g_CActorDestinationActorType_014b8a1c.name_hash);
       pCStack_2c = pCVar4;
       if ((pCVar4 != (CActorDestination *)0x0) &&
@@ -164,7 +163,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
                (fStack_14 - fVar9) + (this_ptr->carry_object_world_center).y;
           if (iVar6 != 0) {
             shape_edittool_cpp_CEditorTools_showWarning_FUN_0046fb40
-                      (g_CEditorTools_PTR_005b6d50,"actionPending = %d\nstranger.cpp line %d",iVar6,0xe6f);
+                      (g_CEditorToolsPtr,"actionPending = %d\nstranger.cpp line %d",iVar6,0xe6f);
           }
           pCVar7 = &(this_ptr->base).target_position;
           pCVar12 = &(pCStack_2c->base).location;
@@ -187,9 +186,9 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
       local_18 = (float)((int)local_18 + 4);
     }
   }
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,(CDemonActor *)this_ptr);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00511780
-            (g_CDemonSet_PTR_005be368,(this_ptr->base).base.carry_hands[1].carry_actor);
+            (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
   pCVar10 = (this_ptr->base).base.carry_hands[1].carry_actor;
   local_6c = (pCVar10->location).position.x;
   fStack_68 = (pCVar10->location).position.y;
@@ -208,23 +207,23 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
   core_actor_cpp_CDemonActor_transformVector_FUN_0040a200
             ((CDemonActor *)this_ptr,&local_78,&local_54);
   fVar9 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00510a40
-                    (g_CDemonSet_PTR_005be368,local_6c,fStack_64,local_78.x,local_78.z,1.0,0.1,3.0);
+                    (g_CDemonSetPtr,local_6c,fStack_64,local_78.x,local_78.z,1.0,0.1,3.0);
   if (fVar9 < 1.0) {
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
     return 0;
   }
   local_cc.x = local_6c + local_78.x;
   local_cc.y = fStack_68 + local_78.y;
   local_cc.z = fStack_64 + local_78.z;
   local_28 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
-                       (g_CDemonSet_PTR_005be368,&local_cc,0.5);
-  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+                       (g_CDemonSetPtr,&local_cc,0.5);
+  core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
   if (ABS(local_28 - (this_ptr->base).base.base.location.position.y) <= 1.0) {
     iVar6 = 0;
     iVar13 = 0;
     do {
       force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);
-      if (g_CDemonSet_PTR_005be368->actor_count <= iVar6) {
+      if (g_CDemonSetPtr->actor_count <= iVar6) {
         pCVar10 = (this_ptr->base).base.carry_hands[1].carry_actor;
         this_ptr->action_pending = 6;
         if ((pCVar10 == (CDemonActor *)0x0) ||
@@ -242,7 +241,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_0053c800(CStranger *t
         return 1;
       }
       pCVar10 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar13),
+                          (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar13),
                            g_CCrateActorType_0077bd40.name_hash);
       if (pCVar10 != (CDemonActor *)0x0) {
         local_48 = (pCVar10->location).position.x - local_6c;

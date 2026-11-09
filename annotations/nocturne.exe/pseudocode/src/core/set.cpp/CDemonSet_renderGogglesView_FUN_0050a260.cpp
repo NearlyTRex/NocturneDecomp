@@ -31,7 +31,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
   CDemonLight *local_14;
   
   this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
-  local_14 = &g_CDemonLight_01c74640;
+  local_14 = &g_CDemonLightInstance;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                           (&(this_ptr_00->base).model);
   iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Head",0);
@@ -45,12 +45,12 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
   core_xform_cpp_matrixToEulerAngles_FUN_0055b180(matrix,&local_38);
   local_20.z = 0.0;
   local_20.x = local_38.x + (float)0.261799387791667;
-  g_CDemonLight_01c74640.volumetric_enabled = 0;
+  g_CDemonLightInstance.volumetric_enabled = 0;
   local_20.y = local_38.y + (this_ptr_00->base).base.orient.vec.y;
-  if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[2].z) {
-    g_CDemonLight_01c74640.base.position.x = local_2c.x;
-    g_CDemonLight_01c74640.base.position.y = local_2c.y;
-    g_CDemonLight_01c74640.base.position.z = local_2c.z;
+  if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.rotation_matrix.m[2].z) {
+    g_CDemonLightInstance.base.position.x = local_2c.x;
+    g_CDemonLightInstance.base.position.y = local_2c.y;
+    g_CDemonLightInstance.base.position.z = local_2c.z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
             (&(local_14->base).rotation_matrix,&local_20);
@@ -59,12 +59,12 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(local_14,1.0);
   this_ptr_01 = local_14;
   iVar3 = g_UseExternalRenderer;
-  if ((float *)&stack0x00000000 != &g_CDemonCamera_01fb8508.rotation_matrix.m[2].z) {
-    g_CDemonCamera_01fb8508.position.x = local_2c.x;
-    g_CDemonCamera_01fb8508.position.y = local_2c.y;
-    g_CDemonCamera_01fb8508.position.z = local_2c.z;
+  if ((float *)&stack0x00000000 != &g_CDemonCameraInstance.rotation_matrix.m[2].z) {
+    g_CDemonCameraInstance.position.x = local_2c.x;
+    g_CDemonCameraInstance.position.y = local_2c.y;
+    g_CDemonCameraInstance.position.z = local_2c.z;
   }
-  if (g_CGame_PTR_005b9354->geometry_debug_enabled == 0) {
+  if (g_CGamePtr->geometry_debug_enabled == 0) {
     core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(local_14,0);
     core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0(this_ptr_01);
     DAT_005be378 = 0;
@@ -86,7 +86,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
         pCVar5 = (CDemonSet *)pCVar5->cameras;
       } while (iVar3 < this_ptr->sorted_render_actor_count);
     }
-    core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGore_PTR_005b96c4);
+    core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_0048a650(g_CFireEffect_PTR_005b80f0);
     core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(local_14,1);
     local_5c.x = (int)ROUND(local_2c.x * _DAT_005a18f0);
@@ -123,10 +123,10 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
             (g_CDemonRenderer_PTR_005ae704,32.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
             (g_CDemonRenderer_PTR_005ae704,&local_20);
-  g_CDemonRaytrace_01fba938.rendering_mode = 1;
+  g_CDemonRaytraceInstance.rendering_mode = 1;
   engine_special_cpp_clearZBufferNative_FUN_0052eed4();
-  core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(g_CDemonSet_PTR_005be368,9999.9,0);
-  g_CDemonRaytrace_01fba938.rendering_mode = 0;
+  core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(g_CDemonSetPtr,9999.9,0);
+  g_CDemonRaytraceInstance.rendering_mode = 0;
   g_UseExternalRenderer = iVar3;
   return;
 }

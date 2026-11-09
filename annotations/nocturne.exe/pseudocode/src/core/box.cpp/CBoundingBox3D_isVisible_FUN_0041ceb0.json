@@ -1,70 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 47,
-        "message": "use of undeclared identifier '_DAT_0059aa88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 48,
-        "message": "use of undeclared identifier '_DAT_0059aa88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 49,
-        "message": "use of undeclared identifier '_DAT_0059aa88'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 50,
-        "message": "use of undeclared identifier '_DAT_0059aa80'; did you mean 'DAT_005bea80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 51,
-        "message": "use of undeclared identifier '_DAT_0059aa80'; did you mean 'DAT_005bea80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 52,
-        "message": "use of undeclared identifier '_DAT_0059aa80'; did you mean 'DAT_005bea80'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 57,
-        "message": "use of undeclared identifier '_DAT_007f7370'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_01c038f4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_007f7370'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_01c038f4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
@@ -894,44 +828,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CBoundingBox3D_isVisible_FUN_0041ceb0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 29,
-          "line": 50,
-          "message": "Uninitialized variable: local_20",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 29,
-          "line": 51,
-          "message": "Uninitialized variable: local_1c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 29,
-          "line": 52,
-          "message": "Uninitialized variable: local_18",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 68,
-          "message": "Uninitialized variable: in_stack_00000008",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -975,38 +871,6 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 50,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_2c.x = (int)ROUND(local_20 * _DAT_0059aa80);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_1c",
-      "line": 51,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_2c.y = (int)ROUND(local_1c * _DAT_0059aa80);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_18",
-      "line": 52,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_2c.z = (int)ROUND(local_18 * _DAT_0059aa80);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000008",
-      "line": 68,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "else if ((in_stack_00000008 == 0) &&",
-      "type": "static_uninitvar"
     }
   ]
 }

@@ -1,52 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 71,
-        "message": "use of undeclared identifier 'stack0xfffffaa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 83,
-        "message": "use of undeclared identifier 'stack0xfffffaa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 121,
-        "message": "use of undeclared identifier 'stack0xfffffaa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 142,
-        "message": "use of undeclared identifier 'stack0xfffffaa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 163,
-        "message": "use of undeclared identifier 'stack0xfffffaa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 186,
-        "message": "use of undeclared identifier 'stack0xfffffaa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 207,
-        "message": "use of undeclared identifier 'stack0xfffffaa8'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 326,
@@ -463,23 +415,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CGame_displayActStats_FUN_004a6680.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 43,
-          "line": 182,
-          "message": "Uninitialized variable: unaff_EDI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unaffected register variable",
@@ -696,14 +631,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EDI",
-      "line": 182,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "_sprintf(acStack_158,\"%d\\n\\n\",*(uint *)(unaff_EDI + 0x24c));",
-      "type": "static_uninitvar"
     }
   ]
 }

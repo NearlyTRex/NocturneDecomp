@@ -1,100 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 43,
-        "message": "use of undeclared identifier 'DAT_005bc0fc'; did you mean 'DAT_005bc00c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 48,
-        "message": "use of undeclared identifier 'DAT_005bc158'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 49,
-        "message": "use of undeclared identifier 'DAT_005bc158'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 53,
-        "message": "use of undeclared identifier 'DAT_005bc0fc'; did you mean 'DAT_005bc00c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 56,
-        "message": "use of undeclared identifier '_DAT_01cd6324'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 79,
-        "message": "use of undeclared identifier '_DAT_01cd6324'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 98,
-        "message": "use of undeclared identifier 'DAT_005bc0fc'; did you mean 'DAT_005bc00c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 105,
-        "message": "use of undeclared identifier 'DAT_005bc158'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 107,
-        "message": "use of undeclared identifier 'DAT_005bc158'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 110,
-        "message": "use of undeclared identifier 'DAT_005bc118'; did you mean 'DAT_005bb118'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 111,
-        "message": "use of undeclared identifier 'DAT_005bc118'; did you mean 'DAT_005bb118'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 112,
-        "message": "use of undeclared identifier 'DAT_005bc0fc'; did you mean 'DAT_005bc00c'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 117,
-        "message": "use of undeclared identifier 'DAT_005bc164'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 118,
-        "message": "use of undeclared identifier 'DAT_005bc160'; did you mean 'DAT_005b6160'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 119,
-        "message": "use of undeclared identifier 'DAT_005bc164'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 394,
@@ -527,23 +431,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "requantizeLayer3Samples_FUN_004e58d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 27,
-          "line": 157,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -768,14 +655,6 @@
       "severity": "moderate",
       "text": "fVar10 = fVar12;",
       "type": "loop_clobbered_constant"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 157,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar6 = *local_30 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

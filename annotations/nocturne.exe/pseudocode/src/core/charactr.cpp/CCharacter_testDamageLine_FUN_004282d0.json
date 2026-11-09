@@ -1,43 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 65,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 33,
-        "line": 75,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 33,
-        "line": 76,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 127,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 76,
     "suspect_count": 4,
     "suspect_types": [
       "unknown_field",
       "unrolled_memcpy"
     ],
-    "total_lines": 292
+    "total_lines": 291
   },
   "cross_references": [],
   "function": {
@@ -96,7 +72,7 @@
     },
     {
       "addr": "005b96c4",
-      "name": "g_CGore_PTR_005b96c4",
+      "name": "g_CGorePtr",
       "type": "CGore*",
       "value": "01c78c7c"
     }
@@ -236,23 +212,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_testDamageLine_FUN_004282d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 61,
-          "message": "Uninitialized variable: fStack_7c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unknown/mangled field access",
@@ -264,7 +223,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 67,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_30 = ((float)local_48._0_4_ + local_54.x) * 0.5f;",
@@ -272,7 +231,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 68,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fStack_2c = ((float)local_48._4_4_ + local_54.y) * 0.5f;",
@@ -285,14 +244,6 @@
       "severity": "moderate",
       "text": "out_hit->x = pCVar3->x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: fStack_7c",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fStack_7c = fStack_7c * fVar1;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

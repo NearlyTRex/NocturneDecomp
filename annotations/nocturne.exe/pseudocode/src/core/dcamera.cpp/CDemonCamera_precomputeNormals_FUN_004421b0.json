@@ -1,82 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 119,
-        "message": "use of undeclared identifier '_DAT_00b0e604'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 120,
-        "message": "use of undeclared identifier '_DAT_01216608'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 121,
-        "message": "use of undeclared identifier '_DAT_012b0664'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 128,
-        "message": "use of undeclared identifier '_DAT_012b0664'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 138,
-        "message": "use of undeclared identifier 'DAT_012b0660'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 139,
-        "message": "use of undeclared identifier 'DAT_012b0660'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 144,
-        "message": "use of undeclared identifier 'DAT_012b0660'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 146,
-        "message": "use of undeclared identifier 'DAT_012b0660'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 151,
-        "message": "use of undeclared identifier '_DAT_012b0664'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 158,
-        "message": "use of undeclared identifier '_DAT_012b0664'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 162,
-        "message": "use of undeclared identifier '_DAT_012b0664'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 162,
-        "message": "use of undeclared identifier '_DAT_012b0664'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 333,
@@ -518,30 +440,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCamera_precomputeNormals_FUN_004421b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 30,
-          "line": 140,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 34,
-          "line": 148,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -950,22 +848,6 @@
       "severity": "moderate",
       "text": "*(int *)((int)&DAT_005ad45c + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 140,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar3 = (int)uVar6 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 148,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar6 = (int)uVar3 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

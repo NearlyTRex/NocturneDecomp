@@ -48,8 +48,7 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004a6570(CGame *this_ptr)
   search_directory = "save";
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Select file to load");
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550
-                    (g_CEditorTools_PTR_005b6d50,pcVar4,search_directory,file_pattern,
-                     output_filename,flags);
+                    (g_CEditorToolsPtr,pcVar4,search_directory,file_pattern,output_filename,flags);
   if (iVar2 == 0) {
     return;
   }

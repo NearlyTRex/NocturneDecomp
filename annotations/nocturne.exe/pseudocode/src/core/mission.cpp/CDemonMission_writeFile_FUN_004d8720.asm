@@ -59,7 +59,7 @@ section .text
     JNZ 0x004d8751                      ; 004d8732
         ;   XREF to: 004d8751 (CONDITIONAL_JUMP)  ; LAB_004d8751
     PUSH 0x589a4d                       ; 004d8734 | = "Preparing actors..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 004d8739 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004d8739 | g_CEditorToolsPtr
     PUSH ECX                            ; 004d873f
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004d8740
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0(CEditorTools * this_ptr, char * format)
@@ -345,7 +345,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004d8a40
         ;   Label: LAB_004d8a40
     PUSH ECX                            ; 004d8a44
-    MOV ESI,dword ptr [0x005b96c4]      ; 004d8a45 | g_CGore_PTR_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004d8a45 | g_CGorePtr
     PUSH ESI                            ; 004d8a4b
     CALL core_gore.cpp_CGore_save_FUN_004b08d0 ; 004d8a4c
         ;   XREF to: 004b08d0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_save_FUN_004b08d0(CGore * this_ptr, _FILE * file_handle)

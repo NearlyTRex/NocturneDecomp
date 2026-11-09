@@ -1,55 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 29,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 30,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 31,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 55,
-        "message": "use of undeclared identifier '_DAT_02ddf9e8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 56,
-        "message": "use of undeclared identifier 'DAT_02ddf9c8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_02ddf9cc'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 181,
+    "complexity_score": 179,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 49,
     "suspect_count": 10,
     "suspect_types": [
       "stack_param",
@@ -59,7 +17,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 180
+    "total_lines": 178
   },
   "cross_references": [],
   "function": {
@@ -132,85 +90,85 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01c74640",
-      "name": "g_CDemonLight_01c74640",
+      "name": "g_CDemonLightInstance",
       "type": "CDemonLight",
       "value": null
     },
     {
       "addr": "01c74740",
-      "name": "g_CDemonLight_01c74640.base.fixed_point_scale",
+      "name": "g_CDemonLightInstance.base.fixed_point_scale",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74744",
-      "name": "g_CDemonLight_01c74640.base.position.x",
+      "name": "g_CDemonLightInstance.base.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74748",
-      "name": "g_CDemonLight_01c74640.base.position.y",
+      "name": "g_CDemonLightInstance.base.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7474c",
-      "name": "g_CDemonLight_01c74640.base.position.z",
+      "name": "g_CDemonLightInstance.base.position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74750",
-      "name": "g_CDemonLight_01c74640.base.rotation_matrix.m[0].x",
+      "name": "g_CDemonLightInstance.base.rotation_matrix.m[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74778",
-      "name": "g_CDemonLight_01c74640.base.focal_length",
+      "name": "g_CDemonLightInstance.base.focal_length",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762f4",
-      "name": "g_CDemonLight_01c74640.light_enabled_flag",
+      "name": "g_CDemonLightInstance.light_enabled_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762fc",
-      "name": "g_CDemonLight_01c74640.volumetric_enabled",
+      "name": "g_CDemonLightInstance.volumetric_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c76310",
-      "name": "g_CDemonLight_01c74640.antialiasing_enabled",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c775ec",
-      "name": "g_CGame_01c775ec",
+      "name": "g_CGameInstance",
       "type": "CGame",
       "value": null
     },
     {
       "addr": "01c77830",
-      "name": "g_CGame_01c775ec.flashlight_active",
+      "name": "g_CGameInstance.flashlight_active",
       "type": "undefined4",
       "value": null
     },
@@ -222,7 +180,7 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
@@ -307,23 +265,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CWeapon_updateLighting_FUN_005543c0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 46,
-          "line": 32,
-          "message": "Uninitialized variable: fStack_14",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -354,7 +295,7 @@
       "line": 22,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
     },
     {
@@ -362,7 +303,7 @@
       "line": 23,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_CDemonLight_01c74640.base.position.x = (float)auStack_1c._0_4_;",
+      "text": "g_CDemonLightInstance.base.position.x = (float)auStack_1c._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -370,7 +311,7 @@
       "line": 24,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "g_CDemonLight_01c74640.base.position.y = (float)auStack_1c._4_4_;",
+      "text": "g_CDemonLightInstance.base.position.y = (float)auStack_1c._4_4_;",
       "type": "unknown_field"
     },
     {
@@ -394,24 +335,16 @@
       "line": 41,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(&g_CDemonLight_01c74640,unaff_ESI)",
+      "text": "core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00452080(&g_CDemonLightInstance,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_02ddf9c8",
       "severity": "mild",
       "text": "DAT_02ddf9c8 = 0x20;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Uninitialized variable: fStack_14",
-      "line": 32,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "g_CDemonLight_01c74640.base.position.z = fStack_14;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

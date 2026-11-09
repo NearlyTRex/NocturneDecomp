@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 524,
@@ -382,79 +377,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCurtain_setup_FUN_0043dad0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 9,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 34,
-          "line": 58,
-          "message": "Uninitialized variable: iStack_7c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 15,
-          "line": 70,
-          "message": "Uninitialized variable: local_30",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 71,
-          "message": "Uninitialized variable: local_20",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 43,
-          "line": 71,
-          "message": "Uninitialized variable: local_70",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 72,
-          "message": "Uninitialized variable: unaff_EBP",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 37,
-          "line": 76,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 26,
-          "line": 93,
-          "message": "Uninitialized variable: local_40",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 46,
-          "line": 96,
-          "message": "Uninitialized variable: local_44",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 22,
-          "line": 121,
-          "message": "Uninitialized variable: local_14",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unaffected register variable",
@@ -735,78 +657,6 @@
       "severity": "moderate",
       "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 9) + 8);",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: iStack_7c",
-      "line": 58,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(this_ptr->mesh).grid_cols = iStack_7c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_30",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (0 < local_30) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_18 = (int)local_20 * 0x74 + local_70;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_70",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_18 = (int)local_20 * 0x74 + local_70;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: unaff_EBP",
-      "line": 72,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "iVar16 = unaff_EBP;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 76,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*(int *)(iVar16 + 0x10) = local_2c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_40",
-      "line": 93,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((fVar11 == local_40) && (iVar7 == 0)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_44",
-      "line": 96,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if ((fVar11 == fVar1) && (iVar7 == local_44)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_14",
-      "line": 121,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_18 = local_14 + 0x74;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

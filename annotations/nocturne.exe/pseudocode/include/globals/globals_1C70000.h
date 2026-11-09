@@ -19,7 +19,7 @@
 // =============================================================================
 
 // CBloodParticle[256]
-extern CBloodParticle g_CBloodParticle_ARRAY_01c78cec[256];
+extern CBloodParticle g_BloodParticles[256];
 
 // CBloodSplat[2000]
 extern CBloodSplat g_CBloodSplat_ARRAY_01c7ccf4[2000];
@@ -38,19 +38,19 @@ extern CDemonActorType g_CGhoulActorType_01c78bd8;
 extern CDemonActorType g_CGlassActorType_01c78c40;
 
 // CDemonLight
-extern CDemonLight g_CDemonLight_01c74640;
+extern CDemonLight g_CDemonLightInstance;
 
 // CForceFeedback
 extern CForceFeedback g_CForceFeedback_01c70f74;
 
 // CGame
-extern CGame g_CGame_01c775ec;
+extern CGame g_CGameInstance;
 
 // CGore
-extern CGore g_CGore_01c78c7c;
+extern CGore g_CGoreInstance;
 
 // CPickList
-extern CPickList g_CPickList_01c78424;
+extern CPickList g_CPickList;
 
 // CVector3f
 extern CVector3f CVector3f_01c71364;

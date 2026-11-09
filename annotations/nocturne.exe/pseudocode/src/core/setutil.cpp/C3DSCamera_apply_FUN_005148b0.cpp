@@ -41,14 +41,14 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_005148b0(C3DSCamera *this_ptr
     pCVar6 = (CDemonCamera *)(pCVar6->camera_name + 2);
   } while (cVar1 != '\0');
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(camera,this_ptr->ambient_value);
-  if (this_ptr->ambient_value < g_CDemonSet_PTR_005be368->min_ambient_value) {
+  if (this_ptr->ambient_value < g_CDemonSetPtr->min_ambient_value) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"Ambient set low by script\n");
+              (g_CConsolePtr,"Ambient set low by script\n");
   }
   if (this_ptr->ambient_value <= (float)0.25) {
     return;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60
-            (g_CConsole_PTR_005ad350,"Ambient set ridiculously high\n");
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"Ambient set ridiculously high\n")
+  ;
   return;
 }

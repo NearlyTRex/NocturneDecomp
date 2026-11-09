@@ -111,7 +111,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ae190(CBloodParticle *th
   _DAT_005c50bc = DAT_005c502c;
   _DAT_005c50c0 = _DAT_005c5090;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (g_CDemonSet_PTR_005be368,(CVector3i *)local_7c,(CVector3i *)&DAT_01c78cb4,0,4);
+            (g_CDemonSetPtr,(CVector3i *)local_7c,(CVector3i *)&DAT_01c78cb4,0,4);
   EVar1 = this_ptr->blood_type;
   if (EVar1 != BLOOD_TYPE_RED) {
     if (EVar1 < BLOOD_TYPE_NONE) {
@@ -211,7 +211,7 @@ LAB_004ae466:
     local_74 = (int)ROUND(local_d8.y * 256.0f);
     local_70.x = (int)ROUND(local_d8.z * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-              (g_CDemonSet_PTR_005be368,(CVector3i *)(local_7c + 4),(CVector3i *)&DAT_01c78cb4,0,4);
+              (g_CDemonSetPtr,(CVector3i *)(local_7c + 4),(CVector3i *)&DAT_01c78cb4,0,4);
     iVar3 = 0;
     do {
       lVar2 = (longlong)local_20 * (longlong)*(int *)((int)&DAT_005c5034 + iVar3);

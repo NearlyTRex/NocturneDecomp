@@ -62,7 +62,7 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               ((CDemonActor *)this_ptr,&local_3c,input_local_point);
     iVar1 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
-                      (g_CDemonSet_PTR_005be368,&local_24,&local_3c);
+                      (g_CDemonSetPtr,&local_24,&local_3c);
     if (iVar1 == 0) {
       local_1b48 = *clavicle_blend;
     }

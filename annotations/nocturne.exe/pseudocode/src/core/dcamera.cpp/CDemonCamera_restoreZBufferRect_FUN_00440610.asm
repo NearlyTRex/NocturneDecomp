@@ -19,7 +19,7 @@
 ;   int g_UseExternalRenderer
 ;
 ; Called Functions:
-;   core_dstrender.cpp_memcpyMMX_FUN_00465341
+;   core_dstrendr.cpp_memcpyMMX_FUN_00465341
 ;   engine_special.cpp_restoreZBuffer_FUN_00532c90
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     PUSH EAX                            ; 004406c4
     PUSH EDX                            ; 004406c5
     PUSH ECX                            ; 004406c6
-    CALL core_dstrender.cpp_memcpyMMX_FUN_00465341 ; 004406c7
-        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
+    CALL core_dstrendr.cpp_memcpyMMX_FUN_00465341 ; 004406c7
+        ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
     ADD ESP,0xc                         ; 004406cc
     MOV EAX,dword ptr [ESP]             ; 004406cf
     INC EBP                             ; 004406d2

@@ -10,9 +10,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
-;   undefined4 g_CDemonSet_01e57284.disable_directional_lighting
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
@@ -53,10 +53,10 @@ section .text
         ;   Label: LAB_004161d4
     PUSH ESI                            ; 004161d5
     PUSH EBX                            ; 004161d6
-    MOV EAX,[0x005be368]                ; 004161d7 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 004161d7 | g_CDemonSetPtr
     MOV EBX,dword ptr [EBP + 0xc98]     ; 004161dc
     PUSH EBP                            ; 004161e2
-    MOV dword ptr [EAX + 0x15a8a0],EBX  ; 004161e3 | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV dword ptr [EAX + 0x15a8a0],EBX  ; 004161e3 | g_CDemonSetInstance.disable_directional_lighting
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20 ; 004161e9
         ;   XREF to: 00409f20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004161ee
@@ -130,8 +130,8 @@ section .text
     PUSH EBX                            ; 004162b6 | DAT_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004162b7
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
-    MOV EAX,[0x005be368]                ; 004162bc | g_CDemonSet_PTR_005be368
-    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004162c1 | g_CDemonSet_01e57284.disable_directional_lighting
+    MOV EAX,[0x005be368]                ; 004162bc | g_CDemonSetPtr
+    MOV dword ptr [EAX + 0x15a8a0],0x0  ; 004162c1 | g_CDemonSetInstance.disable_directional_lighting
     ADD ESP,0x4                         ; 004162cb
     MOV EAX,dword ptr [EBP + 0xf14]     ; 004162ce
     POP EBX                             ; 004162d4

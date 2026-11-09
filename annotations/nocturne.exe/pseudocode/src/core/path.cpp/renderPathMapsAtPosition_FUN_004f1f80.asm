@@ -21,7 +21,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_01e312f8
-;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
@@ -41,7 +41,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x34]      ; 004f1f87
     MOV EDX,dword ptr [ESP + 0x2c]      ; 004f1f8b
     PUSH EDX                            ; 004f1f8f
-    PUSH 0x1fba938                      ; 004f1f90 | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 004f1f90 | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0x14]                ; 004f1f95
     LEA EDI,[ESP + 0x8]                 ; 004f1f99
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f1f9d

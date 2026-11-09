@@ -1,58 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 55,
-        "message": "use of undeclared identifier 'stack0xffffffc4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 56,
-        "message": "use of undeclared identifier 'stack0xffffffc8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 80,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 81,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 82,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 84,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 85,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 86,
-        "message": "use of undeclared identifier '_DAT_005a1eb0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
@@ -301,30 +247,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 64,
-          "message": "Uninitialized variable: local_3c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 11,
-          "line": 70,
-          "message": "Uninitialized variable: local_38",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -405,22 +327,6 @@
       "severity": "moderate",
       "text": "*(int *)((int)&stack0xffffffc8 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_3c",
-      "line": 64,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_3c < local_30) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_38",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (local_38 < local_2c) {",
-      "type": "static_uninitvar"
     }
   ]
 }

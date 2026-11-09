@@ -24,10 +24,10 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004b52f0(CHero *this_ptr)
   iVar3 = 0;
   local_18 = 1e+30;
   this_ptr->lever_to_pull = (CLever *)0x0;
-  for (iVar4 = 0; iVar4 < g_CDemonSet_PTR_005be368->actor_count; iVar4 = iVar4 + 1) {
+  for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
     this_ptr_00 = (CLever *)
                   core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + iVar3),
+                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
                              g_CLeverActorType_01cc3628.name_hash);
     if (this_ptr_00 != (CLever *)0x0) {
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290

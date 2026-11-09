@@ -22,12 +22,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_punch_wav_00586242
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.character_count
-;   undefined4 g_CDemonSet_01e57284.characters[0]
-;   undefined4 g_CDemonSet_01e57284.characters[1]
-;   undefined4 g_CDemonSet_01e57284.characters[2]
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
+;   undefined4 g_CDemonSetInstance.characters[1]
+;   undefined4 g_CDemonSetInstance.characters[2]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -66,12 +66,12 @@ section .text
     XOR ECX,ECX                         ; 004bb3f5
     XOR EBP,EBP                         ; 004bb3f7
     MOV dword ptr [ESP + 0x54],ECX      ; 004bb3f9
-    MOV EAX,[0x005be368]                ; 004bb3fd | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004bb3fd | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004bb3fd
-    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 004bb402 | g_CDemonSet_01e57284.character_count
+    CMP EDI,dword ptr [EAX + 0x14ecb0]  ; 004bb402 | g_CDemonSetInstance.character_count
     JGE 0x004bb494                      ; 004bb408
         ;   XREF to: 004bb494 (CONDITIONAL_JUMP)  ; LAB_004bb494
-    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14ecb4] ; 004bb40e | g_CDemonSet_01e57284.characters[0] | g_CDemonSet_01e57284.characters[1] | g_CDemonSet_01e57284.characters[2]
+    MOV EBX,dword ptr [EAX + EBP*0x1 + 0x14ecb4] ; 004bb40e | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1] | g_CDemonSetInstance.characters[2]
     CMP EBX,ESI                         ; 004bb415
     JNZ 0x004bb41f                      ; 004bb417
         ;   XREF to: 004bb41f (CONDITIONAL_JUMP)  ; LAB_004bb41f

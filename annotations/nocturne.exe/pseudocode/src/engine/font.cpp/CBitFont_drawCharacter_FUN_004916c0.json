@@ -1,82 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 119,
-        "message": "use of undeclared identifier 'DAT_01c70f5c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 138,
-        "message": "use of undeclared identifier 'DAT_01c70f70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 30,
-        "line": 250,
-        "message": "use of undeclared identifier '_DAT_01c70f5e'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 33,
-        "line": 273,
-        "message": "use of undeclared identifier '_DAT_01c70f5e'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 318,
-        "message": "use of undeclared identifier '_DAT_01c70f70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 343,
-        "message": "use of undeclared identifier '_DAT_01c70f70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 350,
-        "message": "use of undeclared identifier '_DAT_01c70f70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 43,
-        "line": 358,
-        "message": "use of undeclared identifier '_DAT_01c70f70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 482,
-        "message": "use of undeclared identifier '_DAT_01c70f60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 497,
-        "message": "use of undeclared identifier '_DAT_01c70f60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 512,
-        "message": "use of undeclared identifier '_DAT_01c70f70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 527,
-        "message": "use of undeclared identifier '_DAT_01c70f70'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1782,
@@ -857,44 +779,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CBitFont_drawCharacter_FUN_004916c0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 31,
-          "line": 201,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 31,
-          "line": 270,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 31,
-          "line": 338,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 31,
-          "line": 402,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -1239,38 +1123,6 @@
       "severity": "moderate",
       "text": "((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 201,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar8 = iVar6 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 270,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar8 = iVar6 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 338,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar8 = iVar6 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 402,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar8 = iVar6 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

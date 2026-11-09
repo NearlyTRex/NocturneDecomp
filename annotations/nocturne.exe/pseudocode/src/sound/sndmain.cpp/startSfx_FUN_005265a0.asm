@@ -177,7 +177,7 @@ section .text
     LEA ESI,[ESP + 0x304]               ; 005266b9
     MOV EDI,EBP                         ; 005266c0
     PUSH 0x592778                       ; 005266c2 | = "sound"
-    MOVSD.REP ES:EDI,ESI                ; 005266c7 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index | g_CMP3Decoder_02db4d18.synthesis_history[1][28][11]
+    MOVSD.REP ES:EDI,ESI                ; 005266c7 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index | g_CMP3DecoderInstanceOther.synthesis_history[1][28][11]
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 005266c9
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_004568c0(char * directory, char * filename)
     ADD ESP,0x8                         ; 005266ce
@@ -199,7 +199,7 @@ section .text
     MOV EBX,EDI                         ; 005266fc
     IMUL EAX,EBX,0x168                  ; 005266fe
         ;   Label: LAB_005266fe
-    CMP EDI,dword ptr [EAX + 0x2dc2004] ; 00526704 | g_CSfxSample_ARRAY_02dc1edc[1].taken
+    CMP EDI,dword ptr [EAX + 0x2dc2004] ; 00526704 | g_SfxSamples[1].taken
     JZ 0x00526930                       ; 0052670a
         ;   XREF to: 00526930 (CONDITIONAL_JUMP)  ; LAB_00526930
     INC EDX                             ; 00526710
@@ -222,10 +222,10 @@ section .text
     TEST EDX,EDX                        ; 00526741
     JZ 0x00526c1e                       ; 00526743
         ;   XREF to: 00526c1e (CONDITIONAL_JUMP)  ; LAB_00526c1e
-    MOV ECX,dword ptr [EDX + 0x12c]     ; 00526749 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+    MOV ECX,dword ptr [EDX + 0x12c]     ; 00526749 | g_SfxSamples[1].ref_count
     INC ECX                             ; 0052674f
     PUSH EBP                            ; 00526750 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
-    MOV dword ptr [EDX + 0x12c],ECX     ; 00526751 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+    MOV dword ptr [EDX + 0x12c],ECX     ; 00526751 | g_SfxSamples[1].ref_count
     CALL sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80 ; 00526757
         ;   XREF to: 00525a80 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80(CSfxSlot * this_ptr)
     MOV dword ptr [EBP + 0x114],0x0     ; 0052675c
@@ -378,7 +378,7 @@ section .text
     ADD ESP,0x4                         ; 00526928
     JMP 0x0052673b                      ; 0052692b
         ;   XREF to: 0052673b (UNCONDITIONAL_JUMP)  ; LAB_0052673b
-    CMP EDI,dword ptr [EAX + 0x2dc2008] ; 00526930 | g_CSfxSample_ARRAY_02dc1edc[1].ref_count
+    CMP EDI,dword ptr [EAX + 0x2dc2008] ; 00526930 | g_SfxSamples[1].ref_count
         ;   Label: LAB_00526930
     JNZ 0x00526710                      ; 00526936
         ;   XREF to: 00526710 (CONDITIONAL_JUMP)  ; LAB_00526710

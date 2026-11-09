@@ -44,7 +44,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemo
           iVar4 = this_ptr->screen_width * iVar3;
           iVar1 = this_ptr->framebuffer_height + iVar3;
           iVar3 = iVar3 + 1;
-          core_dstrender_cpp_memcpyMMX_FUN_00465341
+          core_dstrendr_cpp_memcpyMMX_FUN_00465341
                     ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
                      g_ZBufferScanlineArray[iVar1] + this_ptr->screen_width,
                      this_ptr->screen_width * 4);

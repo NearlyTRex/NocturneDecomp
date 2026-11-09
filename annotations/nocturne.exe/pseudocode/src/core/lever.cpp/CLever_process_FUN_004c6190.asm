@@ -12,12 +12,12 @@
 ;   double DOUBLE_0058792d = 0.100000000000000
 ;   double DOUBLE_00587935 = 0.900000000000000
 ;   undefined4 DAT_005b7650
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CLeverActorType_01cc3628.name_hash
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.actor_count
-;   undefined4 g_CDemonSet_01e57284.actors[0]
-;   undefined4 g_CDemonSet_01e57284.actors[1]
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -82,14 +82,14 @@ section .text
     XOR ESI,ESI                         ; 004c6233
         ;   Label: LAB_004c6233
     XOR EDI,EDI                         ; 004c6235
-    MOV EAX,[0x005be368]                ; 004c6237 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004c6237 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004c6237
-    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 004c623c | g_CDemonSet_01e57284.actor_count
+    CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 004c623c | g_CDemonSetInstance.actor_count
     JGE 0x004c6314                      ; 004c6242
         ;   XREF to: 004c6314 (CONDITIONAL_JUMP)  ; LAB_004c6314
     MOV EBP,dword ptr [0x01cc3660]      ; 004c6248 | g_CLeverActorType_01cc3628.name_hash
     PUSH EBP                            ; 004c624e
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004c624f | g_CDemonSet_01e57284.actors[0] | g_CDemonSet_01e57284.actors[1]
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004c624f | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EDX                            ; 004c6256
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c6257
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040d890(CDemonActor * actor_ptr, uint class_name_hash)

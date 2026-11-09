@@ -41,7 +41,7 @@
 ;   double DOUBLE_005823f2 = 0.350000000000000
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005be220
+;   CScript* g_CScriptPtr = 01e56da0
 ;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   CBitFont* g_CBitFont_PTR_014b98fc
 ;   CBitFont* g_CBitFont_PTR_014b9900
@@ -49,7 +49,7 @@
 ;   undefined4 DAT_01c789c0
 ;   undefined4 DAT_01c78ac0
 ;   undefined4 DAT_01c78ac4
-;   CScript g_CScript_01e56da0
+;   CScript g_CScriptInstance
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -120,13 +120,13 @@ section .text
         ;   XREF to: 004930b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0049abf0
     MOV ESI,EAX                         ; 0049abf3
-    MOV EAX,[0x005be220]                ; 0049abf5 | DAT_005be220
-    PUSH EAX                            ; 0049abfa | g_CScript_01e56da0
+    MOV EAX,[0x005be220]                ; 0049abf5 | g_CScriptPtr
+    PUSH EAX                            ; 0049abfa | g_CScriptInstance
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049abfb
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     ADD ESP,0x4                         ; 0049ac00
-    MOV EDX,dword ptr [0x005be220]      ; 0049ac03 | DAT_005be220
-    PUSH EDX                            ; 0049ac09 | g_CScript_01e56da0
+    MOV EDX,dword ptr [0x005be220]      ; 0049ac03 | g_CScriptPtr
+    PUSH EDX                            ; 0049ac09 | g_CScriptInstance
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049ac0a
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)
     MOV EDX,dword ptr [0x005b7620]      ; 0049ac0f | g_WindowHeight
@@ -368,13 +368,13 @@ section .text
     ADD ESP,0x4                         ; 0049af46
     MOV EAX,[0x014b9900]                ; 0049af49 | g_CBitFont_PTR_014b9900
     MOV dword ptr [ESP + 0x138],EAX     ; 0049af4e
-    MOV EAX,[0x01fb8644]                ; 0049af55 | g_CDemonCamera_01fb8508.screen_width
+    MOV EAX,[0x01fb8644]                ; 0049af55 | g_CDemonCameraInstance.screen_width
     CMP EAX,0x1e0                       ; 0049af5a
     JGE 0x0049af6d                      ; 0049af5f
         ;   XREF to: 0049af6d (CONDITIONAL_JUMP)  ; LAB_0049af6d
     MOV EAX,[0x014b9904]                ; 0049af61 | g_CBitFont_PTR_014b9904
     MOV dword ptr [ESP + 0x138],EAX     ; 0049af66
-    MOV EDX,dword ptr [0x01fb8644]      ; 0049af6d | g_CDemonCamera_01fb8508.screen_width
+    MOV EDX,dword ptr [0x01fb8644]      ; 0049af6d | g_CDemonCameraInstance.screen_width
         ;   Label: LAB_0049af6d
     LEA EAX,[EDX*0x8 + 0x0]             ; 0049af73
     ADD EDX,EAX                         ; 0049af7a
@@ -406,9 +406,9 @@ section .text
     MOV ESI,EAX                         ; 0049afcb
     MOV dword ptr [ESP + 0x11c],EAX     ; 0049afcd
     MOV EAX,[0x005b7620]                ; 0049afd4 | g_WindowHeight
-    MOV EDI,dword ptr [0x005be220]      ; 0049afd9 | DAT_005be220
+    MOV EDI,dword ptr [0x005be220]      ; 0049afd9 | g_CScriptPtr
     SUB EAX,EBX                         ; 0049afdf
-    PUSH EDI                            ; 0049afe1 | g_CScript_01e56da0
+    PUSH EDI                            ; 0049afe1 | g_CScriptInstance
     MOV EBX,EAX                         ; 0049afe2
     CALL core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710 ; 0049afe4
         ;   XREF to: 004fe710 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript * this_ptr)

@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 876,
@@ -1087,30 +1082,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CMirrorReflection_setupMirrorReflection_FUN_004d6650.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 118,
-          "message": "Uninitialized variable: local_18c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 64,
-          "line": 118,
-          "message": "Uninitialized variable: local_190",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -1535,22 +1506,6 @@
       "severity": "moderate",
       "text": "// 004d6b54: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_18c",
-      "line": 118,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(local_18c * local_18c + local_194 * local_194 + local_190 * local_190);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_190",
-      "line": 118,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(local_18c * local_18c + local_194 * local_194 + local_190 * local_190);",
-      "type": "static_uninitvar"
     }
   ]
 }

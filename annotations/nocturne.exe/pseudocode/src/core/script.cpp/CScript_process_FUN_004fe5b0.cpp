@@ -21,11 +21,11 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
   
   _DAT_01e56418 = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
-    if (g_CGame_PTR_005b9354->cinematic_skip_in_progress != 0) {
+    if (g_CGamePtr->cinematic_skip_in_progress != 0) {
       this_ptr->script_state = 0;
     }
     iVar4 = 0;
-    local_18 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGame_PTR_005b9354);
+    local_18 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGamePtr);
     _DAT_01e56c24 = 0;
     local_14 = local_18;
     do {
@@ -36,7 +36,7 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr)
       if (iVar2 == 0) goto LAB_004fe623;
       if (iVar2 < 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                  (g_CEditorTools_PTR_005b6d50,"Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
+                  (g_CEditorToolsPtr,"Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
                    this_ptr->parsed_lines[iVar1].line_number,this_ptr->parsed_lines[iVar1].text,
                    &DAT_01e56420);
 LAB_004fe675:
@@ -47,13 +47,13 @@ LAB_004fe675:
     } while (iVar4 < 0xc9);
     if (_DAT_01e56c28 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
-                (g_CEditorTools_PTR_005b6d50,"!WARNING!  Infinite loop detected in script at line %d",
+                (g_CEditorToolsPtr,"!WARNING!  Infinite loop detected in script at line %d",
                  this_ptr->parsed_lines[iVar1].line_number);
       _DAT_01e56c28 = 1;
     }
 LAB_004fe623:
     if (_DAT_01e56c24 != 0) {
-      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(g_CGame_PTR_005b9354);
+      core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(g_CGamePtr);
       _DAT_01e56c24 = 0;
     }
     this_ptr_00 = (CCharacter *)this_ptr->who_is_speaking;

@@ -96,9 +96,9 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_0045ab40(CDrac
           pSVar5->control_points[2].y = local_7c;
           pSVar5->control_points[2].z = local_78;
         }
-        local_68 = g_CDemonCamera_01fb8508.position.x;
-        local_64 = g_CDemonCamera_01fb8508.position.y;
-        local_60 = g_CDemonCamera_01fb8508.position.z;
+        local_68 = g_CDemonCameraInstance.position.x;
+        local_64 = g_CDemonCameraInstance.position.y;
+        local_60 = g_CDemonCameraInstance.position.z;
         local_54 = local_78;
         local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(-5.0,5.0);
         local_68 = local_14 + local_68;

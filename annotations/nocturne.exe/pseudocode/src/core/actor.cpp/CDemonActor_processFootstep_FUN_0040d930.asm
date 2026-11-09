@@ -13,12 +13,12 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00578011 = 10000
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.ground_type
-;   undefined4 g_CDemonCamera_01fb8508.position.x
-;   undefined4 g_CDemonCamera_01fb8508.position.y
-;   undefined4 g_CDemonCamera_01fb8508.position.z
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.ground_type
+;   undefined4 g_CDemonCameraInstance.position.x
+;   undefined4 g_CDemonCameraInstance.position.y
+;   undefined4 g_CDemonCameraInstance.position.z
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
@@ -35,13 +35,13 @@ section .text
     PUSH EBP                            ; 0040d932
     SUB ESP,0x18                        ; 0040d933
     MOV ESI,dword ptr [ESP + 0x28]      ; 0040d936
-    MOV EAX,[0x01fb860c]                ; 0040d93a | g_CDemonCamera_01fb8508.position.x
+    MOV EAX,[0x01fb860c]                ; 0040d93a | g_CDemonCameraInstance.position.x
     MOV dword ptr [ESP],EAX             ; 0040d93f
     MOV EAX,0x1fb860c                   ; 0040d942
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0040d947 | g_CDemonCamera_01fb8508.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0040d947 | g_CDemonCameraInstance.position.y
     MOV dword ptr [ESP + 0x4],EAX       ; 0040d94a
     MOV EAX,0x1fb860c                   ; 0040d94e
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0040d953 | g_CDemonCamera_01fb8508.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0040d953 | g_CDemonCameraInstance.position.z
     LEA EBX,[ESI + 0x20]                ; 0040d956
     MOV dword ptr [ESP + 0x8],EAX       ; 0040d959
     FLD float ptr [EBX]                 ; 0040d95d
@@ -70,25 +70,25 @@ section .text
     PUSH EDI                            ; 0040d990
         ;   Label: LAB_0040d990
     PUSH ESI                            ; 0040d991
-    MOV EDX,dword ptr [0x005be368]      ; 0040d992 | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 0040d998 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0040d992 | g_CDemonSetPtr
+    PUSH EDX                            ; 0040d998 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0040d999
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040d99e
     PUSH 0x0                            ; 0040d9a1
     PUSH EBX                            ; 0040d9a3
-    MOV ECX,dword ptr [0x005be368]      ; 0040d9a4 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 0040d9aa | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0040d9a4 | g_CDemonSetPtr
+    PUSH ECX                            ; 0040d9aa | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0040d9ab
         ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     ADD ESP,0xc                         ; 0040d9b0
-    MOV EDI,dword ptr [0x005be368]      ; 0040d9b3 | g_CDemonSet_PTR_005be368
-    PUSH EDI                            ; 0040d9b9 | g_CDemonSet_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 0040d9b3 | g_CDemonSetPtr
+    PUSH EDI                            ; 0040d9b9 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0040d9ba
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
-    MOV EAX,[0x005be368]                ; 0040d9bf | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0040d9bf | g_CDemonSetPtr
     ADD ESP,0x4                         ; 0040d9c4
-    MOV EBP,dword ptr [EAX + 0x14cd4c]  ; 0040d9c7 | g_CDemonSet_01e57284.ground_type
+    MOV EBP,dword ptr [EAX + 0x14cd4c]  ; 0040d9c7 | g_CDemonSetInstance.ground_type
     PUSH dword ptr [ESP + 0x30]         ; 0040d9cd
     PUSH EBP                            ; 0040d9d1
     PUSH EBX                            ; 0040d9d2

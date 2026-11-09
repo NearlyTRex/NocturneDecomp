@@ -40,7 +40,7 @@
 ;   float FLOAT_0059d1f8 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   undefined4 DAT_005b80f4
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_005c502c
 ;   undefined4 DAT_005c5030
 ;   undefined4 DAT_005c505c
@@ -282,7 +282,7 @@ section .text
     PUSH 0x1c08d14                      ; 00482c04 | DAT_01c08d14
     LEA EAX,[ESP + 0x3c]                ; 00482c09
     PUSH EAX                            ; 00482c0d
-    MOV EAX,[0x005be368]                ; 00482c0e | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 00482c0e | g_CDemonSetPtr
     PUSH EAX                            ; 00482c13
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50 ; 00482c14
         ;   XREF to: 0050bb50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0050bb50(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)

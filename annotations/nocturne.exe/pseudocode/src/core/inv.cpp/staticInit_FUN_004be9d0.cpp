@@ -9,33 +9,33 @@
 void __cdecl core_inv_cpp_staticInit_FUN_004be9d0(void)
 
 {
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cb0380);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_InvBackgroundBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baa80);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cb0394);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_InvBackground2Bitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baa90);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cb03a8);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_WeapBackgroundBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baaa0);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cb03bc);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_WeapBackground2Bitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baab0);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc2fd8);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_BatteryIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baac0);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc2fec);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_HealthBar1Bitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baad0);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc3000);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_HealthBar2Bitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baae0);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc3014);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_TommyClipIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005baaf0);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc3028);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_BulletIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005bab00);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc303c);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_LithiumIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005bab10);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc3050);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_MercuryBulletIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005bab20);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc3064);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_ShotShellIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005bab30);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc3078);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_SilverBulletIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005bab40);
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_CAlphaBitmap_01cc308c);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(&g_HolyBulletIconBitmap);
   _atexit(&g_WatcomStaticDestructorNode_005bab50);
   return;
 }

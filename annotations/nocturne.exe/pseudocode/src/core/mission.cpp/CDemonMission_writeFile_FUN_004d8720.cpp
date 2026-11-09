@@ -21,7 +21,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission
   
   if (this_ptr->actors_prepared == 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-              (g_CEditorTools_PTR_005b6d50,"Preparing actors...");
+              (g_CEditorToolsPtr,"Preparing actors...");
     core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(this_ptr);
   }
   this_ptr->mission_version_num = 7;
@@ -104,7 +104,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
     core_actor_cpp_CDemonActor_save_FUN_0040c040(pCVar2,file_handle);
   }
-  core_gore_cpp_CGore_save_FUN_004b08d0(g_CGore_PTR_005b96c4,file_handle);
+  core_gore_cpp_CGore_save_FUN_004b08d0(g_CGorePtr,file_handle);
   this_ptr->actor_lookup_count = 0;
   return;
 }

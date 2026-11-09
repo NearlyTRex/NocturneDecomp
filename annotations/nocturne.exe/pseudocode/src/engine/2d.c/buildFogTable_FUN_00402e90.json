@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 145,
@@ -241,23 +236,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "buildFogTable_FUN_00402e90.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 39,
-          "line": 73,
-          "message": "Uninitialized variable: unaff_SI",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unaffected register variable",
@@ -298,14 +276,6 @@
       "severity": "moderate",
       "text": "blue = 0x402fe2;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Uninitialized variable: unaff_SI",
-      "line": 73,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "g_FogTable[0x10][(int)local_38] = unaff_SI;",
-      "type": "static_uninitvar"
     }
   ]
 }

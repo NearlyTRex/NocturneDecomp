@@ -56,8 +56,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_00445750(CDemo
   char local_14;
   
   bVar1 = 0;
-  if ((g_CGame_PTR_005b9354->halo_mode != 0) || ((force_render == 0 && (globe->corona_mode != 0))))
-  {
+  if ((g_CGamePtr->halo_mode != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {
     _DAT_014b8458 = globe;
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
               (this_ptr,&globe->position_scaled,&local_94);

@@ -16,9 +16,8 @@ void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_0048c2a0(CFireEffect *this
   }
   iVar1 = core_fire_cpp_CFireEffect_allocateToss_FUN_0048c310
                     (this_ptr,0,position,orientation,velocity,fuse_time);
-  g_CToss_ARRAY_01c5d824[iVar1].sfx_handle = sfx_handle;
+  g_TossPool[iVar1].sfx_handle = sfx_handle;
   sound_sndmain_cpp_setSfxTrackedFloatPosition_FUN_00526ea0
-            (g_CToss_ARRAY_01c5d824[iVar1].sfx_handle,
-             &g_CToss_ARRAY_01c5d824[iVar1].physics_box.position);
+            (g_TossPool[iVar1].sfx_handle,&g_TossPool[iVar1].physics_box.position);
   return;
 }

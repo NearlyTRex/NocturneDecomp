@@ -103,7 +103,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x128]     ; 004f0c31
     MOV EDX,dword ptr [ESP + 0x120]     ; 004f0c38
     PUSH EDX                            ; 004f0c3f
-    PUSH 0x1fba938                      ; 004f0c40 | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 004f0c40 | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0xc8]                ; 004f0c45
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700 ; 004f0c4c
         ;   XREF to: 0046b700 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
@@ -395,13 +395,13 @@ section .text
     TEST EAX,EAX                        ; 004f0fb6
     JZ 0x004f113c                       ; 004f0fb8
         ;   XREF to: 004f113c (CONDITIONAL_JUMP)  ; LAB_004f113c
-    MOV EAX,[0x01fba96c]                ; 004f0fbe | g_CDemonRaytrace_01fba938.adjusted_size.x
+    MOV EAX,[0x01fba96c]                ; 004f0fbe | g_CDemonRaytraceInstance.adjusted_size.x
     MOV dword ptr [ESP + 0xe4],EAX      ; 004f0fc3
     MOV EAX,0x1fba96c                   ; 004f0fca
-    MOV EAX,dword ptr [EAX + 0x4]       ; 004f0fcf | g_CDemonRaytrace_01fba938.adjusted_size.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 004f0fcf | g_CDemonRaytraceInstance.adjusted_size.y
     MOV dword ptr [ESP + 0xe8],EAX      ; 004f0fd2
     MOV EAX,0x1fba96c                   ; 004f0fd9
-    MOV EAX,dword ptr [EAX + 0x8]       ; 004f0fde | g_CDemonRaytrace_01fba938.adjusted_size.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 004f0fde | g_CDemonRaytraceInstance.adjusted_size.z
     MOV dword ptr [ESP + 0xec],EAX      ; 004f0fe1
     LEA EAX,[ESP + 0x9c]                ; 004f0fe8
     CMP EAX,EBP                         ; 004f0fef

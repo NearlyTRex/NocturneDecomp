@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 158,
-        "message": "use of undeclared identifier 'stack0xffffff48'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 402,
@@ -409,79 +397,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonRaytrace_rayVoxelGridTest_FUN_004680b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 9,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 9,
-          "line": 91,
-          "message": "Uninitialized variable: local_44",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 91,
-          "message": "Uninitialized variable: fStack_74",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 36,
-          "line": 91,
-          "message": "Uninitialized variable: local_48",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 48,
-          "line": 91,
-          "message": "Uninitialized variable: iStack_80",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 52,
-          "line": 92,
-          "message": "Uninitialized variable: local_4c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 62,
-          "line": 92,
-          "message": "Uninitialized variable: local_40",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 109,
-          "message": "Uninitialized variable: local_70",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 140,
-          "message": "Uninitialized variable: local_5c",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 47,
-          "line": 114,
-          "message": "Uninitialized variable: local_70",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -546,78 +461,6 @@
       "severity": "moderate",
       "text": "(CVector3f *)&stack0xffffff48,local_a0), local_44 < 0.0)) ||",
       "type": "stack_ref"
-    },
-    {
-      "description": "Uninitialized variable: local_44",
-      "line": 91,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((local_44 != fStack_74) || (local_48 != iStack_80)) ||",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_74",
-      "line": 91,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((local_44 != fStack_74) || (local_48 != iStack_80)) ||",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_48",
-      "line": 91,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((local_44 != fStack_74) || (local_48 != iStack_80)) ||",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: iStack_80",
-      "line": 91,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (((local_44 != fStack_74) || (local_48 != iStack_80)) ||",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_4c",
-      "line": 92,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(fVar10 = local_58, fVar4 = local_50, iVar5 = local_4c, local_40 != fStack_78)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_40",
-      "line": 92,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(fVar10 = local_58, fVar4 = local_50, iVar5 = local_4c, local_40 != fStack_78)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_70",
-      "line": 109,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_90 = local_70 - (float)(int)local_50;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_5c",
-      "line": 140,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = (float)local_5c * local_88;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_70",
-      "line": 114,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "local_90 = (float)((int)local_50 + 1) - local_70;",
-      "type": "static_legacy_uninitvar"
     }
   ]
 }

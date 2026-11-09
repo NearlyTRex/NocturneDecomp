@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
@@ -153,23 +148,6 @@
         "type": "CVector3f *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "CDemonPart_loadFromFile_FUN_004571f0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 84,
-          "message": "Uninitialized variable: in_stack_00000010",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
   },
   "suspects": [
     {
@@ -371,14 +349,6 @@
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000010",
-      "line": 84,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (in_stack_00000010 != (float *)0x0) {",
-      "type": "static_uninitvar"
     }
   ]
 }

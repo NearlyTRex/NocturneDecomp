@@ -23,7 +23,7 @@
 ;   TerminatedCString s_d_0059090f
 ;   TerminatedCString s_The_set_has_changed_sinc_00590913
 ;   TerminatedCString s_d_00590979
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -78,7 +78,7 @@ section .text
     JZ 0x0050e998                       ; 0050e982
         ;   XREF to: 0050e998 (CONDITIONAL_JUMP)  ; LAB_0050e998
     PUSH 0x590913                       ; 0050e984 | = "The set has changed since you saved y..."
-    MOV ECX,dword ptr [0x005b6d50]      ; 0050e989 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 0050e989 | g_CEditorToolsPtr
     PUSH ECX                            ; 0050e98f
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 0050e990
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)

@@ -233,7 +233,7 @@ LAB_0047acd1:
       pcVar18 = core_event_cpp_extractParenArg_FUN_0047a650((char **)&local_ec,local_fc4,200);
       if (pcVar18 != (char *)0x0) goto LAB_0047aec8;
       core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
-                (g_CDemonSet_PTR_005be368,local_fc4,&local_e8,&local_44);
+                (g_CDemonSetPtr,local_fc4,&local_e8,&local_44);
       if (local_e8 == (C3DSLight *)0x0) {
         iVar5 = core_event_cpp_formatEventError_FUN_0047a210("SpotLight %s doesn't exist.");
         return iVar5;
@@ -412,7 +412,7 @@ LAB_0047acd1:
             }
             if (local_f0 != 0) {
               core_game_cpp_CGame_displayBitmap_FUN_004a5740
-                        (g_CGame_PTR_005b9354,&stack0xffffe9c4,local_d8,local_d4);
+                        (g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);
             }
           }
           else {
@@ -839,7 +839,7 @@ LAB_0047aec8:
                                        != 0) {
                                   local_ec = local_ec + 1;
                                 }
-                                if (g_CNetGame_PTR_005bdee0->connection_type != CONNECTION_NONE) {
+                                if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
                                   iVar5 = core_event_cpp_formatEventError_FUN_0047a210
                                                     ("Can't use killHero command in multi-player");
                                   return iVar5;
@@ -1168,7 +1168,7 @@ LAB_0047aec8:
                                           SVar16 = SVar16 - 1;
                                         }
                                         iVar5 = core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                                                          (g_CDemonSet_PTR_005be368,local_12e5 + 1);
+                                                          (g_CDemonSetPtr,local_12e5 + 1);
                                         if (iVar5 < 0) {
                                           _sprintf(&DAT_01c08b60,
                                                      "Camera \"%s\" does not exist.");
@@ -1182,7 +1182,7 @@ LAB_0047aec8:
                                         }
                                         if (local_f0 != 0) {
                                           core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_0050e4c0
-                                                    (g_CDemonSet_PTR_005be368,iVar5,
+                                                    (g_CDemonSetPtr,iVar5,
                                                      local_78 * (float)0.01);
                                         }
                                       }
@@ -1288,7 +1288,7 @@ LAB_0047aec8:
                                             }
                                             if (local_f0 != 0) {
                                               core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510
-                                                        (g_CDemonSet_PTR_005be368,local_64,
+                                                        (g_CDemonSetPtr,local_64,
                                                          local_60 * (float)0.01);
                                             }
                                           }
@@ -1316,8 +1316,8 @@ LAB_0047aec8:
                                               }
                                               local_ec = local_ec + local_58;
                                               core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
-                                                        (g_CDemonSet_PTR_005be368,local_7f4,
-                                                         &local_50,&local_4c);
+                                                        (g_CDemonSetPtr,local_7f4,&local_50,
+                                                         &local_4c);
                                               if (local_50 == (C3DSLight *)0x0) {
                                                 iVar5 = core_event_cpp_formatEventError_FUN_0047a210
                                                                   (
@@ -1743,8 +1743,8 @@ LAB_0047aec8:
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_set_cpp_CDemonSet_initCameraShake_FUN_0050e660
-                                                            (g_CDemonSet_PTR_005be368,local_30,
-                                                             local_2c,local_80,local_28);
+                                                            (g_CDemonSetPtr,local_30,local_2c,
+                                                             local_80,local_28);
                                                   }
                                                   }
                                                   else {
@@ -1907,7 +1907,7 @@ LAB_0047aec8:
                                                   }
                                                   iVar5 = 
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
-                                                            (g_CDemonSet_PTR_005be368,local_344);
+                                                            (g_CDemonSetPtr,local_344);
                                                   if (iVar5 < 0) {
                                                     iVar5 = 
                                                   core_event_cpp_formatEventError_FUN_0047a210
@@ -1942,8 +1942,7 @@ LAB_0047aec8:
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0
-                                                            (g_CDemonSet_PTR_005be368,iVar5,local_70
-                                                            );
+                                                            (g_CDemonSetPtr,iVar5,local_70);
                                                   }
                                                   }
                                                   else {
@@ -2141,8 +2140,9 @@ LAB_0047aec8:
                                                     setPositionAndOrientation)
                                                             ((CDemonActor *)pCVar7,&local_11c,
                                                              &local_134);
-                                                  if (pCVar7 == *(CLever **)(0x01E56DA0 + 0xc)) {
-                                                    *(uint *)(0x01E56DA0 + 0x10) = 1;
+                                                  if (pCVar7 == (CLever *)g_CScriptPtr->focus_actor)
+                                                  {
+                                                    g_CScriptPtr->focus_actor_changed = 1;
                                                   }
                                                   }
                                                   }

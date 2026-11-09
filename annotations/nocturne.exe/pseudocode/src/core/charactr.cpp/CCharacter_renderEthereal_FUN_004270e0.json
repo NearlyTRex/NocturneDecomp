@@ -1,34 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_007658e0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 35,
-        "message": "use of undeclared identifier 'DAT_005ad140'; did you mean 'DAT_005ad540'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 38,
-        "message": "use of undeclared identifier 'stack0xffffe550'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 41,
-        "line": 60,
-        "message": "use of undeclared identifier 'stack0xffffe550'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
@@ -161,7 +131,7 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -191,7 +161,7 @@
     },
     {
       "addr": "01c77850",
-      "name": "g_CGame_01c775ec.delta_time_float",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -301,7 +271,7 @@
       "line": 20,
       "match": "DAT_007658dc",
       "severity": "mild",
-      "text": "((double)((float)DAT_007658dc +",
+      "text": "((double)((float)DAT_007658dc + g_CGamePtr->delta_time_float * 8388608.0f)",
       "type": "undefined_data"
     },
     {

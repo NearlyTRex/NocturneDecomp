@@ -38,11 +38,11 @@
 ; Referenced Globals:
 ;   undefined4 DAT_0059aa80
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   uchar* g_CurrentTextureData
 ;   uchar* g_CurrentTextureOpacityData
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70
@@ -92,8 +92,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0041dd1d
     PUSH EAX                            ; 0041dd21
     PUSH 0x8                            ; 0041dd22
-    MOV EDX,dword ptr [0x005be368]      ; 0041dd24 | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 0041dd2a | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0041dd24 | g_CDemonSetPtr
+    PUSH EDX                            ; 0041dd2a | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 0041dd2b
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     ADD ESP,0xc                         ; 0041dd30

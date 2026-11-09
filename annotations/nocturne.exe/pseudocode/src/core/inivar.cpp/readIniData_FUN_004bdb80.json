@@ -1,43 +1,19 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 44,
-        "message": "use of undeclared identifier 'DAT_01cae37c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_01cc64a4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 48,
-        "line": 65,
-        "message": "use of undeclared identifier 'DAT_01cc64a4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 604,
-    "complexity_score": 185,
+    "complexity_score": 184,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 92,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 145,
+    "pseudocode_lines": 144,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 749
+    "total_lines": 748
   },
   "cross_references": [
     {
@@ -470,13 +446,13 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
@@ -518,103 +494,103 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
     {
       "addr": "01c775f8",
-      "name": "g_CGame_01c775ec.halo_mode",
+      "name": "g_CGameInstance.halo_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77600",
-      "name": "g_CGame_01c775ec.blood_flag",
+      "name": "g_CGameInstance.blood_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77604",
-      "name": "g_CGame_01c775ec.nudity_flag",
+      "name": "g_CGameInstance.nudity_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77608",
-      "name": "g_CGame_01c775ec.foul_language_flag",
+      "name": "g_CGameInstance.foul_language_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7760c",
-      "name": "g_CGame_01c775ec.quimby_flag",
+      "name": "g_CGameInstance.quimby_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77610",
-      "name": "g_CGame_01c775ec.shadow_flag",
+      "name": "g_CGameInstance.shadow_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77690",
-      "name": "g_CGame_01c775ec.x_center",
+      "name": "g_CGameInstance.x_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77694",
-      "name": "g_CGame_01c775ec.y_center",
+      "name": "g_CGameInstance.y_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77698",
-      "name": "g_CGame_01c775ec.x_stick_min",
+      "name": "g_CGameInstance.x_stick_min",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7769c",
-      "name": "g_CGame_01c775ec.x_stick_max",
+      "name": "g_CGameInstance.x_stick_max",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a0",
-      "name": "g_CGame_01c775ec.y_stick_min",
+      "name": "g_CGameInstance.y_stick_min",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a4",
-      "name": "g_CGame_01c775ec.y_stick_max",
+      "name": "g_CGameInstance.y_stick_max",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776a8",
-      "name": "g_CGame_01c775ec.game_control",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776ac",
-      "name": "g_CGame_01c775ec.hero_number",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c776b0",
-      "name": "g_CGame_01c775ec.aim_mode",
+      "name": "g_CGameInstance.aim_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77800",
-      "name": "g_CGame_01c775ec.head_of_horror_cheat",
+      "name": "g_CGameInstance.head_of_horror_cheat",
       "type": "undefined4",
       "value": null
     },
@@ -729,7 +705,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 36,
       "match": "DAT_01cae37c",
       "severity": "mild",
       "text": "(&local_204,\"firstTimeFlag\",(int *)&DAT_01cae37c);",
@@ -737,7 +713,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 57,
       "match": "DAT_01cc64a4",
       "severity": "mild",
       "text": "(&local_204,\"currentBoard\",(int *)&DAT_01cc64a4);",

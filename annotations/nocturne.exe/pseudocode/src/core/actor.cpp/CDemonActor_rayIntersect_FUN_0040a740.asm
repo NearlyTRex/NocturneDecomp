@@ -38,10 +38,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00577701
 ;   TerminatedCString s_CDemonActor_rayIntersect_00577713
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 g_CDemonSet_01e57284.skip_exact_collisions
+;   undefined4 g_CDemonSetInstance.skip_exact_collisions
 ;   undefined4 DAT_0268ced8
 ;   undefined4 DAT_0268cedc
 ;   undefined4 DAT_0268cee0
@@ -219,9 +219,9 @@ section .text
     MOV dword ptr [EBX + 0x10],0xffffffff ; 0040a8c1
     MOV dword ptr [EBX + 0x14],0xffffffff ; 0040a8c8
     MOV dword ptr [EBX + 0x18],0xffffffff ; 0040a8cf
-    MOV EAX,[0x005be368]                ; 0040a8d6 | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0040a8d6 | g_CDemonSetPtr
     MOV dword ptr [EBX + 0xc],0xffffffff ; 0040a8db
-    MOV EAX,dword ptr [EAX + 0x15f2f4]  ; 0040a8e2 | g_CDemonSet_01e57284.skip_exact_collisions
+    MOV EAX,dword ptr [EAX + 0x15f2f4]  ; 0040a8e2 | g_CDemonSetInstance.skip_exact_collisions
     TEST EAX,EAX                        ; 0040a8e8
     JZ 0x0040a9c9                       ; 0040a8ea
         ;   XREF to: 0040a9c9 (CONDITIONAL_JUMP)  ; LAB_0040a9c9

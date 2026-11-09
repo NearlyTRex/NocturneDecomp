@@ -279,7 +279,7 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *act
           local_40 = local_40 + iVar8;
         } while (iVar6 < iVar10);
       }
-      if (g_CGame_PTR_005b9354->debug_toggle_flag != 0) {
+      if (g_CGamePtr->debug_toggle_flag != 0) {
         puVar9 = (uint *)(camera_index * 0x3000 + 0x23755f8);
         iVar6 = 0;
         do {

@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   float FLOAT_00581210 = 30
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
@@ -60,10 +60,10 @@ section .text
     PUSH 0x0                            ; 00486e68
     MOV EAX,dword ptr [ESP + 0x64]      ; 00486e6a
     PUSH 0x0                            ; 00486e6e
-    MOV EDX,dword ptr [0x005be368]      ; 00486e70 | g_CDemonSet_PTR_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 00486e70 | g_CDemonSetPtr
     PUSH 0x43480000                     ; 00486e76
     MOV dword ptr [ESI + 0xc],0x3f800000 ; 00486e7b
-    PUSH EDX                            ; 00486e82 | g_CDemonSet_01e57284
+    PUSH EDX                            ; 00486e82 | g_CDemonSetInstance
     MOV dword ptr [ESI + 0x10],EAX      ; 00486e83
     CALL core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660 ; 00486e86
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)

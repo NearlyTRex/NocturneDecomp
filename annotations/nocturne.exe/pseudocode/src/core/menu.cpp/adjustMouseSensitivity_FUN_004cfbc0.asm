@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_4_2f_0058853d
 ;   double DOUBLE_00588543 = 0.0000152587890625
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   int g_WindowWidth = 0x140
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 DAT_01bcd070
@@ -64,7 +64,7 @@ section .text
     SAR EAX,0x2                         ; 004cfbeb
     PUSH 0x2c                           ; 004cfbee
     PUSH EAX                            ; 004cfbf0
-    MOV ECX,dword ptr [0x005b6d50]      ; 004cfbf1 | g_CEditorTools_PTR_005b6d50
+    MOV ECX,dword ptr [0x005b6d50]      ; 004cfbf1 | g_CEditorToolsPtr
     PUSH ECX                            ; 004cfbf7
     CALL shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80 ; 004cfbf8
         ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
@@ -98,7 +98,7 @@ section .text
     XOR EBX,EBX                         ; 004cfc4f
     ADD ESP,0x8                         ; 004cfc51
     MOV dword ptr [ESP + 0x8],EBX       ; 004cfc54
-    MOV EDI,dword ptr [0x005b6d50]      ; 004cfc58 | g_CEditorTools_PTR_005b6d50
+    MOV EDI,dword ptr [0x005b6d50]      ; 004cfc58 | g_CEditorToolsPtr
         ;   Label: LAB_004cfc58
     PUSH EDI                            ; 004cfc5e
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 ; 004cfc5f
@@ -247,7 +247,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004cfdf0
         ;   Label: LAB_004cfdf0
     MOV dword ptr [EAX],ESI             ; 004cfdf3
-    MOV EBX,dword ptr [0x005b6d50]      ; 004cfdf5 | g_CEditorTools_PTR_005b6d50
+    MOV EBX,dword ptr [0x005b6d50]      ; 004cfdf5 | g_CEditorToolsPtr
         ;   Label: LAB_004cfdf5
     PUSH EBX                            ; 004cfdfb
     CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0 ; 004cfdfc

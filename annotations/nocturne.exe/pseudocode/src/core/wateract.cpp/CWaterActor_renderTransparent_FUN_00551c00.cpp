@@ -51,13 +51,13 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
       }
       iVar3 = 0;
       core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200
-                (g_CDemonSet_PTR_005be368,this_ptr->vertex_count,(CVector3i *)&DAT_02dda6b8);
+                (g_CDemonSetPtr,this_ptr->vertex_count,(CVector3i *)&DAT_02dda6b8);
       if (0 < this_ptr->vertex_count) {
         vertex_position = &this_ptr->vertices[0].world_position;
         iVar6 = 0;
         do {
           core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
-                    (g_CDemonSet_PTR_005be368,vertex_position,&g_ZeroVector.f,iVar3);
+                    (g_CDemonSetPtr,vertex_position,&g_ZeroVector.f,iVar3);
           pSVar1 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
           lVar2 = (longlong)((this_ptr->color).r << 8) * (longlong)*(int *)((int)&pSVar1->r + iVar6)
           ;
@@ -90,8 +90,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_00551c00(CWaterA
       }
       else {
         core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_0050ddd0
-                  (g_CDemonSet_PTR_005be368,(SMRGLPrimitiveQuad *)poly,this_ptr->primitive_count,-1)
-        ;
+                  (g_CDemonSetPtr,(SMRGLPrimitiveQuad *)poly,this_ptr->primitive_count,-1);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
                 (g_CDemonRenderer_PTR_005ae704,0);

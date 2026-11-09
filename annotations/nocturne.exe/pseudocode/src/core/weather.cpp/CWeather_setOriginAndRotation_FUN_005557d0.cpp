@@ -57,10 +57,10 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeathe
       }
       local_50.y = local_50.y + 50.0f;
       local_44.y = local_44.y + -50.0f;
-      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSet_PTR_005be368);
+      core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+      core_setcolid_cpp_CDemonSet_disableIgnore_FUN_005117e0(g_CDemonSetPtr);
       local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
-                           (g_CDemonSet_PTR_005be368,&local_50,&local_44);
+                           (g_CDemonSetPtr,&local_50,&local_44);
       fVar1 = (local_44.y - local_50.y) * local_14 + local_50.y;
       *(float *)(iVar3 + 0x2de0388) = fVar1;
       local_24 = (double)fVar1;

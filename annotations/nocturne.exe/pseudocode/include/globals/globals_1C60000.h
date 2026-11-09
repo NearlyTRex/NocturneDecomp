@@ -17,7 +17,7 @@
 // =============================================================================
 
 // CCrater[20]
-extern CCrater g_CCrater_ARRAY_01c625f8[20];
+extern CCrater g_CraterPool[20];
 
 // CGunFlame[500]
 extern CGunFlame g_CGunFlame_ARRAY_01c62ebc[500];
@@ -26,13 +26,13 @@ extern CGunFlame g_CGunFlame_ARRAY_01c62ebc[500];
 extern CLightningBolt g_CLightningBolt_ARRAY_01c67510[10];
 
 // CPopcorn[256]
-extern CPopcorn g_CPopcorn_ARRAY_01c69614[256];
+extern CPopcorn g_PopcornPool[256];
 
 // CRainDrop[256]
-extern CRainDrop g_CRainDrop_ARRAY_01c6ce18[256];
+extern CRainDrop g_RainDropPool[256];
 
 // CShell[50]
-extern CShell g_CShell_ARRAY_01c684e0[50];
+extern CShell g_ShellPool[50];
 
 // CTrail[100]
 extern CTrail g_CTrail_ARRAY_01c676cc[100];

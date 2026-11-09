@@ -1,16 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 8,
-        "line": 72,
-        "message": "use of undeclared identifier '_DAT_01bd1d84'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 361,
@@ -324,30 +312,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "interpolateCubicKeyframes_FUN_004c3c90.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 25,
-          "line": 126,
-          "message": "Uninitialized variable: iStack_34",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 156,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -420,22 +384,6 @@
       "severity": "moderate",
       "text": "pSVar26 = (SMRGLKeyframe *)&pSVar26->vertex_header;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: iStack_34",
-      "line": 126,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "lVar5 = (longlong)iStack_34 * (longlong)(pSVar26->header).base.type;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 156,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_2c = local_2c + 1;",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

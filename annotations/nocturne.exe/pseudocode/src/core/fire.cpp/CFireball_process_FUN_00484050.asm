@@ -12,11 +12,11 @@
 ;
 ; Referenced Globals:
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01bd1d80
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.character_count
-;   undefined4 g_CDemonSet_01e57284.characters[0]
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;
 ; Called Functions:
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
@@ -95,8 +95,8 @@ section .text
         ;   XREF to: 0044cde0 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(CDemonGlobe * this_ptr, float radius)
     ADD ESP,0x8                         ; 004840ef
     PUSH EBX                            ; 004840f2
-    MOV EDX,dword ptr [0x005be368]      ; 004840f3 | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 004840f9 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004840f3 | g_CDemonSetPtr
+    PUSH EDX                            ; 004840f9 | g_CDemonSetInstance
     MOV dword ptr [EBX + 0x20],0x0      ; 004840fa
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 00484101
         ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)
@@ -175,9 +175,9 @@ section .text
     XOR ESI,ESI                         ; 004841eb
         ;   Label: LAB_004841eb
     XOR EBX,EBX                         ; 004841ed
-    MOV EDI,dword ptr [0x005be368]      ; 004841ef | g_CDemonSet_PTR_005be368
+    MOV EDI,dword ptr [0x005be368]      ; 004841ef | g_CDemonSetPtr
         ;   Label: LAB_004841ef
-    CMP EBX,dword ptr [EDI + 0x14ecb0]  ; 004841f5 | g_CDemonSet_01e57284.character_count
+    CMP EBX,dword ptr [EDI + 0x14ecb0]  ; 004841f5 | g_CDemonSetInstance.character_count
     JL 0x00484264                       ; 004841fb
         ;   XREF to: 00484264 (CONDITIONAL_JUMP)  ; LAB_00484264
     ADD ESP,0x44                        ; 004841fd
@@ -221,7 +221,7 @@ section .text
     MOV EAX,ESP                         ; 00484264
         ;   Label: LAB_00484264
     PUSH EAX                            ; 00484266
-    MOV EDI,dword ptr [EDI + ESI*0x1 + 0x14ecb4] ; 00484267 | g_CDemonSet_01e57284.characters[0]
+    MOV EDI,dword ptr [EDI + ESI*0x1 + 0x14ecb4] ; 00484267 | g_CDemonSetInstance.characters[0]
     CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0 ; 0048426e
         ;   XREF to: 00423ed0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00484273

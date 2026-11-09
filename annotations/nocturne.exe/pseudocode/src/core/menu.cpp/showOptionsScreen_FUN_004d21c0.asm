@@ -19,13 +19,13 @@
 ;   TerminatedCString s_Control_options_00588ce1
 ;   TerminatedCString s_Credits_00588cf1
 ;   TerminatedCString s_Option_Menu_00588cf9
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   CGame g_CGame_01c775ec
-;   undefined4 g_CGame_01c775ec.game_control
-;   undefined4 g_CGame_01c775ec.hero_number
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CGame g_CGameInstance
+;   undefined4 g_CGameInstance.game_control
+;   undefined4 g_CGameInstance.hero_number
+;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 004d2321 (CONDITIONAL_JUMP)  ; LAB_004d2321
     PUSH ESI                            ; 004d21d7
         ;   Label: LAB_004d21d7
-    MOV ESI,dword ptr [0x005b9354]      ; 004d21d8 | g_CGame_PTR_005b9354
-    PUSH ESI                            ; 004d21de | g_CGame_01c775ec
+    MOV ESI,dword ptr [0x005b9354]      ; 004d21d8 | g_CGamePtr
+    PUSH ESI                            ; 004d21de | g_CGameInstance
     MOV EBX,0x1cc7900                   ; 004d21df
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004d21e4
         ;   XREF to: 0049a890 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_0049a890(CGame * this_ptr)
@@ -78,14 +78,14 @@ section .text
     CMP EAX,0x10                        ; 004d21fe
     JNZ 0x004d21ef                      ; 004d2201
         ;   XREF to: 004d21ef (CONDITIONAL_JUMP)  ; LAB_004d21ef
-    MOV EDI,dword ptr [0x005b9354]      ; 004d2203 | g_CGame_PTR_005b9354
+    MOV EDI,dword ptr [0x005b9354]      ; 004d2203 | g_CGamePtr
         ;   Label: LAB_004d2203
-    PUSH EDI                            ; 004d2209 | g_CGame_01c775ec
+    PUSH EDI                            ; 004d2209 | g_CGameInstance
     CALL core_game.cpp_CGame_updateDT_FUN_0049a8a0 ; 004d220a
         ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDT_FUN_0049a8a0(CGame * this_ptr)
-    MOV EAX,[0x005b9354]                ; 004d220f | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d220f | g_CGamePtr
     ADD ESP,0x4                         ; 004d2214
-    MOV EAX,dword ptr [EAX + 0x264]     ; 004d2217 | g_CGame_01c775ec.delta_time_float
+    MOV EAX,dword ptr [EAX + 0x264]     ; 004d2217 | g_CGameInstance.delta_time_float
     PUSH EAX                            ; 004d221d
     PUSH 0x1cc5780                      ; 004d221e
     CALL core_moon.cpp_CMoon_update_FUN_004deae0 ; 004d2223
@@ -131,9 +131,9 @@ section .text
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004d229c
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d22a1
-    MOV EAX,[0x005b9354]                ; 004d22a4 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d22a4 | g_CGamePtr
     PUSH 0x588cf9                       ; 004d22a9 | = "Option Menu"
-    MOV dword ptr [EAX + 0xc0],0x2      ; 004d22ae | g_CGame_01c775ec.hero_number
+    MOV dword ptr [EAX + 0xc0],0x2      ; 004d22ae | g_CGameInstance.hero_number
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004d22b8
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_004ee370(char * key)
     ADD ESP,0x4                         ; 004d22bd
@@ -194,22 +194,22 @@ section .text
         ;   Label: caseD_1
     JMP 0x004d22f2                      ; 004d2347
         ;   XREF to: 004d22f2 (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x005b9354]                ; 004d2349 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004d2349 | g_CGamePtr
         ;   Label: caseD_2
-    MOV EBX,dword ptr [EAX + 0xbc]      ; 004d234e | g_CGame_01c775ec.game_control
+    MOV EBX,dword ptr [EAX + 0xbc]      ; 004d234e | g_CGameInstance.game_control
     CALL core_menu.cpp_configureCustomKeys_FUN_004d0d20 ; 004d2354
         ;   XREF to: 004d0d20 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_configureCustomKeys_FUN_004d0d20()
-    MOV EAX,[0x005b9354]                ; 004d2359 | g_CGame_PTR_005b9354
-    CMP EBX,dword ptr [EAX + 0xbc]      ; 004d235e | g_CGame_01c775ec.game_control
+    MOV EAX,[0x005b9354]                ; 004d2359 | g_CGamePtr
+    CMP EBX,dword ptr [EAX + 0xbc]      ; 004d235e | g_CGameInstance.game_control
     JZ 0x004d22f2                       ; 004d2364
         ;   XREF to: 004d22f2 (CONDITIONAL_JUMP)  ; default
     CALL core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 ; 004d2366
         ;   XREF to: 004d2d00 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00()
     JMP 0x004d22f2                      ; 004d236b
         ;   XREF to: 004d22f2 (UNCONDITIONAL_JUMP)  ; default
-    MOV EBP,dword ptr [0x005b9354]      ; 004d236d | g_CGame_PTR_005b9354
+    MOV EBP,dword ptr [0x005b9354]      ; 004d236d | g_CGamePtr
         ;   Label: caseD_3
-    PUSH EBP                            ; 004d2373 | g_CGame_01c775ec
+    PUSH EBP                            ; 004d2373 | g_CGameInstance
     CALL core_game.cpp_CGame_rollCredits_FUN_004a6e90 ; 004d2374
         ;   XREF to: 004a6e90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_rollCredits_FUN_004a6e90(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d2379

@@ -1,56 +1,14 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 67,
-        "message": "no matching function for call to 'core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 86,
-        "message": "use of undeclared identifier '_DAT_01c78ac4'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 94,
-        "message": "no matching function for call to 'core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 95,
-        "message": "no matching function for call to 'core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 98,
-        "message": "use of undeclared identifier '_DAT_01c78ac0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 98,
-        "message": "use of undeclared identifier 'DAT_01c789c0'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 276,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 146,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_truncation",
       "raw_address_constant",
@@ -176,9 +134,9 @@
     },
     {
       "addr": "005be220",
-      "name": "DAT_005be220",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e56da0"
     },
     {
       "addr": "014b98f8",
@@ -224,13 +182,13 @@
     },
     {
       "addr": "01e56da0",
-      "name": "g_CScript_01e56da0",
+      "name": "g_CScriptInstance",
       "type": "CScript",
       "value": null
     },
     {
       "addr": "01fb8644",
-      "name": "g_CDemonCamera_01fb8508.screen_width",
+      "name": "g_CDemonCameraInstance.screen_width",
       "type": "undefined4",
       "value": null
     }
@@ -504,23 +462,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CGame_renderOverlay_FUN_0049ab50.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 22,
-          "line": 103,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -579,44 +520,12 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 60,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "iVar3 = core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(0x01E56DA0);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 87,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(0x01E56DA0);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 88,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(0x01E56DA0);",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex address 0x49af32 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 44,
       "match": "0x49af32",
       "severity": "moderate",
       "text": "iVar2 = 0x49af32;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 103,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar3 = local_60 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

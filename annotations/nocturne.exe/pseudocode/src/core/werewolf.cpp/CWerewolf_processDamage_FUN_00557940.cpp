@@ -43,8 +43,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_processDamage_FUN_00557940(CWerewolf *t
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&this_ptr_00->base);
     if ((pSVar2->state_index != 0xd) && (pSVar2->state_index != 0xc)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&this_ptr_00->base,0xc,1);
-      if ((this_ptr->type == WEREWOLF_TYPE_TRAIN) &&
-         (g_CDemonSet_PTR_005be368->last_switch_area_invalid != 0)) {
+      if ((this_ptr->type == WEREWOLF_TYPE_TRAIN) && (g_CDemonSetPtr->last_switch_area_invalid != 0)
+         ) {
         fVar1 = (this_ptr->base).base.base.location.position.x;
         if (fVar1 <= (float)5) {
           if ((double)fVar1 < -5) {

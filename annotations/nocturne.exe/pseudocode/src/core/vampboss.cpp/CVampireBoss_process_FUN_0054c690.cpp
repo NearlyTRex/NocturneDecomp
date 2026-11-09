@@ -419,12 +419,12 @@ LAB_0054d1ae:
         core_charactr_cpp_CCharacter_dismember_FUN_00427b60
                   ((CCharacter *)this_ptr,&CStack_10c,-1.0,0);
         iVar8 = 0;
-        for (fStack_2c = 0.0; (int)fStack_2c < g_CDemonSet_PTR_005be368->enemy_count;
+        for (fStack_2c = 0.0; (int)fStack_2c < g_CDemonSetPtr->enemy_count;
             fStack_2c = (float)((int)fStack_2c + 1)) {
           this_ptr_00 = (CCharacter *)
                         core_actor_cpp_castToClassHash_FUN_0040d890
-                                  (*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar8)
-                                   ,g_CTVBatActorType_02dd110c.name_hash);
+                                  (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar8),
+                                   g_CTVBatActorType_02dd110c.name_hash);
           if ((this_ptr_00 != (CCharacter *)0x0) &&
              (this_ptr_00[1].model.bone_origins[0xc].z != 0.0)) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_208);
@@ -452,7 +452,7 @@ LAB_0054d1ae:
   }
   pCVar2 = &(this_ptr->base).base.model;
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(&pCVar2->base);
-  pCVar7 = g_CGame_PTR_005b9354;
+  pCVar7 = g_CGamePtr;
   iVar8 = pSVar9->state_index;
   switch(iVar8) {
   case 0:
@@ -568,7 +568,7 @@ LAB_0054d280:
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(&pCVar2->base,0,1);
     }
   }
-  if ((g_CGame_PTR_005b9354->letterbox_mode == 0) && (iVar8 != 2)) {
+  if ((g_CGamePtr->letterbox_mode == 0) && (iVar8 != 2)) {
     local_100.x = (this_ptr->base).base.position_delta.x +
                   (this_ptr->base).base.model.accumulated_root_motion.x;
     local_100.z = (this_ptr->base).base.position_delta.z +
@@ -601,9 +601,9 @@ LAB_0054d280:
 LAB_0054cc7f:
   pSVar9 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                      (&(this_ptr->base).base.model.base);
-  if ((pSVar9->state_index != 2) && (g_CGame_PTR_005b9354->letterbox_mode == 0)) {
+  if ((pSVar9->state_index != 2) && (g_CGamePtr->letterbox_mode == 0)) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004a3ab0
-              (g_CGame_PTR_005b9354,(this_ptr->base).base.descriptive_name,
+              (g_CGamePtr,(this_ptr->base).base.descriptive_name,
                (this_ptr->base).base.hit_points / (this_ptr->base).base.max_hit_points,0.5);
     return;
   }

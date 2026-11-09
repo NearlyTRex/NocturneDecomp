@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
@@ -77,13 +72,13 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -95,7 +90,7 @@
     },
     {
       "addr": "01c77608",
-      "name": "g_CGame_01c775ec.foul_language_flag",
+      "name": "g_CGameInstance.foul_language_flag",
       "type": "undefined4",
       "value": null
     },
@@ -107,7 +102,7 @@
     },
     {
       "addr": "01fa7e78",
-      "name": "g_CDemonSet_01e57284.enemy_count",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     }
@@ -266,9 +261,9 @@
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + local_18),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),",
       "type": "pointer_cast"
     }
   ]

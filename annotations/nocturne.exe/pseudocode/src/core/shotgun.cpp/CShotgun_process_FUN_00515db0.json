@@ -1,32 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 24,
-        "message": "use of undeclared identifier 'stack0x00000000'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 86,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 30,
     "suspect_count": 4,
     "suspect_types": [
       "stack_param",
       "stack_ref",
       "unrolled_memcpy"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [],
   "function": {
@@ -71,73 +59,73 @@
   "globals": [
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01c74640",
-      "name": "g_CDemonLight_01c74640",
+      "name": "g_CDemonLightInstance",
       "type": "CDemonLight",
       "value": null
     },
     {
       "addr": "01c74740",
-      "name": "g_CDemonLight_01c74640.base.fixed_point_scale",
+      "name": "g_CDemonLightInstance.base.fixed_point_scale",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74744",
-      "name": "g_CDemonLight_01c74640.base.position.x",
+      "name": "g_CDemonLightInstance.base.position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74748",
-      "name": "g_CDemonLight_01c74640.base.position.y",
+      "name": "g_CDemonLightInstance.base.position.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c7474c",
-      "name": "g_CDemonLight_01c74640.base.position.z",
+      "name": "g_CDemonLightInstance.base.position.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74750",
-      "name": "g_CDemonLight_01c74640.base.rotation_matrix.m[0].x",
+      "name": "g_CDemonLightInstance.base.rotation_matrix.m[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c74778",
-      "name": "g_CDemonLight_01c74640.base.focal_length",
+      "name": "g_CDemonLightInstance.base.focal_length",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762f4",
-      "name": "g_CDemonLight_01c74640.light_enabled_flag",
+      "name": "g_CDemonLightInstance.light_enabled_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c762fc",
-      "name": "g_CDemonLight_01c74640.volumetric_enabled",
+      "name": "g_CDemonLightInstance.volumetric_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c76310",
-      "name": "g_CDemonLight_01c74640.antialiasing_enabled",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     }
@@ -223,12 +211,12 @@
       "line": 17,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((float *)&stack0x00000000 != &g_CDemonLight_01c74640.base.rotation_matrix.m[1].y) {",
+      "text": "if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.rotation_matrix.m[1].y) {",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "core_weapon_cpp_CWeapon_process_FUN_00554030(&this_ptr->base,in_stack_0000000c);",
@@ -239,7 +227,7 @@
       "line": 18,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CDemonLight_01c74640.base.position.x = CStack_1c.x;",
+      "text": "g_CDemonLightInstance.base.position.x = CStack_1c.x;",
       "type": "unrolled_memcpy"
     }
   ],

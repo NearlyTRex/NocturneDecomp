@@ -35,6 +35,6 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(CDemonLight *this_ptr
   iVar4 = 0x44e269;
   dVar6 = round((double)(this_ptr->volumetric_intensity * fVar1));
   core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0
-            (this_ptr,(CDemonFilter *)(&DAT_005ad51c)[(int)ROUND(dVar6)],0,0,iVar4);
+            (this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar6)],0,0,iVar4);
   return;
 }

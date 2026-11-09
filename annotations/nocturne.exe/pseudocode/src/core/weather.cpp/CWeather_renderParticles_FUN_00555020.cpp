@@ -73,7 +73,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
               (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005c15ec);
   }
   core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-            (g_CDemonSet_PTR_005be368,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
+            (g_CDemonSetPtr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
              (CVector3f *)0x0,(CMatrix3x3f *)0x0);
   local_14 = 0.1;
   local_10 = 0.1;
@@ -112,7 +112,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(CWeather *th
       local_80.y = (int)ROUND(world_position->y * _DAT_005a4290);
       local_80.z = (int)ROUND(world_position->z * _DAT_005a4290);
       core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                (g_CDemonSet_PTR_005be368,&local_80,(CVector3i *)0x0,0,4);
+                (g_CDemonSetPtr,&local_80,(CVector3i *)0x0,0,4);
       pCVar1 = g_CDemonRenderer_PTR_005ae704;
       if (this_ptr->weather_type == WEATHER_TYPE_SNOW) {
         local_20 = (uVar4 & 3) * 0x400000;

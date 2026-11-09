@@ -14,7 +14,7 @@
 // =============================================================================
 
 // CConsole
-extern CConsole g_CConsole_0077ad0c;
+extern CConsole g_CConsoleInstance;
 
 // CDemonActorType
 extern CDemonActorType g_CColonelActorType_0077acd0;

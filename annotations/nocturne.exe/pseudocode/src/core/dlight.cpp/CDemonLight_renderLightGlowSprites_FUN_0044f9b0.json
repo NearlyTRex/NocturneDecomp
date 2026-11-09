@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 18,
-        "line": 84,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 18,
-        "line": 88,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 36,
-        "line": 88,
-        "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
-      },
-      {
-        "category": "type_error",
-        "column": 28,
-        "line": 93,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 97,
-        "message": "use of undeclared identifier '_DAT_0059c038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 98,
-        "message": "use of undeclared identifier '_DAT_0059c038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 46,
-        "line": 99,
-        "message": "use of undeclared identifier '_DAT_0059c038'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 112,
-        "message": "use of undeclared identifier '_DAT_01c038f4'"
-      },
-      {
-        "category": "type_error",
-        "column": 46,
-        "line": 116,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 45,
-        "line": 123,
-        "message": "use of undeclared identifier 'DAT_005ae488'; did you mean 'DAT_005ae4a8'?"
-      },
-      {
-        "category": "type_error",
-        "column": 64,
-        "line": 127,
-        "message": "invalid suffix '._0_4_' on floating constant"
-      },
-      {
-        "category": "type_error",
-        "column": 25,
-        "line": 142,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 155,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 156,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 157,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 162,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 163,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 164,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 53,
-        "line": 169,
-        "message": "use of undeclared identifier '_DAT_0059c030'; did you mean 'DAT_005bc030'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 515,
@@ -928,23 +808,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonLight_renderLightGlowSprites_FUN_0044f9b0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "objectIndex",
-          "column": 20,
-          "line": 94,
-          "message": "The address of local variable 'local_a0' might be accessed at non-zero index.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -1041,14 +904,6 @@
       "severity": "moderate",
       "text": "pCVar5->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "The address of local variable 'local_a0' might be accessed at non-zero index.",
-      "line": 94,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
-      "severity": "moderate",
-      "text": "(&local_a0)[(uint)bVar3 * -2] = *(int *)(local_ec + (uint)bVar3 * -8 + 4);",
-      "type": "static_object_index"
     }
   ]
 }

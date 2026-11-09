@@ -33,8 +33,8 @@
 ;   TerminatedCString s_CNetGame_processServerFr_0058c63c
 ;   TerminatedCString s_core_netgame_cpp_0058c67d
 ;   TerminatedCString s_CNetGame_processServerFr_0058c691
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CGame* g_CGamePtr = 01c775ec
+;   undefined4 g_CGameInstance.delta_time_float
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_01cea3f4
@@ -220,9 +220,9 @@ section .text
         ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_004ed475
     MOV dword ptr [EBP + 0x4],EAX       ; 004ed47a
-    MOV EAX,[0x005b9354]                ; 004ed47d | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004ed47d | g_CGamePtr
     MOV dword ptr [ESP + 0x74],EBP      ; 004ed482
-    MOV EDX,dword ptr [EAX + 0x264]     ; 004ed486 | g_CGame_01c775ec.delta_time_float
+    MOV EDX,dword ptr [EAX + 0x264]     ; 004ed486 | g_CGameInstance.delta_time_float
     MOV dword ptr [EBP + 0x8],EDX       ; 004ed48c
     MOV ECX,dword ptr [EBX + 0x1c]      ; 004ed48f
     XOR EAX,EAX                         ; 004ed492

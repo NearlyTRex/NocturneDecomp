@@ -15,7 +15,7 @@
 ;   undefined4 DAT_0059de84
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_005be220
+;   CScript* g_CScriptPtr = 01e56da0
 ;   undefined4 DAT_01c78b04
 ;   undefined4 DAT_01c78b08
 ;   undefined4 DAT_01c78b0c
@@ -65,7 +65,7 @@ section .text
     FXCH                                ; 004a36eb
     FSTP float ptr [ESP + 0x38]         ; 004a36ed
     PUSH EAX                            ; 004a36f1
-    MOV EAX,[0x005be220]                ; 004a36f2 | DAT_005be220
+    MOV EAX,[0x005be220]                ; 004a36f2 | g_CScriptPtr
     FSTP float ptr [ESP + 0x40]         ; 004a36f7
     MOV ECX,dword ptr [EAX + 0xc]       ; 004a36fb
     PUSH ECX                            ; 004a36fe

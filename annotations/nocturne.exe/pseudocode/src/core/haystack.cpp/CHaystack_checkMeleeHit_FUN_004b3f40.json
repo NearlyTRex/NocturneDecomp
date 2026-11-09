@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
@@ -59,13 +54,13 @@
   "globals": [
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     }
@@ -192,9 +187,9 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(CHaystack **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CHaystack **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CHaystack **)((int)g_CDemonSet_PTR_005be368->characters + iVar1);",
+      "text": "this_ptr_00 = *(CHaystack **)((int)g_CDemonSetPtr->characters + iVar1);",
       "type": "pointer_cast"
     }
   ]

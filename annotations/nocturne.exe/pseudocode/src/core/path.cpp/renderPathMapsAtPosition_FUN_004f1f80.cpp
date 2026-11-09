@@ -23,7 +23,7 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_004f1f80(CVector3f *posi
   
   bVar3 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-            (&g_CDemonRaytrace_01fba938,position,&local_1c);
+            (&g_CDemonRaytraceInstance,position,&local_1c);
   local_28 = local_1c.x;
   *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8) =
        *(uint *)((int)&local_1c + (uint)bVar3 * -8 + 4);

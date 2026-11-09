@@ -20,7 +20,7 @@ void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004d8fc0(CDemonM
     pCVar1 = this_ptr->first_actor;
   }
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_004d8ee0(this_ptr);
-  this_ptr_00 = g_CDemonSet_PTR_005be368;
+  this_ptr_00 = g_CDemonSetPtr;
   _DAT_01cae0d4 = 0;
   this_ptr->actors_prepared = 0;
   core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30(this_ptr_00);

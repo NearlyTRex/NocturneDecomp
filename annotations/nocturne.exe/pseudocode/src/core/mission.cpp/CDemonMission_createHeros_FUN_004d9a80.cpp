@@ -23,18 +23,18 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
     *(uint *)((int)g_HeroActors + iVar4) = 0;
     iVar4 = iVar2;
   } while (iVar2 != 0x10);
-  if (g_CNetGame_PTR_005bdee0->connection_type == CONNECTION_NONE) {
+  if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
     _DAT_01cae0d4 = 1;
-    g_LocalHeroIndex = g_CNetGame_PTR_005bdee0->connection_type;
+    g_LocalHeroIndex = g_CNetGamePtr->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920
-                      (this_ptr,0,g_CGame_PTR_005b9354->hero_number,existing_hero);
+                      (this_ptr,0,g_CGamePtr->hero_number,existing_hero);
     if (iVar4 == 0) {
       return 0;
     }
-    g_HeroActors[g_LocalHeroIndex]->aim_mode = g_CGame_PTR_005b9354->aim_mode;
+    g_HeroActors[g_LocalHeroIndex]->aim_mode = g_CGamePtr->aim_mode;
   }
   else {
-    _DAT_01cae0d4 = g_CNetGame_PTR_005bdee0->player_count;
+    _DAT_01cae0d4 = g_CNetGamePtr->player_count;
     if (3 < _DAT_01cae0d4) {
       g_CurrentFilename = "..\\core\\mission.cpp";
       g_CurrentLineNumber = 1595;
@@ -46,8 +46,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
       iVar2 = 0;
       do {
         iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_004d9920
-                          (this_ptr,iVar4,
-                           *(int *)(g_CNetGame_PTR_005bdee0->players[0].name + iVar3 + 0x14),
+                          (this_ptr,iVar4,*(int *)(g_CNetGamePtr->players[0].name + iVar3 + 0x14),
                            (CCharacter *)0x0);
         if (iVar1 == 0) {
           return 0;
@@ -55,12 +54,12 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(CDemonMissio
         *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0xbc90) = 1;
         iVar4 = iVar4 + 1;
         *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0x1f59c) =
-             *(uint *)(g_CNetGame_PTR_005bdee0->players[0].name + iVar3 + 0x18);
+             *(uint *)(g_CNetGamePtr->players[0].name + iVar3 + 0x18);
         iVar3 = iVar3 + 0x78;
         iVar2 = iVar2 + 4;
       } while (iVar4 < _DAT_01cae0d4);
     }
-    g_LocalHeroIndex = g_CNetGame_PTR_005bdee0->local_player_index;
+    g_LocalHeroIndex = g_CNetGamePtr->local_player_index;
   }
   g_HeroActors[g_LocalHeroIndex]->control_type = HERO_CONTROL_PLAYER;
   actor_ptr = this_ptr->first_actor;

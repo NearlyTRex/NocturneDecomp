@@ -1,134 +1,14 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 35,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 37,
-        "message": "no matching function for call to 'core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 42,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 48,
-        "message": "no matching function for call to 'core_script_cpp_CScript_process_FUN_004fe5b0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 53,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "other",
-        "column": 83,
-        "line": 61,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 63,
-        "message": "member reference type 'int' is not a pointer"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 70,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 77,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 81,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 88,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 91,
-        "message": "no matching function for call to 'core_water_cpp_CWater_process_FUN_00550860'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 93,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 100,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 5,
-        "line": 104,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 106,
-        "message": "no matching function for call to 'core_event_cpp_CEventList_process_FUN_0047aa50'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 111,
-        "message": "use of undeclared identifier '_DAT_01c78b14'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 114,
-        "message": "no matching function for call to 'core_terrain_cpp_CTerrain_process_FUN_00549410'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 244,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 129,
-    "suspect_count": 10,
+    "suspect_count": 5,
     "suspect_types": [
       "raw_address_constant",
       "unaffected_reg",
@@ -338,15 +218,15 @@
     },
     {
       "addr": "005ad350",
-      "name": "g_CConsole_PTR_005ad350",
+      "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0077ad0c"
     },
     {
       "addr": "005ad550",
-      "name": "DAT_005ad550",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFilterFXPtr",
+      "type": "CFilterFX*",
+      "value": "014b98ec"
     },
     {
       "addr": "005b7650",
@@ -362,13 +242,13 @@
     },
     {
       "addr": "005b9354",
-      "name": "g_CGame_PTR_005b9354",
+      "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "01c775ec"
     },
     {
       "addr": "005b96c4",
-      "name": "g_CGore_PTR_005b96c4",
+      "name": "g_CGorePtr",
       "type": "CGore*",
       "value": "01c78c7c"
     },
@@ -380,19 +260,19 @@
     },
     {
       "addr": "005bdee0",
-      "name": "g_CNetGame_PTR_005bdee0",
+      "name": "g_CNetGamePtr",
       "type": "CNetGame*",
       "value": "01cea280"
     },
     {
       "addr": "005be220",
-      "name": "DAT_005be220",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e56da0"
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -410,9 +290,9 @@
     },
     {
       "addr": "005c11ec",
-      "name": "DAT_005c11ec",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "02dd1210"
     },
     {
       "addr": "005c15b8",
@@ -422,19 +302,19 @@
     },
     {
       "addr": "0077ad0c",
-      "name": "g_CConsole_0077ad0c",
+      "name": "g_CConsoleInstance",
       "type": "CConsole",
       "value": null
     },
     {
       "addr": "01c777f8",
-      "name": "g_CGame_01c775ec.profile_mode",
+      "name": "g_CGameInstance.profile_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c77850",
-      "name": "g_CGame_01c775ec.delta_time_float",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -446,43 +326,43 @@
     },
     {
       "addr": "01cea280",
-      "name": "g_CNetGame_01cea280",
+      "name": "g_CNetGameInstance",
       "type": "CNetGame",
       "value": null
     },
     {
       "addr": "01cea3ec",
-      "name": "g_CNetGame_01cea280.random_seed",
+      "name": "g_CNetGameInstance.random_seed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e56da0",
-      "name": "g_CScript_01e56da0",
+      "name": "g_CScriptInstance",
       "type": "CScript",
       "value": null
     },
     {
       "addr": "01e56dac",
-      "name": "g_CScript_01e56da0.focus_actor",
+      "name": "g_CScriptInstance.focus_actor",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e56db0",
-      "name": "g_CScript_01e56da0.focus_actor_changed",
+      "name": "g_CScriptInstance.focus_actor_changed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     },
     {
       "addr": "02dd1210",
-      "name": "g_CWater_02dd1210",
+      "name": "g_CWaterInstance",
       "type": "CWater",
       "value": null
     }
@@ -611,46 +491,6 @@
       "severity": "moderate",
       "text": "((double)(iVar3 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Raw hex literal 0x14b98ec matches address of g_CFilterFX_014b98ec (type CFilterFX). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 30,
-      "match": "0x14b98ec",
-      "severity": "moderate",
-      "text": "core_dfilter_cpp_CFilterFX_process_FUN_0044c4a0(0x014B98EC);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 41,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "core_script_cpp_CScript_process_FUN_004fe5b0(0x01E56DA0);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 54,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSet_PTR_005be368,0x01E56DA0->focus_actor,2);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1e56da0 matches address of g_CScript_01e56da0 (type CScript). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 56,
-      "match": "0x1e56da0",
-      "severity": "moderate",
-      "text": "0x01E56DA0->focus_actor_changed = 0;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x2dd1210 matches address of g_CWater_02dd1210 (type CWater). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 84,
-      "match": "0x2dd1210",
-      "severity": "moderate",
-      "text": "core_water_cpp_CWater_process_FUN_00550860(0x02DD1210);",
-      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",

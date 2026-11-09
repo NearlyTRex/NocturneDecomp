@@ -77,21 +77,21 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
               (&this_ptr->scene_fog,p_Var4,this_ptr->set_file_version);
   }
   _fgets(local_228,0xff,p_Var4);
-  _fscanf(p_Var4,"%f,%f\n",0x02DD1210 + 1,0x02DD1210 + 2);
+  _fscanf(p_Var4,"%f,%f\n",&g_CWaterPtr->water_level_y,&g_CWaterPtr->tile_size);
   _fgets(local_228,0xff,p_Var4);
   _fscanf(p_Var4,"%d,%s\n",&this_ptr->use_enviro_model,this_ptr->enviro_model_name);
   if (this_ptr->set_file_version < 5) {
     iVar10 = _strnicmp(local_128,"ndun",4);
     if (iVar10 == 0) {
-      *0x02DD1210 = 1;
+      g_CWaterPtr->wave_animation_enabled = 1;
     }
     else {
-      *0x02DD1210 = 0;
+      g_CWaterPtr->wave_animation_enabled = 0;
     }
   }
   else {
     _fgets(local_228,0xff,p_Var4);
-    _fscanf(p_Var4,"%d\n",0x02DD1210);
+    _fscanf(p_Var4,"%d\n",g_CWaterPtr);
   }
   if (this_ptr->set_file_version < 6) {
     this_ptr->has_sky = 1;
@@ -356,7 +356,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     else {
       _fclose(p_Var4);
       core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00467890
-                (&g_CDemonRaytrace_01fba938,pcVar3);
+                (&g_CDemonRaytraceInstance,pcVar3);
     }
     core_path_cpp_resetAllPathMaps_FUN_004f1e90();
   }
@@ -411,7 +411,7 @@ LAB_005078c1:
   core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00513610(this_ptr,local_c4);
   if (this_ptr->use_enviro_model != 0) {
     core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650
-              (&g_CKeyFramedModel_01fbacc8,this_ptr->enviro_model_name);
+              (&g_CKeyFramedModelInstance,this_ptr->enviro_model_name);
   }
   iVar10 = 0;
   pCVar5 = this_ptr;

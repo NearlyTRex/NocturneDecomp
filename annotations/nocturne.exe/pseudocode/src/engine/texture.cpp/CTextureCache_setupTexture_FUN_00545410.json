@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 22,
-        "message": "use of undeclared identifier '_DAT_01c02588'; did you mean 'DAT_02DF2588'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 3,
-        "line": 24,
-        "message": "use of undeclared identifier '_DAT_01c0258c'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 235,
@@ -305,23 +287,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CTextureCache_setupTexture_FUN_00545410.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 28,
-          "line": 32,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -354,14 +319,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)g_Hardware32BitPalette + iVar1) = uVar5 | uVar4;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 32,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (g_BitsPerPixel == 0x20) {",
-      "type": "static_identical_inner_condition"
     }
   ]
 }

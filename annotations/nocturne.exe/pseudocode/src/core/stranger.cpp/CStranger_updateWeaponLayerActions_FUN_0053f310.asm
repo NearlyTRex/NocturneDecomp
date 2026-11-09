@@ -35,7 +35,7 @@
 ;   double DOUBLE_00595e0f = 0.990000000000000
 ;   float FLOAT_005a2704 = 10
 ;   float FLOAT_005a2708 = 70
-;   CEditorTools* g_CEditorTools_PTR_005b6d50 = 01bcd074
+;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   CForceFeedback* g_CForceFeedback_PTR_005b9284 = 01c70f74
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   undefined4 g_CDynamiteActorType_01bca088.name_hash
@@ -884,7 +884,7 @@ section .text
     PUSH 0x13ba                         ; 0053fba8
     PUSH EDX                            ; 0053fbad
     PUSH 0x595dde                       ; 0053fbae | = "actionPending = %d\nstranger.cpp line %d"
-    MOV EAX,[0x005b6d50]                ; 0053fbb3 | g_CEditorTools_PTR_005b6d50
+    MOV EAX,[0x005b6d50]                ; 0053fbb3 | g_CEditorToolsPtr
     PUSH EAX                            ; 0053fbb8
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 0053fbb9
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)

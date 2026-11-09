@@ -19,7 +19,7 @@ void __cdecl core_gore_cpp_CGore_reset_FUN_004afdb0(CGore *this_ptr)
   _DAT_01c7ccf0 = 0;
   _DAT_01c9e034 = 0;
   _DAT_01c9e038 = 0;
-  pCVar1 = g_CBloodParticle_ARRAY_01c78cec;
+  pCVar1 = g_BloodParticles;
   do {
     pCVar2 = pCVar1 + 1;
     (pCVar1->base).lifetime_remaining = 0.0;

@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
@@ -120,37 +115,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDrawSurface_drawClippedDashedLine_FUN_0045c050.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 8,
-          "line": 28,
-          "message": "Uninitialized variable: in_stack_00000038",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 8,
-          "line": 29,
-          "message": "Uninitialized variable: in_stack_00000034",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 8,
-          "line": 30,
-          "message": "Uninitialized variable: in_stack_00000030",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
@@ -239,30 +203,6 @@
       "severity": "moderate",
       "text": "(this_ptr,in_stack_0000002c,in_stack_00000030,in_stack_00000034,in_stack_00000038);",
       "type": "stack_param"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000038",
-      "line": 28,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "x2 = in_stack_00000038;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000034",
-      "line": 29,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "y1 = in_stack_00000034;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: in_stack_00000030",
-      "line": 30,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "x1 = in_stack_00000030;",
-      "type": "static_uninitvar"
     }
   ]
 }

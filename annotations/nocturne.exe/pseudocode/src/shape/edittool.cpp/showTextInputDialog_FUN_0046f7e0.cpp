@@ -33,19 +33,18 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0046f7e0(char *dialog_tit
   shape_edittool_cpp_CInputString_init_FUN_0046f0a0(&local_150,source_string,max_length,dialog_mode)
   ;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
-            (g_CEditorTools_PTR_005b6d50,(g_WindowWidth << 2) / 5,_DAT_01bcd9bc,dialog_title,0);
+            (g_CEditorToolsPtr,(g_WindowWidth << 2) / 5,_DAT_01bcd9bc,dialog_title,0);
   iVar2 = INT_005b7630;
   pCVar4 = &local_150;
   INT_005b7630 = 0x7f;
   do {
-    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorToolsPtr);
     shape_edittool_cpp_CInputString_draw_FUN_0046f680(&local_150,g_ClipLeft,g_ClipTop);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar3 != 0) {
       iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(g_CKeys_PTR_005bac64);
       if (iVar3 == 0x1b) {
-        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0
-                  (g_CEditorTools_PTR_005b6d50);
+        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorToolsPtr);
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         INT_005b7630 = iVar2;
         return 0;
@@ -73,7 +72,7 @@ LAB_0046f968:
     *input_buffer = cVar1;
     if (cVar1 == '\0') break;
   }
-  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorToolsPtr);
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   INT_005b7630 = iVar2;
   return 1;

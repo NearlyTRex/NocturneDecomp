@@ -212,8 +212,8 @@ section .text
     LEA EAX,[ESP + 0x134]               ; 0052d233
         ;   Label: LAB_0052d233
     PUSH EAX                            ; 0052d23a
-    MOV ESI,dword ptr [0x005be368]      ; 0052d23b | g_CDemonSet_PTR_005be368
-    PUSH ESI                            ; 0052d241 | g_CDemonSet_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 0052d23b | g_CDemonSetPtr
+    PUSH ESI                            ; 0052d241 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0 ; 0052d242
         ;   XREF to: 0050d1c0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(CDemonSet * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 0052d247
@@ -495,8 +495,8 @@ section .text
         ;   Label: LAB_0052d55e
     PUSH EAX                            ; 0052d562
     PUSH 0x594a56                       ; 0052d563 | = "Can't find wav: %s\n"
-    MOV EDX,dword ptr [0x005ad350]      ; 0052d568 | g_CConsole_PTR_005ad350
-    PUSH EDX                            ; 0052d56e | g_CConsole_0077ad0c
+    MOV EDX,dword ptr [0x005ad350]      ; 0052d568 | g_CConsolePtr
+    PUSH EDX                            ; 0052d56e | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0052d56f
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0052d574

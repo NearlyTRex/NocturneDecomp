@@ -72,10 +72,9 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   if (local_14 != 0) {
     return;
   }
-  core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010
-            (g_CDemonSet_PTR_005be368,this_ptr->num_points);
+  core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(g_CDemonSetPtr,this_ptr->num_points);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-            (g_CDemonSet_PTR_005be368,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
+            (g_CDemonSetPtr,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
              (CVector3i *)&DAT_01cce554,3,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
             (g_CDemonRenderer_PTR_005ae704,local_20);

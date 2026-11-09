@@ -32,7 +32,7 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_0049d870(CGame *this_ptr)
     }
   }
   engine_2d_c_resetGraphicsSystem_FUN_00403760();
-  core_dcamera_cpp_CDemonCamera_init_FUN_00440010(&g_CDemonCamera_01fb8508,g_WindowHeight);
+  core_dcamera_cpp_CDemonCamera_init_FUN_00440010(&g_CDemonCameraInstance,g_WindowHeight);
   if (g_WindowHeight < 0x180) {
     _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
     return;

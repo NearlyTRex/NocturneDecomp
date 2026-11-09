@@ -1,54 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 46,
-        "message": "use of undeclared identifier '_DAT_01bd1d90'; did you mean 'DAT_005c1d90'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 50,
-        "message": "use of undeclared identifier '_DAT_01bd1d8c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 37,
-        "line": 51,
-        "message": "use of undeclared identifier '_DAT_01bd1d8c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 82,
-        "message": "use of undeclared identifier '_DAT_01bcd070'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 84,
-        "message": "use of undeclared identifier '_DAT_01bcd070'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 102,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 86,
     "suspect_count": 1,
     "suspect_types": [
       "warning_overlapping_globals"
     ],
-    "total_lines": 327
+    "total_lines": 326
   },
   "cross_references": [
     {
@@ -138,7 +102,7 @@
     },
     {
       "addr": "005b6d50",
-      "name": "g_CEditorTools_PTR_005b6d50",
+      "name": "g_CEditorToolsPtr",
       "type": "CEditorTools*",
       "value": "01bcd074"
     },
@@ -324,23 +288,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "adjustMouseSensitivity_FUN_004cfbc0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 15,
-          "line": 38,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -349,14 +296,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 38,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (iVar3 < 0x40001) goto LAB_004cfc23;",
-      "type": "static_identical_inner_condition"
     }
   ]
 }

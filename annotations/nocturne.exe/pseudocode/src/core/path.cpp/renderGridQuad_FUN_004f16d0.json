@@ -1,40 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 31,
-        "message": "use of undeclared identifier '_DAT_0058ce27'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 32,
-        "message": "use of undeclared identifier '_DAT_0058ce1f'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 55,
-        "line": 33,
-        "message": "use of undeclared identifier '_DAT_0058ce1f'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 59,
-        "line": 34,
-        "message": "use of undeclared identifier '_DAT_0058ce27'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 74,
-        "line": 38,
-        "message": "use of undeclared identifier '_DAT_0058ce1f'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
@@ -110,25 +74,25 @@
     },
     {
       "addr": "01fba94c",
-      "name": "g_CDemonRaytrace_01fba938.bbox_min.y",
+      "name": "g_CDemonRaytraceInstance.bbox_min.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba96c",
-      "name": "g_CDemonRaytrace_01fba938.adjusted_size.x",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba970",
-      "name": "g_CDemonRaytrace_01fba938.adjusted_size.y",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fba974",
-      "name": "g_CDemonRaytrace_01fba938.adjusted_size.z",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.z",
       "type": "undefined4",
       "value": null
     }
@@ -304,37 +268,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "renderGridQuad_FUN_004f16d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 50,
-          "message": "Return value of function round() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 3,
-          "line": 61,
-          "message": "Return value of function round() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 50,
-          "line": 55,
-          "message": "Uninitialized variable: local_2c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -367,14 +300,6 @@
       "severity": "moderate",
       "text": "local_3c = 0x4f1761;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Uninitialized variable: local_2c",
-      "line": 55,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dVar10 = round((double)((float)(int)local_38 + local_2c));",
-      "type": "static_uninitvar"
     }
   ]
 }

@@ -10,14 +10,14 @@
 ;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c86da
 ;
 ; Referenced Globals:
-;   CPod* g_CPod_PTR_005be1cc = 01e528d0
-;   undefined4 g_CDemonPod_01e528d0.base.vtable
+;   CDemonPod* g_CDemonPodPtr = 01e528d0
+;   undefined4 g_CDemonPodInstance.base.vtable
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x005be1cc]      ; 004f9250 | g_CPod_PTR_005be1cc
+    MOV EDX,dword ptr [0x005be1cc]      ; 004f9250 | g_CDemonPodPtr
         ;   Label: engine_pod.cpp_findFileInPod_FUN_004f9250
     TEST EDX,EDX                        ; 004f9256
     JNZ 0x004f925d                      ; 004f9258
@@ -28,7 +28,7 @@ section .text
         ;   Label: LAB_004f925d
     PUSH ECX                            ; 004f9261
     MOV EAX,EDX                         ; 004f9262
-    MOV EDX,dword ptr [EDX + 0x194]     ; 004f9264 | g_CDemonPod_01e528d0.base.vtable
+    MOV EDX,dword ptr [EDX + 0x194]     ; 004f9264 | g_CDemonPodInstance.base.vtable
     PUSH EAX                            ; 004f926a
     CALL dword ptr [EDX + 0x8]          ; 004f926b
     ADD ESP,0x8                         ; 004f926e

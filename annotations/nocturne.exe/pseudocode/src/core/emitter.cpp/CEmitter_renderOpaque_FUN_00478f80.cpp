@@ -21,8 +21,8 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CEmitter *this_p
   ;
   if (((iVar1 == 0) && (this_ptr->emitter_type == EMITTER_TYPE_LASER)) &&
      (this_ptr->emitter_state != 0)) {
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSet_PTR_005be368,&this_ptr->base);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(g_CDemonSetPtr,&this_ptr->base);
     core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(&local_cc);
     local_cc.laser_type = this_ptr->laser_type;
     local_cc.color.r = (this_ptr->laser_color).r;
@@ -62,7 +62,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_00478f80(CEmitter *this_p
     core_fire_cpp_CFireEffect_traceLaser_FUN_0048b6f0
               (g_CFireEffect_PTR_005b80f0,&(this_ptr->base).location.position,direction,laser_info,
                iVar1);
-    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSet_PTR_005be368);
+    core_setcolid_cpp_CDemonSet_init_FUN_00511750(g_CDemonSetPtr);
     return 1;
   }
   return 0;

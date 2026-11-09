@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
@@ -17,7 +12,7 @@
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
-      "undefined_data"
+      "wrong_global"
     ],
     "total_lines": 101
   },
@@ -101,9 +96,9 @@
     },
     {
       "addr": "005ad51c",
-      "name": "DAT_005ad51c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_GlobalFilters",
+      "type": "CDemonFilter*",
+      "value": "014b8a58"
     },
     {
       "addr": "01cc4800",
@@ -224,23 +219,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonLight_init_FUN_0044e1e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 17,
-          "line": 30,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -251,12 +229,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x005ad53c, +32 bytes).",
       "line": 31,
-      "match": "DAT_005ad51c",
-      "severity": "mild",
-      "text": "(this_ptr,(CDemonFilter *)(&DAT_005ad51c)[(int)ROUND(dVar6)],0,0,iVar4);",
-      "type": "undefined_data"
+      "match": "g_GlobalFilters",
+      "severity": "moderate",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar6)],0,0,iVar4);",
+      "type": "wrong_global"
     },
     {
       "description": "Raw hex address 0x44e269 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
@@ -265,14 +243,6 @@
       "severity": "moderate",
       "text": "iVar4 = 0x44e269;",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 30,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar5 = iVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

@@ -45,14 +45,13 @@ void __cdecl core_sound_cpp_CSound_init_FUN_0052ddf0(CSound *this_ptr)
   sound_sndmain_cpp_pushSfxOptions_FUN_00526340();
   sound_sndmain_cpp_setNextSfxChannel_FUN_005261b0(3);
   _DAT_02dc9c90 =
-       core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSet_PTR_005be368,&DAT_02dc9c68)
-  ;
+       core_sound_cpp_CSound_playSound_FUN_0052ea40(this_ptr,g_CDemonSetPtr,&DAT_02dc9c68);
   sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
-  if (g_CDemonSet_PTR_005be368->player_on_train != 0) {
+  if (g_CDemonSetPtr->player_on_train != 0) {
     if (&stack0x00000000 != &DAT_02dc9d58) {
-      _DAT_02dc9d44 = -(g_CDemonSet_PTR_005be368->active_fog).scroll.x;
-      _DAT_02dc9d48 = -(g_CDemonSet_PTR_005be368->active_fog).scroll.y;
-      _DAT_02dc9d4c = -(g_CDemonSet_PTR_005be368->active_fog).scroll.z;
+      _DAT_02dc9d44 = -(g_CDemonSetPtr->active_fog).scroll.x;
+      _DAT_02dc9d48 = -(g_CDemonSetPtr->active_fog).scroll.y;
+      _DAT_02dc9d4c = -(g_CDemonSetPtr->active_fog).scroll.z;
     }
     _DAT_02dc9d54 = 0xffffffff;
   }

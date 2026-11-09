@@ -24,10 +24,10 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
   float local_18;
   float local_14;
   
-  if (g_CGame_PTR_005b9354->god_mode_enabled != 0) {
+  if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;
   }
-  if (g_CGame_PTR_005b9354->allow_damage_flag == 0) {
+  if (g_CGamePtr->allow_damage_flag == 0) {
     damage_info->damage_amount = 0.0;
   }
   core_hero_cpp_CHero_stopNearbyInteraction_FUN_004b5920(&this_ptr->base);
@@ -40,17 +40,16 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
   if (iVar3 != 0) {
     (this_ptr->base).invincibility_timer = 0.15;
   }
-  pCVar2 = g_CGame_PTR_005b9354;
+  pCVar2 = g_CGamePtr;
   (this_ptr->base).base.hit_points = (this_ptr->base).base.hit_points - damage_info->damage_amount;
-  this_ptr_01 = g_CConsole_PTR_005ad350;
+  this_ptr_01 = g_CConsolePtr;
   if (((pCVar2->auto_use_health != 0) && (0xb < (int)damage_info->damage_type)) &&
      ((this_ptr->base).base.hit_points <= 0.0)) {
     (this_ptr->base).base.hit_points = 0.0;
     engine_console_cpp_CConsole_printf_FUN_0043ac60(this_ptr_01,"Using auto health\n");
     core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(&(this_ptr->base).inventory);
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"hit points: %3.2f\n",
-               (double)(this_ptr->base).base.hit_points);
+              (g_CConsolePtr,"hit points: %3.2f\n",(double)(this_ptr->base).base.hit_points);
   }
   local_28.y = 0.0;
   local_28.z = 1.0;
@@ -124,7 +123,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_0053e860(CStranger *t
           this_ptr->sfx_handle = uVar6;
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670
-                  (g_CGore_PTR_005b96c4,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
+                  (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);
       }
     }
     if (this_ptr->weapon == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor) {
@@ -160,7 +159,7 @@ LAB_0053ec87:
   }
 LAB_0053eb7b:
   if (0.0 < damage_info->damage_amount) {
-    core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(g_CGame_PTR_005b9354);
+    core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004a3a90(g_CGamePtr);
   }
   core_charactr_cpp_CCharacter_processDamage_FUN_00428510((CCharacter *)this_ptr,damage_info);
   return;

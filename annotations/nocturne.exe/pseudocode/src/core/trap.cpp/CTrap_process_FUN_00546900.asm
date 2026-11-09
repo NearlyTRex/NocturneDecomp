@@ -10,8 +10,8 @@
 ; undefined        Stack[-0x34]:1  local_34
 ;
 ; Referenced Globals:
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 g_CDemonSet_01e57284.enemy_count
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 g_CWerewolfActorType_02de078c.name_hash
 ;
 ; Called Functions:
@@ -47,9 +47,9 @@ section .text
     XOR EDI,EDI                         ; 00546932
     CALL dword ptr [EAX + 0x14]         ; 00546934
     ADD ESP,0x8                         ; 00546937
-    MOV EBX,dword ptr [0x005be368]      ; 0054693a | g_CDemonSet_PTR_005be368
+    MOV EBX,dword ptr [0x005be368]      ; 0054693a | g_CDemonSetPtr
         ;   Label: LAB_0054693a
-    CMP EBP,dword ptr [EBX + 0x150bf4]  ; 00546940 | g_CDemonSet_01e57284.enemy_count
+    CMP EBP,dword ptr [EBX + 0x150bf4]  ; 00546940 | g_CDemonSetInstance.enemy_count
     JL 0x00546989                       ; 00546946
         ;   XREF to: 00546989 (CONDITIONAL_JUMP)  ; LAB_00546989
     ADD ESP,0x88                        ; 00546948

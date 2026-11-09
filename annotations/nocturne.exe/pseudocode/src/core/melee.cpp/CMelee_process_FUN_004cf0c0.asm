@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00588473 = 1.15000000000000
-;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
+;   CGore* g_CGorePtr = 01c78c7c
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -79,7 +79,7 @@ section .text
     PUSH 0x2dd1184                      ; 004cf153 | g_ZeroVector
     LEA EAX,[ESP + 0x1c]                ; 004cf158
     PUSH EAX                            ; 004cf15c
-    MOV EDI,dword ptr [0x005b96c4]      ; 004cf15d | g_CGore_PTR_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004cf15d | g_CGorePtr
     PUSH EDI                            ; 004cf163
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004cf164
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)

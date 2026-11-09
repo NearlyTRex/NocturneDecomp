@@ -41,11 +41,11 @@
 ;   double DOUBLE_0057f1ec = 2.5
 ;   undefined4 DAT_005b7650
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 g_CGame_01c775ec.foul_language_flag
+;   CGame* g_CGamePtr = 01c775ec
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   undefined4 g_CGameInstance.foul_language_flag
 ;   int g_LocalHeroIndex
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
@@ -122,8 +122,8 @@ section .text
     TEST EAX,EAX                        ; 0047881c
     JZ 0x00478835                       ; 0047881e
         ;   XREF to: 00478835 (CONDITIONAL_JUMP)  ; LAB_00478835
-    MOV EAX,[0x005b9354]                ; 00478820 | g_CGame_PTR_005b9354
-    MOV EDX,dword ptr [EAX + 0x1c]      ; 00478825 | g_CGame_01c775ec.foul_language_flag
+    MOV EAX,[0x005b9354]                ; 00478820 | g_CGamePtr
+    MOV EDX,dword ptr [EAX + 0x1c]      ; 00478825 | g_CGameInstance.foul_language_flag
     MOV ESI,0x1                         ; 00478828
     TEST EDX,EDX                        ; 0047882d
     JZ 0x004789d2                       ; 0047882f
@@ -199,8 +199,8 @@ section .text
         ;   Label: LAB_00478902
     ADD ESP,0x8                         ; 00478907
     PUSH ESI                            ; 0047890a
-    MOV EDX,dword ptr [0x005be368]      ; 0047890b | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 00478911 | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 0047890b | g_CDemonSetPtr
+    PUSH EDX                            ; 00478911 | g_CDemonSetInstance
     MOV dword ptr [ESI + 0x20],0x0      ; 00478912
     CALL core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0 ; 00478919
         ;   XREF to: 0050a9f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(CDemonSet * this_ptr, CDemonGlobe * globe)
@@ -255,9 +255,9 @@ section .text
     FLD float ptr [EBX + 0x22c]         ; 004789a2
     MOV ESI,0x1                         ; 004789a8
     PUSH EBX                            ; 004789ad
-    MOV ECX,dword ptr [0x005be368]      ; 004789ae | g_CDemonSet_PTR_005be368
+    MOV ECX,dword ptr [0x005be368]      ; 004789ae | g_CDemonSetPtr
     MOV dword ptr [EBX + 0x160],0x1     ; 004789b4
-    PUSH ECX                            ; 004789be | g_CDemonSet_01e57284
+    PUSH ECX                            ; 004789be | g_CDemonSetInstance
     FSTP float ptr [EBX + 0x440]        ; 004789bf
     CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890 ; 004789c5
         ;   XREF to: 00508890 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(CDemonSet * this_ptr, CDemonActor * actor)

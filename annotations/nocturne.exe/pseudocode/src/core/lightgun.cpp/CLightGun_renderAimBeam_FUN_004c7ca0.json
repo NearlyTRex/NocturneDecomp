@@ -1,9 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 304,
@@ -198,37 +193,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CLightGun_renderAimBeam_FUN_004c7ca0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 61,
-          "message": "Uninitialized variable: fStack_2c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 42,
-          "line": 61,
-          "message": "Uninitialized variable: fStack_34",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 66,
-          "line": 61,
-          "message": "Uninitialized variable: fStack_30",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
@@ -253,30 +217,6 @@
       "severity": "moderate",
       "text": "if (&fStack_70 != &fStack_7c) {",
       "type": "self_copy_guard"
-    },
-    {
-      "description": "Uninitialized variable: fStack_2c",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_34",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_30",
-      "line": 61,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = SQRT(fStack_2c * fStack_2c + fStack_34 * fStack_34 + fStack_30 * fStack_30);",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

@@ -1,104 +1,20 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 62,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 63,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 64,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 68,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 69,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 70,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 74,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 75,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 76,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 80,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 81,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 82,
-        "message": "use of undeclared identifier '_DAT_005a0020'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 117,
-        "message": "use of undeclared identifier 'stack0xffffff40'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 323,
-    "complexity_score": 158,
+    "complexity_score": 157,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 112,
     "suspect_count": 3,
     "suspect_types": [
       "stack_ref",
       "suspect_float",
       "warning_overlapping_globals"
     ],
-    "total_lines": 436
+    "total_lines": 435
   },
   "cross_references": [
     {
@@ -204,7 +120,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -216,7 +132,7 @@
     },
     {
       "addr": "01e57284",
-      "name": "g_CDemonSet_01e57284",
+      "name": "g_CDemonSetInstance",
       "type": "CDemonSet",
       "value": null
     }
@@ -554,7 +470,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 110,
+      "line": 109,
       "match": "&stack0xffffff40",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,(SMRGLPrimitivePoly *)&stack0xffffff40);",

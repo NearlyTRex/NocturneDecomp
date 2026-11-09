@@ -29,8 +29,8 @@
 ;   TerminatedCString s_refCount_for_streaming_S_0059302b
 ;   TerminatedCString s_sound_sndmain_cpp_0059304d
 ;   TerminatedCString s_streaming_sample_sfx_ind_00593062
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CConsole g_CConsole_0077ad0c
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CConsole g_CConsoleInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 DAT_02dc8318
@@ -67,8 +67,8 @@ section .text
     PUSH EDX                            ; 0052559b | = "[NULLsamplePtr]"
         ;   Label: LAB_0052559b
     PUSH 0x592fc7                       ; 0052559c | = "Killing sfx %s\n"
-    MOV EAX,[0x005ad350]                ; 005255a1 | g_CConsole_PTR_005ad350
-    PUSH EAX                            ; 005255a6 | g_CConsole_0077ad0c
+    MOV EAX,[0x005ad350]                ; 005255a1 | g_CConsolePtr
+    PUSH EAX                            ; 005255a6 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 005255a7
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005255ac

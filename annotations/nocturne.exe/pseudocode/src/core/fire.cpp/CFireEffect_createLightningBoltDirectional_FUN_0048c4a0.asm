@@ -16,9 +16,9 @@
 ;   core_emitter.cpp_CEmitter_process_FUN_00478790 at 00478e83
 ;
 ; Referenced Globals:
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01c6750c
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_fire.cpp_CLightningBolt_activateDirectional_FUN_00488b50
@@ -72,9 +72,9 @@ section .text
         ;   Label: LAB_0048c506
     PUSH 0x0                            ; 0048c50b
     PUSH 0x0                            ; 0048c50d
-    MOV EAX,[0x005be368]                ; 0048c50f | g_CDemonSet_PTR_005be368
+    MOV EAX,[0x005be368]                ; 0048c50f | g_CDemonSetPtr
     PUSH 0x42c80000                     ; 0048c514
-    PUSH EAX                            ; 0048c519 | g_CDemonSet_01e57284
+    PUSH EAX                            ; 0048c519 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660 ; 0048c51a
         ;   XREF to: 0050e660 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_0050e660(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 0048c51f

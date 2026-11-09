@@ -21,12 +21,12 @@
 ; Referenced Globals:
 ;   float FLOAT_00578015 = 10000
 ;   double DOUBLE_00578019 = -1
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   CDemonSet g_CDemonSet_01e57284
-;   undefined4 g_CDemonSet_01e57284.ground_type
-;   undefined4 g_CDemonCamera_01fb8508.position.x
-;   undefined4 g_CDemonCamera_01fb8508.position.y
-;   undefined4 g_CDemonCamera_01fb8508.position.z
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   CDemonSet g_CDemonSetInstance
+;   undefined4 g_CDemonSetInstance.ground_type
+;   undefined4 g_CDemonCameraInstance.position.x
+;   undefined4 g_CDemonCameraInstance.position.y
+;   undefined4 g_CDemonCameraInstance.position.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -50,19 +50,19 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 0040da03
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0040da08
-    MOV EAX,[0x01fb860c]                ; 0040da0b | g_CDemonCamera_01fb8508.position.x
+    MOV EAX,[0x01fb860c]                ; 0040da0b | g_CDemonCameraInstance.position.x
     FLD float ptr [ESP]                 ; 0040da10
     MOV dword ptr [ESP + 0xc],EAX       ; 0040da13
     MOV EAX,0x1fb860c                   ; 0040da17
     FSUB float ptr [ESP + 0xc]          ; 0040da1c
     FMUL ST0                            ; 0040da20
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0040da22 | g_CDemonCamera_01fb8508.position.y
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0040da22 | g_CDemonCameraInstance.position.y
     FLD float ptr [ESP + 0x4]           ; 0040da25
     MOV dword ptr [ESP + 0x10],EAX      ; 0040da29
     MOV EAX,0x1fb860c                   ; 0040da2d
     FSUB float ptr [ESP + 0x10]         ; 0040da32
     FMUL ST0                            ; 0040da36
-    MOV EAX,dword ptr [EAX + 0x8]       ; 0040da38 | g_CDemonCamera_01fb8508.position.z
+    MOV EAX,dword ptr [EAX + 0x8]       ; 0040da38 | g_CDemonCameraInstance.position.z
     FLD float ptr [ESP + 0x8]           ; 0040da3b
     MOV dword ptr [ESP + 0x14],EAX      ; 0040da3f
     FXCH                                ; 0040da43
@@ -83,16 +83,16 @@ section .text
         ;   Label: LAB_0040da61
     PUSH ESI                            ; 0040da62
     PUSH EBX                            ; 0040da63
-    MOV ECX,dword ptr [0x005be368]      ; 0040da64 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 0040da6a | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 0040da64 | g_CDemonSetPtr
+    PUSH ECX                            ; 0040da6a | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 0040da6b
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040da70
     LEA EAX,[ESP + 0x8]                 ; 0040da73
     PUSH 0x0                            ; 0040da77
     PUSH EAX                            ; 0040da79
-    MOV ESI,dword ptr [0x005be368]      ; 0040da7a | g_CDemonSet_PTR_005be368
-    PUSH ESI                            ; 0040da80 | g_CDemonSet_01e57284
+    MOV ESI,dword ptr [0x005be368]      ; 0040da7a | g_CDemonSetPtr
+    PUSH ESI                            ; 0040da80 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0040da81
         ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x40],EAX      ; 0040da86
@@ -101,17 +101,17 @@ section .text
     LEA EDX,[EBX + 0x20]                ; 0040da91
     PUSH 0x0                            ; 0040da94
     PUSH EDX                            ; 0040da96
-    MOV EAX,[0x005be368]                ; 0040da97 | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 0040da9c | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 0040da97 | g_CDemonSetPtr
+    PUSH EAX                            ; 0040da9c | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x2c]         ; 0040da9d
-    MOV ESI,dword ptr [EAX + 0x14cd4c]  ; 0040daa1 | g_CDemonSet_01e57284.ground_type
+    MOV ESI,dword ptr [EAX + 0x14cd4c]  ; 0040daa1 | g_CDemonSetInstance.ground_type
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 ; 0040daa7
         ;   XREF to: 0050ec80 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x40],EAX      ; 0040daac
     FLD float ptr [ESP + 0x40]          ; 0040dab0
     ADD ESP,0xc                         ; 0040dab4
-    MOV EDI,dword ptr [0x005be368]      ; 0040dab7 | g_CDemonSet_PTR_005be368
-    PUSH EDI                            ; 0040dabd | g_CDemonSet_01e57284
+    MOV EDI,dword ptr [0x005be368]      ; 0040dab7 | g_CDemonSetPtr
+    PUSH EDI                            ; 0040dabd | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x28]         ; 0040dabe
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 0040dac2
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
@@ -124,8 +124,8 @@ section .text
     SAHF                                ; 0040dadc
     JNC 0x0040daeb                      ; 0040dadd
         ;   XREF to: 0040daeb (CONDITIONAL_JUMP)  ; LAB_0040daeb
-    MOV ESI,dword ptr [0x005be368]      ; 0040dadf | g_CDemonSet_PTR_005be368
-    MOV ESI,dword ptr [ESI + 0x14cd4c]  ; 0040dae5 | g_CDemonSet_01e57284.ground_type
+    MOV ESI,dword ptr [0x005be368]      ; 0040dadf | g_CDemonSetPtr
+    MOV ESI,dword ptr [ESI + 0x14cd4c]  ; 0040dae5 | g_CDemonSetInstance.ground_type
     PUSH dword ptr [ESP + 0x48]         ; 0040daeb
         ;   Label: LAB_0040daeb
     PUSH ESI                            ; 0040daef

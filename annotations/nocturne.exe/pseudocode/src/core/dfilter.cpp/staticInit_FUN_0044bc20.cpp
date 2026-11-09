@@ -15,9 +15,9 @@ void __cdecl core_dfilter_cpp_staticInit_FUN_0044bc20(void)
   __arrinit
             (g_CDemonFilter_ARRAY_014b8cb8,4,&g_CDemonFilterTypeInfo_0059ac90);
   _atexit(&g_WatcomStaticDestructorNode_005ad4ec);
-  core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(&g_CFilterCache_014b8de8);
-  _atexit(&g_WatcomStaticDestructorNode_005ad4fc);
-  core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(&g_CFilterFX_014b98ec);
-  _atexit(&g_WatcomStaticDestructorNode_005ad50c);
+  core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(&g_CFilterCacheInstance);
+  _atexit(&g_CFilterCacheDestructorNode);
+  core_dfilter_cpp_CFilterFX_ctor_FUN_0044c2b0(&g_CFilterFXInstance);
+  _atexit(&g_CFilterFXDestructorNode);
   return;
 }

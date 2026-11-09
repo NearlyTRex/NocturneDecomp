@@ -5,7 +5,7 @@
 // =============================================================================
 
 // CConsole
-CConsole g_CConsole_0077ad0c = {};
+CConsole g_CConsoleInstance = {};
 
 // CDemonActorType
 CDemonActorType g_CColonelActorType_0077acd0 = {};

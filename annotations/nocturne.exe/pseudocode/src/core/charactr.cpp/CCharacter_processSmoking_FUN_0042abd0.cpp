@@ -24,7 +24,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter
   CVector3f local_1c;
   
   if ((this_ptr->was_rendered_opaque != 0) &&
-     ((g_CDemonSet_PTR_005be368->active_fog).temperature < (float)32)) {
+     ((g_CDemonSetPtr->active_fog).temperature < (float)32)) {
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660
                        (&(this_ptr->model).base);
     if (pSVar2->state_index == 0) {
@@ -69,8 +69,7 @@ void __cdecl core_charactr_cpp_CCharacter_processSmoking_FUN_0042abd0(CCharacter
                               (this_ptr->model).bone_transform.bone_model_matrices + iVar4);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                     (&this_ptr->base,&local_28,pCVar5);
-          iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50
-                            (g_CDemonSet_PTR_005be368,&local_28);
+          iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(g_CDemonSetPtr,&local_28);
           if (iVar4 == 0) {
             this_ptr->smoke_occluded = (uint)(this_ptr->smoke_occluded == 0);
             return;

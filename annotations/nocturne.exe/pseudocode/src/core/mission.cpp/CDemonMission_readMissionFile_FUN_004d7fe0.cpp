@@ -234,11 +234,11 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
       if (iVar2 < 0) break;
     } while (iVar2 != 10);
   }
-  this_ptr_00 = g_CGore_PTR_005b96c4;
+  this_ptr_00 = g_CGorePtr;
   this_ptr->current_set_index = -1;
   core_gore_cpp_CGore_reset_FUN_004afdb0(this_ptr_00);
   if (6 < this_ptr->mission_version_num) {
-    core_gore_cpp_CGore_load_FUN_004b0820(g_CGore_PTR_005b96c4,(_FILE *)load_flags);
+    core_gore_cpp_CGore_load_FUN_004b0820(g_CGorePtr,(_FILE *)load_flags);
     return;
   }
   return;

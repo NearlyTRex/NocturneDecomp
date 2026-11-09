@@ -21,7 +21,7 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_00540c20(CSuccubus *this_ptr)
   char *model_name;
   
   pCVar1 = &(this_ptr->base).base.model;
-  if (g_CGame_PTR_005b9354->nudity_flag == 0) {
+  if (g_CGamePtr->nudity_flag == 0) {
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(pCVar1,"succubusx.dfm");
     model_name = "hotdemonx.dfm";
   }

@@ -52,9 +52,9 @@
 ;   double DOUBLE_0057cfc6 = 32
 ;   float FLOAT_0059c0d8 = 3
 ;   float FLOAT_0059c0e4 = 8
-;   CConsole* g_CConsole_PTR_005ad350 = 0077ad0c
-;   CGore* g_CGore_PTR_005b96c4 = 01c78c7c
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CConsole* g_CConsolePtr = 0077ad0c
+;   CGore* g_CGorePtr = 01c78c7c
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   ... and 4 more
 ;
@@ -200,8 +200,8 @@ section .text
         ;   XREF to: 004548c8 (CONDITIONAL_JUMP)  ; LAB_004548c8
     MOV EDX,dword ptr [EBX + 0xbca4]    ; 004548b2
     PUSH EDX                            ; 004548b8
-    MOV ECX,dword ptr [0x005be368]      ; 004548b9 | g_CDemonSet_PTR_005be368
-    PUSH ECX                            ; 004548bf | g_CDemonSet_01e57284
+    MOV ECX,dword ptr [0x005be368]      ; 004548b9 | g_CDemonSetPtr
+    PUSH ECX                            ; 004548bf | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 004548c0
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004548c5
@@ -310,8 +310,8 @@ section .text
     ADD ESP,0xc                         ; 004549d8
     PUSH EBX                            ; 004549db
     PUSH 0x57cf51                       ; 004549dc | = "%s confused while walking to scriptDe..."
-    MOV EDI,dword ptr [0x005ad350]      ; 004549e1 | g_CConsole_PTR_005ad350
-    PUSH EDI                            ; 004549e7 | g_CConsole_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 004549e1 | g_CConsolePtr
+    PUSH EDI                            ; 004549e7 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004549e8
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x00454847                      ; 004549ed
@@ -414,7 +414,7 @@ section .text
     PUSH 0x0                            ; 00454af6
     LEA EAX,[EBP + 0x46]                ; 00454af8
     PUSH EAX                            ; 00454afb
-    MOV ESI,dword ptr [0x005b96c4]      ; 00454afc | g_CGore_PTR_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 00454afc | g_CGorePtr
     PUSH ESI                            ; 00454b02
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004b0480 ; 00454b03
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004b0480(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -648,8 +648,8 @@ section .text
     PUSH EBX                            ; 00454d7d
         ;   Label: LAB_00454d7d
     PUSH 0x57cf8d                       ; 00454d7e | = "%s gave up chase - I'm confused\n"
-    MOV EDI,dword ptr [0x005ad350]      ; 00454d83 | g_CConsole_PTR_005ad350
-    PUSH EDI                            ; 00454d89 | g_CConsole_0077ad0c
+    MOV EDI,dword ptr [0x005ad350]      ; 00454d83 | g_CConsolePtr
+    PUSH EDI                            ; 00454d89 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 00454d8a
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00454d8f

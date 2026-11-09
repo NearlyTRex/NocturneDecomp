@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00585130 = 3.625
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CGame* g_CGamePtr = 01c775ec
+;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; *****************************************************************************
 
@@ -20,9 +20,9 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x4]       ; 004af700
         ;   Label: core_gore.cpp_CBloodPool_processAge_FUN_004af700
-    MOV EDX,dword ptr [0x005b9354]      ; 004af704 | g_CGame_PTR_005b9354
+    MOV EDX,dword ptr [0x005b9354]      ; 004af704 | g_CGamePtr
     LEA EAX,[ECX + 0x18]                ; 004af70a
-    FLD float ptr [EDX + 0x264]         ; 004af70d | g_CGame_01c775ec.delta_time_float
+    FLD float ptr [EDX + 0x264]         ; 004af70d | g_CGameInstance.delta_time_float
     FADD float ptr [EAX]                ; 004af713
     FSTP float ptr [EAX]                ; 004af715
     FLD float ptr [ECX + 0x18]          ; 004af717

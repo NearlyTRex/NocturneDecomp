@@ -17,7 +17,7 @@ char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_004fef60(CScript *this
   
   _DAT_01e56418 = 1;
   core_script_cpp_CScript_initRuntime_FUN_004feff0(this_ptr);
-  shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_CPickList_01e56c30);
+  shape_edittool_cpp_CPickList_clear_FUN_00476160(&g_ScriptPickList);
   if (this_ptr->next_cmd < this_ptr->parsed_line_count) {
     do {
       iVar2 = this_ptr->next_cmd;

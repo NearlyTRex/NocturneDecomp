@@ -1,22 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 25,
-        "line": 57,
-        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 25,
-        "line": 58,
-        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 177,
@@ -101,19 +83,19 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa3ff4",
-      "name": "g_CDemonSet_01e57284.actors[0]",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -281,9 +263,9 @@
     {
       "description": "Complex pointer cast",
       "line": 29,
-      "match": "(CHero **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CHero **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "this_ptr_00 = *(CHero **)((int)g_CDemonSet_PTR_005be368->actors + local_1c);",
+      "text": "this_ptr_00 = *(CHero **)((int)g_CDemonSetPtr->actors + local_1c);",
       "type": "pointer_cast"
     }
   ]

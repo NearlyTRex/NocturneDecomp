@@ -75,8 +75,8 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_0053b630(CStranger *
   local_24 = &(this_ptr->base).base.base.location.position;
   local_28 = 4.0;
   local_18 = 0;
-  for (local_1c = 0; local_1c < g_CDemonSet_PTR_005be368->actor_count; local_1c = local_1c + 1) {
-    pCVar8 = *(CDemonActor **)((int)g_CDemonSet_PTR_005be368->actors + local_18);
+  for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
+    pCVar8 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18);
     pCVar3 = (*((pCVar8->vtable)._ub)->getCarrier)(pCVar8);
     if (pCVar3 == (CDemonActor *)0x0) {
       iStack_2c = (*((pCVar8->vtable)._ub)->canPickup)(pCVar8,(CDemonActor *)this_ptr);
@@ -234,7 +234,7 @@ LAB_0053b782:
                 SQRT(fStack_11c * fStack_11c + fStack_124 * fStack_124 + fStack_120 * fStack_120)))
         {
           engine_console_cpp_CConsole_printf_FUN_0043ac60
-                    (g_CConsole_PTR_005ad350,"%s out of reach - canceling pickup\n",
+                    (g_CConsolePtr,"%s out of reach - canceling pickup\n",
                      (this_ptr->base).object_to_pick_up);
           (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
           return 0;
@@ -277,7 +277,7 @@ LAB_0053b782:
     core_main_c_displayErrorAndQuit_FUN_004c8440("Hell froze - invalid pickUpType: %d",iStack_30);
     goto LAB_0053bbf0;
   }
-  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsole_PTR_005ad350,format,pCVar8);
+  engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,format,pCVar8);
 LAB_0053bbf0:
   this_ptr->action_timer = 4.0;
   this_ptr->action_pending = 4;

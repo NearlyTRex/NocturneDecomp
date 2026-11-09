@@ -57,14 +57,14 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
   float local_14;
   
   bVar9 = 0;
-  if (g_CGame_PTR_005b9354->goggles_active == 0) {
-    local_48 = g_CDemonCamera_01fb8508.position.x;
-    local_44 = g_CDemonCamera_01fb8508.position.y;
-    local_40 = g_CDemonCamera_01fb8508.position.z;
+  if (g_CGamePtr->goggles_active == 0) {
+    local_48 = g_CDemonCameraInstance.position.x;
+    local_44 = g_CDemonCameraInstance.position.y;
+    local_40 = g_CDemonCameraInstance.position.z;
     if (&local_cc != &local_48) {
-      local_cc = g_CDemonCamera_01fb8508.position.x;
-      local_c8 = g_CDemonCamera_01fb8508.position.y;
-      local_c4 = g_CDemonCamera_01fb8508.position.z;
+      local_cc = g_CDemonCameraInstance.position.x;
+      local_c8 = g_CDemonCameraInstance.position.y;
+      local_c4 = g_CDemonCameraInstance.position.z;
     }
     local_68 = local_c8 - _DAT_02dc9460;
     local_6c = local_cc - _DAT_02dc945c;
@@ -73,7 +73,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
         (float)0.0001) {
       return;
     }
-    pCVar6 = &g_CDemonCamera_01fb8508.rotation_matrix;
+    pCVar6 = &g_CDemonCameraInstance.rotation_matrix;
     pfVar8 = local_10c;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
       *pfVar8 = pCVar6->m[0].x;
@@ -85,15 +85,15 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
     pfVar8 = (float *)&local_15c;
   }
   else {
-    local_a8 = g_CDemonLight_01c74640.base.position.x;
-    local_a4 = g_CDemonLight_01c74640.base.position.y;
-    local_a0 = g_CDemonLight_01c74640.base.position.z;
+    local_a8 = g_CDemonLightInstance.base.position.x;
+    local_a4 = g_CDemonLightInstance.base.position.y;
+    local_a0 = g_CDemonLightInstance.base.position.z;
     if (&local_cc != &local_a8) {
-      local_cc = g_CDemonLight_01c74640.base.position.x;
-      local_c8 = g_CDemonLight_01c74640.base.position.y;
-      local_c4 = g_CDemonLight_01c74640.base.position.z;
+      local_cc = g_CDemonLightInstance.base.position.x;
+      local_c8 = g_CDemonLightInstance.base.position.y;
+      local_c4 = g_CDemonLightInstance.base.position.z;
     }
-    pCVar6 = &g_CDemonLight_01c74640.base.rotation_matrix;
+    pCVar6 = &g_CDemonLightInstance.base.rotation_matrix;
     pfVar8 = local_134;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
       *pfVar8 = pCVar6->m[0].x;
@@ -128,22 +128,22 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
              (double)local_c0.y,(double)local_c0.z,(double)local_78.x,(double)local_78.y,
              (double)local_78.z);
   _DAT_02dc9468 = 0.0;
-  if (g_CGame_PTR_005b9354->goggles_active == 0) {
+  if (g_CGamePtr->goggles_active == 0) {
     iVar3 = _strnicmp
-                      (g_CDemonSet_PTR_005be368->geometry_filename,"castle",6);
+                      (g_CDemonSetPtr->geometry_filename,"castle",6);
     if (iVar3 == 0) {
       local_1c = 1;
       do {
         iVar3 = 1;
         local_18 = local_1c;
         do {
-          iVar4 = g_CDemonCamera_01fb8508.screen_width * iVar3 >> 0x1f;
-          iVar5 = (int)g_CDemonCamera_01fb8508.max_distance * local_18 >> 0x1f;
+          iVar4 = g_CDemonCameraInstance.screen_width * iVar3 >> 0x1f;
+          iVar5 = (int)g_CDemonCameraInstance.max_distance * local_18 >> 0x1f;
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
-                    (&g_CDemonCamera_01fb8508,
-                     (int)((g_CDemonCamera_01fb8508.screen_width * iVar3 + iVar4 * -0x20) -
+                    (&g_CDemonCameraInstance,
+                     (int)((g_CDemonCameraInstance.screen_width * iVar3 + iVar4 * -0x20) -
                           (uint)(iVar4 << 4 < 0)) >> 5,
-                     (int)(((int)g_CDemonCamera_01fb8508.max_distance * local_18 + iVar5 * -0x20) -
+                     (int)(((int)g_CDemonCameraInstance.max_distance * local_18 + iVar5 * -0x20) -
                           (uint)(iVar5 << 4 < 0)) >> 5,&local_3c);
           local_e4.x = local_3c.x;
           *(uint *)((int)&local_e4 + (uint)bVar9 * -8 + 4) =
@@ -157,7 +157,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
               local_e4.z = 1;
             }
             core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_004411b0
-                      (&g_CDemonCamera_01fb8508,&local_e4,&local_54);
+                      (&g_CDemonCameraInstance,&local_e4,&local_54);
             local_90 = local_54.x;
             local_8c[(uint)bVar9 * -2] = *(int *)((int)&local_54 + (uint)bVar9 * -8 + 4);
             local_8c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
@@ -175,7 +175,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
             }
             local_84.y = (float)local_8c[0] * fVar2 + 1.0;
             local_14 = core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_0050f910
-                                 (g_CDemonSet_PTR_005be368,&local_84);
+                                 (g_CDemonSetPtr,&local_84);
             if ((float)60 < local_14 - local_84.y) {
               local_160 = ((local_14 - local_84.y) + (float)-60) *
                           (float)0.016666666666666701 + local_160;

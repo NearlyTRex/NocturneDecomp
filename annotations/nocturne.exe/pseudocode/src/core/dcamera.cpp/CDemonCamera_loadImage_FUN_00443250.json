@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 130,
-        "message": "use of undeclared identifier 'DAT_00b0daf8'; did you mean 'DAT_005b06f8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 177,
-        "message": "use of undeclared identifier '_DAT_0140d780'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 180,
-        "message": "use of undeclared identifier '_DAT_0140d780'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 200,
-        "message": "use of undeclared identifier 'DAT_0077d250'; did you mean 'DAT_00575250'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 22,
-        "line": 202,
-        "message": "use of undeclared identifier '_DAT_0140d780'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 204,
-        "message": "use of undeclared identifier 'DAT_0077d250'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 212,
-        "message": "use of undeclared identifier '_DAT_0140d780'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 243,
-        "message": "use of undeclared identifier '_DAT_0140d780'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 47,
-        "line": 248,
-        "message": "use of undeclared identifier '_DAT_0140d780'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 263,
-        "message": "use of undeclared identifier 'DAT_00b0daf8'; did you mean 'DAT_005b06f8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 267,
-        "message": "use of undeclared identifier 'DAT_00b0daf8'; did you mean 'DAT_005b06f8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 274,
-        "message": "use of undeclared identifier 'DAT_01410290'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 281,
-        "message": "use of undeclared identifier 'DAT_01410290'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 297,
-        "message": "use of undeclared identifier 'DAT_01410290'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 29,
-        "line": 299,
-        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 309,
-        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 329,
-        "message": "use of undeclared identifier 'DAT_01410290'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 49,
-        "line": 335,
-        "message": "use of undeclared identifier 'DAT_01410290'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 340,
-        "message": "use of undeclared identifier 'DAT_01410290'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
@@ -978,44 +858,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCamera_loadImage_FUN_00443250.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 57,
-          "line": 312,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 27,
-          "line": 410,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 416,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 47,
-          "line": 462,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Overlapping global symbols",
@@ -1046,7 +888,7 @@
       "line": 197,
       "match": "DAT_0077d250",
       "severity": "mild",
-      "text": "(&g_CLZWDecompress_012cdb28,&DAT_0077d250,(int *)&local_9c,",
+      "text": "(&g_CLZWDecompressInstance,&DAT_0077d250,(int *)&local_9c,",
       "type": "undefined_data"
     },
     {
@@ -1408,38 +1250,6 @@
       "severity": "moderate",
       "text": "// 00443913: MOVSD.REP ES:EDI,ESI  ; DAT_00b0daf8 | DAT_00b0dafc",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 312,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "((ulonglong)(uint)((int)uVar4 >> 0x1f) << 0x20 | uVar4 & 0xffffffff) /",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 410,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar18 = iVar15 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 416,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "((int)((iVar21 + (iVar21 >> 0x1f) * -0x100) - (uint)((iVar21 >> 0x1f) << 7 < 0)) >>",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 462,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar15 = ((int)((iVar7 + (iVar7 >> 0x1f) * -0x100) - (uint)((iVar7 >> 0x1f) << 7 < 0))",
-      "type": "static_shift_too_many_bits"
     }
   ]
 }

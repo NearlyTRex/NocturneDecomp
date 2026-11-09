@@ -44,7 +44,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CDemonRaytrace g_CDemonRaytrace_01fba938
+;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   undefined4 g_CSpikeActorType_02dc9e28.name_hash
 ;
 ; Called Functions:
@@ -90,7 +90,7 @@ section .text
     PUSH EDX                            ; 0050ecbf
     PUSH ESI                            ; 0050ecc0
     PUSH EBX                            ; 0050ecc1
-    PUSH 0x1fba938                      ; 0050ecc2 | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 0050ecc2 | g_CDemonRaytraceInstance
     CALL core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580 ; 0050ecc7
         ;   XREF to: 00468580 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)
     MOV dword ptr [ESP + 0x304],EAX     ; 0050eccc
@@ -234,7 +234,7 @@ section .text
     PUSH ESI                            ; 0050ef16
     PUSH dword ptr [ESP + 0x31c]        ; 0050ef17
     PUSH EBX                            ; 0050ef1e
-    PUSH 0x1fba938                      ; 0050ef1f | g_CDemonRaytrace_01fba938
+    PUSH 0x1fba938                      ; 0050ef1f | g_CDemonRaytraceInstance
     CALL core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0 ; 0050ef24
         ;   XREF to: 004687e0 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0(CDemonRaytrace * this_ptr, CVector3f * pos, float radius, int * hit_flag, ...)
     MOV dword ptr [ESP + 0x308],EAX     ; 0050ef29

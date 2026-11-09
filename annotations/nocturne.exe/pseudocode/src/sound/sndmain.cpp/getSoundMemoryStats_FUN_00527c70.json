@@ -1,23 +1,18 @@
 {
-  "compilation_status": {
-    "errors": [],
-    "success": true,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 70,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 53,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 173
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -55,19 +50,19 @@
     },
     {
       "addr": "02dc216c",
-      "name": "g_CSfxSample_ARRAY_02dc1edc[1].taken",
+      "name": "g_SfxSamples[1].taken",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc2170",
-      "name": "g_CSfxSample_ARRAY_02dc1edc[1].ref_count",
+      "name": "g_SfxSamples[1].ref_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc217c",
-      "name": "g_CSfxSample_ARRAY_02dc1edc[1].streaming_buffer_size",
+      "name": "g_SfxSamples[1].streaming_buffer_size",
       "type": "undefined4",
       "value": null
     }
@@ -198,7 +193,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 51,
       "match": "DAT_005bea94",
       "severity": "mild",
       "text": "(iVar2 = DAT_005bea94 - (iVar2 + local_14), *out_available_memory = iVar2, iVar2 < 0)) {",

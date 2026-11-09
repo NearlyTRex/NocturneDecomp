@@ -20,7 +20,7 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(CDoor *this_ptr,CDemonA
     goto LAB_0045663d;
     if (this_ptr->allowed_sides != DOOR_OPEN_SIDES_NEITHER) {
       core_door_cpp_CDoor_onLocked_FUN_00456650(this_ptr);
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,message,5.0);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGamePtr,message,5.0);
       return 0;
     }
   }
@@ -57,7 +57,7 @@ LAB_0045663d:
     }
     if (this_ptr->allowed_sides != DOOR_OPEN_SIDES_NEITHER) {
       core_door_cpp_CDoor_onLocked_FUN_00456650(this_ptr);
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGame_PTR_005b9354,message,5.0);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGamePtr,message,5.0);
     }
   }
   return 0;

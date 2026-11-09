@@ -34,32 +34,30 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
   if (0 < _DAT_01c23d48) {
     iVar1 = 0;
     do {
-      if (*(int *)((int)g_CStake_ARRAY_01c23d50[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) ==
-          0) {
+      if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {
         core_fire_cpp_CStake_render_FUN_004835d0
-                  ((CStake *)
-                   ((int)g_CStake_ARRAY_01c23d50[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
+                  ((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
       }
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x260;
     } while (iVar2 < _DAT_01c23d48);
   }
-  this_ptr_00 = g_CRock_ARRAY_01c5b500;
+  this_ptr_00 = g_RockPool;
   do {
     if (0.0 < (this_ptr_00->base).lifetime_remaining) {
       (*((this_ptr_00->base).vtable)->render)(&this_ptr_00->base);
     }
     this_ptr_00 = this_ptr_00 + 1;
   } while (this_ptr_00 != (CRock *)&DAT_01c5c700);
-  this_ptr_01 = g_CFireball_ARRAY_01c58dfc;
-  core_fire_cpp_CFireball_setupRenderState_FUN_004842a0(g_CFireball_ARRAY_01c58dfc);
+  this_ptr_01 = g_FireballPool;
+  core_fire_cpp_CFireball_setupRenderState_FUN_004842a0(g_FireballPool);
   do {
     if (0.0 < (this_ptr_01->base).lifetime_remaining) {
       (*((this_ptr_01->base).vtable)->render)(&this_ptr_01->base);
     }
     this_ptr_01 = this_ptr_01 + 1;
   } while (this_ptr_01 != (CFireball *)&DAT_01c5b4fc);
-  this_ptr_02 = g_CShell_ARRAY_01c684e0;
+  this_ptr_02 = g_ShellPool;
   do {
     (*((this_ptr_02->base).vtable)->render)(&this_ptr_02->base);
     this_ptr_02 = this_ptr_02 + 1;
@@ -68,7 +66,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
   ;
   if (iVar2 == 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
-              (g_CDemonSet_PTR_005be368,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
+              (g_CDemonSetPtr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,
                (CVector3f *)0x0,(CMatrix3x3f *)0x0);
     iVar2 = 0;
     core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(g_CBulletHole_ARRAY_01c20148);
@@ -107,15 +105,15 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
         this_ptr_15 = this_ptr_15 + 1;
       } while (iVar2 < _DAT_01c5c700);
     }
-    this_ptr_05 = g_CSpark_ARRAY_01c49d54;
-    core_fire_cpp_CSpark_setupRenderState_FUN_004837a0(g_CSpark_ARRAY_01c49d54);
+    this_ptr_05 = g_SparkPool;
+    core_fire_cpp_CSpark_setupRenderState_FUN_004837a0(g_SparkPool);
     do {
       if (0.0 < (this_ptr_05->base).lifetime_remaining) {
         (*((this_ptr_05->base).vtable)->render)(&this_ptr_05->base);
       }
       this_ptr_05 = this_ptr_05 + 1;
     } while (this_ptr_05 != (CSpark *)&DAT_01c4e954);
-    this_ptr_06 = g_CGlassParticle_ARRAY_01c4f08c;
+    this_ptr_06 = g_GlassParticlePool;
     do {
       if (0.0 < (this_ptr_06->base).lifetime_remaining) {
         (*((this_ptr_06->base).vtable)->render)(&this_ptr_06->base);
@@ -134,7 +132,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
       core_fire_cpp_CExplosion_render_FUN_00486fe0(this_ptr_08);
       this_ptr_08 = this_ptr_08 + 1;
     } while (this_ptr_08 != (CExplosion *)&DAT_01c5d820);
-    this_ptr_09 = g_CToss_ARRAY_01c5d824;
+    this_ptr_09 = g_TossPool;
     do {
       core_fire_cpp_CToss_render_FUN_00487630(this_ptr_09);
       this_ptr_09 = this_ptr_09 + 1;
@@ -154,20 +152,20 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
       core_fire_cpp_CTrail_render_FUN_00489360(this_ptr_12);
       this_ptr_12 = this_ptr_12 + 1;
     } while (this_ptr_12 != (CTrail *)&DAT_01c684dc);
-    this_ptr_13 = g_CPopcorn_ARRAY_01c69614;
+    this_ptr_13 = g_PopcornPool;
     do {
       if (0.0 < (this_ptr_13->base).lifetime_remaining) {
         (*((this_ptr_13->base).vtable)->render)(&this_ptr_13->base);
       }
       this_ptr_13 = this_ptr_13 + 1;
     } while (&this_ptr_13->base != (CParticle *)&DAT_01c6ce14);
-    this_ptr_14 = g_CRainDrop_ARRAY_01c6ce18;
+    this_ptr_14 = g_RainDropPool;
     do {
       if (0.0 < (this_ptr_14->base).lifetime_remaining) {
         (*((this_ptr_14->base).vtable)->render)(&this_ptr_14->base);
       }
       this_ptr_14 = this_ptr_14 + 1;
-    } while (this_ptr_14 != g_CRainDrop_ARRAY_01c6ce18 + sizeof(g_CRainDrop_ARRAY_01c6ce18) / sizeof(g_CRainDrop_ARRAY_01c6ce18[0]));
+    } while (this_ptr_14 != g_RainDropPool + sizeof(g_RainDropPool) / sizeof(g_RainDropPool[0]));
   }
   return;
 }

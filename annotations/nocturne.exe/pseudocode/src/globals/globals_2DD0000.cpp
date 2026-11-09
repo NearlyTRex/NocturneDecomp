@@ -25,7 +25,7 @@ CVector3f g_CVector3f_ARRAY_02dd9268[100] = {};
 CVector3f g_CVector3f_ARRAY_02ddfa28[200] = {};
 
 // CWater
-CWater g_CWater_02dd1210 = {};
+CWater g_CWaterInstance = {};
 
 // CWeather
 CWeather g_CWeather_02ddf9f0 = {};

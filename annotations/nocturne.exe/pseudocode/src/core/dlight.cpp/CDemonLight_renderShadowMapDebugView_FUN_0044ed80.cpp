@@ -64,7 +64,7 @@ LAB_0044eea7:
           }
         }
       }
-      if (g_CGame_PTR_005b9354->camera_debug_enabled != 0) {
+      if (g_CGamePtr->camera_debug_enabled != 0) {
         engine_2d_c_drawTextCenteredXYColor_FUN_00402d30
                   (screen_x,screen_x + display_size,screen_y + display_size + -0xb,(char *)this_ptr)
         ;

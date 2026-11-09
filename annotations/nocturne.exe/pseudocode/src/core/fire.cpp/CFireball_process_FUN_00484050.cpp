@@ -52,7 +52,7 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00484050(CFireball *this_ptr)
     (this_ptr->light_globe).intensity.bytes[0] =
          (uchar)((int)(((iVar3 >> 8) + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2);
     core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0044cde0(this_ptr_00,8.0);
-    this_ptr_02 = g_CDemonSet_PTR_005be368;
+    this_ptr_02 = g_CDemonSetPtr;
     (this_ptr->light_globe).corona_mode = 0;
     core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0050a9f0(this_ptr_02,this_ptr_00);
     iVar3 = this_ptr->spawn_timer + _DAT_01bd1d80;
@@ -91,8 +91,8 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_00484050(CFireball *this_ptr)
   iVar4 = 0;
   iVar3 = 0;
   while( true ) {
-    if (g_CDemonSet_PTR_005be368->character_count <= iVar3) break;
-    iVar1 = *(int *)((int)g_CDemonSet_PTR_005be368->characters + iVar4);
+    if (g_CDemonSetPtr->character_count <= iVar3) break;
+    iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
     core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&SStack_54);
     SStack_54.damage_amount = local_18;
     iVar4 = iVar4 + 4;

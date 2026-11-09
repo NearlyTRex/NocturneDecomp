@@ -46,8 +46,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   local_5c.z = 72.0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,&local_5c);
-  pCVar1 = g_CDemonSet_PTR_005be368;
-  g_CDemonSet_PTR_005be368->rendering_mode = 1;
+  pCVar1 = g_CDemonSetPtr;
+  g_CDemonSetPtr->rendering_mode = 1;
   (pCVar1->light_direction).x = -37000;
   (pCVar1->light_direction).y = -37000;
   (pCVar1->light_direction).z = 37000;
@@ -55,8 +55,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   core_set_cpp_CDemonSet_setFlatColor_FUN_0050e340(pCVar1,0x10000,0x10000,0x10000);
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
             (&this_ptr->moon,0,(CKeyFramedModelInstance *)0x0,0x205);
-  pCVar1 = g_CDemonSet_PTR_005be368;
-  (g_CDemonSet_PTR_005be368->light_direction).x = -0x4844;
+  pCVar1 = g_CDemonSetPtr;
+  (g_CDemonSetPtr->light_direction).x = -0x4844;
   (pCVar1->light_direction).y = -0x4844;
   iVar4 = DAT_005bb210;
   (pCVar1->light_direction).z = 0x4844;
@@ -66,8 +66,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
     do {
       if (0.0 <= *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4)) {
         core_course_cpp_CCourse_evaluate_FUN_0043b800
-                  (g_CCourse_ARRAY_01ccdec8 +
-                   *(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4),
+                  (g_MoonBatCourses + *(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4),
                    *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4),&local_44,
                    &local_50);
         local_44.x = local_44.x + *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.x + iVar4)
@@ -87,12 +86,11 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
                                              ));
         local_14 = (int)ROUND(dVar7);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00453040
-                  (&g_CKeyFramedModel_01cce1bc,local_14,(CKeyFramedModelInstance *)0x0,render_flags)
-        ;
+                  (&g_MoonBatModel,local_14,(CKeyFramedModelInstance *)0x0,render_flags);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
-        pCVar1 = g_CDemonSet_PTR_005be368;
-        local_14 = g_CCourse_ARRAY_01ccdec8
-                   [*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].len;
+        pCVar1 = g_CDemonSetPtr;
+        local_14 = g_MoonBatCourses[*(int *)((int)&g_SBat_ARRAY_01ccdeec[0].course_index + iVar4)].
+                   len;
         local_18 = *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) /
                    (float)local_14;
         local_38 = (double)local_18;
@@ -110,12 +108,12 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
       iVar4 = iVar4 + 0x18;
     } while (iVar4 != 0x2d0);
   }
-  g_CDemonSet_PTR_005be368->rendering_mode = 0;
-  engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(&g_CAlphaBitmap_01ccdc50);
-  pcVar2 = g_CAlphaBitmap_01ccdc50.raw;
+  g_CDemonSetPtr->rendering_mode = 0;
+  engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(&g_MoonCloudTexture);
+  pcVar2 = g_MoonCloudTexture.raw;
   local_30 = _DAT_01ccdebc >> 0x10;
   local_24 = _DAT_01ccdec0 >> 0x10;
-  local_2c = g_CAlphaBitmap_01ccdc50.raw;
+  local_2c = g_MoonCloudTexture.raw;
   local_28 = 0;
   do {
     local_20 = g_ScreenBufferArray[local_28];
@@ -146,8 +144,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   if (0x1d < local_1c) {
     local_1c = 0;
   }
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710
-            (g_CAlphaBitmap_ARRAY_01ccdc64 + local_1c,0,0,48000);
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(g_MoonAnimTextures + local_1c,0,0,48000);
   engine_3d_c_setBlendMode_FUN_004083c0(0);
   return;
 }

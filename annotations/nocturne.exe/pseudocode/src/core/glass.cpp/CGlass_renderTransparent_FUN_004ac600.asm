@@ -11,10 +11,10 @@
 ; Referenced Globals:
 ;   undefined4 DAT_0059e390
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
+;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01c038f4
-;   CDemonSet g_CDemonSet_01e57284
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -121,8 +121,8 @@ section .text
         ;   Label: LAB_004ac6e0
     MOV ESI,dword ptr [EBP + 0xb2c]     ; 004ac6e1
     PUSH ESI                            ; 004ac6e7
-    MOV EAX,[0x005be368]                ; 004ac6e8 | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 004ac6ed | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004ac6e8 | g_CDemonSetPtr
+    PUSH EAX                            ; 004ac6ed | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200 ; 004ac6ee
         ;   XREF to: 0050c200 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0050c200(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,0xffff                      ; 004ac6f3
@@ -147,8 +147,8 @@ section .text
     PUSH EBX                            ; 004ac731
     MOV ESI,dword ptr [EBP + 0xb2c]     ; 004ac732
     PUSH ESI                            ; 004ac738
-    MOV EAX,[0x005be368]                ; 004ac739 | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 004ac73e | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004ac739 | g_CDemonSetPtr
+    PUSH EAX                            ; 004ac73e | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0 ; 004ac73f
         ;   XREF to: 0050c2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0(CDemonSet * this_ptr, int vertex_count, int tri_count, void * face_data, ...)
     XOR ESI,ESI                         ; 004ac744

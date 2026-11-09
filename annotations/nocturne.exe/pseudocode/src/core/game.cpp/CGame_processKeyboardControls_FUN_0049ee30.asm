@@ -28,11 +28,11 @@
 ;   float FLOAT_00582a0a = -0.25
 ;   float FLOAT_00582a0e = 0.1000000
 ;   double DOUBLE_00582a12 = 0.200000000000000
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_005be220
-;   CDemonSet* g_CDemonSet_PTR_005be368 = 01e57284
-;   undefined4 g_CGame_01c775ec.delta_time_float
+;   CScript* g_CScriptPtr = 01e56da0
+;   CDemonSet* g_CDemonSetPtr = 01e57284
+;   undefined4 g_CGameInstance.delta_time_float
 ;   int g_LocalHeroIndex
 ;   ... and 5 more
 ;
@@ -73,8 +73,8 @@ section .text
     SAHF                                ; 0049ee73
     JBE 0x0049ee9c                      ; 0049ee74
         ;   XREF to: 0049ee9c (CONDITIONAL_JUMP)  ; LAB_0049ee9c
-    MOV EAX,[0x005b9354]                ; 0049ee76 | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049ee7b | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049ee76 | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049ee7b | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005829ea]         ; 0049ee81 | FLOAT_005829ea
     FSUBR float ptr [EDX]               ; 0049ee87
     FST float ptr [EDX]                 ; 0049ee89
@@ -101,8 +101,8 @@ section .text
     SAHF                                ; 0049eecc
     JBE 0x0049eef5                      ; 0049eecd
         ;   XREF to: 0049eef5 (CONDITIONAL_JUMP)  ; LAB_0049eef5
-    MOV EAX,[0x005b9354]                ; 0049eecf | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049eed4 | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049eecf | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049eed4 | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005829ea]         ; 0049eeda | FLOAT_005829ea
     FSUBR float ptr [EDX]               ; 0049eee0
     FST float ptr [EDX]                 ; 0049eee2
@@ -112,9 +112,9 @@ section .text
     JNC 0x0049eef5                      ; 0049eeed
         ;   XREF to: 0049eef5 (CONDITIONAL_JUMP)  ; LAB_0049eef5
     MOV dword ptr [EDX],0xbf800000      ; 0049eeef
-    MOV EAX,[0x005b9354]                ; 0049eef5 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 0049eef5 | g_CGamePtr
         ;   Label: LAB_0049eef5
-    FLD float ptr [EAX + 0x264]         ; 0049eefa | g_CGame_01c775ec.delta_time_float
+    FLD float ptr [EAX + 0x264]         ; 0049eefa | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005829f2]         ; 0049ef00 | FLOAT_005829f2
     FDIV float ptr [0x005829f6]         ; 0049ef06 | FLOAT_005829f6
     FLDZ                                ; 0049ef0c
@@ -161,8 +161,8 @@ section .text
     SAHF                                ; 0049ef7f
     JBE 0x0049efac                      ; 0049ef80
         ;   XREF to: 0049efac (CONDITIONAL_JUMP)  ; LAB_0049efac
-    MOV EAX,[0x005b9354]                ; 0049ef82 | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049ef87 | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049ef82 | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049ef87 | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005829f2]         ; 0049ef8d | FLOAT_005829f2
     FDIV float ptr [ESP + 0x8]          ; 0049ef93
     FSUBR float ptr [EDX]               ; 0049ef97
@@ -519,20 +519,20 @@ section .text
     JZ 0x0049f6de                       ; 0049f38a
         ;   XREF to: 0049f6de (CONDITIONAL_JUMP)  ; LAB_0049f6de
     MOV dword ptr [EBX + 0x240],0x0     ; 0049f390
-    MOV EDX,dword ptr [0x005be220]      ; 0049f39a | DAT_005be220
+    MOV EDX,dword ptr [0x005be220]      ; 0049f39a | g_CScriptPtr
         ;   Label: LAB_0049f39a
     PUSH 0x1                            ; 0049f3a0
-    MOV EBP,dword ptr [EDX + 0xc]       ; 0049f3a2 | g_CScript_01e56da0.focus_actor
+    MOV EBP,dword ptr [EDX + 0xc]       ; 0049f3a2 | g_CScriptInstance.focus_actor
     PUSH EBP                            ; 0049f3a5
-    MOV EAX,[0x005be368]                ; 0049f3a6 | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 0049f3ab | g_CDemonSet_01e57284
-    MOV EBX,dword ptr [EAX + 0x15aabc]  ; 0049f3ac | g_CDemonSet_01e57284.selected_camera_index
+    MOV EAX,[0x005be368]                ; 0049f3a6 | g_CDemonSetPtr
+    PUSH EAX                            ; 0049f3ab | g_CDemonSetInstance
+    MOV EBX,dword ptr [EAX + 0x15aabc]  ; 0049f3ac | g_CDemonSetInstance.selected_camera_index
     CALL core_setdir.cpp_CDemonSet_FUN_005125a0 ; 0049f3b2
         ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005125a0(CDemonSet * this_ptr, CDemonActor * param_2, int param_3)
-    MOV EAX,[0x005be220]                ; 0049f3b7 | DAT_005be220
-    MOV dword ptr [EAX + 0x10],0x0      ; 0049f3bc | g_CScript_01e56da0.focus_actor_changed
-    MOV EAX,[0x005be368]                ; 0049f3c3 | g_CDemonSet_PTR_005be368 | g_CDemonSet_01e57284
-    MOV EDX,dword ptr [EAX + 0x15aabc]  ; 0049f3c8 | g_CDemonSet_01e57284.selected_camera_index
+    MOV EAX,[0x005be220]                ; 0049f3b7 | g_CScriptPtr
+    MOV dword ptr [EAX + 0x10],0x0      ; 0049f3bc | g_CScriptInstance.focus_actor_changed
+    MOV EAX,[0x005be368]                ; 0049f3c3 | g_CDemonSetPtr | g_CDemonSetInstance
+    MOV EDX,dword ptr [EAX + 0x15aabc]  ; 0049f3c8 | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0xc                         ; 0049f3ce
     CMP EBX,EDX                         ; 0049f3d1
     JZ 0x0049f6f3                       ; 0049f3d3
@@ -566,8 +566,8 @@ section .text
     CMP dword ptr [EDX],0x3f800000      ; 0049f419
     JGE 0x0049ee9c                      ; 0049f41f
         ;   XREF to: 0049ee9c (CONDITIONAL_JUMP)  ; LAB_0049ee9c
-    MOV EAX,[0x005b9354]                ; 0049f425 | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049f42a | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049f425 | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049f42a | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005829ea]         ; 0049f430 | FLOAT_005829ea
     FADD float ptr [EDX]                ; 0049f436
     FSTP float ptr [EDX]                ; 0049f438
@@ -584,8 +584,8 @@ section .text
     CMP dword ptr [EDX],0x3f800000      ; 0049f45e
     JGE 0x0049eef5                      ; 0049f464
         ;   XREF to: 0049eef5 (CONDITIONAL_JUMP)  ; LAB_0049eef5
-    MOV EAX,[0x005b9354]                ; 0049f46a | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049f46f | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049f46a | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049f46f | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005829ea]         ; 0049f475 | FLOAT_005829ea
     FADD float ptr [EDX]                ; 0049f47b
     FSTP float ptr [EDX]                ; 0049f47d
@@ -630,8 +630,8 @@ section .text
     SAHF                                ; 0049f4f3
     JBE 0x0049ef39                      ; 0049f4f4
         ;   XREF to: 0049ef39 (CONDITIONAL_JUMP)  ; LAB_0049ef39
-    MOV EAX,[0x005b9354]                ; 0049f4fa | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049f4ff | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049f4fa | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049f4ff | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005829f2]         ; 0049f505 | FLOAT_005829f2
     FDIV float ptr [ESP + 0x10]         ; 0049f50b
     FSUBR float ptr [EDX]               ; 0049f50f
@@ -649,8 +649,8 @@ section .text
     CMP byte ptr [EAX + 0x1c02598],0x0  ; 0049f530
     JNZ 0x0049f4bd                      ; 0049f537
         ;   XREF to: 0049f4bd (CONDITIONAL_JUMP)  ; LAB_0049f4bd
-    MOV EAX,[0x005b9354]                ; 0049f539 | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049f53e | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049f539 | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049f53e | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005829f2]         ; 0049f544 | FLOAT_005829f2
     FDIV float ptr [0x005829f6]         ; 0049f54a | FLOAT_005829f6
     FLDZ                                ; 0049f550
@@ -673,8 +673,8 @@ section .text
     CMP dword ptr [EDX],0x3e800000      ; 0049f57a
     JGE 0x0049ef39                      ; 0049f580
         ;   XREF to: 0049ef39 (CONDITIONAL_JUMP)  ; LAB_0049ef39
-    MOV EAX,[0x005b9354]                ; 0049f586 | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049f58b | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049f586 | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049f58b | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005829f2]         ; 0049f591 | FLOAT_005829f2
     FDIV float ptr [ESP + 0x10]         ; 0049f597
     FADD float ptr [EDX]                ; 0049f59b
@@ -703,8 +703,8 @@ section .text
     CMP byte ptr [EAX + 0x1c02598],0x0  ; 0049f5d5
     JNZ 0x0049ef49                      ; 0049f5dc
         ;   XREF to: 0049ef49 (CONDITIONAL_JUMP)  ; LAB_0049ef49
-    MOV EAX,[0x005b9354]                ; 0049f5e2 | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049f5e7 | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049f5e2 | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049f5e7 | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005829f2]         ; 0049f5ed | FLOAT_005829f2
     FDIV float ptr [0x00582a0e]         ; 0049f5f3 | FLOAT_00582a0e
     FLDZ                                ; 0049f5f9
@@ -736,8 +736,8 @@ section .text
     CMP dword ptr [EDX],0x3e800000      ; 0049f63a
     JGE 0x0049efac                      ; 0049f640
         ;   XREF to: 0049efac (CONDITIONAL_JUMP)  ; LAB_0049efac
-    MOV EAX,[0x005b9354]                ; 0049f646 | g_CGame_PTR_005b9354
-    FLD float ptr [EAX + 0x264]         ; 0049f64b | g_CGame_01c775ec.delta_time_float
+    MOV EAX,[0x005b9354]                ; 0049f646 | g_CGamePtr
+    FLD float ptr [EAX + 0x264]         ; 0049f64b | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005829f2]         ; 0049f651 | FLOAT_005829f2
     FDIV float ptr [ESP + 0x8]          ; 0049f657
     FADD float ptr [EDX]                ; 0049f65b
@@ -799,7 +799,7 @@ section .text
     RET                                 ; 0049f6f2
     PUSH EDX                            ; 0049f6f3
         ;   Label: LAB_0049f6f3
-    PUSH EAX                            ; 0049f6f4 | g_CDemonSet_01e57284
+    PUSH EAX                            ; 0049f6f4 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 ; 0049f6f5
         ;   XREF to: 005088f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_005088f0(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 0049f6fa

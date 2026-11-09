@@ -110,12 +110,12 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CChain *this_pt
         CStack_6c.y = (int)ROUND((pSVar5->position).y * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((pSVar5->position).z * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,0,2);
+                  (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,0,2);
         CStack_6c.x = (int)ROUND((pSVar4->position).x * _DAT_0059b220);
         CStack_6c.y = (int)ROUND((pSVar4->position).y * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((pSVar4->position).z * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,2,2);
+                  (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,2,2);
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
                   (g_CDemonRenderer_PTR_005ae704,&SStack_b8);
         CStack_30.x = (int)ROUND((pSVar5->position).x * _DAT_0059b220);
@@ -167,12 +167,12 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_0042c4c0(CChain *this_pt
         CStack_6c.y = (int)ROUND((pSVar5->position).y * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((pSVar5->position).z * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,0,2);
+                  (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,0,2);
         CStack_6c.x = (int)ROUND((pSVar4->position).x * _DAT_0059b220);
         CStack_6c.y = (int)ROUND((pSVar4->position).y * _DAT_0059b220);
         CStack_6c.z = (int)ROUND((pSVar4->position).z * _DAT_0059b220);
         core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-                  (g_CDemonSet_PTR_005be368,&CStack_6c,(CVector3i *)0x0,2,2);
+                  (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,2,2);
         pSVar5 = pSVar5 + 1;
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
                   (g_CDemonRenderer_PTR_005ae704,&SStack_b8);

@@ -1,43 +1,13 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 21,
-        "line": 141,
-        "message": "cannot cast from type 'float' to pointer type 'CVehicle *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 19,
-        "line": 187,
-        "message": "cannot cast from type 'float' to pointer type 'CVehicle *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 213,
-        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 218,
-        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 405,
+    "complexity_score": 404,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 285,
+    "pseudocode_lines": 284,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
@@ -45,7 +15,7 @@
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 967
+    "total_lines": 966
   },
   "cross_references": [],
   "function": {
@@ -240,7 +210,7 @@
     },
     {
       "addr": "005be368",
-      "name": "g_CDemonSet_PTR_005be368",
+      "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "01e57284"
     },
@@ -276,31 +246,31 @@
     },
     {
       "addr": "01fa3ff0",
-      "name": "g_CDemonSet_01e57284.actor_count",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f34",
-      "name": "g_CDemonSet_01e57284.character_count",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f38",
-      "name": "g_CDemonSet_01e57284.characters[0]",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa5f3c",
-      "name": "g_CDemonSet_01e57284.characters[1]",
+      "name": "g_CDemonSetInstance.characters[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fa7e78",
-      "name": "g_CDemonSet_01e57284.enemy_count",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -554,17 +524,17 @@
     {
       "description": "Complex pointer cast",
       "line": 130,
-      "match": "(CCharacter **)((int)g_CDemonSet_PTR_005be368",
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar7 = *(CCharacter **)((int)g_CDemonSet_PTR_005be368->characters + iStack_18);",
+      "text": "pCVar7 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
-      "match": "(CDemonActor **)((int)g_CDemonSet_PTR_005be368",
+      "line": 176,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSet_PTR_005be368->enemies + iVar16),",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),",
       "type": "pointer_cast"
     },
     {
@@ -585,7 +555,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 243,
+      "line": 242,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr_01->base).base.base.location.position.x = (this_ptr->base).location.position.x;",
@@ -593,7 +563,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 250,
+      "line": 249,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar2->vec).x = (pUVar1->vec).x;",
@@ -601,7 +571,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 254,
+      "line": 253,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
@@ -609,7 +579,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 261,
+      "line": 260,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pUVar2->vec).x = (pUVar1->vec).x;",

@@ -23,7 +23,7 @@ extern CDemonActorType g_CEnemyActorType_01bcdebc;
 extern CDemonTriangle g_CDemonTriangle_ARRAY_01bc9ec8[8];
 
 // CEditorTools
-extern CEditorTools g_CEditorTools_01bcd074;
+extern CEditorTools g_CEditorToolsInstance;
 
 // CVector3f
 extern CVector3f g_CVector3f_01bca0c4;

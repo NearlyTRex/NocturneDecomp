@@ -311,8 +311,8 @@ section .text
         ;   XREF to: 004a9433 (CONDITIONAL_JUMP)  ; LAB_004a9433
     MOV EAX,dword ptr [EBX + 0xbca4]    ; 004a941d
     PUSH EAX                            ; 004a9423
-    MOV EDX,dword ptr [0x005be368]      ; 004a9424 | g_CDemonSet_PTR_005be368
-    PUSH EDX                            ; 004a942a | g_CDemonSet_01e57284
+    MOV EDX,dword ptr [0x005be368]      ; 004a9424 | g_CDemonSetPtr
+    PUSH EDX                            ; 004a942a | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 004a942b
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004a9430
@@ -752,7 +752,7 @@ section .text
     PUSH 0x0                            ; 004a9965
     LEA EAX,[EBP + 0xffffff22]          ; 004a9967
     PUSH EAX                            ; 004a996d
-    MOV ECX,dword ptr [0x005b96c4]      ; 004a996e | g_CGore_PTR_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 004a996e | g_CGorePtr
     PUSH ECX                            ; 004a9974
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004a9975
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -843,7 +843,7 @@ section .text
     PUSH 0x0                            ; 004a9a5d
     LEA EAX,[EBP + 0xfffffeb6]          ; 004a9a5f
     PUSH EAX                            ; 004a9a65
-    MOV ESI,dword ptr [0x005b96c4]      ; 004a9a66 | g_CGore_PTR_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004a9a66 | g_CGorePtr
     PUSH ESI                            ; 004a9a6c
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004a9a6d
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -892,7 +892,7 @@ section .text
     PUSH 0x0                            ; 004a9ae8
     LEA EAX,[EBP + 0xfffffe62]          ; 004a9aea
     PUSH EAX                            ; 004a9af0
-    MOV ESI,dword ptr [0x005b96c4]      ; 004a9af1 | g_CGore_PTR_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004a9af1 | g_CGorePtr
     PUSH ESI                            ; 004a9af7
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004a9af8
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -941,7 +941,7 @@ section .text
     PUSH 0x0                            ; 004a9b73
     LEA EAX,[EBP + 0xffffff2e]          ; 004a9b75
     PUSH EAX                            ; 004a9b7b
-    MOV ESI,dword ptr [0x005b96c4]      ; 004a9b7c | g_CGore_PTR_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004a9b7c | g_CGorePtr
     PUSH ESI                            ; 004a9b82
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004a9b83
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
@@ -1018,8 +1018,8 @@ section .text
     PUSH EBX                            ; 004a9c24
     MOV EAX,0x584c8d                    ; 004a9c25 | = "%s confused while walking to scriptDe..."
     PUSH EAX                            ; 004a9c2a | = "%s confused while walking to scriptDe..."
-    MOV ECX,dword ptr [0x005ad350]      ; 004a9c2b | g_CConsole_PTR_005ad350
-    PUSH ECX                            ; 004a9c31 | g_CConsole_0077ad0c
+    MOV ECX,dword ptr [0x005ad350]      ; 004a9c2b | g_CConsolePtr
+    PUSH ECX                            ; 004a9c31 | g_CConsoleInstance
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 004a9c32
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     JMP 0x004a93a9                      ; 004a9c37
@@ -1068,7 +1068,7 @@ section .text
     PUSH 0x0                            ; 004a9c90
     LEA EAX,[EBP + -0x7e]               ; 004a9c92
     PUSH EAX                            ; 004a9c95
-    MOV EDX,dword ptr [0x005b96c4]      ; 004a9c96 | g_CGore_PTR_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 004a9c96 | g_CGorePtr
     PUSH EDX                            ; 004a9c9c
     CALL core_gore.cpp_CGore_createBloodPool_FUN_004b0480 ; 004a9c9d
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createBloodPool_FUN_004b0480(CGore * this_ptr, CVector3f * position, int blood_type)
@@ -1258,16 +1258,16 @@ section .text
         ;   Label: LAB_004a9ee7
     FILD dword ptr [EBP + 0x76]         ; 004a9eea
     FMUL double ptr [0x00584d95]        ; 004a9eed | DOUBLE_00584d95
-    MOV ECX,dword ptr [0x005be368]      ; 004a9ef3 | g_CDemonSet_PTR_005be368
+    MOV ECX,dword ptr [0x005be368]      ; 004a9ef3 | g_CDemonSetPtr
     FMUL double ptr [0x00584d7d]        ; 004a9ef9 | DOUBLE_00584d7d
-    PUSH ECX                            ; 004a9eff | g_CDemonSet_01e57284
+    PUSH ECX                            ; 004a9eff | g_CDemonSetInstance
     FSTP float ptr [EBP + 0x22]         ; 004a9f00
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004a9f03
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004a9f08
     PUSH EBX                            ; 004a9f0b
-    MOV EAX,[0x005be368]                ; 004a9f0c | g_CDemonSet_PTR_005be368
-    PUSH EAX                            ; 004a9f11 | g_CDemonSet_01e57284
+    MOV EAX,[0x005be368]                ; 004a9f0c | g_CDemonSetPtr
+    PUSH EAX                            ; 004a9f11 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_00511780 ; 004a9f12
         ;   XREF to: 00511780 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_00511780(CDemonSet * this_ptr, CDemonActor * actor)
     FLD float ptr [EBP + 0x22]          ; 004a9f17
@@ -1297,16 +1297,16 @@ section .text
     SUB ESP,0x4                         ; 004a9f5e
     FSTP float ptr [ESP]                ; 004a9f61
     PUSH dword ptr [EBX + 0x28]         ; 004a9f64
-    MOV EDX,dword ptr [0x005be368]      ; 004a9f67 | g_CDemonSet_PTR_005be368
+    MOV EDX,dword ptr [0x005be368]      ; 004a9f67 | g_CDemonSetPtr
     PUSH dword ptr [EBX + 0x20]         ; 004a9f6d
-    PUSH EDX                            ; 004a9f70 | g_CDemonSet_01e57284
+    PUSH EDX                            ; 004a9f70 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40 ; 004a9f71
         ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00510a40(CDemonSet * this_ptr, float start_x, float start_z, float dir_x, ...)
-    MOV ECX,dword ptr [0x005be368]      ; 004a9f76 | g_CDemonSet_PTR_005be368
+    MOV ECX,dword ptr [0x005be368]      ; 004a9f76 | g_CDemonSetPtr
     MOV dword ptr [EBP + 0x76],EAX      ; 004a9f7c
     ADD ESP,0x20                        ; 004a9f7f
     FLD float ptr [EBP + 0x76]          ; 004a9f82
-    PUSH ECX                            ; 004a9f85 | g_CDemonSet_01e57284
+    PUSH ECX                            ; 004a9f85 | g_CDemonSetInstance
     FSTP float ptr [EBP + 0x1e]         ; 004a9f86
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00511750 ; 004a9f89
         ;   XREF to: 00511750 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00511750(CDemonSet * this_ptr)
@@ -2048,9 +2048,9 @@ section .text
         ;   Label: LAB_004aa823
     JNZ 0x004aa846                      ; 004aa826
         ;   XREF to: 004aa846 (CONDITIONAL_JUMP)  ; LAB_004aa846
-    MOV EAX,[0x005b9354]                ; 004aa828 | g_CGame_PTR_005b9354
+    MOV EAX,[0x005b9354]                ; 004aa828 | g_CGamePtr
     MOV dword ptr [EBX + 0xbd34],0xe    ; 004aa82d
-    MOV dword ptr [EAX + 0x220],0x1     ; 004aa837 | g_CGame_01c775ec.player_hit_flag
+    MOV dword ptr [EAX + 0x220],0x1     ; 004aa837 | g_CGameInstance.player_hit_flag
     JMP 0x004aa6a3                      ; 004aa841
         ;   XREF to: 004aa6a3 (UNCONDITIONAL_JUMP)  ; LAB_004aa6a3
     PUSH 0x3f000000                     ; 004aa846
@@ -2063,8 +2063,8 @@ section .text
     AND EAX,0xff                        ; 004aa858
     ADD EAX,0xd                         ; 004aa85d
     MOV dword ptr [EBX + 0xbd34],EAX    ; 004aa860
-    MOV EAX,[0x005b9354]                ; 004aa866 | g_CGame_PTR_005b9354
-    MOV dword ptr [EAX + 0x220],0x1     ; 004aa86b | g_CGame_01c775ec.player_hit_flag
+    MOV EAX,[0x005b9354]                ; 004aa866 | g_CGamePtr
+    MOV dword ptr [EAX + 0x220],0x1     ; 004aa86b | g_CGameInstance.player_hit_flag
     JMP 0x004aa6a3                      ; 004aa875
         ;   XREF to: 004aa6a3 (UNCONDITIONAL_JUMP)  ; LAB_004aa6a3
     MOV EAX,dword ptr [EBX + 0xbca4]    ; 004aa87a

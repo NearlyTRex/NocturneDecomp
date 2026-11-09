@@ -34,7 +34,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(CDemonSet *this_p
   }
   out_intersection_point = &this_ptr->voxel_hit_point;
   local_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-                       (&g_CDemonRaytrace_01fba938,ray_origin,ray_target,out_intersection_point,
+                       (&g_CDemonRaytraceInstance,ray_origin,ray_target,out_intersection_point,
                         &this_ptr->voxel_surface_type);
   this_ptr->voxel_distance = local_14;
   if (&this_ptr->collision_normal != out_intersection_point) {

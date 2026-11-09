@@ -9,42 +9,8 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 304
-  Functions flagged by multiple tools: 3
+  Functions with static analysis data: 0
+  Functions flagged by multiple tools: 0
 
-  Clang-Tidy (quick):
-    Files analyzed:      10
-    Files with findings: 10
-    Total diagnostics:   14
-
-  Cppcheck (quick):
-    Files analyzed:      297
-    Files with findings: 297
-    Total diagnostics:   878
-
-====================================================================================================
-TOP FINDINGS - Clang-Tidy (quick)
-====================================================================================================
-
-  bugprone-integer-division                                   9  [likely decompiler artifact]
-  cert-flp30-c                                                5
-
-====================================================================================================
-TOP FINDINGS - Cppcheck (quick)
-====================================================================================================
-
-  uninitvar                                                 369  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                    200  [likely decompiler artifact]
-  legacyUninitvar                                            83
-  ignoredReturnValue                                         57
-  wrongPrintfScanfArgNum                                     41
-  invalidscanf                                               41
-  objectIndex                                                25
-  invalidPointerCast                                         11
-  nullPointerRedundantCheck                                  10
-  nullPointer                                                 9
-  shiftNegativeLHS                                            7
-  identicalInnerCondition                                     5
-  pointerOutOfBounds                                          4
-  arrayIndexOutOfBoundsCond                                   4
-  invalidScanfArgType_int                                     3
+  No static analysis results found.
+  Run static analysis tools first (see static_analysis.py).

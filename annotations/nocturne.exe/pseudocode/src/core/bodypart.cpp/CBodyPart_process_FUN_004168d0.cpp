@@ -77,8 +77,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_004168d0(CBodyPart *this_pt
           local_54.wielder = &this_ptr->base;
           local_c = local_54.damage_amount;
           core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_00511880
-                    (g_CDemonSet_PTR_005be368,&local_18,&(this_ptr->base).location.position,
-                     &local_54);
+                    (g_CDemonSetPtr,&local_18,&(this_ptr->base).location.position,&local_54);
           core_bodypart_cpp_CBodyPart_processFires_FUN_00416b00(this_ptr,delta_time);
           return;
         }

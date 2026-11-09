@@ -27,7 +27,7 @@ void __cdecl core_event_cpp_CEventList_process_FUN_0047aa50(CEventList *this_ptr
     pSVar3 = (SEventNameBlock *)*pacVar8;
     *(uint *)*pacVar8 = *(uint *)*(char (*) [32])pCVar7;
   }
-  for (iVar5 = 0; pCVar4 = g_CGame_PTR_005b9354, iVar5 != 0; iVar5 = iVar5 + -1) {
+  for (iVar5 = 0; pCVar4 = g_CGamePtr, iVar5 != 0; iVar5 = iVar5 + -1) {
     (*pacVar8)[0] = (*(char (*) [32])pCVar7)[0];
     pCVar7 = (CEventList *)(*(char (*) [32])pCVar7 + 1);
     pacVar8 = (char (*) [32])(*pacVar8 + 1);

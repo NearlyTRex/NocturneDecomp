@@ -25,7 +25,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *t
   
   if (actor == (CDemonActor *)0x0) {
     engine_console_cpp_CConsole_printf_FUN_0043ac60
-              (g_CConsole_PTR_005ad350,"%s tried to follow NULL actor!\n",this_ptr);
+              (g_CConsolePtr,"%s tried to follow NULL actor!\n",this_ptr);
     *out_state = 3;
     return;
   }
@@ -36,7 +36,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *t
     if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))
        || ((float)40 < ABS(local_50.z))) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60
-                (g_CConsole_PTR_005ad350,"%s confused while following %s\n",this_ptr,actor);
+                (g_CConsolePtr,"%s confused while following %s\n",this_ptr,actor);
       *out_state = 3;
       return;
     }
@@ -69,7 +69,7 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_00428780(CCharacter *t
                         (this_ptr,&(actor->location).position,path_map,&direction->f,fVar3,fVar4);
       if (iVar2 < 0) {
         engine_console_cpp_CConsole_printf_FUN_0043ac60
-                  (g_CConsole_PTR_005ad350,"%s confused after pathmap call while following %s\n",this_ptr,actor);
+                  (g_CConsolePtr,"%s confused after pathmap call while following %s\n",this_ptr,actor);
         *out_state = 3;
         return;
       }

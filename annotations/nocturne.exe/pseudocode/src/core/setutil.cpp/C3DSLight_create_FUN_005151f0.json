@@ -1,34 +1,15 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 22,
-        "message": "use of undeclared identifier 'operator_new'; did you mean 'operator'?"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 55,
-        "message": "no matching function for call to 'core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 136,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "raw_address_constant",
       "shadow_pointer_walk",
       "unrolled_memcpy",
       "unrolled_strcpy"
@@ -102,9 +83,9 @@
     },
     {
       "addr": "005ad54c",
-      "name": "DAT_005ad54c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "014b8de8"
     },
     {
       "addr": "01cc4800",
@@ -192,14 +173,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Raw hex literal 0x14b8de8 matches address of g_CFilterCache_014b8de8 (type CFilterCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 49,
-      "match": "0x14b8de8",
-      "severity": "moderate",
-      "text": "(0x014B8DE8,*filter_name,this_ptr->blend_filter);",
-      "type": "raw_address_constant"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 57,

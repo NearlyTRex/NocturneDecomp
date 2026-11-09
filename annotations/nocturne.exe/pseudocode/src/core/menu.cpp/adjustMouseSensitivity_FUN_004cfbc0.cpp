@@ -22,9 +22,8 @@ void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(int *sensitivity_
   
   iVar3 = g_WindowWidth * 3 >> 0x1f;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80
-            (g_CEditorTools_PTR_005b6d50,
-             (int)((g_WindowWidth * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2,0x2c,window_title
-             ,0);
+            (g_CEditorToolsPtr,(int)((g_WindowWidth * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2
+             ,0x2c,window_title,0);
   iVar3 = *sensitivity_value_ptr;
   if (iVar3 < 0x4000) {
     *sensitivity_value_ptr = 0x4000;
@@ -46,7 +45,7 @@ LAB_004cfc23:
              _DAT_01bd1d90);
   pCVar6 = (CKeys *)0x0;
   do {
-    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorTools_PTR_005b6d50);
+    shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorToolsPtr);
     if (_DAT_01bd1d8c != pCVar6) {
       iVar3 = (int)(((longlong)(int)_DAT_01bd1d8c * 0x3c000) / (longlong)(g_WindowWidth + -1)) +
               0x4000;
@@ -93,6 +92,6 @@ LAB_004cfc23:
                              (g_CKeys_PTR_005bac64,DIM_LBUTTON), iVar1 == 0));
   *sensitivity_value_ptr = iVar3;
 LAB_004cfdf5:
-  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorTools_PTR_005b6d50);
+  shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0(g_CEditorToolsPtr);
   return;
 }

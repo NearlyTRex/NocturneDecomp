@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c74a
 ;   TerminatedCString s_CNetGame_applySimFrameHi_0058c75e
-;   CGame* g_CGame_PTR_005b9354 = 01c775ec
+;   CGame* g_CGamePtr = 01c775ec
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -40,7 +40,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x4]       ; 004ed999
     MOV dword ptr [EBP + 0x16c],EAX     ; 004ed99c
     MOV EAX,dword ptr [ESP + 0x18]      ; 004ed9a2
-    MOV ESI,dword ptr [0x005b9354]      ; 004ed9a6 | g_CGame_PTR_005b9354
+    MOV ESI,dword ptr [0x005b9354]      ; 004ed9a6 | g_CGamePtr
     PUSH dword ptr [EAX + 0x8]          ; 004ed9ac
     PUSH ESI                            ; 004ed9af
     CALL core_game.cpp_CGame_slamDT_FUN_004a5f00 ; 004ed9b0

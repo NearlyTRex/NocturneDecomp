@@ -1,124 +1,4 @@
 {
-  "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 58,
-        "message": "use of undeclared identifier '_DAT_01cea3f8'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 135,
-        "message": "use of undeclared identifier '_DAT_01cea3fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 149,
-        "message": "use of undeclared identifier '_DAT_01cea404'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 156,
-        "message": "use of undeclared identifier '_DAT_01cea3fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 188,
-        "message": "use of undeclared identifier '_DAT_01cea3f8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 36,
-        "line": 197,
-        "message": "use of undeclared identifier '_DAT_01cea3f8'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 202,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 211,
-        "message": "use of undeclared identifier '_DAT_01cea40c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 213,
-        "message": "use of undeclared identifier '_DAT_01cea40c'; did you mean 'DAT_01cc4808'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 87,
-        "line": 226,
-        "message": "use of undeclared identifier '_DAT_01d06610'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 229,
-        "message": "use of undeclared identifier '_DAT_01d06610'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 231,
-        "message": "use of undeclared identifier 'DAT_01d06618'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 232,
-        "message": "use of undeclared identifier 'DAT_01d0661c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 253,
-        "message": "use of undeclared identifier '_DAT_01cea400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 254,
-        "message": "use of undeclared identifier '_DAT_01cea400'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 16,
-        "line": 310,
-        "message": "use of undeclared identifier '_DAT_01cea404'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 9,
-        "line": 315,
-        "message": "use of undeclared identifier '_DAT_01cea404'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 319,
-        "message": "use of undeclared identifier '_DAT_01cea404'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 81,
-        "line": 348,
-        "message": "use of undeclared identifier 'DAT_02dd10c4'"
-      }
-    ],
-    "success": false,
-    "warnings": []
-  },
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1085,
@@ -707,23 +587,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CNetGame_processPacket_FUN_004ea830.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "objectIndex",
-          "column": 17,
-          "line": 119,
-          "message": "The address of local variable 'uStack_77' might be accessed at non-zero index.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
     {
       "description": "Unreachable code block removed",
@@ -916,14 +779,6 @@
       "severity": "moderate",
       "text": "// 004eb321: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "The address of local variable 'uStack_77' might be accessed at non-zero index.",
-      "line": 119,
-      "match": "Cppcheck: pointer-to-object indexed past bounds",
-      "severity": "moderate",
-      "text": "(&uStack_77)[(uint)bVar10 * -2] = *(uint *)&source_addr[-(uint)bVar10].port;",
-      "type": "static_object_index"
     }
   ]
 }

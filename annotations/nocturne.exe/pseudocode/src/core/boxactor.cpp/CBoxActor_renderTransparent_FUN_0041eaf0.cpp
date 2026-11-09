@@ -27,14 +27,14 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041eaf0(CBoxActor
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
             (g_CDemonRenderer_PTR_005ae704,0xffff);
   if (this_ptr->dont_use_normals != 0) {
-    g_CDemonSet_PTR_005be368->disable_directional_lighting = 1;
+    g_CDemonSetPtr->disable_directional_lighting = 1;
   }
   if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&this_ptr->model,this_ptr->anim_frame,-1);
   }
   if (this_ptr->dont_use_normals != 0) {
-    g_CDemonSet_PTR_005be368->disable_directional_lighting = 0;
+    g_CDemonSetPtr->disable_directional_lighting = 0;
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0((CDemonRenderer *)PTR_DAT_005ae700);
   return iVar2;
