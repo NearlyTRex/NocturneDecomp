@@ -29,12 +29,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
     if (this_ptr->shadow_pass_active == 0) {
       g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
       g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
-      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58;
     }
     else {
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = PREPROCESS_NONE;
-      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
               (this_ptr,(poly->base).base.count,g_VertexIndexBuffer);

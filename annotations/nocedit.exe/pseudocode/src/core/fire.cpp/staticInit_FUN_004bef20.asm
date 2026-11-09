@@ -155,7 +155,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004bf0ba
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004bf0bf
-    PUSH 0x67a380                       ; 004bf0c2 | g_CFireEffectTossesDestructorNodes
+    PUSH 0x67a380                       ; 004bf0c2 | g_CFireEffectTossesDestructorNode
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004bf0c7
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004bf0cc
@@ -165,7 +165,7 @@ section .text
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 004bf0db
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004bf0e0
-    PUSH 0x67a390                       ; 004bf0e3 | g_CFireEffectCratersDestructorNodes
+    PUSH 0x67a390                       ; 004bf0e3 | g_CFireEffectCratersDestructorNode
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 004bf0e8
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004bf0ed

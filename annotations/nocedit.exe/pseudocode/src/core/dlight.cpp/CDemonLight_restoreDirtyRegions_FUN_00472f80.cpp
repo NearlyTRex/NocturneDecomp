@@ -132,7 +132,7 @@ LAB_004730f9:
             piVar2 = (int *)((int)g_DirtySpanEnds + iVar1);
             iVar1 = iVar1 + 4;
             iVar3 = iVar3 + 1;
-            core_dstrender_cpp_memcpyMMX_FUN_00492001
+            core_dstrendr_cpp_memcpyMMX_FUN_00492001
                       (this_ptr->shadow_depth_buffer + iVar5,
                        (void *)((int)this_ptr->master_zbuffer + iVar5 * 2),
                        (*piVar2 - *piVar1) * 2 + 2);

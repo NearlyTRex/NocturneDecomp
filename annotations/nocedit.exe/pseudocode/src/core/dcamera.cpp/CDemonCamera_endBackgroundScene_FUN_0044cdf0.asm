@@ -30,7 +30,7 @@
 ;   ... and 9 more
 ;
 ; Called Functions:
-;   core_dstrender.cpp_memcpyMMX_FUN_00492001
+;   core_dstrendr.cpp_memcpyMMX_FUN_00492001
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_special.cpp_masterZBuffer_FUN_005b7d00
 ;
@@ -116,8 +116,8 @@ section .text
     ADD EDI,0x4                         ; 0044cedd
     PUSH EDX                            ; 0044cee0
     INC ESI                             ; 0044cee1
-    CALL core_dstrender.cpp_memcpyMMX_FUN_00492001 ; 0044cee2
-        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
+    CALL core_dstrendr.cpp_memcpyMMX_FUN_00492001 ; 0044cee2
+        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
     MOV EAX,dword ptr [EBP + 0x148]     ; 0044cee7
     ADD ESP,0xc                         ; 0044ceed
     CMP ESI,EAX                         ; 0044cef0

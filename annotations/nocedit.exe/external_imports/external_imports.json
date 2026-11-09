@@ -1078,6 +1078,13 @@
     "type":"Function"
   },
   {
+    "addr":"0021220a",
+    "importable":true,
+    "lib":"KERNEL32.DLL",
+    "name":"SetUnhandledExceptionFilter",
+    "type":"Function"
+  },
+  {
     "addr":"00212228",
     "importable":true,
     "lib":"KERNEL32.DLL",
@@ -1123,15 +1130,8 @@
     "addr":"0021227a",
     "importable":true,
     "lib":"KERNEL32.DLL",
-    "name":"SetUnhandledExceptionFilter",
-    "type":"Function"
-  },
-  {
-    "addr":"0021227a",
-    "importable":true,
-    "lib":"KERNEL32.DLL",
     "name":"UnhandledExceptionFilter",
-    "type":"Label"
+    "type":"Function"
   },
   {
     "addr":"00212296",
@@ -1193,14 +1193,7 @@
     "addr":"80000001",
     "importable":true,
     "lib":"DSOUND.DLL",
-    "name":"DirectSoundCreate",
-    "type":"Function"
-  },
-  {
-    "addr":"80000001",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"accept",
+    "name":"Ordinal_1",
     "type":"Function"
   },
   {
@@ -1214,25 +1207,11 @@
     "addr":"80000002",
     "importable":true,
     "lib":"DSOUND.DLL",
-    "name":"DirectSoundEnumerateA",
+    "name":"Ordinal_2",
     "type":"Function"
   },
   {
     "addr":"80000002",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"connect",
-    "type":"Function"
-  },
-  {
-    "addr":"80000002",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"connect",
-    "type":"Function"
-  },
-  {
-    "addr":"80000003",
     "importable":true,
     "lib":"WSOCK32.DLL",
     "name":"bind",
@@ -1242,21 +1221,14 @@
     "addr":"80000003",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"bind",
+    "name":"Ordinal_3",
     "type":"Function"
   },
   {
     "addr":"80000004",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"closesocket",
-    "type":"Function"
-  },
-  {
-    "addr":"80000006",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"getsockname",
+    "name":"connect",
     "type":"Function"
   },
   {
@@ -1270,63 +1242,56 @@
     "addr":"80000009",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"getservbyport",
+    "name":"Ordinal_9",
     "type":"Function"
   },
   {
     "addr":"8000000c",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"getpeername",
+    "name":"ioctlsocket",
     "type":"Function"
   },
   {
     "addr":"8000000d",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"htons",
+    "name":"listen",
     "type":"Function"
   },
   {
     "addr":"8000000f",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"gethostbyname",
+    "name":"Ordinal_15",
     "type":"Function"
   },
   {
     "addr":"80000010",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"gethostname",
+    "name":"Ordinal_16",
     "type":"Function"
   },
   {
     "addr":"80000011",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"htonl",
+    "name":"Ordinal_17",
     "type":"Function"
   },
   {
     "addr":"80000013",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"inet_addr",
+    "name":"Ordinal_19",
     "type":"Function"
   },
   {
     "addr":"80000014",
     "importable":true,
     "lib":"WSOCK32.DLL",
-    "name":"ioctlsocket",
-    "type":"Function"
-  },
-  {
-    "addr":"80000014",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"ioctlsocket",
+    "name":"Ordinal_20",
     "type":"Function"
   },
   {
@@ -1337,20 +1302,6 @@
     "type":"Function"
   },
   {
-    "addr":"80000015",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"listen",
-    "type":"Function"
-  },
-  {
-    "addr":"80000015",
-    "importable":true,
-    "lib":"WSOCK32.DLL",
-    "name":"listen",
-    "type":"Function"
-  },
-  {
     "addr":"80000017",
     "importable":true,
     "lib":"WSOCK32.DLL",
@@ -1358,21 +1309,147 @@
     "type":"Function"
   },
   {
-    "addr":"80000017",
+    "addr":"80000073",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"Ordinal_115",
+    "type":"Function"
+  },
+  {
+    "addr":"80000074",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"Ordinal_116",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"DSOUND.DLL",
+    "name":"DirectSoundCreate",
+    "type":"Label"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"DSOUND.DLL",
+    "name":"DirectSoundEnumerateA",
+    "type":"Label"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"accept",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"connect",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"bind",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"closesocket",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"getsockname",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"getservbyport",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"getpeername",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"htons",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"gethostbyname",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"gethostname",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"htonl",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"inet_addr",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"ioctlsocket",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
+    "importable":true,
+    "lib":"WSOCK32.DLL",
+    "name":"listen",
+    "type":"Function"
+  },
+  {
+    "addr":"None",
     "importable":true,
     "lib":"WSOCK32.DLL",
     "name":"ntohs",
     "type":"Function"
   },
   {
-    "addr":"80000073",
+    "addr":"None",
     "importable":true,
     "lib":"WSOCK32.DLL",
     "name":"WSACleanup",
     "type":"Function"
   },
   {
-    "addr":"80000074",
+    "addr":"None",
     "importable":true,
     "lib":"WSOCK32.DLL",
     "name":"WSAStartup",

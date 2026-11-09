@@ -1,0 +1,850 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 589,
+    "complexity_score": 350,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 56,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 350,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 939
+  },
+  "cross_references": [
+    {
+      "addr": "0048ac40",
+      "from_addr": "0048ad6b",
+      "name": "engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00490ec0",
+    "address_range": [
+      [
+        "00490ec0",
+        "0049169c"
+      ]
+    ],
+    "convention": "__edi_esi_ebx",
+    "name": "core_dstrendr.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0",
+    "signature": "void __edi_esi_ebx core_dstrendr_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00672370",
+      "name": "g_PerspectiveLeftU",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672374",
+      "name": "g_PerspectiveLeftV",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672378",
+      "name": "g_PerspectiveLeftZ",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "0067237c",
+      "name": "g_PerspectiveLeftW",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672380",
+      "name": "g_PerspectiveInterpolatedW",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672384",
+      "name": "g_PerspectiveRightW",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672388",
+      "name": "g_PerspectiveRightU",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "0067238c",
+      "name": "g_PerspectiveRightV",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672390",
+      "name": "g_PerspectiveRightZ",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672394",
+      "name": "g_PerspectiveSubdivDeltaU",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00672398",
+      "name": "g_PerspectiveSubdivDeltaV",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "0067239c",
+      "name": "g_PerspectiveSubdivDeltaZ",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723a0",
+      "name": "g_PerspectiveCurrentU",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723a4",
+      "name": "g_PerspectiveCurrentV",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723a8",
+      "name": "g_PerspectiveNextU",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723ac",
+      "name": "g_PerspectiveNextV",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723d0",
+      "name": "g_PerspectiveScanlineColorPtr",
+      "type": "void*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006723d4",
+      "name": "g_PerspectiveScanlinePixelCount",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723d8",
+      "name": "g_PerspectiveScanlineZPtr",
+      "type": "uint*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006723dc",
+      "name": "g_PerspectiveColorCache",
+      "type": "uint[640]",
+      "value": null
+    },
+    {
+      "addr": "006723e0",
+      "name": "g_PerspectiveColorCache[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006723e4",
+      "name": "g_PerspectiveColorCache[2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006723e8",
+      "name": "g_PerspectiveColorCache[3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006723ec",
+      "name": "g_PerspectiveColorCache[4]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006723f0",
+      "name": "g_PerspectiveColorCache[5]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006723f4",
+      "name": "g_PerspectiveColorCache[6]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006723f8",
+      "name": "g_PerspectiveColorCache[7]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006723fc",
+      "name": "g_PerspectiveColorCache[8]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672400",
+      "name": "g_PerspectiveColorCache[9]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672404",
+      "name": "g_PerspectiveColorCache[10]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672408",
+      "name": "g_PerspectiveColorCache[11]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067240c",
+      "name": "g_PerspectiveColorCache[12]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672410",
+      "name": "g_PerspectiveColorCache[13]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672414",
+      "name": "g_PerspectiveColorCache[14]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672418",
+      "name": "g_PerspectiveColorCache[15]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067241c",
+      "name": "g_PerspectiveColorCache[16]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672420",
+      "name": "g_PerspectiveColorCache[17]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672424",
+      "name": "g_PerspectiveColorCache[18]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672428",
+      "name": "g_PerspectiveColorCache[19]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067242c",
+      "name": "g_PerspectiveColorCache[20]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672430",
+      "name": "g_PerspectiveColorCache[21]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672434",
+      "name": "g_PerspectiveColorCache[22]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672438",
+      "name": "g_PerspectiveColorCache[23]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067243c",
+      "name": "g_PerspectiveColorCache[24]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672440",
+      "name": "g_PerspectiveColorCache[25]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672444",
+      "name": "g_PerspectiveColorCache[26]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672448",
+      "name": "g_PerspectiveColorCache[27]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067244c",
+      "name": "g_PerspectiveColorCache[28]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672450",
+      "name": "g_PerspectiveColorCache[29]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672454",
+      "name": "g_PerspectiveColorCache[30]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00672458",
+      "name": "g_PerspectiveColorCache[31]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1200]",
+      "value": null
+    },
+    {
+      "addr": "02d01924",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "02d02584",
+      "name": "g_ReciprocalLookupTable[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e80",
+      "name": "g_CurrentTextureData",
+      "type": "uchar*",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.9851576994434135,
+    "instruction_count": 539,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 145,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CBRANCH": 33,
+      "COPY": 327,
+      "INT_ADD": 221,
+      "INT_AND": 688,
+      "INT_CARRY": 114,
+      "INT_EQUAL": 395,
+      "INT_LEFT": 40,
+      "INT_LESS": 38,
+      "INT_MULT": 44,
+      "INT_NOTEQUAL": 84,
+      "INT_OR": 148,
+      "INT_RIGHT": 10,
+      "INT_SBORROW": 38,
+      "INT_SCARRY": 114,
+      "INT_SDIV": 6,
+      "INT_SEXT": 27,
+      "INT_SLESS": 219,
+      "INT_SREM": 6,
+      "INT_SRIGHT": 20,
+      "INT_SUB": 78,
+      "INT_XOR": 17,
+      "INT_ZEXT": 44,
+      "LOAD": 101,
+      "POPCOUNT": 183,
+      "RETURN": 1,
+      "STORE": 53,
+      "SUBPIECE": 28
+    },
+    "pcode_op_count": 3226
+  },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(void *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[scanline_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)g_ScreenBufferArray[scanline_y]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 56,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftU >> 0x1f) << 0x18 | g_PerspectiveLeftU >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 59,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftV >> 0x1f) << 0x18 | g_PerspectiveLeftV >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 70,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftW >> 0x1f) << 0x18 | g_PerspectiveLeftW >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 73,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveInterpolatedW >> 0x1f) << 0x18 |",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 163,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveRightU >> 0x1f) << 0x18 | g_PerspectiveRightU >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 166,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveRightV >> 0x1f) << 0x18 | g_PerspectiveRightV >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 56,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftU >> 0x1f) << 0x18 | g_PerspectiveLeftU >> 8,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 59,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftV >> 0x1f) << 0x18 | g_PerspectiveLeftV >> 8,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 70,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftW >> 0x1f) << 0x18 | g_PerspectiveLeftW >> 8,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 73,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveInterpolatedW >> 0x1f) << 0x18 |",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 80,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*puVar15 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar9,uVar6)]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 85,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 90,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 95,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 100,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 105,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 110,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 115,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 120,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 125,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 130,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 135,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 140,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 145,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 148,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 151,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)(iVar8 + iVar11) >> 8),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 163,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveRightU >> 0x1f) << 0x18 | g_PerspectiveRightU >> 8,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 166,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveRightV >> 0x1f) << 0x18 | g_PerspectiveRightV >> 8,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 175,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*puVar15 = g_Hardware32BitPalette[g_CurrentTextureData[CONCAT11(uVar9,uVar6)]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 181,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 187,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 193,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 199,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 205,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 211,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 217,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 223,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))]];",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 229,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8))]]",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 236,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8)",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 243,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 250,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 257,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar5 >> 8),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 262,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)iVar8 >> 8),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 267,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[CONCAT11((char)((uint)(iVar8 + iVar4) >> 8),",
+      "type": "concat_reconstruction"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

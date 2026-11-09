@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70
-;   core_dstrender.cpp_memcpyMMX_FUN_00492001
+;   core_dstrendr.cpp_memcpyMMX_FUN_00492001
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;
 ; *****************************************************************************
@@ -219,8 +219,8 @@ section .text
     PUSH EDX                            ; 00473157
     ADD ESI,0x4                         ; 00473158
     INC EDI                             ; 0047315b
-    CALL core_dstrender.cpp_memcpyMMX_FUN_00492001 ; 0047315c
-        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
+    CALL core_dstrendr.cpp_memcpyMMX_FUN_00492001 ; 0047315c
+        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
     MOV EAX,[0x026a6ad4]                ; 00473161 | g_DirtySpanCount
     ADD ESP,0xc                         ; 00473166
     CMP EDI,EAX                         ; 00473169

@@ -24,6 +24,7 @@
 #include "types/classes/CSound.h"
 #include "types/classes/CSpotView.h"
 #include "types/classes/CTerrain.h"
+#include "types/classes/CTextureList.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWater.h"
 #include "types/classes/CWeather.h"
@@ -72,6 +73,9 @@ extern CSpotView* g_CSpotViewPtr;
 
 // CTerrain*
 extern CTerrain* g_CTerrainPtr;
+
+// CTextureList*
+extern CTextureList* g_CTextureListPtr;
 
 // CVector3i
 extern CVector3i g_GlobalLightDirection;

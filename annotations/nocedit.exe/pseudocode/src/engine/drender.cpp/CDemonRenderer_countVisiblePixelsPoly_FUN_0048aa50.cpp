@@ -39,7 +39,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa5
     if (this_ptr->shadow_pass_active == 0) {
       g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
       g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
-      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;
     }
     else {
       g_CurrentFilename = "..\\engine\\drender.cpp";

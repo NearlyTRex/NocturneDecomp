@@ -39,7 +39,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048b
       else {
         g_RenderStateFlags.dword = 0;
         g_VertexPreprocessMode = PREPROCESS_NONE;
-        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
                 (this_ptr,(prim->base).count,(int *)(prim + 1));

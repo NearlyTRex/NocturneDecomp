@@ -34,9 +34,9 @@ void __cdecl core_fire_cpp_staticInit_FUN_004bef20(void)
   __arrinit(g_LaserBeamPool,0x40,&g_CLaserBeamTypeInfo);
   __arrinit(g_ExplosionPool,10,&g_CExplosionTypeInfo);
   __arrinit(g_TossPool,0x14,&g_CTossTypeInfo);
-  _atexit(&g_CFireEffectTossesDestructorNodes);
+  _atexit(&g_CFireEffectTossesDestructorNode);
   __arrinit(g_CraterPool,0x14,&g_CCraterTypeInfo);
-  _atexit(&g_CFireEffectCratersDestructorNodes);
+  _atexit(&g_CFireEffectCratersDestructorNode);
   __arrinit(g_GunFlamePool,500,&g_CGunFlameTypeInfo);
   __arrinit(g_LightningBoltPool,10,&g_CLightningBoltTypeInfo);
   __arrinit(g_TrailPool,100,&g_CTrailTypeInfo);

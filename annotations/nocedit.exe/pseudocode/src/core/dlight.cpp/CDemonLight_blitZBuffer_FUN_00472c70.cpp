@@ -25,7 +25,7 @@ void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_00472c70(CDemonLight *t
     do {
       iVar1 = this_ptr->shadow_map_width * iVar2 + source_rect->x_min;
       iVar2 = iVar2 + 1;
-      core_dstrender_cpp_memcpyMMX_FUN_00492001
+      core_dstrendr_cpp_memcpyMMX_FUN_00492001
                 (this_ptr->shadow_depth_buffer + iVar1,
                  (void *)((int)this_ptr->master_zbuffer + iVar1 * 2),
                  (source_rect->x_max - source_rect->x_min) * 2 + 2);

@@ -22,7 +22,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004
     output_buffer = output_buffer + 1;
     input_buffer = input_buffer + 1;
     if (this_ptr->display_height + -1 <= iVar2) break;
-    core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00492042
+    core_dstrendr_cpp_verticalBlur3TapMMXStride320_FUN_00492042
               ((ulonglong *)output_buffer,(ulonglong *)input_buffer,this_ptr->display_width);
     iVar2 = iVar2 + 1;
   }
