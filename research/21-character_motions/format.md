@@ -91,8 +91,17 @@ quaternions of four little-endian float32 (`w,x,y,z`, 16 bytes each, all unit le
 written directly between the `// angle list` line and `// root offset list`. Every other
 section stays text. Volume 3 went back to version 3 with a text angle list.
 
-Unverified: how a frame maps onto the stored poses (interpolated or held at the nearest
-stored pose). The Blair Witch pose lookup in the `.asm` settles it.
+Blair Witch Volume 1 opens every skeleton `"rb"` (nocedit uses `"rt"`), which the binary block
+needs; the text sections scan the same either way.
+
+A frame between stored poses is interpolated, not held (Volume 1's
+`getFramesForInterpolation`, `00525240`): its position is `frameStart + frame / frameResolution`,
+blended between the poses either side by the fraction. Past `frameCount − frameResolution` it sits
+on the last stored pose, `frameStart + storedFrameCount − 1`, and a jump exit blends from there
+towards the target's `frameStart + toFrame / its resolution` over one stored step. Root motion
+takes the same positions, through the reciprocal of the resolution (`00524ba0`, `00524d70`).
+With a resolution of 1 every one of these is Nocturne's arithmetic.
+
 `dump_skl_motions.py` reads all three motion list versions; it does not read poses.
 
 The field names come from the authoring importer,
