@@ -7,6 +7,11 @@ project is built and worked on.
 
 | Document | What it covers |
 |---|---|
+| [about.md](about.md) | Goals, the two source trees, licensing, tools |
+| [progress.md](progress.md) | Decompilation and compilation charts for every binary |
+| [ports.md](ports.md) | Each platform's status, and how to report a test |
+| [mod-support.md](mod-support.md) | Packages, manifests and the Blair Witch games |
+| [recreation-itinerary.md](recreation-itinerary.md) | The order the recreation is ported in, and how far it has got |
 | [building.md](building.md) | Presets, prerequisites, the multilib hazard, build commands |
 | [porting.md](porting.md) | Adding a platform: toolchain, platform and dependencies files, and where the shims meet the OS |
 | [releasing.md](releasing.md) | Where the version lives, cutting a release through Prepare Release, what an archive holds |
