@@ -77,6 +77,16 @@ std::optional<std::string_view> CTextScanner::scanUntilAny(std::string_view deli
     return match;
 }
 
+std::optional<std::string_view> CTextScanner::readBytes(std::size_t count) {
+    if (text_.size() - std::min(position_, text_.size()) < count) {
+        position_ = text_.size();
+        return std::nullopt;
+    }
+    const std::string_view bytes = text_.substr(position_, count);
+    position_ += count;
+    return bytes;
+}
+
 std::size_t CTextScanner::getPosition() const {
     return position_;
 }

@@ -37,6 +37,9 @@ public:
     [[nodiscard]] std::optional<std::string_view> scanUntil(char delimiter);
     // "%[^...]": everything up to any of the delimiters, likewise.
     [[nodiscard]] std::optional<std::string_view> scanUntilAny(std::string_view delimiters);
+    // fread of one block: the next count bytes as they are; nothing when fewer remain, which
+    // leaves the position at the end, as a short fread leaves the file.
+    [[nodiscard]] std::optional<std::string_view> readBytes(std::size_t count);
     // How much of the text has been read: scanf's "%n".
     [[nodiscard]] std::size_t getPosition() const;
 
