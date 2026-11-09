@@ -44,7 +44,6 @@ patch = ["subprocess"]
 # two lists agree. The list only shrinks.
 omit = [
     "recreation/cmake/tidy.py",
-    "scripts/Python/actor_class_tree.py",
     "scripts/Python/add_missing_string_references.py",
     "scripts/Python/add_runtime_heap_block.py",
     "scripts/Python/analyze_crt_functions.py",
@@ -62,7 +61,6 @@ omit = [
     "scripts/Python/create_data_label.py",
     "scripts/Python/create_terminated_string.py",
     "scripts/Python/delete_function.py",
-    "scripts/Python/derive_vtable_contract.py",
     "scripts/Python/dethunk_function.py",
     "scripts/Python/diff_sibling_layout.py",
     "scripts/Python/disassemble_function.py",
@@ -148,7 +146,6 @@ omit = [
     "scripts/Python/validate_function_ranges.py",
     "scripts/Python/verify_globals.py",
     "scripts/Python/verify_headers.py",
-    "scripts/Python/verify_sibling_signatures.py",
 ]
 
 [tool.coverage.report]
@@ -166,7 +163,6 @@ select = ["E4", "E7", "E9", "F"]
 [tool.ruff.lint.per-file-ignores]
 # Not yet cleaned up; mirrors [tool.coverage.run] omit, and shrinks with it
 "recreation/cmake/tidy.py" = ["E", "F"]
-"scripts/Python/actor_class_tree.py" = ["E", "F"]
 "scripts/Python/add_missing_string_references.py" = ["E", "F"]
 "scripts/Python/add_runtime_heap_block.py" = ["E", "F"]
 "scripts/Python/analyze_crt_functions.py" = ["E", "F"]
@@ -184,7 +180,6 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/create_data_label.py" = ["E", "F"]
 "scripts/Python/create_terminated_string.py" = ["E", "F"]
 "scripts/Python/delete_function.py" = ["E", "F"]
-"scripts/Python/derive_vtable_contract.py" = ["E", "F"]
 "scripts/Python/dethunk_function.py" = ["E", "F"]
 "scripts/Python/diff_sibling_layout.py" = ["E", "F"]
 "scripts/Python/disassemble_function.py" = ["E", "F"]
@@ -270,4 +265,3 @@ select = ["E4", "E7", "E9", "F"]
 "scripts/Python/validate_function_ranges.py" = ["E", "F"]
 "scripts/Python/verify_globals.py" = ["E", "F"]
 "scripts/Python/verify_headers.py" = ["E", "F"]
-"scripts/Python/verify_sibling_signatures.py" = ["E", "F"]

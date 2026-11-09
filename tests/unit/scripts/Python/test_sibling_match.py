@@ -300,6 +300,14 @@ def test_slots_align_across_an_inserted_block():
     assert sm.lcs_anchors(["b", "a"], ["a", "b"]) == [(1, 0)]
 
 
+def test_a_folded_stub_never_anchors():
+    # "s" fills target slots 1 and 2, so pinning it to either would make the
+    # gap between x and y unequal; without it the gap is two slots on each side.
+    assert sm.lcs_anchors(["x", "s", None, "y"], ["x", "s", "s", "y"]) == [(0, 0), (3, 3)]
+    # The same on the source side: two methods that map to one target function.
+    assert sm.lcs_anchors(["x", "t", "t", "y"], ["x", "t", "u", "y"]) == [(0, 0), (3, 3)]
+
+
 # --- conventions and pins --------------------------------------------------------------
 
 CSPEC = """

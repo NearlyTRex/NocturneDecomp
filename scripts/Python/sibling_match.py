@@ -565,7 +565,17 @@ def lcs_anchors(seq_a_mapped, seq_b):
 
     Shared by map_vtable_slots.py and map_sibling_functions.py's prop_vtables so
     the two cannot drift apart on the alignment itself.
+
+    A function filling more than one slot on either side is a stub the linker
+    folded (the empty `return 0` shared by a dozen methods), and it pairs with a
+    single method on the other side. Anchoring on it pins whichever of its slots
+    the LCS meets first and breaks the equal-sized gap around it, so it never
+    anchors.
     """
+    folded_a = {x for x in seq_a_mapped if x and seq_a_mapped.count(x) > 1}
+    folded_b = {x for x in seq_b if x and seq_b.count(x) > 1}
+    seq_a_mapped = [None if x in folded_a or x in folded_b else x
+                    for x in seq_a_mapped]
     n, m = len(seq_a_mapped), len(seq_b)
     dp = [[0] * (m + 1) for _ in range(n + 1)]
     for i in range(n - 1, -1, -1):

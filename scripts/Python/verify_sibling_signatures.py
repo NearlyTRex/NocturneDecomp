@@ -21,9 +21,15 @@ storage. Watcom's own conventions pass leading arguments in registers --
 one in ESI -- so a function with register-passed arguments correctly expects
 *zero* stack bytes, and a caller that pushes nothing confirms it.
 
+A virtual method called only through its vtable has neither a `RET imm16` nor a
+call site to measure. It takes the size of a verified override of the same
+virtual instead (`override_peers`), since C++ gives every override the
+parameters of the virtual it overrides.
+
 Verdicts per pair:
 
-  agree         the binary's own argument size matches the transferred one
+  agree         the binary's own argument size matches the transferred one,
+                directly or through a verified override in the same slot
   conflict      it does not -- a real finding, the signature differs between
                 the two builds, not noise to be silenced. Only a definite
                 `RET imm16` or `ADD ESP, n` may convict; the other two
@@ -48,10 +54,7 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-try:
-    from capstone import Cs, CS_ARCH_X86, CS_MODE_32
-except ImportError:
-    sys.exit("capstone is required: pip install capstone")
+from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -238,9 +241,10 @@ def call_sites_to(image):
         if x.get("type") not in ("UNCONDITIONAL_CALL", "COMPUTED_CALL"):
             continue
         try:
-            out[f"{int(x['to'], 16):08x}"].append(int(x["from"], 16))
+            callee, site = int(x["to"], 16), int(x["from"], 16)
         except (KeyError, ValueError):
             continue
+        out[f"{callee:08x}"].append(site)
     return out
 
 
@@ -292,14 +296,82 @@ def verify_pair(a_func, b_func, b_img, sites, cache):
                             f"(pop {popped}, push {pushed}, store {stored})")
 
 
-def main():
+def override_peers(vtables):
+    """function -> {(peer function, slot index)}: the other overrides of the same virtual.
+
+    An override takes exactly the parameters of the virtual it overrides. Two
+    tables holding the same function at index j share an ancestor whose table
+    reaches past j, so every slot up to j is the same virtual in both. Past their
+    deepest shared slot the two branches define their own virtuals -- CCharacter
+    and CWeapon share CDemonActor's slots and nothing beyond -- so a slot is only
+    ever compared between two tables directly, never through a third.
+
+    A function found at two different indices is a folded stub (one `ret`
+    serving many slots, as nocturne's CCharacter does nine), not any one
+    virtual: it neither links tables nor stands for a slot.
+    """
+    tables = [[(e.get("func_addr") or "").lower() for e in t.get("functions", [])]
+              for t in vtables]
+    indices = defaultdict(set)
+    holders = defaultdict(set)
+    for ti, slots in enumerate(tables):
+        for i, fn in enumerate(slots):
+            if fn:
+                indices[fn].add(i)
+                holders[(fn, i)].add(ti)
+    folded = {fn for fn, seen in indices.items() if len(seen) > 1}
+    shared_depth = defaultdict(int)
+    for (fn, i), owners in holders.items():
+        if fn in folded:
+            continue
+        for t in owners:
+            for u in owners:
+                if t < u:
+                    shared_depth[(t, u)] = max(shared_depth[(t, u)], i + 1)
+    peers = defaultdict(set)
+    for (t, u), depth in shared_depth.items():
+        for i in range(depth):
+            f, g = tables[t][i], tables[u][i]
+            if f and g and f != g and f not in folded and g not in folded:
+                peers[f].add((g, i))
+                peers[g].add((f, i))
+    return peers
+
+
+def propagate_through_slots(results, expected_by_b, peers):
+    """Confirm unverifiable pairs from verified overrides of the same virtual.
+
+    `results` are the per-pair records with their verdicts, `expected_by_b` the
+    stack bytes each pair's prototype wants. A pair takes `agree` when every
+    verified override of its virtual wants the size its own prototype does.
+    Never `conflict`: an override is indirect evidence, and a mismatch says the
+    prototype or a pairing is off, not which. Returns how many it confirmed.
+    """
+    verified = {r["b"]: expected_by_b[r["b"]] for r in results
+                if r["sig_verdict"] == "agree" and expected_by_b.get(r["b"]) is not None}
+    confirmed = 0
+    for r in results:
+        expected = expected_by_b.get(r["b"])
+        if r["sig_verdict"] != "unverifiable" or expected is None:
+            continue
+        witnesses = sorted((g, i) for g, i in peers.get(r["b"], ()) if g in verified)
+        if witnesses and {verified[g] for g, _ in witnesses} == {expected}:
+            g, i = witnesses[0]
+            r["sig_verdict"] = "agree"
+            r["sig_detail"] = (f"vtable slot {i} shares {expected} stack bytes with "
+                               f"verified override {g}")
+            confirmed += 1
+    return confirmed
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("mapping")
     ap.add_argument("--out", help="write per-pair verdicts as JSON")
     ap.add_argument("--list-conflicts", action="store_true")
     ap.add_argument("--show", type=int, default=15)
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.mapping) as fh:
         mapping = json.load(fh)
@@ -310,8 +382,7 @@ def main():
     insn_cache = {}
 
     results = []
-    tally = Counter()
-    by_conf = defaultdict(Counter)
+    expected_by_b = {}
     for pair in mapping["pairs"]:
         a_func = a_img.by_addr.get(pair["a"])
         b_func = b_img.by_addr.get(pair["b"])
@@ -319,17 +390,25 @@ def main():
             continue
         verdict, detail = verify_pair(a_func, b_func, b_img,
                                       sites.get(pair["b"], ()), insn_cache)
-        tally[verdict] += 1
-        band = "0.95+" if pair["confidence"] >= 0.95 else \
-               "0.90+" if pair["confidence"] >= 0.90 else \
-               "0.80+" if pair["confidence"] >= 0.80 else "<0.80"
-        by_conf[band][verdict] += 1
+        expected_by_b[pair["b"]] = expected_param_bytes(a_func)[0]
         results.append({**pair, "sig_verdict": verdict, "sig_detail": detail})
+    by_slot = propagate_through_slots(results, expected_by_b, override_peers(b_img.vtables))
+
+    tally = Counter(r["sig_verdict"] for r in results)
+    by_conf = defaultdict(Counter)
+    for r in results:
+        band = "0.95+" if r["confidence"] >= 0.95 else \
+               "0.90+" if r["confidence"] >= 0.90 else \
+               "0.80+" if r["confidence"] >= 0.80 else "<0.80"
+        by_conf[band][r["sig_verdict"]] += 1
 
     total = sum(tally.values())
     print(f"verified {total} pairs from {args.mapping}\n")
     for v in ("agree", "conflict", "unverifiable"):
         print(f"  {v:<13}: {tally[v]:5d}  ({100.0 * tally[v] / total:.1f}%)")
+
+    if by_slot:
+        print(f"  ({by_slot} of the agreements through a verified override of the same virtual)")
 
     measurable = tally["agree"] + tally["conflict"]
     if measurable:
