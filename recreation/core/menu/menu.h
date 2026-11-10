@@ -123,6 +123,7 @@ private:
 
     void showGameplayOptions();
     void configureGraphicsOptions();
+    void configureDisplayOptions();
     void configureSoundOptions();
     void configureCustomKeys();
     // The hotkeys as Customize Keys lists the play actions, the developers' in developer mode.

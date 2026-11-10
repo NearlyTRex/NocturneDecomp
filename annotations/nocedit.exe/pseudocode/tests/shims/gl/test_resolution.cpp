@@ -61,6 +61,38 @@ NOCTURNE_TEST(the_software_ceiling_bounds_the_stepping) {
     CHECK(step({320, 240}, kRight, 100) == (Mode{320, 240}));
 }
 
+namespace {
+
+// A display of 1920x1080 that shows only 16:9.
+int sixteen_by_nine(int width, int height) {
+    return width <= 1920 && height <= 1080 && width * 9 == height * 16;
+}
+
+int nothing(int, int) {
+    return 0;
+}
+
+Mode step_where(Mode from, int direction, int (*accept)(int, int), int max_height = 0) {
+    Mode to = {0, 0};
+    nocturne_resolution_step_where(from.width, from.height, direction, max_height, accept,
+                                   &to.width, &to.height);
+    return to;
+}
+
+} // namespace
+
+// What the display offers bounds the stepping as the ceiling does, and a mode
+// it does not offer snaps to the nearest it does; one that offers nothing is
+// not asked.
+NOCTURNE_TEST(what_the_display_offers_bounds_the_stepping) {
+    CHECK(step_where({1280, 720}, kRight, sixteen_by_nine) == (Mode{1600, 900}));
+    CHECK(step_where({1920, 1080}, kRight, sixteen_by_nine) == (Mode{1280, 720}));
+    CHECK(step_where({1280, 720}, kLeft, sixteen_by_nine) == (Mode{1920, 1080}));
+    CHECK(step_where({1024, 768}, kRight, sixteen_by_nine) == (Mode{1280, 720}));
+    CHECK(step_where({640, 480}, kRight, nothing) == (Mode{800, 600}));
+    CHECK(step_where({1600, 900}, kRight, sixteen_by_nine, 800) == (Mode{1280, 720}));
+}
+
 // A mode not in the list snaps to the nearest by height, then width, within
 // the ceiling, the first of two as near.
 NOCTURNE_TEST(a_mode_not_in_the_list_snaps_to_the_nearest) {

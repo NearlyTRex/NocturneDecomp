@@ -28,6 +28,18 @@ TEST(IDisplay, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&IDisplay::getWindowMode), EWindowMode (IDisplay::*)() const>);
     static_assert(std::is_same_v<decltype(&IDisplay::setWindowSize), void (IDisplay::*)(int, int)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setDisplayIndex), void (IDisplay::*)(int)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getDisplayIndex), int (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setFullscreenSize),
+                                 void (IDisplay::*)(EFullscreenSize)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getFullscreenSize),
+                                 EFullscreenSize (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setRefreshRate), void (IDisplay::*)(int)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getRefreshRate), int (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setVsync), void (IDisplay::*)(bool)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getVsync), bool (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getDisplays),
+                                 std::vector<SDisplayInfo> (IDisplay::*)() const>);
     static_assert(std::is_same_v<decltype(&IDisplay::setUpscaler), void (IDisplay::*)(EUpscaler)>);
     static_assert(
         std::is_same_v<decltype(&IDisplay::getUpscaler), EUpscaler (IDisplay::*)() const>);

@@ -55,6 +55,16 @@ void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *
     *out_y = window_y / stand.logical_scale;
 }
 
+void nocturne_gl_logical_to_window(int logical_x, int logical_y, int *out_x, int *out_y) {
+    *out_x = logical_x * stand.logical_scale;
+    *out_y = logical_y * stand.logical_scale;
+}
+
+// DirectDraw's presenter asks; these cases do not present through it.
+int nocturne_vsync_get(void) {
+    return 1;
+}
+
 void nocturne_apply_window_icon(struct SDL_Window *) {
     ++stand.icons;
 }

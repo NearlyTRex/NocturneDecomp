@@ -147,6 +147,24 @@ NOCTURNE_TEST(without_adaptive_vsync_it_is_plain_vsync) {
     CHECK_EQ(stand.intervals[1], 1);
 }
 
+// Vsync off is no interval; turned on or off while presenting, the next swap
+// takes it, and only a change asks again.
+NOCTURNE_TEST(vsync_follows_the_setting_at_each_swap) {
+    fresh();
+    stand.vsync = 0;
+    CHECK_EQ(nocturne_gl_init(sdl_gl::window()), 1);
+    CHECK_EQ((int)stand.intervals.size(), 1);
+    CHECK_EQ(stand.intervals[0], 0);
+    nocturne_gl_set_logical_size(640, 480);
+    present(640, 480);
+    CHECK_EQ((int)stand.intervals.size(), 1);
+    stand.vsync = 1;
+    present(640, 480);
+    CHECK_EQ((int)stand.intervals.size(), 2);
+    CHECK_EQ(stand.intervals[1], -1);
+    stand.vsync = 1;
+}
+
 // No context, one that will not be made current, or no entry points: no GL,
 // and nothing left behind.
 NOCTURNE_TEST(a_context_that_cannot_be_had_is_no_gl) {
@@ -616,6 +634,51 @@ NOCTURNE_TEST(a_point_on_the_window_is_the_point_in_the_game) {
         stand.drawable_width = empty == 2 ? 0 : 1920;
         stand.drawable_height = empty == 3 ? 0 : 1080;
         nocturne_gl_window_to_logical(7, 9, &x, &y);
+        CHECK_EQ(x, 7);
+        CHECK_EQ(y, 9);
+    }
+}
+
+// A point in the game is the window point in the middle of that game pixel,
+// which maps back onto it: past the letterbox, at the HiDPI scale. Without a
+// context or a window it is as given.
+NOCTURNE_TEST(a_point_in_the_game_is_the_window_point_that_maps_back_to_it) {
+    int x = -1, y = -1;
+    fresh();
+    nocturne_gl_logical_to_window(100, 50, &x, &y);
+    CHECK_EQ(x, 100);
+    CHECK_EQ(y, 50);
+
+    up();
+    nocturne_gl_set_logical_size(640, 480);
+    stand.window_width = 960;
+    stand.window_height = 540;
+    stand.drawable_width = 1920;
+    stand.drawable_height = 1080;
+    const int points[][2] = {{320, 240}, {0, 0}, {639, 479}, {317, 101}};
+    for (const auto &p : points) {
+        nocturne_gl_logical_to_window(p[0], p[1], &x, &y);
+        int back_x = -1, back_y = -1;
+        nocturne_gl_window_to_logical(x, y, &back_x, &back_y);
+        CHECK_EQ(back_x, p[0]);
+        CHECK_EQ(back_y, p[1]);
+    }
+    nocturne_gl_logical_to_window(320, 240, &x, &y); // the middle
+    CHECK_EQ(x, 480);
+    CHECK_EQ(y, 270);
+
+    // With no game size set, the drawable is the game.
+    nocturne_gl_set_logical_size(0, 0);
+    nocturne_gl_logical_to_window(960, 540, &x, &y);
+    CHECK_EQ(x, 480);
+    CHECK_EQ(y, 270);
+
+    for (int empty = 0; empty < 4; ++empty) {
+        stand.window_width = empty == 0 ? 0 : 960;
+        stand.window_height = empty == 1 ? 0 : 540;
+        stand.drawable_width = empty == 2 ? 0 : 1920;
+        stand.drawable_height = empty == 3 ? 0 : 1080;
+        nocturne_gl_logical_to_window(7, 9, &x, &y);
         CHECK_EQ(x, 7);
         CHECK_EQ(y, 9);
     }

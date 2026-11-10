@@ -79,6 +79,14 @@ void nocturne_window_set_size(int width, int height);
 // the window.
 int nocturne_window_preferred_size(int *width, int *height);
 
+// Push the current mode and display settings (display_settings.h) onto the
+// window last applied to, after one of them changes.
+void nocturne_window_mode_reapply(void);
+
+// The size Fullscreen shows: the desktop's under fullscreenSize=Desktop, else
+// the size above, else the window's own; 0 x 0 with neither.
+void nocturne_window_fullscreen_size(int *width, int *height);
+
 #ifdef __cplusplus
 }
 #endif

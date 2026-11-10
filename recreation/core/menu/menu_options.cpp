@@ -21,15 +21,17 @@ namespace {
 enum class EOptionsLine : std::uint8_t {
     Gameplay,
     Graphic,
+    Display,
     Sound,
     Control,
     Cheats,
     Credits,
 };
 
-constexpr std::array<std::pair<EOptionsLine, std::string_view>, 6> kOptionsLines{{
+constexpr std::array<std::pair<EOptionsLine, std::string_view>, 7> kOptionsLines{{
     {EOptionsLine::Gameplay, "Gameplay options"},
     {EOptionsLine::Graphic, "Graphic options"},
+    {EOptionsLine::Display, "Display options"},
     {EOptionsLine::Sound, "Sound options"},
     {EOptionsLine::Control, "Control options"},
     {EOptionsLine::Cheats, "Cheats"},
@@ -64,6 +66,9 @@ public:
             break;
         case EOptionsLine::Graphic:
             getMenu().configureGraphicsOptions();
+            break;
+        case EOptionsLine::Display:
+            getMenu().configureDisplayOptions();
             break;
         case EOptionsLine::Sound:
             getMenu().configureSoundOptions();

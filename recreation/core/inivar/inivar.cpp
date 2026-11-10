@@ -33,6 +33,12 @@ int readEnumValue(const engine::CIniFile &file, std::string_view key, int value,
     return read < 0 || read > last ? value : read;
 }
 
+// An index or rate; a negative one keeps the setting as it was.
+int readNonNegative(const engine::CIniFile &file, std::string_view key, int value) {
+    const int read = file.getInteger(key, value);
+    return read < 0 ? value : read;
+}
+
 void readFlag(const engine::CIniFile &file, std::string_view key, int &value) {
     value = file.getInteger(key, value);
 }
@@ -70,6 +76,14 @@ void readGraphics(const engine::CIniFile &file, const SIniDataOwners &owners) {
     owners.fonts.setMenuFontChoice(static_cast<EMenuFontChoice>(
         readEnumValue(file, "menuFont", static_cast<int>(owners.fonts.getMenuFontChoice()),
                       static_cast<int>(EMenuFontChoice::Small))));
+    owners.display.setDisplayIndex(
+        readNonNegative(file, "displayIndex", owners.display.getDisplayIndex()));
+    owners.display.setFullscreenSize(static_cast<platform::EFullscreenSize>(
+        readEnumValue(file, "fullscreenSize", static_cast<int>(owners.display.getFullscreenSize()),
+                      platform::kFullscreenSizeCount - 1)));
+    owners.display.setRefreshRate(
+        readNonNegative(file, "refreshRate", owners.display.getRefreshRate()));
+    owners.display.setVsync(file.getInteger("vsync", owners.display.getVsync() ? 1 : 0) != 0);
     owners.display.setWindowSize(game.game_pixx, game.game_pixy);
     owners.display.setWindowMode(static_cast<platform::EWindowMode>(
         readEnumValue(file, "windowMode", static_cast<int>(owners.display.getWindowMode()),
@@ -164,6 +178,10 @@ void writeGraphics(engine::CIniFile &file, const SIniDataOwners &owners) {
     file.setInteger("osFont", static_cast<int>(owners.fonts.getOsFontChoice()));
     file.setInteger("menuFont", static_cast<int>(owners.fonts.getMenuFontChoice()));
     file.setInteger("windowMode", static_cast<int>(owners.display.getWindowMode()));
+    file.setInteger("displayIndex", owners.display.getDisplayIndex());
+    file.setInteger("fullscreenSize", static_cast<int>(owners.display.getFullscreenSize()));
+    file.setInteger("refreshRate", owners.display.getRefreshRate());
+    file.setInteger("vsync", owners.display.getVsync() ? 1 : 0);
     file.setInteger("upscaler", static_cast<int>(owners.display.getUpscaler()));
     file.setInteger("upscalerSharpness", owners.display.getUpscalerSharpness());
     file.setInteger("antialias", static_cast<int>(owners.display.getAntialias()));
@@ -194,10 +212,10 @@ void writeControls(engine::CIniFile &file, const CGame &game) {
 } // namespace
 
 // The renderer DLL and AGP texturing the original also read have no reader in the game now, so
-// their lines are left as they are; retail has no Editor section. The window
-// opens at the resolution the game will run at, as the decomp's menu resolution change has it,
-// in the enhanced game's window mode and upscaler. The pad's tuning is read after the controls
-// (the decomp's pad_tuning.h). The language, which picks the packages' translations, is the
+// their lines are left as they are; retail has no Editor section. The window opens at the
+// resolution the game will run at, as the decomp's menu resolution change has it, on the
+// enhanced game's display, in its window mode and upscaler. The pad's tuning is read after the
+// controls (the decomp's pad_tuning.h). The language, which picks the packages' translations, is the
 // enhanced game's.
 // nocedit 0x004fbd90
 void readIniData(engine::CIni &ini, platform::IFileSystem &file_system,

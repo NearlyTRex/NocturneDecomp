@@ -86,6 +86,10 @@ void CWinRun::mainWindowProc(const platform::SWindowEvent &event) {
         }
         return;
     case platform::EWindowEventType::MouseMove:
+        // Passing over an inactive window is not the game's.
+        if (window_active_ == 0) {
+            return;
+        }
         mouse_x_ = event.x;
         mouse_y_ = event.y;
         return;
@@ -192,10 +196,14 @@ void CWinRun::clearMouseClicks() {
     mouse_button_flags_ = 0;
 }
 
-// In the game's coordinates, which the window maps onto its own.
+// In the game's coordinates, which the window maps onto its own. Mouse-look sets it every frame
+// and the game runs on unfocused, so while the window is inactive the pointer is the player's:
+// it is not warped, and the game is told it is where it asked, so the camera holds still.
 // nocedit 0x005f30d0
 void CWinRun::setCursorPosition(int x, int y) {
-    window_.warpMouse(x, y);
+    if (window_active_ != 0) {
+        window_.warpMouse(x, y);
+    }
     mouse_x_ = x;
     mouse_y_ = y;
 }

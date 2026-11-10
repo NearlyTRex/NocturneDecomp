@@ -93,11 +93,11 @@ TEST_F(COptionsScreenTest, CreditsRollThenTheMusicStartsAgain) {
     std::vector<int> playing;
     on_frame_ = [&](int frame) {
         playing.push_back(sound_main_.countActiveSfx());
-        if (frame <= 5) {
+        if (frame <= 6) {
             press(kDown);
-        } else if (frame == 6) {
+        } else if (frame == 7) {
             press(kReturn);
-        } else if (frame == 8) {
+        } else if (frame == 9) {
             press(kEscape);
         }
     };
@@ -108,10 +108,10 @@ TEST_F(COptionsScreenTest, CreditsRollThenTheMusicStartsAgain) {
 
 // The mute is Sound Options' first line; Cancel there goes back to Options.
 TEST_F(COptionsScreenTest, SoundOptionsOpensItsPage) {
-    pressEachFrame({kDown, kDown, kReturn, kReturn, kEscape, kEscape});
+    pressEachFrame({kDown, kDown, kDown, kReturn, kReturn, kEscape, kEscape});
     menu_.showOptionsScreen(0);
     EXPECT_TRUE(sound_main_.isSoundMuted());
-    EXPECT_EQ(frames_, 6);
+    EXPECT_EQ(frames_, 7);
 }
 
 // Always run is the Gameplay page's first line; Cancel there goes back to Options.
@@ -122,16 +122,24 @@ TEST_F(COptionsScreenTest, GameplayOpensItsPage) {
     EXPECT_EQ(frames_, 4);
 }
 
-// The halo is the Graphic page's third line.
+// The halo is the Graphic page's last line, five below its first without acceleration.
 TEST_F(COptionsScreenTest, GraphicOpensItsPage) {
-    pressEachFrame({kDown, kReturn, kDown, kDown, kDown, kReturn, kEscape, kEscape});
+    pressEachFrame({kDown, kReturn, kDown, kDown, kDown, kDown, kDown, kReturn, kEscape, kEscape});
     menu_.showOptionsScreen(0);
     EXPECT_EQ(game_.halo_mode, 1);
-    EXPECT_EQ(frames_, 8);
+    EXPECT_EQ(frames_, 10);
+}
+
+// The resolution is the Display page's second line, after the display.
+TEST_F(COptionsScreenTest, DisplayOpensItsPage) {
+    pressEachFrame({kDown, kDown, kReturn, kDown, kReturn, kEscape, kEscape});
+    menu_.showOptionsScreen(0);
+    EXPECT_EQ(game_.game_pixx, 320);
+    EXPECT_EQ(frames_, 7);
 }
 
 TEST_F(COptionsScreenTest, TheCheatsQuitUntilTheyArePorted) {
-    on_frame_ = [&](int frame) { press(frame <= 4 ? kDown : kReturn); };
+    on_frame_ = [&](int frame) { press(frame <= 5 ? kDown : kReturn); };
     EXPECT_THAT([this] { menu_.showOptionsScreen(0); },
                 ::testing::ThrowsMessage<common::CFatalError>(
                     ::testing::StrEq("CMenu::showCheatsMenu is not ported yet")));

@@ -11,10 +11,13 @@
 #include "platform/lograte.h"
 #include "platform/upscaler.h"
 
+#include <cstdint>
 #include <memory>
 #include <optional>
+#include <vector>
 
 struct SDL_GLContextState;
+using SDL_DisplayID = std::uint32_t;
 
 namespace nocturne::platform::sdl {
 
@@ -37,6 +40,15 @@ public:
     void setWindowMode(EWindowMode mode) override;
     [[nodiscard]] EWindowMode getWindowMode() const override;
     void setWindowSize(int width, int height) override;
+    void setDisplayIndex(int index) override;
+    [[nodiscard]] int getDisplayIndex() const override;
+    void setFullscreenSize(EFullscreenSize size) override;
+    [[nodiscard]] EFullscreenSize getFullscreenSize() const override;
+    void setRefreshRate(int hertz) override;
+    [[nodiscard]] int getRefreshRate() const override;
+    void setVsync(bool on) override;
+    [[nodiscard]] bool getVsync() const override;
+    [[nodiscard]] std::vector<SDisplayInfo> getDisplays() const override;
     void setUpscaler(EUpscaler upscaler) override;
     [[nodiscard]] EUpscaler getUpscaler() const override;
     void setUpscalerSharpness(int percent) override;
@@ -57,7 +69,13 @@ private:
         void operator()(SDL_GLContextState *context) const;
     };
 
+    // The chosen display's id, or the window's when SDL lists none.
+    [[nodiscard]] SDL_DisplayID getDisplayId() const;
+    void applyWindowMode();
     void applyWindowSize();
+    void applyExclusiveMode();
+    void applyVsync() const;
+    void placeOnDisplay();
     void drawFrame(GLuint texture, common::SExtent frame, gl::EQuadRows rows);
 
     CSdlWindow &window_;
@@ -75,6 +93,10 @@ private:
     // The player's windowed size; empty until chosen, when the first mode's size stands in.
     common::SExtent window_size_;
     EWindowMode window_mode_ = EWindowMode::Windowed;
+    int display_index_ = 0;
+    EFullscreenSize fullscreen_size_ = EFullscreenSize::Game;
+    int refresh_rate_ = kRefreshRateAuto;
+    bool vsync_ = true;
     EUpscaler upscaler_mode_ = EUpscaler::Standard;
     int upscaler_sharpness_ = kUpscalerSharpnessDefault;
     EAntialias antialias_ = EAntialias::Off;
